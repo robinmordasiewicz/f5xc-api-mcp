@@ -27,8 +27,7 @@ export const securityTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.AllApplicationInventoryWaf",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-hit-create",
@@ -59,8 +58,7 @@ export const securityTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.service_policy.CustomDataAPI.ServicePolicyHits",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-latency-create",
@@ -91,8 +89,7 @@ export const securityTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.service_policy.CustomDataAPI.ServicePolicyHitsLatency",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-malicious-user-mitigation-create",
@@ -127,7 +124,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.malicious_user_mitigation.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-malicious-user-mitigation-delete",
@@ -168,7 +165,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.malicious_user_mitigation.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-malicious-user-mitigation-get",
@@ -232,7 +229,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.malicious_user_mitigation.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-malicious-user-mitigation-list",
@@ -299,7 +296,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.malicious_user_mitigation.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-malicious-user-mitigation-update",
@@ -344,7 +341,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.malicious_user_mitigation.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-rule-hit-create",
@@ -376,8 +373,7 @@ export const securityTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.waf.WAFMonitoringAPI.ClientRuleHitsMetrics",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0262.public.ves.io.schema.waf.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0262.public.ves.io.schema.waf.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-security-event-create",
@@ -409,8 +405,7 @@ export const securityTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.waf.WAFMonitoringAPI.ClientSecurityEventsMetrics",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0262.public.ves.io.schema.waf.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0262.public.ves.io.schema.waf.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-create",
@@ -444,8 +439,7 @@ export const securityTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.service_policy.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-delete",
@@ -485,8 +479,7 @@ export const securityTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.service_policy.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-get",
@@ -549,8 +542,7 @@ export const securityTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.service_policy.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-list",
@@ -616,8 +608,7 @@ export const securityTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.service_policy.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-rule-create",
@@ -652,7 +643,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.service_policy_rule.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-rule-delete",
@@ -693,7 +684,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.service_policy_rule.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-rule-get",
@@ -757,7 +748,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.service_policy_rule.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-rule-list",
@@ -824,7 +815,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.service_policy_rule.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-rule-update",
@@ -869,7 +860,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.service_policy_rule.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-set-get",
@@ -931,7 +922,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.service_policy_set.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0210.public.ves.io.schema.service_policy_set.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0210.public.ves.io.schema.service_policy_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-set-list",
@@ -998,7 +989,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.service_policy_set.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0210.public.ves.io.schema.service_policy_set.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0210.public.ves.io.schema.service_policy_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-update",
@@ -1042,8 +1033,7 @@ export const securityTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.service_policy.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-suggestion-create",
@@ -1086,8 +1076,7 @@ export const securityTools: ParsedOperation[] = [
     operationId:
       "ves.io.schema.app_security.AppSecurityWafExclusionAPI.GetSuggestedWAFExclusionRuleForCDN",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-threat-campaign-get",
@@ -1118,8 +1107,7 @@ export const securityTools: ParsedOperation[] = [
     requiredParams: ["id"],
     operationId: "ves.io.schema.app_security.ThreatCampaignAPI.GetThreatCampaignById",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-waf-exclusion-policy-create",
@@ -1153,7 +1141,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.waf_exclusion_policy.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-waf-exclusion-policy-delete",
@@ -1194,7 +1182,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.waf_exclusion_policy.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-waf-exclusion-policy-get",
@@ -1257,7 +1245,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.waf_exclusion_policy.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-waf-exclusion-policy-list",
@@ -1324,7 +1312,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.waf_exclusion_policy.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-security-waf-exclusion-policy-update",
@@ -1368,7 +1356,7 @@ export const securityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.waf_exclusion_policy.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
   },
 ];
 

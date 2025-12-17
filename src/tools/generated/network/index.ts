@@ -38,7 +38,7 @@ export const networkTools: ParsedOperation[] = [
     operationId: "ves.io.schema.enhanced_firewall_policy.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-enhanced-firewall-policy-delete",
@@ -79,7 +79,7 @@ export const networkTools: ParsedOperation[] = [
     operationId: "ves.io.schema.enhanced_firewall_policy.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-enhanced-firewall-policy-get",
@@ -142,7 +142,7 @@ export const networkTools: ParsedOperation[] = [
     operationId: "ves.io.schema.enhanced_firewall_policy.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-enhanced-firewall-policy-list",
@@ -209,7 +209,7 @@ export const networkTools: ParsedOperation[] = [
     operationId: "ves.io.schema.enhanced_firewall_policy.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-enhanced-firewall-policy-update",
@@ -253,7 +253,7 @@ export const networkTools: ParsedOperation[] = [
     operationId: "ves.io.schema.enhanced_firewall_policy.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-hit-create",
@@ -287,7 +287,7 @@ export const networkTools: ParsedOperation[] = [
     operationId: "ves.io.schema.enhanced_firewall_policy.CustomDataAPI.EnhancedFirewallPolicyHits",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-network-connector-create",
@@ -321,7 +321,7 @@ export const networkTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_connector.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-network-connector-delete",
@@ -362,7 +362,7 @@ export const networkTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_connector.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-network-connector-get",
@@ -425,7 +425,7 @@ export const networkTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_connector.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-network-connector-list",
@@ -492,7 +492,7 @@ export const networkTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_connector.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-network-connector-update",
@@ -536,7 +536,7 @@ export const networkTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_connector.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-network-firewall-create",
@@ -569,8 +569,7 @@ export const networkTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.network_firewall.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-network-firewall-delete",
@@ -610,8 +609,7 @@ export const networkTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.network_firewall.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-network-firewall-get",
@@ -673,8 +671,7 @@ export const networkTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.network_firewall.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-network-firewall-list",
@@ -740,8 +737,7 @@ export const networkTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.network_firewall.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-network-network-firewall-update",
@@ -784,8 +780,7 @@ export const networkTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.network_firewall.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
   },
 ];
 

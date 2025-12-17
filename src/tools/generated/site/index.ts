@@ -38,7 +38,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_vpc_site.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-aws-vpc-site-delete",
@@ -79,7 +79,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_vpc_site.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-aws-vpc-site-get",
@@ -142,7 +142,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_vpc_site.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-aws-vpc-site-list",
@@ -209,7 +209,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_vpc_site.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-aws-vpc-site-update",
@@ -253,7 +253,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_vpc_site.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-azure-vnet-site-create",
@@ -287,7 +287,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.azure_vnet_site.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-azure-vnet-site-delete",
@@ -328,7 +328,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.azure_vnet_site.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-azure-vnet-site-get",
@@ -391,7 +391,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.azure_vnet_site.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-azure-vnet-site-list",
@@ -458,7 +458,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.azure_vnet_site.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-azure-vnet-site-update",
@@ -502,7 +502,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.azure_vnet_site.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-gcp-vpc-site-create",
@@ -536,7 +536,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.gcp_vpc_site.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-gcp-vpc-site-delete",
@@ -577,7 +577,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.gcp_vpc_site.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-gcp-vpc-site-get",
@@ -640,7 +640,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.gcp_vpc_site.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-gcp-vpc-site-list",
@@ -707,7 +707,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.gcp_vpc_site.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-gcp-vpc-site-update",
@@ -751,7 +751,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.gcp_vpc_site.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-set-cloud-site-info-create",
@@ -794,7 +794,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_vpc_site.CustomAPI.SetCloudSiteInfo",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-set-vip-info-create",
@@ -836,7 +836,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_vpc_site.CustomAPI.SetVIPInfo",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-set-vpc-k8s-hostname-create",
@@ -878,7 +878,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_vpc_site.CustomAPI.SetVPCK8SHostnames",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-validate-config-create",
@@ -920,7 +920,7 @@ export const siteTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_vpc_site.CustomAPI.ValidateConfig",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
   },
 ];
 

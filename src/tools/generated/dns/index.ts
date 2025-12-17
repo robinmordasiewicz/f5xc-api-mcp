@@ -26,8 +26,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.dns_zone.CustomAPI.CloneFromDNSDomain",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-create",
@@ -61,8 +60,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.dns_lb_pool.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-delete",
@@ -102,8 +100,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.dns_lb_pool.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-get",
@@ -165,8 +162,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.dns_lb_pool.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-list",
@@ -231,8 +227,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.dns_lb_pool.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-update",
@@ -275,8 +270,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.dns_lb_pool.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-create",
@@ -311,7 +305,7 @@ export const dnsTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_load_balancer.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-delete",
@@ -352,7 +346,7 @@ export const dnsTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_load_balancer.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-get",
@@ -415,7 +409,7 @@ export const dnsTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_load_balancer.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-list",
@@ -482,7 +476,7 @@ export const dnsTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_load_balancer.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-update",
@@ -526,7 +520,7 @@ export const dnsTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_load_balancer.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-zone-create",
@@ -559,8 +553,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.dns_zone.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-zone-delete",
@@ -600,8 +593,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.dns_zone.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-zone-get",
@@ -663,8 +655,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.dns_zone.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-zone-list",
@@ -729,8 +720,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.dns_zone.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-zone-update",
@@ -773,8 +763,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.dns_zone.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-export-list",
@@ -814,8 +803,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["dns_zone_name", "namespace"],
     operationId: "ves.io.schema.dns_zone.CustomAPI.ExportZoneFile",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-health-statu-get",
@@ -856,7 +844,7 @@ export const dnsTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBHealthStatus",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-health-statu-list",
@@ -888,7 +876,7 @@ export const dnsTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBHealthStatusList",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-health-status-change-event-list",
@@ -951,7 +939,7 @@ export const dnsTools: ParsedOperation[] = [
       "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBPoolMemberHealthStatusChangeEvents",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-import-axfr-create",
@@ -973,8 +961,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.dns_zone.CustomAPI.ImportAXFR",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-import-bind-create-create",
@@ -996,8 +983,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.dns_zone.CustomAPI.ImportBINDCreate",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-import-bind-validate-create",
@@ -1019,8 +1005,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.dns_zone.CustomAPI.ImportBINDValidate",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-import-create",
@@ -1042,8 +1027,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.dns_zone.CustomAPI.ImportF5CSZone",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-local-zone-file-list",
@@ -1083,8 +1067,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["dns_zone_name", "namespace"],
     operationId: "ves.io.schema.dns_zone.CustomAPI.GetLocalZoneFile",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-metric-create",
@@ -1116,8 +1099,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.dns_zone.CustomDataAPI.DnsZoneMetrics",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-pool-members-health-statu-list",
@@ -1149,7 +1131,7 @@ export const dnsTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBPoolMemberHealthStatusList",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-record-name-delete",
@@ -1206,8 +1188,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["dns_zone_name", "group_name", "record_name", "type"],
     operationId: "ves.io.schema.dns_zone.rrset.CustomAPI.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0105.public.ves.io.schema.dns_zone.rrset.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0105.public.ves.io.schema.dns_zone.rrset.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-record-name-list",
@@ -1264,8 +1245,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["dns_zone_name", "group_name", "record_name", "type"],
     operationId: "ves.io.schema.dns_zone.rrset.CustomAPI.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0105.public.ves.io.schema.dns_zone.rrset.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0105.public.ves.io.schema.dns_zone.rrset.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-record-name-update",
@@ -1324,8 +1304,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body", "dns_zone_name", "group_name", "record_name", "type"],
     operationId: "ves.io.schema.dns_zone.rrset.CustomAPI.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0105.public.ves.io.schema.dns_zone.rrset.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0105.public.ves.io.schema.dns_zone.rrset.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-remote-zone-file-list",
@@ -1365,8 +1344,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["dns_zone_name", "namespace"],
     operationId: "ves.io.schema.dns_zone.CustomAPI.GetRemoteZoneFile",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-request-log-create",
@@ -1398,8 +1376,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.dns_zone.CustomDataAPI.DnsZoneRequestLogs",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-rrset-create",
@@ -1440,8 +1417,7 @@ export const dnsTools: ParsedOperation[] = [
     requiredParams: ["body", "dns_zone_name", "group_name"],
     operationId: "ves.io.schema.dns_zone.rrset.CustomAPI.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0105.public.ves.io.schema.dns_zone.rrset.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0105.public.ves.io.schema.dns_zone.rrset.ves-swagger.json",
   },
 ];
 

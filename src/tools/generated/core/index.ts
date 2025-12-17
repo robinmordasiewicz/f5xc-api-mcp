@@ -36,8 +36,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.user.CustomAPI.AcceptTOS",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-acces-create",
@@ -62,7 +61,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.tenant_management.allowed_tenant.CustomAPI.UpdateSupportTenantAccess",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-acces-list",
@@ -83,7 +82,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.allowed_tenant.CustomAPI.GetSupportTenantAccess",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-access-count-create",
@@ -117,8 +116,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.voltshare.MonitoringAPI.VoltShareAccessCountQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0109.public.ves.io.schema.voltshare.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0109.public.ves.io.schema.voltshare.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-access-log-create",
@@ -151,7 +149,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.CDNAccessLogs",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-action-create",
@@ -184,7 +182,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousTrafficOverviewActions",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-activation-statu-list",
@@ -216,7 +214,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.pbac.addon_service.CustomAPI.GetActivationStatus",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0008.public.ves.io.schema.pbac.addon_service.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0008.public.ves.io.schema.pbac.addon_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-active-alert-policie-create",
@@ -249,8 +247,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.SetActiveAlertPolicies",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-active-alert-policie-list",
@@ -281,8 +278,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.GetActiveAlertPolicies",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-active-network-policie-create",
@@ -315,8 +311,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.SetActiveNetworkPolicies",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-active-network-policie-list",
@@ -347,8 +342,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.GetActiveNetworkPolicies",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-active-service-policie-create",
@@ -381,8 +375,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.SetActiveServicePolicies",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-active-service-policie-list",
@@ -413,8 +406,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.GetActiveServicePolicies",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-active-staged-signature-list",
@@ -456,7 +448,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.waf_signatures_changelog.WafSignatureChangelogCustomApi.GetActiveStagedSignatures",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0264.public.ves.io.schema.waf_signatures_changelog.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0264.public.ves.io.schema.waf_signatures_changelog.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-add-create",
@@ -507,8 +499,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "node", "site"],
     operationId: "ves.io.schema.operate.usb.CustomPublicAPI.AddRules",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0244.public.ves.io.schema.operate.usb.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0244.public.ves.io.schema.operate.usb.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-addon-service-get",
@@ -539,7 +530,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.pbac.addon_service.CustomAPI.GetAddonServiceDetails",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0008.public.ves.io.schema.pbac.addon_service.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0008.public.ves.io.schema.pbac.addon_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-addon-service-list",
@@ -606,7 +597,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.pbac.addon_service.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0008.public.ves.io.schema.pbac.addon_service.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0008.public.ves.io.schema.pbac.addon_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-addon-subscription-create",
@@ -640,7 +631,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.pbac.addon_subscription.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0009.public.ves.io.schema.pbac.addon_subscription.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0009.public.ves.io.schema.pbac.addon_subscription.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-addon-subscription-delete",
@@ -681,7 +672,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.pbac.addon_subscription.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0009.public.ves.io.schema.pbac.addon_subscription.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0009.public.ves.io.schema.pbac.addon_subscription.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-addon-subscription-get",
@@ -744,7 +735,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.pbac.addon_subscription.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0009.public.ves.io.schema.pbac.addon_subscription.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0009.public.ves.io.schema.pbac.addon_subscription.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-addon-subscription-list",
@@ -811,7 +802,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.pbac.addon_subscription.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0009.public.ves.io.schema.pbac.addon_subscription.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0009.public.ves.io.schema.pbac.addon_subscription.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-addon-subscription-update",
@@ -855,7 +846,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.pbac.addon_subscription.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0009.public.ves.io.schema.pbac.addon_subscription.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0009.public.ves.io.schema.pbac.addon_subscription.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-address-allocator-create",
@@ -890,7 +881,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.address_allocator.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0010.public.ves.io.schema.address_allocator.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0010.public.ves.io.schema.address_allocator.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-address-allocator-delete",
@@ -931,7 +922,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.address_allocator.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0010.public.ves.io.schema.address_allocator.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0010.public.ves.io.schema.address_allocator.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-address-allocator-get",
@@ -993,7 +984,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.address_allocator.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0010.public.ves.io.schema.address_allocator.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0010.public.ves.io.schema.address_allocator.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-address-allocator-list",
@@ -1060,7 +1051,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.address_allocator.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0010.public.ves.io.schema.address_allocator.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0010.public.ves.io.schema.address_allocator.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-admin-notification-list",
@@ -1081,8 +1072,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.setting.CustomAPI.GetAdminNtfnPreferences",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-admin-notification-update",
@@ -1103,8 +1093,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.setting.CustomAPI.UpdateAdminNtfnPreferences",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-admin-reset-create",
@@ -1127,8 +1116,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.user.CustomAPI.ResetPasswordByAdmin",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-admin-reset-update",
@@ -1148,8 +1136,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.setting.CustomAPI.ResetOtpDeviceByAdmin",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-advertise-policy-create",
@@ -1183,8 +1170,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.advertise_policy.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0011.public.ves.io.schema.advertise_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0011.public.ves.io.schema.advertise_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-advertise-policy-delete",
@@ -1224,8 +1210,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.advertise_policy.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0011.public.ves.io.schema.advertise_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0011.public.ves.io.schema.advertise_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-advertise-policy-get",
@@ -1288,8 +1273,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.advertise_policy.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0011.public.ves.io.schema.advertise_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0011.public.ves.io.schema.advertise_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-advertise-policy-list",
@@ -1355,8 +1339,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.advertise_policy.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0011.public.ves.io.schema.advertise_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0011.public.ves.io.schema.advertise_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-advertise-policy-update",
@@ -1400,8 +1383,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.advertise_policy.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0011.public.ves.io.schema.advertise_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0011.public.ves.io.schema.advertise_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-affecteduser-create",
@@ -1443,7 +1425,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.ListAffectedUsers",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-age-create",
@@ -1465,8 +1447,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.GetDashboardByAge",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-aggregation-create",
@@ -1500,8 +1481,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.alert.CustomAPI.AlertsHistoryAggregation",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-create",
@@ -1535,8 +1515,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomAlertAPI.ListAlerts",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-gen-policy-create",
@@ -1570,7 +1549,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.brmalerts.alert_gen_policy.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-gen-policy-delete",
@@ -1611,7 +1590,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.brmalerts.alert_gen_policy.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-gen-policy-get",
@@ -1674,7 +1653,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.brmalerts.alert_gen_policy.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-gen-policy-list",
@@ -1741,7 +1720,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.brmalerts.alert_gen_policy.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-gen-policy-update",
@@ -1785,7 +1764,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.brmalerts.alert_gen_policy.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-list",
@@ -1870,8 +1849,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.alert.CustomAPI.Alerts",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-policy-create",
@@ -1904,8 +1882,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.alert_policy.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-policy-delete",
@@ -1945,8 +1922,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.alert_policy.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-policy-get",
@@ -2008,8 +1984,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.alert_policy.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-policy-list",
@@ -2075,8 +2050,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.alert_policy.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-policy-update",
@@ -2119,8 +2093,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.alert_policy.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-receiver-create",
@@ -2153,8 +2126,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.alert_receiver.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-receiver-delete",
@@ -2194,8 +2166,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.alert_receiver.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-receiver-get",
@@ -2257,8 +2228,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.alert_receiver.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-receiver-list",
@@ -2324,8 +2294,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.alert_receiver.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-receiver-update",
@@ -2368,8 +2337,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.alert_receiver.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-template-create",
@@ -2403,7 +2371,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.brmalerts.alert_template.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0034.public.ves.io.schema.shape.brmalerts.alert_template.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0034.public.ves.io.schema.shape.brmalerts.alert_template.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-template-delete",
@@ -2444,7 +2412,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.brmalerts.alert_template.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0034.public.ves.io.schema.shape.brmalerts.alert_template.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0034.public.ves.io.schema.shape.brmalerts.alert_template.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-template-get",
@@ -2506,7 +2474,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.brmalerts.alert_template.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0034.public.ves.io.schema.shape.brmalerts.alert_template.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0034.public.ves.io.schema.shape.brmalerts.alert_template.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-alert-template-list",
@@ -2573,7 +2541,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.brmalerts.alert_template.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0034.public.ves.io.schema.shape.brmalerts.alert_template.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0034.public.ves.io.schema.shape.brmalerts.alert_template.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-all-activation-statu-list",
@@ -2606,7 +2574,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.pbac.addon_service.CustomAPI.GetAllServiceTiersActivationStatus",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0008.public.ves.io.schema.pbac.addon_service.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0008.public.ves.io.schema.pbac.addon_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-all-application-inventory-create",
@@ -2629,8 +2597,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.AllApplicationInventory",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-all-ns-alert-list",
@@ -2715,8 +2682,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.alert.CustomAPI.AlertsAllNamespaces",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-all-ns-event-create",
@@ -2738,8 +2704,7 @@ export const coreTools: ParsedOperation[] = [
     operationId:
       "ves.io.schema.app_security.AppSecurityMonitoringAPI.SecurityEventsQueryAllNamespaces",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-all-ns-service-create",
@@ -2759,8 +2724,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.graph.service.CustomAPI.QueryAllNamespaces",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0207.public.ves.io.schema.graph.service.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0207.public.ves.io.schema.graph.service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-all-ns-stat-create",
@@ -2783,8 +2747,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.namespace.NamespaceMLCustomAPI.GetApiEndpointsStatsAllNamespaces",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-allocateip-create",
@@ -2806,8 +2769,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.gia.CustomAPI.AllocateIP",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0121.public.ves.io.schema.gia.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0121.public.ves.io.schema.gia.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-allowed-domain-create",
@@ -2841,7 +2803,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.allowed_domain.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0054.public.ves.io.schema.shape.client_side_defense.allowed_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0054.public.ves.io.schema.shape.client_side_defense.allowed_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-allowed-domain-delete",
@@ -2882,7 +2844,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.allowed_domain.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0054.public.ves.io.schema.shape.client_side_defense.allowed_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0054.public.ves.io.schema.shape.client_side_defense.allowed_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-allowed-domain-get",
@@ -2944,7 +2906,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.allowed_domain.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0054.public.ves.io.schema.shape.client_side_defense.allowed_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0054.public.ves.io.schema.shape.client_side_defense.allowed_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-allowed-domain-list",
@@ -3011,7 +2973,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.allowed_domain.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0054.public.ves.io.schema.shape.client_side_defense.allowed_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0054.public.ves.io.schema.shape.client_side_defense.allowed_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-allowed-tenant-create",
@@ -3046,7 +3008,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.allowed_tenant.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-allowed-tenant-delete",
@@ -3087,7 +3049,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.allowed_tenant.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-allowed-tenant-get",
@@ -3151,7 +3113,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.allowed_tenant.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-allowed-tenant-list",
@@ -3218,7 +3180,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.allowed_tenant.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-allowed-tenant-update",
@@ -3263,7 +3225,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.allowed_tenant.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0015.public.ves.io.schema.tenant_management.allowed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-analysi-create",
@@ -3296,7 +3258,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.UpdateFieldAnalysis",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-analyze-for-deletion-create",
@@ -3319,8 +3281,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.user_group.CustomAPI.AnalyzeForDeletion",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-annotation-list",
@@ -3361,8 +3322,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["mitigation_id", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomMitigationAPI.ListMitigationAnnotations",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-crawler-create",
@@ -3396,7 +3356,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_crawler.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0001.public.ves.io.schema.api_sec.api_crawler.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0001.public.ves.io.schema.api_sec.api_crawler.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-crawler-delete",
@@ -3437,7 +3397,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_crawler.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0001.public.ves.io.schema.api_sec.api_crawler.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0001.public.ves.io.schema.api_sec.api_crawler.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-crawler-get",
@@ -3500,7 +3460,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_crawler.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0001.public.ves.io.schema.api_sec.api_crawler.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0001.public.ves.io.schema.api_sec.api_crawler.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-crawler-list",
@@ -3566,7 +3526,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_crawler.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0001.public.ves.io.schema.api_sec.api_crawler.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0001.public.ves.io.schema.api_sec.api_crawler.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-crawler-update",
@@ -3610,7 +3570,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_crawler.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0001.public.ves.io.schema.api_sec.api_crawler.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0001.public.ves.io.schema.api_sec.api_crawler.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-credential-create",
@@ -3631,8 +3591,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.api_credential.CustomAPI.BulkRevoke",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-credential-get",
@@ -3673,8 +3632,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.api_credential.CustomAPI.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-credential-list",
@@ -3705,8 +3663,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.api_credential.CustomAPI.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-definition-create",
@@ -3740,7 +3697,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.api_definition.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-definition-delete",
@@ -3781,7 +3738,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.api_definition.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-definition-get",
@@ -3844,7 +3801,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.api_definition.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-definition-list",
@@ -3911,7 +3868,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.api_definition.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-definition-update",
@@ -3955,7 +3912,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.api_definition.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-definitions-without-shared-list",
@@ -3989,7 +3946,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.views.api_definition.PublicConfigCustomAPI.ListAvailableAPIDefinitions",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-discovery-create",
@@ -4024,7 +3981,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_discovery.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0003.public.ves.io.schema.api_sec.api_discovery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0003.public.ves.io.schema.api_sec.api_discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-discovery-delete",
@@ -4065,7 +4022,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_discovery.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0003.public.ves.io.schema.api_sec.api_discovery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0003.public.ves.io.schema.api_sec.api_discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-discovery-get",
@@ -4129,7 +4086,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_discovery.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0003.public.ves.io.schema.api_sec.api_discovery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0003.public.ves.io.schema.api_sec.api_discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-discovery-list",
@@ -4196,7 +4153,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_discovery.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0003.public.ves.io.schema.api_sec.api_discovery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0003.public.ves.io.schema.api_sec.api_discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-discovery-update",
@@ -4241,7 +4198,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_discovery.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0003.public.ves.io.schema.api_sec.api_discovery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0003.public.ves.io.schema.api_sec.api_discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-endpoint-create",
@@ -4293,8 +4250,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["app_type_name", "body", "namespace", "service_name"],
     operationId: "ves.io.schema.app_type.CustomAPI.GetServiceAPIEndpoints",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-endpoint-get",
@@ -4404,8 +4360,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.GetAPIEndpoints",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-endpoint-list",
@@ -4460,8 +4415,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["app_type_name", "namespace"],
     operationId: "ves.io.schema.app_type.CustomAPI.APIEndpoints",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-endpoint-protection-create",
@@ -4496,7 +4450,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.api_sec.rule_suggestion.RuleSuggestionAPI.GetSuggestedAPIEndpointProtectionRule",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0021.public.ves.io.schema.api_sec.rule_suggestion.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0021.public.ves.io.schema.api_sec.rule_suggestion.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-group-element-get",
@@ -4558,7 +4512,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_group_element.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0005.public.ves.io.schema.api_group_element.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0005.public.ves.io.schema.api_group_element.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-group-element-list",
@@ -4625,7 +4579,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_group_element.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0005.public.ves.io.schema.api_group_element.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0005.public.ves.io.schema.api_group_element.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-group-get",
@@ -4685,8 +4639,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.api_group.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0004.public.ves.io.schema.api_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0004.public.ves.io.schema.api_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-group-list",
@@ -4751,8 +4704,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.api_group.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0004.public.ves.io.schema.api_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0004.public.ves.io.schema.api_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-testing-create",
@@ -4786,7 +4738,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_testing.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0006.public.ves.io.schema.api_sec.api_testing.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0006.public.ves.io.schema.api_sec.api_testing.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-testing-delete",
@@ -4827,7 +4779,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_testing.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0006.public.ves.io.schema.api_sec.api_testing.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0006.public.ves.io.schema.api_sec.api_testing.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-testing-get",
@@ -4890,7 +4842,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_testing.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0006.public.ves.io.schema.api_sec.api_testing.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0006.public.ves.io.schema.api_sec.api_testing.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-testing-list",
@@ -4956,7 +4908,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_testing.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0006.public.ves.io.schema.api_sec.api_testing.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0006.public.ves.io.schema.api_sec.api_testing.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-api-testing-update",
@@ -5000,7 +4952,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.api_testing.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0006.public.ves.io.schema.api_sec.api_testing.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0006.public.ves.io.schema.api_sec.api_testing.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-apikey-list",
@@ -5021,7 +4973,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.protected_application.CustomAPI.ApiKey",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-apm-create",
@@ -5054,8 +5006,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.bigip.apm.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0030.public.ves.io.schema.bigip.apm.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0030.public.ves.io.schema.bigip.apm.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-apm-delete",
@@ -5095,8 +5046,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.bigip.apm.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0030.public.ves.io.schema.bigip.apm.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0030.public.ves.io.schema.bigip.apm.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-apm-get",
@@ -5158,8 +5108,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.bigip.apm.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0030.public.ves.io.schema.bigip.apm.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0030.public.ves.io.schema.bigip.apm.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-apm-list",
@@ -5224,8 +5173,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.bigip.apm.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0030.public.ves.io.schema.bigip.apm.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0030.public.ves.io.schema.bigip.apm.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-apm-update",
@@ -5268,8 +5216,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.bigip.apm.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0030.public.ves.io.schema.bigip.apm.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0030.public.ves.io.schema.bigip.apm.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-api-group-create",
@@ -5304,7 +5251,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.app_api_group.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-api-group-delete",
@@ -5345,7 +5292,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.app_api_group.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-api-group-get",
@@ -5409,7 +5356,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.app_api_group.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-api-group-list",
@@ -5476,7 +5423,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.app_api_group.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-api-group-update",
@@ -5521,7 +5468,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.app_api_group.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-create",
@@ -5553,7 +5500,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopLatencyOverviewApps",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-provision-create",
@@ -5575,8 +5522,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.ApplicationProvision",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-setting-create",
@@ -5609,8 +5555,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.app_setting.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-setting-delete",
@@ -5650,8 +5595,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.app_setting.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-setting-get",
@@ -5714,8 +5658,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.app_setting.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-setting-list",
@@ -5780,8 +5723,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.app_setting.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-setting-update",
@@ -5825,8 +5767,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.app_setting.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-type-create",
@@ -5859,8 +5800,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.app_type.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-type-delete",
@@ -5900,8 +5840,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.app_type.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-type-get",
@@ -5963,8 +5902,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.app_type.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-type-list",
@@ -6029,8 +5967,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.app_type.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-app-type-update",
@@ -6074,8 +6011,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.app_type.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-application-create",
@@ -6097,8 +6033,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.UpdateApplication",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-application-delete",
@@ -6129,8 +6064,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.DeleteApplication",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-application-inventory-create",
@@ -6163,8 +6097,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.ApplicationInventory",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-application-list",
@@ -6184,8 +6117,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.GetApplications",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-approve-create",
@@ -6229,8 +6161,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.registration.CustomAPI.RegistrationApprove",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-asn-create",
@@ -6252,8 +6183,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.GetBotAssessmentTopAsn",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-asorg-create",
@@ -6285,7 +6215,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopMaliciousBotsByASOrg",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-assign-create",
@@ -6308,8 +6238,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.tenant.CustomAPI.AssignDomainOwner",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-assign-namespace-role-update",
@@ -6340,8 +6269,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name"],
     operationId: "ves.io.schema.user_group.CustomAPI.AssignRole",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-atb-create",
@@ -6375,7 +6303,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.ATB",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-atb-list",
@@ -6418,7 +6346,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.ATBStatus",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-attachment-list",
@@ -6460,8 +6388,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["event_id", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomEventAPI.ListEventAttachments",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-attackintent-create",
@@ -6494,7 +6421,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopMaliciousBotByAttackIntent",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-audit-list",
@@ -6553,8 +6480,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.GetSafeBlockAudit",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-audit-log-create",
@@ -6587,8 +6513,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.voltshare.MonitoringAPI.AuditLogQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0109.public.ves.io.schema.voltshare.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0109.public.ves.io.schema.voltshare.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-authentication-create",
@@ -6621,8 +6546,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.authentication.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0023.public.ves.io.schema.authentication.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0023.public.ves.io.schema.authentication.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-authentication-delete",
@@ -6662,8 +6586,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.authentication.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0023.public.ves.io.schema.authentication.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0023.public.ves.io.schema.authentication.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-authentication-get",
@@ -6725,8 +6648,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.authentication.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0023.public.ves.io.schema.authentication.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0023.public.ves.io.schema.authentication.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-authentication-list",
@@ -6792,8 +6714,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.authentication.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0023.public.ves.io.schema.authentication.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0023.public.ves.io.schema.authentication.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-authentication-update",
@@ -6836,8 +6757,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.authentication.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0023.public.ves.io.schema.authentication.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0023.public.ves.io.schema.authentication.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-automation-create",
@@ -6869,7 +6789,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopAutomationTypes",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-aws-tgw-site-create",
@@ -6903,7 +6823,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_tgw_site.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-aws-tgw-site-delete",
@@ -6944,7 +6864,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_tgw_site.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-aws-tgw-site-get",
@@ -7007,7 +6927,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_tgw_site.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-aws-tgw-site-list",
@@ -7074,7 +6994,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_tgw_site.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-aws-tgw-site-update",
@@ -7118,7 +7038,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_tgw_site.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bad-bot-reduction-create",
@@ -7149,7 +7069,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.InsightBadBotReduction",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-behavior-get",
@@ -7222,7 +7142,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.ListBehaviorsByScript",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bfp-create",
@@ -7254,7 +7174,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopAttackedBFP",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-asn-set-create",
@@ -7288,8 +7208,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.bgp_asn_set.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0027.public.ves.io.schema.bgp_asn_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0027.public.ves.io.schema.bgp_asn_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-asn-set-delete",
@@ -7329,8 +7248,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.bgp_asn_set.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0027.public.ves.io.schema.bgp_asn_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0027.public.ves.io.schema.bgp_asn_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-asn-set-get",
@@ -7393,8 +7311,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.bgp_asn_set.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0027.public.ves.io.schema.bgp_asn_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0027.public.ves.io.schema.bgp_asn_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-asn-set-list",
@@ -7459,8 +7376,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.bgp_asn_set.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0027.public.ves.io.schema.bgp_asn_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0027.public.ves.io.schema.bgp_asn_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-asn-set-update",
@@ -7504,8 +7420,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.bgp_asn_set.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0027.public.ves.io.schema.bgp_asn_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0027.public.ves.io.schema.bgp_asn_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-create",
@@ -7539,8 +7454,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.bgp.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-delete",
@@ -7580,8 +7494,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.bgp.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-get",
@@ -7644,8 +7557,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.bgp.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-list",
@@ -7710,8 +7622,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.bgp.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-peer-list",
@@ -7751,8 +7662,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.operate.bgp.CustomPublicAPI.ShowBGPPeers",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0028.public.ves.io.schema.operate.bgp.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0028.public.ves.io.schema.operate.bgp.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-peer-statu-create",
@@ -7784,8 +7694,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomDataAPI.BGPPeerStatus",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-route-list",
@@ -7825,8 +7734,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.operate.bgp.CustomPublicAPI.ShowBGPRoutes",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0028.public.ves.io.schema.operate.bgp.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0028.public.ves.io.schema.operate.bgp.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-routing-policy-create",
@@ -7861,7 +7769,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bgp_routing_policy.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0029.public.ves.io.schema.bgp_routing_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0029.public.ves.io.schema.bgp_routing_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-routing-policy-delete",
@@ -7902,7 +7810,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bgp_routing_policy.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0029.public.ves.io.schema.bgp_routing_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0029.public.ves.io.schema.bgp_routing_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-routing-policy-get",
@@ -7965,7 +7873,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bgp_routing_policy.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0029.public.ves.io.schema.bgp_routing_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0029.public.ves.io.schema.bgp_routing_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-routing-policy-list",
@@ -8032,7 +7940,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bgp_routing_policy.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0029.public.ves.io.schema.bgp_routing_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0029.public.ves.io.schema.bgp_routing_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-routing-policy-update",
@@ -8077,7 +7985,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bgp_routing_policy.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0029.public.ves.io.schema.bgp_routing_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0029.public.ves.io.schema.bgp_routing_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgp-update",
@@ -8121,8 +8029,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.bgp.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bgpstatu-list",
@@ -8173,8 +8080,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "view_name"],
     operationId: "ves.io.schema.bgp.CustomAPI.GetBgpStatus",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0026.public.ves.io.schema.bgp.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bigip-irule-create",
@@ -8207,8 +8113,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.bigip_irule.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0031.public.ves.io.schema.bigip_irule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0031.public.ves.io.schema.bigip_irule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bigip-irule-delete",
@@ -8248,8 +8153,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.bigip_irule.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0031.public.ves.io.schema.bigip_irule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0031.public.ves.io.schema.bigip_irule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bigip-irule-get",
@@ -8311,8 +8215,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.bigip_irule.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0031.public.ves.io.schema.bigip_irule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0031.public.ves.io.schema.bigip_irule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bigip-irule-list",
@@ -8377,8 +8280,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.bigip_irule.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0031.public.ves.io.schema.bigip_irule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0031.public.ves.io.schema.bigip_irule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bigip-irule-update",
@@ -8421,8 +8323,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.bigip_irule.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0031.public.ves.io.schema.bigip_irule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0031.public.ves.io.schema.bigip_irule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bigip-virtual-server-get",
@@ -8484,7 +8385,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bigip_virtual_server.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0032.public.ves.io.schema.views.bigip_virtual_server.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0032.public.ves.io.schema.views.bigip_virtual_server.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bigip-virtual-server-list",
@@ -8551,7 +8452,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bigip_virtual_server.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0032.public.ves.io.schema.views.bigip_virtual_server.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0032.public.ves.io.schema.views.bigip_virtual_server.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bigip-virtual-server-update",
@@ -8595,7 +8496,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bigip_virtual_server.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0032.public.ves.io.schema.views.bigip_virtual_server.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0032.public.ves.io.schema.views.bigip_virtual_server.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-allowlist-policie-list",
@@ -8627,7 +8528,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.bot_allowlist_policy.CustomAPI.GetAllowlistPoliciesAndVersionsList",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0040.public.ves.io.schema.shape.bot_defense.bot_allowlist_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0040.public.ves.io.schema.shape.bot_defense.bot_allowlist_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-allowlist-policy-get",
@@ -8689,7 +8590,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_allowlist_policy.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0040.public.ves.io.schema.shape.bot_defense.bot_allowlist_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0040.public.ves.io.schema.shape.bot_defense.bot_allowlist_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-allowlist-policy-list",
@@ -8756,7 +8657,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_allowlist_policy.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0040.public.ves.io.schema.shape.bot_defense.bot_allowlist_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0040.public.ves.io.schema.shape.bot_defense.bot_allowlist_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-allowlist-policy-update",
@@ -8798,7 +8699,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_allowlist_policy.CustomAPI.CustomReplace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0040.public.ves.io.schema.shape.bot_defense.bot_allowlist_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0040.public.ves.io.schema.shape.bot_defense.bot_allowlist_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-defense-app-infrastructure-create",
@@ -8832,7 +8733,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bot_defense_app_infrastructure.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0035.public.ves.io.schema.views.bot_defense_app_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0035.public.ves.io.schema.views.bot_defense_app_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-defense-app-infrastructure-delete",
@@ -8873,7 +8774,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bot_defense_app_infrastructure.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0035.public.ves.io.schema.views.bot_defense_app_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0035.public.ves.io.schema.views.bot_defense_app_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-defense-app-infrastructure-get",
@@ -8935,7 +8836,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bot_defense_app_infrastructure.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0035.public.ves.io.schema.views.bot_defense_app_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0035.public.ves.io.schema.views.bot_defense_app_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-defense-app-infrastructure-list",
@@ -9002,7 +8903,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bot_defense_app_infrastructure.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0035.public.ves.io.schema.views.bot_defense_app_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0035.public.ves.io.schema.views.bot_defense_app_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-defense-app-infrastructure-update",
@@ -9046,7 +8947,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bot_defense_app_infrastructure.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0035.public.ves.io.schema.views.bot_defense_app_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0035.public.ves.io.schema.views.bot_defense_app_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-detection-rule-create",
@@ -9079,7 +8980,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.DeployBotDetectionRules",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-detection-rule-get",
@@ -9139,7 +9040,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-detection-rule-list",
@@ -9206,7 +9107,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-detection-update-list",
@@ -9239,7 +9140,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_update.CustomAPI.GetBotDetectionUpdates",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0037.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_update.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0037.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_update.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-endpoint-policie-list",
@@ -9271,7 +9172,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.bot_endpoint_policy.CustomAPI.GetEndpointPoliciesAndVersionsList",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0038.public.ves.io.schema.shape.bot_defense.bot_endpoint_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0038.public.ves.io.schema.shape.bot_defense.bot_endpoint_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-endpoint-policy-get",
@@ -9333,7 +9234,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_endpoint_policy.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0038.public.ves.io.schema.shape.bot_defense.bot_endpoint_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0038.public.ves.io.schema.shape.bot_defense.bot_endpoint_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-endpoint-policy-list",
@@ -9400,7 +9301,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_endpoint_policy.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0038.public.ves.io.schema.shape.bot_defense.bot_endpoint_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0038.public.ves.io.schema.shape.bot_defense.bot_endpoint_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-endpoint-policy-update",
@@ -9442,7 +9343,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_endpoint_policy.CustomAPI.CustomReplace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0038.public.ves.io.schema.shape.bot_defense.bot_endpoint_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0038.public.ves.io.schema.shape.bot_defense.bot_endpoint_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-infrastructure-create",
@@ -9476,7 +9377,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-infrastructure-get",
@@ -9539,7 +9440,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-infrastructure-list",
@@ -9606,7 +9507,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-infrastructure-update",
@@ -9650,7 +9551,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-network-policie-list",
@@ -9682,7 +9583,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.bot_network_policy.CustomAPI.GetNetworkPoliciesAndVersionsList",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0041.public.ves.io.schema.shape.bot_defense.bot_network_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0041.public.ves.io.schema.shape.bot_defense.bot_network_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-network-policy-get",
@@ -9744,7 +9645,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_network_policy.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0041.public.ves.io.schema.shape.bot_defense.bot_network_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0041.public.ves.io.schema.shape.bot_defense.bot_network_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-network-policy-list",
@@ -9811,7 +9712,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_network_policy.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0041.public.ves.io.schema.shape.bot_defense.bot_network_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0041.public.ves.io.schema.shape.bot_defense.bot_network_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-bot-network-policy-update",
@@ -9853,7 +9754,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_network_policy.CustomAPI.CustomReplace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0041.public.ves.io.schema.shape.bot_defense.bot_network_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0041.public.ves.io.schema.shape.bot_defense.bot_network_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-browser-create",
@@ -9886,7 +9787,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousReportTransactionsBrowser",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-by-application-create",
@@ -9928,8 +9829,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "network_id"],
     operationId: "ves.io.schema.graph.l3l4.CustomAPI.ByApplication",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0270.public.ves.io.schema.graph.l3l4.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0270.public.ves.io.schema.graph.l3l4.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-by-mitigation-create",
@@ -9971,8 +9871,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "mitigation_id", "namespace"],
     operationId: "ves.io.schema.graph.l3l4.CustomAPI.ByMitigation",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0270.public.ves.io.schema.graph.l3l4.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0270.public.ves.io.schema.graph.l3l4.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-by-network-create",
@@ -10014,8 +9913,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "network_id"],
     operationId: "ves.io.schema.graph.l3l4.CustomAPI.ByNetwork",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0270.public.ves.io.schema.graph.l3l4.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0270.public.ves.io.schema.graph.l3l4.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-by-zone-create",
@@ -10057,8 +9955,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "network_id"],
     operationId: "ves.io.schema.graph.l3l4.CustomAPI.ByZone",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0270.public.ves.io.schema.graph.l3l4.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0270.public.ves.io.schema.graph.l3l4.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ca-certificate-get",
@@ -10098,8 +9995,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.proxy.CustomAPI.GetProxyServerCACert",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cache-purge-create",
@@ -10142,7 +10038,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.CDNCachePurge",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-calls-by-response-code-create",
@@ -10185,8 +10081,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.GetAPICallSummary",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cascade-delete-create",
@@ -10219,8 +10114,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name"],
     operationId: "ves.io.schema.namespace.CustomAPI.CascadeDelete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-catalog-update",
@@ -10242,8 +10136,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.pbac.catalog.CustomAPI.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0046.public.ves.io.schema.pbac.catalog.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0046.public.ves.io.schema.pbac.catalog.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-categorie-create",
@@ -10275,7 +10168,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.EndpointCategories",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cdn-cache-rule-create",
@@ -10308,8 +10201,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.cdn_cache_rule.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0043.public.ves.io.schema.cdn_cache_rule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0043.public.ves.io.schema.cdn_cache_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cdn-cache-rule-delete",
@@ -10349,8 +10241,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.cdn_cache_rule.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0043.public.ves.io.schema.cdn_cache_rule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0043.public.ves.io.schema.cdn_cache_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cdn-cache-rule-get",
@@ -10411,8 +10302,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.cdn_cache_rule.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0043.public.ves.io.schema.cdn_cache_rule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0043.public.ves.io.schema.cdn_cache_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cdn-cache-rule-list",
@@ -10478,8 +10368,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.cdn_cache_rule.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0043.public.ves.io.schema.cdn_cache_rule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0043.public.ves.io.schema.cdn_cache_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cdn-cache-rule-update",
@@ -10522,8 +10411,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.cdn_cache_rule.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0043.public.ves.io.schema.cdn_cache_rule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0043.public.ves.io.schema.cdn_cache_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cdn-loadbalancer-create",
@@ -10557,7 +10445,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cdn-loadbalancer-delete",
@@ -10598,7 +10486,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cdn-loadbalancer-get",
@@ -10661,7 +10549,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cdn-loadbalancer-list",
@@ -10728,7 +10616,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cdn-loadbalancer-update",
@@ -10772,7 +10660,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-chain-create",
@@ -10806,7 +10694,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.certificate_chain.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0049.public.ves.io.schema.certificate_chain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0049.public.ves.io.schema.certificate_chain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-chain-delete",
@@ -10847,7 +10735,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.certificate_chain.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0049.public.ves.io.schema.certificate_chain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0049.public.ves.io.schema.certificate_chain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-chain-get",
@@ -10910,7 +10798,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.certificate_chain.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0049.public.ves.io.schema.certificate_chain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0049.public.ves.io.schema.certificate_chain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-chain-list",
@@ -10977,7 +10865,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.certificate_chain.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0049.public.ves.io.schema.certificate_chain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0049.public.ves.io.schema.certificate_chain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-chain-update",
@@ -11021,7 +10909,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.certificate_chain.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0049.public.ves.io.schema.certificate_chain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0049.public.ves.io.schema.certificate_chain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-create",
@@ -11054,8 +10942,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.certificate.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0048.public.ves.io.schema.certificate.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0048.public.ves.io.schema.certificate.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-delete",
@@ -11095,8 +10982,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.certificate.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0048.public.ves.io.schema.certificate.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0048.public.ves.io.schema.certificate.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-get",
@@ -11158,8 +11044,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.certificate.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0048.public.ves.io.schema.certificate.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0048.public.ves.io.schema.certificate.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-list",
@@ -11224,8 +11109,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.certificate.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0048.public.ves.io.schema.certificate.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0048.public.ves.io.schema.certificate.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-report-detail-list",
@@ -11257,7 +11141,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetCertificateReportDetail",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-summary-list",
@@ -11301,7 +11185,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetCertSummary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certificate-update",
@@ -11344,8 +11228,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.certificate.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0048.public.ves.io.schema.certificate.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0048.public.ves.io.schema.certificate.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certified-hardware-get",
@@ -11406,7 +11289,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.certified_hardware.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0050.public.ves.io.schema.certified_hardware.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0050.public.ves.io.schema.certified_hardware.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-certified-hardware-list",
@@ -11473,7 +11356,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.certified_hardware.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0050.public.ves.io.schema.certified_hardware.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0050.public.ves.io.schema.certified_hardware.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-change-password-create",
@@ -11512,8 +11395,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "node", "site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.ChangePasswordPublic",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-channel-create",
@@ -11535,8 +11417,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.recognize.CustomAPI.Channel",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-check-create",
@@ -11559,7 +11440,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.PeerStatusCheck",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-check-debug-info-collection-list",
@@ -11589,8 +11470,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.CheckDebugInfoCollection",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-child-tenant-create",
@@ -11625,7 +11505,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-child-tenant-delete",
@@ -11666,7 +11546,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-child-tenant-get",
@@ -11730,7 +11610,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-child-tenant-list",
@@ -11793,7 +11673,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.CustomAPI.ListChildTenants",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-child-tenant-manager-create",
@@ -11828,7 +11708,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant_manager.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0052.public.ves.io.schema.tenant_management.child_tenant_manager.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0052.public.ves.io.schema.tenant_management.child_tenant_manager.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-child-tenant-manager-delete",
@@ -11869,7 +11749,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant_manager.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0052.public.ves.io.schema.tenant_management.child_tenant_manager.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0052.public.ves.io.schema.tenant_management.child_tenant_manager.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-child-tenant-manager-get",
@@ -11932,7 +11812,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant_manager.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0052.public.ves.io.schema.tenant_management.child_tenant_manager.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0052.public.ves.io.schema.tenant_management.child_tenant_manager.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-child-tenant-manager-list",
@@ -11999,7 +11879,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant_manager.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0052.public.ves.io.schema.tenant_management.child_tenant_manager.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0052.public.ves.io.schema.tenant_management.child_tenant_manager.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-child-tenant-manager-update",
@@ -12043,7 +11923,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant_manager.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0052.public.ves.io.schema.tenant_management.child_tenant_manager.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0052.public.ves.io.schema.tenant_management.child_tenant_manager.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-child-tenant-update",
@@ -12087,7 +11967,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-citie-list",
@@ -12138,8 +12018,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["country_code", "prefix", "state_code"],
     operationId: "ves.io.schema.signup.CustomAPI.ListCities",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-clone-create",
@@ -12181,7 +12060,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.brmalerts.alert_template.CustomAPI.Clone",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0034.public.ves.io.schema.shape.brmalerts.alert_template.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0034.public.ves.io.schema.shape.brmalerts.alert_template.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-close-create",
@@ -12214,7 +12093,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.CustomerSupportCustomAPI.Close",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-connect-create",
@@ -12247,8 +12126,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.cloud_connect.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-connect-delete",
@@ -12288,8 +12166,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.cloud_connect.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-connect-get",
@@ -12351,8 +12228,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.cloud_connect.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-connect-list",
@@ -12418,8 +12294,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.cloud_connect.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-connect-reapply-vpc-attachment-create",
@@ -12441,8 +12316,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.cloud_connect.CloudDataCustomAPI.ReApplyVPCAttachment",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-connect-update",
@@ -12485,8 +12359,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.cloud_connect.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-credentials-create",
@@ -12520,7 +12393,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.cloud_credentials.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0059.public.ves.io.schema.cloud_credentials.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0059.public.ves.io.schema.cloud_credentials.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-credentials-delete",
@@ -12561,7 +12434,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.cloud_credentials.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0059.public.ves.io.schema.cloud_credentials.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0059.public.ves.io.schema.cloud_credentials.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-credentials-get",
@@ -12624,7 +12497,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.cloud_credentials.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0059.public.ves.io.schema.cloud_credentials.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0059.public.ves.io.schema.cloud_credentials.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-credentials-list",
@@ -12691,7 +12564,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.cloud_credentials.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0059.public.ves.io.schema.cloud_credentials.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0059.public.ves.io.schema.cloud_credentials.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-credentials-update",
@@ -12735,7 +12608,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.cloud_credentials.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0059.public.ves.io.schema.cloud_credentials.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0059.public.ves.io.schema.cloud_credentials.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-elastic-ip-create",
@@ -12769,8 +12642,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.cloud_elastic_ip.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-elastic-ip-delete",
@@ -12810,8 +12682,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.cloud_elastic_ip.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-elastic-ip-get",
@@ -12874,8 +12745,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.cloud_elastic_ip.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-elastic-ip-list",
@@ -12941,8 +12811,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.cloud_elastic_ip.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-elastic-ip-update",
@@ -12985,8 +12854,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.cloud_elastic_ip.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-link-create",
@@ -13019,8 +12887,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.cloud_link.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-link-delete",
@@ -13060,8 +12927,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.cloud_link.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-link-get",
@@ -13123,8 +12989,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.cloud_link.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-link-list",
@@ -13189,8 +13054,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.cloud_link.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-link-update",
@@ -13233,8 +13097,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.cloud_link.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-region-get",
@@ -13295,8 +13158,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.cloud_region.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0061.public.ves.io.schema.cloud_region.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0061.public.ves.io.schema.cloud_region.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-region-list",
@@ -13362,8 +13224,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.cloud_region.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0061.public.ves.io.schema.cloud_region.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0061.public.ves.io.schema.cloud_region.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cloud-region-update",
@@ -13406,8 +13267,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.cloud_region.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0061.public.ves.io.schema.cloud_region.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0061.public.ves.io.schema.cloud_region.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cluster-create",
@@ -13441,8 +13301,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.cluster.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0063.public.ves.io.schema.cluster.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0063.public.ves.io.schema.cluster.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cluster-delete",
@@ -13482,8 +13341,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.cluster.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0063.public.ves.io.schema.cluster.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0063.public.ves.io.schema.cluster.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cluster-get",
@@ -13546,8 +13404,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.cluster.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0063.public.ves.io.schema.cluster.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0063.public.ves.io.schema.cluster.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cluster-list",
@@ -13612,8 +13469,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.cluster.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0063.public.ves.io.schema.cluster.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0063.public.ves.io.schema.cluster.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cluster-update",
@@ -13657,8 +13513,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.cluster.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0063.public.ves.io.schema.cluster.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0063.public.ves.io.schema.cluster.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cminstance-create",
@@ -13691,8 +13546,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.cminstance.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0047.public.ves.io.schema.cminstance.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0047.public.ves.io.schema.cminstance.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cminstance-delete",
@@ -13732,8 +13586,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.cminstance.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0047.public.ves.io.schema.cminstance.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0047.public.ves.io.schema.cminstance.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cminstance-get",
@@ -13795,8 +13648,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.cminstance.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0047.public.ves.io.schema.cminstance.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0047.public.ves.io.schema.cminstance.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cminstance-list",
@@ -13861,8 +13713,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.cminstance.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0047.public.ves.io.schema.cminstance.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0047.public.ves.io.schema.cminstance.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cminstance-update",
@@ -13906,8 +13757,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.cminstance.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0047.public.ves.io.schema.cminstance.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0047.public.ves.io.schema.cminstance.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-code-base-integration-create",
@@ -13941,7 +13791,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.code_base_integration.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0064.public.ves.io.schema.api_sec.code_base_integration.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0064.public.ves.io.schema.api_sec.code_base_integration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-code-base-integration-delete",
@@ -13982,7 +13832,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.code_base_integration.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0064.public.ves.io.schema.api_sec.code_base_integration.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0064.public.ves.io.schema.api_sec.code_base_integration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-code-base-integration-get",
@@ -14045,7 +13895,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.code_base_integration.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0064.public.ves.io.schema.api_sec.code_base_integration.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0064.public.ves.io.schema.api_sec.code_base_integration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-code-base-integration-list",
@@ -14112,7 +13962,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.code_base_integration.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0064.public.ves.io.schema.api_sec.code_base_integration.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0064.public.ves.io.schema.api_sec.code_base_integration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-code-base-integration-update",
@@ -14156,7 +14006,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.api_sec.code_base_integration.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0064.public.ves.io.schema.api_sec.code_base_integration.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0064.public.ves.io.schema.api_sec.code_base_integration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-combined-notification-list",
@@ -14177,8 +14027,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.setting.CustomAPI.GetCombinedNtfnPreferences",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-combined-notification-update",
@@ -14199,8 +14048,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.setting.CustomAPI.UpdateCombinedNtfnPreferences",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-comment-create",
@@ -14235,7 +14083,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.CustomerSupportCustomAPI.Comment",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-config-create",
@@ -14286,8 +14134,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "node", "site"],
     operationId: "ves.io.schema.operate.lte.CustomPublicAPI.UpdateConfig",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0149.public.ves.io.schema.operate.lte.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0149.public.ves.io.schema.operate.lte.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-config-get",
@@ -14327,7 +14174,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.protected_application.CustomAPI.ConnectorConfig",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-config-list",
@@ -14376,8 +14223,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "node", "site"],
     operationId: "ves.io.schema.operate.lte.CustomPublicAPI.GetConfig",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0149.public.ves.io.schema.operate.lte.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0149.public.ves.io.schema.operate.lte.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-configmap-list",
@@ -14417,8 +14263,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.ConfigMapList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-confirm-create",
@@ -14460,8 +14305,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.alert_receiver.CustomAPI.ConfirmAlertReceiver",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-connectivity-create",
@@ -14495,7 +14339,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.graph.connectivity.CustomAPI.Query",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0081.public.ves.io.schema.graph.connectivity.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0081.public.ves.io.schema.graph.connectivity.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-contact-create",
@@ -14529,8 +14373,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.contact.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0082.public.ves.io.schema.contact.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0082.public.ves.io.schema.contact.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-contact-delete",
@@ -14570,8 +14413,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.contact.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0082.public.ves.io.schema.contact.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0082.public.ves.io.schema.contact.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-contact-get",
@@ -14634,8 +14476,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.contact.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0082.public.ves.io.schema.contact.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0082.public.ves.io.schema.contact.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-contact-list",
@@ -14700,8 +14541,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.contact.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0082.public.ves.io.schema.contact.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0082.public.ves.io.schema.contact.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-contact-update",
@@ -14744,8 +14584,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.contact.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0082.public.ves.io.schema.contact.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0082.public.ves.io.schema.contact.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-container-registry-create",
@@ -14779,7 +14618,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.container_registry.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0083.public.ves.io.schema.container_registry.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0083.public.ves.io.schema.container_registry.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-container-registry-delete",
@@ -14820,7 +14659,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.container_registry.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0083.public.ves.io.schema.container_registry.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0083.public.ves.io.schema.container_registry.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-container-registry-get",
@@ -14883,7 +14722,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.container_registry.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0083.public.ves.io.schema.container_registry.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0083.public.ves.io.schema.container_registry.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-container-registry-list",
@@ -14950,7 +14789,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.container_registry.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0083.public.ves.io.schema.container_registry.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0083.public.ves.io.schema.container_registry.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-container-registry-update",
@@ -14994,7 +14833,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.container_registry.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0083.public.ves.io.schema.container_registry.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0083.public.ves.io.schema.container_registry.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-conversion-create",
@@ -15016,8 +14855,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.recognize.CustomAPI.Conversion",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-countrie-list",
@@ -15049,8 +14887,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["prefix"],
     operationId: "ves.io.schema.signup.CustomAPI.ListCountries",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-country-create",
@@ -15072,8 +14909,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.GetDashboardByCountry",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-create-create",
@@ -15106,8 +14942,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.known_label.CustomAPI.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0146.public.ves.io.schema.known_label.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0146.public.ves.io.schema.known_label.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-create-http-load-balancer-create",
@@ -15152,7 +14987,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.discovered_service.CustomAPI.CreateHTTPLoadBalancer",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-create-tcp-load-balancer-create",
@@ -15196,7 +15031,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.discovered_service.CustomAPI.CreateTCPLoadBalancer",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-create-ticket-create",
@@ -15238,8 +15073,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.CreateTicket",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-credential-stuffing-attack-create",
@@ -15270,7 +15104,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.CredentialStuffingAttack",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-crl-create",
@@ -15303,8 +15137,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.crl.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0044.public.ves.io.schema.crl.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0044.public.ves.io.schema.crl.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-crl-delete",
@@ -15344,8 +15177,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.crl.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0044.public.ves.io.schema.crl.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0044.public.ves.io.schema.crl.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-crl-get",
@@ -15407,8 +15239,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.crl.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0044.public.ves.io.schema.crl.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0044.public.ves.io.schema.crl.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-crl-list",
@@ -15473,8 +15304,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.crl.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0044.public.ves.io.schema.crl.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0044.public.ves.io.schema.crl.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-crl-update",
@@ -15517,8 +15347,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.crl.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0044.public.ves.io.schema.crl.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0044.public.ves.io.schema.crl.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-cronjob-list",
@@ -15558,8 +15387,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.CronJobList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-current-list",
@@ -15579,8 +15407,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.usage.plan.CustomAPI.GetCurrentPlan",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0250.public.ves.io.schema.usage.plan.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0250.public.ves.io.schema.usage.plan.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-current-usage-create",
@@ -15613,8 +15440,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.usage.CustomCalculatedUsageAPI.ListCurrentUsage",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0249.public.ves.io.schema.usage.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0249.public.ves.io.schema.usage.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-custom-list-list",
@@ -15656,8 +15482,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.usage.invoice.CustomAPI.ListInvoices",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0140.public.ves.io.schema.usage.invoice.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0140.public.ves.io.schema.usage.invoice.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-customer-support-create",
@@ -15680,7 +15505,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.CustomerSupportCustomAPI.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-customer-support-get",
@@ -15742,8 +15567,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.customer_support.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0084.public.ves.io.schema.customer_support.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0084.public.ves.io.schema.customer_support.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-customer-support-list",
@@ -15765,7 +15589,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.tenant_management.child_tenant.CustomerSupportCustomAPI.ListChildTenantSupportTickets",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-daemonset-list",
@@ -15805,8 +15629,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.DaemonSetList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dashboard-get",
@@ -15879,7 +15702,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.GetScriptOverview",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-data-exposure-create",
@@ -15914,7 +15737,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.api_sec.rule_suggestion.RuleSuggestionAPI.GetSuggestedSensitiveDataRule",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0021.public.ves.io.schema.api_sec.rule_suggestion.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0021.public.ves.io.schema.api_sec.rule_suggestion.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-data-group-create",
@@ -15949,7 +15772,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.data_group.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0094.public.ves.io.schema.bigcne.data_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0094.public.ves.io.schema.bigcne.data_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-data-group-delete",
@@ -15990,7 +15813,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.data_group.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0094.public.ves.io.schema.bigcne.data_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0094.public.ves.io.schema.bigcne.data_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-data-group-get",
@@ -16052,7 +15875,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.data_group.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0094.public.ves.io.schema.bigcne.data_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0094.public.ves.io.schema.bigcne.data_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-data-group-list",
@@ -16118,7 +15941,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.data_group.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0094.public.ves.io.schema.bigcne.data_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0094.public.ves.io.schema.bigcne.data_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-data-group-update",
@@ -16162,7 +15985,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.data_group.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0094.public.ves.io.schema.bigcne.data_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0094.public.ves.io.schema.bigcne.data_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-data-type-create",
@@ -16196,8 +16019,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.data_type.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0096.public.ves.io.schema.data_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0096.public.ves.io.schema.data_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-data-type-delete",
@@ -16237,8 +16059,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.data_type.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0096.public.ves.io.schema.data_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0096.public.ves.io.schema.data_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-data-type-get",
@@ -16300,8 +16121,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.data_type.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0096.public.ves.io.schema.data_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0096.public.ves.io.schema.data_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-data-type-list",
@@ -16366,8 +16186,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.data_type.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0096.public.ves.io.schema.data_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0096.public.ves.io.schema.data_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-data-type-update",
@@ -16411,8 +16230,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.data_type.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0096.public.ves.io.schema.data_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0096.public.ves.io.schema.data_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-datadictionary-list",
@@ -16444,7 +16262,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.data_delivery.CustomAPI.GetDataDictionary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0093.public.ves.io.schema.shape.data_delivery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0093.public.ves.io.schema.shape.data_delivery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dataset-list",
@@ -16465,7 +16283,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.data_delivery.CustomAPI.GetDataSets",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0093.public.ves.io.schema.shape.data_delivery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0093.public.ves.io.schema.shape.data_delivery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dc-cluster-group-create",
@@ -16498,8 +16316,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.dc_cluster_group.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0085.public.ves.io.schema.dc_cluster_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0085.public.ves.io.schema.dc_cluster_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dc-cluster-group-delete",
@@ -16539,8 +16356,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.dc_cluster_group.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0085.public.ves.io.schema.dc_cluster_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0085.public.ves.io.schema.dc_cluster_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dc-cluster-group-get",
@@ -16602,8 +16418,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.dc_cluster_group.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0085.public.ves.io.schema.dc_cluster_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0085.public.ves.io.schema.dc_cluster_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dc-cluster-group-list",
@@ -16669,8 +16484,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.dc_cluster_group.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0085.public.ves.io.schema.dc_cluster_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0085.public.ves.io.schema.dc_cluster_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dc-cluster-group-update",
@@ -16713,8 +16527,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.dc_cluster_group.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0085.public.ves.io.schema.dc_cluster_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0085.public.ves.io.schema.dc_cluster_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-deactivate-update",
@@ -16737,8 +16550,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.tenant.CustomAPIEywaprime.DeactivateTenant",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-deallocateip-delete",
@@ -16760,8 +16572,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.gia.CustomAPI.DeallocateIP",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0121.public.ves.io.schema.gia.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0121.public.ves.io.schema.gia.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-decrypt-secret-create",
@@ -16784,8 +16595,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.voltshare.CustomAPI.DecryptSecret",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0109.public.ves.io.schema.voltshare.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0109.public.ves.io.schema.voltshare.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-delete-create",
@@ -16818,8 +16628,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.known_label.CustomAPI.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0146.public.ves.io.schema.known_label.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0146.public.ves.io.schema.known_label.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-deployment-history-get",
@@ -16859,7 +16668,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.CustomAPI.DeploymentHistory",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-deployment-list",
@@ -16917,7 +16726,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.GetBotDetectionRulesDeployments",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-deployment-statu-get",
@@ -16958,7 +16767,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.bot_infrastructure.CustomAPI.DeploymentStatusOverview",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-detail-create",
@@ -17001,8 +16810,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "event_id", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomEventDetailsAPI.AddEventDetail",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-detail-delete",
@@ -17053,8 +16861,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["event_detail_id", "event_id", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomEventDetailsAPI.DeleteEventDetail",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-detail-list",
@@ -17096,8 +16903,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["event_id", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomEventDetailsAPI.ListEventDetails",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-detail-update",
@@ -17150,8 +16956,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "event_detail_id", "event_id", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomEventDetailsAPI.EditEventDetail",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-detected-domain-list",
@@ -17212,7 +17017,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.GetDetectedDomains",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-device-create",
@@ -17244,7 +17049,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopHumanDevice",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dhcp-lease-list",
@@ -17284,8 +17089,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.operate.dhcp.CustomPublicAPI.ShowDhcpLeases",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0098.public.ves.io.schema.operate.dhcp.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0098.public.ves.io.schema.operate.dhcp.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-diagnosi-list",
@@ -17325,8 +17129,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.DiagnosisPublic",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-disable-update",
@@ -17347,8 +17150,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.DisableTenantLevelOTP",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-disable-visibility-create",
@@ -17393,7 +17195,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.discovered_service.CustomAPI.DisableVisibility",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-disconnect-create",
@@ -17444,8 +17246,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "node", "site"],
     operationId: "ves.io.schema.operate.lte.CustomPublicAPI.Disconnect",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0149.public.ves.io.schema.operate.lte.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0149.public.ves.io.schema.operate.lte.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-discover-vpc-create",
@@ -17468,8 +17269,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.cloud_connect.CloudDataCustomAPI.DiscoverVPC",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-discovered-service-get",
@@ -17529,7 +17329,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.discovered_service.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-discovered-service-list",
@@ -17583,7 +17383,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.discovered_service.CustomAPI.ListDiscoveredServices",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-discovery-create",
@@ -17616,8 +17416,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.discovery.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-discovery-delete",
@@ -17657,8 +17456,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.discovery.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-discovery-get",
@@ -17720,8 +17518,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.discovery.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-discovery-list",
@@ -17786,8 +17583,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.discovery.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-discovery-update",
@@ -17830,8 +17626,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.discovery.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-compliance-checks-create",
@@ -17866,7 +17661,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_compliance_checks.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0069.public.ves.io.schema.dns_compliance_checks.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0069.public.ves.io.schema.dns_compliance_checks.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-compliance-checks-delete",
@@ -17907,7 +17702,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_compliance_checks.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0069.public.ves.io.schema.dns_compliance_checks.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0069.public.ves.io.schema.dns_compliance_checks.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-compliance-checks-get",
@@ -17970,7 +17765,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_compliance_checks.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0069.public.ves.io.schema.dns_compliance_checks.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0069.public.ves.io.schema.dns_compliance_checks.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-compliance-checks-list",
@@ -18037,7 +17832,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_compliance_checks.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0069.public.ves.io.schema.dns_compliance_checks.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0069.public.ves.io.schema.dns_compliance_checks.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-compliance-checks-update",
@@ -18081,7 +17876,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_compliance_checks.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0069.public.ves.io.schema.dns_compliance_checks.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0069.public.ves.io.schema.dns_compliance_checks.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-domain-create",
@@ -18115,8 +17910,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.dns_domain.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0086.public.ves.io.schema.dns_domain.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0086.public.ves.io.schema.dns_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-domain-delete",
@@ -18156,8 +17950,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.dns_domain.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0086.public.ves.io.schema.dns_domain.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0086.public.ves.io.schema.dns_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-domain-get",
@@ -18219,8 +18012,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.dns_domain.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0086.public.ves.io.schema.dns_domain.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0086.public.ves.io.schema.dns_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-domain-list",
@@ -18285,8 +18077,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.dns_domain.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0086.public.ves.io.schema.dns_domain.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0086.public.ves.io.schema.dns_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-domain-update",
@@ -18329,8 +18120,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.dns_domain.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0086.public.ves.io.schema.dns_domain.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0086.public.ves.io.schema.dns_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-lb-health-check-create",
@@ -18365,7 +18155,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_lb_health_check.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0088.public.ves.io.schema.dns_lb_health_check.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0088.public.ves.io.schema.dns_lb_health_check.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-lb-health-check-delete",
@@ -18406,7 +18196,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_lb_health_check.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0088.public.ves.io.schema.dns_lb_health_check.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0088.public.ves.io.schema.dns_lb_health_check.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-lb-health-check-get",
@@ -18469,7 +18259,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_lb_health_check.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0088.public.ves.io.schema.dns_lb_health_check.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0088.public.ves.io.schema.dns_lb_health_check.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-lb-health-check-list",
@@ -18536,7 +18326,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_lb_health_check.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0088.public.ves.io.schema.dns_lb_health_check.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0088.public.ves.io.schema.dns_lb_health_check.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-lb-health-check-update",
@@ -18580,7 +18370,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.dns_lb_health_check.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0088.public.ves.io.schema.dns_lb_health_check.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0088.public.ves.io.schema.dns_lb_health_check.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-monitor-summary-list",
@@ -18641,7 +18431,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetDNSMonitorSummary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dns-monitors-health-create",
@@ -18674,7 +18464,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetDNSMonitorHealth",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-domain-detail-list",
@@ -18715,7 +18505,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.GetDomainDetails",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dos-automitigation-rule-delete",
@@ -18767,7 +18557,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.views.cdn_loadbalancer.CustomCDNWAAPAPI.DeleteCDNDoSAutoMitigationRule",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-dos-automitigation-rule-get",
@@ -18808,7 +18598,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.views.cdn_loadbalancer.CustomCDNWAAPAPI.GetCDNDoSAutoMitigationRules",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-download-certificate-create",
@@ -18852,8 +18642,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.discovery.CustomAPI.DownloadCertificates",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0101.public.ves.io.schema.discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-download-debug-info-collection-list",
@@ -18883,8 +18672,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.DownloadDebugInfoCollection",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-download-get",
@@ -18924,8 +18712,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.report.CustomAPI.DownloadReport",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0193.public.ves.io.schema.report.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0193.public.ves.io.schema.report.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-download-release-note-list",
@@ -18969,7 +18756,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_update.CustomAPI.DownloadBotDetectionUpdatesReleaseNotes",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0037.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_update.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0037.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_update.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-draft-create",
@@ -19002,7 +18789,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.SaveDraft",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-draft-delete",
@@ -19035,7 +18822,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.DiscardDraft",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-draft-list",
@@ -19068,7 +18855,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.GetBotDetectionRulesDraft",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-edge-create",
@@ -19103,7 +18890,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.graph.connectivity.CustomAPI.EdgeQuery",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0081.public.ves.io.schema.graph.connectivity.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0081.public.ves.io.schema.graph.connectivity.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-edge-credential-create",
@@ -19125,8 +18912,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.cloud_connect.ConfigCustomAPI.EdgeCredentials",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-edge-list-list",
@@ -19146,8 +18932,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.cloud_connect.ConfigCustomAPI.EdgeList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-enable-create",
@@ -19169,8 +18954,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.Enable",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-enable-feature-create",
@@ -19192,8 +18976,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.ai_data.bfdp.CustomAPI.EnableFeature",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0024.public.ves.io.schema.ai_data.bfdp.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0024.public.ves.io.schema.ai_data.bfdp.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-enable-update",
@@ -19214,8 +18997,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.EnableTenantLevelOTP",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-enable-visibility-create",
@@ -19260,7 +19042,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.discovered_service.CustomAPI.EnableVisibility",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-endpoint-create",
@@ -19294,8 +19076,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.endpoint.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0102.public.ves.io.schema.endpoint.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0102.public.ves.io.schema.endpoint.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-endpoint-delete",
@@ -19335,8 +19116,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.endpoint.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0102.public.ves.io.schema.endpoint.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0102.public.ves.io.schema.endpoint.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-endpoint-get",
@@ -19399,8 +19179,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.endpoint.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0102.public.ves.io.schema.endpoint.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0102.public.ves.io.schema.endpoint.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-endpoint-list",
@@ -19465,8 +19244,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.endpoint.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0102.public.ves.io.schema.endpoint.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0102.public.ves.io.schema.endpoint.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-endpoint-update",
@@ -19510,8 +19288,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.endpoint.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0102.public.ves.io.schema.endpoint.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0102.public.ves.io.schema.endpoint.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-endpointlabel-create",
@@ -19543,7 +19320,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopEndpointLabels",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-enjoy-create",
@@ -19565,8 +19342,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.recognize.CustomAPI.Enjoy",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ep-create",
@@ -19599,8 +19375,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeEp",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-escalate-create",
@@ -19633,7 +19408,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.CustomerSupportCustomAPI.Escalate",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-eval-query-create",
@@ -19665,8 +19440,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.ai_assistant.SahayaAPI.EvalAIAssistantQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0000.public.ves.io.schema.ai_assistant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0000.public.ves.io.schema.ai_assistant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-eval-query-feedback-create",
@@ -19698,8 +19472,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.ai_assistant.SahayaAPI.EvalAIAssistantFeedback",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0000.public.ves.io.schema.ai_assistant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0000.public.ves.io.schema.ai_assistant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-evaluate-api-acces-create",
@@ -19722,8 +19495,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.namespace.CustomAPI.EvaluateAPIAccess",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-evaluate-batch-api-acces-create",
@@ -19746,8 +19518,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.namespace.CustomAPI.EvaluateBatchAPIAccess",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-evaluate-create",
@@ -19782,7 +19553,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.app_api_group.CustomAPI.EvaluateApiGroup",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-event-count-create",
@@ -19825,8 +19596,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "network_id"],
     operationId: "ves.io.schema.graph.l3l4.CustomAPI.EventCount",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0270.public.ves.io.schema.graph.l3l4.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0270.public.ves.io.schema.graph.l3l4.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-event-create",
@@ -19858,8 +19628,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.app_security.AppSecurityMonitoringAPI.SecurityEventsQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-event-list",
@@ -19901,8 +19670,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["event_id", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomEventAPI.GetEvent",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-event-update",
@@ -19946,8 +19714,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "event_id", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomEventAPI.EditEvent",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-events-summary-list",
@@ -19989,8 +19756,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.infraprotect.CustomEventAPI.ListEventsSummary",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-exec-create",
@@ -20039,8 +19805,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "node", "site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.Exec",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-exec-log-list",
@@ -20100,8 +19865,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "node", "site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.ExecLog",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-exec-user-create",
@@ -20150,8 +19914,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "node", "site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.ExecUser",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-expanded-create",
@@ -20183,7 +19946,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TrafficOverviewExpanded",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-external-connector-create",
@@ -20217,7 +19980,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.external_connector.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0104.public.ves.io.schema.views.external_connector.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0104.public.ves.io.schema.views.external_connector.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-external-connector-delete",
@@ -20258,7 +20021,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.external_connector.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0104.public.ves.io.schema.views.external_connector.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0104.public.ves.io.schema.views.external_connector.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-external-connector-get",
@@ -20321,7 +20084,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.external_connector.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0104.public.ves.io.schema.views.external_connector.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0104.public.ves.io.schema.views.external_connector.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-external-connector-list",
@@ -20388,7 +20151,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.external_connector.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0104.public.ves.io.schema.views.external_connector.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0104.public.ves.io.schema.views.external_connector.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-external-connector-update",
@@ -20432,7 +20195,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.external_connector.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0104.public.ves.io.schema.views.external_connector.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0104.public.ves.io.schema.views.external_connector.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acl-create",
@@ -20466,8 +20229,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.fast_acl.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0111.public.ves.io.schema.fast_acl.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0111.public.ves.io.schema.fast_acl.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acl-delete",
@@ -20507,8 +20269,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.fast_acl.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0111.public.ves.io.schema.fast_acl.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0111.public.ves.io.schema.fast_acl.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acl-get",
@@ -20570,8 +20331,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.fast_acl.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0111.public.ves.io.schema.fast_acl.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0111.public.ves.io.schema.fast_acl.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acl-list",
@@ -20636,8 +20396,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.fast_acl.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0111.public.ves.io.schema.fast_acl.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0111.public.ves.io.schema.fast_acl.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acl-rule-create",
@@ -20671,8 +20430,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.fast_acl_rule.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0112.public.ves.io.schema.fast_acl_rule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0112.public.ves.io.schema.fast_acl_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acl-rule-delete",
@@ -20712,8 +20470,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.fast_acl_rule.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0112.public.ves.io.schema.fast_acl_rule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0112.public.ves.io.schema.fast_acl_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acl-rule-get",
@@ -20775,8 +20532,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.fast_acl_rule.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0112.public.ves.io.schema.fast_acl_rule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0112.public.ves.io.schema.fast_acl_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acl-rule-list",
@@ -20842,8 +20598,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.fast_acl_rule.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0112.public.ves.io.schema.fast_acl_rule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0112.public.ves.io.schema.fast_acl_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acl-rule-update",
@@ -20887,8 +20642,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.fast_acl_rule.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0112.public.ves.io.schema.fast_acl_rule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0112.public.ves.io.schema.fast_acl_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acl-update",
@@ -20932,8 +20686,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.fast_acl.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0111.public.ves.io.schema.fast_acl.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0111.public.ves.io.schema.fast_acl.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acls-for-internet-vip-create",
@@ -20966,8 +20719,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.SetFastACLsForInternetVIPs",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fast-acls-for-internet-vip-list",
@@ -20998,8 +20750,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.GetFastACLsForInternetVIPs",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-favicon-list",
@@ -21019,8 +20770,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.GetFavIcon",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-feedback-create",
@@ -21053,8 +20803,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeBlockFeedback",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fetchdump-create",
@@ -21094,8 +20843,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.operate.tcpdump.CustomPublicAPI.FetchDump",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0232.public.ves.io.schema.operate.tcpdump.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0232.public.ves.io.schema.operate.tcpdump.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-field-create",
@@ -21129,7 +20877,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.ForensicFields",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-filter-set-create",
@@ -21162,8 +20910,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.filter_set.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-filter-set-delete",
@@ -21203,8 +20950,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.filter_set.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-filter-set-get",
@@ -21266,8 +21012,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.filter_set.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-filter-set-list",
@@ -21332,8 +21077,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.filter_set.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-filter-set-update",
@@ -21376,8 +21120,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.filter_set.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-filtered-dns-monitor-list-list",
@@ -21452,7 +21195,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.CustomAPI.GetFilteredDNSMonitorList",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-filtered-http-monitor-list-list",
@@ -21527,7 +21270,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.CustomAPI.GetFilteredHTTPMonitorList",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-find-create",
@@ -21560,8 +21303,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.filter_set.CustomAPI.FindFilterSets",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0113.public.ves.io.schema.filter_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-firewall-log-create",
@@ -21594,8 +21336,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.log.CustomAPI.FirewallLogQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fleet-create",
@@ -21628,8 +21369,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.fleet.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0114.public.ves.io.schema.fleet.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0114.public.ves.io.schema.fleet.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fleet-delete",
@@ -21669,8 +21409,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.fleet.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0114.public.ves.io.schema.fleet.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0114.public.ves.io.schema.fleet.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fleet-get",
@@ -21732,8 +21471,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.fleet.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0114.public.ves.io.schema.fleet.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0114.public.ves.io.schema.fleet.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fleet-list",
@@ -21798,8 +21536,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.fleet.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0114.public.ves.io.schema.fleet.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0114.public.ves.io.schema.fleet.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-fleet-update",
@@ -21842,8 +21579,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.fleet.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0114.public.ves.io.schema.fleet.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0114.public.ves.io.schema.fleet.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-flow-anomaly-get",
@@ -21903,8 +21639,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.flow_anomaly.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0115.public.ves.io.schema.flow_anomaly.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0115.public.ves.io.schema.flow_anomaly.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-flow-anomaly-list",
@@ -21970,8 +21705,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.flow_anomaly.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0115.public.ves.io.schema.flow_anomaly.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0115.public.ves.io.schema.flow_anomaly.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-flow-collection-create",
@@ -21991,8 +21725,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.flow.CustomAPI.FlowCollection",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0117.public.ves.io.schema.flow.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0117.public.ves.io.schema.flow.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-flowlabel-list",
@@ -22024,7 +21757,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.data_delivery.CustomAPI.ListFlowLabels",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0093.public.ves.io.schema.shape.data_delivery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0093.public.ves.io.schema.shape.data_delivery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-force-delete-create",
@@ -22057,8 +21790,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name"],
     operationId: "ves.io.schema.cloud_elastic_ip.CustomAPI.ForceDeleteCloudElasticIP",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0060.public.ves.io.schema.cloud_elastic_ip.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-formfield-create",
@@ -22091,7 +21823,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.ListFormFields",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-formfield-get",
@@ -22131,7 +21863,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.GetFormField",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-formfield-list",
@@ -22184,7 +21916,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.ListFormFieldsGet",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-forward-proxy-policy-create",
@@ -22218,7 +21950,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.forward_proxy_policy.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-forward-proxy-policy-delete",
@@ -22259,7 +21991,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.forward_proxy_policy.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-forward-proxy-policy-get",
@@ -22322,7 +22054,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.forward_proxy_policy.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-forward-proxy-policy-list",
@@ -22389,7 +22121,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.forward_proxy_policy.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-forward-proxy-policy-update",
@@ -22433,7 +22165,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.forward_proxy_policy.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-forwarding-class-create",
@@ -22466,8 +22198,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.forwarding_class.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0118.public.ves.io.schema.forwarding_class.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0118.public.ves.io.schema.forwarding_class.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-forwarding-class-delete",
@@ -22507,8 +22238,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.forwarding_class.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0118.public.ves.io.schema.forwarding_class.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0118.public.ves.io.schema.forwarding_class.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-forwarding-class-get",
@@ -22570,8 +22300,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.forwarding_class.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0118.public.ves.io.schema.forwarding_class.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0118.public.ves.io.schema.forwarding_class.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-forwarding-class-list",
@@ -22637,8 +22366,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.forwarding_class.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0118.public.ves.io.schema.forwarding_class.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0118.public.ves.io.schema.forwarding_class.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-forwarding-class-update",
@@ -22681,8 +22409,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.forwarding_class.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0118.public.ves.io.schema.forwarding_class.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0118.public.ves.io.schema.forwarding_class.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-friction-aggregation-create",
@@ -22704,8 +22431,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.recognize.CustomAPI.FrictionAggregation",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-friction-histogram-create",
@@ -22727,8 +22453,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.recognize.CustomAPI.FrictionHistogram",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-general-feedback-create",
@@ -22761,8 +22486,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostGeneralFeedback",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-generate-create",
@@ -22804,8 +22528,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.report_config.CustomAPI.GenerateReport",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-generate-token-get",
@@ -22847,7 +22570,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.third_party_application.CustomAPI.GenerateToken",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0237.public.ves.io.schema.views.third_party_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0237.public.ves.io.schema.views.third_party_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-geo-config-get",
@@ -22908,7 +22631,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.data_privacy.geo_config.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0119.public.ves.io.schema.data_privacy.geo_config.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0119.public.ves.io.schema.data_privacy.geo_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-geo-location-set-create",
@@ -22941,8 +22664,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.geo_location_set.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0120.public.ves.io.schema.geo_location_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0120.public.ves.io.schema.geo_location_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-geo-location-set-delete",
@@ -22982,8 +22704,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.geo_location_set.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0120.public.ves.io.schema.geo_location_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0120.public.ves.io.schema.geo_location_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-geo-location-set-get",
@@ -23045,8 +22766,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.geo_location_set.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0120.public.ves.io.schema.geo_location_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0120.public.ves.io.schema.geo_location_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-geo-location-set-list",
@@ -23112,8 +22832,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.geo_location_set.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0120.public.ves.io.schema.geo_location_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0120.public.ves.io.schema.geo_location_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-geo-location-set-update",
@@ -23156,8 +22875,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.geo_location_set.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0120.public.ves.io.schema.geo_location_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0120.public.ves.io.schema.geo_location_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-geolocation-create",
@@ -23189,7 +22907,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopHumanGeolocation",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-get-cloud-init-config-list",
@@ -23228,8 +22946,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.token.CustomAPI.GetCloudInitConfig",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-get-dns-info-get",
@@ -23269,7 +22986,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.tcp_loadbalancer.CustomAPI.GetDnsInfo",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-get-image-download-url-create",
@@ -23291,8 +23008,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.registration.CustomAPI.GetImageDownloadUrl",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-get-policy-document-get",
@@ -23334,7 +23050,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_management.CustomAPI.GetPolicyDocument",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0108.public.ves.io.schema.secret_management.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0108.public.ves.io.schema.secret_management.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-get-public-key-list",
@@ -23367,7 +23083,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_management.CustomAPI.GetPublicKey",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0108.public.ves.io.schema.secret_management.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0108.public.ves.io.schema.secret_management.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-get-registrations-by-token-create",
@@ -23389,8 +23105,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.registration.CustomAPI.GetRegistrationsBySiteToken",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-get-schema-update-create",
@@ -23434,8 +23149,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.GetAPIEndpointsSchemaUpdates",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-get-security-config-create",
@@ -23469,7 +23183,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bigip_virtual_server.CustomAPI.GetSecurityConfig",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0032.public.ves.io.schema.views.bigip_virtual_server.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0032.public.ves.io.schema.views.bigip_virtual_server.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-get-service-operation-statu-create",
@@ -23503,7 +23217,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.GetServiceOperation",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-getcurrentfrauddata-create",
@@ -23525,8 +23239,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.safeap.CustomAPI.GetCurrentFraudData",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-gettoken-create",
@@ -23549,7 +23262,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.ai_data.bfdp.subscription.CustomAPI.GetToken",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0025.public.ves.io.schema.ai_data.bfdp.subscription.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0025.public.ves.io.schema.ai_data.bfdp.subscription.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-gettopriskyaccount-create",
@@ -23571,8 +23284,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.safeap.CustomAPI.GetTopRiskyAccounts",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-gettopriskydevice-create",
@@ -23594,8 +23306,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.safeap.CustomAPI.GetTopRiskyDevices",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-gettopriskyipaddresse-create",
@@ -23617,8 +23328,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.safeap.CustomAPI.GetTopRiskyIpAddresses",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-gettopriskyreason-create",
@@ -23640,8 +23350,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.safeap.CustomAPI.GetTopRiskyReasons",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-gettransactiondata-create",
@@ -23663,8 +23372,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.safeap.CustomAPI.GetTransactionData",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-global-history-list",
@@ -23734,7 +23442,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetGlobalHistory",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-global-kubeconfig-create",
@@ -23756,8 +23464,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.site.UamKubeConfigAPI.RevokeGlobalKubeConfig",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-global-kubeconfig-list",
@@ -23788,8 +23495,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["site"],
     operationId: "ves.io.schema.site.UamKubeConfigAPI.ListGlobalKubeConfig",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-global-log-receiver-create",
@@ -23823,7 +23529,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.global_log_receiver.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0122.public.ves.io.schema.global_log_receiver.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0122.public.ves.io.schema.global_log_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-global-log-receiver-delete",
@@ -23864,7 +23570,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.global_log_receiver.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0122.public.ves.io.schema.global_log_receiver.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0122.public.ves.io.schema.global_log_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-global-log-receiver-get",
@@ -23927,7 +23633,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.global_log_receiver.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0122.public.ves.io.schema.global_log_receiver.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0122.public.ves.io.schema.global_log_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-global-log-receiver-list",
@@ -23994,7 +23700,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.global_log_receiver.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0122.public.ves.io.schema.global_log_receiver.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0122.public.ves.io.schema.global_log_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-global-log-receiver-update",
@@ -24038,7 +23744,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.global_log_receiver.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0122.public.ves.io.schema.global_log_receiver.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0122.public.ves.io.schema.global_log_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-global-network-list",
@@ -24077,8 +23783,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.site.CustomVirtualNetworkListAPI.GlobalNetworkList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-global-summary-list",
@@ -24120,7 +23825,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetGlobalSummary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-good-create",
@@ -24152,7 +23857,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopGoodBots",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-graph-create",
@@ -24186,8 +23891,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.segment.CustomDataAPI.SegmentsGraph",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-group-add-update",
@@ -24207,8 +23911,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.CustomAPI.AddUserToGroup",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-group-create",
@@ -24230,8 +23933,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.CreateGroup",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-group-delete",
@@ -24276,8 +23978,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["id"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.DeleteGroupById",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-group-get",
@@ -24322,8 +24023,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["id"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.GetGroupById",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-group-list",
@@ -24386,8 +24086,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.scim.CustomPublicAPI.ListGroups",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-group-patch",
@@ -24419,8 +24118,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "id"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.PatchGroupById",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-group-remove-update",
@@ -24440,8 +24138,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.CustomAPI.RemoveUserFromGroup",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-group-update",
@@ -24473,8 +24170,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "id"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.ReplaceGroupById",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-health-list",
@@ -24514,8 +24210,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.HealthPublic",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-health-statu-get",
@@ -24556,7 +24251,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.discovered_service.CustomDataAPI.DiscoveredServiceHealthStatus",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0100.public.ves.io.schema.discovered_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-healthcheck-create",
@@ -24590,8 +24285,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.healthcheck.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0124.public.ves.io.schema.healthcheck.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0124.public.ves.io.schema.healthcheck.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-healthcheck-delete",
@@ -24631,8 +24325,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.healthcheck.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0124.public.ves.io.schema.healthcheck.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0124.public.ves.io.schema.healthcheck.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-healthcheck-get",
@@ -24695,8 +24388,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.healthcheck.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0124.public.ves.io.schema.healthcheck.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0124.public.ves.io.schema.healthcheck.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-healthcheck-list",
@@ -24761,8 +24453,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.healthcheck.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0124.public.ves.io.schema.healthcheck.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0124.public.ves.io.schema.healthcheck.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-healthcheck-update",
@@ -24806,8 +24497,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.healthcheck.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0124.public.ves.io.schema.healthcheck.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0124.public.ves.io.schema.healthcheck.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-history-get",
@@ -24850,7 +24540,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.GetBotDetectionRuleChangeHistory",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-history-list",
@@ -24913,8 +24603,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.alert.CustomAPI.AlertsHistory",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-hit-create",
@@ -24948,7 +24637,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.forward_proxy_policy.CustomDataAPI.ForwardProxyPolicyHits",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0071.public.ves.io.schema.views.forward_proxy_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-host-ping-create",
@@ -24999,8 +24688,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "node", "site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.HostPing",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-hourly-usage-detail-create",
@@ -25033,8 +24721,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.usage.CustomAggregatedUsageAPI.ListHourlyUsageDetails",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0249.public.ves.io.schema.usage.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0249.public.ves.io.schema.usage.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-http-monitor-detail-list",
@@ -25095,7 +24782,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetHTTPMonitorDetail",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-http-monitor-summary-list",
@@ -25156,7 +24843,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetHTTPMonitorSummary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-http-monitors-health-create",
@@ -25189,7 +24876,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetHTTPMonitorHealth",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike-phase1-profile-create",
@@ -25223,7 +24910,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.ike_phase1_profile.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0126.public.ves.io.schema.views.ike_phase1_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0126.public.ves.io.schema.views.ike_phase1_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike-phase1-profile-delete",
@@ -25264,7 +24951,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.ike_phase1_profile.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0126.public.ves.io.schema.views.ike_phase1_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0126.public.ves.io.schema.views.ike_phase1_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike-phase1-profile-get",
@@ -25327,7 +25014,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.ike_phase1_profile.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0126.public.ves.io.schema.views.ike_phase1_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0126.public.ves.io.schema.views.ike_phase1_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike-phase1-profile-list",
@@ -25394,7 +25081,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.ike_phase1_profile.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0126.public.ves.io.schema.views.ike_phase1_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0126.public.ves.io.schema.views.ike_phase1_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike-phase1-profile-update",
@@ -25438,7 +25125,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.ike_phase1_profile.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0126.public.ves.io.schema.views.ike_phase1_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0126.public.ves.io.schema.views.ike_phase1_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike-phase2-profile-create",
@@ -25472,7 +25159,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.ike_phase2_profile.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0128.public.ves.io.schema.views.ike_phase2_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0128.public.ves.io.schema.views.ike_phase2_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike-phase2-profile-delete",
@@ -25513,7 +25200,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.ike_phase2_profile.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0128.public.ves.io.schema.views.ike_phase2_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0128.public.ves.io.schema.views.ike_phase2_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike-phase2-profile-get",
@@ -25576,7 +25263,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.ike_phase2_profile.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0128.public.ves.io.schema.views.ike_phase2_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0128.public.ves.io.schema.views.ike_phase2_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike-phase2-profile-list",
@@ -25643,7 +25330,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.ike_phase2_profile.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0128.public.ves.io.schema.views.ike_phase2_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0128.public.ves.io.schema.views.ike_phase2_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike-phase2-profile-update",
@@ -25687,7 +25374,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.ike_phase2_profile.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0128.public.ves.io.schema.views.ike_phase2_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0128.public.ves.io.schema.views.ike_phase2_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike1-create",
@@ -25720,8 +25407,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.ike1.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0125.public.ves.io.schema.ike1.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0125.public.ves.io.schema.ike1.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike1-delete",
@@ -25761,8 +25447,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.ike1.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0125.public.ves.io.schema.ike1.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0125.public.ves.io.schema.ike1.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike1-get",
@@ -25824,8 +25509,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.ike1.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0125.public.ves.io.schema.ike1.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0125.public.ves.io.schema.ike1.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike1-list",
@@ -25890,8 +25574,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.ike1.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0125.public.ves.io.schema.ike1.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0125.public.ves.io.schema.ike1.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike1-update",
@@ -25934,8 +25617,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.ike1.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0125.public.ves.io.schema.ike1.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0125.public.ves.io.schema.ike1.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike2-create",
@@ -25968,8 +25650,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.ike2.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0127.public.ves.io.schema.ike2.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0127.public.ves.io.schema.ike2.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike2-delete",
@@ -26009,8 +25690,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.ike2.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0127.public.ves.io.schema.ike2.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0127.public.ves.io.schema.ike2.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike2-get",
@@ -26072,8 +25752,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.ike2.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0127.public.ves.io.schema.ike2.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0127.public.ves.io.schema.ike2.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike2-list",
@@ -26138,8 +25817,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.ike2.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0127.public.ves.io.schema.ike2.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0127.public.ves.io.schema.ike2.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ike2-update",
@@ -26182,8 +25860,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.ike2.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0127.public.ves.io.schema.ike2.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0127.public.ves.io.schema.ike2.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-image-delete",
@@ -26203,8 +25880,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.DeleteImage",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-image-list",
@@ -26224,8 +25900,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.GetImage",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-image-update",
@@ -26247,8 +25922,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.tenant.CustomAPI.UpdateImage",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-implicit-label-list",
@@ -26331,8 +26005,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.implicit_label.CustomAPI.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0130.public.ves.io.schema.implicit_label.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0130.public.ves.io.schema.implicit_label.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-inactive-list",
@@ -26353,8 +26026,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.ListInactiveUsers",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-incident-create",
@@ -26388,8 +26060,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.app_security.AppSecurityMonitoringAPI.SecurityIncidentsQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-info-list",
@@ -26438,8 +26109,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "node", "site"],
     operationId: "ves.io.schema.operate.lte.CustomPublicAPI.ShowInfo",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0149.public.ves.io.schema.operate.lte.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0149.public.ves.io.schema.operate.lte.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-asn-create",
@@ -26472,8 +26142,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.infraprotect_asn.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-asn-delete",
@@ -26513,8 +26182,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.infraprotect_asn.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-asn-get",
@@ -26576,8 +26244,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.infraprotect_asn.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-asn-list",
@@ -26643,8 +26310,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.infraprotect_asn.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-asn-prefix-create",
@@ -26678,7 +26344,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_asn_prefix.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-asn-prefix-delete",
@@ -26719,7 +26385,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_asn_prefix.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-asn-prefix-get",
@@ -26782,7 +26448,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_asn_prefix.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-asn-prefix-list",
@@ -26849,7 +26515,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_asn_prefix.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-asn-prefix-update",
@@ -26893,7 +26559,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_asn_prefix.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-asn-update",
@@ -26936,8 +26602,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.infraprotect_asn.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-deny-list-rule-create",
@@ -26971,7 +26636,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_deny_list_rule.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0134.public.ves.io.schema.infraprotect_deny_list_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0134.public.ves.io.schema.infraprotect_deny_list_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-deny-list-rule-delete",
@@ -27012,7 +26677,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_deny_list_rule.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0134.public.ves.io.schema.infraprotect_deny_list_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0134.public.ves.io.schema.infraprotect_deny_list_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-deny-list-rule-get",
@@ -27075,7 +26740,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_deny_list_rule.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0134.public.ves.io.schema.infraprotect_deny_list_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0134.public.ves.io.schema.infraprotect_deny_list_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-deny-list-rule-list",
@@ -27142,7 +26807,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_deny_list_rule.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0134.public.ves.io.schema.infraprotect_deny_list_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0134.public.ves.io.schema.infraprotect_deny_list_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-deny-list-rule-update",
@@ -27186,7 +26851,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_deny_list_rule.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0134.public.ves.io.schema.infraprotect_deny_list_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0134.public.ves.io.schema.infraprotect_deny_list_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-rule-create",
@@ -27220,7 +26885,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_rule.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0135.public.ves.io.schema.infraprotect_firewall_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0135.public.ves.io.schema.infraprotect_firewall_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-rule-delete",
@@ -27261,7 +26926,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_rule.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0135.public.ves.io.schema.infraprotect_firewall_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0135.public.ves.io.schema.infraprotect_firewall_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-rule-get",
@@ -27324,7 +26989,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_rule.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0135.public.ves.io.schema.infraprotect_firewall_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0135.public.ves.io.schema.infraprotect_firewall_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-rule-group-create",
@@ -27358,7 +27023,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_rule_group.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0136.public.ves.io.schema.infraprotect_firewall_rule_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0136.public.ves.io.schema.infraprotect_firewall_rule_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-rule-group-delete",
@@ -27399,7 +27064,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_rule_group.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0136.public.ves.io.schema.infraprotect_firewall_rule_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0136.public.ves.io.schema.infraprotect_firewall_rule_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-rule-group-get",
@@ -27462,7 +27127,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_rule_group.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0136.public.ves.io.schema.infraprotect_firewall_rule_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0136.public.ves.io.schema.infraprotect_firewall_rule_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-rule-group-list",
@@ -27529,7 +27194,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_rule_group.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0136.public.ves.io.schema.infraprotect_firewall_rule_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0136.public.ves.io.schema.infraprotect_firewall_rule_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-rule-group-update",
@@ -27573,7 +27238,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_rule_group.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0136.public.ves.io.schema.infraprotect_firewall_rule_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0136.public.ves.io.schema.infraprotect_firewall_rule_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-rule-list",
@@ -27640,7 +27305,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_rule.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0135.public.ves.io.schema.infraprotect_firewall_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0135.public.ves.io.schema.infraprotect_firewall_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-rule-update",
@@ -27684,7 +27349,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_rule.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0135.public.ves.io.schema.infraprotect_firewall_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0135.public.ves.io.schema.infraprotect_firewall_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-ruleset-get",
@@ -27746,7 +27411,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_ruleset.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0137.public.ves.io.schema.infraprotect_firewall_ruleset.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0137.public.ves.io.schema.infraprotect_firewall_ruleset.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-ruleset-list",
@@ -27813,7 +27478,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_ruleset.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0137.public.ves.io.schema.infraprotect_firewall_ruleset.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0137.public.ves.io.schema.infraprotect_firewall_ruleset.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-firewall-ruleset-update",
@@ -27857,7 +27522,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_firewall_ruleset.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0137.public.ves.io.schema.infraprotect_firewall_ruleset.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0137.public.ves.io.schema.infraprotect_firewall_ruleset.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-information-get",
@@ -27918,7 +27583,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_information.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0138.public.ves.io.schema.infraprotect_information.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0138.public.ves.io.schema.infraprotect_information.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-internet-prefix-advertisement-create",
@@ -27952,7 +27617,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_internet_prefix_advertisement.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-internet-prefix-advertisement-delete",
@@ -27993,7 +27658,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_internet_prefix_advertisement.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-internet-prefix-advertisement-get",
@@ -28056,7 +27721,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_internet_prefix_advertisement.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-internet-prefix-advertisement-list",
@@ -28123,7 +27788,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_internet_prefix_advertisement.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-internet-prefix-advertisement-update",
@@ -28167,7 +27832,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_internet_prefix_advertisement.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-tunnel-create",
@@ -28201,7 +27866,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_tunnel.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-tunnel-delete",
@@ -28242,7 +27907,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_tunnel.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-tunnel-get",
@@ -28305,7 +27970,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_tunnel.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-tunnel-list",
@@ -28372,7 +28037,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_tunnel.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-infraprotect-tunnel-update",
@@ -28416,7 +28081,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_tunnel.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-init-create",
@@ -28439,7 +28104,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.Init",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-init-request-create",
@@ -28462,7 +28127,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.data_delivery.CustomAPI.Init",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0093.public.ves.io.schema.shape.data_delivery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0093.public.ves.io.schema.shape.data_delivery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-instance-create",
@@ -28495,8 +28160,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.graph.service.CustomAPI.InstanceQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0207.public.ves.io.schema.graph.service.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0207.public.ves.io.schema.graph.service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-invoice-pdf-list",
@@ -28536,8 +28200,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.usage.invoice.CustomAPI.DownloadInvoicePdf",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0140.public.ves.io.schema.usage.invoice.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0140.public.ves.io.schema.usage.invoice.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ip-create",
@@ -28570,7 +28233,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousReportTransactionsIP",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ip-list",
@@ -28612,8 +28275,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["mitigation_id", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomMitigationAPI.ListMitigationIPs",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ip-prefix-set-create",
@@ -28647,8 +28309,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.ip_prefix_set.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0129.public.ves.io.schema.ip_prefix_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0129.public.ves.io.schema.ip_prefix_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ip-prefix-set-delete",
@@ -28688,8 +28349,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.ip_prefix_set.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0129.public.ves.io.schema.ip_prefix_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0129.public.ves.io.schema.ip_prefix_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ip-prefix-set-get",
@@ -28752,8 +28412,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.ip_prefix_set.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0129.public.ves.io.schema.ip_prefix_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0129.public.ves.io.schema.ip_prefix_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ip-prefix-set-list",
@@ -28819,8 +28478,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.ip_prefix_set.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0129.public.ves.io.schema.ip_prefix_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0129.public.ves.io.schema.ip_prefix_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ip-prefix-set-update",
@@ -28864,8 +28522,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.ip_prefix_set.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0129.public.ves.io.schema.ip_prefix_set.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0129.public.ves.io.schema.ip_prefix_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-irule-create",
@@ -28898,8 +28555,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.bigcne.irule.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0080.public.ves.io.schema.bigcne.irule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0080.public.ves.io.schema.bigcne.irule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-irule-delete",
@@ -28939,8 +28595,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.bigcne.irule.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0080.public.ves.io.schema.bigcne.irule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0080.public.ves.io.schema.bigcne.irule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-irule-get",
@@ -29001,8 +28656,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.bigcne.irule.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0080.public.ves.io.schema.bigcne.irule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0080.public.ves.io.schema.bigcne.irule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-irule-list",
@@ -29067,8 +28721,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.bigcne.irule.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0080.public.ves.io.schema.bigcne.irule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0080.public.ves.io.schema.bigcne.irule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-irule-update",
@@ -29111,8 +28764,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.bigcne.irule.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0080.public.ves.io.schema.bigcne.irule.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0080.public.ves.io.schema.bigcne.irule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-jira-projects-issue-type-create",
@@ -29137,7 +28789,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.ticket_management.ticket_tracking_system.CustomAPI.JiraProjectsIssueTypes",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-job-list",
@@ -29177,8 +28829,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.JobList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-js-configuration-list",
@@ -29219,7 +28870,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.GetJsInjectionConfiguration",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-justification-create",
@@ -29261,7 +28912,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.UpdateScriptJustification",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-justification-delete",
@@ -29301,7 +28952,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.DeleteScriptJustification",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-audit-log-create",
@@ -29343,8 +28994,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "site"],
     operationId: "ves.io.schema.log.CustomAPI.K8SAuditLogQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-event-create",
@@ -29386,8 +29036,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "site"],
     operationId: "ves.io.schema.log.CustomAPI.K8SEventsQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-pod-security-admission-create",
@@ -29421,7 +29070,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_pod_security_admission.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0144.public.ves.io.schema.k8s_pod_security_admission.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0144.public.ves.io.schema.k8s_pod_security_admission.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-pod-security-admission-delete",
@@ -29462,7 +29111,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_pod_security_admission.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0144.public.ves.io.schema.k8s_pod_security_admission.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0144.public.ves.io.schema.k8s_pod_security_admission.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-pod-security-admission-get",
@@ -29525,7 +29174,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_pod_security_admission.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0144.public.ves.io.schema.k8s_pod_security_admission.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0144.public.ves.io.schema.k8s_pod_security_admission.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-pod-security-admission-list",
@@ -29592,7 +29241,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_pod_security_admission.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0144.public.ves.io.schema.k8s_pod_security_admission.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0144.public.ves.io.schema.k8s_pod_security_admission.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-pod-security-admission-update",
@@ -29637,7 +29286,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_pod_security_admission.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0144.public.ves.io.schema.k8s_pod_security_admission.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0144.public.ves.io.schema.k8s_pod_security_admission.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-pod-security-policy-create",
@@ -29672,7 +29321,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_pod_security_policy.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0145.public.ves.io.schema.k8s_pod_security_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0145.public.ves.io.schema.k8s_pod_security_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-pod-security-policy-delete",
@@ -29713,7 +29362,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_pod_security_policy.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0145.public.ves.io.schema.k8s_pod_security_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0145.public.ves.io.schema.k8s_pod_security_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-pod-security-policy-get",
@@ -29777,7 +29426,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_pod_security_policy.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0145.public.ves.io.schema.k8s_pod_security_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0145.public.ves.io.schema.k8s_pod_security_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-pod-security-policy-list",
@@ -29844,7 +29493,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_pod_security_policy.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0145.public.ves.io.schema.k8s_pod_security_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0145.public.ves.io.schema.k8s_pod_security_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-k8s-pod-security-policy-update",
@@ -29889,7 +29538,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_pod_security_policy.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0145.public.ves.io.schema.k8s_pod_security_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0145.public.ves.io.schema.k8s_pod_security_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-known-label-key-list",
@@ -29943,8 +29592,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.known_label_key.CustomAPI.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0147.public.ves.io.schema.known_label_key.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0147.public.ves.io.schema.known_label_key.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-known-label-list",
@@ -30011,8 +29659,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.known_label.CustomAPI.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0146.public.ves.io.schema.known_label.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0146.public.ves.io.schema.known_label.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-last-login-list",
@@ -30032,8 +29679,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.GetLastLoginMap",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-lb-cache-content-create",
@@ -30066,8 +29712,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.graph.service.CustomAPI.LBCacheContent",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0207.public.ves.io.schema.graph.service.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0207.public.ves.io.schema.graph.service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-learnt-schema-create",
@@ -30110,8 +29755,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["app_type_name", "body", "namespace"],
     operationId: "ves.io.schema.app_type.CustomAPI.GetAPIEndpointLearntSchema",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-learnt-schema-get",
@@ -30200,8 +29844,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.GetAPIEndpointLearntSchema",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-lift-create",
@@ -30223,8 +29866,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.recognize.CustomAPI.Lift",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-limit-list",
@@ -30254,8 +29896,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.quota.CustomAPI.CustomGetQuotaLimits",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-list-create",
@@ -30287,7 +29928,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.EndpointList",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-list-list",
@@ -30336,8 +29977,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "node", "site"],
     operationId: "ves.io.schema.operate.usb.CustomPublicAPI.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0244.public.ves.io.schema.operate.usb.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0244.public.ves.io.schema.operate.usb.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-list-policy-list",
@@ -30377,8 +30017,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "policy_state"],
     operationId: "ves.io.schema.secret_policy.CustomAPI.ListPolicy",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-list-reports-history-bot-defence-create",
@@ -30409,8 +30048,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.report_config.CustomAPI.ListReportsHistoryBotDefence",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-list-reports-history-create",
@@ -30441,8 +30079,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.report_config.CustomAPI.ListReportsHistory",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-list-reports-history-waap-create",
@@ -30473,8 +30110,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.report_config.CustomAPI.ListReportsHistoryWaap",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-list-service-list",
@@ -30514,8 +30150,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.ListVolterraServices",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-list-service-operations-statu-create",
@@ -30549,7 +30184,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.ListServiceOperations",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0042.public.ves.io.schema.views.cdn_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-list-tcpdump-create",
@@ -30592,8 +30227,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "site"],
     operationId: "ves.io.schema.operate.tcpdump.CustomPublicAPI.ListTcpdump",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0232.public.ves.io.schema.operate.tcpdump.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0232.public.ves.io.schema.operate.tcpdump.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-listregistrationsbystate-create",
@@ -30627,8 +30261,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.registration.CustomAPI.ListRegistrationsByState",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-lma-region-get",
@@ -30689,7 +30322,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.data_privacy.lma_region.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0148.public.ves.io.schema.data_privacy.lma_region.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0148.public.ves.io.schema.data_privacy.lma_region.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-lma-region-list",
@@ -30755,7 +30388,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.data_privacy.lma_region.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0148.public.ves.io.schema.data_privacy.lma_region.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0148.public.ves.io.schema.data_privacy.lma_region.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-loadbalancer-create",
@@ -30776,8 +30409,7 @@ export const coreTools: ParsedOperation[] = [
     operationId:
       "ves.io.schema.app_security.AppSecurityMonitoringAPI.SearchLoadBalancersAllNamespaces",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-loadbalancer-get",
@@ -30820,7 +30452,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.views.api_definition.PublicConfigCustomAPI.GetReferencingLoadbalancers",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-local-kubeconfig-create",
@@ -30861,8 +30493,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.site.ConfigKubeConfigAPI.CreateLocalKubeConfig",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-local-kubeconfig-get",
@@ -30901,8 +30532,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.site.ConfigKubeConfigAPI.ListLocalKubeConfig",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-log-create",
@@ -30954,8 +30584,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "external_connector", "namespace", "site"],
     operationId: "ves.io.schema.log.CustomAPI.ExternalConnectorLogQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-log-list",
@@ -31024,8 +30653,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "node", "service", "site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.Log",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-log-receiver-create",
@@ -31058,8 +30686,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.log_receiver.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0150.public.ves.io.schema.log_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0150.public.ves.io.schema.log_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-log-receiver-delete",
@@ -31099,8 +30726,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.log_receiver.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0150.public.ves.io.schema.log_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0150.public.ves.io.schema.log_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-log-receiver-get",
@@ -31162,8 +30788,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.log_receiver.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0150.public.ves.io.schema.log_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0150.public.ves.io.schema.log_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-log-receiver-list",
@@ -31229,8 +30854,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.log_receiver.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0150.public.ves.io.schema.log_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0150.public.ves.io.schema.log_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-log-receiver-update",
@@ -31273,8 +30897,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.log_receiver.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0150.public.ves.io.schema.log_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0150.public.ves.io.schema.log_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-login-in-time-create",
@@ -31297,8 +30920,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.tenant.CustomAPI.GetLoginEventsInTimeFrame",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-login-list",
@@ -31340,8 +30962,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.GetLoginEvents",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-logo-list",
@@ -31361,8 +30982,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.GetLogo",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-lookup-list",
@@ -31401,8 +31021,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.LookupCname",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-lookup-user-role-create",
@@ -31424,8 +31043,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.namespace.CustomAPI.LookupUserRoles",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-managed-tenant-create",
@@ -31460,7 +31078,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.managed_tenant.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-managed-tenant-delete",
@@ -31501,7 +31119,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.managed_tenant.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-managed-tenant-get",
@@ -31565,7 +31183,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.managed_tenant.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-managed-tenant-list",
@@ -31618,7 +31236,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.managed_tenant.CustomAPI.ListSupportTenantMT",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-managed-tenant-update",
@@ -31663,7 +31281,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.managed_tenant.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-managed-tenants-by-user-list",
@@ -31717,7 +31335,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.tenant_management.managed_tenant.CustomAPI.GetManagedTenantListByUser",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-managed-tenants-list-list",
@@ -31770,7 +31388,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.managed_tenant.CustomAPI.GetManagedTenantList",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mapper-create",
@@ -31811,8 +31429,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.oidc_provider.CustomAPI.UpdateOIDCMappers",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mapper-get",
@@ -31853,8 +31470,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.oidc_provider.CustomAPI.GetOIDCMappers",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mark-as-non-api-create",
@@ -31896,7 +31512,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.api_definition.PublicConfigCustomAPI.MarkAsNonAPI",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-match-create",
@@ -31929,8 +31545,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.alert_policy.CustomAPI.GetAlertPolicyMatch",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0012.public.ves.io.schema.alert_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-matching-flow-create",
@@ -31973,8 +31588,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "site"],
     operationId: "ves.io.schema.operate.flow.CustomPublicAPI.ShowMatchingFlows",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0116.public.ves.io.schema.operate.flow.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0116.public.ves.io.schema.operate.flow.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-metric-create",
@@ -32008,8 +31622,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.app_security.AppSecurityMonitoringAPI.SecurityEventsMetrics",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-metric-query-create",
@@ -32042,7 +31655,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetMetricQueryData",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-migrate-create",
@@ -32065,7 +31678,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.CustomAPI.MigrateChildTenants",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mitigated-domain-create",
@@ -32099,7 +31712,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.mitigated_domain.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0056.public.ves.io.schema.shape.client_side_defense.mitigated_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0056.public.ves.io.schema.shape.client_side_defense.mitigated_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mitigated-domain-delete",
@@ -32140,7 +31753,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.mitigated_domain.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0056.public.ves.io.schema.shape.client_side_defense.mitigated_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0056.public.ves.io.schema.shape.client_side_defense.mitigated_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mitigated-domain-get",
@@ -32202,7 +31815,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.mitigated_domain.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0056.public.ves.io.schema.shape.client_side_defense.mitigated_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0056.public.ves.io.schema.shape.client_side_defense.mitigated_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mitigated-domain-list",
@@ -32269,7 +31882,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.mitigated_domain.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0056.public.ves.io.schema.shape.client_side_defense.mitigated_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0056.public.ves.io.schema.shape.client_side_defense.mitigated_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mitigation-annotation-list",
@@ -32310,8 +31923,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["event_id", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomEventAPI.ListEventMitigations",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mitigation-create",
@@ -32344,8 +31956,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomMitigationAPI.ListMitigations",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mitigation-list",
@@ -32386,8 +31997,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["mitigation_id", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomMitigationAPI.GetMitigation",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mobile-app-shield-list",
@@ -32461,8 +32071,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.stored_object.MobileAppShieldCustomAPI.ListMobileAppShields",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mobile-base-config-create",
@@ -32496,7 +32105,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.mobile_base_config.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mobile-base-config-delete",
@@ -32537,7 +32146,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.mobile_base_config.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mobile-base-config-file-get",
@@ -32580,7 +32189,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.mobile_base_config.CustomAPI.GetMobileBaseConfigurationFile",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mobile-base-config-get",
@@ -32642,7 +32251,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.mobile_base_config.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mobile-base-config-list",
@@ -32709,7 +32318,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.mobile_base_config.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mobile-base-config-update",
@@ -32753,7 +32362,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.mobile_base_config.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0157.public.ves.io.schema.shape.bot_defense.mobile_base_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mobile-integrator-list",
@@ -32827,8 +32436,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.stored_object.MobileIntegratorCustomAPI.ListMobileIntegrators",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-mobile-sdk-list",
@@ -32902,7 +32510,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.mobile_sdk.CustomAPI.ListMobileSDKs",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0156.public.ves.io.schema.shape.bot_defense.mobile_sdk.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0156.public.ves.io.schema.shape.bot_defense.mobile_sdk.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-monitor-event-list",
@@ -32972,7 +32580,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetMonitorEvents",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-monitor-history-list",
@@ -33051,7 +32659,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetMonitorHistory",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-monthly-usage-create",
@@ -33084,8 +32692,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.usage.CustomCalculatedUsageAPI.ListMonthlyUsage",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0249.public.ves.io.schema.usage.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0249.public.ves.io.schema.usage.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-move-to-inventory-create",
@@ -33127,7 +32734,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.api_definition.PublicConfigCustomAPI.MoveToAPInventory",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-name-delete",
@@ -33197,8 +32804,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace", "object_type", "version"],
     operationId: "ves.io.schema.stored_object.CustomAPI.DeleteObject",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-name-get",
@@ -33258,7 +32864,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.mobile_sdk.CustomAPI.GetMobileSDK",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0156.public.ves.io.schema.shape.bot_defense.mobile_sdk.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0156.public.ves.io.schema.shape.bot_defense.mobile_sdk.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-namespace-create",
@@ -33280,8 +32886,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.namespace.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-namespace-get",
@@ -33342,8 +32947,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name"],
     operationId: "ves.io.schema.namespace.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-namespace-list",
@@ -33407,8 +33011,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.namespace.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-namespace-role-get",
@@ -33468,8 +33071,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.namespace_role.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0167.public.ves.io.schema.namespace_role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0167.public.ves.io.schema.namespace_role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-namespace-role-list",
@@ -33535,8 +33137,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.namespace_role.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0167.public.ves.io.schema.namespace_role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0167.public.ves.io.schema.namespace_role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-namespace-update",
@@ -33570,8 +33171,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name"],
     operationId: "ves.io.schema.namespace.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nat-policy-create",
@@ -33604,8 +33204,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.nat_policy.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0159.public.ves.io.schema.nat_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0159.public.ves.io.schema.nat_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nat-policy-delete",
@@ -33645,8 +33244,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.nat_policy.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0159.public.ves.io.schema.nat_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0159.public.ves.io.schema.nat_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nat-policy-get",
@@ -33709,8 +33307,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.nat_policy.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0159.public.ves.io.schema.nat_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0159.public.ves.io.schema.nat_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nat-policy-list",
@@ -33775,8 +33372,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.nat_policy.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0159.public.ves.io.schema.nat_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0159.public.ves.io.schema.nat_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nat-policy-update",
@@ -33820,8 +33416,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.nat_policy.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0159.public.ves.io.schema.nat_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0159.public.ves.io.schema.nat_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-navigation-tile-get",
@@ -33883,7 +33478,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.pbac.navigation_tile.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0168.public.ves.io.schema.pbac.navigation_tile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0168.public.ves.io.schema.pbac.navigation_tile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-navigation-tile-list",
@@ -33950,7 +33545,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.pbac.navigation_tile.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0168.public.ves.io.schema.pbac.navigation_tile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0168.public.ves.io.schema.pbac.navigation_tile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-get",
@@ -33980,8 +33575,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name"],
     operationId: "ves.io.schema.topology.CustomDataAPI.GetSiteNetworks",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0240.public.ves.io.schema.topology.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0240.public.ves.io.schema.topology.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-interface-create",
@@ -34016,7 +33610,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_interface.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0171.public.ves.io.schema.network_interface.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0171.public.ves.io.schema.network_interface.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-interface-delete",
@@ -34057,7 +33651,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_interface.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0171.public.ves.io.schema.network_interface.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0171.public.ves.io.schema.network_interface.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-interface-get",
@@ -34120,7 +33714,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_interface.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0171.public.ves.io.schema.network_interface.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0171.public.ves.io.schema.network_interface.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-interface-list",
@@ -34187,7 +33781,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_interface.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0171.public.ves.io.schema.network_interface.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0171.public.ves.io.schema.network_interface.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-interface-update",
@@ -34232,7 +33826,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_interface.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0171.public.ves.io.schema.network_interface.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0171.public.ves.io.schema.network_interface.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-list",
@@ -34264,8 +33858,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.infraprotect.CustomNetworkAPI.ListNetworks",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-create",
@@ -34298,8 +33891,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.network_policy.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0172.public.ves.io.schema.network_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0172.public.ves.io.schema.network_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-delete",
@@ -34339,8 +33931,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.network_policy.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0172.public.ves.io.schema.network_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0172.public.ves.io.schema.network_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-get",
@@ -34402,8 +33993,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.network_policy.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0172.public.ves.io.schema.network_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0172.public.ves.io.schema.network_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-list",
@@ -34469,8 +34059,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.network_policy.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0172.public.ves.io.schema.network_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0172.public.ves.io.schema.network_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-rule-create",
@@ -34504,7 +34093,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_policy_rule.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0173.public.ves.io.schema.network_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0173.public.ves.io.schema.network_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-rule-delete",
@@ -34545,7 +34134,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_policy_rule.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0173.public.ves.io.schema.network_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0173.public.ves.io.schema.network_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-rule-get",
@@ -34608,7 +34197,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_policy_rule.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0173.public.ves.io.schema.network_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0173.public.ves.io.schema.network_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-rule-list",
@@ -34675,7 +34264,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_policy_rule.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0173.public.ves.io.schema.network_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0173.public.ves.io.schema.network_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-rule-update",
@@ -34719,7 +34308,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_policy_rule.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0173.public.ves.io.schema.network_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0173.public.ves.io.schema.network_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-set-get",
@@ -34780,7 +34369,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_policy_set.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0174.public.ves.io.schema.network_policy_set.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0174.public.ves.io.schema.network_policy_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-set-list",
@@ -34847,7 +34436,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.network_policy_set.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0174.public.ves.io.schema.network_policy_set.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0174.public.ves.io.schema.network_policy_set.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-update",
@@ -34891,8 +34480,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.network_policy.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0172.public.ves.io.schema.network_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0172.public.ves.io.schema.network_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-view-create",
@@ -34926,7 +34514,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.network_policy_view.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0074.public.ves.io.schema.views.network_policy_view.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0074.public.ves.io.schema.views.network_policy_view.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-view-delete",
@@ -34967,7 +34555,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.network_policy_view.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0074.public.ves.io.schema.views.network_policy_view.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0074.public.ves.io.schema.views.network_policy_view.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-view-get",
@@ -35030,7 +34618,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.network_policy_view.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0074.public.ves.io.schema.views.network_policy_view.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0074.public.ves.io.schema.views.network_policy_view.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-view-list",
@@ -35097,7 +34685,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.network_policy_view.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0074.public.ves.io.schema.views.network_policy_view.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0074.public.ves.io.schema.views.network_policy_view.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-network-policy-view-update",
@@ -35141,7 +34729,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.network_policy_view.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0074.public.ves.io.schema.views.network_policy_view.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0074.public.ves.io.schema.views.network_policy_view.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-networking-inventory-create",
@@ -35164,8 +34752,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.NetworkingInventory",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-networkinteraction-get",
@@ -35228,7 +34815,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.client_side_defense.CustomAPI.ListNetworkInteractionsByScript",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nfv-service-create",
@@ -35261,8 +34848,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.nfv_service.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0160.public.ves.io.schema.nfv_service.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0160.public.ves.io.schema.nfv_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nfv-service-delete",
@@ -35302,8 +34888,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.nfv_service.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0160.public.ves.io.schema.nfv_service.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0160.public.ves.io.schema.nfv_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nfv-service-get",
@@ -35365,8 +34950,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.nfv_service.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0160.public.ves.io.schema.nfv_service.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0160.public.ves.io.schema.nfv_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nfv-service-list",
@@ -35431,8 +35015,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.nfv_service.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0160.public.ves.io.schema.nfv_service.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0160.public.ves.io.schema.nfv_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nfv-service-update",
@@ -35475,8 +35058,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.nfv_service.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0160.public.ves.io.schema.nfv_service.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0160.public.ves.io.schema.nfv_service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-csg-get",
@@ -35536,7 +35118,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_csg.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0161.public.ves.io.schema.nginx.one.nginx_csg.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0161.public.ves.io.schema.nginx.one.nginx_csg.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-csg-list",
@@ -35602,7 +35184,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_csg.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0161.public.ves.io.schema.nginx.one.nginx_csg.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0161.public.ves.io.schema.nginx.one.nginx_csg.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-dataplane-server-create",
@@ -35635,7 +35217,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_server.CustomAPI.GetDataplaneServers",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0163.public.ves.io.schema.nginx.one.nginx_server.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0163.public.ves.io.schema.nginx.one.nginx_server.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-instance-get",
@@ -35695,7 +35277,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_instance.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0162.public.ves.io.schema.nginx.one.nginx_instance.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0162.public.ves.io.schema.nginx.one.nginx_instance.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-instance-list",
@@ -35762,7 +35344,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_instance.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0162.public.ves.io.schema.nginx.one.nginx_instance.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0162.public.ves.io.schema.nginx.one.nginx_instance.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-server-get",
@@ -35823,7 +35405,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_server.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0163.public.ves.io.schema.nginx.one.nginx_server.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0163.public.ves.io.schema.nginx.one.nginx_server.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-server-list",
@@ -35890,7 +35472,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_server.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0163.public.ves.io.schema.nginx.one.nginx_server.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0163.public.ves.io.schema.nginx.one.nginx_server.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-service-discovery-create",
@@ -35925,7 +35507,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_service_discovery.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0165.public.ves.io.schema.nginx.one.nginx_service_discovery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0165.public.ves.io.schema.nginx.one.nginx_service_discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-service-discovery-delete",
@@ -35966,7 +35548,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_service_discovery.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0165.public.ves.io.schema.nginx.one.nginx_service_discovery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0165.public.ves.io.schema.nginx.one.nginx_service_discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-service-discovery-get",
@@ -36030,7 +35612,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_service_discovery.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0165.public.ves.io.schema.nginx.one.nginx_service_discovery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0165.public.ves.io.schema.nginx.one.nginx_service_discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-service-discovery-list",
@@ -36097,7 +35679,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_service_discovery.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0165.public.ves.io.schema.nginx.one.nginx_service_discovery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0165.public.ves.io.schema.nginx.one.nginx_service_discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-nginx-service-discovery-update",
@@ -36142,7 +35724,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nginx.one.nginx_service_discovery.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0165.public.ves.io.schema.nginx.one.nginx_service_discovery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0165.public.ves.io.schema.nginx.one.nginx_service_discovery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-node-create",
@@ -36177,7 +35759,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.graph.connectivity.CustomAPI.NodeQuery",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0081.public.ves.io.schema.graph.connectivity.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0081.public.ves.io.schema.graph.connectivity.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-node-list",
@@ -36207,8 +35789,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.NodeList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-notification-list",
@@ -36229,8 +35810,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.setting.CustomAPI.GetNtfnPreferences",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-notification-update",
@@ -36251,8 +35831,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.setting.CustomAPI.UpdateNtfnPreferences",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-o-create",
@@ -36285,7 +35864,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousReportTransactionsOS",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-oas-validation-create",
@@ -36320,7 +35899,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.api_sec.rule_suggestion.RuleSuggestionAPI.GetSuggestedOasValidationRule",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0021.public.ves.io.schema.api_sec.rule_suggestion.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0021.public.ves.io.schema.api_sec.rule_suggestion.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-object-type-delete",
@@ -36390,8 +35969,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace", "object_type"],
     operationId: "ves.io.schema.stored_object.CustomAPI.DeleteObject",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-object-type-update",
@@ -36443,8 +36021,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace", "object_type"],
     operationId: "ves.io.schema.stored_object.CustomAPI.CreateObject",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-oidc-provider-create",
@@ -36477,8 +36054,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.oidc_provider.CustomAPI.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-oidc-provider-get",
@@ -36518,8 +36094,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.oidc_provider.CustomAPI.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-oidc-provider-list",
@@ -36550,8 +36125,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.oidc_provider.CustomAPI.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-oidc-provider-update",
@@ -36591,8 +36165,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.oidc_provider.CustomAPI.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-override-list",
@@ -36632,8 +36205,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["app_type_name", "namespace"],
     operationId: "ves.io.schema.app_type.CustomAPI.Overrides",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-overview-create",
@@ -36665,7 +36237,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopLatencyOverview",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-overview-list",
@@ -36728,8 +36300,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.GetSafeOverview",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-password-policy-list",
@@ -36759,8 +36330,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.GetPasswordPolicy",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-payment-method-create",
@@ -36794,7 +36364,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.billing.payment_method.CustomAPI.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0178.public.ves.io.schema.billing.payment_method.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0178.public.ves.io.schema.billing.payment_method.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-payment-method-delete",
@@ -36833,7 +36403,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.billing.payment_method.CustomAPI.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0178.public.ves.io.schema.billing.payment_method.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0178.public.ves.io.schema.billing.payment_method.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-pdf-create",
@@ -36885,8 +36455,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["app_type_name", "body", "namespace", "service_name"],
     operationId: "ves.io.schema.app_type.CustomAPI.GetServiceAPIEndpointPDF",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-pdf-get",
@@ -36947,8 +36516,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.GetAPIEndpointPDF",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-pdf-list",
@@ -37007,8 +36575,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["app_type_name", "namespace"],
     operationId: "ves.io.schema.app_type.CustomAPI.APIEndpointPDF",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-persistentvolume-list",
@@ -37038,8 +36605,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.PersistentVolumeList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-persistentvolumeclaim-list",
@@ -37079,8 +36645,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.PersistentVolumeClaimList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-personal-stat-create",
@@ -37111,7 +36676,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.InsightPersonalStats",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ping-create",
@@ -37154,8 +36719,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "site"],
     operationId: "ves.io.schema.operate.ping.CustomPublicAPI.Ping",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0179.public.ves.io.schema.operate.ping.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0179.public.ves.io.schema.operate.ping.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-plan-get",
@@ -37215,8 +36779,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.pbac.plan.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0180.public.ves.io.schema.pbac.plan.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0180.public.ves.io.schema.pbac.plan.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-plan-list",
@@ -37281,8 +36844,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.pbac.plan.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0180.public.ves.io.schema.pbac.plan.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0180.public.ves.io.schema.pbac.plan.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-plan-transition-create",
@@ -37316,7 +36878,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.billing.plan_transition.CustomAPI.InitiatePlanTransition",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0181.public.ves.io.schema.billing.plan_transition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0181.public.ves.io.schema.billing.plan_transition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-plan-transition-list",
@@ -37349,7 +36911,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.billing.plan_transition.CustomAPI.GetPlanTransition",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0181.public.ves.io.schema.billing.plan_transition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0181.public.ves.io.schema.billing.plan_transition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-platform-create",
@@ -37381,7 +36943,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopHumanPlatform",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-platform-event-create",
@@ -37414,8 +36976,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.log.CustomAPI.PlatformEventQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-pod-list",
@@ -37455,8 +37016,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.PodList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-policer-create",
@@ -37489,8 +37049,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.policer.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0182.public.ves.io.schema.policer.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0182.public.ves.io.schema.policer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-policer-delete",
@@ -37530,8 +37089,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.policer.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0182.public.ves.io.schema.policer.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0182.public.ves.io.schema.policer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-policer-get",
@@ -37593,8 +37151,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.policer.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0182.public.ves.io.schema.policer.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0182.public.ves.io.schema.policer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-policer-list",
@@ -37659,8 +37216,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.policer.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0182.public.ves.io.schema.policer.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0182.public.ves.io.schema.policer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-policer-update",
@@ -37703,8 +37259,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.policer.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0182.public.ves.io.schema.policer.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0182.public.ves.io.schema.policer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-policie-create",
@@ -37747,7 +37302,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.bot_infrastructure.CustomAPI.DeployPoliciesToBotInfra",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-policy-based-routing-create",
@@ -37781,7 +37336,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.policy_based_routing.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0183.public.ves.io.schema.views.policy_based_routing.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0183.public.ves.io.schema.views.policy_based_routing.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-policy-based-routing-delete",
@@ -37822,7 +37377,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.policy_based_routing.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0183.public.ves.io.schema.views.policy_based_routing.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0183.public.ves.io.schema.views.policy_based_routing.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-policy-based-routing-get",
@@ -37885,7 +37440,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.policy_based_routing.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0183.public.ves.io.schema.views.policy_based_routing.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0183.public.ves.io.schema.views.policy_based_routing.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-policy-based-routing-list",
@@ -37952,7 +37507,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.policy_based_routing.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0183.public.ves.io.schema.views.policy_based_routing.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0183.public.ves.io.schema.views.policy_based_routing.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-policy-based-routing-update",
@@ -37996,7 +37551,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.policy_based_routing.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0183.public.ves.io.schema.views.policy_based_routing.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0183.public.ves.io.schema.views.policy_based_routing.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-pop-create",
@@ -38039,8 +37594,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["app_type_name", "body", "namespace"],
     operationId: "ves.io.schema.app_type.CustomAPI.OverridePop",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-pre-upgrade-check-get",
@@ -38090,8 +37644,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.upgrade_status.UpgradeStatusCustomApi.PreUpgradeCheck",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0247.public.ves.io.schema.upgrade_status.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0247.public.ves.io.schema.upgrade_status.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-preauth-create",
@@ -38113,8 +37666,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.tpm_provision.CustomAPI.Preauth",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0231.public.ves.io.schema.tpm_provision.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0231.public.ves.io.schema.tpm_provision.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-primary-create",
@@ -38157,7 +37709,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.billing.payment_method.CustomAPI.MakePaymentMethodPrimary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0178.public.ves.io.schema.billing.payment_method.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0178.public.ves.io.schema.billing.payment_method.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-priority-create",
@@ -38191,7 +37743,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.CustomerSupportCustomAPI.Priority",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-process-policy-information-create",
@@ -38214,8 +37766,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.voltshare.CustomAPI.ProcessPolicyInformation",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0109.public.ves.io.schema.voltshare.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0109.public.ves.io.schema.voltshare.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protected-application-create",
@@ -38249,7 +37800,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.protected_application.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protected-application-delete",
@@ -38290,7 +37841,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.protected_application.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protected-application-get",
@@ -38353,7 +37904,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.protected_application.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protected-application-list",
@@ -38420,7 +37971,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.protected_application.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protected-application-update",
@@ -38464,7 +38015,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.protected_application.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protected-domain-create",
@@ -38498,7 +38049,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.protected_domain.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0055.public.ves.io.schema.shape.client_side_defense.protected_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0055.public.ves.io.schema.shape.client_side_defense.protected_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protected-domain-delete",
@@ -38539,7 +38090,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.protected_domain.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0055.public.ves.io.schema.shape.client_side_defense.protected_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0055.public.ves.io.schema.shape.client_side_defense.protected_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protected-domain-get",
@@ -38601,7 +38152,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.protected_domain.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0055.public.ves.io.schema.shape.client_side_defense.protected_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0055.public.ves.io.schema.shape.client_side_defense.protected_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protected-domain-list",
@@ -38668,7 +38219,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.protected_domain.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0055.public.ves.io.schema.shape.client_side_defense.protected_domain.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0055.public.ves.io.schema.shape.client_side_defense.protected_domain.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protocol-inspection-create",
@@ -38703,7 +38254,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.protocol_inspection.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0075.public.ves.io.schema.protocol_inspection.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0075.public.ves.io.schema.protocol_inspection.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protocol-inspection-delete",
@@ -38744,7 +38295,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.protocol_inspection.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0075.public.ves.io.schema.protocol_inspection.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0075.public.ves.io.schema.protocol_inspection.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protocol-inspection-get",
@@ -38807,7 +38358,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.protocol_inspection.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0075.public.ves.io.schema.protocol_inspection.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0075.public.ves.io.schema.protocol_inspection.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protocol-inspection-list",
@@ -38874,7 +38425,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.protocol_inspection.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0075.public.ves.io.schema.protocol_inspection.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0075.public.ves.io.schema.protocol_inspection.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protocol-inspection-update",
@@ -38918,7 +38469,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.protocol_inspection.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0075.public.ves.io.schema.protocol_inspection.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0075.public.ves.io.schema.protocol_inspection.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protocol-policer-create",
@@ -38952,8 +38503,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.protocol_policer.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0185.public.ves.io.schema.protocol_policer.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0185.public.ves.io.schema.protocol_policer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protocol-policer-delete",
@@ -38993,8 +38543,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.protocol_policer.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0185.public.ves.io.schema.protocol_policer.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0185.public.ves.io.schema.protocol_policer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protocol-policer-get",
@@ -39057,8 +38606,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.protocol_policer.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0185.public.ves.io.schema.protocol_policer.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0185.public.ves.io.schema.protocol_policer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protocol-policer-list",
@@ -39124,8 +38672,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.protocol_policer.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0185.public.ves.io.schema.protocol_policer.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0185.public.ves.io.schema.protocol_policer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-protocol-policer-update",
@@ -39169,8 +38716,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.protocol_policer.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0185.public.ves.io.schema.protocol_policer.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0185.public.ves.io.schema.protocol_policer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-provision-create",
@@ -39203,8 +38749,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeProvision",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-provision-list",
@@ -39224,8 +38769,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.shape.recognize.CustomAPI.GetStatusAddon",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-proxy-create",
@@ -39258,8 +38802,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.views.proxy.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-proxy-delete",
@@ -39299,8 +38842,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.proxy.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-proxy-get",
@@ -39362,8 +38904,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.proxy.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-proxy-list",
@@ -39428,8 +38969,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.views.proxy.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-proxy-update",
@@ -39472,8 +39012,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.views.proxy.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0186.public.ves.io.schema.views.proxy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-public-ip-get",
@@ -39535,8 +39074,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.public_ip.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0187.public.ves.io.schema.public_ip.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0187.public.ves.io.schema.public_ip.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-public-ip-list",
@@ -39601,8 +39139,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.public_ip.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0187.public.ves.io.schema.public_ip.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0187.public.ves.io.schema.public_ip.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-public-ip-update",
@@ -39646,8 +39183,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.public_ip.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0187.public.ves.io.schema.public_ip.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0187.public.ves.io.schema.public_ip.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-push-create",
@@ -39690,8 +39226,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["app_type_name", "body", "namespace"],
     operationId: "ves.io.schema.app_type.CustomAPI.OverridePush",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-query-create",
@@ -39722,8 +39257,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.ai_assistant.SahayaAPI.AIAssistantQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0000.public.ves.io.schema.ai_assistant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0000.public.ves.io.schema.ai_assistant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-query-feedback-create",
@@ -39754,8 +39288,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.ai_assistant.SahayaAPI.AIAssistantFeedback",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0000.public.ves.io.schema.ai_assistant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0000.public.ves.io.schema.ai_assistant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-quota-create",
@@ -39788,8 +39321,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.quota.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-quota-delete",
@@ -39829,8 +39361,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.quota.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-quota-get",
@@ -39892,8 +39423,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.quota.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-quota-list",
@@ -39958,8 +39488,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.quota.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-quota-update",
@@ -40003,8 +39532,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.quota.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-rate-limit-create",
@@ -40039,7 +39567,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.api_sec.rule_suggestion.RuleSuggestionAPI.GetSuggestedRateLimitRule",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0021.public.ves.io.schema.api_sec.rule_suggestion.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0021.public.ves.io.schema.api_sec.rule_suggestion.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-rbac-policy-get",
@@ -40100,8 +39628,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.rbac_policy.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0189.public.ves.io.schema.rbac_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0189.public.ves.io.schema.rbac_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-rbac-policy-list",
@@ -40166,8 +39693,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.rbac_policy.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0189.public.ves.io.schema.rbac_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0189.public.ves.io.schema.rbac_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-readstatu-create",
@@ -40209,7 +39735,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.UpdateScriptReadStatus",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-reapply-config-create",
@@ -40241,8 +39767,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name"],
     operationId: "ves.io.schema.cloud_link.CustomDataAPI.ReapplyConfig",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0062.public.ves.io.schema.cloud_link.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-reboot-create",
@@ -40293,8 +39818,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "node", "site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.Reboot",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-receiver-create",
@@ -40328,7 +39852,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.data_delivery.receiver.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0092.public.ves.io.schema.shape.data_delivery.receiver.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0092.public.ves.io.schema.shape.data_delivery.receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-receiver-delete",
@@ -40369,7 +39893,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.data_delivery.receiver.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0092.public.ves.io.schema.shape.data_delivery.receiver.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0092.public.ves.io.schema.shape.data_delivery.receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-receiver-get",
@@ -40432,7 +39956,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.data_delivery.receiver.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0092.public.ves.io.schema.shape.data_delivery.receiver.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0092.public.ves.io.schema.shape.data_delivery.receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-receiver-list",
@@ -40498,7 +40022,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.data_delivery.receiver.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0092.public.ves.io.schema.shape.data_delivery.receiver.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0092.public.ves.io.schema.shape.data_delivery.receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-receiver-update",
@@ -40542,7 +40066,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.data_delivery.receiver.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0092.public.ves.io.schema.shape.data_delivery.receiver.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0092.public.ves.io.schema.shape.data_delivery.receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-record-type-summary-list",
@@ -40573,7 +40097,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetRecordTypeSummary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-recover-create",
@@ -40615,8 +40139,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.secret_policy.CustomAPI.RecoverPolicy",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-refresh-token-create",
@@ -40638,8 +40161,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.ai_data.bfdp.CustomAPI.RefreshToken",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0024.public.ves.io.schema.ai_data.bfdp.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0024.public.ves.io.schema.ai_data.bfdp.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-region-list",
@@ -40659,8 +40181,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.GetRegions",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-register-create",
@@ -40683,7 +40204,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.marketplace.aws_account.OnboardCustomAPI.RegisterNewAWSAccount",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0176.public.ves.io.schema.marketplace.aws_account.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0176.public.ves.io.schema.marketplace.aws_account.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-registerbootstrap-create",
@@ -40706,8 +40227,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.registration.CustomAPI.RegistrationCreate",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-registration-create",
@@ -40740,8 +40260,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.registration.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-registration-delete",
@@ -40790,8 +40309,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.registration.CustomAPI.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-registration-detail-list",
@@ -40824,7 +40342,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.marketplace.xc_saas.CustomAPI.GetRegistrationDetails",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0269.public.ves.io.schema.marketplace.xc_saas.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0269.public.ves.io.schema.marketplace.xc_saas.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-registration-get",
@@ -40885,8 +40403,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.registration.CustomAPI.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-registration-list",
@@ -40952,8 +40469,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.registration.CustomAPI.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-registration-update",
@@ -40996,8 +40512,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.registration.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-registrations-by-site-list",
@@ -41038,8 +40553,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site_name"],
     operationId: "ves.io.schema.registration.CustomAPI.ListRegistrationsBySite",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-released-signature-list",
@@ -41081,7 +40595,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.waf_signatures_changelog.WafSignatureChangelogCustomApi.GetReleasedSignatures",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0264.public.ves.io.schema.waf_signatures_changelog.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0264.public.ves.io.schema.waf_signatures_changelog.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-remove-from-inventory-create",
@@ -41123,7 +40637,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.api_definition.PublicConfigCustomAPI.RemoveFromAPInventory",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-remove-namespace-role-update",
@@ -41154,8 +40668,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name"],
     operationId: "ves.io.schema.user_group.CustomAPI.RemoveRole",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-reopen-create",
@@ -41187,7 +40700,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.child_tenant.CustomerSupportCustomAPI.Reopen",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-replicaset-list",
@@ -41227,8 +40740,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.ReplicaSetList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-report-config-create",
@@ -41262,8 +40774,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.report_config.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-report-config-delete",
@@ -41303,8 +40814,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.report_config.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-report-config-get",
@@ -41366,8 +40876,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.report_config.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-report-config-list",
@@ -41433,8 +40942,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.report_config.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-report-config-update",
@@ -41478,8 +40986,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.report_config.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0194.public.ves.io.schema.report_config.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-report-create",
@@ -41513,8 +41020,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomReportAPI.ListReports",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-report-get",
@@ -41573,8 +41079,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.report.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0193.public.ves.io.schema.report.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0193.public.ves.io.schema.report.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-report-list",
@@ -41615,8 +41120,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "report_id"],
     operationId: "ves.io.schema.infraprotect.CustomReportAPI.GetReport",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-request-delete-create",
@@ -41639,8 +41143,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.tenant.CustomAPI.DeleteTenant",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-request-initial-acces-update",
@@ -41663,8 +41166,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.user.setting.CustomAPI.RequestInitialAccess",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-requestconfig-create",
@@ -41687,8 +41189,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.registration.CustomAPI.RegistrationConfig",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0192.public.ves.io.schema.registration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-rescue-create",
@@ -41710,8 +41211,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.recognize.CustomAPI.Rescue",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-reset-create",
@@ -41731,8 +41231,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.CustomAPI.ResetPassword",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-resourcetype-get",
@@ -41777,8 +41276,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["id"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.GetResourceTypesById",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-resourcetype-list",
@@ -41798,8 +41296,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.scim.CustomPublicAPI.ListResourceTypes",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-resync-crl-create",
@@ -41841,8 +41338,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "site"],
     operationId: "ves.io.schema.operate.crl.CustomPublicAPI.ResyncCRL",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0045.public.ves.io.schema.operate.crl.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0045.public.ves.io.schema.operate.crl.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-role-create",
@@ -41874,8 +41370,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.role.CustomAPI.CustomCreate",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0195.public.ves.io.schema.role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0195.public.ves.io.schema.role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-role-delete",
@@ -41915,8 +41410,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.role.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0195.public.ves.io.schema.role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0195.public.ves.io.schema.role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-role-get",
@@ -41955,8 +41449,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.role.CustomAPI.CustomGet",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0195.public.ves.io.schema.role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0195.public.ves.io.schema.role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-role-list",
@@ -41986,8 +41479,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.role.CustomAPI.CustomList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0195.public.ves.io.schema.role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0195.public.ves.io.schema.role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-role-update",
@@ -42028,8 +41520,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.role.CustomAPI.CustomReplace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0195.public.ves.io.schema.role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0195.public.ves.io.schema.role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-role-user-create",
@@ -42062,8 +41553,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.user.CustomAPI.AssignRole",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-route-create",
@@ -42097,8 +41587,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.route.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0197.public.ves.io.schema.route.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0197.public.ves.io.schema.route.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-route-delete",
@@ -42138,8 +41627,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.route.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0197.public.ves.io.schema.route.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0197.public.ves.io.schema.route.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-route-get",
@@ -42202,8 +41690,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.route.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0197.public.ves.io.schema.route.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0197.public.ves.io.schema.route.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-route-list",
@@ -42268,8 +41755,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.route.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0197.public.ves.io.schema.route.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0197.public.ves.io.schema.route.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-route-table-get",
@@ -42357,8 +41843,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["id"],
     operationId: "ves.io.schema.topology.CustomDataAPI.GetNetworkRouteTables",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0240.public.ves.io.schema.topology.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0240.public.ves.io.schema.topology.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-route-update",
@@ -42402,8 +41887,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.route.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0197.public.ves.io.schema.route.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0197.public.ves.io.schema.route.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-rule-create",
@@ -42436,8 +41920,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeBlockRule",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-rule-list",
@@ -42486,8 +41969,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "node", "site"],
     operationId: "ves.io.schema.operate.usb.CustomPublicAPI.ListRules",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0244.public.ves.io.schema.operate.usb.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0244.public.ves.io.schema.operate.usb.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-run-create",
@@ -42541,7 +42023,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.terraform_parameters.CustomActionAPI.Run",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0256.public.ves.io.schema.views.terraform_parameters.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0256.public.ves.io.schema.views.terraform_parameters.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-safecubejsdata-create",
@@ -42563,8 +42045,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.safeap.CustomAPI.GetSafeCubeJSData",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0215.public.ves.io.schema.shape.safeap.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-schema-get",
@@ -42609,8 +42090,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["id"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.GetSchemaById",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-schema-list",
@@ -42630,8 +42110,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.scim.CustomPublicAPI.ListSchemas",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-scim-token-create",
@@ -42664,8 +42143,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.api_credential.CustomAPI.RevokeScimToken",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-scim-token-list",
@@ -42697,8 +42175,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.api_credential.CustomAPI.GetScimToken",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-scim-update",
@@ -42739,8 +42216,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.oidc_provider.CustomAPI.UpdateScimIntegration",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0200.public.ves.io.schema.oidc_provider.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-script-create",
@@ -42773,7 +42249,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.ListScripts",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-script-list",
@@ -42856,7 +42332,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.ListScriptsLegacy",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-scroll-create",
@@ -42889,8 +42365,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.alert.CustomAPI.AlertsHistoryScroll",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-scroll-list",
@@ -42932,8 +42407,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.alert.CustomAPI.AlertsHistoryScroll",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0014.public.ves.io.schema.alert.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secondary-create",
@@ -42976,7 +42450,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.billing.payment_method.CustomAPI.MakePaymentMethodSecondary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0178.public.ves.io.schema.billing.payment_method.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0178.public.ves.io.schema.billing.payment_method.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-list",
@@ -43016,8 +42490,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.SecretList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-management-access-create",
@@ -43052,7 +42525,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_management_access.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0201.public.ves.io.schema.secret_management_access.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0201.public.ves.io.schema.secret_management_access.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-management-access-delete",
@@ -43093,7 +42566,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_management_access.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0201.public.ves.io.schema.secret_management_access.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0201.public.ves.io.schema.secret_management_access.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-management-access-get",
@@ -43157,7 +42630,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_management_access.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0201.public.ves.io.schema.secret_management_access.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0201.public.ves.io.schema.secret_management_access.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-management-access-list",
@@ -43224,7 +42697,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_management_access.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0201.public.ves.io.schema.secret_management_access.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0201.public.ves.io.schema.secret_management_access.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-management-access-update",
@@ -43269,7 +42742,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_management_access.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0201.public.ves.io.schema.secret_management_access.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0201.public.ves.io.schema.secret_management_access.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-policy-create",
@@ -43303,8 +42776,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.secret_policy.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-policy-delete",
@@ -43344,8 +42816,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.secret_policy.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-policy-get",
@@ -43408,8 +42879,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.secret_policy.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-policy-list",
@@ -43475,8 +42945,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.secret_policy.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-policy-rule-create",
@@ -43511,7 +42980,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_policy_rule.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0203.public.ves.io.schema.secret_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0203.public.ves.io.schema.secret_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-policy-rule-delete",
@@ -43552,7 +43021,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_policy_rule.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0203.public.ves.io.schema.secret_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0203.public.ves.io.schema.secret_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-policy-rule-get",
@@ -43616,7 +43085,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_policy_rule.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0203.public.ves.io.schema.secret_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0203.public.ves.io.schema.secret_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-policy-rule-list",
@@ -43683,7 +43152,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_policy_rule.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0203.public.ves.io.schema.secret_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0203.public.ves.io.schema.secret_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-policy-rule-update",
@@ -43728,7 +43197,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.secret_policy_rule.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0203.public.ves.io.schema.secret_policy_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0203.public.ves.io.schema.secret_policy_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-secret-policy-update",
@@ -43772,8 +43241,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.secret_policy.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-securemesh-site-create",
@@ -43807,7 +43275,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.securemesh_site.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0076.public.ves.io.schema.views.securemesh_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0076.public.ves.io.schema.views.securemesh_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-securemesh-site-delete",
@@ -43848,7 +43316,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.securemesh_site.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0076.public.ves.io.schema.views.securemesh_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0076.public.ves.io.schema.views.securemesh_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-securemesh-site-get",
@@ -43911,7 +43379,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.securemesh_site.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0076.public.ves.io.schema.views.securemesh_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0076.public.ves.io.schema.views.securemesh_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-securemesh-site-list",
@@ -43978,7 +43446,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.securemesh_site.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0076.public.ves.io.schema.views.securemesh_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0076.public.ves.io.schema.views.securemesh_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-securemesh-site-update",
@@ -44022,7 +43490,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.securemesh_site.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0076.public.ves.io.schema.views.securemesh_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0076.public.ves.io.schema.views.securemesh_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-securemesh-site-v2-create",
@@ -44056,7 +43524,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.securemesh_site_v2.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0077.public.ves.io.schema.views.securemesh_site_v2.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0077.public.ves.io.schema.views.securemesh_site_v2.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-securemesh-site-v2-delete",
@@ -44097,7 +43565,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.securemesh_site_v2.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0077.public.ves.io.schema.views.securemesh_site_v2.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0077.public.ves.io.schema.views.securemesh_site_v2.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-securemesh-site-v2-get",
@@ -44160,7 +43628,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.securemesh_site_v2.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0077.public.ves.io.schema.views.securemesh_site_v2.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0077.public.ves.io.schema.views.securemesh_site_v2.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-securemesh-site-v2-list",
@@ -44227,7 +43695,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.securemesh_site_v2.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0077.public.ves.io.schema.views.securemesh_site_v2.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0077.public.ves.io.schema.views.securemesh_site_v2.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-securemesh-site-v2-update",
@@ -44271,7 +43739,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.securemesh_site_v2.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0077.public.ves.io.schema.views.securemesh_site_v2.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0077.public.ves.io.schema.views.securemesh_site_v2.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-segment-connection-get",
@@ -44333,7 +43801,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.segment_connection.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0205.public.ves.io.schema.segment_connection.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0205.public.ves.io.schema.segment_connection.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-segment-connection-list",
@@ -44400,7 +43868,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.segment_connection.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0205.public.ves.io.schema.segment_connection.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0205.public.ves.io.schema.segment_connection.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-segment-connection-update",
@@ -44444,7 +43912,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.segment_connection.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0205.public.ves.io.schema.segment_connection.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0205.public.ves.io.schema.segment_connection.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-segment-create",
@@ -44477,8 +43945,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.segment.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-segment-delete",
@@ -44518,8 +43985,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.segment.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-segment-get",
@@ -44581,8 +44047,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.segment.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-segment-list",
@@ -44647,8 +44112,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.segment.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-segment-metric-create",
@@ -44670,8 +44134,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.cloud_connect.CustomAPI.ListSegmentMetrics",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0058.public.ves.io.schema.cloud_connect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-segment-update",
@@ -44714,8 +44177,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.segment.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0204.public.ves.io.schema.segment.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-selectee-get",
@@ -44757,8 +44219,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_site.CustomAPI.GetSelectees",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-send-email-create",
@@ -44782,7 +44243,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.marketplace.xc_saas.CustomAPI.SendSignupEmail",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0269.public.ves.io.schema.marketplace.xc_saas.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0269.public.ves.io.schema.marketplace.xc_saas.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-send-password-email-create",
@@ -44805,8 +44266,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.signup.CustomAPI.SendPasswordEmail",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-sensitive-data-policy-create",
@@ -44841,7 +44301,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.sensitive_data_policy.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0206.public.ves.io.schema.sensitive_data_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0206.public.ves.io.schema.sensitive_data_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-sensitive-data-policy-delete",
@@ -44882,7 +44342,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.sensitive_data_policy.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0206.public.ves.io.schema.sensitive_data_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0206.public.ves.io.schema.sensitive_data_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-sensitive-data-policy-get",
@@ -44946,7 +44406,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.sensitive_data_policy.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0206.public.ves.io.schema.sensitive_data_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0206.public.ves.io.schema.sensitive_data_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-sensitive-data-policy-list",
@@ -45013,7 +44473,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.sensitive_data_policy.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0206.public.ves.io.schema.sensitive_data_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0206.public.ves.io.schema.sensitive_data_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-sensitive-data-policy-update",
@@ -45058,7 +44518,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.sensitive_data_policy.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0206.public.ves.io.schema.sensitive_data_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0206.public.ves.io.schema.sensitive_data_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-service-create",
@@ -45089,8 +44549,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.graph.service.CustomAPI.Query",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0207.public.ves.io.schema.graph.service.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0207.public.ves.io.schema.graph.service.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-service-credential-create",
@@ -45111,8 +44570,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.api_credential.CustomAPI.BulkRevokeServiceCredentials",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-service-credential-get",
@@ -45153,8 +44611,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.api_credential.CustomAPI.GetServiceCredentials",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-service-credential-list",
@@ -45184,8 +44641,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.api_credential.CustomAPI.ListServiceCredentials",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-service-credential-update",
@@ -45229,8 +44685,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.api_credential.CustomAPI.ReplaceServiceCredentials",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-service-list",
@@ -45270,8 +44725,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.ServiceList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-serviceproviderconfig-list",
@@ -45291,8 +44745,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.scim.CustomPublicAPI.ListServiceProviderConfig",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-session-create",
@@ -45314,8 +44767,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.GetDashboardBySession",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-session-list",
@@ -45335,8 +44787,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.setting.CustomAPI.GetUserSessions",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-set-tgw-info-create",
@@ -45378,7 +44829,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_tgw_site.CustomAPI.SetTGWInfo",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-set-vip-info-create",
@@ -45420,7 +44871,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_tgw_site.CustomAPI.SetVIPInfo",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-set-vpc-ip-prefixe-create",
@@ -45462,7 +44913,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_tgw_site.CustomAPI.SetVPCIpPrefixes",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-set-vpn-tunnel-create",
@@ -45504,7 +44955,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_tgw_site.CustomAPI.SetVPNTunnels",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-setting-list",
@@ -45535,7 +44986,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.module_management.ModuleManagementAPI.GetModuleManagementSettings",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0158.public.ves.io.schema.module_management.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0158.public.ves.io.schema.module_management.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-setting-update",
@@ -45558,8 +45009,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.tenant.CustomAPI.UpdateIDMSettings",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-shape-bot-defense-instance-get",
@@ -45619,7 +45069,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape_bot_defense_instance.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0211.public.ves.io.schema.shape_bot_defense_instance.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0211.public.ves.io.schema.shape_bot_defense_instance.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-shape-bot-defense-instance-list",
@@ -45686,7 +45136,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape_bot_defense_instance.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0211.public.ves.io.schema.shape_bot_defense_instance.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0211.public.ves.io.schema.shape_bot_defense_instance.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-sid-counter-create",
@@ -45718,8 +45168,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.virtual_network.CustomDataAPI.SIDCounters",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-signup-create",
@@ -45742,7 +45191,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.marketplace.aws_account.OnboardCustomAPI.SignupAWSAccount",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0176.public.ves.io.schema.marketplace.aws_account.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0176.public.ves.io.schema.marketplace.aws_account.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-signup-get",
@@ -45774,8 +45223,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name"],
     operationId: "ves.io.schema.signup.CustomAPI.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-simplified-route-create",
@@ -45817,8 +45265,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "site"],
     operationId: "ves.io.schema.operate.route.CustomPublicAPI.ShowSimplifiedRoutes",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0198.public.ves.io.schema.operate.route.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0198.public.ves.io.schema.operate.route.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-site-create",
@@ -45851,8 +45298,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.graph.site.CustomAPI.Query",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0219.public.ves.io.schema.graph.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0219.public.ves.io.schema.graph.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-site-get",
@@ -45913,8 +45359,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.site.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-site-list",
@@ -45979,8 +45424,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.site.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-site-mesh-group-create",
@@ -46013,8 +45457,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.site_mesh_group.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0220.public.ves.io.schema.site_mesh_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0220.public.ves.io.schema.site_mesh_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-site-mesh-group-delete",
@@ -46054,8 +45497,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.site_mesh_group.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0220.public.ves.io.schema.site_mesh_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0220.public.ves.io.schema.site_mesh_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-site-mesh-group-get",
@@ -46117,8 +45559,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.site_mesh_group.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0220.public.ves.io.schema.site_mesh_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0220.public.ves.io.schema.site_mesh_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-site-mesh-group-list",
@@ -46184,8 +45625,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.site_mesh_group.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0220.public.ves.io.schema.site_mesh_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0220.public.ves.io.schema.site_mesh_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-site-mesh-group-update",
@@ -46228,8 +45668,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.site_mesh_group.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0220.public.ves.io.schema.site_mesh_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0220.public.ves.io.schema.site_mesh_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-site-update",
@@ -46272,8 +45711,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.site.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-soft-restart-create",
@@ -46333,8 +45771,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "node", "service", "site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.SoftRestart",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-softdelete-create",
@@ -46376,8 +45813,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.secret_policy.CustomAPI.DeletePolicy",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0202.public.ves.io.schema.secret_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-software-os-version-create",
@@ -46400,7 +45836,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.virtual_appliance.SoftwareVersionOsImageCustomApi.GetImage",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0248.public.ves.io.schema.virtual_appliance.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0248.public.ves.io.schema.virtual_appliance.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-source-summary-list",
@@ -46461,7 +45897,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetSourceSummary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-sources-openapi-schema-get",
@@ -46526,8 +45962,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.GetAPIEPSourceOpenApiSchema",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-src-tag-injection-create",
@@ -46549,8 +45984,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.ValidateSrcTagInjection",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-srv6-network-slice-create",
@@ -46585,7 +46019,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.srv6_network_slice.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0199.public.ves.io.schema.srv6_network_slice.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0199.public.ves.io.schema.srv6_network_slice.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-srv6-network-slice-delete",
@@ -46626,7 +46060,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.srv6_network_slice.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0199.public.ves.io.schema.srv6_network_slice.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0199.public.ves.io.schema.srv6_network_slice.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-srv6-network-slice-get",
@@ -46690,7 +46124,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.srv6_network_slice.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0199.public.ves.io.schema.srv6_network_slice.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0199.public.ves.io.schema.srv6_network_slice.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-srv6-network-slice-list",
@@ -46757,7 +46191,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.srv6_network_slice.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0199.public.ves.io.schema.srv6_network_slice.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0199.public.ves.io.schema.srv6_network_slice.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-srv6-network-slice-update",
@@ -46802,7 +46236,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.srv6_network_slice.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0199.public.ves.io.schema.srv6_network_slice.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0199.public.ves.io.schema.srv6_network_slice.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-staged-signature-create",
@@ -46845,7 +46279,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.waf_signatures_changelog.SignatureCustomApi.GetStagedSignatures",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0264.public.ves.io.schema.waf_signatures_changelog.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0264.public.ves.io.schema.waf_signatures_changelog.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-start-debug-info-collection-list",
@@ -46883,8 +46317,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["node", "site"],
     operationId: "ves.io.schema.operate.debug.CustomPublicAPI.StartDebugInfoCollection",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0097.public.ves.io.schema.operate.debug.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-stat-create",
@@ -46919,7 +46352,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.app_api_group.CustomAPI.GetApiGroupsStats",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0016.public.ves.io.schema.views.app_api_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-stat-get",
@@ -46960,8 +46393,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.GetApiEndpointsStats",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-state-create",
@@ -47003,8 +46435,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.site.CustomStateAPI.SetState",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-state-list",
@@ -47024,8 +46455,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.shape.recognize.CustomAPI.State",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0214.public.ves.io.schema.shape.recognize.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-statefulset-list",
@@ -47065,8 +46495,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.site.CustomDataK8SAPI.StatefulSetList",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-static-component-get",
@@ -47126,7 +46555,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.ui.static_component.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0246.public.ves.io.schema.ui.static_component.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0246.public.ves.io.schema.ui.static_component.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-static-component-list",
@@ -47193,7 +46622,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.ui.static_component.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0246.public.ves.io.schema.ui.static_component.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0246.public.ves.io.schema.ui.static_component.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-statu-create",
@@ -47235,7 +46664,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.brmalerts.alert_gen_policy.CustomAPI.ChangeStatus",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0033.public.ves.io.schema.shape.brmalerts.alert_gen_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-statu-list",
@@ -47255,8 +46684,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.GetStatus",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-status-at-site-get",
@@ -47327,8 +46755,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["kind", "name", "namespace"],
     operationId: "ves.io.schema.status_at_site.CustomAPI.GetStatus",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0221.public.ves.io.schema.status_at_site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0221.public.ves.io.schema.status_at_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-stop-tcpdump-create",
@@ -47368,8 +46795,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "site"],
     operationId: "ves.io.schema.operate.tcpdump.CustomPublicAPI.StopTcpdump",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0232.public.ves.io.schema.operate.tcpdump.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0232.public.ves.io.schema.operate.tcpdump.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-stored-object-list",
@@ -47443,8 +46869,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace", "object_type"],
     operationId: "ves.io.schema.stored_object.CustomAPI.ListObjects",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0222.public.ves.io.schema.stored_object.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-subnet-create",
@@ -47478,8 +46903,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.subnet.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0223.public.ves.io.schema.subnet.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0223.public.ves.io.schema.subnet.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-subnet-delete",
@@ -47519,8 +46943,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.subnet.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0223.public.ves.io.schema.subnet.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0223.public.ves.io.schema.subnet.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-subnet-get",
@@ -47582,8 +47005,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.subnet.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0223.public.ves.io.schema.subnet.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0223.public.ves.io.schema.subnet.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-subnet-list",
@@ -47648,8 +47070,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.subnet.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0223.public.ves.io.schema.subnet.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0223.public.ves.io.schema.subnet.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-subnet-update",
@@ -47692,8 +47113,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.subnet.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0223.public.ves.io.schema.subnet.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0223.public.ves.io.schema.subnet.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-subscribe-create",
@@ -47716,7 +47136,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.ai_data.bfdp.subscription.CustomAPI.Subscribe",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0025.public.ves.io.schema.ai_data.bfdp.subscription.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0025.public.ves.io.schema.ai_data.bfdp.subscription.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-subscription-statu-list",
@@ -47736,8 +47156,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.flow.CustomFlowConnectionAPI.GetSubscriptionStatus",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0117.public.ves.io.schema.flow.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0117.public.ves.io.schema.flow.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-suggest-value-create",
@@ -47772,7 +47191,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.CustomAPI.SuggestValues",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0039.public.ves.io.schema.shape.bot_defense.bot_infrastructure.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-suggestion-create",
@@ -47814,8 +47233,7 @@ export const coreTools: ParsedOperation[] = [
     operationId:
       "ves.io.schema.app_security.AppSecurityClientRuleAPI.GetSuggestedBlockClientRuleForCDN",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-summary-create",
@@ -47849,7 +47267,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.data_delivery.CustomAPI.LoadExecutiveSummary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0093.public.ves.io.schema.shape.data_delivery.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0093.public.ves.io.schema.shape.data_delivery.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-summary-list",
@@ -47882,7 +47300,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.GetBotDetectionRulesSummary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0036.public.ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-support-info-list",
@@ -47902,8 +47320,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.GetSupportInfo",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-support-ticket-create",
@@ -47926,8 +47343,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.customer_support.CustomAPI.ListCTSupportTickets",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0084.public.ves.io.schema.customer_support.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0084.public.ves.io.schema.customer_support.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-suspicious-user-get",
@@ -48010,8 +47426,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.app_setting.CustomAPI.SuspiciousUserStatus",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0017.public.ves.io.schema.app_setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-suspicious-user-log-create",
@@ -48045,8 +47460,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.app_security.AppSecurityMonitoringAPI.SuspiciousUserLogsQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-swagger-spec-get",
@@ -48101,8 +47515,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.GetSwaggerSpec",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-swagger-spec-list",
@@ -48142,8 +47555,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["app_type_name", "namespace"],
     operationId: "ves.io.schema.app_type.CustomAPI.GetSwaggerSpec",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0018.public.ves.io.schema.app_type.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-swap-primary-create",
@@ -48186,7 +47598,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.billing.payment_method.CustomAPI.SwapPaymentMethodRole",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0178.public.ves.io.schema.billing.payment_method.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0178.public.ves.io.schema.billing.payment_method.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-sync-create",
@@ -48207,8 +47619,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.CustomAPI.SyncUser",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-table-list",
@@ -48280,8 +47691,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.GetSafeBlockTableCsv",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tax-exempt-request-create",
@@ -48304,8 +47714,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.customer_support.CustomAPI.RaiseTaxExemptVerificationSupportTicket",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0084.public.ves.io.schema.customer_support.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0084.public.ves.io.schema.customer_support.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tcp-loadbalancer-create",
@@ -48339,7 +47748,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.tcp_loadbalancer.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tcp-loadbalancer-delete",
@@ -48380,7 +47789,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.tcp_loadbalancer.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tcp-loadbalancer-get",
@@ -48443,7 +47852,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.tcp_loadbalancer.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tcp-loadbalancer-list",
@@ -48510,7 +47919,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.tcp_loadbalancer.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tcp-loadbalancer-update",
@@ -48554,7 +47963,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.tcp_loadbalancer.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0078.public.ves.io.schema.views.tcp_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tcpdump-create",
@@ -48597,8 +48006,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace", "site"],
     operationId: "ves.io.schema.operate.tcpdump.CustomPublicAPI.Tcpdump",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0232.public.ves.io.schema.operate.tcpdump.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0232.public.ves.io.schema.operate.tcpdump.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-template-get",
@@ -48639,7 +48047,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.protected_application.CustomAPI.TemplateConnector",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0184.public.ves.io.schema.shape.bot_defense.protected_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tenant-configuration-create",
@@ -48673,7 +48081,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.tenant_configuration.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0234.public.ves.io.schema.views.tenant_configuration.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0234.public.ves.io.schema.views.tenant_configuration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tenant-configuration-delete",
@@ -48714,7 +48122,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.tenant_configuration.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0234.public.ves.io.schema.views.tenant_configuration.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0234.public.ves.io.schema.views.tenant_configuration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tenant-configuration-get",
@@ -48777,7 +48185,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.tenant_configuration.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0234.public.ves.io.schema.views.tenant_configuration.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0234.public.ves.io.schema.views.tenant_configuration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tenant-configuration-list",
@@ -48844,7 +48252,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.tenant_configuration.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0234.public.ves.io.schema.views.tenant_configuration.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0234.public.ves.io.schema.views.tenant_configuration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tenant-configuration-update",
@@ -48888,7 +48296,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.tenant_configuration.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0234.public.ves.io.schema.views.tenant_configuration.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0234.public.ves.io.schema.views.tenant_configuration.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tenant-escalation-doc-list",
@@ -48908,8 +48316,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.tenant.CustomAPI.GetTenantEscalationDoc",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tenant-profile-create",
@@ -48944,7 +48351,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.tenant_profile.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0236.public.ves.io.schema.tenant_management.tenant_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0236.public.ves.io.schema.tenant_management.tenant_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tenant-profile-delete",
@@ -48985,7 +48392,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.tenant_profile.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0236.public.ves.io.schema.tenant_management.tenant_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0236.public.ves.io.schema.tenant_management.tenant_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tenant-profile-get",
@@ -49048,7 +48455,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.tenant_profile.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0236.public.ves.io.schema.tenant_management.tenant_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0236.public.ves.io.schema.tenant_management.tenant_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tenant-profile-list",
@@ -49115,7 +48522,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.tenant_profile.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0236.public.ves.io.schema.tenant_management.tenant_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0236.public.ves.io.schema.tenant_management.tenant_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tenant-profile-update",
@@ -49159,7 +48566,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.tenant_management.tenant_profile.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0236.public.ves.io.schema.tenant_management.tenant_profile.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0236.public.ves.io.schema.tenant_management.tenant_profile.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-test-create",
@@ -49201,8 +48608,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.alert_receiver.CustomAPI.TestAlertReceiver",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-testj-create",
@@ -49235,7 +48641,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.TestJS",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-third-party-application-get",
@@ -49297,7 +48703,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.third_party_application.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0237.public.ves.io.schema.views.third_party_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0237.public.ves.io.schema.views.third_party_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-third-party-application-list",
@@ -49364,7 +48770,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.third_party_application.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0237.public.ves.io.schema.views.third_party_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0237.public.ves.io.schema.views.third_party_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-third-party-application-update",
@@ -49408,7 +48814,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.third_party_application.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0237.public.ves.io.schema.views.third_party_application.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0237.public.ves.io.schema.views.third_party_application.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-threat-type-create",
@@ -49429,7 +48835,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.PeersThreatTypes",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ticket-tracking-system-create",
@@ -49463,7 +48869,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.ticket_management.ticket_tracking_system.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ticket-tracking-system-delete",
@@ -49504,7 +48910,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.ticket_management.ticket_tracking_system.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ticket-tracking-system-get",
@@ -49566,7 +48972,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.ticket_management.ticket_tracking_system.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ticket-tracking-system-list",
@@ -49633,7 +49039,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.ticket_management.ticket_tracking_system.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ticket-tracking-system-update",
@@ -49677,7 +49083,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.ticket_management.ticket_tracking_system.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-timeserie-create",
@@ -49709,7 +49115,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousReportAPPTimeSeries",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tls-report-detail-list",
@@ -49750,7 +49156,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetTLSReportDetail",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tls-report-summary-list",
@@ -49791,7 +49197,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetTLSReportSummary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tls-summary-list",
@@ -49822,7 +49228,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetTLSSummary",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0226.public.ves.io.schema.observability.synthetic_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-to-event-update",
@@ -49866,8 +49272,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["alert_id", "body", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomAlertAPI.AddAlertToEvent",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-to-list",
@@ -49897,8 +49302,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.user.CustomAPI.GetTOS",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-token-create",
@@ -49932,8 +49336,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.token.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-token-delete",
@@ -49973,8 +49376,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.token.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-token-get",
@@ -50037,8 +49439,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.token.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-token-list",
@@ -50103,8 +49504,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.token.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-token-update",
@@ -50148,8 +49548,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.token.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0239.public.ves.io.schema.token.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-top-active-create",
@@ -50193,8 +49592,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.GetTopAPIEndpoints",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-top-flow-anomalie-create",
@@ -50216,8 +49614,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.flow.CustomAPI.TopFlowAnomalies",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0117.public.ves.io.schema.flow.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0117.public.ves.io.schema.flow.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-top-good-bot-create",
@@ -50238,7 +49635,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.PeersTopGoodBots",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-top-location-create",
@@ -50269,8 +49666,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeTopLocations",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-top-location-list",
@@ -50343,8 +49739,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.GetSafeTopLocations",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-top-reason-code-create",
@@ -50365,7 +49760,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.PeersTopReasonCodes",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-top-sensitive-data-create",
@@ -50409,8 +49804,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.GetTopSensitiveData",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-top-source-create",
@@ -50441,8 +49835,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeTopSources",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-top-source-list",
@@ -50515,8 +49908,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.GetSafeTopSources",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-top-talker-create",
@@ -50536,8 +49928,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.flow.CustomAPI.TopTalkers",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0117.public.ves.io.schema.flow.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0117.public.ves.io.schema.flow.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-total-automation-create",
@@ -50568,7 +49959,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TotalAutomation",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tpm-api-key-create",
@@ -50602,8 +49993,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.tpm_api_key.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0228.public.ves.io.schema.tpm_api_key.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0228.public.ves.io.schema.tpm_api_key.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tpm-api-key-get",
@@ -50665,8 +50055,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.tpm_api_key.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0228.public.ves.io.schema.tpm_api_key.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0228.public.ves.io.schema.tpm_api_key.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tpm-api-key-list",
@@ -50731,8 +50120,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.tpm_api_key.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0228.public.ves.io.schema.tpm_api_key.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0228.public.ves.io.schema.tpm_api_key.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tpm-api-key-update",
@@ -50776,8 +50164,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.tpm_api_key.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0228.public.ves.io.schema.tpm_api_key.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0228.public.ves.io.schema.tpm_api_key.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tpm-category-create",
@@ -50811,8 +50198,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.tpm_category.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0229.public.ves.io.schema.tpm_category.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0229.public.ves.io.schema.tpm_category.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tpm-category-get",
@@ -50874,8 +50260,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.tpm_category.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0229.public.ves.io.schema.tpm_category.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0229.public.ves.io.schema.tpm_category.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tpm-category-list",
@@ -50941,8 +50326,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.tpm_category.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0229.public.ves.io.schema.tpm_category.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0229.public.ves.io.schema.tpm_category.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tpm-category-update",
@@ -50985,8 +50369,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.tpm_category.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0229.public.ves.io.schema.tpm_category.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0229.public.ves.io.schema.tpm_category.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tpm-manager-create",
@@ -51019,8 +50402,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.tpm_manager.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0230.public.ves.io.schema.tpm_manager.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0230.public.ves.io.schema.tpm_manager.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tpm-manager-get",
@@ -51081,8 +50463,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.tpm_manager.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0230.public.ves.io.schema.tpm_manager.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0230.public.ves.io.schema.tpm_manager.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tpm-manager-list",
@@ -51147,8 +50528,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.tpm_manager.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0230.public.ves.io.schema.tpm_manager.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0230.public.ves.io.schema.tpm_manager.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-traceroute-create",
@@ -51192,7 +50572,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.operate.traceroute.CustomPublicAPI.Traceroute",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0241.public.ves.io.schema.operate.traceroute.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0241.public.ves.io.schema.operate.traceroute.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-transaction-create",
@@ -51214,8 +50594,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.GetBotAssessmentTransactions",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-transaction-detail-create",
@@ -51248,8 +50627,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeTransactionDetails",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-transaction-detail-list",
@@ -51299,8 +50677,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.GetSafeTransactionDetails",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-transaction-device-history-create",
@@ -51333,8 +50710,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeTransactionDeviceHistory",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-transaction-location-create",
@@ -51367,8 +50743,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeTransactionLocations",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-transaction-related-session-create",
@@ -51401,8 +50776,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeTransactionRelatedSessions",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-transaction-timeline-create",
@@ -51435,8 +50809,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeTransactionTimeline",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-transactions-csv-create",
@@ -51469,8 +50842,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeTransactionsCsv",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-transactions-over-time-create",
@@ -51503,8 +50875,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.shape.safe.CustomAPI.PostSafeTransactionsOverTime",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0216.public.ves.io.schema.shape.safe.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-transit-usage-create",
@@ -51536,8 +50907,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.infraprotect.CustomDataAPI.TransitUsage",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0131.public.ves.io.schema.infraprotect.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-trusted-ca-list-create",
@@ -51570,8 +50940,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.trusted_ca_list.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0196.public.ves.io.schema.trusted_ca_list.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0196.public.ves.io.schema.trusted_ca_list.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-trusted-ca-list-delete",
@@ -51611,8 +50980,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.trusted_ca_list.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0196.public.ves.io.schema.trusted_ca_list.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0196.public.ves.io.schema.trusted_ca_list.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-trusted-ca-list-get",
@@ -51674,8 +51042,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.trusted_ca_list.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0196.public.ves.io.schema.trusted_ca_list.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0196.public.ves.io.schema.trusted_ca_list.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-trusted-ca-list-list",
@@ -51741,8 +51108,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.trusted_ca_list.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0196.public.ves.io.schema.trusted_ca_list.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0196.public.ves.io.schema.trusted_ca_list.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-trusted-ca-list-update",
@@ -51785,8 +51151,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.trusted_ca_list.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0196.public.ves.io.schema.trusted_ca_list.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0196.public.ves.io.schema.trusted_ca_list.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tunnel-create",
@@ -51819,8 +51184,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.tunnel.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0242.public.ves.io.schema.tunnel.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0242.public.ves.io.schema.tunnel.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tunnel-delete",
@@ -51860,8 +51224,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.tunnel.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0242.public.ves.io.schema.tunnel.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0242.public.ves.io.schema.tunnel.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tunnel-get",
@@ -51923,8 +51286,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.tunnel.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0242.public.ves.io.schema.tunnel.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0242.public.ves.io.schema.tunnel.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tunnel-list",
@@ -51989,8 +51351,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.tunnel.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0242.public.ves.io.schema.tunnel.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0242.public.ves.io.schema.tunnel.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-tunnel-update",
@@ -52033,8 +51394,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.tunnel.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0242.public.ves.io.schema.tunnel.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0242.public.ves.io.schema.tunnel.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-ua-create",
@@ -52056,8 +51416,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.GetDashboardByUa",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-udp-loadbalancer-create",
@@ -52091,7 +51450,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.udp_loadbalancer.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0079.public.ves.io.schema.views.udp_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0079.public.ves.io.schema.views.udp_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-udp-loadbalancer-delete",
@@ -52132,7 +51491,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.udp_loadbalancer.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0079.public.ves.io.schema.views.udp_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0079.public.ves.io.schema.views.udp_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-udp-loadbalancer-get",
@@ -52195,7 +51554,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.udp_loadbalancer.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0079.public.ves.io.schema.views.udp_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0079.public.ves.io.schema.views.udp_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-udp-loadbalancer-list",
@@ -52262,7 +51621,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.udp_loadbalancer.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0079.public.ves.io.schema.views.udp_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0079.public.ves.io.schema.views.udp_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-udp-loadbalancer-update",
@@ -52306,7 +51665,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.udp_loadbalancer.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0079.public.ves.io.schema.views.udp_loadbalancer.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0079.public.ves.io.schema.views.udp_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-unaddressed-automation-create",
@@ -52338,7 +51697,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.reporting.CustomAPI.InsightUnaddressedAutomations",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0212.public.ves.io.schema.shape.bot_defense.reporting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-unassign-create",
@@ -52361,8 +51720,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.tenant.CustomAPI.UnassignDomainOwner",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0233.public.ves.io.schema.tenant.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-unique-create",
@@ -52384,8 +51742,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.GetDashboardUniqueAccess",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-unlink-ticket-create",
@@ -52428,8 +51785,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.UnlinkTickets",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-unmark-as-non-api-create",
@@ -52471,7 +51827,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.api_definition.PublicConfigCustomAPI.UnmarkAsNonAPI",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-unmerge-sources-openapi-schema-create",
@@ -52512,8 +51868,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.UnmergeAPIEPSourceOpenApiSchema",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-unset-update",
@@ -52534,8 +51889,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.setting.CustomAPI.UnsetAdminNtfnPreference",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-unsubscribe-create",
@@ -52558,7 +51912,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.ai_data.bfdp.subscription.CustomAPI.Unsubscribe",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0025.public.ves.io.schema.ai_data.bfdp.subscription.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0025.public.ves.io.schema.ai_data.bfdp.subscription.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-update-advertisement-statu-create",
@@ -52593,7 +51947,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.infraprotect_internet_prefix_advertisement.CustomAPI.UpdateInternetPrefixAdvertisementStatus",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0139.public.ves.io.schema.infraprotect_internet_prefix_advertisement.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-update-allow-advertise-on-public-create",
@@ -52615,8 +51969,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.UpdateAllowAdvertiseOnPublic",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-update-asn-prefix-irr-override-create",
@@ -52650,7 +52003,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_asn_prefix.CustomAPI.UpdateASNPrefixIRROverride",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-update-asn-prefix-review-statu-create",
@@ -52684,7 +52037,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_asn_prefix.CustomAPI.UpdateASNPrefixReviewStatus",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0133.public.ves.io.schema.infraprotect_asn_prefix.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-update-asn-review-statu-create",
@@ -52717,8 +52070,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.infraprotect_asn.CustomAPI.UpdateASNReviewStatus",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0132.public.ves.io.schema.infraprotect_asn.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-update-domain-create",
@@ -52751,7 +52103,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.shape.client_side_defense.CustomAPI.UpdateDomains",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0053.public.ves.io.schema.shape.client_side_defense.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-update-schema-create",
@@ -52795,8 +52147,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.UpdateAPIEndpointsSchemas",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-update-state-create",
@@ -52839,8 +52190,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.UpdateVulnerabilitiesState",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-update-tunnel-statu-create",
@@ -52874,7 +52224,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.infraprotect_tunnel.CustomAPI.UpdateTunnelStatus",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0243.public.ves.io.schema.infraprotect_tunnel.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-upgradable-sw-version-list",
@@ -52913,8 +52263,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.upgrade_status.UpgradeStatusCustomApi.GetUpgradableSWVersions",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0247.public.ves.io.schema.upgrade_status.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0247.public.ves.io.schema.upgrade_status.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-upgrade-o-create",
@@ -52955,8 +52304,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.site.UpgradeAPI.UpgradeOS",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-upgrade-statu-get",
@@ -52996,8 +52344,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.upgrade_status.UpgradeStatusCustomApi.GetUpgradeStatus",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0247.public.ves.io.schema.upgrade_status.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0247.public.ves.io.schema.upgrade_status.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-upgrade-statu-list",
@@ -53018,7 +52365,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.maintenance_status.CustomAPI.GetUpgradeStatus",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0110.public.ves.io.schema.maintenance_status.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0110.public.ves.io.schema.maintenance_status.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-upgrade-sw-create",
@@ -53059,8 +52406,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.site.UpgradeAPI.UpgradeSW",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0218.public.ves.io.schema.site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-url-create",
@@ -53082,8 +52428,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.shape.device_id.CustomAPI.GetBotAssessmentTopUrls",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0022.public.ves.io.schema.shape.device_id.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-usage-detail-create",
@@ -53116,8 +52461,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.usage.CustomAggregatedUsageAPI.ListUsageDetails",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0249.public.ves.io.schema.usage.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0249.public.ves.io.schema.usage.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-usage-list",
@@ -53147,8 +52491,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.quota.CustomAPI.GetQuotaUsage",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0188.public.ves.io.schema.quota.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-usb-policy-create",
@@ -53181,8 +52524,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.usb_policy.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0245.public.ves.io.schema.usb_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0245.public.ves.io.schema.usb_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-usb-policy-delete",
@@ -53222,8 +52564,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.usb_policy.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0245.public.ves.io.schema.usb_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0245.public.ves.io.schema.usb_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-usb-policy-get",
@@ -53285,8 +52626,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.usb_policy.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0245.public.ves.io.schema.usb_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0245.public.ves.io.schema.usb_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-usb-policy-list",
@@ -53351,8 +52691,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.usb_policy.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0245.public.ves.io.schema.usb_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0245.public.ves.io.schema.usb_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-usb-policy-update",
@@ -53395,8 +52734,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.usb_policy.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0245.public.ves.io.schema.usb_policy.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0245.public.ves.io.schema.usb_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-create",
@@ -53418,8 +52756,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.CreateUser",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-delete",
@@ -53464,8 +52801,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["id"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.DeleteUserById",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-get",
@@ -53510,8 +52846,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["id"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.GetUserById",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-group-create",
@@ -53531,8 +52866,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user_group.CustomAPI.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-group-delete",
@@ -53576,8 +52910,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name"],
     operationId: "ves.io.schema.user_group.CustomAPI.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-group-get",
@@ -53609,8 +52942,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name"],
     operationId: "ves.io.schema.user_group.CustomAPI.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-group-list",
@@ -53630,8 +52962,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user_group.CustomAPI.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-group-update",
@@ -53662,8 +52993,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name"],
     operationId: "ves.io.schema.user_group.CustomAPI.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0252.public.ves.io.schema.user_group.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-identification-create",
@@ -53698,7 +53028,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.user_identification.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0253.public.ves.io.schema.user_identification.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0253.public.ves.io.schema.user_identification.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-identification-delete",
@@ -53739,7 +53069,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.user_identification.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0253.public.ves.io.schema.user_identification.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0253.public.ves.io.schema.user_identification.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-identification-get",
@@ -53803,7 +53133,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.user_identification.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0253.public.ves.io.schema.user_identification.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0253.public.ves.io.schema.user_identification.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-identification-list",
@@ -53870,7 +53200,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.user_identification.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0253.public.ves.io.schema.user_identification.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0253.public.ves.io.schema.user_identification.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-identification-update",
@@ -53915,7 +53245,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.user_identification.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0253.public.ves.io.schema.user_identification.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0253.public.ves.io.schema.user_identification.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-list",
@@ -53978,8 +53308,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.scim.CustomPublicAPI.ListUsers",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-patch",
@@ -54012,8 +53341,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "id"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.PatchUserById",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-role-create",
@@ -54044,8 +53372,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.user.CustomAPI.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-role-list",
@@ -54075,8 +53402,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.user.CustomAPI.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-role-update",
@@ -54107,8 +53433,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.user.CustomAPI.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-token-list",
@@ -54128,8 +53453,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.was.user_token.CustomAPI.GetUserToken",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0266.public.ves.io.schema.was.user_token.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0266.public.ves.io.schema.was.user_token.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-user-update",
@@ -54161,8 +53485,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "id"],
     operationId: "ves.io.schema.scim.CustomPublicAPI.ReplaceUserById",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0227.public.ves.io.schema.scim.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-v1-dns-monitor-create",
@@ -54196,7 +53519,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-v1-dns-monitor-delete",
@@ -54237,7 +53560,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-v1-dns-monitor-get",
@@ -54300,7 +53623,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-v1-dns-monitor-list",
@@ -54367,7 +53690,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-v1-dns-monitor-update",
@@ -54411,7 +53734,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0090.public.ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-v1-http-monitor-create",
@@ -54445,7 +53768,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-v1-http-monitor-delete",
@@ -54486,7 +53809,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-v1-http-monitor-get",
@@ -54549,7 +53872,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-v1-http-monitor-list",
@@ -54616,7 +53939,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-v1-http-monitor-update",
@@ -54660,7 +53983,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0123.public.ves.io.schema.observability.synthetic_monitor.v1_http_monitor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-validate-config-create",
@@ -54702,7 +54025,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.aws_tgw_site.CustomAPI.ValidateConfig",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0065.public.ves.io.schema.views.aws_tgw_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-validate-contact-create",
@@ -54725,8 +54048,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.signup.CustomAPI.ValidateContact",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-validate-registration-create",
@@ -54749,8 +54071,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.signup.CustomAPI.ValidateRegistration",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0217.public.ves.io.schema.signup.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-validate-rule-create",
@@ -54773,8 +54094,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.namespace.NamespaceCustomAPI.ValidateRules",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-validate-ticket-tracking-system-create",
@@ -54799,7 +54119,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.ticket_management.ticket_tracking_system.CustomAPI.ValidateTicketTrackingSystem",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0238.public.ves.io.schema.ticket_management.ticket_tracking_system.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-verify-create",
@@ -54841,8 +54161,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.alert_receiver.CustomAPI.VerifyAlertReceiver",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0013.public.ves.io.schema.alert_receiver.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-version-get",
@@ -54883,7 +54202,7 @@ export const coreTools: ParsedOperation[] = [
       "ves.io.schema.shape.bot_defense.bot_endpoint_policy.CustomAPI.GetEndpointPolicyVersions",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0038.public.ves.io.schema.shape.bot_defense.bot_endpoint_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0038.public.ves.io.schema.shape.bot_defense.bot_endpoint_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-view-kind-list",
@@ -54934,7 +54253,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.view_internal.CustomAPI.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0255.public.ves.io.schema.views.view_internal.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0255.public.ves.io.schema.views.view_internal.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-view-preference-list",
@@ -54954,8 +54273,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: [],
     operationId: "ves.io.schema.user.setting.CustomAPI.GetViewPreference",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-view-preference-update",
@@ -54977,8 +54295,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body"],
     operationId: "ves.io.schema.user.setting.CustomAPI.SetViewPreference",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0254.public.ves.io.schema.user.setting.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-host-create",
@@ -55011,8 +54328,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.virtual_host.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-host-delete",
@@ -55052,8 +54368,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_host.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-host-get",
@@ -55115,8 +54430,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_host.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-host-list",
@@ -55182,8 +54496,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.virtual_host.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-host-update",
@@ -55226,8 +54539,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.virtual_host.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-network-create",
@@ -55260,8 +54572,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.virtual_network.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-network-delete",
@@ -55301,8 +54612,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_network.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-network-get",
@@ -55364,8 +54674,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_network.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-network-list",
@@ -55431,8 +54740,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.virtual_network.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-network-update",
@@ -55475,8 +54783,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.virtual_network.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0259.public.ves.io.schema.virtual_network.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-site-create",
@@ -55509,8 +54816,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.virtual_site.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-site-delete",
@@ -55550,8 +54856,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_site.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-site-get",
@@ -55613,8 +54918,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_site.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-site-list",
@@ -55680,8 +54984,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.virtual_site.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-virtual-site-update",
@@ -55724,8 +55027,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.virtual_site.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0260.public.ves.io.schema.virtual_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-vk8s-audit-log-create",
@@ -55758,8 +55060,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.log.CustomAPI.VK8SAuditLogQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-vk8s-event-create",
@@ -55792,8 +55093,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.log.CustomAPI.VK8SEventsQuery",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0151.public.ves.io.schema.log.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-voltshare-admin-policy-create",
@@ -55828,7 +55128,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.voltshare_admin_policy.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0261.public.ves.io.schema.voltshare_admin_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0261.public.ves.io.schema.voltshare_admin_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-voltshare-admin-policy-delete",
@@ -55869,7 +55169,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.voltshare_admin_policy.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0261.public.ves.io.schema.voltshare_admin_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0261.public.ves.io.schema.voltshare_admin_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-voltshare-admin-policy-get",
@@ -55933,7 +55233,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.voltshare_admin_policy.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0261.public.ves.io.schema.voltshare_admin_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0261.public.ves.io.schema.voltshare_admin_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-voltshare-admin-policy-list",
@@ -56000,7 +55300,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.voltshare_admin_policy.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0261.public.ves.io.schema.voltshare_admin_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0261.public.ves.io.schema.voltshare_admin_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-voltshare-admin-policy-update",
@@ -56045,7 +55345,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.voltshare_admin_policy.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0261.public.ves.io.schema.voltshare_admin_policy.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0261.public.ves.io.schema.voltshare_admin_policy.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-voltstack-site-create",
@@ -56079,7 +55379,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.voltstack_site.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0067.public.ves.io.schema.views.voltstack_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0067.public.ves.io.schema.views.voltstack_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-voltstack-site-delete",
@@ -56120,7 +55420,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.voltstack_site.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0067.public.ves.io.schema.views.voltstack_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0067.public.ves.io.schema.views.voltstack_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-voltstack-site-get",
@@ -56183,7 +55483,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.voltstack_site.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0067.public.ves.io.schema.views.voltstack_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0067.public.ves.io.schema.views.voltstack_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-voltstack-site-list",
@@ -56250,7 +55550,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.voltstack_site.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0067.public.ves.io.schema.views.voltstack_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0067.public.ves.io.schema.views.voltstack_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-voltstack-site-update",
@@ -56294,7 +55594,7 @@ export const coreTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.voltstack_site.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0067.public.ves.io.schema.views.voltstack_site.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0067.public.ves.io.schema.views.voltstack_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-vulnerabilitie-create",
@@ -56337,8 +55637,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_host.ApiepCustomAPI.GetVulnerabilities",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0257.public.ves.io.schema.virtual_host.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-core-whoami-list",
@@ -56370,8 +55669,7 @@ export const coreTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.user.CustomAPI.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0251.public.ves.io.schema.user.ves-swagger.json",
   },
 ];
 

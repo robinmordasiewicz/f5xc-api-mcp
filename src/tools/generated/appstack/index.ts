@@ -38,8 +38,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.k8s_cluster.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-delete",
@@ -79,8 +78,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.k8s_cluster.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-get",
@@ -143,8 +141,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.k8s_cluster.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-list",
@@ -209,8 +206,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.k8s_cluster.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-role-binding-create",
@@ -245,7 +241,7 @@ export const appstackTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_cluster_role_binding.API.Create",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-role-binding-delete",
@@ -286,7 +282,7 @@ export const appstackTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_cluster_role_binding.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-role-binding-get",
@@ -350,7 +346,7 @@ export const appstackTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_cluster_role_binding.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-role-binding-list",
@@ -417,7 +413,7 @@ export const appstackTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_cluster_role_binding.API.List",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-role-binding-update",
@@ -462,7 +458,7 @@ export const appstackTools: ParsedOperation[] = [
     operationId: "ves.io.schema.k8s_cluster_role_binding.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
+      "raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-role-create",
@@ -496,8 +492,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.k8s_cluster_role.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-role-delete",
@@ -537,8 +532,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.k8s_cluster_role.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-role-get",
@@ -601,8 +595,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.k8s_cluster_role.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-role-list",
@@ -668,8 +661,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.k8s_cluster_role.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-role-update",
@@ -713,8 +705,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.k8s_cluster_role.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-k8s-cluster-update",
@@ -758,8 +749,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.k8s_cluster.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-metric-create",
@@ -791,8 +781,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.virtual_k8s.CustomDataAPI.PVCMetrics",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-usage-create",
@@ -825,8 +814,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.views.workload.CustomDataAPI.Usage",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-virtual-k8s-create",
@@ -860,8 +848,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.virtual_k8s.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-virtual-k8s-delete",
@@ -901,8 +888,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_k8s.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-virtual-k8s-get",
@@ -965,8 +951,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_k8s.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-virtual-k8s-list",
@@ -1031,8 +1016,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.virtual_k8s.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-virtual-k8s-update",
@@ -1076,8 +1060,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.virtual_k8s.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-workload-create",
@@ -1110,8 +1093,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.views.workload.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-workload-delete",
@@ -1151,8 +1133,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.workload.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-workload-flavor-create",
@@ -1185,8 +1166,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.workload_flavor.API.Create",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-workload-flavor-delete",
@@ -1226,8 +1206,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.workload_flavor.API.Delete",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-workload-flavor-get",
@@ -1289,8 +1268,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.workload_flavor.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-workload-flavor-list",
@@ -1356,8 +1334,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.workload_flavor.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-workload-flavor-update",
@@ -1400,8 +1377,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.workload_flavor.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-workload-get",
@@ -1463,8 +1439,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.workload.API.Get",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-workload-list",
@@ -1529,8 +1504,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.views.workload.API.List",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-workload-update",
@@ -1573,8 +1547,7 @@ export const appstackTools: ParsedOperation[] = [
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.views.workload.API.Replace",
     tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
+    sourceFile: "raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
   },
 ];
 

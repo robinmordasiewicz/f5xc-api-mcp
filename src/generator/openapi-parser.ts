@@ -6,7 +6,7 @@
  */
 
 import { readFileSync, readdirSync, existsSync } from "fs";
-import { join, extname } from "path";
+import { join, extname, relative } from "path";
 import YAML from "yaml";
 import { z } from "zod";
 import {
@@ -151,8 +151,10 @@ export interface ParsedSpec {
 
 /**
  * Parse a single OpenAPI specification file
+ * @param filePath - Absolute path to the spec file
+ * @param basePath - Optional base path for creating relative sourceFile paths (for deterministic output)
  */
-export function parseSpecFile(filePath: string): ParsedSpec | null {
+export function parseSpecFile(filePath: string, basePath?: string): ParsedSpec | null {
   try {
     const content = readFileSync(filePath, "utf-8");
     const ext = extname(filePath).toLowerCase();
@@ -177,7 +179,9 @@ export function parseSpecFile(filePath: string): ParsedSpec | null {
     }
 
     const spec = parseResult.data;
-    const operations = extractOperations(spec, filePath);
+    // Use relative path for sourceFile to ensure deterministic output across environments
+    const sourceFile = basePath ? relative(basePath, filePath) : filePath;
+    const operations = extractOperations(spec, sourceFile);
 
     return {
       filePath,
@@ -307,6 +311,9 @@ export function parseSpecDirectory(dirPath: string): ParsedSpec[] {
     return specs;
   }
 
+  // Use parent of dirPath as base for relative paths (makes paths like "raw/filename.json")
+  const basePath = join(dirPath, "..");
+
   function scanDir(currentDir: string): void {
     const entries = readdirSync(currentDir, { withFileTypes: true });
     // Sort entries alphabetically for deterministic output across different filesystems (locale-independent)
@@ -322,7 +329,7 @@ export function parseSpecDirectory(dirPath: string): ParsedSpec[] {
         entry.name.endsWith(".yaml") ||
         entry.name.endsWith(".yml")
       ) {
-        const spec = parseSpecFile(fullPath);
+        const spec = parseSpecFile(fullPath, basePath);
         if (spec && spec.operations.length > 0) {
           specs.push(spec);
         }
