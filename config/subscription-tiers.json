@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "F5 Distributed Cloud subscription tier mappings",
+  "tiers": {
+    "NO_TIER": {
+      "description": "Core platform resources available to all subscriptions",
+      "resources": [
+        "namespace",
+        "certificate",
+        "secret",
+        "cloud_credentials",
+        "user",
+        "role",
+        "api_credential"
+      ]
+    },
+    "STANDARD": {
+      "description": "Standard tier features",
+      "resources": [
+        "http_loadbalancer",
+        "tcp_loadbalancer",
+        "origin_pool",
+        "healthcheck",
+        "dns_zone",
+        "dns_load_balancer",
+        "aws_vpc_site",
+        "azure_vnet_site",
+        "gcp_vpc_site",
+        "network_connector",
+        "virtual_site",
+        "known_label",
+        "known_label_key"
+      ]
+    },
+    "ADVANCED": {
+      "description": "Advanced tier features requiring WAAP subscription",
+      "resources": [
+        "app_firewall",
+        "waf_rules",
+        "service_policy",
+        "rate_limiter",
+        "bot_defense",
+        "api_discovery",
+        "api_definition",
+        "malicious_user_detection",
+        "client_side_defense",
+        "data_guard",
+        "sensitive_data_detection",
+        "user_identification"
+      ]
+    }
+  },
+  "featureFlags": {
+    "bot_defense": {
+      "tier": "ADVANCED",
+      "description": "Bot Defense and Client-Side Protection"
+    },
+    "api_security": {
+      "tier": "ADVANCED",
+      "description": "API Discovery and Protection"
+    },
+    "advanced_waf": {
+      "tier": "ADVANCED",
+      "description": "Advanced WAF with custom rules"
+    },
+    "ddos_protection": {
+      "tier": "STANDARD",
+      "description": "DDoS Protection"
+    },
+    "load_balancing": {
+      "tier": "STANDARD",
+      "description": "HTTP/TCP Load Balancing"
+    },
+    "dns_management": {
+      "tier": "STANDARD",
+      "description": "DNS Zone and Load Balancer Management"
+    },
+    "multi_cloud_networking": {
+      "tier": "STANDARD",
+      "description": "Multi-Cloud Networking"
+    }
+  },
+  "resourceTierOverrides": {
+    "enhanced_firewall_policy": "ADVANCED",
+    "forward_proxy_policy": "ADVANCED",
+    "network_policy": "STANDARD",
+    "alert_receiver": "NO_TIER",
+    "alert_policy": "NO_TIER"
+  }
+}

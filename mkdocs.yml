@@ -1,0 +1,116 @@
+site_name: F5XC API MCP Server
+site_description: MCP server for F5 Distributed Cloud API - AI-powered infrastructure management
+site_url: https://robinmordasiewicz.github.io/f5xc-api-mcp
+repo_url: https://github.com/robinmordasiewicz/f5xc-api-mcp
+repo_name: robinmordasiewicz/f5xc-api-mcp
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: robinmordasiewicz
+      repo: f5xc-api-mcp
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/robinmordasiewicz/f5xc-api-mcp
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/robinmordasiewicz/f5xc-api-mcp
+  generator: false
+
+nav:
+  - Home: index.md
+  - Quick Start: quickstart.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Claude Desktop: getting-started/claude-desktop.md
+      - Claude Code: getting-started/claude-code.md
+      - VS Code: getting-started/vscode.md
+      - Cursor: getting-started/cursor.md
+  - Configuration:
+      - MCP Configuration: configuration/mcp-json.md
+      - Environment Variables: configuration/environment-variables.md
+      - Authentication: configuration/authentication.md
+  - Tools:
+      - Overview: tools/index.md
+      - HTTP Load Balancer: tools/http-loadbalancer.md
+      - Origin Pool: tools/origin-pool.md
+      - App Firewall: tools/app-firewall.md
+      - DNS Zone: tools/dns-zone.md
+  - Integrations:
+      - f5xcctl CLI: integrations/f5xcctl.md
+      - Terraform: integrations/terraform.md
+  - Troubleshooting:
+      - FAQ: troubleshooting/faq.md
+
+copyright: Copyright &copy; 2024 F5XC API MCP Server

@@ -1,28 +1,91 @@
 {
   "name": "f5xc-api-mcp",
   "version": "0.1.0",
-  "description": "F5 Distributed Cloud API MCP Server",
+  "description": "F5 Distributed Cloud API MCP Server - Exposes F5XC APIs to AI assistants via Model Context Protocol",
   "type": "module",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "f5xc-api-mcp": "./dist/index.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsx src/index.ts"
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write 'src/**/*.ts'",
+    "format:check": "prettier --check 'src/**/*.ts'",
+    "typecheck": "tsc --noEmit",
+    "sync-specs": "tsx scripts/sync-specs.ts",
+    "generate": "tsx scripts/generate.ts",
+    "prepare": "npm run build"
   },
   "keywords": [
     "f5",
     "xc",
+    "f5xc",
     "distributed-cloud",
     "mcp",
-    "api"
+    "model-context-protocol",
+    "api",
+    "load-balancer",
+    "waf",
+    "dns",
+    "ai-tools"
   ],
+  "author": "Robin Mordasiewicz",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robinmordasiewicz/f5xc-api-mcp.git"
+  },
+  "homepage": "https://robinmordasiewicz.github.io/f5xc-api-mcp",
+  "bugs": {
+    "url": "https://github.com/robinmordasiewicz/f5xc-api-mcp/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "files": [
+    "dist",
+    "manifest.json",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "globals": "^16.5.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.0.0",
     "typescript": "^5.0.0",
-    "tsx": "^4.0.0"
+    "vitest": "^2.0.0"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0"
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "axios": "^1.7.0",
+    "https-proxy-agent": "^7.0.0",
+    "jszip": "^3.10.0",
+    "yaml": "^2.4.0",
+    "zod": "^3.23.0"
   }
 }

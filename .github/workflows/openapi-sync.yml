@@ -1,0 +1,104 @@
+name: OpenAPI Sync
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force regeneration even if specs unchanged"
+        required: false
+        default: "false"
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-specs:
+    name: Sync OpenAPI Specifications
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download OpenAPI specs
+        run: npm run sync-specs
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [[ -n $(git status specs/ --porcelain) ]]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Specs have changed"
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to specs"
+          fi
+
+      - name: Generate tools from specs
+        if: steps.changes.outputs.changed == 'true' || inputs.force == 'true'
+        run: npm run generate
+
+      - name: Run tests
+        if: steps.changes.outputs.changed == 'true' || inputs.force == 'true'
+        run: npm test
+
+      - name: Build
+        if: steps.changes.outputs.changed == 'true' || inputs.force == 'true'
+        run: npm run build
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true' || inputs.force == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update OpenAPI specifications"
+          title: "chore: Update OpenAPI specifications"
+          body: |
+            ## OpenAPI Specification Update
+
+            This PR updates the F5 Distributed Cloud OpenAPI specifications from the official bundle.
+
+            ### Changes
+            - Updated OpenAPI specs from https://docs.cloud.f5.com/docs-v2/downloads/f5-distributed-cloud-open-api.zip
+            - Regenerated MCP tool definitions
+
+            ### Automated
+            This PR was automatically created by the OpenAPI sync workflow.
+
+            ---
+            🤖 Generated with [Claude Code](https://claude.com/claude-code)
+          branch: openapi-sync/update-specs
+          delete-branch: true
+          labels: |
+            automated
+            openapi
+            dependencies
+
+      - name: Summary
+        run: |
+          echo "## OpenAPI Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [[ "${{ steps.changes.outputs.changed }}" == "true" ]]; then
+            echo "✅ Specs updated and PR created" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Changed Files" >> $GITHUB_STEP_SUMMARY
+            git status specs/ --porcelain >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ No changes detected in specs" >> $GITHUB_STEP_SUMMARY
+          fi
