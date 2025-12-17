@@ -66,8 +66,8 @@ async function main(): Promise<void> {
 }
 
 // Only run main when executed directly, not when imported (e.g., during tests)
-const isMainModule = import.meta.url === `file://${process.argv[1]}` ||
-  process.argv[1]?.endsWith("f5xc-api-mcp");
+const isMainModule =
+  import.meta.url === `file://${process.argv[1]}` || process.argv[1]?.endsWith("f5xc-api-mcp");
 
 if (isMainModule) {
   main().catch((error: unknown) => {

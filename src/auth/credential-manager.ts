@@ -205,9 +205,7 @@ export class CredentialManager {
    * Get the tenant name
    */
   getTenant(): string | null {
-    return this.credentials.apiUrl
-      ? extractTenantFromUrl(this.credentials.apiUrl)
-      : null;
+    return this.credentials.apiUrl ? extractTenantFromUrl(this.credentials.apiUrl) : null;
   }
 
   /**

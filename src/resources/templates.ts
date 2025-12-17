@@ -266,9 +266,7 @@ export function getResourceType(type: string): ResourceType | undefined {
  * @param tier - Subscription tier
  * @returns Array of resource types
  */
-export function getResourceTypesByTier(
-  tier: "NO_TIER" | "STANDARD" | "ADVANCED"
-): ResourceType[] {
+export function getResourceTypesByTier(tier: "NO_TIER" | "STANDARD" | "ADVANCED"): ResourceType[] {
   return Object.values(RESOURCE_TYPES).filter((rt) => rt.tier === tier);
 }
 

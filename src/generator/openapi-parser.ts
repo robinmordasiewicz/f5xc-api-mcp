@@ -33,20 +33,24 @@ const OpenApiParameterSchema = z.object({
 const OpenApiRequestBodySchema = z.object({
   required: z.boolean().optional(),
   description: z.string().optional(),
-  content: z.record(
-    z.object({
-      schema: z.record(z.unknown()).optional(),
-    })
-  ).optional(),
+  content: z
+    .record(
+      z.object({
+        schema: z.record(z.unknown()).optional(),
+      })
+    )
+    .optional(),
 });
 
 const OpenApiResponseSchema = z.object({
   description: z.string().optional(),
-  content: z.record(
-    z.object({
-      schema: z.record(z.unknown()).optional(),
-    })
-  ).optional(),
+  content: z
+    .record(
+      z.object({
+        schema: z.record(z.unknown()).optional(),
+      })
+    )
+    .optional(),
 });
 
 const OpenApiOperationSchema = z.object({
@@ -79,10 +83,12 @@ const OpenApiSpecSchema = z.object({
     description: z.string().optional(),
   }),
   paths: z.record(OpenApiPathItemSchema).optional(),
-  components: z.object({
-    schemas: z.record(z.unknown()).optional(),
-    securitySchemes: z.record(z.unknown()).optional(),
-  }).optional(),
+  components: z
+    .object({
+      schemas: z.record(z.unknown()).optional(),
+      securitySchemes: z.record(z.unknown()).optional(),
+    })
+    .optional(),
 });
 
 export type OpenApiSpec = z.infer<typeof OpenApiSpecSchema>;
@@ -191,10 +197,7 @@ export function parseSpecFile(filePath: string): ParsedSpec | null {
 /**
  * Extract operations from parsed spec
  */
-function extractOperations(
-  spec: OpenApiSpec,
-  sourceFile: string
-): ParsedOperation[] {
+function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperation[] {
   const operations: ParsedOperation[] = [];
 
   if (!spec.paths) {
@@ -223,10 +226,7 @@ function extractOperations(
       const toolName = generateToolName(domain, resource, operationType);
 
       // Combine path and operation parameters
-      const allParams = [
-        ...pathLevelParams,
-        ...(operation.parameters ?? []),
-      ];
+      const allParams = [...pathLevelParams, ...(operation.parameters ?? [])];
 
       const pathParameters = allParams.filter((p) => p.in === "path");
       const queryParameters = allParams.filter((p) => p.in === "query");
@@ -243,8 +243,7 @@ function extractOperations(
       // Extract response schema (from 200 or first success response)
       let responseSchema: Record<string, unknown> | null = null;
       if (operation.responses) {
-        const successResponse =
-          operation.responses["200"] ?? operation.responses["201"];
+        const successResponse = operation.responses["200"] ?? operation.responses["201"];
         if (successResponse?.content) {
           const jsonContent = successResponse.content["application/json"];
           if (jsonContent?.schema) {

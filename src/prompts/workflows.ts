@@ -596,10 +596,7 @@ export function getWorkflowPrompt(name: string): WorkflowPrompt | undefined {
 /**
  * Process prompt template with arguments
  */
-export function processPromptTemplate(
-  template: string,
-  args: Record<string, string>
-): string {
+export function processPromptTemplate(template: string, args: Record<string, string>): string {
   let result = template;
 
   // Replace simple {{variable}} placeholders

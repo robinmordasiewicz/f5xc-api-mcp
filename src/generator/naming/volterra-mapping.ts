@@ -150,9 +150,7 @@ export function transformText(text: string): string {
  * @param spec - OpenAPI specification object
  * @returns Transformed specification
  */
-export function transformOpenApiSpec(
-  spec: Record<string, unknown>
-): Record<string, unknown> {
+export function transformOpenApiSpec(spec: Record<string, unknown>): Record<string, unknown> {
   return transformObject(spec) as Record<string, unknown>;
 }
 
@@ -195,20 +193,14 @@ function transformObject(obj: unknown): unknown {
  * @param operation - Operation type (create, list, get, update, delete)
  * @returns Tool name in kebab-case
  */
-export function generateToolName(
-  domain: string,
-  resource: string,
-  operation: string
-): string {
+export function generateToolName(domain: string, resource: string, operation: string): string {
   // Normalize inputs
   const normalizedDomain = domain.toLowerCase().replace(/[^a-z0-9]/g, "");
   const normalizedResource = resource
     .toLowerCase()
     .replace(/_/g, "-")
     .replace(/[^a-z0-9-]/g, "");
-  const normalizedOperation = operation
-    .toLowerCase()
-    .replace(/[^a-z0-9]/g, "");
+  const normalizedOperation = operation.toLowerCase().replace(/[^a-z0-9]/g, "");
 
   return `f5xc-api-${normalizedDomain}-${normalizedResource}-${normalizedOperation}`;
 }
@@ -273,10 +265,7 @@ export function extractResourceFromPath(path: string): string {
  * @param hasPathParam - Whether the path has a resource name parameter
  * @returns Operation name
  */
-export function methodToOperation(
-  method: string,
-  hasPathParam: boolean
-): string {
+export function methodToOperation(method: string, hasPathParam: boolean): string {
   const upperMethod = method.toUpperCase();
 
   switch (upperMethod) {

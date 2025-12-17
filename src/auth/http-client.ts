@@ -62,10 +62,7 @@ export class HttpClient {
   private credentialManager: CredentialManager;
   private config: Required<HttpClientConfig>;
 
-  constructor(
-    credentialManager: CredentialManager,
-    config: HttpClientConfig = {}
-  ) {
+  constructor(credentialManager: CredentialManager, config: HttpClientConfig = {}) {
     this.credentialManager = credentialManager;
     this.config = { ...DEFAULT_CONFIG, ...config };
 
@@ -150,10 +147,10 @@ export class HttpClient {
     // Add response interceptor for logging and error handling
     client.interceptors.response.use(
       (response: AxiosResponse) => {
-        const config = response.config as InternalAxiosRequestConfig & { metadata?: { startTime: number } };
-        const duration = config.metadata
-          ? Date.now() - config.metadata.startTime
-          : 0;
+        const config = response.config as InternalAxiosRequestConfig & {
+          metadata?: { startTime: number };
+        };
+        const duration = config.metadata ? Date.now() - config.metadata.startTime : 0;
 
         if (this.config.debug) {
           logger.debug("API Response", {
@@ -203,10 +200,7 @@ export class HttpClient {
   /**
    * Make a GET request
    */
-  async get<T = unknown>(
-    path: string,
-    config?: AxiosRequestConfig
-  ): Promise<ApiResponse<T>> {
+  async get<T = unknown>(path: string, config?: AxiosRequestConfig): Promise<ApiResponse<T>> {
     return this.request<T>("GET", path, undefined, config);
   }
 
@@ -235,10 +229,7 @@ export class HttpClient {
   /**
    * Make a DELETE request
    */
-  async delete<T = unknown>(
-    path: string,
-    config?: AxiosRequestConfig
-  ): Promise<ApiResponse<T>> {
+  async delete<T = unknown>(path: string, config?: AxiosRequestConfig): Promise<ApiResponse<T>> {
     return this.request<T>("DELETE", path, undefined, config);
   }
 

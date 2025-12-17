@@ -235,7 +235,6 @@ Or configure delegation in your parent zone.
 
 ## Related Resources
 
-- [DNS Load Balancer](dns-loadbalancer.md) - Intelligent DNS routing
 - [HTTP Load Balancer](http-loadbalancer.md) - Often uses DNS for discovery
 
 ## Subscription Tier

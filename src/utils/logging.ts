@@ -80,9 +80,7 @@ class Logger {
    * Check if a log level should be output
    */
   private shouldLog(level: LogLevel): boolean {
-    return (
-      LOG_LEVEL_PRIORITY[level] >= LOG_LEVEL_PRIORITY[this.config.level]
-    );
+    return LOG_LEVEL_PRIORITY[level] >= LOG_LEVEL_PRIORITY[this.config.level];
   }
 
   /**

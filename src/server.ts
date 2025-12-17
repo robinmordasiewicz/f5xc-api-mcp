@@ -13,15 +13,8 @@ import { CredentialManager, AuthMode } from "./auth/credential-manager.js";
 import { HttpClient, createHttpClient } from "./auth/http-client.js";
 import { logger } from "./utils/logging.js";
 import { VERSION } from "./index.js";
-import {
-  WORKFLOW_PROMPTS,
-  processPromptTemplate,
-} from "./prompts/index.js";
-import {
-  RESOURCE_TYPES,
-  createResourceHandler,
-  ResourceHandler,
-} from "./resources/index.js";
+import { WORKFLOW_PROMPTS, processPromptTemplate } from "./prompts/index.js";
+import { RESOURCE_TYPES, createResourceHandler, ResourceHandler } from "./resources/index.js";
 
 /**
  * Server configuration options
@@ -59,10 +52,7 @@ export class F5XCApiServer {
     }
 
     // Create resource handler
-    this.resourceHandler = createResourceHandler(
-      this.credentialManager,
-      this.httpClient
-    );
+    this.resourceHandler = createResourceHandler(this.credentialManager, this.httpClient);
 
     this.server = new McpServer({
       name: config.name,
@@ -147,29 +137,25 @@ export class F5XCApiServer {
         ? `f5xc://${tenant}/{namespace}/${rt.type}/{name}`
         : `f5xc://${tenant}/system/${rt.type}/{name}`;
 
-      this.server.resource(
-        uriTemplate,
-        rt.description,
-        async (uri: URL) => {
-          try {
-            const result = await this.resourceHandler.readResource(uri.href);
-            return {
-              contents: [
-                {
-                  uri: result.uri,
-                  mimeType: result.mimeType,
-                  text: result.content,
-                },
-              ],
-            };
-          } catch (error) {
-            logger.error(`Failed to read resource: ${uri.href}`, {
-              error: error instanceof Error ? error.message : String(error),
-            });
-            throw error;
-          }
+      this.server.resource(uriTemplate, rt.description, async (uri: URL) => {
+        try {
+          const result = await this.resourceHandler.readResource(uri.href);
+          return {
+            contents: [
+              {
+                uri: result.uri,
+                mimeType: result.mimeType,
+                text: result.content,
+              },
+            ],
+          };
+        } catch (error) {
+          logger.error(`Failed to read resource: ${uri.href}`, {
+            error: error instanceof Error ? error.message : String(error),
+          });
+          throw error;
         }
-      );
+      });
     }
 
     logger.info("Resource registration completed", {
@@ -214,10 +200,7 @@ export class F5XCApiServer {
             }
           }
 
-          const processedTemplate = processPromptTemplate(
-            workflow.template,
-            processedArgs
-          );
+          const processedTemplate = processPromptTemplate(workflow.template, processedArgs);
 
           return {
             messages: [

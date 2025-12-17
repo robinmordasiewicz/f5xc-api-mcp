@@ -234,7 +234,6 @@ EOF
 ## Related Resources
 
 - [HTTP Load Balancer](http-loadbalancer.md) - Uses origin pools
-- [Health Check](health-check.md) - Backend health monitoring
 
 ## Subscription Tier
 

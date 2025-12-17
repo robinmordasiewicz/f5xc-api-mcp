@@ -14,9 +14,6 @@ export {
 
 export type { ResourceType } from "./templates.js";
 
-export {
-  ResourceHandler,
-  createResourceHandler,
-} from "./handlers.js";
+export { ResourceHandler, createResourceHandler } from "./handlers.js";
 
 export type { ResourceReadResult, ResourceDocumentation } from "./handlers.js";

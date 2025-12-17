@@ -14,11 +14,7 @@ export class F5XCError extends Error {
   /** Additional error context */
   readonly context?: Record<string, unknown>;
 
-  constructor(
-    message: string,
-    code: string,
-    context?: Record<string, unknown>
-  ) {
+  constructor(message: string, code: string, context?: Record<string, unknown>) {
     super(message);
     this.name = "F5XCError";
     this.code = code;
@@ -128,11 +124,7 @@ export class ToolExecutionError extends F5XCError {
   /** Name of the tool that failed */
   readonly toolName: string;
 
-  constructor(
-    toolName: string,
-    message: string,
-    context?: Record<string, unknown>
-  ) {
+  constructor(toolName: string, message: string, context?: Record<string, unknown>) {
     super(message, "TOOL_ERROR", context);
     this.name = "ToolExecutionError";
     this.toolName = toolName;

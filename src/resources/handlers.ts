@@ -172,11 +172,7 @@ function generateExampleResource(
 /**
  * Generate f5xcctl command for resource
  */
-function generateF5xcctlCommand(
-  resourceType: string,
-  namespace: string,
-  name: string
-): string {
+function generateF5xcctlCommand(resourceType: string, namespace: string, name: string): string {
   const rt = resourceType.replace(/-/g, "_");
   return `f5xcctl get ${rt} ${name} -n ${namespace} -o yaml`;
 }
@@ -232,10 +228,7 @@ export class ResourceHandler {
   private credentialManager: CredentialManager;
   private httpClient: HttpClient | null;
 
-  constructor(
-    credentialManager: CredentialManager,
-    httpClient: HttpClient | null
-  ) {
+  constructor(credentialManager: CredentialManager, httpClient: HttpClient | null) {
     this.credentialManager = credentialManager;
     this.httpClient = httpClient;
   }
@@ -318,10 +311,7 @@ export class ResourceHandler {
   /**
    * List resources of a specific type in a namespace
    */
-  async listResources(
-    namespace: string,
-    resourceType: string
-  ): Promise<ResourceReadResult> {
+  async listResources(namespace: string, resourceType: string): Promise<ResourceReadResult> {
     const rt = getResourceType(resourceType);
 
     if (!rt) {

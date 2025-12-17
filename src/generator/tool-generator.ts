@@ -192,9 +192,7 @@ function generatePrerequisites(operation: ParsedOperation): string[] {
 /**
  * Convert OpenAPI parameter to Zod schema
  */
-function parameterToZodSchema(
-  param: OpenApiParameter
-): z.ZodTypeAny {
+function parameterToZodSchema(param: OpenApiParameter): z.ZodTypeAny {
   const schema = param.schema as Record<string, unknown> | undefined;
   const type = schema?.type as string | undefined;
 
@@ -234,9 +232,7 @@ function parameterToZodSchema(
 /**
  * Build Zod schema for tool parameters
  */
-function buildToolSchema(
-  operation: ParsedOperation
-): z.ZodObject<Record<string, z.ZodTypeAny>> {
+function buildToolSchema(operation: ParsedOperation): z.ZodObject<Record<string, z.ZodTypeAny>> {
   const shape: Record<string, z.ZodTypeAny> = {};
 
   // Add path parameters
@@ -254,10 +250,7 @@ function buildToolSchema(
     operation.requestBodySchema &&
     (operation.operation === "create" || operation.operation === "update")
   ) {
-    shape["body"] = z
-      .record(z.unknown())
-      .optional()
-      .describe("Request body (JSON object)");
+    shape["body"] = z.record(z.unknown()).optional().describe("Request body (JSON object)");
   }
 
   return z.object(shape);
@@ -266,9 +259,7 @@ function buildToolSchema(
 /**
  * Build documentation response for a tool
  */
-function buildDocumentationResponse(
-  operation: ParsedOperation
-): DocumentationResponse {
+function buildDocumentationResponse(operation: ParsedOperation): DocumentationResponse {
   const parameters: ParameterInfo[] = [];
 
   // Add path parameters
@@ -276,7 +267,7 @@ function buildDocumentationResponse(
     parameters.push({
       name: param.name,
       location: "path",
-      type: (param.schema as Record<string, unknown>)?.type as string ?? "string",
+      type: ((param.schema as Record<string, unknown>)?.type as string) ?? "string",
       required: param.required ?? true,
       description: param.description ?? "",
     });
@@ -287,7 +278,7 @@ function buildDocumentationResponse(
     parameters.push({
       name: param.name,
       location: "query",
-      type: (param.schema as Record<string, unknown>)?.type as string ?? "string",
+      type: ((param.schema as Record<string, unknown>)?.type as string) ?? "string",
       required: param.required ?? false,
       description: param.description ?? "",
     });
@@ -331,9 +322,7 @@ function buildDocumentationResponse(
 /**
  * Generate example request for documentation
  */
-function generateExampleRequest(
-  operation: ParsedOperation
-): Record<string, unknown> | null {
+function generateExampleRequest(operation: ParsedOperation): Record<string, unknown> | null {
   if (operation.operation !== "create" && operation.operation !== "update") {
     return null;
   }
@@ -471,9 +460,7 @@ export function registerTool(
 
         const duration = Date.now() - startTime;
         const tenant = credentialManager.getTenant();
-        const resourceUrl = tenant
-          ? `https://${tenant}.console.ves.volterra.io${apiPath}`
-          : null;
+        const resourceUrl = tenant ? `https://${tenant}.console.ves.volterra.io${apiPath}` : null;
 
         const execResponse: ExecutionResponse = {
           mode: "execution",

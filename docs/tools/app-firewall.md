@@ -249,7 +249,6 @@ resource "volterra_http_loadbalancer" "my_app" {
 ## Related Resources
 
 - [HTTP Load Balancer](http-loadbalancer.md) - Applies WAF policy
-- [Service Policy](service-policy.md) - Additional security rules
 
 ## Subscription Tier
 
