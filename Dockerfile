@@ -9,14 +9,15 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci
+# Install dependencies (ignore scripts to avoid premature build)
+# The prepare script runs npm build, but tsconfig.json isn't copied yet
+RUN npm ci --ignore-scripts
 
 # Copy source files
 COPY tsconfig.json ./
 COPY src/ ./src/
 
-# Build TypeScript
+# Build TypeScript (now that all source files are present)
 RUN npm run build
 
 # Prune dev dependencies
