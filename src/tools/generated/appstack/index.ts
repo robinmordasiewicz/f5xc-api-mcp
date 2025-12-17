@@ -18,11 +18,11 @@ export const appstackTools: ParsedOperation[] = [
       "Create k8s_cluster will create the object in the storage backend for namespace metadata.namespace",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -35,7 +35,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/k8s_clusterCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.k8s_cluster.API.Create",
     tags: [],
     sourceFile:
@@ -52,20 +52,20 @@ export const appstackTools: ParsedOperation[] = [
     description: "Delete the specified k8s_cluster",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -76,7 +76,7 @@ export const appstackTools: ParsedOperation[] = [
       $ref: "#/components/schemas/k8s_clusterDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.k8s_cluster.API.Delete",
     tags: [],
     sourceFile:
@@ -94,21 +94,21 @@ export const appstackTools: ParsedOperation[] = [
       "Get k8s_cluster will get the object from the storage backend for namespace metadata.namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -116,13 +116,13 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -132,7 +132,7 @@ export const appstackTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -140,7 +140,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/k8s_clusterGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.k8s_cluster.API.Get",
     tags: [],
     sourceFile:
@@ -157,10 +157,10 @@ export const appstackTools: ParsedOperation[] = [
     description: "List the set of k8s_cluster in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description: 'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of k8s_cluster',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -168,37 +168,37 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -224,11 +224,11 @@ export const appstackTools: ParsedOperation[] = [
       "Create k8s_cluster_role_binding will create the object in the storage backend for namespace metadata.namespace",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -241,7 +241,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/k8s_cluster_role_bindingCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.k8s_cluster_role_binding.API.Create",
     tags: [],
     sourceFile:
@@ -258,20 +258,20 @@ export const appstackTools: ParsedOperation[] = [
     description: "Delete the specified k8s_cluster_role_binding",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -282,7 +282,7 @@ export const appstackTools: ParsedOperation[] = [
       $ref: "#/components/schemas/k8s_cluster_role_bindingDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.k8s_cluster_role_binding.API.Delete",
     tags: [],
     sourceFile:
@@ -300,21 +300,21 @@ export const appstackTools: ParsedOperation[] = [
       "Get k8s_cluster_role_binding will get the object from the storage backend for namespace metadata.namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -322,13 +322,13 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -338,7 +338,7 @@ export const appstackTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -346,7 +346,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/k8s_cluster_role_bindingGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.k8s_cluster_role_binding.API.Get",
     tags: [],
     sourceFile:
@@ -363,11 +363,11 @@ export const appstackTools: ParsedOperation[] = [
     description: "List the set of k8s_cluster_role_binding in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of k8s_cluster_role_binding',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -375,37 +375,37 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -431,21 +431,21 @@ export const appstackTools: ParsedOperation[] = [
       "Replacing an k8s_cluster_role_binding object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -458,7 +458,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/k8s_cluster_role_bindingReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.k8s_cluster_role_binding.API.Replace",
     tags: [],
     sourceFile:
@@ -476,11 +476,11 @@ export const appstackTools: ParsedOperation[] = [
       "Create k8s_cluster_role will create the object in the storage backend for namespace metadata.namespace",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -493,7 +493,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/k8s_cluster_roleCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.k8s_cluster_role.API.Create",
     tags: [],
     sourceFile:
@@ -510,20 +510,20 @@ export const appstackTools: ParsedOperation[] = [
     description: "Delete the specified k8s_cluster_role",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -534,7 +534,7 @@ export const appstackTools: ParsedOperation[] = [
       $ref: "#/components/schemas/k8s_cluster_roleDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.k8s_cluster_role.API.Delete",
     tags: [],
     sourceFile:
@@ -552,21 +552,21 @@ export const appstackTools: ParsedOperation[] = [
       "Get k8s_cluster_role will get the object from the storage backend for namespace metadata.namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -574,13 +574,13 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -590,7 +590,7 @@ export const appstackTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -598,7 +598,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/k8s_cluster_roleGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.k8s_cluster_role.API.Get",
     tags: [],
     sourceFile:
@@ -615,11 +615,11 @@ export const appstackTools: ParsedOperation[] = [
     description: "List the set of k8s_cluster_role in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of k8s_cluster_role',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -627,37 +627,37 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -683,21 +683,21 @@ export const appstackTools: ParsedOperation[] = [
       "Replacing an k8s_cluster_role object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -710,7 +710,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/k8s_cluster_roleReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.k8s_cluster_role.API.Replace",
     tags: [],
     sourceFile:
@@ -728,21 +728,21 @@ export const appstackTools: ParsedOperation[] = [
       "Replacing an k8s_cluster object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -755,7 +755,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/k8s_clusterReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.k8s_cluster.API.Replace",
     tags: [],
     sourceFile:
@@ -772,10 +772,10 @@ export const appstackTools: ParsedOperation[] = [
     description: "API to get PVC capacity/usage.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description: 'Namespace\n\nx-example: "ns1"',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -788,7 +788,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/virtual_k8sPVCMetricsResponse",
     },
-    requiredParams: ["namespace", "body"],
+    requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.virtual_k8s.CustomDataAPI.PVCMetrics",
     tags: [],
     sourceFile:
@@ -805,11 +805,11 @@ export const appstackTools: ParsedOperation[] = [
     description: "Get the workload usage",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'Namespace\n\nx-example: "ns1"\nnamespace is used to scope the workload usage to a given namespace.',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -822,7 +822,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/workloadUsageResponse",
     },
-    requiredParams: ["namespace", "body"],
+    requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.views.workload.CustomDataAPI.Usage",
     tags: [],
     sourceFile:
@@ -840,11 +840,11 @@ export const appstackTools: ParsedOperation[] = [
       "Create virtual_k8s will create the object in the storage backend for namespace metadata.namespace",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -857,7 +857,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/virtual_k8sCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.virtual_k8s.API.Create",
     tags: [],
     sourceFile:
@@ -874,20 +874,20 @@ export const appstackTools: ParsedOperation[] = [
     description: "Delete the specified virtual_k8s",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -898,7 +898,7 @@ export const appstackTools: ParsedOperation[] = [
       $ref: "#/components/schemas/virtual_k8sDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.virtual_k8s.API.Delete",
     tags: [],
     sourceFile:
@@ -916,21 +916,21 @@ export const appstackTools: ParsedOperation[] = [
       "Get virtual_k8s will get the object from the storage backend for namesapce metadata.namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -938,13 +938,13 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -954,7 +954,7 @@ export const appstackTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -962,7 +962,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/virtual_k8sGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.virtual_k8s.API.Get",
     tags: [],
     sourceFile:
@@ -979,10 +979,10 @@ export const appstackTools: ParsedOperation[] = [
     description: "List the set of virtual_k8s in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description: 'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of virtual_k8s',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -990,37 +990,37 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -1046,21 +1046,21 @@ export const appstackTools: ParsedOperation[] = [
       "Replacing an endpoint object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1073,7 +1073,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/virtual_k8sReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.virtual_k8s.API.Replace",
     tags: [],
     sourceFile:
@@ -1090,11 +1090,11 @@ export const appstackTools: ParsedOperation[] = [
     description: "Shape of Workload",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1107,7 +1107,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/workloadCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.views.workload.API.Create",
     tags: [],
     sourceFile:
@@ -1124,20 +1124,20 @@ export const appstackTools: ParsedOperation[] = [
     description: "Delete the specified workload",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -1148,7 +1148,7 @@ export const appstackTools: ParsedOperation[] = [
       $ref: "#/components/schemas/workloadDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.workload.API.Delete",
     tags: [],
     sourceFile:
@@ -1165,11 +1165,11 @@ export const appstackTools: ParsedOperation[] = [
     description: "Create a workload_flavor",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1182,7 +1182,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/workload_flavorCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.workload_flavor.API.Create",
     tags: [],
     sourceFile:
@@ -1199,20 +1199,20 @@ export const appstackTools: ParsedOperation[] = [
     description: "Delete the specified workload_flavor",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -1223,7 +1223,7 @@ export const appstackTools: ParsedOperation[] = [
       $ref: "#/components/schemas/workload_flavorDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.workload_flavor.API.Delete",
     tags: [],
     sourceFile:
@@ -1240,21 +1240,21 @@ export const appstackTools: ParsedOperation[] = [
     description: "Get Workload Flavor",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1262,13 +1262,13 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -1278,7 +1278,7 @@ export const appstackTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -1286,7 +1286,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/workload_flavorGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.workload_flavor.API.Get",
     tags: [],
     sourceFile:
@@ -1303,11 +1303,11 @@ export const appstackTools: ParsedOperation[] = [
     description: "List the set of workload_flavor in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of workload_flavor',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1315,37 +1315,37 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -1370,21 +1370,21 @@ export const appstackTools: ParsedOperation[] = [
     description: "Replace a K8S workload_flavor",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1397,7 +1397,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/workload_flavorReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.workload_flavor.API.Replace",
     tags: [],
     sourceFile:
@@ -1414,21 +1414,21 @@ export const appstackTools: ParsedOperation[] = [
     description: "Shape of Workload",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1436,13 +1436,13 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -1452,7 +1452,7 @@ export const appstackTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -1460,7 +1460,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/workloadGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.workload.API.Get",
     tags: [],
     sourceFile:
@@ -1477,10 +1477,10 @@ export const appstackTools: ParsedOperation[] = [
     description: "List the set of workload in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description: 'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of workload',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1488,37 +1488,37 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -1543,21 +1543,21 @@ export const appstackTools: ParsedOperation[] = [
     description: "Shape of Workload",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1570,7 +1570,7 @@ export const appstackTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/workloadReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.views.workload.API.Replace",
     tags: [],
     sourceFile:

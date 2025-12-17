@@ -206,7 +206,10 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
 
   const httpMethods = ["get", "post", "put", "delete", "patch"] as const;
 
-  for (const [path, pathItem] of Object.entries(spec.paths)) {
+  // Sort paths alphabetically for deterministic output
+  const sortedPaths = Object.entries(spec.paths).sort(([a], [b]) => a.localeCompare(b));
+
+  for (const [path, pathItem] of sortedPaths) {
     // Check if path has a name parameter (indicates single resource operations)
     const hasNameParam = path.includes("{name}") || path.includes("{id}");
 
@@ -306,6 +309,8 @@ export function parseSpecDirectory(dirPath: string): ParsedSpec[] {
 
   function scanDir(currentDir: string): void {
     const entries = readdirSync(currentDir, { withFileTypes: true });
+    // Sort entries alphabetically for deterministic output across different filesystems
+    entries.sort((a, b) => a.name.localeCompare(b.name));
 
     for (const entry of entries) {
       const fullPath = join(currentDir, entry.name);
@@ -349,7 +354,8 @@ export function getAllOperations(specs: ParsedSpec[]): ParsedOperation[] {
     }
   }
 
-  return Array.from(operationsMap.values());
+  // Sort by toolName for deterministic output
+  return Array.from(operationsMap.values()).sort((a, b) => a.toolName.localeCompare(b.toolName));
 }
 
 /**
@@ -368,5 +374,17 @@ export function groupOperationsByDomain(
     grouped.get(domain)!.push(operation);
   }
 
-  return grouped;
+  // Sort operations within each domain by toolName for deterministic output
+  for (const ops of grouped.values()) {
+    ops.sort((a, b) => a.toolName.localeCompare(b.toolName));
+  }
+
+  // Return a new Map with sorted domain keys for deterministic iteration order
+  const sortedGrouped = new Map<string, ParsedOperation[]>();
+  const sortedDomains = Array.from(grouped.keys()).sort();
+  for (const domain of sortedDomains) {
+    sortedGrouped.set(domain, grouped.get(domain)!);
+  }
+
+  return sortedGrouped;
 }

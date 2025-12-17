@@ -41,11 +41,11 @@ export const securityTools: ParsedOperation[] = [
     description: "Get the counter for Service Policy hits for a given namespace.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'Namespace\n\nx-example: "ns1"\nNamespace is used to scope Service policy hits for the given namespace.',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -73,11 +73,11 @@ export const securityTools: ParsedOperation[] = [
     description: "Get the average latency for Service policy evaluation.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'Namespace\n\nx-example: "ns1"\nNamespace is used to scope Service policy hits for the given namespace.',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -106,11 +106,11 @@ export const securityTools: ParsedOperation[] = [
       "Create malicious_user_mitigation creates a new object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -123,7 +123,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/malicious_user_mitigationCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.malicious_user_mitigation.API.Create",
     tags: [],
     sourceFile:
@@ -140,20 +140,20 @@ export const securityTools: ParsedOperation[] = [
     description: "Delete the specified malicious_user_mitigation",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -164,7 +164,7 @@ export const securityTools: ParsedOperation[] = [
       $ref: "#/components/schemas/malicious_user_mitigationDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.malicious_user_mitigation.API.Delete",
     tags: [],
     sourceFile:
@@ -182,21 +182,21 @@ export const securityTools: ParsedOperation[] = [
       "Get malicious_user_mitigation reads a given object from storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -204,13 +204,13 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -220,7 +220,7 @@ export const securityTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -228,7 +228,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/malicious_user_mitigationGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.malicious_user_mitigation.API.Get",
     tags: [],
     sourceFile:
@@ -245,11 +245,11 @@ export const securityTools: ParsedOperation[] = [
     description: "List the set of malicious_user_mitigation in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of malicious_user_mitigation',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -257,37 +257,37 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -313,21 +313,21 @@ export const securityTools: ParsedOperation[] = [
       "Replace malicious_user_mitigation replaces an existing object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -340,7 +340,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/malicious_user_mitigationReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.malicious_user_mitigation.API.Replace",
     tags: [],
     sourceFile:
@@ -358,11 +358,11 @@ export const securityTools: ParsedOperation[] = [
       "Get number of rule hits per client for a given namespace.\nThe rule hits counter can be aggregated based on one or more labels listed here.\nNAMESPACE, APP_TYPE, VIRTUAL_HOST, SITE, SERVICE, INSTANCE, WAF_INSTANCE_ID, RULE_ID, RULE_SEVERITY, RULE_TAG.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'Namespace\n\nnamespace is used to scope the WAF rule hits for the given namespace.\nx-example: "bloggin-app-namespace-1"',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -391,11 +391,11 @@ export const securityTools: ParsedOperation[] = [
       "Get number of security events per client for a given namespace.\nThe security events counter can be aggregated based on one or more labels listed here.\nNAMESPACE, APP_TYPE, VIRTUAL_HOST, SITE, SERVICE, INSTANCE, WAF_INSTANCE_ID, WAF_MODE.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'Namespace\n\nx-example: "bloggin-app-namespace-1"\nnamespace is used to scope the WAF security events for the given namespace.',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -424,11 +424,11 @@ export const securityTools: ParsedOperation[] = [
       "Create service_policy creates a new object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -441,7 +441,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/service_policyCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.service_policy.API.Create",
     tags: [],
     sourceFile:
@@ -458,20 +458,20 @@ export const securityTools: ParsedOperation[] = [
     description: "Delete the specified service_policy",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -482,7 +482,7 @@ export const securityTools: ParsedOperation[] = [
       $ref: "#/components/schemas/service_policyDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.service_policy.API.Delete",
     tags: [],
     sourceFile:
@@ -500,21 +500,21 @@ export const securityTools: ParsedOperation[] = [
       "Get service_policy reads a given object from storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -522,13 +522,13 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -538,7 +538,7 @@ export const securityTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -546,7 +546,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/service_policyGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.service_policy.API.Get",
     tags: [],
     sourceFile:
@@ -563,11 +563,11 @@ export const securityTools: ParsedOperation[] = [
     description: "List the set of service_policy in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -575,37 +575,37 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -631,11 +631,11 @@ export const securityTools: ParsedOperation[] = [
       "Create service_policy_rule creates a new object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -648,7 +648,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/service_policy_ruleCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.service_policy_rule.API.Create",
     tags: [],
     sourceFile:
@@ -665,20 +665,20 @@ export const securityTools: ParsedOperation[] = [
     description: "Delete the specified service_policy_rule",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -689,7 +689,7 @@ export const securityTools: ParsedOperation[] = [
       $ref: "#/components/schemas/service_policy_ruleDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.service_policy_rule.API.Delete",
     tags: [],
     sourceFile:
@@ -707,21 +707,21 @@ export const securityTools: ParsedOperation[] = [
       "Get service_policy_rule reads a given object from storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -729,13 +729,13 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -745,7 +745,7 @@ export const securityTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -753,7 +753,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/service_policy_ruleGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.service_policy_rule.API.Get",
     tags: [],
     sourceFile:
@@ -770,11 +770,11 @@ export const securityTools: ParsedOperation[] = [
     description: "List the set of service_policy_rule in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy_rule',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -782,37 +782,37 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -838,21 +838,21 @@ export const securityTools: ParsedOperation[] = [
       "Replace service_policy_rule replaces an existing object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -865,7 +865,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/service_policy_ruleReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.service_policy_rule.API.Replace",
     tags: [],
     sourceFile:
@@ -883,21 +883,21 @@ export const securityTools: ParsedOperation[] = [
       "Get service_policy_set reads a given object from storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -905,13 +905,13 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_STATUS",
@@ -919,7 +919,7 @@ export const securityTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -927,7 +927,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/service_policy_setGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.service_policy_set.API.Get",
     tags: [],
     sourceFile:
@@ -944,11 +944,11 @@ export const securityTools: ParsedOperation[] = [
     description: "List the set of service_policy_set in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy_set',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -956,37 +956,37 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -1012,21 +1012,21 @@ export const securityTools: ParsedOperation[] = [
       "Replace service_policy replaces an existing object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1039,7 +1039,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/service_policyReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.service_policy.API.Replace",
     tags: [],
     sourceFile:
@@ -1057,21 +1057,21 @@ export const securityTools: ParsedOperation[] = [
       "Suggest service policy rule to set up WAF exclusion for a given WAF security event",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'Namespace\n\nx-example: "shared"\nNamespace of the App type for current request',
+          'Name\n\nx-example: "ves-io-frontend"\nHTTP load balancer for which this WAF exclusion will be applied',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'Name\n\nx-example: "ves-io-frontend"\nHTTP load balancer for which this WAF exclusion will be applied',
+          'Namespace\n\nx-example: "shared"\nNamespace of the App type for current request',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1082,7 +1082,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/app_securityGetSuggestedWAFExclusionRuleRsp",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId:
       "ves.io.schema.app_security.AppSecurityWafExclusionAPI.GetSuggestedWAFExclusionRuleForCDN",
     tags: [],
@@ -1100,11 +1100,11 @@ export const securityTools: ParsedOperation[] = [
     description: "Get Threat Campaign by ID",
     pathParameters: [
       {
-        name: "id",
-        in: "path",
-        required: true,
         description:
           'id\n\nx-example: "cmp5641a5adbeabaf2708ce7663ad937df8"\nx-required\nId with which the request will find entry.',
+        in: "path",
+        name: "id",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1132,11 +1132,11 @@ export const securityTools: ParsedOperation[] = [
     description: "Create a WAF exclusion policy",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1149,7 +1149,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/waf_exclusion_policyCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.waf_exclusion_policy.API.Create",
     tags: [],
     sourceFile:
@@ -1166,20 +1166,20 @@ export const securityTools: ParsedOperation[] = [
     description: "Delete the specified waf_exclusion_policy",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -1190,7 +1190,7 @@ export const securityTools: ParsedOperation[] = [
       $ref: "#/components/schemas/waf_exclusion_policyDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.waf_exclusion_policy.API.Delete",
     tags: [],
     sourceFile:
@@ -1207,21 +1207,21 @@ export const securityTools: ParsedOperation[] = [
     description: "Retrieve a WAF exclusion policy",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1229,13 +1229,13 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -1245,7 +1245,7 @@ export const securityTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -1253,7 +1253,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/waf_exclusion_policyGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.waf_exclusion_policy.API.Get",
     tags: [],
     sourceFile:
@@ -1270,11 +1270,11 @@ export const securityTools: ParsedOperation[] = [
     description: "List the set of waf_exclusion_policy in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of waf_exclusion_policy',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1282,37 +1282,37 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -1337,21 +1337,21 @@ export const securityTools: ParsedOperation[] = [
     description: "Replace an existing WAF exclusion policy",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1364,7 +1364,7 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/waf_exclusion_policyReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.waf_exclusion_policy.API.Replace",
     tags: [],
     sourceFile:

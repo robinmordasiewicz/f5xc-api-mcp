@@ -69,6 +69,23 @@ const PRETTIER_CONFIG: prettier.Options = {
 };
 
 /**
+ * Deterministic JSON stringify that sorts object keys recursively
+ * Ensures consistent output across different environments
+ */
+function deterministicStringify(obj: unknown, indent: number = 2): string {
+  return JSON.stringify(obj, (_, value) => {
+    if (value && typeof value === 'object' && !Array.isArray(value)) {
+      // Sort object keys alphabetically
+      return Object.keys(value).sort().reduce((sorted: Record<string, unknown>, key) => {
+        sorted[key] = value[key];
+        return sorted;
+      }, {});
+    }
+    return value;
+  }, indent);
+}
+
+/**
  * Format TypeScript code using Prettier
  */
 async function formatCode(code: string): Promise<string> {
@@ -96,6 +113,12 @@ function generateDomainFile(
   operations: ParsedOperation[]
 ): string {
   const toolDefs = operations.map((op) => {
+    // Sort arrays for deterministic output
+    const sortedPathParams = [...op.pathParameters].sort((a, b) => a.name.localeCompare(b.name));
+    const sortedQueryParams = [...op.queryParameters].sort((a, b) => a.name.localeCompare(b.name));
+    const sortedRequiredParams = [...op.requiredParams].sort();
+    const sortedTags = [...op.tags].sort();
+
     return `  {
     toolName: "${op.toolName}",
     method: "${op.method}",
@@ -105,13 +128,13 @@ function generateDomainFile(
     resource: "${op.resource}",
     summary: ${JSON.stringify(op.summary)},
     description: ${JSON.stringify(op.description)},
-    pathParameters: ${JSON.stringify(op.pathParameters, null, 2).replace(/\n/g, "\n    ")},
-    queryParameters: ${JSON.stringify(op.queryParameters, null, 2).replace(/\n/g, "\n    ")},
-    requestBodySchema: ${op.requestBodySchema ? JSON.stringify(op.requestBodySchema, null, 2).replace(/\n/g, "\n    ") : "null"},
-    responseSchema: ${op.responseSchema ? JSON.stringify(op.responseSchema, null, 2).replace(/\n/g, "\n    ") : "null"},
-    requiredParams: ${JSON.stringify(op.requiredParams)},
+    pathParameters: ${deterministicStringify(sortedPathParams).replace(/\n/g, "\n    ")},
+    queryParameters: ${deterministicStringify(sortedQueryParams).replace(/\n/g, "\n    ")},
+    requestBodySchema: ${op.requestBodySchema ? deterministicStringify(op.requestBodySchema).replace(/\n/g, "\n    ") : "null"},
+    responseSchema: ${op.responseSchema ? deterministicStringify(op.responseSchema).replace(/\n/g, "\n    ") : "null"},
+    requiredParams: ${JSON.stringify(sortedRequiredParams)},
     operationId: ${op.operationId ? `"${op.operationId}"` : "null"},
-    tags: ${JSON.stringify(op.tags)},
+    tags: ${JSON.stringify(sortedTags)},
     sourceFile: "${op.sourceFile}",
   }`;
   });

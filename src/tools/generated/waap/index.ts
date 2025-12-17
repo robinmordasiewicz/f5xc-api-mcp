@@ -39,21 +39,21 @@ export const waapTools: ParsedOperation[] = [
       "Get list of all API Endpoints associated with the HTTP loadbalancer in format suitable for API Groups management.\nDeprecated: instead use GetAPIEndpoints in f5xc.io.schema.virtual_host.ApiepCustomAPI",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'Namespace\n\nx-example: "shared"\nNamespace of the Http LoadBalancer for the current request',
+          'Http LoadBalancer Name\n\nx-example: "blogging-app"\nHttp LoadBalancer for the current request',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'Http LoadBalancer Name\n\nx-example: "blogging-app"\nHttp LoadBalancer for the current request',
+          'Namespace\n\nx-example: "shared"\nNamespace of the Http LoadBalancer for the current request',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -66,7 +66,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/http_loadbalancerGetAPIEndpointsForGroupsRsp",
     },
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.GetAPIEndpointsForGroups",
     tags: [],
     sourceFile:
@@ -83,11 +83,11 @@ export const waapTools: ParsedOperation[] = [
     description: "Create Application Firewall",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -100,7 +100,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/app_firewallCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.app_firewall.API.Create",
     tags: [],
     sourceFile:
@@ -117,20 +117,20 @@ export const waapTools: ParsedOperation[] = [
     description: "Delete the specified app_firewall",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -141,7 +141,7 @@ export const waapTools: ParsedOperation[] = [
       $ref: "#/components/schemas/app_firewallDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.app_firewall.API.Delete",
     tags: [],
     sourceFile:
@@ -158,21 +158,21 @@ export const waapTools: ParsedOperation[] = [
     description: "Get Application Firewall",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -180,13 +180,13 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -196,7 +196,7 @@ export const waapTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -204,7 +204,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/app_firewallGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.app_firewall.API.Get",
     tags: [],
     sourceFile:
@@ -221,11 +221,11 @@ export const waapTools: ParsedOperation[] = [
     description: "List the set of app_firewall in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of app_firewall',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -233,37 +233,37 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -288,21 +288,21 @@ export const waapTools: ParsedOperation[] = [
     description: "Replace Application Firewall",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -315,7 +315,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/app_firewallReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.app_firewall.API.Replace",
     tags: [],
     sourceFile:
@@ -333,19 +333,19 @@ export const waapTools: ParsedOperation[] = [
       "Set a reference to the API Definition, with an option to create an empty one if not exists.\nDEPRECATED. instead use virtual host public custom api - AssignAPIDefinition",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'Name\n\nx-example: "blogging-app"\nName of the HTTP Load Balancer',
         in: "path",
+        name: "name",
         required: true,
-        description: 'Namespace\n\nx-example: "shared"\nNamespace of the HTTP Load Balancer',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description: 'Namespace\n\nx-example: "shared"\nNamespace of the HTTP Load Balancer',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'Name\n\nx-example: "blogging-app"\nName of the HTTP Load Balancer',
         schema: {
           type: "string",
         },
@@ -358,7 +358,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/http_loadbalancerAssignAPIDefinitionResp",
     },
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.AssignAPIDefinition",
     tags: [],
     sourceFile:
@@ -376,19 +376,19 @@ export const waapTools: ParsedOperation[] = [
       "List API definitions suitable for API Inventory management\nAPI Definitions which are associated at most with one app type.\nDEPRECATED: instead use ListAvailableAPIDefinitions in f5xc.io.schema.views.api_definition.PublicConfigCustomAPI",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'Name\n\nx-example: "blogging-app"\nName of the HTTP Load Balancer',
         in: "path",
+        name: "name",
         required: true,
-        description: 'Namespace\n\nx-example: "shared"\nNamespace of the HTTP Load Balancer',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description: 'Namespace\n\nx-example: "shared"\nNamespace of the HTTP Load Balancer',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'Name\n\nx-example: "blogging-app"\nName of the HTTP Load Balancer',
         schema: {
           type: "string",
         },
@@ -399,7 +399,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/http_loadbalancerListAvailableAPIDefinitionsResp",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.ListAvailableAPIDefinitions",
     tags: [],
     sourceFile:
@@ -416,20 +416,20 @@ export const waapTools: ParsedOperation[] = [
     description: "Initiate Purge on the LB Cache",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'CDN Distribution Name\n\nx-example: "cdn-1"\nx-required\nFormat: string',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'Namespace\n\nx-example: "default"\nx-required\nNamespace scope of the metric request',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'Namespace\n\nx-example: "default"\nx-required\nNamespace scope of the metric request',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'CDN Distribution Name\n\nx-example: "cdn-1"\nx-required\nFormat: string',
         schema: {
           type: "string",
         },
@@ -442,7 +442,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/common_cdnLilacCDNCachePurgeResponse",
     },
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId:
       "ves.io.schema.views.http_loadbalancer.CDNCustomAPI.CDNCachePurgeHTTPLBCacheEnabled",
     tags: [],
@@ -461,29 +461,29 @@ export const waapTools: ParsedOperation[] = [
       "Delete the corresponding DoS Auto-Mitigation Rule for the given HTTP load balancer",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description: 'Namespace\n\nx-example: "shared"\nNamespace of the Load Balancer',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'Name\n\nx-example: "blogging-app"\nName of the Load Balancer',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "dos_automitigation_rule_name",
-        in: "path",
-        required: true,
         description:
           'DoS Mitigation Rule Name\n\nx-example: "dos-auto-mitigation-ves-io-http-loadbalancer-ce22"\nName of the DoS Mitigation Rule',
+        in: "path",
+        name: "dos_automitigation_rule_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'Name\n\nx-example: "blogging-app"\nName of the Load Balancer',
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'Namespace\n\nx-example: "shared"\nNamespace of the Load Balancer',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -494,7 +494,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/common_securityDeleteDoSAutoMitigationRuleRsp",
     },
-    requiredParams: ["namespace", "name", "dos_automitigation_rule_name"],
+    requiredParams: ["dos_automitigation_rule_name", "name", "namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.DeleteDoSAutoMitigationRule",
     tags: [],
     sourceFile:
@@ -511,19 +511,19 @@ export const waapTools: ParsedOperation[] = [
     description: "Get the corresponding DoS Auto-Mitigation Rules for the given HTTP load balancer",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'Name\n\nx-example: "blogging-app"\nName of the Load Balancer',
         in: "path",
+        name: "name",
         required: true,
-        description: 'Namespace\n\nx-example: "shared"\nNamespace of the Load Balancer',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description: 'Namespace\n\nx-example: "shared"\nNamespace of the Load Balancer',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'Name\n\nx-example: "blogging-app"\nName of the Load Balancer',
         schema: {
           type: "string",
         },
@@ -534,7 +534,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/common_securityGetDoSAutoMitigationRulesRsp",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.GetDoSAutoMitigationRules",
     tags: [],
     sourceFile:
@@ -551,19 +551,19 @@ export const waapTools: ParsedOperation[] = [
     description: "GetDnsInfo is an API to get DNS information for a given HTTP load balancer",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'Name\n\nx-example: "value"\nName of the HTTP load balancer',
         in: "path",
+        name: "name",
         required: true,
-        description: 'Namespace\n\nx-example: "value"\nNamespace for the HTTP load balancer',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description: 'Namespace\n\nx-example: "value"\nNamespace for the HTTP load balancer',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'Name\n\nx-example: "value"\nName of the HTTP load balancer',
         schema: {
           type: "string",
         },
@@ -574,7 +574,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/http_loadbalancerGetDnsInfoResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.GetDnsInfo",
     tags: [],
     sourceFile:
@@ -592,21 +592,21 @@ export const waapTools: ParsedOperation[] = [
       "Get list of schema pairs, current and updated, for each endpoint in the request\nor all pending changes if empty list is provided.\nNOTE: any API endpoint defined in user swagger files should be ignored\nDEPRECATED. USE virtual host custom api GetAPIEndpointsSchemaUpdates",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'Namespace\n\nx-example: "shared"\nThe namespace of the HTTP Loadbalancer for the current request',
+          'Name\n\nx-example: "name"\nThe name of the HTTP Loadbalancer for the current request',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'Name\n\nx-example: "name"\nThe name of the HTTP Loadbalancer for the current request',
+          'Namespace\n\nx-example: "shared"\nThe namespace of the HTTP Loadbalancer for the current request',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -619,7 +619,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/http_loadbalancerGetAPIEndpointsSchemaUpdatesResp",
     },
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId:
       "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.GetAPIEndpointsSchemaUpdates",
     tags: [],
@@ -637,11 +637,11 @@ export const waapTools: ParsedOperation[] = [
     description: "Fetch the corresponding Security Config for the given HTTP load balancers",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'Namespace\n\nx-example: "shared"\nNamespace of the HTTP Load Balancer for current request',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -654,7 +654,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/common_securityGetSecurityConfigRsp",
     },
-    requiredParams: ["namespace", "body"],
+    requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.GetSecurityConfig",
     tags: [],
     sourceFile:
@@ -671,11 +671,11 @@ export const waapTools: ParsedOperation[] = [
     description: "Get status of an operation command for a given HTTP LB when caching enabled.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'Namespace\n\nx-example: "default"\nx-required\nNamespace scope of the operation request',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -688,7 +688,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/common_cdnGetServiceOperationRsp",
     },
-    requiredParams: ["namespace", "body"],
+    requiredParams: ["body", "namespace"],
     operationId:
       "ves.io.schema.views.http_loadbalancer.CDNCustomAPI.GetServiceOperationHTTPLBCacheEnabled",
     tags: [],
@@ -706,11 +706,11 @@ export const waapTools: ParsedOperation[] = [
     description: "Shape of the HTTP load balancer specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -723,7 +723,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/http_loadbalancerCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.API.Create",
     tags: [],
     sourceFile:
@@ -740,20 +740,20 @@ export const waapTools: ParsedOperation[] = [
     description: "Delete the specified http_loadbalancer",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -764,7 +764,7 @@ export const waapTools: ParsedOperation[] = [
       $ref: "#/components/schemas/http_loadbalancerDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.API.Delete",
     tags: [],
     sourceFile:
@@ -782,21 +782,21 @@ export const waapTools: ParsedOperation[] = [
       "List Loadbalancer objects referenced by the API Definition (backrefrences).\nDEPRECATED. use GetReferencingLoadBalancers",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'Namespace\n\nx-example: "shared"\nThe namespace of the API Definition for the current request',
+          'Name\n\nx-example: "name"\nThe name of the API Definition for the current request',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'Name\n\nx-example: "name"\nThe name of the API Definition for the current request',
+          'Namespace\n\nx-example: "shared"\nThe namespace of the API Definition for the current request',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -807,7 +807,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/api_definitionGetReferencingLoadbalancersResp",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId:
       "ves.io.schema.views.api_definition.PublicConfigCustomAPI.GetReferencingHttpLoadbalancers",
     tags: [],
@@ -825,11 +825,11 @@ export const waapTools: ParsedOperation[] = [
     description: "List the set of http_loadbalancer in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of http_loadbalancer',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -837,37 +837,37 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -892,21 +892,21 @@ export const waapTools: ParsedOperation[] = [
     description: "Shape of the HTTP load balancer specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -919,7 +919,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/http_loadbalancerReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.API.Replace",
     tags: [],
     sourceFile:
@@ -936,20 +936,20 @@ export const waapTools: ParsedOperation[] = [
     description: "Sets the L7 DDoS RPS threshold for HTTP load balancer",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'Name\n\nx-example: "lb_name"\nx-required\nName of the HTTP loadbalancer',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'Namespace\n\nx-example: "default"\nx-required\nNamespace scope of the request',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'Namespace\n\nx-example: "default"\nx-required\nNamespace scope of the request',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'Name\n\nx-example: "lb_name"\nx-required\nName of the HTTP loadbalancer',
         schema: {
           type: "string",
         },
@@ -962,7 +962,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/http_loadbalancerSetL7DDoSRPSThresholdRsp",
     },
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.SetL7DDoSRPSThreshold",
     tags: [],
     sourceFile:
@@ -979,11 +979,11 @@ export const waapTools: ParsedOperation[] = [
     description: "List of service operations for a given HTTP LB when Caching Enabled",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'Namespace\n\nx-example: "ns1"\nx-required\nThe namespace this item belongs to',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -996,7 +996,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/common_cdnListServiceOperationsRsp",
     },
-    requiredParams: ["namespace", "body"],
+    requiredParams: ["body", "namespace"],
     operationId:
       "ves.io.schema.views.http_loadbalancer.CDNCustomAPI.ListServiceOperationsHTTPLBCacheEnabled",
     tags: [],
@@ -1014,10 +1014,10 @@ export const waapTools: ParsedOperation[] = [
     description: "App Firewall metrics",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description: 'Namespace\n\nx-example: "system"',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1045,11 +1045,11 @@ export const waapTools: ParsedOperation[] = [
     description: "Shape of the origin pool create specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1062,7 +1062,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/origin_poolCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.views.origin_pool.API.Create",
     tags: [],
     sourceFile:
@@ -1079,20 +1079,20 @@ export const waapTools: ParsedOperation[] = [
     description: "Delete the specified origin_pool",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -1103,7 +1103,7 @@ export const waapTools: ParsedOperation[] = [
       $ref: "#/components/schemas/origin_poolDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.origin_pool.API.Delete",
     tags: [],
     sourceFile:
@@ -1120,21 +1120,21 @@ export const waapTools: ParsedOperation[] = [
     description: "Shape of the origin pool get specification",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1142,13 +1142,13 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -1157,7 +1157,7 @@ export const waapTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -1165,7 +1165,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/origin_poolGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.origin_pool.API.Get",
     tags: [],
     sourceFile:
@@ -1182,10 +1182,10 @@ export const waapTools: ParsedOperation[] = [
     description: "List the set of origin_pool in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description: 'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of origin_pool',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1193,37 +1193,37 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -1248,21 +1248,21 @@ export const waapTools: ParsedOperation[] = [
     description: "Shape of the origin pool create specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1275,7 +1275,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/origin_poolReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.views.origin_pool.API.Replace",
     tags: [],
     sourceFile:
@@ -1293,11 +1293,11 @@ export const waapTools: ParsedOperation[] = [
       "Create rate_limiter creates a new object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1310,7 +1310,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/rate_limiterCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.rate_limiter.API.Create",
     tags: [],
     sourceFile:
@@ -1327,20 +1327,20 @@ export const waapTools: ParsedOperation[] = [
     description: "Delete the specified rate_limiter",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -1351,7 +1351,7 @@ export const waapTools: ParsedOperation[] = [
       $ref: "#/components/schemas/rate_limiterDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.rate_limiter.API.Delete",
     tags: [],
     sourceFile:
@@ -1369,21 +1369,21 @@ export const waapTools: ParsedOperation[] = [
       "Get rate_limiter reads a given object from storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1391,13 +1391,13 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -1407,7 +1407,7 @@ export const waapTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -1415,7 +1415,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/rate_limiterGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.rate_limiter.API.Get",
     tags: [],
     sourceFile:
@@ -1432,11 +1432,11 @@ export const waapTools: ParsedOperation[] = [
     description: "List the set of rate_limiter in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of rate_limiter',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1444,37 +1444,37 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -1499,11 +1499,11 @@ export const waapTools: ParsedOperation[] = [
     description: "Shape of the Rate Limiter Policy Create specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1516,7 +1516,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/rate_limiter_policyCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.views.rate_limiter_policy.API.Create",
     tags: [],
     sourceFile:
@@ -1533,20 +1533,20 @@ export const waapTools: ParsedOperation[] = [
     description: "Delete the specified rate_limiter_policy",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -1557,7 +1557,7 @@ export const waapTools: ParsedOperation[] = [
       $ref: "#/components/schemas/rate_limiter_policyDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.rate_limiter_policy.API.Delete",
     tags: [],
     sourceFile:
@@ -1574,21 +1574,21 @@ export const waapTools: ParsedOperation[] = [
     description: "Shape of the Rate Limiter Policy Get specification",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1596,13 +1596,13 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -1612,7 +1612,7 @@ export const waapTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -1620,7 +1620,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/rate_limiter_policyGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.rate_limiter_policy.API.Get",
     tags: [],
     sourceFile:
@@ -1637,11 +1637,11 @@ export const waapTools: ParsedOperation[] = [
     description: "List the set of rate_limiter_policy in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of rate_limiter_policy',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1649,37 +1649,37 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -1704,21 +1704,21 @@ export const waapTools: ParsedOperation[] = [
     description: "Shape of the Rate Limiter Policy Replace specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1731,7 +1731,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/rate_limiter_policyReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.views.rate_limiter_policy.API.Replace",
     tags: [],
     sourceFile:
@@ -1749,21 +1749,21 @@ export const waapTools: ParsedOperation[] = [
       "Replace rate_limiter replaces an existing object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1776,7 +1776,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/rate_limiterReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.rate_limiter.API.Replace",
     tags: [],
     sourceFile:
@@ -1794,21 +1794,21 @@ export const waapTools: ParsedOperation[] = [
       "Suggest API endpoint protection rule for a given path\nDEPRECATED. use api_sec.rule_suggestion.RuleSuggestionAPI.GetSuggestedAPIEndpointProtectionRule",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'Namespace\n\nx-example: "shared"\nNamespace of the App type for current request',
+          'Name\n\nx-example: "ves-io-frontend"\nHTTP load balancer for which this API endpoint protection rule applied',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'Name\n\nx-example: "ves-io-frontend"\nHTTP load balancer for which this API endpoint protection rule applied',
+          'Namespace\n\nx-example: "shared"\nNamespace of the App type for current request',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1821,7 +1821,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/app_securityGetSuggestedAPIEndpointProtectionRuleRsp",
     },
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId:
       "ves.io.schema.app_security.APIEndpointProtectionRuleSuggestionAPI.GetSuggestedAPIEndpointProtectionRule",
     tags: [],
@@ -1839,20 +1839,20 @@ export const waapTools: ParsedOperation[] = [
     description: "Get the corresponding Swagger spec for the given HTTP load balancer",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'Name\n\nx-example: "blogging-app"\nHTTP load balancer for current request',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'Namespace\n\nx-example: "shared"\nNamespace of the HTTP Load Balancer for current request',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'Namespace\n\nx-example: "shared"\nNamespace of the HTTP Load Balancer for current request',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'Name\n\nx-example: "blogging-app"\nHTTP load balancer for current request',
         schema: {
           type: "string",
         },
@@ -1863,7 +1863,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/apiHttpBody",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.GetSwaggerSpec",
     tags: [],
     sourceFile:
@@ -1881,21 +1881,21 @@ export const waapTools: ParsedOperation[] = [
       "Update the payload schema for the specified endpoints or all pending changes if empty list is provided.\nNOTE: only API endpoints returned by a call to `GetAPIEndpointsSchemaStates` can be updated.\nDEPRECATED. USE virtual host custom api UpdateAPIEndpointsSchemas",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'Namespace\n\nx-example: "shared"\nThe namespace of the HTTP Loadbalancer for the current request',
+          'Name\n\nx-example: "name"\nThe name of the HTTP Loadbalancer for the current request',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'Name\n\nx-example: "name"\nThe name of the HTTP Loadbalancer for the current request',
+          'Namespace\n\nx-example: "shared"\nThe namespace of the HTTP Loadbalancer for the current request',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1908,7 +1908,7 @@ export const waapTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/http_loadbalancerUpdateAPIEndpointsSchemasResp",
     },
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.UpdateAPIEndpointsSchemas",
     tags: [],
     sourceFile:

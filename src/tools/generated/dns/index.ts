@@ -41,11 +41,11 @@ export const dnsTools: ParsedOperation[] = [
       "Create DNS Load Balancer Pool in a given namespace. If one already exist it will give a error.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -58,7 +58,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_lb_poolCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.dns_lb_pool.API.Create",
     tags: [],
     sourceFile:
@@ -75,20 +75,20 @@ export const dnsTools: ParsedOperation[] = [
     description: "Delete the specified dns_lb_pool",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -99,7 +99,7 @@ export const dnsTools: ParsedOperation[] = [
       $ref: "#/components/schemas/dns_lb_poolDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.dns_lb_pool.API.Delete",
     tags: [],
     sourceFile:
@@ -116,21 +116,21 @@ export const dnsTools: ParsedOperation[] = [
     description: "Get DNS Load Balancer Pool details.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -138,13 +138,13 @@ export const dnsTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -154,7 +154,7 @@ export const dnsTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -162,7 +162,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_lb_poolGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.dns_lb_pool.API.Get",
     tags: [],
     sourceFile:
@@ -179,10 +179,10 @@ export const dnsTools: ParsedOperation[] = [
     description: "List the set of dns_lb_pool in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description: 'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of dns_lb_pool',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -190,37 +190,37 @@ export const dnsTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -245,21 +245,21 @@ export const dnsTools: ParsedOperation[] = [
     description: "Replace DNS Load Balancer Pool in a given namespace.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -272,7 +272,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_lb_poolReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.dns_lb_pool.API.Replace",
     tags: [],
     sourceFile:
@@ -290,11 +290,11 @@ export const dnsTools: ParsedOperation[] = [
       "Create DNS Load Balancer in a given namespace. If one already exist it will give a error.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -307,7 +307,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_load_balancerCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.dns_load_balancer.API.Create",
     tags: [],
     sourceFile:
@@ -324,20 +324,20 @@ export const dnsTools: ParsedOperation[] = [
     description: "Delete the specified dns_load_balancer",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -348,7 +348,7 @@ export const dnsTools: ParsedOperation[] = [
       $ref: "#/components/schemas/dns_load_balancerDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.dns_load_balancer.API.Delete",
     tags: [],
     sourceFile:
@@ -365,21 +365,21 @@ export const dnsTools: ParsedOperation[] = [
     description: "Get DNS Load Balancer details.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -387,13 +387,13 @@ export const dnsTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -403,7 +403,7 @@ export const dnsTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -411,7 +411,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_load_balancerGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.dns_load_balancer.API.Get",
     tags: [],
     sourceFile:
@@ -428,11 +428,11 @@ export const dnsTools: ParsedOperation[] = [
     description: "List the set of dns_load_balancer in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of dns_load_balancer',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -440,37 +440,37 @@ export const dnsTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -495,21 +495,21 @@ export const dnsTools: ParsedOperation[] = [
     description: "Replace DNS Load Balancer in a given namespace.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -522,7 +522,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_load_balancerReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.dns_load_balancer.API.Replace",
     tags: [],
     sourceFile:
@@ -539,11 +539,11 @@ export const dnsTools: ParsedOperation[] = [
     description: "Create DNS Zone in a given namespace. If one already exist it will give a error.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -556,7 +556,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_zoneCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.dns_zone.API.Create",
     tags: [],
     sourceFile:
@@ -573,20 +573,20 @@ export const dnsTools: ParsedOperation[] = [
     description: "Delete the specified dns_zone",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -597,7 +597,7 @@ export const dnsTools: ParsedOperation[] = [
       $ref: "#/components/schemas/dns_zoneDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.dns_zone.API.Delete",
     tags: [],
     sourceFile:
@@ -614,21 +614,21 @@ export const dnsTools: ParsedOperation[] = [
     description: "Get DNS Zone details.",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -636,13 +636,13 @@ export const dnsTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -652,7 +652,7 @@ export const dnsTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -660,7 +660,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_zoneGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.dns_zone.API.Get",
     tags: [],
     sourceFile:
@@ -677,10 +677,10 @@ export const dnsTools: ParsedOperation[] = [
     description: "List the set of dns_zone in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description: 'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of dns_zone',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -688,37 +688,37 @@ export const dnsTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -743,21 +743,21 @@ export const dnsTools: ParsedOperation[] = [
     description: "Replace DNS Zone in a given namespace.",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -770,7 +770,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_zoneReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.dns_zone.API.Replace",
     tags: [],
     sourceFile:
@@ -787,20 +787,20 @@ export const dnsTools: ParsedOperation[] = [
     description: "Export Zone File",
     pathParameters: [
       {
-        name: "namespace",
+        description:
+          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
         in: "path",
+        name: "dns_zone_name",
         required: true,
-        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
         schema: {
           type: "string",
         },
       },
       {
-        name: "dns_zone_name",
+        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
         in: "path",
+        name: "namespace",
         required: true,
-        description:
-          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
         schema: {
           type: "string",
         },
@@ -811,7 +811,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_zoneExportZoneFileResponse",
     },
-    requiredParams: ["namespace", "dns_zone_name"],
+    requiredParams: ["dns_zone_name", "namespace"],
     operationId: "ves.io.schema.dns_zone.CustomAPI.ExportZoneFile",
     tags: [],
     sourceFile:
@@ -828,20 +828,20 @@ export const dnsTools: ParsedOperation[] = [
     description: "Get DNS Load Balancer Health status",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'Name\n\nx-example: "dns_lb1"\nName of the DNS Load Balancer',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'Namespace\n\nx-example: "ns1"\nNamespace in which the DNS Load Balancer is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'Namespace\n\nx-example: "ns1"\nNamespace in which the DNS Load Balancer is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'Name\n\nx-example: "dns_lb1"\nName of the DNS Load Balancer',
         schema: {
           type: "string",
         },
@@ -852,7 +852,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_load_balancerDNSLBHealthStatusResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBHealthStatus",
     tags: [],
     sourceFile:
@@ -861,19 +861,39 @@ export const dnsTools: ParsedOperation[] = [
   {
     toolName: "f5xc-api-dns-health-statu-list",
     method: "GET",
-    path: "/api/data/namespaces/{namespace}/dns_load_balancers/health_status",
+    path: "/api/data/namespaces/{namespace}/dns_load_balancers/{dns_lb_name}/dns_lb_pools/{dns_lb_pool_name}/health_status",
     operation: "list",
     domain: "dns",
     resource: "health-statu",
-    summary: "DNS Load Balancer Health Status List",
-    description: "Get Health Status of all DNS Load Balancers in a namespace",
+    summary: "DNS Load Balancer Pool Health Status",
+    description: "Get DNS Load Balancer Pool Health Status",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'Namespace\n\nx-example: "ns1"\nNamespace to scope the listing of DNS LB health status',
+          'DNS Load Balancer Name\n\nx-example: "dns_lb1"\nName of the DNS Load Balancer',
+        in: "path",
+        name: "dns_lb_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'DNS Load Balancer Pool Name\n\nx-example: "dns_lb_pool1"\nName of the DNS Load Balancer Pool',
+        in: "path",
+        name: "dns_lb_pool_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\n\nx-example: "ns1"\nNamespace in which the DNS Load Balancer Pool is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -882,10 +902,10 @@ export const dnsTools: ParsedOperation[] = [
     queryParameters: [],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/dns_load_balancerDNSLBHealthStatusListResponse",
+      $ref: "#/components/schemas/dns_load_balancerDNSLBPoolHealthStatusResponse",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBHealthStatusList",
+    requiredParams: ["dns_lb_name", "dns_lb_pool_name", "namespace"],
+    operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBPoolHealthStatus",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
@@ -901,41 +921,41 @@ export const dnsTools: ParsedOperation[] = [
     description: "Get DNS Load Balancer Pool Health Status Changes",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "ns1"\nx-required\nNamespace in which the DNS Load Balancer Pool is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "dns_lb_name",
-        in: "path",
-        required: true,
         description:
           'DNS Load Balancer Name\n\nx-example: "dns_lb1"\nx-required\nName of the DNS Load Balancer',
+        in: "path",
+        name: "dns_lb_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "dns_lb_pool_name",
-        in: "path",
-        required: true,
         description:
           'DNS Load Balancer Pool Name\n\nx-example: "dns_lb_pool1"\nx-required\nName of the DNS Load Balancer Pool',
+        in: "path",
+        name: "dns_lb_pool_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "pool_member_address",
+        description:
+          'Namespace\n\nx-example: "ns1"\nx-required\nNamespace in which the DNS Load Balancer Pool is present',
         in: "path",
+        name: "namespace",
         required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
         description:
           'DNS Load Balancer Pool Member Address\n\nx-example: "10.0.0.1"\nx-required\nIP Address of the DNS Load Balancer Pool Member',
+        in: "path",
+        name: "pool_member_address",
+        required: true,
         schema: {
           type: "string",
         },
@@ -946,7 +966,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_load_balancerDNSLBPoolMemberHealthStatusResponse",
     },
-    requiredParams: ["namespace", "dns_lb_name", "dns_lb_pool_name", "pool_member_address"],
+    requiredParams: ["dns_lb_name", "dns_lb_pool_name", "namespace", "pool_member_address"],
     operationId:
       "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBPoolMemberHealthStatusChangeEvents",
     tags: [],
@@ -1056,20 +1076,20 @@ export const dnsTools: ParsedOperation[] = [
     description: "get local zone file from secondary dns",
     pathParameters: [
       {
-        name: "namespace",
+        description:
+          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
         in: "path",
+        name: "dns_zone_name",
         required: true,
-        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
         schema: {
           type: "string",
         },
       },
       {
-        name: "dns_zone_name",
+        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
         in: "path",
+        name: "namespace",
         required: true,
-        description:
-          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
         schema: {
           type: "string",
         },
@@ -1080,7 +1100,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_zoneGetLocalZoneFileResponse",
     },
-    requiredParams: ["namespace", "dns_zone_name"],
+    requiredParams: ["dns_zone_name", "namespace"],
     operationId: "ves.io.schema.dns_zone.CustomAPI.GetLocalZoneFile",
     tags: [],
     sourceFile:
@@ -1097,10 +1117,10 @@ export const dnsTools: ParsedOperation[] = [
     description: "Request to get dns zone metrics data",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1113,7 +1133,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_zoneDnsZoneMetricsResponse",
     },
-    requiredParams: ["namespace", "body"],
+    requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.dns_zone.CustomDataAPI.DnsZoneMetrics",
     tags: [],
     sourceFile:
@@ -1130,11 +1150,11 @@ export const dnsTools: ParsedOperation[] = [
     description: "Get Health Status of all DNS Load Balancer Pool Members in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'Namespace\n\nx-example: "ns1"\nNamespace to scope the listing of DNS LB health status',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1162,37 +1182,37 @@ export const dnsTools: ParsedOperation[] = [
     description: "",
     pathParameters: [
       {
-        name: "dns_zone_name",
-        in: "path",
-        required: true,
         description: "dns_zone_name\n\nx-required",
+        in: "path",
+        name: "dns_zone_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "group_name",
-        in: "path",
-        required: true,
         description: "group_name\n\nx-required",
+        in: "path",
+        name: "group_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "record_name",
-        in: "path",
-        required: true,
         description: "record_name\n\nx-required",
+        in: "path",
+        name: "record_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "type",
-        in: "path",
-        required: true,
         description: "type\n\nx-required",
+        in: "path",
+        name: "type",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1220,37 +1240,37 @@ export const dnsTools: ParsedOperation[] = [
     description: "",
     pathParameters: [
       {
-        name: "dns_zone_name",
-        in: "path",
-        required: true,
         description: "dns_zone_name\n\nx-required",
+        in: "path",
+        name: "dns_zone_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "group_name",
-        in: "path",
-        required: true,
         description: "group_name\n\nx-required",
+        in: "path",
+        name: "group_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "record_name",
-        in: "path",
-        required: true,
         description: "record_name\n\nx-required",
+        in: "path",
+        name: "record_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "type",
-        in: "path",
-        required: true,
         description: "type\n\nx-required",
+        in: "path",
+        name: "type",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1278,37 +1298,37 @@ export const dnsTools: ParsedOperation[] = [
     description: "",
     pathParameters: [
       {
-        name: "dns_zone_name",
-        in: "path",
-        required: true,
         description: "dns_zone_name\n\nx-required",
+        in: "path",
+        name: "dns_zone_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "group_name",
-        in: "path",
-        required: true,
         description: "group_name\n\nx-required",
+        in: "path",
+        name: "group_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "record_name",
-        in: "path",
-        required: true,
         description: "record_name\n\nx-required",
+        in: "path",
+        name: "record_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "type",
-        in: "path",
-        required: true,
         description: "type\n\nx-required",
+        in: "path",
+        name: "type",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1321,7 +1341,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/rrsetResponse",
     },
-    requiredParams: ["dns_zone_name", "group_name", "record_name", "type", "body"],
+    requiredParams: ["body", "dns_zone_name", "group_name", "record_name", "type"],
     operationId: "ves.io.schema.dns_zone.rrset.CustomAPI.Replace",
     tags: [],
     sourceFile:
@@ -1338,20 +1358,20 @@ export const dnsTools: ParsedOperation[] = [
     description: "get remote zone file from primary dns",
     pathParameters: [
       {
-        name: "namespace",
+        description:
+          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
         in: "path",
+        name: "dns_zone_name",
         required: true,
-        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
         schema: {
           type: "string",
         },
       },
       {
-        name: "dns_zone_name",
+        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
         in: "path",
+        name: "namespace",
         required: true,
-        description:
-          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
         schema: {
           type: "string",
         },
@@ -1362,7 +1382,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_zoneGetRemoteZoneFileResponse",
     },
-    requiredParams: ["namespace", "dns_zone_name"],
+    requiredParams: ["dns_zone_name", "namespace"],
     operationId: "ves.io.schema.dns_zone.CustomAPI.GetRemoteZoneFile",
     tags: [],
     sourceFile:
@@ -1379,10 +1399,10 @@ export const dnsTools: ParsedOperation[] = [
     description: "Retrieve Dns Zone Request Logs",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description: 'namespace\n\nx-example: "value"\nfetch request logs for a given namespace',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1395,7 +1415,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/dns_zoneDnsZoneRequestLogResponse",
     },
-    requiredParams: ["namespace", "body"],
+    requiredParams: ["body", "namespace"],
     operationId: "ves.io.schema.dns_zone.CustomDataAPI.DnsZoneRequestLogs",
     tags: [],
     sourceFile:
@@ -1412,19 +1432,19 @@ export const dnsTools: ParsedOperation[] = [
     description: "",
     pathParameters: [
       {
-        name: "dns_zone_name",
-        in: "path",
-        required: true,
         description: "dns_zone_name\n\nx-required",
+        in: "path",
+        name: "dns_zone_name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "group_name",
-        in: "path",
-        required: true,
         description: "group_name\n\nx-required",
+        in: "path",
+        name: "group_name",
+        required: true,
         schema: {
           type: "string",
         },
@@ -1437,7 +1457,7 @@ export const dnsTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/rrsetResponse",
     },
-    requiredParams: ["dns_zone_name", "group_name", "body"],
+    requiredParams: ["body", "dns_zone_name", "group_name"],
     operationId: "ves.io.schema.dns_zone.rrset.CustomAPI.Create",
     tags: [],
     sourceFile:

@@ -17,11 +17,11 @@ export const siteTools: ParsedOperation[] = [
     description: "Shape of the AWS VPC site specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -34,7 +34,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/aws_vpc_siteCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.views.aws_vpc_site.API.Create",
     tags: [],
     sourceFile:
@@ -51,20 +51,20 @@ export const siteTools: ParsedOperation[] = [
     description: "Delete the specified aws_vpc_site",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -75,7 +75,7 @@ export const siteTools: ParsedOperation[] = [
       $ref: "#/components/schemas/aws_vpc_siteDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.aws_vpc_site.API.Delete",
     tags: [],
     sourceFile:
@@ -92,21 +92,21 @@ export const siteTools: ParsedOperation[] = [
     description: "Shape of the AWS VPC site specification",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -114,13 +114,13 @@ export const siteTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -130,7 +130,7 @@ export const siteTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -138,7 +138,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/aws_vpc_siteGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.aws_vpc_site.API.Get",
     tags: [],
     sourceFile:
@@ -155,11 +155,11 @@ export const siteTools: ParsedOperation[] = [
     description: "List the set of aws_vpc_site in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of aws_vpc_site',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -167,37 +167,37 @@ export const siteTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -222,21 +222,21 @@ export const siteTools: ParsedOperation[] = [
     description: "Shape of the AWS VPC site replace specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -249,7 +249,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/aws_vpc_siteReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.views.aws_vpc_site.API.Replace",
     tags: [],
     sourceFile:
@@ -266,11 +266,11 @@ export const siteTools: ParsedOperation[] = [
     description: "Shape of the Azure VNet site specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -283,7 +283,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/azure_vnet_siteCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.views.azure_vnet_site.API.Create",
     tags: [],
     sourceFile:
@@ -300,20 +300,20 @@ export const siteTools: ParsedOperation[] = [
     description: "Delete the specified azure_vnet_site",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -324,7 +324,7 @@ export const siteTools: ParsedOperation[] = [
       $ref: "#/components/schemas/azure_vnet_siteDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.azure_vnet_site.API.Delete",
     tags: [],
     sourceFile:
@@ -341,21 +341,21 @@ export const siteTools: ParsedOperation[] = [
     description: "Shape of the Azure VNet site specification",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -363,13 +363,13 @@ export const siteTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -379,7 +379,7 @@ export const siteTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -387,7 +387,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/azure_vnet_siteGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.azure_vnet_site.API.Get",
     tags: [],
     sourceFile:
@@ -404,11 +404,11 @@ export const siteTools: ParsedOperation[] = [
     description: "List the set of azure_vnet_site in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of azure_vnet_site',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -416,37 +416,37 @@ export const siteTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -471,21 +471,21 @@ export const siteTools: ParsedOperation[] = [
     description: "Shape of the Azure VNet site replace specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -498,7 +498,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/azure_vnet_siteReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.views.azure_vnet_site.API.Replace",
     tags: [],
     sourceFile:
@@ -515,11 +515,11 @@ export const siteTools: ParsedOperation[] = [
     description: "Shape of the GCP VPC site specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -532,7 +532,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/gcp_vpc_siteCreateResponse",
     },
-    requiredParams: ["metadata.namespace", "body"],
+    requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.views.gcp_vpc_site.API.Create",
     tags: [],
     sourceFile:
@@ -549,20 +549,20 @@ export const siteTools: ParsedOperation[] = [
     description: "Delete the specified gcp_vpc_site",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         in: "path",
+        name: "name",
         required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -573,7 +573,7 @@ export const siteTools: ParsedOperation[] = [
       $ref: "#/components/schemas/gcp_vpc_siteDeleteRequest",
     },
     responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.gcp_vpc_site.API.Delete",
     tags: [],
     sourceFile:
@@ -590,21 +590,21 @@ export const siteTools: ParsedOperation[] = [
     description: "Shape of the GCP VPC site specification",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        in: "path",
+        name: "name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -612,13 +612,13 @@ export const siteTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "response_format",
-        in: "query",
-        required: false,
         description:
           "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        in: "query",
+        name: "response_format",
+        required: false,
         schema: {
-          type: "string",
+          default: "GET_RSP_FORMAT_DEFAULT",
           enum: [
             "GET_RSP_FORMAT_DEFAULT",
             "GET_RSP_FORMAT_FOR_CREATE",
@@ -628,7 +628,7 @@ export const siteTools: ParsedOperation[] = [
             "GET_RSP_FORMAT_REFERRING_OBJECTS",
             "GET_RSP_FORMAT_BROKEN_REFERENCES",
           ],
-          default: "GET_RSP_FORMAT_DEFAULT",
+          type: "string",
         },
       },
     ],
@@ -636,7 +636,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/gcp_vpc_siteGetResponse",
     },
-    requiredParams: ["namespace", "name"],
+    requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.views.gcp_vpc_site.API.Get",
     tags: [],
     sourceFile:
@@ -653,11 +653,11 @@ export const siteTools: ParsedOperation[] = [
     description: "List the set of gcp_vpc_site in a namespace",
     pathParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
         description:
           'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of gcp_vpc_site',
+        in: "path",
+        name: "namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -665,37 +665,37 @@ export const siteTools: ParsedOperation[] = [
     ],
     queryParameters: [
       {
-        name: "label_filter",
-        in: "query",
-        required: false,
         description:
           'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        in: "query",
+        name: "label_filter",
+        required: false,
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra fields to return along with summary fields',
+        in: "query",
+        name: "report_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
       {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
         description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
         schema: {
-          type: "array",
           items: {
             type: "string",
           },
+          type: "array",
         },
       },
     ],
@@ -720,21 +720,21 @@ export const siteTools: ParsedOperation[] = [
     description: "Shape of the GCP VPC site replace specification",
     pathParameters: [
       {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        in: "path",
+        name: "metadata.name",
+        required: true,
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
-        in: "path",
-        required: true,
         description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
         schema: {
           type: "string",
         },
@@ -747,7 +747,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/gcp_vpc_siteReplaceResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.views.gcp_vpc_site.API.Replace",
     tags: [],
     sourceFile:
@@ -765,19 +765,19 @@ export const siteTools: ParsedOperation[] = [
       "Configure AWS VPC Site  Information like public, private ips, subnet ids and others",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'Name\n\nx-example: "aws-vpc-site-1"\nName of the object to be configured',
         in: "path",
+        name: "name",
         required: true,
-        description: 'Namespace\n\nx-example: "default"\nNamespace for the object to be configured',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description: 'Namespace\n\nx-example: "default"\nNamespace for the object to be configured',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'Name\n\nx-example: "aws-vpc-site-1"\nName of the object to be configured',
         schema: {
           type: "string",
         },
@@ -790,7 +790,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/aws_vpc_siteSetCloudSiteInfoResponse",
     },
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.aws_vpc_site.CustomAPI.SetCloudSiteInfo",
     tags: [],
     sourceFile:
@@ -807,19 +807,19 @@ export const siteTools: ParsedOperation[] = [
     description: "Configure AWS VPC Site VIP Information",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'Name\n\nx-example: "aws-vpc-site-1"\nName of the object to be configured',
         in: "path",
+        name: "name",
         required: true,
-        description: 'Namespace\n\nx-example: "default"\nNamespace for the object to be configured',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description: 'Namespace\n\nx-example: "default"\nNamespace for the object to be configured',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'Name\n\nx-example: "aws-vpc-site-1"\nName of the object to be configured',
         schema: {
           type: "string",
         },
@@ -832,7 +832,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/aws_vpc_siteSetVIPInfoResponse",
     },
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.aws_vpc_site.CustomAPI.SetVIPInfo",
     tags: [],
     sourceFile:
@@ -849,19 +849,19 @@ export const siteTools: ParsedOperation[] = [
     description: "Configure VPC k8s node hostname set",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'Name\n\nx-example: "aws-vpc-site-1"\nName of the object to be configured',
         in: "path",
+        name: "name",
         required: true,
-        description: 'Namespace\n\nx-example: "default"\nNamespace for the object to be configured',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description: 'Namespace\n\nx-example: "default"\nNamespace for the object to be configured',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'Name\n\nx-example: "aws-vpc-site-1"\nName of the object to be configured',
         schema: {
           type: "string",
         },
@@ -874,7 +874,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/aws_vpc_siteSetVPCK8SHostnamesResponse",
     },
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.aws_vpc_site.CustomAPI.SetVPCK8SHostnames",
     tags: [],
     sourceFile:
@@ -891,19 +891,19 @@ export const siteTools: ParsedOperation[] = [
     description: "Validate AWS VPC Site Config",
     pathParameters: [
       {
-        name: "namespace",
+        description: 'Name\n\nx-example: "aws-vpc-site-1"\nName of the object to be configured',
         in: "path",
+        name: "name",
         required: true,
-        description: 'Namespace\n\nx-example: "default"\nNamespace for the object to be configured',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        description: 'Namespace\n\nx-example: "default"\nNamespace for the object to be configured',
         in: "path",
+        name: "namespace",
         required: true,
-        description: 'Name\n\nx-example: "aws-vpc-site-1"\nName of the object to be configured',
         schema: {
           type: "string",
         },
@@ -916,7 +916,7 @@ export const siteTools: ParsedOperation[] = [
     responseSchema: {
       $ref: "#/components/schemas/viewsValidateConfigResponse",
     },
-    requiredParams: ["namespace", "name", "body"],
+    requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.views.aws_vpc_site.CustomAPI.ValidateConfig",
     tags: [],
     sourceFile:
