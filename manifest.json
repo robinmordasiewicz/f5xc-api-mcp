@@ -1,0 +1,147 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/anthropic-cookbook/main/misc/mcp_schema.json",
+  "name": "f5xc-api-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for F5 Distributed Cloud API - AI-powered infrastructure management with 270+ tools",
+  "author": "Robin Mordasiewicz",
+  "license": "MIT",
+  "homepage": "https://github.com/robinmordasiewicz/f5xc-api-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robinmordasiewicz/f5xc-api-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "f5",
+    "f5xc",
+    "distributed-cloud",
+    "api",
+    "infrastructure",
+    "load-balancer",
+    "waf",
+    "dns",
+    "terraform",
+    "ai"
+  ],
+  "categories": [
+    "infrastructure",
+    "cloud",
+    "networking",
+    "security"
+  ],
+  "icon": "https://raw.githubusercontent.com/robinmordasiewicz/f5xc-api-mcp/main/docs/assets/icon.png",
+  "transport": {
+    "type": "stdio"
+  },
+  "runtime": {
+    "type": "node",
+    "minVersion": "18.0.0"
+  },
+  "installation": {
+    "npx": {
+      "command": "npx",
+      "args": ["f5xc-api-mcp"]
+    },
+    "npm": {
+      "package": "f5xc-api-mcp",
+      "command": "f5xc-api-mcp"
+    },
+    "docker": {
+      "image": "ghcr.io/robinmordasiewicz/f5xc-api-mcp",
+      "command": ["docker", "run", "-i", "--rm", "ghcr.io/robinmordasiewicz/f5xc-api-mcp"]
+    }
+  },
+  "configuration": {
+    "environment": {
+      "F5XC_API_URL": {
+        "description": "F5 Distributed Cloud tenant URL",
+        "required": false,
+        "example": "https://your-tenant.console.ves.volterra.io"
+      },
+      "F5XC_API_TOKEN": {
+        "description": "API token for authentication",
+        "required": false,
+        "sensitive": true
+      },
+      "F5XC_P12_FILE": {
+        "description": "Path to P12 certificate file for mTLS authentication",
+        "required": false
+      },
+      "F5XC_P12_PASSWORD": {
+        "description": "Password for P12 certificate",
+        "required": false,
+        "sensitive": true
+      },
+      "LOG_LEVEL": {
+        "description": "Logging verbosity (debug, info, warn, error)",
+        "required": false,
+        "default": "info"
+      }
+    }
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": true
+  },
+  "features": {
+    "dualMode": {
+      "description": "Works without authentication (documentation mode) or with authentication (execution mode)"
+    },
+    "f5xcctlIntegration": {
+      "description": "Every response includes equivalent f5xcctl CLI commands"
+    },
+    "terraformExamples": {
+      "description": "Every response includes Terraform HCL examples"
+    },
+    "urlNormalization": {
+      "description": "Automatically normalizes various F5XC URL formats"
+    }
+  },
+  "tools": {
+    "count": "270+",
+    "domains": [
+      "waap",
+      "dns",
+      "network",
+      "site",
+      "appstack",
+      "security",
+      "core"
+    ],
+    "examples": [
+      "f5xc-api-waap-http-loadbalancer-create",
+      "f5xc-api-waap-origin-pool-list",
+      "f5xc-api-dns-zone-get",
+      "f5xc-api-server-info"
+    ]
+  },
+  "resources": {
+    "scheme": "f5xc://",
+    "example": "f5xc://tenant/namespace/http_loadbalancer/my-app"
+  },
+  "prompts": [
+    {
+      "name": "deploy-http-loadbalancer",
+      "description": "Guided workflow for deploying HTTP Load Balancer with origin pool"
+    },
+    {
+      "name": "configure-waf",
+      "description": "Guided workflow for configuring Web Application Firewall"
+    },
+    {
+      "name": "create-multicloud-site",
+      "description": "Guided workflow for deploying F5XC site in AWS/Azure/GCP"
+    },
+    {
+      "name": "generate-terraform",
+      "description": "Export F5XC resources as Terraform configuration"
+    }
+  ],
+  "documentation": "https://robinmordasiewicz.github.io/f5xc-api-mcp",
+  "changelog": "https://github.com/robinmordasiewicz/f5xc-api-mcp/blob/main/CHANGELOG.md",
+  "support": {
+    "issues": "https://github.com/robinmordasiewicz/f5xc-api-mcp/issues",
+    "discussions": "https://github.com/robinmordasiewicz/f5xc-api-mcp/discussions"
+  }
+}
