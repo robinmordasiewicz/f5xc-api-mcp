@@ -7,6 +7,278 @@ import type { ParsedOperation } from "../../../generator/openapi-parser.js";
 
 export const dnsTools: ParsedOperation[] = [
   {
+    toolName: "f5xc-api-dns-clone-from-dns-domain-create",
+    method: "POST",
+    path: "/api/config/dns/namespaces/system/dns_zone/clone_from_dns_domain",
+    operation: "create",
+    domain: "dns",
+    resource: "clone-from-dns-domain",
+    summary: "Clone from DNSDomain",
+    description: "cloning dns domain to DNSZone.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/dns_zoneCloneReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/dns_zoneCloneResp",
+    },
+    requiredParams: ["body"],
+    operationId: "ves.io.schema.dns_zone.CustomAPI.CloneFromDNSDomain",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-dns-lb-pool-create",
+    method: "POST",
+    path: "/api/config/dns/namespaces/{metadata.namespace}/dns_lb_pools",
+    operation: "create",
+    domain: "dns",
+    resource: "dns-lb-pool",
+    summary: "Create DNS Load Balancer Pool",
+    description:
+      "Create DNS Load Balancer Pool in a given namespace. If one already exist it will give a error.",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/dns_lb_poolCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/dns_lb_poolCreateResponse",
+    },
+    requiredParams: ["metadata.namespace", "body"],
+    operationId: "ves.io.schema.dns_lb_pool.API.Create",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-dns-lb-pool-delete",
+    method: "DELETE",
+    path: "/api/config/dns/namespaces/{namespace}/dns_lb_pools/{name}",
+    operation: "delete",
+    domain: "dns",
+    resource: "dns-lb-pool",
+    summary: "Delete DNS Load Balancer Pool",
+    description: "Delete the specified dns_lb_pool",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/dns_lb_poolDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.dns_lb_pool.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-dns-lb-pool-get",
+    method: "GET",
+    path: "/api/config/dns/namespaces/{namespace}/dns_lb_pools/{name}",
+    operation: "get",
+    domain: "dns",
+    resource: "dns-lb-pool",
+    summary: "Get DNS Load Balancer Pool",
+    description: "Get DNS Load Balancer Pool details.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/dns_lb_poolGetResponse",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.dns_lb_pool.API.Get",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-dns-lb-pool-list",
+    method: "GET",
+    path: "/api/config/dns/namespaces/{namespace}/dns_lb_pools",
+    operation: "list",
+    domain: "dns",
+    resource: "dns-lb-pool",
+    summary: "List DNS Load Balancer Pool",
+    description: "List the set of dns_lb_pool in a namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description: 'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of dns_lb_pool',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
+        description:
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/dns_lb_poolListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.dns_lb_pool.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-dns-lb-pool-update",
+    method: "PUT",
+    path: "/api/config/dns/namespaces/{metadata.namespace}/dns_lb_pools/{metadata.name}",
+    operation: "update",
+    domain: "dns",
+    resource: "dns-lb-pool",
+    summary: "Replace DNS Load Balancer Pool",
+    description: "Replace DNS Load Balancer Pool in a given namespace.",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/dns_lb_poolReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/dns_lb_poolReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.dns_lb_pool.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
+  },
+  {
     toolName: "f5xc-api-dns-dns-load-balancer-create",
     method: "POST",
     path: "/api/config/dns/namespaces/{metadata.namespace}/dns_load_balancers",
@@ -42,31 +314,30 @@ export const dnsTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-dns-dns-load-balancer-update",
-    method: "PUT",
-    path: "/api/config/dns/namespaces/{metadata.namespace}/dns_load_balancers/{metadata.name}",
-    operation: "update",
+    toolName: "f5xc-api-dns-dns-load-balancer-delete",
+    method: "DELETE",
+    path: "/api/config/dns/namespaces/{namespace}/dns_load_balancers/{name}",
+    operation: "delete",
     domain: "dns",
     resource: "dns-load-balancer",
-    summary: "Replace DNS Load Balancer",
-    description: "Replace DNS Load Balancer in a given namespace.",
+    summary: "Delete DNS Load Balancer",
+    description: "Delete the specified dns_load_balancer",
     pathParameters: [
       {
-        name: "metadata.namespace",
+        name: "namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
+        name: "name",
         in: "path",
         required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -74,13 +345,74 @@ export const dnsTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/dns_load_balancerReplaceRequest",
+      $ref: "#/components/schemas/dns_load_balancerDeleteRequest",
     },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.dns_load_balancer.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-dns-load-balancer-get",
+    method: "GET",
+    path: "/api/config/dns/namespaces/{namespace}/dns_load_balancers/{name}",
+    operation: "get",
+    domain: "dns",
+    resource: "dns-load-balancer",
+    summary: "Get DNS Load Balancer",
+    description: "Get DNS Load Balancer details.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/dns_load_balancerReplaceResponse",
+      $ref: "#/components/schemas/dns_load_balancerGetResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.dns_load_balancer.API.Replace",
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.dns_load_balancer.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
@@ -153,321 +485,14 @@ export const dnsTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-dns-health-statu-list",
-    method: "GET",
-    path: "/api/data/namespaces/{namespace}/dns_load_balancers/health_status",
-    operation: "list",
-    domain: "dns",
-    resource: "health-statu",
-    summary: "DNS Load Balancer Health Status List",
-    description: "Get Health Status of all DNS Load Balancers in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "ns1"\nNamespace to scope the listing of DNS LB health status',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/dns_load_balancerDNSLBHealthStatusListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBHealthStatusList",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-pool-members-health-statu-list",
-    method: "GET",
-    path: "/api/data/namespaces/{namespace}/dns_load_balancers/pool_members_health_status",
-    operation: "list",
-    domain: "dns",
-    resource: "pool-members-health-statu",
-    summary: "DNS Load Balancer Pool Members Health Status List",
-    description: "Get Health Status of all DNS Load Balancer Pool Members in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "ns1"\nNamespace to scope the listing of DNS LB health status',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/dns_load_balancerDNSLBPoolMemberHealthStatusListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBPoolMemberHealthStatusList",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-health-status-change-event-list",
-    method: "GET",
-    path: "/api/data/namespaces/{namespace}/dns_load_balancers/{dns_lb_name}/dns_lb_pools/{dns_lb_pool_name}/pool_members/{pool_member_address}/health_status_change_events",
-    operation: "list",
-    domain: "dns",
-    resource: "health-status-change-event",
-    summary: "DNS Load Balancer Pool Member Health Status Change Events",
-    description: "Get DNS Load Balancer Pool Health Status Changes",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "ns1"\nx-required\nNamespace in which the DNS Load Balancer Pool is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "dns_lb_name",
-        in: "path",
-        required: true,
-        description:
-          'DNS Load Balancer Name\n\nx-example: "dns_lb1"\nx-required\nName of the DNS Load Balancer',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "dns_lb_pool_name",
-        in: "path",
-        required: true,
-        description:
-          'DNS Load Balancer Pool Name\n\nx-example: "dns_lb_pool1"\nx-required\nName of the DNS Load Balancer Pool',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "pool_member_address",
-        in: "path",
-        required: true,
-        description:
-          'DNS Load Balancer Pool Member Address\n\nx-example: "10.0.0.1"\nx-required\nIP Address of the DNS Load Balancer Pool Member',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/dns_load_balancerDNSLBPoolMemberHealthStatusResponse",
-    },
-    requiredParams: ["namespace", "dns_lb_name", "dns_lb_pool_name", "pool_member_address"],
-    operationId:
-      "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBPoolMemberHealthStatusChangeEvents",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-dns-load-balancer-get",
-    method: "GET",
-    path: "/api/config/dns/namespaces/{namespace}/dns_load_balancers/{name}",
-    operation: "get",
-    domain: "dns",
-    resource: "dns-load-balancer",
-    summary: "Get DNS Load Balancer",
-    description: "Get DNS Load Balancer details.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/dns_load_balancerGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.dns_load_balancer.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-dns-load-balancer-delete",
-    method: "DELETE",
-    path: "/api/config/dns/namespaces/{namespace}/dns_load_balancers/{name}",
-    operation: "delete",
-    domain: "dns",
-    resource: "dns-load-balancer",
-    summary: "Delete DNS Load Balancer",
-    description: "Delete the specified dns_load_balancer",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/dns_load_balancerDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.dns_load_balancer.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-health-statu-get",
-    method: "GET",
-    path: "/api/data/namespaces/{namespace}/dns_load_balancers/{name}/health_status",
-    operation: "get",
-    domain: "dns",
-    resource: "health-statu",
-    summary: "DNS Load Balancer Health Status",
-    description: "Get DNS Load Balancer Health status",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "ns1"\nNamespace in which the DNS Load Balancer is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'Name\n\nx-example: "dns_lb1"\nName of the DNS Load Balancer',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/dns_load_balancerDNSLBHealthStatusResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBHealthStatus",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-dns-lb-pool-create",
-    method: "POST",
-    path: "/api/config/dns/namespaces/{metadata.namespace}/dns_lb_pools",
-    operation: "create",
-    domain: "dns",
-    resource: "dns-lb-pool",
-    summary: "Create DNS Load Balancer Pool",
-    description:
-      "Create DNS Load Balancer Pool in a given namespace. If one already exist it will give a error.",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/dns_lb_poolCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/dns_lb_poolCreateResponse",
-    },
-    requiredParams: ["metadata.namespace", "body"],
-    operationId: "ves.io.schema.dns_lb_pool.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-dns-lb-pool-update",
+    toolName: "f5xc-api-dns-dns-load-balancer-update",
     method: "PUT",
-    path: "/api/config/dns/namespaces/{metadata.namespace}/dns_lb_pools/{metadata.name}",
+    path: "/api/config/dns/namespaces/{metadata.namespace}/dns_load_balancers/{metadata.name}",
     operation: "update",
     domain: "dns",
-    resource: "dns-lb-pool",
-    summary: "Replace DNS Load Balancer Pool",
-    description: "Replace DNS Load Balancer Pool in a given namespace.",
+    resource: "dns-load-balancer",
+    summary: "Replace DNS Load Balancer",
+    description: "Replace DNS Load Balancer in a given namespace.",
     pathParameters: [
       {
         name: "metadata.namespace",
@@ -492,301 +517,16 @@ export const dnsTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/dns_lb_poolReplaceRequest",
+      $ref: "#/components/schemas/dns_load_balancerReplaceRequest",
     },
     responseSchema: {
-      $ref: "#/components/schemas/dns_lb_poolReplaceResponse",
+      $ref: "#/components/schemas/dns_load_balancerReplaceResponse",
     },
     requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.dns_lb_pool.API.Replace",
+    operationId: "ves.io.schema.dns_load_balancer.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-dns-lb-pool-list",
-    method: "GET",
-    path: "/api/config/dns/namespaces/{namespace}/dns_lb_pools",
-    operation: "list",
-    domain: "dns",
-    resource: "dns-lb-pool",
-    summary: "List DNS Load Balancer Pool",
-    description: "List the set of dns_lb_pool in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description: 'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of dns_lb_pool',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/dns_lb_poolListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.dns_lb_pool.API.List",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-dns-lb-pool-get",
-    method: "GET",
-    path: "/api/config/dns/namespaces/{namespace}/dns_lb_pools/{name}",
-    operation: "get",
-    domain: "dns",
-    resource: "dns-lb-pool",
-    summary: "Get DNS Load Balancer Pool",
-    description: "Get DNS Load Balancer Pool details.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/dns_lb_poolGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.dns_lb_pool.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-dns-lb-pool-delete",
-    method: "DELETE",
-    path: "/api/config/dns/namespaces/{namespace}/dns_lb_pools/{name}",
-    operation: "delete",
-    domain: "dns",
-    resource: "dns-lb-pool",
-    summary: "Delete DNS Load Balancer Pool",
-    description: "Delete the specified dns_lb_pool",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/dns_lb_poolDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.dns_lb_pool.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0089.public.ves.io.schema.dns_lb_pool.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-clone-from-dns-domain-create",
-    method: "POST",
-    path: "/api/config/dns/namespaces/system/dns_zone/clone_from_dns_domain",
-    operation: "create",
-    domain: "dns",
-    resource: "clone-from-dns-domain",
-    summary: "Clone from DNSDomain",
-    description: "cloning dns domain to DNSZone.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/dns_zoneCloneReq",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/dns_zoneCloneResp",
-    },
-    requiredParams: ["body"],
-    operationId: "ves.io.schema.dns_zone.CustomAPI.CloneFromDNSDomain",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-import-create",
-    method: "POST",
-    path: "/api/config/dns/namespaces/system/dns_zone/import",
-    operation: "create",
-    domain: "dns",
-    resource: "import",
-    summary: "Import F5 Cloud Services DNS Zone",
-    description: "Import F5 Cloud Services DNS Zone",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/dns_zoneImportF5CSZoneRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/dns_zoneImportF5CSZoneResponse",
-    },
-    requiredParams: ["body"],
-    operationId: "ves.io.schema.dns_zone.CustomAPI.ImportF5CSZone",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-import-axfr-create",
-    method: "POST",
-    path: "/api/config/dns/namespaces/system/dns_zone/import_axfr",
-    operation: "create",
-    domain: "dns",
-    resource: "import-axfr",
-    summary: "Import DNS Zone",
-    description: "Import DNS Zone via AXFR",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/dns_zoneImportAXFRRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/dns_zoneImportAXFRResponse",
-    },
-    requiredParams: ["body"],
-    operationId: "ves.io.schema.dns_zone.CustomAPI.ImportAXFR",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-import-bind-create-create",
-    method: "POST",
-    path: "/api/config/dns/namespaces/system/dns_zone/import_bind_create",
-    operation: "create",
-    domain: "dns",
-    resource: "import-bind-create",
-    summary: "Import BIND Files",
-    description: "Import BIND Files to Create DNS Zones",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/dns_zoneImportBINDCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/dns_zoneImportBINDResponse",
-    },
-    requiredParams: ["body"],
-    operationId: "ves.io.schema.dns_zone.CustomAPI.ImportBINDCreate",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-import-bind-validate-create",
-    method: "POST",
-    path: "/api/config/dns/namespaces/system/dns_zone/import_bind_validate",
-    operation: "create",
-    domain: "dns",
-    resource: "import-bind-validate",
-    summary: "Validate BIND Files",
-    description: "Validate BIND Files for Import",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/dns_zoneImportBINDValidateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/dns_zoneImportBINDResponse",
-    },
-    requiredParams: ["body"],
-    operationId: "ves.io.schema.dns_zone.CustomAPI.ImportBINDValidate",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-dns-dns-zone-create",
@@ -823,31 +563,30 @@ export const dnsTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-dns-dns-zone-update",
-    method: "PUT",
-    path: "/api/config/dns/namespaces/{metadata.namespace}/dns_zones/{metadata.name}",
-    operation: "update",
+    toolName: "f5xc-api-dns-dns-zone-delete",
+    method: "DELETE",
+    path: "/api/config/dns/namespaces/{namespace}/dns_zones/{name}",
+    operation: "delete",
     domain: "dns",
     resource: "dns-zone",
-    summary: "Replace DNS Zone",
-    description: "Replace DNS Zone in a given namespace.",
+    summary: "Delete DNS Zone",
+    description: "Delete the specified dns_zone",
     pathParameters: [
       {
-        name: "metadata.namespace",
+        name: "namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
+        name: "name",
         in: "path",
         required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -855,136 +594,74 @@ export const dnsTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/dns_zoneReplaceRequest",
+      $ref: "#/components/schemas/dns_zoneDeleteRequest",
     },
-    responseSchema: {
-      $ref: "#/components/schemas/dns_zoneReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.dns_zone.API.Replace",
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.dns_zone.API.Delete",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-dns-local-zone-file-list",
+    toolName: "f5xc-api-dns-dns-zone-get",
     method: "GET",
-    path: "/api/config/dns/namespaces/{namespace}/dns_zone/{dns_zone_name}/local_zone_file",
-    operation: "list",
+    path: "/api/config/dns/namespaces/{namespace}/dns_zones/{name}",
+    operation: "get",
     domain: "dns",
-    resource: "local-zone-file",
-    summary: "Get Local Zone File",
-    description: "get local zone file from secondary dns",
+    resource: "dns-zone",
+    summary: "Get DNS Zone",
+    description: "Get DNS Zone details.",
     pathParameters: [
       {
         name: "namespace",
         in: "path",
         required: true,
-        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "dns_zone_name",
+        name: "name",
         in: "path",
         required: true,
         description:
-          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
         schema: {
           type: "string",
         },
       },
     ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/dns_zoneGetLocalZoneFileResponse",
-    },
-    requiredParams: ["namespace", "dns_zone_name"],
-    operationId: "ves.io.schema.dns_zone.CustomAPI.GetLocalZoneFile",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-remote-zone-file-list",
-    method: "GET",
-    path: "/api/config/dns/namespaces/{namespace}/dns_zone/{dns_zone_name}/remote_zone_file",
-    operation: "list",
-    domain: "dns",
-    resource: "remote-zone-file",
-    summary: "Get Remote Zone File",
-    description: "get remote zone file from primary dns",
-    pathParameters: [
+    queryParameters: [
       {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "dns_zone_name",
-        in: "path",
-        required: true,
+        name: "response_format",
+        in: "query",
+        required: false,
         description:
-          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
         schema: {
           type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
         },
       },
     ],
-    queryParameters: [],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/dns_zoneGetRemoteZoneFileResponse",
+      $ref: "#/components/schemas/dns_zoneGetResponse",
     },
-    requiredParams: ["namespace", "dns_zone_name"],
-    operationId: "ves.io.schema.dns_zone.CustomAPI.GetRemoteZoneFile",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-export-list",
-    method: "GET",
-    path: "/api/config/dns/namespaces/{namespace}/dns_zone/{dns_zone_name}/zone_file/export",
-    operation: "list",
-    domain: "dns",
-    resource: "export",
-    summary: "Export Zone File",
-    description: "Export Zone File",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "dns_zone_name",
-        in: "path",
-        required: true,
-        description:
-          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/dns_zoneExportZoneFileResponse",
-    },
-    requiredParams: ["namespace", "dns_zone_name"],
-    operationId: "ves.io.schema.dns_zone.CustomAPI.ExportZoneFile",
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.dns_zone.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
@@ -1056,6 +733,360 @@ export const dnsTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
+    toolName: "f5xc-api-dns-dns-zone-update",
+    method: "PUT",
+    path: "/api/config/dns/namespaces/{metadata.namespace}/dns_zones/{metadata.name}",
+    operation: "update",
+    domain: "dns",
+    resource: "dns-zone",
+    summary: "Replace DNS Zone",
+    description: "Replace DNS Zone in a given namespace.",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/dns_zoneReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/dns_zoneReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.dns_zone.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-export-list",
+    method: "GET",
+    path: "/api/config/dns/namespaces/{namespace}/dns_zone/{dns_zone_name}/zone_file/export",
+    operation: "list",
+    domain: "dns",
+    resource: "export",
+    summary: "Export Zone File",
+    description: "Export Zone File",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "dns_zone_name",
+        in: "path",
+        required: true,
+        description:
+          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/dns_zoneExportZoneFileResponse",
+    },
+    requiredParams: ["namespace", "dns_zone_name"],
+    operationId: "ves.io.schema.dns_zone.CustomAPI.ExportZoneFile",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-health-statu-get",
+    method: "GET",
+    path: "/api/data/namespaces/{namespace}/dns_load_balancers/{name}/health_status",
+    operation: "get",
+    domain: "dns",
+    resource: "health-statu",
+    summary: "DNS Load Balancer Health Status",
+    description: "Get DNS Load Balancer Health status",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "ns1"\nNamespace in which the DNS Load Balancer is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'Name\n\nx-example: "dns_lb1"\nName of the DNS Load Balancer',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/dns_load_balancerDNSLBHealthStatusResponse",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBHealthStatus",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-health-statu-list",
+    method: "GET",
+    path: "/api/data/namespaces/{namespace}/dns_load_balancers/health_status",
+    operation: "list",
+    domain: "dns",
+    resource: "health-statu",
+    summary: "DNS Load Balancer Health Status List",
+    description: "Get Health Status of all DNS Load Balancers in a namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "ns1"\nNamespace to scope the listing of DNS LB health status',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/dns_load_balancerDNSLBHealthStatusListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBHealthStatusList",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-health-status-change-event-list",
+    method: "GET",
+    path: "/api/data/namespaces/{namespace}/dns_load_balancers/{dns_lb_name}/dns_lb_pools/{dns_lb_pool_name}/pool_members/{pool_member_address}/health_status_change_events",
+    operation: "list",
+    domain: "dns",
+    resource: "health-status-change-event",
+    summary: "DNS Load Balancer Pool Member Health Status Change Events",
+    description: "Get DNS Load Balancer Pool Health Status Changes",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "ns1"\nx-required\nNamespace in which the DNS Load Balancer Pool is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "dns_lb_name",
+        in: "path",
+        required: true,
+        description:
+          'DNS Load Balancer Name\n\nx-example: "dns_lb1"\nx-required\nName of the DNS Load Balancer',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "dns_lb_pool_name",
+        in: "path",
+        required: true,
+        description:
+          'DNS Load Balancer Pool Name\n\nx-example: "dns_lb_pool1"\nx-required\nName of the DNS Load Balancer Pool',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "pool_member_address",
+        in: "path",
+        required: true,
+        description:
+          'DNS Load Balancer Pool Member Address\n\nx-example: "10.0.0.1"\nx-required\nIP Address of the DNS Load Balancer Pool Member',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/dns_load_balancerDNSLBPoolMemberHealthStatusResponse",
+    },
+    requiredParams: ["namespace", "dns_lb_name", "dns_lb_pool_name", "pool_member_address"],
+    operationId:
+      "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBPoolMemberHealthStatusChangeEvents",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-import-axfr-create",
+    method: "POST",
+    path: "/api/config/dns/namespaces/system/dns_zone/import_axfr",
+    operation: "create",
+    domain: "dns",
+    resource: "import-axfr",
+    summary: "Import DNS Zone",
+    description: "Import DNS Zone via AXFR",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/dns_zoneImportAXFRRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/dns_zoneImportAXFRResponse",
+    },
+    requiredParams: ["body"],
+    operationId: "ves.io.schema.dns_zone.CustomAPI.ImportAXFR",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-import-bind-create-create",
+    method: "POST",
+    path: "/api/config/dns/namespaces/system/dns_zone/import_bind_create",
+    operation: "create",
+    domain: "dns",
+    resource: "import-bind-create",
+    summary: "Import BIND Files",
+    description: "Import BIND Files to Create DNS Zones",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/dns_zoneImportBINDCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/dns_zoneImportBINDResponse",
+    },
+    requiredParams: ["body"],
+    operationId: "ves.io.schema.dns_zone.CustomAPI.ImportBINDCreate",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-import-bind-validate-create",
+    method: "POST",
+    path: "/api/config/dns/namespaces/system/dns_zone/import_bind_validate",
+    operation: "create",
+    domain: "dns",
+    resource: "import-bind-validate",
+    summary: "Validate BIND Files",
+    description: "Validate BIND Files for Import",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/dns_zoneImportBINDValidateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/dns_zoneImportBINDResponse",
+    },
+    requiredParams: ["body"],
+    operationId: "ves.io.schema.dns_zone.CustomAPI.ImportBINDValidate",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-import-create",
+    method: "POST",
+    path: "/api/config/dns/namespaces/system/dns_zone/import",
+    operation: "create",
+    domain: "dns",
+    resource: "import",
+    summary: "Import F5 Cloud Services DNS Zone",
+    description: "Import F5 Cloud Services DNS Zone",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/dns_zoneImportF5CSZoneRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/dns_zoneImportF5CSZoneResponse",
+    },
+    requiredParams: ["body"],
+    operationId: "ves.io.schema.dns_zone.CustomAPI.ImportF5CSZone",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-local-zone-file-list",
+    method: "GET",
+    path: "/api/config/dns/namespaces/{namespace}/dns_zone/{dns_zone_name}/local_zone_file",
+    operation: "list",
+    domain: "dns",
+    resource: "local-zone-file",
+    summary: "Get Local Zone File",
+    description: "get local zone file from secondary dns",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "dns_zone_name",
+        in: "path",
+        required: true,
+        description:
+          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/dns_zoneGetLocalZoneFileResponse",
+    },
+    requiredParams: ["namespace", "dns_zone_name"],
+    operationId: "ves.io.schema.dns_zone.CustomAPI.GetLocalZoneFile",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+  },
+  {
     toolName: "f5xc-api-dns-metric-create",
     method: "POST",
     path: "/api/data/namespaces/{namespace}/dns_zones/metrics",
@@ -1089,150 +1120,45 @@ export const dnsTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-dns-request-log-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/dns_zones/request_logs",
-    operation: "create",
+    toolName: "f5xc-api-dns-pool-members-health-statu-list",
+    method: "GET",
+    path: "/api/data/namespaces/{namespace}/dns_load_balancers/pool_members_health_status",
+    operation: "list",
     domain: "dns",
-    resource: "request-log",
-    summary: "Get DNS Zone Request Logs",
-    description: "Retrieve Dns Zone Request Logs",
+    resource: "pool-members-health-statu",
+    summary: "DNS Load Balancer Pool Members Health Status List",
+    description: "Get Health Status of all DNS Load Balancer Pool Members in a namespace",
     pathParameters: [
       {
         name: "namespace",
         in: "path",
         required: true,
-        description: 'namespace\n\nx-example: "value"\nfetch request logs for a given namespace',
+        description:
+          'Namespace\n\nx-example: "ns1"\nNamespace to scope the listing of DNS LB health status',
         schema: {
           type: "string",
         },
       },
     ],
     queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/dns_zoneDnsZoneRequestLogRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/dns_zoneDnsZoneRequestLogResponse",
-    },
-    requiredParams: ["namespace", "body"],
-    operationId: "ves.io.schema.dns_zone.CustomDataAPI.DnsZoneRequestLogs",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-dns-zone-get",
-    method: "GET",
-    path: "/api/config/dns/namespaces/{namespace}/dns_zones/{name}",
-    operation: "get",
-    domain: "dns",
-    resource: "dns-zone",
-    summary: "Get DNS Zone",
-    description: "Get DNS Zone details.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/dns_zoneGetResponse",
+      $ref: "#/components/schemas/dns_load_balancerDNSLBPoolMemberHealthStatusListResponse",
     },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.dns_zone.API.Get",
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBPoolMemberHealthStatusList",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-dns-dns-zone-delete",
+    toolName: "f5xc-api-dns-record-name-delete",
     method: "DELETE",
-    path: "/api/config/dns/namespaces/{namespace}/dns_zones/{name}",
+    path: "/api/config/dns/namespaces/system/dns_zones/{dns_zone_name}/rrsets/{group_name}/{record_name}/{type}",
     operation: "delete",
     domain: "dns",
-    resource: "dns-zone",
-    summary: "Delete DNS Zone",
-    description: "Delete the specified dns_zone",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/dns_zoneDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.dns_zone.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-dns-rrset-create",
-    method: "POST",
-    path: "/api/config/dns/namespaces/system/dns_zones/{dns_zone_name}/rrsets/{group_name}",
-    operation: "create",
-    domain: "dns",
-    resource: "rrset",
-    summary: "Create",
+    resource: "{record-name}",
+    summary: "Delete",
     description: "",
     pathParameters: [
       {
@@ -1253,16 +1179,32 @@ export const dnsTools: ParsedOperation[] = [
           type: "string",
         },
       },
+      {
+        name: "record_name",
+        in: "path",
+        required: true,
+        description: "record_name\n\nx-required",
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "type",
+        in: "path",
+        required: true,
+        description: "type\n\nx-required",
+        schema: {
+          type: "string",
+        },
+      },
     ],
     queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/rrsetCreateRequest",
-    },
+    requestBodySchema: null,
     responseSchema: {
       $ref: "#/components/schemas/rrsetResponse",
     },
-    requiredParams: ["dns_zone_name", "group_name", "body"],
-    operationId: "ves.io.schema.dns_zone.rrset.CustomAPI.Create",
+    requiredParams: ["dns_zone_name", "group_name", "record_name", "type"],
+    operationId: "ves.io.schema.dns_zone.rrset.CustomAPI.Delete",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0105.public.ves.io.schema.dns_zone.rrset.ves-swagger.json",
@@ -1386,13 +1328,87 @@ export const dnsTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0105.public.ves.io.schema.dns_zone.rrset.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-dns-record-name-delete",
-    method: "DELETE",
-    path: "/api/config/dns/namespaces/system/dns_zones/{dns_zone_name}/rrsets/{group_name}/{record_name}/{type}",
-    operation: "delete",
+    toolName: "f5xc-api-dns-remote-zone-file-list",
+    method: "GET",
+    path: "/api/config/dns/namespaces/{namespace}/dns_zone/{dns_zone_name}/remote_zone_file",
+    operation: "list",
     domain: "dns",
-    resource: "{record-name}",
-    summary: "Delete",
+    resource: "remote-zone-file",
+    summary: "Get Remote Zone File",
+    description: "get remote zone file from primary dns",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description: 'Namespace\n\nx-example: "system"\nNamespace is always system for dns_zone',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "dns_zone_name",
+        in: "path",
+        required: true,
+        description:
+          'Name\n\nx-example: "example.com"\nName dns_zone object which is also the DNS zone',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/dns_zoneGetRemoteZoneFileResponse",
+    },
+    requiredParams: ["namespace", "dns_zone_name"],
+    operationId: "ves.io.schema.dns_zone.CustomAPI.GetRemoteZoneFile",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-request-log-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/dns_zones/request_logs",
+    operation: "create",
+    domain: "dns",
+    resource: "request-log",
+    summary: "Get DNS Zone Request Logs",
+    description: "Retrieve Dns Zone Request Logs",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description: 'namespace\n\nx-example: "value"\nfetch request logs for a given namespace',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/dns_zoneDnsZoneRequestLogRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/dns_zoneDnsZoneRequestLogResponse",
+    },
+    requiredParams: ["namespace", "body"],
+    operationId: "ves.io.schema.dns_zone.CustomDataAPI.DnsZoneRequestLogs",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0091.public.ves.io.schema.dns_zone.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-dns-rrset-create",
+    method: "POST",
+    path: "/api/config/dns/namespaces/system/dns_zones/{dns_zone_name}/rrsets/{group_name}",
+    operation: "create",
+    domain: "dns",
+    resource: "rrset",
+    summary: "Create",
     description: "",
     pathParameters: [
       {
@@ -1413,32 +1429,16 @@ export const dnsTools: ParsedOperation[] = [
           type: "string",
         },
       },
-      {
-        name: "record_name",
-        in: "path",
-        required: true,
-        description: "record_name\n\nx-required",
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "type",
-        in: "path",
-        required: true,
-        description: "type\n\nx-required",
-        schema: {
-          type: "string",
-        },
-      },
     ],
     queryParameters: [],
-    requestBodySchema: null,
+    requestBodySchema: {
+      $ref: "#/components/schemas/rrsetCreateRequest",
+    },
     responseSchema: {
       $ref: "#/components/schemas/rrsetResponse",
     },
-    requiredParams: ["dns_zone_name", "group_name", "record_name", "type"],
-    operationId: "ves.io.schema.dns_zone.rrset.CustomAPI.Delete",
+    requiredParams: ["dns_zone_name", "group_name", "body"],
+    operationId: "ves.io.schema.dns_zone.rrset.CustomAPI.Create",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0105.public.ves.io.schema.dns_zone.rrset.ves-swagger.json",

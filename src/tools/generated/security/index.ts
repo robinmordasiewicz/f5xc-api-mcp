@@ -7,6 +7,1045 @@ import type { ParsedOperation } from "../../../generator/openapi-parser.js";
 
 export const securityTools: ParsedOperation[] = [
   {
+    toolName: "f5xc-api-security-all-application-inventory-waf-filter-create",
+    method: "POST",
+    path: "/api/config/namespaces/system/all_application_inventory_waf_filters",
+    operation: "create",
+    domain: "security",
+    resource: "all-application-inventory-waf-filter",
+    summary: "All Application Objects Inventory with WAF Filters",
+    description:
+      "AllApplicationInventoryWaf returns inventory of configured application related objects for all namespaces with WAF Filters.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/namespaceAllApplicationInventoryWafFilterRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/namespaceAllApplicationInventoryWafFilterResponse",
+    },
+    requiredParams: ["body"],
+    operationId: "ves.io.schema.namespace.NamespaceCustomAPI.AllApplicationInventoryWaf",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-hit-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/service_policy/hits",
+    operation: "create",
+    domain: "security",
+    resource: "hit",
+    summary: "Service Policy Hits",
+    description: "Get the counter for Service Policy hits for a given namespace.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "ns1"\nNamespace is used to scope Service policy hits for the given namespace.',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/service_policyServicePolicyHitsResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.service_policy.CustomDataAPI.ServicePolicyHits",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-latency-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/service_policy/latency",
+    operation: "create",
+    domain: "security",
+    resource: "latency",
+    summary: "Service Policy Latency",
+    description: "Get the average latency for Service policy evaluation.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "ns1"\nNamespace is used to scope Service policy hits for the given namespace.',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/service_policyServicePolicyHitsResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.service_policy.CustomDataAPI.ServicePolicyHitsLatency",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-malicious-user-mitigation-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/malicious_user_mitigations",
+    operation: "create",
+    domain: "security",
+    resource: "malicious-user-mitigation",
+    summary: "Create Malicious User Mitigation",
+    description:
+      "Create malicious_user_mitigation creates a new object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/malicious_user_mitigationCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/malicious_user_mitigationCreateResponse",
+    },
+    requiredParams: ["metadata.namespace", "body"],
+    operationId: "ves.io.schema.malicious_user_mitigation.API.Create",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-malicious-user-mitigation-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/malicious_user_mitigations/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "malicious-user-mitigation",
+    summary: "Delete Malicious User Mitigation",
+    description: "Delete the specified malicious_user_mitigation",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/malicious_user_mitigationDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.malicious_user_mitigation.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-malicious-user-mitigation-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/malicious_user_mitigations/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "malicious-user-mitigation",
+    summary: "Get Malicious User Mitigation",
+    description:
+      "Get malicious_user_mitigation reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/malicious_user_mitigationGetResponse",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.malicious_user_mitigation.API.Get",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-malicious-user-mitigation-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/malicious_user_mitigations",
+    operation: "list",
+    domain: "security",
+    resource: "malicious-user-mitigation",
+    summary: "List Malicious User Mitigation",
+    description: "List the set of malicious_user_mitigation in a namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of malicious_user_mitigation',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
+        description:
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/malicious_user_mitigationListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.malicious_user_mitigation.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-malicious-user-mitigation-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/malicious_user_mitigations/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "malicious-user-mitigation",
+    summary: "Replace Malicious User Mitigation",
+    description:
+      "Replace malicious_user_mitigation replaces an existing object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/malicious_user_mitigationReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/malicious_user_mitigationReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.malicious_user_mitigation.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-rule-hit-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/wafs/metrics/client/rule_hits",
+    operation: "create",
+    domain: "security",
+    resource: "rule-hit",
+    summary: "Client Rule Hits Metrics",
+    description:
+      "Get number of rule hits per client for a given namespace.\nThe rule hits counter can be aggregated based on one or more labels listed here.\nNAMESPACE, APP_TYPE, VIRTUAL_HOST, SITE, SERVICE, INSTANCE, WAF_INSTANCE_ID, RULE_ID, RULE_SEVERITY, RULE_TAG.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nnamespace is used to scope the WAF rule hits for the given namespace.\nx-example: "bloggin-app-namespace-1"',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/wafRuleHitsCountResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.waf.WAFMonitoringAPI.ClientRuleHitsMetrics",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0262.public.ves.io.schema.waf.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-security-event-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/wafs/metrics/client/security_events",
+    operation: "create",
+    domain: "security",
+    resource: "security-event",
+    summary: "Client Security Events Metrics",
+    description:
+      "Get number of security events per client for a given namespace.\nThe security events counter can be aggregated based on one or more labels listed here.\nNAMESPACE, APP_TYPE, VIRTUAL_HOST, SITE, SERVICE, INSTANCE, WAF_INSTANCE_ID, WAF_MODE.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "bloggin-app-namespace-1"\nnamespace is used to scope the WAF security events for the given namespace.',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/wafSecurityEventsCountResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.waf.WAFMonitoringAPI.ClientSecurityEventsMetrics",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0262.public.ves.io.schema.waf.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/service_policys",
+    operation: "create",
+    domain: "security",
+    resource: "service-policy",
+    summary: "Create Service Policy",
+    description:
+      "Create service_policy creates a new object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/service_policyCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/service_policyCreateResponse",
+    },
+    requiredParams: ["metadata.namespace", "body"],
+    operationId: "ves.io.schema.service_policy.API.Create",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/service_policys/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "service-policy",
+    summary: "Delete Service Policy",
+    description: "Delete the specified service_policy",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/service_policyDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.service_policy.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/service_policys/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "service-policy",
+    summary: "Get Service Policy",
+    description:
+      "Get service_policy reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/service_policyGetResponse",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.service_policy.API.Get",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/service_policys",
+    operation: "list",
+    domain: "security",
+    resource: "service-policy",
+    summary: "List Service Policy",
+    description: "List the set of service_policy in a namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
+        description:
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/service_policyListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.service_policy.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-rule-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/service_policy_rules",
+    operation: "create",
+    domain: "security",
+    resource: "service-policy-rule",
+    summary: "Create Service Policy Rule",
+    description:
+      "Create service_policy_rule creates a new object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/service_policy_ruleCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/service_policy_ruleCreateResponse",
+    },
+    requiredParams: ["metadata.namespace", "body"],
+    operationId: "ves.io.schema.service_policy_rule.API.Create",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-rule-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/service_policy_rules/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "service-policy-rule",
+    summary: "Delete Service Policy Rule",
+    description: "Delete the specified service_policy_rule",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/service_policy_ruleDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.service_policy_rule.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-rule-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/service_policy_rules/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "service-policy-rule",
+    summary: "Get Service Policy Rule",
+    description:
+      "Get service_policy_rule reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/service_policy_ruleGetResponse",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.service_policy_rule.API.Get",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-rule-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/service_policy_rules",
+    operation: "list",
+    domain: "security",
+    resource: "service-policy-rule",
+    summary: "List Service Policy Rule",
+    description: "List the set of service_policy_rule in a namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy_rule',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
+        description:
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/service_policy_ruleListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.service_policy_rule.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-rule-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/service_policy_rules/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "service-policy-rule",
+    summary: "Replace Service Policy Rule",
+    description:
+      "Replace service_policy_rule replaces an existing object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/service_policy_ruleReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/service_policy_ruleReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.service_policy_rule.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-set-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/service_policy_sets/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "service-policy-set",
+    summary: "Get Service Policy Set",
+    description:
+      "Get service_policy_set reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/service_policy_setGetResponse",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.service_policy_set.API.Get",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0210.public.ves.io.schema.service_policy_set.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-set-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/service_policy_sets",
+    operation: "list",
+    domain: "security",
+    resource: "service-policy-set",
+    summary: "List Service Policy Set",
+    description: "List the set of service_policy_set in a namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy_set',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
+        description:
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/service_policy_setListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.service_policy_set.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0210.public.ves.io.schema.service_policy_set.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-service-policy-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/service_policys/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "service-policy",
+    summary: "Replace Service Policy",
+    description:
+      "Replace service_policy replaces an existing object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/service_policyReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/service_policyReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.service_policy.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+  },
+  {
     toolName: "f5xc-api-security-suggestion-create",
     method: "POST",
     path: "/api/config/namespaces/{namespace}/cdn_loadbalancers/{name}/waf_exclusion/suggestion",
@@ -83,1045 +1122,6 @@ export const securityTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-security-malicious-user-mitigation-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/malicious_user_mitigations",
-    operation: "create",
-    domain: "security",
-    resource: "malicious-user-mitigation",
-    summary: "Create Malicious User Mitigation",
-    description:
-      "Create malicious_user_mitigation creates a new object in the storage backend for metadata.namespace.",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/malicious_user_mitigationCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/malicious_user_mitigationCreateResponse",
-    },
-    requiredParams: ["metadata.namespace", "body"],
-    operationId: "ves.io.schema.malicious_user_mitigation.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-malicious-user-mitigation-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/malicious_user_mitigations/{metadata.name}",
-    operation: "update",
-    domain: "security",
-    resource: "malicious-user-mitigation",
-    summary: "Replace Malicious User Mitigation",
-    description:
-      "Replace malicious_user_mitigation replaces an existing object in the storage backend for metadata.namespace.",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "metadata.name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/malicious_user_mitigationReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/malicious_user_mitigationReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.malicious_user_mitigation.API.Replace",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-malicious-user-mitigation-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/malicious_user_mitigations",
-    operation: "list",
-    domain: "security",
-    resource: "malicious-user-mitigation",
-    summary: "List Malicious User Mitigation",
-    description: "List the set of malicious_user_mitigation in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of malicious_user_mitigation',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/malicious_user_mitigationListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.malicious_user_mitigation.API.List",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-malicious-user-mitigation-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/malicious_user_mitigations/{name}",
-    operation: "get",
-    domain: "security",
-    resource: "malicious-user-mitigation",
-    summary: "Get Malicious User Mitigation",
-    description:
-      "Get malicious_user_mitigation reads a given object from storage backend for metadata.namespace.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/malicious_user_mitigationGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.malicious_user_mitigation.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-malicious-user-mitigation-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/malicious_user_mitigations/{name}",
-    operation: "delete",
-    domain: "security",
-    resource: "malicious-user-mitigation",
-    summary: "Delete Malicious User Mitigation",
-    description: "Delete the specified malicious_user_mitigation",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/malicious_user_mitigationDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.malicious_user_mitigation.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-all-application-inventory-waf-filter-create",
-    method: "POST",
-    path: "/api/config/namespaces/system/all_application_inventory_waf_filters",
-    operation: "create",
-    domain: "security",
-    resource: "all-application-inventory-waf-filter",
-    summary: "All Application Objects Inventory with WAF Filters",
-    description:
-      "AllApplicationInventoryWaf returns inventory of configured application related objects for all namespaces with WAF Filters.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/namespaceAllApplicationInventoryWafFilterRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/namespaceAllApplicationInventoryWafFilterResponse",
-    },
-    requiredParams: ["body"],
-    operationId: "ves.io.schema.namespace.NamespaceCustomAPI.AllApplicationInventoryWaf",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/service_policys",
-    operation: "create",
-    domain: "security",
-    resource: "service-policy",
-    summary: "Create Service Policy",
-    description:
-      "Create service_policy creates a new object in the storage backend for metadata.namespace.",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/service_policyCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/service_policyCreateResponse",
-    },
-    requiredParams: ["metadata.namespace", "body"],
-    operationId: "ves.io.schema.service_policy.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/service_policys/{metadata.name}",
-    operation: "update",
-    domain: "security",
-    resource: "service-policy",
-    summary: "Replace Service Policy",
-    description:
-      "Replace service_policy replaces an existing object in the storage backend for metadata.namespace.",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "metadata.name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/service_policyReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/service_policyReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.service_policy.API.Replace",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-hit-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/service_policy/hits",
-    operation: "create",
-    domain: "security",
-    resource: "hit",
-    summary: "Service Policy Hits",
-    description: "Get the counter for Service Policy hits for a given namespace.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "ns1"\nNamespace is used to scope Service policy hits for the given namespace.',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/service_policyServicePolicyHitsResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.service_policy.CustomDataAPI.ServicePolicyHits",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-latency-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/service_policy/latency",
-    operation: "create",
-    domain: "security",
-    resource: "latency",
-    summary: "Service Policy Latency",
-    description: "Get the average latency for Service policy evaluation.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "ns1"\nNamespace is used to scope Service policy hits for the given namespace.',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/service_policyServicePolicyHitsResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.service_policy.CustomDataAPI.ServicePolicyHitsLatency",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/service_policys",
-    operation: "list",
-    domain: "security",
-    resource: "service-policy",
-    summary: "List Service Policy",
-    description: "List the set of service_policy in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/service_policyListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.service_policy.API.List",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/service_policys/{name}",
-    operation: "get",
-    domain: "security",
-    resource: "service-policy",
-    summary: "Get Service Policy",
-    description:
-      "Get service_policy reads a given object from storage backend for metadata.namespace.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/service_policyGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.service_policy.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/service_policys/{name}",
-    operation: "delete",
-    domain: "security",
-    resource: "service-policy",
-    summary: "Delete Service Policy",
-    description: "Delete the specified service_policy",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/service_policyDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.service_policy.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-rule-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/service_policy_rules",
-    operation: "create",
-    domain: "security",
-    resource: "service-policy-rule",
-    summary: "Create Service Policy Rule",
-    description:
-      "Create service_policy_rule creates a new object in the storage backend for metadata.namespace.",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/service_policy_ruleCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/service_policy_ruleCreateResponse",
-    },
-    requiredParams: ["metadata.namespace", "body"],
-    operationId: "ves.io.schema.service_policy_rule.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-rule-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/service_policy_rules/{metadata.name}",
-    operation: "update",
-    domain: "security",
-    resource: "service-policy-rule",
-    summary: "Replace Service Policy Rule",
-    description:
-      "Replace service_policy_rule replaces an existing object in the storage backend for metadata.namespace.",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "metadata.name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/service_policy_ruleReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/service_policy_ruleReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.service_policy_rule.API.Replace",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-rule-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/service_policy_rules",
-    operation: "list",
-    domain: "security",
-    resource: "service-policy-rule",
-    summary: "List Service Policy Rule",
-    description: "List the set of service_policy_rule in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy_rule',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/service_policy_ruleListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.service_policy_rule.API.List",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-rule-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/service_policy_rules/{name}",
-    operation: "get",
-    domain: "security",
-    resource: "service-policy-rule",
-    summary: "Get Service Policy Rule",
-    description:
-      "Get service_policy_rule reads a given object from storage backend for metadata.namespace.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/service_policy_ruleGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.service_policy_rule.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-rule-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/service_policy_rules/{name}",
-    operation: "delete",
-    domain: "security",
-    resource: "service-policy-rule",
-    summary: "Delete Service Policy Rule",
-    description: "Delete the specified service_policy_rule",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/service_policy_ruleDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.service_policy_rule.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-set-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/service_policy_sets",
-    operation: "list",
-    domain: "security",
-    resource: "service-policy-set",
-    summary: "List Service Policy Set",
-    description: "List the set of service_policy_set in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy_set',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/service_policy_setListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.service_policy_set.API.List",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0210.public.ves.io.schema.service_policy_set.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-service-policy-set-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/service_policy_sets/{name}",
-    operation: "get",
-    domain: "security",
-    resource: "service-policy-set",
-    summary: "Get Service Policy Set",
-    description:
-      "Get service_policy_set reads a given object from storage backend for metadata.namespace.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/service_policy_setGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.service_policy_set.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0210.public.ves.io.schema.service_policy_set.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-rule-hit-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/wafs/metrics/client/rule_hits",
-    operation: "create",
-    domain: "security",
-    resource: "rule-hit",
-    summary: "Client Rule Hits Metrics",
-    description:
-      "Get number of rule hits per client for a given namespace.\nThe rule hits counter can be aggregated based on one or more labels listed here.\nNAMESPACE, APP_TYPE, VIRTUAL_HOST, SITE, SERVICE, INSTANCE, WAF_INSTANCE_ID, RULE_ID, RULE_SEVERITY, RULE_TAG.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nnamespace is used to scope the WAF rule hits for the given namespace.\nx-example: "bloggin-app-namespace-1"',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/wafRuleHitsCountResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.waf.WAFMonitoringAPI.ClientRuleHitsMetrics",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0262.public.ves.io.schema.waf.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-security-event-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/wafs/metrics/client/security_events",
-    operation: "create",
-    domain: "security",
-    resource: "security-event",
-    summary: "Client Security Events Metrics",
-    description:
-      "Get number of security events per client for a given namespace.\nThe security events counter can be aggregated based on one or more labels listed here.\nNAMESPACE, APP_TYPE, VIRTUAL_HOST, SITE, SERVICE, INSTANCE, WAF_INSTANCE_ID, WAF_MODE.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "bloggin-app-namespace-1"\nnamespace is used to scope the WAF security events for the given namespace.',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/wafSecurityEventsCountResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.waf.WAFMonitoringAPI.ClientSecurityEventsMetrics",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0262.public.ves.io.schema.waf.ves-swagger.json",
-  },
-  {
     toolName: "f5xc-api-security-waf-exclusion-policy-create",
     method: "POST",
     path: "/api/config/namespaces/{metadata.namespace}/waf_exclusion_policys",
@@ -1156,31 +1156,30 @@ export const securityTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-security-waf-exclusion-policy-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/waf_exclusion_policys/{metadata.name}",
-    operation: "update",
+    toolName: "f5xc-api-security-waf-exclusion-policy-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/waf_exclusion_policys/{name}",
+    operation: "delete",
     domain: "security",
     resource: "waf-exclusion-policy",
-    summary: "Replace WAF Exclusion Policy",
-    description: "Replace an existing WAF exclusion policy",
+    summary: "Delete WAF Exclusion Policy",
+    description: "Delete the specified waf_exclusion_policy",
     pathParameters: [
       {
-        name: "metadata.namespace",
+        name: "namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
+        name: "name",
         in: "path",
         required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -1188,13 +1187,74 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/waf_exclusion_policyReplaceRequest",
+      $ref: "#/components/schemas/waf_exclusion_policyDeleteRequest",
     },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.waf_exclusion_policy.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-security-waf-exclusion-policy-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/waf_exclusion_policys/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "waf-exclusion-policy",
+    summary: "Get WAF Exclusion Policy",
+    description: "Retrieve a WAF exclusion policy",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/waf_exclusion_policyReplaceResponse",
+      $ref: "#/components/schemas/waf_exclusion_policyGetResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.waf_exclusion_policy.API.Replace",
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.waf_exclusion_policy.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
@@ -1267,93 +1327,31 @@ export const securityTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-security-waf-exclusion-policy-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/waf_exclusion_policys/{name}",
-    operation: "get",
+    toolName: "f5xc-api-security-waf-exclusion-policy-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/waf_exclusion_policys/{metadata.name}",
+    operation: "update",
     domain: "security",
     resource: "waf-exclusion-policy",
-    summary: "Get WAF Exclusion Policy",
-    description: "Retrieve a WAF exclusion policy",
+    summary: "Replace WAF Exclusion Policy",
+    description: "Replace an existing WAF exclusion policy",
     pathParameters: [
       {
-        name: "namespace",
+        name: "metadata.namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        name: "metadata.name",
         in: "path",
         required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/waf_exclusion_policyGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.waf_exclusion_policy.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-waf-exclusion-policy-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/waf_exclusion_policys/{name}",
-    operation: "delete",
-    domain: "security",
-    resource: "waf-exclusion-policy",
-    summary: "Delete WAF Exclusion Policy",
-    description: "Delete the specified waf_exclusion_policy",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
         schema: {
           type: "string",
         },
@@ -1361,11 +1359,13 @@ export const securityTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/waf_exclusion_policyDeleteRequest",
+      $ref: "#/components/schemas/waf_exclusion_policyReplaceRequest",
     },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.waf_exclusion_policy.API.Delete",
+    responseSchema: {
+      $ref: "#/components/schemas/waf_exclusion_policyReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.waf_exclusion_policy.API.Replace",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",

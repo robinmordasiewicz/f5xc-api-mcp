@@ -267,7 +267,9 @@ async function generate(): Promise<void> {
     const domainDir = join(CONFIG.GENERATED_DIR, domain);
     mkdirSync(domainDir, { recursive: true });
 
-    const content = generateDomainFile(domain, ops);
+    // Sort operations by toolName for deterministic output
+    const sortedOps = [...ops].sort((a, b) => a.toolName.localeCompare(b.toolName));
+    const content = generateDomainFile(domain, sortedOps);
     await writeFormattedFile(join(domainDir, "index.ts"), content);
 
     log.info(`Generated ${ops.length} tools for ${domain} domain`);

@@ -41,6 +41,177 @@ export const siteTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
   },
   {
+    toolName: "f5xc-api-site-aws-vpc-site-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/aws_vpc_sites/{name}",
+    operation: "delete",
+    domain: "site",
+    resource: "aws-vpc-site",
+    summary: "Delete Configure AWS VPC Site",
+    description: "Delete the specified aws_vpc_site",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/aws_vpc_siteDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.views.aws_vpc_site.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-aws-vpc-site-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/aws_vpc_sites/{name}",
+    operation: "get",
+    domain: "site",
+    resource: "aws-vpc-site",
+    summary: "Get AWS VPC site",
+    description: "Shape of the AWS VPC site specification",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/aws_vpc_siteGetResponse",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.views.aws_vpc_site.API.Get",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-aws-vpc-site-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/aws_vpc_sites",
+    operation: "list",
+    domain: "site",
+    resource: "aws-vpc-site",
+    summary: "List Configure AWS VPC Site",
+    description: "List the set of aws_vpc_site in a namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of aws_vpc_site',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
+        description:
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/aws_vpc_siteListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.views.aws_vpc_site.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+  },
+  {
     toolName: "f5xc-api-site-aws-vpc-site-update",
     method: "PUT",
     path: "/api/config/namespaces/{metadata.namespace}/aws_vpc_sites/{metadata.name}",
@@ -83,6 +254,504 @@ export const siteTools: ParsedOperation[] = [
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-azure-vnet-site-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/azure_vnet_sites",
+    operation: "create",
+    domain: "site",
+    resource: "azure-vnet-site",
+    summary: "Create Azure VNet site",
+    description: "Shape of the Azure VNet site specification",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/azure_vnet_siteCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/azure_vnet_siteCreateResponse",
+    },
+    requiredParams: ["metadata.namespace", "body"],
+    operationId: "ves.io.schema.views.azure_vnet_site.API.Create",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-azure-vnet-site-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/azure_vnet_sites/{name}",
+    operation: "delete",
+    domain: "site",
+    resource: "azure-vnet-site",
+    summary: "Delete Configure Azure VNet Site",
+    description: "Delete the specified azure_vnet_site",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/azure_vnet_siteDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.views.azure_vnet_site.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-azure-vnet-site-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/azure_vnet_sites/{name}",
+    operation: "get",
+    domain: "site",
+    resource: "azure-vnet-site",
+    summary: "Get Azure VNet site",
+    description: "Shape of the Azure VNet site specification",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/azure_vnet_siteGetResponse",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.views.azure_vnet_site.API.Get",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-azure-vnet-site-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/azure_vnet_sites",
+    operation: "list",
+    domain: "site",
+    resource: "azure-vnet-site",
+    summary: "List Configure Azure VNet Site",
+    description: "List the set of azure_vnet_site in a namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of azure_vnet_site',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
+        description:
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/azure_vnet_siteListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.views.azure_vnet_site.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-azure-vnet-site-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/azure_vnet_sites/{metadata.name}",
+    operation: "update",
+    domain: "site",
+    resource: "azure-vnet-site",
+    summary: "Replace Azure VNet site",
+    description: "Shape of the Azure VNet site replace specification",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/azure_vnet_siteReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/azure_vnet_siteReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.views.azure_vnet_site.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-gcp-vpc-site-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/gcp_vpc_sites",
+    operation: "create",
+    domain: "site",
+    resource: "gcp-vpc-site",
+    summary: "Create GCP VPC site",
+    description: "Shape of the GCP VPC site specification",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/gcp_vpc_siteCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/gcp_vpc_siteCreateResponse",
+    },
+    requiredParams: ["metadata.namespace", "body"],
+    operationId: "ves.io.schema.views.gcp_vpc_site.API.Create",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-gcp-vpc-site-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/gcp_vpc_sites/{name}",
+    operation: "delete",
+    domain: "site",
+    resource: "gcp-vpc-site",
+    summary: "Delete Configure GCP VPC Site",
+    description: "Delete the specified gcp_vpc_site",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/gcp_vpc_siteDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.views.gcp_vpc_site.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-gcp-vpc-site-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/gcp_vpc_sites/{name}",
+    operation: "get",
+    domain: "site",
+    resource: "gcp-vpc-site",
+    summary: "Get GCP VPC site",
+    description: "Shape of the GCP VPC site specification",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/gcp_vpc_siteGetResponse",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.views.gcp_vpc_site.API.Get",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-gcp-vpc-site-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/gcp_vpc_sites",
+    operation: "list",
+    domain: "site",
+    resource: "gcp-vpc-site",
+    summary: "List Configure GCP VPC Site",
+    description: "List the set of gcp_vpc_site in a namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of gcp_vpc_site',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
+        description:
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/gcp_vpc_siteListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.views.gcp_vpc_site.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-site-gcp-vpc-site-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/gcp_vpc_sites/{metadata.name}",
+    operation: "update",
+    domain: "site",
+    resource: "gcp-vpc-site",
+    summary: "Replace GCP VPC site",
+    description: "Shape of the GCP VPC site replace specification",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/gcp_vpc_siteReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/gcp_vpc_siteReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.views.gcp_vpc_site.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-site-set-cloud-site-info-create",
@@ -252,675 +921,6 @@ export const siteTools: ParsedOperation[] = [
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-aws-vpc-site-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/aws_vpc_sites",
-    operation: "list",
-    domain: "site",
-    resource: "aws-vpc-site",
-    summary: "List Configure AWS VPC Site",
-    description: "List the set of aws_vpc_site in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of aws_vpc_site',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/aws_vpc_siteListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.views.aws_vpc_site.API.List",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-aws-vpc-site-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/aws_vpc_sites/{name}",
-    operation: "get",
-    domain: "site",
-    resource: "aws-vpc-site",
-    summary: "Get AWS VPC site",
-    description: "Shape of the AWS VPC site specification",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/aws_vpc_siteGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.views.aws_vpc_site.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-aws-vpc-site-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/aws_vpc_sites/{name}",
-    operation: "delete",
-    domain: "site",
-    resource: "aws-vpc-site",
-    summary: "Delete Configure AWS VPC Site",
-    description: "Delete the specified aws_vpc_site",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/aws_vpc_siteDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.views.aws_vpc_site.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0066.public.ves.io.schema.views.aws_vpc_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-azure-vnet-site-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/azure_vnet_sites",
-    operation: "create",
-    domain: "site",
-    resource: "azure-vnet-site",
-    summary: "Create Azure VNet site",
-    description: "Shape of the Azure VNet site specification",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/azure_vnet_siteCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/azure_vnet_siteCreateResponse",
-    },
-    requiredParams: ["metadata.namespace", "body"],
-    operationId: "ves.io.schema.views.azure_vnet_site.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-azure-vnet-site-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/azure_vnet_sites/{metadata.name}",
-    operation: "update",
-    domain: "site",
-    resource: "azure-vnet-site",
-    summary: "Replace Azure VNet site",
-    description: "Shape of the Azure VNet site replace specification",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "metadata.name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/azure_vnet_siteReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/azure_vnet_siteReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.views.azure_vnet_site.API.Replace",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-azure-vnet-site-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/azure_vnet_sites",
-    operation: "list",
-    domain: "site",
-    resource: "azure-vnet-site",
-    summary: "List Configure Azure VNet Site",
-    description: "List the set of azure_vnet_site in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of azure_vnet_site',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/azure_vnet_siteListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.views.azure_vnet_site.API.List",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-azure-vnet-site-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/azure_vnet_sites/{name}",
-    operation: "get",
-    domain: "site",
-    resource: "azure-vnet-site",
-    summary: "Get Azure VNet site",
-    description: "Shape of the Azure VNet site specification",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/azure_vnet_siteGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.views.azure_vnet_site.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-azure-vnet-site-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/azure_vnet_sites/{name}",
-    operation: "delete",
-    domain: "site",
-    resource: "azure-vnet-site",
-    summary: "Delete Configure Azure VNet Site",
-    description: "Delete the specified azure_vnet_site",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/azure_vnet_siteDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.views.azure_vnet_site.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0068.public.ves.io.schema.views.azure_vnet_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-gcp-vpc-site-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/gcp_vpc_sites",
-    operation: "create",
-    domain: "site",
-    resource: "gcp-vpc-site",
-    summary: "Create GCP VPC site",
-    description: "Shape of the GCP VPC site specification",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/gcp_vpc_siteCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/gcp_vpc_siteCreateResponse",
-    },
-    requiredParams: ["metadata.namespace", "body"],
-    operationId: "ves.io.schema.views.gcp_vpc_site.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-gcp-vpc-site-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/gcp_vpc_sites/{metadata.name}",
-    operation: "update",
-    domain: "site",
-    resource: "gcp-vpc-site",
-    summary: "Replace GCP VPC site",
-    description: "Shape of the GCP VPC site replace specification",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "metadata.name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/gcp_vpc_siteReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/gcp_vpc_siteReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.views.gcp_vpc_site.API.Replace",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-gcp-vpc-site-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/gcp_vpc_sites",
-    operation: "list",
-    domain: "site",
-    resource: "gcp-vpc-site",
-    summary: "List Configure GCP VPC Site",
-    description: "List the set of gcp_vpc_site in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of gcp_vpc_site',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/gcp_vpc_siteListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.views.gcp_vpc_site.API.List",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-gcp-vpc-site-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/gcp_vpc_sites/{name}",
-    operation: "get",
-    domain: "site",
-    resource: "gcp-vpc-site",
-    summary: "Get GCP VPC site",
-    description: "Shape of the GCP VPC site specification",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/gcp_vpc_siteGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.views.gcp_vpc_site.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-site-gcp-vpc-site-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/gcp_vpc_sites/{name}",
-    operation: "delete",
-    domain: "site",
-    resource: "gcp-vpc-site",
-    summary: "Delete Configure GCP VPC Site",
-    description: "Delete the specified gcp_vpc_site",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/gcp_vpc_siteDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.views.gcp_vpc_site.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0072.public.ves.io.schema.views.gcp_vpc_site.ves-swagger.json",
   },
 ];
 

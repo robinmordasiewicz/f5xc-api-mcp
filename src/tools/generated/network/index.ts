@@ -41,6 +41,177 @@ export const networkTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
   },
   {
+    toolName: "f5xc-api-network-enhanced-firewall-policy-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/enhanced_firewall_policys/{name}",
+    operation: "delete",
+    domain: "network",
+    resource: "enhanced-firewall-policy",
+    summary: "Delete Enhanced Firewall Policy",
+    description: "Delete the specified enhanced_firewall_policy",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.enhanced_firewall_policy.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-network-enhanced-firewall-policy-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/enhanced_firewall_policys/{name}",
+    operation: "get",
+    domain: "network",
+    resource: "enhanced-firewall-policy",
+    summary: "Get Enhanced Firewall Policy",
+    description: "Shape of the Enhanced Firewall Policy specification",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyGetResponse",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.enhanced_firewall_policy.API.Get",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-network-enhanced-firewall-policy-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/enhanced_firewall_policys",
+    operation: "list",
+    domain: "network",
+    resource: "enhanced-firewall-policy",
+    summary: "List Enhanced Firewall Policy",
+    description: "List the set of enhanced_firewall_policy in a namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of enhanced_firewall_policy',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
+        description:
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.enhanced_firewall_policy.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
+  },
+  {
     toolName: "f5xc-api-network-enhanced-firewall-policy-update",
     method: "PUT",
     path: "/api/config/namespaces/{metadata.namespace}/enhanced_firewall_policys/{metadata.name}",
@@ -119,81 +290,89 @@ export const networkTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-network-enhanced-firewall-policy-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/enhanced_firewall_policys",
-    operation: "list",
+    toolName: "f5xc-api-network-network-connector-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/network_connectors",
+    operation: "create",
     domain: "network",
-    resource: "enhanced-firewall-policy",
-    summary: "List Enhanced Firewall Policy",
-    description: "List the set of enhanced_firewall_policy in a namespace",
+    resource: "network-connector",
+    summary: "Create Network Connector",
+    description: "Network Connector is created by users in system namespace",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/network_connectorCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/network_connectorCreateResponse",
+    },
+    requiredParams: ["metadata.namespace", "body"],
+    operationId: "ves.io.schema.network_connector.API.Create",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-network-network-connector-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/network_connectors/{name}",
+    operation: "delete",
+    domain: "network",
+    resource: "network-connector",
+    summary: "Delete Network Connector",
+    description: "Delete the specified network_connector",
     pathParameters: [
       {
         name: "namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of enhanced_firewall_policy',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
+          type: "string",
         },
       },
     ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/enhanced_firewall_policyListResponse",
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/network_connectorDeleteRequest",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.enhanced_firewall_policy.API.List",
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.network_connector.API.Delete",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-network-enhanced-firewall-policy-get",
+    toolName: "f5xc-api-network-network-connector-get",
     method: "GET",
-    path: "/api/config/namespaces/{namespace}/enhanced_firewall_policys/{name}",
+    path: "/api/config/namespaces/{namespace}/network_connectors/{name}",
     operation: "get",
     domain: "network",
-    resource: "enhanced-firewall-policy",
-    summary: "Get Enhanced Firewall Policy",
-    description: "Shape of the Enhanced Firewall Policy specification",
+    resource: "network-connector",
+    summary: "Get Network Connector",
+    description: "Get Network Connector in system namespace",
     pathParameters: [
       {
         name: "namespace",
@@ -240,129 +419,10 @@ export const networkTools: ParsedOperation[] = [
     ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/enhanced_firewall_policyGetResponse",
+      $ref: "#/components/schemas/network_connectorGetResponse",
     },
     requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.enhanced_firewall_policy.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-network-enhanced-firewall-policy-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/enhanced_firewall_policys/{name}",
-    operation: "delete",
-    domain: "network",
-    resource: "enhanced-firewall-policy",
-    summary: "Delete Enhanced Firewall Policy",
-    description: "Delete the specified enhanced_firewall_policy",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/enhanced_firewall_policyDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.enhanced_firewall_policy.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0103.public.ves.io.schema.enhanced_firewall_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-network-network-connector-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/network_connectors",
-    operation: "create",
-    domain: "network",
-    resource: "network-connector",
-    summary: "Create Network Connector",
-    description: "Network Connector is created by users in system namespace",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/network_connectorCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/network_connectorCreateResponse",
-    },
-    requiredParams: ["metadata.namespace", "body"],
-    operationId: "ves.io.schema.network_connector.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-network-network-connector-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/network_connectors/{metadata.name}",
-    operation: "update",
-    domain: "network",
-    resource: "network-connector",
-    summary: "Replace Network Connector",
-    description: "Replace Network Connector will replace the contains of given object",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "metadata.name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/network_connectorReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/network_connectorReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.network_connector.API.Replace",
+    operationId: "ves.io.schema.network_connector.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
@@ -435,14 +495,133 @@ export const networkTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-network-network-connector-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/network_connectors/{name}",
-    operation: "get",
+    toolName: "f5xc-api-network-network-connector-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/network_connectors/{metadata.name}",
+    operation: "update",
     domain: "network",
     resource: "network-connector",
-    summary: "Get Network Connector",
-    description: "Get Network Connector in system namespace",
+    summary: "Replace Network Connector",
+    description: "Replace Network Connector will replace the contains of given object",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/network_connectorReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/network_connectorReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.network_connector.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-network-network-firewall-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/network_firewalls",
+    operation: "create",
+    domain: "network",
+    resource: "network-firewall",
+    summary: "Create Network Firewall",
+    description: "network firewall is created by users in system namespace",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/network_firewallCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/network_firewallCreateResponse",
+    },
+    requiredParams: ["metadata.namespace", "body"],
+    operationId: "ves.io.schema.network_firewall.API.Create",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-network-network-firewall-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/network_firewalls/{name}",
+    operation: "delete",
+    domain: "network",
+    resource: "network-firewall",
+    summary: "Delete Network Firewall",
+    description: "Delete the specified network_firewall",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/network_firewallDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.network_firewall.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-network-network-firewall-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/network_firewalls/{name}",
+    operation: "get",
+    domain: "network",
+    resource: "network-firewall",
+    summary: "Get Network Firewall",
+    description: "Get network firewall in system namespace",
     pathParameters: [
       {
         name: "namespace",
@@ -489,129 +668,10 @@ export const networkTools: ParsedOperation[] = [
     ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/network_connectorGetResponse",
+      $ref: "#/components/schemas/network_firewallGetResponse",
     },
     requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.network_connector.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-network-network-connector-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/network_connectors/{name}",
-    operation: "delete",
-    domain: "network",
-    resource: "network-connector",
-    summary: "Delete Network Connector",
-    description: "Delete the specified network_connector",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/network_connectorDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.network_connector.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0169.public.ves.io.schema.network_connector.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-network-network-firewall-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/network_firewalls",
-    operation: "create",
-    domain: "network",
-    resource: "network-firewall",
-    summary: "Create Network Firewall",
-    description: "network firewall is created by users in system namespace",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/network_firewallCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/network_firewallCreateResponse",
-    },
-    requiredParams: ["metadata.namespace", "body"],
-    operationId: "ves.io.schema.network_firewall.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-network-network-firewall-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/network_firewalls/{metadata.name}",
-    operation: "update",
-    domain: "network",
-    resource: "network-firewall",
-    summary: "Replace Network Firewall",
-    description: "Replace network firewall  will replace the contains of given object",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "metadata.name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/network_firewallReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/network_firewallReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.network_firewall.API.Replace",
+    operationId: "ves.io.schema.network_firewall.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
@@ -684,93 +744,31 @@ export const networkTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-network-network-firewall-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/network_firewalls/{name}",
-    operation: "get",
+    toolName: "f5xc-api-network-network-firewall-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/network_firewalls/{metadata.name}",
+    operation: "update",
     domain: "network",
     resource: "network-firewall",
-    summary: "Get Network Firewall",
-    description: "Get network firewall in system namespace",
+    summary: "Replace Network Firewall",
+    description: "Replace network firewall  will replace the contains of given object",
     pathParameters: [
       {
-        name: "namespace",
+        name: "metadata.namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        name: "metadata.name",
         in: "path",
         required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/network_firewallGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.network_firewall.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-network-network-firewall-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/network_firewalls/{name}",
-    operation: "delete",
-    domain: "network",
-    resource: "network-firewall",
-    summary: "Delete Network Firewall",
-    description: "Delete the specified network_firewall",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
         schema: {
           type: "string",
         },
@@ -778,11 +776,13 @@ export const networkTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/network_firewallDeleteRequest",
+      $ref: "#/components/schemas/network_firewallReplaceRequest",
     },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.network_firewall.API.Delete",
+    responseSchema: {
+      $ref: "#/components/schemas/network_firewallReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.network_firewall.API.Replace",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0170.public.ves.io.schema.network_firewall.ves-swagger.json",

@@ -7,50 +7,6 @@ import type { ParsedOperation } from "../../../generator/openapi-parser.js";
 
 export const waapTools: ParsedOperation[] = [
   {
-    toolName: "f5xc-api-waap-http-loadbalancer-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/api_definitions/{name}/http_loadbalancers",
-    operation: "get",
-    domain: "waap",
-    resource: "http-loadbalancer",
-    summary: "Get Referencing HTTP Loadbalancers",
-    description:
-      "List Loadbalancer objects referenced by the API Definition (backrefrences).\nDEPRECATED. use GetReferencingLoadBalancers",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "shared"\nThe namespace of the API Definition for the current request',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'Name\n\nx-example: "name"\nThe name of the API Definition for the current request',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/api_definitionGetReferencingLoadbalancersResp",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId:
-      "ves.io.schema.views.api_definition.PublicConfigCustomAPI.GetReferencingHttpLoadbalancers",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
-  },
-  {
     toolName: "f5xc-api-waap-all-ns-metric-create",
     method: "POST",
     path: "/api/data/namespaces/system/app_firewall/all_ns_metrics",
@@ -70,6 +26,51 @@ export const waapTools: ParsedOperation[] = [
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0019.public.ves.io.schema.app_firewall.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-api-endpoint-create",
+    method: "POST",
+    path: "/api/ml/data/namespaces/{namespace}/http_loadbalancers/{name}/api_endpoints",
+    operation: "create",
+    domain: "waap",
+    resource: "api-endpoint",
+    summary: "Get API Endpoints",
+    description:
+      "Get list of all API Endpoints associated with the HTTP loadbalancer in format suitable for API Groups management.\nDeprecated: instead use GetAPIEndpoints in f5xc.io.schema.virtual_host.ApiepCustomAPI",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "shared"\nNamespace of the Http LoadBalancer for the current request',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'Http LoadBalancer Name\n\nx-example: "blogging-app"\nHttp LoadBalancer for the current request',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/http_loadbalancerGetAPIEndpointsForGroupsReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/http_loadbalancerGetAPIEndpointsForGroupsRsp",
+    },
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.GetAPIEndpointsForGroups",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-waap-app-firewall-create",
@@ -106,31 +107,30 @@ export const waapTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0019.public.ves.io.schema.app_firewall.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-waap-app-firewall-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/app_firewalls/{metadata.name}",
-    operation: "update",
+    toolName: "f5xc-api-waap-app-firewall-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/app_firewalls/{name}",
+    operation: "delete",
     domain: "waap",
     resource: "app-firewall",
-    summary: "Replace Application Firewall",
-    description: "Replace Application Firewall",
+    summary: "Delete Application Firewall",
+    description: "Delete the specified app_firewall",
     pathParameters: [
       {
-        name: "metadata.namespace",
+        name: "namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
+        name: "name",
         in: "path",
         required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -138,44 +138,74 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/app_firewallReplaceRequest",
+      $ref: "#/components/schemas/app_firewallDeleteRequest",
     },
-    responseSchema: {
-      $ref: "#/components/schemas/app_firewallReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.app_firewall.API.Replace",
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.app_firewall.API.Delete",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0019.public.ves.io.schema.app_firewall.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-waap-metric-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/app_firewall/metrics",
-    operation: "create",
+    toolName: "f5xc-api-waap-app-firewall-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/app_firewalls/{name}",
+    operation: "get",
     domain: "waap",
-    resource: "metric",
-    summary: "Metrics",
-    description: "App Firewall metrics",
+    resource: "app-firewall",
+    summary: "Get Application Firewall",
+    description: "Get Application Firewall",
     pathParameters: [
       {
         name: "namespace",
         in: "path",
         required: true,
-        description: 'Namespace\n\nx-example: "system"',
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
         schema: {
           type: "string",
         },
       },
     ],
-    queryParameters: [],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/app_firewallMetricsResponse",
+      $ref: "#/components/schemas/app_firewallGetResponse",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.app_firewall.CustomDataAPI.Metrics",
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.app_firewall.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0019.public.ves.io.schema.app_firewall.ves-swagger.json",
@@ -248,198 +278,14 @@ export const waapTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0019.public.ves.io.schema.app_firewall.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-waap-app-firewall-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/app_firewalls/{name}",
-    operation: "get",
-    domain: "waap",
-    resource: "app-firewall",
-    summary: "Get Application Firewall",
-    description: "Get Application Firewall",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/app_firewallGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.app_firewall.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0019.public.ves.io.schema.app_firewall.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-app-firewall-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/app_firewalls/{name}",
-    operation: "delete",
-    domain: "waap",
-    resource: "app-firewall",
-    summary: "Delete Application Firewall",
-    description: "Delete the specified app_firewall",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/app_firewallDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.app_firewall.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0019.public.ves.io.schema.app_firewall.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-suggestion-create",
-    method: "POST",
-    path: "/api/config/namespaces/{namespace}/http_loadbalancers/{name}/api_endpoint_protection/suggestion",
-    operation: "create",
-    domain: "waap",
-    resource: "suggestion",
-    summary: "Suggest API endpoint protection rule",
-    description:
-      "Suggest API endpoint protection rule for a given path\nDEPRECATED. use api_sec.rule_suggestion.RuleSuggestionAPI.GetSuggestedAPIEndpointProtectionRule",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "shared"\nNamespace of the App type for current request',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'Name\n\nx-example: "ves-io-frontend"\nHTTP load balancer for which this API endpoint protection rule applied',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/app_securityGetSuggestedAPIEndpointProtectionRuleReq",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/app_securityGetSuggestedAPIEndpointProtectionRuleRsp",
-    },
-    requiredParams: ["namespace", "name", "body"],
-    operationId:
-      "ves.io.schema.app_security.APIEndpointProtectionRuleSuggestionAPI.GetSuggestedAPIEndpointProtectionRule",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-http-loadbalancer-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/http_loadbalancers",
-    operation: "create",
-    domain: "waap",
-    resource: "http-loadbalancer",
-    summary: "Create HTTP Load Balancer",
-    description: "Shape of the HTTP load balancer specification",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/http_loadbalancerCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/http_loadbalancerCreateResponse",
-    },
-    requiredParams: ["metadata.namespace", "body"],
-    operationId: "ves.io.schema.views.http_loadbalancer.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-http-loadbalancer-update",
+    toolName: "f5xc-api-waap-app-firewall-update",
     method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/http_loadbalancers/{metadata.name}",
+    path: "/api/config/namespaces/{metadata.namespace}/app_firewalls/{metadata.name}",
     operation: "update",
     domain: "waap",
-    resource: "http-loadbalancer",
-    summary: "Replace HTTP Load Balancer",
-    description: "Shape of the HTTP load balancer specification",
+    resource: "app-firewall",
+    summary: "Replace Application Firewall",
+    description: "Replace Application Firewall",
     pathParameters: [
       {
         name: "metadata.namespace",
@@ -464,272 +310,16 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/http_loadbalancerReplaceRequest",
+      $ref: "#/components/schemas/app_firewallReplaceRequest",
     },
     responseSchema: {
-      $ref: "#/components/schemas/http_loadbalancerReplaceResponse",
+      $ref: "#/components/schemas/app_firewallReplaceResponse",
     },
     requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.views.http_loadbalancer.API.Replace",
+    operationId: "ves.io.schema.app_firewall.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-get-service-operation-statu-create",
-    method: "POST",
-    path: "/api/cdn/namespaces/{namespace}/http_loadbalancer/get-service-operation-status",
-    operation: "create",
-    domain: "waap",
-    resource: "get-service-operation-statu",
-    summary: "Get Service Operation Status for HTTPLB when Caching Enabled",
-    description: "Get status of an operation command for a given HTTP LB when caching enabled.",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "default"\nx-required\nNamespace scope of the operation request',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/common_cdnGetServiceOperationReq",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/common_cdnGetServiceOperationRsp",
-    },
-    requiredParams: ["namespace", "body"],
-    operationId:
-      "ves.io.schema.views.http_loadbalancer.CDNCustomAPI.GetServiceOperationHTTPLBCacheEnabled",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-list-service-operations-statu-create",
-    method: "POST",
-    path: "/api/cdn/namespaces/{namespace}/http_loadbalancer/list-service-operations-status",
-    operation: "create",
-    domain: "waap",
-    resource: "list-service-operations-statu",
-    summary: "List of HTTPLB Operation Commands when Caching Enabled",
-    description: "List of service operations for a given HTTP LB when Caching Enabled",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "ns1"\nx-required\nThe namespace this item belongs to',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/common_cdnListServiceOperationsReq",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/common_cdnListServiceOperationsRsp",
-    },
-    requiredParams: ["namespace", "body"],
-    operationId:
-      "ves.io.schema.views.http_loadbalancer.CDNCustomAPI.ListServiceOperationsHTTPLBCacheEnabled",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-cache-purge-create",
-    method: "POST",
-    path: "/api/cdn/namespaces/{namespace}/http_loadbalancer/{name}/cache-purge",
-    operation: "create",
-    domain: "waap",
-    resource: "cache-purge",
-    summary: "Purge the LB Cache",
-    description: "Initiate Purge on the LB Cache",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "default"\nx-required\nNamespace scope of the metric request',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'CDN Distribution Name\n\nx-example: "cdn-1"\nx-required\nFormat: string',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/common_cdnLilacCDNCachePurgeRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/common_cdnLilacCDNCachePurgeResponse",
-    },
-    requiredParams: ["namespace", "name", "body"],
-    operationId:
-      "ves.io.schema.views.http_loadbalancer.CDNCustomAPI.CDNCachePurgeHTTPLBCacheEnabled",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-http-loadbalancer-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/http_loadbalancers",
-    operation: "list",
-    domain: "waap",
-    resource: "http-loadbalancer",
-    summary: "List Configure HTTP Load Balancer",
-    description: "List the set of http_loadbalancer in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of http_loadbalancer',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/http_loadbalancerListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.views.http_loadbalancer.API.List",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-get-security-config-create",
-    method: "POST",
-    path: "/api/config/namespaces/{namespace}/http_loadbalancers/get_security_config",
-    operation: "create",
-    domain: "waap",
-    resource: "get-security-config",
-    summary: "Get Security Config for HTTP Load Balancer",
-    description: "Fetch the corresponding Security Config for the given HTTP load balancers",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "shared"\nNamespace of the HTTP Load Balancer for current request',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/http_loadbalancerGetSecurityConfigReq",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/common_securityGetSecurityConfigRsp",
-    },
-    requiredParams: ["namespace", "body"],
-    operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.GetSecurityConfig",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-http-loadbalancer-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/http_loadbalancers/{name}",
-    operation: "delete",
-    domain: "waap",
-    resource: "http-loadbalancer",
-    summary: "Delete Configure HTTP Load Balancer",
-    description: "Delete the specified http_loadbalancer",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/http_loadbalancerDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.views.http_loadbalancer.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0019.public.ves.io.schema.app_firewall.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-waap-assign-create",
@@ -816,22 +406,21 @@ export const waapTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-waap-api-endpoint-create",
+    toolName: "f5xc-api-waap-cache-purge-create",
     method: "POST",
-    path: "/api/ml/data/namespaces/{namespace}/http_loadbalancers/{name}/api_endpoints",
+    path: "/api/cdn/namespaces/{namespace}/http_loadbalancer/{name}/cache-purge",
     operation: "create",
     domain: "waap",
-    resource: "api-endpoint",
-    summary: "Get API Endpoints",
-    description:
-      "Get list of all API Endpoints associated with the HTTP loadbalancer in format suitable for API Groups management.\nDeprecated: instead use GetAPIEndpoints in f5xc.io.schema.virtual_host.ApiepCustomAPI",
+    resource: "cache-purge",
+    summary: "Purge the LB Cache",
+    description: "Initiate Purge on the LB Cache",
     pathParameters: [
       {
         name: "namespace",
         in: "path",
         required: true,
         description:
-          'Namespace\n\nx-example: "shared"\nNamespace of the Http LoadBalancer for the current request',
+          'Namespace\n\nx-example: "default"\nx-required\nNamespace scope of the metric request',
         schema: {
           type: "string",
         },
@@ -840,8 +429,7 @@ export const waapTools: ParsedOperation[] = [
         name: "name",
         in: "path",
         required: true,
-        description:
-          'Http LoadBalancer Name\n\nx-example: "blogging-app"\nHttp LoadBalancer for the current request',
+        description: 'CDN Distribution Name\n\nx-example: "cdn-1"\nx-required\nFormat: string',
         schema: {
           type: "string",
         },
@@ -849,185 +437,14 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/http_loadbalancerGetAPIEndpointsForGroupsReq",
+      $ref: "#/components/schemas/common_cdnLilacCDNCachePurgeRequest",
     },
     responseSchema: {
-      $ref: "#/components/schemas/http_loadbalancerGetAPIEndpointsForGroupsRsp",
-    },
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.GetAPIEndpointsForGroups",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-swagger-spec-get",
-    method: "GET",
-    path: "/api/ml/data/namespaces/{namespace}/http_loadbalancers/{name}/api_endpoints/swagger_spec",
-    operation: "get",
-    domain: "waap",
-    resource: "swagger-spec",
-    summary: "Get Swagger Spec for HTTP Load Balancer",
-    description: "Get the corresponding Swagger spec for the given HTTP load balancer",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "shared"\nNamespace of the HTTP Load Balancer for current request',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'Name\n\nx-example: "blogging-app"\nHTTP load balancer for current request',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/apiHttpBody",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.GetSwaggerSpec",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-get-schema-update-create",
-    method: "POST",
-    path: "/api/ml/data/namespaces/{namespace}/http_loadbalancers/{name}/api_inventory/api_endpoints/get_schema_updates",
-    operation: "create",
-    domain: "waap",
-    resource: "get-schema-update",
-    summary: "Get API Endpoints Schema Updates",
-    description:
-      "Get list of schema pairs, current and updated, for each endpoint in the request\nor all pending changes if empty list is provided.\nNOTE: any API endpoint defined in user swagger files should be ignored\nDEPRECATED. USE virtual host custom api GetAPIEndpointsSchemaUpdates",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "shared"\nThe namespace of the HTTP Loadbalancer for the current request',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'Name\n\nx-example: "name"\nThe name of the HTTP Loadbalancer for the current request',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/http_loadbalancerGetAPIEndpointsSchemaUpdatesReq",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/http_loadbalancerGetAPIEndpointsSchemaUpdatesResp",
+      $ref: "#/components/schemas/common_cdnLilacCDNCachePurgeResponse",
     },
     requiredParams: ["namespace", "name", "body"],
     operationId:
-      "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.GetAPIEndpointsSchemaUpdates",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-update-schema-create",
-    method: "POST",
-    path: "/api/ml/data/namespaces/{namespace}/http_loadbalancers/{name}/api_inventory/api_endpoints/update_schemas",
-    operation: "create",
-    domain: "waap",
-    resource: "update-schema",
-    summary: "Update API Endpoints Schemas",
-    description:
-      "Update the payload schema for the specified endpoints or all pending changes if empty list is provided.\nNOTE: only API endpoints returned by a call to `GetAPIEndpointsSchemaStates` can be updated.\nDEPRECATED. USE virtual host custom api UpdateAPIEndpointsSchemas",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "shared"\nThe namespace of the HTTP Loadbalancer for the current request',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'Name\n\nx-example: "name"\nThe name of the HTTP Loadbalancer for the current request',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/http_loadbalancerUpdateAPIEndpointsSchemasReq",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/http_loadbalancerUpdateAPIEndpointsSchemasResp",
-    },
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.UpdateAPIEndpointsSchemas",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-dos-automitigation-rule-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/http_loadbalancers/{name}/dos_automitigation_rules",
-    operation: "get",
-    domain: "waap",
-    resource: "dos-automitigation-rule",
-    summary: "Get DoS Auto-Mitigation Rules for HTTP Load Balancer",
-    description: "Get the corresponding DoS Auto-Mitigation Rules for the given HTTP load balancer",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description: 'Namespace\n\nx-example: "shared"\nNamespace of the Load Balancer',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'Name\n\nx-example: "blogging-app"\nName of the Load Balancer',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/common_securityGetDoSAutoMitigationRulesRsp",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.GetDoSAutoMitigationRules",
+      "ves.io.schema.views.http_loadbalancer.CDNCustomAPI.CDNCachePurgeHTTPLBCacheEnabled",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
@@ -1084,6 +501,46 @@ export const waapTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
   },
   {
+    toolName: "f5xc-api-waap-dos-automitigation-rule-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/http_loadbalancers/{name}/dos_automitigation_rules",
+    operation: "get",
+    domain: "waap",
+    resource: "dos-automitigation-rule",
+    summary: "Get DoS Auto-Mitigation Rules for HTTP Load Balancer",
+    description: "Get the corresponding DoS Auto-Mitigation Rules for the given HTTP load balancer",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description: 'Namespace\n\nx-example: "shared"\nNamespace of the Load Balancer',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'Name\n\nx-example: "blogging-app"\nName of the Load Balancer',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/common_securityGetDoSAutoMitigationRulesRsp",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.GetDoSAutoMitigationRules",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
+  },
+  {
     toolName: "f5xc-api-waap-get-dns-info-get",
     method: "GET",
     path: "/api/config/namespaces/{namespace}/http_loadbalancers/{name}/get-dns-info",
@@ -1119,6 +576,351 @@ export const waapTools: ParsedOperation[] = [
     },
     requiredParams: ["namespace", "name"],
     operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.GetDnsInfo",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-get-schema-update-create",
+    method: "POST",
+    path: "/api/ml/data/namespaces/{namespace}/http_loadbalancers/{name}/api_inventory/api_endpoints/get_schema_updates",
+    operation: "create",
+    domain: "waap",
+    resource: "get-schema-update",
+    summary: "Get API Endpoints Schema Updates",
+    description:
+      "Get list of schema pairs, current and updated, for each endpoint in the request\nor all pending changes if empty list is provided.\nNOTE: any API endpoint defined in user swagger files should be ignored\nDEPRECATED. USE virtual host custom api GetAPIEndpointsSchemaUpdates",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "shared"\nThe namespace of the HTTP Loadbalancer for the current request',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'Name\n\nx-example: "name"\nThe name of the HTTP Loadbalancer for the current request',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/http_loadbalancerGetAPIEndpointsSchemaUpdatesReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/http_loadbalancerGetAPIEndpointsSchemaUpdatesResp",
+    },
+    requiredParams: ["namespace", "name", "body"],
+    operationId:
+      "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.GetAPIEndpointsSchemaUpdates",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-get-security-config-create",
+    method: "POST",
+    path: "/api/config/namespaces/{namespace}/http_loadbalancers/get_security_config",
+    operation: "create",
+    domain: "waap",
+    resource: "get-security-config",
+    summary: "Get Security Config for HTTP Load Balancer",
+    description: "Fetch the corresponding Security Config for the given HTTP load balancers",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "shared"\nNamespace of the HTTP Load Balancer for current request',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/http_loadbalancerGetSecurityConfigReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/common_securityGetSecurityConfigRsp",
+    },
+    requiredParams: ["namespace", "body"],
+    operationId: "ves.io.schema.views.http_loadbalancer.CustomAPI.GetSecurityConfig",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-get-service-operation-statu-create",
+    method: "POST",
+    path: "/api/cdn/namespaces/{namespace}/http_loadbalancer/get-service-operation-status",
+    operation: "create",
+    domain: "waap",
+    resource: "get-service-operation-statu",
+    summary: "Get Service Operation Status for HTTPLB when Caching Enabled",
+    description: "Get status of an operation command for a given HTTP LB when caching enabled.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "default"\nx-required\nNamespace scope of the operation request',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/common_cdnGetServiceOperationReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/common_cdnGetServiceOperationRsp",
+    },
+    requiredParams: ["namespace", "body"],
+    operationId:
+      "ves.io.schema.views.http_loadbalancer.CDNCustomAPI.GetServiceOperationHTTPLBCacheEnabled",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-http-loadbalancer-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/http_loadbalancers",
+    operation: "create",
+    domain: "waap",
+    resource: "http-loadbalancer",
+    summary: "Create HTTP Load Balancer",
+    description: "Shape of the HTTP load balancer specification",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/http_loadbalancerCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/http_loadbalancerCreateResponse",
+    },
+    requiredParams: ["metadata.namespace", "body"],
+    operationId: "ves.io.schema.views.http_loadbalancer.API.Create",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-http-loadbalancer-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/http_loadbalancers/{name}",
+    operation: "delete",
+    domain: "waap",
+    resource: "http-loadbalancer",
+    summary: "Delete Configure HTTP Load Balancer",
+    description: "Delete the specified http_loadbalancer",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/http_loadbalancerDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.views.http_loadbalancer.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-http-loadbalancer-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/api_definitions/{name}/http_loadbalancers",
+    operation: "get",
+    domain: "waap",
+    resource: "http-loadbalancer",
+    summary: "Get Referencing HTTP Loadbalancers",
+    description:
+      "List Loadbalancer objects referenced by the API Definition (backrefrences).\nDEPRECATED. use GetReferencingLoadBalancers",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "shared"\nThe namespace of the API Definition for the current request',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'Name\n\nx-example: "name"\nThe name of the API Definition for the current request',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/api_definitionGetReferencingLoadbalancersResp",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId:
+      "ves.io.schema.views.api_definition.PublicConfigCustomAPI.GetReferencingHttpLoadbalancers",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0002.public.ves.io.schema.views.api_definition.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-http-loadbalancer-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/http_loadbalancers",
+    operation: "list",
+    domain: "waap",
+    resource: "http-loadbalancer",
+    summary: "List Configure HTTP Load Balancer",
+    description: "List the set of http_loadbalancer in a namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of http_loadbalancer',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
+        description:
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/http_loadbalancerListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.views.http_loadbalancer.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-http-loadbalancer-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/http_loadbalancers/{metadata.name}",
+    operation: "update",
+    domain: "waap",
+    resource: "http-loadbalancer",
+    summary: "Replace HTTP Load Balancer",
+    description: "Shape of the HTTP load balancer specification",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/http_loadbalancerReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/http_loadbalancerReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.views.http_loadbalancer.API.Replace",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
@@ -1167,6 +969,72 @@ export const waapTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
   },
   {
+    toolName: "f5xc-api-waap-list-service-operations-statu-create",
+    method: "POST",
+    path: "/api/cdn/namespaces/{namespace}/http_loadbalancer/list-service-operations-status",
+    operation: "create",
+    domain: "waap",
+    resource: "list-service-operations-statu",
+    summary: "List of HTTPLB Operation Commands when Caching Enabled",
+    description: "List of service operations for a given HTTP LB when Caching Enabled",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "ns1"\nx-required\nThe namespace this item belongs to',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/common_cdnListServiceOperationsReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/common_cdnListServiceOperationsRsp",
+    },
+    requiredParams: ["namespace", "body"],
+    operationId:
+      "ves.io.schema.views.http_loadbalancer.CDNCustomAPI.ListServiceOperationsHTTPLBCacheEnabled",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-metric-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/app_firewall/metrics",
+    operation: "create",
+    domain: "waap",
+    resource: "metric",
+    summary: "Metrics",
+    description: "App Firewall metrics",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description: 'Namespace\n\nx-example: "system"',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_firewallMetricsResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.app_firewall.CustomDataAPI.Metrics",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0019.public.ves.io.schema.app_firewall.ves-swagger.json",
+  },
+  {
     toolName: "f5xc-api-waap-origin-pool-create",
     method: "POST",
     path: "/api/config/namespaces/{metadata.namespace}/origin_pools",
@@ -1201,31 +1069,30 @@ export const waapTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0177.public.ves.io.schema.views.origin_pool.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-waap-origin-pool-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/origin_pools/{metadata.name}",
-    operation: "update",
+    toolName: "f5xc-api-waap-origin-pool-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/origin_pools/{name}",
+    operation: "delete",
     domain: "waap",
     resource: "origin-pool",
-    summary: "Replace Origin Pool",
-    description: "Shape of the origin pool create specification",
+    summary: "Delete Origin Pool",
+    description: "Delete the specified origin_pool",
     pathParameters: [
       {
-        name: "metadata.namespace",
+        name: "namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
+        name: "name",
         in: "path",
         required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -1233,13 +1100,73 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/origin_poolReplaceRequest",
+      $ref: "#/components/schemas/origin_poolDeleteRequest",
     },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.views.origin_pool.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0177.public.ves.io.schema.views.origin_pool.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-origin-pool-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/origin_pools/{name}",
+    operation: "get",
+    domain: "waap",
+    resource: "origin-pool",
+    summary: "Get Origin Pool",
+    description: "Shape of the origin pool get specification",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/origin_poolReplaceResponse",
+      $ref: "#/components/schemas/origin_poolGetResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.views.origin_pool.API.Replace",
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.views.origin_pool.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0177.public.ves.io.schema.views.origin_pool.ves-swagger.json",
@@ -1311,92 +1238,31 @@ export const waapTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0177.public.ves.io.schema.views.origin_pool.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-waap-origin-pool-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/origin_pools/{name}",
-    operation: "get",
+    toolName: "f5xc-api-waap-origin-pool-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/origin_pools/{metadata.name}",
+    operation: "update",
     domain: "waap",
     resource: "origin-pool",
-    summary: "Get Origin Pool",
-    description: "Shape of the origin pool get specification",
+    summary: "Replace Origin Pool",
+    description: "Shape of the origin pool create specification",
     pathParameters: [
       {
-        name: "namespace",
+        name: "metadata.namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        name: "metadata.name",
         in: "path",
         required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/origin_poolGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.views.origin_pool.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0177.public.ves.io.schema.views.origin_pool.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-origin-pool-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/origin_pools/{name}",
-    operation: "delete",
-    domain: "waap",
-    resource: "origin-pool",
-    summary: "Delete Origin Pool",
-    description: "Delete the specified origin_pool",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
         schema: {
           type: "string",
         },
@@ -1404,11 +1270,13 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/origin_poolDeleteRequest",
+      $ref: "#/components/schemas/origin_poolReplaceRequest",
     },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.views.origin_pool.API.Delete",
+    responseSchema: {
+      $ref: "#/components/schemas/origin_poolReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.views.origin_pool.API.Replace",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0177.public.ves.io.schema.views.origin_pool.ves-swagger.json",
@@ -1449,32 +1317,30 @@ export const waapTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0190.public.ves.io.schema.rate_limiter.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-waap-rate-limiter-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/rate_limiters/{metadata.name}",
-    operation: "update",
+    toolName: "f5xc-api-waap-rate-limiter-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/rate_limiters/{name}",
+    operation: "delete",
     domain: "waap",
     resource: "rate-limiter",
-    summary: "Replace Rate Limiter",
-    description:
-      "Replace rate_limiter replaces an existing object in the storage backend for metadata.namespace.",
+    summary: "Delete Rate Limiter",
+    description: "Delete the specified rate_limiter",
     pathParameters: [
       {
-        name: "metadata.namespace",
+        name: "namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
+        name: "name",
         in: "path",
         required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -1482,13 +1348,75 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/rate_limiterReplaceRequest",
+      $ref: "#/components/schemas/rate_limiterDeleteRequest",
     },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.rate_limiter.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0190.public.ves.io.schema.rate_limiter.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-rate-limiter-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/rate_limiters/{name}",
+    operation: "get",
+    domain: "waap",
+    resource: "rate-limiter",
+    summary: "Get Rate Limiter",
+    description:
+      "Get rate_limiter reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/rate_limiterReplaceResponse",
+      $ref: "#/components/schemas/rate_limiterGetResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.rate_limiter.API.Replace",
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.rate_limiter.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0190.public.ves.io.schema.rate_limiter.ves-swagger.json",
@@ -1561,15 +1489,89 @@ export const waapTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0190.public.ves.io.schema.rate_limiter.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-waap-rate-limiter-get",
+    toolName: "f5xc-api-waap-rate-limiter-policy-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/rate_limiter_policys",
+    operation: "create",
+    domain: "waap",
+    resource: "rate-limiter-policy",
+    summary: "Create Specification",
+    description: "Shape of the Rate Limiter Policy Create specification",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/rate_limiter_policyCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/rate_limiter_policyCreateResponse",
+    },
+    requiredParams: ["metadata.namespace", "body"],
+    operationId: "ves.io.schema.views.rate_limiter_policy.API.Create",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0191.public.ves.io.schema.views.rate_limiter_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-rate-limiter-policy-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/rate_limiter_policys/{name}",
+    operation: "delete",
+    domain: "waap",
+    resource: "rate-limiter-policy",
+    summary: "Delete Rate Limiter Policy",
+    description: "Delete the specified rate_limiter_policy",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/rate_limiter_policyDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.views.rate_limiter_policy.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0191.public.ves.io.schema.views.rate_limiter_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-rate-limiter-policy-get",
     method: "GET",
-    path: "/api/config/namespaces/{namespace}/rate_limiters/{name}",
+    path: "/api/config/namespaces/{namespace}/rate_limiter_policys/{name}",
     operation: "get",
     domain: "waap",
-    resource: "rate-limiter",
-    summary: "Get Rate Limiter",
-    description:
-      "Get rate_limiter reads a given object from storage backend for metadata.namespace.",
+    resource: "rate-limiter-policy",
+    summary: "Get Specification",
+    description: "Shape of the Rate Limiter Policy Get specification",
     pathParameters: [
       {
         name: "namespace",
@@ -1616,129 +1618,10 @@ export const waapTools: ParsedOperation[] = [
     ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/rate_limiterGetResponse",
+      $ref: "#/components/schemas/rate_limiter_policyGetResponse",
     },
     requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.rate_limiter.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0190.public.ves.io.schema.rate_limiter.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-rate-limiter-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/rate_limiters/{name}",
-    operation: "delete",
-    domain: "waap",
-    resource: "rate-limiter",
-    summary: "Delete Rate Limiter",
-    description: "Delete the specified rate_limiter",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/rate_limiterDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.rate_limiter.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0190.public.ves.io.schema.rate_limiter.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-rate-limiter-policy-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/rate_limiter_policys",
-    operation: "create",
-    domain: "waap",
-    resource: "rate-limiter-policy",
-    summary: "Create Specification",
-    description: "Shape of the Rate Limiter Policy Create specification",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/rate_limiter_policyCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/rate_limiter_policyCreateResponse",
-    },
-    requiredParams: ["metadata.namespace", "body"],
-    operationId: "ves.io.schema.views.rate_limiter_policy.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0191.public.ves.io.schema.views.rate_limiter_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-rate-limiter-policy-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/rate_limiter_policys/{metadata.name}",
-    operation: "update",
-    domain: "waap",
-    resource: "rate-limiter-policy",
-    summary: "Replace Specification",
-    description: "Shape of the Rate Limiter Policy Replace specification",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "metadata.name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/rate_limiter_policyReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/rate_limiter_policyReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.views.rate_limiter_policy.API.Replace",
+    operationId: "ves.io.schema.views.rate_limiter_policy.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0191.public.ves.io.schema.views.rate_limiter_policy.ves-swagger.json",
@@ -1811,93 +1694,31 @@ export const waapTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0191.public.ves.io.schema.views.rate_limiter_policy.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-waap-rate-limiter-policy-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/rate_limiter_policys/{name}",
-    operation: "get",
+    toolName: "f5xc-api-waap-rate-limiter-policy-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/rate_limiter_policys/{metadata.name}",
+    operation: "update",
     domain: "waap",
     resource: "rate-limiter-policy",
-    summary: "Get Specification",
-    description: "Shape of the Rate Limiter Policy Get specification",
+    summary: "Replace Specification",
+    description: "Shape of the Rate Limiter Policy Replace specification",
     pathParameters: [
       {
-        name: "namespace",
+        name: "metadata.namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        name: "metadata.name",
         in: "path",
         required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/rate_limiter_policyGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.views.rate_limiter_policy.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0191.public.ves.io.schema.views.rate_limiter_policy.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-waap-rate-limiter-policy-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/rate_limiter_policys/{name}",
-    operation: "delete",
-    domain: "waap",
-    resource: "rate-limiter-policy",
-    summary: "Delete Rate Limiter Policy",
-    description: "Delete the specified rate_limiter_policy",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
         schema: {
           type: "string",
         },
@@ -1905,14 +1726,193 @@ export const waapTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/rate_limiter_policyDeleteRequest",
+      $ref: "#/components/schemas/rate_limiter_policyReplaceRequest",
     },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.views.rate_limiter_policy.API.Delete",
+    responseSchema: {
+      $ref: "#/components/schemas/rate_limiter_policyReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.views.rate_limiter_policy.API.Replace",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0191.public.ves.io.schema.views.rate_limiter_policy.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-rate-limiter-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/rate_limiters/{metadata.name}",
+    operation: "update",
+    domain: "waap",
+    resource: "rate-limiter",
+    summary: "Replace Rate Limiter",
+    description:
+      "Replace rate_limiter replaces an existing object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/rate_limiterReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/rate_limiterReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.rate_limiter.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0190.public.ves.io.schema.rate_limiter.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-suggestion-create",
+    method: "POST",
+    path: "/api/config/namespaces/{namespace}/http_loadbalancers/{name}/api_endpoint_protection/suggestion",
+    operation: "create",
+    domain: "waap",
+    resource: "suggestion",
+    summary: "Suggest API endpoint protection rule",
+    description:
+      "Suggest API endpoint protection rule for a given path\nDEPRECATED. use api_sec.rule_suggestion.RuleSuggestionAPI.GetSuggestedAPIEndpointProtectionRule",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "shared"\nNamespace of the App type for current request',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'Name\n\nx-example: "ves-io-frontend"\nHTTP load balancer for which this API endpoint protection rule applied',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/app_securityGetSuggestedAPIEndpointProtectionRuleReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/app_securityGetSuggestedAPIEndpointProtectionRuleRsp",
+    },
+    requiredParams: ["namespace", "name", "body"],
+    operationId:
+      "ves.io.schema.app_security.APIEndpointProtectionRuleSuggestionAPI.GetSuggestedAPIEndpointProtectionRule",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-swagger-spec-get",
+    method: "GET",
+    path: "/api/ml/data/namespaces/{namespace}/http_loadbalancers/{name}/api_endpoints/swagger_spec",
+    operation: "get",
+    domain: "waap",
+    resource: "swagger-spec",
+    summary: "Get Swagger Spec for HTTP Load Balancer",
+    description: "Get the corresponding Swagger spec for the given HTTP load balancer",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "shared"\nNamespace of the HTTP Load Balancer for current request',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'Name\n\nx-example: "blogging-app"\nHTTP load balancer for current request',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/apiHttpBody",
+    },
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.GetSwaggerSpec",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-waap-update-schema-create",
+    method: "POST",
+    path: "/api/ml/data/namespaces/{namespace}/http_loadbalancers/{name}/api_inventory/api_endpoints/update_schemas",
+    operation: "create",
+    domain: "waap",
+    resource: "update-schema",
+    summary: "Update API Endpoints Schemas",
+    description:
+      "Update the payload schema for the specified endpoints or all pending changes if empty list is provided.\nNOTE: only API endpoints returned by a call to `GetAPIEndpointsSchemaStates` can be updated.\nDEPRECATED. USE virtual host custom api UpdateAPIEndpointsSchemas",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "shared"\nThe namespace of the HTTP Loadbalancer for the current request',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'Name\n\nx-example: "name"\nThe name of the HTTP Loadbalancer for the current request',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/http_loadbalancerUpdateAPIEndpointsSchemasReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/http_loadbalancerUpdateAPIEndpointsSchemasResp",
+    },
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.views.http_loadbalancer.ApiepLBCustomAPI.UpdateAPIEndpointsSchemas",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0073.public.ves.io.schema.views.http_loadbalancer.ves-swagger.json",
   },
 ];
 

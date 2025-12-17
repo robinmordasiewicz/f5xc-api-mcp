@@ -42,32 +42,30 @@ export const appstackTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-appstack-k8s-cluster-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/k8s_clusters/{metadata.name}",
-    operation: "update",
+    toolName: "f5xc-api-appstack-k8s-cluster-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/k8s_clusters/{name}",
+    operation: "delete",
     domain: "appstack",
     resource: "k8s-cluster",
-    summary: "Replace Configuration Specification",
-    description:
-      "Replacing an k8s_cluster object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write",
+    summary: "Delete K8s Cluster",
+    description: "Delete the specified k8s_cluster",
     pathParameters: [
       {
-        name: "metadata.namespace",
+        name: "namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
+        name: "name",
         in: "path",
         required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -75,13 +73,75 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/k8s_clusterReplaceRequest",
+      $ref: "#/components/schemas/k8s_clusterDeleteRequest",
     },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.k8s_cluster.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-k8s-cluster-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/k8s_clusters/{name}",
+    operation: "get",
+    domain: "appstack",
+    resource: "k8s-cluster",
+    summary: "Get Configuration Specification",
+    description:
+      "Get k8s_cluster will get the object from the storage backend for namespace metadata.namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/k8s_clusterReplaceResponse",
+      $ref: "#/components/schemas/k8s_clusterGetResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.k8s_cluster.API.Replace",
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.k8s_cluster.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
@@ -153,363 +213,6 @@ export const appstackTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-appstack-k8s-cluster-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/k8s_clusters/{name}",
-    operation: "get",
-    domain: "appstack",
-    resource: "k8s-cluster",
-    summary: "Get Configuration Specification",
-    description:
-      "Get k8s_cluster will get the object from the storage backend for namespace metadata.namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/k8s_clusterGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.k8s_cluster.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-k8s-cluster-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/k8s_clusters/{name}",
-    operation: "delete",
-    domain: "appstack",
-    resource: "k8s-cluster",
-    summary: "Delete K8s Cluster",
-    description: "Delete the specified k8s_cluster",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/k8s_clusterDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.k8s_cluster.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-k8s-cluster-role-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/k8s_cluster_roles",
-    operation: "create",
-    domain: "appstack",
-    resource: "k8s-cluster-role",
-    summary: "Create Configuration Specification",
-    description:
-      "Create k8s_cluster_role will create the object in the storage backend for namespace metadata.namespace",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/k8s_cluster_roleCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/k8s_cluster_roleCreateResponse",
-    },
-    requiredParams: ["metadata.namespace", "body"],
-    operationId: "ves.io.schema.k8s_cluster_role.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-k8s-cluster-role-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/k8s_cluster_roles/{metadata.name}",
-    operation: "update",
-    domain: "appstack",
-    resource: "k8s-cluster-role",
-    summary: "Replace Configuration Specification",
-    description:
-      "Replacing an k8s_cluster_role object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "metadata.name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/k8s_cluster_roleReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/k8s_cluster_roleReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.k8s_cluster_role.API.Replace",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-k8s-cluster-role-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/k8s_cluster_roles",
-    operation: "list",
-    domain: "appstack",
-    resource: "k8s-cluster-role",
-    summary: "List K8s Cluster Role",
-    description: "List the set of k8s_cluster_role in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of k8s_cluster_role',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/k8s_cluster_roleListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.k8s_cluster_role.API.List",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-k8s-cluster-role-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/k8s_cluster_roles/{name}",
-    operation: "get",
-    domain: "appstack",
-    resource: "k8s-cluster-role",
-    summary: "Get Configuration Specification",
-    description:
-      "Get k8s_cluster_role will get the object from the storage backend for namespace metadata.namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/k8s_cluster_roleGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.k8s_cluster_role.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-k8s-cluster-role-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/k8s_cluster_roles/{name}",
-    operation: "delete",
-    domain: "appstack",
-    resource: "k8s-cluster-role",
-    summary: "Delete K8s Cluster Role",
-    description: "Delete the specified k8s_cluster_role",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/k8s_cluster_roleDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.k8s_cluster_role.API.Delete",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
-  },
-  {
     toolName: "f5xc-api-appstack-k8s-cluster-role-binding-create",
     method: "POST",
     path: "/api/config/namespaces/{metadata.namespace}/k8s_cluster_role_bindings",
@@ -545,32 +248,30 @@ export const appstackTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-appstack-k8s-cluster-role-binding-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/k8s_cluster_role_bindings/{metadata.name}",
-    operation: "update",
+    toolName: "f5xc-api-appstack-k8s-cluster-role-binding-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/k8s_cluster_role_bindings/{name}",
+    operation: "delete",
     domain: "appstack",
     resource: "k8s-cluster-role-binding",
-    summary: "Replace Configuration Specification",
-    description:
-      "Replacing an k8s_cluster_role_binding object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write",
+    summary: "Delete K8s Cluster Role Binding",
+    description: "Delete the specified k8s_cluster_role_binding",
     pathParameters: [
       {
-        name: "metadata.namespace",
+        name: "namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
+        name: "name",
         in: "path",
         required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -578,13 +279,75 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/k8s_cluster_role_bindingReplaceRequest",
+      $ref: "#/components/schemas/k8s_cluster_role_bindingDeleteRequest",
     },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.k8s_cluster_role_binding.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-k8s-cluster-role-binding-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/k8s_cluster_role_bindings/{name}",
+    operation: "get",
+    domain: "appstack",
+    resource: "k8s-cluster-role-binding",
+    summary: "Get Configuration Specification",
+    description:
+      "Get k8s_cluster_role_binding will get the object from the storage backend for namespace metadata.namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/k8s_cluster_role_bindingReplaceResponse",
+      $ref: "#/components/schemas/k8s_cluster_role_bindingGetResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.k8s_cluster_role_binding.API.Replace",
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.k8s_cluster_role_binding.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
@@ -657,15 +420,136 @@ export const appstackTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-appstack-k8s-cluster-role-binding-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/k8s_cluster_role_bindings/{name}",
-    operation: "get",
+    toolName: "f5xc-api-appstack-k8s-cluster-role-binding-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/k8s_cluster_role_bindings/{metadata.name}",
+    operation: "update",
     domain: "appstack",
     resource: "k8s-cluster-role-binding",
+    summary: "Replace Configuration Specification",
+    description:
+      "Replacing an k8s_cluster_role_binding object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/k8s_cluster_role_bindingReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/k8s_cluster_role_bindingReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.k8s_cluster_role_binding.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-k8s-cluster-role-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/k8s_cluster_roles",
+    operation: "create",
+    domain: "appstack",
+    resource: "k8s-cluster-role",
+    summary: "Create Configuration Specification",
+    description:
+      "Create k8s_cluster_role will create the object in the storage backend for namespace metadata.namespace",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/k8s_cluster_roleCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/k8s_cluster_roleCreateResponse",
+    },
+    requiredParams: ["metadata.namespace", "body"],
+    operationId: "ves.io.schema.k8s_cluster_role.API.Create",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-k8s-cluster-role-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/k8s_cluster_roles/{name}",
+    operation: "delete",
+    domain: "appstack",
+    resource: "k8s-cluster-role",
+    summary: "Delete K8s Cluster Role",
+    description: "Delete the specified k8s_cluster_role",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/k8s_cluster_roleDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.k8s_cluster_role.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-k8s-cluster-role-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/k8s_cluster_roles/{name}",
+    operation: "get",
+    domain: "appstack",
+    resource: "k8s-cluster-role",
     summary: "Get Configuration Specification",
     description:
-      "Get k8s_cluster_role_binding will get the object from the storage backend for namespace metadata.namespace",
+      "Get k8s_cluster_role will get the object from the storage backend for namespace metadata.namespace",
     pathParameters: [
       {
         name: "namespace",
@@ -712,39 +596,108 @@ export const appstackTools: ParsedOperation[] = [
     ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/k8s_cluster_role_bindingGetResponse",
+      $ref: "#/components/schemas/k8s_cluster_roleGetResponse",
     },
     requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.k8s_cluster_role_binding.API.Get",
+    operationId: "ves.io.schema.k8s_cluster_role.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-appstack-k8s-cluster-role-binding-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/k8s_cluster_role_bindings/{name}",
-    operation: "delete",
+    toolName: "f5xc-api-appstack-k8s-cluster-role-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/k8s_cluster_roles",
+    operation: "list",
     domain: "appstack",
-    resource: "k8s-cluster-role-binding",
-    summary: "Delete K8s Cluster Role Binding",
-    description: "Delete the specified k8s_cluster_role_binding",
+    resource: "k8s-cluster-role",
+    summary: "List K8s Cluster Role",
+    description: "List the set of k8s_cluster_role in a namespace",
     pathParameters: [
       {
         name: "namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of k8s_cluster_role',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
+        description:
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/k8s_cluster_roleListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.k8s_cluster_role.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-k8s-cluster-role-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/k8s_cluster_roles/{metadata.name}",
+    operation: "update",
+    domain: "appstack",
+    resource: "k8s-cluster-role",
+    summary: "Replace Configuration Specification",
+    description:
+      "Replacing an k8s_cluster_role object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
         in: "path",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
         schema: {
           type: "string",
         },
@@ -752,14 +705,128 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/k8s_cluster_role_bindingDeleteRequest",
+      $ref: "#/components/schemas/k8s_cluster_roleReplaceRequest",
     },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.k8s_cluster_role_binding.API.Delete",
+    responseSchema: {
+      $ref: "#/components/schemas/k8s_cluster_roleReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.k8s_cluster_role.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0143.public.ves.io.schema.k8s_cluster_role_binding.ves-swagger.json",
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0142.public.ves.io.schema.k8s_cluster_role.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-k8s-cluster-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/k8s_clusters/{metadata.name}",
+    operation: "update",
+    domain: "appstack",
+    resource: "k8s-cluster",
+    summary: "Replace Configuration Specification",
+    description:
+      "Replacing an k8s_cluster object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/k8s_clusterReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/k8s_clusterReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.k8s_cluster.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0141.public.ves.io.schema.k8s_cluster.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-metric-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/virtual_k8s/pvc/metrics",
+    operation: "create",
+    domain: "appstack",
+    resource: "metric",
+    summary: "PVC Metrics",
+    description: "API to get PVC capacity/usage.",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description: 'Namespace\n\nx-example: "ns1"',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/virtual_k8sPVCMetricsRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/virtual_k8sPVCMetricsResponse",
+    },
+    requiredParams: ["namespace", "body"],
+    operationId: "ves.io.schema.virtual_k8s.CustomDataAPI.PVCMetrics",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-usage-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/workloads/usage",
+    operation: "create",
+    domain: "appstack",
+    resource: "usage",
+    summary: "Usage Metrics",
+    description: "Get the workload usage",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'Namespace\n\nx-example: "ns1"\nnamespace is used to scope the workload usage to a given namespace.',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/workloadUsageRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/workloadUsageResponse",
+    },
+    requiredParams: ["namespace", "body"],
+    operationId: "ves.io.schema.views.workload.CustomDataAPI.Usage",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
   },
   {
     toolName: "f5xc-api-appstack-virtual-k8s-create",
@@ -797,65 +864,30 @@ export const appstackTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-appstack-virtual-k8s-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/virtual_k8ss/{metadata.name}",
-    operation: "update",
+    toolName: "f5xc-api-appstack-virtual-k8s-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/virtual_k8ss/{name}",
+    operation: "delete",
     domain: "appstack",
     resource: "virtual-k8s",
-    summary: "Replace Virtual Kubernetes",
-    description:
-      "Replacing an endpoint object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write.",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "metadata.name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/virtual_k8sReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/virtual_k8sReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.virtual_k8s.API.Replace",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-metric-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/virtual_k8s/pvc/metrics",
-    operation: "create",
-    domain: "appstack",
-    resource: "metric",
-    summary: "PVC Metrics",
-    description: "API to get PVC capacity/usage.",
+    summary: "Delete Virtual Kubernetes",
+    description: "Delete the specified virtual_k8s",
     pathParameters: [
       {
         name: "namespace",
         in: "path",
         required: true,
-        description: 'Namespace\n\nx-example: "ns1"',
+        description:
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -863,13 +895,75 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/virtual_k8sPVCMetricsRequest",
+      $ref: "#/components/schemas/virtual_k8sDeleteRequest",
     },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.virtual_k8s.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-virtual-k8s-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/virtual_k8ss/{name}",
+    operation: "get",
+    domain: "appstack",
+    resource: "virtual-k8s",
+    summary: "Get Virtual Kubernetes",
+    description:
+      "Get virtual_k8s will get the object from the storage backend for namesapce metadata.namespace",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/virtual_k8sPVCMetricsResponse",
+      $ref: "#/components/schemas/virtual_k8sGetResponse",
     },
-    requiredParams: ["namespace", "body"],
-    operationId: "ves.io.schema.virtual_k8s.CustomDataAPI.PVCMetrics",
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.virtual_k8s.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
@@ -941,94 +1035,32 @@ export const appstackTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-appstack-virtual-k8s-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/virtual_k8ss/{name}",
-    operation: "get",
+    toolName: "f5xc-api-appstack-virtual-k8s-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/virtual_k8ss/{metadata.name}",
+    operation: "update",
     domain: "appstack",
     resource: "virtual-k8s",
-    summary: "Get Virtual Kubernetes",
+    summary: "Replace Virtual Kubernetes",
     description:
-      "Get virtual_k8s will get the object from the storage backend for namesapce metadata.namespace",
+      "Replacing an endpoint object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write.",
     pathParameters: [
       {
-        name: "namespace",
+        name: "metadata.namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        name: "metadata.name",
         in: "path",
         required: true,
         description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/virtual_k8sGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.virtual_k8s.API.Get",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-virtual-k8s-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/virtual_k8ss/{name}",
-    operation: "delete",
-    domain: "appstack",
-    resource: "virtual-k8s",
-    summary: "Delete Virtual Kubernetes",
-    description: "Delete the specified virtual_k8s",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
         schema: {
           type: "string",
         },
@@ -1036,11 +1068,13 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/virtual_k8sDeleteRequest",
+      $ref: "#/components/schemas/virtual_k8sReplaceRequest",
     },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.virtual_k8s.API.Delete",
+    responseSchema: {
+      $ref: "#/components/schemas/virtual_k8sReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.virtual_k8s.API.Replace",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0258.public.ves.io.schema.virtual_k8s.ves-swagger.json",
@@ -1075,213 +1109,6 @@ export const appstackTools: ParsedOperation[] = [
     },
     requiredParams: ["metadata.namespace", "body"],
     operationId: "ves.io.schema.views.workload.API.Create",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-workload-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/workloads/{metadata.name}",
-    operation: "update",
-    domain: "appstack",
-    resource: "workload",
-    summary: "Replace Workload",
-    description: "Shape of Workload",
-    pathParameters: [
-      {
-        name: "metadata.namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "metadata.name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/workloadReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/workloadReplaceResponse",
-    },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.views.workload.API.Replace",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-workload-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/workloads",
-    operation: "list",
-    domain: "appstack",
-    resource: "workload",
-    summary: "List Workload",
-    description: "List the set of workload in a namespace",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description: 'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of workload',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "label_filter",
-        in: "query",
-        required: false,
-        description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "report_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-      {
-        name: "report_status_fields",
-        in: "query",
-        required: false,
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        schema: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/workloadListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.views.workload.API.List",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-usage-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/workloads/usage",
-    operation: "create",
-    domain: "appstack",
-    resource: "usage",
-    summary: "Usage Metrics",
-    description: "Get the workload usage",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'Namespace\n\nx-example: "ns1"\nnamespace is used to scope the workload usage to a given namespace.',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/workloadUsageRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/workloadUsageResponse",
-    },
-    requiredParams: ["namespace", "body"],
-    operationId: "ves.io.schema.views.workload.CustomDataAPI.Usage",
-    tags: [],
-    sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-appstack-workload-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/workloads/{name}",
-    operation: "get",
-    domain: "appstack",
-    resource: "workload",
-    summary: "Get Workload",
-    description: "Shape of Workload",
-    pathParameters: [
-      {
-        name: "namespace",
-        in: "path",
-        required: true,
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        name: "name",
-        in: "path",
-        required: true,
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        name: "response_format",
-        in: "query",
-        required: false,
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
-        schema: {
-          type: "string",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          default: "GET_RSP_FORMAT_DEFAULT",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/workloadGetResponse",
-    },
-    requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.views.workload.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
@@ -1362,31 +1189,30 @@ export const appstackTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-appstack-workload-flavor-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/workload_flavors/{metadata.name}",
-    operation: "update",
+    toolName: "f5xc-api-appstack-workload-flavor-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/workload_flavors/{name}",
+    operation: "delete",
     domain: "appstack",
     resource: "workload-flavor",
-    summary: "Replace Flavor",
-    description: "Replace a K8S workload_flavor",
+    summary: "Delete Workload Flavor",
+    description: "Delete the specified workload_flavor",
     pathParameters: [
       {
-        name: "metadata.namespace",
+        name: "namespace",
         in: "path",
         required: true,
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
         schema: {
           type: "string",
         },
       },
       {
-        name: "metadata.name",
+        name: "name",
         in: "path",
         required: true,
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: 'name\n\nx-example: "name"\nName of the configuration object',
         schema: {
           type: "string",
         },
@@ -1394,13 +1220,74 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/workload_flavorReplaceRequest",
+      $ref: "#/components/schemas/workload_flavorDeleteRequest",
     },
+    responseSchema: {},
+    requiredParams: ["namespace", "name", "body"],
+    operationId: "ves.io.schema.workload_flavor.API.Delete",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-workload-flavor-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/workload_flavors/{name}",
+    operation: "get",
+    domain: "appstack",
+    resource: "workload-flavor",
+    summary: "Get Workload Flavor",
+    description: "Get Workload Flavor",
+    pathParameters: [
+      {
+        name: "namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "response_format",
+        in: "query",
+        required: false,
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+        schema: {
+          type: "string",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          default: "GET_RSP_FORMAT_DEFAULT",
+        },
+      },
+    ],
+    requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/workload_flavorReplaceResponse",
+      $ref: "#/components/schemas/workload_flavorGetResponse",
     },
-    requiredParams: ["metadata.namespace", "metadata.name", "body"],
-    operationId: "ves.io.schema.workload_flavor.API.Replace",
+    requiredParams: ["namespace", "name"],
+    operationId: "ves.io.schema.workload_flavor.API.Get",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
@@ -1473,14 +1360,58 @@ export const appstackTools: ParsedOperation[] = [
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-appstack-workload-flavor-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/workload_flavors/{name}",
-    operation: "get",
+    toolName: "f5xc-api-appstack-workload-flavor-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/workload_flavors/{metadata.name}",
+    operation: "update",
     domain: "appstack",
     resource: "workload-flavor",
-    summary: "Get Workload Flavor",
-    description: "Get Workload Flavor",
+    summary: "Replace Flavor",
+    description: "Replace a K8S workload_flavor",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
+        in: "path",
+        required: true,
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/workload_flavorReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/workload_flavorReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.workload_flavor.API.Replace",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-workload-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/workloads/{name}",
+    operation: "get",
+    domain: "appstack",
+    resource: "workload",
+    summary: "Get Workload",
+    description: "Shape of Workload",
     pathParameters: [
       {
         name: "namespace",
@@ -1527,39 +1458,106 @@ export const appstackTools: ParsedOperation[] = [
     ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/workload_flavorGetResponse",
+      $ref: "#/components/schemas/workloadGetResponse",
     },
     requiredParams: ["namespace", "name"],
-    operationId: "ves.io.schema.workload_flavor.API.Get",
+    operationId: "ves.io.schema.views.workload.API.Get",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
   },
   {
-    toolName: "f5xc-api-appstack-workload-flavor-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/workload_flavors/{name}",
-    operation: "delete",
+    toolName: "f5xc-api-appstack-workload-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/workloads",
+    operation: "list",
     domain: "appstack",
-    resource: "workload-flavor",
-    summary: "Delete Workload Flavor",
-    description: "Delete the specified workload_flavor",
+    resource: "workload",
+    summary: "List Workload",
+    description: "List the set of workload in a namespace",
     pathParameters: [
       {
         name: "namespace",
         in: "path",
         required: true,
+        description: 'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of workload',
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        name: "label_filter",
+        in: "query",
+        required: false,
         description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
         schema: {
           type: "string",
         },
       },
       {
-        name: "name",
+        name: "report_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+      {
+        name: "report_status_fields",
+        in: "query",
+        required: false,
+        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        schema: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/workloadListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.views.workload.API.List",
+    tags: [],
+    sourceFile:
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
+  },
+  {
+    toolName: "f5xc-api-appstack-workload-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/workloads/{metadata.name}",
+    operation: "update",
+    domain: "appstack",
+    resource: "workload",
+    summary: "Replace Workload",
+    description: "Shape of Workload",
+    pathParameters: [
+      {
+        name: "metadata.namespace",
         in: "path",
         required: true,
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        description:
+          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        name: "metadata.name",
+        in: "path",
+        required: true,
+        description:
+          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
         schema: {
           type: "string",
         },
@@ -1567,14 +1565,16 @@ export const appstackTools: ParsedOperation[] = [
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/workload_flavorDeleteRequest",
+      $ref: "#/components/schemas/workloadReplaceRequest",
     },
-    responseSchema: {},
-    requiredParams: ["namespace", "name", "body"],
-    operationId: "ves.io.schema.workload_flavor.API.Delete",
+    responseSchema: {
+      $ref: "#/components/schemas/workloadReplaceResponse",
+    },
+    requiredParams: ["metadata.namespace", "metadata.name", "body"],
+    operationId: "ves.io.schema.views.workload.API.Replace",
     tags: [],
     sourceFile:
-      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0268.public.ves.io.schema.workload_flavor.ves-swagger.json",
+      "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0267.public.ves.io.schema.views.workload.ves-swagger.json",
   },
 ];
 
