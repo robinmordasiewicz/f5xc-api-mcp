@@ -6,6 +6,8 @@
  * Generates MCP tool definitions from F5 Distributed Cloud OpenAPI specifications.
  * This script is run after specs are synced to regenerate tool definitions.
  *
+ * Generated files are automatically formatted with Prettier to ensure lint-compatible output.
+ *
  * Usage:
  *   npm run generate
  *   tsx scripts/generate.ts
@@ -14,6 +16,7 @@
 import { existsSync, mkdirSync, writeFileSync, readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import * as prettier from "prettier";
 import {
   parseSpecDirectory,
   getAllOperations,
@@ -51,6 +54,39 @@ const log = {
   error: (message: string): void => console.error(`[ERROR] ${message}`),
   success: (message: string): void => console.log(`[SUCCESS] ${message}`),
 };
+
+/**
+ * Prettier configuration for generated TypeScript files
+ */
+const PRETTIER_CONFIG: prettier.Options = {
+  parser: "typescript",
+  semi: true,
+  singleQuote: false,
+  trailingComma: "es5",
+  printWidth: 100,
+  tabWidth: 2,
+  useTabs: false,
+};
+
+/**
+ * Format TypeScript code using Prettier
+ */
+async function formatCode(code: string): Promise<string> {
+  try {
+    return await prettier.format(code, PRETTIER_CONFIG);
+  } catch (error) {
+    log.warn(`Prettier formatting failed, using unformatted code: ${error instanceof Error ? error.message : String(error)}`);
+    return code;
+  }
+}
+
+/**
+ * Write formatted TypeScript file
+ */
+async function writeFormattedFile(filePath: string, content: string): Promise<void> {
+  const formattedContent = await formatCode(content);
+  writeFileSync(filePath, formattedContent);
+}
 
 /**
  * Generate tool definition file for a domain
@@ -191,16 +227,16 @@ async function generate(): Promise<void> {
     log.warn(`Specs directory not found: ${CONFIG.SPECS_DIR}`);
     log.info("Run 'npm run sync-specs' first to download OpenAPI specs");
 
-    // Create placeholder files for empty state
+    // Create placeholder files for empty state (formatted)
     mkdirSync(join(CONFIG.GENERATED_DIR, "core"), { recursive: true });
-    writeFileSync(
+    await writeFormattedFile(
       join(CONFIG.GENERATED_DIR, "core", "index.ts"),
       generateDomainFile("core", [])
     );
-    writeFileSync(CONFIG.REGISTRY_FILE, generateRegistryFile(["core"]));
-    writeFileSync(CONFIG.INDEX_FILE, generateIndexFile());
+    await writeFormattedFile(CONFIG.REGISTRY_FILE, generateRegistryFile(["core"]));
+    await writeFormattedFile(CONFIG.INDEX_FILE, generateIndexFile());
 
-    log.info("Created placeholder tool files");
+    log.info("Created placeholder tool files (Prettier formatted)");
     return;
   }
 
@@ -225,20 +261,22 @@ async function generate(): Promise<void> {
 
   log.info(`Domains: ${domains.join(", ")}`);
 
-  // Generate domain files
+  // Generate domain files (formatted with Prettier)
+  log.info("Generating and formatting tool files...");
   for (const [domain, ops] of domainGroups) {
     const domainDir = join(CONFIG.GENERATED_DIR, domain);
     mkdirSync(domainDir, { recursive: true });
 
     const content = generateDomainFile(domain, ops);
-    writeFileSync(join(domainDir, "index.ts"), content);
+    await writeFormattedFile(join(domainDir, "index.ts"), content);
 
     log.info(`Generated ${ops.length} tools for ${domain} domain`);
   }
 
-  // Generate registry and index
-  writeFileSync(CONFIG.REGISTRY_FILE, generateRegistryFile(domains));
-  writeFileSync(CONFIG.INDEX_FILE, generateIndexFile());
+  // Generate registry and index (formatted with Prettier)
+  await writeFormattedFile(CONFIG.REGISTRY_FILE, generateRegistryFile(domains));
+  await writeFormattedFile(CONFIG.INDEX_FILE, generateIndexFile());
+  log.info("All generated files formatted with Prettier");
 
   // Summary
   console.log("=".repeat(60));
