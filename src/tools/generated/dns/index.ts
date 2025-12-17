@@ -861,36 +861,16 @@ export const dnsTools: ParsedOperation[] = [
   {
     toolName: "f5xc-api-dns-health-statu-list",
     method: "GET",
-    path: "/api/data/namespaces/{namespace}/dns_load_balancers/{dns_lb_name}/dns_lb_pools/{dns_lb_pool_name}/health_status",
+    path: "/api/data/namespaces/{namespace}/dns_load_balancers/health_status",
     operation: "list",
     domain: "dns",
     resource: "health-statu",
-    summary: "DNS Load Balancer Pool Health Status",
-    description: "Get DNS Load Balancer Pool Health Status",
+    summary: "DNS Load Balancer Health Status List",
+    description: "Get Health Status of all DNS Load Balancers in a namespace",
     pathParameters: [
       {
         description:
-          'DNS Load Balancer Name\n\nx-example: "dns_lb1"\nName of the DNS Load Balancer',
-        in: "path",
-        name: "dns_lb_name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          'DNS Load Balancer Pool Name\n\nx-example: "dns_lb_pool1"\nName of the DNS Load Balancer Pool',
-        in: "path",
-        name: "dns_lb_pool_name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          'Namespace\n\nx-example: "ns1"\nNamespace in which the DNS Load Balancer Pool is present',
+          'Namespace\n\nx-example: "ns1"\nNamespace to scope the listing of DNS LB health status',
         in: "path",
         name: "namespace",
         required: true,
@@ -902,10 +882,10 @@ export const dnsTools: ParsedOperation[] = [
     queryParameters: [],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/dns_load_balancerDNSLBPoolHealthStatusResponse",
+      $ref: "#/components/schemas/dns_load_balancerDNSLBHealthStatusListResponse",
     },
-    requiredParams: ["dns_lb_name", "dns_lb_pool_name", "namespace"],
-    operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBPoolHealthStatus",
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.dns_load_balancer.CustomDataAPI.DNSLBHealthStatusList",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0087.public.ves.io.schema.dns_load_balancer.ves-swagger.json",

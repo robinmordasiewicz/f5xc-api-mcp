@@ -113,11 +113,15 @@ function generateDomainFile(
   operations: ParsedOperation[]
 ): string {
   const toolDefs = operations.map((op) => {
-    // Sort arrays for deterministic output
-    const sortedPathParams = [...op.pathParameters].sort((a, b) => a.name.localeCompare(b.name));
-    const sortedQueryParams = [...op.queryParameters].sort((a, b) => a.name.localeCompare(b.name));
-    const sortedRequiredParams = [...op.requiredParams].sort();
-    const sortedTags = [...op.tags].sort();
+    // Sort arrays for deterministic output (locale-independent comparison)
+    const sortedPathParams = [...op.pathParameters].sort((a, b) =>
+      a.name < b.name ? -1 : a.name > b.name ? 1 : 0
+    );
+    const sortedQueryParams = [...op.queryParameters].sort((a, b) =>
+      a.name < b.name ? -1 : a.name > b.name ? 1 : 0
+    );
+    const sortedRequiredParams = [...op.requiredParams].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+    const sortedTags = [...op.tags].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
 
     return `  {
     toolName: "${op.toolName}",
@@ -290,8 +294,10 @@ async function generate(): Promise<void> {
     const domainDir = join(CONFIG.GENERATED_DIR, domain);
     mkdirSync(domainDir, { recursive: true });
 
-    // Sort operations by toolName for deterministic output
-    const sortedOps = [...ops].sort((a, b) => a.toolName.localeCompare(b.toolName));
+    // Sort operations by toolName for deterministic output (locale-independent)
+    const sortedOps = [...ops].sort((a, b) =>
+      a.toolName < b.toolName ? -1 : a.toolName > b.toolName ? 1 : 0
+    );
     const content = generateDomainFile(domain, sortedOps);
     await writeFormattedFile(join(domainDir, "index.ts"), content);
 

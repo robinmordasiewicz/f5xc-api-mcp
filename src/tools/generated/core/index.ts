@@ -3615,31 +3615,21 @@ export const coreTools: ParsedOperation[] = [
   {
     toolName: "f5xc-api-core-api-credential-create",
     method: "POST",
-    path: "/api/web/namespaces/{namespace}/activate/api_credentials",
+    path: "/api/web/namespaces/system/bulk_revoke/api_credentials",
     operation: "create",
     domain: "core",
     resource: "api-credential",
-    summary: "Activate API credential",
-    description: "For API credential activation/deactivation.",
-    pathParameters: [
-      {
-        description:
-          'Namespace\n\nx-required\nx-example: "system"\nValue of namespace is always "system".',
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
+    summary: "Bulk Revoke API credentials",
+    description:
+      "It is used to revoke multiple API credentials. This API would disable the credentials and mark them for deletion.\nThe actual removal of objects would be done in the background.\nDepending upon if user is admin or not, following behaviour is supported:-\n* for admins : user has the access to delete their own as well as credentials created by others\n* for non-admins: user can only delete their own credentials.",
+    pathParameters: [],
     queryParameters: [],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/api_credentialStatusResponse",
+      $ref: "#/components/schemas/api_credentialBulkRevokeResponse",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.api_credential.CustomAPI.Activate",
+    requiredParams: [],
+    operationId: "ves.io.schema.api_credential.CustomAPI.BulkRevoke",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",
@@ -11745,66 +11735,62 @@ export const coreTools: ParsedOperation[] = [
   {
     toolName: "f5xc-api-core-child-tenant-list",
     method: "GET",
-    path: "/api/web/namespaces/{namespace}/child_tenants",
+    path: "/api/web/namespaces/system/partner-management/child_tenants",
     operation: "list",
     domain: "core",
     resource: "child-tenant",
-    summary: "List Child Tenant",
-    description: "List the set of child_tenant in a namespace",
-    pathParameters: [
-      {
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of child_tenant',
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
+    summary: "List of Child Tenants",
+    description:
+      "Get list of child tenants user has access to based on assigned membership.\nThis is an optimized list generated based on the requesting user's current group assignments\nthat will allow access to child tenant.",
+    pathParameters: [],
     queryParameters: [
       {
         description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+          'x-example: "value"\nName of the Child Tenant Manager.\nIf this field set, child tenant list will be filtered by given CTM',
         in: "query",
-        name: "label_filter",
+        name: "ctm",
         required: false,
         schema: {
           type: "string",
         },
       },
       {
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        description: 'x-example: "value"\nFilter child tenant list using name of child tenant.',
         in: "query",
-        name: "report_fields",
+        name: "name",
         required: false,
         schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
+          type: "string",
         },
       },
       {
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        description:
+          'x-example: "100"\nPageLimit will hold the limit of items required per query.\nDefault value is set as 100',
         in: "query",
-        name: "report_status_fields",
+        name: "page_limit",
         required: false,
         schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
+          format: "int32",
+          type: "integer",
+        },
+      },
+      {
+        description:
+          'x-example: "c5776a8e-bcae-4392-98d3-3556f4b9df1b"\nPageStart will hold the UUID of the first item in the requested page.\nResponse will contain items upto count specified in PageLimit starting from  PageStart.\nIf this is empty then first page will be served.',
+        in: "query",
+        name: "page_start",
+        required: false,
+        schema: {
+          type: "string",
         },
       },
     ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/tenant_managementchild_tenantListResponse",
+      $ref: "#/components/schemas/child_tenantListChildTenantsResp",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.tenant_management.child_tenant.API.List",
+    requiredParams: [],
+    operationId: "ves.io.schema.tenant_management.child_tenant.CustomAPI.ListChildTenants",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0051.public.ves.io.schema.tenant_management.child_tenant.ves-swagger.json",
@@ -16463,31 +16449,20 @@ export const coreTools: ParsedOperation[] = [
   {
     toolName: "f5xc-api-core-dataset-list",
     method: "GET",
-    path: "/api/data-intelligence/namespaces/{namespace}/data-dictionary/datasets",
+    path: "/api/data-intelligence/namespaces/system/dataSets",
     operation: "list",
     domain: "core",
-    resource: "dataset",
-    summary: "List DataSets",
-    description: "API to list datasets by tenant",
-    pathParameters: [
-      {
-        description:
-          'namespace\n\nx-example: "foobar"\nNamespace in which the suggestions are scoped.',
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
+    resource: "dataSet",
+    summary: "Get Data Sets",
+    description: "Get the list of data sets eligible for the tenant",
+    pathParameters: [],
     queryParameters: [],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/data_deliveryListDataSetsResponse",
+      $ref: "#/components/schemas/data_deliveryGetDataSetsResponse",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.data_delivery.CustomAPI.ListDataSets",
+    requiredParams: [],
+    operationId: "ves.io.schema.shape.data_delivery.CustomAPI.GetDataSets",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0093.public.ves.io.schema.shape.data_delivery.ves-swagger.json",
@@ -30785,31 +30760,21 @@ export const coreTools: ParsedOperation[] = [
   {
     toolName: "f5xc-api-core-loadbalancer-create",
     method: "POST",
-    path: "/api/data/namespaces/{namespace}/app_security/search/loadbalancers",
+    path: "/api/data/namespaces/system/app_security/all_ns_search/loadbalancers",
     operation: "create",
     domain: "core",
     resource: "loadbalancer",
-    summary: "Search load balancers",
+    summary: "Search load balancers All Namespaces",
     description: "Get list of virtual hosts matching label filter",
-    pathParameters: [
-      {
-        description:
-          'Namespace\n\nx-example: "shared"\nNamespace of the App type for current request',
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
+    pathParameters: [],
     queryParameters: [],
     requestBodySchema: null,
     responseSchema: {
       $ref: "#/components/schemas/app_securitySearchLoadBalancersResponse",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.app_security.AppSecurityMonitoringAPI.SearchLoadBalancers",
+    requiredParams: [],
+    operationId:
+      "ves.io.schema.app_security.AppSecurityMonitoringAPI.SearchLoadBalancersAllNamespaces",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
@@ -31605,66 +31570,52 @@ export const coreTools: ParsedOperation[] = [
   {
     toolName: "f5xc-api-core-managed-tenant-list",
     method: "GET",
-    path: "/api/web/namespaces/{namespace}/managed_tenants",
+    path: "/api/web/namespaces/system/support-tenant/managed_tenants",
     operation: "list",
     domain: "core",
     resource: "managed-tenant",
-    summary: "List Managed Tenant",
-    description: "List the set of managed_tenant in a namespace",
-    pathParameters: [
-      {
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of managed_tenant',
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
+    summary: "List of Managed Tenant By User For Support Operations",
+    description:
+      "Get list of managed tenants that user have access to based on assingned membership.\nThis is an optimized list generated based on the requesting user's current group assignments\nthat will allow access to managed tenant.",
+    pathParameters: [],
     queryParameters: [
       {
         description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+          'x-example: "100"\nPageLimit will hold the limit of items required per query.\nDefault value is set as 100',
         in: "query",
-        name: "label_filter",
+        name: "page_limit",
+        required: false,
+        schema: {
+          format: "int32",
+          type: "integer",
+        },
+      },
+      {
+        description:
+          'x-example: "c5776a8e-bcae-4392-98d3-3556f4b9df1b"\nPageStart will hold the UUID of the first item in the requested page.\nResponse will contain items upto count specified in PageLimit starting from  PageStart.\nIf this is empty then first page will be served.',
+        in: "query",
+        name: "page_start",
         required: false,
         schema: {
           type: "string",
         },
       },
       {
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        description: 'x-example: "value"\nSearch Keyword for filtering the Managed Tenant List.',
         in: "query",
-        name: "report_fields",
+        name: "search_keyword",
         required: false,
         schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-      {
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
-        in: "query",
-        name: "report_status_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
+          type: "string",
         },
       },
     ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/tenant_managementmanaged_tenantListResponse",
+      $ref: "#/components/schemas/managed_tenantListSupportTenantMTResp",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.tenant_management.managed_tenant.API.List",
+    requiredParams: [],
+    operationId: "ves.io.schema.tenant_management.managed_tenant.CustomAPI.ListSupportTenantMT",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0153.public.ves.io.schema.tenant_management.managed_tenant.ves-swagger.json",
@@ -45144,31 +45095,21 @@ export const coreTools: ParsedOperation[] = [
   {
     toolName: "f5xc-api-core-service-credential-create",
     method: "POST",
-    path: "/api/web/namespaces/{namespace}/activate/service_credentials",
+    path: "/api/web/namespaces/system/bulk_revoke/service_credentials",
     operation: "create",
     domain: "core",
     resource: "service-credential",
-    summary: "Activate API service credential",
-    description: "For Service credential activation/deactivation.",
-    pathParameters: [
-      {
-        description:
-          'Namespace\n\nx-required\nx-example: "system"\nValue of namespace is always "system".',
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
+    summary: "Bulk Revoke service credential",
+    description:
+      "It is used to revoke multiple service credentials. This API would disable the credentials and mark them for deletion.\nThe actual removal of objects would be done in the background. Only admins are allowed to access this API.",
+    pathParameters: [],
     queryParameters: [],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/api_credentialStatusResponse",
+      $ref: "#/components/schemas/api_credentialBulkRevokeResponse",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.api_credential.CustomAPI.ActivateServiceCredentials",
+    requiredParams: [],
+    operationId: "ves.io.schema.api_credential.CustomAPI.BulkRevokeServiceCredentials",
     tags: [],
     sourceFile:
       "/Users/r.mordasiewicz/GIT/robinmordasiewicz/f5xc/f5xc-api-mcp/specs/raw/docs-cloud-f5-com.0007.public.ves.io.schema.api_credential.ves-swagger.json",

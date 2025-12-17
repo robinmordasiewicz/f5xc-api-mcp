@@ -206,8 +206,8 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
 
   const httpMethods = ["get", "post", "put", "delete", "patch"] as const;
 
-  // Sort paths alphabetically for deterministic output
-  const sortedPaths = Object.entries(spec.paths).sort(([a], [b]) => a.localeCompare(b));
+  // Sort paths alphabetically for deterministic output (use < > for locale-independent sorting)
+  const sortedPaths = Object.entries(spec.paths).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
 
   for (const [path, pathItem] of sortedPaths) {
     // Check if path has a name parameter (indicates single resource operations)
@@ -309,8 +309,8 @@ export function parseSpecDirectory(dirPath: string): ParsedSpec[] {
 
   function scanDir(currentDir: string): void {
     const entries = readdirSync(currentDir, { withFileTypes: true });
-    // Sort entries alphabetically for deterministic output across different filesystems
-    entries.sort((a, b) => a.name.localeCompare(b.name));
+    // Sort entries alphabetically for deterministic output across different filesystems (locale-independent)
+    entries.sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
 
     for (const entry of entries) {
       const fullPath = join(currentDir, entry.name);
@@ -354,8 +354,10 @@ export function getAllOperations(specs: ParsedSpec[]): ParsedOperation[] {
     }
   }
 
-  // Sort by toolName for deterministic output
-  return Array.from(operationsMap.values()).sort((a, b) => a.toolName.localeCompare(b.toolName));
+  // Sort by toolName for deterministic output (locale-independent)
+  return Array.from(operationsMap.values()).sort((a, b) =>
+    a.toolName < b.toolName ? -1 : a.toolName > b.toolName ? 1 : 0
+  );
 }
 
 /**
@@ -374,9 +376,9 @@ export function groupOperationsByDomain(
     grouped.get(domain)!.push(operation);
   }
 
-  // Sort operations within each domain by toolName for deterministic output
+  // Sort operations within each domain by toolName for deterministic output (locale-independent)
   for (const ops of grouped.values()) {
-    ops.sort((a, b) => a.toolName.localeCompare(b.toolName));
+    ops.sort((a, b) => (a.toolName < b.toolName ? -1 : a.toolName > b.toolName ? 1 : 0));
   }
 
   // Return a new Map with sorted domain keys for deterministic iteration order
