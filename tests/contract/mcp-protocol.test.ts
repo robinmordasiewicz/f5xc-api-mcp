@@ -165,7 +165,7 @@ describe("MCP Resource Contract", () => {
   describe("Resource URI Format", () => {
     it("should follow f5xc:// scheme", () => {
       const validUris = [
-        "f5xc://tenant/namespace/http_loadbalancer/my-lb",
+        "f5xc://tenant/namespace/http_loadbalancer/example-lb",
         "f5xc://tenant/system/namespace/production",
         "f5xc://tenant/shared/origin_pool/backend",
       ];
@@ -176,7 +176,7 @@ describe("MCP Resource Contract", () => {
     });
 
     it("should have parseable path components", () => {
-      const uri = "f5xc://mytenant/production/http_loadbalancer/my-app";
+      const uri = "f5xc://mytenant/production/http_loadbalancer/example-app";
 
       // Remove scheme and parse path
       const path = uri.replace("f5xc://", "");
@@ -185,7 +185,7 @@ describe("MCP Resource Contract", () => {
       expect(parts[0]).toBe("mytenant"); // tenant
       expect(parts[1]).toBe("production"); // namespace
       expect(parts[2]).toBe("http_loadbalancer"); // resource type
-      expect(parts[3]).toBe("my-app"); // resource name
+      expect(parts[3]).toBe("example-app"); // resource name
     });
   });
 
@@ -232,14 +232,14 @@ describe("MCP Prompt Contract", () => {
   describe("Prompt Arguments", () => {
     it("should process template variables", () => {
       const template = "Deploy {{name}} in {{namespace}}";
-      const args = { name: "my-app", namespace: "production" };
+      const args = { name: "example-app", namespace: "production" };
 
       let result = template;
       for (const [key, value] of Object.entries(args)) {
         result = result.replace(new RegExp(`\\{\\{${key}\\}\\}`, "g"), value);
       }
 
-      expect(result).toBe("Deploy my-app in production");
+      expect(result).toBe("Deploy example-app in production");
     });
 
     it("should handle missing optional arguments", () => {
@@ -286,7 +286,7 @@ describe("Dual-Mode Operation Contract", () => {
         tool: "f5xc-api-waap-http-loadbalancer-create",
         status: "success",
         response: {
-          metadata: { name: "my-lb", namespace: "production" },
+          metadata: { name: "example-lb", namespace: "production" },
         },
         resource_url: "https://tenant.console.ves.volterra.io/...",
       };

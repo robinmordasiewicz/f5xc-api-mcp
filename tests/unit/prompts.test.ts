@@ -170,16 +170,16 @@ describe("processPromptTemplate", () => {
     it("should replace multiple variables", () => {
       const template = "Deploy {{name}} in {{namespace}}";
       const result = processPromptTemplate(template, {
-        name: "my-lb",
+        name: "example-lb",
         namespace: "production",
       });
-      expect(result).toBe("Deploy my-lb in production");
+      expect(result).toBe("Deploy example-lb in production");
     });
 
     it("should replace multiple occurrences of same variable", () => {
       const template = "{{name}} is deployed as {{name}}-origin-pool";
-      const result = processPromptTemplate(template, { name: "my-app" });
-      expect(result).toBe("my-app is deployed as my-app-origin-pool");
+      const result = processPromptTemplate(template, { name: "example-app" });
+      expect(result).toBe("example-app is deployed as example-app-origin-pool");
     });
 
     it("should replace with empty string if value is undefined", () => {
@@ -218,9 +218,9 @@ describe("processPromptTemplate", () => {
       const template = "{{#if waf}}WAF: {{waf_name}}{{/if}}";
       const result = processPromptTemplate(template, {
         waf: "enabled",
-        waf_name: "my-waf",
+        waf_name: "example-waf",
       });
-      expect(result).toBe("WAF: my-waf");
+      expect(result).toBe("WAF: example-waf");
     });
   });
 
@@ -259,7 +259,7 @@ describe("processPromptTemplate", () => {
     it("should process HTTP load balancer template", () => {
       const result = processPromptTemplate(deployHttpLoadBalancerPrompt.template, {
         namespace: "production",
-        name: "my-app",
+        name: "example-app",
         domain: "app.example.com",
         backend_ip: "10.0.0.1",
         backend_port: "8080",
@@ -267,7 +267,7 @@ describe("processPromptTemplate", () => {
       });
 
       expect(result).toContain("production");
-      expect(result).toContain("my-app");
+      expect(result).toContain("example-app");
       expect(result).toContain("app.example.com");
       expect(result).toContain("10.0.0.1");
       expect(result).toContain("8080");

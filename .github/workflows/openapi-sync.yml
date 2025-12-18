@@ -2,15 +2,8 @@ name: OpenAPI Sync
 
 on:
   schedule:
-    # Run daily at 00:00 UTC
+    # Run daily at 00:00 UTC to check for upstream API changes
     - cron: "0 0 * * *"
-  workflow_dispatch:
-    inputs:
-      force:
-        description: "Force regeneration even if specs unchanged"
-        required: false
-        default: "false"
-        type: boolean
 
 permissions:
   contents: write
@@ -51,19 +44,19 @@ jobs:
           fi
 
       - name: Generate tools from specs
-        if: steps.changes.outputs.changed == 'true' || inputs.force == 'true'
+        if: steps.changes.outputs.changed == 'true'
         run: npm run generate
 
       - name: Run tests
-        if: steps.changes.outputs.changed == 'true' || inputs.force == 'true'
+        if: steps.changes.outputs.changed == 'true'
         run: npm test
 
       - name: Build
-        if: steps.changes.outputs.changed == 'true' || inputs.force == 'true'
+        if: steps.changes.outputs.changed == 'true'
         run: npm run build
 
       - name: Create Pull Request
-        if: steps.changes.outputs.changed == 'true' || inputs.force == 'true'
+        if: steps.changes.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}

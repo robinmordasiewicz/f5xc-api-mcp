@@ -103,20 +103,20 @@ describe("HttpClient Integration", () => {
       };
 
       const updateData = {
-        metadata: { name: "my-lb" },
+        metadata: { name: "example-lb" },
         spec: { domains: ["new-domain.example.com"] },
       };
 
       mockRequest.mockResolvedValue(mockResponse);
 
       const result = await httpClient.put(
-        "/web/namespaces/production/http_loadbalancers/my-lb",
+        "/web/namespaces/production/http_loadbalancers/example-lb",
         updateData
       );
 
       expect(mockRequest).toHaveBeenCalledWith({
         method: "PUT",
-        url: "/web/namespaces/production/http_loadbalancers/my-lb",
+        url: "/web/namespaces/production/http_loadbalancers/example-lb",
         data: updateData,
       });
       expect(result.data).toEqual(mockResponse.data);
@@ -133,12 +133,12 @@ describe("HttpClient Integration", () => {
       mockRequest.mockResolvedValue(mockResponse);
 
       const result = await httpClient.delete(
-        "/web/namespaces/production/http_loadbalancers/my-lb"
+        "/web/namespaces/production/http_loadbalancers/example-lb"
       );
 
       expect(mockRequest).toHaveBeenCalledWith({
         method: "DELETE",
-        url: "/web/namespaces/production/http_loadbalancers/my-lb",
+        url: "/web/namespaces/production/http_loadbalancers/example-lb",
         data: undefined,
       });
       expect(result.status).toBe(200);
@@ -252,7 +252,7 @@ describe("HttpClient Integration", () => {
         headers: {},
       });
 
-      const result = await httpClient.delete("/web/namespaces/production/http_loadbalancers/my-lb");
+      const result = await httpClient.delete("/web/namespaces/production/http_loadbalancers/example-lb");
 
       expect(result.data).toBeNull();
       expect(result.status).toBe(204);
@@ -307,7 +307,7 @@ describe("Mock API Scenarios", () => {
   it("should simulate create HTTP load balancer workflow", async () => {
     const newLbRequest = {
       metadata: {
-        name: "my-app-lb",
+        name: "example-app-lb",
         namespace: "production",
       },
       spec: {
@@ -329,7 +329,7 @@ describe("Mock API Scenarios", () => {
 
     const mockResponse = {
       metadata: {
-        name: "my-app-lb",
+        name: "example-app-lb",
         namespace: "production",
         uid: "abc-123",
       },
@@ -349,14 +349,14 @@ describe("Mock API Scenarios", () => {
       newLbRequest
     );
 
-    expect(result.data.metadata.name).toBe("my-app-lb");
+    expect(result.data.metadata.name).toBe("example-app-lb");
     expect(result.data.metadata.uid).toBe("abc-123");
   });
 
   it("should simulate get resource with status workflow", async () => {
     const mockLbWithStatus = {
       metadata: {
-        name: "my-app-lb",
+        name: "example-app-lb",
         namespace: "production",
       },
       spec: {
@@ -376,7 +376,7 @@ describe("Mock API Scenarios", () => {
     const httpClient = createHttpClient(credentialManager);
 
     const result = await httpClient.get(
-      "/web/namespaces/production/http_loadbalancers/my-app-lb"
+      "/web/namespaces/production/http_loadbalancers/example-app-lb"
     );
 
     expect(result.data.status.state).toBe("ACTIVE");

@@ -6,7 +6,7 @@
  */
 
 import { readFileSync, readdirSync, existsSync } from "fs";
-import { join, extname } from "path";
+import { join, extname, relative } from "path";
 import YAML from "yaml";
 import { z } from "zod";
 import {
@@ -17,6 +17,7 @@ import {
   generateToolName,
 } from "./naming/index.js";
 import { normalizeTitleAcronyms } from "./naming/acronyms.js";
+import { normalizeExamples } from "./transformers/index.js";
 import { logger } from "../utils/logging.js";
 
 /**
@@ -151,8 +152,10 @@ export interface ParsedSpec {
 
 /**
  * Parse a single OpenAPI specification file
+ * @param filePath - Absolute path to the spec file
+ * @param basePath - Optional base path for creating relative sourceFile paths (for deterministic output)
  */
-export function parseSpecFile(filePath: string): ParsedSpec | null {
+export function parseSpecFile(filePath: string, basePath?: string): ParsedSpec | null {
   try {
     const content = readFileSync(filePath, "utf-8");
     const ext = extname(filePath).toLowerCase();
@@ -177,7 +180,9 @@ export function parseSpecFile(filePath: string): ParsedSpec | null {
     }
 
     const spec = parseResult.data;
-    const operations = extractOperations(spec, filePath);
+    // Use relative path for sourceFile to ensure deterministic output across environments
+    const sourceFile = basePath ? relative(basePath, filePath) : filePath;
+    const operations = extractOperations(spec, sourceFile);
 
     return {
       filePath,
@@ -206,7 +211,10 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
 
   const httpMethods = ["get", "post", "put", "delete", "patch"] as const;
 
-  for (const [path, pathItem] of Object.entries(spec.paths)) {
+  // Sort paths alphabetically for deterministic output (use < > for locale-independent sorting)
+  const sortedPaths = Object.entries(spec.paths).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
+
+  for (const [path, pathItem] of sortedPaths) {
     // Check if path has a name parameter (indicates single resource operations)
     const hasNameParam = path.includes("{name}") || path.includes("{id}");
 
@@ -263,11 +271,21 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
         requiredParams.push("body");
       }
 
-      // Transform text content
+      // Transform text content and normalize examples
       const summary = transformText(
         normalizeTitleAcronyms(operation.summary ?? `${operationType} ${resource}`)
       );
-      const description = transformText(operation.description ?? "");
+      const description = normalizeExamples(transformText(operation.description ?? ""));
+
+      // Normalize parameter descriptions
+      const normalizedPathParams = pathParameters.map((p) => ({
+        ...p,
+        description: p.description ? normalizeExamples(p.description) : p.description,
+      }));
+      const normalizedQueryParams = queryParameters.map((p) => ({
+        ...p,
+        description: p.description ? normalizeExamples(p.description) : p.description,
+      }));
 
       operations.push({
         toolName,
@@ -278,8 +296,8 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
         resource,
         summary,
         description,
-        pathParameters,
-        queryParameters,
+        pathParameters: normalizedPathParams,
+        queryParameters: normalizedQueryParams,
         requestBodySchema,
         responseSchema,
         requiredParams,
@@ -304,8 +322,13 @@ export function parseSpecDirectory(dirPath: string): ParsedSpec[] {
     return specs;
   }
 
+  // Use parent of dirPath as base for relative paths (makes paths like "raw/filename.json")
+  const basePath = join(dirPath, "..");
+
   function scanDir(currentDir: string): void {
     const entries = readdirSync(currentDir, { withFileTypes: true });
+    // Sort entries alphabetically for deterministic output across different filesystems (locale-independent)
+    entries.sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
 
     for (const entry of entries) {
       const fullPath = join(currentDir, entry.name);
@@ -317,7 +340,7 @@ export function parseSpecDirectory(dirPath: string): ParsedSpec[] {
         entry.name.endsWith(".yaml") ||
         entry.name.endsWith(".yml")
       ) {
-        const spec = parseSpecFile(fullPath);
+        const spec = parseSpecFile(fullPath, basePath);
         if (spec && spec.operations.length > 0) {
           specs.push(spec);
         }
@@ -349,7 +372,10 @@ export function getAllOperations(specs: ParsedSpec[]): ParsedOperation[] {
     }
   }
 
-  return Array.from(operationsMap.values());
+  // Sort by toolName for deterministic output (locale-independent)
+  return Array.from(operationsMap.values()).sort((a, b) =>
+    a.toolName < b.toolName ? -1 : a.toolName > b.toolName ? 1 : 0
+  );
 }
 
 /**
@@ -368,5 +394,17 @@ export function groupOperationsByDomain(
     grouped.get(domain)!.push(operation);
   }
 
-  return grouped;
+  // Sort operations within each domain by toolName for deterministic output (locale-independent)
+  for (const ops of grouped.values()) {
+    ops.sort((a, b) => (a.toolName < b.toolName ? -1 : a.toolName > b.toolName ? 1 : 0));
+  }
+
+  // Return a new Map with sorted domain keys for deterministic iteration order
+  const sortedGrouped = new Map<string, ParsedOperation[]>();
+  const sortedDomains = Array.from(grouped.keys()).sort();
+  for (const domain of sortedDomains) {
+    sortedGrouped.set(domain, grouped.get(domain)!);
+  }
+
+  return sortedGrouped;
 }
