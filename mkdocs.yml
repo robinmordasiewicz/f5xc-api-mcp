@@ -26,6 +26,7 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.indexes
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -103,41 +104,112 @@ nav:
       - Authentication: configuration/authentication.md
   - Tools:
       - Overview: tools/index.md
-      - WAAP:
-          - HTTP Load Balancer: tools/http-loadbalancer.md
-          - TCP Load Balancer: tools/tcp-loadbalancer.md
-          - Origin Pool: tools/origin-pool.md
-          - App Firewall: tools/app-firewall.md
-          - Rate Limiter: tools/rate-limiter.md
-          - Service Policy: tools/service-policy.md
-          - API Definition: tools/api-definition.md
+      - API Security:
+          - API Crawler: tools/api-security/api-crawler.md
+          - API Definition: tools/api-security/api-definition.md
+          - API Discovery: tools/api-security/api-discovery.md
+          - API Group: tools/api-security/api-group.md
+          - Swagger Spec: tools/api-security/swagger-spec.md
+      - Applications:
+          - App Setting: tools/applications/app-setting.md
+          - App Type: tools/applications/app-type.md
+          - Application: tools/applications/application.md
+          - Protected Application: tools/applications/protected-application.md
+      - Authentication:
+          - Authentication: tools/authentication/authentication.md
+          - OIDC Provider: tools/authentication/oidc-provider.md
+      - BIG-IP Integration:
+          - BIG-IP iRule: tools/big-ip-integration/bigip-irule.md
+          - BIG-IP Virtual Server: tools/big-ip-integration/bigip-virtual-server.md
+      - Bot Defense:
+          - Bot Defense App Infrastructure: tools/bot-defense/bot-defense-app-infrastructure.md
+          - Shape Bot Defense Instance: tools/bot-defense/shape-bot-defense-instance.md
+      - Certificates:
+          - CA Certificate: tools/certificates/ca-certificate.md
+          - Certificate: tools/certificates/certificate.md
+          - Certificate Chain: tools/certificates/certificate-chain.md
+          - Secret: tools/certificates/secret.md
+          - Secret Policy: tools/certificates/secret-policy.md
+          - Trusted CA List: tools/certificates/trusted-ca-list.md
+      - Cloud Resources:
+          - Cloud Credentials: tools/cloud-resources/cloud-credentials.md
+          - Cloud Region: tools/cloud-resources/cloud-region.md
       - DNS:
-          - DNS Zone: tools/dns-zone.md
-          - DNS Load Balancer: tools/dns-loadbalancer.md
-          - DNS LB Pool: tools/dns-lb-pool.md
-      - Site:
-          - AWS VPC Site: tools/aws-vpc-site.md
-          - Azure VNet Site: tools/azure-vnet-site.md
-          - GCP VPC Site: tools/gcp-vpc-site.md
-          - Customer Edge: tools/customer-edge.md
-      - Network:
-          - Network Connector: tools/network-connector.md
-          - Network Firewall: tools/network-firewall.md
-          - Enhanced Firewall Policy: tools/enhanced-firewall-policy.md
-      - AppStack:
-          - K8s Cluster: tools/k8s-cluster.md
-          - Virtual K8s: tools/virtual-k8s.md
-          - Workload: tools/workload.md
+          - DNS Domain: tools/dns/dns-domain.md
+          - DNS LB Pool: tools/dns/dns-lb-pool.md
+          - DNS Load Balancer: tools/dns/dns-load-balancer.md
+          - DNS Zone: tools/dns/dns-zone.md
+          - RRset: tools/dns/rrset.md
+      - Infrastructure Protection:
+          - Infraprotect ASN: tools/infrastructure-protection/infraprotect-asn.md
+          - Infraprotect Firewall Rule: tools/infrastructure-protection/infraprotect-firewall-rule.md
+          - Infraprotect Firewall Ruleset: tools/infrastructure-protection/infraprotect-firewall-ruleset.md
+          - Infraprotect Tunnel: tools/infrastructure-protection/infraprotect-tunnel.md
+      - Integrations:
+          - External Connector: tools/integrations/external-connector.md
+      - Kubernetes:
+          - Deployment: tools/kubernetes/deployment.md
+          - K8s Cluster: tools/kubernetes/k8s-cluster.md
+          - K8s Cluster Role: tools/kubernetes/k8s-cluster-role.md
+          - Pod: tools/kubernetes/pod.md
+          - Virtual K8s: tools/kubernetes/virtual-k8s.md
+          - Workload: tools/kubernetes/workload.md
+      - Load Balancing:
+          - API Endpoint: tools/load-balancing/api-endpoint.md
+          - Endpoint: tools/load-balancing/endpoint.md
+          - Healthcheck: tools/load-balancing/healthcheck.md
+          - HTTP Loadbalancer: tools/load-balancing/http-loadbalancer.md
+          - Origin Pool: tools/load-balancing/origin-pool.md
+          - Route: tools/load-balancing/route.md
+          - TCP Loadbalancer: tools/load-balancing/tcp-loadbalancer.md
+          - UDP Loadbalancer: tools/load-balancing/udp-loadbalancer.md
+          - Virtual Host: tools/load-balancing/virtual-host.md
+      - Monitoring:
+          - Access Log: tools/monitoring/access-log.md
+          - Alert Policy: tools/monitoring/alert-policy.md
+          - Alert Receiver: tools/monitoring/alert-receiver.md
+          - Audit Log: tools/monitoring/audit-log.md
+          - Global Log Receiver: tools/monitoring/global-log-receiver.md
+          - Log Receiver: tools/monitoring/log-receiver.md
+          - Metric: tools/monitoring/metric.md
+      - Networking:
+          - Enhanced Firewall Policy: tools/networking/enhanced-firewall-policy.md
+          - Fleet: tools/networking/fleet.md
+          - Network Connector: tools/networking/network-connector.md
+          - Network Firewall: tools/networking/network-firewall.md
+          - Network Interface: tools/networking/network-interface.md
+          - Network Policy: tools/networking/network-policy.md
+          - Virtual Network: tools/networking/virtual-network.md
+      - Organization:
+          - Namespace: tools/organization/namespace.md
+          - API Credential: tools/organization/api-credential.md
+          - Namespace Role: tools/organization/namespace-role.md
+          - User Role: tools/organization/user-role.md
+          - User Group: tools/organization/user-group.md
       - Security:
-          - Malicious User Detection: tools/malicious-user-detection.md
-          - Bot Defense: tools/bot-defense.md
-          - API Discovery: tools/api-discovery.md
-      - Core:
-          - Namespace: tools/namespace.md
-          - Certificate: tools/certificate.md
-          - Cloud Credentials: tools/cloud-credentials.md
-          - Secret: tools/secret.md
-          - Health Check: tools/health-check.md
+          - App Firewall: tools/security/app-firewall.md
+          - IP Prefix Set: tools/security/ip-prefix-set.md
+          - Malicious User Mitigation: tools/security/malicious-user-mitigation.md
+          - Rate Limiter Policy: tools/security/rate-limiter-policy.md
+          - Service Policy: tools/security/service-policy.md
+          - Service Policy Set: tools/security/service-policy-set.md
+      - Service Mesh:
+          - Forwarding Class: tools/service-mesh/forwarding-class.md
+          - Segment: tools/service-mesh/segment.md
+      - Sites:
+          - AWS VPC Site: tools/sites/aws-vpc-site.md
+          - Azure VNET Site: tools/sites/azure-vnet-site.md
+          - GCP VPC Site: tools/sites/gcp-vpc-site.md
+          - Site: tools/sites/site.md
+          - Site Mesh Group: tools/sites/site-mesh-group.md
+          - Voltstack Site: tools/sites/voltstack-site.md
+      - Subscriptions:
+          - Addon Subscription: tools/subscriptions/addon-subscription.md
+          - Addon Service: tools/subscriptions/addon-service.md
+      - VPN:
+          - IKE Phase 1 Profile: tools/vpn/ike-phase1-profile.md
+          - IKE Phase 2 Profile: tools/vpn/ike-phase2-profile.md
+          - Tunnel: tools/vpn/tunnel.md
   - Integrations:
       - f5xcctl CLI: integrations/f5xcctl.md
       - Terraform: integrations/terraform.md

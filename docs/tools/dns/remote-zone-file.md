@@ -1,0 +1,64 @@
+---
+page_title: f5xc_remote_zone_file - f5xc-api-mcp
+subcategory: DNS
+description: Get Remote Zone File
+---
+
+# Remote Zone File
+
+get remote zone file from primary dns
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-dns-remote-zone-file-list` | Get Remote Zone File |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `dns_zone_name` | Name |
+| `namespace` | Namespace |
+
+## Example Usage
+
+Ask Claude to help you work with Remote Zone File resources:
+
+### List Remote Zone Files
+
+> "List all remote-zone-files in the 'production' namespace"
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl apply -f remote_zone_file.yaml
+
+# Get
+f5xcctl get remote_zone_file {name} -n {namespace}
+
+# List
+f5xcctl get remote_zone_files -n {namespace}
+
+# Delete
+f5xcctl delete remote_zone_file {name} -n {namespace}
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_remote_zone_file" "example" {
+  name      = "example-remote-zone-file"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs
