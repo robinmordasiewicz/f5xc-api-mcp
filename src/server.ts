@@ -246,9 +246,9 @@ export class F5XCApiServer {
       DISCOVERY_TOOLS.execute.description,
       {
         toolName: z.string().describe("Tool name to execute"),
-        pathParams: z.record(z.string()).optional().describe("Path parameters"),
-        queryParams: z.record(z.string()).optional().describe("Query parameters"),
-        body: z.record(z.unknown()).optional().describe("Request body"),
+        pathParams: z.record(z.string(), z.string()).optional().describe("Path parameters"),
+        queryParams: z.record(z.string(), z.string()).optional().describe("Query parameters"),
+        body: z.record(z.string(), z.unknown()).optional().describe("Request body"),
       },
       async (args) => {
         const result = await executeTool(
@@ -322,9 +322,9 @@ export class F5XCApiServer {
       {
         resourceName: z.string().describe("Consolidated resource name"),
         operation: z.enum(["create", "get", "list", "update", "delete"]).describe("CRUD operation"),
-        pathParams: z.record(z.string()).optional().describe("Path parameters"),
-        queryParams: z.record(z.string()).optional().describe("Query parameters"),
-        body: z.record(z.unknown()).optional().describe("Request body"),
+        pathParams: z.record(z.string(), z.string()).optional().describe("Path parameters"),
+        queryParams: z.record(z.string(), z.string()).optional().describe("Query parameters"),
+        body: z.record(z.string(), z.unknown()).optional().describe("Request body"),
       },
       async (args) => {
         // Resolve to underlying tool
@@ -468,11 +468,11 @@ export class F5XCApiServer {
         workflow.name,
         workflow.description,
         argSchema,
-        async (args: Record<string, string | undefined>) => {
+        async (args) => {
           // Process template with provided arguments
           const processedArgs: Record<string, string> = {};
-          for (const [key, value] of Object.entries(args)) {
-            if (value !== undefined) {
+          for (const [key, value] of Object.entries(args as Record<string, unknown>)) {
+            if (typeof value === "string") {
               processedArgs[key] = value;
             }
           }

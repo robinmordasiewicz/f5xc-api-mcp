@@ -28,7 +28,7 @@ const OpenApiParameterSchema = z.object({
   in: z.enum(["path", "query", "header", "cookie"]),
   required: z.boolean().optional(),
   description: z.string().optional(),
-  schema: z.record(z.unknown()).optional(),
+  schema: z.record(z.string(), z.unknown()).optional(),
 });
 
 const OpenApiRequestBodySchema = z.object({
@@ -36,8 +36,9 @@ const OpenApiRequestBodySchema = z.object({
   description: z.string().optional(),
   content: z
     .record(
+      z.string(),
       z.object({
-        schema: z.record(z.unknown()).optional(),
+        schema: z.record(z.string(), z.unknown()).optional(),
       })
     )
     .optional(),
@@ -47,8 +48,9 @@ const OpenApiResponseSchema = z.object({
   description: z.string().optional(),
   content: z
     .record(
+      z.string(),
       z.object({
-        schema: z.record(z.unknown()).optional(),
+        schema: z.record(z.string(), z.unknown()).optional(),
       })
     )
     .optional(),
@@ -61,8 +63,8 @@ const OpenApiOperationSchema = z.object({
   tags: z.array(z.string()).optional(),
   parameters: z.array(OpenApiParameterSchema).optional(),
   requestBody: OpenApiRequestBodySchema.optional(),
-  responses: z.record(OpenApiResponseSchema).optional(),
-  security: z.array(z.record(z.array(z.string()))).optional(),
+  responses: z.record(z.string(), OpenApiResponseSchema).optional(),
+  security: z.array(z.record(z.string(), z.array(z.string()))).optional(),
   "x-ves-proto-rpc": z.string().optional(),
 });
 
@@ -83,11 +85,11 @@ const OpenApiSpecSchema = z.object({
     version: z.string(),
     description: z.string().optional(),
   }),
-  paths: z.record(OpenApiPathItemSchema).optional(),
+  paths: z.record(z.string(), OpenApiPathItemSchema).optional(),
   components: z
     .object({
-      schemas: z.record(z.unknown()).optional(),
-      securitySchemes: z.record(z.unknown()).optional(),
+      schemas: z.record(z.string(), z.unknown()).optional(),
+      securitySchemes: z.record(z.string(), z.unknown()).optional(),
     })
     .optional(),
 });
@@ -174,7 +176,7 @@ export function parseSpecFile(filePath: string, basePath?: string): ParsedSpec |
     const parseResult = OpenApiSpecSchema.safeParse(rawSpec);
     if (!parseResult.success) {
       logger.debug(`Invalid OpenAPI spec: ${filePath}`, {
-        errors: parseResult.error.errors,
+        errors: parseResult.error.issues,
       });
       return null;
     }
