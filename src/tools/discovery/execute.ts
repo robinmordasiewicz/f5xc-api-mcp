@@ -18,7 +18,7 @@ import { logger } from "../../utils/logging.js";
 export interface ExecuteToolParams {
   /** The tool name to execute */
   toolName: string;
-  /** Path parameters (e.g., { namespace: "default", name: "my-lb" }) */
+  /** Path parameters (e.g., { namespace: "default", name: "example-lb" }) */
   pathParams?: Record<string, string>;
   /** Query parameters */
   queryParams?: Record<string, string | string[]>;
@@ -187,8 +187,7 @@ function generateDocumentationResponse(
     },
     f5xcctlCommand: generateF5xcctlCommand(tool, params),
     curlExample: generateCurlCommand(tool, params, apiUrl),
-    authMessage:
-      "API execution disabled. Set F5XC_API_URL and F5XC_API_TOKEN to enable execution.",
+    authMessage: "API execution disabled. Set F5XC_API_URL and F5XC_API_TOKEN to enable execution.",
   };
 }
 
@@ -214,7 +213,7 @@ function generateDocumentationResponse(
  * const docs = await executeTool({
  *   toolName: "f5xc-api-waap-http-loadbalancer-create",
  *   pathParams: { "metadata.namespace": "default" },
- *   body: { metadata: { name: "my-lb" }, spec: { ... } }
+ *   body: { metadata: { name: "example-lb" }, spec: { ... } }
  * });
  * ```
  */

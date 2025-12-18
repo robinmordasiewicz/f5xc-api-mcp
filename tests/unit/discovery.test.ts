@@ -382,9 +382,9 @@ describe("discovery/index (DISCOVERY_TOOLS)", () => {
     });
 
     it("should have correct tool names", () => {
-      expect(DISCOVERY_TOOLS.search.name).toBe("f5xc-search-tools");
-      expect(DISCOVERY_TOOLS.describe.name).toBe("f5xc-describe-tool");
-      expect(DISCOVERY_TOOLS.execute.name).toBe("f5xc-execute-tool");
+      expect(DISCOVERY_TOOLS.search.name).toBe("f5xc-api-search-tools");
+      expect(DISCOVERY_TOOLS.describe.name).toBe("f5xc-api-describe-tool");
+      expect(DISCOVERY_TOOLS.execute.name).toBe("f5xc-api-execute-tool");
       expect(DISCOVERY_TOOLS.serverInfo.name).toBe("f5xc-api-server-info");
     });
 

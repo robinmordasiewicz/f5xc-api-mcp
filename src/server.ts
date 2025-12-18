@@ -131,14 +131,14 @@ export class F5XCApiServer {
                   },
                   consolidation: getConsolidationStats(),
                   discoveryTools: [
-                    "f5xc-search-tools",
-                    "f5xc-describe-tool",
-                    "f5xc-execute-tool",
-                    "f5xc-search-resources",
-                    "f5xc-execute-resource",
+                    "f5xc-api-search-tools",
+                    "f5xc-api-describe-tool",
+                    "f5xc-api-execute-tool",
+                    "f5xc-api-search-resources",
+                    "f5xc-api-execute-resource",
                   ],
                   message: isAuthenticated
-                    ? "Authenticated - API execution enabled. Use f5xc-search-tools to find available API tools."
+                    ? "Authenticated - API execution enabled. Use f5xc-api-search-tools to find available API tools."
                     : "Documentation mode. Set F5XC_API_URL and F5XC_API_TOKEN to enable API execution.",
                 },
                 null,
@@ -183,7 +183,7 @@ export class F5XCApiServer {
                     summary: r.tool.summary,
                     score: Math.round(r.score * 100) / 100,
                   })),
-                  hint: "Use f5xc-describe-tool to get full schema for a specific tool.",
+                  hint: "Use f5xc-api-describe-tool to get full schema for a specific tool.",
                 },
                 null,
                 2
@@ -212,7 +212,7 @@ export class F5XCApiServer {
                 text: JSON.stringify(
                   {
                     error: `Tool "${args.toolName}" not found`,
-                    hint: "Use f5xc-search-tools to find available tools.",
+                    hint: "Use f5xc-api-search-tools to find available tools.",
                   },
                   null,
                   2
@@ -229,7 +229,7 @@ export class F5XCApiServer {
               text: JSON.stringify(
                 {
                   tool: description,
-                  hint: "Use f5xc-execute-tool to execute this tool.",
+                  hint: "Use f5xc-api-execute-tool to execute this tool.",
                 },
                 null,
                 2
@@ -304,7 +304,7 @@ export class F5XCApiServer {
                     isFullCrud: r.resource.isFullCrud,
                     score: Math.round(r.score * 100) / 100,
                   })),
-                  hint: "Use f5xc-execute-resource with resourceName and operation to execute.",
+                  hint: "Use f5xc-api-execute-resource with resourceName and operation to execute.",
                 },
                 null,
                 2
@@ -321,9 +321,7 @@ export class F5XCApiServer {
       DISCOVERY_TOOLS.executeResource.description,
       {
         resourceName: z.string().describe("Consolidated resource name"),
-        operation: z
-          .enum(["create", "get", "list", "update", "delete"])
-          .describe("CRUD operation"),
+        operation: z.enum(["create", "get", "list", "update", "delete"]).describe("CRUD operation"),
         pathParams: z.record(z.string()).optional().describe("Path parameters"),
         queryParams: z.record(z.string()).optional().describe("Query parameters"),
         body: z.record(z.unknown()).optional().describe("Request body"),
@@ -345,7 +343,7 @@ export class F5XCApiServer {
                   text: JSON.stringify(
                     {
                       error: `Resource "${args.resourceName}" not found`,
-                      hint: "Use f5xc-search-resources to find available resources.",
+                      hint: "Use f5xc-api-search-resources to find available resources.",
                     },
                     null,
                     2

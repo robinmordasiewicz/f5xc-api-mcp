@@ -389,9 +389,9 @@ describe("server", () => {
 
       it("should execute resource handler and return formatted result", async () => {
         mockReadResource.mockResolvedValue({
-          uri: "f5xc://tenant/default/http_loadbalancer/my-lb",
+          uri: "f5xc://tenant/default/http_loadbalancer/example-lb",
           mimeType: "application/json",
-          content: '{"metadata":{"name":"my-lb"}}',
+          content: '{"metadata":{"name":"example-lb"}}',
           mode: "documentation",
         });
 
@@ -409,14 +409,14 @@ describe("server", () => {
         const handler = resourceCall[2];
 
         // Execute the handler with a URL object
-        const uri = new URL("f5xc://tenant/default/http_loadbalancer/my-lb");
+        const uri = new URL("f5xc://tenant/default/http_loadbalancer/example-lb");
         const result = await handler(uri);
 
         expect(result).toBeDefined();
         expect(result.contents).toHaveLength(1);
-        expect(result.contents[0].uri).toBe("f5xc://tenant/default/http_loadbalancer/my-lb");
+        expect(result.contents[0].uri).toBe("f5xc://tenant/default/http_loadbalancer/example-lb");
         expect(result.contents[0].mimeType).toBe("application/json");
-        expect(result.contents[0].text).toBe('{"metadata":{"name":"my-lb"}}');
+        expect(result.contents[0].text).toBe('{"metadata":{"name":"example-lb"}}');
       });
 
       it("should handle errors in resource handler and re-throw", async () => {
@@ -437,7 +437,7 @@ describe("server", () => {
         const handler = resourceCall[2];
 
         // Execute the handler with a URL object
-        const uri = new URL("f5xc://tenant/default/http_loadbalancer/my-lb");
+        const uri = new URL("f5xc://tenant/default/http_loadbalancer/example-lb");
 
         await expect(handler(uri)).rejects.toThrow("Resource not found");
       });
@@ -459,7 +459,7 @@ describe("server", () => {
         const handler = resourceCall[2];
 
         // Execute the handler with a URL object
-        const uri = new URL("f5xc://tenant/default/http_loadbalancer/my-lb");
+        const uri = new URL("f5xc://tenant/default/http_loadbalancer/example-lb");
 
         await expect(handler(uri)).rejects.toBe("string error");
       });
@@ -513,7 +513,7 @@ describe("server", () => {
         const handler = deployLbPrompt[3];
 
         const result = await handler({
-          name: "my-lb",
+          name: "example-lb",
           namespace: "production",
           domains: "app.example.com",
           origin_pool: "backend-pool",
@@ -542,7 +542,7 @@ describe("server", () => {
         const handler = deployLbPrompt[3];
 
         const result = await handler({
-          name: "my-lb",
+          name: "example-lb",
           namespace: "production",
           domains: "app.example.com",
           origin_pool: "backend-pool",
@@ -572,7 +572,7 @@ describe("server", () => {
           const handler = wafPrompt[3];
 
           const result = await handler({
-            name: "my-waf",
+            name: "example-waf",
             namespace: "production",
             // mode is optional, should default to "blocking"
           });

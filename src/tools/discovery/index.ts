@@ -27,11 +27,7 @@ export type {
 
 export type { ToolDescription, ParameterDescription, CompactToolDescription } from "./describe.js";
 
-export type {
-  ExecuteToolParams,
-  ExecuteToolResult,
-  DocumentationResponse,
-} from "./execute.js";
+export type { ExecuteToolParams, ExecuteToolResult, DocumentationResponse } from "./execute.js";
 
 // Index loader exports
 export {
@@ -84,7 +80,7 @@ export {
  */
 export const DISCOVERY_TOOLS = {
   search: {
-    name: "f5xc-search-tools",
+    name: "f5xc-api-search-tools",
     description:
       "Search for F5XC API tools using natural language. Returns matching tools with relevance scores. " +
       "Use this to find tools for specific operations like 'create load balancer' or 'list DNS zones'.",
@@ -104,8 +100,7 @@ export const DISCOVERY_TOOLS = {
         domains: {
           type: "array",
           items: { type: "string" },
-          description:
-            "Filter by domain(s): waap, dns, core, network, site, security, appstack",
+          description: "Filter by domain(s): waap, dns, core, network, site, security, appstack",
         },
         operations: {
           type: "array",
@@ -118,7 +113,7 @@ export const DISCOVERY_TOOLS = {
   },
 
   describe: {
-    name: "f5xc-describe-tool",
+    name: "f5xc-api-describe-tool",
     description:
       "Get detailed information about a specific F5XC API tool including parameters, request body schema, " +
       "and usage examples. Use search_tools first to find the tool name.",
@@ -127,8 +122,7 @@ export const DISCOVERY_TOOLS = {
       properties: {
         toolName: {
           type: "string",
-          description:
-            "The exact tool name (e.g., 'f5xc-api-waap-http-loadbalancer-create')",
+          description: "The exact tool name (e.g., 'f5xc-api-waap-http-loadbalancer-create')",
         },
       },
       required: ["toolName"],
@@ -136,7 +130,7 @@ export const DISCOVERY_TOOLS = {
   },
 
   execute: {
-    name: "f5xc-execute-tool",
+    name: "f5xc-api-execute-tool",
     description:
       "Execute an F5XC API tool. In authenticated mode, makes the actual API call. " +
       "In documentation mode, returns CLI equivalents and curl examples.",
@@ -149,8 +143,7 @@ export const DISCOVERY_TOOLS = {
         },
         pathParams: {
           type: "object",
-          description:
-            "Path parameters (e.g., { namespace: 'default', name: 'my-resource' })",
+          description: "Path parameters (e.g., { namespace: 'default', name: 'example-resource' })",
           additionalProperties: { type: "string" },
         },
         queryParams: {
@@ -179,7 +172,7 @@ export const DISCOVERY_TOOLS = {
   },
 
   searchResources: {
-    name: "f5xc-search-resources",
+    name: "f5xc-api-search-resources",
     description:
       "Search for F5XC resources (consolidated view). Returns resources with their available CRUD operations. " +
       "More efficient than searching individual tools - one result per resource instead of 5 CRUD tools.",
@@ -199,8 +192,7 @@ export const DISCOVERY_TOOLS = {
         domains: {
           type: "array",
           items: { type: "string" },
-          description:
-            "Filter by domain(s): waap, dns, core, network, site, security, appstack",
+          description: "Filter by domain(s): waap, dns, core, network, site, security, appstack",
         },
       },
       required: ["query"],
@@ -208,7 +200,7 @@ export const DISCOVERY_TOOLS = {
   },
 
   executeResource: {
-    name: "f5xc-execute-resource",
+    name: "f5xc-api-execute-resource",
     description:
       "Execute a CRUD operation on a consolidated F5XC resource. Specify the resource name and operation. " +
       "Routes to the correct underlying API tool automatically.",
@@ -217,8 +209,7 @@ export const DISCOVERY_TOOLS = {
       properties: {
         resourceName: {
           type: "string",
-          description:
-            "The consolidated resource name (e.g., 'f5xc-api-waap-http-loadbalancer')",
+          description: "The consolidated resource name (e.g., 'f5xc-api-waap-http-loadbalancer')",
         },
         operation: {
           type: "string",
@@ -227,8 +218,7 @@ export const DISCOVERY_TOOLS = {
         },
         pathParams: {
           type: "object",
-          description:
-            "Path parameters (e.g., { namespace: 'default', name: 'my-resource' })",
+          description: "Path parameters (e.g., { namespace: 'default', name: 'example-resource' })",
           additionalProperties: { type: "string" },
         },
         queryParams: {

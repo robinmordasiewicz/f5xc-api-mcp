@@ -455,14 +455,14 @@ describe("tool-generator", () => {
   describe("API Path Construction", () => {
     it("should replace path parameters with values", () => {
       const path = "/api/config/namespaces/{namespace}/http_loadbalancers/{name}";
-      const params = { namespace: "default", name: "my-lb" };
+      const params = { namespace: "default", name: "example-lb" };
 
       let result = path;
       for (const [key, value] of Object.entries(params)) {
         result = result.replace(`{${key}}`, value);
       }
 
-      expect(result).toBe("/api/config/namespaces/default/http_loadbalancers/my-lb");
+      expect(result).toBe("/api/config/namespaces/default/http_loadbalancers/example-lb");
     });
 
     it("should append query parameters", () => {
@@ -1034,7 +1034,7 @@ describe("tool-generator", () => {
 
       it("should include resourceUrl in response when tenant available", async () => {
         mockHttpClient.get.mockResolvedValue({ data: {} });
-        mockCredentialManager.getTenant.mockReturnValue("my-tenant");
+        mockCredentialManager.getTenant.mockReturnValue("example-tenant");
 
         const operation = createMockParsedOperation({
           method: "GET",
@@ -1054,7 +1054,7 @@ describe("tool-generator", () => {
         const result = await handler({});
 
         const response = JSON.parse(result.content[0].text) as ExecutionResponse;
-        expect(response.resourceUrl).toContain("my-tenant");
+        expect(response.resourceUrl).toContain("example-tenant");
         expect(response.resourceUrl).toContain("console.ves.volterra.io");
       });
 

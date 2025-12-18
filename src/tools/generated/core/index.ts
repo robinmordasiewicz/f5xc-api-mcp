@@ -25947,7 +25947,7 @@ export const coreTools: ParsedOperation[] = [
       },
       {
         description:
-          'x-example: "key classes"\nKey classes\n\nIncludes label keys with generic names such as "my-key", "foobar-key" etc.\nKeys that are obtained using GET on /api/config/namespaces/shared/known_label_keys\nIncludes volterra-defined known label keys such as "ves.io/app_type", "ves.io/app" and "ves.io/siteType" as well as tenant-defined known keys such as\n"my-key", "acme-key-foo" and "acme-key-bar". Note that tenant-defined known keys don\'t have any standard name format - they are known keys because they\nhave been explicitly created as known keys by the tenant and are stored in the configuration as known_label_keys.\nIncludes implicit geoip label keys "geoip.ves.io/city", "geoip.ves.io/region" and "geoip.ves.io/country"\nIncludes implicit label keys associated with packets/requests by the infrastructure e.g. "implicit.ves.io/namespace"\nInclude ip reputation label keys "ipreputation.ves.io/threattype", "ipreputation.ves.io/threatlevel"\nInclude url reputation label keys "urlreputation.ves.io/category", "urlreputation.ves.io/reputationlevel"\nIncludes implicit geoip label keys "geoip.ves.io/continent"\nIncludes implicit geoip label keys  "geoip.ves.io/region", "geoip.ves.io/country" and "geoip.ves.io/continent"\nImplicit aws resource labels (dynamically queried). This may be vpc level tags and/or subnet level tags',
+          'x-example: "key classes"\nKey classes\n\nIncludes label keys with generic names such as "example-key", "foobar-key" etc.\nKeys that are obtained using GET on /api/config/namespaces/shared/known_label_keys\nIncludes volterra-defined known label keys such as "ves.io/app_type", "ves.io/app" and "ves.io/siteType" as well as tenant-defined known keys such as\n"example-key", "acme-key-foo" and "acme-key-bar". Note that tenant-defined known keys don\'t have any standard name format - they are known keys because they\nhave been explicitly created as known keys by the tenant and are stored in the configuration as known_label_keys.\nIncludes implicit geoip label keys "geoip.ves.io/city", "geoip.ves.io/region" and "geoip.ves.io/country"\nIncludes implicit label keys associated with packets/requests by the infrastructure e.g. "implicit.ves.io/namespace"\nInclude ip reputation label keys "ipreputation.ves.io/threattype", "ipreputation.ves.io/threatlevel"\nInclude url reputation label keys "urlreputation.ves.io/category", "urlreputation.ves.io/reputationlevel"\nIncludes implicit geoip label keys "geoip.ves.io/continent"\nIncludes implicit geoip label keys  "geoip.ves.io/region", "geoip.ves.io/country" and "geoip.ves.io/continent"\nImplicit aws resource labels (dynamically queried). This may be vpc level tags and/or subnet level tags',
         in: "query",
         name: "key_classes",
         required: false,
@@ -32034,7 +32034,7 @@ export const coreTools: ParsedOperation[] = [
       },
       {
         description:
-          'x-example: "my-file, shared/my-file, my-ns/my-file"\nOptional query parameter. Name of the stored_object',
+          'x-example: "example-file, shared/example-file, example-ns/example-file"\nOptional query parameter. Name of the stored_object',
         in: "query",
         name: "name",
         required: false,
@@ -32399,7 +32399,7 @@ export const coreTools: ParsedOperation[] = [
       },
       {
         description:
-          'x-example: "my-file, shared/my-file, my-ns/my-file"\nOptional query parameter. Name of the stored_object',
+          'x-example: "example-file, shared/example-file, example-ns/example-file"\nOptional query parameter. Name of the stored_object',
         in: "query",
         name: "name",
         required: false,
@@ -32472,7 +32472,7 @@ export const coreTools: ParsedOperation[] = [
       },
       {
         description:
-          'x-example: "my-file, shared/my-file, my-ns/my-file"\nOptional query parameter. Name of the stored_object',
+          'x-example: "example-file, shared/example-file, example-ns/example-file"\nOptional query parameter. Name of the stored_object',
         in: "query",
         name: "name",
         required: false,
@@ -46841,7 +46841,7 @@ export const coreTools: ParsedOperation[] = [
       },
       {
         description:
-          'x-example: "my-file, shared/my-file, my-ns/my-file"\nOptional query parameter. Name of the stored_object',
+          'x-example: "example-file, shared/example-file, example-ns/example-file"\nOptional query parameter. Name of the stored_object',
         in: "query",
         name: "name",
         required: false,

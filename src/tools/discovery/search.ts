@@ -31,7 +31,10 @@ function tokenize(text: string): string[] {
 /**
  * Calculate relevance score between query and tool
  */
-function calculateScore(query: string, tool: ToolIndexEntry): { score: number; matchedTerms: string[] } {
+function calculateScore(
+  query: string,
+  tool: ToolIndexEntry
+): { score: number; matchedTerms: string[] } {
   const queryTerms = tokenize(query);
   const matchedTerms: string[] = [];
 
@@ -40,13 +43,7 @@ function calculateScore(query: string, tool: ToolIndexEntry): { score: number; m
   }
 
   // Build searchable text from tool
-  const toolText = [
-    tool.name,
-    tool.domain,
-    tool.resource,
-    tool.operation,
-    tool.summary,
-  ].join(" ");
+  const toolText = [tool.name, tool.domain, tool.resource, tool.operation, tool.summary].join(" ");
 
   const normalizedToolText = normalizeText(toolText);
   const toolTerms = new Set(tokenize(toolText));

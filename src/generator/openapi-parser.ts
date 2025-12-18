@@ -17,6 +17,7 @@ import {
   generateToolName,
 } from "./naming/index.js";
 import { normalizeTitleAcronyms } from "./naming/acronyms.js";
+import { normalizeExamples } from "./transformers/index.js";
 import { logger } from "../utils/logging.js";
 
 /**
@@ -270,11 +271,21 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
         requiredParams.push("body");
       }
 
-      // Transform text content
+      // Transform text content and normalize examples
       const summary = transformText(
         normalizeTitleAcronyms(operation.summary ?? `${operationType} ${resource}`)
       );
-      const description = transformText(operation.description ?? "");
+      const description = normalizeExamples(transformText(operation.description ?? ""));
+
+      // Normalize parameter descriptions
+      const normalizedPathParams = pathParameters.map((p) => ({
+        ...p,
+        description: p.description ? normalizeExamples(p.description) : p.description,
+      }));
+      const normalizedQueryParams = queryParameters.map((p) => ({
+        ...p,
+        description: p.description ? normalizeExamples(p.description) : p.description,
+      }));
 
       operations.push({
         toolName,
@@ -285,8 +296,8 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
         resource,
         summary,
         description,
-        pathParameters,
-        queryParameters,
+        pathParameters: normalizedPathParams,
+        queryParameters: normalizedQueryParams,
         requestBodySchema,
         responseSchema,
         requiredParams,

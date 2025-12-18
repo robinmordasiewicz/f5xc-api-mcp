@@ -88,8 +88,8 @@ describe("Resource Types", () => {
 
 describe("buildResourceUri", () => {
   it("should build correct URI with all components", () => {
-    const uri = buildResourceUri("mytenant", "production", "http_loadbalancer", "my-lb");
-    expect(uri).toBe("f5xc://mytenant/production/http_loadbalancer/my-lb");
+    const uri = buildResourceUri("mytenant", "production", "http_loadbalancer", "example-lb");
+    expect(uri).toBe("f5xc://mytenant/production/http_loadbalancer/example-lb");
   });
 
   it("should handle system namespace", () => {
@@ -103,24 +103,24 @@ describe("buildResourceUri", () => {
   });
 
   it("should handle special characters in names", () => {
-    const uri = buildResourceUri("my-tenant", "prod-ns", "http_loadbalancer", "app-lb-1");
-    expect(uri).toBe("f5xc://my-tenant/prod-ns/http_loadbalancer/app-lb-1");
+    const uri = buildResourceUri("example-tenant", "prod-ns", "http_loadbalancer", "app-lb-1");
+    expect(uri).toBe("f5xc://example-tenant/prod-ns/http_loadbalancer/app-lb-1");
   });
 });
 
 describe("parseResourceUri", () => {
   it("should parse valid URI correctly", () => {
-    const result = parseResourceUri("f5xc://mytenant/production/http_loadbalancer/my-lb");
+    const result = parseResourceUri("f5xc://mytenant/production/http_loadbalancer/example-lb");
 
     expect(result).not.toBeNull();
     expect(result!.tenant).toBe("mytenant");
     expect(result!.namespace).toBe("production");
     expect(result!.resourceType).toBe("http_loadbalancer");
-    expect(result!.name).toBe("my-lb");
+    expect(result!.name).toBe("example-lb");
   });
 
   it("should return null for invalid scheme", () => {
-    const result = parseResourceUri("https://mytenant/production/http_loadbalancer/my-lb");
+    const result = parseResourceUri("https://mytenant/production/http_loadbalancer/example-lb");
     expect(result).toBeNull();
   });
 
@@ -131,13 +131,13 @@ describe("parseResourceUri", () => {
   });
 
   it("should return null for extra components", () => {
-    const result = parseResourceUri("f5xc://mytenant/production/http_loadbalancer/my-lb/extra");
+    const result = parseResourceUri("f5xc://mytenant/production/http_loadbalancer/example-lb/extra");
     expect(result).toBeNull();
   });
 
   it("should return null for empty components", () => {
-    expect(parseResourceUri("f5xc://mytenant//http_loadbalancer/my-lb")).toBeNull();
-    expect(parseResourceUri("f5xc:///production/http_loadbalancer/my-lb")).toBeNull();
+    expect(parseResourceUri("f5xc://mytenant//http_loadbalancer/example-lb")).toBeNull();
+    expect(parseResourceUri("f5xc:///production/http_loadbalancer/example-lb")).toBeNull();
   });
 });
 
@@ -193,8 +193,8 @@ describe("buildApiPath", () => {
   });
 
   it("should build path with resource name", () => {
-    const path = buildApiPath("http_loadbalancer", "production", "my-lb");
-    expect(path).toBe("/api/config/namespaces/production/http_loadbalancers/my-lb");
+    const path = buildApiPath("http_loadbalancer", "production", "example-lb");
+    expect(path).toBe("/api/config/namespaces/production/http_loadbalancers/example-lb");
   });
 
   it("should build path for non-namespace-scoped resource", () => {

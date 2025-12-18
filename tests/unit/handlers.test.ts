@@ -92,12 +92,12 @@ describe("handlers", () => {
           );
 
           const result = await handler.readResource(
-            "f5xc://test-tenant/default/http_loadbalancer/my-lb"
+            "f5xc://test-tenant/default/http_loadbalancer/example-lb"
           );
 
           expect(result.mode).toBe("documentation");
           expect(result.mimeType).toBe("application/json");
-          expect(result.uri).toBe("f5xc://test-tenant/default/http_loadbalancer/my-lb");
+          expect(result.uri).toBe("f5xc://test-tenant/default/http_loadbalancer/example-lb");
 
           const content = JSON.parse(result.content) as ResourceDocumentation;
           expect(content.resourceType).toBeDefined();
@@ -118,7 +118,7 @@ describe("handlers", () => {
           );
 
           const result = await handler.readResource(
-            "f5xc://test-tenant/default/origin_pool/my-pool"
+            "f5xc://test-tenant/default/origin_pool/example-pool"
           );
 
           expect(result.mode).toBe("documentation");
@@ -136,7 +136,7 @@ describe("handlers", () => {
           );
 
           const result = await handler.readResource(
-            "f5xc://test-tenant/default/dns_zone/my-zone"
+            "f5xc://test-tenant/default/dns_zone/example-zone"
           );
 
           expect(result.mode).toBe("documentation");
@@ -153,7 +153,7 @@ describe("handlers", () => {
           );
 
           const result = await handler.readResource(
-            "f5xc://test-tenant/default/app_firewall/my-waf"
+            "f5xc://test-tenant/default/app_firewall/example-waf"
           );
 
           expect(result.mode).toBe("documentation");
@@ -170,7 +170,7 @@ describe("handlers", () => {
           );
 
           const result = await handler.readResource(
-            "f5xc://test-tenant/system/namespace/my-ns"
+            "f5xc://test-tenant/system/namespace/example-ns"
           );
 
           expect(result.mode).toBe("documentation");
@@ -187,7 +187,7 @@ describe("handlers", () => {
           );
 
           const result = await handler.readResource(
-            "f5xc://test-tenant/default/http_loadbalancer/my-lb"
+            "f5xc://test-tenant/default/http_loadbalancer/example-lb"
           );
 
           expect(result.mode).toBe("documentation");
@@ -202,7 +202,7 @@ describe("handlers", () => {
           );
 
           const result = await handler.readResource(
-            "f5xc://test-tenant/default/http_loadbalancer/my-lb"
+            "f5xc://test-tenant/default/http_loadbalancer/example-lb"
           );
 
           const content = JSON.parse(result.content) as ResourceDocumentation;
@@ -216,7 +216,7 @@ describe("handlers", () => {
           mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.TOKEN);
           mockHttpClient.get.mockResolvedValue({
             data: {
-              metadata: { name: "my-lb" },
+              metadata: { name: "example-lb" },
               spec: { domains: ["example.com"] },
             },
           });
@@ -227,7 +227,7 @@ describe("handlers", () => {
           );
 
           const result = await handler.readResource(
-            "f5xc://test-tenant/default/http_loadbalancer/my-lb"
+            "f5xc://test-tenant/default/http_loadbalancer/example-lb"
           );
 
           expect(result.mode).toBe("execution");
@@ -236,7 +236,7 @@ describe("handlers", () => {
           );
 
           const content = JSON.parse(result.content);
-          expect(content.metadata.name).toBe("my-lb");
+          expect(content.metadata.name).toBe("example-lb");
         });
 
         it("should throw error when API call fails", async () => {
@@ -249,7 +249,7 @@ describe("handlers", () => {
           );
 
           await expect(
-            handler.readResource("f5xc://test-tenant/default/http_loadbalancer/my-lb")
+            handler.readResource("f5xc://test-tenant/default/http_loadbalancer/example-lb")
           ).rejects.toThrow("API Error");
         });
       });
@@ -273,7 +273,7 @@ describe("handlers", () => {
           );
 
           await expect(
-            handler.readResource("f5xc://test-tenant/default/unknown-resource/my-resource")
+            handler.readResource("f5xc://test-tenant/default/unknown-resource/example-resource")
           ).rejects.toThrow("Unknown resource type");
         });
 
@@ -289,7 +289,7 @@ describe("handlers", () => {
           const buildApiPathSpy = vi.spyOn(templates, "buildApiPath").mockReturnValue(null);
 
           await expect(
-            handler.readResource("f5xc://test-tenant/default/http_loadbalancer/my-lb")
+            handler.readResource("f5xc://test-tenant/default/http_loadbalancer/example-lb")
           ).rejects.toThrow("Cannot build API path for");
 
           buildApiPathSpy.mockRestore();
@@ -310,7 +310,7 @@ describe("handlers", () => {
             .mockReturnValueOnce(undefined);
 
           await expect(
-            handler.readResource("f5xc://test-tenant/default/http_loadbalancer/my-lb")
+            handler.readResource("f5xc://test-tenant/default/http_loadbalancer/example-lb")
           ).rejects.toThrow("Unknown resource type");
 
           getResourceTypeSpy.mockRestore();
@@ -339,7 +339,7 @@ describe("handlers", () => {
       });
 
       it("should include tenant in URI template", () => {
-        mockCredentialManager.getTenant.mockReturnValue("my-tenant");
+        mockCredentialManager.getTenant.mockReturnValue("example-tenant");
 
         const handler = new ResourceHandler(
           mockCredentialManager as unknown as CredentialManager,
@@ -349,7 +349,7 @@ describe("handlers", () => {
         const templates = handler.listResourceTemplates();
         const namespaceScoped = templates.find((t) => t.uriTemplate.includes("{namespace}"));
 
-        expect(namespaceScoped?.uriTemplate).toContain("my-tenant");
+        expect(namespaceScoped?.uriTemplate).toContain("example-tenant");
       });
 
       it("should use placeholder when tenant is null", () => {
@@ -522,7 +522,7 @@ describe("handlers", () => {
       );
 
       const result = await handler.readResource(
-        "f5xc://test-tenant/default/http_loadbalancer/my-lb"
+        "f5xc://test-tenant/default/http_loadbalancer/example-lb"
       );
 
       const content = JSON.parse(result.content) as ResourceDocumentation;
@@ -532,7 +532,7 @@ describe("handlers", () => {
         system_metadata: { creation_timestamp: string };
       };
 
-      expect(example.metadata.name).toBe("my-lb");
+      expect(example.metadata.name).toBe("example-lb");
       expect(example.metadata.namespace).toBe("default");
       expect(example.spec.domains).toContain("app.example.com");
       expect(example.spec.default_route_pools).toHaveLength(1);
@@ -548,7 +548,7 @@ describe("handlers", () => {
       );
 
       const result = await handler.readResource(
-        "f5xc://test-tenant/default/origin_pool/my-pool"
+        "f5xc://test-tenant/default/origin_pool/example-pool"
       );
 
       const content = JSON.parse(result.content) as ResourceDocumentation;
@@ -570,7 +570,7 @@ describe("handlers", () => {
       );
 
       const result = await handler.readResource(
-        "f5xc://test-tenant/default/dns_zone/my-zone"
+        "f5xc://test-tenant/default/dns_zone/example-zone"
       );
 
       const content = JSON.parse(result.content) as ResourceDocumentation;
@@ -591,7 +591,7 @@ describe("handlers", () => {
       );
 
       const result = await handler.readResource(
-        "f5xc://test-tenant/default/app_firewall/my-waf"
+        "f5xc://test-tenant/default/app_firewall/example-waf"
       );
 
       const content = JSON.parse(result.content) as ResourceDocumentation;
@@ -612,7 +612,7 @@ describe("handlers", () => {
       );
 
       const result = await handler.readResource(
-        "f5xc://test-tenant/default/certificate/my-cert"
+        "f5xc://test-tenant/default/certificate/example-cert"
       );
 
       const content = JSON.parse(result.content) as ResourceDocumentation;
@@ -622,7 +622,7 @@ describe("handlers", () => {
         system_metadata: unknown;
       };
 
-      expect(example.metadata.name).toBe("my-cert");
+      expect(example.metadata.name).toBe("example-cert");
       expect(example.spec).toBeDefined();
       expect(example.system_metadata).toBeDefined();
     });
@@ -638,11 +638,11 @@ describe("handlers", () => {
       );
 
       const result = await handler.readResource(
-        "f5xc://test-tenant/default/http_loadbalancer/my-lb"
+        "f5xc://test-tenant/default/http_loadbalancer/example-lb"
       );
 
       const content = JSON.parse(result.content) as ResourceDocumentation;
-      expect(content.f5xcctlCommand).toBe("f5xcctl get http_loadbalancer my-lb -n default -o yaml");
+      expect(content.f5xcctlCommand).toBe("f5xcctl get http_loadbalancer example-lb -n default -o yaml");
     });
 
     it("should handle resource types with hyphens", async () => {
@@ -654,11 +654,11 @@ describe("handlers", () => {
       );
 
       const result = await handler.readResource(
-        "f5xc://test-tenant/default/origin_pool/my-pool"
+        "f5xc://test-tenant/default/origin_pool/example-pool"
       );
 
       const content = JSON.parse(result.content) as ResourceDocumentation;
-      expect(content.f5xcctlCommand).toBe("f5xcctl get origin_pool my-pool -n default -o yaml");
+      expect(content.f5xcctlCommand).toBe("f5xcctl get origin_pool example-pool -n default -o yaml");
     });
   });
 
@@ -672,12 +672,12 @@ describe("handlers", () => {
       );
 
       const result = await handler.readResource(
-        "f5xc://test-tenant/default/http_loadbalancer/my-lb"
+        "f5xc://test-tenant/default/http_loadbalancer/example-lb"
       );
 
       const content = JSON.parse(result.content) as ResourceDocumentation;
       expect(content.terraformDataSource).toContain('data "volterra_http_loadbalancer"');
-      expect(content.terraformDataSource).toContain('name      = "my-lb"');
+      expect(content.terraformDataSource).toContain('name      = "example-lb"');
       expect(content.terraformDataSource).toContain('namespace = "default"');
     });
 
@@ -690,7 +690,7 @@ describe("handlers", () => {
       );
 
       const result = await handler.readResource(
-        "f5xc://test-tenant/default/origin_pool/my-pool"
+        "f5xc://test-tenant/default/origin_pool/example-pool"
       );
 
       const content = JSON.parse(result.content) as ResourceDocumentation;

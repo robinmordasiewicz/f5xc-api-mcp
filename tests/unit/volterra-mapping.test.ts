@@ -208,10 +208,10 @@ describe("volterra-mapping", () => {
 
     it("should transform field names", () => {
       const spec = {
-        ves_io_tenant: "my-tenant",
+        ves_io_tenant: "example-tenant",
       };
       const result = transformOpenApiSpec(spec);
-      expect(result.tenant).toBe("my-tenant");
+      expect(result.tenant).toBe("example-tenant");
       expect(result.ves_io_tenant).toBeUndefined();
     });
 
