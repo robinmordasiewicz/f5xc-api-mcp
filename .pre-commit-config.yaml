@@ -33,7 +33,7 @@ repos:
         name: Generate Tools from OpenAPI Specs
         entry: bash -c 'npm run generate && git add src/tools/generated/'
         language: system
-        files: ^(specs/|src/generator/)
+        always_run: true
         pass_filenames: false
 
       - id: eslint
