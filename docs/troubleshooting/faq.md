@@ -101,7 +101,7 @@ API token or certificate is invalid.
 1. **Token expired**: Generate new token in F5XC Console
 2. **Wrong URL**: Check URL format:
 
-   ```
+   ```text
    https://your-tenant.console.ves.volterra.io
    ```
 

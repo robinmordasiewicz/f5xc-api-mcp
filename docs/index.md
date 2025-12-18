@@ -4,11 +4,16 @@ An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to
 
 ## Features
 
-- **270+ API Operations** - Full coverage of F5XC API as MCP tools
+- **1,426 API Tools** - Full coverage of F5XC API across 7 domains
+- **Dynamic Discovery** - 6 meta-tools with 95%+ token savings
 - **Dual-Mode Operation** - Works with OR without authentication
 - **f5xcctl Integration** - Every response includes CLI equivalents
 - **Terraform Examples** - HCL snippets for infrastructure-as-code
 - **Workflow Prompts** - Guided workflows for common tasks
+
+!!! tip "Token Efficiency"
+    The dynamic discovery architecture reduces initial token consumption from ~535K to ~500 tokens.
+    Schemas load on-demand at ~375 tokens per tool.
 
 ## Quick Install
 
@@ -53,6 +58,10 @@ Enabled when F5XC credentials are provided. Direct API execution.
 - Resource listing and retrieval
 - Configuration deployment
 - Real-time resource status queries
+
+!!! info "Authentication Options"
+    Configure credentials via environment variables or `.env` file.
+    See [Authentication Guide](configuration/authentication.md) for details.
 
 ## Supported Resources
 

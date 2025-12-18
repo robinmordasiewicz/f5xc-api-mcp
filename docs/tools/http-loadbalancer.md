@@ -27,7 +27,8 @@ The HTTP Load Balancer is the primary resource for exposing applications through
 
 Ask Claude:
 
-> "Create an HTTP load balancer named 'my-app' in the 'production' namespace for domain 'app.example.com' with origin pool 'backend-pool'"
+> "Create an HTTP load balancer named 'my-app' in the 'production' namespace
+> for domain 'app.example.com' with origin pool 'backend-pool'"
 
 ### f5xcctl Equivalent
 

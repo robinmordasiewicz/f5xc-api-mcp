@@ -103,10 +103,25 @@ nav:
       - Authentication: configuration/authentication.md
   - Tools:
       - Overview: tools/index.md
-      - HTTP Load Balancer: tools/http-loadbalancer.md
-      - Origin Pool: tools/origin-pool.md
-      - App Firewall: tools/app-firewall.md
-      - DNS Zone: tools/dns-zone.md
+      - WAAP:
+          - HTTP Load Balancer: tools/http-loadbalancer.md
+          - Origin Pool: tools/origin-pool.md
+          - App Firewall: tools/app-firewall.md
+          - Rate Limiter: tools/rate-limiter.md
+      - DNS:
+          - DNS Zone: tools/dns-zone.md
+      - Site:
+          - AWS VPC Site: tools/aws-vpc-site.md
+          - Azure VNet Site: tools/azure-vnet-site.md
+          - GCP VPC Site: tools/gcp-vpc-site.md
+      - Network:
+          - Network Connector: tools/network-connector.md
+      - Security:
+          - Service Policy: tools/service-policy.md
+      - Core:
+          - Namespace: tools/namespace.md
+          - Certificate: tools/certificate.md
+          - Cloud Credentials: tools/cloud-credentials.md
   - Integrations:
       - f5xcctl CLI: integrations/f5xcctl.md
       - Terraform: integrations/terraform.md

@@ -2,6 +2,9 @@
 
 DNS Zones enable you to manage DNS records through F5 Distributed Cloud.
 
+!!! info "Subscription Tier"
+    **STANDARD** - Available with standard F5XC subscription.
+
 ## Tools
 
 | Tool | Description |
@@ -226,7 +229,7 @@ EOF
 
 To use F5XC DNS, update your domain registrar with F5XC nameservers:
 
-```
+```text
 ns1.f5clouddns.com
 ns2.f5clouddns.com
 ```

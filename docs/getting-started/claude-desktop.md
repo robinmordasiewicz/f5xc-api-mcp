@@ -2,10 +2,9 @@
 
 Configure the F5XC API MCP Server with Claude Desktop.
 
-## Prerequisites
-
-- [Claude Desktop](https://claude.ai/download) installed
-- Node.js 18+ installed (for npx)
+!!! note "Prerequisites"
+    - [Claude Desktop](https://claude.ai/download) installed
+    - Node.js 18+ installed (for npx)
 
 ## Configuration
 
@@ -13,19 +12,19 @@ Configure the F5XC API MCP Server with Claude Desktop.
 
 === "macOS"
 
-    ```
+    ```text
     ~/Library/Application Support/Claude/claude_desktop_config.json
     ```
 
 === "Windows"
 
-    ```
+    ```text
     %APPDATA%\Claude\claude_desktop_config.json
     ```
 
 === "Linux"
 
-    ```
+    ```text
     ~/.config/Claude/claude_desktop_config.json
     ```
 
@@ -101,7 +100,9 @@ Edit the config file and add the F5XC API server:
 
 ### Step 3: Restart Claude Desktop
 
-Completely quit and restart Claude Desktop for changes to take effect.
+!!! warning "Full Restart Required"
+    Completely quit and restart Claude Desktop for changes to take effect.
+    Just closing the window is not sufficient.
 
 ## Verification
 
@@ -142,6 +143,13 @@ You can run multiple MCP servers alongside F5XC:
 4. Check Console.app (macOS) or Event Viewer (Windows) for errors
 
 ### Authentication Issues
+
+!!! tip "Verify Credentials First"
+    Test your credentials work before configuring:
+    ```bash
+    curl -H "Authorization: APIToken $F5XC_API_TOKEN" \
+      https://your-tenant.console.ves.volterra.io/api/web/namespaces
+    ```
 
 1. Verify your API URL is correct
 2. Check your API token hasn't expired

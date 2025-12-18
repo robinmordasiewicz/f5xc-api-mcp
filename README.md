@@ -3,7 +3,9 @@
 [![npm version](https://badge.fury.io/js/f5xc-api-mcp.svg)](https://www.npmjs.com/package/f5xc-api-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to AI assistants. Enables natural language interaction with F5XC infrastructure through Claude, VS Code, and other MCP-compatible tools.
+An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to AI assistants.
+Enables natural language interaction with F5XC infrastructure through Claude, VS Code, and
+other MCP-compatible tools.
 
 ## Features
 
@@ -147,7 +149,7 @@ The server includes guided workflow prompts:
 
 Access F5XC resources via URI scheme:
 
-```
+```text
 f5xc://{tenant}/{namespace}/{resource-type}/{name}
 ```
 
