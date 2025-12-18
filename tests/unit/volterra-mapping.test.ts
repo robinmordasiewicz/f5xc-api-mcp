@@ -214,6 +214,32 @@ describe("volterra-mapping", () => {
       expect(result.tenant).toBe("my-tenant");
       expect(result.ves_io_tenant).toBeUndefined();
     });
+
+    it("should preserve number and boolean primitive values", () => {
+      const spec = {
+        version: 3,
+        port: 443,
+        enabled: true,
+        deprecated: false,
+        ratio: 0.75,
+        nested: {
+          count: 42,
+          active: true,
+          name: "Volterra API",
+        },
+      };
+      const result = transformOpenApiSpec(spec) as Record<string, unknown>;
+      expect(result.version).toBe(3);
+      expect(result.port).toBe(443);
+      expect(result.enabled).toBe(true);
+      expect(result.deprecated).toBe(false);
+      expect(result.ratio).toBe(0.75);
+
+      const nested = result.nested as Record<string, unknown>;
+      expect(nested.count).toBe(42);
+      expect(nested.active).toBe(true);
+      expect(nested.name).toBe("F5 Distributed Cloud API");
+    });
   });
 
   describe("generateToolName", () => {

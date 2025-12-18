@@ -177,6 +177,40 @@ paths:
       expect(result).toBeNull();
     });
 
+    it("should return null and log error for malformed JSON file", () => {
+      const specPath = join(TEST_FIXTURES_DIR, "malformed.json");
+      writeFileSync(specPath, '{ "openapi": "3.0.0", malformed json');
+
+      const result = parseSpecFile(specPath);
+
+      expect(result).toBeNull();
+    });
+
+    it("should parse .yml extension files", () => {
+      const specPath = join(TEST_FIXTURES_DIR, "test-spec.yml");
+      const ymlContent = `
+openapi: "3.0.0"
+info:
+  title: "YML Extension Test"
+  version: "1.0.0"
+paths:
+  /api/test:
+    get:
+      operationId: testYml
+      summary: Test YML
+      responses:
+        "200":
+          description: Success
+`;
+
+      writeFileSync(specPath, ymlContent);
+
+      const result = parseSpecFile(specPath, TEST_FIXTURES_DIR);
+
+      expect(result).not.toBeNull();
+      expect(result!.title).toBe("YML Extension Test");
+    });
+
     it("should handle spec with no paths", () => {
       const specPath = join(TEST_FIXTURES_DIR, "no-paths.json");
       const spec = {
@@ -434,6 +468,46 @@ paths:
       const results = parseSpecDirectory("/non/existent/path");
 
       expect(results).toHaveLength(0);
+    });
+
+    it("should scan both .yaml and .yml files in directory", () => {
+      const yamlContent = `
+openapi: "3.0.0"
+info:
+  title: "YAML Ext Test"
+  version: "1.0.0"
+paths:
+  /api/yaml:
+    get:
+      operationId: yamlOp
+      summary: YAML operation
+      responses:
+        "200":
+          description: OK
+`;
+      const ymlContent = `
+openapi: "3.0.0"
+info:
+  title: "YML Ext Test"
+  version: "1.0.0"
+paths:
+  /api/yml:
+    get:
+      operationId: ymlOp
+      summary: YML operation
+      responses:
+        "200":
+          description: OK
+`;
+
+      writeFileSync(join(TEST_FIXTURES_DIR, "test.yaml"), yamlContent);
+      writeFileSync(join(TEST_FIXTURES_DIR, "test.yml"), ymlContent);
+
+      const results = parseSpecDirectory(TEST_FIXTURES_DIR);
+
+      expect(results).toHaveLength(2);
+      const titles = results.map((r) => r.title).sort();
+      expect(titles).toEqual(["YAML Ext Test", "YML Ext Test"]);
     });
 
     it("should process files in deterministic order", () => {
