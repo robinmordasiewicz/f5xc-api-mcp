@@ -134,7 +134,7 @@ Once configured, try these example prompts:
 
 > "Create an origin pool pointing to 10.0.0.1:8080"
 
-> "Get the status of the 'my-app' load balancer"
+> "Get the status of the 'example-app' load balancer"
 
 ## Next Steps
 

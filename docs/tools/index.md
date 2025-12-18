@@ -97,7 +97,7 @@ Execute a discovered API tool.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `toolName` | string | Yes | The exact tool name to execute |
-| `pathParams` | object | No | Path parameters (e.g., `{ namespace: "default", name: "my-lb" }`) |
+| `pathParams` | object | No | Path parameters (e.g., `{ namespace: "default", name: "example-lb" }`) |
 | `queryParams` | object | No | Query parameters for the request |
 | `body` | object | No | Request body for POST/PUT/PATCH operations |
 

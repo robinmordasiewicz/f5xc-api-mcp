@@ -127,7 +127,7 @@ Reference the rate limiter in an HTTP Load Balancer:
 
 ```json
 {
-  "name": "my-app",
+  "name": "example-app",
   "rate_limiter": {
     "namespace": "production",
     "name": "api-limit"

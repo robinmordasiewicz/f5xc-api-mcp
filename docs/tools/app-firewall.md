@@ -238,7 +238,7 @@ Reference the firewall in your HTTP Load Balancer:
 Or via Terraform:
 
 ```hcl
-resource "volterra_http_loadbalancer" "my_app" {
+resource "volterra_http_loadbalancer" "example_app" {
   # ... other config ...
 
   app_firewall {
