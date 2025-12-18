@@ -464,44 +464,39 @@ export class F5XCApiServer {
           : z.string().optional().describe(arg.description);
       }
 
-      this.server.prompt(
-        workflow.name,
-        workflow.description,
-        argSchema,
-        async (args) => {
-          // Process template with provided arguments
-          const processedArgs: Record<string, string> = {};
-          for (const [key, value] of Object.entries(args as Record<string, unknown>)) {
-            if (typeof value === "string") {
-              processedArgs[key] = value;
-            }
+      this.server.prompt(workflow.name, workflow.description, argSchema, async (args) => {
+        // Process template with provided arguments
+        const processedArgs: Record<string, string> = {};
+        for (const [key, value] of Object.entries(args as Record<string, unknown>)) {
+          if (typeof value === "string") {
+            processedArgs[key] = value;
           }
-
-          // Apply default values for optional args
-          for (const arg of workflow.arguments) {
-            if (!processedArgs[arg.name] && !arg.required) {
-              // Set sensible defaults
-              if (arg.name === "backend_port") processedArgs[arg.name] = "80";
-              if (arg.name === "enable_waf") processedArgs[arg.name] = "false";
-              if (arg.name === "mode") processedArgs[arg.name] = "blocking";
-            }
-          }
-
-          const processedTemplate = processPromptTemplate(workflow.template, processedArgs);
-
-          return {
-            messages: [
-              {
-                role: "user" as const,
-                content: {
-                  type: "text" as const,
-                  text: processedTemplate,
-                },
-              },
-            ],
-          };
         }
-      );
+
+        // Apply default values for optional args
+        for (const arg of workflow.arguments) {
+          if (!processedArgs[arg.name] && !arg.required) {
+            // Set sensible defaults
+            if (arg.name === "backend_port") processedArgs[arg.name] = "80";
+            if (arg.name === "enable_waf") processedArgs[arg.name] = "false";
+            if (arg.name === "mode") processedArgs[arg.name] = "blocking";
+          }
+        }
+
+        const processedTemplate = processPromptTemplate(workflow.template, processedArgs);
+
+        return {
+          messages: [
+            {
+              role: "user" as const,
+              content: {
+                type: "text" as const,
+                text: processedTemplate,
+              },
+            },
+          ],
+        };
+      });
     }
 
     logger.info("Prompt registration completed", {

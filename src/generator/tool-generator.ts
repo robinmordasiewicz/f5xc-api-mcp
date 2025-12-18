@@ -250,7 +250,10 @@ function buildToolSchema(operation: ParsedOperation): z.ZodObject<Record<string,
     operation.requestBodySchema &&
     (operation.operation === "create" || operation.operation === "update")
   ) {
-    shape["body"] = z.record(z.string(), z.unknown()).optional().describe("Request body (JSON object)");
+    shape["body"] = z
+      .record(z.string(), z.unknown())
+      .optional()
+      .describe("Request body (JSON object)");
   }
 
   return z.object(shape);
