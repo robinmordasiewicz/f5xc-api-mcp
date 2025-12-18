@@ -20,7 +20,7 @@ repos:
 
   # Secrets detection
   - repo: https://github.com/trufflesecurity/trufflehog
-    rev: v3.63.5
+    rev: v3.92.3
     hooks:
       - id: trufflehog
         entry: trufflehog filesystem --fail --no-update
@@ -59,7 +59,7 @@ repos:
 
   # Markdown linting
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.38.0
+    rev: v0.47.0
     hooks:
       - id: markdownlint
         args: ["--fix"]
@@ -67,7 +67,7 @@ repos:
 
   # YAML linting
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.33.0
+    rev: v1.37.1
     hooks:
       - id: yamllint
         args: ["-c", ".yamllint.yml"]
@@ -75,7 +75,7 @@ repos:
 
   # Commit message validation
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.13.0
+    rev: v4.10.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
