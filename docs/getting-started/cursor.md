@@ -2,10 +2,9 @@
 
 Configure the F5XC API MCP Server with Cursor IDE.
 
-## Prerequisites
-
-- [Cursor](https://cursor.sh/) installed
-- Node.js 18+ installed (for npx)
+!!! note "Prerequisites"
+    - [Cursor](https://cursor.sh/) installed
+    - Node.js 18+ installed (for npx)
 
 ## Configuration
 
@@ -53,7 +52,8 @@ Add the F5XC API server configuration:
 
 ### Step 3: Restart Cursor
 
-Restart Cursor for the changes to take effect.
+!!! warning "Full Restart Required"
+    Restart Cursor completely (quit and reopen) for the changes to take effect.
 
 ## Usage
 
@@ -96,7 +96,8 @@ For project-specific settings, create `.cursor/mcp.json`:
 
 ## Composer Integration
 
-Use Cursor's Composer feature with F5XC tools:
+!!! tip "Multi-Resource Generation"
+    Use Cursor's Composer feature to generate complete infrastructure setups.
 
 1. Open Composer (`Cmd/Ctrl + I`)
 2. Describe your infrastructure needs:
@@ -121,7 +122,8 @@ Cursor's AI is aware of your project context. Open your Terraform files and ask:
 
 Use Composer to generate multiple related resources:
 
-> "Generate Terraform modules for a full F5XC deployment including networking, load balancing, and security"
+> "Generate Terraform modules for a full F5XC deployment including networking, load balancing,
+> and security"
 
 ### Documentation Lookup
 
@@ -143,14 +145,15 @@ Use Composer to generate multiple related resources:
 
 ### Authentication Errors
 
+!!! tip "Test Credentials First"
+    Verify credentials work before configuring:
+    ```bash
+    curl -H "Authorization: APIToken $F5XC_API_TOKEN" \
+      https://your-tenant.console.ves.volterra.io/api/web/namespaces
+    ```
+
 1. Verify API URL format
 2. Check token hasn't expired
-3. Test credentials with curl:
-
-```bash
-curl -H "Authorization: APIToken $F5XC_API_TOKEN" \
-  https://your-tenant.console.ves.volterra.io/api/web/namespaces
-```
 
 ## Next Steps
 

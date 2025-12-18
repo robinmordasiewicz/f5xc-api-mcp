@@ -2,29 +2,38 @@
 
 Complete reference for F5XC API MCP Server environment variables.
 
+!!! tip "Quick Setup"
+    For step-by-step authentication setup, see the [Authentication Guide](authentication.md).
+
+## Variable Reference
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `F5XC_API_URL` | For auth | Tenant URL (auto-normalized) |
+| `F5XC_API_TOKEN` | Token auth | API token from XC Console |
+| `F5XC_P12_FILE` | Cert auth | Absolute path to P12 certificate |
+| `F5XC_P12_PASSWORD` | Cert auth | Password for P12 certificate |
+| `LOG_LEVEL` | No | Logging level: debug, info, warn, error |
+| `NODE_ENV` | No | Node environment: development, production |
+
+---
+
 ## Authentication Variables
 
 ### F5XC_API_URL
 
-**Required for authentication**
-
-The F5 Distributed Cloud tenant URL.
+The F5 Distributed Cloud tenant URL. Multiple formats accepted (auto-normalized).
 
 ```bash
 export F5XC_API_URL="https://your-tenant.console.ves.volterra.io"
 ```
 
-Accepted formats (auto-normalized):
-
-- `https://tenant.volterra.us`
-- `https://tenant.console.ves.volterra.io`
-- `https://tenant.staging.volterra.us`
+!!! info "URL Normalization"
+    See [Authentication Guide](authentication.md#url-normalization) for accepted URL formats.
 
 ### F5XC_API_TOKEN
 
-**Required for API token authentication**
-
-API token from F5XC Console.
+API token from F5XC Console. Required for token-based authentication.
 
 ```bash
 export F5XC_API_TOKEN="your-api-token"
@@ -35,20 +44,16 @@ export F5XC_API_TOKEN="your-api-token"
 
 ### F5XC_P12_FILE
 
-**Required for certificate authentication**
-
-Absolute path to P12 certificate file.
+Absolute path to P12 certificate file. Required for certificate-based authentication.
 
 ```bash
 export F5XC_P12_FILE="/path/to/certificate.p12"
 ```
 
-!!! note
+!!! note "Absolute Paths Required"
     Must be an absolute path, not relative.
 
 ### F5XC_P12_PASSWORD
-
-**Required for certificate authentication**
 
 Password for the P12 certificate.
 
@@ -56,11 +61,13 @@ Password for the P12 certificate.
 export F5XC_P12_PASSWORD="certificate-password"
 ```
 
+---
+
 ## Configuration Variables
 
 ### LOG_LEVEL
 
-Controls logging verbosity. Logs go to stderr (not stdout) to avoid interfering with MCP protocol.
+Controls logging verbosity. Logs go to stderr to avoid interfering with MCP protocol.
 
 ```bash
 export LOG_LEVEL="info"
@@ -86,7 +93,9 @@ export NODE_ENV="production"
 | `development` | Additional debug output |
 | `production` | Optimized for production (default) |
 
-## Setting Environment Variables
+---
+
+## Setting Variables
 
 ### Shell (Temporary)
 
@@ -103,12 +112,6 @@ Add to `~/.zshrc`, `~/.bashrc`, or equivalent:
 ```bash
 export F5XC_API_URL="https://tenant.console.ves.volterra.io"
 export F5XC_API_TOKEN="your-token"
-```
-
-Then reload:
-
-```bash
-source ~/.zshrc
 ```
 
 ### .env File
@@ -160,105 +163,38 @@ Or with env file:
 docker run -it --env-file .env ghcr.io/robinmordasiewicz/f5xc-api-mcp
 ```
 
+---
+
 ## Authentication Priority
 
-When multiple authentication methods are configured, the server uses this priority:
+When multiple methods are configured:
 
 1. **API Token** (`F5XC_API_TOKEN`) - Highest priority
 2. **P12 Certificate** (`F5XC_P12_FILE` + `F5XC_P12_PASSWORD`)
 3. **No Authentication** - Documentation mode
 
+---
+
 ## Validation
 
-### Check Current Settings
+### Check Settings
 
 ```bash
-# Show relevant environment variables
 env | grep F5XC
 ```
 
-### Test Authentication
-
-```bash
-# Test with curl (API token)
-curl -H "Authorization: APIToken $F5XC_API_TOKEN" \
-  "$F5XC_API_URL/web/namespaces"
-
-# Test with curl (shows if URL is reachable)
-curl -I "$F5XC_API_URL"
-```
-
-### Verify in MCP Server
+### Verify in Server
 
 Ask Claude:
 
 > "Get the F5XC API server info"
 
-Check the response for `authenticated: true` and correct `authMethod`.
+Check for `authenticated: true` and correct `authMethod`.
 
-## Security Best Practices
-
-### Use Secret Managers
-
-For production, use secret managers:
-
-```bash
-# AWS Secrets Manager
-export F5XC_API_TOKEN=$(aws secretsmanager get-secret-value \
-  --secret-id f5xc-api-token --query SecretString --output text)
-
-# HashiCorp Vault
-export F5XC_API_TOKEN=$(vault kv get -field=token secret/f5xc)
-```
-
-### Rotate Credentials
-
-- Set calendar reminders to rotate tokens before expiration
-- Use short-lived certificates when possible
-- Audit credential usage regularly
-
-### Minimal Permissions
-
-Create service accounts with only required permissions:
-
-- Read-only for documentation queries
-- Namespace-specific for limited deployments
-- Full access only when necessary
-
-## Troubleshooting
-
-### Variable Not Set
-
-```bash
-# Check if set
-echo $F5XC_API_URL
-
-# Check if exported
-export | grep F5XC
-```
-
-### Wrong Value
-
-```bash
-# Debug: print variables (careful with tokens!)
-echo "URL: $F5XC_API_URL"
-echo "Token length: ${#F5XC_API_TOKEN}"
-```
-
-### Docker Not Seeing Variables
-
-Ensure variables are explicitly passed:
-
-```bash
-# This works
-docker run -e F5XC_API_URL -e F5XC_API_TOKEN ...
-
-# This requires variables to be set in current shell
-docker run -e F5XC_API_URL="$F5XC_API_URL" ...
-```
+---
 
 ## Next Steps
 
-- [Authentication Guide](authentication.md)
-- [MCP Configuration](mcp-json.md)
-- [Troubleshooting](../troubleshooting/faq.md)
+- [Authentication Guide](authentication.md) - Detailed authentication setup
+- [MCP Configuration](mcp-json.md) - Full MCP config reference
+- [Troubleshooting](../troubleshooting/faq.md) - Common issues

@@ -8,9 +8,13 @@ repos:
     rev: v6.0.0
     hooks:
       - id: trailing-whitespace
+        exclude: ^specs/raw/
       - id: end-of-file-fixer
+        exclude: ^specs/raw/
       - id: check-yaml
+        exclude: ^(specs/raw/|mkdocs\.yml)
       - id: check-json
+        exclude: ^specs/raw/
       - id: check-added-large-files
         args: ["--maxkb=1024"]
       - id: check-merge-conflict
@@ -48,6 +52,7 @@ repos:
         entry: npm run format:check
         language: system
         files: \.(ts|tsx|js|jsx|json|md|yaml|yml)$
+        exclude: ^specs/raw/
         pass_filenames: false
 
       - id: typecheck
@@ -63,7 +68,7 @@ repos:
     hooks:
       - id: markdownlint
         args: ["--fix"]
-        exclude: ^node_modules/
+        exclude: ^(node_modules/|specs/raw/)
 
   # YAML linting
   - repo: https://github.com/adrienverge/yamllint
@@ -71,7 +76,7 @@ repos:
     hooks:
       - id: yamllint
         args: ["-c", ".yamllint.yml"]
-        exclude: ^node_modules/
+        exclude: ^(node_modules/|specs/raw/)
 
   # Commit message validation
   - repo: https://github.com/commitizen-tools/commitizen

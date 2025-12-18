@@ -2,9 +2,15 @@
 
 Configure the F5XC API MCP Server with VS Code using Cline or Continue extensions.
 
+!!! note "Prerequisites"
+    - VS Code installed
+    - Node.js 18+ installed (for npx)
+    - Cline or Continue extension installed
+
 ## Option 1: Cline Extension
 
-[Cline](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev) provides Claude integration with MCP support.
+[Cline](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev) provides Claude
+integration with MCP support.
 
 ### Installation
 
@@ -36,9 +42,12 @@ Add to Cline's MCP settings:
 
 > "List HTTP load balancers in the production namespace"
 
+---
+
 ## Option 2: Continue Extension
 
-[Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue) is an open-source AI coding assistant with MCP support.
+[Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue) is an open-source
+AI coding assistant with MCP support.
 
 ### Installation
 
@@ -51,7 +60,7 @@ Edit `~/.continue/config.json`:
 
 ```json
 {
-  "models": [...],
+  "models": [],
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
@@ -72,6 +81,8 @@ Edit `~/.continue/config.json`:
 
 > "Generate Terraform for an origin pool with servers at 10.0.0.1 and 10.0.0.2"
 
+---
+
 ## Workspace Configuration
 
 For project-specific configuration, create `.vscode/mcp.json`:
@@ -89,28 +100,29 @@ For project-specific configuration, create `.vscode/mcp.json`:
 
 ## Environment Variables
 
-Store credentials securely using VS Code's `.env` support:
+!!! tip "Secure Credentials"
+    Store credentials in a `.env` file to avoid committing secrets.
 
 1. Create `.env` in your workspace:
 
-```
-F5XC_API_URL=https://your-tenant.console.ves.volterra.io
-F5XC_API_TOKEN=your-api-token
-```
+    ```bash
+    F5XC_API_URL=https://your-tenant.console.ves.volterra.io
+    F5XC_API_TOKEN=your-api-token
+    ```
 
-1. Add `.env` to `.gitignore`
+2. Add `.env` to `.gitignore`
 
-2. Reference in configuration:
+3. Reference in configuration:
 
-```json
-{
-  "f5xc-api": {
-    "command": "npx",
-    "args": ["f5xc-api-mcp"],
-    "envFile": "${workspaceFolder}/.env"
-  }
-}
-```
+    ```json
+    {
+      "f5xc-api": {
+        "command": "npx",
+        "args": ["f5xc-api-mcp"],
+        "envFile": "${workspaceFolder}/.env"
+      }
+    }
+    ```
 
 ## Troubleshooting
 
@@ -138,11 +150,9 @@ If not found, add Node.js to your shell profile.
 
 ## Tips
 
-### Inline Documentation
-
-Hover over F5XC resources in your Terraform files and ask:
-
-> "What are the valid options for this load balancer's advertise setting?"
+!!! example "Inline Documentation"
+    Hover over F5XC resources in your Terraform files and ask:
+    > "What are the valid options for this load balancer's advertise setting?"
 
 ### Code Generation
 
