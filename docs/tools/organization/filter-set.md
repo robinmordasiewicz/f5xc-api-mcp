@@ -1,0 +1,87 @@
+---
+page_title: f5xc_filter_set - f5xc-api-mcp
+subcategory: Organization
+description: Create Specification
+---
+
+# Filter Set
+
+List the set of filter_set in a namespace
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-core-filter-set-create` | Create Specification |
+| `f5xc-api-core-filter-set-get` | Get Specification |
+| `f5xc-api-core-filter-set-list` | List Filter Set |
+| `f5xc-api-core-filter-set-update` | Replace Specification |
+| `f5xc-api-core-filter-set-delete` | Delete Filter Set |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `metadata.namespace` | namespace |
+| `name` | name |
+| `namespace` | namespace |
+| `metadata.name` | name |
+
+### Query Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
+| `label_filter` | The label_filter parameter |
+| `report_fields` | The report_fields parameter |
+| `report_status_fields` | The report_status_fields parameter |
+
+## Example Usage
+
+Ask Claude to help you work with Filter Set resources:
+
+### Create Filter Set
+
+> "Create a filter-set named 'example' in the 'production' namespace"
+
+### List Filter Sets
+
+> "List all filter-sets in the 'production' namespace"
+
+### Get Filter Set Details
+
+> "Get details of the filter-set named 'example' in namespace 'production'"
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl apply -f filter_set.yaml
+
+# Get
+f5xcctl get filter_set {name} -n {namespace}
+
+# List
+f5xcctl get filter_sets -n {namespace}
+
+# Delete
+f5xcctl delete filter_set {name} -n {namespace}
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_filter_set" "example" {
+  name      = "example-filter-set"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

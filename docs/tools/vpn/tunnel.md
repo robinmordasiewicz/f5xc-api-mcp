@@ -1,0 +1,87 @@
+---
+page_title: f5xc_tunnel - f5xc-api-mcp
+subcategory: VPN
+description: Create Tunnel
+---
+
+# Tunnel
+
+Create tunnel in a given namespace. If one already exist it will give a error.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-core-tunnel-create` | Create Tunnel |
+| `f5xc-api-core-tunnel-get` | Get Tunnel |
+| `f5xc-api-core-tunnel-list` | List Tunnel |
+| `f5xc-api-core-tunnel-update` | Replace Tunnel |
+| `f5xc-api-core-tunnel-delete` | Delete Tunnel |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `metadata.namespace` | namespace |
+| `name` | name |
+| `namespace` | namespace |
+| `metadata.name` | name |
+
+### Query Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
+| `label_filter` | The label_filter parameter |
+| `report_fields` | The report_fields parameter |
+| `report_status_fields` | The report_status_fields parameter |
+
+## Example Usage
+
+Ask Claude to help you work with Tunnel resources:
+
+### Create Tunnel
+
+> "Create a tunnel named 'example' in the 'production' namespace"
+
+### List Tunnels
+
+> "List all tunnels in the 'production' namespace"
+
+### Get Tunnel Details
+
+> "Get details of the tunnel named 'example' in namespace 'production'"
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl apply -f tunnel.yaml
+
+# Get
+f5xcctl get tunnel {name} -n {namespace}
+
+# List
+f5xcctl get tunnels -n {namespace}
+
+# Delete
+f5xcctl delete tunnel {name} -n {namespace}
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_tunnel" "example" {
+  name      = "example-tunnel"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

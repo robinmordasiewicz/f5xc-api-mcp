@@ -1,0 +1,64 @@
+---
+page_title: f5xc_confirm - f5xc-api-mcp
+subcategory: Organization
+description: Confirm Alert Receiver
+---
+
+# Confirm
+
+API to confirm the Alert Receiver - applicable only for email and sms
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-core-confirm-create` | Confirm Alert Receiver |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `name` | Name |
+| `namespace` | Namespace |
+
+## Example Usage
+
+Ask Claude to help you work with Confirm resources:
+
+### Create Confirm
+
+> "Create a confirm named 'example' in the 'production' namespace"
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl apply -f confirm.yaml
+
+# Get
+f5xcctl get confirm {name} -n {namespace}
+
+# List
+f5xcctl get confirms -n {namespace}
+
+# Delete
+f5xcctl delete confirm {name} -n {namespace}
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_confirm" "example" {
+  name      = "example-confirm"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

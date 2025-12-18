@@ -1,0 +1,64 @@
+---
+page_title: f5xc_deployment_history - f5xc-api-mcp
+subcategory: Kubernetes
+description: Deployment History
+---
+
+# Deployment History
+
+Get deployment history
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-core-deployment-history-get` | Deployment History |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `name` | Name |
+| `namespace` | Namespace |
+
+## Example Usage
+
+Ask Claude to help you work with Deployment History resources:
+
+### Get Deployment History Details
+
+> "Get details of the deployment-history named 'example' in namespace 'production'"
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl apply -f deployment_history.yaml
+
+# Get
+f5xcctl get deployment_history {name} -n {namespace}
+
+# List
+f5xcctl get deployment_historys -n {namespace}
+
+# Delete
+f5xcctl delete deployment_history {name} -n {namespace}
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_deployment_history" "example" {
+  name      = "example-deployment-history"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs
