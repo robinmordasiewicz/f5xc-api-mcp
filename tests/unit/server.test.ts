@@ -16,26 +16,48 @@ vi.mock("../../src/utils/logging.js", () => ({
   },
 }));
 
-// Mock MCP SDK
-const mockConnect = vi.fn().mockResolvedValue(undefined);
-const mockClose = vi.fn().mockResolvedValue(undefined);
-const mockTool = vi.fn();
-const mockResource = vi.fn();
-const mockPrompt = vi.fn();
-
-vi.mock("@modelcontextprotocol/sdk/server/mcp.js", () => ({
-  McpServer: vi.fn().mockImplementation(() => ({
-    connect: mockConnect,
-    close: mockClose,
-    tool: mockTool,
-    resource: mockResource,
-    prompt: mockPrompt,
-  })),
+// Mock MCP SDK - use vi.hoisted to ensure mocks are available before vi.mock runs
+const {
+  mockConnect,
+  mockClose,
+  mockTool,
+  mockResource,
+  mockPrompt,
+} = vi.hoisted(() => ({
+  mockConnect: vi.fn().mockResolvedValue(undefined),
+  mockClose: vi.fn().mockResolvedValue(undefined),
+  mockTool: vi.fn(),
+  mockResource: vi.fn(),
+  mockPrompt: vi.fn(),
 }));
 
-vi.mock("@modelcontextprotocol/sdk/server/stdio.js", () => ({
-  StdioServerTransport: vi.fn().mockImplementation(() => ({})),
-}));
+vi.mock("@modelcontextprotocol/sdk/server/mcp.js", () => {
+  // Use a function expression (not arrow function) to allow 'new' operator
+  const MockMcpServer = function (this: Record<string, unknown>) {
+    this.connect = mockConnect;
+    this.close = mockClose;
+    this.tool = mockTool;
+    this.resource = mockResource;
+    this.prompt = mockPrompt;
+  } as unknown as new (config: { name: string; version: string }) => {
+    connect: typeof mockConnect;
+    close: typeof mockClose;
+    tool: typeof mockTool;
+    resource: typeof mockResource;
+    prompt: typeof mockPrompt;
+  };
+
+  return { McpServer: MockMcpServer };
+});
+
+vi.mock("@modelcontextprotocol/sdk/server/stdio.js", () => {
+  // Use a function expression (not arrow function) to allow 'new' operator
+  const MockStdioServerTransport = function () {
+    // Empty transport mock
+  } as unknown as new () => Record<string, never>;
+
+  return { StdioServerTransport: MockStdioServerTransport };
+});
 
 // Mock http-client
 vi.mock("../../src/auth/http-client.js", () => ({
