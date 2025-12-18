@@ -248,6 +248,7 @@ Or configure delegation in your parent zone.
 1. Verify nameserver delegation at registrar
 2. Check zone is configured and active
 3. Use `dig` to test resolution:
+
    ```bash
    dig @ns1.f5clouddns.com example.com
    ```

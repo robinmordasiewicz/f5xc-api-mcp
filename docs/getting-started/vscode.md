@@ -98,9 +98,9 @@ F5XC_API_URL=https://your-tenant.console.ves.volterra.io
 F5XC_API_TOKEN=your-api-token
 ```
 
-2. Add `.env` to `.gitignore`
+1. Add `.env` to `.gitignore`
 
-3. Reference in configuration:
+2. Reference in configuration:
 
 ```json
 {
