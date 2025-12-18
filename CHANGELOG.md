@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Initial release of F5 Distributed Cloud API MCP Server
 - 270+ API tools auto-generated from OpenAPI specifications
 - Dual-mode operation: documentation mode (unauthenticated) and execution mode (authenticated)
@@ -35,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Documentation deployment to GitHub Pages
 
 ### API Domains
+
 - `waap` - HTTP/TCP load balancers, origin pools, app firewalls, rate limiters
 - `dns` - DNS zones, DNS load balancers, DNS LB pools
 - `network` - Network connectors, firewalls, enhanced firewall policies
@@ -44,6 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `core` - Namespaces, certificates, cloud credentials
 
 ### Technical
+
 - TypeScript 5.x with strict mode
 - Node.js 20+ LTS runtime
 - @modelcontextprotocol/sdk for MCP implementation
@@ -56,6 +59,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - TBD
 
 ### Added
+
 - Initial public release
 
 [Unreleased]: https://github.com/robinmordasiewicz/f5xc-api-mcp/compare/v0.1.0...HEAD

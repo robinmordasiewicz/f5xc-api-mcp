@@ -92,6 +92,7 @@ Add to your MCP settings:
 ### Documentation Mode (No Authentication)
 
 When no credentials are provided, the server provides:
+
 - OpenAPI specification documentation
 - API operation explanations
 - Parameter descriptions and validation
@@ -104,6 +105,7 @@ This mode is ideal for users who authenticate via f5xcctl or Terraform.
 ### Execution Mode (With Authentication)
 
 When credentials are provided, the server additionally:
+
 - Executes actual API calls against your tenant
 - Lists and retrieves resources
 - Creates, updates, and deletes configurations
@@ -150,6 +152,7 @@ f5xc://{tenant}/{namespace}/{resource-type}/{name}
 ```
 
 Examples:
+
 - `f5xc://mytenant/production/http_loadbalancer/my-app`
 - `f5xc://mytenant/system/namespace/default`
 
@@ -197,7 +200,7 @@ npm run format        # Format code
 
 ## Documentation
 
-Full documentation is available at: https://robinmordasiewicz.github.io/f5xc-api-mcp
+Full documentation is available at: <https://robinmordasiewicz.github.io/f5xc-api-mcp>
 
 ## Contributing
 

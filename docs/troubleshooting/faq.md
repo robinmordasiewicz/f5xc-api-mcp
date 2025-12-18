@@ -55,6 +55,7 @@ Claude Desktop or other clients can't connect to the server.
 **Solutions:**
 
 1. Validate JSON configuration:
+
    ```bash
    cat ~/Library/Application\ Support/Claude/claude_desktop_config.json | jq .
    ```
@@ -68,6 +69,7 @@ Claude Desktop or other clients can't connect to the server.
 **Solutions:**
 
 1. For MCP config, use `env` block:
+
    ```json
    {
      "env": {
@@ -77,11 +79,13 @@ Claude Desktop or other clients can't connect to the server.
    ```
 
 2. For shell, export variables:
+
    ```bash
    export F5XC_API_URL="https://..."
    ```
 
 3. Verify variables are set:
+
    ```bash
    echo $F5XC_API_URL
    ```
@@ -96,10 +100,13 @@ API token or certificate is invalid.
 
 1. **Token expired**: Generate new token in F5XC Console
 2. **Wrong URL**: Check URL format:
+
    ```
    https://your-tenant.console.ves.volterra.io
    ```
+
 3. **Test credentials**:
+
    ```bash
    curl -H "Authorization: APIToken $F5XC_API_TOKEN" \
      "$F5XC_API_URL/web/namespaces"
@@ -112,6 +119,7 @@ P12 certificate issues.
 **Solutions:**
 
 1. **Use absolute path**:
+
    ```bash
    F5XC_P12_FILE="/Users/username/certs/f5xc.p12"  # Correct
    F5XC_P12_FILE="./f5xc.p12"  # Wrong
@@ -139,6 +147,7 @@ MCP client can't find F5XC tools.
 **Solutions:**
 
 1. Verify server is running:
+
    ```bash
    npx f5xc-api-mcp
    ```

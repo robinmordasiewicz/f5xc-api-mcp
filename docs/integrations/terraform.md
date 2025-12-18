@@ -202,6 +202,7 @@ terraform import volterra_http_loadbalancer.api production/api
 Ask Claude:
 
 > "Convert this f5xcctl config to Terraform:
+>
 > ```yaml
 > kind: http_loadbalancer
 > metadata:
@@ -285,6 +286,7 @@ variable "api_token" {
 ```
 
 Never commit credentials. Use:
+
 - Environment variables
 - HashiCorp Vault
 - AWS Secrets Manager

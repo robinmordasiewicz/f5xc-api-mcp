@@ -213,6 +213,7 @@ The referenced origin pool doesn't exist. Create it first:
 ### "Certificate error"
 
 For HTTPS, ensure:
+
 - Domain ownership is verified
 - Auto-cert is enabled, or
 - Custom certificate is uploaded

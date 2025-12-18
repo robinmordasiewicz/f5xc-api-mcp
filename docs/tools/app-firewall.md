@@ -118,6 +118,7 @@ Logs threats without blocking:
 ```
 
 Options:
+
 - `high_medium_accuracy_signatures` - Balanced (recommended)
 - `high_medium_low_accuracy_signatures` - More sensitive
 - `only_high_accuracy_signatures` - Fewer false positives
@@ -165,6 +166,7 @@ Enable protection against known attack campaigns:
 ```
 
 Actions:
+
 - `BLOCK` - Block the request
 - `REPORT` - Log but allow
 - `IGNORE` - No action

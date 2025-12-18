@@ -72,7 +72,7 @@ Works with any MCP-compatible AI assistant:
 
 <div class="grid cards" markdown>
 
--   :material-message-processing:{ .lg .middle } **Claude Desktop**
+- :material-message-processing:{ .lg .middle } **Claude Desktop**
 
     ---
 
@@ -80,7 +80,7 @@ Works with any MCP-compatible AI assistant:
 
     [:octicons-arrow-right-24: Setup Guide](getting-started/claude-desktop.md)
 
--   :material-console:{ .lg .middle } **Claude Code**
+- :material-console:{ .lg .middle } **Claude Code**
 
     ---
 
@@ -88,7 +88,7 @@ Works with any MCP-compatible AI assistant:
 
     [:octicons-arrow-right-24: Setup Guide](getting-started/claude-code.md)
 
--   :material-microsoft-visual-studio-code:{ .lg .middle } **VS Code**
+- :material-microsoft-visual-studio-code:{ .lg .middle } **VS Code**
 
     ---
 
@@ -96,7 +96,7 @@ Works with any MCP-compatible AI assistant:
 
     [:octicons-arrow-right-24: Setup Guide](getting-started/vscode.md)
 
--   :material-cursor-default:{ .lg .middle } **Cursor**
+- :material-cursor-default:{ .lg .middle } **Cursor**
 
     ---
 

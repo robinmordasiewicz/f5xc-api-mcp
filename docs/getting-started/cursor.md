@@ -102,6 +102,7 @@ Use Cursor's Composer feature with F5XC tools:
 2. Describe your infrastructure needs:
 
 > "Create a complete F5XC setup with:
+>
 > - HTTP load balancer at app.example.com
 > - Origin pool with 3 backend servers
 > - WAF protection with default rules"
