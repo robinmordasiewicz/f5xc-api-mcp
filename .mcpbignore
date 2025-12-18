@@ -1,0 +1,57 @@
+# Source files (compiled to dist/)
+src/
+*.ts
+tsconfig.json
+
+# Development and build configuration
+.github/
+scripts/
+config/
+specs/
+
+# Documentation (not needed in bundle)
+docs/
+*.md
+!README.md
+
+# Development tools
+.eslintrc*
+eslint.config.*
+.prettier*
+.editorconfig
+.gitignore
+.gitattributes
+.npmignore
+
+# Environment and secrets
+.env*
+*.p12
+
+# Container files
+Dockerfile
+docker-compose*
+.dockerignore
+
+# Test files
+*.test.ts
+*.spec.ts
+__tests__/
+coverage/
+.vitest/
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Other
+*.log
+*.tgz

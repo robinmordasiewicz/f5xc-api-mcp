@@ -10,9 +10,23 @@ Multiple ways to install and run the F5XC API MCP Server.
 
 ## Installation Methods
 
-### npx (Recommended)
+### MCPB Bundle (Claude Desktop - Easiest)
 
-The easiest way to run the server. No installation required.
+The simplest way to install for Claude Desktop users. No terminal required.
+
+1. Download the latest `.mcpb` file from [GitHub Releases](https://github.com/robinmordasiewicz/f5xc-api-mcp/releases)
+2. Double-click the file or drag it into Claude Desktop
+3. Click **Install**
+4. Configure your F5XC credentials when prompted (optional - runs in documentation mode without)
+
+That's it! The extension is now available in Claude Desktop.
+
+!!! tip "Drag and Drop Installation"
+    You can also drag the `.mcpb` file directly into the Claude Desktop window to install it.
+
+### npx (Recommended for CLI)
+
+The easiest way to run the server from command line. No installation required.
 
 ```bash
 npx f5xc-api-mcp

@@ -1,15 +1,21 @@
 {
-  "$schema": "https://raw.githubusercontent.com/anthropics/anthropic-cookbook/main/misc/mcp_schema.json",
+  "manifest_version": "0.3",
   "name": "f5xc-api-mcp",
+  "display_name": "F5 Distributed Cloud API",
   "version": "1.0.0",
   "description": "MCP server for F5 Distributed Cloud API - AI-powered infrastructure management with 270+ tools",
-  "author": "Robin Mordasiewicz",
-  "license": "MIT",
-  "homepage": "https://github.com/robinmordasiewicz/f5xc-api-mcp",
+  "long_description": "Enables AI assistants to manage F5 Distributed Cloud resources including HTTP load balancers, origin pools, WAF policies, DNS zones, and multi-cloud sites. Works in dual mode: documentation mode (no auth) or execution mode (with auth). Every response includes equivalent f5xcctl CLI commands and Terraform HCL examples.",
+  "author": {
+    "name": "Robin Mordasiewicz"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/robinmordasiewicz/f5xc-api-mcp.git"
   },
+  "homepage": "https://github.com/robinmordasiewicz/f5xc-api-mcp",
+  "documentation": "https://robinmordasiewicz.github.io/f5xc-api-mcp",
+  "support": "https://github.com/robinmordasiewicz/f5xc-api-mcp/issues",
+  "icon": "docs/assets/icon.png",
   "keywords": [
     "mcp",
     "f5",
@@ -23,125 +29,116 @@
     "terraform",
     "ai"
   ],
-  "categories": [
-    "infrastructure",
-    "cloud",
-    "networking",
-    "security"
-  ],
-  "icon": "https://raw.githubusercontent.com/robinmordasiewicz/f5xc-api-mcp/main/docs/assets/icon.png",
-  "transport": {
-    "type": "stdio"
-  },
-  "runtime": {
-    "type": "node",
-    "minVersion": "18.0.0"
-  },
-  "installation": {
-    "npx": {
-      "command": "npx",
-      "args": ["f5xc-api-mcp"]
-    },
-    "npm": {
-      "package": "f5xc-api-mcp",
-      "command": "f5xc-api-mcp"
-    },
-    "docker": {
-      "image": "ghcr.io/robinmordasiewicz/f5xc-api-mcp",
-      "command": ["docker", "run", "-i", "--rm", "ghcr.io/robinmordasiewicz/f5xc-api-mcp"]
+  "license": "MIT",
+  "compatibility": {
+    "claude_desktop": ">=1.0.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
     }
   },
-  "configuration": {
-    "environment": {
-      "F5XC_API_URL": {
-        "description": "F5 Distributed Cloud tenant URL",
-        "required": false,
-        "example": "https://your-tenant.console.ves.volterra.io"
-      },
-      "F5XC_API_TOKEN": {
-        "description": "API token for authentication",
-        "required": false,
-        "sensitive": true
-      },
-      "F5XC_P12_FILE": {
-        "description": "Path to P12 certificate file for mTLS authentication",
-        "required": false
-      },
-      "F5XC_P12_PASSWORD": {
-        "description": "Password for P12 certificate",
-        "required": false,
-        "sensitive": true
-      },
-      "LOG_LEVEL": {
-        "description": "Logging verbosity (debug, info, warn, error)",
-        "required": false,
-        "default": "info"
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/index.js"],
+      "env": {
+        "F5XC_API_URL": "${user_config.f5xc_api_url}",
+        "F5XC_API_TOKEN": "${user_config.f5xc_api_token}",
+        "F5XC_P12_FILE": "${user_config.f5xc_p12_file}",
+        "F5XC_P12_PASSWORD": "${user_config.f5xc_p12_password}",
+        "LOG_LEVEL": "${user_config.log_level}"
       }
     }
   },
-  "capabilities": {
-    "tools": true,
-    "resources": true,
-    "prompts": true
-  },
-  "features": {
-    "dualMode": {
-      "description": "Works without authentication (documentation mode) or with authentication (execution mode)"
+  "user_config": {
+    "f5xc_api_url": {
+      "type": "string",
+      "title": "F5XC Tenant URL",
+      "description": "F5 Distributed Cloud tenant URL (e.g., https://your-tenant.console.ves.volterra.io)",
+      "required": false
     },
-    "f5xcctlIntegration": {
-      "description": "Every response includes equivalent f5xcctl CLI commands"
+    "f5xc_api_token": {
+      "type": "string",
+      "title": "API Token",
+      "description": "API token for authentication (optional - runs in documentation mode without)",
+      "sensitive": true,
+      "required": false
     },
-    "terraformExamples": {
-      "description": "Every response includes Terraform HCL examples"
+    "f5xc_p12_file": {
+      "type": "file",
+      "title": "P12 Certificate File",
+      "description": "Path to P12 certificate for mTLS authentication (alternative to API token)",
+      "required": false
     },
-    "urlNormalization": {
-      "description": "Automatically normalizes various F5XC URL formats"
+    "f5xc_p12_password": {
+      "type": "string",
+      "title": "P12 Password",
+      "description": "Password for P12 certificate",
+      "sensitive": true,
+      "required": false
+    },
+    "log_level": {
+      "type": "string",
+      "title": "Log Level",
+      "description": "Logging verbosity (debug, info, warn, error)",
+      "default": "info",
+      "required": false
     }
   },
-  "tools": {
-    "count": "270+",
-    "domains": [
-      "waap",
-      "dns",
-      "network",
-      "site",
-      "appstack",
-      "security",
-      "core"
-    ],
-    "examples": [
-      "f5xc-api-waap-http-loadbalancer-create",
-      "f5xc-api-waap-origin-pool-list",
-      "f5xc-api-dns-zone-get",
-      "f5xc-api-server-info"
-    ]
-  },
-  "resources": {
-    "scheme": "f5xc://",
-    "example": "f5xc://tenant/namespace/http_loadbalancer/my-app"
-  },
+  "tools": [
+    {
+      "name": "f5xc-api-server-info",
+      "description": "Get server information and authentication status"
+    },
+    {
+      "name": "f5xc-api-search-tools",
+      "description": "Search for F5XC API tools using natural language"
+    },
+    {
+      "name": "f5xc-api-describe-tool",
+      "description": "Get detailed information about a specific tool"
+    },
+    {
+      "name": "f5xc-api-execute-tool",
+      "description": "Execute an F5XC API tool"
+    },
+    {
+      "name": "f5xc-api-search-resources",
+      "description": "Search for F5XC resources"
+    },
+    {
+      "name": "f5xc-api-execute-resource",
+      "description": "Execute CRUD operation on a resource"
+    }
+  ],
+  "tools_generated": true,
   "prompts": [
     {
       "name": "deploy-http-loadbalancer",
-      "description": "Guided workflow for deploying HTTP Load Balancer with origin pool"
+      "description": "Guided workflow for deploying HTTP Load Balancer with origin pool",
+      "arguments": ["namespace", "name"],
+      "text": "Deploy an HTTP Load Balancer named ${arguments.name} in namespace ${arguments.namespace}"
     },
     {
       "name": "configure-waf",
-      "description": "Guided workflow for configuring Web Application Firewall"
+      "description": "Guided workflow for configuring Web Application Firewall",
+      "arguments": ["namespace"],
+      "text": "Configure WAF protection in namespace ${arguments.namespace}"
     },
     {
       "name": "create-multicloud-site",
-      "description": "Guided workflow for deploying F5XC site in AWS/Azure/GCP"
+      "description": "Guided workflow for deploying F5XC site in AWS/Azure/GCP",
+      "arguments": ["provider", "region"],
+      "text": "Create a multi-cloud site on ${arguments.provider} in ${arguments.region}"
     },
     {
       "name": "generate-terraform",
-      "description": "Export F5XC resources as Terraform configuration"
+      "description": "Export F5XC resources as Terraform configuration",
+      "arguments": ["resource_type", "namespace"],
+      "text": "Generate Terraform for ${arguments.resource_type} resources in ${arguments.namespace}"
     }
   ],
-  "documentation": "https://robinmordasiewicz.github.io/f5xc-api-mcp",
-  "changelog": "https://github.com/robinmordasiewicz/f5xc-api-mcp/blob/main/CHANGELOG.md",
-  "support": {
-    "issues": "https://github.com/robinmordasiewicz/f5xc-api-mcp/issues",
-    "discussions": "https://github.com/robinmordasiewicz/f5xc-api-mcp/discussions"
-  }
+  "prompts_generated": false
 }

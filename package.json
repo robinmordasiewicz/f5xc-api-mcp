@@ -32,7 +32,9 @@
     "typecheck": "tsc --noEmit",
     "sync-specs": "tsx scripts/sync-specs.ts",
     "generate": "tsx scripts/generate.ts",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "bundle": "mcpb pack",
+    "bundle:validate": "mcpb validate"
   },
   "keywords": [
     "f5",
@@ -68,6 +70,7 @@
     "CHANGELOG.md"
   ],
   "devDependencies": {
+    "@anthropic-ai/mcpb": "^0.3.0",
     "@types/node": "^22.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
