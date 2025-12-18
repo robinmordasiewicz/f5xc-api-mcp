@@ -52,7 +52,7 @@ metadata:
 spec:
   aws_region: us-east-1
   aws_cred:
-    name: my-aws-creds
+    name: example-aws-creds
     namespace: system
   vpc:
     vpc_id: vpc-12345678
@@ -104,7 +104,7 @@ For internet-facing applications with outbound connectivity:
   "namespace": "system",
   "aws_region": "us-east-1",
   "aws_cred": {
-    "name": "my-aws-creds",
+    "name": "example-aws-creds",
     "namespace": "system"
   },
   "vpc": {

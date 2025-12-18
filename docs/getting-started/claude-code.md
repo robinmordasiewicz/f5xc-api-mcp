@@ -130,7 +130,7 @@ Then use a simpler config:
 
 ```bash
 # Start Claude Code in your Terraform project
-cd my-terraform-project
+cd example-terraform-project
 claude-code
 
 # Ask Claude to help with F5XC resources

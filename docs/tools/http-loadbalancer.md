@@ -27,7 +27,7 @@ The HTTP Load Balancer is the primary resource for exposing applications through
 
 Ask Claude:
 
-> "Create an HTTP load balancer named 'my-app' in the 'production' namespace
+> "Create an HTTP load balancer named 'example-app' in the 'production' namespace
 > for domain 'app.example.com' with origin pool 'backend-pool'"
 
 ### f5xcctl Equivalent
@@ -37,7 +37,7 @@ f5xcctl apply -f - <<EOF
 apiVersion: config.volterra.io/v1
 kind: http_loadbalancer
 metadata:
-  name: my-app
+  name: example-app
   namespace: production
 spec:
   domains:
@@ -57,8 +57,8 @@ EOF
 ### Terraform Resource
 
 ```hcl
-resource "volterra_http_loadbalancer" "my_app" {
-  name      = "my-app"
+resource "volterra_http_loadbalancer" "example_app" {
+  name      = "example-app"
   namespace = "production"
 
   domains = ["app.example.com"]
@@ -85,7 +85,7 @@ resource "volterra_http_loadbalancer" "my_app" {
 
 ```json
 {
-  "name": "my-app",
+  "name": "example-app",
   "namespace": "production",
   "domains": ["app.example.com"],
   "http": {
@@ -106,7 +106,7 @@ resource "volterra_http_loadbalancer" "my_app" {
 
 ```json
 {
-  "name": "my-app",
+  "name": "example-app",
   "namespace": "production",
   "domains": ["app.example.com"],
   "https_auto_cert": {
@@ -126,12 +126,12 @@ resource "volterra_http_loadbalancer" "my_app" {
 
 ```json
 {
-  "name": "my-app",
+  "name": "example-app",
   "namespace": "production",
   "domains": ["app.example.com"],
   "app_firewall": {
     "namespace": "production",
-    "name": "my-waf-policy"
+    "name": "example-waf"
   },
   "default_route_pools": [{
     "pool": {
@@ -179,7 +179,7 @@ resource "volterra_http_loadbalancer" "my_app" {
         "network": "SITE_NETWORK_INSIDE",
         "site": {
           "namespace": "system",
-          "name": "my-site"
+          "name": "example-site"
         }
       }
     }]

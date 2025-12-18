@@ -72,7 +72,7 @@ variable "api_token" {
 
 ```hcl
 resource "volterra_http_loadbalancer" "example" {
-  name      = "my-app"
+  name      = "example-app"
   namespace = "production"
 
   domains = ["app.example.com"]
@@ -193,7 +193,7 @@ Ask Claude:
 Example output:
 
 ```bash
-terraform import volterra_http_loadbalancer.my_app production/my-app
+terraform import volterra_http_loadbalancer.example_app production/example-app
 terraform import volterra_http_loadbalancer.api production/api
 ```
 
@@ -206,7 +206,7 @@ Ask Claude:
 > ```yaml
 > kind: http_loadbalancer
 > metadata:
->   name: my-app
+>   name: example-app
 > spec:
 >   ...
 > ```"
@@ -219,7 +219,7 @@ Ask Claude:
 module "load_balancer" {
   source = "./modules/load-balancer"
 
-  name        = "my-app"
+  name        = "example-app"
   namespace   = "production"
   domains     = ["app.example.com"]
 
@@ -316,7 +316,7 @@ data "volterra_namespace" "production" {
 }
 
 data "volterra_http_loadbalancer" "existing" {
-  name      = "my-app"
+  name      = "example-app"
   namespace = data.volterra_namespace.production.name
 }
 ```
@@ -345,7 +345,7 @@ provider "volterra" {
 Import the existing resource:
 
 ```bash
-terraform import volterra_http_loadbalancer.app production/my-app
+terraform import volterra_http_loadbalancer.app production/example-app
 ```
 
 ## Next Steps

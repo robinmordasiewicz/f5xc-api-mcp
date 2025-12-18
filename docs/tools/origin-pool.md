@@ -101,7 +101,7 @@ resource "volterra_origin_pool" "backend" {
       "site_locator": {
         "site": {
           "namespace": "system",
-          "name": "my-site"
+          "name": "example-site"
         }
       }
     }
@@ -127,11 +127,11 @@ resource "volterra_origin_pool" "backend" {
 {
   "origin_servers": [{
     "k8s_service": {
-      "service_name": "my-service",
+      "service_name": "example-service",
       "site_locator": {
         "site": {
           "namespace": "system",
-          "name": "my-k8s-site"
+          "name": "example-k8s-site"
         }
       },
       "vk8s_networks": {}

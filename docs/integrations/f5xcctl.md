@@ -69,16 +69,16 @@ export VOLT_API_URL="https://your-tenant.console.ves.volterra.io/api"
 
 ```bash
 # YAML output (default)
-f5xcctl get http_loadbalancer my-app -n production -o yaml
+f5xcctl get http_loadbalancer example-app -n production -o yaml
 
 # JSON output
-f5xcctl get http_loadbalancer my-app -n production -o json
+f5xcctl get http_loadbalancer example-app -n production -o json
 
 # Table output
 f5xcctl get http_loadbalancers -n production -o table
 
 # Terraform output
-f5xcctl get http_loadbalancer my-app -n production -o terraform
+f5xcctl get http_loadbalancer example-app -n production -o terraform
 ```
 
 ## Workflow Examples
@@ -113,7 +113,7 @@ f5xcctl apply -f config.yaml --dry-run
 
 ```bash
 # Export to file
-f5xcctl get http_loadbalancer my-app -n production -o yaml > my-app.yaml
+f5xcctl get http_loadbalancer example-app -n production -o yaml > example-app.yaml
 
 # Export multiple resources
 f5xcctl get http_loadbalancers -n production -o yaml > all-lbs.yaml
@@ -144,10 +144,10 @@ f5xcctl get app_firewalls -n production
 
 ```bash
 # Detailed output
-f5xcctl get http_loadbalancer my-app -n production -o yaml
+f5xcctl get http_loadbalancer example-app -n production -o yaml
 
 # With status
-f5xcctl get http_loadbalancer my-app -n production --show-status
+f5xcctl get http_loadbalancer example-app -n production --show-status
 ```
 
 ### Apply Configuration
@@ -169,13 +169,13 @@ f5xcctl apply -f lb.yaml -f origin.yaml -f waf.yaml
 
 ```bash
 # Single resource
-f5xcctl delete http_loadbalancer my-app -n production
+f5xcctl delete http_loadbalancer example-app -n production
 
 # From file
 f5xcctl delete -f http-lb.yaml
 
 # Force delete
-f5xcctl delete http_loadbalancer my-app -n production --force
+f5xcctl delete http_loadbalancer example-app -n production --force
 ```
 
 ## Tips
@@ -206,7 +206,7 @@ f5xcctl get http_loadbalancers -n production -o json | jq '.items[].metadata.nam
 
 ```bash
 # Monitor status changes
-watch f5xcctl get http_loadbalancer my-app -n production --show-status
+watch f5xcctl get http_loadbalancer example-app -n production --show-status
 ```
 
 ## Troubleshooting

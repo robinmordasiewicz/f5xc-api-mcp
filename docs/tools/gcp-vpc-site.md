@@ -53,11 +53,11 @@ metadata:
 spec:
   gcp_region: us-central1
   gcp_cred:
-    name: my-gcp-creds
+    name: example-gcp-creds
     namespace: system
   vpc_network:
     existing_network:
-      name: my-vpc
+      name: example-vpc
   instance_type: n1-standard-4
   ingress_egress_gw:
     gcp_certified_hw: gcp-byol-voltmesh
@@ -82,7 +82,7 @@ resource "volterra_gcp_vpc_site" "gcp_central" {
 
   vpc_network {
     existing_network {
-      name = "my-vpc"
+      name = "example-vpc"
     }
   }
 

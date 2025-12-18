@@ -53,12 +53,12 @@ metadata:
 spec:
   azure_region: eastus
   azure_cred:
-    name: my-azure-creds
+    name: example-azure-creds
     namespace: system
   vnet:
     existing_vnet:
-      resource_group: my-rg
-      vnet_name: my-vnet
+      resource_group: example-rg
+      vnet_name: example-vnet
   instance_type: Standard_D3_v2
   ingress_egress_gw:
     azure_certified_hw: azure-byol-voltmesh
@@ -83,8 +83,8 @@ resource "volterra_azure_vnet_site" "azure_east" {
 
   vnet {
     existing_vnet {
-      resource_group = "my-rg"
-      vnet_name      = "my-vnet"
+      resource_group = "example-rg"
+      vnet_name      = "example-vnet"
     }
   }
 
