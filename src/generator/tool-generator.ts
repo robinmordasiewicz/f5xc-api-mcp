@@ -212,7 +212,7 @@ function parameterToZodSchema(param: OpenApiParameter): z.ZodTypeAny {
       zodSchema = z.array(z.unknown());
       break;
     case "object":
-      zodSchema = z.record(z.unknown());
+      zodSchema = z.record(z.string(), z.unknown());
       break;
     default:
       zodSchema = z.string();
@@ -250,7 +250,10 @@ function buildToolSchema(operation: ParsedOperation): z.ZodObject<Record<string,
     operation.requestBodySchema &&
     (operation.operation === "create" || operation.operation === "update")
   ) {
-    shape["body"] = z.record(z.unknown()).optional().describe("Request body (JSON object)");
+    shape["body"] = z
+      .record(z.string(), z.unknown())
+      .optional()
+      .describe("Request body (JSON object)");
   }
 
   return z.object(shape);

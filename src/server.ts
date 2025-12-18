@@ -246,9 +246,9 @@ export class F5XCApiServer {
       DISCOVERY_TOOLS.execute.description,
       {
         toolName: z.string().describe("Tool name to execute"),
-        pathParams: z.record(z.string()).optional().describe("Path parameters"),
-        queryParams: z.record(z.string()).optional().describe("Query parameters"),
-        body: z.record(z.unknown()).optional().describe("Request body"),
+        pathParams: z.record(z.string(), z.string()).optional().describe("Path parameters"),
+        queryParams: z.record(z.string(), z.string()).optional().describe("Query parameters"),
+        body: z.record(z.string(), z.unknown()).optional().describe("Request body"),
       },
       async (args) => {
         const result = await executeTool(
@@ -322,9 +322,9 @@ export class F5XCApiServer {
       {
         resourceName: z.string().describe("Consolidated resource name"),
         operation: z.enum(["create", "get", "list", "update", "delete"]).describe("CRUD operation"),
-        pathParams: z.record(z.string()).optional().describe("Path parameters"),
-        queryParams: z.record(z.string()).optional().describe("Query parameters"),
-        body: z.record(z.unknown()).optional().describe("Request body"),
+        pathParams: z.record(z.string(), z.string()).optional().describe("Path parameters"),
+        queryParams: z.record(z.string(), z.string()).optional().describe("Query parameters"),
+        body: z.record(z.string(), z.unknown()).optional().describe("Request body"),
       },
       async (args) => {
         // Resolve to underlying tool
@@ -464,44 +464,39 @@ export class F5XCApiServer {
           : z.string().optional().describe(arg.description);
       }
 
-      this.server.prompt(
-        workflow.name,
-        workflow.description,
-        argSchema,
-        async (args: Record<string, string | undefined>) => {
-          // Process template with provided arguments
-          const processedArgs: Record<string, string> = {};
-          for (const [key, value] of Object.entries(args)) {
-            if (value !== undefined) {
-              processedArgs[key] = value;
-            }
+      this.server.prompt(workflow.name, workflow.description, argSchema, async (args) => {
+        // Process template with provided arguments
+        const processedArgs: Record<string, string> = {};
+        for (const [key, value] of Object.entries(args as Record<string, unknown>)) {
+          if (typeof value === "string") {
+            processedArgs[key] = value;
           }
-
-          // Apply default values for optional args
-          for (const arg of workflow.arguments) {
-            if (!processedArgs[arg.name] && !arg.required) {
-              // Set sensible defaults
-              if (arg.name === "backend_port") processedArgs[arg.name] = "80";
-              if (arg.name === "enable_waf") processedArgs[arg.name] = "false";
-              if (arg.name === "mode") processedArgs[arg.name] = "blocking";
-            }
-          }
-
-          const processedTemplate = processPromptTemplate(workflow.template, processedArgs);
-
-          return {
-            messages: [
-              {
-                role: "user" as const,
-                content: {
-                  type: "text" as const,
-                  text: processedTemplate,
-                },
-              },
-            ],
-          };
         }
-      );
+
+        // Apply default values for optional args
+        for (const arg of workflow.arguments) {
+          if (!processedArgs[arg.name] && !arg.required) {
+            // Set sensible defaults
+            if (arg.name === "backend_port") processedArgs[arg.name] = "80";
+            if (arg.name === "enable_waf") processedArgs[arg.name] = "false";
+            if (arg.name === "mode") processedArgs[arg.name] = "blocking";
+          }
+        }
+
+        const processedTemplate = processPromptTemplate(workflow.template, processedArgs);
+
+        return {
+          messages: [
+            {
+              role: "user" as const,
+              content: {
+                type: "text" as const,
+                text: processedTemplate,
+              },
+            },
+          ],
+        };
+      });
     }
 
     logger.info("Prompt registration completed", {
