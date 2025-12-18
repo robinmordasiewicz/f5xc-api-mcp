@@ -28,6 +28,9 @@ FROM node:20-alpine AS production
 
 WORKDIR /app
 
+# Update npm to fix vulnerabilities (CVE-2024-21538, CVE-2025-64756)
+RUN npm install -g npm@latest
+
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S mcp -u 1001 -G nodejs
