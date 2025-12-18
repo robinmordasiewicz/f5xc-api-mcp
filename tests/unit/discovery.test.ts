@@ -27,7 +27,9 @@ import {
   describeTool,
   describeTools,
   describeToolSafe,
+  describeToolCompact,
   getFullToolSchema,
+  getOptimizationStats,
 } from "../../src/tools/discovery/describe.js";
 import { validateExecuteParams } from "../../src/tools/discovery/execute.js";
 import { DISCOVERY_TOOLS } from "../../src/tools/discovery/index.js";
@@ -429,5 +431,88 @@ describe("Token Efficiency Validation", () => {
     expect(index.tools.length).toBeGreaterThan(1000);
     expect(index.tools[0].name).toBeDefined();
     expect((index.tools[0] as unknown as Record<string, unknown>).pathParameters).toBeUndefined();
+  });
+});
+
+describe("Schema Optimization", () => {
+  describe("describeToolCompact", () => {
+    it("should return compact description for existing tool", () => {
+      const compact = describeToolCompact("f5xc-api-waap-http-loadbalancer-create");
+
+      expect(compact).toBeDefined();
+      expect(compact?.n).toBe("f5xc-api-waap-http-loadbalancer-create");
+      expect(compact?.m).toBe("POST");
+      expect(compact?.d).toBe("waap");
+      expect(compact?.r).toBe("http-loadbalancer");
+      expect(compact?.o).toBe("create");
+    });
+
+    it("should return null for non-existent tool", () => {
+      const compact = describeToolCompact("non-existent-tool");
+
+      expect(compact).toBeNull();
+    });
+
+    it("should be significantly smaller than full description", () => {
+      const full = describeTool("f5xc-api-waap-http-loadbalancer-create");
+      const compact = describeToolCompact("f5xc-api-waap-http-loadbalancer-create");
+
+      const fullSize = JSON.stringify(full).length;
+      const compactSize = JSON.stringify(compact).length;
+
+      // Compact should be at least 30% smaller
+      expect(compactSize).toBeLessThan(fullSize * 0.7);
+    });
+
+    it("should include essential information", () => {
+      const compact = describeToolCompact("f5xc-api-waap-http-loadbalancer-create");
+
+      expect(compact?.s).toBeDefined(); // summary
+      expect(compact?.rp).toBeDefined(); // requiredParams
+      expect(compact?.pp).toBeDefined(); // pathParams
+      expect(compact?.rb).toBe(true); // hasRequestBody
+    });
+  });
+
+  describe("getOptimizationStats", () => {
+    it("should return valid optimization statistics", () => {
+      const stats = getOptimizationStats();
+
+      expect(stats.avgOriginalParamDescLen).toBeGreaterThan(0);
+      expect(stats.avgOptimizedParamDescLen).toBeGreaterThan(0);
+      expect(stats.estimatedSavingsPercent).toMatch(/^\d+\.\d+%$/);
+    });
+
+    it("should show meaningful savings", () => {
+      const stats = getOptimizationStats();
+
+      // Optimized should be shorter than original
+      expect(stats.avgOptimizedParamDescLen).toBeLessThanOrEqual(
+        stats.avgOriginalParamDescLen
+      );
+    });
+  });
+
+  describe("parameter description optimization", () => {
+    it("should use shared descriptions for common params", () => {
+      const desc = describeTool("f5xc-api-waap-http-loadbalancer-create");
+      const namespaceParam = desc?.pathParameters.find(
+        (p) => p.name === "metadata.namespace"
+      );
+
+      // Should use optimized description, not verbose OpenAPI one
+      if (namespaceParam) {
+        expect(namespaceParam.description.length).toBeLessThan(100);
+      }
+    });
+
+    it("should truncate verbose descriptions", () => {
+      const desc = describeTool("f5xc-api-waap-http-loadbalancer-create");
+
+      // All parameter descriptions should be reasonably short
+      for (const param of desc?.pathParameters ?? []) {
+        expect(param.description.length).toBeLessThanOrEqual(103); // 100 + "..."
+      }
+    });
   });
 });

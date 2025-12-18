@@ -25,7 +25,7 @@ export type {
   ToolIndexMetadata,
 } from "./types.js";
 
-export type { ToolDescription, ParameterDescription } from "./describe.js";
+export type { ToolDescription, ParameterDescription, CompactToolDescription } from "./describe.js";
 
 export type {
   ExecuteToolParams,
@@ -56,7 +56,9 @@ export {
   describeTool,
   describeTools,
   describeToolSafe,
+  describeToolCompact,
   getFullToolSchema,
+  getOptimizationStats,
 } from "./describe.js";
 
 // Execute exports
