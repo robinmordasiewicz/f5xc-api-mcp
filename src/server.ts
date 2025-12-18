@@ -22,6 +22,11 @@ import {
   executeTool,
   getIndexMetadata,
   getAvailableDomains,
+  searchConsolidatedResources,
+  resolveConsolidatedTool,
+  getConsolidatedResource,
+  getConsolidationStats,
+  type CrudOperation,
 } from "./tools/discovery/index.js";
 
 /**
@@ -124,7 +129,14 @@ export class F5XCApiServer {
                     domains: indexMetadata.domains,
                     availableDomains: domains,
                   },
-                  discoveryTools: ["f5xc-search-tools", "f5xc-describe-tool", "f5xc-execute-tool"],
+                  consolidation: getConsolidationStats(),
+                  discoveryTools: [
+                    "f5xc-search-tools",
+                    "f5xc-describe-tool",
+                    "f5xc-execute-tool",
+                    "f5xc-search-resources",
+                    "f5xc-execute-resource",
+                  ],
                   message: isAuthenticated
                     ? "Authenticated - API execution enabled. Use f5xc-search-tools to find available API tools."
                     : "Documentation mode. Set F5XC_API_URL and F5XC_API_TOKEN to enable API execution.",
@@ -260,12 +272,143 @@ export class F5XCApiServer {
       }
     );
 
+    // Search resources - consolidated resource search
+    this.server.tool(
+      DISCOVERY_TOOLS.searchResources.name,
+      DISCOVERY_TOOLS.searchResources.description,
+      {
+        query: z.string().describe("Natural language search query"),
+        limit: z.number().optional().describe("Maximum results (default: 10)"),
+        domains: z.array(z.string()).optional().describe("Filter by domains"),
+      },
+      async (args) => {
+        const results = searchConsolidatedResources(args.query, {
+          limit: Math.min(args.limit ?? 10, 50),
+          domains: args.domains,
+        });
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  query: args.query,
+                  resultCount: results.length,
+                  results: results.map((r) => ({
+                    name: r.resource.name,
+                    domain: r.resource.domain,
+                    resource: r.resource.resource,
+                    operations: r.resource.operations,
+                    summary: r.resource.summary,
+                    isFullCrud: r.resource.isFullCrud,
+                    score: Math.round(r.score * 100) / 100,
+                  })),
+                  hint: "Use f5xc-execute-resource with resourceName and operation to execute.",
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
+    );
+
+    // Execute resource - execute a CRUD operation on a consolidated resource
+    this.server.tool(
+      DISCOVERY_TOOLS.executeResource.name,
+      DISCOVERY_TOOLS.executeResource.description,
+      {
+        resourceName: z.string().describe("Consolidated resource name"),
+        operation: z
+          .enum(["create", "get", "list", "update", "delete"])
+          .describe("CRUD operation"),
+        pathParams: z.record(z.string()).optional().describe("Path parameters"),
+        queryParams: z.record(z.string()).optional().describe("Query parameters"),
+        body: z.record(z.unknown()).optional().describe("Request body"),
+      },
+      async (args) => {
+        // Resolve to underlying tool
+        const toolName = resolveConsolidatedTool(
+          args.resourceName,
+          args.operation as CrudOperation
+        );
+
+        if (!toolName) {
+          const resource = getConsolidatedResource(args.resourceName);
+          if (!resource) {
+            return {
+              content: [
+                {
+                  type: "text",
+                  text: JSON.stringify(
+                    {
+                      error: `Resource "${args.resourceName}" not found`,
+                      hint: "Use f5xc-search-resources to find available resources.",
+                    },
+                    null,
+                    2
+                  ),
+                },
+              ],
+            };
+          }
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    error: `Operation "${args.operation}" not available for "${args.resourceName}"`,
+                    availableOperations: resource.operations,
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        // Execute the resolved tool
+        const result = await executeTool(
+          {
+            toolName,
+            pathParams: args.pathParams,
+            queryParams: args.queryParams,
+            body: args.body,
+          },
+          this.credentialManager
+        );
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  resolvedTool: toolName,
+                  ...result,
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
+    );
+
     const indexMetadata = getIndexMetadata();
+    const consolidationStats = getConsolidationStats();
     logger.info("Tool registration completed (dynamic discovery mode)", {
       authMode,
       authenticated: authMode !== AuthMode.NONE,
-      registeredTools: 4,
+      registeredTools: 6,
       indexedTools: indexMetadata.totalTools,
+      consolidatedResources: consolidationStats.consolidatedCount,
+      consolidationReduction: consolidationStats.reductionPercent,
       domains: Object.keys(indexMetadata.domains),
       tokenSavings: "95%+ (535K → ~500 tokens upfront)",
     });

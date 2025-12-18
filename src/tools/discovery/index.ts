@@ -62,6 +62,18 @@ export {
 // Execute exports
 export { executeTool, validateExecuteParams } from "./execute.js";
 
+// Consolidation exports
+export type { CrudOperation, ConsolidatedResource, ConsolidatedIndex } from "./consolidate.js";
+export {
+  getConsolidatedIndex,
+  clearConsolidatedCache,
+  getConsolidatedResource,
+  getConsolidatedByDomain,
+  searchConsolidatedResources,
+  resolveConsolidatedTool,
+  getConsolidationStats,
+} from "./consolidate.js";
+
 /**
  * MCP Tool Definitions for the discovery meta-tools
  *
@@ -161,6 +173,73 @@ export const DISCOVERY_TOOLS = {
     inputSchema: {
       type: "object" as const,
       properties: {},
+    },
+  },
+
+  searchResources: {
+    name: "f5xc-search-resources",
+    description:
+      "Search for F5XC resources (consolidated view). Returns resources with their available CRUD operations. " +
+      "More efficient than searching individual tools - one result per resource instead of 5 CRUD tools.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        query: {
+          type: "string",
+          description:
+            "Natural language search query (e.g., 'http load balancer', 'origin pool', 'dns zone')",
+        },
+        limit: {
+          type: "number",
+          description: "Maximum number of results to return (default: 10)",
+          default: 10,
+        },
+        domains: {
+          type: "array",
+          items: { type: "string" },
+          description:
+            "Filter by domain(s): waap, dns, core, network, site, security, appstack",
+        },
+      },
+      required: ["query"],
+    },
+  },
+
+  executeResource: {
+    name: "f5xc-execute-resource",
+    description:
+      "Execute a CRUD operation on a consolidated F5XC resource. Specify the resource name and operation. " +
+      "Routes to the correct underlying API tool automatically.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        resourceName: {
+          type: "string",
+          description:
+            "The consolidated resource name (e.g., 'f5xc-api-waap-http-loadbalancer')",
+        },
+        operation: {
+          type: "string",
+          enum: ["create", "get", "list", "update", "delete"],
+          description: "The CRUD operation to perform",
+        },
+        pathParams: {
+          type: "object",
+          description:
+            "Path parameters (e.g., { namespace: 'default', name: 'my-resource' })",
+          additionalProperties: { type: "string" },
+        },
+        queryParams: {
+          type: "object",
+          description: "Query parameters for the request",
+          additionalProperties: { type: "string" },
+        },
+        body: {
+          type: "object",
+          description: "Request body for create/update operations",
+        },
+      },
+      required: ["resourceName", "operation"],
     },
   },
 } as const;
