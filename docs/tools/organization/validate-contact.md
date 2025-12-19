@@ -31,16 +31,16 @@ Ask Claude to help you work with Validate Contact resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f validate_contact.yaml
+f5xcctl configuration create validate_contact -n <namespace> -i validate_contact.yaml
 
 # Get
-f5xcctl get validate_contact {name} -n {namespace}
+f5xcctl configuration get validate_contact -n <namespace> <name>
 
 # List
-f5xcctl get validate_contacts -n {namespace}
+f5xcctl configuration list validate_contact -n <namespace>
 
 # Delete
-f5xcctl delete validate_contact {name} -n {namespace}
+f5xcctl configuration delete validate_contact -n <namespace> <name>
 ```
 
 ## Terraform Resource

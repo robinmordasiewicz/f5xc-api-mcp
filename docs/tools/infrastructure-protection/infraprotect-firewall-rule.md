@@ -58,16 +58,16 @@ Ask Claude to help you work with Infraprotect Firewall Rule resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f infraprotect_firewall_rule.yaml
+f5xcctl configuration create infraprotect_firewall_rule -n <namespace> -i infraprotect_firewall_rule.yaml
 
 # Get
-f5xcctl get infraprotect_firewall_rule {name} -n {namespace}
+f5xcctl configuration get infraprotect_firewall_rule -n <namespace> <name>
 
 # List
-f5xcctl get infraprotect_firewall_rules -n {namespace}
+f5xcctl configuration list infraprotect_firewall_rule -n <namespace>
 
 # Delete
-f5xcctl delete infraprotect_firewall_rule {name} -n {namespace}
+f5xcctl configuration delete infraprotect_firewall_rule -n <namespace> <name>
 ```
 
 ## Terraform Resource

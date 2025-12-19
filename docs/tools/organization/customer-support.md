@@ -52,16 +52,16 @@ Ask Claude to help you work with Customer Support resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f customer_support.yaml
+f5xcctl configuration create customer_support -n <namespace> -i customer_support.yaml
 
 # Get
-f5xcctl get customer_support {name} -n {namespace}
+f5xcctl configuration get customer_support -n <namespace> <name>
 
 # List
-f5xcctl get customer_supports -n {namespace}
+f5xcctl configuration list customer_support -n <namespace>
 
 # Delete
-f5xcctl delete customer_support {name} -n {namespace}
+f5xcctl configuration delete customer_support -n <namespace> <name>
 ```
 
 ## Terraform Resource

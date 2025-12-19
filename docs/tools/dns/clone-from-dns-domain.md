@@ -26,16 +26,16 @@ Ask Claude to help you work with Clone From DNS Domain resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f clone_from_dns_domain.yaml
+f5xcctl configuration create clone_from_dns_domain -n <namespace> -i clone_from_dns_domain.yaml
 
 # Get
-f5xcctl get clone_from_dns_domain {name} -n {namespace}
+f5xcctl configuration get clone_from_dns_domain -n <namespace> <name>
 
 # List
-f5xcctl get clone_from_dns_domains -n {namespace}
+f5xcctl configuration list clone_from_dns_domain -n <namespace>
 
 # Delete
-f5xcctl delete clone_from_dns_domain {name} -n {namespace}
+f5xcctl configuration delete clone_from_dns_domain -n <namespace> <name>
 ```
 
 ## Terraform Resource

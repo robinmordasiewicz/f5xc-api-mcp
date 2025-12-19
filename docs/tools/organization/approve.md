@@ -36,16 +36,16 @@ Ask Claude to help you work with Approve resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f approve.yaml
+f5xcctl configuration create approve -n <namespace> -i approve.yaml
 
 # Get
-f5xcctl get approve {name} -n {namespace}
+f5xcctl configuration get approve -n <namespace> <name>
 
 # List
-f5xcctl get approves -n {namespace}
+f5xcctl configuration list approve -n <namespace>
 
 # Delete
-f5xcctl delete approve {name} -n {namespace}
+f5xcctl configuration delete approve -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -61,16 +61,16 @@ Ask Claude to help you work with Virtual K8S resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f virtual_k8s.yaml
+f5xcctl configuration create virtual_k8s -n <namespace> -i virtual_k8s.yaml
 
 # Get
-f5xcctl get virtual_k8s {name} -n {namespace}
+f5xcctl configuration get virtual_k8s -n <namespace> <name>
 
 # List
-f5xcctl get virtual_k8ss -n {namespace}
+f5xcctl configuration list virtual_k8s -n <namespace>
 
 # Delete
-f5xcctl delete virtual_k8s {name} -n {namespace}
+f5xcctl configuration delete virtual_k8s -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -26,16 +26,16 @@ Ask Claude to help you work with Allocateip resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f allocateip.yaml
+f5xcctl configuration create allocateip -n <namespace> -i allocateip.yaml
 
 # Get
-f5xcctl get allocateip {name} -n {namespace}
+f5xcctl configuration get allocateip -n <namespace> <name>
 
 # List
-f5xcctl get allocateips -n {namespace}
+f5xcctl configuration list allocateip -n <namespace>
 
 # Delete
-f5xcctl delete allocateip {name} -n {namespace}
+f5xcctl configuration delete allocateip -n <namespace> <name>
 ```
 
 ## Terraform Resource

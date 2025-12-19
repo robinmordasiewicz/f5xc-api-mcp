@@ -43,16 +43,16 @@ Ask Claude to help you work with Mobile Sdk resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f mobile_sdk.yaml
+f5xcctl configuration create mobile_sdk -n <namespace> -i mobile_sdk.yaml
 
 # Get
-f5xcctl get mobile_sdk {name} -n {namespace}
+f5xcctl configuration get mobile_sdk -n <namespace> <name>
 
 # List
-f5xcctl get mobile_sdks -n {namespace}
+f5xcctl configuration list mobile_sdk -n <namespace>
 
 # Delete
-f5xcctl delete mobile_sdk {name} -n {namespace}
+f5xcctl configuration delete mobile_sdk -n <namespace> <name>
 ```
 
 ## Terraform Resource

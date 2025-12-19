@@ -26,16 +26,16 @@ Ask Claude to help you work with Sync resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f sync.yaml
+f5xcctl configuration create sync -n <namespace> -i sync.yaml
 
 # Get
-f5xcctl get sync {name} -n {namespace}
+f5xcctl configuration get sync -n <namespace> <name>
 
 # List
-f5xcctl get syncs -n {namespace}
+f5xcctl configuration list sync -n <namespace>
 
 # Delete
-f5xcctl delete sync {name} -n {namespace}
+f5xcctl configuration delete sync -n <namespace> <name>
 ```
 
 ## Terraform Resource

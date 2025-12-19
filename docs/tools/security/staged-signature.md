@@ -35,16 +35,16 @@ Ask Claude to help you work with Staged Signature resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f staged_signature.yaml
+f5xcctl configuration create staged_signature -n <namespace> -i staged_signature.yaml
 
 # Get
-f5xcctl get staged_signature {name} -n {namespace}
+f5xcctl configuration get staged_signature -n <namespace> <name>
 
 # List
-f5xcctl get staged_signatures -n {namespace}
+f5xcctl configuration list staged_signature -n <namespace>
 
 # Delete
-f5xcctl delete staged_signature {name} -n {namespace}
+f5xcctl configuration delete staged_signature -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -60,16 +60,16 @@ Ask Claude to help you work with Token resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f token.yaml
+f5xcctl configuration create token -n <namespace> -i token.yaml
 
 # Get
-f5xcctl get token {name} -n {namespace}
+f5xcctl configuration get token -n <namespace> <name>
 
 # List
-f5xcctl get tokens -n {namespace}
+f5xcctl configuration list token -n <namespace>
 
 # Delete
-f5xcctl delete token {name} -n {namespace}
+f5xcctl configuration delete token -n <namespace> <name>
 ```
 
 ## Terraform Resource

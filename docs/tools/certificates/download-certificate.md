@@ -43,16 +43,16 @@ Ask Claude to help you work with Download Certificate resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f download_certificate.yaml
+f5xcctl configuration create download_certificate -n <namespace> -i download_certificate.yaml
 
 # Get
-f5xcctl get download_certificate {name} -n {namespace}
+f5xcctl configuration get download_certificate -n <namespace> <name>
 
 # List
-f5xcctl get download_certificates -n {namespace}
+f5xcctl configuration list download_certificate -n <namespace>
 
 # Delete
-f5xcctl delete download_certificate {name} -n {namespace}
+f5xcctl configuration delete download_certificate -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -40,16 +40,16 @@ Ask Claude to help you work with Upgrade Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f upgrade_statu.yaml
+f5xcctl configuration create upgrade_statu -n <namespace> -i upgrade_statu.yaml
 
 # Get
-f5xcctl get upgrade_statu {name} -n {namespace}
+f5xcctl configuration get upgrade_statu -n <namespace> <name>
 
 # List
-f5xcctl get upgrade_status -n {namespace}
+f5xcctl configuration list upgrade_statu -n <namespace>
 
 # Delete
-f5xcctl delete upgrade_statu {name} -n {namespace}
+f5xcctl configuration delete upgrade_statu -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -26,16 +26,16 @@ Ask Claude to help you work with Url resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f url.yaml
+f5xcctl configuration create url -n <namespace> -i url.yaml
 
 # Get
-f5xcctl get url {name} -n {namespace}
+f5xcctl configuration get url -n <namespace> <name>
 
 # List
-f5xcctl get urls -n {namespace}
+f5xcctl configuration list url -n <namespace>
 
 # Delete
-f5xcctl delete url {name} -n {namespace}
+f5xcctl configuration delete url -n <namespace> <name>
 ```
 
 ## Terraform Resource

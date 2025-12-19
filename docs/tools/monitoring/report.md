@@ -53,16 +53,16 @@ Ask Claude to help you work with Report resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f report.yaml
+f5xcctl configuration create report -n <namespace> -i report.yaml
 
 # Get
-f5xcctl get report {name} -n {namespace}
+f5xcctl configuration get report -n <namespace> <name>
 
 # List
-f5xcctl get reports -n {namespace}
+f5xcctl configuration list report -n <namespace>
 
 # Delete
-f5xcctl delete report {name} -n {namespace}
+f5xcctl configuration delete report -n <namespace> <name>
 ```
 
 ## Terraform Resource

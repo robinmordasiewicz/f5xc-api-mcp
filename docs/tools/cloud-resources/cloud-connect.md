@@ -58,16 +58,16 @@ Ask Claude to help you work with Cloud Connect resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f cloud_connect.yaml
+f5xcctl configuration create cloud_connect -n <namespace> -i cloud_connect.yaml
 
 # Get
-f5xcctl get cloud_connect {name} -n {namespace}
+f5xcctl configuration get cloud_connect -n <namespace> <name>
 
 # List
-f5xcctl get cloud_connects -n {namespace}
+f5xcctl configuration list cloud_connect -n <namespace>
 
 # Delete
-f5xcctl delete cloud_connect {name} -n {namespace}
+f5xcctl configuration delete cloud_connect -n <namespace> <name>
 ```
 
 ## Terraform Resource

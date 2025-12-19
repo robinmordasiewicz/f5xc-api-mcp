@@ -36,16 +36,16 @@ Ask Claude to help you work with Secondary resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f secondary.yaml
+f5xcctl configuration create secondary -n <namespace> -i secondary.yaml
 
 # Get
-f5xcctl get secondary {name} -n {namespace}
+f5xcctl configuration get secondary -n <namespace> <name>
 
 # List
-f5xcctl get secondarys -n {namespace}
+f5xcctl configuration list secondary -n <namespace>
 
 # Delete
-f5xcctl delete secondary {name} -n {namespace}
+f5xcctl configuration delete secondary -n <namespace> <name>
 ```
 
 ## Terraform Resource

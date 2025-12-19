@@ -34,16 +34,16 @@ Ask Claude to help you work with Platform resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f platform.yaml
+f5xcctl configuration create platform -n <namespace> -i platform.yaml
 
 # Get
-f5xcctl get platform {name} -n {namespace}
+f5xcctl configuration get platform -n <namespace> <name>
 
 # List
-f5xcctl get platforms -n {namespace}
+f5xcctl configuration list platform -n <namespace>
 
 # Delete
-f5xcctl delete platform {name} -n {namespace}
+f5xcctl configuration delete platform -n <namespace> <name>
 ```
 
 ## Terraform Resource

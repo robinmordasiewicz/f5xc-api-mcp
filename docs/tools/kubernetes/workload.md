@@ -58,16 +58,16 @@ Ask Claude to help you work with Workload resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f workload.yaml
+f5xcctl configuration create workload -n <namespace> -i workload.yaml
 
 # Get
-f5xcctl get workload {name} -n {namespace}
+f5xcctl configuration get workload -n <namespace> <name>
 
 # List
-f5xcctl get workloads -n {namespace}
+f5xcctl configuration list workload -n <namespace>
 
 # Delete
-f5xcctl delete workload {name} -n {namespace}
+f5xcctl configuration delete workload -n <namespace> <name>
 ```
 
 ## Terraform Resource

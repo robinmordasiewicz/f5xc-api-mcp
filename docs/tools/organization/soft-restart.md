@@ -37,16 +37,16 @@ Ask Claude to help you work with Soft Restart resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f soft_restart.yaml
+f5xcctl configuration create soft_restart -n <namespace> -i soft_restart.yaml
 
 # Get
-f5xcctl get soft_restart {name} -n {namespace}
+f5xcctl configuration get soft_restart -n <namespace> <name>
 
 # List
-f5xcctl get soft_restarts -n {namespace}
+f5xcctl configuration list soft_restart -n <namespace>
 
 # Delete
-f5xcctl delete soft_restart {name} -n {namespace}
+f5xcctl configuration delete soft_restart -n <namespace> <name>
 ```
 
 ## Terraform Resource

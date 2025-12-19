@@ -42,16 +42,16 @@ Ask Claude to help you work with Node resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f node.yaml
+f5xcctl configuration create node -n <namespace> -i node.yaml
 
 # Get
-f5xcctl get node {name} -n {namespace}
+f5xcctl configuration get node -n <namespace> <name>
 
 # List
-f5xcctl get nodes -n {namespace}
+f5xcctl configuration list node -n <namespace>
 
 # Delete
-f5xcctl delete node {name} -n {namespace}
+f5xcctl configuration delete node -n <namespace> <name>
 ```
 
 ## Terraform Resource

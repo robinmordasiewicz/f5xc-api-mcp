@@ -49,16 +49,16 @@ Ask Claude to help you work with Service Policy Set resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f service_policy_set.yaml
+f5xcctl configuration create service_policy_set -n <namespace> -i service_policy_set.yaml
 
 # Get
-f5xcctl get service_policy_set {name} -n {namespace}
+f5xcctl configuration get service_policy_set -n <namespace> <name>
 
 # List
-f5xcctl get service_policy_sets -n {namespace}
+f5xcctl configuration list service_policy_set -n <namespace>
 
 # Delete
-f5xcctl delete service_policy_set {name} -n {namespace}
+f5xcctl configuration delete service_policy_set -n <namespace> <name>
 ```
 
 ## Terraform Resource

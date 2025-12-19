@@ -35,16 +35,16 @@ Ask Claude to help you work with Ca Certificate resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f ca_certificate.yaml
+f5xcctl configuration create ca_certificate -n <namespace> -i ca_certificate.yaml
 
 # Get
-f5xcctl get ca_certificate {name} -n {namespace}
+f5xcctl configuration get ca_certificate -n <namespace> <name>
 
 # List
-f5xcctl get ca_certificates -n {namespace}
+f5xcctl configuration list ca_certificate -n <namespace>
 
 # Delete
-f5xcctl delete ca_certificate {name} -n {namespace}
+f5xcctl configuration delete ca_certificate -n <namespace> <name>
 ```
 
 ## Terraform Resource

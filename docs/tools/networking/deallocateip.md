@@ -22,16 +22,16 @@ Ask Claude to help you work with Deallocateip resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f deallocateip.yaml
+f5xcctl configuration create deallocateip -n <namespace> -i deallocateip.yaml
 
 # Get
-f5xcctl get deallocateip {name} -n {namespace}
+f5xcctl configuration get deallocateip -n <namespace> <name>
 
 # List
-f5xcctl get deallocateips -n {namespace}
+f5xcctl configuration list deallocateip -n <namespace>
 
 # Delete
-f5xcctl delete deallocateip {name} -n {namespace}
+f5xcctl configuration delete deallocateip -n <namespace> <name>
 ```
 
 ## Terraform Resource

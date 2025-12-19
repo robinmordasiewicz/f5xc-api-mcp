@@ -47,16 +47,16 @@ Ask Claude to help you work with Plan Transition resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f plan_transition.yaml
+f5xcctl configuration create plan_transition -n <namespace> -i plan_transition.yaml
 
 # Get
-f5xcctl get plan_transition {name} -n {namespace}
+f5xcctl configuration get plan_transition -n <namespace> <name>
 
 # List
-f5xcctl get plan_transitions -n {namespace}
+f5xcctl configuration list plan_transition -n <namespace>
 
 # Delete
-f5xcctl delete plan_transition {name} -n {namespace}
+f5xcctl configuration delete plan_transition -n <namespace> <name>
 ```
 
 ## Terraform Resource

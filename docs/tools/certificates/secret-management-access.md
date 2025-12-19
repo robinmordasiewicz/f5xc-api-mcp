@@ -59,16 +59,16 @@ Ask Claude to help you work with Secret Management Access resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f secret_management_access.yaml
+f5xcctl configuration create secret_management_access -n <namespace> -i secret_management_access.yaml
 
 # Get
-f5xcctl get secret_management_access {name} -n {namespace}
+f5xcctl configuration get secret_management_access -n <namespace> <name>
 
 # List
-f5xcctl get secret_management_accesss -n {namespace}
+f5xcctl configuration list secret_management_access -n <namespace>
 
 # Delete
-f5xcctl delete secret_management_access {name} -n {namespace}
+f5xcctl configuration delete secret_management_access -n <namespace> <name>
 ```
 
 ## Terraform Resource

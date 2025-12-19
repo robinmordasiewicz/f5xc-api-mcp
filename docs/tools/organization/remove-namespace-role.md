@@ -30,16 +30,16 @@ Ask Claude to help you work with Remove Namespace Role resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f remove_namespace_role.yaml
+f5xcctl configuration create remove_namespace_role -n <namespace> -i remove_namespace_role.yaml
 
 # Get
-f5xcctl get remove_namespace_role {name} -n {namespace}
+f5xcctl configuration get remove_namespace_role -n <namespace> <name>
 
 # List
-f5xcctl get remove_namespace_roles -n {namespace}
+f5xcctl configuration list remove_namespace_role -n <namespace>
 
 # Delete
-f5xcctl delete remove_namespace_role {name} -n {namespace}
+f5xcctl configuration delete remove_namespace_role -n <namespace> <name>
 ```
 
 ## Terraform Resource

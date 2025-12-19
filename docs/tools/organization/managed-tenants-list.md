@@ -40,16 +40,16 @@ Ask Claude to help you work with Managed Tenants List resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f managed_tenants_list.yaml
+f5xcctl configuration create managed_tenants_list -n <namespace> -i managed_tenants_list.yaml
 
 # Get
-f5xcctl get managed_tenants_list {name} -n {namespace}
+f5xcctl configuration get managed_tenants_list -n <namespace> <name>
 
 # List
-f5xcctl get managed_tenants_lists -n {namespace}
+f5xcctl configuration list managed_tenants_list -n <namespace>
 
 # Delete
-f5xcctl delete managed_tenants_list {name} -n {namespace}
+f5xcctl configuration delete managed_tenants_list -n <namespace> <name>
 ```
 
 ## Terraform Resource

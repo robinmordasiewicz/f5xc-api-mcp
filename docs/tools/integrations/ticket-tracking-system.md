@@ -58,16 +58,16 @@ Ask Claude to help you work with Ticket Tracking System resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f ticket_tracking_system.yaml
+f5xcctl configuration create ticket_tracking_system -n <namespace> -i ticket_tracking_system.yaml
 
 # Get
-f5xcctl get ticket_tracking_system {name} -n {namespace}
+f5xcctl configuration get ticket_tracking_system -n <namespace> <name>
 
 # List
-f5xcctl get ticket_tracking_systems -n {namespace}
+f5xcctl configuration list ticket_tracking_system -n <namespace>
 
 # Delete
-f5xcctl delete ticket_tracking_system {name} -n {namespace}
+f5xcctl configuration delete ticket_tracking_system -n <namespace> <name>
 ```
 
 ## Terraform Resource

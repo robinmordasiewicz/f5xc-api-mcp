@@ -26,16 +26,16 @@ Ask Claude to help you work with Country resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f country.yaml
+f5xcctl configuration create country -n <namespace> -i country.yaml
 
 # Get
-f5xcctl get country {name} -n {namespace}
+f5xcctl configuration get country -n <namespace> <name>
 
 # List
-f5xcctl get countrys -n {namespace}
+f5xcctl configuration list country -n <namespace>
 
 # Delete
-f5xcctl delete country {name} -n {namespace}
+f5xcctl configuration delete country -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -43,16 +43,16 @@ Ask Claude to help you work with Global History resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f global_history.yaml
+f5xcctl configuration create global_history -n <namespace> -i global_history.yaml
 
 # Get
-f5xcctl get global_history {name} -n {namespace}
+f5xcctl configuration get global_history -n <namespace> <name>
 
 # List
-f5xcctl get global_historys -n {namespace}
+f5xcctl configuration list global_history -n <namespace>
 
 # Delete
-f5xcctl delete global_history {name} -n {namespace}
+f5xcctl configuration delete global_history -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Registrations By Site resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f registrations_by_site.yaml
+f5xcctl configuration create registrations_by_site -n <namespace> -i registrations_by_site.yaml
 
 # Get
-f5xcctl get registrations_by_site {name} -n {namespace}
+f5xcctl configuration get registrations_by_site -n <namespace> <name>
 
 # List
-f5xcctl get registrations_by_sites -n {namespace}
+f5xcctl configuration list registrations_by_site -n <namespace>
 
 # Delete
-f5xcctl delete registrations_by_site {name} -n {namespace}
+f5xcctl configuration delete registrations_by_site -n <namespace> <name>
 ```
 
 ## Terraform Resource

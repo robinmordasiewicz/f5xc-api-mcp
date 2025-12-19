@@ -43,16 +43,16 @@ Ask Claude to help you work with Behavior resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f behavior.yaml
+f5xcctl configuration create behavior -n <namespace> -i behavior.yaml
 
 # Get
-f5xcctl get behavior {name} -n {namespace}
+f5xcctl configuration get behavior -n <namespace> <name>
 
 # List
-f5xcctl get behaviors -n {namespace}
+f5xcctl configuration list behavior -n <namespace>
 
 # Delete
-f5xcctl delete behavior {name} -n {namespace}
+f5xcctl configuration delete behavior -n <namespace> <name>
 ```
 
 ## Terraform Resource

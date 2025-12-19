@@ -59,16 +59,16 @@ Ask Claude to help you work with Tenant Profile resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f tenant_profile.yaml
+f5xcctl configuration create tenant_profile -n <namespace> -i tenant_profile.yaml
 
 # Get
-f5xcctl get tenant_profile {name} -n {namespace}
+f5xcctl configuration get tenant_profile -n <namespace> <name>
 
 # List
-f5xcctl get tenant_profiles -n {namespace}
+f5xcctl configuration list tenant_profile -n <namespace>
 
 # Delete
-f5xcctl delete tenant_profile {name} -n {namespace}
+f5xcctl configuration delete tenant_profile -n <namespace> <name>
 ```
 
 ## Terraform Resource

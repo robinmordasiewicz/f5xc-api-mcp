@@ -36,16 +36,16 @@ Ask Claude to help you work with Firewall Log resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f firewall_log.yaml
+f5xcctl configuration create firewall_log -n <namespace> -i firewall_log.yaml
 
 # Get
-f5xcctl get firewall_log {name} -n {namespace}
+f5xcctl configuration get firewall_log -n <namespace> <name>
 
 # List
-f5xcctl get firewall_logs -n {namespace}
+f5xcctl configuration list firewall_log -n <namespace>
 
 # Delete
-f5xcctl delete firewall_log {name} -n {namespace}
+f5xcctl configuration delete firewall_log -n <namespace> <name>
 ```
 
 ## Terraform Resource

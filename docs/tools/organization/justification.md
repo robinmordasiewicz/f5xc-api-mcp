@@ -37,16 +37,16 @@ Ask Claude to help you work with Justification resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f justification.yaml
+f5xcctl configuration create justification -n <namespace> -i justification.yaml
 
 # Get
-f5xcctl get justification {name} -n {namespace}
+f5xcctl configuration get justification -n <namespace> <name>
 
 # List
-f5xcctl get justifications -n {namespace}
+f5xcctl configuration list justification -n <namespace>
 
 # Delete
-f5xcctl delete justification {name} -n {namespace}
+f5xcctl configuration delete justification -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with Bot Defense App Infrastructure resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f bot_defense_app_infrastructure.yaml
+f5xcctl configuration create bot_defense_app_infrastructure -n <namespace> -i bot_defense_app_infrastructure.yaml
 
 # Get
-f5xcctl get bot_defense_app_infrastructure {name} -n {namespace}
+f5xcctl configuration get bot_defense_app_infrastructure -n <namespace> <name>
 
 # List
-f5xcctl get bot_defense_app_infrastructures -n {namespace}
+f5xcctl configuration list bot_defense_app_infrastructure -n <namespace>
 
 # Delete
-f5xcctl delete bot_defense_app_infrastructure {name} -n {namespace}
+f5xcctl configuration delete bot_defense_app_infrastructure -n <namespace> <name>
 ```
 
 ## Terraform Resource

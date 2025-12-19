@@ -36,16 +36,16 @@ Ask Claude to help you work with Setting resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f setting.yaml
+f5xcctl configuration create setting -n <namespace> -i setting.yaml
 
 # Get
-f5xcctl get setting {name} -n {namespace}
+f5xcctl configuration get setting -n <namespace> <name>
 
 # List
-f5xcctl get settings -n {namespace}
+f5xcctl configuration list setting -n <namespace>
 
 # Delete
-f5xcctl delete setting {name} -n {namespace}
+f5xcctl configuration delete setting -n <namespace> <name>
 ```
 
 ## Terraform Resource

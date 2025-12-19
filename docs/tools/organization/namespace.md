@@ -56,16 +56,16 @@ Ask Claude to help you work with Namespace resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f namespace.yaml
+f5xcctl configuration create namespace -n <namespace> -i namespace.yaml
 
 # Get
-f5xcctl get namespace {name} -n {namespace}
+f5xcctl configuration get namespace -n <namespace> <name>
 
 # List
-f5xcctl get namespaces -n {namespace}
+f5xcctl configuration list namespace -n <namespace>
 
 # Delete
-f5xcctl delete namespace {name} -n {namespace}
+f5xcctl configuration delete namespace -n <namespace> <name>
 ```
 
 ## Terraform Resource

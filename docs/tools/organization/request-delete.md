@@ -26,16 +26,16 @@ Ask Claude to help you work with Request Delete resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f request_delete.yaml
+f5xcctl configuration create request_delete -n <namespace> -i request_delete.yaml
 
 # Get
-f5xcctl get request_delete {name} -n {namespace}
+f5xcctl configuration get request_delete -n <namespace> <name>
 
 # List
-f5xcctl get request_deletes -n {namespace}
+f5xcctl configuration list request_delete -n <namespace>
 
 # Delete
-f5xcctl delete request_delete {name} -n {namespace}
+f5xcctl configuration delete request_delete -n <namespace> <name>
 ```
 
 ## Terraform Resource

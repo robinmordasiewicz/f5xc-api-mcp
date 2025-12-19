@@ -33,16 +33,16 @@ Ask Claude to help you work with Admin Notification resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f admin_notification.yaml
+f5xcctl configuration create admin_notification -n <namespace> -i admin_notification.yaml
 
 # Get
-f5xcctl get admin_notification {name} -n {namespace}
+f5xcctl configuration get admin_notification -n <namespace> <name>
 
 # List
-f5xcctl get admin_notifications -n {namespace}
+f5xcctl configuration list admin_notification -n <namespace>
 
 # Delete
-f5xcctl delete admin_notification {name} -n {namespace}
+f5xcctl configuration delete admin_notification -n <namespace> <name>
 ```
 
 ## Terraform Resource

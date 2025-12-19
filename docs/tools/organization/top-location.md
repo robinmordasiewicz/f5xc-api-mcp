@@ -48,16 +48,16 @@ Ask Claude to help you work with Top Location resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f top_location.yaml
+f5xcctl configuration create top_location -n <namespace> -i top_location.yaml
 
 # Get
-f5xcctl get top_location {name} -n {namespace}
+f5xcctl configuration get top_location -n <namespace> <name>
 
 # List
-f5xcctl get top_locations -n {namespace}
+f5xcctl configuration list top_location -n <namespace>
 
 # Delete
-f5xcctl delete top_location {name} -n {namespace}
+f5xcctl configuration delete top_location -n <namespace> <name>
 ```
 
 ## Terraform Resource

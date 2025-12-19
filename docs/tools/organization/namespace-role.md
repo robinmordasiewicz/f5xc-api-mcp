@@ -49,16 +49,16 @@ Ask Claude to help you work with Namespace Role resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f namespace_role.yaml
+f5xcctl configuration create namespace_role -n <namespace> -i namespace_role.yaml
 
 # Get
-f5xcctl get namespace_role {name} -n {namespace}
+f5xcctl configuration get namespace_role -n <namespace> <name>
 
 # List
-f5xcctl get namespace_roles -n {namespace}
+f5xcctl configuration list namespace_role -n <namespace>
 
 # Delete
-f5xcctl delete namespace_role {name} -n {namespace}
+f5xcctl configuration delete namespace_role -n <namespace> <name>
 ```
 
 ## Terraform Resource

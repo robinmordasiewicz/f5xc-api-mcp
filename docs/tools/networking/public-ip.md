@@ -55,16 +55,16 @@ Ask Claude to help you work with Public IP resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f public_ip.yaml
+f5xcctl configuration create public_ip -n <namespace> -i public_ip.yaml
 
 # Get
-f5xcctl get public_ip {name} -n {namespace}
+f5xcctl configuration get public_ip -n <namespace> <name>
 
 # List
-f5xcctl get public_ips -n {namespace}
+f5xcctl configuration list public_ip -n <namespace>
 
 # Delete
-f5xcctl delete public_ip {name} -n {namespace}
+f5xcctl configuration delete public_ip -n <namespace> <name>
 ```
 
 ## Terraform Resource

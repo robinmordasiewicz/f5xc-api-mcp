@@ -58,16 +58,16 @@ Ask Claude to help you work with Bgp Asn Set resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f bgp_asn_set.yaml
+f5xcctl configuration create bgp_asn_set -n <namespace> -i bgp_asn_set.yaml
 
 # Get
-f5xcctl get bgp_asn_set {name} -n {namespace}
+f5xcctl configuration get bgp_asn_set -n <namespace> <name>
 
 # List
-f5xcctl get bgp_asn_sets -n {namespace}
+f5xcctl configuration list bgp_asn_set -n <namespace>
 
 # Delete
-f5xcctl delete bgp_asn_set {name} -n {namespace}
+f5xcctl configuration delete bgp_asn_set -n <namespace> <name>
 ```
 
 ## Terraform Resource

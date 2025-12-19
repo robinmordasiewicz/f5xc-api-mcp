@@ -61,16 +61,16 @@ Ask Claude to help you work with K8S Pod Security Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f k8s_pod_security_policy.yaml
+f5xcctl configuration create k8s_pod_security_policy -n <namespace> -i k8s_pod_security_policy.yaml
 
 # Get
-f5xcctl get k8s_pod_security_policy {name} -n {namespace}
+f5xcctl configuration get k8s_pod_security_policy -n <namespace> <name>
 
 # List
-f5xcctl get k8s_pod_security_policys -n {namespace}
+f5xcctl configuration list k8s_pod_security_policy -n <namespace>
 
 # Delete
-f5xcctl delete k8s_pod_security_policy {name} -n {namespace}
+f5xcctl configuration delete k8s_pod_security_policy -n <namespace> <name>
 ```
 
 ## Terraform Resource

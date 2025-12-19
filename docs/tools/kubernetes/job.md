@@ -40,16 +40,16 @@ Ask Claude to help you work with Job resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f job.yaml
+f5xcctl configuration create job -n <namespace> -i job.yaml
 
 # Get
-f5xcctl get job {name} -n {namespace}
+f5xcctl configuration get job -n <namespace> <name>
 
 # List
-f5xcctl get jobs -n {namespace}
+f5xcctl configuration list job -n <namespace>
 
 # Delete
-f5xcctl delete job {name} -n {namespace}
+f5xcctl configuration delete job -n <namespace> <name>
 ```
 
 ## Terraform Resource

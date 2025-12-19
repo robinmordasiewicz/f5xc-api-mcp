@@ -61,16 +61,16 @@ Ask Claude to help you work with Endpoint resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f endpoint.yaml
+f5xcctl configuration create endpoint -n <namespace> -i endpoint.yaml
 
 # Get
-f5xcctl get endpoint {name} -n {namespace}
+f5xcctl configuration get endpoint -n <namespace> <name>
 
 # List
-f5xcctl get endpoints -n {namespace}
+f5xcctl configuration list endpoint -n <namespace>
 
 # Delete
-f5xcctl delete endpoint {name} -n {namespace}
+f5xcctl configuration delete endpoint -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -34,16 +34,16 @@ Ask Claude to help you work with Force Delete resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f force_delete.yaml
+f5xcctl configuration create force_delete -n <namespace> -i force_delete.yaml
 
 # Get
-f5xcctl get force_delete {name} -n {namespace}
+f5xcctl configuration get force_delete -n <namespace> <name>
 
 # List
-f5xcctl get force_deletes -n {namespace}
+f5xcctl configuration list force_delete -n <namespace>
 
 # Delete
-f5xcctl delete force_delete {name} -n {namespace}
+f5xcctl configuration delete force_delete -n <namespace> <name>
 ```
 
 ## Terraform Resource

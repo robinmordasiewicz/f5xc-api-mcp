@@ -34,16 +34,16 @@ Ask Claude to help you work with Bot Allowlist Policie resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f bot_allowlist_policie.yaml
+f5xcctl configuration create bot_allowlist_policie -n <namespace> -i bot_allowlist_policie.yaml
 
 # Get
-f5xcctl get bot_allowlist_policie {name} -n {namespace}
+f5xcctl configuration get bot_allowlist_policie -n <namespace> <name>
 
 # List
-f5xcctl get bot_allowlist_policies -n {namespace}
+f5xcctl configuration list bot_allowlist_policie -n <namespace>
 
 # Delete
-f5xcctl delete bot_allowlist_policie {name} -n {namespace}
+f5xcctl configuration delete bot_allowlist_policie -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with Origin Pool resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f origin_pool.yaml
+f5xcctl configuration create origin_pool -n <namespace> -i origin_pool.yaml
 
 # Get
-f5xcctl get origin_pool {name} -n {namespace}
+f5xcctl configuration get origin_pool -n <namespace> <name>
 
 # List
-f5xcctl get origin_pools -n {namespace}
+f5xcctl configuration list origin_pool -n <namespace>
 
 # Delete
-f5xcctl delete origin_pool {name} -n {namespace}
+f5xcctl configuration delete origin_pool -n <namespace> <name>
 ```
 
 ## Terraform Resource

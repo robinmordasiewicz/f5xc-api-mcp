@@ -58,16 +58,16 @@ Ask Claude to help you work with Network Firewall resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f network_firewall.yaml
+f5xcctl configuration create network_firewall -n <namespace> -i network_firewall.yaml
 
 # Get
-f5xcctl get network_firewall {name} -n {namespace}
+f5xcctl configuration get network_firewall -n <namespace> <name>
 
 # List
-f5xcctl get network_firewalls -n {namespace}
+f5xcctl configuration list network_firewall -n <namespace>
 
 # Delete
-f5xcctl delete network_firewall {name} -n {namespace}
+f5xcctl configuration delete network_firewall -n <namespace> <name>
 ```
 
 ## Terraform Resource

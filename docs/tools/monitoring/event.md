@@ -47,16 +47,16 @@ Ask Claude to help you work with Event resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f event.yaml
+f5xcctl configuration create event -n <namespace> -i event.yaml
 
 # Get
-f5xcctl get event {name} -n {namespace}
+f5xcctl configuration get event -n <namespace> <name>
 
 # List
-f5xcctl get events -n {namespace}
+f5xcctl configuration list event -n <namespace>
 
 # Delete
-f5xcctl delete event {name} -n {namespace}
+f5xcctl configuration delete event -n <namespace> <name>
 ```
 
 ## Terraform Resource

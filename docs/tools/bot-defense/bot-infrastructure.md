@@ -57,16 +57,16 @@ Ask Claude to help you work with Bot Infrastructure resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f bot_infrastructure.yaml
+f5xcctl configuration create bot_infrastructure -n <namespace> -i bot_infrastructure.yaml
 
 # Get
-f5xcctl get bot_infrastructure {name} -n {namespace}
+f5xcctl configuration get bot_infrastructure -n <namespace> <name>
 
 # List
-f5xcctl get bot_infrastructures -n {namespace}
+f5xcctl configuration list bot_infrastructure -n <namespace>
 
 # Delete
-f5xcctl delete bot_infrastructure {name} -n {namespace}
+f5xcctl configuration delete bot_infrastructure -n <namespace> <name>
 ```
 
 ## Terraform Resource

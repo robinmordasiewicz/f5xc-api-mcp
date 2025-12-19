@@ -58,16 +58,16 @@ Ask Claude to help you work with Nginx Service Discovery resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f nginx_service_discovery.yaml
+f5xcctl configuration create nginx_service_discovery -n <namespace> -i nginx_service_discovery.yaml
 
 # Get
-f5xcctl get nginx_service_discovery {name} -n {namespace}
+f5xcctl configuration get nginx_service_discovery -n <namespace> <name>
 
 # List
-f5xcctl get nginx_service_discoverys -n {namespace}
+f5xcctl configuration list nginx_service_discovery -n <namespace>
 
 # Delete
-f5xcctl delete nginx_service_discovery {name} -n {namespace}
+f5xcctl configuration delete nginx_service_discovery -n <namespace> <name>
 ```
 
 ## Terraform Resource

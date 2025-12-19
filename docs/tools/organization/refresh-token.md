@@ -26,16 +26,16 @@ Ask Claude to help you work with Refresh Token resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f refresh_token.yaml
+f5xcctl configuration create refresh_token -n <namespace> -i refresh_token.yaml
 
 # Get
-f5xcctl get refresh_token {name} -n {namespace}
+f5xcctl configuration get refresh_token -n <namespace> <name>
 
 # List
-f5xcctl get refresh_tokens -n {namespace}
+f5xcctl configuration list refresh_token -n <namespace>
 
 # Delete
-f5xcctl delete refresh_token {name} -n {namespace}
+f5xcctl configuration delete refresh_token -n <namespace> <name>
 ```
 
 ## Terraform Resource

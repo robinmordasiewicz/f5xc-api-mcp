@@ -40,16 +40,16 @@ Ask Claude to help you work with Service resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f service.yaml
+f5xcctl configuration create service -n <namespace> -i service.yaml
 
 # Get
-f5xcctl get service {name} -n {namespace}
+f5xcctl configuration get service -n <namespace> <name>
 
 # List
-f5xcctl get services -n {namespace}
+f5xcctl configuration list service -n <namespace>
 
 # Delete
-f5xcctl delete service {name} -n {namespace}
+f5xcctl configuration delete service -n <namespace> <name>
 ```
 
 ## Terraform Resource

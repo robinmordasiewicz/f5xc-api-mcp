@@ -44,16 +44,16 @@ Ask Claude to help you work with Implicit Label resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f implicit_label.yaml
+f5xcctl configuration create implicit_label -n <namespace> -i implicit_label.yaml
 
 # Get
-f5xcctl get implicit_label {name} -n {namespace}
+f5xcctl configuration get implicit_label -n <namespace> <name>
 
 # List
-f5xcctl get implicit_labels -n {namespace}
+f5xcctl configuration list implicit_label -n <namespace>
 
 # Delete
-f5xcctl delete implicit_label {name} -n {namespace}
+f5xcctl configuration delete implicit_label -n <namespace> <name>
 ```
 
 ## Terraform Resource

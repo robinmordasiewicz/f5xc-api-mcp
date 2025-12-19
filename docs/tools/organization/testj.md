@@ -34,16 +34,16 @@ Ask Claude to help you work with Testj resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f testj.yaml
+f5xcctl configuration create testj -n <namespace> -i testj.yaml
 
 # Get
-f5xcctl get testj {name} -n {namespace}
+f5xcctl configuration get testj -n <namespace> <name>
 
 # List
-f5xcctl get testjs -n {namespace}
+f5xcctl configuration list testj -n <namespace>
 
 # Delete
-f5xcctl delete testj {name} -n {namespace}
+f5xcctl configuration delete testj -n <namespace> <name>
 ```
 
 ## Terraform Resource

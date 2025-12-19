@@ -35,16 +35,16 @@ Ask Claude to help you work with Set VPC K8S Hostname resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f set_vpc_k8s_hostname.yaml
+f5xcctl configuration create set_vpc_k8s_hostname -n <namespace> -i set_vpc_k8s_hostname.yaml
 
 # Get
-f5xcctl get set_vpc_k8s_hostname {name} -n {namespace}
+f5xcctl configuration get set_vpc_k8s_hostname -n <namespace> <name>
 
 # List
-f5xcctl get set_vpc_k8s_hostnames -n {namespace}
+f5xcctl configuration list set_vpc_k8s_hostname -n <namespace>
 
 # Delete
-f5xcctl delete set_vpc_k8s_hostname {name} -n {namespace}
+f5xcctl configuration delete set_vpc_k8s_hostname -n <namespace> <name>
 ```
 
 ## Terraform Resource

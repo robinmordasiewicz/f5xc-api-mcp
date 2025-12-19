@@ -62,16 +62,16 @@ Ask Claude to help you work with Route resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f route.yaml
+f5xcctl configuration create route -n <namespace> -i route.yaml
 
 # Get
-f5xcctl get route {name} -n {namespace}
+f5xcctl configuration get route -n <namespace> <name>
 
 # List
-f5xcctl get routes -n {namespace}
+f5xcctl configuration list route -n <namespace>
 
 # Delete
-f5xcctl delete route {name} -n {namespace}
+f5xcctl configuration delete route -n <namespace> <name>
 ```
 
 ## Terraform Resource

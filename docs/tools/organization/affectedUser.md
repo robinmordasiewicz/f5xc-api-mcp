@@ -35,16 +35,16 @@ Ask Claude to help you work with AffectedUser resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f affectedUser.yaml
+f5xcctl configuration create affectedUser -n <namespace> -i affectedUser.yaml
 
 # Get
-f5xcctl get affectedUser {name} -n {namespace}
+f5xcctl configuration get affectedUser -n <namespace> <name>
 
 # List
-f5xcctl get affectedUsers -n {namespace}
+f5xcctl configuration list affectedUser -n <namespace>
 
 # Delete
-f5xcctl delete affectedUser {name} -n {namespace}
+f5xcctl configuration delete affectedUser -n <namespace> <name>
 ```
 
 ## Terraform Resource

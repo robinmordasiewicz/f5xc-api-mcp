@@ -52,16 +52,16 @@ Ask Claude to help you work with Third Party Application resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f third_party_application.yaml
+f5xcctl configuration create third_party_application -n <namespace> -i third_party_application.yaml
 
 # Get
-f5xcctl get third_party_application {name} -n {namespace}
+f5xcctl configuration get third_party_application -n <namespace> <name>
 
 # List
-f5xcctl get third_party_applications -n {namespace}
+f5xcctl configuration list third_party_application -n <namespace>
 
 # Delete
-f5xcctl delete third_party_application {name} -n {namespace}
+f5xcctl configuration delete third_party_application -n <namespace> <name>
 ```
 
 ## Terraform Resource

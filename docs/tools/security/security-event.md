@@ -38,16 +38,16 @@ Ask Claude to help you work with Security Event resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f security_event.yaml
+f5xcctl configuration create security_event -n <namespace> -i security_event.yaml
 
 # Get
-f5xcctl get security_event {name} -n {namespace}
+f5xcctl configuration get security_event -n <namespace> <name>
 
 # List
-f5xcctl get security_events -n {namespace}
+f5xcctl configuration list security_event -n <namespace>
 
 # Delete
-f5xcctl delete security_event {name} -n {namespace}
+f5xcctl configuration delete security_event -n <namespace> <name>
 ```
 
 ## Terraform Resource

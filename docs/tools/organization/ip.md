@@ -40,16 +40,16 @@ Ask Claude to help you work with IP resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f ip.yaml
+f5xcctl configuration create ip -n <namespace> -i ip.yaml
 
 # Get
-f5xcctl get ip {name} -n {namespace}
+f5xcctl configuration get ip -n <namespace> <name>
 
 # List
-f5xcctl get ips -n {namespace}
+f5xcctl configuration list ip -n <namespace>
 
 # Delete
-f5xcctl delete ip {name} -n {namespace}
+f5xcctl configuration delete ip -n <namespace> <name>
 ```
 
 ## Terraform Resource

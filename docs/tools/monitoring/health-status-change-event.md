@@ -37,16 +37,16 @@ Ask Claude to help you work with Health Status Change Event resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f health_status_change_event.yaml
+f5xcctl configuration create health_status_change_event -n <namespace> -i health_status_change_event.yaml
 
 # Get
-f5xcctl get health_status_change_event {name} -n {namespace}
+f5xcctl configuration get health_status_change_event -n <namespace> <name>
 
 # List
-f5xcctl get health_status_change_events -n {namespace}
+f5xcctl configuration list health_status_change_event -n <namespace>
 
 # Delete
-f5xcctl delete health_status_change_event {name} -n {namespace}
+f5xcctl configuration delete health_status_change_event -n <namespace> <name>
 ```
 
 ## Terraform Resource

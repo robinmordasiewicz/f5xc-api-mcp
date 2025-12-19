@@ -54,16 +54,16 @@ Ask Claude to help you work with Scroll resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f scroll.yaml
+f5xcctl configuration create scroll -n <namespace> -i scroll.yaml
 
 # Get
-f5xcctl get scroll {name} -n {namespace}
+f5xcctl configuration get scroll -n <namespace> <name>
 
 # List
-f5xcctl get scrolls -n {namespace}
+f5xcctl configuration list scroll -n <namespace>
 
 # Delete
-f5xcctl delete scroll {name} -n {namespace}
+f5xcctl configuration delete scroll -n <namespace> <name>
 ```
 
 ## Terraform Resource

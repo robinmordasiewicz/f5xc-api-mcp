@@ -34,16 +34,16 @@ Ask Claude to help you work with To resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f to.yaml
+f5xcctl configuration create to -n <namespace> -i to.yaml
 
 # Get
-f5xcctl get to {name} -n {namespace}
+f5xcctl configuration get to -n <namespace> <name>
 
 # List
-f5xcctl get tos -n {namespace}
+f5xcctl configuration list to -n <namespace>
 
 # Delete
-f5xcctl delete to {name} -n {namespace}
+f5xcctl configuration delete to -n <namespace> <name>
 ```
 
 ## Terraform Resource

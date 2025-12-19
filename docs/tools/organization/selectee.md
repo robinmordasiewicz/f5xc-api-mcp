@@ -35,16 +35,16 @@ Ask Claude to help you work with Selectee resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f selectee.yaml
+f5xcctl configuration create selectee -n <namespace> -i selectee.yaml
 
 # Get
-f5xcctl get selectee {name} -n {namespace}
+f5xcctl configuration get selectee -n <namespace> <name>
 
 # List
-f5xcctl get selectees -n {namespace}
+f5xcctl configuration list selectee -n <namespace>
 
 # Delete
-f5xcctl delete selectee {name} -n {namespace}
+f5xcctl configuration delete selectee -n <namespace> <name>
 ```
 
 ## Terraform Resource

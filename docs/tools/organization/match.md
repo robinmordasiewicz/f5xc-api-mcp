@@ -34,16 +34,16 @@ Ask Claude to help you work with Match resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f match.yaml
+f5xcctl configuration create match -n <namespace> -i match.yaml
 
 # Get
-f5xcctl get match {name} -n {namespace}
+f5xcctl configuration get match -n <namespace> <name>
 
 # List
-f5xcctl get matchs -n {namespace}
+f5xcctl configuration list match -n <namespace>
 
 # Delete
-f5xcctl delete match {name} -n {namespace}
+f5xcctl configuration delete match -n <namespace> <name>
 ```
 
 ## Terraform Resource

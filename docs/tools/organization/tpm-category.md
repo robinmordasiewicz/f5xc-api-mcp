@@ -57,16 +57,16 @@ Ask Claude to help you work with Tpm Category resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f tpm_category.yaml
+f5xcctl configuration create tpm_category -n <namespace> -i tpm_category.yaml
 
 # Get
-f5xcctl get tpm_category {name} -n {namespace}
+f5xcctl configuration get tpm_category -n <namespace> <name>
 
 # List
-f5xcctl get tpm_categorys -n {namespace}
+f5xcctl configuration list tpm_category -n <namespace>
 
 # Delete
-f5xcctl delete tpm_category {name} -n {namespace}
+f5xcctl configuration delete tpm_category -n <namespace> <name>
 ```
 
 ## Terraform Resource

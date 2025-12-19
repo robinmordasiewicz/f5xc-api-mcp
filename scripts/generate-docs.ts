@@ -72,17 +72,17 @@ function generateF5xcctlCommand(resource: string, operation: string): string {
 
   switch (operation) {
     case "list":
-      return `f5xcctl get ${normalizedResource}s -n {namespace}`;
+      return `f5xcctl configuration list ${normalizedResource} -n <namespace>`;
     case "get":
-      return `f5xcctl get ${normalizedResource} {name} -n {namespace}`;
+      return `f5xcctl configuration get ${normalizedResource} -n <namespace> <name>`;
     case "create":
-      return `f5xcctl apply -f ${normalizedResource}.yaml`;
+      return `f5xcctl configuration create ${normalizedResource} -n <namespace> -i ${normalizedResource}.yaml`;
     case "update":
-      return `f5xcctl apply -f ${normalizedResource}.yaml`;
+      return `f5xcctl configuration apply ${normalizedResource} -n <namespace> -i ${normalizedResource}.yaml`;
     case "delete":
-      return `f5xcctl delete ${normalizedResource} {name} -n {namespace}`;
+      return `f5xcctl configuration delete ${normalizedResource} -n <namespace> <name>`;
     default:
-      return `f5xcctl ${operation} ${normalizedResource}`;
+      return `f5xcctl configuration ${operation} ${normalizedResource}`;
   }
 }
 

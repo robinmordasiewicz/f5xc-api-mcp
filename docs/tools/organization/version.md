@@ -35,16 +35,16 @@ Ask Claude to help you work with Version resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f version.yaml
+f5xcctl configuration create version -n <namespace> -i version.yaml
 
 # Get
-f5xcctl get version {name} -n {namespace}
+f5xcctl configuration get version -n <namespace> <name>
 
 # List
-f5xcctl get versions -n {namespace}
+f5xcctl configuration list version -n <namespace>
 
 # Delete
-f5xcctl delete version {name} -n {namespace}
+f5xcctl configuration delete version -n <namespace> <name>
 ```
 
 ## Terraform Resource

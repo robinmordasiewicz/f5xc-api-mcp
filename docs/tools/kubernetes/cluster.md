@@ -61,16 +61,16 @@ Ask Claude to help you work with Cluster resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f cluster.yaml
+f5xcctl configuration create cluster -n <namespace> -i cluster.yaml
 
 # Get
-f5xcctl get cluster {name} -n {namespace}
+f5xcctl configuration get cluster -n <namespace> <name>
 
 # List
-f5xcctl get clusters -n {namespace}
+f5xcctl configuration list cluster -n <namespace>
 
 # Delete
-f5xcctl delete cluster {name} -n {namespace}
+f5xcctl configuration delete cluster -n <namespace> <name>
 ```
 
 ## Terraform Resource

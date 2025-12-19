@@ -28,16 +28,16 @@ Ask Claude to help you work with Discover VPC resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f discover_vpc.yaml
+f5xcctl configuration create discover_vpc -n <namespace> -i discover_vpc.yaml
 
 # Get
-f5xcctl get discover_vpc {name} -n {namespace}
+f5xcctl configuration get discover_vpc -n <namespace> <name>
 
 # List
-f5xcctl get discover_vpcs -n {namespace}
+f5xcctl configuration list discover_vpc -n <namespace>
 
 # Delete
-f5xcctl delete discover_vpc {name} -n {namespace}
+f5xcctl configuration delete discover_vpc -n <namespace> <name>
 ```
 
 ## Terraform Resource

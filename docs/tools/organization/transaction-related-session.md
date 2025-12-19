@@ -34,16 +34,16 @@ Ask Claude to help you work with Transaction Related Session resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f transaction_related_session.yaml
+f5xcctl configuration create transaction_related_session -n <namespace> -i transaction_related_session.yaml
 
 # Get
-f5xcctl get transaction_related_session {name} -n {namespace}
+f5xcctl configuration get transaction_related_session -n <namespace> <name>
 
 # List
-f5xcctl get transaction_related_sessions -n {namespace}
+f5xcctl configuration list transaction_related_session -n <namespace>
 
 # Delete
-f5xcctl delete transaction_related_session {name} -n {namespace}
+f5xcctl configuration delete transaction_related_session -n <namespace> <name>
 ```
 
 ## Terraform Resource

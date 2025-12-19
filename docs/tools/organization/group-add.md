@@ -22,16 +22,16 @@ Ask Claude to help you work with Group Add resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f group_add.yaml
+f5xcctl configuration create group_add -n <namespace> -i group_add.yaml
 
 # Get
-f5xcctl get group_add {name} -n {namespace}
+f5xcctl configuration get group_add -n <namespace> <name>
 
 # List
-f5xcctl get group_adds -n {namespace}
+f5xcctl configuration list group_add -n <namespace>
 
 # Delete
-f5xcctl delete group_add {name} -n {namespace}
+f5xcctl configuration delete group_add -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -27,16 +27,16 @@ Ask Claude to help you work with Login In Time resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f login_in_time.yaml
+f5xcctl configuration create login_in_time -n <namespace> -i login_in_time.yaml
 
 # Get
-f5xcctl get login_in_time {name} -n {namespace}
+f5xcctl configuration get login_in_time -n <namespace> <name>
 
 # List
-f5xcctl get login_in_times -n {namespace}
+f5xcctl configuration list login_in_time -n <namespace>
 
 # Delete
-f5xcctl delete login_in_time {name} -n {namespace}
+f5xcctl configuration delete login_in_time -n <namespace> <name>
 ```
 
 ## Terraform Resource

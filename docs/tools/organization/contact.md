@@ -58,16 +58,16 @@ Ask Claude to help you work with Contact resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f contact.yaml
+f5xcctl configuration create contact -n <namespace> -i contact.yaml
 
 # Get
-f5xcctl get contact {name} -n {namespace}
+f5xcctl configuration get contact -n <namespace> <name>
 
 # List
-f5xcctl get contacts -n {namespace}
+f5xcctl configuration list contact -n <namespace>
 
 # Delete
-f5xcctl delete contact {name} -n {namespace}
+f5xcctl configuration delete contact -n <namespace> <name>
 ```
 
 ## Terraform Resource

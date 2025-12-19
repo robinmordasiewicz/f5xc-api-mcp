@@ -41,16 +41,16 @@ Ask Claude to help you work with Active Service Policie resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f active_service_policie.yaml
+f5xcctl configuration create active_service_policie -n <namespace> -i active_service_policie.yaml
 
 # Get
-f5xcctl get active_service_policie {name} -n {namespace}
+f5xcctl configuration get active_service_policie -n <namespace> <name>
 
 # List
-f5xcctl get active_service_policies -n {namespace}
+f5xcctl configuration list active_service_policie -n <namespace>
 
 # Delete
-f5xcctl delete active_service_policie {name} -n {namespace}
+f5xcctl configuration delete active_service_policie -n <namespace> <name>
 ```
 
 ## Terraform Resource

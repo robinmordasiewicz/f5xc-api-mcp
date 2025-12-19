@@ -34,16 +34,16 @@ Ask Claude to help you work with Get Security Config resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f get_security_config.yaml
+f5xcctl configuration create get_security_config -n <namespace> -i get_security_config.yaml
 
 # Get
-f5xcctl get get_security_config {name} -n {namespace}
+f5xcctl configuration get get_security_config -n <namespace> <name>
 
 # List
-f5xcctl get get_security_configs -n {namespace}
+f5xcctl configuration list get_security_config -n <namespace>
 
 # Delete
-f5xcctl delete get_security_config {name} -n {namespace}
+f5xcctl configuration delete get_security_config -n <namespace> <name>
 ```
 
 ## Terraform Resource

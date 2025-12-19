@@ -40,16 +40,16 @@ Ask Claude to help you work with Configmap resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f configmap.yaml
+f5xcctl configuration create configmap -n <namespace> -i configmap.yaml
 
 # Get
-f5xcctl get configmap {name} -n {namespace}
+f5xcctl configuration get configmap -n <namespace> <name>
 
 # List
-f5xcctl get configmaps -n {namespace}
+f5xcctl configuration list configmap -n <namespace>
 
 # Delete
-f5xcctl delete configmap {name} -n {namespace}
+f5xcctl configuration delete configmap -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Start Debug Info Collection resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f start_debug_info_collection.yaml
+f5xcctl configuration create start_debug_info_collection -n <namespace> -i start_debug_info_collection.yaml
 
 # Get
-f5xcctl get start_debug_info_collection {name} -n {namespace}
+f5xcctl configuration get start_debug_info_collection -n <namespace> <name>
 
 # List
-f5xcctl get start_debug_info_collections -n {namespace}
+f5xcctl configuration list start_debug_info_collection -n <namespace>
 
 # Delete
-f5xcctl delete start_debug_info_collection {name} -n {namespace}
+f5xcctl configuration delete start_debug_info_collection -n <namespace> <name>
 ```
 
 ## Terraform Resource

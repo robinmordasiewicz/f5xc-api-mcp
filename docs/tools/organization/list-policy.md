@@ -35,16 +35,16 @@ Ask Claude to help you work with List Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f list_policy.yaml
+f5xcctl configuration create list_policy -n <namespace> -i list_policy.yaml
 
 # Get
-f5xcctl get list_policy {name} -n {namespace}
+f5xcctl configuration get list_policy -n <namespace> <name>
 
 # List
-f5xcctl get list_policys -n {namespace}
+f5xcctl configuration list list_policy -n <namespace>
 
 # Delete
-f5xcctl delete list_policy {name} -n {namespace}
+f5xcctl configuration delete list_policy -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -40,16 +40,16 @@ Ask Claude to help you work with Mapper resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f mapper.yaml
+f5xcctl configuration create mapper -n <namespace> -i mapper.yaml
 
 # Get
-f5xcctl get mapper {name} -n {namespace}
+f5xcctl configuration get mapper -n <namespace> <name>
 
 # List
-f5xcctl get mappers -n {namespace}
+f5xcctl configuration list mapper -n <namespace>
 
 # Delete
-f5xcctl delete mapper {name} -n {namespace}
+f5xcctl configuration delete mapper -n <namespace> <name>
 ```
 
 ## Terraform Resource

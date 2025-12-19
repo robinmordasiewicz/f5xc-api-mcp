@@ -26,16 +26,16 @@ Ask Claude to help you work with All Ns Stat resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f all_ns_stat.yaml
+f5xcctl configuration create all_ns_stat -n <namespace> -i all_ns_stat.yaml
 
 # Get
-f5xcctl get all_ns_stat {name} -n {namespace}
+f5xcctl configuration get all_ns_stat -n <namespace> <name>
 
 # List
-f5xcctl get all_ns_stats -n {namespace}
+f5xcctl configuration list all_ns_stat -n <namespace>
 
 # Delete
-f5xcctl delete all_ns_stat {name} -n {namespace}
+f5xcctl configuration delete all_ns_stat -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -60,16 +60,16 @@ Ask Claude to help you work with Network Interface resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f network_interface.yaml
+f5xcctl configuration create network_interface -n <namespace> -i network_interface.yaml
 
 # Get
-f5xcctl get network_interface {name} -n {namespace}
+f5xcctl configuration get network_interface -n <namespace> <name>
 
 # List
-f5xcctl get network_interfaces -n {namespace}
+f5xcctl configuration list network_interface -n <namespace>
 
 # Delete
-f5xcctl delete network_interface {name} -n {namespace}
+f5xcctl configuration delete network_interface -n <namespace> <name>
 ```
 
 ## Terraform Resource

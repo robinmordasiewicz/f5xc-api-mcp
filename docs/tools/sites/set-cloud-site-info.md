@@ -35,16 +35,16 @@ Ask Claude to help you work with Set Cloud Site Info resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f set_cloud_site_info.yaml
+f5xcctl configuration create set_cloud_site_info -n <namespace> -i set_cloud_site_info.yaml
 
 # Get
-f5xcctl get set_cloud_site_info {name} -n {namespace}
+f5xcctl configuration get set_cloud_site_info -n <namespace> <name>
 
 # List
-f5xcctl get set_cloud_site_infos -n {namespace}
+f5xcctl configuration list set_cloud_site_info -n <namespace>
 
 # Delete
-f5xcctl delete set_cloud_site_info {name} -n {namespace}
+f5xcctl configuration delete set_cloud_site_info -n <namespace> <name>
 ```
 
 ## Terraform Resource

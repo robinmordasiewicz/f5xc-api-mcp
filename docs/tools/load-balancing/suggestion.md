@@ -37,16 +37,16 @@ Ask Claude to help you work with Suggestion resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f suggestion.yaml
+f5xcctl configuration create suggestion -n <namespace> -i suggestion.yaml
 
 # Get
-f5xcctl get suggestion {name} -n {namespace}
+f5xcctl configuration get suggestion -n <namespace> <name>
 
 # List
-f5xcctl get suggestions -n {namespace}
+f5xcctl configuration list suggestion -n <namespace>
 
 # Delete
-f5xcctl delete suggestion {name} -n {namespace}
+f5xcctl configuration delete suggestion -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Verify resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f verify.yaml
+f5xcctl configuration create verify -n <namespace> -i verify.yaml
 
 # Get
-f5xcctl get verify {name} -n {namespace}
+f5xcctl configuration get verify -n <namespace> <name>
 
 # List
-f5xcctl get verifys -n {namespace}
+f5xcctl configuration list verify -n <namespace>
 
 # Delete
-f5xcctl delete verify {name} -n {namespace}
+f5xcctl configuration delete verify -n <namespace> <name>
 ```
 
 ## Terraform Resource

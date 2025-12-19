@@ -27,16 +27,16 @@ Ask Claude to help you work with View Preference resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f view_preference.yaml
+f5xcctl configuration create view_preference -n <namespace> -i view_preference.yaml
 
 # Get
-f5xcctl get view_preference {name} -n {namespace}
+f5xcctl configuration get view_preference -n <namespace> <name>
 
 # List
-f5xcctl get view_preferences -n {namespace}
+f5xcctl configuration list view_preference -n <namespace>
 
 # Delete
-f5xcctl delete view_preference {name} -n {namespace}
+f5xcctl configuration delete view_preference -n <namespace> <name>
 ```
 
 ## Terraform Resource

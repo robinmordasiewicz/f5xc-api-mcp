@@ -27,16 +27,16 @@ Ask Claude to help you work with Validate Registration resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f validate_registration.yaml
+f5xcctl configuration create validate_registration -n <namespace> -i validate_registration.yaml
 
 # Get
-f5xcctl get validate_registration {name} -n {namespace}
+f5xcctl configuration get validate_registration -n <namespace> <name>
 
 # List
-f5xcctl get validate_registrations -n {namespace}
+f5xcctl configuration list validate_registration -n <namespace>
 
 # Delete
-f5xcctl delete validate_registration {name} -n {namespace}
+f5xcctl configuration delete validate_registration -n <namespace> <name>
 ```
 
 ## Terraform Resource

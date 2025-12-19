@@ -31,16 +31,16 @@ Ask Claude to help you work with Session resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f session.yaml
+f5xcctl configuration create session -n <namespace> -i session.yaml
 
 # Get
-f5xcctl get session {name} -n {namespace}
+f5xcctl configuration get session -n <namespace> <name>
 
 # List
-f5xcctl get sessions -n {namespace}
+f5xcctl configuration list session -n <namespace>
 
 # Delete
-f5xcctl delete session {name} -n {namespace}
+f5xcctl configuration delete session -n <namespace> <name>
 ```
 
 ## Terraform Resource

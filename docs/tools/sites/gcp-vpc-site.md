@@ -58,16 +58,16 @@ Ask Claude to help you work with GCP VPC Site resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f gcp_vpc_site.yaml
+f5xcctl configuration create gcp_vpc_site -n <namespace> -i gcp_vpc_site.yaml
 
 # Get
-f5xcctl get gcp_vpc_site {name} -n {namespace}
+f5xcctl configuration get gcp_vpc_site -n <namespace> <name>
 
 # List
-f5xcctl get gcp_vpc_sites -n {namespace}
+f5xcctl configuration list gcp_vpc_site -n <namespace>
 
 # Delete
-f5xcctl delete gcp_vpc_site {name} -n {namespace}
+f5xcctl configuration delete gcp_vpc_site -n <namespace> <name>
 ```
 
 ## Terraform Resource

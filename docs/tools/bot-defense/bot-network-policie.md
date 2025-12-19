@@ -34,16 +34,16 @@ Ask Claude to help you work with Bot Network Policie resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f bot_network_policie.yaml
+f5xcctl configuration create bot_network_policie -n <namespace> -i bot_network_policie.yaml
 
 # Get
-f5xcctl get bot_network_policie {name} -n {namespace}
+f5xcctl configuration get bot_network_policie -n <namespace> <name>
 
 # List
-f5xcctl get bot_network_policies -n {namespace}
+f5xcctl configuration list bot_network_policie -n <namespace>
 
 # Delete
-f5xcctl delete bot_network_policie {name} -n {namespace}
+f5xcctl configuration delete bot_network_policie -n <namespace> <name>
 ```
 
 ## Terraform Resource

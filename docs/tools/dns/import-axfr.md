@@ -26,16 +26,16 @@ Ask Claude to help you work with Import Axfr resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f import_axfr.yaml
+f5xcctl configuration create import_axfr -n <namespace> -i import_axfr.yaml
 
 # Get
-f5xcctl get import_axfr {name} -n {namespace}
+f5xcctl configuration get import_axfr -n <namespace> <name>
 
 # List
-f5xcctl get import_axfrs -n {namespace}
+f5xcctl configuration list import_axfr -n <namespace>
 
 # Delete
-f5xcctl delete import_axfr {name} -n {namespace}
+f5xcctl configuration delete import_axfr -n <namespace> <name>
 ```
 
 ## Terraform Resource

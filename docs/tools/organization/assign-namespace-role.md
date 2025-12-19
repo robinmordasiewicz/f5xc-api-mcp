@@ -30,16 +30,16 @@ Ask Claude to help you work with Assign Namespace Role resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f assign_namespace_role.yaml
+f5xcctl configuration create assign_namespace_role -n <namespace> -i assign_namespace_role.yaml
 
 # Get
-f5xcctl get assign_namespace_role {name} -n {namespace}
+f5xcctl configuration get assign_namespace_role -n <namespace> <name>
 
 # List
-f5xcctl get assign_namespace_roles -n {namespace}
+f5xcctl configuration list assign_namespace_role -n <namespace>
 
 # Delete
-f5xcctl delete assign_namespace_role {name} -n {namespace}
+f5xcctl configuration delete assign_namespace_role -n <namespace> <name>
 ```
 
 ## Terraform Resource

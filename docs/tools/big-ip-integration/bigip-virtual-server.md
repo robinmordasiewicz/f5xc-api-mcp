@@ -52,16 +52,16 @@ Ask Claude to help you work with Bigip Virtual Server resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f bigip_virtual_server.yaml
+f5xcctl configuration create bigip_virtual_server -n <namespace> -i bigip_virtual_server.yaml
 
 # Get
-f5xcctl get bigip_virtual_server {name} -n {namespace}
+f5xcctl configuration get bigip_virtual_server -n <namespace> <name>
 
 # List
-f5xcctl get bigip_virtual_servers -n {namespace}
+f5xcctl configuration list bigip_virtual_server -n <namespace>
 
 # Delete
-f5xcctl delete bigip_virtual_server {name} -n {namespace}
+f5xcctl configuration delete bigip_virtual_server -n <namespace> <name>
 ```
 
 ## Terraform Resource

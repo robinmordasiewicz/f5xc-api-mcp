@@ -58,16 +58,16 @@ Ask Claude to help you work with Policer resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f policer.yaml
+f5xcctl configuration create policer -n <namespace> -i policer.yaml
 
 # Get
-f5xcctl get policer {name} -n {namespace}
+f5xcctl configuration get policer -n <namespace> <name>
 
 # List
-f5xcctl get policers -n {namespace}
+f5xcctl configuration list policer -n <namespace>
 
 # Delete
-f5xcctl delete policer {name} -n {namespace}
+f5xcctl configuration delete policer -n <namespace> <name>
 ```
 
 ## Terraform Resource

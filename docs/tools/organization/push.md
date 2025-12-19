@@ -35,16 +35,16 @@ Ask Claude to help you work with Push resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f push.yaml
+f5xcctl configuration create push -n <namespace> -i push.yaml
 
 # Get
-f5xcctl get push {name} -n {namespace}
+f5xcctl configuration get push -n <namespace> <name>
 
 # List
-f5xcctl get pushs -n {namespace}
+f5xcctl configuration list push -n <namespace>
 
 # Delete
-f5xcctl delete push {name} -n {namespace}
+f5xcctl configuration delete push -n <namespace> <name>
 ```
 
 ## Terraform Resource

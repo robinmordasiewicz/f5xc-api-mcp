@@ -34,16 +34,16 @@ Ask Claude to help you work with Flowlabel resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f flowlabel.yaml
+f5xcctl configuration create flowlabel -n <namespace> -i flowlabel.yaml
 
 # Get
-f5xcctl get flowlabel {name} -n {namespace}
+f5xcctl configuration get flowlabel -n <namespace> <name>
 
 # List
-f5xcctl get flowlabels -n {namespace}
+f5xcctl configuration list flowlabel -n <namespace>
 
 # Delete
-f5xcctl delete flowlabel {name} -n {namespace}
+f5xcctl configuration delete flowlabel -n <namespace> <name>
 ```
 
 ## Terraform Resource

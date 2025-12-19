@@ -35,16 +35,16 @@ Ask Claude to help you work with Export resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f export.yaml
+f5xcctl configuration create export -n <namespace> -i export.yaml
 
 # Get
-f5xcctl get export {name} -n {namespace}
+f5xcctl configuration get export -n <namespace> <name>
 
 # List
-f5xcctl get exports -n {namespace}
+f5xcctl configuration list export -n <namespace>
 
 # Delete
-f5xcctl delete export {name} -n {namespace}
+f5xcctl configuration delete export -n <namespace> <name>
 ```
 
 ## Terraform Resource

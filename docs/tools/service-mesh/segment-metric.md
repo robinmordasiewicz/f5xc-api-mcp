@@ -26,16 +26,16 @@ Ask Claude to help you work with Segment Metric resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f segment_metric.yaml
+f5xcctl configuration create segment_metric -n <namespace> -i segment_metric.yaml
 
 # Get
-f5xcctl get segment_metric {name} -n {namespace}
+f5xcctl configuration get segment_metric -n <namespace> <name>
 
 # List
-f5xcctl get segment_metrics -n {namespace}
+f5xcctl configuration list segment_metric -n <namespace>
 
 # Delete
-f5xcctl delete segment_metric {name} -n {namespace}
+f5xcctl configuration delete segment_metric -n <namespace> <name>
 ```
 
 ## Terraform Resource

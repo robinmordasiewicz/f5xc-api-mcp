@@ -58,16 +58,16 @@ Ask Claude to help you work with DNS Zone resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f dns_zone.yaml
+f5xcctl configuration create dns_zone -n <namespace> -i dns_zone.yaml
 
 # Get
-f5xcctl get dns_zone {name} -n {namespace}
+f5xcctl configuration get dns_zone -n <namespace> <name>
 
 # List
-f5xcctl get dns_zones -n {namespace}
+f5xcctl configuration list dns_zone -n <namespace>
 
 # Delete
-f5xcctl delete dns_zone {name} -n {namespace}
+f5xcctl configuration delete dns_zone -n <namespace> <name>
 ```
 
 ## Terraform Resource

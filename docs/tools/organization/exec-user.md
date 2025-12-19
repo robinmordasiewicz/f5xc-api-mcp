@@ -36,16 +36,16 @@ Ask Claude to help you work with Exec User resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f exec_user.yaml
+f5xcctl configuration create exec_user -n <namespace> -i exec_user.yaml
 
 # Get
-f5xcctl get exec_user {name} -n {namespace}
+f5xcctl configuration get exec_user -n <namespace> <name>
 
 # List
-f5xcctl get exec_users -n {namespace}
+f5xcctl configuration list exec_user -n <namespace>
 
 # Delete
-f5xcctl delete exec_user {name} -n {namespace}
+f5xcctl configuration delete exec_user -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -41,16 +41,16 @@ Ask Claude to help you work with Network resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f network.yaml
+f5xcctl configuration create network -n <namespace> -i network.yaml
 
 # Get
-f5xcctl get network {name} -n {namespace}
+f5xcctl configuration get network -n <namespace> <name>
 
 # List
-f5xcctl get networks -n {namespace}
+f5xcctl configuration list network -n <namespace>
 
 # Delete
-f5xcctl delete network {name} -n {namespace}
+f5xcctl configuration delete network -n <namespace> <name>
 ```
 
 ## Terraform Resource

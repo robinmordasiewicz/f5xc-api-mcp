@@ -35,16 +35,16 @@ Ask Claude to help you work with Set Vip Info resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f set_vip_info.yaml
+f5xcctl configuration create set_vip_info -n <namespace> -i set_vip_info.yaml
 
 # Get
-f5xcctl get set_vip_info {name} -n {namespace}
+f5xcctl configuration get set_vip_info -n <namespace> <name>
 
 # List
-f5xcctl get set_vip_infos -n {namespace}
+f5xcctl configuration list set_vip_info -n <namespace>
 
 # Delete
-f5xcctl delete set_vip_info {name} -n {namespace}
+f5xcctl configuration delete set_vip_info -n <namespace> <name>
 ```
 
 ## Terraform Resource

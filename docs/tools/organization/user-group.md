@@ -57,16 +57,16 @@ Ask Claude to help you work with User Group resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f user_group.yaml
+f5xcctl configuration create user_group -n <namespace> -i user_group.yaml
 
 # Get
-f5xcctl get user_group {name} -n {namespace}
+f5xcctl configuration get user_group -n <namespace> <name>
 
 # List
-f5xcctl get user_groups -n {namespace}
+f5xcctl configuration list user_group -n <namespace>
 
 # Delete
-f5xcctl delete user_group {name} -n {namespace}
+f5xcctl configuration delete user_group -n <namespace> <name>
 ```
 
 ## Terraform Resource

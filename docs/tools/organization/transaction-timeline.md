@@ -34,16 +34,16 @@ Ask Claude to help you work with Transaction Timeline resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f transaction_timeline.yaml
+f5xcctl configuration create transaction_timeline -n <namespace> -i transaction_timeline.yaml
 
 # Get
-f5xcctl get transaction_timeline {name} -n {namespace}
+f5xcctl configuration get transaction_timeline -n <namespace> <name>
 
 # List
-f5xcctl get transaction_timelines -n {namespace}
+f5xcctl configuration list transaction_timeline -n <namespace>
 
 # Delete
-f5xcctl delete transaction_timeline {name} -n {namespace}
+f5xcctl configuration delete transaction_timeline -n <namespace> <name>
 ```
 
 ## Terraform Resource

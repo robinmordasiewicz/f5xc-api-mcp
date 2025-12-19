@@ -28,16 +28,16 @@ Ask Claude to help you work with Enable resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f enable.yaml
+f5xcctl configuration create enable -n <namespace> -i enable.yaml
 
 # Get
-f5xcctl get enable {name} -n {namespace}
+f5xcctl configuration get enable -n <namespace> <name>
 
 # List
-f5xcctl get enables -n {namespace}
+f5xcctl configuration list enable -n <namespace>
 
 # Delete
-f5xcctl delete enable {name} -n {namespace}
+f5xcctl configuration delete enable -n <namespace> <name>
 ```
 
 ## Terraform Resource

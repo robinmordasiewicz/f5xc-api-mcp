@@ -49,16 +49,16 @@ Ask Claude to help you work with API Group resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f api_group.yaml
+f5xcctl configuration create api_group -n <namespace> -i api_group.yaml
 
 # Get
-f5xcctl get api_group {name} -n {namespace}
+f5xcctl configuration get api_group -n <namespace> <name>
 
 # List
-f5xcctl get api_groups -n {namespace}
+f5xcctl configuration list api_group -n <namespace>
 
 # Delete
-f5xcctl delete api_group {name} -n {namespace}
+f5xcctl configuration delete api_group -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -34,16 +34,16 @@ Ask Claude to help you work with API Endpoint Protection resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f api_endpoint_protection.yaml
+f5xcctl configuration create api_endpoint_protection -n <namespace> -i api_endpoint_protection.yaml
 
 # Get
-f5xcctl get api_endpoint_protection {name} -n {namespace}
+f5xcctl configuration get api_endpoint_protection -n <namespace> <name>
 
 # List
-f5xcctl get api_endpoint_protections -n {namespace}
+f5xcctl configuration list api_endpoint_protection -n <namespace>
 
 # Delete
-f5xcctl delete api_endpoint_protection {name} -n {namespace}
+f5xcctl configuration delete api_endpoint_protection -n <namespace> <name>
 ```
 
 ## Terraform Resource

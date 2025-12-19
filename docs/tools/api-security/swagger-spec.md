@@ -35,16 +35,16 @@ Ask Claude to help you work with Swagger Spec resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f swagger_spec.yaml
+f5xcctl configuration create swagger_spec -n <namespace> -i swagger_spec.yaml
 
 # Get
-f5xcctl get swagger_spec {name} -n {namespace}
+f5xcctl configuration get swagger_spec -n <namespace> <name>
 
 # List
-f5xcctl get swagger_specs -n {namespace}
+f5xcctl configuration list swagger_spec -n <namespace>
 
 # Delete
-f5xcctl delete swagger_spec {name} -n {namespace}
+f5xcctl configuration delete swagger_spec -n <namespace> <name>
 ```
 
 ## Terraform Resource

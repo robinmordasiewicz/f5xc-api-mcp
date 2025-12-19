@@ -60,16 +60,16 @@ Ask Claude to help you work with Healthcheck resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f healthcheck.yaml
+f5xcctl configuration create healthcheck -n <namespace> -i healthcheck.yaml
 
 # Get
-f5xcctl get healthcheck {name} -n {namespace}
+f5xcctl configuration get healthcheck -n <namespace> <name>
 
 # List
-f5xcctl get healthchecks -n {namespace}
+f5xcctl configuration list healthcheck -n <namespace>
 
 # Delete
-f5xcctl delete healthcheck {name} -n {namespace}
+f5xcctl configuration delete healthcheck -n <namespace> <name>
 ```
 
 ## Terraform Resource

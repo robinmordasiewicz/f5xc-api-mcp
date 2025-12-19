@@ -34,16 +34,16 @@ Ask Claude to help you work with Unaddressed Automation resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f unaddressed_automation.yaml
+f5xcctl configuration create unaddressed_automation -n <namespace> -i unaddressed_automation.yaml
 
 # Get
-f5xcctl get unaddressed_automation {name} -n {namespace}
+f5xcctl configuration get unaddressed_automation -n <namespace> <name>
 
 # List
-f5xcctl get unaddressed_automations -n {namespace}
+f5xcctl configuration list unaddressed_automation -n <namespace>
 
 # Delete
-f5xcctl delete unaddressed_automation {name} -n {namespace}
+f5xcctl configuration delete unaddressed_automation -n <namespace> <name>
 ```
 
 ## Terraform Resource

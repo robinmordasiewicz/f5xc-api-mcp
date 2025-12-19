@@ -34,16 +34,16 @@ Ask Claude to help you work with Good resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f good.yaml
+f5xcctl configuration create good -n <namespace> -i good.yaml
 
 # Get
-f5xcctl get good {name} -n {namespace}
+f5xcctl configuration get good -n <namespace> <name>
 
 # List
-f5xcctl get goods -n {namespace}
+f5xcctl configuration list good -n <namespace>
 
 # Delete
-f5xcctl delete good {name} -n {namespace}
+f5xcctl configuration delete good -n <namespace> <name>
 ```
 
 ## Terraform Resource

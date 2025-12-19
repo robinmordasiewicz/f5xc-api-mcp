@@ -42,16 +42,16 @@ Ask Claude to help you work with Scim Token resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f scim_token.yaml
+f5xcctl configuration create scim_token -n <namespace> -i scim_token.yaml
 
 # Get
-f5xcctl get scim_token {name} -n {namespace}
+f5xcctl configuration get scim_token -n <namespace> <name>
 
 # List
-f5xcctl get scim_tokens -n {namespace}
+f5xcctl configuration list scim_token -n <namespace>
 
 # Delete
-f5xcctl delete scim_token {name} -n {namespace}
+f5xcctl configuration delete scim_token -n <namespace> <name>
 ```
 
 ## Terraform Resource

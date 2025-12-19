@@ -27,16 +27,16 @@ Ask Claude to help you work with RegisterBootstrap resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f registerBootstrap.yaml
+f5xcctl configuration create registerBootstrap -n <namespace> -i registerBootstrap.yaml
 
 # Get
-f5xcctl get registerBootstrap {name} -n {namespace}
+f5xcctl configuration get registerBootstrap -n <namespace> <name>
 
 # List
-f5xcctl get registerBootstraps -n {namespace}
+f5xcctl configuration list registerBootstrap -n <namespace>
 
 # Delete
-f5xcctl delete registerBootstrap {name} -n {namespace}
+f5xcctl configuration delete registerBootstrap -n <namespace> <name>
 ```
 
 ## Terraform Resource

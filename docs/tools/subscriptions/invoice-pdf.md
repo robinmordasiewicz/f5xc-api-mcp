@@ -40,16 +40,16 @@ Ask Claude to help you work with Invoice Pdf resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f invoice_pdf.yaml
+f5xcctl configuration create invoice_pdf -n <namespace> -i invoice_pdf.yaml
 
 # Get
-f5xcctl get invoice_pdf {name} -n {namespace}
+f5xcctl configuration get invoice_pdf -n <namespace> <name>
 
 # List
-f5xcctl get invoice_pdfs -n {namespace}
+f5xcctl configuration list invoice_pdf -n <namespace>
 
 # Delete
-f5xcctl delete invoice_pdf {name} -n {namespace}
+f5xcctl configuration delete invoice_pdf -n <namespace> <name>
 ```
 
 ## Terraform Resource

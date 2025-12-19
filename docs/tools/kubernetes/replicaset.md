@@ -35,16 +35,16 @@ Ask Claude to help you work with Replicaset resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f replicaset.yaml
+f5xcctl configuration create replicaset -n <namespace> -i replicaset.yaml
 
 # Get
-f5xcctl get replicaset {name} -n {namespace}
+f5xcctl configuration get replicaset -n <namespace> <name>
 
 # List
-f5xcctl get replicasets -n {namespace}
+f5xcctl configuration list replicaset -n <namespace>
 
 # Delete
-f5xcctl delete replicaset {name} -n {namespace}
+f5xcctl configuration delete replicaset -n <namespace> <name>
 ```
 
 ## Terraform Resource

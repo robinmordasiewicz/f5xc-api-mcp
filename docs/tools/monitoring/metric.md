@@ -34,16 +34,16 @@ Ask Claude to help you work with Metric resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f metric.yaml
+f5xcctl configuration create metric -n <namespace> -i metric.yaml
 
 # Get
-f5xcctl get metric {name} -n {namespace}
+f5xcctl configuration get metric -n <namespace> <name>
 
 # List
-f5xcctl get metrics -n {namespace}
+f5xcctl configuration list metric -n <namespace>
 
 # Delete
-f5xcctl delete metric {name} -n {namespace}
+f5xcctl configuration delete metric -n <namespace> <name>
 ```
 
 ## Terraform Resource

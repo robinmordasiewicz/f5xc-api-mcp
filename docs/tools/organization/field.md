@@ -34,16 +34,16 @@ Ask Claude to help you work with Field resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f field.yaml
+f5xcctl configuration create field -n <namespace> -i field.yaml
 
 # Get
-f5xcctl get field {name} -n {namespace}
+f5xcctl configuration get field -n <namespace> <name>
 
 # List
-f5xcctl get fields -n {namespace}
+f5xcctl configuration list field -n <namespace>
 
 # Delete
-f5xcctl delete field {name} -n {namespace}
+f5xcctl configuration delete field -n <namespace> <name>
 ```
 
 ## Terraform Resource

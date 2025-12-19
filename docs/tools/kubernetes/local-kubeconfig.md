@@ -40,16 +40,16 @@ Ask Claude to help you work with Local Kubeconfig resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f local_kubeconfig.yaml
+f5xcctl configuration create local_kubeconfig -n <namespace> -i local_kubeconfig.yaml
 
 # Get
-f5xcctl get local_kubeconfig {name} -n {namespace}
+f5xcctl configuration get local_kubeconfig -n <namespace> <name>
 
 # List
-f5xcctl get local_kubeconfigs -n {namespace}
+f5xcctl configuration list local_kubeconfig -n <namespace>
 
 # Delete
-f5xcctl delete local_kubeconfig {name} -n {namespace}
+f5xcctl configuration delete local_kubeconfig -n <namespace> <name>
 ```
 
 ## Terraform Resource

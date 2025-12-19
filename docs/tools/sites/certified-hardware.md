@@ -49,16 +49,16 @@ Ask Claude to help you work with Certified Hardware resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f certified_hardware.yaml
+f5xcctl configuration create certified_hardware -n <namespace> -i certified_hardware.yaml
 
 # Get
-f5xcctl get certified_hardware {name} -n {namespace}
+f5xcctl configuration get certified_hardware -n <namespace> <name>
 
 # List
-f5xcctl get certified_hardwares -n {namespace}
+f5xcctl configuration list certified_hardware -n <namespace>
 
 # Delete
-f5xcctl delete certified_hardware {name} -n {namespace}
+f5xcctl configuration delete certified_hardware -n <namespace> <name>
 ```
 
 ## Terraform Resource

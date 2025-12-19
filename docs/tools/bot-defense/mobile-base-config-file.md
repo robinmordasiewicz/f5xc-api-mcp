@@ -35,16 +35,16 @@ Ask Claude to help you work with Mobile Base Config File resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f mobile_base_config_file.yaml
+f5xcctl configuration create mobile_base_config_file -n <namespace> -i mobile_base_config_file.yaml
 
 # Get
-f5xcctl get mobile_base_config_file {name} -n {namespace}
+f5xcctl configuration get mobile_base_config_file -n <namespace> <name>
 
 # List
-f5xcctl get mobile_base_config_files -n {namespace}
+f5xcctl configuration list mobile_base_config_file -n <namespace>
 
 # Delete
-f5xcctl delete mobile_base_config_file {name} -n {namespace}
+f5xcctl configuration delete mobile_base_config_file -n <namespace> <name>
 ```
 
 ## Terraform Resource

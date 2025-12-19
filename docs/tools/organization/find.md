@@ -34,16 +34,16 @@ Ask Claude to help you work with Find resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f find.yaml
+f5xcctl configuration create find -n <namespace> -i find.yaml
 
 # Get
-f5xcctl get find {name} -n {namespace}
+f5xcctl configuration get find -n <namespace> <name>
 
 # List
-f5xcctl get finds -n {namespace}
+f5xcctl configuration list find -n <namespace>
 
 # Delete
-f5xcctl delete find {name} -n {namespace}
+f5xcctl configuration delete find -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -34,16 +34,16 @@ Ask Claude to help you work with Datadictionary resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f datadictionary.yaml
+f5xcctl configuration create datadictionary -n <namespace> -i datadictionary.yaml
 
 # Get
-f5xcctl get datadictionary {name} -n {namespace}
+f5xcctl configuration get datadictionary -n <namespace> <name>
 
 # List
-f5xcctl get datadictionarys -n {namespace}
+f5xcctl configuration list datadictionary -n <namespace>
 
 # Delete
-f5xcctl delete datadictionary {name} -n {namespace}
+f5xcctl configuration delete datadictionary -n <namespace> <name>
 ```
 
 ## Terraform Resource

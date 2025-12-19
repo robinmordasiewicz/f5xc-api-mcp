@@ -44,16 +44,16 @@ Ask Claude to help you work with Monitor History resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f monitor_history.yaml
+f5xcctl configuration create monitor_history -n <namespace> -i monitor_history.yaml
 
 # Get
-f5xcctl get monitor_history {name} -n {namespace}
+f5xcctl configuration get monitor_history -n <namespace> <name>
 
 # List
-f5xcctl get monitor_historys -n {namespace}
+f5xcctl configuration list monitor_history -n <namespace>
 
 # Delete
-f5xcctl delete monitor_history {name} -n {namespace}
+f5xcctl configuration delete monitor_history -n <namespace> <name>
 ```
 
 ## Terraform Resource

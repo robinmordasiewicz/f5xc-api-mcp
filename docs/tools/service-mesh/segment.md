@@ -58,16 +58,16 @@ Ask Claude to help you work with Segment resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f segment.yaml
+f5xcctl configuration create segment -n <namespace> -i segment.yaml
 
 # Get
-f5xcctl get segment {name} -n {namespace}
+f5xcctl configuration get segment -n <namespace> <name>
 
 # List
-f5xcctl get segments -n {namespace}
+f5xcctl configuration list segment -n <namespace>
 
 # Delete
-f5xcctl delete segment {name} -n {namespace}
+f5xcctl configuration delete segment -n <namespace> <name>
 ```
 
 ## Terraform Resource

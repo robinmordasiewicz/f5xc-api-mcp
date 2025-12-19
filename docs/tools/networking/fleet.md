@@ -58,16 +58,16 @@ Ask Claude to help you work with Fleet resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f fleet.yaml
+f5xcctl configuration create fleet -n <namespace> -i fleet.yaml
 
 # Get
-f5xcctl get fleet {name} -n {namespace}
+f5xcctl configuration get fleet -n <namespace> <name>
 
 # List
-f5xcctl get fleets -n {namespace}
+f5xcctl configuration list fleet -n <namespace>
 
 # Delete
-f5xcctl delete fleet {name} -n {namespace}
+f5xcctl configuration delete fleet -n <namespace> <name>
 ```
 
 ## Terraform Resource

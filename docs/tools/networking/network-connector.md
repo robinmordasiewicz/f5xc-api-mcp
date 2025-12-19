@@ -58,16 +58,16 @@ Ask Claude to help you work with Network Connector resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f network_connector.yaml
+f5xcctl configuration create network_connector -n <namespace> -i network_connector.yaml
 
 # Get
-f5xcctl get network_connector {name} -n {namespace}
+f5xcctl configuration get network_connector -n <namespace> <name>
 
 # List
-f5xcctl get network_connectors -n {namespace}
+f5xcctl configuration list network_connector -n <namespace>
 
 # Delete
-f5xcctl delete network_connector {name} -n {namespace}
+f5xcctl configuration delete network_connector -n <namespace> <name>
 ```
 
 ## Terraform Resource

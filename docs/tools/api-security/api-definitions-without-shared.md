@@ -36,16 +36,16 @@ Ask Claude to help you work with API Definitions Without Shared resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f api_definitions_without_shared.yaml
+f5xcctl configuration create api_definitions_without_shared -n <namespace> -i api_definitions_without_shared.yaml
 
 # Get
-f5xcctl get api_definitions_without_shared {name} -n {namespace}
+f5xcctl configuration get api_definitions_without_shared -n <namespace> <name>
 
 # List
-f5xcctl get api_definitions_without_shareds -n {namespace}
+f5xcctl configuration list api_definitions_without_shared -n <namespace>
 
 # Delete
-f5xcctl delete api_definitions_without_shared {name} -n {namespace}
+f5xcctl configuration delete api_definitions_without_shared -n <namespace> <name>
 ```
 
 ## Terraform Resource

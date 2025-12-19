@@ -41,16 +41,16 @@ Ask Claude to help you work with List resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f list.yaml
+f5xcctl configuration create list -n <namespace> -i list.yaml
 
 # Get
-f5xcctl get list {name} -n {namespace}
+f5xcctl configuration get list -n <namespace> <name>
 
 # List
-f5xcctl get lists -n {namespace}
+f5xcctl configuration list list -n <namespace>
 
 # Delete
-f5xcctl delete list {name} -n {namespace}
+f5xcctl configuration delete list -n <namespace> <name>
 ```
 
 ## Terraform Resource

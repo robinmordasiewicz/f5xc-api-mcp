@@ -37,16 +37,16 @@ Ask Claude to help you work with Login resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f login.yaml
+f5xcctl configuration create login -n <namespace> -i login.yaml
 
 # Get
-f5xcctl get login {name} -n {namespace}
+f5xcctl configuration get login -n <namespace> <name>
 
 # List
-f5xcctl get logins -n {namespace}
+f5xcctl configuration list login -n <namespace>
 
 # Delete
-f5xcctl delete login {name} -n {namespace}
+f5xcctl configuration delete login -n <namespace> <name>
 ```
 
 ## Terraform Resource

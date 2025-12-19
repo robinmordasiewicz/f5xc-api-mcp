@@ -34,16 +34,16 @@ Ask Claude to help you work with Threat Campaign resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f threat_campaign.yaml
+f5xcctl configuration create threat_campaign -n <namespace> -i threat_campaign.yaml
 
 # Get
-f5xcctl get threat_campaign {name} -n {namespace}
+f5xcctl configuration get threat_campaign -n <namespace> <name>
 
 # List
-f5xcctl get threat_campaigns -n {namespace}
+f5xcctl configuration list threat_campaign -n <namespace>
 
 # Delete
-f5xcctl delete threat_campaign {name} -n {namespace}
+f5xcctl configuration delete threat_campaign -n <namespace> <name>
 ```
 
 ## Terraform Resource

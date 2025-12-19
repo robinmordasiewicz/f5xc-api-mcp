@@ -34,16 +34,16 @@ Ask Claude to help you work with Device resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f device.yaml
+f5xcctl configuration create device -n <namespace> -i device.yaml
 
 # Get
-f5xcctl get device {name} -n {namespace}
+f5xcctl configuration get device -n <namespace> <name>
 
 # List
-f5xcctl get devices -n {namespace}
+f5xcctl configuration list device -n <namespace>
 
 # Delete
-f5xcctl delete device {name} -n {namespace}
+f5xcctl configuration delete device -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -24,16 +24,16 @@ Ask Claude to help you work with Unset resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f unset.yaml
+f5xcctl configuration create unset -n <namespace> -i unset.yaml
 
 # Get
-f5xcctl get unset {name} -n {namespace}
+f5xcctl configuration get unset -n <namespace> <name>
 
 # List
-f5xcctl get unsets -n {namespace}
+f5xcctl configuration list unset -n <namespace>
 
 # Delete
-f5xcctl delete unset {name} -n {namespace}
+f5xcctl configuration delete unset -n <namespace> <name>
 ```
 
 ## Terraform Resource

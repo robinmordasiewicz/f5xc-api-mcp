@@ -35,16 +35,16 @@ Ask Claude to help you work with Local Zone File resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f local_zone_file.yaml
+f5xcctl configuration create local_zone_file -n <namespace> -i local_zone_file.yaml
 
 # Get
-f5xcctl get local_zone_file {name} -n {namespace}
+f5xcctl configuration get local_zone_file -n <namespace> <name>
 
 # List
-f5xcctl get local_zone_files -n {namespace}
+f5xcctl configuration list local_zone_file -n <namespace>
 
 # Delete
-f5xcctl delete local_zone_file {name} -n {namespace}
+f5xcctl configuration delete local_zone_file -n <namespace> <name>
 ```
 
 ## Terraform Resource

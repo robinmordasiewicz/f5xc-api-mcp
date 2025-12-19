@@ -26,16 +26,16 @@ Ask Claude to help you work with Validate Ticket Tracking System resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f validate_ticket_tracking_system.yaml
+f5xcctl configuration create validate_ticket_tracking_system -n <namespace> -i validate_ticket_tracking_system.yaml
 
 # Get
-f5xcctl get validate_ticket_tracking_system {name} -n {namespace}
+f5xcctl configuration get validate_ticket_tracking_system -n <namespace> <name>
 
 # List
-f5xcctl get validate_ticket_tracking_systems -n {namespace}
+f5xcctl configuration list validate_ticket_tracking_system -n <namespace>
 
 # Delete
-f5xcctl delete validate_ticket_tracking_system {name} -n {namespace}
+f5xcctl configuration delete validate_ticket_tracking_system -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -49,16 +49,16 @@ Ask Claude to help you work with Plan resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f plan.yaml
+f5xcctl configuration create plan -n <namespace> -i plan.yaml
 
 # Get
-f5xcctl get plan {name} -n {namespace}
+f5xcctl configuration get plan -n <namespace> <name>
 
 # List
-f5xcctl get plans -n {namespace}
+f5xcctl configuration list plan -n <namespace>
 
 # Delete
-f5xcctl delete plan {name} -n {namespace}
+f5xcctl configuration delete plan -n <namespace> <name>
 ```
 
 ## Terraform Resource

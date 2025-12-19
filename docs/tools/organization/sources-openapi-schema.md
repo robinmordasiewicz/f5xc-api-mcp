@@ -42,16 +42,16 @@ Ask Claude to help you work with Sources Openapi Schema resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f sources_openapi_schema.yaml
+f5xcctl configuration create sources_openapi_schema -n <namespace> -i sources_openapi_schema.yaml
 
 # Get
-f5xcctl get sources_openapi_schema {name} -n {namespace}
+f5xcctl configuration get sources_openapi_schema -n <namespace> <name>
 
 # List
-f5xcctl get sources_openapi_schemas -n {namespace}
+f5xcctl configuration list sources_openapi_schema -n <namespace>
 
 # Delete
-f5xcctl delete sources_openapi_schema {name} -n {namespace}
+f5xcctl configuration delete sources_openapi_schema -n <namespace> <name>
 ```
 
 ## Terraform Resource

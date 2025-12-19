@@ -37,16 +37,16 @@ Ask Claude to help you work with Evaluate resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f evaluate.yaml
+f5xcctl configuration create evaluate -n <namespace> -i evaluate.yaml
 
 # Get
-f5xcctl get evaluate {name} -n {namespace}
+f5xcctl configuration get evaluate -n <namespace> <name>
 
 # List
-f5xcctl get evaluates -n {namespace}
+f5xcctl configuration list evaluate -n <namespace>
 
 # Delete
-f5xcctl delete evaluate {name} -n {namespace}
+f5xcctl configuration delete evaluate -n <namespace> <name>
 ```
 
 ## Terraform Resource

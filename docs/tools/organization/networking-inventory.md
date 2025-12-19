@@ -29,16 +29,16 @@ Ask Claude to help you work with Networking Inventory resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f networking_inventory.yaml
+f5xcctl configuration create networking_inventory -n <namespace> -i networking_inventory.yaml
 
 # Get
-f5xcctl get networking_inventory {name} -n {namespace}
+f5xcctl configuration get networking_inventory -n <namespace> <name>
 
 # List
-f5xcctl get networking_inventorys -n {namespace}
+f5xcctl configuration list networking_inventory -n <namespace>
 
 # Delete
-f5xcctl delete networking_inventory {name} -n {namespace}
+f5xcctl configuration delete networking_inventory -n <namespace> <name>
 ```
 
 ## Terraform Resource

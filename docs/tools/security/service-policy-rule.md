@@ -59,16 +59,16 @@ Ask Claude to help you work with Service Policy Rule resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f service_policy_rule.yaml
+f5xcctl configuration create service_policy_rule -n <namespace> -i service_policy_rule.yaml
 
 # Get
-f5xcctl get service_policy_rule {name} -n {namespace}
+f5xcctl configuration get service_policy_rule -n <namespace> <name>
 
 # List
-f5xcctl get service_policy_rules -n {namespace}
+f5xcctl configuration list service_policy_rule -n <namespace>
 
 # Delete
-f5xcctl delete service_policy_rule {name} -n {namespace}
+f5xcctl configuration delete service_policy_rule -n <namespace> <name>
 ```
 
 ## Terraform Resource

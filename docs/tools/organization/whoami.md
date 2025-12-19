@@ -36,16 +36,16 @@ Ask Claude to help you work with Whoami resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f whoami.yaml
+f5xcctl configuration create whoami -n <namespace> -i whoami.yaml
 
 # Get
-f5xcctl get whoami {name} -n {namespace}
+f5xcctl configuration get whoami -n <namespace> <name>
 
 # List
-f5xcctl get whoamis -n {namespace}
+f5xcctl configuration list whoami -n <namespace>
 
 # Delete
-f5xcctl delete whoami {name} -n {namespace}
+f5xcctl configuration delete whoami -n <namespace> <name>
 ```
 
 ## Terraform Resource

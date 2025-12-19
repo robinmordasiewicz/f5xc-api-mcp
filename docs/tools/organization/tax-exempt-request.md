@@ -29,16 +29,16 @@ Ask Claude to help you work with Tax Exempt Request resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f tax_exempt_request.yaml
+f5xcctl configuration create tax_exempt_request -n <namespace> -i tax_exempt_request.yaml
 
 # Get
-f5xcctl get tax_exempt_request {name} -n {namespace}
+f5xcctl configuration get tax_exempt_request -n <namespace> <name>
 
 # List
-f5xcctl get tax_exempt_requests -n {namespace}
+f5xcctl configuration list tax_exempt_request -n <namespace>
 
 # Delete
-f5xcctl delete tax_exempt_request {name} -n {namespace}
+f5xcctl configuration delete tax_exempt_request -n <namespace> <name>
 ```
 
 ## Terraform Resource

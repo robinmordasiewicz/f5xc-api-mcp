@@ -58,16 +58,16 @@ Ask Claude to help you work with Infraprotect Deny List Rule resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f infraprotect_deny_list_rule.yaml
+f5xcctl configuration create infraprotect_deny_list_rule -n <namespace> -i infraprotect_deny_list_rule.yaml
 
 # Get
-f5xcctl get infraprotect_deny_list_rule {name} -n {namespace}
+f5xcctl configuration get infraprotect_deny_list_rule -n <namespace> <name>
 
 # List
-f5xcctl get infraprotect_deny_list_rules -n {namespace}
+f5xcctl configuration list infraprotect_deny_list_rule -n <namespace>
 
 # Delete
-f5xcctl delete infraprotect_deny_list_rule {name} -n {namespace}
+f5xcctl configuration delete infraprotect_deny_list_rule -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Change Password resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f change_password.yaml
+f5xcctl configuration create change_password -n <namespace> -i change_password.yaml
 
 # Get
-f5xcctl get change_password {name} -n {namespace}
+f5xcctl configuration get change_password -n <namespace> <name>
 
 # List
-f5xcctl get change_passwords -n {namespace}
+f5xcctl configuration list change_password -n <namespace>
 
 # Delete
-f5xcctl delete change_password {name} -n {namespace}
+f5xcctl configuration delete change_password -n <namespace> <name>
 ```
 
 ## Terraform Resource

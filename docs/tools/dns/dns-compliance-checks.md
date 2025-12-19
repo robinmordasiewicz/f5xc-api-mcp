@@ -59,16 +59,16 @@ Ask Claude to help you work with DNS Compliance Checks resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f dns_compliance_checks.yaml
+f5xcctl configuration create dns_compliance_checks -n <namespace> -i dns_compliance_checks.yaml
 
 # Get
-f5xcctl get dns_compliance_checks {name} -n {namespace}
+f5xcctl configuration get dns_compliance_checks -n <namespace> <name>
 
 # List
-f5xcctl get dns_compliance_checkss -n {namespace}
+f5xcctl configuration list dns_compliance_checks -n <namespace>
 
 # Delete
-f5xcctl delete dns_compliance_checks {name} -n {namespace}
+f5xcctl configuration delete dns_compliance_checks -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with V1 DNS Monitor resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f v1_dns_monitor.yaml
+f5xcctl configuration create v1_dns_monitor -n <namespace> -i v1_dns_monitor.yaml
 
 # Get
-f5xcctl get v1_dns_monitor {name} -n {namespace}
+f5xcctl configuration get v1_dns_monitor -n <namespace> <name>
 
 # List
-f5xcctl get v1_dns_monitors -n {namespace}
+f5xcctl configuration list v1_dns_monitor -n <namespace>
 
 # Delete
-f5xcctl delete v1_dns_monitor {name} -n {namespace}
+f5xcctl configuration delete v1_dns_monitor -n <namespace> <name>
 ```
 
 ## Terraform Resource

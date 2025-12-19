@@ -34,16 +34,16 @@ Ask Claude to help you work with Query resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f query.yaml
+f5xcctl configuration create query -n <namespace> -i query.yaml
 
 # Get
-f5xcctl get query {name} -n {namespace}
+f5xcctl configuration get query -n <namespace> <name>
 
 # List
-f5xcctl get querys -n {namespace}
+f5xcctl configuration list query -n <namespace>
 
 # Delete
-f5xcctl delete query {name} -n {namespace}
+f5xcctl configuration delete query -n <namespace> <name>
 ```
 
 ## Terraform Resource

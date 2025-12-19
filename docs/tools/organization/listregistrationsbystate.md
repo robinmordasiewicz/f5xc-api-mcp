@@ -34,16 +34,16 @@ Ask Claude to help you work with Listregistrationsbystate resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f listregistrationsbystate.yaml
+f5xcctl configuration create listregistrationsbystate -n <namespace> -i listregistrationsbystate.yaml
 
 # Get
-f5xcctl get listregistrationsbystate {name} -n {namespace}
+f5xcctl configuration get listregistrationsbystate -n <namespace> <name>
 
 # List
-f5xcctl get listregistrationsbystates -n {namespace}
+f5xcctl configuration list listregistrationsbystate -n <namespace>
 
 # Delete
-f5xcctl delete listregistrationsbystate {name} -n {namespace}
+f5xcctl configuration delete listregistrationsbystate -n <namespace> <name>
 ```
 
 ## Terraform Resource

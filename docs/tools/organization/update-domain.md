@@ -34,16 +34,16 @@ Ask Claude to help you work with Update Domain resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f update_domain.yaml
+f5xcctl configuration create update_domain -n <namespace> -i update_domain.yaml
 
 # Get
-f5xcctl get update_domain {name} -n {namespace}
+f5xcctl configuration get update_domain -n <namespace> <name>
 
 # List
-f5xcctl get update_domains -n {namespace}
+f5xcctl configuration list update_domain -n <namespace>
 
 # Delete
-f5xcctl delete update_domain {name} -n {namespace}
+f5xcctl configuration delete update_domain -n <namespace> <name>
 ```
 
 ## Terraform Resource

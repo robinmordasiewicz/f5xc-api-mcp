@@ -58,16 +58,16 @@ Ask Claude to help you work with DNS Lb Pool resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f dns_lb_pool.yaml
+f5xcctl configuration create dns_lb_pool -n <namespace> -i dns_lb_pool.yaml
 
 # Get
-f5xcctl get dns_lb_pool {name} -n {namespace}
+f5xcctl configuration get dns_lb_pool -n <namespace> <name>
 
 # List
-f5xcctl get dns_lb_pools -n {namespace}
+f5xcctl configuration list dns_lb_pool -n <namespace>
 
 # Delete
-f5xcctl delete dns_lb_pool {name} -n {namespace}
+f5xcctl configuration delete dns_lb_pool -n <namespace> <name>
 ```
 
 ## Terraform Resource

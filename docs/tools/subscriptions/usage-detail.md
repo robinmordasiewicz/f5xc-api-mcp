@@ -35,16 +35,16 @@ Ask Claude to help you work with Usage Detail resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f usage_detail.yaml
+f5xcctl configuration create usage_detail -n <namespace> -i usage_detail.yaml
 
 # Get
-f5xcctl get usage_detail {name} -n {namespace}
+f5xcctl configuration get usage_detail -n <namespace> <name>
 
 # List
-f5xcctl get usage_details -n {namespace}
+f5xcctl configuration list usage_detail -n <namespace>
 
 # Delete
-f5xcctl delete usage_detail {name} -n {namespace}
+f5xcctl configuration delete usage_detail -n <namespace> <name>
 ```
 
 ## Terraform Resource

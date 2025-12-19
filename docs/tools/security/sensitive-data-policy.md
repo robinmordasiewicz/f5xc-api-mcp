@@ -59,16 +59,16 @@ Ask Claude to help you work with Sensitive Data Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f sensitive_data_policy.yaml
+f5xcctl configuration create sensitive_data_policy -n <namespace> -i sensitive_data_policy.yaml
 
 # Get
-f5xcctl get sensitive_data_policy {name} -n {namespace}
+f5xcctl configuration get sensitive_data_policy -n <namespace> <name>
 
 # List
-f5xcctl get sensitive_data_policys -n {namespace}
+f5xcctl configuration list sensitive_data_policy -n <namespace>
 
 # Delete
-f5xcctl delete sensitive_data_policy {name} -n {namespace}
+f5xcctl configuration delete sensitive_data_policy -n <namespace> <name>
 ```
 
 ## Terraform Resource

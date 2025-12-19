@@ -35,16 +35,16 @@ Ask Claude to help you work with Statefulset resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f statefulset.yaml
+f5xcctl configuration create statefulset -n <namespace> -i statefulset.yaml
 
 # Get
-f5xcctl get statefulset {name} -n {namespace}
+f5xcctl configuration get statefulset -n <namespace> <name>
 
 # List
-f5xcctl get statefulsets -n {namespace}
+f5xcctl configuration list statefulset -n <namespace>
 
 # Delete
-f5xcctl delete statefulset {name} -n {namespace}
+f5xcctl configuration delete statefulset -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -36,16 +36,16 @@ Ask Claude to help you work with Citie resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f citie.yaml
+f5xcctl configuration create citie -n <namespace> -i citie.yaml
 
 # Get
-f5xcctl get citie {name} -n {namespace}
+f5xcctl configuration get citie -n <namespace> <name>
 
 # List
-f5xcctl get cities -n {namespace}
+f5xcctl configuration list citie -n <namespace>
 
 # Delete
-f5xcctl delete citie {name} -n {namespace}
+f5xcctl configuration delete citie -n <namespace> <name>
 ```
 
 ## Terraform Resource

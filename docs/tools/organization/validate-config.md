@@ -35,16 +35,16 @@ Ask Claude to help you work with Validate Config resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f validate_config.yaml
+f5xcctl configuration create validate_config -n <namespace> -i validate_config.yaml
 
 # Get
-f5xcctl get validate_config {name} -n {namespace}
+f5xcctl configuration get validate_config -n <namespace> <name>
 
 # List
-f5xcctl get validate_configs -n {namespace}
+f5xcctl configuration list validate_config -n <namespace>
 
 # Delete
-f5xcctl delete validate_config {name} -n {namespace}
+f5xcctl configuration delete validate_config -n <namespace> <name>
 ```
 
 ## Terraform Resource

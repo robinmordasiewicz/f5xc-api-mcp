@@ -34,16 +34,16 @@ Ask Claude to help you work with Credential Stuffing Attack resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f credential_stuffing_attack.yaml
+f5xcctl configuration create credential_stuffing_attack -n <namespace> -i credential_stuffing_attack.yaml
 
 # Get
-f5xcctl get credential_stuffing_attack {name} -n {namespace}
+f5xcctl configuration get credential_stuffing_attack -n <namespace> <name>
 
 # List
-f5xcctl get credential_stuffing_attacks -n {namespace}
+f5xcctl configuration list credential_stuffing_attack -n <namespace>
 
 # Delete
-f5xcctl delete credential_stuffing_attack {name} -n {namespace}
+f5xcctl configuration delete credential_stuffing_attack -n <namespace> <name>
 ```
 
 ## Terraform Resource

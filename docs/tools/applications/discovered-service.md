@@ -48,16 +48,16 @@ Ask Claude to help you work with Discovered Service resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f discovered_service.yaml
+f5xcctl configuration create discovered_service -n <namespace> -i discovered_service.yaml
 
 # Get
-f5xcctl get discovered_service {name} -n {namespace}
+f5xcctl configuration get discovered_service -n <namespace> <name>
 
 # List
-f5xcctl get discovered_services -n {namespace}
+f5xcctl configuration list discovered_service -n <namespace>
 
 # Delete
-f5xcctl delete discovered_service {name} -n {namespace}
+f5xcctl configuration delete discovered_service -n <namespace> <name>
 ```
 
 ## Terraform Resource

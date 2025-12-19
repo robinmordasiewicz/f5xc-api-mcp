@@ -58,16 +58,16 @@ Ask Claude to help you work with IP Prefix Set resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f ip_prefix_set.yaml
+f5xcctl configuration create ip_prefix_set -n <namespace> -i ip_prefix_set.yaml
 
 # Get
-f5xcctl get ip_prefix_set {name} -n {namespace}
+f5xcctl configuration get ip_prefix_set -n <namespace> <name>
 
 # List
-f5xcctl get ip_prefix_sets -n {namespace}
+f5xcctl configuration list ip_prefix_set -n <namespace>
 
 # Delete
-f5xcctl delete ip_prefix_set {name} -n {namespace}
+f5xcctl configuration delete ip_prefix_set -n <namespace> <name>
 ```
 
 ## Terraform Resource

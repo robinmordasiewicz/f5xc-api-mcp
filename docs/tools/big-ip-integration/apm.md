@@ -58,16 +58,16 @@ Ask Claude to help you work with Apm resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f apm.yaml
+f5xcctl configuration create apm -n <namespace> -i apm.yaml
 
 # Get
-f5xcctl get apm {name} -n {namespace}
+f5xcctl configuration get apm -n <namespace> <name>
 
 # List
-f5xcctl get apms -n {namespace}
+f5xcctl configuration list apm -n <namespace>
 
 # Delete
-f5xcctl delete apm {name} -n {namespace}
+f5xcctl configuration delete apm -n <namespace> <name>
 ```
 
 ## Terraform Resource

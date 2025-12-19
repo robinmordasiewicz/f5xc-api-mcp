@@ -35,16 +35,16 @@ Ask Claude to help you work with Clone resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f clone.yaml
+f5xcctl configuration create clone -n <namespace> -i clone.yaml
 
 # Get
-f5xcctl get clone {name} -n {namespace}
+f5xcctl configuration get clone -n <namespace> <name>
 
 # List
-f5xcctl get clones -n {namespace}
+f5xcctl configuration list clone -n <namespace>
 
 # Delete
-f5xcctl delete clone {name} -n {namespace}
+f5xcctl configuration delete clone -n <namespace> <name>
 ```
 
 ## Terraform Resource

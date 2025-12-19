@@ -58,16 +58,16 @@ Ask Claude to help you work with Trusted Ca List resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f trusted_ca_list.yaml
+f5xcctl configuration create trusted_ca_list -n <namespace> -i trusted_ca_list.yaml
 
 # Get
-f5xcctl get trusted_ca_list {name} -n {namespace}
+f5xcctl configuration get trusted_ca_list -n <namespace> <name>
 
 # List
-f5xcctl get trusted_ca_lists -n {namespace}
+f5xcctl configuration list trusted_ca_list -n <namespace>
 
 # Delete
-f5xcctl delete trusted_ca_list {name} -n {namespace}
+f5xcctl configuration delete trusted_ca_list -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -34,16 +34,16 @@ Ask Claude to help you work with Instance resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f instance.yaml
+f5xcctl configuration create instance -n <namespace> -i instance.yaml
 
 # Get
-f5xcctl get instance {name} -n {namespace}
+f5xcctl configuration get instance -n <namespace> <name>
 
 # List
-f5xcctl get instances -n {namespace}
+f5xcctl configuration list instance -n <namespace>
 
 # Delete
-f5xcctl delete instance {name} -n {namespace}
+f5xcctl configuration delete instance -n <namespace> <name>
 ```
 
 ## Terraform Resource

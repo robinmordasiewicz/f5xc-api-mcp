@@ -26,16 +26,16 @@ Ask Claude to help you work with Enable Feature resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f enable_feature.yaml
+f5xcctl configuration create enable_feature -n <namespace> -i enable_feature.yaml
 
 # Get
-f5xcctl get enable_feature {name} -n {namespace}
+f5xcctl configuration get enable_feature -n <namespace> <name>
 
 # List
-f5xcctl get enable_features -n {namespace}
+f5xcctl configuration list enable_feature -n <namespace>
 
 # Delete
-f5xcctl delete enable_feature {name} -n {namespace}
+f5xcctl configuration delete enable_feature -n <namespace> <name>
 ```
 
 ## Terraform Resource

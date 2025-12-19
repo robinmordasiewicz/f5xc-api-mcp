@@ -35,16 +35,16 @@ Ask Claude to help you work with Current Usage resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f current_usage.yaml
+f5xcctl configuration create current_usage -n <namespace> -i current_usage.yaml
 
 # Get
-f5xcctl get current_usage {name} -n {namespace}
+f5xcctl configuration get current_usage -n <namespace> <name>
 
 # List
-f5xcctl get current_usages -n {namespace}
+f5xcctl configuration list current_usage -n <namespace>
 
 # Delete
-f5xcctl delete current_usage {name} -n {namespace}
+f5xcctl configuration delete current_usage -n <namespace> <name>
 ```
 
 ## Terraform Resource

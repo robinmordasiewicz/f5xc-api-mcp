@@ -26,16 +26,16 @@ Ask Claude to help you work with Software Os Version resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f software_os_version.yaml
+f5xcctl configuration create software_os_version -n <namespace> -i software_os_version.yaml
 
 # Get
-f5xcctl get software_os_version {name} -n {namespace}
+f5xcctl configuration get software_os_version -n <namespace> <name>
 
 # List
-f5xcctl get software_os_versions -n {namespace}
+f5xcctl configuration list software_os_version -n <namespace>
 
 # Delete
-f5xcctl delete software_os_version {name} -n {namespace}
+f5xcctl configuration delete software_os_version -n <namespace> <name>
 ```
 
 ## Terraform Resource

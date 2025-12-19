@@ -36,16 +36,16 @@ Ask Claude to help you work with Disconnect resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f disconnect.yaml
+f5xcctl configuration create disconnect -n <namespace> -i disconnect.yaml
 
 # Get
-f5xcctl get disconnect {name} -n {namespace}
+f5xcctl configuration get disconnect -n <namespace> <name>
 
 # List
-f5xcctl get disconnects -n {namespace}
+f5xcctl configuration list disconnect -n <namespace>
 
 # Delete
-f5xcctl delete disconnect {name} -n {namespace}
+f5xcctl configuration delete disconnect -n <namespace> <name>
 ```
 
 ## Terraform Resource

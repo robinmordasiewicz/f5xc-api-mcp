@@ -26,16 +26,16 @@ Ask Claude to help you work with Subscription Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f subscription_statu.yaml
+f5xcctl configuration create subscription_statu -n <namespace> -i subscription_statu.yaml
 
 # Get
-f5xcctl get subscription_statu {name} -n {namespace}
+f5xcctl configuration get subscription_statu -n <namespace> <name>
 
 # List
-f5xcctl get subscription_status -n {namespace}
+f5xcctl configuration list subscription_statu -n <namespace>
 
 # Delete
-f5xcctl delete subscription_statu {name} -n {namespace}
+f5xcctl configuration delete subscription_statu -n <namespace> <name>
 ```
 
 ## Terraform Resource

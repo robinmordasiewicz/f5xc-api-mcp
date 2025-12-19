@@ -35,16 +35,16 @@ Ask Claude to help you work with Fetchdump resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f fetchdump.yaml
+f5xcctl configuration create fetchdump -n <namespace> -i fetchdump.yaml
 
 # Get
-f5xcctl get fetchdump {name} -n {namespace}
+f5xcctl configuration get fetchdump -n <namespace> <name>
 
 # List
-f5xcctl get fetchdumps -n {namespace}
+f5xcctl configuration list fetchdump -n <namespace>
 
 # Delete
-f5xcctl delete fetchdump {name} -n {namespace}
+f5xcctl configuration delete fetchdump -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -26,16 +26,16 @@ Ask Claude to help you work with Init resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f init.yaml
+f5xcctl configuration create init -n <namespace> -i init.yaml
 
 # Get
-f5xcctl get init {name} -n {namespace}
+f5xcctl configuration get init -n <namespace> <name>
 
 # List
-f5xcctl get inits -n {namespace}
+f5xcctl configuration list init -n <namespace>
 
 # Delete
-f5xcctl delete init {name} -n {namespace}
+f5xcctl configuration delete init -n <namespace> <name>
 ```
 
 ## Terraform Resource

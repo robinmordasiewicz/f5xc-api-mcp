@@ -40,16 +40,16 @@ Ask Claude to help you work with User Role resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f user_role.yaml
+f5xcctl configuration create user_role -n <namespace> -i user_role.yaml
 
 # Get
-f5xcctl get user_role {name} -n {namespace}
+f5xcctl configuration get user_role -n <namespace> <name>
 
 # List
-f5xcctl get user_roles -n {namespace}
+f5xcctl configuration list user_role -n <namespace>
 
 # Delete
-f5xcctl delete user_role {name} -n {namespace}
+f5xcctl configuration delete user_role -n <namespace> <name>
 ```
 
 ## Terraform Resource
