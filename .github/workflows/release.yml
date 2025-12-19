@@ -85,7 +85,7 @@ jobs:
         run: npm install -g @anthropic-ai/mcpb
 
       - name: Create MCPB bundle
-        run: mcpb pack --output f5xc-api-mcp-${{ needs.release.outputs.new_release_version }}.mcpb
+        run: mcpb pack . f5xc-api-mcp-${{ needs.release.outputs.new_release_version }}.mcpb
 
       - name: Upload MCPB to release
         uses: softprops/action-gh-release@v2
