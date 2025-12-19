@@ -26,16 +26,16 @@ Ask Claude to help you work with Unique resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f unique.yaml
+f5xcctl configuration create unique -n <namespace> -i unique.yaml
 
 # Get
-f5xcctl get unique {name} -n {namespace}
+f5xcctl configuration get unique -n <namespace> <name>
 
 # List
-f5xcctl get uniques -n {namespace}
+f5xcctl configuration list unique -n <namespace>
 
 # Delete
-f5xcctl delete unique {name} -n {namespace}
+f5xcctl configuration delete unique -n <namespace> <name>
 ```
 
 ## Terraform Resource

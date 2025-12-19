@@ -27,16 +27,16 @@ Ask Claude to help you work with Jira Projects Issue Type resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f jira_projects_issue_type.yaml
+f5xcctl configuration create jira_projects_issue_type -n <namespace> -i jira_projects_issue_type.yaml
 
 # Get
-f5xcctl get jira_projects_issue_type {name} -n {namespace}
+f5xcctl configuration get jira_projects_issue_type -n <namespace> <name>
 
 # List
-f5xcctl get jira_projects_issue_types -n {namespace}
+f5xcctl configuration list jira_projects_issue_type -n <namespace>
 
 # Delete
-f5xcctl delete jira_projects_issue_type {name} -n {namespace}
+f5xcctl configuration delete jira_projects_issue_type -n <namespace> <name>
 ```
 
 ## Terraform Resource

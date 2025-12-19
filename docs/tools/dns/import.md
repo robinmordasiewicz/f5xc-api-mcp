@@ -26,16 +26,16 @@ Ask Claude to help you work with Import resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f import.yaml
+f5xcctl configuration create import -n <namespace> -i import.yaml
 
 # Get
-f5xcctl get import {name} -n {namespace}
+f5xcctl configuration get import -n <namespace> <name>
 
 # List
-f5xcctl get imports -n {namespace}
+f5xcctl configuration list import -n <namespace>
 
 # Delete
-f5xcctl delete import {name} -n {namespace}
+f5xcctl configuration delete import -n <namespace> <name>
 ```
 
 ## Terraform Resource

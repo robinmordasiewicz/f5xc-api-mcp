@@ -34,16 +34,16 @@ Ask Claude to help you work with Asorg resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f asorg.yaml
+f5xcctl configuration create asorg -n <namespace> -i asorg.yaml
 
 # Get
-f5xcctl get asorg {name} -n {namespace}
+f5xcctl configuration get asorg -n <namespace> <name>
 
 # List
-f5xcctl get asorgs -n {namespace}
+f5xcctl configuration list asorg -n <namespace>
 
 # Delete
-f5xcctl delete asorg {name} -n {namespace}
+f5xcctl configuration delete asorg -n <namespace> <name>
 ```
 
 ## Terraform Resource

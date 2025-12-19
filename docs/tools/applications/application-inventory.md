@@ -37,16 +37,16 @@ Ask Claude to help you work with Application Inventory resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f application_inventory.yaml
+f5xcctl configuration create application_inventory -n <namespace> -i application_inventory.yaml
 
 # Get
-f5xcctl get application_inventory {name} -n {namespace}
+f5xcctl configuration get application_inventory -n <namespace> <name>
 
 # List
-f5xcctl get application_inventorys -n {namespace}
+f5xcctl configuration list application_inventory -n <namespace>
 
 # Delete
-f5xcctl delete application_inventory {name} -n {namespace}
+f5xcctl configuration delete application_inventory -n <namespace> <name>
 ```
 
 ## Terraform Resource

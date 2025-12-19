@@ -58,16 +58,16 @@ Ask Claude to help you work with Enhanced Firewall Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f enhanced_firewall_policy.yaml
+f5xcctl configuration create enhanced_firewall_policy -n <namespace> -i enhanced_firewall_policy.yaml
 
 # Get
-f5xcctl get enhanced_firewall_policy {name} -n {namespace}
+f5xcctl configuration get enhanced_firewall_policy -n <namespace> <name>
 
 # List
-f5xcctl get enhanced_firewall_policys -n {namespace}
+f5xcctl configuration list enhanced_firewall_policy -n <namespace>
 
 # Delete
-f5xcctl delete enhanced_firewall_policy {name} -n {namespace}
+f5xcctl configuration delete enhanced_firewall_policy -n <namespace> <name>
 ```
 
 ## Terraform Resource

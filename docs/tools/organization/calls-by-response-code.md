@@ -35,16 +35,16 @@ Ask Claude to help you work with Calls By Response Code resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f calls_by_response_code.yaml
+f5xcctl configuration create calls_by_response_code -n <namespace> -i calls_by_response_code.yaml
 
 # Get
-f5xcctl get calls_by_response_code {name} -n {namespace}
+f5xcctl configuration get calls_by_response_code -n <namespace> <name>
 
 # List
-f5xcctl get calls_by_response_codes -n {namespace}
+f5xcctl configuration list calls_by_response_code -n <namespace>
 
 # Delete
-f5xcctl delete calls_by_response_code {name} -n {namespace}
+f5xcctl configuration delete calls_by_response_code -n <namespace> <name>
 ```
 
 ## Terraform Resource

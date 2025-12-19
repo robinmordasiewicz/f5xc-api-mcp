@@ -58,16 +58,16 @@ Ask Claude to help you work with AZURE VNET Site resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f azure_vnet_site.yaml
+f5xcctl configuration create azure_vnet_site -n <namespace> -i azure_vnet_site.yaml
 
 # Get
-f5xcctl get azure_vnet_site {name} -n {namespace}
+f5xcctl configuration get azure_vnet_site -n <namespace> <name>
 
 # List
-f5xcctl get azure_vnet_sites -n {namespace}
+f5xcctl configuration list azure_vnet_site -n <namespace>
 
 # Delete
-f5xcctl delete azure_vnet_site {name} -n {namespace}
+f5xcctl configuration delete azure_vnet_site -n <namespace> <name>
 ```
 
 ## Terraform Resource

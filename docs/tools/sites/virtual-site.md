@@ -58,16 +58,16 @@ Ask Claude to help you work with Virtual Site resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f virtual_site.yaml
+f5xcctl configuration create virtual_site -n <namespace> -i virtual_site.yaml
 
 # Get
-f5xcctl get virtual_site {name} -n {namespace}
+f5xcctl configuration get virtual_site -n <namespace> <name>
 
 # List
-f5xcctl get virtual_sites -n {namespace}
+f5xcctl configuration list virtual_site -n <namespace>
 
 # Delete
-f5xcctl delete virtual_site {name} -n {namespace}
+f5xcctl configuration delete virtual_site -n <namespace> <name>
 ```
 
 ## Terraform Resource

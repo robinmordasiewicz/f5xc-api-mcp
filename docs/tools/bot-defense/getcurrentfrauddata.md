@@ -26,16 +26,16 @@ Ask Claude to help you work with Getcurrentfrauddata resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f getcurrentfrauddata.yaml
+f5xcctl configuration create getcurrentfrauddata -n <namespace> -i getcurrentfrauddata.yaml
 
 # Get
-f5xcctl get getcurrentfrauddata {name} -n {namespace}
+f5xcctl configuration get getcurrentfrauddata -n <namespace> <name>
 
 # List
-f5xcctl get getcurrentfrauddatas -n {namespace}
+f5xcctl configuration list getcurrentfrauddata -n <namespace>
 
 # Delete
-f5xcctl delete getcurrentfrauddata {name} -n {namespace}
+f5xcctl configuration delete getcurrentfrauddata -n <namespace> <name>
 ```
 
 ## Terraform Resource

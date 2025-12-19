@@ -34,16 +34,16 @@ Ask Claude to help you work with Eval Query Feedback resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f eval_query_feedback.yaml
+f5xcctl configuration create eval_query_feedback -n <namespace> -i eval_query_feedback.yaml
 
 # Get
-f5xcctl get eval_query_feedback {name} -n {namespace}
+f5xcctl configuration get eval_query_feedback -n <namespace> <name>
 
 # List
-f5xcctl get eval_query_feedbacks -n {namespace}
+f5xcctl configuration list eval_query_feedback -n <namespace>
 
 # Delete
-f5xcctl delete eval_query_feedback {name} -n {namespace}
+f5xcctl configuration delete eval_query_feedback -n <namespace> <name>
 ```
 
 ## Terraform Resource

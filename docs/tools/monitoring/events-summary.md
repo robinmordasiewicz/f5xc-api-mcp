@@ -40,16 +40,16 @@ Ask Claude to help you work with Events Summary resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f events_summary.yaml
+f5xcctl configuration create events_summary -n <namespace> -i events_summary.yaml
 
 # Get
-f5xcctl get events_summary {name} -n {namespace}
+f5xcctl configuration get events_summary -n <namespace> <name>
 
 # List
-f5xcctl get events_summarys -n {namespace}
+f5xcctl configuration list events_summary -n <namespace>
 
 # Delete
-f5xcctl delete events_summary {name} -n {namespace}
+f5xcctl configuration delete events_summary -n <namespace> <name>
 ```
 
 ## Terraform Resource

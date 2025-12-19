@@ -42,16 +42,16 @@ Ask Claude to help you work with HTTP Monitor Summary resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f http_monitor_summary.yaml
+f5xcctl configuration create http_monitor_summary -n <namespace> -i http_monitor_summary.yaml
 
 # Get
-f5xcctl get http_monitor_summary {name} -n {namespace}
+f5xcctl configuration get http_monitor_summary -n <namespace> <name>
 
 # List
-f5xcctl get http_monitor_summarys -n {namespace}
+f5xcctl configuration list http_monitor_summary -n <namespace>
 
 # Delete
-f5xcctl delete http_monitor_summary {name} -n {namespace}
+f5xcctl configuration delete http_monitor_summary -n <namespace> <name>
 ```
 
 ## Terraform Resource

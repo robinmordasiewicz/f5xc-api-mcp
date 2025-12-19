@@ -34,16 +34,16 @@ Ask Claude to help you work with Priority resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f priority.yaml
+f5xcctl configuration create priority -n <namespace> -i priority.yaml
 
 # Get
-f5xcctl get priority {name} -n {namespace}
+f5xcctl configuration get priority -n <namespace> <name>
 
 # List
-f5xcctl get prioritys -n {namespace}
+f5xcctl configuration list priority -n <namespace>
 
 # Delete
-f5xcctl delete priority {name} -n {namespace}
+f5xcctl configuration delete priority -n <namespace> <name>
 ```
 
 ## Terraform Resource

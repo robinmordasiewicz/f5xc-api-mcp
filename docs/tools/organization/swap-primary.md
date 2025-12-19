@@ -36,16 +36,16 @@ Ask Claude to help you work with Swap Primary resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f swap_primary.yaml
+f5xcctl configuration create swap_primary -n <namespace> -i swap_primary.yaml
 
 # Get
-f5xcctl get swap_primary {name} -n {namespace}
+f5xcctl configuration get swap_primary -n <namespace> <name>
 
 # List
-f5xcctl get swap_primarys -n {namespace}
+f5xcctl configuration list swap_primary -n <namespace>
 
 # Delete
-f5xcctl delete swap_primary {name} -n {namespace}
+f5xcctl configuration delete swap_primary -n <namespace> <name>
 ```
 
 ## Terraform Resource

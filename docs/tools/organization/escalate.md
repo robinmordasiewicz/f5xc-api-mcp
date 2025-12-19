@@ -35,16 +35,16 @@ Ask Claude to help you work with Escalate resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f escalate.yaml
+f5xcctl configuration create escalate -n <namespace> -i escalate.yaml
 
 # Get
-f5xcctl get escalate {name} -n {namespace}
+f5xcctl configuration get escalate -n <namespace> <name>
 
 # List
-f5xcctl get escalates -n {namespace}
+f5xcctl configuration list escalate -n <namespace>
 
 # Delete
-f5xcctl delete escalate {name} -n {namespace}
+f5xcctl configuration delete escalate -n <namespace> <name>
 ```
 
 ## Terraform Resource

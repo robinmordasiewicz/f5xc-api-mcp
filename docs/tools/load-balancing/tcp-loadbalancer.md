@@ -58,16 +58,16 @@ Ask Claude to help you work with TCP Loadbalancer resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f tcp_loadbalancer.yaml
+f5xcctl configuration create tcp_loadbalancer -n <namespace> -i tcp_loadbalancer.yaml
 
 # Get
-f5xcctl get tcp_loadbalancer {name} -n {namespace}
+f5xcctl configuration get tcp_loadbalancer -n <namespace> <name>
 
 # List
-f5xcctl get tcp_loadbalancers -n {namespace}
+f5xcctl configuration list tcp_loadbalancer -n <namespace>
 
 # Delete
-f5xcctl delete tcp_loadbalancer {name} -n {namespace}
+f5xcctl configuration delete tcp_loadbalancer -n <namespace> <name>
 ```
 
 ## Terraform Resource

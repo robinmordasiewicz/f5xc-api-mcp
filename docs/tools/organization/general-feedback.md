@@ -34,16 +34,16 @@ Ask Claude to help you work with General Feedback resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f general_feedback.yaml
+f5xcctl configuration create general_feedback -n <namespace> -i general_feedback.yaml
 
 # Get
-f5xcctl get general_feedback {name} -n {namespace}
+f5xcctl configuration get general_feedback -n <namespace> <name>
 
 # List
-f5xcctl get general_feedbacks -n {namespace}
+f5xcctl configuration list general_feedback -n <namespace>
 
 # Delete
-f5xcctl delete general_feedback {name} -n {namespace}
+f5xcctl configuration delete general_feedback -n <namespace> <name>
 ```
 
 ## Terraform Resource

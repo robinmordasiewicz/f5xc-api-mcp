@@ -58,16 +58,16 @@ Ask Claude to help you work with Policy Based Routing resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f policy_based_routing.yaml
+f5xcctl configuration create policy_based_routing -n <namespace> -i policy_based_routing.yaml
 
 # Get
-f5xcctl get policy_based_routing {name} -n {namespace}
+f5xcctl configuration get policy_based_routing -n <namespace> <name>
 
 # List
-f5xcctl get policy_based_routings -n {namespace}
+f5xcctl configuration list policy_based_routing -n <namespace>
 
 # Delete
-f5xcctl delete policy_based_routing {name} -n {namespace}
+f5xcctl configuration delete policy_based_routing -n <namespace> <name>
 ```
 
 ## Terraform Resource

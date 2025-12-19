@@ -35,16 +35,16 @@ Ask Claude to help you work with Generate resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f generate.yaml
+f5xcctl configuration create generate -n <namespace> -i generate.yaml
 
 # Get
-f5xcctl get generate {name} -n {namespace}
+f5xcctl configuration get generate -n <namespace> <name>
 
 # List
-f5xcctl get generates -n {namespace}
+f5xcctl configuration list generate -n <namespace>
 
 # Delete
-f5xcctl delete generate {name} -n {namespace}
+f5xcctl configuration delete generate -n <namespace> <name>
 ```
 
 ## Terraform Resource

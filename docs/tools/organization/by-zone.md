@@ -35,16 +35,16 @@ Ask Claude to help you work with By Zone resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f by_zone.yaml
+f5xcctl configuration create by_zone -n <namespace> -i by_zone.yaml
 
 # Get
-f5xcctl get by_zone {name} -n {namespace}
+f5xcctl configuration get by_zone -n <namespace> <name>
 
 # List
-f5xcctl get by_zones -n {namespace}
+f5xcctl configuration list by_zone -n <namespace>
 
 # Delete
-f5xcctl delete by_zone {name} -n {namespace}
+f5xcctl configuration delete by_zone -n <namespace> <name>
 ```
 
 ## Terraform Resource

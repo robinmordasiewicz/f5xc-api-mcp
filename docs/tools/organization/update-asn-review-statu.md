@@ -34,16 +34,16 @@ Ask Claude to help you work with Update Asn Review Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f update_asn_review_statu.yaml
+f5xcctl configuration create update_asn_review_statu -n <namespace> -i update_asn_review_statu.yaml
 
 # Get
-f5xcctl get update_asn_review_statu {name} -n {namespace}
+f5xcctl configuration get update_asn_review_statu -n <namespace> <name>
 
 # List
-f5xcctl get update_asn_review_status -n {namespace}
+f5xcctl configuration list update_asn_review_statu -n <namespace>
 
 # Delete
-f5xcctl delete update_asn_review_statu {name} -n {namespace}
+f5xcctl configuration delete update_asn_review_statu -n <namespace> <name>
 ```
 
 ## Terraform Resource

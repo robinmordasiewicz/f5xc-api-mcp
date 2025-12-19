@@ -26,16 +26,16 @@ Ask Claude to help you work with Init Request resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f init_request.yaml
+f5xcctl configuration create init_request -n <namespace> -i init_request.yaml
 
 # Get
-f5xcctl get init_request {name} -n {namespace}
+f5xcctl configuration get init_request -n <namespace> <name>
 
 # List
-f5xcctl get init_requests -n {namespace}
+f5xcctl configuration list init_request -n <namespace>
 
 # Delete
-f5xcctl delete init_request {name} -n {namespace}
+f5xcctl configuration delete init_request -n <namespace> <name>
 ```
 
 ## Terraform Resource

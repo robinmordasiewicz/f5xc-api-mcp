@@ -26,16 +26,16 @@ Ask Claude to help you work with Safecubejsdata resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f safecubejsdata.yaml
+f5xcctl configuration create safecubejsdata -n <namespace> -i safecubejsdata.yaml
 
 # Get
-f5xcctl get safecubejsdata {name} -n {namespace}
+f5xcctl configuration get safecubejsdata -n <namespace> <name>
 
 # List
-f5xcctl get safecubejsdatas -n {namespace}
+f5xcctl configuration list safecubejsdata -n <namespace>
 
 # Delete
-f5xcctl delete safecubejsdata {name} -n {namespace}
+f5xcctl configuration delete safecubejsdata -n <namespace> <name>
 ```
 
 ## Terraform Resource

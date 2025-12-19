@@ -26,16 +26,16 @@ Ask Claude to help you work with Top Talker resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f top_talker.yaml
+f5xcctl configuration create top_talker -n <namespace> -i top_talker.yaml
 
 # Get
-f5xcctl get top_talker {name} -n {namespace}
+f5xcctl configuration get top_talker -n <namespace> <name>
 
 # List
-f5xcctl get top_talkers -n {namespace}
+f5xcctl configuration list top_talker -n <namespace>
 
 # Delete
-f5xcctl delete top_talker {name} -n {namespace}
+f5xcctl configuration delete top_talker -n <namespace> <name>
 ```
 
 ## Terraform Resource

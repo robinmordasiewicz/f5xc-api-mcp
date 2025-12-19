@@ -58,16 +58,16 @@ Ask Claude to help you work with Ike Phase2 Profile resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f ike_phase2_profile.yaml
+f5xcctl configuration create ike_phase2_profile -n <namespace> -i ike_phase2_profile.yaml
 
 # Get
-f5xcctl get ike_phase2_profile {name} -n {namespace}
+f5xcctl configuration get ike_phase2_profile -n <namespace> <name>
 
 # List
-f5xcctl get ike_phase2_profiles -n {namespace}
+f5xcctl configuration list ike_phase2_profile -n <namespace>
 
 # Delete
-f5xcctl delete ike_phase2_profile {name} -n {namespace}
+f5xcctl configuration delete ike_phase2_profile -n <namespace> <name>
 ```
 
 ## Terraform Resource

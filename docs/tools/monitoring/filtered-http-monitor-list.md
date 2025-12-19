@@ -43,16 +43,16 @@ Ask Claude to help you work with Filtered HTTP Monitor List resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f filtered_http_monitor_list.yaml
+f5xcctl configuration create filtered_http_monitor_list -n <namespace> -i filtered_http_monitor_list.yaml
 
 # Get
-f5xcctl get filtered_http_monitor_list {name} -n {namespace}
+f5xcctl configuration get filtered_http_monitor_list -n <namespace> <name>
 
 # List
-f5xcctl get filtered_http_monitor_lists -n {namespace}
+f5xcctl configuration list filtered_http_monitor_list -n <namespace>
 
 # Delete
-f5xcctl delete filtered_http_monitor_list {name} -n {namespace}
+f5xcctl configuration delete filtered_http_monitor_list -n <namespace> <name>
 ```
 
 ## Terraform Resource

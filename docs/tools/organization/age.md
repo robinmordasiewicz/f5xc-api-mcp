@@ -26,16 +26,16 @@ Ask Claude to help you work with Age resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f age.yaml
+f5xcctl configuration create age -n <namespace> -i age.yaml
 
 # Get
-f5xcctl get age {name} -n {namespace}
+f5xcctl configuration get age -n <namespace> <name>
 
 # List
-f5xcctl get ages -n {namespace}
+f5xcctl configuration list age -n <namespace>
 
 # Delete
-f5xcctl delete age {name} -n {namespace}
+f5xcctl configuration delete age -n <namespace> <name>
 ```
 
 ## Terraform Resource

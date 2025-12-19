@@ -41,16 +41,16 @@ Ask Claude to help you work with Geo Config resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f geo_config.yaml
+f5xcctl configuration create geo_config -n <namespace> -i geo_config.yaml
 
 # Get
-f5xcctl get geo_config {name} -n {namespace}
+f5xcctl configuration get geo_config -n <namespace> <name>
 
 # List
-f5xcctl get geo_configs -n {namespace}
+f5xcctl configuration list geo_config -n <namespace>
 
 # Delete
-f5xcctl delete geo_config {name} -n {namespace}
+f5xcctl configuration delete geo_config -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -46,16 +46,16 @@ Ask Claude to help you work with Transaction Detail resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f transaction_detail.yaml
+f5xcctl configuration create transaction_detail -n <namespace> -i transaction_detail.yaml
 
 # Get
-f5xcctl get transaction_detail {name} -n {namespace}
+f5xcctl configuration get transaction_detail -n <namespace> <name>
 
 # List
-f5xcctl get transaction_details -n {namespace}
+f5xcctl configuration list transaction_detail -n <namespace>
 
 # Delete
-f5xcctl delete transaction_detail {name} -n {namespace}
+f5xcctl configuration delete transaction_detail -n <namespace> <name>
 ```
 
 ## Terraform Resource

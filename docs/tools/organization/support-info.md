@@ -26,16 +26,16 @@ Ask Claude to help you work with Support Info resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f support_info.yaml
+f5xcctl configuration create support_info -n <namespace> -i support_info.yaml
 
 # Get
-f5xcctl get support_info {name} -n {namespace}
+f5xcctl configuration get support_info -n <namespace> <name>
 
 # List
-f5xcctl get support_infos -n {namespace}
+f5xcctl configuration list support_info -n <namespace>
 
 # Delete
-f5xcctl delete support_info {name} -n {namespace}
+f5xcctl configuration delete support_info -n <namespace> <name>
 ```
 
 ## Terraform Resource

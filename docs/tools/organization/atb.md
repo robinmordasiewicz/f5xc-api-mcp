@@ -45,16 +45,16 @@ Ask Claude to help you work with Atb resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f atb.yaml
+f5xcctl configuration create atb -n <namespace> -i atb.yaml
 
 # Get
-f5xcctl get atb {name} -n {namespace}
+f5xcctl configuration get atb -n <namespace> <name>
 
 # List
-f5xcctl get atbs -n {namespace}
+f5xcctl configuration list atb -n <namespace>
 
 # Delete
-f5xcctl delete atb {name} -n {namespace}
+f5xcctl configuration delete atb -n <namespace> <name>
 ```
 
 ## Terraform Resource

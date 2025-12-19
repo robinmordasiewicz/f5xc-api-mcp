@@ -49,16 +49,16 @@ Ask Claude to help you work with Nginx Csg resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f nginx_csg.yaml
+f5xcctl configuration create nginx_csg -n <namespace> -i nginx_csg.yaml
 
 # Get
-f5xcctl get nginx_csg {name} -n {namespace}
+f5xcctl configuration get nginx_csg -n <namespace> <name>
 
 # List
-f5xcctl get nginx_csgs -n {namespace}
+f5xcctl configuration list nginx_csg -n <namespace>
 
 # Delete
-f5xcctl delete nginx_csg {name} -n {namespace}
+f5xcctl configuration delete nginx_csg -n <namespace> <name>
 ```
 
 ## Terraform Resource

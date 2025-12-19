@@ -40,16 +40,16 @@ Ask Claude to help you work with Deployment resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f deployment.yaml
+f5xcctl configuration create deployment -n <namespace> -i deployment.yaml
 
 # Get
-f5xcctl get deployment {name} -n {namespace}
+f5xcctl configuration get deployment -n <namespace> <name>
 
 # List
-f5xcctl get deployments -n {namespace}
+f5xcctl configuration list deployment -n <namespace>
 
 # Delete
-f5xcctl delete deployment {name} -n {namespace}
+f5xcctl configuration delete deployment -n <namespace> <name>
 ```
 
 ## Terraform Resource

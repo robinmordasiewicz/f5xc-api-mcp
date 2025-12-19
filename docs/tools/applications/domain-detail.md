@@ -40,16 +40,16 @@ Ask Claude to help you work with Domain Detail resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f domain_detail.yaml
+f5xcctl configuration create domain_detail -n <namespace> -i domain_detail.yaml
 
 # Get
-f5xcctl get domain_detail {name} -n {namespace}
+f5xcctl configuration get domain_detail -n <namespace> <name>
 
 # List
-f5xcctl get domain_details -n {namespace}
+f5xcctl configuration list domain_detail -n <namespace>
 
 # Delete
-f5xcctl delete domain_detail {name} -n {namespace}
+f5xcctl configuration delete domain_detail -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -49,16 +49,16 @@ Ask Claude to help you work with Service Credential resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f service_credential.yaml
+f5xcctl configuration create service_credential -n <namespace> -i service_credential.yaml
 
 # Get
-f5xcctl get service_credential {name} -n {namespace}
+f5xcctl configuration get service_credential -n <namespace> <name>
 
 # List
-f5xcctl get service_credentials -n {namespace}
+f5xcctl configuration list service_credential -n <namespace>
 
 # Delete
-f5xcctl delete service_credential {name} -n {namespace}
+f5xcctl configuration delete service_credential -n <namespace> <name>
 ```
 
 ## Terraform Resource

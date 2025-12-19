@@ -58,16 +58,16 @@ Ask Claude to help you work with Secret Policy Rule resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f secret_policy_rule.yaml
+f5xcctl configuration create secret_policy_rule -n <namespace> -i secret_policy_rule.yaml
 
 # Get
-f5xcctl get secret_policy_rule {name} -n {namespace}
+f5xcctl configuration get secret_policy_rule -n <namespace> <name>
 
 # List
-f5xcctl get secret_policy_rules -n {namespace}
+f5xcctl configuration list secret_policy_rule -n <namespace>
 
 # Delete
-f5xcctl delete secret_policy_rule {name} -n {namespace}
+f5xcctl configuration delete secret_policy_rule -n <namespace> <name>
 ```
 
 ## Terraform Resource

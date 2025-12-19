@@ -35,16 +35,16 @@ Ask Claude to help you work with Upgrade O resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f upgrade_o.yaml
+f5xcctl configuration create upgrade_o -n <namespace> -i upgrade_o.yaml
 
 # Get
-f5xcctl get upgrade_o {name} -n {namespace}
+f5xcctl configuration get upgrade_o -n <namespace> <name>
 
 # List
-f5xcctl get upgrade_os -n {namespace}
+f5xcctl configuration list upgrade_o -n <namespace>
 
 # Delete
-f5xcctl delete upgrade_o {name} -n {namespace}
+f5xcctl configuration delete upgrade_o -n <namespace> <name>
 ```
 
 ## Terraform Resource

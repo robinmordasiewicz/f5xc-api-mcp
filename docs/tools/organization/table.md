@@ -43,16 +43,16 @@ Ask Claude to help you work with Table resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f table.yaml
+f5xcctl configuration create table -n <namespace> -i table.yaml
 
 # Get
-f5xcctl get table {name} -n {namespace}
+f5xcctl configuration get table -n <namespace> <name>
 
 # List
-f5xcctl get tables -n {namespace}
+f5xcctl configuration list table -n <namespace>
 
 # Delete
-f5xcctl delete table {name} -n {namespace}
+f5xcctl configuration delete table -n <namespace> <name>
 ```
 
 ## Terraform Resource

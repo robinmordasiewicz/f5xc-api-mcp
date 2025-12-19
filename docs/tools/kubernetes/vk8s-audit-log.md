@@ -40,16 +40,16 @@ Ask Claude to help you work with Vk8s Audit Log resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f vk8s_audit_log.yaml
+f5xcctl configuration create vk8s_audit_log -n <namespace> -i vk8s_audit_log.yaml
 
 # Get
-f5xcctl get vk8s_audit_log {name} -n {namespace}
+f5xcctl configuration get vk8s_audit_log -n <namespace> <name>
 
 # List
-f5xcctl get vk8s_audit_logs -n {namespace}
+f5xcctl configuration list vk8s_audit_log -n <namespace>
 
 # Delete
-f5xcctl delete vk8s_audit_log {name} -n {namespace}
+f5xcctl configuration delete vk8s_audit_log -n <namespace> <name>
 ```
 
 ## Terraform Resource

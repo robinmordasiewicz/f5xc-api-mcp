@@ -26,16 +26,16 @@ Ask Claude to help you work with Edge Credential resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f edge_credential.yaml
+f5xcctl configuration create edge_credential -n <namespace> -i edge_credential.yaml
 
 # Get
-f5xcctl get edge_credential {name} -n {namespace}
+f5xcctl configuration get edge_credential -n <namespace> <name>
 
 # List
-f5xcctl get edge_credentials -n {namespace}
+f5xcctl configuration list edge_credential -n <namespace>
 
 # Delete
-f5xcctl delete edge_credential {name} -n {namespace}
+f5xcctl configuration delete edge_credential -n <namespace> <name>
 ```
 
 ## Terraform Resource

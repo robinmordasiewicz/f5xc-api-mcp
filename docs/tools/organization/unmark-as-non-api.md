@@ -35,16 +35,16 @@ Ask Claude to help you work with Unmark As Non API resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f unmark_as_non_api.yaml
+f5xcctl configuration create unmark_as_non_api -n <namespace> -i unmark_as_non_api.yaml
 
 # Get
-f5xcctl get unmark_as_non_api {name} -n {namespace}
+f5xcctl configuration get unmark_as_non_api -n <namespace> <name>
 
 # List
-f5xcctl get unmark_as_non_apis -n {namespace}
+f5xcctl configuration list unmark_as_non_api -n <namespace>
 
 # Delete
-f5xcctl delete unmark_as_non_api {name} -n {namespace}
+f5xcctl configuration delete unmark_as_non_api -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -37,16 +37,16 @@ Ask Claude to help you work with Audit Log resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f audit_log.yaml
+f5xcctl configuration create audit_log -n <namespace> -i audit_log.yaml
 
 # Get
-f5xcctl get audit_log {name} -n {namespace}
+f5xcctl configuration get audit_log -n <namespace> <name>
 
 # List
-f5xcctl get audit_logs -n {namespace}
+f5xcctl configuration list audit_log -n <namespace>
 
 # Delete
-f5xcctl delete audit_log {name} -n {namespace}
+f5xcctl configuration delete audit_log -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with Infraprotect Tunnel resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f infraprotect_tunnel.yaml
+f5xcctl configuration create infraprotect_tunnel -n <namespace> -i infraprotect_tunnel.yaml
 
 # Get
-f5xcctl get infraprotect_tunnel {name} -n {namespace}
+f5xcctl configuration get infraprotect_tunnel -n <namespace> <name>
 
 # List
-f5xcctl get infraprotect_tunnels -n {namespace}
+f5xcctl configuration list infraprotect_tunnel -n <namespace>
 
 # Delete
-f5xcctl delete infraprotect_tunnel {name} -n {namespace}
+f5xcctl configuration delete infraprotect_tunnel -n <namespace> <name>
 ```
 
 ## Terraform Resource

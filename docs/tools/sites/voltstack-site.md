@@ -58,16 +58,16 @@ Ask Claude to help you work with Voltstack Site resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f voltstack_site.yaml
+f5xcctl configuration create voltstack_site -n <namespace> -i voltstack_site.yaml
 
 # Get
-f5xcctl get voltstack_site {name} -n {namespace}
+f5xcctl configuration get voltstack_site -n <namespace> <name>
 
 # List
-f5xcctl get voltstack_sites -n {namespace}
+f5xcctl configuration list voltstack_site -n <namespace>
 
 # Delete
-f5xcctl delete voltstack_site {name} -n {namespace}
+f5xcctl configuration delete voltstack_site -n <namespace> <name>
 ```
 
 ## Terraform Resource

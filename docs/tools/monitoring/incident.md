@@ -39,16 +39,16 @@ Ask Claude to help you work with Incident resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f incident.yaml
+f5xcctl configuration create incident -n <namespace> -i incident.yaml
 
 # Get
-f5xcctl get incident {name} -n {namespace}
+f5xcctl configuration get incident -n <namespace> <name>
 
 # List
-f5xcctl get incidents -n {namespace}
+f5xcctl configuration list incident -n <namespace>
 
 # Delete
-f5xcctl delete incident {name} -n {namespace}
+f5xcctl configuration delete incident -n <namespace> <name>
 ```
 
 ## Terraform Resource

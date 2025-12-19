@@ -37,16 +37,16 @@ Ask Claude to help you work with Aggregation resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f aggregation.yaml
+f5xcctl configuration create aggregation -n <namespace> -i aggregation.yaml
 
 # Get
-f5xcctl get aggregation {name} -n {namespace}
+f5xcctl configuration get aggregation -n <namespace> <name>
 
 # List
-f5xcctl get aggregations -n {namespace}
+f5xcctl configuration list aggregation -n <namespace>
 
 # Delete
-f5xcctl delete aggregation {name} -n {namespace}
+f5xcctl configuration delete aggregation -n <namespace> <name>
 ```
 
 ## Terraform Resource

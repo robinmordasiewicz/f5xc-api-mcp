@@ -34,16 +34,16 @@ Ask Claude to help you work with Total Automation resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f total_automation.yaml
+f5xcctl configuration create total_automation -n <namespace> -i total_automation.yaml
 
 # Get
-f5xcctl get total_automation {name} -n {namespace}
+f5xcctl configuration get total_automation -n <namespace> <name>
 
 # List
-f5xcctl get total_automations -n {namespace}
+f5xcctl configuration list total_automation -n <namespace>
 
 # Delete
-f5xcctl delete total_automation {name} -n {namespace}
+f5xcctl configuration delete total_automation -n <namespace> <name>
 ```
 
 ## Terraform Resource

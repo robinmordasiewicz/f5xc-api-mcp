@@ -43,16 +43,16 @@ Ask Claude to help you work with Dashboard resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f dashboard.yaml
+f5xcctl configuration create dashboard -n <namespace> -i dashboard.yaml
 
 # Get
-f5xcctl get dashboard {name} -n {namespace}
+f5xcctl configuration get dashboard -n <namespace> <name>
 
 # List
-f5xcctl get dashboards -n {namespace}
+f5xcctl configuration list dashboard -n <namespace>
 
 # Delete
-f5xcctl delete dashboard {name} -n {namespace}
+f5xcctl configuration delete dashboard -n <namespace> <name>
 ```
 
 ## Terraform Resource

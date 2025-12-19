@@ -26,16 +26,16 @@ Ask Claude to help you work with Check resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f check.yaml
+f5xcctl configuration create check -n <namespace> -i check.yaml
 
 # Get
-f5xcctl get check {name} -n {namespace}
+f5xcctl configuration get check -n <namespace> <name>
 
 # List
-f5xcctl get checks -n {namespace}
+f5xcctl configuration list check -n <namespace>
 
 # Delete
-f5xcctl delete check {name} -n {namespace}
+f5xcctl configuration delete check -n <namespace> <name>
 ```
 
 ## Terraform Resource

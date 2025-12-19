@@ -59,16 +59,16 @@ Ask Claude to help you work with User Identification resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f user_identification.yaml
+f5xcctl configuration create user_identification -n <namespace> -i user_identification.yaml
 
 # Get
-f5xcctl get user_identification {name} -n {namespace}
+f5xcctl configuration get user_identification -n <namespace> <name>
 
 # List
-f5xcctl get user_identifications -n {namespace}
+f5xcctl configuration list user_identification -n <namespace>
 
 # Delete
-f5xcctl delete user_identification {name} -n {namespace}
+f5xcctl configuration delete user_identification -n <namespace> <name>
 ```
 
 ## Terraform Resource

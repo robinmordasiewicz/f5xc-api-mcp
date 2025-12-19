@@ -36,16 +36,16 @@ Ask Claude to help you work with Cascade Delete resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f cascade_delete.yaml
+f5xcctl configuration create cascade_delete -n <namespace> -i cascade_delete.yaml
 
 # Get
-f5xcctl get cascade_delete {name} -n {namespace}
+f5xcctl configuration get cascade_delete -n <namespace> <name>
 
 # List
-f5xcctl get cascade_deletes -n {namespace}
+f5xcctl configuration list cascade_delete -n <namespace>
 
 # Delete
-f5xcctl delete cascade_delete {name} -n {namespace}
+f5xcctl configuration delete cascade_delete -n <namespace> <name>
 ```
 
 ## Terraform Resource

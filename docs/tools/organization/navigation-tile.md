@@ -49,16 +49,16 @@ Ask Claude to help you work with Navigation Tile resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f navigation_tile.yaml
+f5xcctl configuration create navigation_tile -n <namespace> -i navigation_tile.yaml
 
 # Get
-f5xcctl get navigation_tile {name} -n {namespace}
+f5xcctl configuration get navigation_tile -n <namespace> <name>
 
 # List
-f5xcctl get navigation_tiles -n {namespace}
+f5xcctl configuration list navigation_tile -n <namespace>
 
 # Delete
-f5xcctl delete navigation_tile {name} -n {namespace}
+f5xcctl configuration delete navigation_tile -n <namespace> <name>
 ```
 
 ## Terraform Resource

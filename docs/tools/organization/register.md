@@ -26,16 +26,16 @@ Ask Claude to help you work with Register resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f register.yaml
+f5xcctl configuration create register -n <namespace> -i register.yaml
 
 # Get
-f5xcctl get register {name} -n {namespace}
+f5xcctl configuration get register -n <namespace> <name>
 
 # List
-f5xcctl get registers -n {namespace}
+f5xcctl configuration list register -n <namespace>
 
 # Delete
-f5xcctl delete register {name} -n {namespace}
+f5xcctl configuration delete register -n <namespace> <name>
 ```
 
 ## Terraform Resource

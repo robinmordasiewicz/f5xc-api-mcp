@@ -58,16 +58,16 @@ Ask Claude to help you work with Alert Receiver resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f alert_receiver.yaml
+f5xcctl configuration create alert_receiver -n <namespace> -i alert_receiver.yaml
 
 # Get
-f5xcctl get alert_receiver {name} -n {namespace}
+f5xcctl configuration get alert_receiver -n <namespace> <name>
 
 # List
-f5xcctl get alert_receivers -n {namespace}
+f5xcctl configuration list alert_receiver -n <namespace>
 
 # Delete
-f5xcctl delete alert_receiver {name} -n {namespace}
+f5xcctl configuration delete alert_receiver -n <namespace> <name>
 ```
 
 ## Terraform Resource

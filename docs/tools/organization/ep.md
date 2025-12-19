@@ -34,16 +34,16 @@ Ask Claude to help you work with Ep resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f ep.yaml
+f5xcctl configuration create ep -n <namespace> -i ep.yaml
 
 # Get
-f5xcctl get ep {name} -n {namespace}
+f5xcctl configuration get ep -n <namespace> <name>
 
 # List
-f5xcctl get eps -n {namespace}
+f5xcctl configuration list ep -n <namespace>
 
 # Delete
-f5xcctl delete ep {name} -n {namespace}
+f5xcctl configuration delete ep -n <namespace> <name>
 ```
 
 ## Terraform Resource

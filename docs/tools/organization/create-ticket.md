@@ -35,16 +35,16 @@ Ask Claude to help you work with Create Ticket resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f create_ticket.yaml
+f5xcctl configuration create create_ticket -n <namespace> -i create_ticket.yaml
 
 # Get
-f5xcctl get create_ticket {name} -n {namespace}
+f5xcctl configuration get create_ticket -n <namespace> <name>
 
 # List
-f5xcctl get create_tickets -n {namespace}
+f5xcctl configuration list create_ticket -n <namespace>
 
 # Delete
-f5xcctl delete create_ticket {name} -n {namespace}
+f5xcctl configuration delete create_ticket -n <namespace> <name>
 ```
 
 ## Terraform Resource

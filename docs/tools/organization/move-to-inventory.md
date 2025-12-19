@@ -35,16 +35,16 @@ Ask Claude to help you work with Move To Inventory resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f move_to_inventory.yaml
+f5xcctl configuration create move_to_inventory -n <namespace> -i move_to_inventory.yaml
 
 # Get
-f5xcctl get move_to_inventory {name} -n {namespace}
+f5xcctl configuration get move_to_inventory -n <namespace> <name>
 
 # List
-f5xcctl get move_to_inventorys -n {namespace}
+f5xcctl configuration list move_to_inventory -n <namespace>
 
 # Delete
-f5xcctl delete move_to_inventory {name} -n {namespace}
+f5xcctl configuration delete move_to_inventory -n <namespace> <name>
 ```
 
 ## Terraform Resource

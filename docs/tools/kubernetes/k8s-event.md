@@ -41,16 +41,16 @@ Ask Claude to help you work with K8S Event resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f k8s_event.yaml
+f5xcctl configuration create k8s_event -n <namespace> -i k8s_event.yaml
 
 # Get
-f5xcctl get k8s_event {name} -n {namespace}
+f5xcctl configuration get k8s_event -n <namespace> <name>
 
 # List
-f5xcctl get k8s_events -n {namespace}
+f5xcctl configuration list k8s_event -n <namespace>
 
 # Delete
-f5xcctl delete k8s_event {name} -n {namespace}
+f5xcctl configuration delete k8s_event -n <namespace> <name>
 ```
 
 ## Terraform Resource

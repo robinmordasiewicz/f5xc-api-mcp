@@ -34,16 +34,16 @@ Ask Claude to help you work with Automation resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f automation.yaml
+f5xcctl configuration create automation -n <namespace> -i automation.yaml
 
 # Get
-f5xcctl get automation {name} -n {namespace}
+f5xcctl configuration get automation -n <namespace> <name>
 
 # List
-f5xcctl get automations -n {namespace}
+f5xcctl configuration list automation -n <namespace>
 
 # Delete
-f5xcctl delete automation {name} -n {namespace}
+f5xcctl configuration delete automation -n <namespace> <name>
 ```
 
 ## Terraform Resource

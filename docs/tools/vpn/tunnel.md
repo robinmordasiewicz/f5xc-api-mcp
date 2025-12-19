@@ -58,16 +58,16 @@ Ask Claude to help you work with Tunnel resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f tunnel.yaml
+f5xcctl configuration create tunnel -n <namespace> -i tunnel.yaml
 
 # Get
-f5xcctl get tunnel {name} -n {namespace}
+f5xcctl configuration get tunnel -n <namespace> <name>
 
 # List
-f5xcctl get tunnels -n {namespace}
+f5xcctl configuration list tunnel -n <namespace>
 
 # Delete
-f5xcctl delete tunnel {name} -n {namespace}
+f5xcctl configuration delete tunnel -n <namespace> <name>
 ```
 
 ## Terraform Resource

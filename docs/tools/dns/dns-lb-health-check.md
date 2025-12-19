@@ -59,16 +59,16 @@ Ask Claude to help you work with DNS Lb Health Check resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f dns_lb_health_check.yaml
+f5xcctl configuration create dns_lb_health_check -n <namespace> -i dns_lb_health_check.yaml
 
 # Get
-f5xcctl get dns_lb_health_check {name} -n {namespace}
+f5xcctl configuration get dns_lb_health_check -n <namespace> <name>
 
 # List
-f5xcctl get dns_lb_health_checks -n {namespace}
+f5xcctl configuration list dns_lb_health_check -n <namespace>
 
 # Delete
-f5xcctl delete dns_lb_health_check {name} -n {namespace}
+f5xcctl configuration delete dns_lb_health_check -n <namespace> <name>
 ```
 
 ## Terraform Resource

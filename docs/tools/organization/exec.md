@@ -36,16 +36,16 @@ Ask Claude to help you work with Exec resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f exec.yaml
+f5xcctl configuration create exec -n <namespace> -i exec.yaml
 
 # Get
-f5xcctl get exec {name} -n {namespace}
+f5xcctl configuration get exec -n <namespace> <name>
 
 # List
-f5xcctl get execs -n {namespace}
+f5xcctl configuration list exec -n <namespace>
 
 # Delete
-f5xcctl delete exec {name} -n {namespace}
+f5xcctl configuration delete exec -n <namespace> <name>
 ```
 
 ## Terraform Resource

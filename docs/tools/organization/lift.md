@@ -26,16 +26,16 @@ Ask Claude to help you work with Lift resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f lift.yaml
+f5xcctl configuration create lift -n <namespace> -i lift.yaml
 
 # Get
-f5xcctl get lift {name} -n {namespace}
+f5xcctl configuration get lift -n <namespace> <name>
 
 # List
-f5xcctl get lifts -n {namespace}
+f5xcctl configuration list lift -n <namespace>
 
 # Delete
-f5xcctl delete lift {name} -n {namespace}
+f5xcctl configuration delete lift -n <namespace> <name>
 ```
 
 ## Terraform Resource

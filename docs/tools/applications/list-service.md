@@ -35,16 +35,16 @@ Ask Claude to help you work with List Service resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f list_service.yaml
+f5xcctl configuration create list_service -n <namespace> -i list_service.yaml
 
 # Get
-f5xcctl get list_service {name} -n {namespace}
+f5xcctl configuration get list_service -n <namespace> <name>
 
 # List
-f5xcctl get list_services -n {namespace}
+f5xcctl configuration list list_service -n <namespace>
 
 # Delete
-f5xcctl delete list_service {name} -n {namespace}
+f5xcctl configuration delete list_service -n <namespace> <name>
 ```
 
 ## Terraform Resource

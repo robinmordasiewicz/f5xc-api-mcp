@@ -26,16 +26,16 @@ Ask Claude to help you work with All Ns Metric resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f all_ns_metric.yaml
+f5xcctl configuration create all_ns_metric -n <namespace> -i all_ns_metric.yaml
 
 # Get
-f5xcctl get all_ns_metric {name} -n {namespace}
+f5xcctl configuration get all_ns_metric -n <namespace> <name>
 
 # List
-f5xcctl get all_ns_metrics -n {namespace}
+f5xcctl configuration list all_ns_metric -n <namespace>
 
 # Delete
-f5xcctl delete all_ns_metric {name} -n {namespace}
+f5xcctl configuration delete all_ns_metric -n <namespace> <name>
 ```
 
 ## Terraform Resource

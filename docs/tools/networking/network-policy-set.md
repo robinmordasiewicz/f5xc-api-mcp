@@ -49,16 +49,16 @@ Ask Claude to help you work with Network Policy Set resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f network_policy_set.yaml
+f5xcctl configuration create network_policy_set -n <namespace> -i network_policy_set.yaml
 
 # Get
-f5xcctl get network_policy_set {name} -n {namespace}
+f5xcctl configuration get network_policy_set -n <namespace> <name>
 
 # List
-f5xcctl get network_policy_sets -n {namespace}
+f5xcctl configuration list network_policy_set -n <namespace>
 
 # Delete
-f5xcctl delete network_policy_set {name} -n {namespace}
+f5xcctl configuration delete network_policy_set -n <namespace> <name>
 ```
 
 ## Terraform Resource

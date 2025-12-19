@@ -42,16 +42,16 @@ Ask Claude to help you work with Exec Log resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f exec_log.yaml
+f5xcctl configuration create exec_log -n <namespace> -i exec_log.yaml
 
 # Get
-f5xcctl get exec_log {name} -n {namespace}
+f5xcctl configuration get exec_log -n <namespace> <name>
 
 # List
-f5xcctl get exec_logs -n {namespace}
+f5xcctl configuration list exec_log -n <namespace>
 
 # Delete
-f5xcctl delete exec_log {name} -n {namespace}
+f5xcctl configuration delete exec_log -n <namespace> <name>
 ```
 
 ## Terraform Resource

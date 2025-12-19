@@ -35,16 +35,16 @@ Ask Claude to help you work with By Application resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f by_application.yaml
+f5xcctl configuration create by_application -n <namespace> -i by_application.yaml
 
 # Get
-f5xcctl get by_application {name} -n {namespace}
+f5xcctl configuration get by_application -n <namespace> <name>
 
 # List
-f5xcctl get by_applications -n {namespace}
+f5xcctl configuration list by_application -n <namespace>
 
 # Delete
-f5xcctl delete by_application {name} -n {namespace}
+f5xcctl configuration delete by_application -n <namespace> <name>
 ```
 
 ## Terraform Resource

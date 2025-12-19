@@ -49,16 +49,16 @@ Ask Claude to help you work with Shape Bot Defense Instance resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f shape_bot_defense_instance.yaml
+f5xcctl configuration create shape_bot_defense_instance -n <namespace> -i shape_bot_defense_instance.yaml
 
 # Get
-f5xcctl get shape_bot_defense_instance {name} -n {namespace}
+f5xcctl configuration get shape_bot_defense_instance -n <namespace> <name>
 
 # List
-f5xcctl get shape_bot_defense_instances -n {namespace}
+f5xcctl configuration list shape_bot_defense_instance -n <namespace>
 
 # Delete
-f5xcctl delete shape_bot_defense_instance {name} -n {namespace}
+f5xcctl configuration delete shape_bot_defense_instance -n <namespace> <name>
 ```
 
 ## Terraform Resource

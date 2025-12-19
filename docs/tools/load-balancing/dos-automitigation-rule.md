@@ -37,16 +37,16 @@ Ask Claude to help you work with Dos Automitigation Rule resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f dos_automitigation_rule.yaml
+f5xcctl configuration create dos_automitigation_rule -n <namespace> -i dos_automitigation_rule.yaml
 
 # Get
-f5xcctl get dos_automitigation_rule {name} -n {namespace}
+f5xcctl configuration get dos_automitigation_rule -n <namespace> <name>
 
 # List
-f5xcctl get dos_automitigation_rules -n {namespace}
+f5xcctl configuration list dos_automitigation_rule -n <namespace>
 
 # Delete
-f5xcctl delete dos_automitigation_rule {name} -n {namespace}
+f5xcctl configuration delete dos_automitigation_rule -n <namespace> <name>
 ```
 
 ## Terraform Resource

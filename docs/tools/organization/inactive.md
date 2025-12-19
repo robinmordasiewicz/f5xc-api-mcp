@@ -28,16 +28,16 @@ Ask Claude to help you work with Inactive resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f inactive.yaml
+f5xcctl configuration create inactive -n <namespace> -i inactive.yaml
 
 # Get
-f5xcctl get inactive {name} -n {namespace}
+f5xcctl configuration get inactive -n <namespace> <name>
 
 # List
-f5xcctl get inactives -n {namespace}
+f5xcctl configuration list inactive -n <namespace>
 
 # Delete
-f5xcctl delete inactive {name} -n {namespace}
+f5xcctl configuration delete inactive -n <namespace> <name>
 ```
 
 ## Terraform Resource

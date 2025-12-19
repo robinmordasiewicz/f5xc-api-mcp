@@ -58,16 +58,16 @@ Ask Claude to help you work with Forwarding Class resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f forwarding_class.yaml
+f5xcctl configuration create forwarding_class -n <namespace> -i forwarding_class.yaml
 
 # Get
-f5xcctl get forwarding_class {name} -n {namespace}
+f5xcctl configuration get forwarding_class -n <namespace> <name>
 
 # List
-f5xcctl get forwarding_classs -n {namespace}
+f5xcctl configuration list forwarding_class -n <namespace>
 
 # Delete
-f5xcctl delete forwarding_class {name} -n {namespace}
+f5xcctl configuration delete forwarding_class -n <namespace> <name>
 ```
 
 ## Terraform Resource

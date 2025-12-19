@@ -43,16 +43,16 @@ Ask Claude to help you work with Status At Site resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f status_at_site.yaml
+f5xcctl configuration create status_at_site -n <namespace> -i status_at_site.yaml
 
 # Get
-f5xcctl get status_at_site {name} -n {namespace}
+f5xcctl configuration get status_at_site -n <namespace> <name>
 
 # List
-f5xcctl get status_at_sites -n {namespace}
+f5xcctl configuration list status_at_site -n <namespace>
 
 # Delete
-f5xcctl delete status_at_site {name} -n {namespace}
+f5xcctl configuration delete status_at_site -n <namespace> <name>
 ```
 
 ## Terraform Resource

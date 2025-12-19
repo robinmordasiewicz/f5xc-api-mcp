@@ -26,16 +26,16 @@ Ask Claude to help you work with Reset resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f reset.yaml
+f5xcctl configuration create reset -n <namespace> -i reset.yaml
 
 # Get
-f5xcctl get reset {name} -n {namespace}
+f5xcctl configuration get reset -n <namespace> <name>
 
 # List
-f5xcctl get resets -n {namespace}
+f5xcctl configuration list reset -n <namespace>
 
 # Delete
-f5xcctl delete reset {name} -n {namespace}
+f5xcctl configuration delete reset -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -49,16 +49,16 @@ Ask Claude to help you work with Nginx Server resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f nginx_server.yaml
+f5xcctl configuration create nginx_server -n <namespace> -i nginx_server.yaml
 
 # Get
-f5xcctl get nginx_server {name} -n {namespace}
+f5xcctl configuration get nginx_server -n <namespace> <name>
 
 # List
-f5xcctl get nginx_servers -n {namespace}
+f5xcctl configuration list nginx_server -n <namespace>
 
 # Delete
-f5xcctl delete nginx_server {name} -n {namespace}
+f5xcctl configuration delete nginx_server -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -26,16 +26,16 @@ Ask Claude to help you work with Last Login resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f last_login.yaml
+f5xcctl configuration create last_login -n <namespace> -i last_login.yaml
 
 # Get
-f5xcctl get last_login {name} -n {namespace}
+f5xcctl configuration get last_login -n <namespace> <name>
 
 # List
-f5xcctl get last_logins -n {namespace}
+f5xcctl configuration list last_login -n <namespace>
 
 # Delete
-f5xcctl delete last_login {name} -n {namespace}
+f5xcctl configuration delete last_login -n <namespace> <name>
 ```
 
 ## Terraform Resource

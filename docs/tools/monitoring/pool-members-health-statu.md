@@ -34,16 +34,16 @@ Ask Claude to help you work with Pool Members Health Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f pool_members_health_statu.yaml
+f5xcctl configuration create pool_members_health_statu -n <namespace> -i pool_members_health_statu.yaml
 
 # Get
-f5xcctl get pool_members_health_statu {name} -n {namespace}
+f5xcctl configuration get pool_members_health_statu -n <namespace> <name>
 
 # List
-f5xcctl get pool_members_health_status -n {namespace}
+f5xcctl configuration list pool_members_health_statu -n <namespace>
 
 # Delete
-f5xcctl delete pool_members_health_statu {name} -n {namespace}
+f5xcctl configuration delete pool_members_health_statu -n <namespace> <name>
 ```
 
 ## Terraform Resource

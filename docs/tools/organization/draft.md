@@ -40,16 +40,16 @@ Ask Claude to help you work with Draft resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f draft.yaml
+f5xcctl configuration create draft -n <namespace> -i draft.yaml
 
 # Get
-f5xcctl get draft {name} -n {namespace}
+f5xcctl configuration get draft -n <namespace> <name>
 
 # List
-f5xcctl get drafts -n {namespace}
+f5xcctl configuration list draft -n <namespace>
 
 # Delete
-f5xcctl delete draft {name} -n {namespace}
+f5xcctl configuration delete draft -n <namespace> <name>
 ```
 
 ## Terraform Resource

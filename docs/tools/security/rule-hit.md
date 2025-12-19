@@ -38,16 +38,16 @@ Ask Claude to help you work with Rule Hit resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f rule_hit.yaml
+f5xcctl configuration create rule_hit -n <namespace> -i rule_hit.yaml
 
 # Get
-f5xcctl get rule_hit {name} -n {namespace}
+f5xcctl configuration get rule_hit -n <namespace> <name>
 
 # List
-f5xcctl get rule_hits -n {namespace}
+f5xcctl configuration list rule_hit -n <namespace>
 
 # Delete
-f5xcctl delete rule_hit {name} -n {namespace}
+f5xcctl configuration delete rule_hit -n <namespace> <name>
 ```
 
 ## Terraform Resource

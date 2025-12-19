@@ -24,16 +24,16 @@ Ask Claude to help you work with Request Initial Acces resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f request_initial_acces.yaml
+f5xcctl configuration create request_initial_acces -n <namespace> -i request_initial_acces.yaml
 
 # Get
-f5xcctl get request_initial_acces {name} -n {namespace}
+f5xcctl configuration get request_initial_acces -n <namespace> <name>
 
 # List
-f5xcctl get request_initial_access -n {namespace}
+f5xcctl configuration list request_initial_acces -n <namespace>
 
 # Delete
-f5xcctl delete request_initial_acces {name} -n {namespace}
+f5xcctl configuration delete request_initial_acces -n <namespace> <name>
 ```
 
 ## Terraform Resource

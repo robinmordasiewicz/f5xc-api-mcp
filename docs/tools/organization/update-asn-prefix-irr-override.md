@@ -34,16 +34,16 @@ Ask Claude to help you work with Update Asn Prefix Irr Override resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f update_asn_prefix_irr_override.yaml
+f5xcctl configuration create update_asn_prefix_irr_override -n <namespace> -i update_asn_prefix_irr_override.yaml
 
 # Get
-f5xcctl get update_asn_prefix_irr_override {name} -n {namespace}
+f5xcctl configuration get update_asn_prefix_irr_override -n <namespace> <name>
 
 # List
-f5xcctl get update_asn_prefix_irr_overrides -n {namespace}
+f5xcctl configuration list update_asn_prefix_irr_override -n <namespace>
 
 # Delete
-f5xcctl delete update_asn_prefix_irr_override {name} -n {namespace}
+f5xcctl configuration delete update_asn_prefix_irr_override -n <namespace> <name>
 ```
 
 ## Terraform Resource

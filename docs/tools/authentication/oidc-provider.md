@@ -68,16 +68,16 @@ Ask Claude to help you work with Oidc Provider resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f oidc_provider.yaml
+f5xcctl configuration create oidc_provider -n <namespace> -i oidc_provider.yaml
 
 # Get
-f5xcctl get oidc_provider {name} -n {namespace}
+f5xcctl configuration get oidc_provider -n <namespace> <name>
 
 # List
-f5xcctl get oidc_providers -n {namespace}
+f5xcctl configuration list oidc_provider -n <namespace>
 
 # Delete
-f5xcctl delete oidc_provider {name} -n {namespace}
+f5xcctl configuration delete oidc_provider -n <namespace> <name>
 ```
 
 ## Terraform Resource

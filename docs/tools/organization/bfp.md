@@ -34,16 +34,16 @@ Ask Claude to help you work with Bfp resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f bfp.yaml
+f5xcctl configuration create bfp -n <namespace> -i bfp.yaml
 
 # Get
-f5xcctl get bfp {name} -n {namespace}
+f5xcctl configuration get bfp -n <namespace> <name>
 
 # List
-f5xcctl get bfps -n {namespace}
+f5xcctl configuration list bfp -n <namespace>
 
 # Delete
-f5xcctl delete bfp {name} -n {namespace}
+f5xcctl configuration delete bfp -n <namespace> <name>
 ```
 
 ## Terraform Resource

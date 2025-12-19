@@ -26,16 +26,16 @@ Ask Claude to help you work with Current resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f current.yaml
+f5xcctl configuration create current -n <namespace> -i current.yaml
 
 # Get
-f5xcctl get current {name} -n {namespace}
+f5xcctl configuration get current -n <namespace> <name>
 
 # List
-f5xcctl get currents -n {namespace}
+f5xcctl configuration list current -n <namespace>
 
 # Delete
-f5xcctl delete current {name} -n {namespace}
+f5xcctl configuration delete current -n <namespace> <name>
 ```
 
 ## Terraform Resource

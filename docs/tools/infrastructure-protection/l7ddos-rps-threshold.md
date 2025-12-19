@@ -35,16 +35,16 @@ Ask Claude to help you work with L7ddos Rps Threshold resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f l7ddos_rps_threshold.yaml
+f5xcctl configuration create l7ddos_rps_threshold -n <namespace> -i l7ddos_rps_threshold.yaml
 
 # Get
-f5xcctl get l7ddos_rps_threshold {name} -n {namespace}
+f5xcctl configuration get l7ddos_rps_threshold -n <namespace> <name>
 
 # List
-f5xcctl get l7ddos_rps_thresholds -n {namespace}
+f5xcctl configuration list l7ddos_rps_threshold -n <namespace>
 
 # Delete
-f5xcctl delete l7ddos_rps_threshold {name} -n {namespace}
+f5xcctl configuration delete l7ddos_rps_threshold -n <namespace> <name>
 ```
 
 ## Terraform Resource

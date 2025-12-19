@@ -58,16 +58,16 @@ Ask Claude to help you work with Virtual Host resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f virtual_host.yaml
+f5xcctl configuration create virtual_host -n <namespace> -i virtual_host.yaml
 
 # Get
-f5xcctl get virtual_host {name} -n {namespace}
+f5xcctl configuration get virtual_host -n <namespace> <name>
 
 # List
-f5xcctl get virtual_hosts -n {namespace}
+f5xcctl configuration list virtual_host -n <namespace>
 
 # Delete
-f5xcctl delete virtual_host {name} -n {namespace}
+f5xcctl configuration delete virtual_host -n <namespace> <name>
 ```
 
 ## Terraform Resource

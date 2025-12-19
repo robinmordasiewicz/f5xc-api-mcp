@@ -44,16 +44,16 @@ Ask Claude to help you work with Suspicious User resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f suspicious_user.yaml
+f5xcctl configuration create suspicious_user -n <namespace> -i suspicious_user.yaml
 
 # Get
-f5xcctl get suspicious_user {name} -n {namespace}
+f5xcctl configuration get suspicious_user -n <namespace> <name>
 
 # List
-f5xcctl get suspicious_users -n {namespace}
+f5xcctl configuration list suspicious_user -n <namespace>
 
 # Delete
-f5xcctl delete suspicious_user {name} -n {namespace}
+f5xcctl configuration delete suspicious_user -n <namespace> <name>
 ```
 
 ## Terraform Resource

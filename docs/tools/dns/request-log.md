@@ -34,16 +34,16 @@ Ask Claude to help you work with Request Log resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f request_log.yaml
+f5xcctl configuration create request_log -n <namespace> -i request_log.yaml
 
 # Get
-f5xcctl get request_log {name} -n {namespace}
+f5xcctl configuration get request_log -n <namespace> <name>
 
 # List
-f5xcctl get request_logs -n {namespace}
+f5xcctl configuration list request_log -n <namespace>
 
 # Delete
-f5xcctl delete request_log {name} -n {namespace}
+f5xcctl configuration delete request_log -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with API Definition resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f api_definition.yaml
+f5xcctl configuration create api_definition -n <namespace> -i api_definition.yaml
 
 # Get
-f5xcctl get api_definition {name} -n {namespace}
+f5xcctl configuration get api_definition -n <namespace> <name>
 
 # List
-f5xcctl get api_definitions -n {namespace}
+f5xcctl configuration list api_definition -n <namespace>
 
 # Delete
-f5xcctl delete api_definition {name} -n {namespace}
+f5xcctl configuration delete api_definition -n <namespace> <name>
 ```
 
 ## Terraform Resource

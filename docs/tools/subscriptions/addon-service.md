@@ -48,16 +48,16 @@ Ask Claude to help you work with Addon Service resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f addon_service.yaml
+f5xcctl configuration create addon_service -n <namespace> -i addon_service.yaml
 
 # Get
-f5xcctl get addon_service {name} -n {namespace}
+f5xcctl configuration get addon_service -n <namespace> <name>
 
 # List
-f5xcctl get addon_services -n {namespace}
+f5xcctl configuration list addon_service -n <namespace>
 
 # Delete
-f5xcctl delete addon_service {name} -n {namespace}
+f5xcctl configuration delete addon_service -n <namespace> <name>
 ```
 
 ## Terraform Resource

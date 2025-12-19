@@ -35,16 +35,16 @@ Ask Claude to help you work with Global Network resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f global_network.yaml
+f5xcctl configuration create global_network -n <namespace> -i global_network.yaml
 
 # Get
-f5xcctl get global_network {name} -n {namespace}
+f5xcctl configuration get global_network -n <namespace> <name>
 
 # List
-f5xcctl get global_networks -n {namespace}
+f5xcctl configuration list global_network -n <namespace>
 
 # Delete
-f5xcctl delete global_network {name} -n {namespace}
+f5xcctl configuration delete global_network -n <namespace> <name>
 ```
 
 ## Terraform Resource

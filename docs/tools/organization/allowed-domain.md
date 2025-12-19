@@ -56,16 +56,16 @@ Ask Claude to help you work with Allowed Domain resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f allowed_domain.yaml
+f5xcctl configuration create allowed_domain -n <namespace> -i allowed_domain.yaml
 
 # Get
-f5xcctl get allowed_domain {name} -n {namespace}
+f5xcctl configuration get allowed_domain -n <namespace> <name>
 
 # List
-f5xcctl get allowed_domains -n {namespace}
+f5xcctl configuration list allowed_domain -n <namespace>
 
 # Delete
-f5xcctl delete allowed_domain {name} -n {namespace}
+f5xcctl configuration delete allowed_domain -n <namespace> <name>
 ```
 
 ## Terraform Resource

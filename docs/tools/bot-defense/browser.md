@@ -34,16 +34,16 @@ Ask Claude to help you work with Browser resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f browser.yaml
+f5xcctl configuration create browser -n <namespace> -i browser.yaml
 
 # Get
-f5xcctl get browser {name} -n {namespace}
+f5xcctl configuration get browser -n <namespace> <name>
 
 # List
-f5xcctl get browsers -n {namespace}
+f5xcctl configuration list browser -n <namespace>
 
 # Delete
-f5xcctl delete browser {name} -n {namespace}
+f5xcctl configuration delete browser -n <namespace> <name>
 ```
 
 ## Terraform Resource

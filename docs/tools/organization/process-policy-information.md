@@ -27,16 +27,16 @@ Ask Claude to help you work with Process Policy Information resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f process_policy_information.yaml
+f5xcctl configuration create process_policy_information -n <namespace> -i process_policy_information.yaml
 
 # Get
-f5xcctl get process_policy_information {name} -n {namespace}
+f5xcctl configuration get process_policy_information -n <namespace> <name>
 
 # List
-f5xcctl get process_policy_informations -n {namespace}
+f5xcctl configuration list process_policy_information -n <namespace>
 
 # Delete
-f5xcctl delete process_policy_information {name} -n {namespace}
+f5xcctl configuration delete process_policy_information -n <namespace> <name>
 ```
 
 ## Terraform Resource

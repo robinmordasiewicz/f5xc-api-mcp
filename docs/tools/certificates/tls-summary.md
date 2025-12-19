@@ -34,16 +34,16 @@ Ask Claude to help you work with TLS Summary resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f tls_summary.yaml
+f5xcctl configuration create tls_summary -n <namespace> -i tls_summary.yaml
 
 # Get
-f5xcctl get tls_summary {name} -n {namespace}
+f5xcctl configuration get tls_summary -n <namespace> <name>
 
 # List
-f5xcctl get tls_summarys -n {namespace}
+f5xcctl configuration list tls_summary -n <namespace>
 
 # Delete
-f5xcctl delete tls_summary {name} -n {namespace}
+f5xcctl configuration delete tls_summary -n <namespace> <name>
 ```
 
 ## Terraform Resource

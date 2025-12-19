@@ -35,16 +35,16 @@ Ask Claude to help you work with Download resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f download.yaml
+f5xcctl configuration create download -n <namespace> -i download.yaml
 
 # Get
-f5xcctl get download {name} -n {namespace}
+f5xcctl configuration get download -n <namespace> <name>
 
 # List
-f5xcctl get downloads -n {namespace}
+f5xcctl configuration list download -n <namespace>
 
 # Delete
-f5xcctl delete download {name} -n {namespace}
+f5xcctl configuration delete download -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -26,16 +26,16 @@ Ask Claude to help you work with Favicon resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f favicon.yaml
+f5xcctl configuration create favicon -n <namespace> -i favicon.yaml
 
 # Get
-f5xcctl get favicon {name} -n {namespace}
+f5xcctl configuration get favicon -n <namespace> <name>
 
 # List
-f5xcctl get favicons -n {namespace}
+f5xcctl configuration list favicon -n <namespace>
 
 # Delete
-f5xcctl delete favicon {name} -n {namespace}
+f5xcctl configuration delete favicon -n <namespace> <name>
 ```
 
 ## Terraform Resource

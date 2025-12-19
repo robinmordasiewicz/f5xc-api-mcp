@@ -35,16 +35,16 @@ Ask Claude to help you work with Simplified Route resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f simplified_route.yaml
+f5xcctl configuration create simplified_route -n <namespace> -i simplified_route.yaml
 
 # Get
-f5xcctl get simplified_route {name} -n {namespace}
+f5xcctl configuration get simplified_route -n <namespace> <name>
 
 # List
-f5xcctl get simplified_routes -n {namespace}
+f5xcctl configuration list simplified_route -n <namespace>
 
 # Delete
-f5xcctl delete simplified_route {name} -n {namespace}
+f5xcctl configuration delete simplified_route -n <namespace> <name>
 ```
 
 ## Terraform Resource

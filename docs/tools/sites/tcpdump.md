@@ -35,16 +35,16 @@ Ask Claude to help you work with Tcpdump resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f tcpdump.yaml
+f5xcctl configuration create tcpdump -n <namespace> -i tcpdump.yaml
 
 # Get
-f5xcctl get tcpdump {name} -n {namespace}
+f5xcctl configuration get tcpdump -n <namespace> <name>
 
 # List
-f5xcctl get tcpdumps -n {namespace}
+f5xcctl configuration list tcpdump -n <namespace>
 
 # Delete
-f5xcctl delete tcpdump {name} -n {namespace}
+f5xcctl configuration delete tcpdump -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -26,16 +26,16 @@ Ask Claude to help you work with Ua resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f ua.yaml
+f5xcctl configuration create ua -n <namespace> -i ua.yaml
 
 # Get
-f5xcctl get ua {name} -n {namespace}
+f5xcctl configuration get ua -n <namespace> <name>
 
 # List
-f5xcctl get uas -n {namespace}
+f5xcctl configuration list ua -n <namespace>
 
 # Delete
-f5xcctl delete ua {name} -n {namespace}
+f5xcctl configuration delete ua -n <namespace> <name>
 ```
 
 ## Terraform Resource

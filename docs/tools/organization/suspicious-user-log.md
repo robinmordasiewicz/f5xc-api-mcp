@@ -40,16 +40,16 @@ Ask Claude to help you work with Suspicious User Log resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f suspicious_user_log.yaml
+f5xcctl configuration create suspicious_user_log -n <namespace> -i suspicious_user_log.yaml
 
 # Get
-f5xcctl get suspicious_user_log {name} -n {namespace}
+f5xcctl configuration get suspicious_user_log -n <namespace> <name>
 
 # List
-f5xcctl get suspicious_user_logs -n {namespace}
+f5xcctl configuration list suspicious_user_log -n <namespace>
 
 # Delete
-f5xcctl delete suspicious_user_log {name} -n {namespace}
+f5xcctl configuration delete suspicious_user_log -n <namespace> <name>
 ```
 
 ## Terraform Resource

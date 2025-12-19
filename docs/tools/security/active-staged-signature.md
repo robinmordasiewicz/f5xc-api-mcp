@@ -35,16 +35,16 @@ Ask Claude to help you work with Active Staged Signature resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f active_staged_signature.yaml
+f5xcctl configuration create active_staged_signature -n <namespace> -i active_staged_signature.yaml
 
 # Get
-f5xcctl get active_staged_signature {name} -n {namespace}
+f5xcctl configuration get active_staged_signature -n <namespace> <name>
 
 # List
-f5xcctl get active_staged_signatures -n {namespace}
+f5xcctl configuration list active_staged_signature -n <namespace>
 
 # Delete
-f5xcctl delete active_staged_signature {name} -n {namespace}
+f5xcctl configuration delete active_staged_signature -n <namespace> <name>
 ```
 
 ## Terraform Resource

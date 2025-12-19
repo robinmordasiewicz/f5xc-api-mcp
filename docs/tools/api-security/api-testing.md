@@ -58,16 +58,16 @@ Ask Claude to help you work with API Testing resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f api_testing.yaml
+f5xcctl configuration create api_testing -n <namespace> -i api_testing.yaml
 
 # Get
-f5xcctl get api_testing {name} -n {namespace}
+f5xcctl configuration get api_testing -n <namespace> <name>
 
 # List
-f5xcctl get api_testings -n {namespace}
+f5xcctl configuration list api_testing -n <namespace>
 
 # Delete
-f5xcctl delete api_testing {name} -n {namespace}
+f5xcctl configuration delete api_testing -n <namespace> <name>
 ```
 
 ## Terraform Resource

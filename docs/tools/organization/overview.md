@@ -47,16 +47,16 @@ Ask Claude to help you work with Overview resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f overview.yaml
+f5xcctl configuration create overview -n <namespace> -i overview.yaml
 
 # Get
-f5xcctl get overview {name} -n {namespace}
+f5xcctl configuration get overview -n <namespace> <name>
 
 # List
-f5xcctl get overviews -n {namespace}
+f5xcctl configuration list overview -n <namespace>
 
 # Delete
-f5xcctl delete overview {name} -n {namespace}
+f5xcctl configuration delete overview -n <namespace> <name>
 ```
 
 ## Terraform Resource

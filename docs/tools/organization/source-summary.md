@@ -42,16 +42,16 @@ Ask Claude to help you work with Source Summary resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f source_summary.yaml
+f5xcctl configuration create source_summary -n <namespace> -i source_summary.yaml
 
 # Get
-f5xcctl get source_summary {name} -n {namespace}
+f5xcctl configuration get source_summary -n <namespace> <name>
 
 # List
-f5xcctl get source_summarys -n {namespace}
+f5xcctl configuration list source_summary -n <namespace>
 
 # Delete
-f5xcctl delete source_summary {name} -n {namespace}
+f5xcctl configuration delete source_summary -n <namespace> <name>
 ```
 
 ## Terraform Resource

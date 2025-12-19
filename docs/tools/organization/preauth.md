@@ -26,16 +26,16 @@ Ask Claude to help you work with Preauth resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f preauth.yaml
+f5xcctl configuration create preauth -n <namespace> -i preauth.yaml
 
 # Get
-f5xcctl get preauth {name} -n {namespace}
+f5xcctl configuration get preauth -n <namespace> <name>
 
 # List
-f5xcctl get preauths -n {namespace}
+f5xcctl configuration list preauth -n <namespace>
 
 # Delete
-f5xcctl delete preauth {name} -n {namespace}
+f5xcctl configuration delete preauth -n <namespace> <name>
 ```
 
 ## Terraform Resource

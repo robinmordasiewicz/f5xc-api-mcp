@@ -34,16 +34,16 @@ Ask Claude to help you work with Transit Usage resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f transit_usage.yaml
+f5xcctl configuration create transit_usage -n <namespace> -i transit_usage.yaml
 
 # Get
-f5xcctl get transit_usage {name} -n {namespace}
+f5xcctl configuration get transit_usage -n <namespace> <name>
 
 # List
-f5xcctl get transit_usages -n {namespace}
+f5xcctl configuration list transit_usage -n <namespace>
 
 # Delete
-f5xcctl delete transit_usage {name} -n {namespace}
+f5xcctl configuration delete transit_usage -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -60,16 +60,16 @@ Ask Claude to help you work with Fast Acl resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f fast_acl.yaml
+f5xcctl configuration create fast_acl -n <namespace> -i fast_acl.yaml
 
 # Get
-f5xcctl get fast_acl {name} -n {namespace}
+f5xcctl configuration get fast_acl -n <namespace> <name>
 
 # List
-f5xcctl get fast_acls -n {namespace}
+f5xcctl configuration list fast_acl -n <namespace>
 
 # Delete
-f5xcctl delete fast_acl {name} -n {namespace}
+f5xcctl configuration delete fast_acl -n <namespace> <name>
 ```
 
 ## Terraform Resource

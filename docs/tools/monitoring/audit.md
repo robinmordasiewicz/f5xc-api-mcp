@@ -42,16 +42,16 @@ Ask Claude to help you work with Audit resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f audit.yaml
+f5xcctl configuration create audit -n <namespace> -i audit.yaml
 
 # Get
-f5xcctl get audit {name} -n {namespace}
+f5xcctl configuration get audit -n <namespace> <name>
 
 # List
-f5xcctl get audits -n {namespace}
+f5xcctl configuration list audit -n <namespace>
 
 # Delete
-f5xcctl delete audit {name} -n {namespace}
+f5xcctl configuration delete audit -n <namespace> <name>
 ```
 
 ## Terraform Resource

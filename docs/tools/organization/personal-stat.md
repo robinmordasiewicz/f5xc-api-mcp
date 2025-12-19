@@ -34,16 +34,16 @@ Ask Claude to help you work with Personal Stat resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f personal_stat.yaml
+f5xcctl configuration create personal_stat -n <namespace> -i personal_stat.yaml
 
 # Get
-f5xcctl get personal_stat {name} -n {namespace}
+f5xcctl configuration get personal_stat -n <namespace> <name>
 
 # List
-f5xcctl get personal_stats -n {namespace}
+f5xcctl configuration list personal_stat -n <namespace>
 
 # Delete
-f5xcctl delete personal_stat {name} -n {namespace}
+f5xcctl configuration delete personal_stat -n <namespace> <name>
 ```
 
 ## Terraform Resource

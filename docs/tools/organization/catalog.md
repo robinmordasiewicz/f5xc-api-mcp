@@ -22,16 +22,16 @@ Ask Claude to help you work with Catalog resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f catalog.yaml
+f5xcctl configuration create catalog -n <namespace> -i catalog.yaml
 
 # Get
-f5xcctl get catalog {name} -n {namespace}
+f5xcctl configuration get catalog -n <namespace> <name>
 
 # List
-f5xcctl get catalogs -n {namespace}
+f5xcctl configuration list catalog -n <namespace>
 
 # Delete
-f5xcctl delete catalog {name} -n {namespace}
+f5xcctl configuration delete catalog -n <namespace> <name>
 ```
 
 ## Terraform Resource

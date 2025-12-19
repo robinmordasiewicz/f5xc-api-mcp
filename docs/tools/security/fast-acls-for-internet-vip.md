@@ -41,16 +41,16 @@ Ask Claude to help you work with Fast Acls For Internet Vip resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f fast_acls_for_internet_vip.yaml
+f5xcctl configuration create fast_acls_for_internet_vip -n <namespace> -i fast_acls_for_internet_vip.yaml
 
 # Get
-f5xcctl get fast_acls_for_internet_vip {name} -n {namespace}
+f5xcctl configuration get fast_acls_for_internet_vip -n <namespace> <name>
 
 # List
-f5xcctl get fast_acls_for_internet_vips -n {namespace}
+f5xcctl configuration list fast_acls_for_internet_vip -n <namespace>
 
 # Delete
-f5xcctl delete fast_acls_for_internet_vip {name} -n {namespace}
+f5xcctl configuration delete fast_acls_for_internet_vip -n <namespace> <name>
 ```
 
 ## Terraform Resource

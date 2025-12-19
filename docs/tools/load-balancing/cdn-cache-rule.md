@@ -58,16 +58,16 @@ Ask Claude to help you work with Cdn Cache Rule resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f cdn_cache_rule.yaml
+f5xcctl configuration create cdn_cache_rule -n <namespace> -i cdn_cache_rule.yaml
 
 # Get
-f5xcctl get cdn_cache_rule {name} -n {namespace}
+f5xcctl configuration get cdn_cache_rule -n <namespace> <name>
 
 # List
-f5xcctl get cdn_cache_rules -n {namespace}
+f5xcctl configuration list cdn_cache_rule -n <namespace>
 
 # Delete
-f5xcctl delete cdn_cache_rule {name} -n {namespace}
+f5xcctl configuration delete cdn_cache_rule -n <namespace> <name>
 ```
 
 ## Terraform Resource

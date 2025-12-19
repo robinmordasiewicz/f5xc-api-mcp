@@ -35,16 +35,16 @@ Ask Claude to help you work with Secret resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f secret.yaml
+f5xcctl configuration create secret -n <namespace> -i secret.yaml
 
 # Get
-f5xcctl get secret {name} -n {namespace}
+f5xcctl configuration get secret -n <namespace> <name>
 
 # List
-f5xcctl get secrets -n {namespace}
+f5xcctl configuration list secret -n <namespace>
 
 # Delete
-f5xcctl delete secret {name} -n {namespace}
+f5xcctl configuration delete secret -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -44,16 +44,16 @@ Ask Claude to help you work with Detail resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f detail.yaml
+f5xcctl configuration create detail -n <namespace> -i detail.yaml
 
 # Get
-f5xcctl get detail {name} -n {namespace}
+f5xcctl configuration get detail -n <namespace> <name>
 
 # List
-f5xcctl get details -n {namespace}
+f5xcctl configuration list detail -n <namespace>
 
 # Delete
-f5xcctl delete detail {name} -n {namespace}
+f5xcctl configuration delete detail -n <namespace> <name>
 ```
 
 ## Terraform Resource

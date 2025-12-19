@@ -35,16 +35,16 @@ Ask Claude to help you work with Vulnerabilitie resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f vulnerabilitie.yaml
+f5xcctl configuration create vulnerabilitie -n <namespace> -i vulnerabilitie.yaml
 
 # Get
-f5xcctl get vulnerabilitie {name} -n {namespace}
+f5xcctl configuration get vulnerabilitie -n <namespace> <name>
 
 # List
-f5xcctl get vulnerabilities -n {namespace}
+f5xcctl configuration list vulnerabilitie -n <namespace>
 
 # Delete
-f5xcctl delete vulnerabilitie {name} -n {namespace}
+f5xcctl configuration delete vulnerabilitie -n <namespace> <name>
 ```
 
 ## Terraform Resource

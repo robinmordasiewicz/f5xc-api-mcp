@@ -58,16 +58,16 @@ Ask Claude to help you work with External Connector resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f external_connector.yaml
+f5xcctl configuration create external_connector -n <namespace> -i external_connector.yaml
 
 # Get
-f5xcctl get external_connector {name} -n {namespace}
+f5xcctl configuration get external_connector -n <namespace> <name>
 
 # List
-f5xcctl get external_connectors -n {namespace}
+f5xcctl configuration list external_connector -n <namespace>
 
 # Delete
-f5xcctl delete external_connector {name} -n {namespace}
+f5xcctl configuration delete external_connector -n <namespace> <name>
 ```
 
 ## Terraform Resource

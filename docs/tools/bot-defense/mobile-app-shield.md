@@ -43,16 +43,16 @@ Ask Claude to help you work with Mobile App Shield resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f mobile_app_shield.yaml
+f5xcctl configuration create mobile_app_shield -n <namespace> -i mobile_app_shield.yaml
 
 # Get
-f5xcctl get mobile_app_shield {name} -n {namespace}
+f5xcctl configuration get mobile_app_shield -n <namespace> <name>
 
 # List
-f5xcctl get mobile_app_shields -n {namespace}
+f5xcctl configuration list mobile_app_shield -n <namespace>
 
 # Delete
-f5xcctl delete mobile_app_shield {name} -n {namespace}
+f5xcctl configuration delete mobile_app_shield -n <namespace> <name>
 ```
 
 ## Terraform Resource

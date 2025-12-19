@@ -58,16 +58,16 @@ Ask Claude to help you work with Quota resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f quota.yaml
+f5xcctl configuration create quota -n <namespace> -i quota.yaml
 
 # Get
-f5xcctl get quota {name} -n {namespace}
+f5xcctl configuration get quota -n <namespace> <name>
 
 # List
-f5xcctl get quotas -n {namespace}
+f5xcctl configuration list quota -n <namespace>
 
 # Delete
-f5xcctl delete quota {name} -n {namespace}
+f5xcctl configuration delete quota -n <namespace> <name>
 ```
 
 ## Terraform Resource

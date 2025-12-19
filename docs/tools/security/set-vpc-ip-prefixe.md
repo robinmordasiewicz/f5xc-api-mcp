@@ -35,16 +35,16 @@ Ask Claude to help you work with Set VPC IP Prefixe resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f set_vpc_ip_prefixe.yaml
+f5xcctl configuration create set_vpc_ip_prefixe -n <namespace> -i set_vpc_ip_prefixe.yaml
 
 # Get
-f5xcctl get set_vpc_ip_prefixe {name} -n {namespace}
+f5xcctl configuration get set_vpc_ip_prefixe -n <namespace> <name>
 
 # List
-f5xcctl get set_vpc_ip_prefixes -n {namespace}
+f5xcctl configuration list set_vpc_ip_prefixe -n <namespace>
 
 # Delete
-f5xcctl delete set_vpc_ip_prefixe {name} -n {namespace}
+f5xcctl configuration delete set_vpc_ip_prefixe -n <namespace> <name>
 ```
 
 ## Terraform Resource

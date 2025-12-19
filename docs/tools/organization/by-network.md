@@ -35,16 +35,16 @@ Ask Claude to help you work with By Network resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f by_network.yaml
+f5xcctl configuration create by_network -n <namespace> -i by_network.yaml
 
 # Get
-f5xcctl get by_network {name} -n {namespace}
+f5xcctl configuration get by_network -n <namespace> <name>
 
 # List
-f5xcctl get by_networks -n {namespace}
+f5xcctl configuration list by_network -n <namespace>
 
 # Delete
-f5xcctl delete by_network {name} -n {namespace}
+f5xcctl configuration delete by_network -n <namespace> <name>
 ```
 
 ## Terraform Resource

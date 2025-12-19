@@ -40,16 +40,16 @@ Ask Claude to help you work with Diagnosi resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f diagnosi.yaml
+f5xcctl configuration create diagnosi -n <namespace> -i diagnosi.yaml
 
 # Get
-f5xcctl get diagnosi {name} -n {namespace}
+f5xcctl configuration get diagnosi -n <namespace> <name>
 
 # List
-f5xcctl get diagnosis -n {namespace}
+f5xcctl configuration list diagnosi -n <namespace>
 
 # Delete
-f5xcctl delete diagnosi {name} -n {namespace}
+f5xcctl configuration delete diagnosi -n <namespace> <name>
 ```
 
 ## Terraform Resource

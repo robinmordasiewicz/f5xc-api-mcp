@@ -34,16 +34,16 @@ Ask Claude to help you work with Password Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f password_policy.yaml
+f5xcctl configuration create password_policy -n <namespace> -i password_policy.yaml
 
 # Get
-f5xcctl get password_policy {name} -n {namespace}
+f5xcctl configuration get password_policy -n <namespace> <name>
 
 # List
-f5xcctl get password_policys -n {namespace}
+f5xcctl configuration list password_policy -n <namespace>
 
 # Delete
-f5xcctl delete password_policy {name} -n {namespace}
+f5xcctl configuration delete password_policy -n <namespace> <name>
 ```
 
 ## Terraform Resource

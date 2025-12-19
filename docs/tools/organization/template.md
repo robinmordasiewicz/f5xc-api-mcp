@@ -35,16 +35,16 @@ Ask Claude to help you work with Template resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f template.yaml
+f5xcctl configuration create template -n <namespace> -i template.yaml
 
 # Get
-f5xcctl get template {name} -n {namespace}
+f5xcctl configuration get template -n <namespace> <name>
 
 # List
-f5xcctl get templates -n {namespace}
+f5xcctl configuration list template -n <namespace>
 
 # Delete
-f5xcctl delete template {name} -n {namespace}
+f5xcctl configuration delete template -n <namespace> <name>
 ```
 
 ## Terraform Resource

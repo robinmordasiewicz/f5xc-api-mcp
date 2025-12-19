@@ -41,16 +41,16 @@ Ask Claude to help you work with Pre Upgrade Check resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f pre_upgrade_check.yaml
+f5xcctl configuration create pre_upgrade_check -n <namespace> -i pre_upgrade_check.yaml
 
 # Get
-f5xcctl get pre_upgrade_check {name} -n {namespace}
+f5xcctl configuration get pre_upgrade_check -n <namespace> <name>
 
 # List
-f5xcctl get pre_upgrade_checks -n {namespace}
+f5xcctl configuration list pre_upgrade_check -n <namespace>
 
 # Delete
-f5xcctl delete pre_upgrade_check {name} -n {namespace}
+f5xcctl configuration delete pre_upgrade_check -n <namespace> <name>
 ```
 
 ## Terraform Resource

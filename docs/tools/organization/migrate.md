@@ -26,16 +26,16 @@ Ask Claude to help you work with Migrate resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f migrate.yaml
+f5xcctl configuration create migrate -n <namespace> -i migrate.yaml
 
 # Get
-f5xcctl get migrate {name} -n {namespace}
+f5xcctl configuration get migrate -n <namespace> <name>
 
 # List
-f5xcctl get migrates -n {namespace}
+f5xcctl configuration list migrate -n <namespace>
 
 # Delete
-f5xcctl delete migrate {name} -n {namespace}
+f5xcctl configuration delete migrate -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -34,16 +34,16 @@ Ask Claude to help you work with Nginx Dataplane Server resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f nginx_dataplane_server.yaml
+f5xcctl configuration create nginx_dataplane_server -n <namespace> -i nginx_dataplane_server.yaml
 
 # Get
-f5xcctl get nginx_dataplane_server {name} -n {namespace}
+f5xcctl configuration get nginx_dataplane_server -n <namespace> <name>
 
 # List
-f5xcctl get nginx_dataplane_servers -n {namespace}
+f5xcctl configuration list nginx_dataplane_server -n <namespace>
 
 # Delete
-f5xcctl delete nginx_dataplane_server {name} -n {namespace}
+f5xcctl configuration delete nginx_dataplane_server -n <namespace> <name>
 ```
 
 ## Terraform Resource

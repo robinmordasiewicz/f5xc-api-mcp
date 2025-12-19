@@ -58,16 +58,16 @@ Ask Claude to help you work with Log Receiver resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f log_receiver.yaml
+f5xcctl configuration create log_receiver -n <namespace> -i log_receiver.yaml
 
 # Get
-f5xcctl get log_receiver {name} -n {namespace}
+f5xcctl configuration get log_receiver -n <namespace> <name>
 
 # List
-f5xcctl get log_receivers -n {namespace}
+f5xcctl configuration list log_receiver -n <namespace>
 
 # Delete
-f5xcctl delete log_receiver {name} -n {namespace}
+f5xcctl configuration delete log_receiver -n <namespace> <name>
 ```
 
 ## Terraform Resource

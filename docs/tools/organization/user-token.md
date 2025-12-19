@@ -26,16 +26,16 @@ Ask Claude to help you work with User Token resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f user_token.yaml
+f5xcctl configuration create user_token -n <namespace> -i user_token.yaml
 
 # Get
-f5xcctl get user_token {name} -n {namespace}
+f5xcctl configuration get user_token -n <namespace> <name>
 
 # List
-f5xcctl get user_tokens -n {namespace}
+f5xcctl configuration list user_token -n <namespace>
 
 # Delete
-f5xcctl delete user_token {name} -n {namespace}
+f5xcctl configuration delete user_token -n <namespace> <name>
 ```
 
 ## Terraform Resource

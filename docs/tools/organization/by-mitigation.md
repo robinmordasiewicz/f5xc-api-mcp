@@ -35,16 +35,16 @@ Ask Claude to help you work with By Mitigation resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f by_mitigation.yaml
+f5xcctl configuration create by_mitigation -n <namespace> -i by_mitigation.yaml
 
 # Get
-f5xcctl get by_mitigation {name} -n {namespace}
+f5xcctl configuration get by_mitigation -n <namespace> <name>
 
 # List
-f5xcctl get by_mitigations -n {namespace}
+f5xcctl configuration list by_mitigation -n <namespace>
 
 # Delete
-f5xcctl delete by_mitigation {name} -n {namespace}
+f5xcctl configuration delete by_mitigation -n <namespace> <name>
 ```
 
 ## Terraform Resource

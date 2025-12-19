@@ -40,16 +40,16 @@ Ask Claude to help you work with TLS Report Detail resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f tls_report_detail.yaml
+f5xcctl configuration create tls_report_detail -n <namespace> -i tls_report_detail.yaml
 
 # Get
-f5xcctl get tls_report_detail {name} -n {namespace}
+f5xcctl configuration get tls_report_detail -n <namespace> <name>
 
 # List
-f5xcctl get tls_report_details -n {namespace}
+f5xcctl configuration list tls_report_detail -n <namespace>
 
 # Delete
-f5xcctl delete tls_report_detail {name} -n {namespace}
+f5xcctl configuration delete tls_report_detail -n <namespace> <name>
 ```
 
 ## Terraform Resource

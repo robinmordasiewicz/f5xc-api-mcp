@@ -26,16 +26,16 @@ Ask Claude to help you work with Send Password Email resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f send_password_email.yaml
+f5xcctl configuration create send_password_email -n <namespace> -i send_password_email.yaml
 
 # Get
-f5xcctl get send_password_email {name} -n {namespace}
+f5xcctl configuration get send_password_email -n <namespace> <name>
 
 # List
-f5xcctl get send_password_emails -n {namespace}
+f5xcctl configuration list send_password_email -n <namespace>
 
 # Delete
-f5xcctl delete send_password_email {name} -n {namespace}
+f5xcctl configuration delete send_password_email -n <namespace> <name>
 ```
 
 ## Terraform Resource

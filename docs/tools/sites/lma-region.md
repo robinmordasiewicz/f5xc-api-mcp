@@ -49,16 +49,16 @@ Ask Claude to help you work with Lma Region resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f lma_region.yaml
+f5xcctl configuration create lma_region -n <namespace> -i lma_region.yaml
 
 # Get
-f5xcctl get lma_region {name} -n {namespace}
+f5xcctl configuration get lma_region -n <namespace> <name>
 
 # List
-f5xcctl get lma_regions -n {namespace}
+f5xcctl configuration list lma_region -n <namespace>
 
 # Delete
-f5xcctl delete lma_region {name} -n {namespace}
+f5xcctl configuration delete lma_region -n <namespace> <name>
 ```
 
 ## Terraform Resource

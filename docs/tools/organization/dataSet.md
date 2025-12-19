@@ -26,16 +26,16 @@ Ask Claude to help you work with DataSet resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f dataSet.yaml
+f5xcctl configuration create dataSet -n <namespace> -i dataSet.yaml
 
 # Get
-f5xcctl get dataSet {name} -n {namespace}
+f5xcctl configuration get dataSet -n <namespace> <name>
 
 # List
-f5xcctl get dataSets -n {namespace}
+f5xcctl configuration list dataSet -n <namespace>
 
 # Delete
-f5xcctl delete dataSet {name} -n {namespace}
+f5xcctl configuration delete dataSet -n <namespace> <name>
 ```
 
 ## Terraform Resource

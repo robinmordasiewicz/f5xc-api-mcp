@@ -35,16 +35,16 @@ Ask Claude to help you work with Access Count resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f access_count.yaml
+f5xcctl configuration create access_count -n <namespace> -i access_count.yaml
 
 # Get
-f5xcctl get access_count {name} -n {namespace}
+f5xcctl configuration get access_count -n <namespace> <name>
 
 # List
-f5xcctl get access_counts -n {namespace}
+f5xcctl configuration list access_count -n <namespace>
 
 # Delete
-f5xcctl delete access_count {name} -n {namespace}
+f5xcctl configuration delete access_count -n <namespace> <name>
 ```
 
 ## Terraform Resource

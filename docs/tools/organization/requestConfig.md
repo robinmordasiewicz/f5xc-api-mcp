@@ -28,16 +28,16 @@ Ask Claude to help you work with RequestConfig resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f requestConfig.yaml
+f5xcctl configuration create requestConfig -n <namespace> -i requestConfig.yaml
 
 # Get
-f5xcctl get requestConfig {name} -n {namespace}
+f5xcctl configuration get requestConfig -n <namespace> <name>
 
 # List
-f5xcctl get requestConfigs -n {namespace}
+f5xcctl configuration list requestConfig -n <namespace>
 
 # Delete
-f5xcctl delete requestConfig {name} -n {namespace}
+f5xcctl configuration delete requestConfig -n <namespace> <name>
 ```
 
 ## Terraform Resource

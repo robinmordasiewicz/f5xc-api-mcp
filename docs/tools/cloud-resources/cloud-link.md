@@ -58,16 +58,16 @@ Ask Claude to help you work with Cloud Link resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f cloud_link.yaml
+f5xcctl configuration create cloud_link -n <namespace> -i cloud_link.yaml
 
 # Get
-f5xcctl get cloud_link {name} -n {namespace}
+f5xcctl configuration get cloud_link -n <namespace> <name>
 
 # List
-f5xcctl get cloud_links -n {namespace}
+f5xcctl configuration list cloud_link -n <namespace>
 
 # Delete
-f5xcctl delete cloud_link {name} -n {namespace}
+f5xcctl configuration delete cloud_link -n <namespace> <name>
 ```
 
 ## Terraform Resource

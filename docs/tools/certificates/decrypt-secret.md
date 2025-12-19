@@ -27,16 +27,16 @@ Ask Claude to help you work with Decrypt Secret resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f decrypt_secret.yaml
+f5xcctl configuration create decrypt_secret -n <namespace> -i decrypt_secret.yaml
 
 # Get
-f5xcctl get decrypt_secret {name} -n {namespace}
+f5xcctl configuration get decrypt_secret -n <namespace> <name>
 
 # List
-f5xcctl get decrypt_secrets -n {namespace}
+f5xcctl configuration list decrypt_secret -n <namespace>
 
 # Delete
-f5xcctl delete decrypt_secret {name} -n {namespace}
+f5xcctl configuration delete decrypt_secret -n <namespace> <name>
 ```
 
 ## Terraform Resource

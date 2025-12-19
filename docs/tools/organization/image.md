@@ -28,16 +28,16 @@ Ask Claude to help you work with Image resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f image.yaml
+f5xcctl configuration create image -n <namespace> -i image.yaml
 
 # Get
-f5xcctl get image {name} -n {namespace}
+f5xcctl configuration get image -n <namespace> <name>
 
 # List
-f5xcctl get images -n {namespace}
+f5xcctl configuration list image -n <namespace>
 
 # Delete
-f5xcctl delete image {name} -n {namespace}
+f5xcctl configuration delete image -n <namespace> <name>
 ```
 
 ## Terraform Resource

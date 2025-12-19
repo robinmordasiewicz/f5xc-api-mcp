@@ -58,16 +58,16 @@ Ask Claude to help you work with Securemesh Site resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f securemesh_site.yaml
+f5xcctl configuration create securemesh_site -n <namespace> -i securemesh_site.yaml
 
 # Get
-f5xcctl get securemesh_site {name} -n {namespace}
+f5xcctl configuration get securemesh_site -n <namespace> <name>
 
 # List
-f5xcctl get securemesh_sites -n {namespace}
+f5xcctl configuration list securemesh_site -n <namespace>
 
 # Delete
-f5xcctl delete securemesh_site {name} -n {namespace}
+f5xcctl configuration delete securemesh_site -n <namespace> <name>
 ```
 
 ## Terraform Resource

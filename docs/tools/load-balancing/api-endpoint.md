@@ -38,16 +38,16 @@ Ask Claude to help you work with API Endpoint resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f api_endpoint.yaml
+f5xcctl configuration create api_endpoint -n <namespace> -i api_endpoint.yaml
 
 # Get
-f5xcctl get api_endpoint {name} -n {namespace}
+f5xcctl configuration get api_endpoint -n <namespace> <name>
 
 # List
-f5xcctl get api_endpoints -n {namespace}
+f5xcctl configuration list api_endpoint -n <namespace>
 
 # Delete
-f5xcctl delete api_endpoint {name} -n {namespace}
+f5xcctl configuration delete api_endpoint -n <namespace> <name>
 ```
 
 ## Terraform Resource

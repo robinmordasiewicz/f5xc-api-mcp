@@ -37,16 +37,16 @@ Ask Claude to help you work with Disable Visibility resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f disable_visibility.yaml
+f5xcctl configuration create disable_visibility -n <namespace> -i disable_visibility.yaml
 
 # Get
-f5xcctl get disable_visibility {name} -n {namespace}
+f5xcctl configuration get disable_visibility -n <namespace> <name>
 
 # List
-f5xcctl get disable_visibilitys -n {namespace}
+f5xcctl configuration list disable_visibility -n <namespace>
 
 # Delete
-f5xcctl delete disable_visibility {name} -n {namespace}
+f5xcctl configuration delete disable_visibility -n <namespace> <name>
 ```
 
 ## Terraform Resource

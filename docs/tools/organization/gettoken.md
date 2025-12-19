@@ -26,16 +26,16 @@ Ask Claude to help you work with Gettoken resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f gettoken.yaml
+f5xcctl configuration create gettoken -n <namespace> -i gettoken.yaml
 
 # Get
-f5xcctl get gettoken {name} -n {namespace}
+f5xcctl configuration get gettoken -n <namespace> <name>
 
 # List
-f5xcctl get gettokens -n {namespace}
+f5xcctl configuration list gettoken -n <namespace>
 
 # Delete
-f5xcctl delete gettoken {name} -n {namespace}
+f5xcctl configuration delete gettoken -n <namespace> <name>
 ```
 
 ## Terraform Resource

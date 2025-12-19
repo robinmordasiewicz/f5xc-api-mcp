@@ -50,16 +50,16 @@ Ask Claude to help you work with Learnt Schema resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f learnt_schema.yaml
+f5xcctl configuration create learnt_schema -n <namespace> -i learnt_schema.yaml
 
 # Get
-f5xcctl get learnt_schema {name} -n {namespace}
+f5xcctl configuration get learnt_schema -n <namespace> <name>
 
 # List
-f5xcctl get learnt_schemas -n {namespace}
+f5xcctl configuration list learnt_schema -n <namespace>
 
 # Delete
-f5xcctl delete learnt_schema {name} -n {namespace}
+f5xcctl configuration delete learnt_schema -n <namespace> <name>
 ```
 
 ## Terraform Resource

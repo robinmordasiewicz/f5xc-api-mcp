@@ -27,16 +27,16 @@ Ask Claude to help you work with Evaluate Batch API Acces resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f evaluate_batch_api_acces.yaml
+f5xcctl configuration create evaluate_batch_api_acces -n <namespace> -i evaluate_batch_api_acces.yaml
 
 # Get
-f5xcctl get evaluate_batch_api_acces {name} -n {namespace}
+f5xcctl configuration get evaluate_batch_api_acces -n <namespace> <name>
 
 # List
-f5xcctl get evaluate_batch_api_access -n {namespace}
+f5xcctl configuration list evaluate_batch_api_acces -n <namespace>
 
 # Delete
-f5xcctl delete evaluate_batch_api_acces {name} -n {namespace}
+f5xcctl configuration delete evaluate_batch_api_acces -n <namespace> <name>
 ```
 
 ## Terraform Resource

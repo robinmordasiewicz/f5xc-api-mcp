@@ -48,16 +48,16 @@ Ask Claude to help you work with Top Source resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f top_source.yaml
+f5xcctl configuration create top_source -n <namespace> -i top_source.yaml
 
 # Get
-f5xcctl get top_source {name} -n {namespace}
+f5xcctl configuration get top_source -n <namespace> <name>
 
 # List
-f5xcctl get top_sources -n {namespace}
+f5xcctl configuration list top_source -n <namespace>
 
 # Delete
-f5xcctl delete top_source {name} -n {namespace}
+f5xcctl configuration delete top_source -n <namespace> <name>
 ```
 
 ## Terraform Resource

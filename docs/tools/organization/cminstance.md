@@ -61,16 +61,16 @@ Ask Claude to help you work with Cminstance resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f cminstance.yaml
+f5xcctl configuration create cminstance -n <namespace> -i cminstance.yaml
 
 # Get
-f5xcctl get cminstance {name} -n {namespace}
+f5xcctl configuration get cminstance -n <namespace> <name>
 
 # List
-f5xcctl get cminstances -n {namespace}
+f5xcctl configuration list cminstance -n <namespace>
 
 # Delete
-f5xcctl delete cminstance {name} -n {namespace}
+f5xcctl configuration delete cminstance -n <namespace> <name>
 ```
 
 ## Terraform Resource

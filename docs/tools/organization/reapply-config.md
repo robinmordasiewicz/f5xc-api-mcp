@@ -34,16 +34,16 @@ Ask Claude to help you work with Reapply Config resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f reapply_config.yaml
+f5xcctl configuration create reapply_config -n <namespace> -i reapply_config.yaml
 
 # Get
-f5xcctl get reapply_config {name} -n {namespace}
+f5xcctl configuration get reapply_config -n <namespace> <name>
 
 # List
-f5xcctl get reapply_configs -n {namespace}
+f5xcctl configuration list reapply_config -n <namespace>
 
 # Delete
-f5xcctl delete reapply_config {name} -n {namespace}
+f5xcctl configuration delete reapply_config -n <namespace> <name>
 ```
 
 ## Terraform Resource

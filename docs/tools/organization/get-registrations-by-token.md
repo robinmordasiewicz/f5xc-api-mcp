@@ -26,16 +26,16 @@ Ask Claude to help you work with Get Registrations By Token resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f get_registrations_by_token.yaml
+f5xcctl configuration create get_registrations_by_token -n <namespace> -i get_registrations_by_token.yaml
 
 # Get
-f5xcctl get get_registrations_by_token {name} -n {namespace}
+f5xcctl configuration get get_registrations_by_token -n <namespace> <name>
 
 # List
-f5xcctl get get_registrations_by_tokens -n {namespace}
+f5xcctl configuration list get_registrations_by_token -n <namespace>
 
 # Delete
-f5xcctl delete get_registrations_by_token {name} -n {namespace}
+f5xcctl configuration delete get_registrations_by_token -n <namespace> <name>
 ```
 
 ## Terraform Resource

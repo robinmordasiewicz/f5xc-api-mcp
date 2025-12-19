@@ -59,16 +59,16 @@ Ask Claude to help you work with Registration resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f registration.yaml
+f5xcctl configuration create registration -n <namespace> -i registration.yaml
 
 # Get
-f5xcctl get registration {name} -n {namespace}
+f5xcctl configuration get registration -n <namespace> <name>
 
 # List
-f5xcctl get registrations -n {namespace}
+f5xcctl configuration list registration -n <namespace>
 
 # Delete
-f5xcctl delete registration {name} -n {namespace}
+f5xcctl configuration delete registration -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Mitigation Annotation resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f mitigation_annotation.yaml
+f5xcctl configuration create mitigation_annotation -n <namespace> -i mitigation_annotation.yaml
 
 # Get
-f5xcctl get mitigation_annotation {name} -n {namespace}
+f5xcctl configuration get mitigation_annotation -n <namespace> <name>
 
 # List
-f5xcctl get mitigation_annotations -n {namespace}
+f5xcctl configuration list mitigation_annotation -n <namespace>
 
 # Delete
-f5xcctl delete mitigation_annotation {name} -n {namespace}
+f5xcctl configuration delete mitigation_annotation -n <namespace> <name>
 ```
 
 ## Terraform Resource

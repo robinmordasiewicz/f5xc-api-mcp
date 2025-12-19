@@ -34,16 +34,16 @@ Ask Claude to help you work with Transactions Over Time resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f transactions_over_time.yaml
+f5xcctl configuration create transactions_over_time -n <namespace> -i transactions_over_time.yaml
 
 # Get
-f5xcctl get transactions_over_time {name} -n {namespace}
+f5xcctl configuration get transactions_over_time -n <namespace> <name>
 
 # List
-f5xcctl get transactions_over_times -n {namespace}
+f5xcctl configuration list transactions_over_time -n <namespace>
 
 # Delete
-f5xcctl delete transactions_over_time {name} -n {namespace}
+f5xcctl configuration delete transactions_over_time -n <namespace> <name>
 ```
 
 ## Terraform Resource

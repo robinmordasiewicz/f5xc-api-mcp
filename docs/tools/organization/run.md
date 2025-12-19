@@ -36,16 +36,16 @@ Ask Claude to help you work with Run resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f run.yaml
+f5xcctl configuration create run -n <namespace> -i run.yaml
 
 # Get
-f5xcctl get run {name} -n {namespace}
+f5xcctl configuration get run -n <namespace> <name>
 
 # List
-f5xcctl get runs -n {namespace}
+f5xcctl configuration list run -n <namespace>
 
 # Delete
-f5xcctl delete run {name} -n {namespace}
+f5xcctl configuration delete run -n <namespace> <name>
 ```
 
 ## Terraform Resource

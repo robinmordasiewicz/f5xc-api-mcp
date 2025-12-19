@@ -47,16 +47,16 @@ Ask Claude to help you work with Config resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f config.yaml
+f5xcctl configuration create config -n <namespace> -i config.yaml
 
 # Get
-f5xcctl get config {name} -n {namespace}
+f5xcctl configuration get config -n <namespace> <name>
 
 # List
-f5xcctl get configs -n {namespace}
+f5xcctl configuration list config -n <namespace>
 
 # Delete
-f5xcctl delete config {name} -n {namespace}
+f5xcctl configuration delete config -n <namespace> <name>
 ```
 
 ## Terraform Resource

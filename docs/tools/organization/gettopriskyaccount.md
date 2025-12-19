@@ -26,16 +26,16 @@ Ask Claude to help you work with Gettopriskyaccount resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f gettopriskyaccount.yaml
+f5xcctl configuration create gettopriskyaccount -n <namespace> -i gettopriskyaccount.yaml
 
 # Get
-f5xcctl get gettopriskyaccount {name} -n {namespace}
+f5xcctl configuration get gettopriskyaccount -n <namespace> <name>
 
 # List
-f5xcctl get gettopriskyaccounts -n {namespace}
+f5xcctl configuration list gettopriskyaccount -n <namespace>
 
 # Delete
-f5xcctl delete gettopriskyaccount {name} -n {namespace}
+f5xcctl configuration delete gettopriskyaccount -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -26,16 +26,16 @@ Ask Claude to help you work with Apikey resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f apikey.yaml
+f5xcctl configuration create apikey -n <namespace> -i apikey.yaml
 
 # Get
-f5xcctl get apikey {name} -n {namespace}
+f5xcctl configuration get apikey -n <namespace> <name>
 
 # List
-f5xcctl get apikeys -n {namespace}
+f5xcctl configuration list apikey -n <namespace>
 
 # Delete
-f5xcctl delete apikey {name} -n {namespace}
+f5xcctl configuration delete apikey -n <namespace> <name>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Remote Zone File resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f remote_zone_file.yaml
+f5xcctl configuration create remote_zone_file -n <namespace> -i remote_zone_file.yaml
 
 # Get
-f5xcctl get remote_zone_file {name} -n {namespace}
+f5xcctl configuration get remote_zone_file -n <namespace> <name>
 
 # List
-f5xcctl get remote_zone_files -n {namespace}
+f5xcctl configuration list remote_zone_file -n <namespace>
 
 # Delete
-f5xcctl delete remote_zone_file {name} -n {namespace}
+f5xcctl configuration delete remote_zone_file -n <namespace> <name>
 ```
 
 ## Terraform Resource

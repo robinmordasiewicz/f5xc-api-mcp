@@ -34,16 +34,16 @@ Ask Claude to help you work with Categorie resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f categorie.yaml
+f5xcctl configuration create categorie -n <namespace> -i categorie.yaml
 
 # Get
-f5xcctl get categorie {name} -n {namespace}
+f5xcctl configuration get categorie -n <namespace> <name>
 
 # List
-f5xcctl get categories -n {namespace}
+f5xcctl configuration list categorie -n <namespace>
 
 # Delete
-f5xcctl delete categorie {name} -n {namespace}
+f5xcctl configuration delete categorie -n <namespace> <name>
 ```
 
 ## Terraform Resource

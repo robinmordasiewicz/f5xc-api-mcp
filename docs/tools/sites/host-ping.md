@@ -36,16 +36,16 @@ Ask Claude to help you work with Host Ping resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f host_ping.yaml
+f5xcctl configuration create host_ping -n <namespace> -i host_ping.yaml
 
 # Get
-f5xcctl get host_ping {name} -n {namespace}
+f5xcctl configuration get host_ping -n <namespace> <name>
 
 # List
-f5xcctl get host_pings -n {namespace}
+f5xcctl configuration list host_ping -n <namespace>
 
 # Delete
-f5xcctl delete host_ping {name} -n {namespace}
+f5xcctl configuration delete host_ping -n <namespace> <name>
 ```
 
 ## Terraform Resource

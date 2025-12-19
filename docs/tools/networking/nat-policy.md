@@ -61,16 +61,16 @@ Ask Claude to help you work with Nat Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f nat_policy.yaml
+f5xcctl configuration create nat_policy -n <namespace> -i nat_policy.yaml
 
 # Get
-f5xcctl get nat_policy {name} -n {namespace}
+f5xcctl configuration get nat_policy -n <namespace> <name>
 
 # List
-f5xcctl get nat_policys -n {namespace}
+f5xcctl configuration list nat_policy -n <namespace>
 
 # Delete
-f5xcctl delete nat_policy {name} -n {namespace}
+f5xcctl configuration delete nat_policy -n <namespace> <name>
 ```
 
 ## Terraform Resource

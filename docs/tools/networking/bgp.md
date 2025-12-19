@@ -60,16 +60,16 @@ Ask Claude to help you work with Bgp resources:
 
 ```bash
 # Create/Update
-f5xcctl apply -f bgp.yaml
+f5xcctl configuration create bgp -n <namespace> -i bgp.yaml
 
 # Get
-f5xcctl get bgp {name} -n {namespace}
+f5xcctl configuration get bgp -n <namespace> <name>
 
 # List
-f5xcctl get bgps -n {namespace}
+f5xcctl configuration list bgp -n <namespace>
 
 # Delete
-f5xcctl delete bgp {name} -n {namespace}
+f5xcctl configuration delete bgp -n <namespace> <name>
 ```
 
 ## Terraform Resource
