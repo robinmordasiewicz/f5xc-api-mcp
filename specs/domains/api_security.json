@@ -3,7 +3,7 @@
   "info": {
     "title": "F5 XC Api Security API",
     "description": "F5 Distributed Cloud Api Security API specifications",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -498,7 +498,9 @@
         "x-ves-proto-rpc": "ves.io.schema.api_sec.api_crawler.API.List",
         "tags": [
           "Other"
-        ]
+        ],
+        "x-discovered-response-time-ms": 159.81,
+        "x-discovered-sample-size": 1
       },
       "x-displayname": "API Crawler.",
       "x-ves-proto-service": "ves.io.schema.api_sec.api_crawler.API",
@@ -1268,7 +1270,9 @@
         "x-ves-proto-rpc": "ves.io.schema.api_sec.api_discovery.API.List",
         "tags": [
           "Other"
-        ]
+        ],
+        "x-discovered-response-time-ms": 160.39,
+        "x-discovered-sample-size": 1
       },
       "x-displayname": "API Discovery.",
       "x-ves-proto-service": "ves.io.schema.api_sec.api_discovery.API",
@@ -2698,7 +2702,9 @@
         "x-ves-proto-rpc": "ves.io.schema.api_sec.api_testing.API.List",
         "tags": [
           "Other"
-        ]
+        ],
+        "x-discovered-response-time-ms": 153.63,
+        "x-discovered-sample-size": 1
       },
       "x-displayname": "API Testing.",
       "x-ves-proto-service": "ves.io.schema.api_sec.api_testing.API",
@@ -3468,7 +3474,9 @@
         "x-ves-proto-rpc": "ves.io.schema.views.app_api_group.API.List",
         "tags": [
           "Other"
-        ]
+        ],
+        "x-discovered-response-time-ms": 152.02,
+        "x-discovered-sample-size": 1
       },
       "x-displayname": "App API Group.",
       "x-ves-proto-service": "ves.io.schema.views.app_api_group.API",
@@ -5084,7 +5092,9 @@
         "x-ves-proto-rpc": "ves.io.schema.api_sec.code_base_integration.API.List",
         "tags": [
           "Other"
-        ]
+        ],
+        "x-discovered-response-time-ms": 154.03,
+        "x-discovered-sample-size": 1
       },
       "x-displayname": "Code Base Integration.",
       "x-ves-proto-service": "ves.io.schema.api_sec.code_base_integration.API",
@@ -5854,7 +5864,9 @@
         "x-ves-proto-rpc": "ves.io.schema.sensitive_data_policy.API.List",
         "tags": [
           "Other"
-        ]
+        ],
+        "x-discovered-response-time-ms": 159.77,
+        "x-discovered-sample-size": 1
       },
       "x-displayname": "Sensitive Data Discovery.",
       "x-ves-proto-service": "ves.io.schema.sensitive_data_policy.API",
@@ -6269,14 +6281,22 @@
             "description": "Name of the configuration object.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102879+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "Namespace in which the configuration object is present.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102885+00:00"
           }
         }
       },
@@ -6291,7 +6311,7 @@
             "type": "string",
             "description": "Select the domain to execute API Crawling with given credentials.\n\nRequired: YES.",
             "title": "Domain",
-            "maxLength": 256,
+            "maxLength": 26,
             "x-displayname": "Domains to Crawl.",
             "x-ves-required": "true",
             "x-ves-validation-rules": {
@@ -6303,7 +6323,12 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_len": "256",
               "ves.io.schema.rules.string.vh_domain": "true"
-            }
+            },
+            "x-original-maxLength": 256,
+            "minLength": 26,
+            "format": "hostname",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102894+00:00"
           },
           "simple_login": {
             "$ref": "#/components/schemas/api_crawlerSimpleLogin"
@@ -6363,7 +6388,11 @@
             "items": {
               "$ref": "#/components/schemas/api_crawlerStatusObject"
             },
-            "x-displayname": "Status"
+            "x-displayname": "Status",
+            "maxLength": 17,
+            "minLength": 17,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102910+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -6455,7 +6484,11 @@
             "type": "string",
             "description": "The description set for this api_crawler.",
             "title": "Description.",
-            "x-displayname": "Description."
+            "x-displayname": "Description.",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102926+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -6481,14 +6514,22 @@
             "description": "The name of this api_crawler.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102937+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "The namespace this item belongs to.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102942+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -6510,14 +6551,25 @@
             "description": "The tenant this item belongs to.",
             "title": "Tenant",
             "x-displayname": "Tenant",
-            "x-ves-example": "Example-corp."
+            "x-ves-example": "Example-corp.",
+            "x-field-mutability": "read-only",
+            "maxLength": 18,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102950+00:00"
           },
           "uid": {
             "type": "string",
             "description": "The unique uid of this api_crawler.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75."
+            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102957+00:00"
           }
         }
       },
@@ -6585,7 +6637,12 @@
             "description": "The domain being scanned.",
             "title": "Domain",
             "x-displayname": "Domain",
-            "x-ves-example": "example1.com."
+            "x-ves-example": "example1.com.",
+            "maxLength": 26,
+            "minLength": 26,
+            "format": "hostname",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102971+00:00"
           },
           "endpoint_count": {
             "type": "integer",
@@ -6607,7 +6664,8 @@
             "description": "Timestamp when the message was created in Kafka.",
             "title": "Kafka_message_created_at.",
             "format": "date-time",
-            "x-displayname": "Kafka Message Created At."
+            "x-displayname": "Kafka Message Created At.",
+            "x-field-mutability": "read-only"
           },
           "last_status_update": {
             "type": "string",
@@ -6715,35 +6773,58 @@
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen kind will hold the referred object's kind (e.g. \"route\")",
             "title": "Kind",
             "x-displayname": "Kind",
-            "x-ves-example": "Virtual_site."
+            "x-ves-example": "Virtual_site.",
+            "maxLength": 14,
+            "minLength": 12,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102994+00:00"
           },
           "name": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen name will hold the referred object's(e.g. Route's) name.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Contactus-route."
+            "x-ves-example": "Contactus-route.",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.102999+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen namespace will hold the referred object's(e.g. Route's) namespace.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103003+00:00"
           },
           "tenant": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen tenant will hold the referred object's(e.g. Route's) tenant.",
             "title": "Tenant",
             "x-displayname": "Tenant",
-            "x-ves-example": "Example-corp."
+            "x-ves-example": "Example-corp.",
+            "x-field-mutability": "read-only",
+            "maxLength": 18,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103007+00:00"
           },
           "uid": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen uid will hold the referred object's(e.g. Route's) uid.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31."
+            "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103013+00:00"
           }
         }
       },
@@ -6758,7 +6839,11 @@
           "value": {
             "type": "string",
             "description": "Must be a valid serialized protocol buffer of the above specified type.",
-            "format": "byte"
+            "format": "byte",
+            "maxLength": 15,
+            "minLength": 3,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103020+00:00"
           }
         }
       },
@@ -6791,7 +6876,11 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.uri_ref": "true"
-            }
+            },
+            "maxLength": 4,
+            "minLength": 4,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103027+00:00"
           },
           "store_provider": {
             "type": "string",
@@ -6815,7 +6904,11 @@
             "description": "Name of the Secret Management Access object that contains information about the store to GET encrypted bytes\nThis field needs to be provided only if the URL scheme is not string:///.",
             "title": "Provider",
             "x-displayname": "Provider",
-            "x-ves-example": "Box-provider."
+            "x-ves-example": "Box-provider.",
+            "maxLength": 8,
+            "minLength": 3,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103034+00:00"
           },
           "url": {
             "type": "string",
@@ -6863,7 +6956,11 @@
             "description": "X-reason: \"Insufficient memory in data plane\"\nA human readable string explaining the reason for reaching this condition.",
             "title": "Reason",
             "x-displayname": "Reason",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 43,
+            "minLength": 27,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103044+00:00"
           },
           "service_name": {
             "type": "string",
@@ -6882,7 +6979,11 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.string.in": "[\\\"Success\\\",\\\"Failed\\\",\\\"Incomplete\\\",\\\"Installed\\\",\\\"Down\\\",\\\"Disabled\\\",\\\"NotApplicable\\\"]"
-            }
+            },
+            "maxLength": 17,
+            "minLength": 17,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103050+00:00"
           },
           "type": {
             "type": "string",
@@ -6951,7 +7052,11 @@
             "type": "string",
             "description": "Name of the service that is responsible for initializing this object.",
             "title": "Name",
-            "x-displayname": "Name"
+            "x-displayname": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103061+00:00"
           }
         }
       },
@@ -7006,7 +7111,7 @@
             "type": "string",
             "description": "Human readable description for the object.",
             "title": "Description.",
-            "maxLength": 1200,
+            "maxLength": 0,
             "x-displayname": "Description.",
             "x-ves-example": "Virtual Host for example-corp website.",
             "x-ves-validation-rules": {
@@ -7014,7 +7119,11 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_bytes": "1200"
-            }
+            },
+            "x-original-maxLength": 1200,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103072+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -7043,14 +7152,22 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
-            }
+            },
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103080+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "This defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be \"\"",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Staging"
+            "x-ves-example": "Staging",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103084+00:00"
           }
         }
       },
@@ -7084,7 +7201,7 @@
             "type": "string",
             "description": "Human readable description for the object.",
             "title": "Description.",
-            "maxLength": 1200,
+            "maxLength": 0,
             "x-displayname": "Description.",
             "x-ves-example": "Virtual Host for example-corp website.",
             "x-ves-validation-rules": {
@@ -7092,7 +7209,11 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_bytes": "1200"
-            }
+            },
+            "x-original-maxLength": 1200,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103091+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -7121,14 +7242,22 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
-            }
+            },
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103098+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "This defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be \"\"",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Staging"
+            "x-ves-example": "Staging",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103102+00:00"
           }
         }
       },
@@ -7162,7 +7291,7 @@
             "type": "string",
             "description": "Human readable description for the object.",
             "title": "Description.",
-            "maxLength": 1200,
+            "maxLength": 0,
             "x-displayname": "Description.",
             "x-ves-example": "Virtual Host for example-corp website.",
             "x-ves-validation-rules": {
@@ -7170,7 +7299,11 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_bytes": "1200"
-            }
+            },
+            "x-original-maxLength": 1200,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103109+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -7198,14 +7331,22 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
-            }
+            },
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103116+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "This defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be \"\"",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Staging"
+            "x-ves-example": "Staging",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103120+00:00"
           }
         }
       },
@@ -7247,21 +7388,24 @@
             "description": "Creation_timestamp is when the status object was created. It is used to find/tie-break\nfor latest status object from same origin.",
             "title": "Creation_timestamp.",
             "format": "date-time",
-            "x-displayname": "Creation Timestamp."
+            "x-displayname": "Creation Timestamp.",
+            "x-field-mutability": "read-only"
           },
           "creator_class": {
             "type": "string",
             "description": "Class of creator which created this StatusObject. This will be service's DNS FQDN.\nThis will be set by the system based on client certificate information.",
             "title": "Creator_class.",
             "x-displayname": "Creator Class.",
-            "x-ves-example": "ver.re1.int.ves.I/O."
+            "x-ves-example": "ver.re1.int.ves.I/O.",
+            "x-field-mutability": "read-only"
           },
           "creator_id": {
             "type": "string",
             "description": "ID of creator which created this StatusObject. This will be a concrete identifier for service (e.g.\nIdentifying the environment also). This will be set by the system based on client certificate\ninformation.",
             "title": "Creator_id.",
             "x-displayname": "Creator ID.",
-            "x-ves-example": "Ver-instance-1."
+            "x-ves-example": "Ver-instance-1.",
+            "x-field-mutability": "read-only"
           },
           "publish": {
             "$ref": "#/components/schemas/schemaStatusPublishType"
@@ -7270,20 +7414,28 @@
             "type": "string",
             "description": "Status_id is a field used by the generator to distinguish (if necessary) between two status\nobjects for the same config object from the same site and same service and potentially same\ndaemon(creator-ID)",
             "title": "Status_id",
-            "x-displayname": "Status ID"
+            "x-displayname": "Status ID",
+            "x-field-mutability": "read-only"
           },
           "uid": {
             "type": "string",
             "description": "Uid is the unique in time and space value for a StatusObject.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31."
+            "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103136+00:00"
           },
           "vtrp_id": {
             "type": "string",
             "description": "Origin of this status exchanged by VTRP.",
             "title": "Vtrp_id",
-            "x-displayname": "VTRP ID"
+            "x-displayname": "VTRP ID",
+            "x-field-mutability": "read-only"
           },
           "vtrp_stale": {
             "type": "boolean",
@@ -7326,14 +7478,22 @@
             "description": "A human-readable description of why this operation is in the\n\"Failure\" status. If this value is empty there\nis no information available.",
             "title": "Reason",
             "x-displayname": "Reason",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 43,
+            "minLength": 27,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103146+00:00"
           },
           "status": {
             "type": "string",
             "description": "Status of the operation.\nOne of: \"Success\" or \"Failure\".",
             "title": "Status",
             "x-displayname": "Status",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 17,
+            "minLength": 17,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103150+00:00"
           }
         }
       },
@@ -7349,21 +7509,24 @@
             "description": "CreationTimestamp is a timestamp representing the server time when this object was\ncreated. It is not guaranteed to be set in happens-before order across separate operations.\nClients may not set this value. It is represented in RFC3339 form and is in UTC.",
             "title": "Creation_timestamp.",
             "format": "date-time",
-            "x-displayname": "Creation Timestamp."
+            "x-displayname": "Creation Timestamp.",
+            "x-field-mutability": "read-only"
           },
           "creator_class": {
             "type": "string",
             "description": "A value identifying the class of the user or service which created this configuration object.",
             "title": "Creator_class.",
             "x-displayname": "Creator Class.",
-            "x-ves-example": "Prism"
+            "x-ves-example": "Prism",
+            "x-field-mutability": "read-only"
           },
           "creator_id": {
             "type": "string",
             "description": "A value identifying the exact user or service that created this configuration object.",
             "title": "Creator_id.",
             "x-displayname": "Creator ID.",
-            "x-ves-example": "Admin@example-corp.com."
+            "x-ves-example": "Admin@example-corp.com.",
+            "x-field-mutability": "read-only"
           },
           "deletion_timestamp": {
             "type": "string",
@@ -7397,7 +7560,8 @@
             "description": "ModificationTimestamp is a timestamp representing the server time when this object was\nlast modified.",
             "title": "Modification_timestamp.",
             "format": "date-time",
-            "x-displayname": "Modification Timestamp."
+            "x-displayname": "Modification Timestamp.",
+            "x-field-mutability": "read-only"
           },
           "object_index": {
             "type": "integer",
@@ -7405,7 +7569,8 @@
             "title": "Object_index.",
             "format": "int64",
             "x-displayname": "Object Index.",
-            "x-ves-example": "0"
+            "x-ves-example": "0",
+            "x-field-mutability": "read-only"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -7415,14 +7580,25 @@
             "description": "Tenant to which this configuration object belongs to. The value for this is found from\npresented credentials.",
             "title": "Tenant",
             "x-displayname": "Tenant",
-            "x-ves-example": "Example-corp."
+            "x-ves-example": "Example-corp.",
+            "x-field-mutability": "read-only",
+            "maxLength": 18,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103167+00:00"
           },
           "uid": {
             "type": "string",
             "description": "Uid is the unique in time and space value for this object. It is generated by\nthe server on successful creation of an object and is not allowed to change on Replace\nAPI. The value of is taken from uid field of ObjectMetaType, if provided.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31."
+            "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103172+00:00"
           }
         }
       },
@@ -7435,19 +7611,31 @@
             "type": "string",
             "description": "X-displayName: \"Key\"\nKey of the individual secret. Vault Secrets are stored as key-value pair.\nIf user is only interested in one value from the map, this field should be set to the corresponding key.\nIf not provided entire secret will be returned.",
             "title": "Key",
-            "x-ves-example": "Key_pem"
+            "x-ves-example": "Key_pem",
+            "maxLength": 16,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103177+00:00"
           },
           "location": {
             "type": "string",
             "description": "X-displayName: \"Location\"\nx-required\nPath to secret in Vault.",
             "title": "Location",
-            "x-ves-example": "V1/data/vhost_key."
+            "x-ves-example": "V1/data/vhost_key.",
+            "maxLength": 4,
+            "minLength": 4,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103181+00:00"
           },
           "provider": {
             "type": "string",
             "description": "X-displayName: \"Provider\"\nx-required\nName of the Secret Management Access object that contains information about the backend Vault.",
             "title": "Provider",
-            "x-ves-example": "Vault-vh-provider."
+            "x-ves-example": "Vault-vh-provider.",
+            "maxLength": 8,
+            "minLength": 3,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103185+00:00"
           },
           "secret_encoding": {
             "$ref": "#/components/schemas/schemaSecretEncodingType"
@@ -7457,7 +7645,11 @@
             "description": "X-displayName: \"Version\"\nVersion of the secret to be fetched. As vault secrets are versioned, user can specify this field to fetch specific version.\nIf not provided latest version will be returned.",
             "title": "Version",
             "format": "int64",
-            "x-ves-example": "1"
+            "x-ves-example": "1",
+            "maxLength": 1,
+            "minLength": 1,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103190+00:00"
           }
         }
       },
@@ -7473,28 +7665,46 @@
             "description": "Kind of the view object.",
             "title": "Kind",
             "x-displayname": "Kind",
-            "x-ves-example": "Http_proxy."
+            "x-ves-example": "Http_proxy.",
+            "maxLength": 14,
+            "minLength": 12,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103198+00:00"
           },
           "name": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen name will hold the referred object's(e.g. Route's) name.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Contactus-route."
+            "x-ves-example": "Contactus-route.",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103202+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen namespace will hold the referred object's(e.g. Route's) namespace.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103207+00:00"
           },
           "uid": {
             "type": "string",
             "description": "UID of the view object.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "F3744323-1adf-4aaa-a5dc-0707c1d1bd82."
+            "x-ves-example": "F3744323-1adf-4aaa-a5dc-0707c1d1bd82.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103212+00:00"
           }
         }
       },
@@ -7507,7 +7717,11 @@
             "type": "string",
             "description": "X-displayName: \"Name\"\nx-required\nName of the secret.",
             "title": "Name",
-            "x-ves-example": "ChargeBack-API-Key."
+            "x-ves-example": "ChargeBack-API-Key.",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.103216+00:00"
           }
         }
       },
@@ -7621,14 +7835,22 @@
             "description": "Name of the configuration object.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.688466+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "Namespace in which the configuration object is present.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.688473+00:00"
           }
         }
       },
@@ -7685,7 +7907,11 @@
             "items": {
               "$ref": "#/components/schemas/api_discoveryStatusObject"
             },
-            "x-displayname": "Status"
+            "x-displayname": "Status",
+            "maxLength": 17,
+            "minLength": 17,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.688488+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -7768,7 +7994,11 @@
             "type": "string",
             "description": "The description set for this api_discovery.",
             "title": "Description.",
-            "x-displayname": "Description."
+            "x-displayname": "Description.",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.688501+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -7794,14 +8024,22 @@
             "description": "The name of this api_discovery.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.688511+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "The namespace this item belongs to.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.688516+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -7823,14 +8061,25 @@
             "description": "The tenant this item belongs to.",
             "title": "Tenant",
             "x-displayname": "Tenant",
-            "x-ves-example": "Example-corp."
+            "x-ves-example": "Example-corp.",
+            "x-field-mutability": "read-only",
+            "maxLength": 18,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.688523+00:00"
           },
           "uid": {
             "type": "string",
             "description": "The unique uid of this api_discovery.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75."
+            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.688530+00:00"
           }
         }
       },
@@ -7947,7 +8196,11 @@
             "items": {
               "$ref": "#/components/schemas/api_groupStatusObject"
             },
-            "x-displayname": "Status"
+            "x-displayname": "Status",
+            "maxLength": 17,
+            "minLength": 17,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.903310+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -8011,7 +8264,11 @@
             "type": "string",
             "description": "The description set for this api_group.",
             "title": "Description.",
-            "x-displayname": "Description."
+            "x-displayname": "Description.",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.903325+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -8037,14 +8294,22 @@
             "description": "The name of this api_group.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.903336+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "The namespace this item belongs to.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.903341+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -8066,14 +8331,25 @@
             "description": "The tenant this item belongs to.",
             "title": "Tenant",
             "x-displayname": "Tenant",
-            "x-ves-example": "Example-corp."
+            "x-ves-example": "Example-corp.",
+            "x-field-mutability": "read-only",
+            "maxLength": 18,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.903350+00:00"
           },
           "uid": {
             "type": "string",
             "description": "The unique uid of this api_group.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75."
+            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.903357+00:00"
           }
         }
       },
@@ -8140,35 +8416,58 @@
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen kind will hold the referred object's kind (e.g. \"route\")",
             "title": "Kind",
             "x-displayname": "Kind",
-            "x-ves-example": "Virtual_site."
+            "x-ves-example": "Virtual_site.",
+            "maxLength": 14,
+            "minLength": 12,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.903443+00:00"
           },
           "name": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen name will hold the referred object's(e.g. Route's) name.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Contactus-route."
+            "x-ves-example": "Contactus-route.",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.903448+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen namespace will hold the referred object's(e.g. Route's) namespace.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.903455+00:00"
           },
           "tenant": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen tenant will hold the referred object's(e.g. Route's) tenant.",
             "title": "Tenant",
             "x-displayname": "Tenant",
-            "x-ves-example": "Example-corp."
+            "x-ves-example": "Example-corp.",
+            "x-field-mutability": "read-only",
+            "maxLength": 18,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.903460+00:00"
           },
           "uid": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen uid will hold the referred object's(e.g. Route's) uid.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31."
+            "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:42.903467+00:00"
           }
         }
       },
@@ -8249,7 +8548,7 @@
             "minLength": 1,
             "maxLength": 1024,
             "x-displayname": "Path Regex.",
-            "x-ves-example": "/API/config/configconfigconfigconfigconfigconfigconfigconfigconfigconfigconfig.*/path[123]/$.",
+            "x-ves-example": "/API/config/configconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfig.*/path[123]/$.",
             "x-ves-required": "true",
             "x-ves-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
@@ -8313,7 +8612,11 @@
             "items": {
               "$ref": "#/components/schemas/api_group_elementStatusObject"
             },
-            "x-displayname": "Status"
+            "x-displayname": "Status",
+            "maxLength": 17,
+            "minLength": 17,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.113885+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -8371,7 +8674,7 @@
             "minLength": 1,
             "maxLength": 1024,
             "x-displayname": "Path Regex.",
-            "x-ves-example": "/API/config/configconfigconfigconfigconfigconfigconfigconfigconfigconfigconfig.*/path[123]/$.",
+            "x-ves-example": "/API/config/configconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfig.*/path[123]/$.",
             "x-ves-required": "true",
             "x-ves-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
@@ -8432,7 +8735,11 @@
             "type": "string",
             "description": "The description set for this api_group_element.",
             "title": "Description.",
-            "x-displayname": "Description."
+            "x-displayname": "Description.",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.113904+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -8458,14 +8765,22 @@
             "description": "The name of this api_group_element.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.113914+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "The namespace this item belongs to.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.113919+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -8487,14 +8802,25 @@
             "description": "The tenant this item belongs to.",
             "title": "Tenant",
             "x-displayname": "Tenant",
-            "x-ves-example": "Example-corp."
+            "x-ves-example": "Example-corp.",
+            "x-field-mutability": "read-only",
+            "maxLength": 18,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.113928+00:00"
           },
           "uid": {
             "type": "string",
             "description": "The unique uid of this api_group_element.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75."
+            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.113935+00:00"
           }
         }
       },
@@ -8537,7 +8863,7 @@
             "type": "string",
             "description": "Required: YES.",
             "title": "API Key",
-            "maxLength": 128,
+            "maxLength": 16,
             "x-displayname": "Key",
             "x-ves-required": "true",
             "x-ves-validation-rules": {
@@ -8547,7 +8873,11 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_len": "128"
-            }
+            },
+            "x-original-maxLength": 128,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.385425+00:00"
           },
           "value": {
             "$ref": "#/components/schemas/schemaSecretType"
@@ -8734,14 +9064,22 @@
             "description": "Name of the configuration object.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.385464+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "Namespace in which the configuration object is present.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.385470+00:00"
           }
         }
       },
@@ -8779,7 +9117,7 @@
             "type": "string",
             "description": "Add your testing environment domain. Be aware that running tests on a production domain can impact live applications, as API testing cannot distinguish between production and testing environments.\n\nRequired: YES.",
             "title": "Domain",
-            "maxLength": 256,
+            "maxLength": 26,
             "x-displayname": "Domain",
             "x-ves-required": "true",
             "x-ves-validation-rules": {
@@ -8791,7 +9129,12 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_len": "256",
               "ves.io.schema.rules.string.vh_domain": "true"
-            }
+            },
+            "x-original-maxLength": 256,
+            "minLength": 26,
+            "format": "hostname",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.385481+00:00"
           }
         }
       },
@@ -8848,7 +9191,11 @@
             "items": {
               "$ref": "#/components/schemas/api_testingStatusObject"
             },
-            "x-displayname": "Status"
+            "x-displayname": "Status",
+            "maxLength": 17,
+            "minLength": 17,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.385495+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -8962,7 +9309,11 @@
             "type": "string",
             "description": "The description set for this api_testing.",
             "title": "Description.",
-            "x-displayname": "Description."
+            "x-displayname": "Description.",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.385514+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -8988,14 +9339,22 @@
             "description": "The name of this api_testing.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.385524+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "The namespace this item belongs to.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.385532+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -9017,14 +9376,25 @@
             "description": "The tenant this item belongs to.",
             "title": "Tenant",
             "x-displayname": "Tenant",
-            "x-ves-example": "Example-corp."
+            "x-ves-example": "Example-corp.",
+            "x-field-mutability": "read-only",
+            "maxLength": 18,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.385540+00:00"
           },
           "uid": {
             "type": "string",
             "description": "The unique uid of this api_testing.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75."
+            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:43.385546+00:00"
           }
         }
       },
@@ -9207,7 +9577,7 @@
             "type": "string",
             "description": "X-displayName: \"Path Filter\"\nRegular expression to match the input request API path against.\nThe match is considered to succeed if the input request API path matches the specified path regex.",
             "title": "Path_filter.",
-            "x-ves-example": "/API/config/configconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfig.*/path[123]/$."
+            "x-ves-example": "/API/config/configconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfig.*/path[123]/$."
           }
         }
       },
@@ -9257,14 +9627,22 @@
             "description": "Name of the API Group.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Sensitive"
+            "x-ves-example": "Sensitive",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187340+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "Namespace of the API Group.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Shared"
+            "x-ves-example": "Shared",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187348+00:00"
           }
         }
       },
@@ -9395,14 +9773,22 @@
             "description": "Name of the configuration object.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187371+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "Namespace in which the configuration object is present.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187376+00:00"
           }
         }
       },
@@ -9421,7 +9807,11 @@
             "description": "Namespace of the API Group for the current request.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Shared"
+            "x-ves-example": "Shared",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187382+00:00"
           }
         }
       },
@@ -9465,7 +9855,11 @@
             "description": "Namespace of the API Group for the current request.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Shared"
+            "x-ves-example": "Shared",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187390+00:00"
           }
         }
       },
@@ -9540,7 +9934,11 @@
             "items": {
               "$ref": "#/components/schemas/app_api_groupStatusObject"
             },
-            "x-displayname": "Status"
+            "x-displayname": "Status",
+            "maxLength": 17,
+            "minLength": 17,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187404+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -9606,7 +10004,11 @@
             "type": "string",
             "description": "The description set for this app_api_group.",
             "title": "Description.",
-            "x-displayname": "Description."
+            "x-displayname": "Description.",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187428+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -9632,14 +10034,22 @@
             "description": "The name of this app_api_group.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187439+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "The namespace this item belongs to.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187443+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -9661,14 +10071,25 @@
             "description": "The tenant this item belongs to.",
             "title": "Tenant",
             "x-displayname": "Tenant",
-            "x-ves-example": "Example-corp."
+            "x-ves-example": "Example-corp.",
+            "x-field-mutability": "read-only",
+            "maxLength": 18,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187452+00:00"
           },
           "uid": {
             "type": "string",
             "description": "The unique uid of this app_api_group.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75."
+            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187458+00:00"
           }
         }
       },
@@ -9746,7 +10167,11 @@
             "type": "string",
             "description": "X-displayName: \"Description\"\nHuman readable description.",
             "title": "Description.",
-            "x-ves-example": "Virtual Host for example-corp website."
+            "x-ves-example": "Virtual Host for example-corp website.",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187538+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -9759,7 +10184,11 @@
             "type": "string",
             "description": "X-displayName: \"Name\"\nx-required\nThis is the name of the message.\nThe value of name has to follow DNS-1035 format.",
             "title": "Name",
-            "x-ves-example": "Example-corp-web."
+            "x-ves-example": "Example-corp-web.",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187543+00:00"
           }
         }
       },
@@ -9775,7 +10204,7 @@
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen name will hold the referred object's(e.g. Route's) name.\nRequired: YES.",
             "title": "Name",
             "minLength": 1,
-            "maxLength": 128,
+            "maxLength": 16,
             "x-displayname": "Name",
             "x-ves-example": "Contacts-route.",
             "x-ves-required": "true",
@@ -9788,13 +10217,16 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_bytes": "128",
               "ves.io.schema.rules.string.min_bytes": "1"
-            }
+            },
+            "x-original-maxLength": 128,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187683+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen namespace will hold the referred object's(e.g. Route's) namespace.",
             "title": "Namespace",
-            "maxLength": 64,
+            "maxLength": 6,
             "x-displayname": "Namespace",
             "x-ves-example": "Ns1",
             "x-ves-validation-rules": {
@@ -9802,13 +10234,17 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_bytes": "64"
-            }
+            },
+            "x-original-maxLength": 64,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187688+00:00"
           },
           "tenant": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen tenant will hold the referred object's(e.g. Route's) tenant.",
             "title": "Tenant",
-            "maxLength": 64,
+            "maxLength": 18,
             "x-displayname": "Tenant",
             "x-ves-example": "Example-corp.",
             "x-ves-validation-rules": {
@@ -9816,7 +10252,12 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_bytes": "64"
-            }
+            },
+            "x-field-mutability": "read-only",
+            "x-original-maxLength": 64,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:46.187692+00:00"
           }
         }
       },
@@ -10785,7 +11226,7 @@
             "type": "string",
             "description": "A case-sensitive cookie name.\nRequired: YES.",
             "title": "Name",
-            "maxLength": 256,
+            "maxLength": 16,
             "x-displayname": "Cookie Name.",
             "x-ves-example": "Session",
             "x-ves-required": "true",
@@ -10796,7 +11237,11 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
-            }
+            },
+            "x-original-maxLength": 256,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:48.342441+00:00"
           }
         }
       },
@@ -10923,7 +11368,7 @@
             "type": "string",
             "description": "JWT claim name.\nRequired: YES.",
             "title": "Name",
-            "maxLength": 256,
+            "maxLength": 16,
             "x-displayname": "JWT Claim Name.",
             "x-ves-example": "User_id",
             "x-ves-required": "true",
@@ -10934,7 +11379,11 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
-            }
+            },
+            "x-original-maxLength": 256,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:48.342459+00:00"
           }
         }
       },
@@ -11276,7 +11725,11 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
-            }
+            },
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:48.342484+00:00"
           },
           "path": {
             "type": "string",
@@ -11363,7 +11816,11 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
-            }
+            },
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:48.342503+00:00"
           },
           "path": {
             "type": "string",
@@ -11444,7 +11901,11 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
-            }
+            },
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:48.342517+00:00"
           },
           "path": {
             "type": "string",
@@ -11521,7 +11982,11 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
-            }
+            },
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:48.342529+00:00"
           },
           "path": {
             "type": "string",
@@ -11630,7 +12095,7 @@
             "type": "string",
             "description": "A case-insensitive HTTP header name.\nRequired: YES.",
             "title": "Name",
-            "maxLength": 256,
+            "maxLength": 16,
             "x-displayname": "Header Name.",
             "x-ves-example": "Accept-Encoding.",
             "x-ves-required": "true",
@@ -11643,7 +12108,11 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.http_header_field": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
-            }
+            },
+            "x-original-maxLength": 256,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:48.342558+00:00"
           }
         }
       },
@@ -11706,7 +12175,7 @@
             "type": "string",
             "description": "A case-sensitive HTTP query parameter name.\nRequired: YES.",
             "title": "Key",
-            "maxLength": 256,
+            "maxLength": 16,
             "x-displayname": "Query Parameter Name.",
             "x-ves-example": "Sourceid",
             "x-ves-required": "true",
@@ -11717,7 +12186,11 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
-            }
+            },
+            "x-original-maxLength": 256,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:48.342570+00:00"
           }
         }
       },
@@ -11909,14 +12382,22 @@
             "description": "Name of the configuration object.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:00.430209+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "Namespace in which the configuration object is present.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:00.430216+00:00"
           }
         }
       },
@@ -11973,7 +12454,11 @@
             "items": {
               "$ref": "#/components/schemas/code_base_integrationStatusObject"
             },
-            "x-displayname": "Status"
+            "x-displayname": "Status",
+            "maxLength": 17,
+            "minLength": 17,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:00.430231+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -12024,7 +12509,8 @@
             "type": "string",
             "description": "The last time where the coed base was scanned.",
             "format": "date-time",
-            "x-displayname": "Last Scan"
+            "x-displayname": "Last Scan",
+            "x-field-mutability": "read-only"
           }
         }
       },
@@ -12161,7 +12647,11 @@
           "reason": {
             "type": "string",
             "title": "Integration Health Status Reason.",
-            "x-displayname": "Health Status Reason."
+            "x-displayname": "Health Status Reason.",
+            "maxLength": 43,
+            "minLength": 27,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:00.430259+00:00"
           }
         }
       },
@@ -12209,7 +12699,11 @@
             "type": "string",
             "description": "The description set for this code_base_integration.",
             "title": "Description.",
-            "x-displayname": "Description."
+            "x-displayname": "Description.",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:00.430269+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -12235,14 +12729,22 @@
             "description": "The name of this code_base_integration.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:00.430278+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "The namespace this item belongs to.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:00.430283+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -12264,14 +12766,25 @@
             "description": "The tenant this item belongs to.",
             "title": "Tenant",
             "x-displayname": "Tenant",
-            "x-ves-example": "Example-corp."
+            "x-ves-example": "Example-corp.",
+            "x-field-mutability": "read-only",
+            "maxLength": 18,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:00.430296+00:00"
           },
           "uid": {
             "type": "string",
             "description": "The unique uid of this code_base_integration.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75."
+            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:00.430302+00:00"
           }
         }
       },
@@ -12646,14 +13159,22 @@
             "description": "Name of the configuration object.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:39.817545+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "Namespace in which the configuration object is present.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:39.817549+00:00"
           }
         }
       },
@@ -12710,7 +13231,11 @@
             "items": {
               "$ref": "#/components/schemas/schemasensitive_data_policyStatusObject"
             },
-            "x-displayname": "Status"
+            "x-displayname": "Status",
+            "maxLength": 17,
+            "minLength": 17,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:39.817562+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -12776,7 +13301,11 @@
             "type": "string",
             "description": "The description set for this sensitive_data_policy.",
             "title": "Description.",
-            "x-displayname": "Description."
+            "x-displayname": "Description.",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:39.817573+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -12802,14 +13331,22 @@
             "description": "The name of this sensitive_data_policy.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Name"
+            "x-ves-example": "Name",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:39.817582+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "The namespace this item belongs to.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:39.817587+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -12831,14 +13368,25 @@
             "description": "The tenant this item belongs to.",
             "title": "Tenant",
             "x-displayname": "Tenant",
-            "x-ves-example": "Example-corp."
+            "x-ves-example": "Example-corp.",
+            "x-field-mutability": "read-only",
+            "maxLength": 18,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:39.817594+00:00"
           },
           "uid": {
             "type": "string",
             "description": "The unique uid of this sensitive_data_policy.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75."
+            "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:39.817600+00:00"
           }
         }
       },

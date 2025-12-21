@@ -3,7 +3,7 @@
   "info": {
     "title": "F5 XC Config API",
     "description": "F5 Distributed Cloud Config API specifications",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -190,7 +190,7 @@
           },
           {
             "name": "key_classes",
-            "description": "Key classes\n\nIncludes label keys with generic names such as \"example-key\", \"foobar-key\" etc.\nKeys that are obtained using GET on /API/config/configconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfignamespaces/shared/known_label_keys\nIncludes F5 Distributed Cloud-defined known label keys such as \"F5 XC/app_type\", \"F5 XC/app\" and \"F5 XC/siteType\" as well as tenant-defined known keys such as\n\"example-key\", \"acme-key-foo\" and \"acme-key-bar\". Note that tenant-defined known keys don't have any standard name format - they are known keys because they\nhave been explicitly created as known keys by the tenant and are stored in the configuration as known_label_keys.\nIncludes implicit geoip label keys \"geoip.F5 XC/city\", \"geoip.F5 XC/region\" and \"geoip.F5 XC/country\"\nIncludes implicit label keys associated with packets/requests by the infrastructure e.g. \"implicit.F5 XC/namespace\"\nInclude IP reputation label keys \"ipreputation.F5 XC/threattype\", \"ipreputation.F5 XC/threatlevel\"\nInclude URL reputation label keys \"urlreputation.F5 XC/category\", \"urlreputation.F5 XC/reputationlevel\"\nIncludes implicit geoip label keys \"geoip.F5 XC/continent\"\nIncludes implicit geoip label keys \"geoip.F5 XC/region\", \"geoip.F5 XC/country\" and \"geoip.F5 XC/continent\"\nImplicit AWS resource labels (dynamically queried). This may be VPC level tags and/or subnet level tags.",
+            "description": "Key classes\n\nIncludes label keys with generic names such as \"example-key\", \"foobar-key\" etc.\nKeys that are obtained using GET on /API/config/configconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfignamespaces/shared/known_label_keys\nIncludes F5 Distributed Cloud-defined known label keys such as \"F5 XC/app_type\", \"F5 XC/app\" and \"F5 XC/siteType\" as well as tenant-defined known keys such as\n\"example-key\", \"acme-key-foo\" and \"acme-key-bar\". Note that tenant-defined known keys don't have any standard name format - they are known keys because they\nhave been explicitly created as known keys by the tenant and are stored in the configuration as known_label_keys.\nIncludes implicit geoip label keys \"geoip.F5 XC/city\", \"geoip.F5 XC/region\" and \"geoip.F5 XC/country\"\nIncludes implicit label keys associated with packets/requests by the infrastructure e.g. \"implicit.F5 XC/namespace\"\nInclude IP reputation label keys \"ipreputation.F5 XC/threattype\", \"ipreputation.F5 XC/threatlevel\"\nInclude URL reputation label keys \"urlreputation.F5 XC/category\", \"urlreputation.F5 XC/reputationlevel\"\nIncludes implicit geoip label keys \"geoip.F5 XC/continent\"\nIncludes implicit geoip label keys \"geoip.F5 XC/region\", \"geoip.F5 XC/country\" and \"geoip.F5 XC/continent\"\nImplicit AWS resource labels (dynamically queried). This may be VPC level tags and/or subnet level tags.",
             "in": "query",
             "required": false,
             "x-displayname": "Key Class AWS.",
@@ -222,7 +222,9 @@
         "x-ves-proto-rpc": "ves.io.schema.implicit_label.CustomAPI.Get",
         "tags": [
           "Other"
-        ]
+        ],
+        "x-discovered-response-time-ms": 3042.24,
+        "x-discovered-sample-size": 1
       },
       "x-displayname": "Implicit Label.",
       "x-ves-proto-service": "ves.io.schema.implicit_label.CustomAPI",
@@ -674,7 +676,9 @@
         "x-ves-proto-rpc": "ves.io.schema.known_label.CustomAPI.Get",
         "tags": [
           "Other"
-        ]
+        ],
+        "x-discovered-response-time-ms": 179.39,
+        "x-discovered-sample-size": 1
       },
       "x-displayname": "Known Label.",
       "x-ves-proto-service": "ves.io.schema.known_label.CustomAPI",
@@ -1114,7 +1118,9 @@
         "x-ves-proto-rpc": "ves.io.schema.known_label_key.CustomAPI.Get",
         "tags": [
           "Other"
-        ]
+        ],
+        "x-discovered-response-time-ms": 166.28,
+        "x-discovered-sample-size": 1
       },
       "x-displayname": "Known Label Key.",
       "x-ves-proto-service": "ves.io.schema.known_label_key.CustomAPI",
@@ -1314,21 +1320,33 @@
             "description": "Label description.",
             "title": "Description.",
             "x-displayname": "Description.",
-            "x-ves-example": "Description."
+            "x-ves-example": "Description.",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:20.403072+00:00"
           },
           "key": {
             "type": "string",
             "description": "Label key",
             "title": "Key",
             "x-displayname": "Key",
-            "x-ves-example": "Key"
+            "x-ves-example": "Key",
+            "maxLength": 16,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:20.403079+00:00"
           },
           "value": {
             "type": "string",
             "description": "Label value.",
             "title": "Value",
             "x-displayname": "Value",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 15,
+            "minLength": 3,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:20.403085+00:00"
           }
         }
       },
@@ -1348,7 +1366,7 @@
       },
       "schemaLabelKeyClass": {
         "type": "string",
-        "description": "X-displayName: \"LabelKeyClass\"\nLabelKeyClass is an enumeration of supported label key classes\n\n- KEY_CLASS_GENERIC: x-displayName: \"Key Class Generic\"\nIncludes label keys with generic names such as \"example-key\", \"foobar-key\" etc.\n- KEY_CLASS_KNOWN: x-displayName: \"Key Class Known\"\nKeys that are obtained using GET on /API/config/configconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfignamespaces/shared/known_label_keys\nIncludes F5 Distributed Cloud-defined known label keys such as \"F5 XC/app_type\", \"F5 XC/app\" and \"F5 XC/siteType\" as well as tenant-defined known keys such as\n\"example-key\", \"acme-key-foo\" and \"acme-key-bar\". Note that tenant-defined known keys don't have any standard name format - they are known keys because they\nhave been explicitly created as known keys by the tenant and are stored in the configuration as known_label_keys.\n- KEY_CLASS_GEOIP: x-displayName: \"Key Class GeoIp\"\nIncludes implicit geoip label keys \"geoip.F5 XC/city\", \"geoip.F5 XC/region\" and \"geoip.F5 XC/country\"\n- KEY_CLASS_IMPLICIT: x-displayName: \"Key Class Implicit\"\nIncludes implicit label keys associated with packets/requests by the infrastructure e.g. \"implicit.F5 XC/namespace\"\n- KEY_CLASS_IP_REPUTATION: x-displayName: \"Key Class Reputation\"\nInclude IP reputation label keys \"ipreputation.F5 XC/threattype\", \"ipreputation.F5 XC/threatlevel\"\n- KEY_CLASS_URL_REPUTATION: x-displayName: \"Key Class URL Reputation\"\nInclude URL reputation label keys \"urlreputation.F5 XC/category\", \"urlreputation.F5 XC/reputationlevel\"\n- KEY_CLASS_GEOIP_EXTENDED: x-displayName: \"Key Class GeoIp Extended\"\nIncludes implicit geoip label keys \"geoip.F5 XC/continent\"\n- KEY_CLASS_DNS_GEOIP: x-displayName: \"Key Class DNS GeoIp\"\nIncludes implicit geoip label keys \"geoip.F5 XC/region\", \"geoip.F5 XC/country\" and \"geoip.F5 XC/continent\"\n- KEY_CLASS_AWS: x-displayName: \"Key Class AWS\"\nImplicit AWS resource labels (dynamically queried). This may be VPC level tags and/or subnet level tags.",
+        "description": "X-displayName: \"LabelKeyClass\"\nLabelKeyClass is an enumeration of supported label key classes\n\n- KEY_CLASS_GENERIC: x-displayName: \"Key Class Generic\"\nIncludes label keys with generic names such as \"example-key\", \"foobar-key\" etc.\n- KEY_CLASS_KNOWN: x-displayName: \"Key Class Known\"\nKeys that are obtained using GET on /API/config/configconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfigconfignamespaces/shared/known_label_keys\nIncludes F5 Distributed Cloud-defined known label keys such as \"F5 XC/app_type\", \"F5 XC/app\" and \"F5 XC/siteType\" as well as tenant-defined known keys such as\n\"example-key\", \"acme-key-foo\" and \"acme-key-bar\". Note that tenant-defined known keys don't have any standard name format - they are known keys because they\nhave been explicitly created as known keys by the tenant and are stored in the configuration as known_label_keys.\n- KEY_CLASS_GEOIP: x-displayName: \"Key Class GeoIp\"\nIncludes implicit geoip label keys \"geoip.F5 XC/city\", \"geoip.F5 XC/region\" and \"geoip.F5 XC/country\"\n- KEY_CLASS_IMPLICIT: x-displayName: \"Key Class Implicit\"\nIncludes implicit label keys associated with packets/requests by the infrastructure e.g. \"implicit.F5 XC/namespace\"\n- KEY_CLASS_IP_REPUTATION: x-displayName: \"Key Class Reputation\"\nInclude IP reputation label keys \"ipreputation.F5 XC/threattype\", \"ipreputation.F5 XC/threatlevel\"\n- KEY_CLASS_URL_REPUTATION: x-displayName: \"Key Class URL Reputation\"\nInclude URL reputation label keys \"urlreputation.F5 XC/category\", \"urlreputation.F5 XC/reputationlevel\"\n- KEY_CLASS_GEOIP_EXTENDED: x-displayName: \"Key Class GeoIp Extended\"\nIncludes implicit geoip label keys \"geoip.F5 XC/continent\"\n- KEY_CLASS_DNS_GEOIP: x-displayName: \"Key Class DNS GeoIp\"\nIncludes implicit geoip label keys \"geoip.F5 XC/region\", \"geoip.F5 XC/country\" and \"geoip.F5 XC/continent\"\n- KEY_CLASS_AWS: x-displayName: \"Key Class AWS\"\nImplicit AWS resource labels (dynamically queried). This may be VPC level tags and/or subnet level tags.",
         "title": "LabelKeyClass.",
         "enum": [
           "KEY_CLASS_GENERIC",
@@ -1375,21 +1393,33 @@
             "description": "Description of the label to be created.",
             "title": "Description.",
             "x-displayname": "Description.",
-            "x-ves-example": "Paris metro region in France (EU)"
+            "x-ves-example": "Paris metro region in France (EU)",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.285582+00:00"
           },
           "key": {
             "type": "string",
             "description": "Key for the label to be created.",
             "title": "Key",
             "x-displayname": "Key",
-            "x-ves-example": "VES.I/O/region."
+            "x-ves-example": "VES.I/O/region.",
+            "maxLength": 16,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.285589+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "Namespace in which to create the label.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.285595+00:00"
           },
           "value": {
             "type": "string",
@@ -1402,7 +1432,11 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.string.k8s_label_value": "true"
-            }
+            },
+            "maxLength": 15,
+            "minLength": 3,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.285600+00:00"
           }
         }
       },
@@ -1430,14 +1464,22 @@
             "description": "Key of the label to be deleted.",
             "title": "Key",
             "x-displayname": "Key",
-            "x-ves-example": "VES.I/O/region."
+            "x-ves-example": "VES.I/O/region.",
+            "maxLength": 16,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.285608+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "Namespace of the label to be deleted.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.285613+00:00"
           },
           "value": {
             "type": "string",
@@ -1450,7 +1492,11 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.string.k8s_label_value": "true"
-            }
+            },
+            "maxLength": 15,
+            "minLength": 3,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.285618+00:00"
           }
         }
       },
@@ -1491,21 +1537,33 @@
             "description": "Description of what this label means.",
             "title": "Description.",
             "x-displayname": "Description.",
-            "x-ves-example": "Paris metro region in France (EU)"
+            "x-ves-example": "Paris metro region in France (EU)",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.285627+00:00"
           },
           "key": {
             "type": "string",
             "description": "Label key",
             "title": "Key",
             "x-displayname": "Key",
-            "x-ves-example": "VES.I/O/region."
+            "x-ves-example": "VES.I/O/region.",
+            "maxLength": 16,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.285632+00:00"
           },
           "value": {
             "type": "string",
             "description": "Label value.",
             "title": "Value",
             "x-displayname": "Value",
-            "x-ves-example": "VES-I/O-par."
+            "x-ves-example": "VES-I/O-par.",
+            "maxLength": 15,
+            "minLength": 3,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.285637+00:00"
           }
         }
       },
@@ -1533,21 +1591,33 @@
             "description": "Description for the label key.",
             "title": "Description.",
             "x-displayname": "Description.",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.396325+00:00"
           },
           "key": {
             "type": "string",
             "description": "Key to be created.",
             "title": "Key",
             "x-displayname": "Key",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 16,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.396334+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "Namespace in which to create label key.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.396339+00:00"
           }
         }
       },
@@ -1575,14 +1645,22 @@
             "description": "Key to be deleted.",
             "title": "Key",
             "x-displayname": "Key",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 16,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.396348+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "Namespace in which to DELETE the label key.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.396352+00:00"
           }
         }
       },
@@ -1623,14 +1701,22 @@
             "description": "Description of what this label key means.",
             "title": "Description.",
             "x-displayname": "Description.",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 0,
+            "minLength": 21,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.396360+00:00"
           },
           "key": {
             "type": "string",
             "description": "Label key",
             "title": "Key",
             "x-displayname": "Key",
-            "x-ves-example": "Value"
+            "x-ves-example": "Value",
+            "maxLength": 16,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:24.396365+00:00"
           }
         }
       },
@@ -1657,28 +1743,46 @@
             "description": "Kind of the view object.",
             "title": "Kind",
             "x-displayname": "Kind",
-            "x-ves-example": "Http_proxy."
+            "x-ves-example": "Http_proxy.",
+            "maxLength": 14,
+            "minLength": 12,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:53.620522+00:00"
           },
           "name": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen name will hold the referred object's(e.g. Route's) name.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Contactus-route."
+            "x-ves-example": "Contactus-route.",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:53.620530+00:00"
           },
           "namespace": {
             "type": "string",
             "description": "When a configuration object(e.g. Virtual_host) refers to another(e.g route)\nthen namespace will hold the referred object's(e.g. Route's) namespace.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "Ns1"
+            "x-ves-example": "Ns1",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:53.620535+00:00"
           },
           "uid": {
             "type": "string",
             "description": "UID of the view object.",
             "title": "Uid",
             "x-displayname": "UID",
-            "x-ves-example": "F3744323-1adf-4aaa-a5dc-0707c1d1bd82."
+            "x-ves-example": "F3744323-1adf-4aaa-a5dc-0707c1d1bd82.",
+            "x-field-mutability": "read-only",
+            "maxLength": 36,
+            "minLength": 36,
+            "format": "uuid",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:30:53.620541+00:00"
           }
         }
       },
