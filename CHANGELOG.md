@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Breaking Changes
+
+- **BREAKING**: Package name changed from `f5xc-api-mcp` to `@robinmordasiewicz/f5xc-api-mcp` for scoped npm packaging
+  - Installation command changes: `npm install -g @robinmordasiewicz/f5xc-api-mcp`
+  - npx command changes: `npx @robinmordasiewicz/f5xc-api-mcp`
+  - Binary name remains unchanged: `f5xc-api-mcp`
+  - This aligns with organizational package naming convention for consistency
+
 ### Added
 
 - Initial release of F5 Distributed Cloud API MCP Server
