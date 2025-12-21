@@ -85,11 +85,23 @@ jobs:
           echo "Generated domains:"
           ls dist/tools/generated/
 
+      - name: Verify dist contents
+        run: |
+          echo "Domain count:"
+          find dist/tools/generated -maxdepth 1 -type d | wc -l
+          echo "Missing modules check:"
+          grep "import.*generated" dist/tools/registry.js | wc -l
+
       - name: Install MCPB CLI
         run: npm install -g @anthropic-ai/mcpb
 
       - name: Create MCPB bundle
-        run: mcpb pack . f5xc-api-mcp-${{ needs.release.outputs.new_release_version }}.mcpb
+        run: |
+          echo "Files before packing:"
+          ls -la dist/tools/generated/ | tail -5
+          mcpb pack . f5xc-api-mcp-${{ needs.release.outputs.new_release_version }}.mcpb
+          echo "Created bundle:"
+          ls -lh *.mcpb
 
       - name: Upload MCPB to release
         uses: softprops/action-gh-release@v2
