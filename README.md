@@ -9,13 +9,14 @@ other MCP-compatible tools.
 
 ## Features
 
-- **1500+ API Tools** - Complete coverage of F5XC API operations across 22 domains
+- **1500+ API Tools** - Complete coverage of F5XC API operations across 23 enriched domains
+- **Domain-Based Documentation** - Tools organized by business domains with intelligent 2-level and 3-level hierarchical navigation
 - **Dual-Mode Operation** - Works without authentication (documentation mode) AND with authentication (execution mode)
 - **f5xcctl Integration** - Every response includes equivalent CLI commands
 - **Terraform Examples** - Every response includes Terraform HCL examples
 - **Multiple Auth Methods** - API token and P12 certificate (mTLS) support
 - **URL Normalization** - Automatically handles various F5XC URL formats
-- **Pre-enriched Specs** - Uses optimized OpenAPI 3.0.3 specifications from upstream
+- **Pre-enriched Specs** - Uses optimized OpenAPI 3.0.3 specifications with domain metadata
 
 ## Quick Start
 
@@ -226,32 +227,33 @@ When credentials are provided, the server additionally:
 
 Tools follow the naming pattern: `f5xc-api-{domain}-{resource}-{operation}`
 
-### Domains (22 Total)
+### Domains (23 Total)
 
-| Domain | Description |
-|--------|-------------|
-| `load_balancer` | HTTP/TCP/UDP load balancers, origin pools, forward proxy |
-| `networking` | Network connectors, firewalls, interfaces, policies |
-| `security` | Service policies, WAF, malicious user mitigation |
-| `infrastructure` | AWS/Azure/GCP VPC sites, customer edge sites |
-| `api_security` | API discovery, protection, definitions |
-| `cdn` | CDN load balancers, cache rules |
-| `dns` | DNS zones, DNS load balancers, DNS pools |
-| `identity` | Authentication, users, roles, RBAC |
-| `observability` | Alerts, logs, synthetic monitors |
-| `config` | Namespaces, certificates, credentials |
-| `nginx` | NGINX One instances, servers, service discovery |
-| `bigip` | BIG-IP virtual servers, iRules, APM |
-| `vpn` | VPN tunnels, IKE profiles |
-| `service_mesh` | Virtual K8s, workloads, K8s clusters |
-| `shape_security` | Bot defense, client-side defense |
-| `tenant_management` | Multi-tenant management, profiles |
-| `billing` | Invoices, payment methods, subscriptions |
-| `integrations` | Third-party apps, ticket systems |
-| `operations` | Debug, DHCP, ping, traceroute |
-| `ai_intelligence` | AI assistant, BFDP |
-| `infrastructure_protection` | DDoS protection, firewall rules |
-| `subscriptions` | Feature subscriptions, plans |
+| Domain | Path Count | Structure | Description |
+|--------|-----------|-----------|-------------|
+| AI Intelligence | 11 | 2-level | AI assistant, BFDP |
+| API Security | 45 | 2-level | API discovery, protection, definitions |
+| BIG-IP Integration | 28 | 2-level | BIG-IP virtual servers, iRules, APM |
+| Billing | 19 | 2-level | Invoices, payment methods, subscriptions |
+| CDN | 31 | 2-level | CDN load balancers, cache rules |
+| DNS | 42 | 2-level | DNS zones, DNS load balancers, DNS pools |
+| Infrastructure | 134 | 3-level | AWS/Azure/GCP VPC sites, customer edge sites |
+| Infrastructure Protection | 72 | 2-level | DDoS protection, firewall rules |
+| Integrations | 26 | 2-level | Third-party apps, ticket systems |
+| Identity | 137 | 3-level | Authentication, users, roles, RBAC |
+| Load Balancing | 89 | 2-level | HTTP/TCP/UDP load balancers, origin pools, forward proxy |
+| Monitoring & Observability | 235 | 3-level | Alerts, logs, synthetic monitors, metrics |
+| NGINX Integration | 34 | 2-level | NGINX One instances, servers, service discovery |
+| Networking | 220 | 3-level | Network connectors, firewalls, interfaces, policies |
+| Operations | 22 | 2-level | Debug, DHCP, ping, traceroute |
+| Regional Edge Configuration | 18 | 2-level | Regional edge settings, policies |
+| Security | 210 | 3-level | Service policies, WAF, malicious user mitigation |
+| Service Mesh | 31 | 2-level | Virtual K8s, workloads, K8s clusters |
+| Shape Security (Bot Defense) | 124 | 3-level | Bot defense, client-side defense |
+| System Configuration | 23 | 2-level | Namespaces, certificates, credentials |
+| Tenant Management | 28 | 2-level | Multi-tenant management, profiles |
+| VPN | 20 | 2-level | VPN tunnels, IKE profiles |
+| Workflows & Automation | 15 | 2-level | Workflow templates, automations |
 
 ### Example Tools
 
@@ -259,6 +261,73 @@ Tools follow the naming pattern: `f5xc-api-{domain}-{resource}-{operation}`
 - `f5xc-api-loadbalancer-origin-pool-list`
 - `f5xc-api-networking-network-interface-get`
 - `f5xc-api-server-info`
+
+## Documentation Structure
+
+The documentation site is automatically generated from enriched OpenAPI specifications and organized by domain with intelligent hierarchical navigation:
+
+### Two-Level Navigation (Small Domains < 50 paths)
+
+Small domains use a simple 2-level structure: Domain → Resource
+
+```
+docs/tools/
+├── vpn/
+│   ├── ipsec-gateway.md
+│   └── vpn-connection.md
+├── cdn/
+│   ├── cdn-loadbalancer.md
+│   └── cdn-pool.md
+```
+
+Example: [VPN Tools](https://robinmordasiewicz.github.io/f5xc-api-mcp/tools/vpn/)
+
+### Three-Level Navigation (Large Domains ≥ 50 paths)
+
+Large domains use a 3-level structure: Domain → Category (by OpenAPI tag) → Resource
+
+```
+docs/tools/
+├── observability/
+│   ├── alerts-events/
+│   │   ├── alert-policy.md
+│   │   └── event-manager.md
+│   ├── logging/
+│   │   ├── access-log.md
+│   │   └── audit-log.md
+│   └── metrics-statistics/
+│       └── metric-collector.md
+```
+
+**Large domains (>50 paths) using 3-level navigation:**
+- Monitoring & Observability (235 paths)
+- Networking (220 paths)
+- Security (210 paths)
+- Infrastructure (134 paths)
+- Identity (137 paths)
+- Shape Security (124 paths)
+
+### Automatic Generation
+
+Documentation is automatically generated by the build system:
+
+```bash
+# Generate/regenerate documentation
+npm run generate-docs
+
+# Build documentation site
+mkdocs build
+
+# Preview site locally
+mkdocs serve
+```
+
+The generator automatically:
+- Converts domain titles from snake_case to display format (e.g., `load_balancer` → "Load Balancing")
+- Updates `mkdocs.yml` navigation without manual changes
+- Creates markdown files with API operation details and examples
+- Subdivides large domains based on OpenAPI operation tags
+- Maintains consistent directory structure and naming conventions
 
 ## Workflow Prompts
 

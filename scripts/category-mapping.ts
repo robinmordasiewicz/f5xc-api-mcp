@@ -554,6 +554,24 @@ const LARGE_DOMAIN_THRESHOLD = 50;
 
 /**
  * Load domain specifications from specs/index.json
+ *
+ * Reads the enriched OpenAPI specifications index to get metadata about all 23 API domains,
+ * including path counts, schema counts, and domain titles.
+ *
+ * @returns {DomainSpec[]} Array of domain specifications from specs/index.json
+ * @throws {Error} If specs/index.json is not found or is invalid JSON
+ *
+ * @example
+ * const domains = loadDomainSpecs();
+ * // Returns array with entries like:
+ * // {
+ * //   domain: 'load_balancer',
+ * //   title: 'Load Balancing',
+ * //   description: 'HTTP/TCP/UDP load balancers and origin pools',
+ * //   file: 'load_balancer.json',
+ * //   path_count: 89,
+ * //   schema_count: 145
+ * // }
  */
 function loadDomainSpecs(): DomainSpec[] {
   const indexPath = join(__dirname, '..', 'specs', 'index.json');
@@ -564,6 +582,18 @@ function loadDomainSpecs(): DomainSpec[] {
 
 /**
  * Get domain specification by name
+ *
+ * Retrieves metadata for a specific domain from the enriched specifications index.
+ * Used to check path count, determine if subdivision is needed, and get domain title.
+ *
+ * @param {string} domain - The domain name (e.g., 'load_balancer', 'observability')
+ * @returns {DomainSpec | null} Domain specification object, or null if domain not found
+ *
+ * @example
+ * const spec = getDomainSpec('observability');
+ * if (spec && spec.path_count > 50) {
+ *   // Domain needs 3-level subdivision
+ * }
  */
 export function getDomainSpec(domain: string): DomainSpec | null {
   const specs = loadDomainSpecs();
@@ -572,6 +602,20 @@ export function getDomainSpec(domain: string): DomainSpec | null {
 
 /**
  * Check if domain requires three-level subdivision
+ *
+ * Domains with 50+ paths are automatically subdivided using OpenAPI tags
+ * into a 3-level navigation structure: Domain → Category → Resource.
+ * Smaller domains use simpler 2-level structure: Domain → Resource.
+ *
+ * @param {string} domain - The domain name to check
+ * @returns {boolean} True if domain path_count >= LARGE_DOMAIN_THRESHOLD (50), false otherwise
+ *
+ * @example
+ * if (requiresSubdivision('observability')) {
+ *   // Use 3-level: observability/alerts-events/alert-policy.md
+ * } else {
+ *   // Use 2-level: cdn/cdn-loadbalancer.md
+ * }
  */
 export function requiresSubdivision(domain: string): boolean {
   const spec = getDomainSpec(domain);
@@ -580,6 +624,15 @@ export function requiresSubdivision(domain: string): boolean {
 
 /**
  * Get all domain names from specs index
+ *
+ * Loads all 23 domain names from the enriched OpenAPI specifications.
+ * Useful for validation, iteration, and documentation generation.
+ *
+ * @returns {string[]} Alphabetically sorted array of domain names
+ *
+ * @example
+ * const domains = getAllDomains();
+ * // Returns: ['ai_intelligence', 'api_security', 'billing', ...]
  */
 export function getAllDomains(): string[] {
   return loadDomainSpecs().map(spec => spec.domain);
@@ -587,9 +640,28 @@ export function getAllDomains(): string[] {
 
 /**
  * Convert domain name to display-friendly title
+ *
+ * Converts snake_case domain names to professional Title Case format with:
+ * - Special handling for known acronyms (API, VPN, WAF, etc.)
+ * - Support for custom overrides (DOMAIN_TITLE_OVERRIDES)
+ * - Proper capitalization and spacing
+ *
+ * This is used in mkdocs.yml navigation generation and documentation UI.
+ *
+ * @param {string} domain - The domain name in snake_case (e.g., 'load_balancer')
+ * @returns {string} Display-friendly title (e.g., 'Load Balancing')
+ *
+ * @example
+ * domainToTitle('load_balancer') // Returns 'Load Balancing'
+ * domainToTitle('api_security') // Returns 'API Security'
+ * domainToTitle('shape_security') // Returns 'Shape Security (Bot Defense)' (override)
+ * domainToTitle('bigip') // Returns 'BIG-IP Integration' (override)
+ *
+ * @see DOMAIN_TITLE_OVERRIDES for special case handling
+ * @see DOMAIN_ACRONYMS for acronym definitions
  */
 export function domainToTitle(domain: string): string {
-  // Check overrides first
+  // Check overrides first (highest priority)
   if (domain in DOMAIN_TITLE_OVERRIDES) {
     return DOMAIN_TITLE_OVERRIDES[domain];
   }
@@ -621,6 +693,18 @@ export interface CategoryPath {
 
 /**
  * Convert string to kebab-case
+ *
+ * Used to convert domain titles and category names to directory names.
+ * Handles camelCase, snake_case, and spaces.
+ *
+ * @param {string} str - The string to convert
+ * @returns {string} Kebab-case string suitable for directory names
+ *
+ * @example
+ * kebabCase('Shape Security (Bot Defense)') // Returns 'shape-security-bot-defense'
+ * kebabCase('Alerts & Events') // Returns 'alerts--events'
+ *
+ * @internal
  */
 function kebabCase(str: string): string {
   return str
@@ -631,6 +715,24 @@ function kebabCase(str: string): string {
 
 /**
  * Get subdivision for large domains based on tags and patterns
+ *
+ * For domains with >= 50 paths, determines which 3-level category this resource belongs to.
+ * Uses OpenAPI operation tags as primary source, falls back to pattern matching.
+ *
+ * @param {string} domain - The domain name
+ * @param {string} resource - The resource name
+ * @param {string[]} [tags=[]] - OpenAPI operation tags for this resource
+ * @returns {string | null} Category name for 3-level navigation, null if domain needs no subdivision
+ *
+ * @example
+ * getSubdivision('observability', 'alert-policy', ['Alerts & Events'])
+ * // Returns 'Alerts & Events'
+ *
+ * getSubdivision('cdn', 'cdn-loadbalancer', [])
+ * // Returns null (cdn has <50 paths, 2-level only)
+ *
+ * @see getDomainSubdivision for pattern-based fallback logic
+ * @see LARGE_DOMAIN_THRESHOLD for subdivision threshold (50 paths)
  */
 export function getSubdivision(
   domain: string,
@@ -652,6 +754,20 @@ export function getSubdivision(
 
 /**
  * Domain-specific subdivision rules for poorly tagged domains
+ *
+ * Fallback mechanism when OpenAPI tags are missing or incomplete.
+ * Uses domain-specific regex patterns to categorize resources
+ * based on resource naming conventions.
+ *
+ * Each large domain (>50 paths) has defined patterns that group related resources
+ * into logical subcategories for better navigation.
+ *
+ * @param {string} domain - The domain name
+ * @param {string} resource - The resource name to categorize
+ * @returns {string} Category name for this resource, 'Other' if no pattern matches
+ *
+ * @internal
+ * @see getSubdivision for the main categorization entry point
  */
 function getDomainSubdivision(domain: string, resource: string): string {
   const patterns: Record<string, Array<{pattern: RegExp, category: string}>> = {
@@ -700,6 +816,42 @@ function getDomainSubdivision(domain: string, resource: string): string {
 
 /**
  * Get hierarchical category path for a resource
+ *
+ * Computes the complete hierarchical information needed for documentation organization.
+ * This is the primary function used by the documentation generator to structure files
+ * and navigation entries.
+ *
+ * Returns both display-friendly paths (for navigation) and directory paths (for files).
+ *
+ * @param {string} domain - The domain name (e.g., 'observability')
+ * @param {string} resource - The resource name (e.g., 'alert-policy')
+ * @param {string[]} [tags=[]] - OpenAPI operation tags (for subdivision)
+ * @returns {CategoryPath} Hierarchical path information with domain, subdivision, and directory info
+ *
+ * @example
+ * // Small domain (2-level)
+ * getCategoryPath('cdn', 'cdn-loadbalancer', [])
+ * // Returns {
+ * //   domain: 'cdn',
+ * //   domainTitle: 'CDN',
+ * //   subdivision: null,
+ * //   displayPath: 'CDN',
+ * //   directoryPath: 'cdn'
+ * // }
+ *
+ * @example
+ * // Large domain (3-level)
+ * getCategoryPath('observability', 'alert-policy', ['Alerts & Events'])
+ * // Returns {
+ * //   domain: 'observability',
+ * //   domainTitle: 'Monitoring & Observability',
+ * //   subdivision: 'Alerts & Events',
+ * //   displayPath: 'Monitoring & Observability > Alerts & Events',
+ * //   directoryPath: 'observability/alerts-events'
+ * // }
+ *
+ * @see domainToTitle for title conversion logic
+ * @see getSubdivision for subdivision logic
  */
 export function getCategoryPath(
   domain: string,
