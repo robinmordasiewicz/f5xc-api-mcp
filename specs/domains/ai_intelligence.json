@@ -3,7 +3,7 @@
   "info": {
     "title": "F5 XC Ai Intelligence API",
     "description": "F5 Distributed Cloud Ai Intelligence API specifications",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -1512,7 +1512,11 @@
             "description": "Namespace of the HTTP Load Balancer for current request.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "System"
+            "x-ves-example": "System",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.828979+00:00"
           },
           "negative_feedback": {
             "$ref": "#/components/schemas/ai_assistantNegativeFeedbackDetails"
@@ -1538,7 +1542,8 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.string.pattern": "^([0-9a-f]{8}-){1}([0-9a-f]{4}-){3}([0-9a-f]{12})$"
-            }
+            },
+            "x-field-mutability": "read-only"
           }
         }
       },
@@ -1561,7 +1566,11 @@
             "description": "Namespace of the HTTP Load Balancer for current request.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "System"
+            "x-ves-example": "System",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.828998+00:00"
           }
         }
       },
@@ -1619,7 +1628,8 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.string.pattern": "^([0-9a-f]{8}-){1}([0-9a-f]{4}-){3}([0-9a-f]{12})$"
-            }
+            },
+            "x-field-mutability": "read-only"
           },
           "site_analysis_response": {
             "$ref": "#/components/schemas/site_analysisSiteAnalysisResponse"
@@ -1759,7 +1769,11 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
-            }
+            },
+            "maxLength": 16,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829023+00:00"
           },
           "log_filters": {
             "type": "array",
@@ -1775,7 +1789,11 @@
             "description": "Namespace for current request.",
             "title": "Namespace",
             "x-displayname": "Namespace",
-            "x-ves-example": "System"
+            "x-ves-example": "System",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829030+00:00"
           },
           "object_name": {
             "type": "string",
@@ -1796,7 +1814,11 @@
             "description": "Title for the link.",
             "title": "Title",
             "x-displayname": "Title",
-            "x-ves-example": "Security Analytics lb1."
+            "x-ves-example": "Security Analytics lb1.",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829037+00:00"
           },
           "type": {
             "$ref": "#/components/schemas/commonDashboardLinkType"
@@ -1887,14 +1909,22 @@
             "description": "",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Provider"
+            "x-ves-example": "Provider",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829051+00:00"
           },
           "title": {
             "type": "string",
             "description": "",
             "title": "Title",
             "x-displayname": "Title",
-            "x-ves-example": "Site Name"
+            "x-ves-example": "Site Name",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829055+00:00"
           },
           "tooltip": {
             "type": "string",
@@ -1953,14 +1983,22 @@
             },
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
-            }
+            },
+            "maxLength": 16,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829064+00:00"
           },
           "title": {
             "type": "string",
             "description": "Title for the link.",
             "title": "Title",
             "x-displayname": "Title",
-            "x-ves-example": "Security Analytics lb1."
+            "x-ves-example": "Security Analytics lb1.",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829068+00:00"
           },
           "url": {
             "type": "string",
@@ -2026,7 +2064,11 @@
             "description": "Key to be presented in the filter.",
             "title": "Key",
             "x-displayname": "Key",
-            "x-ves-example": "Attack_types.name."
+            "x-ves-example": "Attack_types.name.",
+            "maxLength": 16,
+            "minLength": 7,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829082+00:00"
           },
           "op": {
             "$ref": "#/components/schemas/commonFilterOperator"
@@ -2064,7 +2106,11 @@
             "description": "Title for the link.",
             "title": "Title",
             "x-displayname": "Title",
-            "x-ves-example": "Security Analytics lb1."
+            "x-ves-example": "Security Analytics lb1.",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829090+00:00"
           },
           "type": {
             "$ref": "#/components/schemas/commonDashboardLinkType"
@@ -2188,7 +2234,11 @@
             "description": "Bot name",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Curl"
+            "x-ves-example": "Curl",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829107+00:00"
           },
           "type": {
             "type": "string",
@@ -2320,7 +2370,12 @@
             "description": "Domain",
             "title": "Domain",
             "x-displayname": "Domain",
-            "x-ves-example": "example.com."
+            "x-ves-example": "example.com.",
+            "maxLength": 26,
+            "minLength": 26,
+            "format": "hostname",
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829134+00:00"
           },
           "rsp_code": {
             "type": "integer",
@@ -2389,7 +2444,11 @@
             "description": "Signature name.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Shell command processor."
+            "x-ves-example": "Shell command processor.",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829150+00:00"
           },
           "state": {
             "type": "string",
@@ -2475,7 +2534,11 @@
             "description": "ThreatCampaign name.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Nette Framework Remote Code Execution - oshi."
+            "x-ves-example": "Nette Framework Remote Code Execution - oshi.",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829167+00:00"
           }
         }
       },
@@ -2512,7 +2575,11 @@
             "description": "Violation name.",
             "title": "Name",
             "x-displayname": "Name",
-            "x-ves-example": "Illegal filetype."
+            "x-ves-example": "Illegal filetype.",
+            "maxLength": 16,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829176+00:00"
           },
           "state": {
             "type": "string",
@@ -2628,14 +2695,22 @@
               "$ref": "#/components/schemas/listItem"
             },
             "x-displayname": "Item",
-            "x-ves-example": "Entries for each item."
+            "x-ves-example": "Entries for each item.",
+            "maxLength": 26,
+            "minLength": 15,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829196+00:00"
           },
           "title": {
             "type": "string",
             "description": "",
             "title": "Title",
             "x-displayname": "Title",
-            "x-ves-example": "Cloud Sites."
+            "x-ves-example": "Cloud Sites.",
+            "maxLength": 6,
+            "minLength": 6,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829201+00:00"
           }
         }
       },
@@ -2714,7 +2789,11 @@
           "value": {
             "type": "string",
             "description": "Must be a valid serialized protocol buffer of the above specified type.",
-            "format": "byte"
+            "format": "byte",
+            "maxLength": 15,
+            "minLength": 3,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829212+00:00"
           }
         }
       },
@@ -2837,7 +2916,11 @@
             "description": "",
             "title": "Value",
             "x-displayname": "Value",
-            "x-ves-example": "Site1"
+            "x-ves-example": "Site1",
+            "maxLength": 15,
+            "minLength": 3,
+            "x-reconciled-from-discovery": true,
+            "x-reconciled-at": "2025-12-21T10:29:41.829230+00:00"
           }
         }
       },
@@ -3011,14 +3094,16 @@
             "description": "F5 product's pipeline configured tenant .",
             "title": "Configured_tenant_id.",
             "x-displayname": "Configured_tenant_id.",
-            "x-ves-example": "Configured Tenant."
+            "x-ves-example": "Configured Tenant.",
+            "x-field-mutability": "read-only"
           },
           "pipeline_id": {
             "type": "string",
             "description": "F5 product's pipeline ID for which this tenant is configured.",
             "title": "Pipleine_id.",
             "x-displayname": "Pipleine_id.",
-            "x-ves-example": "Pipleine_id."
+            "x-ves-example": "Pipleine_id.",
+            "x-field-mutability": "read-only"
           },
           "pipeline_name": {
             "type": "string",
