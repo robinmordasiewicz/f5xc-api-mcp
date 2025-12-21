@@ -1,6 +1,6 @@
 # F5 Distributed Cloud API MCP Server
 
-[![npm version](https://badge.fury.io/js/f5xc-api-mcp.svg)](https://www.npmjs.com/package/f5xc-api-mcp)
+[![npm version](https://badge.fury.io/js/%40robinmordasiewicz%2Ff5xc-api-mcp.svg)](https://www.npmjs.com/package/@robinmordasiewicz/f5xc-api-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to AI assistants.
@@ -22,13 +22,13 @@ other MCP-compatible tools.
 ### Using npx (Recommended)
 
 ```bash
-npx f5xc-api-mcp
+npx @robinmordasiewicz/f5xc-api-mcp
 ```
 
 ### Using npm
 
 ```bash
-npm install -g f5xc-api-mcp
+npm install -g @robinmordasiewicz/f5xc-api-mcp
 f5xc-api-mcp
 ```
 
@@ -49,7 +49,7 @@ Add to your Claude Desktop configuration (`~/Library/Application Support/Claude/
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"],
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "env": {
         "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
         "F5XC_API_TOKEN": "your-api-token"
@@ -62,7 +62,7 @@ Add to your Claude Desktop configuration (`~/Library/Application Support/Claude/
 ### Claude Code CLI
 
 ```bash
-claude mcp add f5xc-api -- npx f5xc-api-mcp
+claude mcp add f5xc-api -- npx @robinmordasiewicz/f5xc-api-mcp
 ```
 
 ### VS Code (with Cline/Continue)
@@ -74,7 +74,7 @@ Add to your MCP settings:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"]
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
     }
   }
 }
