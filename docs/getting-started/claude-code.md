@@ -20,7 +20,7 @@ Create `.mcp.json` in your project root:
       "mcpServers": {
         "f5xc-api": {
           "command": "npx",
-          "args": ["f5xc-api-mcp"]
+          "args": ["@robinmordasiewicz/f5xc-api-mcp"]
         }
       }
     }
@@ -33,7 +33,7 @@ Create `.mcp.json` in your project root:
       "mcpServers": {
         "f5xc-api": {
           "command": "npx",
-          "args": ["f5xc-api-mcp"],
+          "args": ["@robinmordasiewicz/f5xc-api-mcp"],
           "env": {
             "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
             "F5XC_API_TOKEN": "your-api-token"
@@ -50,7 +50,7 @@ Create `.mcp.json` in your project root:
       "mcpServers": {
         "f5xc-api": {
           "command": "npx",
-          "args": ["f5xc-api-mcp"],
+          "args": ["@robinmordasiewicz/f5xc-api-mcp"],
           "env": {
             "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
             "F5XC_P12_FILE": "/path/to/certificate.p12",
@@ -70,7 +70,7 @@ For system-wide availability, add to `~/.claude/mcp.json`:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"]
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
     }
   }
 }

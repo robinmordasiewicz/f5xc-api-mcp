@@ -61,6 +61,26 @@ export default [
     },
   },
   {
+    files: ["src/cli/**/*.ts"],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 2022,
+        sourceType: "module",
+        project: "./tsconfig.json",
+      },
+      globals: {
+        ...globals.node,
+      },
+    },
+    plugins: {
+      "@typescript-eslint": tseslint,
+    },
+    rules: {
+      "no-console": "off", // Allow console.log in CLI code for user interaction
+    },
+  },
+  {
     ignores: ["dist/", "node_modules/", "coverage/", "specs/"],
   },
 ];

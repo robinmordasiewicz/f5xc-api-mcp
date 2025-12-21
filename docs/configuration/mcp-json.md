@@ -105,7 +105,7 @@ Path to environment file:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"]
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
     }
   }
 }
@@ -118,7 +118,7 @@ Path to environment file:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"],
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "env": {
         "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
         "F5XC_API_TOKEN": "your-api-token"
@@ -128,6 +128,32 @@ Path to environment file:
 }
 ```
 
+### With API Token (Using Environment Variables)
+
+For better security, reference environment variables instead of hardcoding:
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
+      "env": {
+        "F5XC_API_URL": "${env:F5XC_API_URL}",
+        "F5XC_API_TOKEN": "${env:F5XC_API_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+The values will be resolved from your system environment variables:
+
+```bash
+export F5XC_API_URL="https://your-tenant.console.ves.volterra.io"
+export F5XC_API_TOKEN="your-api-token"
+```
+
 ### With P12 Certificate
 
 ```json
@@ -135,7 +161,7 @@ Path to environment file:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"],
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "env": {
         "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
         "F5XC_P12_FILE": "/Users/username/certs/f5xc.p12",
@@ -144,6 +170,34 @@ Path to environment file:
     }
   }
 }
+```
+
+### With P12 Certificate (Using Environment Variables)
+
+For better security with certificates:
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
+      "env": {
+        "F5XC_API_URL": "${env:F5XC_API_URL}",
+        "F5XC_P12_FILE": "${env:F5XC_P12_FILE}",
+        "F5XC_P12_PASSWORD": "${env:F5XC_P12_PASSWORD}"
+      }
+    }
+  }
+}
+```
+
+With environment variables set:
+
+```bash
+export F5XC_API_URL="https://your-tenant.console.ves.volterra.io"
+export F5XC_P12_FILE="/Users/username/certs/f5xc.p12"
+export F5XC_P12_PASSWORD="certificate-password"
 ```
 
 ### Docker with Volume Mount
@@ -176,7 +230,7 @@ Path to environment file:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"],
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "envFile": "${workspaceFolder}/.env.f5xc"
     }
   }
@@ -198,7 +252,7 @@ LOG_LEVEL=info
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"]
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
     },
     "filesystem": {
       "command": "npx",
@@ -262,7 +316,7 @@ Use a JSON validator or editor with JSON support. Common issues:
 
 ### Server Not Starting
 
-1. Test command manually: `npx f5xc-api-mcp`
+1. Test command manually: `npx @robinmordasiewicz/f5xc-api-mcp`
 2. Check Node.js version: `node --version`
 3. Verify npx is available: `which npx`
 

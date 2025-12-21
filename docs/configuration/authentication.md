@@ -126,6 +126,61 @@ The server automatically normalizes various URL formats:
 
 You can use any of these formats - the server handles the conversion.
 
+## Profile-Based Configuration
+
+For managing multiple F5XC tenant credentials, use profiles stored in `~/.f5xc/credentials.json`.
+
+### Interactive Setup
+
+Run the setup wizard to create profiles with auto-detection of existing environment variables:
+
+```bash
+f5xc-api-mcp --setup
+```
+
+The wizard will:
+
+1. Detect any existing `F5XC_API_URL`, `F5XC_API_TOKEN`, `F5XC_P12_FILE`, and `F5XC_P12_PASSWORD` environment variables
+2. Offer to create a profile from them (saves manual entry)
+3. Allow creating additional profiles for different tenants
+4. Set a default profile
+
+### Using Profiles
+
+After creating profiles:
+
+```bash
+# Use default profile
+f5xc-api-mcp
+
+# Use specific profile
+F5XC_PROFILE=staging f5xc-api-mcp
+
+# Override profile credentials with environment variables (highest priority)
+F5XC_PROFILE=production F5XC_API_TOKEN=override-token f5xc-api-mcp
+```
+
+### Profile Management
+
+```bash
+# List all profiles
+f5xc-api-mcp --list-profiles
+
+# Set default profile
+f5xc-api-mcp --set-default staging
+
+# Test profile connection
+f5xc-api-mcp --test-profile production
+
+# Delete a profile
+f5xc-api-mcp --delete-profile old-profile
+
+# View configuration
+f5xc-api-mcp --show-config
+```
+
+See [Security Best Practices](../security.md) for credential storage and management guidance.
+
 ## Environment Variables Reference
 
 | Variable | Required | Description |
@@ -134,6 +189,7 @@ You can use any of these formats - the server handles the conversion.
 | `F5XC_API_TOKEN` | Token auth | API token from XC Console |
 | `F5XC_P12_FILE` | Cert auth | Absolute path to P12 certificate |
 | `F5XC_P12_PASSWORD` | Cert auth | Password for P12 certificate |
+| `F5XC_PROFILE` | No | Profile name from `~/.f5xc/credentials.json` |
 | `LOG_LEVEL` | No | Logging level (debug, info, warn, error) |
 
 ## Security Best Practices

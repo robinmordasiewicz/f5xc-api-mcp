@@ -14,7 +14,7 @@ Get the F5XC API MCP Server running in 5 minutes.
     No installation required. The server runs directly via npx.
 
     ```bash
-    npx f5xc-api-mcp
+    npx @robinmordasiewicz/f5xc-api-mcp
     ```
 
 === "Docker"
@@ -30,7 +30,7 @@ Get the F5XC API MCP Server running in 5 minutes.
     Install globally for repeated use:
 
     ```bash
-    npm install -g f5xc-api-mcp
+    npm install -g @robinmordasiewicz/f5xc-api-mcp
     f5xc-api-mcp
     ```
 
@@ -48,7 +48,7 @@ Add to your Claude Desktop config file:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"]
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
     }
   }
 }
@@ -63,7 +63,7 @@ Add to your project's `.mcp.json`:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"]
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
     }
   }
 }
@@ -88,7 +88,7 @@ To execute API calls directly (not just documentation), set credentials:
       "mcpServers": {
         "f5xc-api": {
           "command": "npx",
-          "args": ["f5xc-api-mcp"],
+          "args": ["@robinmordasiewicz/f5xc-api-mcp"],
           "env": {
             "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
             "F5XC_API_TOKEN": "your-api-token"
@@ -105,7 +105,7 @@ To execute API calls directly (not just documentation), set credentials:
       "mcpServers": {
         "f5xc-api": {
           "command": "npx",
-          "args": ["f5xc-api-mcp"],
+          "args": ["@robinmordasiewicz/f5xc-api-mcp"],
           "env": {
             "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
             "F5XC_P12_FILE": "/path/to/certificate.p12",

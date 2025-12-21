@@ -9,6 +9,8 @@
 
 import { readFileSync } from "fs";
 import { logger } from "../utils/logging.js";
+import { ConfigManager } from "../config/index.js";
+import type { ConfigFile } from "../config/index.js";
 
 /**
  * Authentication modes supported by the server
@@ -30,7 +32,19 @@ export const AUTH_ENV_VARS = {
   API_TOKEN: "F5XC_API_TOKEN",
   P12_FILE: "F5XC_P12_FILE",
   P12_PASSWORD: "F5XC_P12_PASSWORD",
+  PROFILE: "F5XC_PROFILE",
 } as const;
+
+/**
+ * Raw credentials as loaded from environment or config
+ * Used internally for credential processing
+ */
+interface RawCredentials {
+  apiUrl?: string;
+  token?: string;
+  p12File?: string;
+  p12Password?: string;
+}
 
 /**
  * Credential configuration for API access
@@ -111,24 +125,110 @@ export function extractTenantFromUrl(url: string): string | null {
  * Credential Manager
  *
  * Manages authentication credentials for F5 Distributed Cloud API.
- * Reads configuration from environment variables and provides
- * normalized credentials for API access.
+ * Supports dual-layer credential loading with priority:
+ * 1. Environment variables (highest priority - overrides all)
+ * 2. Named profiles from ~/.f5xc/credentials.json
+ * 3. No credentials (documentation mode - lowest priority)
  */
 export class CredentialManager {
   private credentials: Credentials;
+  private activeProfile: string | null = null;
+  private configManager: ConfigManager;
 
-  constructor() {
+  constructor(configManager?: ConfigManager) {
+    this.configManager = configManager ?? new ConfigManager();
     this.credentials = this.loadCredentials();
   }
 
   /**
    * Load credentials from environment variables
    */
-  private loadCredentials(): Credentials {
-    const apiUrl = process.env[AUTH_ENV_VARS.API_URL];
-    const token = process.env[AUTH_ENV_VARS.API_TOKEN];
-    const p12File = process.env[AUTH_ENV_VARS.P12_FILE];
-    const p12Password = process.env[AUTH_ENV_VARS.P12_PASSWORD];
+  private loadFromEnvironment(): RawCredentials {
+    return {
+      apiUrl: process.env[AUTH_ENV_VARS.API_URL],
+      token: process.env[AUTH_ENV_VARS.API_TOKEN],
+      p12File: process.env[AUTH_ENV_VARS.P12_FILE],
+      p12Password: process.env[AUTH_ENV_VARS.P12_PASSWORD],
+    };
+  }
+
+  /**
+   * Load credentials from configuration file
+   */
+  private loadFromConfigFile(): RawCredentials | null {
+    try {
+      const config = this.configManager.readSync();
+
+      if (!config || Object.keys(config.profiles).length === 0) {
+        return null;
+      }
+
+      const profileName = this.selectProfile(config);
+      if (!profileName) {
+        return null;
+      }
+
+      const profile = config.profiles[profileName];
+      if (!profile) {
+        return null;
+      }
+
+      this.activeProfile = profileName;
+
+      // Touch the profile to update lastUsedAt (async, but don't block)
+      this.configManager.touchProfile(profileName).catch(() => {
+        // Silently ignore touch errors
+      });
+
+      return {
+        apiUrl: profile.apiUrl,
+        token: profile.apiToken,
+        p12File: profile.p12File,
+        p12Password: profile.p12Password,
+      };
+    } catch (error) {
+      logger.debug("Failed to load credentials from config file", {
+        error: error instanceof Error ? error.message : String(error),
+      });
+      return null;
+    }
+  }
+
+  /**
+   * Select which profile to use based on environment or config
+   */
+  private selectProfile(config: ConfigFile): string | null {
+    // Check if F5XC_PROFILE is explicitly set
+    const envProfile = process.env[AUTH_ENV_VARS.PROFILE];
+    if (envProfile && config.profiles[envProfile]) {
+      return envProfile;
+    }
+
+    // Fall back to default profile if set
+    return config.defaultProfile ?? null;
+  }
+
+  /**
+   * Merge raw credentials from environment and config
+   * Environment variables override profile settings
+   */
+  private mergeCredentials(envCreds: RawCredentials, profileCreds: RawCredentials): RawCredentials {
+    return {
+      apiUrl: envCreds.apiUrl ?? profileCreds.apiUrl,
+      token: envCreds.token ?? profileCreds.token,
+      p12File: envCreds.p12File ?? profileCreds.p12File,
+      p12Password: envCreds.p12Password ?? profileCreds.p12Password,
+    };
+  }
+
+  /**
+   * Build credentials object from raw credentials
+   */
+  private buildCredentials(rawCreds: RawCredentials): Credentials {
+    const apiUrl = rawCreds.apiUrl;
+    const token = rawCreds.token;
+    const p12File = rawCreds.p12File;
+    const p12Password = rawCreds.p12Password;
 
     // Determine authentication mode
     let mode = AuthMode.NONE;
@@ -162,15 +262,6 @@ export class CredentialManager {
       }
     }
 
-    const tenant = normalizedUrl ? extractTenantFromUrl(normalizedUrl) : null;
-
-    logger.info("Credentials loaded", {
-      mode,
-      tenant,
-      hasToken: Boolean(token),
-      hasP12: Boolean(p12Certificate),
-    });
-
     return {
       mode,
       apiUrl: normalizedUrl,
@@ -178,6 +269,62 @@ export class CredentialManager {
       p12Certificate,
       p12Password: p12Password ?? null,
     };
+  }
+
+  /**
+   * Load credentials with priority order:
+   * 1. Environment variables (highest)
+   * 2. Profile from config file
+   * 3. No credentials - documentation mode (lowest)
+   */
+  private loadCredentials(): Credentials {
+    // Step 1: Try environment variables first (highest priority)
+    const envCreds = this.loadFromEnvironment();
+    if (envCreds.apiUrl && (envCreds.token || envCreds.p12File)) {
+      const credentials = this.buildCredentials(envCreds);
+      const tenant = credentials.apiUrl ? extractTenantFromUrl(credentials.apiUrl) : null;
+      logger.info("Credentials loaded from environment variables", {
+        mode: credentials.mode,
+        tenant,
+        profile: this.activeProfile,
+      });
+      return credentials;
+    }
+
+    // Step 2: Try config file profile (medium priority)
+    const profileCreds = this.loadFromConfigFile();
+    if (profileCreds) {
+      const merged = this.mergeCredentials(envCreds, profileCreds);
+      const credentials = this.buildCredentials(merged);
+
+      if (credentials.mode !== AuthMode.NONE) {
+        const tenant = credentials.apiUrl ? extractTenantFromUrl(credentials.apiUrl) : null;
+        logger.info("Credentials loaded from config profile", {
+          mode: credentials.mode,
+          tenant,
+          profile: this.activeProfile,
+        });
+        return credentials;
+      }
+    }
+
+    // Step 3: No credentials - documentation mode (lowest priority)
+    logger.info("No credentials configured - running in documentation mode");
+    return {
+      mode: AuthMode.NONE,
+      apiUrl: null,
+      token: null,
+      p12Certificate: null,
+      p12Password: null,
+    };
+  }
+
+  /**
+   * Get the active profile name (if any)
+   * Returns null if credentials are from environment variables or no profile is active
+   */
+  getActiveProfile(): string | null {
+    return this.activeProfile;
   }
 
   /**

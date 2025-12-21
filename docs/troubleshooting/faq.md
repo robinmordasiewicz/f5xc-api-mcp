@@ -31,7 +31,7 @@ npx cache might be stale.
 npx clear-npx-cache
 
 # Try with force flag
-npx -y f5xc-api-mcp
+npx -y @robinmordasiewicz/f5xc-api-mcp
 ```
 
 ### Docker "image not found"
@@ -149,7 +149,7 @@ MCP client can't find F5XC tools.
 1. Verify server is running:
 
    ```bash
-   npx f5xc-api-mcp
+   npx @robinmordasiewicz/f5xc-api-mcp
    ```
 
 2. Check tool name spelling
