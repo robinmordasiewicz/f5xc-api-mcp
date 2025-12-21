@@ -5,6 +5,7 @@
 
 import * as fs from "fs/promises";
 import * as fsSync from "fs";
+import * as path from "path";
 import {
   ConfigFile,
   ProfileCredentials,
@@ -152,7 +153,16 @@ export class ConfigManager {
 
       // Write to temporary file
       const content = JSON.stringify(config, null, 2);
+      const tempDir = path.dirname(tempFile);
+
+      // Ensure directories exist
+      await fs.mkdir(tempDir, { recursive: true, mode: CONFIG_DIR_PERMISSIONS });
+
       await fs.writeFile(tempFile, content, { mode: CONFIG_FILE_PERMISSIONS });
+
+      // Ensure target directory exists before rename
+      const targetDir = path.dirname(this.configFile);
+      await fs.mkdir(targetDir, { recursive: true, mode: CONFIG_DIR_PERMISSIONS });
 
       // Atomic rename
       await fs.rename(tempFile, this.configFile);
