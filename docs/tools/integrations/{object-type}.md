@@ -41,16 +41,16 @@ Ask Claude to help you work with {object Type} resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create {object_type} -n <namespace> -i {object_type}.yaml
+f5xcctl integrations create {object_type} -n <namespace> -i {object_type}.yaml
 
 # Get
-f5xcctl configuration get {object_type} -n <namespace> <name>
+f5xcctl integrations get {object_type} <name> -n <namespace>
 
 # List
-f5xcctl configuration list {object_type} -n <namespace>
+f5xcctl integrations list {object_type} -n <namespace>
 
 # Delete
-f5xcctl configuration delete {object_type} -n <namespace> <name>
+f5xcctl integrations delete {object_type} <name> -n <namespace>
 ```
 
 ## Terraform Resource

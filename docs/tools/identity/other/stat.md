@@ -34,16 +34,16 @@ Ask Claude to help you work with Stat resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create stat -n <namespace> -i stat.yaml
+f5xcctl identity create stat -n <namespace> -i stat.yaml
 
 # Get
-f5xcctl configuration get stat -n <namespace> <name>
+f5xcctl identity get stat <name> -n <namespace>
 
 # List
-f5xcctl configuration list stat -n <namespace>
+f5xcctl identity list stat -n <namespace>
 
 # Delete
-f5xcctl configuration delete stat -n <namespace> <name>
+f5xcctl identity delete stat <name> -n <namespace>
 ```
 
 ## Terraform Resource

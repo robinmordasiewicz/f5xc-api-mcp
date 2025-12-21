@@ -35,16 +35,16 @@ Ask Claude to help you work with Upgrade Sw resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create upgrade_sw -n <namespace> -i upgrade_sw.yaml
+f5xcctl infrastructure create upgrade_sw -n <namespace> -i upgrade_sw.yaml
 
 # Get
-f5xcctl configuration get upgrade_sw -n <namespace> <name>
+f5xcctl infrastructure get upgrade_sw <name> -n <namespace>
 
 # List
-f5xcctl configuration list upgrade_sw -n <namespace>
+f5xcctl infrastructure list upgrade_sw -n <namespace>
 
 # Delete
-f5xcctl configuration delete upgrade_sw -n <namespace> <name>
+f5xcctl infrastructure delete upgrade_sw <name> -n <namespace>
 ```
 
 ## Terraform Resource

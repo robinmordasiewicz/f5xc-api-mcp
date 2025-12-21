@@ -56,16 +56,16 @@ Ask Claude to help you work with User resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create User -n <namespace> -i User.yaml
+f5xcctl identity create User -n <namespace> -i User.yaml
 
 # Get
-f5xcctl configuration get User -n <namespace> <name>
+f5xcctl identity get User <name> -n <namespace>
 
 # List
-f5xcctl configuration list User -n <namespace>
+f5xcctl identity list User -n <namespace>
 
 # Delete
-f5xcctl configuration delete User -n <namespace> <name>
+f5xcctl identity delete User <name> -n <namespace>
 ```
 
 ## Terraform Resource

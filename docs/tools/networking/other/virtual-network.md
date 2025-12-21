@@ -58,16 +58,16 @@ Ask Claude to help you work with Virtual Network resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create virtual_network -n <namespace> -i virtual_network.yaml
+f5xcctl networking create virtual_network -n <namespace> -i virtual_network.yaml
 
 # Get
-f5xcctl configuration get virtual_network -n <namespace> <name>
+f5xcctl networking get virtual_network <name> -n <namespace>
 
 # List
-f5xcctl configuration list virtual_network -n <namespace>
+f5xcctl networking list virtual_network -n <namespace>
 
 # Delete
-f5xcctl configuration delete virtual_network -n <namespace> <name>
+f5xcctl networking delete virtual_network <name> -n <namespace>
 ```
 
 ## Terraform Resource

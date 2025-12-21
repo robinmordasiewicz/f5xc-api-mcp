@@ -49,16 +49,16 @@ Ask Claude to help you work with Rbac Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create rbac_policy -n <namespace> -i rbac_policy.yaml
+f5xcctl security create rbac_policy -n <namespace> -i rbac_policy.yaml
 
 # Get
-f5xcctl configuration get rbac_policy -n <namespace> <name>
+f5xcctl security get rbac_policy <name> -n <namespace>
 
 # List
-f5xcctl configuration list rbac_policy -n <namespace>
+f5xcctl security list rbac_policy -n <namespace>
 
 # Delete
-f5xcctl configuration delete rbac_policy -n <namespace> <name>
+f5xcctl security delete rbac_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -34,16 +34,16 @@ Ask Claude to help you work with HTTP Monitors Health resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create http_monitors_health -n <namespace> -i http_monitors_health.yaml
+f5xcctl observability create http_monitors_health -n <namespace> -i http_monitors_health.yaml
 
 # Get
-f5xcctl configuration get http_monitors_health -n <namespace> <name>
+f5xcctl observability get http_monitors_health <name> -n <namespace>
 
 # List
-f5xcctl configuration list http_monitors_health -n <namespace>
+f5xcctl observability list http_monitors_health -n <namespace>
 
 # Delete
-f5xcctl configuration delete http_monitors_health -n <namespace> <name>
+f5xcctl observability delete http_monitors_health <name> -n <namespace>
 ```
 
 ## Terraform Resource

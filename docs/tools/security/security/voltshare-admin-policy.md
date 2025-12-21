@@ -59,16 +59,16 @@ Ask Claude to help you work with Voltshare Admin Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create voltshare_admin_policy -n <namespace> -i voltshare_admin_policy.yaml
+f5xcctl security create voltshare_admin_policy -n <namespace> -i voltshare_admin_policy.yaml
 
 # Get
-f5xcctl configuration get voltshare_admin_policy -n <namespace> <name>
+f5xcctl security get voltshare_admin_policy <name> -n <namespace>
 
 # List
-f5xcctl configuration list voltshare_admin_policy -n <namespace>
+f5xcctl security list voltshare_admin_policy -n <namespace>
 
 # Delete
-f5xcctl configuration delete voltshare_admin_policy -n <namespace> <name>
+f5xcctl security delete voltshare_admin_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

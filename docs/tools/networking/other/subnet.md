@@ -60,16 +60,16 @@ Ask Claude to help you work with Subnet resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create subnet -n <namespace> -i subnet.yaml
+f5xcctl networking create subnet -n <namespace> -i subnet.yaml
 
 # Get
-f5xcctl configuration get subnet -n <namespace> <name>
+f5xcctl networking get subnet <name> -n <namespace>
 
 # List
-f5xcctl configuration list subnet -n <namespace>
+f5xcctl networking list subnet -n <namespace>
 
 # Delete
-f5xcctl configuration delete subnet -n <namespace> <name>
+f5xcctl networking delete subnet <name> -n <namespace>
 ```
 
 ## Terraform Resource

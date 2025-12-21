@@ -58,16 +58,16 @@ Ask Claude to help you work with Site Mesh Group resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create site_mesh_group -n <namespace> -i site_mesh_group.yaml
+f5xcctl networking create site_mesh_group -n <namespace> -i site_mesh_group.yaml
 
 # Get
-f5xcctl configuration get site_mesh_group -n <namespace> <name>
+f5xcctl networking get site_mesh_group <name> -n <namespace>
 
 # List
-f5xcctl configuration list site_mesh_group -n <namespace>
+f5xcctl networking list site_mesh_group -n <namespace>
 
 # Delete
-f5xcctl configuration delete site_mesh_group -n <namespace> <name>
+f5xcctl networking delete site_mesh_group <name> -n <namespace>
 ```
 
 ## Terraform Resource

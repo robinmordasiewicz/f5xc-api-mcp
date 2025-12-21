@@ -26,16 +26,16 @@ Ask Claude to help you work with Region resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create region -n <namespace> -i region.yaml
+f5xcctl security create region -n <namespace> -i region.yaml
 
 # Get
-f5xcctl configuration get region -n <namespace> <name>
+f5xcctl security get region <name> -n <namespace>
 
 # List
-f5xcctl configuration list region -n <namespace>
+f5xcctl security list region -n <namespace>
 
 # Delete
-f5xcctl configuration delete region -n <namespace> <name>
+f5xcctl security delete region <name> -n <namespace>
 ```
 
 ## Terraform Resource

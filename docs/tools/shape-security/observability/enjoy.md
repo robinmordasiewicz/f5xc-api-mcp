@@ -26,16 +26,16 @@ Ask Claude to help you work with Enjoy resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create enjoy -n <namespace> -i enjoy.yaml
+f5xcctl shape_security create enjoy -n <namespace> -i enjoy.yaml
 
 # Get
-f5xcctl configuration get enjoy -n <namespace> <name>
+f5xcctl shape_security get enjoy <name> -n <namespace>
 
 # List
-f5xcctl configuration list enjoy -n <namespace>
+f5xcctl shape_security list enjoy -n <namespace>
 
 # Delete
-f5xcctl configuration delete enjoy -n <namespace> <name>
+f5xcctl shape_security delete enjoy <name> -n <namespace>
 ```
 
 ## Terraform Resource

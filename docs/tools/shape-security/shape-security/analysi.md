@@ -34,16 +34,16 @@ Ask Claude to help you work with Analysi resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create analysi -n <namespace> -i analysi.yaml
+f5xcctl shape_security create analysi -n <namespace> -i analysi.yaml
 
 # Get
-f5xcctl configuration get analysi -n <namespace> <name>
+f5xcctl shape_security get analysi <name> -n <namespace>
 
 # List
-f5xcctl configuration list analysi -n <namespace>
+f5xcctl shape_security list analysi -n <namespace>
 
 # Delete
-f5xcctl configuration delete analysi -n <namespace> <name>
+f5xcctl shape_security delete analysi <name> -n <namespace>
 ```
 
 ## Terraform Resource

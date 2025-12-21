@@ -26,16 +26,16 @@ Ask Claude to help you work with Custom List resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create custom_list -n <namespace> -i custom_list.yaml
+f5xcctl billing create custom_list -n <namespace> -i custom_list.yaml
 
 # Get
-f5xcctl configuration get custom_list -n <namespace> <name>
+f5xcctl billing get custom_list <name> -n <namespace>
 
 # List
-f5xcctl configuration list custom_list -n <namespace>
+f5xcctl billing list custom_list -n <namespace>
 
 # Delete
-f5xcctl configuration delete custom_list -n <namespace> <name>
+f5xcctl billing delete custom_list <name> -n <namespace>
 ```
 
 ## Terraform Resource

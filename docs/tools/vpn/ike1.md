@@ -58,16 +58,16 @@ Ask Claude to help you work with Ike1 resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create ike1 -n <namespace> -i ike1.yaml
+f5xcctl vpn create ike1 -n <namespace> -i ike1.yaml
 
 # Get
-f5xcctl configuration get ike1 -n <namespace> <name>
+f5xcctl vpn get ike1 <name> -n <namespace>
 
 # List
-f5xcctl configuration list ike1 -n <namespace>
+f5xcctl vpn list ike1 -n <namespace>
 
 # Delete
-f5xcctl configuration delete ike1 -n <namespace> <name>
+f5xcctl vpn delete ike1 <name> -n <namespace>
 ```
 
 ## Terraform Resource

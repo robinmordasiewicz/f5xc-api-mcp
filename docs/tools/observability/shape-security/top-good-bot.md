@@ -26,16 +26,16 @@ Ask Claude to help you work with Top Good Bot resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create top_good_bot -n <namespace> -i top_good_bot.yaml
+f5xcctl observability create top_good_bot -n <namespace> -i top_good_bot.yaml
 
 # Get
-f5xcctl configuration get top_good_bot -n <namespace> <name>
+f5xcctl observability get top_good_bot <name> -n <namespace>
 
 # List
-f5xcctl configuration list top_good_bot -n <namespace>
+f5xcctl observability list top_good_bot -n <namespace>
 
 # Delete
-f5xcctl configuration delete top_good_bot -n <namespace> <name>
+f5xcctl observability delete top_good_bot <name> -n <namespace>
 ```
 
 ## Terraform Resource

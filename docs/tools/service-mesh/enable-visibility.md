@@ -38,16 +38,16 @@ Ask Claude to help you work with Enable Visibility resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create enable_visibility -n <namespace> -i enable_visibility.yaml
+f5xcctl service_mesh create enable_visibility -n <namespace> -i enable_visibility.yaml
 
 # Get
-f5xcctl configuration get enable_visibility -n <namespace> <name>
+f5xcctl service_mesh get enable_visibility <name> -n <namespace>
 
 # List
-f5xcctl configuration list enable_visibility -n <namespace>
+f5xcctl service_mesh list enable_visibility -n <namespace>
 
 # Delete
-f5xcctl configuration delete enable_visibility -n <namespace> <name>
+f5xcctl service_mesh delete enable_visibility <name> -n <namespace>
 ```
 
 ## Terraform Resource

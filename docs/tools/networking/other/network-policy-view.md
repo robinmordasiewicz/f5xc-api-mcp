@@ -58,16 +58,16 @@ Ask Claude to help you work with Network Policy View resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create network_policy_view -n <namespace> -i network_policy_view.yaml
+f5xcctl networking create network_policy_view -n <namespace> -i network_policy_view.yaml
 
 # Get
-f5xcctl configuration get network_policy_view -n <namespace> <name>
+f5xcctl networking get network_policy_view <name> -n <namespace>
 
 # List
-f5xcctl configuration list network_policy_view -n <namespace>
+f5xcctl networking list network_policy_view -n <namespace>
 
 # Delete
-f5xcctl configuration delete network_policy_view -n <namespace> <name>
+f5xcctl networking delete network_policy_view <name> -n <namespace>
 ```
 
 ## Terraform Resource

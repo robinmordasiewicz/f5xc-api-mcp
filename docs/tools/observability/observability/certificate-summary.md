@@ -41,16 +41,16 @@ Ask Claude to help you work with Certificate Summary resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create certificate_summary -n <namespace> -i certificate_summary.yaml
+f5xcctl observability create certificate_summary -n <namespace> -i certificate_summary.yaml
 
 # Get
-f5xcctl configuration get certificate_summary -n <namespace> <name>
+f5xcctl observability get certificate_summary <name> -n <namespace>
 
 # List
-f5xcctl configuration list certificate_summary -n <namespace>
+f5xcctl observability list certificate_summary -n <namespace>
 
 # Delete
-f5xcctl configuration delete certificate_summary -n <namespace> <name>
+f5xcctl observability delete certificate_summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

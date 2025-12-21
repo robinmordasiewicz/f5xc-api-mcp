@@ -34,16 +34,16 @@ Ask Claude to help you work with Query Feedback resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create query_feedback -n <namespace> -i query_feedback.yaml
+f5xcctl ai_intelligence create query_feedback -n <namespace> -i query_feedback.yaml
 
 # Get
-f5xcctl configuration get query_feedback -n <namespace> <name>
+f5xcctl ai_intelligence get query_feedback <name> -n <namespace>
 
 # List
-f5xcctl configuration list query_feedback -n <namespace>
+f5xcctl ai_intelligence list query_feedback -n <namespace>
 
 # Delete
-f5xcctl configuration delete query_feedback -n <namespace> <name>
+f5xcctl ai_intelligence delete query_feedback <name> -n <namespace>
 ```
 
 ## Terraform Resource

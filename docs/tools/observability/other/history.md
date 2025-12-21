@@ -44,16 +44,16 @@ Ask Claude to help you work with History resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create history -n <namespace> -i history.yaml
+f5xcctl observability create history -n <namespace> -i history.yaml
 
 # Get
-f5xcctl configuration get history -n <namespace> <name>
+f5xcctl observability get history <name> -n <namespace>
 
 # List
-f5xcctl configuration list history -n <namespace>
+f5xcctl observability list history -n <namespace>
 
 # Delete
-f5xcctl configuration delete history -n <namespace> <name>
+f5xcctl observability delete history <name> -n <namespace>
 ```
 
 ## Terraform Resource

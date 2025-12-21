@@ -35,16 +35,16 @@ Ask Claude to help you work with Released Signature resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create released_signature -n <namespace> -i released_signature.yaml
+f5xcctl observability create released_signature -n <namespace> -i released_signature.yaml
 
 # Get
-f5xcctl configuration get released_signature -n <namespace> <name>
+f5xcctl observability get released_signature <name> -n <namespace>
 
 # List
-f5xcctl configuration list released_signature -n <namespace>
+f5xcctl observability list released_signature -n <namespace>
 
 # Delete
-f5xcctl configuration delete released_signature -n <namespace> <name>
+f5xcctl observability delete released_signature <name> -n <namespace>
 ```
 
 ## Terraform Resource

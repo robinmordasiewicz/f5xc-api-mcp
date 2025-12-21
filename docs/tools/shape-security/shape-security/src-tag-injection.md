@@ -26,16 +26,16 @@ Ask Claude to help you work with Src Tag Injection resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create src_tag_injection -n <namespace> -i src_tag_injection.yaml
+f5xcctl shape_security create src_tag_injection -n <namespace> -i src_tag_injection.yaml
 
 # Get
-f5xcctl configuration get src_tag_injection -n <namespace> <name>
+f5xcctl shape_security get src_tag_injection <name> -n <namespace>
 
 # List
-f5xcctl configuration list src_tag_injection -n <namespace>
+f5xcctl shape_security list src_tag_injection -n <namespace>
 
 # Delete
-f5xcctl configuration delete src_tag_injection -n <namespace> <name>
+f5xcctl shape_security delete src_tag_injection <name> -n <namespace>
 ```
 
 ## Terraform Resource

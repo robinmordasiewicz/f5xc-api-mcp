@@ -43,16 +43,16 @@ Ask Claude to help you work with Table resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create table -n <namespace> -i table.yaml
+f5xcctl shape_security create table -n <namespace> -i table.yaml
 
 # Get
-f5xcctl configuration get table -n <namespace> <name>
+f5xcctl shape_security get table <name> -n <namespace>
 
 # List
-f5xcctl configuration list table -n <namespace>
+f5xcctl shape_security list table -n <namespace>
 
 # Delete
-f5xcctl configuration delete table -n <namespace> <name>
+f5xcctl shape_security delete table <name> -n <namespace>
 ```
 
 ## Terraform Resource

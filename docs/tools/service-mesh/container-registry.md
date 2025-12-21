@@ -58,16 +58,16 @@ Ask Claude to help you work with Container Registry resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create container_registry -n <namespace> -i container_registry.yaml
+f5xcctl service_mesh create container_registry -n <namespace> -i container_registry.yaml
 
 # Get
-f5xcctl configuration get container_registry -n <namespace> <name>
+f5xcctl service_mesh get container_registry <name> -n <namespace>
 
 # List
-f5xcctl configuration list container_registry -n <namespace>
+f5xcctl service_mesh list container_registry -n <namespace>
 
 # Delete
-f5xcctl configuration delete container_registry -n <namespace> <name>
+f5xcctl service_mesh delete container_registry <name> -n <namespace>
 ```
 
 ## Terraform Resource

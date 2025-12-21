@@ -34,16 +34,16 @@ Ask Claude to help you work with Limit resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create limit -n <namespace> -i limit.yaml
+f5xcctl billing create limit -n <namespace> -i limit.yaml
 
 # Get
-f5xcctl configuration get limit -n <namespace> <name>
+f5xcctl billing get limit <name> -n <namespace>
 
 # List
-f5xcctl configuration list limit -n <namespace>
+f5xcctl billing list limit -n <namespace>
 
 # Delete
-f5xcctl configuration delete limit -n <namespace> <name>
+f5xcctl billing delete limit <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -41,16 +41,16 @@ Ask Claude to help you work with Bgpstatu resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create bgpstatu -n <namespace> -i bgpstatu.yaml
+f5xcctl networking create bgpstatu -n <namespace> -i bgpstatu.yaml
 
 # Get
-f5xcctl configuration get bgpstatu -n <namespace> <name>
+f5xcctl networking get bgpstatu <name> -n <namespace>
 
 # List
-f5xcctl configuration list bgpstatu -n <namespace>
+f5xcctl networking list bgpstatu -n <namespace>
 
 # Delete
-f5xcctl configuration delete bgpstatu -n <namespace> <name>
+f5xcctl networking delete bgpstatu <name> -n <namespace>
 ```
 
 ## Terraform Resource

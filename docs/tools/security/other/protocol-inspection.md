@@ -59,16 +59,16 @@ Ask Claude to help you work with Protocol Inspection resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create protocol_inspection -n <namespace> -i protocol_inspection.yaml
+f5xcctl security create protocol_inspection -n <namespace> -i protocol_inspection.yaml
 
 # Get
-f5xcctl configuration get protocol_inspection -n <namespace> <name>
+f5xcctl security get protocol_inspection <name> -n <namespace>
 
 # List
-f5xcctl configuration list protocol_inspection -n <namespace>
+f5xcctl security list protocol_inspection -n <namespace>
 
 # Delete
-f5xcctl configuration delete protocol_inspection -n <namespace> <name>
+f5xcctl security delete protocol_inspection <name> -n <namespace>
 ```
 
 ## Terraform Resource

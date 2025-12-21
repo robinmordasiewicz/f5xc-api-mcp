@@ -34,16 +34,16 @@ Ask Claude to help you work with Certificate Report Detail resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create certificate_report_detail -n <namespace> -i certificate_report_detail.yaml
+f5xcctl observability create certificate_report_detail -n <namespace> -i certificate_report_detail.yaml
 
 # Get
-f5xcctl configuration get certificate_report_detail -n <namespace> <name>
+f5xcctl observability get certificate_report_detail <name> -n <namespace>
 
 # List
-f5xcctl configuration list certificate_report_detail -n <namespace>
+f5xcctl observability list certificate_report_detail -n <namespace>
 
 # Delete
-f5xcctl configuration delete certificate_report_detail -n <namespace> <name>
+f5xcctl observability delete certificate_report_detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

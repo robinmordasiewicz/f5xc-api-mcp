@@ -39,16 +39,16 @@ Ask Claude to help you work with {record Name} resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create {record_name} -n <namespace> -i {record_name}.yaml
+f5xcctl networking create {record_name} -n <namespace> -i {record_name}.yaml
 
 # Get
-f5xcctl configuration get {record_name} -n <namespace> <name>
+f5xcctl networking get {record_name} <name> -n <namespace>
 
 # List
-f5xcctl configuration list {record_name} -n <namespace>
+f5xcctl networking list {record_name} -n <namespace>
 
 # Delete
-f5xcctl configuration delete {record_name} -n <namespace> <name>
+f5xcctl networking delete {record_name} <name> -n <namespace>
 ```
 
 ## Terraform Resource

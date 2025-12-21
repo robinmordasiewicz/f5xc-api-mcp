@@ -30,16 +30,16 @@ Ask Claude to help you work with Support Ticket resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create support_ticket -n <namespace> -i support_ticket.yaml
+f5xcctl operations create support_ticket -n <namespace> -i support_ticket.yaml
 
 # Get
-f5xcctl configuration get support_ticket -n <namespace> <name>
+f5xcctl operations get support_ticket <name> -n <namespace>
 
 # List
-f5xcctl configuration list support_ticket -n <namespace>
+f5xcctl operations list support_ticket -n <namespace>
 
 # Delete
-f5xcctl configuration delete support_ticket -n <namespace> <name>
+f5xcctl operations delete support_ticket <name> -n <namespace>
 ```
 
 ## Terraform Resource

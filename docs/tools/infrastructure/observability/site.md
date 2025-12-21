@@ -57,16 +57,16 @@ Ask Claude to help you work with Site resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create site -n <namespace> -i site.yaml
+f5xcctl infrastructure create site -n <namespace> -i site.yaml
 
 # Get
-f5xcctl configuration get site -n <namespace> <name>
+f5xcctl infrastructure get site <name> -n <namespace>
 
 # List
-f5xcctl configuration list site -n <namespace>
+f5xcctl infrastructure list site -n <namespace>
 
 # Delete
-f5xcctl configuration delete site -n <namespace> <name>
+f5xcctl infrastructure delete site <name> -n <namespace>
 ```
 
 ## Terraform Resource

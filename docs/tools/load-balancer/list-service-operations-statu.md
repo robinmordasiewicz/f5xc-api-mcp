@@ -34,16 +34,16 @@ Ask Claude to help you work with List Service Operations Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create list_service_operations_statu -n <namespace> -i list_service_operations_statu.yaml
+f5xcctl load_balancer create list_service_operations_statu -n <namespace> -i list_service_operations_statu.yaml
 
 # Get
-f5xcctl configuration get list_service_operations_statu -n <namespace> <name>
+f5xcctl load_balancer get list_service_operations_statu <name> -n <namespace>
 
 # List
-f5xcctl configuration list list_service_operations_statu -n <namespace>
+f5xcctl load_balancer list list_service_operations_statu -n <namespace>
 
 # Delete
-f5xcctl configuration delete list_service_operations_statu -n <namespace> <name>
+f5xcctl load_balancer delete list_service_operations_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

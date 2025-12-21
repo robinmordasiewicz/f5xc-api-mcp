@@ -26,16 +26,16 @@ Ask Claude to help you work with Gettopriskydevice resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create gettopriskydevice -n <namespace> -i gettopriskydevice.yaml
+f5xcctl shape_security create gettopriskydevice -n <namespace> -i gettopriskydevice.yaml
 
 # Get
-f5xcctl configuration get gettopriskydevice -n <namespace> <name>
+f5xcctl shape_security get gettopriskydevice <name> -n <namespace>
 
 # List
-f5xcctl configuration list gettopriskydevice -n <namespace>
+f5xcctl shape_security list gettopriskydevice -n <namespace>
 
 # Delete
-f5xcctl configuration delete gettopriskydevice -n <namespace> <name>
+f5xcctl shape_security delete gettopriskydevice <name> -n <namespace>
 ```
 
 ## Terraform Resource

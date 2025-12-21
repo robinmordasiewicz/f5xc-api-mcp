@@ -114,32 +114,34 @@ function buildQueryString(queryParams: Record<string, string | string[]>): strin
  * Generate f5xcctl equivalent command
  */
 function generateF5xcctlCommand(tool: ParsedOperation, params: ExecuteToolParams): string {
-  const { operation, resource } = tool;
+  const { operation, resource, domain } = tool;
   const pathParams = params.pathParams ?? {};
 
   // Build resource identifier
   const namespace = pathParams.namespace ?? pathParams["metadata.namespace"] ?? "{namespace}";
   const name = pathParams.name ?? pathParams["metadata.name"] ?? "{name}";
 
+  // Normalize domain and resource
+  const normalizedDomain = domain.replace(/-/g, "_");
+  const normalizedResource = resource.replace(/-/g, "_");
+
   // Map operation to f5xcctl verb
   const verbMap: Record<string, string> = {
     create: "create",
     get: "get",
     list: "list",
-    update: "replace",
+    update: "apply",
     delete: "delete",
   };
   const verb = verbMap[operation] ?? operation;
 
-  // Build command
-  const resourceType = resource.replace(/-/g, "_");
-
+  // Build command following standard pattern: f5xcctl {domain} {operation} {resource}
   if (operation === "list") {
-    return `f5xcctl ${verb} ${resourceType} --namespace ${namespace}`;
-  } else if (operation === "create") {
-    return `f5xcctl ${verb} ${resourceType} --namespace ${namespace} -f config.yaml`;
+    return `f5xcctl ${normalizedDomain} ${verb} ${normalizedResource} -n ${namespace}`;
+  } else if (operation === "create" || operation === "update") {
+    return `f5xcctl ${normalizedDomain} ${verb} ${normalizedResource} -n ${namespace} -i ${normalizedResource}.yaml`;
   } else {
-    return `f5xcctl ${verb} ${resourceType} ${name} --namespace ${namespace}`;
+    return `f5xcctl ${normalizedDomain} ${verb} ${normalizedResource} ${name} -n ${namespace}`;
   }
 }
 

@@ -58,16 +58,16 @@ Ask Claude to help you work with Tenant Configuration resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create tenant_configuration -n <namespace> -i tenant_configuration.yaml
+f5xcctl tenant_management create tenant_configuration -n <namespace> -i tenant_configuration.yaml
 
 # Get
-f5xcctl configuration get tenant_configuration -n <namespace> <name>
+f5xcctl tenant_management get tenant_configuration <name> -n <namespace>
 
 # List
-f5xcctl configuration list tenant_configuration -n <namespace>
+f5xcctl tenant_management list tenant_configuration -n <namespace>
 
 # Delete
-f5xcctl configuration delete tenant_configuration -n <namespace> <name>
+f5xcctl tenant_management delete tenant_configuration <name> -n <namespace>
 ```
 
 ## Terraform Resource

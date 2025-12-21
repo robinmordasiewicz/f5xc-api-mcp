@@ -54,16 +54,16 @@ Ask Claude to help you work with API Credential resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create api_credential -n <namespace> -i api_credential.yaml
+f5xcctl identity create api_credential -n <namespace> -i api_credential.yaml
 
 # Get
-f5xcctl configuration get api_credential -n <namespace> <name>
+f5xcctl identity get api_credential <name> -n <namespace>
 
 # List
-f5xcctl configuration list api_credential -n <namespace>
+f5xcctl identity list api_credential -n <namespace>
 
 # Delete
-f5xcctl configuration delete api_credential -n <namespace> <name>
+f5xcctl identity delete api_credential <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -43,16 +43,16 @@ Ask Claude to help you work with Monitor Event resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create monitor_event -n <namespace> -i monitor_event.yaml
+f5xcctl observability create monitor_event -n <namespace> -i monitor_event.yaml
 
 # Get
-f5xcctl configuration get monitor_event -n <namespace> <name>
+f5xcctl observability get monitor_event <name> -n <namespace>
 
 # List
-f5xcctl configuration list monitor_event -n <namespace>
+f5xcctl observability list monitor_event -n <namespace>
 
 # Delete
-f5xcctl configuration delete monitor_event -n <namespace> <name>
+f5xcctl observability delete monitor_event <name> -n <namespace>
 ```
 
 ## Terraform Resource

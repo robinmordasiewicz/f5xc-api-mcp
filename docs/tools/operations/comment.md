@@ -36,16 +36,16 @@ Ask Claude to help you work with Comment resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create comment -n <namespace> -i comment.yaml
+f5xcctl operations create comment -n <namespace> -i comment.yaml
 
 # Get
-f5xcctl configuration get comment -n <namespace> <name>
+f5xcctl operations get comment <name> -n <namespace>
 
 # List
-f5xcctl configuration list comment -n <namespace>
+f5xcctl operations list comment -n <namespace>
 
 # Delete
-f5xcctl configuration delete comment -n <namespace> <name>
+f5xcctl operations delete comment <name> -n <namespace>
 ```
 
 ## Terraform Resource

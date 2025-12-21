@@ -44,16 +44,16 @@ Ask Claude to help you work with Route Table resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create route_table -n <namespace> -i route_table.yaml
+f5xcctl observability create route_table -n <namespace> -i route_table.yaml
 
 # Get
-f5xcctl configuration get route_table -n <namespace> <name>
+f5xcctl observability get route_table <name> -n <namespace>
 
 # List
-f5xcctl configuration list route_table -n <namespace>
+f5xcctl observability list route_table -n <namespace>
 
 # Delete
-f5xcctl configuration delete route_table -n <namespace> <name>
+f5xcctl observability delete route_table <name> -n <namespace>
 ```
 
 ## Terraform Resource

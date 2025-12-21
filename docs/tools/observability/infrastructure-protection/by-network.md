@@ -35,16 +35,16 @@ Ask Claude to help you work with By Network resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create by_network -n <namespace> -i by_network.yaml
+f5xcctl observability create by_network -n <namespace> -i by_network.yaml
 
 # Get
-f5xcctl configuration get by_network -n <namespace> <name>
+f5xcctl observability get by_network <name> -n <namespace>
 
 # List
-f5xcctl configuration list by_network -n <namespace>
+f5xcctl observability list by_network -n <namespace>
 
 # Delete
-f5xcctl configuration delete by_network -n <namespace> <name>
+f5xcctl observability delete by_network <name> -n <namespace>
 ```
 
 ## Terraform Resource

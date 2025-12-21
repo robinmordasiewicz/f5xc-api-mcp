@@ -34,16 +34,16 @@ Ask Claude to help you work with Action resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create action -n <namespace> -i action.yaml
+f5xcctl observability create action -n <namespace> -i action.yaml
 
 # Get
-f5xcctl configuration get action -n <namespace> <name>
+f5xcctl observability get action <name> -n <namespace>
 
 # List
-f5xcctl configuration list action -n <namespace>
+f5xcctl observability list action -n <namespace>
 
 # Delete
-f5xcctl configuration delete action -n <namespace> <name>
+f5xcctl observability delete action <name> -n <namespace>
 ```
 
 ## Terraform Resource

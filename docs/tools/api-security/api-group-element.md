@@ -49,16 +49,16 @@ Ask Claude to help you work with API Group Element resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create api_group_element -n <namespace> -i api_group_element.yaml
+f5xcctl api_security create api_group_element -n <namespace> -i api_group_element.yaml
 
 # Get
-f5xcctl configuration get api_group_element -n <namespace> <name>
+f5xcctl api_security get api_group_element <name> -n <namespace>
 
 # List
-f5xcctl configuration list api_group_element -n <namespace>
+f5xcctl api_security list api_group_element -n <namespace>
 
 # Delete
-f5xcctl configuration delete api_group_element -n <namespace> <name>
+f5xcctl api_security delete api_group_element <name> -n <namespace>
 ```
 
 ## Terraform Resource

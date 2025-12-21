@@ -62,16 +62,16 @@ Ask Claude to help you work with Child Tenant resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create child_tenant -n <namespace> -i child_tenant.yaml
+f5xcctl tenant_management create child_tenant -n <namespace> -i child_tenant.yaml
 
 # Get
-f5xcctl configuration get child_tenant -n <namespace> <name>
+f5xcctl tenant_management get child_tenant <name> -n <namespace>
 
 # List
-f5xcctl configuration list child_tenant -n <namespace>
+f5xcctl tenant_management list child_tenant -n <namespace>
 
 # Delete
-f5xcctl configuration delete child_tenant -n <namespace> <name>
+f5xcctl tenant_management delete child_tenant <name> -n <namespace>
 ```
 
 ## Terraform Resource

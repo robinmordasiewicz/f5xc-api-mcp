@@ -42,16 +42,16 @@ Ask Claude to help you work with Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create statu -n <namespace> -i statu.yaml
+f5xcctl operations create statu -n <namespace> -i statu.yaml
 
 # Get
-f5xcctl configuration get statu -n <namespace> <name>
+f5xcctl operations get statu <name> -n <namespace>
 
 # List
-f5xcctl configuration list statu -n <namespace>
+f5xcctl operations list statu -n <namespace>
 
 # Delete
-f5xcctl configuration delete statu -n <namespace> <name>
+f5xcctl operations delete statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

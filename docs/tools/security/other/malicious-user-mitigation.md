@@ -59,16 +59,16 @@ Ask Claude to help you work with Malicious User Mitigation resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create malicious_user_mitigation -n <namespace> -i malicious_user_mitigation.yaml
+f5xcctl security create malicious_user_mitigation -n <namespace> -i malicious_user_mitigation.yaml
 
 # Get
-f5xcctl configuration get malicious_user_mitigation -n <namespace> <name>
+f5xcctl security get malicious_user_mitigation <name> -n <namespace>
 
 # List
-f5xcctl configuration list malicious_user_mitigation -n <namespace>
+f5xcctl security list malicious_user_mitigation -n <namespace>
 
 # Delete
-f5xcctl configuration delete malicious_user_mitigation -n <namespace> <name>
+f5xcctl security delete malicious_user_mitigation <name> -n <namespace>
 ```
 
 ## Terraform Resource

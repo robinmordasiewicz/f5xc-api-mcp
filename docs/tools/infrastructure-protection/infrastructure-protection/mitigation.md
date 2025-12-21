@@ -40,16 +40,16 @@ Ask Claude to help you work with Mitigation resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create mitigation -n <namespace> -i mitigation.yaml
+f5xcctl infrastructure_protection create mitigation -n <namespace> -i mitigation.yaml
 
 # Get
-f5xcctl configuration get mitigation -n <namespace> <name>
+f5xcctl infrastructure_protection get mitigation <name> -n <namespace>
 
 # List
-f5xcctl configuration list mitigation -n <namespace>
+f5xcctl infrastructure_protection list mitigation -n <namespace>
 
 # Delete
-f5xcctl configuration delete mitigation -n <namespace> <name>
+f5xcctl infrastructure_protection delete mitigation <name> -n <namespace>
 ```
 
 ## Terraform Resource

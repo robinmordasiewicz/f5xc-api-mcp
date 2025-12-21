@@ -35,16 +35,16 @@ Ask Claude to help you work with Stop Tcpdump resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create stop_tcpdump -n <namespace> -i stop_tcpdump.yaml
+f5xcctl operations create stop_tcpdump -n <namespace> -i stop_tcpdump.yaml
 
 # Get
-f5xcctl configuration get stop_tcpdump -n <namespace> <name>
+f5xcctl operations get stop_tcpdump <name> -n <namespace>
 
 # List
-f5xcctl configuration list stop_tcpdump -n <namespace>
+f5xcctl operations list stop_tcpdump -n <namespace>
 
 # Delete
-f5xcctl configuration delete stop_tcpdump -n <namespace> <name>
+f5xcctl operations delete stop_tcpdump <name> -n <namespace>
 ```
 
 ## Terraform Resource

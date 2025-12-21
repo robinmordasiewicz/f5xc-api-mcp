@@ -26,16 +26,16 @@ Ask Claude to help you work with Top Flow Anomalie resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create top_flow_anomalie -n <namespace> -i top_flow_anomalie.yaml
+f5xcctl observability create top_flow_anomalie -n <namespace> -i top_flow_anomalie.yaml
 
 # Get
-f5xcctl configuration get top_flow_anomalie -n <namespace> <name>
+f5xcctl observability get top_flow_anomalie <name> -n <namespace>
 
 # List
-f5xcctl configuration list top_flow_anomalie -n <namespace>
+f5xcctl observability list top_flow_anomalie -n <namespace>
 
 # Delete
-f5xcctl configuration delete top_flow_anomalie -n <namespace> <name>
+f5xcctl observability delete top_flow_anomalie <name> -n <namespace>
 ```
 
 ## Terraform Resource

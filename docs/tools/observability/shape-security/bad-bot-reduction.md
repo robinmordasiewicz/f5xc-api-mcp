@@ -34,16 +34,16 @@ Ask Claude to help you work with Bad Bot Reduction resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create bad_bot_reduction -n <namespace> -i bad_bot_reduction.yaml
+f5xcctl observability create bad_bot_reduction -n <namespace> -i bad_bot_reduction.yaml
 
 # Get
-f5xcctl configuration get bad_bot_reduction -n <namespace> <name>
+f5xcctl observability get bad_bot_reduction <name> -n <namespace>
 
 # List
-f5xcctl configuration list bad_bot_reduction -n <namespace>
+f5xcctl observability list bad_bot_reduction -n <namespace>
 
 # Delete
-f5xcctl configuration delete bad_bot_reduction -n <namespace> <name>
+f5xcctl observability delete bad_bot_reduction <name> -n <namespace>
 ```
 
 ## Terraform Resource

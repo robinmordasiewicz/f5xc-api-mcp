@@ -26,16 +26,16 @@ Ask Claude to help you work with Gettopriskyipaddresse resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create gettopriskyipaddresse -n <namespace> -i gettopriskyipaddresse.yaml
+f5xcctl shape_security create gettopriskyipaddresse -n <namespace> -i gettopriskyipaddresse.yaml
 
 # Get
-f5xcctl configuration get gettopriskyipaddresse -n <namespace> <name>
+f5xcctl shape_security get gettopriskyipaddresse <name> -n <namespace>
 
 # List
-f5xcctl configuration list gettopriskyipaddresse -n <namespace>
+f5xcctl shape_security list gettopriskyipaddresse -n <namespace>
 
 # Delete
-f5xcctl configuration delete gettopriskyipaddresse -n <namespace> <name>
+f5xcctl shape_security delete gettopriskyipaddresse <name> -n <namespace>
 ```
 
 ## Terraform Resource

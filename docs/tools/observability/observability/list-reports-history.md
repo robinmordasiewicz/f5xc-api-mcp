@@ -34,16 +34,16 @@ Ask Claude to help you work with List Reports History resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create list_reports_history -n <namespace> -i list_reports_history.yaml
+f5xcctl observability create list_reports_history -n <namespace> -i list_reports_history.yaml
 
 # Get
-f5xcctl configuration get list_reports_history -n <namespace> <name>
+f5xcctl observability get list_reports_history <name> -n <namespace>
 
 # List
-f5xcctl configuration list list_reports_history -n <namespace>
+f5xcctl observability list list_reports_history -n <namespace>
 
 # Delete
-f5xcctl configuration delete list_reports_history -n <namespace> <name>
+f5xcctl observability delete list_reports_history <name> -n <namespace>
 ```
 
 ## Terraform Resource

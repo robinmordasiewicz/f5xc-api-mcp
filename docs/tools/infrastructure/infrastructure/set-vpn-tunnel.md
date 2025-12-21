@@ -35,16 +35,16 @@ Ask Claude to help you work with Set Vpn Tunnel resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create set_vpn_tunnel -n <namespace> -i set_vpn_tunnel.yaml
+f5xcctl infrastructure create set_vpn_tunnel -n <namespace> -i set_vpn_tunnel.yaml
 
 # Get
-f5xcctl configuration get set_vpn_tunnel -n <namespace> <name>
+f5xcctl infrastructure get set_vpn_tunnel <name> -n <namespace>
 
 # List
-f5xcctl configuration list set_vpn_tunnel -n <namespace>
+f5xcctl infrastructure list set_vpn_tunnel -n <namespace>
 
 # Delete
-f5xcctl configuration delete set_vpn_tunnel -n <namespace> <name>
+f5xcctl infrastructure delete set_vpn_tunnel <name> -n <namespace>
 ```
 
 ## Terraform Resource

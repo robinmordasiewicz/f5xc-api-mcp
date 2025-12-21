@@ -35,16 +35,16 @@ Ask Claude to help you work with Test resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create test -n <namespace> -i test.yaml
+f5xcctl observability create test -n <namespace> -i test.yaml
 
 # Get
-f5xcctl configuration get test -n <namespace> <name>
+f5xcctl observability get test <name> -n <namespace>
 
 # List
-f5xcctl configuration list test -n <namespace>
+f5xcctl observability list test -n <namespace>
 
 # Delete
-f5xcctl configuration delete test -n <namespace> <name>
+f5xcctl observability delete test <name> -n <namespace>
 ```
 
 ## Terraform Resource

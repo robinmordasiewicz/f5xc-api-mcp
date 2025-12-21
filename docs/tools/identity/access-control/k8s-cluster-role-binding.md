@@ -61,16 +61,16 @@ Ask Claude to help you work with K8S Cluster Role Binding resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create k8s_cluster_role_binding -n <namespace> -i k8s_cluster_role_binding.yaml
+f5xcctl identity create k8s_cluster_role_binding -n <namespace> -i k8s_cluster_role_binding.yaml
 
 # Get
-f5xcctl configuration get k8s_cluster_role_binding -n <namespace> <name>
+f5xcctl identity get k8s_cluster_role_binding <name> -n <namespace>
 
 # List
-f5xcctl configuration list k8s_cluster_role_binding -n <namespace>
+f5xcctl identity list k8s_cluster_role_binding -n <namespace>
 
 # Delete
-f5xcctl configuration delete k8s_cluster_role_binding -n <namespace> <name>
+f5xcctl identity delete k8s_cluster_role_binding <name> -n <namespace>
 ```
 
 ## Terraform Resource

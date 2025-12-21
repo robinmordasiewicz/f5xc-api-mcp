@@ -35,16 +35,16 @@ Ask Claude to help you work with Unmerge Sources Openapi Schema resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create unmerge_sources_openapi_schema -n <namespace> -i unmerge_sources_openapi_schema.yaml
+f5xcctl networking create unmerge_sources_openapi_schema -n <namespace> -i unmerge_sources_openapi_schema.yaml
 
 # Get
-f5xcctl configuration get unmerge_sources_openapi_schema -n <namespace> <name>
+f5xcctl networking get unmerge_sources_openapi_schema <name> -n <namespace>
 
 # List
-f5xcctl configuration list unmerge_sources_openapi_schema -n <namespace>
+f5xcctl networking list unmerge_sources_openapi_schema -n <namespace>
 
 # Delete
-f5xcctl configuration delete unmerge_sources_openapi_schema -n <namespace> <name>
+f5xcctl networking delete unmerge_sources_openapi_schema <name> -n <namespace>
 ```
 
 ## Terraform Resource

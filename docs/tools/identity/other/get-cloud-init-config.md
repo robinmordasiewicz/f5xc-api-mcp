@@ -35,16 +35,16 @@ Ask Claude to help you work with Get Cloud Init Config resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create get_cloud_init_config -n <namespace> -i get_cloud_init_config.yaml
+f5xcctl identity create get_cloud_init_config -n <namespace> -i get_cloud_init_config.yaml
 
 # Get
-f5xcctl configuration get get_cloud_init_config -n <namespace> <name>
+f5xcctl identity get get_cloud_init_config <name> -n <namespace>
 
 # List
-f5xcctl configuration list get_cloud_init_config -n <namespace>
+f5xcctl identity list get_cloud_init_config -n <namespace>
 
 # Delete
-f5xcctl configuration delete get_cloud_init_config -n <namespace> <name>
+f5xcctl identity delete get_cloud_init_config <name> -n <namespace>
 ```
 
 ## Terraform Resource

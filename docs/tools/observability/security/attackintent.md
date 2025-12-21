@@ -34,16 +34,16 @@ Ask Claude to help you work with Attackintent resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create attackintent -n <namespace> -i attackintent.yaml
+f5xcctl observability create attackintent -n <namespace> -i attackintent.yaml
 
 # Get
-f5xcctl configuration get attackintent -n <namespace> <name>
+f5xcctl observability get attackintent <name> -n <namespace>
 
 # List
-f5xcctl configuration list attackintent -n <namespace>
+f5xcctl observability list attackintent -n <namespace>
 
 # Delete
-f5xcctl configuration delete attackintent -n <namespace> <name>
+f5xcctl observability delete attackintent <name> -n <namespace>
 ```
 
 ## Terraform Resource

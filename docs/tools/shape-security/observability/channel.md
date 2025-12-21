@@ -26,16 +26,16 @@ Ask Claude to help you work with Channel resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create channel -n <namespace> -i channel.yaml
+f5xcctl shape_security create channel -n <namespace> -i channel.yaml
 
 # Get
-f5xcctl configuration get channel -n <namespace> <name>
+f5xcctl shape_security get channel <name> -n <namespace>
 
 # List
-f5xcctl configuration list channel -n <namespace>
+f5xcctl shape_security list channel -n <namespace>
 
 # Delete
-f5xcctl configuration delete channel -n <namespace> <name>
+f5xcctl shape_security delete channel <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -47,16 +47,16 @@ Ask Claude to help you work with Overview resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create overview -n <namespace> -i overview.yaml
+f5xcctl shape_security create overview -n <namespace> -i overview.yaml
 
 # Get
-f5xcctl configuration get overview -n <namespace> <name>
+f5xcctl shape_security get overview <name> -n <namespace>
 
 # List
-f5xcctl configuration list overview -n <namespace>
+f5xcctl shape_security list overview -n <namespace>
 
 # Delete
-f5xcctl configuration delete overview -n <namespace> <name>
+f5xcctl shape_security delete overview <name> -n <namespace>
 ```
 
 ## Terraform Resource

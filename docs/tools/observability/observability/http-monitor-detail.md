@@ -42,16 +42,16 @@ Ask Claude to help you work with HTTP Monitor Detail resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create http_monitor_detail -n <namespace> -i http_monitor_detail.yaml
+f5xcctl observability create http_monitor_detail -n <namespace> -i http_monitor_detail.yaml
 
 # Get
-f5xcctl configuration get http_monitor_detail -n <namespace> <name>
+f5xcctl observability get http_monitor_detail <name> -n <namespace>
 
 # List
-f5xcctl configuration list http_monitor_detail -n <namespace>
+f5xcctl observability list http_monitor_detail -n <namespace>
 
 # Delete
-f5xcctl configuration delete http_monitor_detail -n <namespace> <name>
+f5xcctl observability delete http_monitor_detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

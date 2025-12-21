@@ -26,16 +26,16 @@ Ask Claude to help you work with State resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create state -n <namespace> -i state.yaml
+f5xcctl shape_security create state -n <namespace> -i state.yaml
 
 # Get
-f5xcctl configuration get state -n <namespace> <name>
+f5xcctl shape_security get state <name> -n <namespace>
 
 # List
-f5xcctl configuration list state -n <namespace>
+f5xcctl shape_security list state -n <namespace>
 
 # Delete
-f5xcctl configuration delete state -n <namespace> <name>
+f5xcctl shape_security delete state <name> -n <namespace>
 ```
 
 ## Terraform Resource

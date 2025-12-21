@@ -26,16 +26,16 @@ Ask Claude to help you work with Gettransactiondata resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create gettransactiondata -n <namespace> -i gettransactiondata.yaml
+f5xcctl shape_security create gettransactiondata -n <namespace> -i gettransactiondata.yaml
 
 # Get
-f5xcctl configuration get gettransactiondata -n <namespace> <name>
+f5xcctl shape_security get gettransactiondata <name> -n <namespace>
 
 # List
-f5xcctl configuration list gettransactiondata -n <namespace>
+f5xcctl shape_security list gettransactiondata -n <namespace>
 
 # Delete
-f5xcctl configuration delete gettransactiondata -n <namespace> <name>
+f5xcctl shape_security delete gettransactiondata <name> -n <namespace>
 ```
 
 ## Terraform Resource

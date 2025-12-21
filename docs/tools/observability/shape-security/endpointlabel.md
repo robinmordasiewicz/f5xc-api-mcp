@@ -34,16 +34,16 @@ Ask Claude to help you work with Endpointlabel resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create endpointlabel -n <namespace> -i endpointlabel.yaml
+f5xcctl observability create endpointlabel -n <namespace> -i endpointlabel.yaml
 
 # Get
-f5xcctl configuration get endpointlabel -n <namespace> <name>
+f5xcctl observability get endpointlabel <name> -n <namespace>
 
 # List
-f5xcctl configuration list endpointlabel -n <namespace>
+f5xcctl observability list endpointlabel -n <namespace>
 
 # Delete
-f5xcctl configuration delete endpointlabel -n <namespace> <name>
+f5xcctl observability delete endpointlabel <name> -n <namespace>
 ```
 
 ## Terraform Resource

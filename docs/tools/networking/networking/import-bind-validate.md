@@ -26,16 +26,16 @@ Ask Claude to help you work with Import Bind Validate resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create import_bind_validate -n <namespace> -i import_bind_validate.yaml
+f5xcctl networking create import_bind_validate -n <namespace> -i import_bind_validate.yaml
 
 # Get
-f5xcctl configuration get import_bind_validate -n <namespace> <name>
+f5xcctl networking get import_bind_validate <name> -n <namespace>
 
 # List
-f5xcctl configuration list import_bind_validate -n <namespace>
+f5xcctl networking list import_bind_validate -n <namespace>
 
 # Delete
-f5xcctl configuration delete import_bind_validate -n <namespace> <name>
+f5xcctl networking delete import_bind_validate <name> -n <namespace>
 ```
 
 ## Terraform Resource

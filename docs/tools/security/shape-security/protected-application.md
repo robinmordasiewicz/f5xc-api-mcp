@@ -58,16 +58,16 @@ Ask Claude to help you work with Protected Application resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create protected_application -n <namespace> -i protected_application.yaml
+f5xcctl security create protected_application -n <namespace> -i protected_application.yaml
 
 # Get
-f5xcctl configuration get protected_application -n <namespace> <name>
+f5xcctl security get protected_application <name> -n <namespace>
 
 # List
-f5xcctl configuration list protected_application -n <namespace>
+f5xcctl security list protected_application -n <namespace>
 
 # Delete
-f5xcctl configuration delete protected_application -n <namespace> <name>
+f5xcctl security delete protected_application <name> -n <namespace>
 ```
 
 ## Terraform Resource

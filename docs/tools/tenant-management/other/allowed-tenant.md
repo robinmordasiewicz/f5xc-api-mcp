@@ -59,16 +59,16 @@ Ask Claude to help you work with Allowed Tenant resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create allowed_tenant -n <namespace> -i allowed_tenant.yaml
+f5xcctl tenant_management create allowed_tenant -n <namespace> -i allowed_tenant.yaml
 
 # Get
-f5xcctl configuration get allowed_tenant -n <namespace> <name>
+f5xcctl tenant_management get allowed_tenant <name> -n <namespace>
 
 # List
-f5xcctl configuration list allowed_tenant -n <namespace>
+f5xcctl tenant_management list allowed_tenant -n <namespace>
 
 # Delete
-f5xcctl configuration delete allowed_tenant -n <namespace> <name>
+f5xcctl tenant_management delete allowed_tenant <name> -n <namespace>
 ```
 
 ## Terraform Resource

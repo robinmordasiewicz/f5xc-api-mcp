@@ -35,16 +35,16 @@ Ask Claude to help you work with Recover resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create recover -n <namespace> -i recover.yaml
+f5xcctl security create recover -n <namespace> -i recover.yaml
 
 # Get
-f5xcctl configuration get recover -n <namespace> <name>
+f5xcctl security get recover <name> -n <namespace>
 
 # List
-f5xcctl configuration list recover -n <namespace>
+f5xcctl security list recover -n <namespace>
 
 # Delete
-f5xcctl configuration delete recover -n <namespace> <name>
+f5xcctl security delete recover <name> -n <namespace>
 ```
 
 ## Terraform Resource

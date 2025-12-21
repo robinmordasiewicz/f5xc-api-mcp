@@ -36,16 +36,16 @@ Ask Claude to help you work with Firewall Log resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create firewall_log -n <namespace> -i firewall_log.yaml
+f5xcctl observability create firewall_log -n <namespace> -i firewall_log.yaml
 
 # Get
-f5xcctl configuration get firewall_log -n <namespace> <name>
+f5xcctl observability get firewall_log <name> -n <namespace>
 
 # List
-f5xcctl configuration list firewall_log -n <namespace>
+f5xcctl observability list firewall_log -n <namespace>
 
 # Delete
-f5xcctl configuration delete firewall_log -n <namespace> <name>
+f5xcctl observability delete firewall_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

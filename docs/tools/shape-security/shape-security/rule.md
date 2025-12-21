@@ -34,16 +34,16 @@ Ask Claude to help you work with Rule resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create rule -n <namespace> -i rule.yaml
+f5xcctl shape_security create rule -n <namespace> -i rule.yaml
 
 # Get
-f5xcctl configuration get rule -n <namespace> <name>
+f5xcctl shape_security get rule <name> -n <namespace>
 
 # List
-f5xcctl configuration list rule -n <namespace>
+f5xcctl shape_security list rule -n <namespace>
 
 # Delete
-f5xcctl configuration delete rule -n <namespace> <name>
+f5xcctl shape_security delete rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

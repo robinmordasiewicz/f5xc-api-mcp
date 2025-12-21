@@ -35,16 +35,16 @@ Ask Claude to help you work with Traceroute resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create traceroute -n <namespace> -i traceroute.yaml
+f5xcctl networking create traceroute -n <namespace> -i traceroute.yaml
 
 # Get
-f5xcctl configuration get traceroute -n <namespace> <name>
+f5xcctl networking get traceroute <name> -n <namespace>
 
 # List
-f5xcctl configuration list traceroute -n <namespace>
+f5xcctl networking list traceroute -n <namespace>
 
 # Delete
-f5xcctl configuration delete traceroute -n <namespace> <name>
+f5xcctl networking delete traceroute <name> -n <namespace>
 ```
 
 ## Terraform Resource

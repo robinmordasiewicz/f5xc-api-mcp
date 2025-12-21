@@ -37,16 +37,16 @@ Ask Claude to help you work with Dos Automitigation Rule resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create dos_automitigation_rule -n <namespace> -i dos_automitigation_rule.yaml
+f5xcctl load_balancer create dos_automitigation_rule -n <namespace> -i dos_automitigation_rule.yaml
 
 # Get
-f5xcctl configuration get dos_automitigation_rule -n <namespace> <name>
+f5xcctl load_balancer get dos_automitigation_rule <name> -n <namespace>
 
 # List
-f5xcctl configuration list dos_automitigation_rule -n <namespace>
+f5xcctl load_balancer list dos_automitigation_rule -n <namespace>
 
 # Delete
-f5xcctl configuration delete dos_automitigation_rule -n <namespace> <name>
+f5xcctl load_balancer delete dos_automitigation_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

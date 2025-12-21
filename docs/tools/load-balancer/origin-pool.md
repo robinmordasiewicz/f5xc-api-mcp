@@ -58,16 +58,16 @@ Ask Claude to help you work with Origin Pool resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create origin_pool -n <namespace> -i origin_pool.yaml
+f5xcctl load_balancer create origin_pool -n <namespace> -i origin_pool.yaml
 
 # Get
-f5xcctl configuration get origin_pool -n <namespace> <name>
+f5xcctl load_balancer get origin_pool <name> -n <namespace>
 
 # List
-f5xcctl configuration list origin_pool -n <namespace>
+f5xcctl load_balancer list origin_pool -n <namespace>
 
 # Delete
-f5xcctl configuration delete origin_pool -n <namespace> <name>
+f5xcctl load_balancer delete origin_pool <name> -n <namespace>
 ```
 
 ## Terraform Resource

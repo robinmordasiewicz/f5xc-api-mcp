@@ -49,16 +49,16 @@ Ask Claude to help you work with Script resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create script -n <namespace> -i script.yaml
+f5xcctl shape_security create script -n <namespace> -i script.yaml
 
 # Get
-f5xcctl configuration get script -n <namespace> <name>
+f5xcctl shape_security get script <name> -n <namespace>
 
 # List
-f5xcctl configuration list script -n <namespace>
+f5xcctl shape_security list script -n <namespace>
 
 # Delete
-f5xcctl configuration delete script -n <namespace> <name>
+f5xcctl shape_security delete script <name> -n <namespace>
 ```
 
 ## Terraform Resource

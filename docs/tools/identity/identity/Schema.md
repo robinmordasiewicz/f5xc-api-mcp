@@ -45,16 +45,16 @@ Ask Claude to help you work with Schema resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create Schema -n <namespace> -i Schema.yaml
+f5xcctl identity create Schema -n <namespace> -i Schema.yaml
 
 # Get
-f5xcctl configuration get Schema -n <namespace> <name>
+f5xcctl identity get Schema <name> -n <namespace>
 
 # List
-f5xcctl configuration list Schema -n <namespace>
+f5xcctl identity list Schema -n <namespace>
 
 # Delete
-f5xcctl configuration delete Schema -n <namespace> <name>
+f5xcctl identity delete Schema <name> -n <namespace>
 ```
 
 ## Terraform Resource

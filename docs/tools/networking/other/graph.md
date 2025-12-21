@@ -36,16 +36,16 @@ Ask Claude to help you work with Graph resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create graph -n <namespace> -i graph.yaml
+f5xcctl networking create graph -n <namespace> -i graph.yaml
 
 # Get
-f5xcctl configuration get graph -n <namespace> <name>
+f5xcctl networking get graph <name> -n <namespace>
 
 # List
-f5xcctl configuration list graph -n <namespace>
+f5xcctl networking list graph -n <namespace>
 
 # Delete
-f5xcctl configuration delete graph -n <namespace> <name>
+f5xcctl networking delete graph <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -13,12 +13,10 @@ It implies such steps:
 1) mark user as domain owner
 2) if user is SSO
 
-- mark
-user as F5 Distributed Cloud managed
+- mark user as F5 Distributed Cloud managed
 - send update password email
 
-1) set admin roles in system,
-shared, * namespaces
+1) set admin roles in system, shared, * namespaces
 NOTE: previous roles (which was explicitly assigned to this user) will be
 deleted.
 
@@ -40,16 +38,16 @@ Ask Claude to help you work with Assign resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create assign -n <namespace> -i assign.yaml
+f5xcctl tenant_management create assign -n <namespace> -i assign.yaml
 
 # Get
-f5xcctl configuration get assign -n <namespace> <name>
+f5xcctl tenant_management get assign <name> -n <namespace>
 
 # List
-f5xcctl configuration list assign -n <namespace>
+f5xcctl tenant_management list assign -n <namespace>
 
 # Delete
-f5xcctl configuration delete assign -n <namespace> <name>
+f5xcctl tenant_management delete assign <name> -n <namespace>
 ```
 
 ## Terraform Resource

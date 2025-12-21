@@ -58,16 +58,16 @@ Ask Claude to help you work with AWS Tgw Site resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create aws_tgw_site -n <namespace> -i aws_tgw_site.yaml
+f5xcctl infrastructure create aws_tgw_site -n <namespace> -i aws_tgw_site.yaml
 
 # Get
-f5xcctl configuration get aws_tgw_site -n <namespace> <name>
+f5xcctl infrastructure get aws_tgw_site <name> -n <namespace>
 
 # List
-f5xcctl configuration list aws_tgw_site -n <namespace>
+f5xcctl infrastructure list aws_tgw_site -n <namespace>
 
 # Delete
-f5xcctl configuration delete aws_tgw_site -n <namespace> <name>
+f5xcctl infrastructure delete aws_tgw_site <name> -n <namespace>
 ```
 
 ## Terraform Resource

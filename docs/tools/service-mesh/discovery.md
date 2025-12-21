@@ -58,16 +58,16 @@ Ask Claude to help you work with Discovery resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create discovery -n <namespace> -i discovery.yaml
+f5xcctl service_mesh create discovery -n <namespace> -i discovery.yaml
 
 # Get
-f5xcctl configuration get discovery -n <namespace> <name>
+f5xcctl service_mesh get discovery <name> -n <namespace>
 
 # List
-f5xcctl configuration list discovery -n <namespace>
+f5xcctl service_mesh list discovery -n <namespace>
 
 # Delete
-f5xcctl configuration delete discovery -n <namespace> <name>
+f5xcctl service_mesh delete discovery <name> -n <namespace>
 ```
 
 ## Terraform Resource

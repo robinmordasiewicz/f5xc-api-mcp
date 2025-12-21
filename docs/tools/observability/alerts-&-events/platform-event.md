@@ -40,16 +40,16 @@ Ask Claude to help you work with Platform Event resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create platform_event -n <namespace> -i platform_event.yaml
+f5xcctl observability create platform_event -n <namespace> -i platform_event.yaml
 
 # Get
-f5xcctl configuration get platform_event -n <namespace> <name>
+f5xcctl observability get platform_event <name> -n <namespace>
 
 # List
-f5xcctl configuration list platform_event -n <namespace>
+f5xcctl observability list platform_event -n <namespace>
 
 # Delete
-f5xcctl configuration delete platform_event -n <namespace> <name>
+f5xcctl observability delete platform_event <name> -n <namespace>
 ```
 
 ## Terraform Resource

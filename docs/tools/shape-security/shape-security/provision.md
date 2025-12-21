@@ -39,16 +39,16 @@ Ask Claude to help you work with Provision resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create provision -n <namespace> -i provision.yaml
+f5xcctl shape_security create provision -n <namespace> -i provision.yaml
 
 # Get
-f5xcctl configuration get provision -n <namespace> <name>
+f5xcctl shape_security get provision <name> -n <namespace>
 
 # List
-f5xcctl configuration list provision -n <namespace>
+f5xcctl shape_security list provision -n <namespace>
 
 # Delete
-f5xcctl configuration delete provision -n <namespace> <name>
+f5xcctl shape_security delete provision <name> -n <namespace>
 ```
 
 ## Terraform Resource

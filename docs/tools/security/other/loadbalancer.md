@@ -40,16 +40,16 @@ Ask Claude to help you work with Loadbalancer resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create loadbalancer -n <namespace> -i loadbalancer.yaml
+f5xcctl security create loadbalancer -n <namespace> -i loadbalancer.yaml
 
 # Get
-f5xcctl configuration get loadbalancer -n <namespace> <name>
+f5xcctl security get loadbalancer <name> -n <namespace>
 
 # List
-f5xcctl configuration list loadbalancer -n <namespace>
+f5xcctl security list loadbalancer -n <namespace>
 
 # Delete
-f5xcctl configuration delete loadbalancer -n <namespace> <name>
+f5xcctl security delete loadbalancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

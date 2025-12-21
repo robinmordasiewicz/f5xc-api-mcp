@@ -35,16 +35,16 @@ Ask Claude to help you work with Dhcp Lease resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create dhcp_lease -n <namespace> -i dhcp_lease.yaml
+f5xcctl operations create dhcp_lease -n <namespace> -i dhcp_lease.yaml
 
 # Get
-f5xcctl configuration get dhcp_lease -n <namespace> <name>
+f5xcctl operations get dhcp_lease <name> -n <namespace>
 
 # List
-f5xcctl configuration list dhcp_lease -n <namespace>
+f5xcctl operations list dhcp_lease -n <namespace>
 
 # Delete
-f5xcctl configuration delete dhcp_lease -n <namespace> <name>
+f5xcctl operations delete dhcp_lease <name> -n <namespace>
 ```
 
 ## Terraform Resource

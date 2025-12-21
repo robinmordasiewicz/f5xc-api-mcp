@@ -35,16 +35,16 @@ Ask Claude to help you work with Policie resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create policie -n <namespace> -i policie.yaml
+f5xcctl security create policie -n <namespace> -i policie.yaml
 
 # Get
-f5xcctl configuration get policie -n <namespace> <name>
+f5xcctl security get policie <name> -n <namespace>
 
 # List
-f5xcctl configuration list policie -n <namespace>
+f5xcctl security list policie -n <namespace>
 
 # Delete
-f5xcctl configuration delete policie -n <namespace> <name>
+f5xcctl security delete policie <name> -n <namespace>
 ```
 
 ## Terraform Resource

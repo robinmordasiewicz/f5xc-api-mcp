@@ -40,16 +40,16 @@ Ask Claude to help you work with Audit Log resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create audit_log -n <namespace> -i audit_log.yaml
+f5xcctl observability create audit_log -n <namespace> -i audit_log.yaml
 
 # Get
-f5xcctl configuration get audit_log -n <namespace> <name>
+f5xcctl observability get audit_log <name> -n <namespace>
 
 # List
-f5xcctl configuration list audit_log -n <namespace>
+f5xcctl observability list audit_log -n <namespace>
 
 # Delete
-f5xcctl configuration delete audit_log -n <namespace> <name>
+f5xcctl observability delete audit_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

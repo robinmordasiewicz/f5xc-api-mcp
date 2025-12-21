@@ -23,16 +23,16 @@ Ask Claude to help you work with Deactivate resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create deactivate -n <namespace> -i deactivate.yaml
+f5xcctl tenant_management create deactivate -n <namespace> -i deactivate.yaml
 
 # Get
-f5xcctl configuration get deactivate -n <namespace> <name>
+f5xcctl tenant_management get deactivate <name> -n <namespace>
 
 # List
-f5xcctl configuration list deactivate -n <namespace>
+f5xcctl tenant_management list deactivate -n <namespace>
 
 # Delete
-f5xcctl configuration delete deactivate -n <namespace> <name>
+f5xcctl tenant_management delete deactivate <name> -n <namespace>
 ```
 
 ## Terraform Resource

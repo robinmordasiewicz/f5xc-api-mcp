@@ -40,16 +40,16 @@ Ask Claude to help you work with Application resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create application -n <namespace> -i application.yaml
+f5xcctl shape_security create application -n <namespace> -i application.yaml
 
 # Get
-f5xcctl configuration get application -n <namespace> <name>
+f5xcctl shape_security get application <name> -n <namespace>
 
 # List
-f5xcctl configuration list application -n <namespace>
+f5xcctl shape_security list application -n <namespace>
 
 # Delete
-f5xcctl configuration delete application -n <namespace> <name>
+f5xcctl shape_security delete application <name> -n <namespace>
 ```
 
 ## Terraform Resource

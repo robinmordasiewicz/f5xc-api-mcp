@@ -172,9 +172,19 @@ function generateExampleResource(
 /**
  * Generate f5xcctl command for resource
  */
-function generateF5xcctlCommand(resourceType: string, namespace: string, name: string): string {
+function generateF5xcctlCommand(
+  resourceType: string,
+  namespace: string,
+  name: string,
+  apiPath: string
+): string {
   const rt = resourceType.replace(/-/g, "_");
-  return `f5xcctl get ${rt} ${name} -n ${namespace} -o yaml`;
+
+  // Extract domain from API path (/api/{domain}/...)
+  const pathMatch = apiPath.match(/\/api\/([^/]+)/);
+  const domain = pathMatch?.[1]?.replace(/-/g, "_") ?? "config";
+
+  return `f5xcctl ${domain} get ${rt} ${name} -n ${namespace}`;
 }
 
 /**
@@ -215,7 +225,7 @@ function buildDocumentationResponse(
     resourceType: rt,
     apiPath: apiPath ?? "",
     exampleResource: generateExampleResource(resourceType, namespace, name),
-    f5xcctlCommand: generateF5xcctlCommand(resourceType, namespace, name),
+    f5xcctlCommand: generateF5xcctlCommand(resourceType, namespace, name, rt.apiPath),
     terraformDataSource: generateTerraformDataSource(resourceType, namespace, name),
     relatedResources: rt.relatedResources ?? [],
   };

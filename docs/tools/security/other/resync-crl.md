@@ -35,16 +35,16 @@ Ask Claude to help you work with Resync Crl resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create resync_crl -n <namespace> -i resync_crl.yaml
+f5xcctl security create resync_crl -n <namespace> -i resync_crl.yaml
 
 # Get
-f5xcctl configuration get resync_crl -n <namespace> <name>
+f5xcctl security get resync_crl <name> -n <namespace>
 
 # List
-f5xcctl configuration list resync_crl -n <namespace>
+f5xcctl security list resync_crl -n <namespace>
 
 # Delete
-f5xcctl configuration delete resync_crl -n <namespace> <name>
+f5xcctl security delete resync_crl <name> -n <namespace>
 ```
 
 ## Terraform Resource

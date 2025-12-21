@@ -34,16 +34,16 @@ Ask Claude to help you work with Download Debug Info Collection resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create download_debug_info_collection -n <namespace> -i download_debug_info_collection.yaml
+f5xcctl operations create download_debug_info_collection -n <namespace> -i download_debug_info_collection.yaml
 
 # Get
-f5xcctl configuration get download_debug_info_collection -n <namespace> <name>
+f5xcctl operations get download_debug_info_collection <name> -n <namespace>
 
 # List
-f5xcctl configuration list download_debug_info_collection -n <namespace>
+f5xcctl operations list download_debug_info_collection -n <namespace>
 
 # Delete
-f5xcctl configuration delete download_debug_info_collection -n <namespace> <name>
+f5xcctl operations delete download_debug_info_collection <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with Alert Gen Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create alert_gen_policy -n <namespace> -i alert_gen_policy.yaml
+f5xcctl shape_security create alert_gen_policy -n <namespace> -i alert_gen_policy.yaml
 
 # Get
-f5xcctl configuration get alert_gen_policy -n <namespace> <name>
+f5xcctl shape_security get alert_gen_policy <name> -n <namespace>
 
 # List
-f5xcctl configuration list alert_gen_policy -n <namespace>
+f5xcctl shape_security list alert_gen_policy -n <namespace>
 
 # Delete
-f5xcctl configuration delete alert_gen_policy -n <namespace> <name>
+f5xcctl shape_security delete alert_gen_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

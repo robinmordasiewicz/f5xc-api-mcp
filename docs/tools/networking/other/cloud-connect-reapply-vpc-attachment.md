@@ -26,16 +26,16 @@ Ask Claude to help you work with Cloud Connect Reapply VPC Attachment resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create cloud_connect_reapply_vpc_attachment -n <namespace> -i cloud_connect_reapply_vpc_attachment.yaml
+f5xcctl networking create cloud_connect_reapply_vpc_attachment -n <namespace> -i cloud_connect_reapply_vpc_attachment.yaml
 
 # Get
-f5xcctl configuration get cloud_connect_reapply_vpc_attachment -n <namespace> <name>
+f5xcctl networking get cloud_connect_reapply_vpc_attachment <name> -n <namespace>
 
 # List
-f5xcctl configuration list cloud_connect_reapply_vpc_attachment -n <namespace>
+f5xcctl networking list cloud_connect_reapply_vpc_attachment -n <namespace>
 
 # Delete
-f5xcctl configuration delete cloud_connect_reapply_vpc_attachment -n <namespace> <name>
+f5xcctl networking delete cloud_connect_reapply_vpc_attachment <name> -n <namespace>
 ```
 
 ## Terraform Resource

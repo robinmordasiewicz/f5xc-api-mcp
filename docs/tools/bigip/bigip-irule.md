@@ -58,16 +58,16 @@ Ask Claude to help you work with Bigip Irule resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create bigip_irule -n <namespace> -i bigip_irule.yaml
+f5xcctl bigip create bigip_irule -n <namespace> -i bigip_irule.yaml
 
 # Get
-f5xcctl configuration get bigip_irule -n <namespace> <name>
+f5xcctl bigip get bigip_irule <name> -n <namespace>
 
 # List
-f5xcctl configuration list bigip_irule -n <namespace>
+f5xcctl bigip list bigip_irule -n <namespace>
 
 # Delete
-f5xcctl configuration delete bigip_irule -n <namespace> <name>
+f5xcctl bigip delete bigip_irule <name> -n <namespace>
 ```
 
 ## Terraform Resource

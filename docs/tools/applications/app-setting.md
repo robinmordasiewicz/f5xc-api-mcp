@@ -61,16 +61,16 @@ Ask Claude to help you work with App Setting resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create app_setting -n <namespace> -i app_setting.yaml
+f5xcctl applications create app_setting -n <namespace> -i app_setting.yaml
 
 # Get
-f5xcctl configuration get app_setting -n <namespace> <name>
+f5xcctl applications get app_setting <name> -n <namespace>
 
 # List
-f5xcctl configuration list app_setting -n <namespace>
+f5xcctl applications list app_setting -n <namespace>
 
 # Delete
-f5xcctl configuration delete app_setting -n <namespace> <name>
+f5xcctl applications delete app_setting <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with Receiver resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create receiver -n <namespace> -i receiver.yaml
+f5xcctl shape_security create receiver -n <namespace> -i receiver.yaml
 
 # Get
-f5xcctl configuration get receiver -n <namespace> <name>
+f5xcctl shape_security get receiver <name> -n <namespace>
 
 # List
-f5xcctl configuration list receiver -n <namespace>
+f5xcctl shape_security list receiver -n <namespace>
 
 # Delete
-f5xcctl configuration delete receiver -n <namespace> <name>
+f5xcctl shape_security delete receiver <name> -n <namespace>
 ```
 
 ## Terraform Resource

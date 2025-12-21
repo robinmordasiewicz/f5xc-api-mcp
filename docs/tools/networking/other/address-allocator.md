@@ -56,16 +56,16 @@ Ask Claude to help you work with Address Allocator resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create address_allocator -n <namespace> -i address_allocator.yaml
+f5xcctl networking create address_allocator -n <namespace> -i address_allocator.yaml
 
 # Get
-f5xcctl configuration get address_allocator -n <namespace> <name>
+f5xcctl networking get address_allocator <name> -n <namespace>
 
 # List
-f5xcctl configuration list address_allocator -n <namespace>
+f5xcctl networking list address_allocator -n <namespace>
 
 # Delete
-f5xcctl configuration delete address_allocator -n <namespace> <name>
+f5xcctl networking delete address_allocator <name> -n <namespace>
 ```
 
 ## Terraform Resource

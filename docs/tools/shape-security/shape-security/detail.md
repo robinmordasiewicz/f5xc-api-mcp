@@ -42,16 +42,16 @@ Ask Claude to help you work with Detail resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create detail -n <namespace> -i detail.yaml
+f5xcctl shape_security create detail -n <namespace> -i detail.yaml
 
 # Get
-f5xcctl configuration get detail -n <namespace> <name>
+f5xcctl shape_security get detail <name> -n <namespace>
 
 # List
-f5xcctl configuration list detail -n <namespace>
+f5xcctl shape_security list detail -n <namespace>
 
 # Delete
-f5xcctl configuration delete detail -n <namespace> <name>
+f5xcctl shape_security delete detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

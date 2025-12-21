@@ -33,6 +33,9 @@
     "sync-specs": "tsx scripts/sync-specs.ts",
     "generate": "tsx scripts/generate.ts",
     "generate-docs": "tsx scripts/generate-docs.ts",
+    "validate-cli-syntax": "tsx scripts/validate-cli-syntax.ts",
+    "validate-cli-commands": "bash scripts/validate-f5xcctl-commands.sh",
+    "validate-docs": "npm run generate-docs && npm run validate-cli-commands",
     "prepare": "npm run build",
     "bundle": "mcpb pack",
     "bundle:validate": "mcpb validate"

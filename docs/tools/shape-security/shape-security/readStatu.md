@@ -35,16 +35,16 @@ Ask Claude to help you work with ReadStatu resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create readStatu -n <namespace> -i readStatu.yaml
+f5xcctl shape_security create readStatu -n <namespace> -i readStatu.yaml
 
 # Get
-f5xcctl configuration get readStatu -n <namespace> <name>
+f5xcctl shape_security get readStatu <name> -n <namespace>
 
 # List
-f5xcctl configuration list readStatu -n <namespace>
+f5xcctl shape_security list readStatu -n <namespace>
 
 # Delete
-f5xcctl configuration delete readStatu -n <namespace> <name>
+f5xcctl shape_security delete readStatu <name> -n <namespace>
 ```
 
 ## Terraform Resource

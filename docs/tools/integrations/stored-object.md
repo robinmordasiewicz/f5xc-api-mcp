@@ -43,16 +43,16 @@ Ask Claude to help you work with Stored Object resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create stored_object -n <namespace> -i stored_object.yaml
+f5xcctl integrations create stored_object -n <namespace> -i stored_object.yaml
 
 # Get
-f5xcctl configuration get stored_object -n <namespace> <name>
+f5xcctl integrations get stored_object <name> -n <namespace>
 
 # List
-f5xcctl configuration list stored_object -n <namespace>
+f5xcctl integrations list stored_object -n <namespace>
 
 # Delete
-f5xcctl configuration delete stored_object -n <namespace> <name>
+f5xcctl integrations delete stored_object <name> -n <namespace>
 ```
 
 ## Terraform Resource

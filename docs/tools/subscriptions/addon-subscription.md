@@ -58,16 +58,16 @@ Ask Claude to help you work with Addon Subscription resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create addon_subscription -n <namespace> -i addon_subscription.yaml
+f5xcctl subscriptions create addon_subscription -n <namespace> -i addon_subscription.yaml
 
 # Get
-f5xcctl configuration get addon_subscription -n <namespace> <name>
+f5xcctl subscriptions get addon_subscription <name> -n <namespace>
 
 # List
-f5xcctl configuration list addon_subscription -n <namespace>
+f5xcctl subscriptions list addon_subscription -n <namespace>
 
 # Delete
-f5xcctl configuration delete addon_subscription -n <namespace> <name>
+f5xcctl subscriptions delete addon_subscription <name> -n <namespace>
 ```
 
 ## Terraform Resource

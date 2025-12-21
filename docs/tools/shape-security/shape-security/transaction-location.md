@@ -34,16 +34,16 @@ Ask Claude to help you work with Transaction Location resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create transaction_location -n <namespace> -i transaction_location.yaml
+f5xcctl shape_security create transaction_location -n <namespace> -i transaction_location.yaml
 
 # Get
-f5xcctl configuration get transaction_location -n <namespace> <name>
+f5xcctl shape_security get transaction_location <name> -n <namespace>
 
 # List
-f5xcctl configuration list transaction_location -n <namespace>
+f5xcctl shape_security list transaction_location -n <namespace>
 
 # Delete
-f5xcctl configuration delete transaction_location -n <namespace> <name>
+f5xcctl shape_security delete transaction_location <name> -n <namespace>
 ```
 
 ## Terraform Resource

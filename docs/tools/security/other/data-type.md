@@ -58,16 +58,16 @@ Ask Claude to help you work with Data Type resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create data_type -n <namespace> -i data_type.yaml
+f5xcctl security create data_type -n <namespace> -i data_type.yaml
 
 # Get
-f5xcctl configuration get data_type -n <namespace> <name>
+f5xcctl security get data_type <name> -n <namespace>
 
 # List
-f5xcctl configuration list data_type -n <namespace>
+f5xcctl security list data_type -n <namespace>
 
 # Delete
-f5xcctl configuration delete data_type -n <namespace> <name>
+f5xcctl security delete data_type <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with Certificate resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create certificate -n <namespace> -i certificate.yaml
+f5xcctl identity create certificate -n <namespace> -i certificate.yaml
 
 # Get
-f5xcctl configuration get certificate -n <namespace> <name>
+f5xcctl identity get certificate <name> -n <namespace>
 
 # List
-f5xcctl configuration list certificate -n <namespace>
+f5xcctl identity list certificate -n <namespace>
 
 # Delete
-f5xcctl configuration delete certificate -n <namespace> <name>
+f5xcctl identity delete certificate <name> -n <namespace>
 ```
 
 ## Terraform Resource

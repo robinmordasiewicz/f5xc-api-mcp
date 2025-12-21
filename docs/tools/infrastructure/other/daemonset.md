@@ -40,16 +40,16 @@ Ask Claude to help you work with Daemonset resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create daemonset -n <namespace> -i daemonset.yaml
+f5xcctl infrastructure create daemonset -n <namespace> -i daemonset.yaml
 
 # Get
-f5xcctl configuration get daemonset -n <namespace> <name>
+f5xcctl infrastructure get daemonset <name> -n <namespace>
 
 # List
-f5xcctl configuration list daemonset -n <namespace>
+f5xcctl infrastructure list daemonset -n <namespace>
 
 # Delete
-f5xcctl configuration delete daemonset -n <namespace> <name>
+f5xcctl infrastructure delete daemonset <name> -n <namespace>
 ```
 
 ## Terraform Resource

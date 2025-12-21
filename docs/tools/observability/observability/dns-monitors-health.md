@@ -34,16 +34,16 @@ Ask Claude to help you work with DNS Monitors Health resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create dns_monitors_health -n <namespace> -i dns_monitors_health.yaml
+f5xcctl observability create dns_monitors_health -n <namespace> -i dns_monitors_health.yaml
 
 # Get
-f5xcctl configuration get dns_monitors_health -n <namespace> <name>
+f5xcctl observability get dns_monitors_health <name> -n <namespace>
 
 # List
-f5xcctl configuration list dns_monitors_health -n <namespace>
+f5xcctl observability list dns_monitors_health -n <namespace>
 
 # Delete
-f5xcctl configuration delete dns_monitors_health -n <namespace> <name>
+f5xcctl observability delete dns_monitors_health <name> -n <namespace>
 ```
 
 ## Terraform Resource

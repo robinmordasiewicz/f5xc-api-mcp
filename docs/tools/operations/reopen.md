@@ -35,16 +35,16 @@ Ask Claude to help you work with Reopen resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create reopen -n <namespace> -i reopen.yaml
+f5xcctl operations create reopen -n <namespace> -i reopen.yaml
 
 # Get
-f5xcctl configuration get reopen -n <namespace> <name>
+f5xcctl operations get reopen <name> -n <namespace>
 
 # List
-f5xcctl configuration list reopen -n <namespace>
+f5xcctl operations list reopen -n <namespace>
 
 # Delete
-f5xcctl configuration delete reopen -n <namespace> <name>
+f5xcctl operations delete reopen <name> -n <namespace>
 ```
 
 ## Terraform Resource

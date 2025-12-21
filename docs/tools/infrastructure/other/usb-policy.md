@@ -58,16 +58,16 @@ Ask Claude to help you work with Usb Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create usb_policy -n <namespace> -i usb_policy.yaml
+f5xcctl infrastructure create usb_policy -n <namespace> -i usb_policy.yaml
 
 # Get
-f5xcctl configuration get usb_policy -n <namespace> <name>
+f5xcctl infrastructure get usb_policy <name> -n <namespace>
 
 # List
-f5xcctl configuration list usb_policy -n <namespace>
+f5xcctl infrastructure list usb_policy -n <namespace>
 
 # Delete
-f5xcctl configuration delete usb_policy -n <namespace> <name>
+f5xcctl infrastructure delete usb_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

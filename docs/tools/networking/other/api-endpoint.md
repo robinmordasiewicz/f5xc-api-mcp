@@ -31,8 +31,8 @@ GET all autodiscovered API endpoints for Virtual Host.
 | `api_endpoint_info_request` | List of additional things that needs to be sent as part of the request |
 | `apiep_category` | Category of API endpoints. Can be DISCOVERED, INVENTORY or SHADOW API. |
 | `domains` | List of domains that needs to be sent as part of the request |
-| `end_time` | Format: `unix_timestamp` or `RFC 3339` |
-| `start_time` | Format: `unix_timestamp` or `RFC 3339` |
+| `end_time` | Format: unix_timestamp or RFC 3339 |
+| `start_time` | Format: unix_timestamp or RFC 3339 |
 
 ## Example Usage
 
@@ -50,16 +50,16 @@ Ask Claude to help you work with API Endpoint resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create api_endpoint -n <namespace> -i api_endpoint.yaml
+f5xcctl networking create api_endpoint -n <namespace> -i api_endpoint.yaml
 
 # Get
-f5xcctl configuration get api_endpoint -n <namespace> <name>
+f5xcctl networking get api_endpoint <name> -n <namespace>
 
 # List
-f5xcctl configuration list api_endpoint -n <namespace>
+f5xcctl networking list api_endpoint -n <namespace>
 
 # Delete
-f5xcctl configuration delete api_endpoint -n <namespace> <name>
+f5xcctl networking delete api_endpoint <name> -n <namespace>
 ```
 
 ## Terraform Resource

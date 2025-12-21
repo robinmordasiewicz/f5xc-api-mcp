@@ -58,16 +58,16 @@ Ask Claude to help you work with API Discovery resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create api_discovery -n <namespace> -i api_discovery.yaml
+f5xcctl api_security create api_discovery -n <namespace> -i api_discovery.yaml
 
 # Get
-f5xcctl configuration get api_discovery -n <namespace> <name>
+f5xcctl api_security get api_discovery <name> -n <namespace>
 
 # List
-f5xcctl configuration list api_discovery -n <namespace>
+f5xcctl api_security list api_discovery -n <namespace>
 
 # Delete
-f5xcctl configuration delete api_discovery -n <namespace> <name>
+f5xcctl api_security delete api_discovery <name> -n <namespace>
 ```
 
 ## Terraform Resource

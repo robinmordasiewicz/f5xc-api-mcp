@@ -34,16 +34,16 @@ Ask Claude to help you work with Expanded resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create expanded -n <namespace> -i expanded.yaml
+f5xcctl observability create expanded -n <namespace> -i expanded.yaml
 
 # Get
-f5xcctl configuration get expanded -n <namespace> <name>
+f5xcctl observability get expanded <name> -n <namespace>
 
 # List
-f5xcctl configuration list expanded -n <namespace>
+f5xcctl observability list expanded -n <namespace>
 
 # Delete
-f5xcctl configuration delete expanded -n <namespace> <name>
+f5xcctl observability delete expanded <name> -n <namespace>
 ```
 
 ## Terraform Resource

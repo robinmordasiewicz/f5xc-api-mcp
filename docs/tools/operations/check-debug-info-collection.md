@@ -34,16 +34,16 @@ Ask Claude to help you work with Check Debug Info Collection resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create check_debug_info_collection -n <namespace> -i check_debug_info_collection.yaml
+f5xcctl operations create check_debug_info_collection -n <namespace> -i check_debug_info_collection.yaml
 
 # Get
-f5xcctl configuration get check_debug_info_collection -n <namespace> <name>
+f5xcctl operations get check_debug_info_collection <name> -n <namespace>
 
 # List
-f5xcctl configuration list check_debug_info_collection -n <namespace>
+f5xcctl operations list check_debug_info_collection -n <namespace>
 
 # Delete
-f5xcctl configuration delete check_debug_info_collection -n <namespace> <name>
+f5xcctl operations delete check_debug_info_collection <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -46,16 +46,16 @@ Ask Claude to help you work with Known Label Key resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create known_label_key -n <namespace> -i known_label_key.yaml
+f5xcctl config create known_label_key -n <namespace> -i known_label_key.yaml
 
 # Get
-f5xcctl configuration get known_label_key -n <namespace> <name>
+f5xcctl config get known_label_key <name> -n <namespace>
 
 # List
-f5xcctl configuration list known_label_key -n <namespace>
+f5xcctl config list known_label_key -n <namespace>
 
 # Delete
-f5xcctl configuration delete known_label_key -n <namespace> <name>
+f5xcctl config delete known_label_key <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -28,16 +28,16 @@ Ask Claude to help you work with Combined Notification resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create combined_notification -n <namespace> -i combined_notification.yaml
+f5xcctl identity create combined_notification -n <namespace> -i combined_notification.yaml
 
 # Get
-f5xcctl configuration get combined_notification -n <namespace> <name>
+f5xcctl identity get combined_notification <name> -n <namespace>
 
 # List
-f5xcctl configuration list combined_notification -n <namespace>
+f5xcctl identity list combined_notification -n <namespace>
 
 # Delete
-f5xcctl configuration delete combined_notification -n <namespace> <name>
+f5xcctl identity delete combined_notification <name> -n <namespace>
 ```
 
 ## Terraform Resource

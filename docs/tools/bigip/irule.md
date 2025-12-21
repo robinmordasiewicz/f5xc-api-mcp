@@ -58,16 +58,16 @@ Ask Claude to help you work with Irule resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create irule -n <namespace> -i irule.yaml
+f5xcctl bigip create irule -n <namespace> -i irule.yaml
 
 # Get
-f5xcctl configuration get irule -n <namespace> <name>
+f5xcctl bigip get irule <name> -n <namespace>
 
 # List
-f5xcctl configuration list irule -n <namespace>
+f5xcctl bigip list irule -n <namespace>
 
 # Delete
-f5xcctl configuration delete irule -n <namespace> <name>
+f5xcctl bigip delete irule <name> -n <namespace>
 ```
 
 ## Terraform Resource

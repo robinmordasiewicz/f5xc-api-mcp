@@ -58,16 +58,16 @@ Ask Claude to help you work with Crl resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create crl -n <namespace> -i crl.yaml
+f5xcctl security create crl -n <namespace> -i crl.yaml
 
 # Get
-f5xcctl configuration get crl -n <namespace> <name>
+f5xcctl security get crl <name> -n <namespace>
 
 # List
-f5xcctl configuration list crl -n <namespace>
+f5xcctl security list crl -n <namespace>
 
 # Delete
-f5xcctl configuration delete crl -n <namespace> <name>
+f5xcctl security delete crl <name> -n <namespace>
 ```
 
 ## Terraform Resource

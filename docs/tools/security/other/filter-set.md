@@ -58,16 +58,16 @@ Ask Claude to help you work with Filter Set resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create filter_set -n <namespace> -i filter_set.yaml
+f5xcctl security create filter_set -n <namespace> -i filter_set.yaml
 
 # Get
-f5xcctl configuration get filter_set -n <namespace> <name>
+f5xcctl security get filter_set <name> -n <namespace>
 
 # List
-f5xcctl configuration list filter_set -n <namespace>
+f5xcctl security list filter_set -n <namespace>
 
 # Delete
-f5xcctl configuration delete filter_set -n <namespace> <name>
+f5xcctl security delete filter_set <name> -n <namespace>
 ```
 
 ## Terraform Resource

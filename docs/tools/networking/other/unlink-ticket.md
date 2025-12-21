@@ -37,16 +37,16 @@ Ask Claude to help you work with Unlink Ticket resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create unlink_ticket -n <namespace> -i unlink_ticket.yaml
+f5xcctl networking create unlink_ticket -n <namespace> -i unlink_ticket.yaml
 
 # Get
-f5xcctl configuration get unlink_ticket -n <namespace> <name>
+f5xcctl networking get unlink_ticket <name> -n <namespace>
 
 # List
-f5xcctl configuration list unlink_ticket -n <namespace>
+f5xcctl networking list unlink_ticket -n <namespace>
 
 # Delete
-f5xcctl configuration delete unlink_ticket -n <namespace> <name>
+f5xcctl networking delete unlink_ticket <name> -n <namespace>
 ```
 
 ## Terraform Resource

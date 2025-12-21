@@ -34,16 +34,16 @@ Ask Claude to help you work with Hit resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create hit -n <namespace> -i hit.yaml
+f5xcctl security create hit -n <namespace> -i hit.yaml
 
 # Get
-f5xcctl configuration get hit -n <namespace> <name>
+f5xcctl security get hit <name> -n <namespace>
 
 # List
-f5xcctl configuration list hit -n <namespace>
+f5xcctl security list hit -n <namespace>
 
 # Delete
-f5xcctl configuration delete hit -n <namespace> <name>
+f5xcctl security delete hit <name> -n <namespace>
 ```
 
 ## Terraform Resource

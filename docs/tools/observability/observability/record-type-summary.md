@@ -34,16 +34,16 @@ Ask Claude to help you work with Record Type Summary resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create record_type_summary -n <namespace> -i record_type_summary.yaml
+f5xcctl observability create record_type_summary -n <namespace> -i record_type_summary.yaml
 
 # Get
-f5xcctl configuration get record_type_summary -n <namespace> <name>
+f5xcctl observability get record_type_summary <name> -n <namespace>
 
 # List
-f5xcctl configuration list record_type_summary -n <namespace>
+f5xcctl observability list record_type_summary -n <namespace>
 
 # Delete
-f5xcctl configuration delete record_type_summary -n <namespace> <name>
+f5xcctl observability delete record_type_summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

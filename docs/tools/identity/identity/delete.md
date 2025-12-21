@@ -38,16 +38,16 @@ Ask Claude to help you work with Delete resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create delete -n <namespace> -i delete.yaml
+f5xcctl identity create delete -n <namespace> -i delete.yaml
 
 # Get
-f5xcctl configuration get delete -n <namespace> <name>
+f5xcctl identity get delete <name> -n <namespace>
 
 # List
-f5xcctl configuration list delete -n <namespace>
+f5xcctl identity list delete -n <namespace>
 
 # Delete
-f5xcctl configuration delete delete -n <namespace> <name>
+f5xcctl identity delete delete <name> -n <namespace>
 ```
 
 ## Terraform Resource

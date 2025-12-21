@@ -36,16 +36,16 @@ Ask Claude to help you work with Reboot resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create reboot -n <namespace> -i reboot.yaml
+f5xcctl operations create reboot -n <namespace> -i reboot.yaml
 
 # Get
-f5xcctl configuration get reboot -n <namespace> <name>
+f5xcctl operations get reboot <name> -n <namespace>
 
 # List
-f5xcctl configuration list reboot -n <namespace>
+f5xcctl operations list reboot -n <namespace>
 
 # Delete
-f5xcctl configuration delete reboot -n <namespace> <name>
+f5xcctl operations delete reboot <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -27,16 +27,16 @@ Ask Claude to help you work with All Application Inventory resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create all_application_inventory -n <namespace> -i all_application_inventory.yaml
+f5xcctl identity create all_application_inventory -n <namespace> -i all_application_inventory.yaml
 
 # Get
-f5xcctl configuration get all_application_inventory -n <namespace> <name>
+f5xcctl identity get all_application_inventory <name> -n <namespace>
 
 # List
-f5xcctl configuration list all_application_inventory -n <namespace>
+f5xcctl identity list all_application_inventory -n <namespace>
 
 # Delete
-f5xcctl configuration delete all_application_inventory -n <namespace> <name>
+f5xcctl identity delete all_application_inventory <name> -n <namespace>
 ```
 
 ## Terraform Resource

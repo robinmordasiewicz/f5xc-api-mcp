@@ -35,16 +35,16 @@ Ask Claude to help you work with Event Count resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create event_count -n <namespace> -i event_count.yaml
+f5xcctl observability create event_count -n <namespace> -i event_count.yaml
 
 # Get
-f5xcctl configuration get event_count -n <namespace> <name>
+f5xcctl observability get event_count <name> -n <namespace>
 
 # List
-f5xcctl configuration list event_count -n <namespace>
+f5xcctl observability list event_count -n <namespace>
 
 # Delete
-f5xcctl configuration delete event_count -n <namespace> <name>
+f5xcctl observability delete event_count <name> -n <namespace>
 ```
 
 ## Terraform Resource

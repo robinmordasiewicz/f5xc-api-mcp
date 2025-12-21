@@ -39,16 +39,16 @@ Ask Claude to help you work with Global Kubeconfig resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create global_kubeconfig -n <namespace> -i global_kubeconfig.yaml
+f5xcctl infrastructure create global_kubeconfig -n <namespace> -i global_kubeconfig.yaml
 
 # Get
-f5xcctl configuration get global_kubeconfig -n <namespace> <name>
+f5xcctl infrastructure get global_kubeconfig <name> -n <namespace>
 
 # List
-f5xcctl configuration list global_kubeconfig -n <namespace>
+f5xcctl infrastructure list global_kubeconfig -n <namespace>
 
 # Delete
-f5xcctl configuration delete global_kubeconfig -n <namespace> <name>
+f5xcctl infrastructure delete global_kubeconfig <name> -n <namespace>
 ```
 
 ## Terraform Resource

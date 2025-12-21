@@ -35,16 +35,16 @@ Ask Claude to help you work with Matching Flow resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create matching_flow -n <namespace> -i matching_flow.yaml
+f5xcctl observability create matching_flow -n <namespace> -i matching_flow.yaml
 
 # Get
-f5xcctl configuration get matching_flow -n <namespace> <name>
+f5xcctl observability get matching_flow <name> -n <namespace>
 
 # List
-f5xcctl configuration list matching_flow -n <namespace>
+f5xcctl observability list matching_flow -n <namespace>
 
 # Delete
-f5xcctl configuration delete matching_flow -n <namespace> <name>
+f5xcctl observability delete matching_flow <name> -n <namespace>
 ```
 
 ## Terraform Resource

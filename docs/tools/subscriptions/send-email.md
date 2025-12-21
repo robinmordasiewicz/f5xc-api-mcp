@@ -27,16 +27,16 @@ Ask Claude to help you work with Send Email resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create send_email -n <namespace> -i send_email.yaml
+f5xcctl subscriptions create send_email -n <namespace> -i send_email.yaml
 
 # Get
-f5xcctl configuration get send_email -n <namespace> <name>
+f5xcctl subscriptions get send_email <name> -n <namespace>
 
 # List
-f5xcctl configuration list send_email -n <namespace>
+f5xcctl subscriptions list send_email -n <namespace>
 
 # Delete
-f5xcctl configuration delete send_email -n <namespace> <name>
+f5xcctl subscriptions delete send_email <name> -n <namespace>
 ```
 
 ## Terraform Resource

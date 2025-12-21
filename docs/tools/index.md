@@ -245,7 +245,7 @@ When credentials are not configured, tools return documentation:
   "tool": "f5xc-api-waap-http-loadbalancer-create",
   "description": "Creates an HTTP Load Balancer",
   "parameters": {},
-  "f5xcctl_command": "f5xcctl apply -f http_lb.yaml",
+  "f5xcctl_command": "f5xcctl load_balancer create http_loadbalancer -n production -i http_lb.yaml",
   "terraform_resource": "volterra_http_loadbalancer",
   "terraform_example": "resource \"volterra_http_loadbalancer\" {...}",
   "prerequisites": ["namespace must exist", "origin_pool required"],

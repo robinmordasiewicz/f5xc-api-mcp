@@ -52,16 +52,16 @@ Ask Claude to help you work with Segment Connection resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create segment_connection -n <namespace> -i segment_connection.yaml
+f5xcctl networking create segment_connection -n <namespace> -i segment_connection.yaml
 
 # Get
-f5xcctl configuration get segment_connection -n <namespace> <name>
+f5xcctl networking get segment_connection <name> -n <namespace>
 
 # List
-f5xcctl configuration list segment_connection -n <namespace>
+f5xcctl networking list segment_connection -n <namespace>
 
 # Delete
-f5xcctl configuration delete segment_connection -n <namespace> <name>
+f5xcctl networking delete segment_connection <name> -n <namespace>
 ```
 
 ## Terraform Resource

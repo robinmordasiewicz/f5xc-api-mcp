@@ -58,16 +58,16 @@ Ask Claude to help you work with Forward Proxy Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create forward_proxy_policy -n <namespace> -i forward_proxy_policy.yaml
+f5xcctl load_balancer create forward_proxy_policy -n <namespace> -i forward_proxy_policy.yaml
 
 # Get
-f5xcctl configuration get forward_proxy_policy -n <namespace> <name>
+f5xcctl load_balancer get forward_proxy_policy <name> -n <namespace>
 
 # List
-f5xcctl configuration list forward_proxy_policy -n <namespace>
+f5xcctl load_balancer list forward_proxy_policy -n <namespace>
 
 # Delete
-f5xcctl configuration delete forward_proxy_policy -n <namespace> <name>
+f5xcctl load_balancer delete forward_proxy_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

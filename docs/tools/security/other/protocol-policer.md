@@ -60,16 +60,16 @@ Ask Claude to help you work with Protocol Policer resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create protocol_policer -n <namespace> -i protocol_policer.yaml
+f5xcctl security create protocol_policer -n <namespace> -i protocol_policer.yaml
 
 # Get
-f5xcctl configuration get protocol_policer -n <namespace> <name>
+f5xcctl security get protocol_policer <name> -n <namespace>
 
 # List
-f5xcctl configuration list protocol_policer -n <namespace>
+f5xcctl security list protocol_policer -n <namespace>
 
 # Delete
-f5xcctl configuration delete protocol_policer -n <namespace> <name>
+f5xcctl security delete protocol_policer <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -44,16 +44,16 @@ Ask Claude to help you work with Alert resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create alert -n <namespace> -i alert.yaml
+f5xcctl observability create alert -n <namespace> -i alert.yaml
 
 # Get
-f5xcctl configuration get alert -n <namespace> <name>
+f5xcctl observability get alert <name> -n <namespace>
 
 # List
-f5xcctl configuration list alert -n <namespace>
+f5xcctl observability list alert -n <namespace>
 
 # Delete
-f5xcctl configuration delete alert -n <namespace> <name>
+f5xcctl observability delete alert <name> -n <namespace>
 ```
 
 ## Terraform Resource

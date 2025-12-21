@@ -39,16 +39,16 @@ Ask Claude to help you work with Unassign resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create unassign -n <namespace> -i unassign.yaml
+f5xcctl tenant_management create unassign -n <namespace> -i unassign.yaml
 
 # Get
-f5xcctl configuration get unassign -n <namespace> <name>
+f5xcctl tenant_management get unassign <name> -n <namespace>
 
 # List
-f5xcctl configuration list unassign -n <namespace>
+f5xcctl tenant_management list unassign -n <namespace>
 
 # Delete
-f5xcctl configuration delete unassign -n <namespace> <name>
+f5xcctl tenant_management delete unassign <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with App Firewall resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create app_firewall -n <namespace> -i app_firewall.yaml
+f5xcctl security create app_firewall -n <namespace> -i app_firewall.yaml
 
 # Get
-f5xcctl configuration get app_firewall -n <namespace> <name>
+f5xcctl security get app_firewall <name> -n <namespace>
 
 # List
-f5xcctl configuration list app_firewall -n <namespace>
+f5xcctl security list app_firewall -n <namespace>
 
 # Delete
-f5xcctl configuration delete app_firewall -n <namespace> <name>
+f5xcctl security delete app_firewall <name> -n <namespace>
 ```
 
 ## Terraform Resource

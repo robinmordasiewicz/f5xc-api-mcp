@@ -35,16 +35,16 @@ Ask Claude to help you work with Generate resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create generate -n <namespace> -i generate.yaml
+f5xcctl observability create generate -n <namespace> -i generate.yaml
 
 # Get
-f5xcctl configuration get generate -n <namespace> <name>
+f5xcctl observability get generate <name> -n <namespace>
 
 # List
-f5xcctl configuration list generate -n <namespace>
+f5xcctl observability list generate -n <namespace>
 
 # Delete
-f5xcctl configuration delete generate -n <namespace> <name>
+f5xcctl observability delete generate <name> -n <namespace>
 ```
 
 ## Terraform Resource

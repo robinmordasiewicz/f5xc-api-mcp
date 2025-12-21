@@ -26,16 +26,16 @@ Ask Claude to help you work with ServiceProviderConfig resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create ServiceProviderConfig -n <namespace> -i ServiceProviderConfig.yaml
+f5xcctl identity create ServiceProviderConfig -n <namespace> -i ServiceProviderConfig.yaml
 
 # Get
-f5xcctl configuration get ServiceProviderConfig -n <namespace> <name>
+f5xcctl identity get ServiceProviderConfig <name> -n <namespace>
 
 # List
-f5xcctl configuration list ServiceProviderConfig -n <namespace>
+f5xcctl identity list ServiceProviderConfig -n <namespace>
 
 # Delete
-f5xcctl configuration delete ServiceProviderConfig -n <namespace> <name>
+f5xcctl identity delete ServiceProviderConfig <name> -n <namespace>
 ```
 
 ## Terraform Resource

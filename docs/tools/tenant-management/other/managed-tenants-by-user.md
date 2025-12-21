@@ -40,16 +40,16 @@ Ask Claude to help you work with Managed Tenants By User resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create managed_tenants_by_user -n <namespace> -i managed_tenants_by_user.yaml
+f5xcctl tenant_management create managed_tenants_by_user -n <namespace> -i managed_tenants_by_user.yaml
 
 # Get
-f5xcctl configuration get managed_tenants_by_user -n <namespace> <name>
+f5xcctl tenant_management get managed_tenants_by_user <name> -n <namespace>
 
 # List
-f5xcctl configuration list managed_tenants_by_user -n <namespace>
+f5xcctl tenant_management list managed_tenants_by_user -n <namespace>
 
 # Delete
-f5xcctl configuration delete managed_tenants_by_user -n <namespace> <name>
+f5xcctl tenant_management delete managed_tenants_by_user <name> -n <namespace>
 ```
 
 ## Terraform Resource

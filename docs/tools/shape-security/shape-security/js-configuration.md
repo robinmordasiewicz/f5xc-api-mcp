@@ -40,16 +40,16 @@ Ask Claude to help you work with Js Configuration resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create js_configuration -n <namespace> -i js_configuration.yaml
+f5xcctl shape_security create js_configuration -n <namespace> -i js_configuration.yaml
 
 # Get
-f5xcctl configuration get js_configuration -n <namespace> <name>
+f5xcctl shape_security get js_configuration <name> -n <namespace>
 
 # List
-f5xcctl configuration list js_configuration -n <namespace>
+f5xcctl shape_security list js_configuration -n <namespace>
 
 # Delete
-f5xcctl configuration delete js_configuration -n <namespace> <name>
+f5xcctl shape_security delete js_configuration <name> -n <namespace>
 ```
 
 ## Terraform Resource

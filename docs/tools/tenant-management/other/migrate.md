@@ -34,16 +34,16 @@ Ask Claude to help you work with Migrate resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create migrate -n <namespace> -i migrate.yaml
+f5xcctl tenant_management create migrate -n <namespace> -i migrate.yaml
 
 # Get
-f5xcctl configuration get migrate -n <namespace> <name>
+f5xcctl tenant_management get migrate <name> -n <namespace>
 
 # List
-f5xcctl configuration list migrate -n <namespace>
+f5xcctl tenant_management list migrate -n <namespace>
 
 # Delete
-f5xcctl configuration delete migrate -n <namespace> <name>
+f5xcctl tenant_management delete migrate <name> -n <namespace>
 ```
 
 ## Terraform Resource

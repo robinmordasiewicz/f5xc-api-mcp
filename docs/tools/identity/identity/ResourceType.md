@@ -45,16 +45,16 @@ Ask Claude to help you work with ResourceType resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create ResourceType -n <namespace> -i ResourceType.yaml
+f5xcctl identity create ResourceType -n <namespace> -i ResourceType.yaml
 
 # Get
-f5xcctl configuration get ResourceType -n <namespace> <name>
+f5xcctl identity get ResourceType <name> -n <namespace>
 
 # List
-f5xcctl configuration list ResourceType -n <namespace>
+f5xcctl identity list ResourceType -n <namespace>
 
 # Delete
-f5xcctl configuration delete ResourceType -n <namespace> <name>
+f5xcctl identity delete ResourceType <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with Geo Location Set resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create geo_location_set -n <namespace> -i geo_location_set.yaml
+f5xcctl security create geo_location_set -n <namespace> -i geo_location_set.yaml
 
 # Get
-f5xcctl configuration get geo_location_set -n <namespace> <name>
+f5xcctl security get geo_location_set <name> -n <namespace>
 
 # List
-f5xcctl configuration list geo_location_set -n <namespace>
+f5xcctl security list geo_location_set -n <namespace>
 
 # Delete
-f5xcctl configuration delete geo_location_set -n <namespace> <name>
+f5xcctl security delete geo_location_set <name> -n <namespace>
 ```
 
 ## Terraform Resource

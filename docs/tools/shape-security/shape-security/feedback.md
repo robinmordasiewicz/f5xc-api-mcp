@@ -34,16 +34,16 @@ Ask Claude to help you work with Feedback resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create feedback -n <namespace> -i feedback.yaml
+f5xcctl shape_security create feedback -n <namespace> -i feedback.yaml
 
 # Get
-f5xcctl configuration get feedback -n <namespace> <name>
+f5xcctl shape_security get feedback <name> -n <namespace>
 
 # List
-f5xcctl configuration list feedback -n <namespace>
+f5xcctl shape_security list feedback -n <namespace>
 
 # Delete
-f5xcctl configuration delete feedback -n <namespace> <name>
+f5xcctl shape_security delete feedback <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Lookup resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create lookup -n <namespace> -i lookup.yaml
+f5xcctl tenant_management create lookup -n <namespace> -i lookup.yaml
 
 # Get
-f5xcctl configuration get lookup -n <namespace> <name>
+f5xcctl tenant_management get lookup <name> -n <namespace>
 
 # List
-f5xcctl configuration list lookup -n <namespace>
+f5xcctl tenant_management list lookup -n <namespace>
 
 # Delete
-f5xcctl configuration delete lookup -n <namespace> <name>
+f5xcctl tenant_management delete lookup <name> -n <namespace>
 ```
 
 ## Terraform Resource

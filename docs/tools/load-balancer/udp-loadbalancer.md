@@ -58,16 +58,16 @@ Ask Claude to help you work with UDP Loadbalancer resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create udp_loadbalancer -n <namespace> -i udp_loadbalancer.yaml
+f5xcctl load_balancer create udp_loadbalancer -n <namespace> -i udp_loadbalancer.yaml
 
 # Get
-f5xcctl configuration get udp_loadbalancer -n <namespace> <name>
+f5xcctl load_balancer get udp_loadbalancer <name> -n <namespace>
 
 # List
-f5xcctl configuration list udp_loadbalancer -n <namespace>
+f5xcctl load_balancer list udp_loadbalancer -n <namespace>
 
 # Delete
-f5xcctl configuration delete udp_loadbalancer -n <namespace> <name>
+f5xcctl load_balancer delete udp_loadbalancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

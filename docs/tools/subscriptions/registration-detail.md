@@ -35,16 +35,16 @@ Ask Claude to help you work with Registration Detail resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create registration_detail -n <namespace> -i registration_detail.yaml
+f5xcctl subscriptions create registration_detail -n <namespace> -i registration_detail.yaml
 
 # Get
-f5xcctl configuration get registration_detail -n <namespace> <name>
+f5xcctl subscriptions get registration_detail <name> -n <namespace>
 
 # List
-f5xcctl configuration list registration_detail -n <namespace>
+f5xcctl subscriptions list registration_detail -n <namespace>
 
 # Delete
-f5xcctl configuration delete registration_detail -n <namespace> <name>
+f5xcctl subscriptions delete registration_detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

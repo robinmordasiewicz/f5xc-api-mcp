@@ -49,16 +49,16 @@ Ask Claude to help you work with Static Component resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create static_component -n <namespace> -i static_component.yaml
+f5xcctl applications create static_component -n <namespace> -i static_component.yaml
 
 # Get
-f5xcctl configuration get static_component -n <namespace> <name>
+f5xcctl applications get static_component <name> -n <namespace>
 
 # List
-f5xcctl configuration list static_component -n <namespace>
+f5xcctl applications list static_component -n <namespace>
 
 # Delete
-f5xcctl configuration delete static_component -n <namespace> <name>
+f5xcctl applications delete static_component <name> -n <namespace>
 ```
 
 ## Terraform Resource

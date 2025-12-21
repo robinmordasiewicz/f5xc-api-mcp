@@ -26,16 +26,16 @@ Ask Claude to help you work with Analyze For Deletion resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create analyze_for_deletion -n <namespace> -i analyze_for_deletion.yaml
+f5xcctl identity create analyze_for_deletion -n <namespace> -i analyze_for_deletion.yaml
 
 # Get
-f5xcctl configuration get analyze_for_deletion -n <namespace> <name>
+f5xcctl identity get analyze_for_deletion <name> -n <namespace>
 
 # List
-f5xcctl configuration list analyze_for_deletion -n <namespace>
+f5xcctl identity list analyze_for_deletion -n <namespace>
 
 # Delete
-f5xcctl configuration delete analyze_for_deletion -n <namespace> <name>
+f5xcctl identity delete analyze_for_deletion <name> -n <namespace>
 ```
 
 ## Terraform Resource
