@@ -81,7 +81,7 @@ export async function handleCliCommand(args: string[]): Promise<void> {
 /**
  * Show help information
  */
-function showHelp(): void {
+export function showHelp(): void {
   console.log(`
 F5XC API MCP Server - Profile-Based Credential Management
 
@@ -124,6 +124,11 @@ For more information, visit: https://github.com/robinmordasiewicz/f5xc-api-mcp
  * Show version information
  */
 export function showVersion(): void {
-  // Version will be injected by the caller from package.json
-  console.log("f5xc-api-mcp");
+  // Get version from package.json
+  try {
+    const pkg = require("../../package.json");
+    console.log(`f5xc-api-mcp v${pkg.version}`);
+  } catch {
+    console.log("f5xc-api-mcp");
+  }
 }
