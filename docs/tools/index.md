@@ -336,8 +336,8 @@ Export F5XC resources as Terraform configuration.
 
 ## Next Steps
 
-- [HTTP Load Balancer](load-balancing/http-loadbalancer.md) - Detailed load balancer documentation
-- [Origin Pool](load-balancing/origin-pool.md) - Backend pool configuration
-- [App Firewall](security/app-firewall.md) - WAF configuration
+- [HTTP Load Balancer](load-balancer/http-loadbalancer.md) - Detailed load balancer documentation
+- [Origin Pool](load-balancer/origin-pool.md) - Backend pool configuration
+- [App Firewall](security/waf/app-firewall.md) - WAF configuration
 - [f5xcctl Integration](../integrations/f5xcctl.md) - CLI equivalents
 - [Terraform Integration](../integrations/terraform.md) - Infrastructure as code
