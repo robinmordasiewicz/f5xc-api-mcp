@@ -56,16 +56,16 @@ Ask Claude to help you work with Alert Template resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create alert_template -n <namespace> -i alert_template.yaml
+f5xcctl shape_security create alert_template -n <namespace> -i alert_template.yaml
 
 # Get
-f5xcctl configuration get alert_template -n <namespace> <name>
+f5xcctl shape_security get alert_template <name> -n <namespace>
 
 # List
-f5xcctl configuration list alert_template -n <namespace>
+f5xcctl shape_security list alert_template -n <namespace>
 
 # Delete
-f5xcctl configuration delete alert_template -n <namespace> <name>
+f5xcctl shape_security delete alert_template <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -26,16 +26,16 @@ Ask Claude to help you work with Threat Type resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create threat_type -n <namespace> -i threat_type.yaml
+f5xcctl observability create threat_type -n <namespace> -i threat_type.yaml
 
 # Get
-f5xcctl configuration get threat_type -n <namespace> <name>
+f5xcctl observability get threat_type <name> -n <namespace>
 
 # List
-f5xcctl configuration list threat_type -n <namespace>
+f5xcctl observability list threat_type -n <namespace>
 
 # Delete
-f5xcctl configuration delete threat_type -n <namespace> <name>
+f5xcctl observability delete threat_type <name> -n <namespace>
 ```
 
 ## Terraform Resource

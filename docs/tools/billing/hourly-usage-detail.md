@@ -37,16 +37,16 @@ Ask Claude to help you work with Hourly Usage Detail resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create hourly_usage_detail -n <namespace> -i hourly_usage_detail.yaml
+f5xcctl billing create hourly_usage_detail -n <namespace> -i hourly_usage_detail.yaml
 
 # Get
-f5xcctl configuration get hourly_usage_detail -n <namespace> <name>
+f5xcctl billing get hourly_usage_detail <name> -n <namespace>
 
 # List
-f5xcctl configuration list hourly_usage_detail -n <namespace>
+f5xcctl billing list hourly_usage_detail -n <namespace>
 
 # Delete
-f5xcctl configuration delete hourly_usage_detail -n <namespace> <name>
+f5xcctl billing delete hourly_usage_detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

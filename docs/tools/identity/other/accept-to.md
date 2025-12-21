@@ -34,16 +34,16 @@ Ask Claude to help you work with Accept To resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create accept_to -n <namespace> -i accept_to.yaml
+f5xcctl identity create accept_to -n <namespace> -i accept_to.yaml
 
 # Get
-f5xcctl configuration get accept_to -n <namespace> <name>
+f5xcctl identity get accept_to <name> -n <namespace>
 
 # List
-f5xcctl configuration list accept_to -n <namespace>
+f5xcctl identity list accept_to -n <namespace>
 
 # Delete
-f5xcctl configuration delete accept_to -n <namespace> <name>
+f5xcctl identity delete accept_to <name> -n <namespace>
 ```
 
 ## Terraform Resource

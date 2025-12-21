@@ -58,16 +58,16 @@ Ask Claude to help you work with Infraprotect Internet Prefix Advertisement reso
 
 ```bash
 # Create/Update
-f5xcctl configuration create infraprotect_internet_prefix_advertisement -n <namespace> -i infraprotect_internet_prefix_advertisement.yaml
+f5xcctl infrastructure_protection create infraprotect_internet_prefix_advertisement -n <namespace> -i infraprotect_internet_prefix_advertisement.yaml
 
 # Get
-f5xcctl configuration get infraprotect_internet_prefix_advertisement -n <namespace> <name>
+f5xcctl infrastructure_protection get infraprotect_internet_prefix_advertisement <name> -n <namespace>
 
 # List
-f5xcctl configuration list infraprotect_internet_prefix_advertisement -n <namespace>
+f5xcctl infrastructure_protection list infraprotect_internet_prefix_advertisement -n <namespace>
 
 # Delete
-f5xcctl configuration delete infraprotect_internet_prefix_advertisement -n <namespace> <name>
+f5xcctl infrastructure_protection delete infraprotect_internet_prefix_advertisement <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -26,16 +26,16 @@ Ask Claude to help you work with Subscribe resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create subscribe -n <namespace> -i subscribe.yaml
+f5xcctl ai_intelligence create subscribe -n <namespace> -i subscribe.yaml
 
 # Get
-f5xcctl configuration get subscribe -n <namespace> <name>
+f5xcctl ai_intelligence get subscribe <name> -n <namespace>
 
 # List
-f5xcctl configuration list subscribe -n <namespace>
+f5xcctl ai_intelligence list subscribe -n <namespace>
 
 # Delete
-f5xcctl configuration delete subscribe -n <namespace> <name>
+f5xcctl ai_intelligence delete subscribe <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -34,16 +34,16 @@ Ask Claude to help you work with Lb Cache Content resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create lb_cache_content -n <namespace> -i lb_cache_content.yaml
+f5xcctl observability create lb_cache_content -n <namespace> -i lb_cache_content.yaml
 
 # Get
-f5xcctl configuration get lb_cache_content -n <namespace> <name>
+f5xcctl observability get lb_cache_content <name> -n <namespace>
 
 # List
-f5xcctl configuration list lb_cache_content -n <namespace>
+f5xcctl observability list lb_cache_content -n <namespace>
 
 # Delete
-f5xcctl configuration delete lb_cache_content -n <namespace> <name>
+f5xcctl observability delete lb_cache_content <name> -n <namespace>
 ```
 
 ## Terraform Resource

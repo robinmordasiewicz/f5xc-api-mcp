@@ -34,16 +34,16 @@ Ask Claude to help you work with Latency resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create latency -n <namespace> -i latency.yaml
+f5xcctl security create latency -n <namespace> -i latency.yaml
 
 # Get
-f5xcctl configuration get latency -n <namespace> <name>
+f5xcctl security get latency <name> -n <namespace>
 
 # List
-f5xcctl configuration list latency -n <namespace>
+f5xcctl security list latency -n <namespace>
 
 # Delete
-f5xcctl configuration delete latency -n <namespace> <name>
+f5xcctl security delete latency <name> -n <namespace>
 ```
 
 ## Terraform Resource

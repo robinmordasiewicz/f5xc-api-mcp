@@ -35,16 +35,16 @@ Ask Claude to help you work with Close resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create close -n <namespace> -i close.yaml
+f5xcctl tenant_management create close -n <namespace> -i close.yaml
 
 # Get
-f5xcctl configuration get close -n <namespace> <name>
+f5xcctl tenant_management get close <name> -n <namespace>
 
 # List
-f5xcctl configuration list close -n <namespace>
+f5xcctl tenant_management list close -n <namespace>
 
 # Delete
-f5xcctl configuration delete close -n <namespace> <name>
+f5xcctl tenant_management delete close <name> -n <namespace>
 ```
 
 ## Terraform Resource

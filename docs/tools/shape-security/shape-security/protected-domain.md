@@ -56,16 +56,16 @@ Ask Claude to help you work with Protected Domain resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create protected_domain -n <namespace> -i protected_domain.yaml
+f5xcctl shape_security create protected_domain -n <namespace> -i protected_domain.yaml
 
 # Get
-f5xcctl configuration get protected_domain -n <namespace> <name>
+f5xcctl shape_security get protected_domain <name> -n <namespace>
 
 # List
-f5xcctl configuration list protected_domain -n <namespace>
+f5xcctl shape_security list protected_domain -n <namespace>
 
 # Delete
-f5xcctl configuration delete protected_domain -n <namespace> <name>
+f5xcctl shape_security delete protected_domain <name> -n <namespace>
 ```
 
 ## Terraform Resource

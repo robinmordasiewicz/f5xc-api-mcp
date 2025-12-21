@@ -34,16 +34,16 @@ Ask Claude to help you work with Transactions Csv resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create transactions_csv -n <namespace> -i transactions_csv.yaml
+f5xcctl shape_security create transactions_csv -n <namespace> -i transactions_csv.yaml
 
 # Get
-f5xcctl configuration get transactions_csv -n <namespace> <name>
+f5xcctl shape_security get transactions_csv <name> -n <namespace>
 
 # List
-f5xcctl configuration list transactions_csv -n <namespace>
+f5xcctl shape_security list transactions_csv -n <namespace>
 
 # Delete
-f5xcctl configuration delete transactions_csv -n <namespace> <name>
+f5xcctl shape_security delete transactions_csv <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with Alert Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create alert_policy -n <namespace> -i alert_policy.yaml
+f5xcctl observability create alert_policy -n <namespace> -i alert_policy.yaml
 
 # Get
-f5xcctl configuration get alert_policy -n <namespace> <name>
+f5xcctl observability get alert_policy <name> -n <namespace>
 
 # List
-f5xcctl configuration list alert_policy -n <namespace>
+f5xcctl observability list alert_policy -n <namespace>
 
 # Delete
-f5xcctl configuration delete alert_policy -n <namespace> <name>
+f5xcctl observability delete alert_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

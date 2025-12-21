@@ -26,16 +26,16 @@ Ask Claude to help you work with Signup resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create signup -n <namespace> -i signup.yaml
+f5xcctl subscriptions create signup -n <namespace> -i signup.yaml
 
 # Get
-f5xcctl configuration get signup -n <namespace> <name>
+f5xcctl subscriptions get signup <name> -n <namespace>
 
 # List
-f5xcctl configuration list signup -n <namespace>
+f5xcctl subscriptions list signup -n <namespace>
 
 # Delete
-f5xcctl configuration delete signup -n <namespace> <name>
+f5xcctl subscriptions delete signup <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -40,16 +40,16 @@ Ask Claude to help you work with Global Summary resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create global_summary -n <namespace> -i global_summary.yaml
+f5xcctl observability create global_summary -n <namespace> -i global_summary.yaml
 
 # Get
-f5xcctl configuration get global_summary -n <namespace> <name>
+f5xcctl observability get global_summary <name> -n <namespace>
 
 # List
-f5xcctl configuration list global_summary -n <namespace>
+f5xcctl observability list global_summary -n <namespace>
 
 # Delete
-f5xcctl configuration delete global_summary -n <namespace> <name>
+f5xcctl observability delete global_summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

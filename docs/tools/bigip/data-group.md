@@ -58,16 +58,16 @@ Ask Claude to help you work with Data Group resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create data_group -n <namespace> -i data_group.yaml
+f5xcctl bigip create data_group -n <namespace> -i data_group.yaml
 
 # Get
-f5xcctl configuration get data_group -n <namespace> <name>
+f5xcctl bigip get data_group <name> -n <namespace>
 
 # List
-f5xcctl configuration list data_group -n <namespace>
+f5xcctl bigip list data_group -n <namespace>
 
 # Delete
-f5xcctl configuration delete data_group -n <namespace> <name>
+f5xcctl bigip delete data_group <name> -n <namespace>
 ```
 
 ## Terraform Resource

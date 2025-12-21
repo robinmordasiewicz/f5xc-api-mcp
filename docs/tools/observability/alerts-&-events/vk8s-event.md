@@ -40,16 +40,16 @@ Ask Claude to help you work with Vk8s Event resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create vk8s_event -n <namespace> -i vk8s_event.yaml
+f5xcctl observability create vk8s_event -n <namespace> -i vk8s_event.yaml
 
 # Get
-f5xcctl configuration get vk8s_event -n <namespace> <name>
+f5xcctl observability get vk8s_event <name> -n <namespace>
 
 # List
-f5xcctl configuration list vk8s_event -n <namespace>
+f5xcctl observability list vk8s_event -n <namespace>
 
 # Delete
-f5xcctl configuration delete vk8s_event -n <namespace> <name>
+f5xcctl observability delete vk8s_event <name> -n <namespace>
 ```
 
 ## Terraform Resource

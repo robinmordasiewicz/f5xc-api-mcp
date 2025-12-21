@@ -35,16 +35,16 @@ Ask Claude to help you work with Generate Token resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create generate_token -n <namespace> -i generate_token.yaml
+f5xcctl integrations create generate_token -n <namespace> -i generate_token.yaml
 
 # Get
-f5xcctl configuration get generate_token -n <namespace> <name>
+f5xcctl integrations get generate_token <name> -n <namespace>
 
 # List
-f5xcctl configuration list generate_token -n <namespace>
+f5xcctl integrations list generate_token -n <namespace>
 
 # Delete
-f5xcctl configuration delete generate_token -n <namespace> <name>
+f5xcctl integrations delete generate_token <name> -n <namespace>
 ```
 
 ## Terraform Resource

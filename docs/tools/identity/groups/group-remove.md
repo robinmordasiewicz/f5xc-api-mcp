@@ -22,16 +22,16 @@ Ask Claude to help you work with Group Remove resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create group_remove -n <namespace> -i group_remove.yaml
+f5xcctl identity create group_remove -n <namespace> -i group_remove.yaml
 
 # Get
-f5xcctl configuration get group_remove -n <namespace> <name>
+f5xcctl identity get group_remove <name> -n <namespace>
 
 # List
-f5xcctl configuration list group_remove -n <namespace>
+f5xcctl identity list group_remove -n <namespace>
 
 # Delete
-f5xcctl configuration delete group_remove -n <namespace> <name>
+f5xcctl identity delete group_remove <name> -n <namespace>
 ```
 
 ## Terraform Resource

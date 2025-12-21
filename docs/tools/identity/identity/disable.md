@@ -22,16 +22,16 @@ Ask Claude to help you work with Disable resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create disable -n <namespace> -i disable.yaml
+f5xcctl identity create disable -n <namespace> -i disable.yaml
 
 # Get
-f5xcctl configuration get disable -n <namespace> <name>
+f5xcctl identity get disable <name> -n <namespace>
 
 # List
-f5xcctl configuration list disable -n <namespace>
+f5xcctl identity list disable -n <namespace>
 
 # Delete
-f5xcctl configuration delete disable -n <namespace> <name>
+f5xcctl identity delete disable <name> -n <namespace>
 ```
 
 ## Terraform Resource

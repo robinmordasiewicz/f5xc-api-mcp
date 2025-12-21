@@ -40,16 +40,16 @@ Ask Claude to help you work with Health Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create health_statu -n <namespace> -i health_statu.yaml
+f5xcctl networking create health_statu -n <namespace> -i health_statu.yaml
 
 # Get
-f5xcctl configuration get health_statu -n <namespace> <name>
+f5xcctl networking get health_statu <name> -n <namespace>
 
 # List
-f5xcctl configuration list health_statu -n <namespace>
+f5xcctl networking list health_statu -n <namespace>
 
 # Delete
-f5xcctl configuration delete health_statu -n <namespace> <name>
+f5xcctl networking delete health_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

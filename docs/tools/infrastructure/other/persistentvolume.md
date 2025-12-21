@@ -34,16 +34,16 @@ Ask Claude to help you work with Persistentvolume resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create persistentvolume -n <namespace> -i persistentvolume.yaml
+f5xcctl infrastructure create persistentvolume -n <namespace> -i persistentvolume.yaml
 
 # Get
-f5xcctl configuration get persistentvolume -n <namespace> <name>
+f5xcctl infrastructure get persistentvolume <name> -n <namespace>
 
 # List
-f5xcctl configuration list persistentvolume -n <namespace>
+f5xcctl infrastructure list persistentvolume -n <namespace>
 
 # Delete
-f5xcctl configuration delete persistentvolume -n <namespace> <name>
+f5xcctl infrastructure delete persistentvolume <name> -n <namespace>
 ```
 
 ## Terraform Resource

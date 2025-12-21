@@ -34,16 +34,16 @@ Ask Claude to help you work with Role User resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create role_user -n <namespace> -i role_user.yaml
+f5xcctl identity create role_user -n <namespace> -i role_user.yaml
 
 # Get
-f5xcctl configuration get role_user -n <namespace> <name>
+f5xcctl identity get role_user <name> -n <namespace>
 
 # List
-f5xcctl configuration list role_user -n <namespace>
+f5xcctl identity list role_user -n <namespace>
 
 # Delete
-f5xcctl configuration delete role_user -n <namespace> <name>
+f5xcctl identity delete role_user <name> -n <namespace>
 ```
 
 ## Terraform Resource

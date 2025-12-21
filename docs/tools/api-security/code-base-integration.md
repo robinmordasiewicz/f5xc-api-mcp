@@ -58,16 +58,16 @@ Ask Claude to help you work with Code Base Integration resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create code_base_integration -n <namespace> -i code_base_integration.yaml
+f5xcctl api_security create code_base_integration -n <namespace> -i code_base_integration.yaml
 
 # Get
-f5xcctl configuration get code_base_integration -n <namespace> <name>
+f5xcctl api_security get code_base_integration <name> -n <namespace>
 
 # List
-f5xcctl configuration list code_base_integration -n <namespace>
+f5xcctl api_security list code_base_integration -n <namespace>
 
 # Delete
-f5xcctl configuration delete code_base_integration -n <namespace> <name>
+f5xcctl api_security delete code_base_integration <name> -n <namespace>
 ```
 
 ## Terraform Resource

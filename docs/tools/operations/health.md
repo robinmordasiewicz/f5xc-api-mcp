@@ -40,16 +40,16 @@ Ask Claude to help you work with Health resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create health -n <namespace> -i health.yaml
+f5xcctl operations create health -n <namespace> -i health.yaml
 
 # Get
-f5xcctl configuration get health -n <namespace> <name>
+f5xcctl operations get health <name> -n <namespace>
 
 # List
-f5xcctl configuration list health -n <namespace>
+f5xcctl operations list health -n <namespace>
 
 # Delete
-f5xcctl configuration delete health -n <namespace> <name>
+f5xcctl operations delete health <name> -n <namespace>
 ```
 
 ## Terraform Resource

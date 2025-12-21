@@ -35,16 +35,16 @@ Ask Claude to help you work with Ca Certificate resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create ca_certificate -n <namespace> -i ca_certificate.yaml
+f5xcctl load_balancer create ca_certificate -n <namespace> -i ca_certificate.yaml
 
 # Get
-f5xcctl configuration get ca_certificate -n <namespace> <name>
+f5xcctl load_balancer get ca_certificate <name> -n <namespace>
 
 # List
-f5xcctl configuration list ca_certificate -n <namespace>
+f5xcctl load_balancer list ca_certificate -n <namespace>
 
 # Delete
-f5xcctl configuration delete ca_certificate -n <namespace> <name>
+f5xcctl load_balancer delete ca_certificate <name> -n <namespace>
 ```
 
 ## Terraform Resource

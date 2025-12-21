@@ -35,16 +35,16 @@ Ask Claude to help you work with Deployment Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create deployment_statu -n <namespace> -i deployment_statu.yaml
+f5xcctl security create deployment_statu -n <namespace> -i deployment_statu.yaml
 
 # Get
-f5xcctl configuration get deployment_statu -n <namespace> <name>
+f5xcctl security get deployment_statu <name> -n <namespace>
 
 # List
-f5xcctl configuration list deployment_statu -n <namespace>
+f5xcctl security list deployment_statu -n <namespace>
 
 # Delete
-f5xcctl configuration delete deployment_statu -n <namespace> <name>
+f5xcctl security delete deployment_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

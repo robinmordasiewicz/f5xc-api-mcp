@@ -35,16 +35,16 @@ Ask Claude to help you work with Suggest Value resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create suggest_value -n <namespace> -i suggest_value.yaml
+f5xcctl service_mesh create suggest_value -n <namespace> -i suggest_value.yaml
 
 # Get
-f5xcctl configuration get suggest_value -n <namespace> <name>
+f5xcctl service_mesh get suggest_value <name> -n <namespace>
 
 # List
-f5xcctl configuration list suggest_value -n <namespace>
+f5xcctl service_mesh list suggest_value -n <namespace>
 
 # Delete
-f5xcctl configuration delete suggest_value -n <namespace> <name>
+f5xcctl service_mesh delete suggest_value <name> -n <namespace>
 ```
 
 ## Terraform Resource

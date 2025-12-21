@@ -47,16 +47,16 @@ Ask Claude to help you work with Role resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create role -n <namespace> -i role.yaml
+f5xcctl identity create role -n <namespace> -i role.yaml
 
 # Get
-f5xcctl configuration get role -n <namespace> <name>
+f5xcctl identity get role <name> -n <namespace>
 
 # List
-f5xcctl configuration list role -n <namespace>
+f5xcctl identity list role -n <namespace>
 
 # Delete
-f5xcctl configuration delete role -n <namespace> <name>
+f5xcctl identity delete role <name> -n <namespace>
 ```
 
 ## Terraform Resource

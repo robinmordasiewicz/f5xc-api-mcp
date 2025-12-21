@@ -26,16 +26,16 @@ Ask Claude to help you work with All Ns Service resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create all_ns_service -n <namespace> -i all_ns_service.yaml
+f5xcctl observability create all_ns_service -n <namespace> -i all_ns_service.yaml
 
 # Get
-f5xcctl configuration get all_ns_service -n <namespace> <name>
+f5xcctl observability get all_ns_service <name> -n <namespace>
 
 # List
-f5xcctl configuration list all_ns_service -n <namespace>
+f5xcctl observability list all_ns_service -n <namespace>
 
 # Delete
-f5xcctl configuration delete all_ns_service -n <namespace> <name>
+f5xcctl observability delete all_ns_service <name> -n <namespace>
 ```
 
 ## Terraform Resource

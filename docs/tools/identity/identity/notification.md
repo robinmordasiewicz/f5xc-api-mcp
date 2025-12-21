@@ -33,16 +33,16 @@ Ask Claude to help you work with Notification resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create notification -n <namespace> -i notification.yaml
+f5xcctl identity create notification -n <namespace> -i notification.yaml
 
 # Get
-f5xcctl configuration get notification -n <namespace> <name>
+f5xcctl identity get notification <name> -n <namespace>
 
 # List
-f5xcctl configuration list notification -n <namespace>
+f5xcctl identity list notification -n <namespace>
 
 # Delete
-f5xcctl configuration delete notification -n <namespace> <name>
+f5xcctl identity delete notification <name> -n <namespace>
 ```
 
 ## Terraform Resource

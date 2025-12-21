@@ -34,16 +34,16 @@ Ask Claude to help you work with List Reports History Waap resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create list_reports_history_waap -n <namespace> -i list_reports_history_waap.yaml
+f5xcctl observability create list_reports_history_waap -n <namespace> -i list_reports_history_waap.yaml
 
 # Get
-f5xcctl configuration get list_reports_history_waap -n <namespace> <name>
+f5xcctl observability get list_reports_history_waap <name> -n <namespace>
 
 # List
-f5xcctl configuration list list_reports_history_waap -n <namespace>
+f5xcctl observability list list_reports_history_waap -n <namespace>
 
 # Delete
-f5xcctl configuration delete list_reports_history_waap -n <namespace> <name>
+f5xcctl observability delete list_reports_history_waap <name> -n <namespace>
 ```
 
 ## Terraform Resource

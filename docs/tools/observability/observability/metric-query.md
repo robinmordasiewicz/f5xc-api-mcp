@@ -34,16 +34,16 @@ Ask Claude to help you work with Metric Query resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create metric_query -n <namespace> -i metric_query.yaml
+f5xcctl observability create metric_query -n <namespace> -i metric_query.yaml
 
 # Get
-f5xcctl configuration get metric_query -n <namespace> <name>
+f5xcctl observability get metric_query <name> -n <namespace>
 
 # List
-f5xcctl configuration list metric_query -n <namespace>
+f5xcctl observability list metric_query -n <namespace>
 
 # Delete
-f5xcctl configuration delete metric_query -n <namespace> <name>
+f5xcctl observability delete metric_query <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Override resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create override -n <namespace> -i override.yaml
+f5xcctl applications create override -n <namespace> -i override.yaml
 
 # Get
-f5xcctl configuration get override -n <namespace> <name>
+f5xcctl applications get override <name> -n <namespace>
 
 # List
-f5xcctl configuration list override -n <namespace>
+f5xcctl applications list override -n <namespace>
 
 # Delete
-f5xcctl configuration delete override -n <namespace> <name>
+f5xcctl applications delete override <name> -n <namespace>
 ```
 
 ## Terraform Resource

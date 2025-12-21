@@ -60,25 +60,25 @@ export VOLT_API_URL="https://your-tenant.console.ves.volterra.io/api"
 
 | MCP Tool | f5xcctl Command |
 |----------|-----------------|
-| `f5xc-api-waap-http-loadbalancer-list` | `f5xcctl get http_loadbalancers -n {namespace}` |
-| `f5xc-api-waap-http-loadbalancer-get` | `f5xcctl get http_loadbalancer {name} -n {namespace}` |
-| `f5xc-api-waap-http-loadbalancer-create` | `f5xcctl apply -f config.yaml` |
-| `f5xc-api-waap-http-loadbalancer-delete` | `f5xcctl delete http_loadbalancer {name} -n {namespace}` |
+| `f5xc-api-load-balancer-http-loadbalancer-list` | `f5xcctl load_balancer list http_loadbalancer -n {namespace}` |
+| `f5xc-api-load-balancer-http-loadbalancer-get` | `f5xcctl load_balancer get http_loadbalancer {name} -n {namespace}` |
+| `f5xc-api-load-balancer-http-loadbalancer-create` | `f5xcctl load_balancer create http_loadbalancer -n {namespace} -i http_loadbalancer.yaml` |
+| `f5xc-api-load-balancer-http-loadbalancer-delete` | `f5xcctl load_balancer delete http_loadbalancer {name} -n {namespace}` |
 
 ### Output Formats
 
 ```bash
 # YAML output (default)
-f5xcctl get http_loadbalancer example-app -n production -o yaml
+f5xcctl load_balancer get http_loadbalancer example-app -n production
 
 # JSON output
-f5xcctl get http_loadbalancer example-app -n production -o json
+f5xcctl load_balancer get http_loadbalancer example-app -n production --json
 
-# Table output
-f5xcctl get http_loadbalancers -n production -o table
+# List resources
+f5xcctl load_balancer list http_loadbalancer -n production
 
 # Terraform output
-f5xcctl get http_loadbalancer example-app -n production -o terraform
+f5xcctl load_balancer get http_loadbalancer example-app -n production --terraform
 ```
 
 ## Workflow Examples
@@ -92,11 +92,7 @@ f5xcctl get http_loadbalancer example-app -n production -o terraform
 2. Get the f5xcctl command from the response:
 
    ```bash
-   f5xcctl apply -f - <<EOF
-   apiVersion: config.volterra.io/v1
-   kind: http_loadbalancer
-   ...
-   EOF
+   f5xcctl load_balancer create http_loadbalancer -n production -i http_loadbalancer.yaml
    ```
 
 3. Execute in terminal
@@ -106,24 +102,25 @@ f5xcctl get http_loadbalancer example-app -n production -o terraform
 Use `--dry-run` to validate:
 
 ```bash
-f5xcctl apply -f config.yaml --dry-run
+f5xcctl load_balancer create http_loadbalancer -n production -i config.yaml --dry-run
 ```
 
 ### Export Existing Resources
 
 ```bash
 # Export to file
-f5xcctl get http_loadbalancer example-app -n production -o yaml > example-app.yaml
+f5xcctl load_balancer get http_loadbalancer example-app -n production > example-app.yaml
 
 # Export multiple resources
-f5xcctl get http_loadbalancers -n production -o yaml > all-lbs.yaml
+f5xcctl load_balancer list http_loadbalancer -n production > all-lbs.yaml
 ```
 
-### Diff Changes
+### Compare Resources
 
 ```bash
-# Compare local config with remote
-f5xcctl diff -f config.yaml
+# Get current resource and compare
+f5xcctl load_balancer get http_loadbalancer example-app -n production > current.yaml
+# Compare with local version: diff current.yaml config.yaml
 ```
 
 ## Common Commands
@@ -132,50 +129,53 @@ f5xcctl diff -f config.yaml
 
 ```bash
 # All namespaces
-f5xcctl get namespaces
+f5xcctl tenant_management list namespace
 
 # Resources in namespace
-f5xcctl get http_loadbalancers -n production
-f5xcctl get origin_pools -n production
-f5xcctl get app_firewalls -n production
+f5xcctl load_balancer list http_loadbalancer -n production
+f5xcctl infrastructure list origin_pool -n production
+f5xcctl security list app_firewall -n production
 ```
 
 ### Get Resource Details
 
 ```bash
-# Detailed output
-f5xcctl get http_loadbalancer example-app -n production -o yaml
+# Get resource
+f5xcctl load_balancer get http_loadbalancer example-app -n production
 
-# With status
-f5xcctl get http_loadbalancer example-app -n production --show-status
+# Get resource with status
+f5xcctl load_balancer status http_loadbalancer example-app -n production
 ```
 
 ### Apply Configuration
 
 ```bash
-# From file
-f5xcctl apply -f http-lb.yaml
+# Create/update from file
+f5xcctl load_balancer apply http_loadbalancer -n production -i http-lb.yaml
 
-# From stdin
-f5xcctl apply -f - <<EOF
+# Create/update from stdin
+f5xcctl load_balancer apply http_loadbalancer -n production -i - <<EOF
 ...
 EOF
 
-# Multiple files
-f5xcctl apply -f lb.yaml -f origin.yaml -f waf.yaml
+# Create/update individual resources
+f5xcctl load_balancer apply http_loadbalancer -n production -i lb.yaml
+f5xcctl infrastructure apply origin_pool -n production -i origin.yaml
+f5xcctl security apply app_firewall -n production -i waf.yaml
 ```
 
 ### Delete Resources
 
 ```bash
 # Single resource
-f5xcctl delete http_loadbalancer example-app -n production
+f5xcctl load_balancer delete http_loadbalancer example-app -n production
 
-# From file
-f5xcctl delete -f http-lb.yaml
+# Delete multiple resources
+f5xcctl load_balancer delete http_loadbalancer lb1 -n production
+f5xcctl load_balancer delete http_loadbalancer lb2 -n production
 
 # Force delete
-f5xcctl delete http_loadbalancer example-app -n production --force
+f5xcctl load_balancer delete http_loadbalancer example-app -n production --force
 ```
 
 ## Tips
@@ -191,22 +191,23 @@ Ask Claude to help build complex configs, then execute with f5xcctl:
 ```bash
 # Add to ~/.zshrc or ~/.bashrc
 alias xc='f5xcctl'
-alias xcget='f5xcctl get'
-alias xcapply='f5xcctl apply -f'
+alias xclb='f5xcctl load_balancer'
+alias xcinfra='f5xcctl infrastructure'
+alias xcsec='f5xcctl security'
 ```
 
 ### Pipe to jq
 
 ```bash
 # Filter JSON output
-f5xcctl get http_loadbalancers -n production -o json | jq '.items[].metadata.name'
+f5xcctl load_balancer list http_loadbalancer -n production | jq '.items[].metadata.name'
 ```
 
-### Watch Resources
+### Check Resource Status
 
 ```bash
-# Monitor status changes
-watch f5xcctl get http_loadbalancer example-app -n production --show-status
+# Monitor status
+f5xcctl load_balancer status http_loadbalancer example-app -n production
 ```
 
 ## Troubleshooting
@@ -225,20 +226,20 @@ echo $VOLT_API_URL
 
 ```bash
 # List all to verify name
-f5xcctl get http_loadbalancers -n production
+f5xcctl load_balancer list http_loadbalancer -n production
 
 # Check namespace
-f5xcctl get namespaces | grep production
+f5xcctl tenant_management list namespace | grep production
 ```
 
 ### "Validation error"
 
 ```bash
 # Validate config
-f5xcctl apply -f config.yaml --dry-run
+f5xcctl load_balancer create http_loadbalancer -n production -i config.yaml --dry-run
 
 # Get schema
-f5xcctl explain http_loadbalancer
+f5xcctl load_balancer list http_loadbalancer -n production
 ```
 
 ## Next Steps

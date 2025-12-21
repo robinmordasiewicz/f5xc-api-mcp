@@ -58,16 +58,16 @@ Ask Claude to help you work with Workload Flavor resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create workload_flavor -n <namespace> -i workload_flavor.yaml
+f5xcctl applications create workload_flavor -n <namespace> -i workload_flavor.yaml
 
 # Get
-f5xcctl configuration get workload_flavor -n <namespace> <name>
+f5xcctl applications get workload_flavor <name> -n <namespace>
 
 # List
-f5xcctl configuration list workload_flavor -n <namespace>
+f5xcctl applications list workload_flavor -n <namespace>
 
 # Delete
-f5xcctl configuration delete workload_flavor -n <namespace> <name>
+f5xcctl applications delete workload_flavor <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with Dc Cluster Group resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create dc_cluster_group -n <namespace> -i dc_cluster_group.yaml
+f5xcctl networking create dc_cluster_group -n <namespace> -i dc_cluster_group.yaml
 
 # Get
-f5xcctl configuration get dc_cluster_group -n <namespace> <name>
+f5xcctl networking get dc_cluster_group <name> -n <namespace>
 
 # List
-f5xcctl configuration list dc_cluster_group -n <namespace>
+f5xcctl networking list dc_cluster_group -n <namespace>
 
 # Delete
-f5xcctl configuration delete dc_cluster_group -n <namespace> <name>
+f5xcctl networking delete dc_cluster_group <name> -n <namespace>
 ```
 
 ## Terraform Resource

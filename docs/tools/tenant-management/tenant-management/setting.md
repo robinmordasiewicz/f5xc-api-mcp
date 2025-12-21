@@ -29,16 +29,16 @@ Ask Claude to help you work with Setting resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create setting -n <namespace> -i setting.yaml
+f5xcctl tenant_management create setting -n <namespace> -i setting.yaml
 
 # Get
-f5xcctl configuration get setting -n <namespace> <name>
+f5xcctl tenant_management get setting <name> -n <namespace>
 
 # List
-f5xcctl configuration list setting -n <namespace>
+f5xcctl tenant_management list setting -n <namespace>
 
 # Delete
-f5xcctl configuration delete setting -n <namespace> <name>
+f5xcctl tenant_management delete setting <name> -n <namespace>
 ```
 
 ## Terraform Resource

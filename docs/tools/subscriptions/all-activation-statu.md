@@ -35,16 +35,16 @@ Ask Claude to help you work with All Activation Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create all_activation_statu -n <namespace> -i all_activation_statu.yaml
+f5xcctl subscriptions create all_activation_statu -n <namespace> -i all_activation_statu.yaml
 
 # Get
-f5xcctl configuration get all_activation_statu -n <namespace> <name>
+f5xcctl subscriptions get all_activation_statu <name> -n <namespace>
 
 # List
-f5xcctl configuration list all_activation_statu -n <namespace>
+f5xcctl subscriptions list all_activation_statu -n <namespace>
 
 # Delete
-f5xcctl configuration delete all_activation_statu -n <namespace> <name>
+f5xcctl subscriptions delete all_activation_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

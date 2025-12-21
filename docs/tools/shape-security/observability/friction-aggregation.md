@@ -26,16 +26,16 @@ Ask Claude to help you work with Friction Aggregation resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create friction_aggregation -n <namespace> -i friction_aggregation.yaml
+f5xcctl shape_security create friction_aggregation -n <namespace> -i friction_aggregation.yaml
 
 # Get
-f5xcctl configuration get friction_aggregation -n <namespace> <name>
+f5xcctl shape_security get friction_aggregation <name> -n <namespace>
 
 # List
-f5xcctl configuration list friction_aggregation -n <namespace>
+f5xcctl shape_security list friction_aggregation -n <namespace>
 
 # Delete
-f5xcctl configuration delete friction_aggregation -n <namespace> <name>
+f5xcctl shape_security delete friction_aggregation <name> -n <namespace>
 ```
 
 ## Terraform Resource

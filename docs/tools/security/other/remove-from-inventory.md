@@ -35,16 +35,16 @@ Ask Claude to help you work with Remove From Inventory resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create remove_from_inventory -n <namespace> -i remove_from_inventory.yaml
+f5xcctl security create remove_from_inventory -n <namespace> -i remove_from_inventory.yaml
 
 # Get
-f5xcctl configuration get remove_from_inventory -n <namespace> <name>
+f5xcctl security get remove_from_inventory <name> -n <namespace>
 
 # List
-f5xcctl configuration list remove_from_inventory -n <namespace>
+f5xcctl security list remove_from_inventory -n <namespace>
 
 # Delete
-f5xcctl configuration delete remove_from_inventory -n <namespace> <name>
+f5xcctl security delete remove_from_inventory <name> -n <namespace>
 ```
 
 ## Terraform Resource

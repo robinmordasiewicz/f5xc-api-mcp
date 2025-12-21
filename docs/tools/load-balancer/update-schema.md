@@ -39,16 +39,16 @@ Ask Claude to help you work with Update Schema resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create update_schema -n <namespace> -i update_schema.yaml
+f5xcctl load_balancer create update_schema -n <namespace> -i update_schema.yaml
 
 # Get
-f5xcctl configuration get update_schema -n <namespace> <name>
+f5xcctl load_balancer get update_schema <name> -n <namespace>
 
 # List
-f5xcctl configuration list update_schema -n <namespace>
+f5xcctl load_balancer list update_schema -n <namespace>
 
 # Delete
-f5xcctl configuration delete update_schema -n <namespace> <name>
+f5xcctl load_balancer delete update_schema <name> -n <namespace>
 ```
 
 ## Terraform Resource

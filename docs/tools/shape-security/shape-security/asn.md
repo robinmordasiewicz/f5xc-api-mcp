@@ -26,16 +26,16 @@ Ask Claude to help you work with Asn resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create asn -n <namespace> -i asn.yaml
+f5xcctl shape_security create asn -n <namespace> -i asn.yaml
 
 # Get
-f5xcctl configuration get asn -n <namespace> <name>
+f5xcctl shape_security get asn <name> -n <namespace>
 
 # List
-f5xcctl configuration list asn -n <namespace>
+f5xcctl shape_security list asn -n <namespace>
 
 # Delete
-f5xcctl configuration delete asn -n <namespace> <name>
+f5xcctl shape_security delete asn <name> -n <namespace>
 ```
 
 ## Terraform Resource

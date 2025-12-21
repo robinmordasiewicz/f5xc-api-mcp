@@ -35,16 +35,16 @@ Ask Claude to help you work with Create TCP Load Balancer resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create create_tcp_load_balancer -n <namespace> -i create_tcp_load_balancer.yaml
+f5xcctl service_mesh create create_tcp_load_balancer -n <namespace> -i create_tcp_load_balancer.yaml
 
 # Get
-f5xcctl configuration get create_tcp_load_balancer -n <namespace> <name>
+f5xcctl service_mesh get create_tcp_load_balancer <name> -n <namespace>
 
 # List
-f5xcctl configuration list create_tcp_load_balancer -n <namespace>
+f5xcctl service_mesh list create_tcp_load_balancer -n <namespace>
 
 # Delete
-f5xcctl configuration delete create_tcp_load_balancer -n <namespace> <name>
+f5xcctl service_mesh delete create_tcp_load_balancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

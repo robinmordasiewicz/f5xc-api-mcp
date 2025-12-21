@@ -35,16 +35,16 @@ Ask Claude to help you work with Confirm resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create confirm -n <namespace> -i confirm.yaml
+f5xcctl observability create confirm -n <namespace> -i confirm.yaml
 
 # Get
-f5xcctl configuration get confirm -n <namespace> <name>
+f5xcctl observability get confirm <name> -n <namespace>
 
 # List
-f5xcctl configuration list confirm -n <namespace>
+f5xcctl observability list confirm -n <namespace>
 
 # Delete
-f5xcctl configuration delete confirm -n <namespace> <name>
+f5xcctl observability delete confirm <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Bgp Peer resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create bgp_peer -n <namespace> -i bgp_peer.yaml
+f5xcctl networking create bgp_peer -n <namespace> -i bgp_peer.yaml
 
 # Get
-f5xcctl configuration get bgp_peer -n <namespace> <name>
+f5xcctl networking get bgp_peer <name> -n <namespace>
 
 # List
-f5xcctl configuration list bgp_peer -n <namespace>
+f5xcctl networking list bgp_peer -n <namespace>
 
 # Delete
-f5xcctl configuration delete bgp_peer -n <namespace> <name>
+f5xcctl networking delete bgp_peer <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -136,22 +136,23 @@ interface ResourceDoc {
 /**
  * Generate f5xcctl equivalent command
  */
-function generateF5xcctlCommand(resource: string, operation: string): string {
+function generateF5xcctlCommand(resource: string, operation: string, domain: string): string {
   const normalizedResource = resource.replace(/-/g, "_");
+  const normalizedDomain = domain.replace(/-/g, "_");
 
   switch (operation) {
     case "list":
-      return `f5xcctl configuration list ${normalizedResource} -n <namespace>`;
+      return `f5xcctl ${normalizedDomain} list ${normalizedResource} -n <namespace>`;
     case "get":
-      return `f5xcctl configuration get ${normalizedResource} -n <namespace> <name>`;
+      return `f5xcctl ${normalizedDomain} get ${normalizedResource} <name> -n <namespace>`;
     case "create":
-      return `f5xcctl configuration create ${normalizedResource} -n <namespace> -i ${normalizedResource}.yaml`;
+      return `f5xcctl ${normalizedDomain} create ${normalizedResource} -n <namespace> -i ${normalizedResource}.yaml`;
     case "update":
-      return `f5xcctl configuration apply ${normalizedResource} -n <namespace> -i ${normalizedResource}.yaml`;
+      return `f5xcctl ${normalizedDomain} apply ${normalizedResource} -n <namespace> -i ${normalizedResource}.yaml`;
     case "delete":
-      return `f5xcctl configuration delete ${normalizedResource} -n <namespace> <name>`;
+      return `f5xcctl ${normalizedDomain} delete ${normalizedResource} <name> -n <namespace>`;
     default:
-      return `f5xcctl configuration ${operation} ${normalizedResource}`;
+      return `f5xcctl ${normalizedDomain} ${operation} ${normalizedResource}`;
   }
 }
 
@@ -304,16 +305,16 @@ Ask Claude to help you work with ${title} resources:
 
 \`\`\`bash
 # Create/Update
-${generateF5xcctlCommand(resource, "create")}
+${generateF5xcctlCommand(resource, "create", categoryPath.domain)}
 
 # Get
-${generateF5xcctlCommand(resource, "get")}
+${generateF5xcctlCommand(resource, "get", categoryPath.domain)}
 
 # List
-${generateF5xcctlCommand(resource, "list")}
+${generateF5xcctlCommand(resource, "list", categoryPath.domain)}
 
 # Delete
-${generateF5xcctlCommand(resource, "delete")}
+${generateF5xcctlCommand(resource, "delete", categoryPath.domain)}
 \`\`\`
 `;
 

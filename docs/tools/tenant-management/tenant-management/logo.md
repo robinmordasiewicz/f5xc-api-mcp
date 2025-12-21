@@ -26,16 +26,16 @@ Ask Claude to help you work with Logo resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create logo -n <namespace> -i logo.yaml
+f5xcctl tenant_management create logo -n <namespace> -i logo.yaml
 
 # Get
-f5xcctl configuration get logo -n <namespace> <name>
+f5xcctl tenant_management get logo <name> -n <namespace>
 
 # List
-f5xcctl configuration list logo -n <namespace>
+f5xcctl tenant_management list logo -n <namespace>
 
 # Delete
-f5xcctl configuration delete logo -n <namespace> <name>
+f5xcctl tenant_management delete logo <name> -n <namespace>
 ```
 
 ## Terraform Resource

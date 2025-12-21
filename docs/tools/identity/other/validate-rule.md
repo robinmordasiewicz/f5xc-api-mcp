@@ -26,16 +26,16 @@ Ask Claude to help you work with Validate Rule resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create validate_rule -n <namespace> -i validate_rule.yaml
+f5xcctl identity create validate_rule -n <namespace> -i validate_rule.yaml
 
 # Get
-f5xcctl configuration get validate_rule -n <namespace> <name>
+f5xcctl identity get validate_rule <name> -n <namespace>
 
 # List
-f5xcctl configuration list validate_rule -n <namespace>
+f5xcctl identity list validate_rule -n <namespace>
 
 # Delete
-f5xcctl configuration delete validate_rule -n <namespace> <name>
+f5xcctl identity delete validate_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

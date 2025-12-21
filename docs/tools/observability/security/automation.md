@@ -34,16 +34,16 @@ Ask Claude to help you work with Automation resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create automation -n <namespace> -i automation.yaml
+f5xcctl observability create automation -n <namespace> -i automation.yaml
 
 # Get
-f5xcctl configuration get automation -n <namespace> <name>
+f5xcctl observability get automation <name> -n <namespace>
 
 # List
-f5xcctl configuration list automation -n <namespace>
+f5xcctl observability list automation -n <namespace>
 
 # Delete
-f5xcctl configuration delete automation -n <namespace> <name>
+f5xcctl observability delete automation <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Cache Purge resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create cache_purge -n <namespace> -i cache_purge.yaml
+f5xcctl cdn create cache_purge -n <namespace> -i cache_purge.yaml
 
 # Get
-f5xcctl configuration get cache_purge -n <namespace> <name>
+f5xcctl cdn get cache_purge <name> -n <namespace>
 
 # List
-f5xcctl configuration list cache_purge -n <namespace>
+f5xcctl cdn list cache_purge -n <namespace>
 
 # Delete
-f5xcctl configuration delete cache_purge -n <namespace> <name>
+f5xcctl cdn delete cache_purge <name> -n <namespace>
 ```
 
 ## Terraform Resource

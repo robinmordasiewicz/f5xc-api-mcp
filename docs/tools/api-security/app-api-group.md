@@ -58,16 +58,16 @@ Ask Claude to help you work with App API Group resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create app_api_group -n <namespace> -i app_api_group.yaml
+f5xcctl api_security create app_api_group -n <namespace> -i app_api_group.yaml
 
 # Get
-f5xcctl configuration get app_api_group -n <namespace> <name>
+f5xcctl api_security get app_api_group <name> -n <namespace>
 
 # List
-f5xcctl configuration list app_api_group -n <namespace>
+f5xcctl api_security list app_api_group -n <namespace>
 
 # Delete
-f5xcctl configuration delete app_api_group -n <namespace> <name>
+f5xcctl api_security delete app_api_group <name> -n <namespace>
 ```
 
 ## Terraform Resource

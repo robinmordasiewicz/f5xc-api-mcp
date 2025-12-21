@@ -26,16 +26,16 @@ Ask Claude to help you work with Acces resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create acces -n <namespace> -i acces.yaml
+f5xcctl infrastructure_protection create acces -n <namespace> -i acces.yaml
 
 # Get
-f5xcctl configuration get acces -n <namespace> <name>
+f5xcctl infrastructure_protection get acces <name> -n <namespace>
 
 # List
-f5xcctl configuration list acces -n <namespace>
+f5xcctl infrastructure_protection list acces -n <namespace>
 
 # Delete
-f5xcctl configuration delete acces -n <namespace> <name>
+f5xcctl infrastructure_protection delete acces <name> -n <namespace>
 ```
 
 ## Terraform Resource

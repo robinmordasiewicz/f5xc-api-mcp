@@ -34,16 +34,16 @@ Ask Claude to help you work with Geolocation resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create geolocation -n <namespace> -i geolocation.yaml
+f5xcctl observability create geolocation -n <namespace> -i geolocation.yaml
 
 # Get
-f5xcctl configuration get geolocation -n <namespace> <name>
+f5xcctl observability get geolocation <name> -n <namespace>
 
 # List
-f5xcctl configuration list geolocation -n <namespace>
+f5xcctl observability list geolocation -n <namespace>
 
 # Delete
-f5xcctl configuration delete geolocation -n <namespace> <name>
+f5xcctl observability delete geolocation <name> -n <namespace>
 ```
 
 ## Terraform Resource

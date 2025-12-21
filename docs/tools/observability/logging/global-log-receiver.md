@@ -58,16 +58,16 @@ Ask Claude to help you work with Global Log Receiver resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create global_log_receiver -n <namespace> -i global_log_receiver.yaml
+f5xcctl observability create global_log_receiver -n <namespace> -i global_log_receiver.yaml
 
 # Get
-f5xcctl configuration get global_log_receiver -n <namespace> <name>
+f5xcctl observability get global_log_receiver <name> -n <namespace>
 
 # List
-f5xcctl configuration list global_log_receiver -n <namespace>
+f5xcctl observability list global_log_receiver -n <namespace>
 
 # Delete
-f5xcctl configuration delete global_log_receiver -n <namespace> <name>
+f5xcctl observability delete global_log_receiver <name> -n <namespace>
 ```
 
 ## Terraform Resource

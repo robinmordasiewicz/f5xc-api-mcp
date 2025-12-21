@@ -42,16 +42,16 @@ Ask Claude to help you work with NetworkInteraction resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create networkInteraction -n <namespace> -i networkInteraction.yaml
+f5xcctl shape_security create networkInteraction -n <namespace> -i networkInteraction.yaml
 
 # Get
-f5xcctl configuration get networkInteraction -n <namespace> <name>
+f5xcctl shape_security get networkInteraction <name> -n <namespace>
 
 # List
-f5xcctl configuration list networkInteraction -n <namespace>
+f5xcctl shape_security list networkInteraction -n <namespace>
 
 # Delete
-f5xcctl configuration delete networkInteraction -n <namespace> <name>
+f5xcctl shape_security delete networkInteraction <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Annotation resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create annotation -n <namespace> -i annotation.yaml
+f5xcctl infrastructure_protection create annotation -n <namespace> -i annotation.yaml
 
 # Get
-f5xcctl configuration get annotation -n <namespace> <name>
+f5xcctl infrastructure_protection get annotation <name> -n <namespace>
 
 # List
-f5xcctl configuration list annotation -n <namespace>
+f5xcctl infrastructure_protection list annotation -n <namespace>
 
 # Delete
-f5xcctl configuration delete annotation -n <namespace> <name>
+f5xcctl infrastructure_protection delete annotation <name> -n <namespace>
 ```
 
 ## Terraform Resource

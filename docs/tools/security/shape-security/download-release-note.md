@@ -40,16 +40,16 @@ Ask Claude to help you work with Download Release Note resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create download_release_note -n <namespace> -i download_release_note.yaml
+f5xcctl security create download_release_note -n <namespace> -i download_release_note.yaml
 
 # Get
-f5xcctl configuration get download_release_note -n <namespace> <name>
+f5xcctl security get download_release_note <name> -n <namespace>
 
 # List
-f5xcctl configuration list download_release_note -n <namespace>
+f5xcctl security list download_release_note -n <namespace>
 
 # Delete
-f5xcctl configuration delete download_release_note -n <namespace> <name>
+f5xcctl security delete download_release_note <name> -n <namespace>
 ```
 
 ## Terraform Resource

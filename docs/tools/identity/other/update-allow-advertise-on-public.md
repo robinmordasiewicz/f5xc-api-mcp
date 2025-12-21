@@ -26,16 +26,16 @@ Ask Claude to help you work with Update Allow Advertise On Public resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create update_allow_advertise_on_public -n <namespace> -i update_allow_advertise_on_public.yaml
+f5xcctl identity create update_allow_advertise_on_public -n <namespace> -i update_allow_advertise_on_public.yaml
 
 # Get
-f5xcctl configuration get update_allow_advertise_on_public -n <namespace> <name>
+f5xcctl identity get update_allow_advertise_on_public <name> -n <namespace>
 
 # List
-f5xcctl configuration list update_allow_advertise_on_public -n <namespace>
+f5xcctl identity list update_allow_advertise_on_public -n <namespace>
 
 # Delete
-f5xcctl configuration delete update_allow_advertise_on_public -n <namespace> <name>
+f5xcctl identity delete update_allow_advertise_on_public <name> -n <namespace>
 ```
 
 ## Terraform Resource

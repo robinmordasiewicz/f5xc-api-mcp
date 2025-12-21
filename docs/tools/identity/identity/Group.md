@@ -56,16 +56,16 @@ Ask Claude to help you work with Group resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create Group -n <namespace> -i Group.yaml
+f5xcctl identity create Group -n <namespace> -i Group.yaml
 
 # Get
-f5xcctl configuration get Group -n <namespace> <name>
+f5xcctl identity get Group <name> -n <namespace>
 
 # List
-f5xcctl configuration list Group -n <namespace>
+f5xcctl identity list Group -n <namespace>
 
 # Delete
-f5xcctl configuration delete Group -n <namespace> <name>
+f5xcctl identity delete Group <name> -n <namespace>
 ```
 
 ## Terraform Resource

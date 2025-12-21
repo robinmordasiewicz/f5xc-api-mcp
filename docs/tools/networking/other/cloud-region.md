@@ -52,16 +52,16 @@ Ask Claude to help you work with Cloud Region resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create cloud_region -n <namespace> -i cloud_region.yaml
+f5xcctl networking create cloud_region -n <namespace> -i cloud_region.yaml
 
 # Get
-f5xcctl configuration get cloud_region -n <namespace> <name>
+f5xcctl networking get cloud_region <name> -n <namespace>
 
 # List
-f5xcctl configuration list cloud_region -n <namespace>
+f5xcctl networking list cloud_region -n <namespace>
 
 # Delete
-f5xcctl configuration delete cloud_region -n <namespace> <name>
+f5xcctl networking delete cloud_region <name> -n <namespace>
 ```
 
 ## Terraform Resource

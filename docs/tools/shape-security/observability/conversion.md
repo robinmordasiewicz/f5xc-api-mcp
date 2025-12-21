@@ -26,16 +26,16 @@ Ask Claude to help you work with Conversion resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create conversion -n <namespace> -i conversion.yaml
+f5xcctl shape_security create conversion -n <namespace> -i conversion.yaml
 
 # Get
-f5xcctl configuration get conversion -n <namespace> <name>
+f5xcctl shape_security get conversion <name> -n <namespace>
 
 # List
-f5xcctl configuration list conversion -n <namespace>
+f5xcctl shape_security list conversion -n <namespace>
 
 # Delete
-f5xcctl configuration delete conversion -n <namespace> <name>
+f5xcctl shape_security delete conversion <name> -n <namespace>
 ```
 
 ## Terraform Resource

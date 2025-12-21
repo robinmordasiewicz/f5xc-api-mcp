@@ -35,16 +35,16 @@ Ask Claude to help you work with Countrie resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create countrie -n <namespace> -i countrie.yaml
+f5xcctl identity create countrie -n <namespace> -i countrie.yaml
 
 # Get
-f5xcctl configuration get countrie -n <namespace> <name>
+f5xcctl identity get countrie <name> -n <namespace>
 
 # List
-f5xcctl configuration list countrie -n <namespace>
+f5xcctl identity list countrie -n <namespace>
 
 # Delete
-f5xcctl configuration delete countrie -n <namespace> <name>
+f5xcctl identity delete countrie <name> -n <namespace>
 ```
 
 ## Terraform Resource

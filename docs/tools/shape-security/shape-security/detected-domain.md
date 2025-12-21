@@ -42,16 +42,16 @@ Ask Claude to help you work with Detected Domain resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create detected_domain -n <namespace> -i detected_domain.yaml
+f5xcctl shape_security create detected_domain -n <namespace> -i detected_domain.yaml
 
 # Get
-f5xcctl configuration get detected_domain -n <namespace> <name>
+f5xcctl shape_security get detected_domain <name> -n <namespace>
 
 # List
-f5xcctl configuration list detected_domain -n <namespace>
+f5xcctl shape_security list detected_domain -n <namespace>
 
 # Delete
-f5xcctl configuration delete detected_domain -n <namespace> <name>
+f5xcctl shape_security delete detected_domain <name> -n <namespace>
 ```
 
 ## Terraform Resource

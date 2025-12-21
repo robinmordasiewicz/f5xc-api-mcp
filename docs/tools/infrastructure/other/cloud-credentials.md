@@ -58,16 +58,16 @@ Ask Claude to help you work with Cloud Credentials resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create cloud_credentials -n <namespace> -i cloud_credentials.yaml
+f5xcctl infrastructure create cloud_credentials -n <namespace> -i cloud_credentials.yaml
 
 # Get
-f5xcctl configuration get cloud_credentials -n <namespace> <name>
+f5xcctl infrastructure get cloud_credentials <name> -n <namespace>
 
 # List
-f5xcctl configuration list cloud_credentials -n <namespace>
+f5xcctl infrastructure list cloud_credentials -n <namespace>
 
 # Delete
-f5xcctl configuration delete cloud_credentials -n <namespace> <name>
+f5xcctl infrastructure delete cloud_credentials <name> -n <namespace>
 ```
 
 ## Terraform Resource

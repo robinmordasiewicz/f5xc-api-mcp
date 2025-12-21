@@ -58,16 +58,16 @@ Ask Claude to help you work with Nfv Service resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create nfv_service -n <namespace> -i nfv_service.yaml
+f5xcctl service_mesh create nfv_service -n <namespace> -i nfv_service.yaml
 
 # Get
-f5xcctl configuration get nfv_service -n <namespace> <name>
+f5xcctl service_mesh get nfv_service <name> -n <namespace>
 
 # List
-f5xcctl configuration list nfv_service -n <namespace>
+f5xcctl service_mesh list nfv_service -n <namespace>
 
 # Delete
-f5xcctl configuration delete nfv_service -n <namespace> <name>
+f5xcctl service_mesh delete nfv_service <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -61,16 +61,16 @@ Ask Claude to help you work with App Type resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create app_type -n <namespace> -i app_type.yaml
+f5xcctl applications create app_type -n <namespace> -i app_type.yaml
 
 # Get
-f5xcctl configuration get app_type -n <namespace> <name>
+f5xcctl applications get app_type <name> -n <namespace>
 
 # List
-f5xcctl configuration list app_type -n <namespace>
+f5xcctl applications list app_type -n <namespace>
 
 # Delete
-f5xcctl configuration delete app_type -n <namespace> <name>
+f5xcctl applications delete app_type <name> -n <namespace>
 ```
 
 ## Terraform Resource

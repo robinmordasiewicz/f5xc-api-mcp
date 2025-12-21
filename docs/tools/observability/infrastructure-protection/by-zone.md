@@ -35,16 +35,16 @@ Ask Claude to help you work with By Zone resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create by_zone -n <namespace> -i by_zone.yaml
+f5xcctl observability create by_zone -n <namespace> -i by_zone.yaml
 
 # Get
-f5xcctl configuration get by_zone -n <namespace> <name>
+f5xcctl observability get by_zone <name> -n <namespace>
 
 # List
-f5xcctl configuration list by_zone -n <namespace>
+f5xcctl observability list by_zone -n <namespace>
 
 # Delete
-f5xcctl configuration delete by_zone -n <namespace> <name>
+f5xcctl observability delete by_zone <name> -n <namespace>
 ```
 
 ## Terraform Resource

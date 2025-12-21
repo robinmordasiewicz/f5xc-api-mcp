@@ -108,20 +108,21 @@ function getSubscriptionTier(resource: string): string {
  */
 function generateF5xcctlCommand(operation: ParsedOperation): string {
   const resource = operation.resource.replace(/-/g, "_");
+  const domain = operation.domain.replace(/-/g, "_");
 
   switch (operation.operation) {
     case "list":
-      return `f5xcctl get ${resource}s -n {namespace}`;
+      return `f5xcctl ${domain} list ${resource} -n {namespace}`;
     case "get":
-      return `f5xcctl get ${resource} {name} -n {namespace}`;
+      return `f5xcctl ${domain} get ${resource} {name} -n {namespace}`;
     case "create":
-      return `f5xcctl apply -f ${resource}.yaml`;
+      return `f5xcctl ${domain} create ${resource} -n {namespace} -i ${resource}.yaml`;
     case "update":
-      return `f5xcctl apply -f ${resource}.yaml`;
+      return `f5xcctl ${domain} apply ${resource} -n {namespace} -i ${resource}.yaml`;
     case "delete":
-      return `f5xcctl delete ${resource} {name} -n {namespace}`;
+      return `f5xcctl ${domain} delete ${resource} {name} -n {namespace}`;
     default:
-      return `f5xcctl ${operation.operation} ${resource}`;
+      return `f5xcctl ${domain} ${operation.operation} ${resource}`;
   }
 }
 

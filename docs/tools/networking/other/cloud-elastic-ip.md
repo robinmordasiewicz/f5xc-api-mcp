@@ -58,16 +58,16 @@ Ask Claude to help you work with Cloud Elastic IP resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create cloud_elastic_ip -n <namespace> -i cloud_elastic_ip.yaml
+f5xcctl networking create cloud_elastic_ip -n <namespace> -i cloud_elastic_ip.yaml
 
 # Get
-f5xcctl configuration get cloud_elastic_ip -n <namespace> <name>
+f5xcctl networking get cloud_elastic_ip <name> -n <namespace>
 
 # List
-f5xcctl configuration list cloud_elastic_ip -n <namespace>
+f5xcctl networking list cloud_elastic_ip -n <namespace>
 
 # Delete
-f5xcctl configuration delete cloud_elastic_ip -n <namespace> <name>
+f5xcctl networking delete cloud_elastic_ip <name> -n <namespace>
 ```
 
 ## Terraform Resource

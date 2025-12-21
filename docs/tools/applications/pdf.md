@@ -48,16 +48,16 @@ Ask Claude to help you work with Pdf resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create pdf -n <namespace> -i pdf.yaml
+f5xcctl applications create pdf -n <namespace> -i pdf.yaml
 
 # Get
-f5xcctl configuration get pdf -n <namespace> <name>
+f5xcctl applications get pdf <name> -n <namespace>
 
 # List
-f5xcctl configuration list pdf -n <namespace>
+f5xcctl applications list pdf -n <namespace>
 
 # Delete
-f5xcctl configuration delete pdf -n <namespace> <name>
+f5xcctl applications delete pdf <name> -n <namespace>
 ```
 
 ## Terraform Resource

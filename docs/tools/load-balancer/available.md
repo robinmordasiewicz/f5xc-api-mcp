@@ -39,16 +39,16 @@ Ask Claude to help you work with Available resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create available -n <namespace> -i available.yaml
+f5xcctl load_balancer create available -n <namespace> -i available.yaml
 
 # Get
-f5xcctl configuration get available -n <namespace> <name>
+f5xcctl load_balancer get available <name> -n <namespace>
 
 # List
-f5xcctl configuration list available -n <namespace>
+f5xcctl load_balancer list available -n <namespace>
 
 # Delete
-f5xcctl configuration delete available -n <namespace> <name>
+f5xcctl load_balancer delete available <name> -n <namespace>
 ```
 
 ## Terraform Resource

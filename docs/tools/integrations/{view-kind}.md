@@ -36,16 +36,16 @@ Ask Claude to help you work with {view Kind} resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create {view_kind} -n <namespace> -i {view_kind}.yaml
+f5xcctl integrations create {view_kind} -n <namespace> -i {view_kind}.yaml
 
 # Get
-f5xcctl configuration get {view_kind} -n <namespace> <name>
+f5xcctl integrations get {view_kind} <name> -n <namespace>
 
 # List
-f5xcctl configuration list {view_kind} -n <namespace>
+f5xcctl integrations list {view_kind} -n <namespace>
 
 # Delete
-f5xcctl configuration delete {view_kind} -n <namespace> <name>
+f5xcctl integrations delete {view_kind} <name> -n <namespace>
 ```
 
 ## Terraform Resource

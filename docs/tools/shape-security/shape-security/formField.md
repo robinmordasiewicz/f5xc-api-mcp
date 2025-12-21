@@ -52,16 +52,16 @@ Ask Claude to help you work with FormField resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create formField -n <namespace> -i formField.yaml
+f5xcctl shape_security create formField -n <namespace> -i formField.yaml
 
 # Get
-f5xcctl configuration get formField -n <namespace> <name>
+f5xcctl shape_security get formField <name> -n <namespace>
 
 # List
-f5xcctl configuration list formField -n <namespace>
+f5xcctl shape_security list formField -n <namespace>
 
 # Delete
-f5xcctl configuration delete formField -n <namespace> <name>
+f5xcctl shape_security delete formField <name> -n <namespace>
 ```
 
 ## Terraform Resource

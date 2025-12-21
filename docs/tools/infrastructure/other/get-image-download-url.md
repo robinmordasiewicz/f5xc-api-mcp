@@ -26,16 +26,16 @@ Ask Claude to help you work with Get Image Download Url resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create get_image_download_url -n <namespace> -i get_image_download_url.yaml
+f5xcctl infrastructure create get_image_download_url -n <namespace> -i get_image_download_url.yaml
 
 # Get
-f5xcctl configuration get get_image_download_url -n <namespace> <name>
+f5xcctl infrastructure get get_image_download_url <name> -n <namespace>
 
 # List
-f5xcctl configuration list get_image_download_url -n <namespace>
+f5xcctl infrastructure list get_image_download_url -n <namespace>
 
 # Delete
-f5xcctl configuration delete get_image_download_url -n <namespace> <name>
+f5xcctl infrastructure delete get_image_download_url <name> -n <namespace>
 ```
 
 ## Terraform Resource

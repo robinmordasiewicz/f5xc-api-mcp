@@ -36,16 +36,16 @@ Ask Claude to help you work with Add resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create add -n <namespace> -i add.yaml
+f5xcctl operations create add -n <namespace> -i add.yaml
 
 # Get
-f5xcctl configuration get add -n <namespace> <name>
+f5xcctl operations get add <name> -n <namespace>
 
 # List
-f5xcctl configuration list add -n <namespace>
+f5xcctl operations list add -n <namespace>
 
 # Delete
-f5xcctl configuration delete add -n <namespace> <name>
+f5xcctl operations delete add <name> -n <namespace>
 ```
 
 ## Terraform Resource

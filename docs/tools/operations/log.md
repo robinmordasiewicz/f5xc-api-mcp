@@ -43,16 +43,16 @@ Ask Claude to help you work with Log resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create log -n <namespace> -i log.yaml
+f5xcctl operations create log -n <namespace> -i log.yaml
 
 # Get
-f5xcctl configuration get log -n <namespace> <name>
+f5xcctl operations get log <name> -n <namespace>
 
 # List
-f5xcctl configuration list log -n <namespace>
+f5xcctl operations list log -n <namespace>
 
 # Delete
-f5xcctl configuration delete log -n <namespace> <name>
+f5xcctl operations delete log <name> -n <namespace>
 ```
 
 ## Terraform Resource

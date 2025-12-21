@@ -34,16 +34,16 @@ Ask Claude to help you work with Eval Query resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create eval_query -n <namespace> -i eval_query.yaml
+f5xcctl ai_intelligence create eval_query -n <namespace> -i eval_query.yaml
 
 # Get
-f5xcctl configuration get eval_query -n <namespace> <name>
+f5xcctl ai_intelligence get eval_query <name> -n <namespace>
 
 # List
-f5xcctl configuration list eval_query -n <namespace>
+f5xcctl ai_intelligence list eval_query -n <namespace>
 
 # Delete
-f5xcctl configuration delete eval_query -n <namespace> <name>
+f5xcctl ai_intelligence delete eval_query <name> -n <namespace>
 ```
 
 ## Terraform Resource

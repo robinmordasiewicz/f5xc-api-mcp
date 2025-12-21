@@ -34,16 +34,16 @@ Ask Claude to help you work with Bot Endpoint Policie resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create bot_endpoint_policie -n <namespace> -i bot_endpoint_policie.yaml
+f5xcctl security create bot_endpoint_policie -n <namespace> -i bot_endpoint_policie.yaml
 
 # Get
-f5xcctl configuration get bot_endpoint_policie -n <namespace> <name>
+f5xcctl security get bot_endpoint_policie <name> -n <namespace>
 
 # List
-f5xcctl configuration list bot_endpoint_policie -n <namespace>
+f5xcctl security list bot_endpoint_policie -n <namespace>
 
 # Delete
-f5xcctl configuration delete bot_endpoint_policie -n <namespace> <name>
+f5xcctl security delete bot_endpoint_policie <name> -n <namespace>
 ```
 
 ## Terraform Resource

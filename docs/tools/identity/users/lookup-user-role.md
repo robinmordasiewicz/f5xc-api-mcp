@@ -26,16 +26,16 @@ Ask Claude to help you work with Lookup User Role resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create lookup_user_role -n <namespace> -i lookup_user_role.yaml
+f5xcctl identity create lookup_user_role -n <namespace> -i lookup_user_role.yaml
 
 # Get
-f5xcctl configuration get lookup_user_role -n <namespace> <name>
+f5xcctl identity get lookup_user_role <name> -n <namespace>
 
 # List
-f5xcctl configuration list lookup_user_role -n <namespace>
+f5xcctl identity list lookup_user_role -n <namespace>
 
 # Delete
-f5xcctl configuration delete lookup_user_role -n <namespace> <name>
+f5xcctl identity delete lookup_user_role <name> -n <namespace>
 ```
 
 ## Terraform Resource

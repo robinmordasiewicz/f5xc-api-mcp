@@ -59,16 +59,16 @@ Ask Claude to help you work with Srv6 Network Slice resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create srv6_network_slice -n <namespace> -i srv6_network_slice.yaml
+f5xcctl networking create srv6_network_slice -n <namespace> -i srv6_network_slice.yaml
 
 # Get
-f5xcctl configuration get srv6_network_slice -n <namespace> <name>
+f5xcctl networking get srv6_network_slice <name> -n <namespace>
 
 # List
-f5xcctl configuration list srv6_network_slice -n <namespace>
+f5xcctl networking list srv6_network_slice -n <namespace>
 
 # Delete
-f5xcctl configuration delete srv6_network_slice -n <namespace> <name>
+f5xcctl networking delete srv6_network_slice <name> -n <namespace>
 ```
 
 ## Terraform Resource

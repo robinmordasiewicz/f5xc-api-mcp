@@ -26,16 +26,16 @@ Ask Claude to help you work with Friction Histogram resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create friction_histogram -n <namespace> -i friction_histogram.yaml
+f5xcctl shape_security create friction_histogram -n <namespace> -i friction_histogram.yaml
 
 # Get
-f5xcctl configuration get friction_histogram -n <namespace> <name>
+f5xcctl shape_security get friction_histogram <name> -n <namespace>
 
 # List
-f5xcctl configuration list friction_histogram -n <namespace>
+f5xcctl shape_security list friction_histogram -n <namespace>
 
 # Delete
-f5xcctl configuration delete friction_histogram -n <namespace> <name>
+f5xcctl shape_security delete friction_histogram <name> -n <namespace>
 ```
 
 ## Terraform Resource

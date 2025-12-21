@@ -62,16 +62,16 @@ Ask Claude to help you work with Tpm API Key resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create tpm_api_key -n <namespace> -i tpm_api_key.yaml
+f5xcctl integrations create tpm_api_key -n <namespace> -i tpm_api_key.yaml
 
 # Get
-f5xcctl configuration get tpm_api_key -n <namespace> <name>
+f5xcctl integrations get tpm_api_key <name> -n <namespace>
 
 # List
-f5xcctl configuration list tpm_api_key -n <namespace>
+f5xcctl integrations list tpm_api_key -n <namespace>
 
 # Delete
-f5xcctl configuration delete tpm_api_key -n <namespace> <name>
+f5xcctl integrations delete tpm_api_key <name> -n <namespace>
 ```
 
 ## Terraform Resource

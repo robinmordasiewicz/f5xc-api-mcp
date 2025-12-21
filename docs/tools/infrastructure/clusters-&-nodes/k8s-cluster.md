@@ -61,16 +61,16 @@ Ask Claude to help you work with K8S Cluster resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create k8s_cluster -n <namespace> -i k8s_cluster.yaml
+f5xcctl infrastructure create k8s_cluster -n <namespace> -i k8s_cluster.yaml
 
 # Get
-f5xcctl configuration get k8s_cluster -n <namespace> <name>
+f5xcctl infrastructure get k8s_cluster <name> -n <namespace>
 
 # List
-f5xcctl configuration list k8s_cluster -n <namespace>
+f5xcctl infrastructure list k8s_cluster -n <namespace>
 
 # Delete
-f5xcctl configuration delete k8s_cluster -n <namespace> <name>
+f5xcctl infrastructure delete k8s_cluster <name> -n <namespace>
 ```
 
 ## Terraform Resource

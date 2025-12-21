@@ -49,16 +49,16 @@ Ask Claude to help you work with Nginx Instance resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create nginx_instance -n <namespace> -i nginx_instance.yaml
+f5xcctl nginx create nginx_instance -n <namespace> -i nginx_instance.yaml
 
 # Get
-f5xcctl configuration get nginx_instance -n <namespace> <name>
+f5xcctl nginx get nginx_instance <name> -n <namespace>
 
 # List
-f5xcctl configuration list nginx_instance -n <namespace>
+f5xcctl nginx list nginx_instance -n <namespace>
 
 # Delete
-f5xcctl configuration delete nginx_instance -n <namespace> <name>
+f5xcctl nginx delete nginx_instance <name> -n <namespace>
 ```
 
 ## Terraform Resource

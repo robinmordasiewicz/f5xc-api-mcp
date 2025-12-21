@@ -35,16 +35,16 @@ Ask Claude to help you work with Deployment History resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create deployment_history -n <namespace> -i deployment_history.yaml
+f5xcctl security create deployment_history -n <namespace> -i deployment_history.yaml
 
 # Get
-f5xcctl configuration get deployment_history -n <namespace> <name>
+f5xcctl security get deployment_history <name> -n <namespace>
 
 # List
-f5xcctl configuration list deployment_history -n <namespace>
+f5xcctl security list deployment_history -n <namespace>
 
 # Delete
-f5xcctl configuration delete deployment_history -n <namespace> <name>
+f5xcctl security delete deployment_history <name> -n <namespace>
 ```
 
 ## Terraform Resource

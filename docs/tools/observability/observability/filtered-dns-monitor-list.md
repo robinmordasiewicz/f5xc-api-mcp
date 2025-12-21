@@ -43,16 +43,16 @@ Ask Claude to help you work with Filtered DNS Monitor List resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create filtered_dns_monitor_list -n <namespace> -i filtered_dns_monitor_list.yaml
+f5xcctl observability create filtered_dns_monitor_list -n <namespace> -i filtered_dns_monitor_list.yaml
 
 # Get
-f5xcctl configuration get filtered_dns_monitor_list -n <namespace> <name>
+f5xcctl observability get filtered_dns_monitor_list <name> -n <namespace>
 
 # List
-f5xcctl configuration list filtered_dns_monitor_list -n <namespace>
+f5xcctl observability list filtered_dns_monitor_list -n <namespace>
 
 # Delete
-f5xcctl configuration delete filtered_dns_monitor_list -n <namespace> <name>
+f5xcctl observability delete filtered_dns_monitor_list <name> -n <namespace>
 ```
 
 ## Terraform Resource

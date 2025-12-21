@@ -49,16 +49,16 @@ Ask Claude to help you work with Flow Anomaly resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create flow_anomaly -n <namespace> -i flow_anomaly.yaml
+f5xcctl observability create flow_anomaly -n <namespace> -i flow_anomaly.yaml
 
 # Get
-f5xcctl configuration get flow_anomaly -n <namespace> <name>
+f5xcctl observability get flow_anomaly <name> -n <namespace>
 
 # List
-f5xcctl configuration list flow_anomaly -n <namespace>
+f5xcctl observability list flow_anomaly -n <namespace>
 
 # Delete
-f5xcctl configuration delete flow_anomaly -n <namespace> <name>
+f5xcctl observability delete flow_anomaly <name> -n <namespace>
 ```
 
 ## Terraform Resource

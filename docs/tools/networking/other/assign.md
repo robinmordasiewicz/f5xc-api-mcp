@@ -35,16 +35,16 @@ Ask Claude to help you work with Assign resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create assign -n <namespace> -i assign.yaml
+f5xcctl networking create assign -n <namespace> -i assign.yaml
 
 # Get
-f5xcctl configuration get assign -n <namespace> <name>
+f5xcctl networking get assign <name> -n <namespace>
 
 # List
-f5xcctl configuration list assign -n <namespace>
+f5xcctl networking list assign -n <namespace>
 
 # Delete
-f5xcctl configuration delete assign -n <namespace> <name>
+f5xcctl networking delete assign <name> -n <namespace>
 ```
 
 ## Terraform Resource

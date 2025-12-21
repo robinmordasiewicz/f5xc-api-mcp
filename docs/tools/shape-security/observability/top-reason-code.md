@@ -26,16 +26,16 @@ Ask Claude to help you work with Top Reason Code resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create top_reason_code -n <namespace> -i top_reason_code.yaml
+f5xcctl shape_security create top_reason_code -n <namespace> -i top_reason_code.yaml
 
 # Get
-f5xcctl configuration get top_reason_code -n <namespace> <name>
+f5xcctl shape_security get top_reason_code <name> -n <namespace>
 
 # List
-f5xcctl configuration list top_reason_code -n <namespace>
+f5xcctl shape_security list top_reason_code -n <namespace>
 
 # Delete
-f5xcctl configuration delete top_reason_code -n <namespace> <name>
+f5xcctl shape_security delete top_reason_code <name> -n <namespace>
 ```
 
 ## Terraform Resource

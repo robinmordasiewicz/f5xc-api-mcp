@@ -35,16 +35,16 @@ Ask Claude to help you work with Ping resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create ping -n <namespace> -i ping.yaml
+f5xcctl operations create ping -n <namespace> -i ping.yaml
 
 # Get
-f5xcctl configuration get ping -n <namespace> <name>
+f5xcctl operations get ping <name> -n <namespace>
 
 # List
-f5xcctl configuration list ping -n <namespace>
+f5xcctl operations list ping -n <namespace>
 
 # Delete
-f5xcctl configuration delete ping -n <namespace> <name>
+f5xcctl operations delete ping <name> -n <namespace>
 ```
 
 ## Terraform Resource

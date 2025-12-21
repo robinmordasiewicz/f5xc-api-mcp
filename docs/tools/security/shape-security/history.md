@@ -35,16 +35,16 @@ Ask Claude to help you work with History resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create history -n <namespace> -i history.yaml
+f5xcctl security create history -n <namespace> -i history.yaml
 
 # Get
-f5xcctl configuration get history -n <namespace> <name>
+f5xcctl security get history <name> -n <namespace>
 
 # List
-f5xcctl configuration list history -n <namespace>
+f5xcctl security list history -n <namespace>
 
 # Delete
-f5xcctl configuration delete history -n <namespace> <name>
+f5xcctl security delete history <name> -n <namespace>
 ```
 
 ## Terraform Resource

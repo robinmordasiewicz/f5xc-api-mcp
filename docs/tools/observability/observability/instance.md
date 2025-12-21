@@ -34,16 +34,16 @@ Ask Claude to help you work with Instance resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create instance -n <namespace> -i instance.yaml
+f5xcctl observability create instance -n <namespace> -i instance.yaml
 
 # Get
-f5xcctl configuration get instance -n <namespace> <name>
+f5xcctl observability get instance <name> -n <namespace>
 
 # List
-f5xcctl configuration list instance -n <namespace>
+f5xcctl observability list instance -n <namespace>
 
 # Delete
-f5xcctl configuration delete instance -n <namespace> <name>
+f5xcctl observability delete instance <name> -n <namespace>
 ```
 
 ## Terraform Resource

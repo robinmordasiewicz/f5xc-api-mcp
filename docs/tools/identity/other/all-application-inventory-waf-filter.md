@@ -27,16 +27,16 @@ Ask Claude to help you work with All Application Inventory WAF Filter resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create all_application_inventory_waf_filter -n <namespace> -i all_application_inventory_waf_filter.yaml
+f5xcctl identity create all_application_inventory_waf_filter -n <namespace> -i all_application_inventory_waf_filter.yaml
 
 # Get
-f5xcctl configuration get all_application_inventory_waf_filter -n <namespace> <name>
+f5xcctl identity get all_application_inventory_waf_filter <name> -n <namespace>
 
 # List
-f5xcctl configuration list all_application_inventory_waf_filter -n <namespace>
+f5xcctl identity list all_application_inventory_waf_filter -n <namespace>
 
 # Delete
-f5xcctl configuration delete all_application_inventory_waf_filter -n <namespace> <name>
+f5xcctl identity delete all_application_inventory_waf_filter <name> -n <namespace>
 ```
 
 ## Terraform Resource

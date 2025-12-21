@@ -39,16 +39,16 @@ Ask Claude to help you work with Top Sensitive Data resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create top_sensitive_data -n <namespace> -i top_sensitive_data.yaml
+f5xcctl networking create top_sensitive_data -n <namespace> -i top_sensitive_data.yaml
 
 # Get
-f5xcctl configuration get top_sensitive_data -n <namespace> <name>
+f5xcctl networking get top_sensitive_data <name> -n <namespace>
 
 # List
-f5xcctl configuration list top_sensitive_data -n <namespace>
+f5xcctl networking list top_sensitive_data -n <namespace>
 
 # Delete
-f5xcctl configuration delete top_sensitive_data -n <namespace> <name>
+f5xcctl networking delete top_sensitive_data <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -32,16 +32,16 @@ Ask Claude to help you work with To Event resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create to_event -n <namespace> -i to_event.yaml
+f5xcctl infrastructure_protection create to_event -n <namespace> -i to_event.yaml
 
 # Get
-f5xcctl configuration get to_event -n <namespace> <name>
+f5xcctl infrastructure_protection get to_event <name> -n <namespace>
 
 # List
-f5xcctl configuration list to_event -n <namespace>
+f5xcctl infrastructure_protection list to_event -n <namespace>
 
 # Delete
-f5xcctl configuration delete to_event -n <namespace> <name>
+f5xcctl infrastructure_protection delete to_event <name> -n <namespace>
 ```
 
 ## Terraform Resource

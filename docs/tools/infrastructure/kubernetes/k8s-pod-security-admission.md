@@ -61,16 +61,16 @@ Ask Claude to help you work with K8S Pod Security Admission resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create k8s_pod_security_admission -n <namespace> -i k8s_pod_security_admission.yaml
+f5xcctl infrastructure create k8s_pod_security_admission -n <namespace> -i k8s_pod_security_admission.yaml
 
 # Get
-f5xcctl configuration get k8s_pod_security_admission -n <namespace> <name>
+f5xcctl infrastructure get k8s_pod_security_admission <name> -n <namespace>
 
 # List
-f5xcctl configuration list k8s_pod_security_admission -n <namespace>
+f5xcctl infrastructure list k8s_pod_security_admission -n <namespace>
 
 # Delete
-f5xcctl configuration delete k8s_pod_security_admission -n <namespace> <name>
+f5xcctl infrastructure delete k8s_pod_security_admission <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -58,16 +58,16 @@ Ask Claude to help you work with DNS Load Balancer resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create dns_load_balancer -n <namespace> -i dns_load_balancer.yaml
+f5xcctl networking create dns_load_balancer -n <namespace> -i dns_load_balancer.yaml
 
 # Get
-f5xcctl configuration get dns_load_balancer -n <namespace> <name>
+f5xcctl networking get dns_load_balancer <name> -n <namespace>
 
 # List
-f5xcctl configuration list dns_load_balancer -n <namespace>
+f5xcctl networking list dns_load_balancer -n <namespace>
 
 # Delete
-f5xcctl configuration delete dns_load_balancer -n <namespace> <name>
+f5xcctl networking delete dns_load_balancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

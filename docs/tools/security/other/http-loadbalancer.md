@@ -37,16 +37,16 @@ Ask Claude to help you work with HTTP Loadbalancer resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create http_loadbalancer -n <namespace> -i http_loadbalancer.yaml
+f5xcctl security create http_loadbalancer -n <namespace> -i http_loadbalancer.yaml
 
 # Get
-f5xcctl configuration get http_loadbalancer -n <namespace> <name>
+f5xcctl security get http_loadbalancer <name> -n <namespace>
 
 # List
-f5xcctl configuration list http_loadbalancer -n <namespace>
+f5xcctl security list http_loadbalancer -n <namespace>
 
 # Delete
-f5xcctl configuration delete http_loadbalancer -n <namespace> <name>
+f5xcctl security delete http_loadbalancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

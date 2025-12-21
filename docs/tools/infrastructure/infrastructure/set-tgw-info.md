@@ -35,16 +35,16 @@ Ask Claude to help you work with Set Tgw Info resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create set_tgw_info -n <namespace> -i set_tgw_info.yaml
+f5xcctl infrastructure create set_tgw_info -n <namespace> -i set_tgw_info.yaml
 
 # Get
-f5xcctl configuration get set_tgw_info -n <namespace> <name>
+f5xcctl infrastructure get set_tgw_info <name> -n <namespace>
 
 # List
-f5xcctl configuration list set_tgw_info -n <namespace>
+f5xcctl infrastructure list set_tgw_info -n <namespace>
 
 # Delete
-f5xcctl configuration delete set_tgw_info -n <namespace> <name>
+f5xcctl infrastructure delete set_tgw_info <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Softdelete resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create softdelete -n <namespace> -i softdelete.yaml
+f5xcctl security create softdelete -n <namespace> -i softdelete.yaml
 
 # Get
-f5xcctl configuration get softdelete -n <namespace> <name>
+f5xcctl security get softdelete <name> -n <namespace>
 
 # List
-f5xcctl configuration list softdelete -n <namespace>
+f5xcctl security list softdelete -n <namespace>
 
 # Delete
-f5xcctl configuration delete softdelete -n <namespace> <name>
+f5xcctl security delete softdelete <name> -n <namespace>
 ```
 
 ## Terraform Resource

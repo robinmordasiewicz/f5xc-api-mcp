@@ -34,16 +34,16 @@ Ask Claude to help you work with Sid Counter resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create sid_counter -n <namespace> -i sid_counter.yaml
+f5xcctl networking create sid_counter -n <namespace> -i sid_counter.yaml
 
 # Get
-f5xcctl configuration get sid_counter -n <namespace> <name>
+f5xcctl networking get sid_counter <name> -n <namespace>
 
 # List
-f5xcctl configuration list sid_counter -n <namespace>
+f5xcctl networking list sid_counter -n <namespace>
 
 # Delete
-f5xcctl configuration delete sid_counter -n <namespace> <name>
+f5xcctl networking delete sid_counter <name> -n <namespace>
 ```
 
 ## Terraform Resource

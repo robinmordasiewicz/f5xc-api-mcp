@@ -58,16 +58,16 @@ Ask Claude to help you work with Infraprotect Asn Prefix resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create infraprotect_asn_prefix -n <namespace> -i infraprotect_asn_prefix.yaml
+f5xcctl infrastructure_protection create infraprotect_asn_prefix -n <namespace> -i infraprotect_asn_prefix.yaml
 
 # Get
-f5xcctl configuration get infraprotect_asn_prefix -n <namespace> <name>
+f5xcctl infrastructure_protection get infraprotect_asn_prefix <name> -n <namespace>
 
 # List
-f5xcctl configuration list infraprotect_asn_prefix -n <namespace>
+f5xcctl infrastructure_protection list infraprotect_asn_prefix -n <namespace>
 
 # Delete
-f5xcctl configuration delete infraprotect_asn_prefix -n <namespace> <name>
+f5xcctl infrastructure_protection delete infraprotect_asn_prefix <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -26,16 +26,16 @@ Ask Claude to help you work with Rescue resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create rescue -n <namespace> -i rescue.yaml
+f5xcctl shape_security create rescue -n <namespace> -i rescue.yaml
 
 # Get
-f5xcctl configuration get rescue -n <namespace> <name>
+f5xcctl shape_security get rescue <name> -n <namespace>
 
 # List
-f5xcctl configuration list rescue -n <namespace>
+f5xcctl shape_security list rescue -n <namespace>
 
 # Delete
-f5xcctl configuration delete rescue -n <namespace> <name>
+f5xcctl shape_security delete rescue <name> -n <namespace>
 ```
 
 ## Terraform Resource

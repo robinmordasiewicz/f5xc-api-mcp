@@ -38,16 +38,16 @@ Ask Claude to help you work with Access Log resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create access_log -n <namespace> -i access_log.yaml
+f5xcctl observability create access_log -n <namespace> -i access_log.yaml
 
 # Get
-f5xcctl configuration get access_log -n <namespace> <name>
+f5xcctl observability get access_log <name> -n <namespace>
 
 # List
-f5xcctl configuration list access_log -n <namespace>
+f5xcctl observability list access_log -n <namespace>
 
 # Delete
-f5xcctl configuration delete access_log -n <namespace> <name>
+f5xcctl observability delete access_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

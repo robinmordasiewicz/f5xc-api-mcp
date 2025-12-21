@@ -34,16 +34,16 @@ Ask Claude to help you work with Timeserie resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create timeserie -n <namespace> -i timeserie.yaml
+f5xcctl observability create timeserie -n <namespace> -i timeserie.yaml
 
 # Get
-f5xcctl configuration get timeserie -n <namespace> <name>
+f5xcctl observability get timeserie <name> -n <namespace>
 
 # List
-f5xcctl configuration list timeserie -n <namespace>
+f5xcctl observability list timeserie -n <namespace>
 
 # Delete
-f5xcctl configuration delete timeserie -n <namespace> <name>
+f5xcctl observability delete timeserie <name> -n <namespace>
 ```
 
 ## Terraform Resource

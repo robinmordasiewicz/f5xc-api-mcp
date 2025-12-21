@@ -35,16 +35,16 @@ Ask Claude to help you work with Update State resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create update_state -n <namespace> -i update_state.yaml
+f5xcctl networking create update_state -n <namespace> -i update_state.yaml
 
 # Get
-f5xcctl configuration get update_state -n <namespace> <name>
+f5xcctl networking get update_state <name> -n <namespace>
 
 # List
-f5xcctl configuration list update_state -n <namespace>
+f5xcctl networking list update_state -n <namespace>
 
 # Delete
-f5xcctl configuration delete update_state -n <namespace> <name>
+f5xcctl networking delete update_state <name> -n <namespace>
 ```
 
 ## Terraform Resource

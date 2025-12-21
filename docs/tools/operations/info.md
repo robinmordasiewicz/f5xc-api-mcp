@@ -36,16 +36,16 @@ Ask Claude to help you work with Info resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create info -n <namespace> -i info.yaml
+f5xcctl operations create info -n <namespace> -i info.yaml
 
 # Get
-f5xcctl configuration get info -n <namespace> <name>
+f5xcctl operations get info <name> -n <namespace>
 
 # List
-f5xcctl configuration list info -n <namespace>
+f5xcctl operations list info -n <namespace>
 
 # Delete
-f5xcctl configuration delete info -n <namespace> <name>
+f5xcctl operations delete info <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -26,16 +26,16 @@ Ask Claude to help you work with Import Bind Create resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create import_bind_create -n <namespace> -i import_bind_create.yaml
+f5xcctl networking create import_bind_create -n <namespace> -i import_bind_create.yaml
 
 # Get
-f5xcctl configuration get import_bind_create -n <namespace> <name>
+f5xcctl networking get import_bind_create <name> -n <namespace>
 
 # List
-f5xcctl configuration list import_bind_create -n <namespace>
+f5xcctl networking list import_bind_create -n <namespace>
 
 # Delete
-f5xcctl configuration delete import_bind_create -n <namespace> <name>
+f5xcctl networking delete import_bind_create <name> -n <namespace>
 ```
 
 ## Terraform Resource

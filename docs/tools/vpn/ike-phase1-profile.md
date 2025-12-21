@@ -58,16 +58,16 @@ Ask Claude to help you work with Ike Phase1 Profile resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create ike_phase1_profile -n <namespace> -i ike_phase1_profile.yaml
+f5xcctl vpn create ike_phase1_profile -n <namespace> -i ike_phase1_profile.yaml
 
 # Get
-f5xcctl configuration get ike_phase1_profile -n <namespace> <name>
+f5xcctl vpn get ike_phase1_profile <name> -n <namespace>
 
 # List
-f5xcctl configuration list ike_phase1_profile -n <namespace>
+f5xcctl vpn list ike_phase1_profile -n <namespace>
 
 # Delete
-f5xcctl configuration delete ike_phase1_profile -n <namespace> <name>
+f5xcctl vpn delete ike_phase1_profile <name> -n <namespace>
 ```
 
 ## Terraform Resource

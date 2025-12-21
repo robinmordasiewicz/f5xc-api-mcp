@@ -34,16 +34,16 @@ Ask Claude to help you work with App resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create app -n <namespace> -i app.yaml
+f5xcctl observability create app -n <namespace> -i app.yaml
 
 # Get
-f5xcctl configuration get app -n <namespace> <name>
+f5xcctl observability get app <name> -n <namespace>
 
 # List
-f5xcctl configuration list app -n <namespace>
+f5xcctl observability list app -n <namespace>
 
 # Delete
-f5xcctl configuration delete app -n <namespace> <name>
+f5xcctl observability delete app <name> -n <namespace>
 ```
 
 ## Terraform Resource

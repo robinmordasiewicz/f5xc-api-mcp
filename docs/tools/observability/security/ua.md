@@ -34,16 +34,16 @@ Ask Claude to help you work with Ua resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create ua -n <namespace> -i ua.yaml
+f5xcctl observability create ua -n <namespace> -i ua.yaml
 
 # Get
-f5xcctl configuration get ua -n <namespace> <name>
+f5xcctl observability get ua <name> -n <namespace>
 
 # List
-f5xcctl configuration list ua -n <namespace>
+f5xcctl observability list ua -n <namespace>
 
 # Delete
-f5xcctl configuration delete ua -n <namespace> <name>
+f5xcctl observability delete ua <name> -n <namespace>
 ```
 
 ## Terraform Resource

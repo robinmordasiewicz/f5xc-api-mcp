@@ -38,16 +38,16 @@ Ask Claude to help you work with Get Policy Document resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create get_policy_document -n <namespace> -i get_policy_document.yaml
+f5xcctl security create get_policy_document -n <namespace> -i get_policy_document.yaml
 
 # Get
-f5xcctl configuration get get_policy_document -n <namespace> <name>
+f5xcctl security get get_policy_document <name> -n <namespace>
 
 # List
-f5xcctl configuration list get_policy_document -n <namespace>
+f5xcctl security list get_policy_document -n <namespace>
 
 # Delete
-f5xcctl configuration delete get_policy_document -n <namespace> <name>
+f5xcctl security delete get_policy_document <name> -n <namespace>
 ```
 
 ## Terraform Resource

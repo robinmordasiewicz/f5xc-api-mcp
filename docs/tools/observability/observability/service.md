@@ -34,16 +34,16 @@ Ask Claude to help you work with Service resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create service -n <namespace> -i service.yaml
+f5xcctl observability create service -n <namespace> -i service.yaml
 
 # Get
-f5xcctl configuration get service -n <namespace> <name>
+f5xcctl observability get service <name> -n <namespace>
 
 # List
-f5xcctl configuration list service -n <namespace>
+f5xcctl observability list service -n <namespace>
 
 # Delete
-f5xcctl configuration delete service -n <namespace> <name>
+f5xcctl observability delete service <name> -n <namespace>
 ```
 
 ## Terraform Resource

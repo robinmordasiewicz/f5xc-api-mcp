@@ -34,16 +34,16 @@ Ask Claude to help you work with IP resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create ip -n <namespace> -i ip.yaml
+f5xcctl observability create ip -n <namespace> -i ip.yaml
 
 # Get
-f5xcctl configuration get ip -n <namespace> <name>
+f5xcctl observability get ip <name> -n <namespace>
 
 # List
-f5xcctl configuration list ip -n <namespace>
+f5xcctl observability list ip -n <namespace>
 
 # Delete
-f5xcctl configuration delete ip -n <namespace> <name>
+f5xcctl observability delete ip <name> -n <namespace>
 ```
 
 ## Terraform Resource

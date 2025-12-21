@@ -34,16 +34,16 @@ Ask Claude to help you work with Bot Detection Update resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create bot_detection_update -n <namespace> -i bot_detection_update.yaml
+f5xcctl security create bot_detection_update -n <namespace> -i bot_detection_update.yaml
 
 # Get
-f5xcctl configuration get bot_detection_update -n <namespace> <name>
+f5xcctl security get bot_detection_update <name> -n <namespace>
 
 # List
-f5xcctl configuration list bot_detection_update -n <namespace>
+f5xcctl security list bot_detection_update -n <namespace>
 
 # Delete
-f5xcctl configuration delete bot_detection_update -n <namespace> <name>
+f5xcctl security delete bot_detection_update <name> -n <namespace>
 ```
 
 ## Terraform Resource

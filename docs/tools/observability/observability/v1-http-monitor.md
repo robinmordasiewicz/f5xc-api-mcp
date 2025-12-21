@@ -58,16 +58,16 @@ Ask Claude to help you work with V1 HTTP Monitor resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create v1_http_monitor -n <namespace> -i v1_http_monitor.yaml
+f5xcctl observability create v1_http_monitor -n <namespace> -i v1_http_monitor.yaml
 
 # Get
-f5xcctl configuration get v1_http_monitor -n <namespace> <name>
+f5xcctl observability get v1_http_monitor <name> -n <namespace>
 
 # List
-f5xcctl configuration list v1_http_monitor -n <namespace>
+f5xcctl observability list v1_http_monitor -n <namespace>
 
 # Delete
-f5xcctl configuration delete v1_http_monitor -n <namespace> <name>
+f5xcctl observability delete v1_http_monitor <name> -n <namespace>
 ```
 
 ## Terraform Resource

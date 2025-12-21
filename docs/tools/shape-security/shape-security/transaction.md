@@ -26,16 +26,16 @@ Ask Claude to help you work with Transaction resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create transaction -n <namespace> -i transaction.yaml
+f5xcctl shape_security create transaction -n <namespace> -i transaction.yaml
 
 # Get
-f5xcctl configuration get transaction -n <namespace> <name>
+f5xcctl shape_security get transaction <name> -n <namespace>
 
 # List
-f5xcctl configuration list transaction -n <namespace>
+f5xcctl shape_security list transaction -n <namespace>
 
 # Delete
-f5xcctl configuration delete transaction -n <namespace> <name>
+f5xcctl shape_security delete transaction <name> -n <namespace>
 ```
 
 ## Terraform Resource

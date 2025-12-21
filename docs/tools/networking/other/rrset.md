@@ -35,16 +35,16 @@ Ask Claude to help you work with Rrset resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create rrset -n <namespace> -i rrset.yaml
+f5xcctl networking create rrset -n <namespace> -i rrset.yaml
 
 # Get
-f5xcctl configuration get rrset -n <namespace> <name>
+f5xcctl networking get rrset <name> -n <namespace>
 
 # List
-f5xcctl configuration list rrset -n <namespace>
+f5xcctl networking list rrset -n <namespace>
 
 # Delete
-f5xcctl configuration delete rrset -n <namespace> <name>
+f5xcctl networking delete rrset <name> -n <namespace>
 ```
 
 ## Terraform Resource

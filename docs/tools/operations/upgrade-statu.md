@@ -26,16 +26,16 @@ Ask Claude to help you work with Upgrade Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create upgrade_statu -n <namespace> -i upgrade_statu.yaml
+f5xcctl operations create upgrade_statu -n <namespace> -i upgrade_statu.yaml
 
 # Get
-f5xcctl configuration get upgrade_statu -n <namespace> <name>
+f5xcctl operations get upgrade_statu <name> -n <namespace>
 
 # List
-f5xcctl configuration list upgrade_statu -n <namespace>
+f5xcctl operations list upgrade_statu -n <namespace>
 
 # Delete
-f5xcctl configuration delete upgrade_statu -n <namespace> <name>
+f5xcctl operations delete upgrade_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

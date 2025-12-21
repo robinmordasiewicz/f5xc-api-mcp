@@ -58,16 +58,16 @@ Ask Claude to help you work with Cdn Loadbalancer resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create cdn_loadbalancer -n <namespace> -i cdn_loadbalancer.yaml
+f5xcctl cdn create cdn_loadbalancer -n <namespace> -i cdn_loadbalancer.yaml
 
 # Get
-f5xcctl configuration get cdn_loadbalancer -n <namespace> <name>
+f5xcctl cdn get cdn_loadbalancer <name> -n <namespace>
 
 # List
-f5xcctl configuration list cdn_loadbalancer -n <namespace>
+f5xcctl cdn list cdn_loadbalancer -n <namespace>
 
 # Delete
-f5xcctl configuration delete cdn_loadbalancer -n <namespace> <name>
+f5xcctl cdn delete cdn_loadbalancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

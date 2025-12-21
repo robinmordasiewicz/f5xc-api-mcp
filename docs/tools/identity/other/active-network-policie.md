@@ -41,16 +41,16 @@ Ask Claude to help you work with Active Network Policie resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create active_network_policie -n <namespace> -i active_network_policie.yaml
+f5xcctl identity create active_network_policie -n <namespace> -i active_network_policie.yaml
 
 # Get
-f5xcctl configuration get active_network_policie -n <namespace> <name>
+f5xcctl identity get active_network_policie <name> -n <namespace>
 
 # List
-f5xcctl configuration list active_network_policie -n <namespace>
+f5xcctl identity list active_network_policie -n <namespace>
 
 # Delete
-f5xcctl configuration delete active_network_policie -n <namespace> <name>
+f5xcctl identity delete active_network_policie <name> -n <namespace>
 ```
 
 ## Terraform Resource

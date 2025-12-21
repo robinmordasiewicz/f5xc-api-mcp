@@ -26,16 +26,16 @@ Ask Claude to help you work with Unsubscribe resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create unsubscribe -n <namespace> -i unsubscribe.yaml
+f5xcctl shape_security create unsubscribe -n <namespace> -i unsubscribe.yaml
 
 # Get
-f5xcctl configuration get unsubscribe -n <namespace> <name>
+f5xcctl shape_security get unsubscribe <name> -n <namespace>
 
 # List
-f5xcctl configuration list unsubscribe -n <namespace>
+f5xcctl shape_security list unsubscribe -n <namespace>
 
 # Delete
-f5xcctl configuration delete unsubscribe -n <namespace> <name>
+f5xcctl shape_security delete unsubscribe <name> -n <namespace>
 ```
 
 ## Terraform Resource

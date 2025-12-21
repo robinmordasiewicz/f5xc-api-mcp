@@ -34,16 +34,16 @@ Ask Claude to help you work with Bgp Peer Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create bgp_peer_statu -n <namespace> -i bgp_peer_statu.yaml
+f5xcctl infrastructure_protection create bgp_peer_statu -n <namespace> -i bgp_peer_statu.yaml
 
 # Get
-f5xcctl configuration get bgp_peer_statu -n <namespace> <name>
+f5xcctl infrastructure_protection get bgp_peer_statu <name> -n <namespace>
 
 # List
-f5xcctl configuration list bgp_peer_statu -n <namespace>
+f5xcctl infrastructure_protection list bgp_peer_statu -n <namespace>
 
 # Delete
-f5xcctl configuration delete bgp_peer_statu -n <namespace> <name>
+f5xcctl infrastructure_protection delete bgp_peer_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

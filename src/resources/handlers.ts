@@ -170,11 +170,66 @@ function generateExampleResource(
 }
 
 /**
+ * Map resource types to their f5xcctl domains
+ * Verified against actual f5xcctl CLI structure
+ */
+function getResourceDomain(resourceType: string): string {
+  const domainMap: Record<string, string> = {
+    // Load Balancer domain - L4/L7 LB and origin pool management
+    http_loadbalancer: "load_balancer",
+    tcp_loadbalancer: "load_balancer",
+    udp_loadbalancer: "load_balancer",
+    origin_pool: "load_balancer",
+    healthcheck: "load_balancer",
+    proxy: "load_balancer",
+    forward_proxy_policy: "load_balancer",
+
+    // Infrastructure domain - Sites, cloud provisioning, clusters
+    aws_vpc_site: "infrastructure",
+    aws_tgw_site: "infrastructure",
+    azure_vnet_site: "infrastructure",
+    gcp_vpc_site: "infrastructure",
+    cloud_credentials: "infrastructure",
+    k8s_cluster: "infrastructure",
+
+    // Networking domain - DNS and routing
+    dns_zone: "networking",
+    dns_load_balancer: "networking",
+    dns_domain: "networking",
+    bgp: "networking",
+    virtual_network: "networking",
+
+    // Security domain - WAF, DDoS, policies
+    app_firewall: "security",
+    service_policy: "security",
+    rate_limiter: "security",
+    bot_defense: "security",
+    api_definition: "security",
+
+    // Operations domain - System operations
+    namespace: "operations",
+
+    // Configuration domain - System-level resources
+    certificate: "config",
+    secret: "config",
+  };
+
+  return domainMap[resourceType] ?? "config";
+}
+
+/**
  * Generate f5xcctl command for resource
  */
-function generateF5xcctlCommand(resourceType: string, namespace: string, name: string): string {
+function generateF5xcctlCommand(
+  resourceType: string,
+  namespace: string,
+  name: string,
+  _apiPath: string
+): string {
   const rt = resourceType.replace(/-/g, "_");
-  return `f5xcctl get ${rt} ${name} -n ${namespace} -o yaml`;
+  const domain = getResourceDomain(resourceType);
+
+  return `f5xcctl ${domain} get ${rt} ${name} -n ${namespace}`;
 }
 
 /**
@@ -215,7 +270,7 @@ function buildDocumentationResponse(
     resourceType: rt,
     apiPath: apiPath ?? "",
     exampleResource: generateExampleResource(resourceType, namespace, name),
-    f5xcctlCommand: generateF5xcctlCommand(resourceType, namespace, name),
+    f5xcctlCommand: generateF5xcctlCommand(resourceType, namespace, name, rt.apiPath),
     terraformDataSource: generateTerraformDataSource(resourceType, namespace, name),
     relatedResources: rt.relatedResources ?? [],
   };

@@ -35,16 +35,16 @@ Ask Claude to help you work with Bgp Route resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create bgp_route -n <namespace> -i bgp_route.yaml
+f5xcctl networking create bgp_route -n <namespace> -i bgp_route.yaml
 
 # Get
-f5xcctl configuration get bgp_route -n <namespace> <name>
+f5xcctl networking get bgp_route <name> -n <namespace>
 
 # List
-f5xcctl configuration list bgp_route -n <namespace>
+f5xcctl networking list bgp_route -n <namespace>
 
 # Delete
-f5xcctl configuration delete bgp_route -n <namespace> <name>
+f5xcctl networking delete bgp_route <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Get Public Key resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create get_public_key -n <namespace> -i get_public_key.yaml
+f5xcctl security create get_public_key -n <namespace> -i get_public_key.yaml
 
 # Get
-f5xcctl configuration get get_public_key -n <namespace> <name>
+f5xcctl security get get_public_key <name> -n <namespace>
 
 # List
-f5xcctl configuration list get_public_key -n <namespace>
+f5xcctl security list get_public_key -n <namespace>
 
 # Delete
-f5xcctl configuration delete get_public_key -n <namespace> <name>
+f5xcctl security delete get_public_key <name> -n <namespace>
 ```
 
 ## Terraform Resource

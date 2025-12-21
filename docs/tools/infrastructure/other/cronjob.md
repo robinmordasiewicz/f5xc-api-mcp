@@ -40,16 +40,16 @@ Ask Claude to help you work with Cronjob resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create cronjob -n <namespace> -i cronjob.yaml
+f5xcctl infrastructure create cronjob -n <namespace> -i cronjob.yaml
 
 # Get
-f5xcctl configuration get cronjob -n <namespace> <name>
+f5xcctl infrastructure get cronjob <name> -n <namespace>
 
 # List
-f5xcctl configuration list cronjob -n <namespace>
+f5xcctl infrastructure list cronjob -n <namespace>
 
 # Delete
-f5xcctl configuration delete cronjob -n <namespace> <name>
+f5xcctl infrastructure delete cronjob <name> -n <namespace>
 ```
 
 ## Terraform Resource

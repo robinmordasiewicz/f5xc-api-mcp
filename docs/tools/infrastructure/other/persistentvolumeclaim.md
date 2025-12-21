@@ -35,16 +35,16 @@ Ask Claude to help you work with Persistentvolumeclaim resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create persistentvolumeclaim -n <namespace> -i persistentvolumeclaim.yaml
+f5xcctl infrastructure create persistentvolumeclaim -n <namespace> -i persistentvolumeclaim.yaml
 
 # Get
-f5xcctl configuration get persistentvolumeclaim -n <namespace> <name>
+f5xcctl infrastructure get persistentvolumeclaim <name> -n <namespace>
 
 # List
-f5xcctl configuration list persistentvolumeclaim -n <namespace>
+f5xcctl infrastructure list persistentvolumeclaim -n <namespace>
 
 # Delete
-f5xcctl configuration delete persistentvolumeclaim -n <namespace> <name>
+f5xcctl infrastructure delete persistentvolumeclaim <name> -n <namespace>
 ```
 
 ## Terraform Resource

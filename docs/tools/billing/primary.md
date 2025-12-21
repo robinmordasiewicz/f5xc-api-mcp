@@ -36,16 +36,16 @@ Ask Claude to help you work with Primary resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create primary -n <namespace> -i primary.yaml
+f5xcctl billing create primary -n <namespace> -i primary.yaml
 
 # Get
-f5xcctl configuration get primary -n <namespace> <name>
+f5xcctl billing get primary <name> -n <namespace>
 
 # List
-f5xcctl configuration list primary -n <namespace>
+f5xcctl billing list primary -n <namespace>
 
 # Delete
-f5xcctl configuration delete primary -n <namespace> <name>
+f5xcctl billing delete primary <name> -n <namespace>
 ```
 
 ## Terraform Resource

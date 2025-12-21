@@ -34,16 +34,16 @@ Ask Claude to help you work with List Reports History Bot Defence resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create list_reports_history_bot_defence -n <namespace> -i list_reports_history_bot_defence.yaml
+f5xcctl observability create list_reports_history_bot_defence -n <namespace> -i list_reports_history_bot_defence.yaml
 
 # Get
-f5xcctl configuration get list_reports_history_bot_defence -n <namespace> <name>
+f5xcctl observability get list_reports_history_bot_defence <name> -n <namespace>
 
 # List
-f5xcctl configuration list list_reports_history_bot_defence -n <namespace>
+f5xcctl observability list list_reports_history_bot_defence -n <namespace>
 
 # Delete
-f5xcctl configuration delete list_reports_history_bot_defence -n <namespace> <name>
+f5xcctl observability delete list_reports_history_bot_defence <name> -n <namespace>
 ```
 
 ## Terraform Resource

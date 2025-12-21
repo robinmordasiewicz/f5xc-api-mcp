@@ -40,16 +40,16 @@ Ask Claude to help you work with Get Schema Update resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create get_schema_update -n <namespace> -i get_schema_update.yaml
+f5xcctl load_balancer create get_schema_update -n <namespace> -i get_schema_update.yaml
 
 # Get
-f5xcctl configuration get get_schema_update -n <namespace> <name>
+f5xcctl load_balancer get get_schema_update <name> -n <namespace>
 
 # List
-f5xcctl configuration list get_schema_update -n <namespace>
+f5xcctl load_balancer list get_schema_update -n <namespace>
 
 # Delete
-f5xcctl configuration delete get_schema_update -n <namespace> <name>
+f5xcctl load_balancer delete get_schema_update <name> -n <namespace>
 ```
 
 ## Terraform Resource

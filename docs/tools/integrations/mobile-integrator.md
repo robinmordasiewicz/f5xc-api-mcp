@@ -43,16 +43,16 @@ Ask Claude to help you work with Mobile Integrator resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create mobile_integrator -n <namespace> -i mobile_integrator.yaml
+f5xcctl integrations create mobile_integrator -n <namespace> -i mobile_integrator.yaml
 
 # Get
-f5xcctl configuration get mobile_integrator -n <namespace> <name>
+f5xcctl integrations get mobile_integrator <name> -n <namespace>
 
 # List
-f5xcctl configuration list mobile_integrator -n <namespace>
+f5xcctl integrations list mobile_integrator -n <namespace>
 
 # Delete
-f5xcctl configuration delete mobile_integrator -n <namespace> <name>
+f5xcctl integrations delete mobile_integrator <name> -n <namespace>
 ```
 
 ## Terraform Resource

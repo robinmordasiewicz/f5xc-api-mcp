@@ -58,16 +58,16 @@ Ask Claude to help you work with Proxy resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create proxy -n <namespace> -i proxy.yaml
+f5xcctl load_balancer create proxy -n <namespace> -i proxy.yaml
 
 # Get
-f5xcctl configuration get proxy -n <namespace> <name>
+f5xcctl load_balancer get proxy <name> -n <namespace>
 
 # List
-f5xcctl configuration list proxy -n <namespace>
+f5xcctl load_balancer list proxy -n <namespace>
 
 # Delete
-f5xcctl configuration delete proxy -n <namespace> <name>
+f5xcctl load_balancer delete proxy <name> -n <namespace>
 ```
 
 ## Terraform Resource

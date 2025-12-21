@@ -29,16 +29,16 @@ Ask Claude to help you work with Admin Reset resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create admin_reset -n <namespace> -i admin_reset.yaml
+f5xcctl identity create admin_reset -n <namespace> -i admin_reset.yaml
 
 # Get
-f5xcctl configuration get admin_reset -n <namespace> <name>
+f5xcctl identity get admin_reset <name> -n <namespace>
 
 # List
-f5xcctl configuration list admin_reset -n <namespace>
+f5xcctl identity list admin_reset -n <namespace>
 
 # Delete
-f5xcctl configuration delete admin_reset -n <namespace> <name>
+f5xcctl identity delete admin_reset <name> -n <namespace>
 ```
 
 ## Terraform Resource

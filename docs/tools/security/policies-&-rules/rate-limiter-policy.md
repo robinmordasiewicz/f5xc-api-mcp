@@ -58,16 +58,16 @@ Ask Claude to help you work with Rate Limiter Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create rate_limiter_policy -n <namespace> -i rate_limiter_policy.yaml
+f5xcctl security create rate_limiter_policy -n <namespace> -i rate_limiter_policy.yaml
 
 # Get
-f5xcctl configuration get rate_limiter_policy -n <namespace> <name>
+f5xcctl security get rate_limiter_policy <name> -n <namespace>
 
 # List
-f5xcctl configuration list rate_limiter_policy -n <namespace>
+f5xcctl security list rate_limiter_policy -n <namespace>
 
 # Delete
-f5xcctl configuration delete rate_limiter_policy -n <namespace> <name>
+f5xcctl security delete rate_limiter_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

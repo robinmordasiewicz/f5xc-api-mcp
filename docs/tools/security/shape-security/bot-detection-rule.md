@@ -54,16 +54,16 @@ Ask Claude to help you work with Bot Detection Rule resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create bot_detection_rule -n <namespace> -i bot_detection_rule.yaml
+f5xcctl security create bot_detection_rule -n <namespace> -i bot_detection_rule.yaml
 
 # Get
-f5xcctl configuration get bot_detection_rule -n <namespace> <name>
+f5xcctl security get bot_detection_rule <name> -n <namespace>
 
 # List
-f5xcctl configuration list bot_detection_rule -n <namespace>
+f5xcctl security list bot_detection_rule -n <namespace>
 
 # Delete
-f5xcctl configuration delete bot_detection_rule -n <namespace> <name>
+f5xcctl security delete bot_detection_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

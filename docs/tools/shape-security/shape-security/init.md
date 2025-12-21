@@ -26,16 +26,16 @@ Ask Claude to help you work with Init resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create init -n <namespace> -i init.yaml
+f5xcctl shape_security create init -n <namespace> -i init.yaml
 
 # Get
-f5xcctl configuration get init -n <namespace> <name>
+f5xcctl shape_security get init <name> -n <namespace>
 
 # List
-f5xcctl configuration list init -n <namespace>
+f5xcctl shape_security list init -n <namespace>
 
 # Delete
-f5xcctl configuration delete init -n <namespace> <name>
+f5xcctl shape_security delete init <name> -n <namespace>
 ```
 
 ## Terraform Resource

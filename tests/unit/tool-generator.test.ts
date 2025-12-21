@@ -1342,6 +1342,7 @@ describe("tool-generator", () => {
         const operation = createMockParsedOperation({
           operation: "list",
           resource: "http-loadbalancer",
+          domain: "load_balancer",
         });
 
         registerTool(
@@ -1358,7 +1359,7 @@ describe("tool-generator", () => {
         const result = await handler({});
 
         const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl get http_loadbalancers -n {namespace}");
+        expect(response.f5xcctlCommand).toBe("f5xcctl load_balancer list http_loadbalancer -n {namespace}");
       });
 
       it("should generate get command", async () => {
@@ -1367,6 +1368,7 @@ describe("tool-generator", () => {
         const operation = createMockParsedOperation({
           operation: "get",
           resource: "http-loadbalancer",
+          domain: "load_balancer",
         });
 
         registerTool(
@@ -1383,7 +1385,7 @@ describe("tool-generator", () => {
         const result = await handler({});
 
         const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl get http_loadbalancer {name} -n {namespace}");
+        expect(response.f5xcctlCommand).toBe("f5xcctl load_balancer get http_loadbalancer {name} -n {namespace}");
       });
 
       it("should generate delete command", async () => {
@@ -1392,6 +1394,7 @@ describe("tool-generator", () => {
         const operation = createMockParsedOperation({
           operation: "delete",
           resource: "http-loadbalancer",
+          domain: "load_balancer",
         });
 
         registerTool(
@@ -1408,7 +1411,7 @@ describe("tool-generator", () => {
         const result = await handler({});
 
         const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl delete http_loadbalancer {name} -n {namespace}");
+        expect(response.f5xcctlCommand).toBe("f5xcctl load_balancer delete http_loadbalancer {name} -n {namespace}");
       });
 
       it("should generate default command for unknown operations", async () => {
@@ -1433,7 +1436,7 @@ describe("tool-generator", () => {
         const result = await handler({});
 
         const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl custom test");
+        expect(response.f5xcctlCommand).toBe("f5xcctl core custom test");
       });
 
       it("should generate create command for create operations", async () => {
@@ -1442,6 +1445,7 @@ describe("tool-generator", () => {
         const operation = createMockParsedOperation({
           operation: "create",
           resource: "http-loadbalancer",
+          domain: "load_balancer",
         });
 
         registerTool(
@@ -1458,7 +1462,7 @@ describe("tool-generator", () => {
         const result = await handler({});
 
         const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl apply -f http_loadbalancer.yaml");
+        expect(response.f5xcctlCommand).toBe("f5xcctl load_balancer create http_loadbalancer -n {namespace} -i http_loadbalancer.yaml");
       });
 
       it("should generate update command for update operations", async () => {
@@ -1467,6 +1471,7 @@ describe("tool-generator", () => {
         const operation = createMockParsedOperation({
           operation: "update",
           resource: "http-loadbalancer",
+          domain: "load_balancer",
         });
 
         registerTool(
@@ -1483,7 +1488,7 @@ describe("tool-generator", () => {
         const result = await handler({});
 
         const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl apply -f http_loadbalancer.yaml");
+        expect(response.f5xcctlCommand).toBe("f5xcctl load_balancer apply http_loadbalancer -n {namespace} -i http_loadbalancer.yaml");
       });
     });
 

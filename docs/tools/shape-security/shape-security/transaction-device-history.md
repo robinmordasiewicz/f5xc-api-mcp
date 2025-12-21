@@ -34,16 +34,16 @@ Ask Claude to help you work with Transaction Device History resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create transaction_device_history -n <namespace> -i transaction_device_history.yaml
+f5xcctl shape_security create transaction_device_history -n <namespace> -i transaction_device_history.yaml
 
 # Get
-f5xcctl configuration get transaction_device_history -n <namespace> <name>
+f5xcctl shape_security get transaction_device_history <name> -n <namespace>
 
 # List
-f5xcctl configuration list transaction_device_history -n <namespace>
+f5xcctl shape_security list transaction_device_history -n <namespace>
 
 # Delete
-f5xcctl configuration delete transaction_device_history -n <namespace> <name>
+f5xcctl shape_security delete transaction_device_history <name> -n <namespace>
 ```
 
 ## Terraform Resource

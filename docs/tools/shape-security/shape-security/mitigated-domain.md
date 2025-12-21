@@ -56,16 +56,16 @@ Ask Claude to help you work with Mitigated Domain resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create mitigated_domain -n <namespace> -i mitigated_domain.yaml
+f5xcctl shape_security create mitigated_domain -n <namespace> -i mitigated_domain.yaml
 
 # Get
-f5xcctl configuration get mitigated_domain -n <namespace> <name>
+f5xcctl shape_security get mitigated_domain <name> -n <namespace>
 
 # List
-f5xcctl configuration list mitigated_domain -n <namespace>
+f5xcctl shape_security list mitigated_domain -n <namespace>
 
 # Delete
-f5xcctl configuration delete mitigated_domain -n <namespace> <name>
+f5xcctl shape_security delete mitigated_domain <name> -n <namespace>
 ```
 
 ## Terraform Resource

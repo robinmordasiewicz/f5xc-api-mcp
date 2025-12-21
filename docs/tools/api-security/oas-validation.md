@@ -34,16 +34,16 @@ Ask Claude to help you work with Oas Validation resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create oas_validation -n <namespace> -i oas_validation.yaml
+f5xcctl api_security create oas_validation -n <namespace> -i oas_validation.yaml
 
 # Get
-f5xcctl configuration get oas_validation -n <namespace> <name>
+f5xcctl api_security get oas_validation <name> -n <namespace>
 
 # List
-f5xcctl configuration list oas_validation -n <namespace>
+f5xcctl api_security list oas_validation -n <namespace>
 
 # Delete
-f5xcctl configuration delete oas_validation -n <namespace> <name>
+f5xcctl api_security delete oas_validation <name> -n <namespace>
 ```
 
 ## Terraform Resource

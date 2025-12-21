@@ -58,16 +58,16 @@ Ask Claude to help you work with Authentication resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create authentication -n <namespace> -i authentication.yaml
+f5xcctl identity create authentication -n <namespace> -i authentication.yaml
 
 # Get
-f5xcctl configuration get authentication -n <namespace> <name>
+f5xcctl identity get authentication <name> -n <namespace>
 
 # List
-f5xcctl configuration list authentication -n <namespace>
+f5xcctl identity list authentication -n <namespace>
 
 # Delete
-f5xcctl configuration delete authentication -n <namespace> <name>
+f5xcctl identity delete authentication <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -41,16 +41,16 @@ Ask Claude to help you work with Infraprotect Information resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create infraprotect_information -n <namespace> -i infraprotect_information.yaml
+f5xcctl infrastructure_protection create infraprotect_information -n <namespace> -i infraprotect_information.yaml
 
 # Get
-f5xcctl configuration get infraprotect_information -n <namespace> <name>
+f5xcctl infrastructure_protection get infraprotect_information <name> -n <namespace>
 
 # List
-f5xcctl configuration list infraprotect_information -n <namespace>
+f5xcctl infrastructure_protection list infraprotect_information -n <namespace>
 
 # Delete
-f5xcctl configuration delete infraprotect_information -n <namespace> <name>
+f5xcctl infrastructure_protection delete infraprotect_information <name> -n <namespace>
 ```
 
 ## Terraform Resource

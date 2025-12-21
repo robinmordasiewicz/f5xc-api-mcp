@@ -34,16 +34,16 @@ Ask Claude to help you work with Summary resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create summary -n <namespace> -i summary.yaml
+f5xcctl tenant_management create summary -n <namespace> -i summary.yaml
 
 # Get
-f5xcctl configuration get summary -n <namespace> <name>
+f5xcctl tenant_management get summary <name> -n <namespace>
 
 # List
-f5xcctl configuration list summary -n <namespace>
+f5xcctl tenant_management list summary -n <namespace>
 
 # Delete
-f5xcctl configuration delete summary -n <namespace> <name>
+f5xcctl tenant_management delete summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

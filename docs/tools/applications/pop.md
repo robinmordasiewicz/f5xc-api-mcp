@@ -35,16 +35,16 @@ Ask Claude to help you work with Pop resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create pop -n <namespace> -i pop.yaml
+f5xcctl applications create pop -n <namespace> -i pop.yaml
 
 # Get
-f5xcctl configuration get pop -n <namespace> <name>
+f5xcctl applications get pop <name> -n <namespace>
 
 # List
-f5xcctl configuration list pop -n <namespace>
+f5xcctl applications list pop -n <namespace>
 
 # Delete
-f5xcctl configuration delete pop -n <namespace> <name>
+f5xcctl applications delete pop <name> -n <namespace>
 ```
 
 ## Terraform Resource

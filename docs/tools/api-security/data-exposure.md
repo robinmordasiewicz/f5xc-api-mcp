@@ -34,16 +34,16 @@ Ask Claude to help you work with Data Exposure resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create data_exposure -n <namespace> -i data_exposure.yaml
+f5xcctl api_security create data_exposure -n <namespace> -i data_exposure.yaml
 
 # Get
-f5xcctl configuration get data_exposure -n <namespace> <name>
+f5xcctl api_security get data_exposure <name> -n <namespace>
 
 # List
-f5xcctl configuration list data_exposure -n <namespace>
+f5xcctl api_security list data_exposure -n <namespace>
 
 # Delete
-f5xcctl configuration delete data_exposure -n <namespace> <name>
+f5xcctl api_security delete data_exposure <name> -n <namespace>
 ```
 
 ## Terraform Resource

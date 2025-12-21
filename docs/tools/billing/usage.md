@@ -34,16 +34,16 @@ Ask Claude to help you work with Usage resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create usage -n <namespace> -i usage.yaml
+f5xcctl billing create usage -n <namespace> -i usage.yaml
 
 # Get
-f5xcctl configuration get usage -n <namespace> <name>
+f5xcctl billing get usage <name> -n <namespace>
 
 # List
-f5xcctl configuration list usage -n <namespace>
+f5xcctl billing list usage -n <namespace>
 
 # Delete
-f5xcctl configuration delete usage -n <namespace> <name>
+f5xcctl billing delete usage <name> -n <namespace>
 ```
 
 ## Terraform Resource

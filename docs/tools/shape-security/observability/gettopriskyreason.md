@@ -26,16 +26,16 @@ Ask Claude to help you work with Gettopriskyreason resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create gettopriskyreason -n <namespace> -i gettopriskyreason.yaml
+f5xcctl shape_security create gettopriskyreason -n <namespace> -i gettopriskyreason.yaml
 
 # Get
-f5xcctl configuration get gettopriskyreason -n <namespace> <name>
+f5xcctl shape_security get gettopriskyreason <name> -n <namespace>
 
 # List
-f5xcctl configuration list gettopriskyreason -n <namespace>
+f5xcctl shape_security list gettopriskyreason -n <namespace>
 
 # Delete
-f5xcctl configuration delete gettopriskyreason -n <namespace> <name>
+f5xcctl shape_security delete gettopriskyreason <name> -n <namespace>
 ```
 
 ## Terraform Resource

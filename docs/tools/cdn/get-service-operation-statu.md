@@ -34,16 +34,16 @@ Ask Claude to help you work with Get Service Operation Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create get_service_operation_statu -n <namespace> -i get_service_operation_statu.yaml
+f5xcctl cdn create get_service_operation_statu -n <namespace> -i get_service_operation_statu.yaml
 
 # Get
-f5xcctl configuration get get_service_operation_statu -n <namespace> <name>
+f5xcctl cdn get get_service_operation_statu <name> -n <namespace>
 
 # List
-f5xcctl configuration list get_service_operation_statu -n <namespace>
+f5xcctl cdn list get_service_operation_statu -n <namespace>
 
 # Delete
-f5xcctl configuration delete get_service_operation_statu -n <namespace> <name>
+f5xcctl cdn delete get_service_operation_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

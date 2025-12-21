@@ -26,16 +26,16 @@ Ask Claude to help you work with Tenant Escalation Doc resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create tenant_escalation_doc -n <namespace> -i tenant_escalation_doc.yaml
+f5xcctl tenant_management create tenant_escalation_doc -n <namespace> -i tenant_escalation_doc.yaml
 
 # Get
-f5xcctl configuration get tenant_escalation_doc -n <namespace> <name>
+f5xcctl tenant_management get tenant_escalation_doc <name> -n <namespace>
 
 # List
-f5xcctl configuration list tenant_escalation_doc -n <namespace>
+f5xcctl tenant_management list tenant_escalation_doc -n <namespace>
 
 # Delete
-f5xcctl configuration delete tenant_escalation_doc -n <namespace> <name>
+f5xcctl tenant_management delete tenant_escalation_doc <name> -n <namespace>
 ```
 
 ## Terraform Resource

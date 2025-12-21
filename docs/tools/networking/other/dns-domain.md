@@ -58,16 +58,16 @@ Ask Claude to help you work with DNS Domain resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create dns_domain -n <namespace> -i dns_domain.yaml
+f5xcctl networking create dns_domain -n <namespace> -i dns_domain.yaml
 
 # Get
-f5xcctl configuration get dns_domain -n <namespace> <name>
+f5xcctl networking get dns_domain <name> -n <namespace>
 
 # List
-f5xcctl configuration list dns_domain -n <namespace>
+f5xcctl networking list dns_domain -n <namespace>
 
 # Delete
-f5xcctl configuration delete dns_domain -n <namespace> <name>
+f5xcctl networking delete dns_domain <name> -n <namespace>
 ```
 
 ## Terraform Resource

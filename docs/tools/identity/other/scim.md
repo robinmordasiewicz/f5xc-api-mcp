@@ -31,16 +31,16 @@ Ask Claude to help you work with Scim resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create scim -n <namespace> -i scim.yaml
+f5xcctl identity create scim -n <namespace> -i scim.yaml
 
 # Get
-f5xcctl configuration get scim -n <namespace> <name>
+f5xcctl identity get scim <name> -n <namespace>
 
 # List
-f5xcctl configuration list scim -n <namespace>
+f5xcctl identity list scim -n <namespace>
 
 # Delete
-f5xcctl configuration delete scim -n <namespace> <name>
+f5xcctl identity delete scim <name> -n <namespace>
 ```
 
 ## Terraform Resource

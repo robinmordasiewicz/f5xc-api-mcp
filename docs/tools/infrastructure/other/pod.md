@@ -35,16 +35,16 @@ Ask Claude to help you work with Pod resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create pod -n <namespace> -i pod.yaml
+f5xcctl infrastructure create pod -n <namespace> -i pod.yaml
 
 # Get
-f5xcctl configuration get pod -n <namespace> <name>
+f5xcctl infrastructure get pod <name> -n <namespace>
 
 # List
-f5xcctl configuration list pod -n <namespace>
+f5xcctl infrastructure list pod -n <namespace>
 
 # Delete
-f5xcctl configuration delete pod -n <namespace> <name>
+f5xcctl infrastructure delete pod <name> -n <namespace>
 ```
 
 ## Terraform Resource

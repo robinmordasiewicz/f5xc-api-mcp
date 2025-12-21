@@ -34,16 +34,16 @@ Ask Claude to help you work with Create resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create create -n <namespace> -i create.yaml
+f5xcctl config create create -n <namespace> -i create.yaml
 
 # Get
-f5xcctl configuration get create -n <namespace> <name>
+f5xcctl config get create <name> -n <namespace>
 
 # List
-f5xcctl configuration list create -n <namespace>
+f5xcctl config list create -n <namespace>
 
 # Delete
-f5xcctl configuration delete create -n <namespace> <name>
+f5xcctl config delete create <name> -n <namespace>
 ```
 
 ## Terraform Resource

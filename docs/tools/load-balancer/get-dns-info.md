@@ -35,16 +35,16 @@ Ask Claude to help you work with Get DNS Info resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create get_dns_info -n <namespace> -i get_dns_info.yaml
+f5xcctl load_balancer create get_dns_info -n <namespace> -i get_dns_info.yaml
 
 # Get
-f5xcctl configuration get get_dns_info -n <namespace> <name>
+f5xcctl load_balancer get get_dns_info <name> -n <namespace>
 
 # List
-f5xcctl configuration list get_dns_info -n <namespace>
+f5xcctl load_balancer list get_dns_info -n <namespace>
 
 # Delete
-f5xcctl configuration delete get_dns_info -n <namespace> <name>
+f5xcctl load_balancer delete get_dns_info <name> -n <namespace>
 ```
 
 ## Terraform Resource

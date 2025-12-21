@@ -26,16 +26,16 @@ Ask Claude to help you work with Flow Collection resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create flow_collection -n <namespace> -i flow_collection.yaml
+f5xcctl observability create flow_collection -n <namespace> -i flow_collection.yaml
 
 # Get
-f5xcctl configuration get flow_collection -n <namespace> <name>
+f5xcctl observability get flow_collection <name> -n <namespace>
 
 # List
-f5xcctl configuration list flow_collection -n <namespace>
+f5xcctl observability list flow_collection -n <namespace>
 
 # Delete
-f5xcctl configuration delete flow_collection -n <namespace> <name>
+f5xcctl observability delete flow_collection <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -35,16 +35,16 @@ Ask Claude to help you work with Upgradable Sw Version resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create upgradable_sw_version -n <namespace> -i upgradable_sw_version.yaml
+f5xcctl infrastructure create upgradable_sw_version -n <namespace> -i upgradable_sw_version.yaml
 
 # Get
-f5xcctl configuration get upgradable_sw_version -n <namespace> <name>
+f5xcctl infrastructure get upgradable_sw_version <name> -n <namespace>
 
 # List
-f5xcctl configuration list upgradable_sw_version -n <namespace>
+f5xcctl infrastructure list upgradable_sw_version -n <namespace>
 
 # Delete
-f5xcctl configuration delete upgradable_sw_version -n <namespace> <name>
+f5xcctl infrastructure delete upgradable_sw_version <name> -n <namespace>
 ```
 
 ## Terraform Resource

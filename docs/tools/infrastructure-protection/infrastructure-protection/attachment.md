@@ -37,16 +37,16 @@ Ask Claude to help you work with Attachment resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create attachment -n <namespace> -i attachment.yaml
+f5xcctl infrastructure_protection create attachment -n <namespace> -i attachment.yaml
 
 # Get
-f5xcctl configuration get attachment -n <namespace> <name>
+f5xcctl infrastructure_protection get attachment <name> -n <namespace>
 
 # List
-f5xcctl configuration list attachment -n <namespace>
+f5xcctl infrastructure_protection list attachment -n <namespace>
 
 # Delete
-f5xcctl configuration delete attachment -n <namespace> <name>
+f5xcctl infrastructure_protection delete attachment <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -59,16 +59,16 @@ Ask Claude to help you work with Advertise Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create advertise_policy -n <namespace> -i advertise_policy.yaml
+f5xcctl networking create advertise_policy -n <namespace> -i advertise_policy.yaml
 
 # Get
-f5xcctl configuration get advertise_policy -n <namespace> <name>
+f5xcctl networking get advertise_policy <name> -n <namespace>
 
 # List
-f5xcctl configuration list advertise_policy -n <namespace>
+f5xcctl networking list advertise_policy -n <namespace>
 
 # Delete
-f5xcctl configuration delete advertise_policy -n <namespace> <name>
+f5xcctl networking delete advertise_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

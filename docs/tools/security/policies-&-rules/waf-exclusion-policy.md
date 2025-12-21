@@ -58,16 +58,16 @@ Ask Claude to help you work with WAF Exclusion Policy resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create waf_exclusion_policy -n <namespace> -i waf_exclusion_policy.yaml
+f5xcctl security create waf_exclusion_policy -n <namespace> -i waf_exclusion_policy.yaml
 
 # Get
-f5xcctl configuration get waf_exclusion_policy -n <namespace> <name>
+f5xcctl security get waf_exclusion_policy <name> -n <namespace>
 
 # List
-f5xcctl configuration list waf_exclusion_policy -n <namespace>
+f5xcctl security list waf_exclusion_policy -n <namespace>
 
 # Delete
-f5xcctl configuration delete waf_exclusion_policy -n <namespace> <name>
+f5xcctl security delete waf_exclusion_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

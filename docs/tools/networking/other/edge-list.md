@@ -26,16 +26,16 @@ Ask Claude to help you work with Edge List resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create edge_list -n <namespace> -i edge_list.yaml
+f5xcctl networking create edge_list -n <namespace> -i edge_list.yaml
 
 # Get
-f5xcctl configuration get edge_list -n <namespace> <name>
+f5xcctl networking get edge_list <name> -n <namespace>
 
 # List
-f5xcctl configuration list edge_list -n <namespace>
+f5xcctl networking list edge_list -n <namespace>
 
 # Delete
-f5xcctl configuration delete edge_list -n <namespace> <name>
+f5xcctl networking delete edge_list <name> -n <namespace>
 ```
 
 ## Terraform Resource

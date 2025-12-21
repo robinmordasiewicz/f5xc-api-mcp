@@ -36,16 +36,16 @@ Ask Claude to help you work with Payment Method resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create payment_method -n <namespace> -i payment_method.yaml
+f5xcctl billing create payment_method -n <namespace> -i payment_method.yaml
 
 # Get
-f5xcctl configuration get payment_method -n <namespace> <name>
+f5xcctl billing get payment_method <name> -n <namespace>
 
 # List
-f5xcctl configuration list payment_method -n <namespace>
+f5xcctl billing list payment_method -n <namespace>
 
 # Delete
-f5xcctl configuration delete payment_method -n <namespace> <name>
+f5xcctl billing delete payment_method <name> -n <namespace>
 ```
 
 ## Terraform Resource

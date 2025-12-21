@@ -35,16 +35,16 @@ Ask Claude to help you work with Monthly Usage resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create monthly_usage -n <namespace> -i monthly_usage.yaml
+f5xcctl billing create monthly_usage -n <namespace> -i monthly_usage.yaml
 
 # Get
-f5xcctl configuration get monthly_usage -n <namespace> <name>
+f5xcctl billing get monthly_usage <name> -n <namespace>
 
 # List
-f5xcctl configuration list monthly_usage -n <namespace>
+f5xcctl billing list monthly_usage -n <namespace>
 
 # Delete
-f5xcctl configuration delete monthly_usage -n <namespace> <name>
+f5xcctl billing delete monthly_usage <name> -n <namespace>
 ```
 
 ## Terraform Resource

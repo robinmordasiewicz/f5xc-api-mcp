@@ -34,16 +34,16 @@ Ask Claude to help you work with Connectivity resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create connectivity -n <namespace> -i connectivity.yaml
+f5xcctl observability create connectivity -n <namespace> -i connectivity.yaml
 
 # Get
-f5xcctl configuration get connectivity -n <namespace> <name>
+f5xcctl observability get connectivity <name> -n <namespace>
 
 # List
-f5xcctl configuration list connectivity -n <namespace>
+f5xcctl observability list connectivity -n <namespace>
 
 # Delete
-f5xcctl configuration delete connectivity -n <namespace> <name>
+f5xcctl observability delete connectivity <name> -n <namespace>
 ```
 
 ## Terraform Resource

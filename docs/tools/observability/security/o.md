@@ -34,16 +34,16 @@ Ask Claude to help you work with O resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create o -n <namespace> -i o.yaml
+f5xcctl observability create o -n <namespace> -i o.yaml
 
 # Get
-f5xcctl configuration get o -n <namespace> <name>
+f5xcctl observability get o <name> -n <namespace>
 
 # List
-f5xcctl configuration list o -n <namespace>
+f5xcctl observability list o -n <namespace>
 
 # Delete
-f5xcctl configuration delete o -n <namespace> <name>
+f5xcctl observability delete o <name> -n <namespace>
 ```
 
 ## Terraform Resource

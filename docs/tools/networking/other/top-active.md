@@ -35,16 +35,16 @@ Ask Claude to help you work with Top Active resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create top_active -n <namespace> -i top_active.yaml
+f5xcctl networking create top_active -n <namespace> -i top_active.yaml
 
 # Get
-f5xcctl configuration get top_active -n <namespace> <name>
+f5xcctl networking get top_active <name> -n <namespace>
 
 # List
-f5xcctl configuration list top_active -n <namespace>
+f5xcctl networking list top_active -n <namespace>
 
 # Delete
-f5xcctl configuration delete top_active -n <namespace> <name>
+f5xcctl networking delete top_active <name> -n <namespace>
 ```
 
 ## Terraform Resource

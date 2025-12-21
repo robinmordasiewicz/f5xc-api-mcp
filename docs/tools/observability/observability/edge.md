@@ -36,16 +36,16 @@ Ask Claude to help you work with Edge resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create edge -n <namespace> -i edge.yaml
+f5xcctl observability create edge -n <namespace> -i edge.yaml
 
 # Get
-f5xcctl configuration get edge -n <namespace> <name>
+f5xcctl observability get edge <name> -n <namespace>
 
 # List
-f5xcctl configuration list edge -n <namespace>
+f5xcctl observability list edge -n <namespace>
 
 # Delete
-f5xcctl configuration delete edge -n <namespace> <name>
+f5xcctl observability delete edge <name> -n <namespace>
 ```
 
 ## Terraform Resource

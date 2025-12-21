@@ -34,16 +34,16 @@ Ask Claude to help you work with Update Asn Prefix Review Statu resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create update_asn_prefix_review_statu -n <namespace> -i update_asn_prefix_review_statu.yaml
+f5xcctl infrastructure_protection create update_asn_prefix_review_statu -n <namespace> -i update_asn_prefix_review_statu.yaml
 
 # Get
-f5xcctl configuration get update_asn_prefix_review_statu -n <namespace> <name>
+f5xcctl infrastructure_protection get update_asn_prefix_review_statu <name> -n <namespace>
 
 # List
-f5xcctl configuration list update_asn_prefix_review_statu -n <namespace>
+f5xcctl infrastructure_protection list update_asn_prefix_review_statu -n <namespace>
 
 # Delete
-f5xcctl configuration delete update_asn_prefix_review_statu -n <namespace> <name>
+f5xcctl infrastructure_protection delete update_asn_prefix_review_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

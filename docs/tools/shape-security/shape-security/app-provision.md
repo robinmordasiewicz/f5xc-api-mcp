@@ -26,16 +26,16 @@ Ask Claude to help you work with App Provision resources:
 
 ```bash
 # Create/Update
-f5xcctl configuration create app_provision -n <namespace> -i app_provision.yaml
+f5xcctl shape_security create app_provision -n <namespace> -i app_provision.yaml
 
 # Get
-f5xcctl configuration get app_provision -n <namespace> <name>
+f5xcctl shape_security get app_provision <name> -n <namespace>
 
 # List
-f5xcctl configuration list app_provision -n <namespace>
+f5xcctl shape_security list app_provision -n <namespace>
 
 # Delete
-f5xcctl configuration delete app_provision -n <namespace> <name>
+f5xcctl shape_security delete app_provision <name> -n <namespace>
 ```
 
 ## Terraform Resource
