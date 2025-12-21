@@ -2,7 +2,8 @@
 
 ## Purpose
 
-F5 Distributed Cloud API MCP Server that exposes F5XC APIs to AI assistants via Model Context Protocol (Claude, VS Code, etc.)
+F5 Distributed Cloud API MCP Server that exposes F5XC APIs to AI assistants via
+Model Context Protocol (Claude, VS Code, etc.)
 
 ## Tech Stack
 

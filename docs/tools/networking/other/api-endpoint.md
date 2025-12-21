@@ -31,8 +31,8 @@ GET all autodiscovered API endpoints for Virtual Host.
 | `api_endpoint_info_request` | List of additional things that needs to be sent as part of the request |
 | `apiep_category` | Category of API endpoints. Can be DISCOVERED, INVENTORY or SHADOW API. |
 | `domains` | List of domains that needs to be sent as part of the request |
-| `end_time` | Format: unix_timestamp|RFC 3339 |
-| `start_time` | Format: unix_timestamp|RFC 3339 |
+| `end_time` | Format: `unix_timestamp` or `RFC 3339` |
+| `start_time` | Format: `unix_timestamp` or `RFC 3339` |
 
 ## Example Usage
 

@@ -5,6 +5,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { F5XCApiServer, createServer, ServerConfig } from "../../src/server.js";
 import { CredentialManager, AuthMode } from "../../src/auth/credential-manager.js";
+import { isCI, createEmptyConfigManager } from "../../tests/utils/ci-environment.js";
 
 // Mock dependencies
 vi.mock("../../src/utils/logging.js", () => ({
@@ -110,6 +111,11 @@ describe("server", () => {
     delete process.env.F5XC_P12_FILE;
     delete process.env.F5XC_P12_PASSWORD;
     delete process.env.F5XC_PROFILE;
+
+    // In CI mode, prevent loading from config file by setting a non-existent profile
+    if (isCI()) {
+      process.env.F5XC_PROFILE = "__nonexistent__";
+    }
   });
 
   afterEach(() => {
@@ -170,7 +176,8 @@ describe("server", () => {
       });
 
       it("should not create HTTP client in documentation mode", () => {
-        const credentialManager = new CredentialManager();
+        const configManager = isCI() ? createEmptyConfigManager() : undefined;
+        const credentialManager = new CredentialManager(configManager as any);
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -284,7 +291,8 @@ describe("server", () => {
       });
 
       it("should execute server-info tool handler in documentation mode", async () => {
-        const credentialManager = new CredentialManager();
+        const configManager = isCI() ? createEmptyConfigManager() : undefined;
+        const credentialManager = new CredentialManager(configManager as any);
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -609,14 +617,16 @@ describe("server", () => {
 
   describe("createServer", () => {
     it("should create server with default configuration", () => {
-      const server = createServer();
+      const configManager = isCI() ? createEmptyConfigManager() : undefined;
+      const server = createServer(configManager as any);
 
       expect(server).toBeInstanceOf(F5XCApiServer);
       expect(server.getCredentialManager()).toBeInstanceOf(CredentialManager);
     });
 
     it("should create server in documentation mode without credentials", () => {
-      const server = createServer();
+      const configManager = isCI() ? createEmptyConfigManager() : undefined;
+      const server = createServer(configManager as any);
 
       expect(server.getCredentialManager().getAuthMode()).toBe(AuthMode.NONE);
     });

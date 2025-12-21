@@ -10,7 +10,8 @@ other MCP-compatible tools.
 ## Features
 
 - **1500+ API Tools** - Complete coverage of F5XC API operations across 23 enriched domains
-- **Domain-Based Documentation** - Tools organized by business domains with intelligent 2-level and 3-level hierarchical navigation
+- **Domain-Based Documentation** - Tools organized by domains with intelligent 2-level and
+  3-level hierarchical navigation
 - **Dual-Mode Operation** - Works without authentication (documentation mode) AND with authentication (execution mode)
 - **f5xcctl Integration** - Every response includes equivalent CLI commands
 - **Terraform Examples** - Every response includes Terraform HCL examples
@@ -264,13 +265,14 @@ Tools follow the naming pattern: `f5xc-api-{domain}-{resource}-{operation}`
 
 ## Documentation Structure
 
-The documentation site is automatically generated from enriched OpenAPI specifications and organized by domain with intelligent hierarchical navigation:
+The documentation site is automatically generated from enriched OpenAPI specifications
+and organized by domain with intelligent hierarchical navigation:
 
 ### Two-Level Navigation (Small Domains < 50 paths)
 
 Small domains use a simple 2-level structure: Domain → Resource
 
-```
+```yaml
 docs/tools/
 ├── vpn/
 │   ├── ipsec-gateway.md
@@ -286,7 +288,7 @@ Example: [VPN Tools](https://robinmordasiewicz.github.io/f5xc-api-mcp/tools/vpn/
 
 Large domains use a 3-level structure: Domain → Category (by OpenAPI tag) → Resource
 
-```
+```yaml
 docs/tools/
 ├── observability/
 │   ├── alerts-events/
@@ -300,6 +302,7 @@ docs/tools/
 ```
 
 **Large domains (>50 paths) using 3-level navigation:**
+
 - Monitoring & Observability (235 paths)
 - Networking (220 paths)
 - Security (210 paths)
@@ -323,6 +326,7 @@ mkdocs serve
 ```
 
 The generator automatically:
+
 - Converts domain titles from snake_case to display format (e.g., `load_balancer` → "Load Balancing")
 - Updates `mkdocs.yml` navigation without manual changes
 - Creates markdown files with API operation details and examples

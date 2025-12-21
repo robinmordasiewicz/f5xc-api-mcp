@@ -16,6 +16,7 @@ It implies such steps:
 - mark
 user as F5 Distributed Cloud managed
 - send update password email
+
 1) set admin roles in system,
 shared, * namespaces
 NOTE: previous roles (which was explicitly assigned to this user) will be
