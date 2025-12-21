@@ -257,7 +257,7 @@ export async function runSetupWizard(): Promise<void> {
         console.log(`   F5XC_API_URL: ${envCreds.apiUrl}`);
       }
       if (envCreds.apiToken) {
-        console.log(`   F5XC_API_TOKEN: ***${envCreds.apiToken.slice(-4)}`);
+        console.log(`   F5XC_API_TOKEN: ******* (configured)`);
       }
       if (envCreds.p12File) {
         console.log(`   F5XC_P12_FILE: ${envCreds.p12File}`);
