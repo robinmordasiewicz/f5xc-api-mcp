@@ -16,7 +16,7 @@ import { logger } from "../utils/logging.js";
 /**
  * Detected environment credentials
  */
-interface DetectedCredentials {
+export interface DetectedCredentials {
   hasCredentials: boolean;
   apiUrl?: string;
   apiToken?: string;
@@ -27,7 +27,7 @@ interface DetectedCredentials {
 /**
  * Detect existing environment variables
  */
-function detectEnvironmentCredentials(): DetectedCredentials {
+export function detectEnvironmentCredentials(): DetectedCredentials {
   const apiUrl = process.env[AUTH_ENV_VARS.API_URL];
   const apiToken = process.env[AUTH_ENV_VARS.API_TOKEN];
   const p12File = process.env[AUTH_ENV_VARS.P12_FILE];
@@ -66,7 +66,7 @@ async function prompt(rl: readline.Interface, question: string): Promise<string>
 /**
  * Validate profile name format
  */
-function validateProfileName(name: string): { valid: boolean; error?: string } {
+export function validateProfileName(name: string): { valid: boolean; error?: string } {
   if (!name) {
     return { valid: false, error: "Profile name cannot be empty" };
   }

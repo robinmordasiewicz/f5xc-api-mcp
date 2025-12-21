@@ -109,6 +109,7 @@ describe("server", () => {
     delete process.env.F5XC_API_TOKEN;
     delete process.env.F5XC_P12_FILE;
     delete process.env.F5XC_P12_PASSWORD;
+    delete process.env.F5XC_PROFILE;
   });
 
   afterEach(() => {
