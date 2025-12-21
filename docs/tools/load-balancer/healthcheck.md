@@ -1,0 +1,89 @@
+---
+page_title: f5xc_healthcheck - f5xc-api-mcp
+subcategory: Load Balancing
+description: Create Health Check.
+---
+
+# Healthcheck
+
+Healthcheck object defines method to determine if the given Endpoint is healthy.
+Single Healthcheck
+object can be referred to by one or many Cluster objects.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-loadbalancer-healthcheck-create` | Create Health Check. |
+| `f5xc-api-loadbalancer-healthcheck-get` | GET Health Check. |
+| `f5xc-api-loadbalancer-healthcheck-list` | List Health Check. |
+| `f5xc-api-loadbalancer-healthcheck-update` | Replace Health Check. |
+| `f5xc-api-loadbalancer-healthcheck-delete` | DELETE Health Check. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `metadata.namespace` | Namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
+
+### Query Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
+| `report_fields` | The report_fields parameter |
+| `report_status_fields` | The report_status_fields parameter |
+
+## Example Usage
+
+Ask Claude to help you work with Healthcheck resources:
+
+### Create Healthcheck
+
+> "Create a healthcheck named 'example' in the 'production' namespace"
+
+### List Healthchecks
+
+> "List all healthchecks in the 'production' namespace"
+
+### Get Healthcheck Details
+
+> "Get details of the healthcheck named 'example' in namespace 'production'"
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl configuration create healthcheck -n <namespace> -i healthcheck.yaml
+
+# Get
+f5xcctl configuration get healthcheck -n <namespace> <name>
+
+# List
+f5xcctl configuration list healthcheck -n <namespace>
+
+# Delete
+f5xcctl configuration delete healthcheck -n <namespace> <name>
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_healthcheck" "example" {
+  name      = "example-healthcheck"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

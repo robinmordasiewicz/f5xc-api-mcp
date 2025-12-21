@@ -1,18 +1,18 @@
 ---
 page_title: f5xc_api_endpoint_protection - f5xc-api-mcp
 subcategory: API Security
-description: Suggest API endpoint protection rule
+description: Suggest API endpoint protection rule.
 ---
 
 # API Endpoint Protection
 
-Suggest API endpoint protection rule for a given path
+Suggest API endpoint protection rule for a given path.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-api-endpoint-protection-create` | Suggest API endpoint protection rule |
+| `f5xc-api-apisecurity-api-endpoint-protection-create` | Suggest API endpoint protection rule. |
 
 ## Parameters
 

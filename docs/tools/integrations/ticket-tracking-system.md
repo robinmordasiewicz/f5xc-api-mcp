@@ -1,22 +1,22 @@
 ---
 page_title: f5xc_ticket_tracking_system - f5xc-api-mcp
 subcategory: Integrations
-description: Create Ticket Tracking System
+description: Create Ticket Tracking System.
 ---
 
 # Ticket Tracking System
 
-List the set of ticket_tracking_system in a namespace
+List the set of ticket_tracking_system in a namespace.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-ticket-tracking-system-create` | Create Ticket Tracking System |
-| `f5xc-api-core-ticket-tracking-system-get` | Get Ticket Tracking System |
-| `f5xc-api-core-ticket-tracking-system-list` | List Ticket Tracking System |
-| `f5xc-api-core-ticket-tracking-system-update` | Replace Ticket Tracking System |
-| `f5xc-api-core-ticket-tracking-system-delete` | Delete Ticket Tracking System |
+| `f5xc-api-integrations-ticket-tracking-system-create` | Create Ticket Tracking System. |
+| `f5xc-api-integrations-ticket-tracking-system-get` | GET Ticket Tracking System. |
+| `f5xc-api-integrations-ticket-tracking-system-list` | List Ticket Tracking System. |
+| `f5xc-api-integrations-ticket-tracking-system-update` | Replace Ticket Tracking System. |
+| `f5xc-api-integrations-ticket-tracking-system-delete` | DELETE Ticket Tracking System. |
 
 ## Parameters
 
@@ -24,17 +24,17 @@ List the set of ticket_tracking_system in a namespace
 
 | Parameter | Description |
 |-----------|-------------|
-| `metadata.namespace` | namespace |
-| `name` | name |
-| `namespace` | namespace |
-| `metadata.name` | name |
+| `metadata.namespace` | Namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

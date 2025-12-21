@@ -1,0 +1,64 @@
+---
+page_title: f5xc_registration_detail - f5xc-api-mcp
+subcategory: Subscriptions
+description: GET Registration Details.
+---
+
+# Registration Detail
+
+Use this API to to GET registration details (currently limited to email address and domain)
+associated with a specific asb_message object.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-subscriptions-registration-detail-list` | GET Registration Details. |
+
+## Parameters
+
+### Query Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `token` | The token contains the encrypted data, secured using an HMAC key. |
+
+## Example Usage
+
+Ask Claude to help you work with Registration Detail resources:
+
+### List Registration Details
+
+> "List all registration-details in the 'production' namespace"
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl configuration create registration_detail -n <namespace> -i registration_detail.yaml
+
+# Get
+f5xcctl configuration get registration_detail -n <namespace> <name>
+
+# List
+f5xcctl configuration list registration_detail -n <namespace>
+
+# Delete
+f5xcctl configuration delete registration_detail -n <namespace> <name>
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_registration_detail" "example" {
+  name      = "example-registration-detail"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

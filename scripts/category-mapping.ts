@@ -5,6 +5,15 @@
  * matching the structure used in Terraform provider and f5xcctl CLI.
  */
 
+import { readFileSync } from 'fs';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 /**
  * Subcategory definitions matching sister projects
  */
@@ -490,4 +499,223 @@ export function getAllUsedSubcategories(
     used.add(getSubcategory(tool.domain, tool.resource));
   }
   return Array.from(used).sort();
+}
+
+// ============================================================
+// Domain-Based Documentation Organization (Phase 1)
+// ============================================================
+
+/**
+ * Acronym handling for domain titles
+ */
+const DOMAIN_ACRONYMS = {
+  ai: 'AI',
+  api: 'API',
+  bigip: 'BIG-IP',
+  cdn: 'CDN',
+  dns: 'DNS',
+  http: 'HTTP',
+  ip: 'IP',
+  k8s: 'Kubernetes',
+  vpn: 'VPN',
+  waf: 'WAF'
+} as const;
+
+/**
+ * Special title overrides for domains
+ */
+const DOMAIN_TITLE_OVERRIDES: Record<string, string> = {
+  'ai_intelligence': 'AI Intelligence',
+  'api_security': 'API Security',
+  'bigip': 'BIG-IP Integration',
+  'infrastructure_protection': 'Infrastructure Protection',
+  'load_balancer': 'Load Balancing',
+  'service_mesh': 'Service Mesh',
+  'shape_security': 'Shape Security (Bot Defense)',
+  'tenant_management': 'Tenant & Organization Management'
+};
+
+/**
+ * Domain specification from enriched specs index
+ */
+export interface DomainSpec {
+  domain: string;
+  title: string;
+  description: string;
+  file: string;
+  path_count: number;
+  schema_count: number;
+}
+
+/**
+ * Subdivision threshold for three-level navigation
+ */
+const LARGE_DOMAIN_THRESHOLD = 50;
+
+/**
+ * Load domain specifications from specs/index.json
+ */
+function loadDomainSpecs(): DomainSpec[] {
+  const indexPath = join(__dirname, '..', 'specs', 'index.json');
+  const content = readFileSync(indexPath, 'utf-8');
+  const index = JSON.parse(content);
+  return index.specifications;
+}
+
+/**
+ * Get domain specification by name
+ */
+export function getDomainSpec(domain: string): DomainSpec | null {
+  const specs = loadDomainSpecs();
+  return specs.find(spec => spec.domain === domain) || null;
+}
+
+/**
+ * Check if domain requires three-level subdivision
+ */
+export function requiresSubdivision(domain: string): boolean {
+  const spec = getDomainSpec(domain);
+  return spec ? spec.path_count >= LARGE_DOMAIN_THRESHOLD : false;
+}
+
+/**
+ * Get all domain names from specs index
+ */
+export function getAllDomains(): string[] {
+  return loadDomainSpecs().map(spec => spec.domain);
+}
+
+/**
+ * Convert domain name to display-friendly title
+ */
+export function domainToTitle(domain: string): string {
+  // Check overrides first
+  if (domain in DOMAIN_TITLE_OVERRIDES) {
+    return DOMAIN_TITLE_OVERRIDES[domain];
+  }
+
+  // Split snake_case and convert to Title Case
+  return domain
+    .split('_')
+    .map(word => {
+      // Check if word is an acronym
+      if (word.toLowerCase() in DOMAIN_ACRONYMS) {
+        return DOMAIN_ACRONYMS[word.toLowerCase() as keyof typeof DOMAIN_ACRONYMS];
+      }
+      // Title case for normal words
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(' ');
+}
+
+/**
+ * Hierarchical category path for documentation organization
+ */
+export interface CategoryPath {
+  domain: string;              // 'observability'
+  domainTitle: string;         // 'Observability'
+  subdivision: string | null;  // 'Alerts & Events' or null
+  displayPath: string;         // 'Observability > Alerts & Events'
+  directoryPath: string;       // 'observability/alerts-events' or 'observability'
+}
+
+/**
+ * Convert string to kebab-case
+ */
+function kebabCase(str: string): string {
+  return str
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
+}
+
+/**
+ * Get subdivision for large domains based on tags and patterns
+ */
+export function getSubdivision(
+  domain: string,
+  resource: string,
+  tags: string[] = []
+): string | null {
+  if (!requiresSubdivision(domain)) {
+    return null;
+  }
+
+  // Use first tag if available and not "Other"
+  if (tags.length > 0 && tags[0] !== 'Other') {
+    return tags[0];
+  }
+
+  // Fallback to pattern-based subdivision
+  return getDomainSubdivision(domain, resource);
+}
+
+/**
+ * Domain-specific subdivision rules for poorly tagged domains
+ */
+function getDomainSubdivision(domain: string, resource: string): string {
+  const patterns: Record<string, Array<{pattern: RegExp, category: string}>> = {
+    observability: [
+      { pattern: /alert|event/i, category: 'Alerts & Events' },
+      { pattern: /log|audit/i, category: 'Logging' },
+      { pattern: /metric|stat/i, category: 'Metrics & Statistics' },
+      { pattern: /monitor|health/i, category: 'Monitoring' },
+    ],
+    networking: [
+      { pattern: /route|routing/i, category: 'Routing' },
+      { pattern: /firewall|security-group/i, category: 'Security' },
+      { pattern: /interface|network-interface/i, category: 'Interfaces' },
+    ],
+    security: [
+      { pattern: /policy|rule/i, category: 'Policies & Rules' },
+      { pattern: /waf|app-firewall/i, category: 'WAF' },
+      { pattern: /certificate|cert|tls|ssl/i, category: 'Certificates' },
+    ],
+    identity: [
+      { pattern: /user|account/i, category: 'Users' },
+      { pattern: /role|permission|rbac/i, category: 'Access Control' },
+      { pattern: /group|team/i, category: 'Groups' },
+    ],
+    infrastructure: [
+      { pattern: /cluster|node/i, category: 'Clusters & Nodes' },
+      { pattern: /site|location/i, category: 'Sites' },
+      { pattern: /vk8s|k8s|kubernetes/i, category: 'Kubernetes' },
+    ],
+    shape_security: [
+      { pattern: /bot|mitigation/i, category: 'Bot Defense' },
+      { pattern: /mobile/i, category: 'Mobile Security' },
+    ],
+  };
+
+  const domainPatterns = patterns[domain] || [];
+
+  for (const { pattern, category } of domainPatterns) {
+    if (pattern.test(resource)) {
+      return category;
+    }
+  }
+
+  return 'Other';
+}
+
+/**
+ * Get hierarchical category path for a resource
+ */
+export function getCategoryPath(
+  domain: string,
+  resource: string,
+  tags: string[] = []
+): CategoryPath {
+  const domainTitle = domainToTitle(domain);
+  const subdivision = getSubdivision(domain, resource, tags);
+
+  return {
+    domain,
+    domainTitle,
+    subdivision,
+    displayPath: subdivision ? `${domainTitle} > ${subdivision}` : domainTitle,
+    directoryPath: subdivision
+      ? `${kebabCase(domain)}/${kebabCase(subdivision)}`
+      : kebabCase(domain)
+  };
 }

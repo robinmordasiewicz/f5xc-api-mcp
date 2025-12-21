@@ -1,7 +1,7 @@
 ---
 page_title: f5xc_api_discovery - f5xc-api-mcp
 subcategory: API Security
-description: Create API Discovery
+description: Create API Discovery.
 ---
 
 # API Discovery
@@ -12,11 +12,11 @@ Replace api_discovery replaces an existing object in the storage backend for met
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-api-discovery-create` | Create API Discovery |
-| `f5xc-api-core-api-discovery-get` | Get API Discovery |
-| `f5xc-api-core-api-discovery-list` | List API Discovery |
-| `f5xc-api-core-api-discovery-update` | Replace API Discovery |
-| `f5xc-api-core-api-discovery-delete` | Delete API Discovery |
+| `f5xc-api-apisecurity-api-discovery-create` | Create API Discovery. |
+| `f5xc-api-apisecurity-api-discovery-get` | GET API Discovery. |
+| `f5xc-api-apisecurity-api-discovery-list` | List API Discovery. |
+| `f5xc-api-apisecurity-api-discovery-update` | Replace API Discovery. |
+| `f5xc-api-apisecurity-api-discovery-delete` | DELETE API Discovery. |
 
 ## Parameters
 
@@ -24,17 +24,17 @@ Replace api_discovery replaces an existing object in the storage backend for met
 
 | Parameter | Description |
 |-----------|-------------|
-| `metadata.namespace` | namespace |
-| `name` | name |
-| `namespace` | namespace |
-| `metadata.name` | name |
+| `metadata.namespace` | Namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

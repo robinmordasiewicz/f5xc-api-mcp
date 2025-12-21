@@ -1,0 +1,81 @@
+---
+page_title: f5xc_formField - f5xc-api-mcp
+subcategory: Shape Security (Bot Defense)
+description: List All Form Fields.
+---
+
+# FormField
+
+List form fields for all the scripts depending on start time and end time with GET method.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-shapesecurity-formfield-create` | List All Form Fields. |
+| `f5xc-api-shapesecurity-formfield-get` | GET Form Field. |
+| `f5xc-api-shapesecurity-formfield-list` | List All Form Fields with GET method. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `namespace` | Namespace |
+| `id` | ID |
+
+### Query Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `end_time` | X-required |
+| `start_time` | X-required |
+
+## Example Usage
+
+Ask Claude to help you work with FormField resources:
+
+### Create FormField
+
+> "Create a formField named 'example' in the 'production' namespace"
+
+### List FormFields
+
+> "List all formFields in the 'production' namespace"
+
+### Get FormField Details
+
+> "Get details of the formField named 'example' in namespace 'production'"
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl configuration create formField -n <namespace> -i formField.yaml
+
+# Get
+f5xcctl configuration get formField -n <namespace> <name>
+
+# List
+f5xcctl configuration list formField -n <namespace>
+
+# Delete
+f5xcctl configuration delete formField -n <namespace> <name>
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_formField" "example" {
+  name      = "example-formField"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

@@ -1,22 +1,22 @@
 ---
 page_title: f5xc_ike1 - f5xc-api-mcp
 subcategory: VPN
-description: Create IKE Phase1 Profile
+description: Create IKE Phase1 Profile.
 ---
 
 # Ike1
 
-Shape of the IKE Phase1 Profile  configuration specification
+Shape of the IKE Phase1 Profile configuration specification.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-ike1-create` | Create IKE Phase1 Profile |
-| `f5xc-api-core-ike1-get` | Get IKE Phase1 profile  configuration |
-| `f5xc-api-core-ike1-list` | List IKE Phase 1 Profile |
-| `f5xc-api-core-ike1-update` | Replace IKE Phase1 Profile  configuration |
-| `f5xc-api-core-ike1-delete` | Delete IKE Phase 1 Profile |
+| `f5xc-api-vpn-ike1-create` | Create IKE Phase1 Profile. |
+| `f5xc-api-vpn-ike1-get` | GET IKE Phase1 profile configuration. |
+| `f5xc-api-vpn-ike1-list` | List IKE Phase 1 Profile. |
+| `f5xc-api-vpn-ike1-update` | Replace IKE Phase1 Profile configuration. |
+| `f5xc-api-vpn-ike1-delete` | DELETE IKE Phase 1 Profile. |
 
 ## Parameters
 
@@ -24,17 +24,17 @@ Shape of the IKE Phase1 Profile  configuration specification
 
 | Parameter | Description |
 |-----------|-------------|
-| `metadata.namespace` | namespace |
-| `name` | name |
-| `namespace` | namespace |
-| `metadata.name` | name |
+| `metadata.namespace` | Namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

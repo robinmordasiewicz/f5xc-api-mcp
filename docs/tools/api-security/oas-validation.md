@@ -1,18 +1,18 @@
 ---
 page_title: f5xc_oas_validation - f5xc-api-mcp
 subcategory: API Security
-description: Suggest Open API specification validation rule
+description: Suggest Open API specification validation rule.
 ---
 
 # Oas Validation
 
-Suggest Open API specification validation rule for a given path
+Suggest Open API specification validation rule for a given path.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-oas-validation-create` | Suggest Open API specification validation rule |
+| `f5xc-api-apisecurity-oas-validation-create` | Suggest Open API specification validation rule. |
 
 ## Parameters
 

@@ -1,22 +1,22 @@
 ---
 page_title: f5xc_ike_phase2_profile - f5xc-api-mcp
 subcategory: VPN
-description: Create IKE Phase2 Profile
+description: Create IKE Phase2 Profile.
 ---
 
 # Ike Phase2 Profile
 
-Shape of the IKE Phase2 Profile  configuration specification
+Shape of the IKE Phase2 Profile configuration specification.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-ike-phase2-profile-create` | Create IKE Phase2 Profile |
-| `f5xc-api-core-ike-phase2-profile-get` | Get IKE Phase2 profile  configuration |
-| `f5xc-api-core-ike-phase2-profile-list` | List IKE Phase 2  Profile |
-| `f5xc-api-core-ike-phase2-profile-update` | Replace IKE Phase2 Profile  configuration |
-| `f5xc-api-core-ike-phase2-profile-delete` | Delete IKE Phase 2  Profile |
+| `f5xc-api-vpn-ike-phase2-profile-create` | Create IKE Phase2 Profile. |
+| `f5xc-api-vpn-ike-phase2-profile-get` | GET IKE Phase2 profile configuration. |
+| `f5xc-api-vpn-ike-phase2-profile-list` | List IKE Phase 2 Profile. |
+| `f5xc-api-vpn-ike-phase2-profile-update` | Replace IKE Phase2 Profile configuration. |
+| `f5xc-api-vpn-ike-phase2-profile-delete` | DELETE IKE Phase 2 Profile. |
 
 ## Parameters
 
@@ -24,17 +24,17 @@ Shape of the IKE Phase2 Profile  configuration specification
 
 | Parameter | Description |
 |-----------|-------------|
-| `metadata.namespace` | namespace |
-| `name` | name |
-| `namespace` | namespace |
-| `metadata.name` | name |
+| `metadata.namespace` | Namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

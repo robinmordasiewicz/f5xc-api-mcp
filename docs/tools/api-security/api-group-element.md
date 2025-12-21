@@ -1,19 +1,19 @@
 ---
 page_title: f5xc_api_group_element - f5xc-api-mcp
 subcategory: API Security
-description: Get API Group Element
+description: GET API Group Element.
 ---
 
 # API Group Element
 
-Get api_group_element reads a given object from storage backend for metadata.namespace.
+GET api_group_element reads a given object from storage backend for metadata.namespace.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-api-group-element-get` | Get API Group Element |
-| `f5xc-api-core-api-group-element-list` | List API Group Element |
+| `f5xc-api-apisecurity-api-group-element-get` | GET API Group Element. |
+| `f5xc-api-apisecurity-api-group-element-list` | List API Group Element. |
 
 ## Parameters
 
@@ -21,15 +21,15 @@ Get api_group_element reads a given object from storage backend for metadata.nam
 
 | Parameter | Description |
 |-----------|-------------|
-| `name` | name |
-| `namespace` | namespace |
+| `name` | Name |
+| `namespace` | Namespace |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

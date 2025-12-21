@@ -1,22 +1,22 @@
 ---
 page_title: f5xc_api_testing - f5xc-api-mcp
 subcategory: API Security
-description: Create API Testing
+description: Create API Testing.
 ---
 
 # API Testing
 
-List the set of api_testing in a namespace
+List the set of api_testing in a namespace.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-api-testing-create` | Create API Testing |
-| `f5xc-api-core-api-testing-get` | Get API testing |
-| `f5xc-api-core-api-testing-list` | List API Testing |
-| `f5xc-api-core-api-testing-update` | Replace API testing |
-| `f5xc-api-core-api-testing-delete` | Delete API Testing |
+| `f5xc-api-apisecurity-api-testing-create` | Create API Testing. |
+| `f5xc-api-apisecurity-api-testing-get` | GET API testing. |
+| `f5xc-api-apisecurity-api-testing-list` | List API Testing. |
+| `f5xc-api-apisecurity-api-testing-update` | Replace API testing. |
+| `f5xc-api-apisecurity-api-testing-delete` | DELETE API Testing. |
 
 ## Parameters
 
@@ -24,17 +24,17 @@ List the set of api_testing in a namespace
 
 | Parameter | Description |
 |-----------|-------------|
-| `metadata.namespace` | namespace |
-| `name` | name |
-| `namespace` | namespace |
-| `metadata.name` | name |
+| `metadata.namespace` | Namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

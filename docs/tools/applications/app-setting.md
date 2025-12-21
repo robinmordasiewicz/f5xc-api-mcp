@@ -1,7 +1,7 @@
 ---
 page_title: f5xc_app_setting - f5xc-api-mcp
 subcategory: Applications
-description: Create App Setting
+description: Create App Setting.
 ---
 
 # App Setting
@@ -15,11 +15,11 @@ modified between the read and write.
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-app-setting-create` | Create App Setting |
-| `f5xc-api-core-app-setting-get` | Get App Setting |
-| `f5xc-api-core-app-setting-list` | List App Setting |
-| `f5xc-api-core-app-setting-update` | Replace App Setting |
-| `f5xc-api-core-app-setting-delete` | Delete App Setting |
+| `f5xc-api-applications-app-setting-create` | Create App Setting. |
+| `f5xc-api-applications-app-setting-get` | GET App Setting. |
+| `f5xc-api-applications-app-setting-list` | List App Setting. |
+| `f5xc-api-applications-app-setting-update` | Replace App Setting. |
+| `f5xc-api-applications-app-setting-delete` | DELETE App Setting. |
 
 ## Parameters
 
@@ -27,17 +27,17 @@ modified between the read and write.
 
 | Parameter | Description |
 |-----------|-------------|
-| `metadata.namespace` | namespace |
-| `name` | name |
-| `namespace` | namespace |
-| `metadata.name` | name |
+| `metadata.namespace` | Namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

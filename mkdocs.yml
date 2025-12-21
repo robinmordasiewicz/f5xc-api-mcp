@@ -3,7 +3,6 @@ site_description: MCP server for F5 Distributed Cloud API - AI-powered infrastru
 site_url: https://robinmordasiewicz.github.io/f5xc-api-mcp
 repo_url: https://github.com/robinmordasiewicz/f5xc-api-mcp
 repo_name: robinmordasiewicz/f5xc-api-mcp
-
 theme:
   name: material
   palette:
@@ -20,7 +19,6 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   features:
-    # Navigation
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.instant.progress
@@ -31,13 +29,10 @@ theme:
     - navigation.indexes
     - navigation.top
     - navigation.footer
-    # TOC
     - toc.follow
-    # Search
     - search.suggest
     - search.highlight
     - search.share
-    # Content
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
@@ -55,11 +50,9 @@ theme:
       api: material/api
       sites: material/server
       certs: material/certificate
-
 plugins:
   - search
   - meta
-  - awesome-pages
   - tags
   - social:
       cards_layout: default
@@ -68,7 +61,6 @@ plugins:
         color: "#ffffff"
   - minify:
       minify_html: true
-
 markdown_extensions:
   - abbr
   - admonition
@@ -85,8 +77,8 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -103,13 +95,12 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: ""
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -138,5 +129,851 @@ extra:
     Integrations: int
     Cloud Resources: cloud
     BIG-IP Integration: bigip
-
 copyright: Copyright &copy; 2024 F5XC API MCP Server
+nav:
+  - Home: index.md
+  - Tools:
+      - Overview: tools/index.md
+      - AI Intelligence:
+          - Allocateip: tools/ai-intelligence/allocateip.md
+          - Deallocateip: tools/ai-intelligence/deallocateip.md
+          - Enable Feature: tools/ai-intelligence/enable-feature.md
+          - Eval Query: tools/ai-intelligence/eval-query.md
+          - Eval Query Feedback: tools/ai-intelligence/eval-query-feedback.md
+          - Gettoken: tools/ai-intelligence/gettoken.md
+          - Query: tools/ai-intelligence/query.md
+          - Query Feedback: tools/ai-intelligence/query-feedback.md
+          - Refresh Token: tools/ai-intelligence/refresh-token.md
+          - Subscribe: tools/ai-intelligence/subscribe.md
+          - Unsubscribe: tools/ai-intelligence/unsubscribe.md
+      - API Security:
+          - API Crawler: tools/api-security/api-crawler.md
+          - API Discovery: tools/api-security/api-discovery.md
+          - API Endpoint Protection: tools/api-security/api-endpoint-protection.md
+          - API Group: tools/api-security/api-group.md
+          - API Group Element: tools/api-security/api-group-element.md
+          - API Testing: tools/api-security/api-testing.md
+          - App API Group: tools/api-security/app-api-group.md
+          - Code Base Integration: tools/api-security/code-base-integration.md
+          - Data Exposure: tools/api-security/data-exposure.md
+          - Evaluate: tools/api-security/evaluate.md
+          - Oas Validation: tools/api-security/oas-validation.md
+          - Rate Limit: tools/api-security/rate-limit.md
+          - Sensitive Data Policy: tools/api-security/sensitive-data-policy.md
+          - Stat: tools/api-security/stat.md
+      - Applications:
+          - API Endpoint: tools/applications/api-endpoint.md
+          - App Setting: tools/applications/app-setting.md
+          - App Type: tools/applications/app-type.md
+          - Learnt Schema: tools/applications/learnt-schema.md
+          - Override: tools/applications/override.md
+          - Pdf: tools/applications/pdf.md
+          - Pop: tools/applications/pop.md
+          - Push: tools/applications/push.md
+          - Static Component: tools/applications/static-component.md
+          - Suspicious User: tools/applications/suspicious-user.md
+          - Swagger Spec: tools/applications/swagger-spec.md
+          - Usage: tools/applications/usage.md
+          - Workload: tools/applications/workload.md
+          - Workload Flavor: tools/applications/workload-flavor.md
+      - BIG-IP Integration:
+          - Apm: tools/bigip/apm.md
+          - Bigip Irule: tools/bigip/bigip-irule.md
+          - Bigip Virtual Server: tools/bigip/bigip-virtual-server.md
+          - Data Group: tools/bigip/data-group.md
+          - Get Security Config: tools/bigip/get-security-config.md
+          - Irule: tools/bigip/irule.md
+          - Metric: tools/bigip/metric.md
+      - Billing:
+          - Current: tools/billing/current.md
+          - Current Usage: tools/billing/current-usage.md
+          - Custom List: tools/billing/custom-list.md
+          - Hourly Usage Detail: tools/billing/hourly-usage-detail.md
+          - Invoice Pdf: tools/billing/invoice-pdf.md
+          - Limit: tools/billing/limit.md
+          - Monthly Usage: tools/billing/monthly-usage.md
+          - Payment Method: tools/billing/payment-method.md
+          - Plan Transition: tools/billing/plan-transition.md
+          - Primary: tools/billing/primary.md
+          - Quota: tools/billing/quota.md
+          - Secondary: tools/billing/secondary.md
+          - Swap Primary: tools/billing/swap-primary.md
+          - Usage: tools/billing/usage.md
+          - Usage Detail: tools/billing/usage-detail.md
+      - CDN:
+          - Access Log: tools/cdn/access-log.md
+          - Aggregation: tools/cdn/aggregation.md
+          - Cache Purge: tools/cdn/cache-purge.md
+          - Cdn Cache Rule: tools/cdn/cdn-cache-rule.md
+          - Cdn Loadbalancer: tools/cdn/cdn-loadbalancer.md
+          - Dos Automitigation Rule: tools/cdn/dos-automitigation-rule.md
+          - Get Security Config: tools/cdn/get-security-config.md
+          - Get Service Operation Statu: tools/cdn/get-service-operation-statu.md
+          - List Service Operations Statu: tools/cdn/list-service-operations-statu.md
+          - Metric: tools/cdn/metric.md
+          - Subscribe: tools/cdn/subscribe.md
+          - Unsubscribe: tools/cdn/unsubscribe.md
+      - Config:
+          - "{view Kind}": tools/config/{view-kind}.md
+          - Create: tools/config/create.md
+          - Delete: tools/config/delete.md
+          - Implicit Label: tools/config/implicit-label.md
+          - Known Label: tools/config/known-label.md
+          - Known Label Key: tools/config/known-label-key.md
+      - Identity:
+          - Access Control:
+              - Assign Namespace Role: tools/identity/access-control/assign-namespace-role.md
+              - K8S Cluster Role: tools/identity/access-control/k8s-cluster-role.md
+              - K8S Cluster Role Binding: tools/identity/access-control/k8s-cluster-role-binding.md
+              - Namespace Role: tools/identity/access-control/namespace-role.md
+              - Remove Namespace Role: tools/identity/access-control/remove-namespace-role.md
+              - Role: tools/identity/access-control/role.md
+          - Groups:
+              - Group Add: tools/identity/groups/group-add.md
+              - Group Remove: tools/identity/groups/group-remove.md
+          - Identity:
+              - Admin Notification: tools/identity/identity/admin-notification.md
+              - Combined Notification: tools/identity/identity/combined-notification.md
+              - Delete: tools/identity/identity/delete.md
+              - Disable: tools/identity/identity/disable.md
+              - Enable: tools/identity/identity/enable.md
+              - Group: tools/identity/identity/Group.md
+              - Image: tools/identity/identity/image.md
+              - Notification: tools/identity/identity/notification.md
+              - Request Initial Acces: tools/identity/identity/request-initial-acces.md
+              - ResourceType: tools/identity/identity/ResourceType.md
+              - Schema: tools/identity/identity/Schema.md
+              - ServiceProviderConfig: tools/identity/identity/ServiceProviderConfig.md
+              - Session: tools/identity/identity/session.md
+              - Setting: tools/identity/identity/setting.md
+              - Signup: tools/identity/identity/signup.md
+              - Sync: tools/identity/identity/sync.md
+              - Unset: tools/identity/identity/unset.md
+              - User: tools/identity/identity/User.md
+              - View Preference: tools/identity/identity/view-preference.md
+          - Other:
+              - Accept To: tools/identity/other/accept-to.md
+              - Active Alert Policie: tools/identity/other/active-alert-policie.md
+              - Active Network Policie: tools/identity/other/active-network-policie.md
+              - Active Service Policie: tools/identity/other/active-service-policie.md
+              - Admin Reset: tools/identity/other/admin-reset.md
+              - All Application Inventory: tools/identity/other/all-application-inventory.md
+              - All Application Inventory WAF Filter: tools/identity/other/all-application-inventory-waf-filter.md
+              - All Ns Stat: tools/identity/other/all-ns-stat.md
+              - Analyze For Deletion: tools/identity/other/analyze-for-deletion.md
+              - API Credential: tools/identity/other/api-credential.md
+              - Application Inventory: tools/identity/other/application-inventory.md
+              - Authentication: tools/identity/other/authentication.md
+              - Cascade Delete: tools/identity/other/cascade-delete.md
+              - Certificate: tools/identity/other/certificate.md
+              - Certificate Chain: tools/identity/other/certificate-chain.md
+              - Citie: tools/identity/other/citie.md
+              - Contact: tools/identity/other/contact.md
+              - Countrie: tools/identity/other/countrie.md
+              - Evaluate API Acces: tools/identity/other/evaluate-api-acces.md
+              - Evaluate Batch API Acces: tools/identity/other/evaluate-batch-api-acces.md
+              - Fast Acls For Internet Vip: tools/identity/other/fast-acls-for-internet-vip.md
+              - Get Cloud Init Config: tools/identity/other/get-cloud-init-config.md
+              - Mapper: tools/identity/other/mapper.md
+              - Namespace: tools/identity/other/namespace.md
+              - Networking Inventory: tools/identity/other/networking-inventory.md
+              - Oidc Provider: tools/identity/other/oidc-provider.md
+              - Reset: tools/identity/other/reset.md
+              - Scim: tools/identity/other/scim.md
+              - Scim Token: tools/identity/other/scim-token.md
+              - Send Password Email: tools/identity/other/send-password-email.md
+              - Service Credential: tools/identity/other/service-credential.md
+              - Stat: tools/identity/other/stat.md
+              - State: tools/identity/other/state.md
+              - Suggest Value: tools/identity/other/suggest-value.md
+              - To: tools/identity/other/to.md
+              - Token: tools/identity/other/token.md
+              - Update Allow Advertise On Public: tools/identity/other/update-allow-advertise-on-public.md
+              - Validate Contact: tools/identity/other/validate-contact.md
+              - Validate Registration: tools/identity/other/validate-registration.md
+              - Validate Rule: tools/identity/other/validate-rule.md
+              - Whoami: tools/identity/other/whoami.md
+          - Users:
+              - Lookup User Role: tools/identity/users/lookup-user-role.md
+              - Role User: tools/identity/users/role-user.md
+              - User Group: tools/identity/users/user-group.md
+              - User Identification: tools/identity/users/user-identification.md
+              - User Role: tools/identity/users/user-role.md
+              - User Token: tools/identity/users/user-token.md
+      - Infrastructure:
+          - Clusters & Nodes:
+              - K8S Cluster: tools/infrastructure/clusters-&-nodes/k8s-cluster.md
+          - Infrastructure:
+              - Approve: tools/infrastructure/infrastructure/approve.md
+              - Set Cloud Site Info: tools/infrastructure/infrastructure/set-cloud-site-info.md
+              - Set Tgw Info: tools/infrastructure/infrastructure/set-tgw-info.md
+              - Set Vip Info: tools/infrastructure/infrastructure/set-vip-info.md
+              - Set VPC IP Prefixe: tools/infrastructure/infrastructure/set-vpc-ip-prefixe.md
+              - Set VPC K8S Hostname: tools/infrastructure/infrastructure/set-vpc-k8s-hostname.md
+              - Set Vpn Tunnel: tools/infrastructure/infrastructure/set-vpn-tunnel.md
+              - Setting: tools/infrastructure/infrastructure/setting.md
+              - Validate Config: tools/infrastructure/infrastructure/validate-config.md
+          - Kubernetes:
+              - K8S Pod Security Admission: tools/infrastructure/kubernetes/k8s-pod-security-admission.md
+              - K8S Pod Security Policy: tools/infrastructure/kubernetes/k8s-pod-security-policy.md
+              - Virtual K8S: tools/infrastructure/kubernetes/virtual-k8s.md
+          - Observability:
+              - Edge: tools/infrastructure/observability/edge.md
+              - Node: tools/infrastructure/observability/node.md
+              - Site: tools/infrastructure/observability/site.md
+          - Other:
+              - Certified Hardware: tools/infrastructure/other/certified-hardware.md
+              - Cloud Credentials: tools/infrastructure/other/cloud-credentials.md
+              - Configmap: tools/infrastructure/other/configmap.md
+              - Cronjob: tools/infrastructure/other/cronjob.md
+              - Daemonset: tools/infrastructure/other/daemonset.md
+              - Deployment: tools/infrastructure/other/deployment.md
+              - Endpoint: tools/infrastructure/other/endpoint.md
+              - Get Image Download Url: tools/infrastructure/other/get-image-download-url.md
+              - Get Registrations By Token: tools/infrastructure/other/get-registrations-by-token.md
+              - Global Kubeconfig: tools/infrastructure/other/global-kubeconfig.md
+              - Global Network: tools/infrastructure/other/global-network.md
+              - Job: tools/infrastructure/other/job.md
+              - Listregistrationsbystate: tools/infrastructure/other/listregistrationsbystate.md
+              - Local Kubeconfig: tools/infrastructure/other/local-kubeconfig.md
+              - Metric: tools/infrastructure/other/metric.md
+              - Namespace: tools/infrastructure/other/namespace.md
+              - Persistentvolume: tools/infrastructure/other/persistentvolume.md
+              - Persistentvolumeclaim: tools/infrastructure/other/persistentvolumeclaim.md
+              - Pod: tools/infrastructure/other/pod.md
+              - Pre Upgrade Check: tools/infrastructure/other/pre-upgrade-check.md
+              - RegisterBootstrap: tools/infrastructure/other/registerBootstrap.md
+              - Registration: tools/infrastructure/other/registration.md
+              - Replicaset: tools/infrastructure/other/replicaset.md
+              - RequestConfig: tools/infrastructure/other/requestConfig.md
+              - Secret: tools/infrastructure/other/secret.md
+              - Segment: tools/infrastructure/other/segment.md
+              - Service: tools/infrastructure/other/service.md
+              - Software Os Version: tools/infrastructure/other/software-os-version.md
+              - State: tools/infrastructure/other/state.md
+              - Statefulset: tools/infrastructure/other/statefulset.md
+              - Statu: tools/infrastructure/other/statu.md
+              - Suggest Value: tools/infrastructure/other/suggest-value.md
+              - Upgradable Sw Version: tools/infrastructure/other/upgradable-sw-version.md
+              - Upgrade O: tools/infrastructure/other/upgrade-o.md
+              - Upgrade Statu: tools/infrastructure/other/upgrade-statu.md
+              - Upgrade Sw: tools/infrastructure/other/upgrade-sw.md
+              - Usb Policy: tools/infrastructure/other/usb-policy.md
+          - Sites:
+              - AWS Tgw Site: tools/infrastructure/sites/aws-tgw-site.md
+              - AWS VPC Site: tools/infrastructure/sites/aws-vpc-site.md
+              - AZURE VNET Site: tools/infrastructure/sites/azure-vnet-site.md
+              - GCP VPC Site: tools/infrastructure/sites/gcp-vpc-site.md
+              - Registrations By Site: tools/infrastructure/sites/registrations-by-site.md
+              - Securemesh Site: tools/infrastructure/sites/securemesh-site.md
+              - Securemesh Site V2: tools/infrastructure/sites/securemesh-site-v2.md
+              - Voltstack Site: tools/infrastructure/sites/voltstack-site.md
+      - Infrastructure Protection:
+          - Infrastructure Protection:
+              - Acces: tools/infrastructure-protection/infrastructure-protection/acces.md
+              - Alert: tools/infrastructure-protection/infrastructure-protection/alert.md
+              - Annotation: tools/infrastructure-protection/infrastructure-protection/annotation.md
+              - Attachment: tools/infrastructure-protection/infrastructure-protection/attachment.md
+              - Bgp Peer Statu: tools/infrastructure-protection/infrastructure-protection/bgp-peer-statu.md
+              - Detail: tools/infrastructure-protection/infrastructure-protection/detail.md
+              - Event: tools/infrastructure-protection/infrastructure-protection/event.md
+              - Events Summary: tools/infrastructure-protection/infrastructure-protection/events-summary.md
+              - Infraprotect Asn: tools/infrastructure-protection/infrastructure-protection/infraprotect-asn.md
+              - Infraprotect Asn Prefix: tools/infrastructure-protection/infrastructure-protection/infraprotect-asn-prefix.md
+              - Infraprotect Deny List Rule: tools/infrastructure-protection/infrastructure-protection/infraprotect-deny-list-rule.md
+              - Infraprotect Firewall Rule: tools/infrastructure-protection/infrastructure-protection/infraprotect-firewall-rule.md
+              - Infraprotect Firewall Rule Group: tools/infrastructure-protection/infrastructure-protection/infraprotect-firewall-rule-group.md
+              - Infraprotect Firewall Ruleset: tools/infrastructure-protection/infrastructure-protection/infraprotect-firewall-ruleset.md
+              - Infraprotect Information: tools/infrastructure-protection/infrastructure-protection/infraprotect-information.md
+              - Infraprotect Internet Prefix Advertisement: tools/infrastructure-protection/infrastructure-protection/infraprotect-internet-prefix-advertisement.md
+              - Infraprotect Tunnel: tools/infrastructure-protection/infrastructure-protection/infraprotect-tunnel.md
+              - IP: tools/infrastructure-protection/infrastructure-protection/ip.md
+              - Mitigation: tools/infrastructure-protection/infrastructure-protection/mitigation.md
+              - Mitigation Annotation: tools/infrastructure-protection/infrastructure-protection/mitigation-annotation.md
+              - Network: tools/infrastructure-protection/infrastructure-protection/network.md
+              - Report: tools/infrastructure-protection/infrastructure-protection/report.md
+              - Suggest Value: tools/infrastructure-protection/infrastructure-protection/suggest-value.md
+              - To Event: tools/infrastructure-protection/infrastructure-protection/to-event.md
+              - Transit Usage: tools/infrastructure-protection/infrastructure-protection/transit-usage.md
+              - Update Advertisement Statu: tools/infrastructure-protection/infrastructure-protection/update-advertisement-statu.md
+              - Update Asn Prefix Irr Override: tools/infrastructure-protection/infrastructure-protection/update-asn-prefix-irr-override.md
+              - Update Asn Prefix Review Statu: tools/infrastructure-protection/infrastructure-protection/update-asn-prefix-review-statu.md
+              - Update Asn Review Statu: tools/infrastructure-protection/infrastructure-protection/update-asn-review-statu.md
+              - Update Tunnel Statu: tools/infrastructure-protection/infrastructure-protection/update-tunnel-statu.md
+      - Integrations:
+          - "{name}": tools/integrations/{name}.md
+          - "{object Type}": tools/integrations/{object-type}.md
+          - "{view Kind}": tools/integrations/{view-kind}.md
+          - Cminstance: tools/integrations/cminstance.md
+          - Force Delete: tools/integrations/force-delete.md
+          - Generate Token: tools/integrations/generate-token.md
+          - Get Security Config: tools/integrations/get-security-config.md
+          - Jira Projects Issue Type: tools/integrations/jira-projects-issue-type.md
+          - Mobile App Shield: tools/integrations/mobile-app-shield.md
+          - Mobile Integrator: tools/integrations/mobile-integrator.md
+          - Preauth: tools/integrations/preauth.md
+          - Provision: tools/integrations/provision.md
+          - Run: tools/integrations/run.md
+          - Statu: tools/integrations/statu.md
+          - Stored Object: tools/integrations/stored-object.md
+          - Third Party Application: tools/integrations/third-party-application.md
+          - Ticket Tracking System: tools/integrations/ticket-tracking-system.md
+          - Tpm API Key: tools/integrations/tpm-api-key.md
+          - Tpm Category: tools/integrations/tpm-category.md
+          - Tpm Manager: tools/integrations/tpm-manager.md
+          - Validate Ticket Tracking System: tools/integrations/validate-ticket-tracking-system.md
+      - Load Balancing:
+          - API Endpoint: tools/load-balancer/api-endpoint.md
+          - Assign: tools/load-balancer/assign.md
+          - Available: tools/load-balancer/available.md
+          - Ca Certificate: tools/load-balancer/ca-certificate.md
+          - Cache Purge: tools/load-balancer/cache-purge.md
+          - Dos Automitigation Rule: tools/load-balancer/dos-automitigation-rule.md
+          - Forward Proxy Policy: tools/load-balancer/forward-proxy-policy.md
+          - Get DNS Info: tools/load-balancer/get-dns-info.md
+          - Get Schema Update: tools/load-balancer/get-schema-update.md
+          - Get Security Config: tools/load-balancer/get-security-config.md
+          - Get Service Operation Statu: tools/load-balancer/get-service-operation-statu.md
+          - Healthcheck: tools/load-balancer/healthcheck.md
+          - Hit: tools/load-balancer/hit.md
+          - HTTP Loadbalancer: tools/load-balancer/http-loadbalancer.md
+          - L7ddos Rps Threshold: tools/load-balancer/l7ddos-rps-threshold.md
+          - List Service Operations Statu: tools/load-balancer/list-service-operations-statu.md
+          - Origin Pool: tools/load-balancer/origin-pool.md
+          - Proxy: tools/load-balancer/proxy.md
+          - Swagger Spec: tools/load-balancer/swagger-spec.md
+          - TCP Loadbalancer: tools/load-balancer/tcp-loadbalancer.md
+          - UDP Loadbalancer: tools/load-balancer/udp-loadbalancer.md
+          - Update Schema: tools/load-balancer/update-schema.md
+      - Networking:
+          - Interfaces:
+              - Network Interface: tools/networking/interfaces/network-interface.md
+          - Networking:
+              - Clone From DNS Domain: tools/networking/networking/clone-from-dns-domain.md
+              - Export: tools/networking/networking/export.md
+              - Hit: tools/networking/networking/hit.md
+              - Import: tools/networking/networking/import.md
+              - Import Axfr: tools/networking/networking/import-axfr.md
+              - Import Bind Create: tools/networking/networking/import-bind-create.md
+              - Import Bind Validate: tools/networking/networking/import-bind-validate.md
+              - Local Zone File: tools/networking/networking/local-zone-file.md
+              - Remote Zone File: tools/networking/networking/remote-zone-file.md
+              - Sid Counter: tools/networking/networking/sid-counter.md
+              - Verify: tools/networking/networking/verify.md
+          - Other:
+              - "{record Name}": tools/networking/other/{record-name}.md
+              - Address Allocator: tools/networking/other/address-allocator.md
+              - Advertise Policy: tools/networking/other/advertise-policy.md
+              - API Endpoint: tools/networking/other/api-endpoint.md
+              - Assign: tools/networking/other/assign.md
+              - Bgp: tools/networking/other/bgp.md
+              - Bgp Asn Set: tools/networking/other/bgp-asn-set.md
+              - Bgp Peer: tools/networking/other/bgp-peer.md
+              - Bgpstatu: tools/networking/other/bgpstatu.md
+              - Calls By Response Code: tools/networking/other/calls-by-response-code.md
+              - Cloud Connect: tools/networking/other/cloud-connect.md
+              - Cloud Connect Reapply VPC Attachment: tools/networking/other/cloud-connect-reapply-vpc-attachment.md
+              - Cloud Elastic IP: tools/networking/other/cloud-elastic-ip.md
+              - Cloud Link: tools/networking/other/cloud-link.md
+              - Cloud Region: tools/networking/other/cloud-region.md
+              - Create Ticket: tools/networking/other/create-ticket.md
+              - Dc Cluster Group: tools/networking/other/dc-cluster-group.md
+              - Discover VPC: tools/networking/other/discover-vpc.md
+              - DNS Compliance Checks: tools/networking/other/dns-compliance-checks.md
+              - DNS Domain: tools/networking/other/dns-domain.md
+              - DNS Lb Health Check: tools/networking/other/dns-lb-health-check.md
+              - DNS Lb Pool: tools/networking/other/dns-lb-pool.md
+              - DNS Load Balancer: tools/networking/other/dns-load-balancer.md
+              - DNS Zone: tools/networking/other/dns-zone.md
+              - Edge Credential: tools/networking/other/edge-credential.md
+              - Edge List: tools/networking/other/edge-list.md
+              - External Connector: tools/networking/other/external-connector.md
+              - Fleet: tools/networking/other/fleet.md
+              - Force Delete: tools/networking/other/force-delete.md
+              - Forwarding Class: tools/networking/other/forwarding-class.md
+              - Geo Config: tools/networking/other/geo-config.md
+              - Get DNS Info: tools/networking/other/get-dns-info.md
+              - Get Schema Update: tools/networking/other/get-schema-update.md
+              - Graph: tools/networking/other/graph.md
+              - Health Statu: tools/networking/other/health-statu.md
+              - Health Status Change Event: tools/networking/other/health-status-change-event.md
+              - IP Prefix Set: tools/networking/other/ip-prefix-set.md
+              - Learnt Schema: tools/networking/other/learnt-schema.md
+              - Metric: tools/networking/other/metric.md
+              - Nat Policy: tools/networking/other/nat-policy.md
+              - Network Connector: tools/networking/other/network-connector.md
+              - Network Policy: tools/networking/other/network-policy.md
+              - Network Policy Rule: tools/networking/other/network-policy-rule.md
+              - Network Policy Set: tools/networking/other/network-policy-set.md
+              - Network Policy View: tools/networking/other/network-policy-view.md
+              - Pdf: tools/networking/other/pdf.md
+              - Pool Members Health Statu: tools/networking/other/pool-members-health-statu.md
+              - Public IP: tools/networking/other/public-ip.md
+              - Reapply Config: tools/networking/other/reapply-config.md
+              - Request Log: tools/networking/other/request-log.md
+              - Rrset: tools/networking/other/rrset.md
+              - Segment: tools/networking/other/segment.md
+              - Segment Connection: tools/networking/other/segment-connection.md
+              - Segment Metric: tools/networking/other/segment-metric.md
+              - Selectee: tools/networking/other/selectee.md
+              - Site Mesh Group: tools/networking/other/site-mesh-group.md
+              - Sources Openapi Schema: tools/networking/other/sources-openapi-schema.md
+              - Srv6 Network Slice: tools/networking/other/srv6-network-slice.md
+              - Stat: tools/networking/other/stat.md
+              - Subnet: tools/networking/other/subnet.md
+              - Subscribe: tools/networking/other/subscribe.md
+              - Suggest Value: tools/networking/other/suggest-value.md
+              - Swagger Spec: tools/networking/other/swagger-spec.md
+              - Top Active: tools/networking/other/top-active.md
+              - Top Sensitive Data: tools/networking/other/top-sensitive-data.md
+              - Unlink Ticket: tools/networking/other/unlink-ticket.md
+              - Unmerge Sources Openapi Schema: tools/networking/other/unmerge-sources-openapi-schema.md
+              - Unsubscribe: tools/networking/other/unsubscribe.md
+              - Update Schema: tools/networking/other/update-schema.md
+              - Update State: tools/networking/other/update-state.md
+              - Virtual Host: tools/networking/other/virtual-host.md
+              - Virtual Network: tools/networking/other/virtual-network.md
+              - Virtual Site: tools/networking/other/virtual-site.md
+              - Vulnerabilitie: tools/networking/other/vulnerabilitie.md
+          - Routing:
+              - Bgp Route: tools/networking/routing/bgp-route.md
+              - Bgp Routing Policy: tools/networking/routing/bgp-routing-policy.md
+              - Policy Based Routing: tools/networking/routing/policy-based-routing.md
+              - Route: tools/networking/routing/route.md
+              - Simplified Route: tools/networking/routing/simplified-route.md
+              - Traceroute: tools/networking/routing/traceroute.md
+          - Security:
+              - Network Firewall: tools/networking/security/network-firewall.md
+          - Shape Security:
+              - Bot Network Policie: tools/networking/shape-security/bot-network-policie.md
+              - Bot Network Policy: tools/networking/shape-security/bot-network-policy.md
+              - Version: tools/networking/shape-security/version.md
+      - Nginx:
+          - Nginx Csg: tools/nginx/nginx-csg.md
+          - Nginx Dataplane Server: tools/nginx/nginx-dataplane-server.md
+          - Nginx Instance: tools/nginx/nginx-instance.md
+          - Nginx Server: tools/nginx/nginx-server.md
+          - Nginx Service Discovery: tools/nginx/nginx-service-discovery.md
+          - Subscribe: tools/nginx/subscribe.md
+          - Unsubscribe: tools/nginx/unsubscribe.md
+      - Observability:
+          - Alerts & Events:
+              - Alert: tools/observability/alerts-&-events/alert.md
+              - Alert Policy: tools/observability/alerts-&-events/alert-policy.md
+              - Alert Receiver: tools/observability/alerts-&-events/alert-receiver.md
+              - All Ns Alert: tools/observability/alerts-&-events/all-ns-alert.md
+              - K8S Event: tools/observability/alerts-&-events/k8s-event.md
+              - Platform Event: tools/observability/alerts-&-events/platform-event.md
+              - Vk8s Event: tools/observability/alerts-&-events/vk8s-event.md
+          - Infrastructure Protection:
+              - By Application: tools/observability/infrastructure-protection/by-application.md
+              - By Mitigation: tools/observability/infrastructure-protection/by-mitigation.md
+              - By Network: tools/observability/infrastructure-protection/by-network.md
+              - By Zone: tools/observability/infrastructure-protection/by-zone.md
+              - Event Count: tools/observability/infrastructure-protection/event-count.md
+          - Logging:
+              - Access Log: tools/observability/logging/access-log.md
+              - Audit Log: tools/observability/logging/audit-log.md
+              - Catalog: tools/observability/logging/catalog.md
+              - Firewall Log: tools/observability/logging/firewall-log.md
+              - Global Log Receiver: tools/observability/logging/global-log-receiver.md
+              - K8S Audit Log: tools/observability/logging/k8s-audit-log.md
+              - Log Receiver: tools/observability/logging/log-receiver.md
+              - Vk8s Audit Log: tools/observability/logging/vk8s-audit-log.md
+          - Metrics & Statistics:
+              - Status At Site: tools/observability/metrics-&-statistics/status-at-site.md
+              - Subscription Statu: tools/observability/metrics-&-statistics/subscription-statu.md
+          - Networking:
+              - Log: tools/observability/networking/log.md
+          - Observability:
+              - All Ns Service: tools/observability/observability/all-ns-service.md
+              - App Type: tools/observability/observability/app-type.md
+              - Certificate Report Detail: tools/observability/observability/certificate-report-detail.md
+              - Certificate Summary: tools/observability/observability/certificate-summary.md
+              - Confirm: tools/observability/observability/confirm.md
+              - Connectivity: tools/observability/observability/connectivity.md
+              - Dc Cluster Group: tools/observability/observability/dc-cluster-group.md
+              - DNS Monitor Summary: tools/observability/observability/dns-monitor-summary.md
+              - DNS Monitors Health: tools/observability/observability/dns-monitors-health.md
+              - Download: tools/observability/observability/download.md
+              - Edge: tools/observability/observability/edge.md
+              - Filtered DNS Monitor List: tools/observability/observability/filtered-dns-monitor-list.md
+              - Filtered HTTP Monitor List: tools/observability/observability/filtered-http-monitor-list.md
+              - Generate: tools/observability/observability/generate.md
+              - Global History: tools/observability/observability/global-history.md
+              - Global Summary: tools/observability/observability/global-summary.md
+              - Health: tools/observability/observability/health.md
+              - HTTP Monitor Detail: tools/observability/observability/http-monitor-detail.md
+              - HTTP Monitor Summary: tools/observability/observability/http-monitor-summary.md
+              - HTTP Monitors Health: tools/observability/observability/http-monitors-health.md
+              - Instance: tools/observability/observability/instance.md
+              - Lb Cache Content: tools/observability/observability/lb-cache-content.md
+              - List Reports History: tools/observability/observability/list-reports-history.md
+              - List Reports History Bot Defence: tools/observability/observability/list-reports-history-bot-defence.md
+              - List Reports History Waap: tools/observability/observability/list-reports-history-waap.md
+              - Match: tools/observability/observability/match.md
+              - Metric Query: tools/observability/observability/metric-query.md
+              - Monitor Event: tools/observability/observability/monitor-event.md
+              - Monitor History: tools/observability/observability/monitor-history.md
+              - Network: tools/observability/observability/network.md
+              - Node: tools/observability/observability/node.md
+              - Record Type Summary: tools/observability/observability/record-type-summary.md
+              - Report: tools/observability/observability/report.md
+              - Report Config: tools/observability/observability/report-config.md
+              - Route Table: tools/observability/observability/route-table.md
+              - Service: tools/observability/observability/service.md
+              - Site: tools/observability/observability/site.md
+              - Site Mesh Group: tools/observability/observability/site-mesh-group.md
+              - Source Summary: tools/observability/observability/source-summary.md
+              - Statu: tools/observability/observability/statu.md
+              - Suggest Value: tools/observability/observability/suggest-value.md
+              - Test: tools/observability/observability/test.md
+              - TLS Report Detail: tools/observability/observability/tls-report-detail.md
+              - TLS Report Summary: tools/observability/observability/tls-report-summary.md
+              - TLS Summary: tools/observability/observability/tls-summary.md
+              - V1 DNS Monitor: tools/observability/observability/v1-dns-monitor.md
+              - V1 HTTP Monitor: tools/observability/observability/v1-http-monitor.md
+              - Verify: tools/observability/observability/verify.md
+          - Other:
+              - Active Staged Signature: tools/observability/other/active-staged-signature.md
+              - Aggregation: tools/observability/other/aggregation.md
+              - Flow Anomaly: tools/observability/other/flow-anomaly.md
+              - Flow Collection: tools/observability/other/flow-collection.md
+              - History: tools/observability/other/history.md
+              - Lma Region: tools/observability/other/lma-region.md
+              - Matching Flow: tools/observability/other/matching-flow.md
+              - Released Signature: tools/observability/other/released-signature.md
+              - Scroll: tools/observability/other/scroll.md
+              - Staged Signature: tools/observability/other/staged-signature.md
+              - Subscribe: tools/observability/other/subscribe.md
+              - Top Flow Anomalie: tools/observability/other/top-flow-anomalie.md
+              - Top Talker: tools/observability/other/top-talker.md
+              - Unsubscribe: tools/observability/other/unsubscribe.md
+          - Security:
+              - Action: tools/observability/security/action.md
+              - Asn: tools/observability/security/asn.md
+              - Asorg: tools/observability/security/asorg.md
+              - Attackintent: tools/observability/security/attackintent.md
+              - Automation: tools/observability/security/automation.md
+              - Bfp: tools/observability/security/bfp.md
+              - Browser: tools/observability/security/browser.md
+              - IP: tools/observability/security/ip.md
+              - Metric: tools/observability/security/metric.md
+              - O: tools/observability/security/o.md
+              - Timeserie: tools/observability/security/timeserie.md
+              - Ua: tools/observability/security/ua.md
+          - Service Mesh:
+              - Categorie: tools/observability/service-mesh/categorie.md
+              - List: tools/observability/service-mesh/list.md
+              - Summary: tools/observability/service-mesh/summary.md
+          - Shape Security:
+              - App: tools/observability/shape-security/app.md
+              - Atb: tools/observability/shape-security/atb.md
+              - Bad Bot Reduction: tools/observability/shape-security/bad-bot-reduction.md
+              - Check: tools/observability/shape-security/check.md
+              - Credential Stuffing Attack: tools/observability/shape-security/credential-stuffing-attack.md
+              - Device: tools/observability/shape-security/device.md
+              - Endpoint: tools/observability/shape-security/endpoint.md
+              - Endpointlabel: tools/observability/shape-security/endpointlabel.md
+              - Expanded: tools/observability/shape-security/expanded.md
+              - Field: tools/observability/shape-security/field.md
+              - Geolocation: tools/observability/shape-security/geolocation.md
+              - Good: tools/observability/shape-security/good.md
+              - Overview: tools/observability/shape-security/overview.md
+              - Personal Stat: tools/observability/shape-security/personal-stat.md
+              - Platform: tools/observability/shape-security/platform.md
+              - Threat Type: tools/observability/shape-security/threat-type.md
+              - Top Good Bot: tools/observability/shape-security/top-good-bot.md
+              - Top Reason Code: tools/observability/shape-security/top-reason-code.md
+              - Total Automation: tools/observability/shape-security/total-automation.md
+              - Unaddressed Automation: tools/observability/shape-security/unaddressed-automation.md
+      - Operations:
+          - Add: tools/operations/add.md
+          - Change Password: tools/operations/change-password.md
+          - Check Debug Info Collection: tools/operations/check-debug-info-collection.md
+          - Close: tools/operations/close.md
+          - Comment: tools/operations/comment.md
+          - Config: tools/operations/config.md
+          - Customer Support: tools/operations/customer-support.md
+          - Delete: tools/operations/delete.md
+          - Dhcp Lease: tools/operations/dhcp-lease.md
+          - Diagnosi: tools/operations/diagnosi.md
+          - Disconnect: tools/operations/disconnect.md
+          - Download Debug Info Collection: tools/operations/download-debug-info-collection.md
+          - Escalate: tools/operations/escalate.md
+          - Exec: tools/operations/exec.md
+          - Exec Log: tools/operations/exec-log.md
+          - Exec User: tools/operations/exec-user.md
+          - Fetchdump: tools/operations/fetchdump.md
+          - Health: tools/operations/health.md
+          - Host Ping: tools/operations/host-ping.md
+          - Info: tools/operations/info.md
+          - List: tools/operations/list.md
+          - List Service: tools/operations/list-service.md
+          - List Tcpdump: tools/operations/list-tcpdump.md
+          - Log: tools/operations/log.md
+          - Ping: tools/operations/ping.md
+          - Priority: tools/operations/priority.md
+          - Reboot: tools/operations/reboot.md
+          - Reopen: tools/operations/reopen.md
+          - Rule: tools/operations/rule.md
+          - Soft Restart: tools/operations/soft-restart.md
+          - Start Debug Info Collection: tools/operations/start-debug-info-collection.md
+          - Statu: tools/operations/statu.md
+          - Stop Tcpdump: tools/operations/stop-tcpdump.md
+          - Support Ticket: tools/operations/support-ticket.md
+          - Tax Exempt Request: tools/operations/tax-exempt-request.md
+          - Tcpdump: tools/operations/tcpdump.md
+          - Upgrade Statu: tools/operations/upgrade-statu.md
+      - Security:
+          - Other:
+              - "{name}": tools/security/other/{name}.md
+              - Aggregation: tools/security/other/aggregation.md
+              - All Ns Event: tools/security/other/all-ns-event.md
+              - API Definition: tools/security/other/api-definition.md
+              - API Definitions Without Shared: tools/security/other/api-definitions-without-shared.md
+              - Bot Defense App Infrastructure: tools/security/other/bot-defense-app-infrastructure.md
+              - Crl: tools/security/other/crl.md
+              - Data Type: tools/security/other/data-type.md
+              - Event: tools/security/other/event.md
+              - Fast Acl: tools/security/other/fast-acl.md
+              - Filter Set: tools/security/other/filter-set.md
+              - Find: tools/security/other/find.md
+              - Geo Location Set: tools/security/other/geo-location-set.md
+              - Hit: tools/security/other/hit.md
+              - HTTP Loadbalancer: tools/security/other/http-loadbalancer.md
+              - Incident: tools/security/other/incident.md
+              - Loadbalancer: tools/security/other/loadbalancer.md
+              - Malicious User Mitigation: tools/security/other/malicious-user-mitigation.md
+              - Mark As Non API: tools/security/other/mark-as-non-api.md
+              - Mobile Base Config: tools/security/other/mobile-base-config.md
+              - Mobile Base Config File: tools/security/other/mobile-base-config-file.md
+              - Mobile Sdk: tools/security/other/mobile-sdk.md
+              - Move To Inventory: tools/security/other/move-to-inventory.md
+              - Policer: tools/security/other/policer.md
+              - Protocol Inspection: tools/security/other/protocol-inspection.md
+              - Protocol Policer: tools/security/other/protocol-policer.md
+              - Rate Limiter: tools/security/other/rate-limiter.md
+              - Remove From Inventory: tools/security/other/remove-from-inventory.md
+              - Resync Crl: tools/security/other/resync-crl.md
+              - Scroll: tools/security/other/scroll.md
+              - Secret Management Access: tools/security/other/secret-management-access.md
+              - Security Event: tools/security/other/security-event.md
+              - Shape Bot Defense Instance: tools/security/other/shape-bot-defense-instance.md
+              - Suggestion: tools/security/other/suggestion.md
+              - Suspicious User Log: tools/security/other/suspicious-user-log.md
+              - Trusted Ca List: tools/security/other/trusted-ca-list.md
+              - Unmark As Non API: tools/security/other/unmark-as-non-api.md
+          - Policies & Rules:
+              - Enhanced Firewall Policy: tools/security/policies-&-rules/enhanced-firewall-policy.md
+              - Fast Acl Rule: tools/security/policies-&-rules/fast-acl-rule.md
+              - Rate Limiter Policy: tools/security/policies-&-rules/rate-limiter-policy.md
+              - Rbac Policy: tools/security/policies-&-rules/rbac-policy.md
+              - Rule Hit: tools/security/policies-&-rules/rule-hit.md
+              - Service Policy: tools/security/policies-&-rules/service-policy.md
+              - Service Policy Rule: tools/security/policies-&-rules/service-policy-rule.md
+              - Service Policy Set: tools/security/policies-&-rules/service-policy-set.md
+              - WAF Exclusion Policy: tools/security/policies-&-rules/waf-exclusion-policy.md
+          - Security:
+              - Access Count: tools/security/security/access-count.md
+              - All Ns Metric: tools/security/security/all-ns-metric.md
+              - Audit Log: tools/security/security/audit-log.md
+              - Decrypt Secret: tools/security/security/decrypt-secret.md
+              - Get Policy Document: tools/security/security/get-policy-document.md
+              - Get Public Key: tools/security/security/get-public-key.md
+              - Latency: tools/security/security/latency.md
+              - List Policy: tools/security/security/list-policy.md
+              - Metric: tools/security/security/metric.md
+              - Process Policy Information: tools/security/security/process-policy-information.md
+              - Recover: tools/security/security/recover.md
+              - Secret Policy: tools/security/security/secret-policy.md
+              - Secret Policy Rule: tools/security/security/secret-policy-rule.md
+              - Softdelete: tools/security/security/softdelete.md
+              - Threat Campaign: tools/security/security/threat-campaign.md
+              - Voltshare Admin Policy: tools/security/security/voltshare-admin-policy.md
+          - Shape Security:
+              - Apikey: tools/security/shape-security/apikey.md
+              - Bot Allowlist Policie: tools/security/shape-security/bot-allowlist-policie.md
+              - Bot Allowlist Policy: tools/security/shape-security/bot-allowlist-policy.md
+              - Bot Detection Rule: tools/security/shape-security/bot-detection-rule.md
+              - Bot Detection Update: tools/security/shape-security/bot-detection-update.md
+              - Bot Endpoint Policie: tools/security/shape-security/bot-endpoint-policie.md
+              - Bot Endpoint Policy: tools/security/shape-security/bot-endpoint-policy.md
+              - Bot Infrastructure: tools/security/shape-security/bot-infrastructure.md
+              - Config: tools/security/shape-security/config.md
+              - Deployment: tools/security/shape-security/deployment.md
+              - Deployment History: tools/security/shape-security/deployment-history.md
+              - Deployment Statu: tools/security/shape-security/deployment-statu.md
+              - Download Release Note: tools/security/shape-security/download-release-note.md
+              - Draft: tools/security/shape-security/draft.md
+              - History: tools/security/shape-security/history.md
+              - Policie: tools/security/shape-security/policie.md
+              - Protected Application: tools/security/shape-security/protected-application.md
+              - Region: tools/security/shape-security/region.md
+              - Subscribe: tools/security/shape-security/subscribe.md
+              - Suggest Value: tools/security/shape-security/suggest-value.md
+              - Summary: tools/security/shape-security/summary.md
+              - Template: tools/security/shape-security/template.md
+              - Unsubscribe: tools/security/shape-security/unsubscribe.md
+              - Version: tools/security/shape-security/version.md
+          - WAF:
+              - App Firewall: tools/security/waf/app-firewall.md
+      - Service Mesh:
+          - Cluster: tools/service-mesh/cluster.md
+          - Container Registry: tools/service-mesh/container-registry.md
+          - Create HTTP Load Balancer: tools/service-mesh/create-http-load-balancer.md
+          - Create TCP Load Balancer: tools/service-mesh/create-tcp-load-balancer.md
+          - Disable Visibility: tools/service-mesh/disable-visibility.md
+          - Discovered Service: tools/service-mesh/discovered-service.md
+          - Discovery: tools/service-mesh/discovery.md
+          - Download Certificate: tools/service-mesh/download-certificate.md
+          - Enable Visibility: tools/service-mesh/enable-visibility.md
+          - Endpoint: tools/service-mesh/endpoint.md
+          - Force Delete: tools/service-mesh/force-delete.md
+          - Health Statu: tools/service-mesh/health-statu.md
+          - Metric: tools/service-mesh/metric.md
+          - Nfv Service: tools/service-mesh/nfv-service.md
+          - Suggest Value: tools/service-mesh/suggest-value.md
+      - Shape Security (Bot Defense):
+          - Observability:
+              - Age: tools/shape-security/observability/age.md
+              - Channel: tools/shape-security/observability/channel.md
+              - Conversion: tools/shape-security/observability/conversion.md
+              - Country: tools/shape-security/observability/country.md
+              - Enjoy: tools/shape-security/observability/enjoy.md
+              - Friction Aggregation: tools/shape-security/observability/friction-aggregation.md
+              - Friction Histogram: tools/shape-security/observability/friction-histogram.md
+              - Getcurrentfrauddata: tools/shape-security/observability/getcurrentfrauddata.md
+              - Gettopriskyaccount: tools/shape-security/observability/gettopriskyaccount.md
+              - Gettopriskydevice: tools/shape-security/observability/gettopriskydevice.md
+              - Gettopriskyipaddresse: tools/shape-security/observability/gettopriskyipaddresse.md
+              - Gettopriskyreason: tools/shape-security/observability/gettopriskyreason.md
+              - Gettransactiondata: tools/shape-security/observability/gettransactiondata.md
+              - Health: tools/shape-security/observability/health.md
+              - Lift: tools/shape-security/observability/lift.md
+              - Rescue: tools/shape-security/observability/rescue.md
+              - Safecubejsdata: tools/shape-security/observability/safecubejsdata.md
+              - Session: tools/shape-security/observability/session.md
+              - Top Reason Code: tools/shape-security/observability/top-reason-code.md
+              - Ua: tools/shape-security/observability/ua.md
+              - Unique: tools/shape-security/observability/unique.md
+          - Other:
+              - Datadictionary: tools/shape-security/other/datadictionary.md
+              - DataSet: tools/shape-security/other/dataSet.md
+              - Flowlabel: tools/shape-security/other/flowlabel.md
+              - Init Request: tools/shape-security/other/init-request.md
+              - Receiver: tools/shape-security/other/receiver.md
+              - Statu: tools/shape-security/other/statu.md
+              - Subscribe: tools/shape-security/other/subscribe.md
+              - Suggest Value: tools/shape-security/other/suggest-value.md
+              - Summary: tools/shape-security/other/summary.md
+              - Test: tools/shape-security/other/test.md
+              - Unsubscribe: tools/shape-security/other/unsubscribe.md
+          - Shape Security:
+              - AffectedUser: tools/shape-security/shape-security/affectedUser.md
+              - Alert Gen Policy: tools/shape-security/shape-security/alert-gen-policy.md
+              - Alert Template: tools/shape-security/shape-security/alert-template.md
+              - Allowed Domain: tools/shape-security/shape-security/allowed-domain.md
+              - Analysi: tools/shape-security/shape-security/analysi.md
+              - App Provision: tools/shape-security/shape-security/app-provision.md
+              - Application: tools/shape-security/shape-security/application.md
+              - Asn: tools/shape-security/shape-security/asn.md
+              - Audit: tools/shape-security/shape-security/audit.md
+              - Behavior: tools/shape-security/shape-security/behavior.md
+              - Clone: tools/shape-security/shape-security/clone.md
+              - Dashboard: tools/shape-security/shape-security/dashboard.md
+              - Detail: tools/shape-security/shape-security/detail.md
+              - Detected Domain: tools/shape-security/shape-security/detected-domain.md
+              - Domain Detail: tools/shape-security/shape-security/domain-detail.md
+              - Enable: tools/shape-security/shape-security/enable.md
+              - Ep: tools/shape-security/shape-security/ep.md
+              - Feedback: tools/shape-security/shape-security/feedback.md
+              - FormField: tools/shape-security/shape-security/formField.md
+              - General Feedback: tools/shape-security/shape-security/general-feedback.md
+              - Init: tools/shape-security/shape-security/init.md
+              - Js Configuration: tools/shape-security/shape-security/js-configuration.md
+              - Justification: tools/shape-security/shape-security/justification.md
+              - Mitigated Domain: tools/shape-security/shape-security/mitigated-domain.md
+              - NetworkInteraction: tools/shape-security/shape-security/networkInteraction.md
+              - Overview: tools/shape-security/shape-security/overview.md
+              - Protected Domain: tools/shape-security/shape-security/protected-domain.md
+              - Provision: tools/shape-security/shape-security/provision.md
+              - ReadStatu: tools/shape-security/shape-security/readStatu.md
+              - Region: tools/shape-security/shape-security/region.md
+              - Rule: tools/shape-security/shape-security/rule.md
+              - Script: tools/shape-security/shape-security/script.md
+              - Src Tag Injection: tools/shape-security/shape-security/src-tag-injection.md
+              - State: tools/shape-security/shape-security/state.md
+              - Table: tools/shape-security/shape-security/table.md
+              - Testj: tools/shape-security/shape-security/testj.md
+              - Top Location: tools/shape-security/shape-security/top-location.md
+              - Top Source: tools/shape-security/shape-security/top-source.md
+              - Transaction: tools/shape-security/shape-security/transaction.md
+              - Transaction Detail: tools/shape-security/shape-security/transaction-detail.md
+              - Transaction Device History: tools/shape-security/shape-security/transaction-device-history.md
+              - Transaction Location: tools/shape-security/shape-security/transaction-location.md
+              - Transaction Related Session: tools/shape-security/shape-security/transaction-related-session.md
+              - Transaction Timeline: tools/shape-security/shape-security/transaction-timeline.md
+              - Transactions Csv: tools/shape-security/shape-security/transactions-csv.md
+              - Transactions Over Time: tools/shape-security/shape-security/transactions-over-time.md
+              - Update Domain: tools/shape-security/shape-security/update-domain.md
+              - Url: tools/shape-security/shape-security/url.md
+      - Subscriptions:
+          - Activation Statu: tools/subscriptions/activation-statu.md
+          - Addon Service: tools/subscriptions/addon-service.md
+          - Addon Subscription: tools/subscriptions/addon-subscription.md
+          - All Activation Statu: tools/subscriptions/all-activation-statu.md
+          - Navigation Tile: tools/subscriptions/navigation-tile.md
+          - Plan: tools/subscriptions/plan.md
+          - Register: tools/subscriptions/register.md
+          - Registration Detail: tools/subscriptions/registration-detail.md
+          - Send Email: tools/subscriptions/send-email.md
+          - Signup: tools/subscriptions/signup.md
+          - Subscribe: tools/subscriptions/subscribe.md
+          - Unsubscribe: tools/subscriptions/unsubscribe.md
+      - Tenant & Organization Management:
+          - Other:
+              - Acces: tools/tenant-management/other/acces.md
+              - Allowed Tenant: tools/tenant-management/other/allowed-tenant.md
+              - Child Tenant: tools/tenant-management/other/child-tenant.md
+              - Child Tenant Manager: tools/tenant-management/other/child-tenant-manager.md
+              - Close: tools/tenant-management/other/close.md
+              - Comment: tools/tenant-management/other/comment.md
+              - Customer Support: tools/tenant-management/other/customer-support.md
+              - Escalate: tools/tenant-management/other/escalate.md
+              - Managed Tenant: tools/tenant-management/other/managed-tenant.md
+              - Managed Tenants By User: tools/tenant-management/other/managed-tenants-by-user.md
+              - Managed Tenants List: tools/tenant-management/other/managed-tenants-list.md
+              - Migrate: tools/tenant-management/other/migrate.md
+              - Priority: tools/tenant-management/other/priority.md
+              - Reopen: tools/tenant-management/other/reopen.md
+              - Summary: tools/tenant-management/other/summary.md
+              - Tenant Configuration: tools/tenant-management/other/tenant-configuration.md
+              - Tenant Profile: tools/tenant-management/other/tenant-profile.md
+          - Tenant Management:
+              - Assign: tools/tenant-management/tenant-management/assign.md
+              - Deactivate: tools/tenant-management/tenant-management/deactivate.md
+              - Disable: tools/tenant-management/tenant-management/disable.md
+              - Enable: tools/tenant-management/tenant-management/enable.md
+              - Favicon: tools/tenant-management/tenant-management/favicon.md
+              - Image: tools/tenant-management/tenant-management/image.md
+              - Inactive: tools/tenant-management/tenant-management/inactive.md
+              - Last Login: tools/tenant-management/tenant-management/last-login.md
+              - Login: tools/tenant-management/tenant-management/login.md
+              - Login In Time: tools/tenant-management/tenant-management/login-in-time.md
+              - Logo: tools/tenant-management/tenant-management/logo.md
+              - Lookup: tools/tenant-management/tenant-management/lookup.md
+              - Password Policy: tools/tenant-management/tenant-management/password-policy.md
+              - Request Delete: tools/tenant-management/tenant-management/request-delete.md
+              - Setting: tools/tenant-management/tenant-management/setting.md
+              - Subscribe: tools/tenant-management/tenant-management/subscribe.md
+              - Support Info: tools/tenant-management/tenant-management/support-info.md
+              - Tenant Escalation Doc: tools/tenant-management/tenant-management/tenant-escalation-doc.md
+              - Unassign: tools/tenant-management/tenant-management/unassign.md
+              - Unsubscribe: tools/tenant-management/tenant-management/unsubscribe.md
+      - VPN:
+          - Ike Phase1 Profile: tools/vpn/ike-phase1-profile.md
+          - Ike Phase2 Profile: tools/vpn/ike-phase2-profile.md
+          - Ike1: tools/vpn/ike1.md
+          - Ike2: tools/vpn/ike2.md
+          - Tunnel: tools/vpn/tunnel.md

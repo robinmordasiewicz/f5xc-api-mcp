@@ -1,22 +1,22 @@
 ---
 page_title: f5xc_addon_subscription - f5xc-api-mcp
 subcategory: Subscriptions
-description: Create Addon Subscription
+description: Create Addon Subscription.
 ---
 
 # Addon Subscription
 
-Get Addon Subsciption reads a given object from storage backend for metadata.namespace.
+GET Addon Subsciption reads a given object from storage backend for metadata.namespace.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-addon-subscription-create` | Create Addon Subscription |
-| `f5xc-api-core-addon-subscription-get` | Get Addon Subsciption |
-| `f5xc-api-core-addon-subscription-list` | List Addon Subscrption |
-| `f5xc-api-core-addon-subscription-update` | Replace Addon Subscription |
-| `f5xc-api-core-addon-subscription-delete` | Delete Addon Subscrption |
+| `f5xc-api-subscriptions-addon-subscription-create` | Create Addon Subscription. |
+| `f5xc-api-subscriptions-addon-subscription-get` | GET Addon Subsciption. |
+| `f5xc-api-subscriptions-addon-subscription-list` | List Addon Subscrption. |
+| `f5xc-api-subscriptions-addon-subscription-update` | Replace Addon Subscription. |
+| `f5xc-api-subscriptions-addon-subscription-delete` | DELETE Addon Subscrption. |
 
 ## Parameters
 
@@ -24,17 +24,17 @@ Get Addon Subsciption reads a given object from storage backend for metadata.nam
 
 | Parameter | Description |
 |-----------|-------------|
-| `metadata.namespace` | namespace |
-| `name` | name |
-| `namespace` | namespace |
-| `metadata.name` | name |
+| `metadata.namespace` | Namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

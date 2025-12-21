@@ -1,7 +1,7 @@
 ---
 page_title: f5xc_tunnel - f5xc-api-mcp
 subcategory: VPN
-description: Create Tunnel
+description: Create Tunnel.
 ---
 
 # Tunnel
@@ -12,11 +12,11 @@ Create tunnel in a given namespace. If one already exist it will give a error.
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-tunnel-create` | Create Tunnel |
-| `f5xc-api-core-tunnel-get` | Get Tunnel |
-| `f5xc-api-core-tunnel-list` | List Tunnel |
-| `f5xc-api-core-tunnel-update` | Replace Tunnel |
-| `f5xc-api-core-tunnel-delete` | Delete Tunnel |
+| `f5xc-api-vpn-tunnel-create` | Create Tunnel. |
+| `f5xc-api-vpn-tunnel-get` | GET Tunnel. |
+| `f5xc-api-vpn-tunnel-list` | List Tunnel. |
+| `f5xc-api-vpn-tunnel-update` | Replace Tunnel. |
+| `f5xc-api-vpn-tunnel-delete` | DELETE Tunnel. |
 
 ## Parameters
 
@@ -24,17 +24,17 @@ Create tunnel in a given namespace. If one already exist it will give a error.
 
 | Parameter | Description |
 |-----------|-------------|
-| `metadata.namespace` | namespace |
-| `name` | name |
-| `namespace` | namespace |
-| `metadata.name` | name |
+| `metadata.namespace` | Namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

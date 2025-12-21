@@ -1,7 +1,7 @@
 ---
 page_title: f5xc_app_api_group - f5xc-api-mcp
 subcategory: API Security
-description: Create API Group
+description: Create API Group.
 ---
 
 # App API Group
@@ -12,11 +12,11 @@ Replace app_api_group replaces an existing object in the storage backend for met
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-app-api-group-create` | Create API Group |
-| `f5xc-api-core-app-api-group-get` | Get API Group |
-| `f5xc-api-core-app-api-group-list` | List App API Group |
-| `f5xc-api-core-app-api-group-update` | Replace API Group |
-| `f5xc-api-core-app-api-group-delete` | Delete App API Group |
+| `f5xc-api-apisecurity-app-api-group-create` | Create API Group. |
+| `f5xc-api-apisecurity-app-api-group-get` | GET API Group. |
+| `f5xc-api-apisecurity-app-api-group-list` | List App API Group. |
+| `f5xc-api-apisecurity-app-api-group-update` | Replace API Group. |
+| `f5xc-api-apisecurity-app-api-group-delete` | DELETE App API Group. |
 
 ## Parameters
 
@@ -24,17 +24,17 @@ Replace app_api_group replaces an existing object in the storage backend for met
 
 | Parameter | Description |
 |-----------|-------------|
-| `metadata.namespace` | namespace |
-| `name` | name |
-| `namespace` | namespace |
-| `metadata.name` | name |
+| `metadata.namespace` | Namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

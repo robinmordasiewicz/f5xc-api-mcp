@@ -1,7 +1,7 @@
 ---
 page_title: f5xc_app_type - f5xc-api-mcp
 subcategory: Applications
-description: Create App Type
+description: Create App Type.
 ---
 
 # App Type
@@ -15,11 +15,11 @@ write.
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-app-type-create` | Create App Type |
-| `f5xc-api-core-app-type-get` | Get App Type |
-| `f5xc-api-core-app-type-list` | List App Type |
-| `f5xc-api-core-app-type-update` | Replace App Type |
-| `f5xc-api-core-app-type-delete` | Delete App Type |
+| `f5xc-api-applications-app-type-create` | Create App Type. |
+| `f5xc-api-applications-app-type-get` | GET App Type. |
+| `f5xc-api-applications-app-type-list` | List App Type. |
+| `f5xc-api-applications-app-type-update` | Replace App Type. |
+| `f5xc-api-applications-app-type-delete` | DELETE App Type. |
 
 ## Parameters
 
@@ -27,17 +27,17 @@ write.
 
 | Parameter | Description |
 |-----------|-------------|
-| `metadata.namespace` | namespace |
-| `name` | name |
-| `namespace` | namespace |
-| `metadata.name` | name |
+| `metadata.namespace` | Namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

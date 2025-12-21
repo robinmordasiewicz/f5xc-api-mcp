@@ -1,20 +1,20 @@
 ---
 page_title: f5xc_third_party_application - f5xc-api-mcp
 subcategory: Integrations
-description: Get Third Party Application
+description: GET Third Party Application.
 ---
 
 # Third Party Application
 
-List the set of third_party_application in a namespace
+List the set of third_party_application in a namespace.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-third-party-application-get` | Get Third Party Application |
-| `f5xc-api-core-third-party-application-list` | List Third Party Application |
-| `f5xc-api-core-third-party-application-update` | Replace Third Party Applicationr |
+| `f5xc-api-integrations-third-party-application-get` | GET Third Party Application. |
+| `f5xc-api-integrations-third-party-application-list` | List Third Party Application. |
+| `f5xc-api-integrations-third-party-application-update` | Replace Third Party Applicationr. |
 
 ## Parameters
 
@@ -22,17 +22,17 @@ List the set of third_party_application in a namespace
 
 | Parameter | Description |
 |-----------|-------------|
-| `name` | name |
-| `namespace` | namespace |
-| `metadata.name` | name |
-| `metadata.namespace` | namespace |
+| `name` | Name |
+| `namespace` | Namespace |
+| `metadata.name` | Name |
+| `metadata.namespace` | Namespace |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

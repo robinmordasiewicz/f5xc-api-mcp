@@ -1,7 +1,7 @@
 ---
 page_title: f5xc_addon_service - f5xc-api-mcp
 subcategory: Subscriptions
-description: Get Addon Service Details
+description: GET Addon Service Details.
 ---
 
 # Addon Service
@@ -12,8 +12,8 @@ Retrieves addon service information for the given addon service name.
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-addon-service-get` | Get Addon Service Details |
-| `f5xc-api-core-addon-service-list` | List Addon Service |
+| `f5xc-api-subscriptions-addon-service-get` | GET Addon Service Details. |
+| `f5xc-api-subscriptions-addon-service-list` | List Addon Service. |
 
 ## Parameters
 
@@ -21,14 +21,14 @@ Retrieves addon service information for the given addon service name.
 
 | Parameter | Description |
 |-----------|-------------|
-| `name` | name |
-| `namespace` | namespace |
+| `name` | Name |
+| `namespace` | Namespace |
 
 ### Query Parameters
 
 | Parameter | Description |
 |-----------|-------------|
-| `label_filter` | The label_filter parameter |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
 | `report_fields` | The report_fields parameter |
 | `report_status_fields` | The report_status_fields parameter |
 

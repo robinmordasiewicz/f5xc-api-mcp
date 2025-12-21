@@ -1,19 +1,19 @@
 ---
 page_title: f5xc_jira_projects_issue_type - f5xc-api-mcp
 subcategory: Integrations
-description: JIRA Projects & Issue Types
+description: JIRA Projects & Issue Types.
 ---
 
 # Jira Projects Issue Type
 
 Returns the available projects and issue types that are available from the Jira ticket tracking
-system
+system.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-core-jira-projects-issue-type-create` | JIRA Projects & Issue Types |
+| `f5xc-api-integrations-jira-projects-issue-type-create` | JIRA Projects & Issue Types. |
 
 ## Example Usage
 
