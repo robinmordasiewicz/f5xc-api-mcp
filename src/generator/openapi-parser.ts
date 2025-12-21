@@ -431,9 +431,7 @@ function extractDomainOperations(
   const httpMethods = ["get", "post", "put", "delete", "patch"] as const;
 
   // Sort paths alphabetically for deterministic output
-  const sortedPaths = Object.entries(spec.paths).sort(([a], [b]) =>
-    a < b ? -1 : a > b ? 1 : 0
-  );
+  const sortedPaths = Object.entries(spec.paths).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
 
   for (const [path, pathItem] of sortedPaths) {
     // Check if path has a name parameter (indicates single resource operations)
@@ -471,8 +469,7 @@ function extractDomainOperations(
       // Extract response schema (from 200 or first success response)
       let responseSchema: Record<string, unknown> | null = null;
       if (operation.responses) {
-        const successResponse =
-          operation.responses["200"] ?? operation.responses["201"];
+        const successResponse = operation.responses["200"] ?? operation.responses["201"];
         if (successResponse?.content) {
           const jsonContent = successResponse.content["application/json"];
           if (jsonContent?.schema) {
@@ -527,10 +524,7 @@ function extractDomainOperations(
  * @param filePath - Absolute path to the domain spec file
  * @param basePath - Optional base path for creating relative sourceFile paths
  */
-export function parseDomainSpecFile(
-  filePath: string,
-  basePath?: string
-): ParsedSpec | null {
+export function parseDomainSpecFile(filePath: string, basePath?: string): ParsedSpec | null {
   try {
     const content = readFileSync(filePath, "utf-8");
     const ext = extname(filePath).toLowerCase();
