@@ -139,6 +139,7 @@ f5xc-api-mcp --setup
 ```
 
 The wizard will:
+
 1. Detect any existing `F5XC_API_URL`, `F5XC_API_TOKEN`, `F5XC_P12_FILE`, and `F5XC_P12_PASSWORD` environment variables
 2. Offer to create a profile from them (saves manual entry)
 3. Allow creating additional profiles for different tenants

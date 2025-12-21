@@ -77,8 +77,8 @@ export const DEFAULT_CONFIG: ConfigFile = {
 /**
  * File system permissions for security
  */
-export const CONFIG_DIR_PERMISSIONS = 0o700;    // rwx------ (user only)
-export const CONFIG_FILE_PERMISSIONS = 0o600;   // rw------- (user read/write only)
+export const CONFIG_DIR_PERMISSIONS = 0o700; // rwx------ (user only)
+export const CONFIG_FILE_PERMISSIONS = 0o600; // rw------- (user read/write only)
 
 /**
  * Configuration paths

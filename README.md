@@ -104,6 +104,7 @@ f5xc-api-mcp --setup
 ```
 
 The wizard will:
+
 1. Detect existing `F5XC_API_URL`, `F5XC_API_TOKEN`, `F5XC_P12_FILE`, `F5XC_P12_PASSWORD`
 2. Offer to create a profile from detected credentials
 3. Allow manual profile creation if no credentials are detected

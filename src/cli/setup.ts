@@ -87,7 +87,7 @@ function validateProfileName(name: string): { valid: boolean; error?: string } {
 async function createProfileFromEnv(
   rl: readline.Interface,
   configManager: ConfigManager,
-  envCreds: DetectedCredentials,
+  envCreds: DetectedCredentials
 ): Promise<void> {
   console.log();
 

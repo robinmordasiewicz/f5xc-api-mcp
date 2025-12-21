@@ -49,26 +49,32 @@ export class ConfigManager {
       // Fix permissions if directory already exists
       await fs.chmod(this.configDir, CONFIG_DIR_PERMISSIONS);
     } catch (error) {
-      throw new Error(`Failed to create config directory: ${error instanceof Error ? error.message : "Unknown error"}`);
+      throw new Error(
+        `Failed to create config directory: ${error instanceof Error ? error.message : "Unknown error"}`
+      );
     }
   }
 
   /**
    * Check and fix file permissions
    */
-  private async checkAndFixPermissions(filePath: string, expectedPermissions: number): Promise<void> {
+  private async checkAndFixPermissions(
+    filePath: string,
+    expectedPermissions: number
+  ): Promise<void> {
     try {
       const stats = await fs.stat(filePath);
       const currentMode = stats.mode & 0o777;
 
       if (currentMode !== expectedPermissions) {
         console.warn(
-          `Warning: Config file has insecure permissions (${currentMode.toString(8)}). Fixing to ${expectedPermissions.toString(8)}...`,
+          `Warning: Config file has insecure permissions (${currentMode.toString(8)}). Fixing to ${expectedPermissions.toString(8)}...`
         );
         await fs.chmod(filePath, expectedPermissions);
       }
     } catch (error) {
-      if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
+      const err = error as { code?: string };
+      if (err.code !== "ENOENT") {
         throw error;
       }
     }
@@ -84,10 +90,13 @@ export class ConfigManager {
       const data = JSON.parse(content);
       return validateConfigFile(data);
     } catch (error) {
-      if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      const err = error as { code?: string };
+      if (err.code === "ENOENT") {
         return DEFAULT_CONFIG;
       }
-      throw new Error(`Failed to read config file: ${error instanceof Error ? error.message : "Unknown error"}`);
+      throw new Error(
+        `Failed to read config file: ${error instanceof Error ? error.message : "Unknown error"}`
+      );
     }
   }
 
@@ -106,7 +115,7 @@ export class ConfigManager {
       const currentMode = stats.mode & 0o777;
       if (currentMode !== CONFIG_FILE_PERMISSIONS) {
         console.warn(
-          `Warning: Config file has insecure permissions (${currentMode.toString(8)}). Run 'f5xc-api-mcp --setup' to fix.`,
+          `Warning: Config file has insecure permissions (${currentMode.toString(8)}). Run 'f5xc-api-mcp --setup' to fix.`
         );
       }
 
@@ -122,7 +131,7 @@ export class ConfigManager {
       return result.data!;
     } catch (error) {
       console.warn(
-        `Warning: Failed to read config file: ${error instanceof Error ? error.message : "Unknown error"}`,
+        `Warning: Failed to read config file: ${error instanceof Error ? error.message : "Unknown error"}`
       );
       return DEFAULT_CONFIG;
     }
@@ -157,7 +166,9 @@ export class ConfigManager {
       } catch {
         // Ignore cleanup errors
       }
-      throw new Error(`Failed to write config file: ${error instanceof Error ? error.message : "Unknown error"}`);
+      throw new Error(
+        `Failed to write config file: ${error instanceof Error ? error.message : "Unknown error"}`
+      );
     }
   }
 
@@ -185,7 +196,9 @@ export class ConfigManager {
 
     // Validate profile name
     if (!/^[a-z0-9_-]+$/i.test(name)) {
-      throw new Error("Profile name must contain only alphanumeric characters, hyphens, and underscores");
+      throw new Error(
+        "Profile name must contain only alphanumeric characters, hyphens, and underscores"
+      );
     }
 
     // Set metadata if not provided

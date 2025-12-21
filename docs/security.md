@@ -10,6 +10,7 @@ The configuration file is protected with strict POSIX permissions:
 - **File (`credentials.json`)**: `0600` (user read/write only)
 
 No group or other users can access your credentials. The system automatically:
+
 - Creates directories with correct permissions
 - Detects and corrects insecure permissions
 - Warns if improper permissions are detected
@@ -17,6 +18,7 @@ No group or other users can access your credentials. The system automatically:
 ### Plaintext Storage
 
 Credentials are stored in plaintext JSON. This is the same approach used by:
+
 - AWS CLI (`.aws/credentials`)
 - kubectl (`~/.kube/config`)
 - Cloud SDKs (gcloud, az, etc.)
@@ -35,6 +37,7 @@ Credentials are stored in plaintext JSON. This is the same approach used by:
    - Use `.gitignore` to protect config files
 
 3. **Restrict File Access**
+
    ```bash
    # Verify permissions
    ls -la ~/.f5xc/credentials.json
@@ -50,11 +53,13 @@ Credentials are stored in plaintext JSON. This is the same approach used by:
 ### API Token Security
 
 API tokens are:
+
 - Long-lived credentials with full tenant access
 - Should be treated like passwords
 - Cannot be revoked at the token level (must revoke and re-issue)
 
 **Best Practices:**
+
 - Create tokens with minimal scope if your XC Console supports scoped tokens
 - Rotate tokens regularly (quarterly or as part of security policy)
 - Revoke old tokens immediately after rotating
@@ -64,11 +69,13 @@ API tokens are:
 ### P12 Certificate Security
 
 P12 certificates are:
+
 - Used for mutual TLS (mTLS) authentication
 - Password-protected private key + certificate
 - More secure than API tokens for automated integrations
 
 **Best Practices:**
+
 - Use strong passwords for P12 certificates (16+ characters, mixed case/numbers/symbols)
 - Store passwords separately from the certificate file
 - Restrict certificate file access: `chmod 400 certificate.p12`
@@ -78,6 +85,7 @@ P12 certificates are:
 ### Environment Variable Security
 
 When using environment variables:
+
 - Do not add them to shell profile files (`.bashrc`, `.zshrc`, etc.)
 - Use temporary session variables: `export F5XC_API_TOKEN=xxx && command`
 - Clear history: `history -c`
@@ -96,6 +104,7 @@ env:
 ```
 
 Never:
+
 - Hardcode credentials in workflows
 - Log secrets in output
 - Pass secrets as command arguments
@@ -131,16 +140,19 @@ withCredentials([string(credentialsId: 'f5xc-token', variable: 'F5XC_API_TOKEN')
 ### API Token (Default)
 
 **Pros:**
+
 - Simplest to use
 - Immediate activation
 - Easy to manage in profiles
 
 **Cons:**
+
 - Long-lived credentials
 - No client certificate verification
 - Full tenant access unless scoped
 
 **Use Cases:**
+
 - Development and testing
 - Single-tenant environments
 - Automated tasks with limited scope
@@ -148,17 +160,20 @@ withCredentials([string(credentialsId: 'f5xc-token', variable: 'F5XC_API_TOKEN')
 ### P12 Certificate (mTLS)
 
 **Pros:**
+
 - Mutual authentication (both client and server verified)
 - Private key stays local
 - Better for production integrations
 - Can be rotated more frequently
 
 **Cons:**
+
 - More setup complexity
 - Requires certificate management infrastructure
 - Password required for key
 
 **Use Cases:**
+
 - Production automation
 - Multi-tenant environments
 - High-security requirements
@@ -170,7 +185,8 @@ withCredentials([string(credentialsId: 'f5xc-token', variable: 'F5XC_API_TOKEN')
 
 - Never commit `~/.f5xc/credentials.json` to version control
 - Add to `.gitignore`:
-  ```
+
+  ```bash
   .f5xc/
   ~/.f5xc/
   ```
@@ -210,6 +226,7 @@ LOG_LEVEL=debug f5xc-api-mcp
 ### Credential Redaction
 
 The system automatically redacts sensitive information:
+
 - API tokens shown as `***` with last 4 characters
 - P12 passwords never logged
 - Full URLs shown (contains tenant name, not secrets)
@@ -223,6 +240,7 @@ LOG_LEVEL=info F5XC_API_TOKEN=xxx f5xc-api-mcp > audit.log 2>&1
 ```
 
 Review logs for:
+
 - Unexpected authentication failures
 - API calls to sensitive operations
 - Profile switching events
@@ -235,6 +253,7 @@ Review logs for:
 If you suspect an API token is compromised:
 
 1. **Immediate Actions:**
+
    ```bash
    # Remove from profile
    f5xc-api-mcp --delete-profile compromised-profile
@@ -258,6 +277,7 @@ If you suspect an API token is compromised:
 If your P12 certificate is compromised:
 
 1. **Immediate Actions:**
+
    ```bash
    # Remove from profile
    f5xc-api-mcp --delete-profile compromised-cert
@@ -281,6 +301,7 @@ If your P12 certificate is compromised:
 If `~/.f5xc/credentials.json` is compromised:
 
 1. **Immediate Actions:**
+
    ```bash
    # Disable all profiles immediately
    for profile in $(f5xc-api-mcp --list-profiles); do
@@ -294,6 +315,7 @@ If `~/.f5xc/credentials.json` is compromised:
    - Create new tokens/certificates
 
 3. **Rebuild Profiles:**
+
    ```bash
    f5xc-api-mcp --setup
    ```
@@ -316,6 +338,7 @@ If `~/.f5xc/credentials.json` is compromised:
 ### Audit Trail
 
 Maintain audit trail of:
+
 - Profile creation and modification times
 - Token issuance and rotation dates
 - Certificate expiration dates
@@ -325,11 +348,13 @@ Maintain audit trail of:
 ### Regular Reviews
 
 Monthly:
+
 - Review profile list
 - Check for unused profiles
 - Verify audit logs for suspicious activity
 
 Quarterly:
+
 - Rotate API tokens
 - Review certificate expiration dates
 - Update security procedures if needed

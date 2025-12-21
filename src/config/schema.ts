@@ -8,35 +8,44 @@ import type { ConfigFile, ProfileCredentials } from "./types.js";
 /**
  * Schema for profile metadata
  */
-export const ProfileMetadataSchema = z.object({
-  description: z.string().optional(),
-  createdAt: z.string().datetime(),
-  lastUsedAt: z.string().datetime().optional(),
-  lastModifiedAt: z.string().datetime(),
-}).strict();
+export const ProfileMetadataSchema = z
+  .object({
+    description: z.string().optional(),
+    createdAt: z.string().datetime(),
+    lastUsedAt: z.string().datetime().optional(),
+    lastModifiedAt: z.string().datetime(),
+  })
+  .strict();
 
 /**
  * Schema for profile credentials
  */
-export const ProfileCredentialsSchema = z.object({
-  apiUrl: z.string().url().optional(),
-  apiToken: z.string().optional(),
-  p12File: z.string().optional(),
-  p12Password: z.string().optional(),
-  metadata: ProfileMetadataSchema.optional(),
-}).strict();
+export const ProfileCredentialsSchema = z
+  .object({
+    apiUrl: z.string().url().optional(),
+    apiToken: z.string().optional(),
+    p12File: z.string().optional(),
+    p12Password: z.string().optional(),
+    metadata: ProfileMetadataSchema.optional(),
+  })
+  .strict();
 
 /**
  * Schema for configuration file
  */
-export const ConfigFileSchema = z.object({
-  version: z.string(),
-  defaultProfile: z.string().optional(),
-  profiles: z.record(z.string(), ProfileCredentialsSchema),
-  metadata: z.object({
-    lastModifiedAt: z.string().datetime(),
-  }).strict().optional(),
-}).strict();
+export const ConfigFileSchema = z
+  .object({
+    version: z.string(),
+    defaultProfile: z.string().optional(),
+    profiles: z.record(z.string(), ProfileCredentialsSchema),
+    metadata: z
+      .object({
+        lastModifiedAt: z.string().datetime(),
+      })
+      .strict()
+      .optional(),
+  })
+  .strict();
 
 /**
  * Validate a configuration file
@@ -61,9 +70,11 @@ export function validateProfileCredentials(data: unknown): ProfileCredentials {
  * @param data - Data to validate
  * @returns Object with success flag and data or error
  */
-export function safeValidateConfigFile(
-  data: unknown,
-): { success: boolean; data?: ConfigFile; error?: string } {
+export function safeValidateConfigFile(data: unknown): {
+  success: boolean;
+  data?: ConfigFile;
+  error?: string;
+} {
   try {
     const config = validateConfigFile(data);
     return { success: true, data: config };
