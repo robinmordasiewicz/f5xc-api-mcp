@@ -9,12 +9,13 @@ other MCP-compatible tools.
 
 ## Features
 
-- **270+ API Tools** - Complete coverage of F5XC API operations (CRUD for all resources)
+- **1500+ API Tools** - Complete coverage of F5XC API operations across 22 domains
 - **Dual-Mode Operation** - Works without authentication (documentation mode) AND with authentication (execution mode)
 - **f5xcctl Integration** - Every response includes equivalent CLI commands
 - **Terraform Examples** - Every response includes Terraform HCL examples
 - **Multiple Auth Methods** - API token and P12 certificate (mTLS) support
 - **URL Normalization** - Automatically handles various F5XC URL formats
+- **Pre-enriched Specs** - Uses optimized OpenAPI 3.0.3 specifications from upstream
 
 ## Quick Start
 
@@ -117,23 +118,38 @@ When credentials are provided, the server additionally:
 
 Tools follow the naming pattern: `f5xc-api-{domain}-{resource}-{operation}`
 
-### Domains
+### Domains (22 Total)
 
-| Domain | Resources |
-|--------|-----------|
-| `waap` | http_loadbalancer, origin_pool, app_firewall, rate_limiter |
-| `dns` | dns_zone, dns_load_balancer, dns_lb_pool |
-| `network` | network_connector, network_firewall, enhanced_firewall_policy |
-| `site` | aws_vpc_site, azure_vnet_site, gcp_vpc_site, customer_edge |
-| `appstack` | k8s_cluster, virtual_k8s, workload |
-| `security` | service_policy, waf, malicious_user_detection |
-| `core` | namespace, certificate, cloud_credentials |
+| Domain | Description |
+|--------|-------------|
+| `load_balancer` | HTTP/TCP/UDP load balancers, origin pools, forward proxy |
+| `networking` | Network connectors, firewalls, interfaces, policies |
+| `security` | Service policies, WAF, malicious user mitigation |
+| `infrastructure` | AWS/Azure/GCP VPC sites, customer edge sites |
+| `api_security` | API discovery, protection, definitions |
+| `cdn` | CDN load balancers, cache rules |
+| `dns` | DNS zones, DNS load balancers, DNS pools |
+| `identity` | Authentication, users, roles, RBAC |
+| `observability` | Alerts, logs, synthetic monitors |
+| `config` | Namespaces, certificates, credentials |
+| `nginx` | NGINX One instances, servers, service discovery |
+| `bigip` | BIG-IP virtual servers, iRules, APM |
+| `vpn` | VPN tunnels, IKE profiles |
+| `service_mesh` | Virtual K8s, workloads, K8s clusters |
+| `shape_security` | Bot defense, client-side defense |
+| `tenant_management` | Multi-tenant management, profiles |
+| `billing` | Invoices, payment methods, subscriptions |
+| `integrations` | Third-party apps, ticket systems |
+| `operations` | Debug, DHCP, ping, traceroute |
+| `ai_intelligence` | AI assistant, BFDP |
+| `infrastructure_protection` | DDoS protection, firewall rules |
+| `subscriptions` | Feature subscriptions, plans |
 
 ### Example Tools
 
-- `f5xc-api-waap-http-loadbalancer-create`
-- `f5xc-api-waap-origin-pool-list`
-- `f5xc-api-dns-zone-get`
+- `f5xc-api-loadbalancer-http-loadbalancer-create`
+- `f5xc-api-loadbalancer-origin-pool-list`
+- `f5xc-api-networking-network-interface-get`
 - `f5xc-api-server-info`
 
 ## Workflow Prompts
