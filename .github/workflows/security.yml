@@ -41,7 +41,7 @@ jobs:
         continue-on-error: true
 
       - name: Run Trivy vulnerability scanner (filesystem)
-        uses: aquasecurity/trivy-action@0.34.0
+        uses: aquasecurity/trivy-action@0.33.1
         with:
           scan-type: "fs"
           scan-ref: "."
@@ -79,7 +79,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Run Trivy vulnerability scanner (container)
-        uses: aquasecurity/trivy-action@0.34.0
+        uses: aquasecurity/trivy-action@0.33.1
         with:
           image-ref: "f5xc-api-mcp:security-scan"
           severity: "HIGH,CRITICAL"
