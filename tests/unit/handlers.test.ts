@@ -102,7 +102,7 @@ describe("handlers", () => {
           const content = JSON.parse(result.content) as ResourceDocumentation;
           expect(content.resourceType).toBeDefined();
           expect(content.apiPath).toContain("http_loadbalancers");
-          expect(content.f5xcctlCommand).toContain("f5xcctl get");
+          expect(content.f5xcctlCommand).toMatch(/f5xcctl\s+\w+\s+get/);
           expect(content.terraformDataSource).toContain("volterra_http_loadbalancer");
           expect(content.exampleResource).toBeDefined();
           expect(content.exampleResource.metadata).toBeDefined();
@@ -642,7 +642,7 @@ describe("handlers", () => {
       );
 
       const content = JSON.parse(result.content) as ResourceDocumentation;
-      expect(content.f5xcctlCommand).toBe("f5xcctl get http_loadbalancer example-lb -n default -o yaml");
+      expect(content.f5xcctlCommand).toBe("f5xcctl load_balancer get http_loadbalancer example-lb -n default");
     });
 
     it("should handle resource types with hyphens", async () => {
@@ -658,7 +658,7 @@ describe("handlers", () => {
       );
 
       const content = JSON.parse(result.content) as ResourceDocumentation;
-      expect(content.f5xcctlCommand).toBe("f5xcctl get origin_pool example-pool -n default -o yaml");
+      expect(content.f5xcctlCommand).toBe("f5xcctl load_balancer get origin_pool example-pool -n default");
     });
   });
 
