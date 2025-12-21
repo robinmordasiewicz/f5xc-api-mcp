@@ -26,7 +26,7 @@ Add to Cline's MCP settings:
 {
   "f5xc-api": {
     "command": "npx",
-    "args": ["f5xc-api-mcp"],
+    "args": ["@robinmordasiewicz/f5xc-api-mcp"],
     "env": {
       "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
       "F5XC_API_TOKEN": "your-api-token"
@@ -64,7 +64,7 @@ Edit `~/.continue/config.json`:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"],
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "env": {
         "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
         "F5XC_API_TOKEN": "your-api-token"

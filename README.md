@@ -88,7 +88,114 @@ Add to your MCP settings:
 | `F5XC_API_TOKEN` | For token auth | API token from XC Console |
 | `F5XC_P12_FILE` | For cert auth | Path to P12 certificate file |
 | `F5XC_P12_PASSWORD` | For cert auth | Password for P12 certificate |
+| `F5XC_PROFILE` | No | Profile name to use (default: `defaultProfile` from config) |
 | `LOG_LEVEL` | No | Logging verbosity (debug, info, warn, error) |
+
+## Profile-Based Configuration
+
+Manage multiple F5XC tenant credentials with named profiles stored in `~/.f5xc/credentials.json`.
+
+### Interactive Setup
+
+Run the setup wizard to create profiles with auto-detection of existing environment variables:
+
+```bash
+f5xc-api-mcp --setup
+```
+
+The wizard will:
+1. Detect existing `F5XC_API_URL`, `F5XC_API_TOKEN`, `F5XC_P12_FILE`, `F5XC_P12_PASSWORD`
+2. Offer to create a profile from detected credentials
+3. Allow manual profile creation if no credentials are detected
+4. Set a default profile for automatic selection
+
+### Using Profiles
+
+```bash
+# Use default profile
+f5xc-api-mcp
+
+# Use specific profile
+F5XC_PROFILE=staging f5xc-api-mcp
+
+# Override profile credentials with environment variables
+F5XC_PROFILE=production F5XC_API_TOKEN=temporary-token f5xc-api-mcp
+```
+
+### Profile Management Commands
+
+```bash
+# List all configured profiles
+f5xc-api-mcp --list-profiles
+
+# Display configuration file
+f5xc-api-mcp --show-config
+
+# Set default profile
+f5xc-api-mcp --set-default production
+
+# Delete a profile
+f5xc-api-mcp --delete-profile staging
+
+# Test profile connection
+f5xc-api-mcp --test-profile production
+```
+
+### Configuration File Format
+
+Profiles are stored in `~/.f5xc/credentials.json`:
+
+```json
+{
+  "version": "1.0",
+  "defaultProfile": "production",
+  "profiles": {
+    "production": {
+      "apiUrl": "https://mytenant.console.ves.volterra.io",
+      "apiToken": "your-api-token",
+      "metadata": {
+        "description": "Production tenant",
+        "createdAt": "2025-12-21T10:00:00Z",
+        "lastUsedAt": "2025-12-21T15:30:00Z"
+      }
+    },
+    "staging": {
+      "apiUrl": "https://staging.console.ves.volterra.io",
+      "apiToken": "staging-token",
+      "metadata": {
+        "description": "Staging environment",
+        "createdAt": "2025-12-21T10:05:00Z"
+      }
+    }
+  }
+}
+```
+
+### Credential Priority
+
+Credentials are loaded in this order (highest to lowest priority):
+
+1. **Environment Variables** - `F5XC_API_URL`, `F5XC_API_TOKEN`, etc.
+2. **Active Profile** - Selected by `F5XC_PROFILE` or `defaultProfile`
+3. **Documentation Mode** - No credentials (read-only API documentation)
+
+Environment variables always override profile settings, enabling temporary overrides.
+
+### Backward Compatibility
+
+Existing setups using environment variables continue to work unchanged:
+
+```bash
+export F5XC_API_URL=https://mytenant.console.ves.volterra.io
+export F5XC_API_TOKEN=your-api-token
+f5xc-api-mcp
+```
+
+No changes needed - profiles are optional. Migrate to profiles when ready:
+
+```bash
+f5xc-api-mcp --setup  # Auto-detects existing env vars
+```
 
 ## Dual-Mode Operation
 

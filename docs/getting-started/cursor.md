@@ -27,7 +27,7 @@ Add the F5XC API server configuration:
       "mcpServers": {
         "f5xc-api": {
           "command": "npx",
-          "args": ["f5xc-api-mcp"]
+          "args": ["@robinmordasiewicz/f5xc-api-mcp"]
         }
       }
     }
@@ -40,7 +40,7 @@ Add the F5XC API server configuration:
       "mcpServers": {
         "f5xc-api": {
           "command": "npx",
-          "args": ["f5xc-api-mcp"],
+          "args": ["@robinmordasiewicz/f5xc-api-mcp"],
           "env": {
             "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
             "F5XC_API_TOKEN": "your-api-token"
@@ -84,7 +84,7 @@ For project-specific settings, create `.cursor/mcp.json`:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"],
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "env": {
         "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
         "F5XC_API_TOKEN": "${env:F5XC_API_TOKEN}"

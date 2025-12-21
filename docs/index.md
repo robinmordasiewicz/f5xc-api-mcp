@@ -20,7 +20,7 @@ An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to
 === "npx (Recommended)"
 
     ```bash
-    npx f5xc-api-mcp
+    npx @robinmordasiewicz/f5xc-api-mcp
     ```
 
 === "Docker"
@@ -32,7 +32,7 @@ An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to
 === "npm Global"
 
     ```bash
-    npm install -g f5xc-api-mcp
+    npm install -g @robinmordasiewicz/f5xc-api-mcp
     f5xc-api-mcp
     ```
 

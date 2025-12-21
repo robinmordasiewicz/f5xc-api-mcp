@@ -29,7 +29,7 @@ That's it! The extension is now available in Claude Desktop.
 The easiest way to run the server from command line. No installation required.
 
 ```bash
-npx f5xc-api-mcp
+npx @robinmordasiewicz/f5xc-api-mcp
 ```
 
 This downloads and runs the latest version automatically.
@@ -39,7 +39,7 @@ This downloads and runs the latest version automatically.
 Install globally for faster startup on repeated use:
 
 ```bash
-npm install -g f5xc-api-mcp
+npm install -g @robinmordasiewicz/f5xc-api-mcp
 ```
 
 Then run:
@@ -94,13 +94,13 @@ npm start
 ### Latest Stable
 
 ```bash
-npx f5xc-api-mcp@latest
+npx @robinmordasiewicz/f5xc-api-mcp@latest
 ```
 
 ### Specific Version
 
 ```bash
-npx f5xc-api-mcp@1.0.0
+npx @robinmordasiewicz/f5xc-api-mcp@3.0.0
 ```
 
 ### Docker Tags
@@ -117,13 +117,13 @@ npx f5xc-api-mcp@1.0.0
 Run the server and check the output:
 
 ```bash
-npx f5xc-api-mcp --version
+npx @robinmordasiewicz/f5xc-api-mcp --version
 ```
 
 Or test with a simple MCP connection:
 
 ```bash
-echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"capabilities":{}}}' | npx f5xc-api-mcp
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"capabilities":{}}}' | npx @robinmordasiewicz/f5xc-api-mcp
 ```
 
 ## Troubleshooting
@@ -160,7 +160,7 @@ If below 18.0, upgrade using:
 If you get permission errors with global install:
 
 ```bash
-npm install -g f5xc-api-mcp --unsafe-perm
+npm install -g @robinmordasiewicz/f5xc-api-mcp --unsafe-perm
 ```
 
 Or use a Node version manager like nvm.

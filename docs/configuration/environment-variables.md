@@ -13,6 +13,7 @@ Complete reference for F5XC API MCP Server environment variables.
 | `F5XC_API_TOKEN` | Token auth | API token from XC Console |
 | `F5XC_P12_FILE` | Cert auth | Absolute path to P12 certificate |
 | `F5XC_P12_PASSWORD` | Cert auth | Password for P12 certificate |
+| `F5XC_PROFILE` | No | Profile name from `~/.f5xc/credentials.json` |
 | `LOG_LEVEL` | No | Logging level: debug, info, warn, error |
 | `NODE_ENV` | No | Node environment: development, production |
 
@@ -60,6 +61,19 @@ Password for the P12 certificate.
 ```bash
 export F5XC_P12_PASSWORD="certificate-password"
 ```
+
+### F5XC_PROFILE
+
+Select a profile from `~/.f5xc/credentials.json` for multi-tenant credential management.
+
+```bash
+export F5XC_PROFILE="staging"
+```
+
+!!! note "Profile-Based Configuration"
+    Profiles are optional. For setup, run: `f5xc-api-mcp --setup`
+
+    See [Authentication Guide](authentication.md#profile-based-configuration) for details.
 
 ---
 
@@ -167,11 +181,21 @@ docker run -it --env-file .env ghcr.io/robinmordasiewicz/f5xc-api-mcp
 
 ## Authentication Priority
 
-When multiple methods are configured:
+When multiple authentication sources are configured:
 
-1. **API Token** (`F5XC_API_TOKEN`) - Highest priority
-2. **P12 Certificate** (`F5XC_P12_FILE` + `F5XC_P12_PASSWORD`)
-3. **No Authentication** - Documentation mode
+1. **Environment Variables** (highest priority) - `F5XC_API_URL`, `F5XC_API_TOKEN`, etc.
+   - Environment variables override all other sources
+2. **Profile-Based Configuration** - `F5XC_PROFILE` selection from `~/.f5xc/credentials.json`
+   - Selected by `F5XC_PROFILE` env var or default profile
+   - Supports multiple credentials for different tenants
+3. **No Authentication** (lowest priority) - Documentation mode
+   - Returns API documentation without executing operations
+
+!!! tip "Profile Setup"
+    Set up profiles with auto-detection of existing environment variables:
+    ```bash
+    f5xc-api-mcp --setup
+    ```
 
 ---
 
@@ -195,6 +219,7 @@ Check for `authenticated: true` and correct `authMethod`.
 
 ## Next Steps
 
-- [Authentication Guide](authentication.md) - Detailed authentication setup
+- [Authentication Guide](authentication.md) - Detailed authentication setup and profile configuration
+- [Security Best Practices](../security.md) - Credential storage and management
 - [MCP Configuration](mcp-json.md) - Full MCP config reference
 - [Troubleshooting](../troubleshooting/faq.md) - Common issues
