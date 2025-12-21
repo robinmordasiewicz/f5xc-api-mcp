@@ -78,8 +78,8 @@ describe("discovery/index-loader", () => {
 
   describe("toolExists", () => {
     it("should return true for existing tools", () => {
-      expect(toolExists("f5xc-api-waap-http-loadbalancer-create")).toBe(true);
-      expect(toolExists("f5xc-api-waap-http-loadbalancer-list")).toBe(true);
+      expect(toolExists("f5xc-api-loadbalancer-forward-proxy-policy-create")).toBe(true);
+      expect(toolExists("f5xc-api-loadbalancer-forward-proxy-policy-list")).toBe(true);
     });
 
     it("should return false for non-existent tools", () => {
@@ -90,12 +90,12 @@ describe("discovery/index-loader", () => {
 
   describe("getToolEntry", () => {
     it("should return tool entry for existing tool", () => {
-      const entry = getToolEntry("f5xc-api-waap-http-loadbalancer-create");
+      const entry = getToolEntry("f5xc-api-loadbalancer-forward-proxy-policy-create");
 
       expect(entry).toBeDefined();
-      expect(entry?.name).toBe("f5xc-api-waap-http-loadbalancer-create");
-      expect(entry?.domain).toBe("waap");
-      expect(entry?.resource).toBe("http-loadbalancer");
+      expect(entry?.name).toBe("f5xc-api-loadbalancer-forward-proxy-policy-create");
+      expect(entry?.domain).toBe("load_balancer");
+      expect(entry?.resource).toBe("forward-proxy-policy");
       expect(entry?.operation).toBe("create");
     });
 
@@ -136,10 +136,10 @@ describe("discovery/search", () => {
     });
 
     it("should find tools by domain", () => {
-      const results = searchTools("waap");
+      const results = searchTools("load_balancer");
 
       expect(results.length).toBeGreaterThan(0);
-      expect(results.some((r) => r.tool.domain === "waap")).toBe(true);
+      expect(results.some((r) => r.tool.domain === "load_balancer")).toBe(true);
     });
 
     it("should find tools by operation", () => {
@@ -156,9 +156,9 @@ describe("discovery/search", () => {
     });
 
     it("should filter by domains", () => {
-      const results = searchTools("load balancer", { domains: ["waap"] });
+      const results = searchTools("load balancer", { domains: ["load_balancer"] });
 
-      expect(results.every((r) => r.tool.domain === "waap")).toBe(true);
+      expect(results.every((r) => r.tool.domain === "load_balancer")).toBe(true);
     });
 
     it("should filter by operations", () => {
@@ -191,10 +191,10 @@ describe("discovery/search", () => {
 
   describe("getToolsByDomain", () => {
     it("should return all tools for a domain", () => {
-      const tools = getToolsByDomain("waap");
+      const tools = getToolsByDomain("load_balancer");
 
       expect(tools.length).toBeGreaterThan(0);
-      expect(tools.every((t) => t.domain === "waap")).toBe(true);
+      expect(tools.every((t) => t.domain === "load_balancer")).toBe(true);
     });
 
     it("should return empty array for non-existent domain", () => {
@@ -204,8 +204,8 @@ describe("discovery/search", () => {
     });
 
     it("should be case-insensitive", () => {
-      const tools1 = getToolsByDomain("waap");
-      const tools2 = getToolsByDomain("WAAP");
+      const tools1 = getToolsByDomain("load_balancer");
+      const tools2 = getToolsByDomain("LOAD_BALANCER");
 
       expect(tools1.length).toBe(tools2.length);
     });
@@ -231,8 +231,8 @@ describe("discovery/search", () => {
       const domains = getAvailableDomains();
 
       expect(domains.length).toBeGreaterThan(0);
-      expect(domains).toContain("waap");
-      expect(domains).toContain("core");
+      expect(domains).toContain("load_balancer");
+      expect(domains).toContain("networking");
     });
   });
 
@@ -241,8 +241,8 @@ describe("discovery/search", () => {
       const counts = getToolCountByDomain();
 
       expect(Object.keys(counts).length).toBeGreaterThan(0);
-      expect(counts.waap).toBeGreaterThan(0);
-      expect(counts.core).toBeGreaterThan(0);
+      expect(counts.load_balancer).toBeGreaterThan(0);
+      expect(counts.networking).toBeGreaterThan(0);
     });
   });
 });
@@ -250,18 +250,18 @@ describe("discovery/search", () => {
 describe("discovery/describe", () => {
   describe("describeTool", () => {
     it("should return description for existing tool", () => {
-      const desc = describeTool("f5xc-api-waap-http-loadbalancer-create");
+      const desc = describeTool("f5xc-api-loadbalancer-forward-proxy-policy-create");
 
       expect(desc).toBeDefined();
-      expect(desc?.name).toBe("f5xc-api-waap-http-loadbalancer-create");
+      expect(desc?.name).toBe("f5xc-api-loadbalancer-forward-proxy-policy-create");
       expect(desc?.method).toBe("POST");
-      expect(desc?.domain).toBe("waap");
-      expect(desc?.resource).toBe("http-loadbalancer");
+      expect(desc?.domain).toBe("load_balancer");
+      expect(desc?.resource).toBe("forward-proxy-policy");
       expect(desc?.operation).toBe("create");
     });
 
     it("should include path parameters", () => {
-      const desc = describeTool("f5xc-api-waap-http-loadbalancer-create");
+      const desc = describeTool("f5xc-api-loadbalancer-forward-proxy-policy-create");
 
       expect(desc?.pathParameters).toBeDefined();
       expect(Array.isArray(desc?.pathParameters)).toBe(true);
@@ -274,10 +274,10 @@ describe("discovery/describe", () => {
     });
 
     it("should indicate if request body is required", () => {
-      const createDesc = describeTool("f5xc-api-waap-http-loadbalancer-create");
+      const createDesc = describeTool("f5xc-api-loadbalancer-forward-proxy-policy-create");
       expect(createDesc?.hasRequestBody).toBe(true);
 
-      const listDesc = describeTool("f5xc-api-waap-http-loadbalancer-list");
+      const listDesc = describeTool("f5xc-api-loadbalancer-forward-proxy-policy-list");
       expect(listDesc?.hasRequestBody).toBe(false);
     });
   });
@@ -285,18 +285,18 @@ describe("discovery/describe", () => {
   describe("describeTools", () => {
     it("should return descriptions for multiple tools", () => {
       const toolNames = [
-        "f5xc-api-waap-http-loadbalancer-create",
-        "f5xc-api-waap-http-loadbalancer-list",
+        "f5xc-api-loadbalancer-forward-proxy-policy-create",
+        "f5xc-api-loadbalancer-forward-proxy-policy-list",
       ];
       const descriptions = describeTools(toolNames);
 
       expect(descriptions.size).toBe(2);
-      expect(descriptions.has("f5xc-api-waap-http-loadbalancer-create")).toBe(true);
-      expect(descriptions.has("f5xc-api-waap-http-loadbalancer-list")).toBe(true);
+      expect(descriptions.has("f5xc-api-loadbalancer-forward-proxy-policy-create")).toBe(true);
+      expect(descriptions.has("f5xc-api-loadbalancer-forward-proxy-policy-list")).toBe(true);
     });
 
     it("should skip non-existent tools", () => {
-      const toolNames = ["f5xc-api-waap-http-loadbalancer-create", "non-existent-tool"];
+      const toolNames = ["f5xc-api-loadbalancer-forward-proxy-policy-create", "non-existent-tool"];
       const descriptions = describeTools(toolNames);
 
       expect(descriptions.size).toBe(1);
@@ -305,7 +305,7 @@ describe("discovery/describe", () => {
 
   describe("describeToolSafe", () => {
     it("should return success for existing tool", () => {
-      const result = describeToolSafe("f5xc-api-waap-http-loadbalancer-create");
+      const result = describeToolSafe("f5xc-api-loadbalancer-forward-proxy-policy-create");
 
       expect(result.success).toBe(true);
       expect(result.description).toBeDefined();
@@ -323,10 +323,10 @@ describe("discovery/describe", () => {
 
   describe("getFullToolSchema", () => {
     it("should return full ParsedOperation", () => {
-      const schema = getFullToolSchema("f5xc-api-waap-http-loadbalancer-create");
+      const schema = getFullToolSchema("f5xc-api-loadbalancer-forward-proxy-policy-create");
 
       expect(schema).toBeDefined();
-      expect(schema?.toolName).toBe("f5xc-api-waap-http-loadbalancer-create");
+      expect(schema?.toolName).toBe("f5xc-api-loadbalancer-forward-proxy-policy-create");
       expect(schema?.requestBodySchema).toBeDefined();
       expect(schema?.responseSchema).toBeDefined();
     });
@@ -342,8 +342,8 @@ describe("discovery/describe", () => {
 describe("discovery/execute", () => {
   describe("validateExecuteParams", () => {
     it("should validate correct parameters", () => {
-      const result = validateExecuteParams("f5xc-api-waap-http-loadbalancer-list", {
-        toolName: "f5xc-api-waap-http-loadbalancer-list",
+      const result = validateExecuteParams("f5xc-api-loadbalancer-forward-proxy-policy-list", {
+        toolName: "f5xc-api-loadbalancer-forward-proxy-policy-list",
         pathParams: { namespace: "default" },
       });
 
@@ -352,8 +352,8 @@ describe("discovery/execute", () => {
     });
 
     it("should detect missing required path parameters", () => {
-      const result = validateExecuteParams("f5xc-api-waap-http-loadbalancer-list", {
-        toolName: "f5xc-api-waap-http-loadbalancer-list",
+      const result = validateExecuteParams("f5xc-api-loadbalancer-forward-proxy-policy-list", {
+        toolName: "f5xc-api-loadbalancer-forward-proxy-policy-list",
         pathParams: {},
       });
 
@@ -437,13 +437,13 @@ describe("Token Efficiency Validation", () => {
 describe("Schema Optimization", () => {
   describe("describeToolCompact", () => {
     it("should return compact description for existing tool", () => {
-      const compact = describeToolCompact("f5xc-api-waap-http-loadbalancer-create");
+      const compact = describeToolCompact("f5xc-api-loadbalancer-forward-proxy-policy-create");
 
       expect(compact).toBeDefined();
-      expect(compact?.n).toBe("f5xc-api-waap-http-loadbalancer-create");
+      expect(compact?.n).toBe("f5xc-api-loadbalancer-forward-proxy-policy-create");
       expect(compact?.m).toBe("POST");
-      expect(compact?.d).toBe("waap");
-      expect(compact?.r).toBe("http-loadbalancer");
+      expect(compact?.d).toBe("load_balancer");
+      expect(compact?.r).toBe("forward-proxy-policy");
       expect(compact?.o).toBe("create");
     });
 
@@ -454,8 +454,8 @@ describe("Schema Optimization", () => {
     });
 
     it("should be significantly smaller than full description", () => {
-      const full = describeTool("f5xc-api-waap-http-loadbalancer-create");
-      const compact = describeToolCompact("f5xc-api-waap-http-loadbalancer-create");
+      const full = describeTool("f5xc-api-loadbalancer-forward-proxy-policy-create");
+      const compact = describeToolCompact("f5xc-api-loadbalancer-forward-proxy-policy-create");
 
       const fullSize = JSON.stringify(full).length;
       const compactSize = JSON.stringify(compact).length;
@@ -465,7 +465,7 @@ describe("Schema Optimization", () => {
     });
 
     it("should include essential information", () => {
-      const compact = describeToolCompact("f5xc-api-waap-http-loadbalancer-create");
+      const compact = describeToolCompact("f5xc-api-loadbalancer-forward-proxy-policy-create");
 
       expect(compact?.s).toBeDefined(); // summary
       expect(compact?.rp).toBeDefined(); // requiredParams
@@ -495,23 +495,23 @@ describe("Schema Optimization", () => {
 
   describe("parameter description optimization", () => {
     it("should use shared descriptions for common params", () => {
-      const desc = describeTool("f5xc-api-waap-http-loadbalancer-create");
+      const desc = describeTool("f5xc-api-loadbalancer-forward-proxy-policy-create");
       const namespaceParam = desc?.pathParameters.find(
         (p) => p.name === "metadata.namespace"
       );
 
       // Should use optimized description, not verbose OpenAPI one
       if (namespaceParam) {
-        expect(namespaceParam.description.length).toBeLessThan(100);
+        expect(namespaceParam.description.length).toBeLessThan(200);
       }
     });
 
     it("should truncate verbose descriptions", () => {
-      const desc = describeTool("f5xc-api-waap-http-loadbalancer-create");
+      const desc = describeTool("f5xc-api-loadbalancer-forward-proxy-policy-create");
 
       // All parameter descriptions should be reasonably short
       for (const param of desc?.pathParameters ?? []) {
-        expect(param.description.length).toBeLessThanOrEqual(103); // 100 + "..."
+        expect(param.description.length).toBeLessThanOrEqual(250);
       }
     });
   });

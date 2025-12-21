@@ -115,10 +115,10 @@ describe("consolidate", () => {
 
   describe("getConsolidatedByDomain", () => {
     it("should return resources for existing domain", () => {
-      const resources = getConsolidatedByDomain("waap");
+      const resources = getConsolidatedByDomain("load_balancer");
 
       expect(resources.length).toBeGreaterThan(0);
-      expect(resources.every((r) => r.domain === "waap")).toBe(true);
+      expect(resources.every((r) => r.domain === "load_balancer")).toBe(true);
     });
 
     it("should return empty array for non-existent domain", () => {
@@ -128,8 +128,8 @@ describe("consolidate", () => {
     });
 
     it("should be case-insensitive", () => {
-      const resources1 = getConsolidatedByDomain("waap");
-      const resources2 = getConsolidatedByDomain("WAAP");
+      const resources1 = getConsolidatedByDomain("load_balancer");
+      const resources2 = getConsolidatedByDomain("LOAD_BALANCER");
 
       expect(resources1.length).toBe(resources2.length);
     });
@@ -150,10 +150,10 @@ describe("consolidate", () => {
     });
 
     it("should find resources by domain", () => {
-      const results = searchConsolidatedResources("waap");
+      const results = searchConsolidatedResources("load_balancer");
 
       expect(results.length).toBeGreaterThan(0);
-      expect(results.some((r) => r.resource.domain === "waap")).toBe(true);
+      expect(results.some((r) => r.resource.domain === "load_balancer")).toBe(true);
     });
 
     it("should respect limit option", () => {
@@ -163,9 +163,9 @@ describe("consolidate", () => {
     });
 
     it("should filter by domains", () => {
-      const results = searchConsolidatedResources("load balancer", { domains: ["waap"] });
+      const results = searchConsolidatedResources("load balancer", { domains: ["load_balancer"] });
 
-      expect(results.every((r) => r.resource.domain === "waap")).toBe(true);
+      expect(results.every((r) => r.resource.domain === "load_balancer")).toBe(true);
     });
 
     it("should return empty array for no matches", () => {

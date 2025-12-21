@@ -6,7 +6,7 @@
  */
 
 import { readFileSync, readdirSync, existsSync } from "fs";
-import { join, extname, relative } from "path";
+import { join, extname, relative, basename } from "path";
 import YAML from "yaml";
 import { z } from "zod";
 import {
@@ -156,6 +156,7 @@ export interface ParsedSpec {
  * Parse a single OpenAPI specification file
  * @param filePath - Absolute path to the spec file
  * @param basePath - Optional base path for creating relative sourceFile paths (for deterministic output)
+ * @deprecated Use parseDomainSpecFile() for pre-enriched domain specs from robinmordasiewicz/f5xc-api-enriched
  */
 export function parseSpecFile(filePath: string, basePath?: string): ParsedSpec | null {
   try {
@@ -315,6 +316,7 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
 
 /**
  * Parse all spec files in a directory
+ * @deprecated Use parseDomainsDirectory() for pre-enriched domain specs from robinmordasiewicz/f5xc-api-enriched
  */
 export function parseSpecDirectory(dirPath: string): ParsedSpec[] {
   const specs: ParsedSpec[] = [];
@@ -409,4 +411,217 @@ export function groupOperationsByDomain(
   }
 
   return sortedGrouped;
+}
+
+/**
+ * Extract operations from an enriched domain spec (pre-normalized upstream)
+ * This skips transformation since enriched specs are already normalized
+ */
+function extractDomainOperations(
+  spec: OpenApiSpec,
+  domain: string,
+  sourceFile: string
+): ParsedOperation[] {
+  const operations: ParsedOperation[] = [];
+
+  if (!spec.paths) {
+    return operations;
+  }
+
+  const httpMethods = ["get", "post", "put", "delete", "patch"] as const;
+
+  // Sort paths alphabetically for deterministic output
+  const sortedPaths = Object.entries(spec.paths).sort(([a], [b]) =>
+    a < b ? -1 : a > b ? 1 : 0
+  );
+
+  for (const [path, pathItem] of sortedPaths) {
+    // Check if path has a name parameter (indicates single resource operations)
+    const hasNameParam = path.includes("{name}") || path.includes("{id}");
+
+    // Get path-level parameters
+    const pathLevelParams = pathItem.parameters ?? [];
+
+    for (const method of httpMethods) {
+      const operation = pathItem[method];
+      if (!operation) {
+        continue;
+      }
+
+      // Determine operation type and generate tool name
+      const operationType = methodToOperation(method, hasNameParam);
+      const resource = extractResourceFromPath(path);
+      const toolName = generateToolName(domain, resource, operationType);
+
+      // Combine path and operation parameters
+      const allParams = [...pathLevelParams, ...(operation.parameters ?? [])];
+
+      const pathParameters = allParams.filter((p) => p.in === "path");
+      const queryParameters = allParams.filter((p) => p.in === "query");
+
+      // Extract request body schema
+      let requestBodySchema: Record<string, unknown> | null = null;
+      if (operation.requestBody?.content) {
+        const jsonContent = operation.requestBody.content["application/json"];
+        if (jsonContent?.schema) {
+          requestBodySchema = jsonContent.schema as Record<string, unknown>;
+        }
+      }
+
+      // Extract response schema (from 200 or first success response)
+      let responseSchema: Record<string, unknown> | null = null;
+      if (operation.responses) {
+        const successResponse =
+          operation.responses["200"] ?? operation.responses["201"];
+        if (successResponse?.content) {
+          const jsonContent = successResponse.content["application/json"];
+          if (jsonContent?.schema) {
+            responseSchema = jsonContent.schema as Record<string, unknown>;
+          }
+        }
+      }
+
+      // Collect required parameters
+      const requiredParams: string[] = [];
+      for (const param of allParams) {
+        if (param.required) {
+          requiredParams.push(param.name);
+        }
+      }
+      if (operation.requestBody?.required) {
+        requiredParams.push("body");
+      }
+
+      // Use content as-is - enriched specs are already normalized
+      const summary = operation.summary ?? `${operationType} ${resource}`;
+      const description = operation.description ?? "";
+
+      operations.push({
+        toolName,
+        method: method.toUpperCase(),
+        path,
+        operation: operationType,
+        domain,
+        resource,
+        summary,
+        description,
+        pathParameters,
+        queryParameters,
+        requestBodySchema,
+        responseSchema,
+        requiredParams,
+        operationId: operation.operationId ?? null,
+        tags: operation.tags ?? [],
+        sourceFile,
+      });
+    }
+  }
+
+  return operations;
+}
+
+/**
+ * Parse a single enriched domain specification file
+ * Domain is derived from the filename (e.g., load_balancer.json → load_balancer)
+ *
+ * @param filePath - Absolute path to the domain spec file
+ * @param basePath - Optional base path for creating relative sourceFile paths
+ */
+export function parseDomainSpecFile(
+  filePath: string,
+  basePath?: string
+): ParsedSpec | null {
+  try {
+    const content = readFileSync(filePath, "utf-8");
+    const ext = extname(filePath).toLowerCase();
+
+    if (ext !== ".json") {
+      logger.warn(`Domain specs must be JSON: ${ext}`, { file: filePath });
+      return null;
+    }
+
+    const rawSpec: unknown = JSON.parse(content);
+
+    // Validate spec structure
+    const parseResult = OpenApiSpecSchema.safeParse(rawSpec);
+    if (!parseResult.success) {
+      logger.debug(`Invalid OpenAPI spec: ${filePath}`, {
+        errors: parseResult.error.issues,
+      });
+      return null;
+    }
+
+    const spec = parseResult.data;
+
+    // Derive domain from filename (load_balancer.json → load_balancer)
+    const filename = basename(filePath, ext);
+    const domain = filename.replace(/-/g, "_");
+
+    // Use relative path for sourceFile to ensure deterministic output
+    const sourceFile = basePath ? relative(basePath, filePath) : filePath;
+
+    // Extract operations using domain-specific function (no transformations)
+    const operations = extractDomainOperations(spec, domain, sourceFile);
+
+    // Title is already normalized in enriched specs
+    return {
+      filePath,
+      title: spec.info.title,
+      version: spec.info.version,
+      operations,
+      schemas: (spec.components?.schemas as Record<string, unknown>) ?? {},
+    };
+  } catch (error) {
+    logger.error(`Failed to parse domain spec file: ${filePath}`, {
+      error: error instanceof Error ? error.message : String(error),
+    });
+    return null;
+  }
+}
+
+/**
+ * Parse all enriched domain specs from a directory
+ * This is the primary entry point for the new enriched spec format
+ *
+ * @param dirPath - Path to the domains directory (specs/domains/)
+ */
+export function parseDomainsDirectory(dirPath: string): ParsedSpec[] {
+  const specs: ParsedSpec[] = [];
+
+  if (!existsSync(dirPath)) {
+    logger.warn(`Domains directory does not exist: ${dirPath}`);
+    return specs;
+  }
+
+  // Use parent of dirPath as base for relative paths (makes paths like "domains/filename.json")
+  const basePath = join(dirPath, "..");
+
+  const entries = readdirSync(dirPath, { withFileTypes: true });
+
+  // Sort entries alphabetically for deterministic output
+  entries.sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
+
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      continue;
+    }
+
+    if (!entry.name.endsWith(".json")) {
+      continue;
+    }
+
+    const fullPath = join(dirPath, entry.name);
+    const spec = parseDomainSpecFile(fullPath, basePath);
+
+    if (spec && spec.operations.length > 0) {
+      specs.push(spec);
+    }
+  }
+
+  logger.info(`Parsed ${specs.length} domain spec files`, {
+    totalOperations: specs.reduce((sum, s) => sum + s.operations.length, 0),
+    domains: specs.map((s) => basename(s.filePath, ".json")),
+  });
+
+  return specs;
 }

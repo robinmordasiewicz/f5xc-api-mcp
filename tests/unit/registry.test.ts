@@ -35,22 +35,22 @@ describe("registry", () => {
 
   describe("getToolsByDomain", () => {
     it("should return tools for a valid domain", () => {
-      const waapTools = getToolsByDomain("waap");
-      expect(Array.isArray(waapTools)).toBe(true);
-      expect(waapTools.length).toBeGreaterThan(0);
-      expect(waapTools.every((t) => t.domain === "waap")).toBe(true);
+      const lbTools = getToolsByDomain("load_balancer");
+      expect(Array.isArray(lbTools)).toBe(true);
+      expect(lbTools.length).toBeGreaterThan(0);
+      expect(lbTools.every((t) => t.domain === "load_balancer")).toBe(true);
     });
 
-    it("should return tools for core domain", () => {
-      const coreTools = getToolsByDomain("core");
-      expect(coreTools.length).toBeGreaterThan(0);
-      expect(coreTools.every((t) => t.domain === "core")).toBe(true);
+    it("should return tools for networking domain", () => {
+      const networkingTools = getToolsByDomain("networking");
+      expect(networkingTools.length).toBeGreaterThan(0);
+      expect(networkingTools.every((t) => t.domain === "networking")).toBe(true);
     });
 
-    it("should return tools for dns domain", () => {
-      const dnsTools = getToolsByDomain("dns");
-      expect(dnsTools.length).toBeGreaterThan(0);
-      expect(dnsTools.every((t) => t.domain === "dns")).toBe(true);
+    it("should return tools for security domain", () => {
+      const securityTools = getToolsByDomain("security");
+      expect(securityTools.length).toBeGreaterThan(0);
+      expect(securityTools.every((t) => t.domain === "security")).toBe(true);
     });
 
     it("should return empty array for non-existent domain", () => {
@@ -93,14 +93,22 @@ describe("registry", () => {
 
     it("should include expected domains", () => {
       const domains = getAllDomains();
-      expect(domains).toContain("waap");
-      expect(domains).toContain("core");
-      expect(domains).toContain("dns");
+      expect(domains).toContain("load_balancer");
+      expect(domains).toContain("networking");
+      expect(domains).toContain("security");
     });
 
     it("should return known domains", () => {
       const domains = getAllDomains();
-      const expectedDomains = ["appstack", "core", "dns", "network", "security", "site", "waap"];
+      const expectedDomains = [
+        "api_security",
+        "infrastructure",
+        "load_balancer",
+        "networking",
+        "observability",
+        "security",
+        "vpn",
+      ];
 
       for (const expected of expectedDomains) {
         expect(domains).toContain(expected);

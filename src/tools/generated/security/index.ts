@@ -7,41 +7,356 @@ import type { ParsedOperation } from "../../../generator/openapi-parser.js";
 
 export const securityTools: ParsedOperation[] = [
   {
-    toolName: "f5xc-api-security-all-application-inventory-waf-filter-create",
+    toolName: "f5xc-api-security-access-count-create",
     method: "POST",
-    path: "/api/config/namespaces/system/all_application_inventory_waf_filters",
+    path: "/api/secret_management/namespaces/{namespace}/voltshare/access_count",
     operation: "create",
     domain: "security",
-    resource: "all-application-inventory-waf-filter",
-    summary: "All Application Objects Inventory with WAF Filters",
+    resource: "access-count",
+    summary: "VoltShare Access Count Query.",
     description:
-      "AllApplicationInventoryWaf returns inventory of configured application related objects for all namespaces with WAF Filters.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/namespaceAllApplicationInventoryWafFilterRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/namespaceAllApplicationInventoryWafFilterResponse",
-    },
-    requiredParams: ["body"],
-    operationId: "ves.io.schema.namespace.NamespaceCustomAPI.AllApplicationInventoryWaf",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0166.public.ves.io.schema.namespace.ves-swagger.json",
-  },
-  {
-    toolName: "f5xc-api-security-hit-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/service_policy/hits",
-    operation: "create",
-    domain: "security",
-    resource: "hit",
-    summary: "Service Policy Hits",
-    description: "Get the counter for Service Policy hits for a given namespace.",
+      "Request to GET number of VoltShare API calls aggregated across multiple dimensions like OPERATION, COUNTRY, RESULT, USER_TENANT.",
     pathParameters: [
       {
         description:
-          'Namespace\n\nx-example: "ns1"\nNamespace is used to scope Service policy hits for the given namespace.',
+          "Namespace\nnamespace is used to scope the security events for the given namespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/voltshareVoltShareAccessCountRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/voltshareVoltShareAccessCountResponse",
+    },
+    requiredParams: ["body", "namespace"],
+    operationId: "ves.io.schema.voltshare.MonitoringAPI.VoltShareAccessCountQuery",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-aggregation-create",
+    method: "POST",
+    path: "/api/data/namespaces/system/app_security/all_ns_events/aggregation",
+    operation: "create",
+    domain: "security",
+    resource: "aggregation",
+    summary: "Security Events Aggregation Query All Namespaces.",
+    description:
+      "GET summary/aggregation data for security events in the given namespace.\nFor `system` namespace, all security events for the tenant matching the query specified\nin the request will be considered for aggregation. User may query security events that matches various\nfields such as `vh_name`, `sec_event_type`, `src_site`, `city`, `country`.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_securitySecurityEventsAggregationResponse",
+    },
+    requiredParams: [],
+    operationId:
+      "ves.io.schema.app_security.AppSecurityMonitoringAPI.SecurityEventsAggregationQueryAllNamespaces",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-all-ns-event-create",
+    method: "POST",
+    path: "/api/data/namespaces/system/app_security/all_ns_events",
+    operation: "create",
+    domain: "security",
+    resource: "all-ns-event",
+    summary: "Security Events Query All Namespaces.",
+    description:
+      "GET security events for the given namespace.\nFor `system` namespace, all security events for the tenant matching the query specified\nin the request will be returned in the response. User may query security events that matches various\nfields such as `vh_name`, `sec_event_type`, `src_site`, `city`, `country`.\nThis API is specific to system namespace.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_securitySecurityEventsResponse",
+    },
+    requiredParams: [],
+    operationId:
+      "ves.io.schema.app_security.AppSecurityMonitoringAPI.SecurityEventsQueryAllNamespaces",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-all-ns-metric-create",
+    method: "POST",
+    path: "/api/data/namespaces/system/app_firewall/all_ns_metrics",
+    operation: "create",
+    domain: "security",
+    resource: "all-ns-metric",
+    summary: "MetricsAllNamespaces.",
+    description: "App Firewall metrics.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_firewallMetricsResponse",
+    },
+    requiredParams: [],
+    operationId: "ves.io.schema.app_firewall.CustomDataAPI.MetricsAllNamespaces",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-api-definition-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/api_definitions",
+    operation: "create",
+    domain: "security",
+    resource: "api-definition",
+    summary: "Create API Definition.",
+    description: "Create API Definition.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/api_definitionCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/api_definitionCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.views.api_definition.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-api-definition-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/api_definitions/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "api-definition",
+    summary: "DELETE API Definition.",
+    description: "DELETE the specified api_definition.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/api_definitionDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.views.api_definition.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-api-definition-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/api_definitions/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "api-definition",
+    summary: "GET API Definition.",
+    description: "GET API Definition.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/api_definitionGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.views.api_definition.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-api-definition-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/api_definitions",
+    operation: "list",
+    domain: "security",
+    resource: "api-definition",
+    summary: "List API Definition.",
+    description: "List the set of api_definition in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of api_definition.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/api_definitionListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.views.api_definition.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-api-definition-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/api_definitions/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "api-definition",
+    summary: "Replace API Definition.",
+    description: "Replace API Definition.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/api_definitionReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/api_definitionReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.views.api_definition.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-api-definitions-without-shared-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/api_definitions_without_shared",
+    operation: "list",
+    domain: "security",
+    resource: "api-definitions-without-shared",
+    summary: "List Available API Definitions.",
+    description:
+      "List API definitions suitable for API Inventory management\nGET all API Definitions for specific namespace exclude shared namespace.",
+    pathParameters: [
+      {
+        description:
+          "Namespace\nnamespace is used to GET available API Definitions for the given namespace.",
         in: "path",
         name: "namespace",
         required: true,
@@ -53,12 +368,3611 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/service_policyServicePolicyHitsResponse",
+      $ref: "#/components/schemas/api_definitionListAvailableAPIDefinitionsResp",
     },
     requiredParams: ["namespace"],
-    operationId: "ves.io.schema.service_policy.CustomDataAPI.ServicePolicyHits",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    operationId:
+      "ves.io.schema.views.api_definition.PublicConfigCustomAPI.ListAvailableAPIDefinitions",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-apikey-list",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/system/apikey",
+    operation: "list",
+    domain: "security",
+    resource: "apikey",
+    summary: "API Key",
+    description: "GET API key.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/protected_applicationApiKeyResponse",
+    },
+    requiredParams: [],
+    operationId: "ves.io.schema.shape.bot_defense.protected_application.CustomAPI.ApiKey",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-app-firewall-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/app_firewalls",
+    operation: "create",
+    domain: "security",
+    resource: "app-firewall",
+    summary: "Create Application Firewall.",
+    description: "Create Application Firewall.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/app_firewallCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/app_firewallCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.app_firewall.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-app-firewall-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/app_firewalls/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "app-firewall",
+    summary: "DELETE Application Firewall.",
+    description: "DELETE the specified app_firewall.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/app_firewallDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.app_firewall.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-app-firewall-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/app_firewalls/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "app-firewall",
+    summary: "GET Application Firewall.",
+    description: "GET Application Firewall.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_firewallGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.app_firewall.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-app-firewall-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/app_firewalls",
+    operation: "list",
+    domain: "security",
+    resource: "app-firewall",
+    summary: "List Application Firewall.",
+    description: "List the set of app_firewall in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of app_firewall.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_firewallListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.app_firewall.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-app-firewall-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/app_firewalls/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "app-firewall",
+    summary: "Replace Application Firewall.",
+    description: "Replace Application Firewall.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/app_firewallReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/app_firewallReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.app_firewall.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-audit-log-create",
+    method: "POST",
+    path: "/api/secret_management/namespaces/{namespace}/voltshare/audit_logs",
+    operation: "create",
+    domain: "security",
+    resource: "audit-log",
+    summary: "Audit Log Query.",
+    description:
+      "Request to GET voltshare audit logs that matches the criteria in request.\nIf no match conditions are specified in the request, then the response contains all\nCRUD operations performed.",
+    pathParameters: [
+      {
+        description: "Namespace\nfetch the log messages scoped by namespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/voltshareAuditLogRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/voltshareAuditLogResponse",
+    },
+    requiredParams: ["body", "namespace"],
+    operationId: "ves.io.schema.voltshare.MonitoringAPI.AuditLogQuery",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-allowlist-policie-list",
+    method: "GET",
+    path: "/api/shape/bot/custom/namespaces/{namespace}/bot_allowlist_policies",
+    operation: "list",
+    domain: "security",
+    resource: "bot-allowlist-policie",
+    summary: "List All Bot Allowlist Policies And Versions.",
+    description: "GET all bot allowlist policies and versions.",
+    pathParameters: [
+      {
+        description: "Namespace\nnamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_allowlist_policyGetPoliciesAndVersionsListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.bot_allowlist_policy.CustomAPI.GetAllowlistPoliciesAndVersionsList",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-allowlist-policy-get",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_allowlist_policys/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "bot-allowlist-policy",
+    summary: "GET Bot allowlist Policy.",
+    description: "GET Bot allowlist Policy.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_allowlist_policyGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_allowlist_policy.API.Get",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-allowlist-policy-list",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_allowlist_policys",
+    operation: "list",
+    domain: "security",
+    resource: "bot-allowlist-policy",
+    summary: "List Bot allowlist Policy.",
+    description: "List the set of bot_allowlist_policy in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of bot_allowlist_policy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_allowlist_policyListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_allowlist_policy.API.List",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-allowlist-policy-update",
+    method: "PUT",
+    path: "/api/shape/bot/custom/namespaces/{namespace}/bot_allowlist_policys/{name}",
+    operation: "update",
+    domain: "security",
+    resource: "bot-allowlist-policy",
+    summary: "Custom Replace Bot allowlist Policy.",
+    description: "Customreplace CustomAPI.",
+    pathParameters: [
+      {
+        description: "Name\nName of the policy.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bot_allowlist_policyCustomReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/bot_allowlist_policyCustomReplaceResponse",
+    },
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_allowlist_policy.CustomAPI.CustomReplace",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-defense-app-infrastructure-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/bot_defense_app_infrastructures",
+    operation: "create",
+    domain: "security",
+    resource: "bot-defense-app-infrastructure",
+    summary: "Create Bot Defense App Infrastructure.",
+    description: "Creates Bot Defense App Infrastructure in a given namespace.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bot_defense_app_infrastructureCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/bot_defense_app_infrastructureCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.views.bot_defense_app_infrastructure.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-defense-app-infrastructure-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/bot_defense_app_infrastructures/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "bot-defense-app-infrastructure",
+    summary: "DELETE Bot Defense App Infrastructure.",
+    description: "DELETE the specified bot_defense_app_infrastructure.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bot_defense_app_infrastructureDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.views.bot_defense_app_infrastructure.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-defense-app-infrastructure-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/bot_defense_app_infrastructures/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "bot-defense-app-infrastructure",
+    summary: "Bot Defense App Infrastructure.",
+    description: "GET Bot Defense App Infrastructure from a given namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_defense_app_infrastructureGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.views.bot_defense_app_infrastructure.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-defense-app-infrastructure-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/bot_defense_app_infrastructures",
+    operation: "list",
+    domain: "security",
+    resource: "bot-defense-app-infrastructure",
+    summary: "List Bot Defense App Infrastructure.",
+    description: "List the set of bot_defense_app_infrastructure in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of bot_defense_app_infrastructure.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_defense_app_infrastructureListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.views.bot_defense_app_infrastructure.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-defense-app-infrastructure-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/bot_defense_app_infrastructures/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "bot-defense-app-infrastructure",
+    summary: "Replace Bot Defense App Infrastructure.",
+    description: "Replace a given Bot Defense App Infrastructure in a given namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bot_defense_app_infrastructureReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/bot_defense_app_infrastructureReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.views.bot_defense_app_infrastructure.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-detection-rule-create",
+    method: "POST",
+    path: "/api/shape/bot/custom/namespaces/{namespace}/bot_detection_rules",
+    operation: "create",
+    domain: "security",
+    resource: "bot-detection-rule",
+    summary: "Deploy Bot Detection Rules.",
+    description: "Deploybotdetectionrules CustomAPI.",
+    pathParameters: [
+      {
+        description: "Namespace\n\nx-required\nnamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_detection_ruleDeployBotDetectionRulesResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.DeployBotDetectionRules",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-detection-rule-get",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_detection_rules/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "bot-detection-rule",
+    summary: "GET Bot Detection Rule.",
+    description: "GET Bot Detection Rule.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_detection_ruleGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.API.Get",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-detection-rule-list",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_detection_rules",
+    operation: "list",
+    domain: "security",
+    resource: "bot-detection-rule",
+    summary: "List Bot Detection Rule.",
+    description: "List the set of bot_detection_rule in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of bot_detection_rule.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_detection_ruleListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.API.List",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-detection-update-list",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_detection_updates",
+    operation: "list",
+    domain: "security",
+    resource: "bot-detection-update",
+    summary: "GET bot detection updates.",
+    description: "Getbotdetectionupdates CustomAPI.",
+    pathParameters: [
+      {
+        description: "Namespace\nx-required\nNamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_detection_updateGetBotDetectionUpdatesResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_update.CustomAPI.GetBotDetectionUpdates",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-endpoint-policie-list",
+    method: "GET",
+    path: "/api/shape/bot/custom/namespaces/{namespace}/bot_endpoint_policies",
+    operation: "list",
+    domain: "security",
+    resource: "bot-endpoint-policie",
+    summary: "List All Bot Endpoint Policies And Versions.",
+    description: "GET all bot endpoint policies and versions.",
+    pathParameters: [
+      {
+        description: "Namespace\nnamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_endpoint_policyGetPoliciesAndVersionsListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.bot_endpoint_policy.CustomAPI.GetEndpointPoliciesAndVersionsList",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-endpoint-policy-get",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_endpoint_policys/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "bot-endpoint-policy",
+    summary: "GET Bot Endpoint Policy.",
+    description: "GET Bot Endpoint Policy.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_endpoint_policyGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_endpoint_policy.API.Get",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-endpoint-policy-list",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_endpoint_policys",
+    operation: "list",
+    domain: "security",
+    resource: "bot-endpoint-policy",
+    summary: "List Bot Endpoint Policy.",
+    description: "List the set of bot_endpoint_policy in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of bot_endpoint_policy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_endpoint_policyListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_endpoint_policy.API.List",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-endpoint-policy-update",
+    method: "PUT",
+    path: "/api/shape/bot/custom/namespaces/{namespace}/bot_endpoint_policys/{name}",
+    operation: "update",
+    domain: "security",
+    resource: "bot-endpoint-policy",
+    summary: "Custom Replace Bot Endpoint Policy.",
+    description: "Customreplace CustomAPI.",
+    pathParameters: [
+      {
+        description: "Name\nName of the policy.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bot_endpoint_policyCustomReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/bot_endpoint_policyCustomReplaceResponse",
+    },
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_endpoint_policy.CustomAPI.CustomReplace",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-infrastructure-create",
+    method: "POST",
+    path: "/api/shape/bot/namespaces/{metadata.namespace}/bot_infrastructures",
+    operation: "create",
+    domain: "security",
+    resource: "bot-infrastructure",
+    summary: "Create Bot Infrastructure.",
+    description: "Create Bot Infrastructure.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bot_infrastructureCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/bot_infrastructureCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.API.Create",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-infrastructure-get",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_infrastructures/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "bot-infrastructure",
+    summary: "GET Bot Infrastructure.",
+    description: "GET Bot Infrastructure.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_infrastructureGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.API.Get",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-infrastructure-list",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_infrastructures",
+    operation: "list",
+    domain: "security",
+    resource: "bot-infrastructure",
+    summary: "List Bot Infrastructure.",
+    description: "List the set of bot_infrastructure in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of bot_infrastructure.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_infrastructureListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.API.List",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-bot-infrastructure-update",
+    method: "PUT",
+    path: "/api/shape/bot/namespaces/{metadata.namespace}/bot_infrastructures/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "bot-infrastructure",
+    summary: "Replace Bot Infrastructure.",
+    description: "Replace Bot Infrastructure.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bot_infrastructureReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/bot_infrastructureReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.API.Replace",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-config-get",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/protected_applications/{name}/config",
+    operation: "get",
+    domain: "security",
+    resource: "config",
+    summary: "Connector Configuration.",
+    description: "GET Connector config.",
+    pathParameters: [
+      {
+        description: "Application Name\nProtected application name.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nnamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/protected_applicationConnectorConfigResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.protected_application.CustomAPI.ConnectorConfig",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-crl-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/crls",
+    operation: "create",
+    domain: "security",
+    resource: "crl",
+    summary: "Create CRL.",
+    description: "API to create CRL object.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/crlCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/crlCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.crl.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-crl-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/crls/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "crl",
+    summary: "DELETE CRL.",
+    description: "DELETE the specified CRL.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/crlDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.crl.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-crl-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/crls/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "crl",
+    summary: "GET CRL",
+    description: "API to GET CRL.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/crlGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.crl.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-crl-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/crls",
+    operation: "list",
+    domain: "security",
+    resource: "crl",
+    summary: "List CRL",
+    description: "List the set of CRL in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of CRL.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/crlListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.crl.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-crl-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/crls/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "crl",
+    summary: "Replace CRL.",
+    description: "API to replace CRL object.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/crlReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/crlReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.crl.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-data-type-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/data_types",
+    operation: "create",
+    domain: "security",
+    resource: "data-type",
+    summary: "Create Data Type.",
+    description:
+      "Create data_type creates a new object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/data_typeCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/data_typeCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.data_type.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-data-type-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/data_types/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "data-type",
+    summary: "DELETE Data Type.",
+    description: "DELETE the specified data_type.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/data_typeDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.data_type.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-data-type-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/data_types/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "data-type",
+    summary: "GET Data Type.",
+    description: "GET data_type reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/data_typeGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.data_type.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-data-type-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/data_types",
+    operation: "list",
+    domain: "security",
+    resource: "data-type",
+    summary: "List Data Type.",
+    description: "List the set of data_type in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of data_type.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/data_typeListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.data_type.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-data-type-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/data_types/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "data-type",
+    summary: "Replace Data Type.",
+    description:
+      "Replace data_type replaces an existing object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/data_typeReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/data_typeReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.data_type.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-decrypt-secret-create",
+    method: "POST",
+    path: "/api/secret_management/namespaces/system/voltshare/decrypt_secret",
+    operation: "create",
+    domain: "security",
+    resource: "decrypt-secret",
+    summary: "DecryptSecret.",
+    description:
+      "DecryptSecret API takes blinded encrypted secret and policy and responds with blinded decrypted secret if user is allowed by the policy.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/voltshareDecryptSecretRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/voltshareDecryptSecretResponse",
+    },
+    requiredParams: ["body"],
+    operationId: "ves.io.schema.voltshare.CustomAPI.DecryptSecret",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-deployment-history-get",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_infrastructures/{name}/deployment_history",
+    operation: "get",
+    domain: "security",
+    resource: "deployment-history",
+    summary: "Deployment History.",
+    description: "GET deployment history.",
+    pathParameters: [
+      {
+        description: "Name\nx-required.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nx-required.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_infrastructureDeploymentHistoryResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.CustomAPI.DeploymentHistory",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-deployment-list",
+    method: "GET",
+    path: "/api/shape/bot/custom/namespaces/{namespace}/bot_detection_rules/deployments",
+    operation: "list",
+    domain: "security",
+    resource: "deployment",
+    summary: "GET list of bot detection rule deployments.",
+    description: "Getbotdetectionrulesdeployments CustomAPI.",
+    pathParameters: [
+      {
+        description: "Namespace\nx-required\nNamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The deployments will be filtered by the deployment status values provided. This field is optional. If no deployment status values are provided, all the deployments will be fetched\n\nInitiated represents the status when SAPI returns successful deployment acknowledgement for all the clusters within the batch\nDeployed represents the status when SAPI's deployment status API returns success for all the clusters within the batch\nFailed represents the status when SAPI's deployment status API returns failure for all the clusters within the batch\nPartially Deployed represents the status when SAPI's deployment status API returns success for some clusters while failure for other clusters within the batch\nInitiation failed represents the status when SAPI returns failed deployment acknowledgement for all the clusters within the batch\nPartially initiated represents the status when SAPI returns success deployment acknowledgement for some clusters while failed deployment acknowledgement for other clusters within the batch.",
+        in: "query",
+        name: "rules_deployment_status",
+        required: false,
+        schema: {
+          items: {
+            enum: [
+              "BOT_DETECTION_RULES_DEPLOYMENT_STATUS_UNKNOWN",
+              "BOT_DETECTION_RULES_DEPLOYMENT_STATUS_DRAFT",
+              "BOT_DETECTION_RULES_DEPLOYMENT_STATUS_INITIATED",
+              "BOT_DETECTION_RULES_DEPLOYMENT_STATUS_DEPLOYED",
+              "BOT_DETECTION_RULES_DEPLOYMENT_STATUS_FAILED",
+              "BOT_DETECTION_RULES_DEPLOYMENT_STATUS_PARTIALLY_DEPLOYED",
+              "BOT_DETECTION_RULES_DEPLOYMENT_STATUS_DISCARDED_DRAFT",
+              "BOT_DETECTION_RULES_DEPLOYMENT_STATUS_INITIATION_FAILED",
+              "BOT_DETECTION_RULES_DEPLOYMENT_STATUS_PARTIALLY_INITIATED",
+            ],
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_detection_ruleGetBotDetectionRulesDeploymentsResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.GetBotDetectionRulesDeployments",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-deployment-statu-get",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_infrastructures/{name}/deployment_status",
+    operation: "get",
+    domain: "security",
+    resource: "deployment-statu",
+    summary: "Deployment Status.",
+    description: "GET deployment status.",
+    pathParameters: [
+      {
+        description: "Name\nx-required\nName Space.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Name Space\nx-required\nName Space.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_infrastructureDeploymentStatusResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.bot_infrastructure.CustomAPI.DeploymentStatusOverview",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-download-release-note-list",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_detection_updates/download_release_notes",
+    operation: "list",
+    domain: "security",
+    resource: "download-release-note",
+    summary: "Download BotDetection Updates Release Notes.",
+    description: "Downloadbotdetectionupdatesreleasenotes CustomAPI.",
+    pathParameters: [
+      {
+        description: "Namespace\nx-required\nNamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description: "X-required\nUnique identifier for a deployment.",
+        in: "query",
+        name: "deployment_id",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_detection_updateDownloadBotDetectionUpdatesReleaseNotesResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_update.CustomAPI.DownloadBotDetectionUpdatesReleaseNotes",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-draft-create",
+    method: "POST",
+    path: "/api/shape/bot/custom/namespaces/{namespace}/bot_detection_rules/draft",
+    operation: "create",
+    domain: "security",
+    resource: "draft",
+    summary: "Save draft.",
+    description: "Savedraft CustomAPI.",
+    pathParameters: [
+      {
+        description: "Namespace\n\nx-required\nnamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_detection_ruleSaveDraftResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.SaveDraft",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-draft-delete",
+    method: "DELETE",
+    path: "/api/shape/bot/custom/namespaces/{namespace}/bot_detection_rules/draft",
+    operation: "delete",
+    domain: "security",
+    resource: "draft",
+    summary: "Discard draft.",
+    description: "Discarddraft CustomAPI.",
+    pathParameters: [
+      {
+        description: "Namespace\nx-required\nNamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/ioschemaEmpty",
+    },
+    requiredParams: ["namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.DiscardDraft",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-draft-list",
+    method: "GET",
+    path: "/api/shape/bot/custom/namespaces/{namespace}/bot_detection_rules/draft",
+    operation: "list",
+    domain: "security",
+    resource: "draft",
+    summary: "GET bot detection rules which are in draft state.",
+    description: "Getbotdetectionrulesdraft CustomAPI.",
+    pathParameters: [
+      {
+        description: "Namespace\nx-required\nNamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_detection_ruleGetBotDetectionRulesDraftResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.GetBotDetectionRulesDraft",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-enhanced-firewall-policy-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/enhanced_firewall_policys",
+    operation: "create",
+    domain: "security",
+    resource: "enhanced-firewall-policy",
+    summary: "Create Enhanced Firewall Policy.",
+    description: "Shape of Enhanced Firewall Policy specification.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.enhanced_firewall_policy.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-enhanced-firewall-policy-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/enhanced_firewall_policys/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "enhanced-firewall-policy",
+    summary: "DELETE Enhanced Firewall Policy.",
+    description: "DELETE the specified enhanced_firewall_policy.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.enhanced_firewall_policy.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-enhanced-firewall-policy-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/enhanced_firewall_policys/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "enhanced-firewall-policy",
+    summary: "GET Enhanced Firewall Policy.",
+    description: "Shape of the Enhanced Firewall Policy specification.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.enhanced_firewall_policy.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-enhanced-firewall-policy-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/enhanced_firewall_policys",
+    operation: "list",
+    domain: "security",
+    resource: "enhanced-firewall-policy",
+    summary: "List Enhanced Firewall Policy.",
+    description: "List the set of enhanced_firewall_policy in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of enhanced_firewall_policy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.enhanced_firewall_policy.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-enhanced-firewall-policy-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/enhanced_firewall_policys/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "enhanced-firewall-policy",
+    summary: "Replace Enhanced Firewall Policy.",
+    description: "Shape of Enhanced Firewall Policy replace specification.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.enhanced_firewall_policy.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-event-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/app_security/events",
+    operation: "create",
+    domain: "security",
+    resource: "event",
+    summary: "Security Events Query.",
+    description:
+      "GET security events for the given namespace.\nFor `system` namespace, all security events for the tenant matching the query specified\nin the request will be returned in the response. User may query security events that matches various\nfields such as `vh_name`, `sec_event_type`, `src_site`, `city`, `country`.",
+    pathParameters: [
+      {
+        description: "Namespace\n\nfetch security events for a given namespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_securitySecurityEventsResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.app_security.AppSecurityMonitoringAPI.SecurityEventsQuery",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-fast-acl-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/fast_acls",
+    operation: "create",
+    domain: "security",
+    resource: "fast-acl",
+    summary: "Create Fast ACL.",
+    description:
+      "Create a `fast_acl` object, `fast_acl` object contains rules to protect site from denial of service\nIt has destination{destination IP, destination port) and references to `fast_acl_rule`",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/fast_aclCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/fast_aclCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.fast_acl.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-fast-acl-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/fast_acls/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "fast-acl",
+    summary: "DELETE Fast ACL.",
+    description: "DELETE the specified fast_acl.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/fast_aclDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.fast_acl.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-fast-acl-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/fast_acls/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "fast-acl",
+    summary: "GET Fast ACL.",
+    description: "GET value of `fast_acl` for object.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/fast_aclGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.fast_acl.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-fast-acl-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/fast_acls",
+    operation: "list",
+    domain: "security",
+    resource: "fast-acl",
+    summary: "List Fast ACL.",
+    description: "List the set of fast_acl in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of fast_acl.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/fast_aclListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.fast_acl.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-fast-acl-rule-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/fast_acl_rules",
+    operation: "create",
+    domain: "security",
+    resource: "fast-acl-rule",
+    summary: "Create Fast ACL Rule.",
+    description:
+      "Create a new Fast ACL rule, `fast_acl_rule` has specification to match source IP, source port and action to apply.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/fast_acl_ruleCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/fast_acl_ruleCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.fast_acl_rule.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-fast-acl-rule-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/fast_acl_rules/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "fast-acl-rule",
+    summary: "DELETE Fast ACL Rule.",
+    description: "DELETE the specified fast_acl_rule.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/fast_acl_ruleDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.fast_acl_rule.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-fast-acl-rule-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/fast_acl_rules/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "fast-acl-rule",
+    summary: "GET Fast ACL Rule.",
+    description: "GET a Fast ACL rule.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/fast_acl_ruleGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.fast_acl_rule.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-fast-acl-rule-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/fast_acl_rules",
+    operation: "list",
+    domain: "security",
+    resource: "fast-acl-rule",
+    summary: "List Fast ACL Rule.",
+    description: "List the set of fast_acl_rule in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of fast_acl_rule.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/fast_acl_ruleListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.fast_acl_rule.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-fast-acl-rule-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/fast_acl_rules/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "fast-acl-rule",
+    summary: "Replace Fast ACL Rule.",
+    description:
+      "Replace a given Fast ACL rule, `fast_acl_rule` has specification to match source IP, source port, protocol and action to apply.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/fast_acl_ruleReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/fast_acl_ruleReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.fast_acl_rule.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-fast-acl-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/fast_acls/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "fast-acl",
+    summary: "Replace Fast ACL.",
+    description:
+      "Replace a `fast_acl` object, `fast_acl` object contains rules to protect site from denial of service\nIt has destination{destination IP, destination port) and references to `fast_acl_rule`",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/fast_aclReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/fast_aclReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.fast_acl.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-filter-set-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/filter_sets",
+    operation: "create",
+    domain: "security",
+    resource: "filter-set",
+    summary: "Create Specification.",
+    description: "Create specification.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/filter_setCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/filter_setCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.filter_set.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-filter-set-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/filter_sets/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "filter-set",
+    summary: "DELETE Filter Set.",
+    description: "DELETE the specified filter_set.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/filter_setDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.filter_set.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-filter-set-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/filter_sets/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "filter-set",
+    summary: "GET Specification.",
+    description: "GET specification.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/filter_setGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.filter_set.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-filter-set-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/filter_sets",
+    operation: "list",
+    domain: "security",
+    resource: "filter-set",
+    summary: "List Filter Set.",
+    description: "List the set of filter_set in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of filter_set.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/filter_setListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.filter_set.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-filter-set-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/filter_sets/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "filter-set",
+    summary: "Replace Specification.",
+    description: "Replace specification.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/filter_setReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/filter_setReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.filter_set.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-find-create",
+    method: "POST",
+    path: "/api/config/namespaces/{namespace}/filter_sets/find",
+    operation: "create",
+    domain: "security",
+    resource: "find",
+    summary: "Find Filter Sets for 1 or More Context Keys.",
+    description: "Retrieve any saved filter sets that are applicable for the given context key(s)",
+    pathParameters: [
+      {
+        description: "Namespace\n\nx-required\nfind filter sets in the given namespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/filter_setFindFilterSetsReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/filter_setFindFilterSetsRsp",
+    },
+    requiredParams: ["body", "namespace"],
+    operationId: "ves.io.schema.filter_set.CustomAPI.FindFilterSets",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-geo-location-set-create",
+    method: "POST",
+    path: "/api/config/dns/namespaces/{metadata.namespace}/geo_location_sets",
+    operation: "create",
+    domain: "security",
+    resource: "geo-location-set",
+    summary: "Create Geolocation.",
+    description: "Creates a Geolocation Set.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/geo_location_setCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/geo_location_setCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.geo_location_set.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-geo-location-set-delete",
+    method: "DELETE",
+    path: "/api/config/dns/namespaces/{namespace}/geo_location_sets/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "geo-location-set",
+    summary: "DELETE Geolocation Set.",
+    description: "DELETE the specified geo_location_set.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/geo_location_setDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.geo_location_set.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-geo-location-set-get",
+    method: "GET",
+    path: "/api/config/dns/namespaces/{namespace}/geo_location_sets/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "geo-location-set",
+    summary: "GET Geolocation Set.",
+    description: "Reads a Geolocation.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/geo_location_setGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.geo_location_set.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-geo-location-set-list",
+    method: "GET",
+    path: "/api/config/dns/namespaces/{namespace}/geo_location_sets",
+    operation: "list",
+    domain: "security",
+    resource: "geo-location-set",
+    summary: "List Geolocation Set.",
+    description: "List the set of geo_location_set in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of geo_location_set.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/geo_location_setListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.geo_location_set.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-geo-location-set-update",
+    method: "PUT",
+    path: "/api/config/dns/namespaces/{metadata.namespace}/geo_location_sets/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "geo-location-set",
+    summary: "Replace Geolocation Set.",
+    description: "Amends a Geolocation Set.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/geo_location_setReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/geo_location_setReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.geo_location_set.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-get-policy-document-get",
+    method: "GET",
+    path: "/api/secret_management/namespaces/{namespace}/secret_policys/{name}/get_policy_document",
+    operation: "get",
+    domain: "security",
+    resource: "get-policy-document",
+    summary: "Policy Document.",
+    description:
+      "GetPolicyDocument API returns secret policy document for the given policy that contains information about all the rules in the policy and policy_id.\nThis document can be given to F5 Distributed Cloud secret management tool to do secret encryption.",
+    pathParameters: [
+      {
+        description: "Name\n\nx-required\nName of the secret policy.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\n\nx-required\nNamespace of the secret policy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/secret_managementGetPolicyDocumentResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.secret_management.CustomAPI.GetPolicyDocument",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-get-public-key-list",
+    method: "GET",
+    path: "/api/secret_management/get_public_key",
+    operation: "list",
+    domain: "security",
+    resource: "get-public-key",
+    summary: "Public Key.",
+    description:
+      "GetPublicKey API returns public part of the F5 Distributed Cloud secret management key that needs to be given to F5 Distributed Cloud secret management tool to do secret encryption.",
+    pathParameters: [],
+    queryParameters: [
+      {
+        description: "The version of public key.",
+        in: "query",
+        name: "key_version",
+        required: false,
+        schema: {
+          format: "int64",
+          type: "integer",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/secret_managementGetPublicKeyResponse",
+    },
+    requiredParams: [],
+    operationId: "ves.io.schema.secret_management.CustomAPI.GetPublicKey",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-history-get",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_detection_rules/{id}/history",
+    operation: "get",
+    domain: "security",
+    resource: "history",
+    summary: "GET the change history for a bot detection rule.",
+    description: "Getbotdetectionrulechangehistory CustomAPI.",
+    pathParameters: [
+      {
+        description: "ID\nx-required\nRule ID is the unique identifier for a Rule.",
+        in: "path",
+        name: "id",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nx-required\nNamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_detection_ruleGetBotDetectionRuleChangeHistoryResponse",
+    },
+    requiredParams: ["id", "namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.GetBotDetectionRuleChangeHistory",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-hit-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/enhanced_firewall_policy/hits",
+    operation: "create",
+    domain: "security",
+    resource: "hit",
+    summary: "Enhanced Firewall Policy Hits.",
+    description: "GET the counter for Enhanced Firewall Policy hits for a given namespace.",
+    pathParameters: [
+      {
+        description:
+          "Namespace\nNamespace is used to scope Enhanced Firewall Policy hits for the given namespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyEnhancedFirewallPolicyHitsRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/enhanced_firewall_policyEnhancedFirewallPolicyHitsResponse",
+    },
+    requiredParams: ["body", "namespace"],
+    operationId: "ves.io.schema.enhanced_firewall_policy.CustomDataAPI.EnhancedFirewallPolicyHits",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-http-loadbalancer-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/api_definitions/{name}/http_loadbalancers",
+    operation: "get",
+    domain: "security",
+    resource: "http-loadbalancer",
+    summary: "GET Referencing HTTP Loadbalancers.",
+    description:
+      "List Loadbalancer objects referenced by the API Definition (backrefrences).\nDEPRECATED. Use GetReferencingLoadBalancers.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the API Definition for the current request.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace of the API Definition for the current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/api_definitionGetReferencingLoadbalancersResp",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId:
+      "ves.io.schema.views.api_definition.PublicConfigCustomAPI.GetReferencingHttpLoadbalancers",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-incident-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/app_security/incidents",
+    operation: "create",
+    domain: "security",
+    resource: "incident",
+    summary: "Security Incidents Query.",
+    description:
+      "GET security incidents for the given namespace.\nFor `system` namespace, all security incidents for the tenant matching the query specified\nin the request will be returned in the response. User may query security incidents that matches various\nfields such as `vh_name`, `intent`, `city`, `country`.",
+    pathParameters: [
+      {
+        description: "Namespace\nFetch security incidents for a given namespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/app_securitySecurityIncidentsRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/app_securitySecurityIncidentsResponse",
+    },
+    requiredParams: ["body", "namespace"],
+    operationId: "ves.io.schema.app_security.AppSecurityMonitoringAPI.SecurityIncidentsQuery",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-latency-create",
@@ -67,12 +3981,12 @@ export const securityTools: ParsedOperation[] = [
     operation: "create",
     domain: "security",
     resource: "latency",
-    summary: "Service Policy Latency",
-    description: "Get the average latency for Service policy evaluation.",
+    summary: "Service Policy Latency.",
+    description: "GET the average latency for Service policy evaluation.",
     pathParameters: [
       {
         description:
-          'Namespace\n\nx-example: "ns1"\nNamespace is used to scope Service policy hits for the given namespace.',
+          "Namespace\nNamespace is used to scope Service policy hits for the given namespace.",
         in: "path",
         name: "namespace",
         required: true,
@@ -88,8 +4002,108 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.service_policy.CustomDataAPI.ServicePolicyHitsLatency",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-list-policy-list",
+    method: "GET",
+    path: "/api/secret_management/namespaces/{namespace}/secret_policy/list_policy/{policy_state}",
+    operation: "list",
+    domain: "security",
+    resource: "list-policy",
+    summary: "List secret policy.",
+    description: "Listpolicy CustomAPI.",
+    pathParameters: [
+      {
+        description: "Namespace\n\nx-required\nNamespace of the secret policy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Policy_state\n\nx-required\nstate of the policy to filter in results.",
+        in: "path",
+        name: "policy_state",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/secret_policyListPolicyResponse",
+    },
+    requiredParams: ["namespace", "policy_state"],
+    operationId: "ves.io.schema.secret_policy.CustomAPI.ListPolicy",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-loadbalancer-create",
+    method: "POST",
+    path: "/api/data/namespaces/system/app_security/all_ns_search/loadbalancers",
+    operation: "create",
+    domain: "security",
+    resource: "loadbalancer",
+    summary: "Search load balancers All Namespaces.",
+    description: "GET list of virtual hosts matching label filter.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_securitySearchLoadBalancersResponse",
+    },
+    requiredParams: [],
+    operationId:
+      "ves.io.schema.app_security.AppSecurityMonitoringAPI.SearchLoadBalancersAllNamespaces",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-loadbalancer-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/api_definitions/{name}/loadbalancers",
+    operation: "get",
+    domain: "security",
+    resource: "loadbalancer",
+    summary: "GET Referencing Loadbalancers.",
+    description: "List Loadbalancers referenced by the API Definition (backrefrences).",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the API Definition for the current request.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace of the API Definition for the current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/api_definitionGetReferencingAllLoadbalancersResp",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId:
+      "ves.io.schema.views.api_definition.PublicConfigCustomAPI.GetReferencingLoadbalancers",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-malicious-user-mitigation-create",
@@ -98,13 +4112,13 @@ export const securityTools: ParsedOperation[] = [
     operation: "create",
     domain: "security",
     resource: "malicious-user-mitigation",
-    summary: "Create Malicious User Mitigation",
+    summary: "Create Malicious User Mitigation.",
     description:
       "Create malicious_user_mitigation creates a new object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         in: "path",
         name: "metadata.namespace",
         required: true,
@@ -122,9 +4136,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.malicious_user_mitigation.API.Create",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-malicious-user-mitigation-delete",
@@ -133,11 +4146,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "delete",
     domain: "security",
     resource: "malicious-user-mitigation",
-    summary: "Delete Malicious User Mitigation",
-    description: "Delete the specified malicious_user_mitigation",
+    summary: "DELETE Malicious User Mitigation.",
+    description: "DELETE the specified malicious_user_mitigation.",
     pathParameters: [
       {
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        description: "Name\nName of the configuration object.",
         in: "path",
         name: "name",
         required: true,
@@ -146,8 +4159,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        description: "Namespace\nNamespace in which the configuration object is present.",
         in: "path",
         name: "namespace",
         required: true,
@@ -163,9 +4175,8 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {},
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.malicious_user_mitigation.API.Delete",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-malicious-user-mitigation-get",
@@ -174,13 +4185,12 @@ export const securityTools: ParsedOperation[] = [
     operation: "get",
     domain: "security",
     resource: "malicious-user-mitigation",
-    summary: "Get Malicious User Mitigation",
+    summary: "GET Malicious User Mitigation.",
     description:
-      "Get malicious_user_mitigation reads a given object from storage backend for metadata.namespace.",
+      "GET malicious_user_mitigation reads a given object from storage backend for metadata.namespace.",
     pathParameters: [
       {
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        description: "Name\nThe name of the configuration object to be fetched.",
         in: "path",
         name: "name",
         required: true,
@@ -189,8 +4199,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        description: "Namespace\nThe namespace in which the configuration object is present.",
         in: "path",
         name: "namespace",
         required: true,
@@ -202,7 +4211,7 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [
       {
         description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
         in: "query",
         name: "response_format",
         required: false,
@@ -227,9 +4236,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.malicious_user_mitigation.API.Get",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-malicious-user-mitigation-list",
@@ -238,12 +4246,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "list",
     domain: "security",
     resource: "malicious-user-mitigation",
-    summary: "List Malicious User Mitigation",
-    description: "List the set of malicious_user_mitigation in a namespace",
+    summary: "List Malicious User Mitigation.",
+    description: "List the set of malicious_user_mitigation in a namespace.",
     pathParameters: [
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of malicious_user_mitigation',
+        description: "Namespace\nNamespace to scope the listing of malicious_user_mitigation.",
         in: "path",
         name: "namespace",
         required: true,
@@ -255,7 +4262,7 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [
       {
         description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+          "A LabelSelectorType expression that every item in list response will satisfy.",
         in: "query",
         name: "label_filter",
         required: false,
@@ -264,7 +4271,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
         in: "query",
         name: "report_fields",
         required: false,
@@ -276,7 +4283,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
         in: "query",
         name: "report_status_fields",
         required: false,
@@ -294,9 +4301,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.malicious_user_mitigation.API.List",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-malicious-user-mitigation-update",
@@ -305,13 +4311,12 @@ export const securityTools: ParsedOperation[] = [
     operation: "update",
     domain: "security",
     resource: "malicious-user-mitigation",
-    summary: "Replace Malicious User Mitigation",
+    summary: "Replace Malicious User Mitigation.",
     description:
       "Replace malicious_user_mitigation replaces an existing object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
         in: "path",
         name: "metadata.name",
         required: true,
@@ -321,7 +4326,7 @@ export const securityTools: ParsedOperation[] = [
       },
       {
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         in: "path",
         name: "metadata.namespace",
         required: true,
@@ -339,9 +4344,2297 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.malicious_user_mitigation.API.Replace",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0152.public.ves.io.schema.malicious_user_mitigation.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-mark-as-non-api-create",
+    method: "POST",
+    path: "/api/config/namespaces/{namespace}/api_definitions/{name}/mark_as_non_api",
+    operation: "create",
+    domain: "security",
+    resource: "mark-as-non-api",
+    summary: "Mark As Non-API.",
+    description: "Update the API Definition's non-API list with the provided API endpoints.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the API Definition for the current request.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace of the API Definition for the current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/api_definitionAPInventoryResp",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.views.api_definition.PublicConfigCustomAPI.MarkAsNonAPI",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-metric-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/app_firewall/metrics",
+    operation: "create",
+    domain: "security",
+    resource: "metric",
+    summary: "Metrics",
+    description: "App Firewall metrics.",
+    pathParameters: [
+      {
+        description: "Namespace",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_firewallMetricsResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.app_firewall.CustomDataAPI.Metrics",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-mobile-base-config-create",
+    method: "POST",
+    path: "/api/mobile/security/namespaces/{metadata.namespace}/mobile_base_configs",
+    operation: "create",
+    domain: "security",
+    resource: "mobile-base-config",
+    summary: "Create Mobile SDK Base Configuration.",
+    description: "Create Mobile SDK Base Configuration.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/mobile_base_configCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/mobile_base_configCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.mobile_base_config.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-mobile-base-config-delete",
+    method: "DELETE",
+    path: "/api/mobile/security/namespaces/{namespace}/mobile_base_configs/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "mobile-base-config",
+    summary: "DELETE Mobile SDK Base Configuration.",
+    description: "DELETE the specified mobile_base_config.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/mobile_base_configDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.mobile_base_config.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-mobile-base-config-file-get",
+    method: "GET",
+    path: "/api/mobile/security/namespaces/{namespace}/mobile_base_config_file/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "mobile-base-config-file",
+    summary: "GET Mobile Base Configuration File.",
+    description: "GET Mobile Base Configuration File.",
+    pathParameters: [
+      {
+        description:
+          "Mobile SDK Base Configuration name\nx-required\nMobile SDK Base Configuration name.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nx-required\nNamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/mobile_base_configMobileBaseConfigurationFileResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.mobile_base_config.CustomAPI.GetMobileBaseConfigurationFile",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-mobile-base-config-get",
+    method: "GET",
+    path: "/api/mobile/security/namespaces/{namespace}/mobile_base_configs/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "mobile-base-config",
+    summary: "GET Mobile SDK Base Configuration.",
+    description: "GET Mobile SDK Base Configuration.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/mobile_base_configGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.mobile_base_config.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-mobile-base-config-list",
+    method: "GET",
+    path: "/api/mobile/security/namespaces/{namespace}/mobile_base_configs",
+    operation: "list",
+    domain: "security",
+    resource: "mobile-base-config",
+    summary: "List Mobile SDK Base Configuration.",
+    description: "List the set of mobile_base_config in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of mobile_base_config.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/mobile_base_configListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.mobile_base_config.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-mobile-base-config-update",
+    method: "PUT",
+    path: "/api/mobile/security/namespaces/{metadata.namespace}/mobile_base_configs/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "mobile-base-config",
+    summary: "Replace Mobile SDK Base Configuration.",
+    description: "Replace Mobile SDK Base Configuration.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/mobile_base_configReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/mobile_base_configReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.mobile_base_config.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-mobile-sdk-list",
+    method: "GET",
+    path: "/api/object_store/namespaces/{namespace}/stored_objects/mobile-sdk",
+    operation: "list",
+    domain: "security",
+    resource: "mobile-sdk",
+    summary: "GET List Of Mobile SDKs.",
+    description: "ListMobileSDKs is an API to list all mobile SDKs available for download.",
+    pathParameters: [
+      {
+        description: "Namespace\nx-required\nNamespace of the stored_object.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "Optional query parameter. If passed, returns only latest version of the objects.",
+        in: "query",
+        name: "latest_version_only",
+        required: false,
+        schema: {
+          format: "boolean",
+          type: "boolean",
+        },
+      },
+      {
+        description: "Optional query parameter. Name of the stored_object.",
+        in: "query",
+        name: "name",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Optional query parameter. Type of the stored_object.",
+        in: "query",
+        name: "object_type",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          "Optional query parameter. The type of search query needs to be performed. Could be EXACT_MATCH or PREFIX_MATCH.\nEXACT_MATCH returns the objects with exact match on the name filed, while PREFIX_MATCH returns the list of object matching the 'name' prefix. Default is EXACT_MATCH.\n\n- EXACT_MATCH: EXACT_MATCH\n\nReturns list of objects with exact match on the name filed.\n- PREFIX_MATCH: PREFIX_MATCH\n\nReturns the list of object matching the 'name' prefix.",
+        in: "query",
+        name: "query_type",
+        required: false,
+        schema: {
+          default: "EXACT_MATCH",
+          enum: ["EXACT_MATCH", "PREFIX_MATCH"],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/stored_objectListObjectsResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.mobile_sdk.CustomAPI.ListMobileSDKs",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-move-to-inventory-create",
+    method: "POST",
+    path: "/api/config/namespaces/{namespace}/api_definitions/{name}/move_to_inventory",
+    operation: "create",
+    domain: "security",
+    resource: "move-to-inventory",
+    summary: "Move To API Inventory.",
+    description: "Update the API Definition's include list with the provided API endpoints.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the API Definition for the current request.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace of the API Definition for the current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/api_definitionAPInventoryResp",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.views.api_definition.PublicConfigCustomAPI.MoveToAPInventory",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-name-get",
+    method: "GET",
+    path: "/api/object_store/namespaces/{namespace}/stored_objects/mobile-sdk/{name}/{version}",
+    operation: "get",
+    domain: "security",
+    resource: "{name}",
+    summary: "GET Mobile SDK.",
+    description: "GetMobileSDK is an API to download particular version of SDK.",
+    pathParameters: [
+      {
+        description: "Name\nx-required\nName of the stored_object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nx-required\nNamespace of the stored_object.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Version\nVersion of the stored_object in "v{n}-{YY}-{MM}-{DD}" formatted string, where n is version number and YY/MM/DD is year, month and date.',
+        in: "path",
+        name: "version",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description: "X-required\nType of the stored_object.",
+        in: "query",
+        name: "object_type",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/stored_objectGetObjectResponse",
+    },
+    requiredParams: ["name", "namespace", "version"],
+    operationId: "ves.io.schema.shape.bot_defense.mobile_sdk.CustomAPI.GetMobileSDK",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-policer-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/policers",
+    operation: "create",
+    domain: "security",
+    resource: "policer",
+    summary: "Create Policer.",
+    description: "Create a new policer with traffic rate limits.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/policerCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/policerCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.policer.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-policer-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/policers/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "policer",
+    summary: "DELETE Policer.",
+    description: "DELETE the specified policer.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/policerDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.policer.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-policer-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/policers/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "policer",
+    summary: "GET Policer.",
+    description: "GET specification of policer object.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/policerGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.policer.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-policer-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/policers",
+    operation: "list",
+    domain: "security",
+    resource: "policer",
+    summary: "List Policer.",
+    description: "List the set of policer in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of policer.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/policerListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.policer.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-policer-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/policers/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "policer",
+    summary: "Replace Policer.",
+    description: "Replace a given policer with changed traffic rate limits.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/policerReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/policerReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.policer.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-policie-create",
+    method: "POST",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_infrastructures/{name}/policies",
+    operation: "create",
+    domain: "security",
+    resource: "policie",
+    summary: "Deploy Policies to Bot Infra.",
+    description: "Deploy Policies to Bot Infrastructure.",
+    pathParameters: [
+      {
+        description: "Bot Infra Name\nBot Infra Name.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nnamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bot_infrastructureDeployPoliciesRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/bot_infrastructureDeployPoliciesResponse",
+    },
+    requiredParams: ["body", "name", "namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.bot_infrastructure.CustomAPI.DeployPoliciesToBotInfra",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-process-policy-information-create",
+    method: "POST",
+    path: "/api/secret_management/namespaces/system/voltshare/process_policy_information",
+    operation: "create",
+    domain: "security",
+    resource: "process-policy-information",
+    summary: "ProcessPolicyInformation.",
+    description:
+      "ProcessPolicyInformation API takes policy and secret name as input and returns a document containing .",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/voltshareProcessPolicyRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/voltshareProcessPolicyResponse",
+    },
+    requiredParams: ["body"],
+    operationId: "ves.io.schema.voltshare.CustomAPI.ProcessPolicyInformation",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protected-application-create",
+    method: "POST",
+    path: "/api/shape/bot/namespaces/{metadata.namespace}/protected_applications",
+    operation: "create",
+    domain: "security",
+    resource: "protected-application",
+    summary: "Create Protected Application.",
+    description: "Create applications protected by Bot Defense.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/protected_applicationCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/protected_applicationCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.protected_application.API.Create",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protected-application-delete",
+    method: "DELETE",
+    path: "/api/shape/bot/namespaces/{namespace}/protected_applications/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "protected-application",
+    summary: "DELETE Protected Application.",
+    description: "DELETE the specified protected_application.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/protected_applicationDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.protected_application.API.Delete",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protected-application-get",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/protected_applications/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "protected-application",
+    summary: "GET Protected Application.",
+    description: "GET applications protected by Bot Defense.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/protected_applicationGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.protected_application.API.Get",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protected-application-list",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/protected_applications",
+    operation: "list",
+    domain: "security",
+    resource: "protected-application",
+    summary: "List Protected Application.",
+    description: "List the set of protected_application in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of protected_application.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/protected_applicationListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.protected_application.API.List",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protected-application-update",
+    method: "PUT",
+    path: "/api/shape/bot/namespaces/{metadata.namespace}/protected_applications/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "protected-application",
+    summary: "Replace Protected Application.",
+    description: "Replace applications protected by Bot Defense.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/protected_applicationReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/protected_applicationReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.protected_application.API.Replace",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protocol-inspection-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/protocol_inspections",
+    operation: "create",
+    domain: "security",
+    resource: "protocol-inspection",
+    summary: "Create Protocol Inspection.",
+    description:
+      "Create Protocol Inspection Specification in a given namespace. If one already exists it will give an error.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/protocol_inspectionCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/protocol_inspectionCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.protocol_inspection.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protocol-inspection-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/protocol_inspections/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "protocol-inspection",
+    summary: "DELETE Configure Protocol Inspection.",
+    description: "DELETE the specified protocol_inspection.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/protocol_inspectionDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.protocol_inspection.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protocol-inspection-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/protocol_inspections/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "protocol-inspection",
+    summary: "GET Protocol Inspection.",
+    description: "GET Protocol Inspection details.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/protocol_inspectionGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.protocol_inspection.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protocol-inspection-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/protocol_inspections",
+    operation: "list",
+    domain: "security",
+    resource: "protocol-inspection",
+    summary: "List Configure Protocol Inspection.",
+    description: "List the set of protocol_inspection in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of protocol_inspection.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/protocol_inspectionListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.protocol_inspection.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protocol-inspection-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/protocol_inspections/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "protocol-inspection",
+    summary: "Replace Protocol Inspection.",
+    description: "Replace Protocol Inspection specification in a given namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/protocol_inspectionReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/protocol_inspectionReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.protocol_inspection.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protocol-policer-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/protocol_policers",
+    operation: "create",
+    domain: "security",
+    resource: "protocol-policer",
+    summary: "Create Protocol Policer.",
+    description:
+      "Create a protocol_policer object, protocol_policer object contains list\nof L4 protocol match condition and corresponding traffic rate limits.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/protocol_policerCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/protocol_policerCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.protocol_policer.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protocol-policer-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/protocol_policers/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "protocol-policer",
+    summary: "DELETE Protocol Policer.",
+    description: "DELETE the specified protocol_policer.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/protocol_policerDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.protocol_policer.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protocol-policer-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/protocol_policers/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "protocol-policer",
+    summary: "GET Protocol Policer.",
+    description:
+      "GET specification of a protocol_policer object with L4 protocol match condition and\ncorresponding traffic rate limits.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/protocol_policerGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.protocol_policer.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protocol-policer-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/protocol_policers",
+    operation: "list",
+    domain: "security",
+    resource: "protocol-policer",
+    summary: "List Protocol Policer.",
+    description: "List the set of protocol_policer in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of protocol_policer.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/protocol_policerListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.protocol_policer.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-protocol-policer-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/protocol_policers/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "protocol-policer",
+    summary: "Replace Protocol Policer.",
+    description:
+      "Replace a protocol_policer object with new L4 protocol match condition and\ncorresponding traffic rate limits.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/protocol_policerReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/protocol_policerReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.protocol_policer.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rate-limiter-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/rate_limiters",
+    operation: "create",
+    domain: "security",
+    resource: "rate-limiter",
+    summary: "Create Rate Limiter.",
+    description:
+      "Create rate_limiter creates a new object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/rate_limiterCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/rate_limiterCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.rate_limiter.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rate-limiter-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/rate_limiters/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "rate-limiter",
+    summary: "DELETE Rate Limiter.",
+    description: "DELETE the specified rate_limiter.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/rate_limiterDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.rate_limiter.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rate-limiter-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/rate_limiters/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "rate-limiter",
+    summary: "GET Rate Limiter.",
+    description:
+      "GET rate_limiter reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/rate_limiterGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.rate_limiter.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rate-limiter-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/rate_limiters",
+    operation: "list",
+    domain: "security",
+    resource: "rate-limiter",
+    summary: "List Rate Limiter.",
+    description: "List the set of rate_limiter in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of rate_limiter.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/rate_limiterListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.rate_limiter.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rate-limiter-policy-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/rate_limiter_policys",
+    operation: "create",
+    domain: "security",
+    resource: "rate-limiter-policy",
+    summary: "Create Specification.",
+    description: "Shape of the Rate Limiter Policy Create specification.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/rate_limiter_policyCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/rate_limiter_policyCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.views.rate_limiter_policy.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rate-limiter-policy-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/rate_limiter_policys/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "rate-limiter-policy",
+    summary: "DELETE Rate Limiter Policy.",
+    description: "DELETE the specified rate_limiter_policy.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/rate_limiter_policyDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.views.rate_limiter_policy.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rate-limiter-policy-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/rate_limiter_policys/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "rate-limiter-policy",
+    summary: "GET Specification.",
+    description: "Shape of the Rate Limiter Policy GET specification.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/rate_limiter_policyGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.views.rate_limiter_policy.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rate-limiter-policy-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/rate_limiter_policys",
+    operation: "list",
+    domain: "security",
+    resource: "rate-limiter-policy",
+    summary: "List Rate Limiter Policy.",
+    description: "List the set of rate_limiter_policy in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of rate_limiter_policy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/rate_limiter_policyListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.views.rate_limiter_policy.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rate-limiter-policy-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/rate_limiter_policys/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "rate-limiter-policy",
+    summary: "Replace Specification.",
+    description: "Shape of the Rate Limiter Policy Replace specification.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/rate_limiter_policyReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/rate_limiter_policyReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.views.rate_limiter_policy.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rate-limiter-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/rate_limiters/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "rate-limiter",
+    summary: "Replace Rate Limiter.",
+    description:
+      "Replace rate_limiter replaces an existing object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/rate_limiterReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/rate_limiterReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.rate_limiter.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rbac-policy-get",
+    method: "GET",
+    path: "/api/web/namespaces/{namespace}/rbac_policys/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "rbac-policy",
+    summary: "GET RBAC Policy.",
+    description:
+      "GET rbac_policy reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/rbac_policyGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.rbac_policy.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-rbac-policy-list",
+    method: "GET",
+    path: "/api/web/namespaces/{namespace}/rbac_policys",
+    operation: "list",
+    domain: "security",
+    resource: "rbac-policy",
+    summary: "List RBAC Policy.",
+    description: "List the set of rbac_policy in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of rbac_policy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/rbac_policyListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.rbac_policy.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-recover-create",
+    method: "POST",
+    path: "/api/secret_management/namespaces/{namespace}/secret_policy/{name}/recover",
+    operation: "create",
+    domain: "security",
+    resource: "recover",
+    summary: "Recover secret policy with given policy name.",
+    description: "Recoverpolicy CustomAPI.",
+    pathParameters: [
+      {
+        description: "Name\n\nx-required\nName of the secret policy.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\n\nx-required\nNamespace of the secret policy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/secret_policyRecoverRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/secret_policyRecoverResponse",
+    },
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.secret_policy.CustomAPI.RecoverPolicy",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-region-list",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/system/regions",
+    operation: "list",
+    domain: "security",
+    resource: "region",
+    summary: "Regions",
+    description: "GET protected apps regions list.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/protected_applicationRegionsListResponse",
+    },
+    requiredParams: [],
+    operationId: "ves.io.schema.shape.bot_defense.protected_application.CustomAPI.RegionsList",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-remove-from-inventory-create",
+    method: "POST",
+    path: "/api/config/namespaces/{namespace}/api_definitions/{name}/remove_from_inventory",
+    operation: "create",
+    domain: "security",
+    resource: "remove-from-inventory",
+    summary: "Remove From API Inventory.",
+    description: "Update the API Definition's exclude list with the provided API endpoints.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the API Definition for the current request.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace of the API Definition for the current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/api_definitionAPInventoryResp",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.views.api_definition.PublicConfigCustomAPI.RemoveFromAPInventory",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-resync-crl-create",
+    method: "POST",
+    path: "/api/operate/namespaces/{namespace}/sites/{site}/ver/resync_crl",
+    operation: "create",
+    domain: "security",
+    resource: "resync-crl",
+    summary: "Resync CRL.",
+    description: "Resync CRL by downloading from the server again.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace for which the request is sent (system)",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Site Name\nName of the site for which request is sent.",
+        in: "path",
+        name: "site",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/crlResyncCRLRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/crlResyncCRLResponse",
+    },
+    requiredParams: ["body", "namespace", "site"],
+    operationId: "ves.io.schema.operate.crl.CustomPublicAPI.ResyncCRL",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-rule-hit-create",
@@ -350,13 +6643,13 @@ export const securityTools: ParsedOperation[] = [
     operation: "create",
     domain: "security",
     resource: "rule-hit",
-    summary: "Client Rule Hits Metrics",
+    summary: "Client Rule Hits Metrics.",
     description:
-      "Get number of rule hits per client for a given namespace.\nThe rule hits counter can be aggregated based on one or more labels listed here.\nNAMESPACE, APP_TYPE, VIRTUAL_HOST, SITE, SERVICE, INSTANCE, WAF_INSTANCE_ID, RULE_ID, RULE_SEVERITY, RULE_TAG.",
+      "GET number of rule hits per client for a given namespace.\nThe rule hits counter can be aggregated based on one or more labels listed here.\nNAMESPACE, APP_TYPE, VIRTUAL_HOST, SITE, SERVICE, INSTANCE, WAF_INSTANCE_ID, RULE_ID, RULE_SEVERITY, RULE_TAG.",
     pathParameters: [
       {
         description:
-          'Namespace\n\nnamespace is used to scope the WAF rule hits for the given namespace.\nx-example: "bloggin-app-namespace-1"',
+          "Namespace\n\nnamespace is used to scope the WAF rule hits for the given namespace.",
         in: "path",
         name: "namespace",
         required: true,
@@ -372,8 +6665,810 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.waf.WAFMonitoringAPI.ClientRuleHitsMetrics",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0262.public.ves.io.schema.waf.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-scroll-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/app_security/events/scroll",
+    operation: "create",
+    domain: "security",
+    resource: "scroll",
+    summary: "Security Event Scroll Query.",
+    description:
+      'Scroll request is used to fetch large number of security events in multiple batches with each SecurityEventResponse\ncontaining no more than 500 messages. To scroll through more than 500 or all messages, one can use the\nSecurityEventScrollRequest. Use the scroll_id returned in the SecurityEventResponse to fetch the next batch of security events\nand one can continue this process till the scroll_id returned is "" which indicates no more events to scroll.',
+    pathParameters: [
+      {
+        description: "Namespace\nfetch the WAF security events scoped by namespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/app_securitySecurityEventsScrollRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/app_securitySecurityEventsResponse",
+    },
+    requiredParams: ["body", "namespace"],
+    operationId:
+      "docs_cloud_f5_com_0020_public_ves_io_schema_app_security_ves_swagger_ves.io.schema.app_security.AppSecurityMonitoringAPI.SecurityEventsScrollQuery",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-scroll-list",
+    method: "GET",
+    path: "/api/data/namespaces/{namespace}/app_security/events/scroll",
+    operation: "list",
+    domain: "security",
+    resource: "scroll",
+    summary: "Security Event Scroll Query.",
+    description:
+      'Scroll request is used to fetch large number of security events in multiple batches with each SecurityEventResponse\ncontaining no more than 500 messages. To scroll through more than 500 or all messages, one can use the\nSecurityEventScrollRequest. Use the scroll_id returned in the SecurityEventResponse to fetch the next batch of security events\nand one can continue this process till the scroll_id returned is "" which indicates no more events to scroll.',
+    pathParameters: [
+      {
+        description: "Namespace\nfetch the WAF security events scoped by namespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "Long Base-64 encoded string which can be used to retrieve next batch of security events.",
+        in: "query",
+        name: "scroll_id",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_securitySecurityEventsResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.app_security.AppSecurityMonitoringAPI.SecurityEventsScrollQuery",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-management-access-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/secret_management_accesss",
+    operation: "create",
+    domain: "security",
+    resource: "secret-management-access",
+    summary: "Create Secret Management Access.",
+    description:
+      "Create secret_management_access creates a new object in storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/secret_management_accessCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/secret_management_accessCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.secret_management_access.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-management-access-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/secret_management_accesss/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "secret-management-access",
+    summary: "DELETE Secret Management Access.",
+    description: "DELETE the specified secret_management_access.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/secret_management_accessDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.secret_management_access.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-management-access-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/secret_management_accesss/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "secret-management-access",
+    summary: "GET Secret Management Access.",
+    description:
+      "GET secret_management_access reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/secret_management_accessGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.secret_management_access.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-management-access-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/secret_management_accesss",
+    operation: "list",
+    domain: "security",
+    resource: "secret-management-access",
+    summary: "List Secret Management Access.",
+    description: "List the set of secret_management_access in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of secret_management_access.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/secret_management_accessListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.secret_management_access.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-management-access-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/secret_management_accesss/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "secret-management-access",
+    summary: "Replace Secret Management Access.",
+    description:
+      "Replace secret_management_access replaces an existing object in storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/secret_management_accessReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/secret_management_accessReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.secret_management_access.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-policy-create",
+    method: "POST",
+    path: "/api/secret_management/namespaces/{metadata.namespace}/secret_policys",
+    operation: "create",
+    domain: "security",
+    resource: "secret-policy",
+    summary: "Create Secret Policy.",
+    description:
+      "Create secret_policy creates a new object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/secret_policyCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/secret_policyCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.secret_policy.API.Create",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-policy-delete",
+    method: "DELETE",
+    path: "/api/secret_management/namespaces/{namespace}/secret_policys/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "secret-policy",
+    summary: "DELETE Secret Policy.",
+    description: "DELETE the specified secret_policy.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/secret_policyDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.secret_policy.API.Delete",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-policy-get",
+    method: "GET",
+    path: "/api/secret_management/namespaces/{namespace}/secret_policys/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "secret-policy",
+    summary: "GET Secret Policy.",
+    description:
+      "GET secret_policy reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/secret_policyGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.secret_policy.API.Get",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-policy-list",
+    method: "GET",
+    path: "/api/secret_management/namespaces/{namespace}/secret_policys",
+    operation: "list",
+    domain: "security",
+    resource: "secret-policy",
+    summary: "List Secret Policy.",
+    description: "List the set of secret_policy in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of secret_policy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/secret_policyListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.secret_policy.API.List",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-policy-rule-create",
+    method: "POST",
+    path: "/api/secret_management/namespaces/{metadata.namespace}/secret_policy_rules",
+    operation: "create",
+    domain: "security",
+    resource: "secret-policy-rule",
+    summary: "Create Secret Policy Rule.",
+    description:
+      "Create secret_policy_rule creates a new object in storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/secret_policy_ruleCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/secret_policy_ruleCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.secret_policy_rule.API.Create",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-policy-rule-delete",
+    method: "DELETE",
+    path: "/api/secret_management/namespaces/{namespace}/secret_policy_rules/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "secret-policy-rule",
+    summary: "DELETE Secret Policy Rule.",
+    description: "DELETE the specified secret_policy_rule.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/secret_policy_ruleDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.secret_policy_rule.API.Delete",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-policy-rule-get",
+    method: "GET",
+    path: "/api/secret_management/namespaces/{namespace}/secret_policy_rules/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "secret-policy-rule",
+    summary: "GET Secret Policy Rule.",
+    description:
+      "GET secret_policy_rule reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/secret_policy_ruleGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.secret_policy_rule.API.Get",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-policy-rule-list",
+    method: "GET",
+    path: "/api/secret_management/namespaces/{namespace}/secret_policy_rules",
+    operation: "list",
+    domain: "security",
+    resource: "secret-policy-rule",
+    summary: "List Secret Policy Rule.",
+    description: "List the set of secret_policy_rule in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of secret_policy_rule.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/secret_policy_ruleListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.secret_policy_rule.API.List",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-policy-rule-update",
+    method: "PUT",
+    path: "/api/secret_management/namespaces/{metadata.namespace}/secret_policy_rules/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "secret-policy-rule",
+    summary: "Replace Secret Policy Rule.",
+    description:
+      "Replace secret_policy_rule creates a new object in storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/secret_policy_ruleReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/secret_policy_ruleReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.secret_policy_rule.API.Replace",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-secret-policy-update",
+    method: "PUT",
+    path: "/api/secret_management/namespaces/{metadata.namespace}/secret_policys/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "secret-policy",
+    summary: "Replace Secret Policy.",
+    description:
+      "Replace secret_policy replaces an existing object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/secret_policyReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/secret_policyReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.secret_policy.API.Replace",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-security-event-create",
@@ -382,13 +7477,13 @@ export const securityTools: ParsedOperation[] = [
     operation: "create",
     domain: "security",
     resource: "security-event",
-    summary: "Client Security Events Metrics",
+    summary: "Client Security Events Metrics.",
     description:
-      "Get number of security events per client for a given namespace.\nThe security events counter can be aggregated based on one or more labels listed here.\nNAMESPACE, APP_TYPE, VIRTUAL_HOST, SITE, SERVICE, INSTANCE, WAF_INSTANCE_ID, WAF_MODE.",
+      "GET number of security events per client for a given namespace.\nThe security events counter can be aggregated based on one or more labels listed here.\nNAMESPACE, APP_TYPE, VIRTUAL_HOST, SITE, SERVICE, INSTANCE, WAF_INSTANCE_ID, WAF_MODE.",
     pathParameters: [
       {
         description:
-          'Namespace\n\nx-example: "bloggin-app-namespace-1"\nnamespace is used to scope the WAF security events for the given namespace.',
+          "Namespace\nnamespace is used to scope the WAF security events for the given namespace.",
         in: "path",
         name: "namespace",
         required: true,
@@ -404,8 +7499,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.waf.WAFMonitoringAPI.ClientSecurityEventsMetrics",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0262.public.ves.io.schema.waf.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-create",
@@ -414,13 +7509,13 @@ export const securityTools: ParsedOperation[] = [
     operation: "create",
     domain: "security",
     resource: "service-policy",
-    summary: "Create Service Policy",
+    summary: "Create Service Policy.",
     description:
       "Create service_policy creates a new object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         in: "path",
         name: "metadata.namespace",
         required: true,
@@ -438,8 +7533,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.service_policy.API.Create",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-delete",
@@ -448,11 +7543,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "delete",
     domain: "security",
     resource: "service-policy",
-    summary: "Delete Service Policy",
-    description: "Delete the specified service_policy",
+    summary: "DELETE Service Policy.",
+    description: "DELETE the specified service_policy.",
     pathParameters: [
       {
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        description: "Name\nName of the configuration object.",
         in: "path",
         name: "name",
         required: true,
@@ -461,8 +7556,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        description: "Namespace\nNamespace in which the configuration object is present.",
         in: "path",
         name: "namespace",
         required: true,
@@ -478,8 +7572,8 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {},
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.service_policy.API.Delete",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-get",
@@ -488,13 +7582,12 @@ export const securityTools: ParsedOperation[] = [
     operation: "get",
     domain: "security",
     resource: "service-policy",
-    summary: "Get Service Policy",
+    summary: "GET Service Policy.",
     description:
-      "Get service_policy reads a given object from storage backend for metadata.namespace.",
+      "GET service_policy reads a given object from storage backend for metadata.namespace.",
     pathParameters: [
       {
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        description: "Name\nThe name of the configuration object to be fetched.",
         in: "path",
         name: "name",
         required: true,
@@ -503,8 +7596,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        description: "Namespace\nThe namespace in which the configuration object is present.",
         in: "path",
         name: "namespace",
         required: true,
@@ -516,7 +7608,7 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [
       {
         description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
         in: "query",
         name: "response_format",
         required: false,
@@ -541,8 +7633,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.service_policy.API.Get",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-list",
@@ -551,12 +7643,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "list",
     domain: "security",
     resource: "service-policy",
-    summary: "List Service Policy",
-    description: "List the set of service_policy in a namespace",
+    summary: "List Service Policy.",
+    description: "List the set of service_policy in a namespace.",
     pathParameters: [
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy',
+        description: "Namespace\nNamespace to scope the listing of service_policy.",
         in: "path",
         name: "namespace",
         required: true,
@@ -568,7 +7659,7 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [
       {
         description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+          "A LabelSelectorType expression that every item in list response will satisfy.",
         in: "query",
         name: "label_filter",
         required: false,
@@ -577,7 +7668,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
         in: "query",
         name: "report_fields",
         required: false,
@@ -589,7 +7680,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
         in: "query",
         name: "report_status_fields",
         required: false,
@@ -607,8 +7698,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.service_policy.API.List",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-rule-create",
@@ -617,13 +7708,13 @@ export const securityTools: ParsedOperation[] = [
     operation: "create",
     domain: "security",
     resource: "service-policy-rule",
-    summary: "Create Service Policy Rule",
+    summary: "Create Service Policy Rule.",
     description:
       "Create service_policy_rule creates a new object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         in: "path",
         name: "metadata.namespace",
         required: true,
@@ -641,9 +7732,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.service_policy_rule.API.Create",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-rule-delete",
@@ -652,11 +7742,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "delete",
     domain: "security",
     resource: "service-policy-rule",
-    summary: "Delete Service Policy Rule",
-    description: "Delete the specified service_policy_rule",
+    summary: "DELETE Service Policy Rule.",
+    description: "DELETE the specified service_policy_rule.",
     pathParameters: [
       {
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        description: "Name\nName of the configuration object.",
         in: "path",
         name: "name",
         required: true,
@@ -665,8 +7755,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        description: "Namespace\nNamespace in which the configuration object is present.",
         in: "path",
         name: "namespace",
         required: true,
@@ -682,9 +7771,8 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {},
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.service_policy_rule.API.Delete",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-rule-get",
@@ -693,13 +7781,12 @@ export const securityTools: ParsedOperation[] = [
     operation: "get",
     domain: "security",
     resource: "service-policy-rule",
-    summary: "Get Service Policy Rule",
+    summary: "GET Service Policy Rule.",
     description:
-      "Get service_policy_rule reads a given object from storage backend for metadata.namespace.",
+      "GET service_policy_rule reads a given object from storage backend for metadata.namespace.",
     pathParameters: [
       {
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        description: "Name\nThe name of the configuration object to be fetched.",
         in: "path",
         name: "name",
         required: true,
@@ -708,8 +7795,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        description: "Namespace\nThe namespace in which the configuration object is present.",
         in: "path",
         name: "namespace",
         required: true,
@@ -721,7 +7807,7 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [
       {
         description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
         in: "query",
         name: "response_format",
         required: false,
@@ -746,9 +7832,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.service_policy_rule.API.Get",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-rule-list",
@@ -757,12 +7842,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "list",
     domain: "security",
     resource: "service-policy-rule",
-    summary: "List Service Policy Rule",
-    description: "List the set of service_policy_rule in a namespace",
+    summary: "List Service Policy Rule.",
+    description: "List the set of service_policy_rule in a namespace.",
     pathParameters: [
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy_rule',
+        description: "Namespace\nNamespace to scope the listing of service_policy_rule.",
         in: "path",
         name: "namespace",
         required: true,
@@ -774,7 +7858,7 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [
       {
         description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+          "A LabelSelectorType expression that every item in list response will satisfy.",
         in: "query",
         name: "label_filter",
         required: false,
@@ -783,7 +7867,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
         in: "query",
         name: "report_fields",
         required: false,
@@ -795,7 +7879,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
         in: "query",
         name: "report_status_fields",
         required: false,
@@ -813,9 +7897,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.service_policy_rule.API.List",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-rule-update",
@@ -824,13 +7907,12 @@ export const securityTools: ParsedOperation[] = [
     operation: "update",
     domain: "security",
     resource: "service-policy-rule",
-    summary: "Replace Service Policy Rule",
+    summary: "Replace Service Policy Rule.",
     description:
       "Replace service_policy_rule replaces an existing object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
         in: "path",
         name: "metadata.name",
         required: true,
@@ -840,7 +7922,7 @@ export const securityTools: ParsedOperation[] = [
       },
       {
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         in: "path",
         name: "metadata.namespace",
         required: true,
@@ -858,9 +7940,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.service_policy_rule.API.Replace",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0209.public.ves.io.schema.service_policy_rule.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-set-get",
@@ -869,13 +7950,12 @@ export const securityTools: ParsedOperation[] = [
     operation: "get",
     domain: "security",
     resource: "service-policy-set",
-    summary: "Get Service Policy Set",
+    summary: "GET Service Policy Set.",
     description:
-      "Get service_policy_set reads a given object from storage backend for metadata.namespace.",
+      "GET service_policy_set reads a given object from storage backend for metadata.namespace.",
     pathParameters: [
       {
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        description: "Name\nThe name of the configuration object to be fetched.",
         in: "path",
         name: "name",
         required: true,
@@ -884,8 +7964,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        description: "Namespace\nThe namespace in which the configuration object is present.",
         in: "path",
         name: "namespace",
         required: true,
@@ -897,7 +7976,7 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [
       {
         description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
         in: "query",
         name: "response_format",
         required: false,
@@ -920,9 +7999,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.service_policy_set.API.Get",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0210.public.ves.io.schema.service_policy_set.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-set-list",
@@ -931,12 +8009,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "list",
     domain: "security",
     resource: "service-policy-set",
-    summary: "List Service Policy Set",
-    description: "List the set of service_policy_set in a namespace",
+    summary: "List Service Policy Set.",
+    description: "List the set of service_policy_set in a namespace.",
     pathParameters: [
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of service_policy_set',
+        description: "Namespace\nNamespace to scope the listing of service_policy_set.",
         in: "path",
         name: "namespace",
         required: true,
@@ -948,7 +8025,7 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [
       {
         description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+          "A LabelSelectorType expression that every item in list response will satisfy.",
         in: "query",
         name: "label_filter",
         required: false,
@@ -957,7 +8034,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
         in: "query",
         name: "report_fields",
         required: false,
@@ -969,7 +8046,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
         in: "query",
         name: "report_status_fields",
         required: false,
@@ -987,9 +8064,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.service_policy_set.API.List",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0210.public.ves.io.schema.service_policy_set.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-service-policy-update",
@@ -998,13 +8074,12 @@ export const securityTools: ParsedOperation[] = [
     operation: "update",
     domain: "security",
     resource: "service-policy",
-    summary: "Replace Service Policy",
+    summary: "Replace Service Policy.",
     description:
       "Replace service_policy replaces an existing object in the storage backend for metadata.namespace.",
     pathParameters: [
       {
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
         in: "path",
         name: "metadata.name",
         required: true,
@@ -1014,7 +8089,7 @@ export const securityTools: ParsedOperation[] = [
       },
       {
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         in: "path",
         name: "metadata.namespace",
         required: true,
@@ -1032,23 +8107,21 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.service_policy.API.Replace",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0208.public.ves.io.schema.service_policy.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
-    toolName: "f5xc-api-security-suggestion-create",
-    method: "POST",
-    path: "/api/config/namespaces/{namespace}/cdn_loadbalancers/{name}/waf_exclusion/suggestion",
-    operation: "create",
+    toolName: "f5xc-api-security-shape-bot-defense-instance-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/shape_bot_defense_instances/{name}",
+    operation: "get",
     domain: "security",
-    resource: "suggestion",
-    summary: "Suggest WAF Exclusion Rule",
-    description:
-      "Suggest service policy rule to set up WAF exclusion for a given WAF security event",
+    resource: "shape-bot-defense-instance",
+    summary: "GET Virtual Host.",
+    description: "GET virtual host from a given namespace.",
     pathParameters: [
       {
-        description:
-          'Name\n\nx-example: "ves-io-frontend"\nHTTP load balancer for which this WAF exclusion will be applied',
+        description: "Name\nThe name of the configuration object to be fetched.",
         in: "path",
         name: "name",
         required: true,
@@ -1057,8 +8130,223 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
         description:
-          'Namespace\n\nx-example: "shared"\nNamespace of the App type for current request',
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/shape_bot_defense_instanceGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.shape_bot_defense_instance.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-shape-bot-defense-instance-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/shape_bot_defense_instances",
+    operation: "list",
+    domain: "security",
+    resource: "shape-bot-defense-instance",
+    summary: "List Shape Bot Defense Instance.",
+    description: "List the set of shape_bot_defense_instance in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of shape_bot_defense_instance.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/shape_bot_defense_instanceListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.shape_bot_defense_instance.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-softdelete-create",
+    method: "POST",
+    path: "/api/secret_management/namespaces/{namespace}/secret_policy/{name}/softdelete",
+    operation: "create",
+    domain: "security",
+    resource: "softdelete",
+    summary: "DELETE secret policy with given policy name.",
+    description: "Deletepolicy CustomAPI.",
+    pathParameters: [
+      {
+        description: "Name\n\nx-required\nName of the secret policy.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\n\nx-required\nNamespace of the secret policy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/secret_policySoftDeleteRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/secret_policySoftDeleteResponse",
+    },
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.secret_policy.CustomAPI.DeletePolicy",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-subscribe-create",
+    method: "POST",
+    path: "/api/shape/bot/namespaces/system/bot-defense/addon/subscribe",
+    operation: "create",
+    domain: "security",
+    resource: "subscribe",
+    summary: "Subscribe to Shape Bot Defense.",
+    description: "Subscribe to Shape Bot Defense.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/subscriptionSubscribeResponse",
+    },
+    requiredParams: [],
+    operationId: "ves.io.schema.shape.bot_defense.subscription.CustomAPI.Subscribe",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-suggest-value-create",
+    method: "POST",
+    path: "/api/shape/bot/namespaces/{namespace}/suggest-values",
+    operation: "create",
+    domain: "security",
+    resource: "suggest-value",
+    summary: "Suggest Values.",
+    description:
+      "Returns suggested values for the specified field in the given Create/Replace/Custom request.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace in which the suggestions are scoped.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/bot_infrastructureSuggestValuesReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/bot_infrastructureSuggestValuesResp",
+    },
+    requiredParams: ["body", "namespace"],
+    operationId: "ves.io.schema.shape.bot_defense.bot_infrastructure.CustomAPI.SuggestValues",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-suggestion-create",
+    method: "POST",
+    path: "/api/config/namespaces/{namespace}/cdn_loadbalancers/{name}/block_client/suggestion",
+    operation: "create",
+    domain: "security",
+    resource: "suggestion",
+    summary: "Suggest block client rule.",
+    description: "Suggest blocking SimpleClientSrcRule for a given IP/ASN.",
+    pathParameters: [
+      {
+        description: "Name\nHTTP load balancer for which this WAF exclusion will be applied.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace of the App type for current request.",
         in: "path",
         name: "namespace",
         required: true,
@@ -1070,13 +8358,117 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/app_securityGetSuggestedWAFExclusionRuleRsp",
+      $ref: "#/components/schemas/app_securityGetSuggestedBlockClientRuleRsp",
     },
     requiredParams: ["name", "namespace"],
     operationId:
-      "ves.io.schema.app_security.AppSecurityWafExclusionAPI.GetSuggestedWAFExclusionRuleForCDN",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+      "ves.io.schema.app_security.AppSecurityClientRuleAPI.GetSuggestedBlockClientRuleForCDN",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-summary-list",
+    method: "GET",
+    path: "/api/shape/bot/custom/namespaces/{namespace}/bot_detection_rules/summary",
+    operation: "list",
+    domain: "security",
+    resource: "summary",
+    summary: "GET summary of bot detection rules.",
+    description: "Getbotdetectionrulessummary CustomAPI.",
+    pathParameters: [
+      {
+        description: "Namespace\nx-required\nNamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_detection_ruleGetBotDetectionRulesSummaryResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.threat_intelligence.bot_detection_rule.CustomAPI.GetBotDetectionRulesSummary",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-suspicious-user-log-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/app_security/suspicious_user_logs",
+    operation: "create",
+    domain: "security",
+    resource: "suspicious-user-log",
+    summary: "Suspicious User Logs Query.",
+    description:
+      "GET suspicious user logs for the given namespace.\nFor `system` namespace, all suspicious users logs for the tenant matching the query specified\nin the request will be returned in the response. User may query suspicious user logs that matches various\nfields such as `vh_name`, `user`, `site`, `city`, `country`.",
+    pathParameters: [
+      {
+        description: "Namespace\n\nfetch suspicious user logs for a given namespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/app_securitySuspiciousUserLogsRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/app_securitySuspiciousUserLogsResponse",
+    },
+    requiredParams: ["body", "namespace"],
+    operationId: "ves.io.schema.app_security.AppSecurityMonitoringAPI.SuspiciousUserLogsQuery",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-template-get",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/protected_applications/{name}/template",
+    operation: "get",
+    domain: "security",
+    resource: "template",
+    summary: "Template Connector.",
+    description: "GET iApp template.",
+    pathParameters: [
+      {
+        description: "Application Name\nProtected application name.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nnamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/protected_applicationTemplateConnectorResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.protected_application.CustomAPI.TemplateConnector",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-threat-campaign-get",
@@ -1085,12 +8477,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "get",
     domain: "security",
     resource: "threat-campaign",
-    summary: "Get Threat Campaign by ID",
-    description: "Get Threat Campaign by ID",
+    summary: "GET Threat Campaign by ID.",
+    description: "GET Threat Campaign by ID.",
     pathParameters: [
       {
-        description:
-          'id\n\nx-example: "cmp5641a5adbeabaf2708ce7663ad937df8"\nx-required\nId with which the request will find entry.',
+        description: "ID\nx-required\nID with which the request will find entry.",
         in: "path",
         name: "id",
         required: true,
@@ -1106,8 +8497,588 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["id"],
     operationId: "ves.io.schema.app_security.ThreatCampaignAPI.GetThreatCampaignById",
-    tags: [],
-    sourceFile: "raw/docs-cloud-f5-com.0020.public.ves.io.schema.app_security.ves-swagger.json",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-trusted-ca-list-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/trusted_ca_lists",
+    operation: "create",
+    domain: "security",
+    resource: "trusted-ca-list",
+    summary: "Create Root CA Certificate.",
+    description: "Shape of the Root CA Certificate specification.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/trusted_ca_listCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/trusted_ca_listCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.trusted_ca_list.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-trusted-ca-list-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/trusted_ca_lists/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "trusted-ca-list",
+    summary: "DELETE Root CA Certificate.",
+    description: "DELETE the specified trusted_ca_list.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/trusted_ca_listDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.trusted_ca_list.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-trusted-ca-list-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/trusted_ca_lists/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "trusted-ca-list",
+    summary: "GET Root CA Certificate.",
+    description: "Shape of the Root CA Certificate specification.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/trusted_ca_listGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.trusted_ca_list.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-trusted-ca-list-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/trusted_ca_lists",
+    operation: "list",
+    domain: "security",
+    resource: "trusted-ca-list",
+    summary: "List Root CA Certificate.",
+    description: "List the set of trusted_ca_list in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of trusted_ca_list.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/trusted_ca_listListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.trusted_ca_list.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-trusted-ca-list-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/trusted_ca_lists/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "trusted-ca-list",
+    summary: "Replace Root CA Certificate.",
+    description: "Shape of the Root CA Certificate specification.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/trusted_ca_listReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/trusted_ca_listReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.trusted_ca_list.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-unmark-as-non-api-create",
+    method: "POST",
+    path: "/api/config/namespaces/{namespace}/api_definitions/{name}/unmark_as_non_api",
+    operation: "create",
+    domain: "security",
+    resource: "unmark-as-non-api",
+    summary: "Unmark As Non-API.",
+    description: "DELETE the provided API endpoints from the API Definition's non-API list.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the API Definition for the current request.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace of the API Definition for the current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/api_definitionAPInventoryResp",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.views.api_definition.PublicConfigCustomAPI.UnmarkAsNonAPI",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-unsubscribe-create",
+    method: "POST",
+    path: "/api/shape/bot/namespaces/system/bot-defense/addon/unsubscribe",
+    operation: "create",
+    domain: "security",
+    resource: "unsubscribe",
+    summary: "Unsubscribe to Shape Bot Defense.",
+    description: "Unsubscribe to Shape Bot Defense.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/subscriptionUnsubscribeResponse",
+    },
+    requiredParams: [],
+    operationId: "ves.io.schema.shape.bot_defense.subscription.CustomAPI.Unsubscribe",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-version-get",
+    method: "GET",
+    path: "/api/shape/bot/namespaces/{namespace}/bot_allowlist_policy/{name}/versions",
+    operation: "get",
+    domain: "security",
+    resource: "version",
+    summary: "Bot Allowlist Policy Versions.",
+    description: "GET bot allowlist policy versions.",
+    pathParameters: [
+      {
+        description: "Policy name\nPolicy name.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nnamespace is used to scope the query.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/bot_allowlist_policyPolicyVersionsResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId:
+      "ves.io.schema.shape.bot_defense.bot_allowlist_policy.CustomAPI.GetAllowlistPolicyVersions",
+    tags: ["Shape Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-voltshare-admin-policy-create",
+    method: "POST",
+    path: "/api/secret_management/namespaces/{metadata.namespace}/voltshare_admin_policys",
+    operation: "create",
+    domain: "security",
+    resource: "voltshare-admin-policy",
+    summary: "Create VoltShare Admin Policy.",
+    description:
+      "Create voltshare_admin_policy creates a new object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/voltshare_admin_policyCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/voltshare_admin_policyCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.voltshare_admin_policy.API.Create",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-voltshare-admin-policy-delete",
+    method: "DELETE",
+    path: "/api/secret_management/namespaces/{namespace}/voltshare_admin_policys/{name}",
+    operation: "delete",
+    domain: "security",
+    resource: "voltshare-admin-policy",
+    summary: "DELETE VoltShare Admin Policy.",
+    description: "DELETE the specified voltshare_admin_policy.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/voltshare_admin_policyDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.voltshare_admin_policy.API.Delete",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-voltshare-admin-policy-get",
+    method: "GET",
+    path: "/api/secret_management/namespaces/{namespace}/voltshare_admin_policys/{name}",
+    operation: "get",
+    domain: "security",
+    resource: "voltshare-admin-policy",
+    summary: "GET VoltShare Admin Policy.",
+    description:
+      "GET voltshare_admin_policy reads a given object from storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/voltshare_admin_policyGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.voltshare_admin_policy.API.Get",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-voltshare-admin-policy-list",
+    method: "GET",
+    path: "/api/secret_management/namespaces/{namespace}/voltshare_admin_policys",
+    operation: "list",
+    domain: "security",
+    resource: "voltshare-admin-policy",
+    summary: "List VoltShare Admin Policy.",
+    description: "List the set of voltshare_admin_policy in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of voltshare_admin_policy.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/voltshare_admin_policyListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.voltshare_admin_policy.API.List",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
+  },
+  {
+    toolName: "f5xc-api-security-voltshare-admin-policy-update",
+    method: "PUT",
+    path: "/api/secret_management/namespaces/{metadata.namespace}/voltshare_admin_policys/{metadata.name}",
+    operation: "update",
+    domain: "security",
+    resource: "voltshare-admin-policy",
+    summary: "Replace VoltShare Admin Policy.",
+    description:
+      "Replace voltshare_admin_policy replaces an existing object in the storage backend for metadata.namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/voltshare_admin_policyReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/voltshare_admin_policyReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.voltshare_admin_policy.API.Replace",
+    tags: ["Security"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-waf-exclusion-policy-create",
@@ -1116,12 +9087,12 @@ export const securityTools: ParsedOperation[] = [
     operation: "create",
     domain: "security",
     resource: "waf-exclusion-policy",
-    summary: "Create WAF Exclusion Policy",
-    description: "Create a WAF exclusion policy",
+    summary: "Create WAF Exclusion Policy.",
+    description: "Create a WAF exclusion policy.",
     pathParameters: [
       {
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         in: "path",
         name: "metadata.namespace",
         required: true,
@@ -1139,9 +9110,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["body", "metadata.namespace"],
     operationId: "ves.io.schema.waf_exclusion_policy.API.Create",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-waf-exclusion-policy-delete",
@@ -1150,11 +9120,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "delete",
     domain: "security",
     resource: "waf-exclusion-policy",
-    summary: "Delete WAF Exclusion Policy",
-    description: "Delete the specified waf_exclusion_policy",
+    summary: "DELETE WAF Exclusion Policy.",
+    description: "DELETE the specified waf_exclusion_policy.",
     pathParameters: [
       {
-        description: 'name\n\nx-example: "name"\nName of the configuration object',
+        description: "Name\nName of the configuration object.",
         in: "path",
         name: "name",
         required: true,
@@ -1163,8 +9133,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace in which the configuration object is present',
+        description: "Namespace\nNamespace in which the configuration object is present.",
         in: "path",
         name: "namespace",
         required: true,
@@ -1180,9 +9149,8 @@ export const securityTools: ParsedOperation[] = [
     responseSchema: {},
     requiredParams: ["body", "name", "namespace"],
     operationId: "ves.io.schema.waf_exclusion_policy.API.Delete",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-waf-exclusion-policy-get",
@@ -1191,12 +9159,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "get",
     domain: "security",
     resource: "waf-exclusion-policy",
-    summary: "Get WAF Exclusion Policy",
-    description: "Retrieve a WAF exclusion policy",
+    summary: "GET WAF Exclusion Policy.",
+    description: "Retrieve a WAF exclusion policy.",
     pathParameters: [
       {
-        description:
-          'name\n\nx-example: "name"\nThe name of the configuration object to be fetched',
+        description: "Name\nThe name of the configuration object to be fetched.",
         in: "path",
         name: "name",
         required: true,
@@ -1205,8 +9172,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nThe namespace in which the configuration object is present',
+        description: "Namespace\nThe namespace in which the configuration object is present.",
         in: "path",
         name: "namespace",
         required: true,
@@ -1218,7 +9184,7 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [
       {
         description:
-          "The format in which the configuration object is to be fetched. This could be for example\n    - in GetSpec form for the contents of object\n    - in CreateRequest form to create a new similar object\n    - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object",
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
         in: "query",
         name: "response_format",
         required: false,
@@ -1243,9 +9209,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["name", "namespace"],
     operationId: "ves.io.schema.waf_exclusion_policy.API.Get",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-waf-exclusion-policy-list",
@@ -1254,12 +9219,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "list",
     domain: "security",
     resource: "waf-exclusion-policy",
-    summary: "List WAF Exclusion Policy",
-    description: "List the set of waf_exclusion_policy in a namespace",
+    summary: "List WAF Exclusion Policy.",
+    description: "List the set of waf_exclusion_policy in a namespace.",
     pathParameters: [
       {
-        description:
-          'namespace\n\nx-example: "ns1"\nNamespace to scope the listing of waf_exclusion_policy',
+        description: "Namespace\nNamespace to scope the listing of waf_exclusion_policy.",
         in: "path",
         name: "namespace",
         required: true,
@@ -1271,7 +9235,7 @@ export const securityTools: ParsedOperation[] = [
     queryParameters: [
       {
         description:
-          'x-example: "env in (staging, testing), tier in (web, db)"\nA LabelSelectorType expression that every item in list response will satisfy',
+          "A LabelSelectorType expression that every item in list response will satisfy.",
         in: "query",
         name: "label_filter",
         required: false,
@@ -1280,7 +9244,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description: 'x-example: ""\nExtra fields to return along with summary fields',
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
         in: "query",
         name: "report_fields",
         required: false,
@@ -1292,7 +9256,7 @@ export const securityTools: ParsedOperation[] = [
         },
       },
       {
-        description: 'x-example: ""\nExtra status fields to return along with summary fields',
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
         in: "query",
         name: "report_status_fields",
         required: false,
@@ -1310,9 +9274,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["namespace"],
     operationId: "ves.io.schema.waf_exclusion_policy.API.List",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
   {
     toolName: "f5xc-api-security-waf-exclusion-policy-update",
@@ -1321,12 +9284,11 @@ export const securityTools: ParsedOperation[] = [
     operation: "update",
     domain: "security",
     resource: "waf-exclusion-policy",
-    summary: "Replace WAF Exclusion Policy",
-    description: "Replace an existing WAF exclusion policy",
+    summary: "Replace WAF Exclusion Policy.",
+    description: "Replace an existing WAF exclusion policy.",
     pathParameters: [
       {
-        description:
-          'name\n\nx-example: "acmecorp-web"\nThe configuration object to be replaced will be looked up by name',
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
         in: "path",
         name: "metadata.name",
         required: true,
@@ -1336,7 +9298,7 @@ export const securityTools: ParsedOperation[] = [
       },
       {
         description:
-          'namespace\n\nx-example: "staging"\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
         in: "path",
         name: "metadata.namespace",
         required: true,
@@ -1354,9 +9316,8 @@ export const securityTools: ParsedOperation[] = [
     },
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
     operationId: "ves.io.schema.waf_exclusion_policy.API.Replace",
-    tags: [],
-    sourceFile:
-      "raw/docs-cloud-f5-com.0263.public.ves.io.schema.waf_exclusion_policy.ves-swagger.json",
+    tags: ["Other"],
+    sourceFile: "domains/security.json",
   },
 ];
 

@@ -4,6 +4,11 @@ on:
   schedule:
     # Run daily at 00:00 UTC to check for upstream API changes
     - cron: "0 0 * * *"
+  repository_dispatch:
+    # Triggered by webhook from robinmordasiewicz/f5xc-api-enriched releases
+    types: [enriched-specs-updated]
+  workflow_dispatch:
+    # Allow manual triggering
 
 permissions:
   contents: write
@@ -29,8 +34,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Download OpenAPI specs
+      - name: Download OpenAPI specs from enriched source
         run: npm run sync-specs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check for changes
         id: changes
@@ -41,6 +48,17 @@ jobs:
           else
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "No changes to specs"
+          fi
+
+      - name: Get version info
+        id: version
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          if [[ -f specs/index.json ]]; then
+            VERSION=$(jq -r '.version // "unknown"' specs/index.json)
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+          else
+            echo "version=unknown" >> $GITHUB_OUTPUT
           fi
 
       - name: Generate tools from specs
@@ -60,15 +78,19 @@ jobs:
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: update OpenAPI specifications"
-          title: "chore: Update OpenAPI specifications"
+          commit-message: "chore: update OpenAPI specifications to ${{ steps.version.outputs.version }}"
+          title: "chore: Update OpenAPI specifications to ${{ steps.version.outputs.version }}"
           body: |
             ## OpenAPI Specification Update
 
-            This PR updates the F5 Distributed Cloud OpenAPI specifications from the official bundle.
+            This PR updates the F5 Distributed Cloud OpenAPI specifications from the pre-enriched source.
+
+            ### Source
+            - Repository: [robinmordasiewicz/f5xc-api-enriched](https://github.com/robinmordasiewicz/f5xc-api-enriched)
+            - Version: ${{ steps.version.outputs.version }}
 
             ### Changes
-            - Updated OpenAPI specs from https://docs.cloud.f5.com/docs-v2/downloads/f5-distributed-cloud-open-api.zip
+            - Updated pre-enriched OpenAPI specs (23 domain-based specifications)
             - Regenerated MCP tool definitions
 
             ### Automated
@@ -89,6 +111,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           if [[ "${{ steps.changes.outputs.changed }}" == "true" ]]; then
             echo "✅ Specs updated and PR created" >> $GITHUB_STEP_SUMMARY
+            echo "- Version: ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### Changed Files" >> $GITHUB_STEP_SUMMARY
             git status specs/ --porcelain >> $GITHUB_STEP_SUMMARY

@@ -18,12 +18,11 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import * as prettier from "prettier";
 import {
-  parseSpecDirectory,
+  parseDomainsDirectory,
   getAllOperations,
   groupOperationsByDomain,
   ParsedOperation,
 } from "../src/generator/openapi-parser.js";
-import { generateToolName } from "../src/generator/naming/volterra-mapping.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -32,8 +31,8 @@ const __dirname = dirname(__filename);
  * Configuration
  */
 const CONFIG = {
-  /** Directory containing raw OpenAPI specs */
-  SPECS_DIR: join(__dirname, "..", "specs", "raw"),
+  /** Directory containing enriched domain OpenAPI specs */
+  SPECS_DIR: join(__dirname, "..", "specs", "domains"),
 
   /** Directory for generated tool definitions */
   GENERATED_DIR: join(__dirname, "..", "src", "tools", "generated"),
@@ -267,9 +266,9 @@ async function generate(): Promise<void> {
     return;
   }
 
-  // Parse all specs
-  log.info("Parsing OpenAPI specifications...");
-  const specs = parseSpecDirectory(CONFIG.SPECS_DIR);
+  // Parse all enriched domain specs
+  log.info("Parsing enriched domain specifications...");
+  const specs = parseDomainsDirectory(CONFIG.SPECS_DIR);
 
   if (specs.length === 0) {
     log.warn("No valid OpenAPI specs found");

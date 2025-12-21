@@ -69,6 +69,7 @@ function containsProtectedPattern(text: string): boolean {
  *
  * @param namespace - Original namespace
  * @returns Transformed namespace
+ * @deprecated Pre-enriched specs already have transformed naming
  */
 export function transformNamespace(namespace: string): string {
   for (const [volterra, f5xc] of NAMESPACE_MAPPINGS) {
@@ -84,6 +85,7 @@ export function transformNamespace(namespace: string): string {
  *
  * @param resourceName - Original resource name
  * @returns Transformed resource name
+ * @deprecated Pre-enriched specs already have transformed naming
  */
 export function transformResourceName(resourceName: string): string {
   const lowerName = resourceName.toLowerCase();
@@ -95,6 +97,7 @@ export function transformResourceName(resourceName: string): string {
  *
  * @param fieldName - Original field name
  * @returns Transformed field name
+ * @deprecated Pre-enriched specs already have transformed naming
  */
 export function transformFieldName(fieldName: string): string {
   const lowerName = fieldName.toLowerCase();
@@ -109,6 +112,7 @@ export function transformFieldName(fieldName: string): string {
  *
  * @param text - Text to transform
  * @returns Transformed text
+ * @deprecated Pre-enriched specs already have transformed naming
  */
 export function transformText(text: string): string {
   // Skip if text contains protected patterns
@@ -149,6 +153,7 @@ export function transformText(text: string): string {
  *
  * @param spec - OpenAPI specification object
  * @returns Transformed specification
+ * @deprecated Pre-enriched specs already have transformed naming
  */
 export function transformOpenApiSpec(spec: Record<string, unknown>): Record<string, unknown> {
   return transformObject(spec) as Record<string, unknown>;
@@ -210,6 +215,7 @@ export function generateToolName(domain: string, resource: string, operation: st
  *
  * @param path - API path like /api/config/namespaces/{namespace}/http_loadbalancers
  * @returns Domain category
+ * @deprecated Pre-enriched specs provide domain from filename. Old domain mappings (waap, dns, etc.) are replaced by new domains (load_balancer, networking, etc.)
  */
 export function extractDomainFromPath(path: string): string {
   // Domain mappings based on path patterns

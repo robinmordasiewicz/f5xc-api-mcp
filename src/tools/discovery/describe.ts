@@ -273,9 +273,9 @@ export function getOptimizationStats(): {
 } {
   // Sample a few tools to estimate savings
   const sampleTools = [
-    "f5xc-api-waap-http-loadbalancer-create",
-    "f5xc-api-waap-http-loadbalancer-list",
-    "f5xc-api-core-namespace-create",
+    "f5xc-api-loadbalancer-forward-proxy-policy-create",
+    "f5xc-api-loadbalancer-forward-proxy-policy-list",
+    "f5xc-api-networking-network-interface-create",
   ];
 
   let originalTotal = 0;

@@ -5,25 +5,55 @@
 
 import type { ParsedOperation } from "../generator/openapi-parser.js";
 
-import { appstackTools } from "./generated/appstack/index.js";
-import { coreTools } from "./generated/core/index.js";
-import { dnsTools } from "./generated/dns/index.js";
-import { networkTools } from "./generated/network/index.js";
+import { ai_intelligenceTools } from "./generated/ai_intelligence/index.js";
+import { api_securityTools } from "./generated/api_security/index.js";
+import { applicationsTools } from "./generated/applications/index.js";
+import { bigipTools } from "./generated/bigip/index.js";
+import { billingTools } from "./generated/billing/index.js";
+import { cdnTools } from "./generated/cdn/index.js";
+import { configTools } from "./generated/config/index.js";
+import { identityTools } from "./generated/identity/index.js";
+import { infrastructureTools } from "./generated/infrastructure/index.js";
+import { infrastructure_protectionTools } from "./generated/infrastructure_protection/index.js";
+import { integrationsTools } from "./generated/integrations/index.js";
+import { load_balancerTools } from "./generated/load_balancer/index.js";
+import { networkingTools } from "./generated/networking/index.js";
+import { nginxTools } from "./generated/nginx/index.js";
+import { observabilityTools } from "./generated/observability/index.js";
+import { operationsTools } from "./generated/operations/index.js";
 import { securityTools } from "./generated/security/index.js";
-import { siteTools } from "./generated/site/index.js";
-import { waapTools } from "./generated/waap/index.js";
+import { service_meshTools } from "./generated/service_mesh/index.js";
+import { shape_securityTools } from "./generated/shape_security/index.js";
+import { subscriptionsTools } from "./generated/subscriptions/index.js";
+import { tenant_managementTools } from "./generated/tenant_management/index.js";
+import { vpnTools } from "./generated/vpn/index.js";
 
 /**
  * All registered tools from all domains
  */
 export const allTools: ParsedOperation[] = [
-  ...appstackTools,
-  ...coreTools,
-  ...dnsTools,
-  ...networkTools,
+  ...ai_intelligenceTools,
+  ...api_securityTools,
+  ...applicationsTools,
+  ...bigipTools,
+  ...billingTools,
+  ...cdnTools,
+  ...configTools,
+  ...identityTools,
+  ...infrastructureTools,
+  ...infrastructure_protectionTools,
+  ...integrationsTools,
+  ...load_balancerTools,
+  ...networkingTools,
+  ...nginxTools,
+  ...observabilityTools,
+  ...operationsTools,
   ...securityTools,
-  ...siteTools,
-  ...waapTools,
+  ...service_meshTools,
+  ...shape_securityTools,
+  ...subscriptionsTools,
+  ...tenant_managementTools,
+  ...vpnTools,
 ];
 
 /**

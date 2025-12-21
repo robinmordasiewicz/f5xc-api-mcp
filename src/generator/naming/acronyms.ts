@@ -153,6 +153,7 @@ const ACRONYM_MAP: Map<string, string> = new Map(
  *
  * @param text - Input text with potentially inconsistent acronym casing
  * @returns Text with normalized acronym capitalization
+ * @deprecated Pre-enriched specs already have normalized acronyms
  */
 export function normalizeAcronyms(text: string): string {
   // Word boundary pattern that matches words
@@ -171,6 +172,7 @@ export function normalizeAcronyms(text: string): string {
  *
  * @param title - Title text to normalize
  * @returns Title with normalized acronym capitalization
+ * @deprecated Pre-enriched specs already have normalized acronyms
  */
 export function normalizeTitleAcronyms(title: string): string {
   return normalizeAcronyms(title);

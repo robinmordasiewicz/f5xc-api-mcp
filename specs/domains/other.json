@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "F5 XC Other API",
+    "description": "F5 Distributed Cloud Other API specifications",
+    "version": "1.0.15",
+    "contact": {
+      "name": "F5 Distributed Cloud",
+      "url": "https://docs.cloud.f5.com"
+    },
+    "license": {
+      "name": "Proprietary",
+      "url": "https://www.f5.com/company/policies/eula"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://{tenant}.console.ves.volterra.io",
+      "description": "F5 Distributed Cloud Console",
+      "variables": {
+        "tenant": {
+          "default": "console",
+          "description": "Your F5 XC tenant name"
+        }
+      }
+    }
+  ],
+  "security": [
+    {
+      "ApiToken": []
+    }
+  ],
+  "tags": [],
+  "paths": {},
+  "components": {
+    "securitySchemes": {
+      "ApiToken": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header",
+        "description": "API Token authentication. Format: 'APIToken <your-token>'"
+      }
+    },
+    "schemas": {},
+    "responses": {},
+    "parameters": {},
+    "requestBodies": {}
+  }
+}
