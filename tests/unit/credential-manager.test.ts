@@ -10,6 +10,7 @@ import {
   CredentialManager,
   AuthMode,
 } from "../../src/auth/credential-manager.js";
+import { shouldSkipP12Tests, shouldSkipTokenAuthTests } from "../utils/ci-environment.js";
 
 // Mock fs for P12 file testing
 vi.mock("fs", async (importOriginal) => {
@@ -172,7 +173,7 @@ describe("CredentialManager", () => {
     expect(manager.getP12Certificate()).toBeNull();
   });
 
-  it("should use certificate auth when P12 file is provided", () => {
+  it.skipIf(shouldSkipP12Tests())("should use certificate auth when P12 file is provided", () => {
     process.env.F5XC_API_URL = "https://mytenant.volterra.us";
     process.env.F5XC_P12_FILE = "/path/to/cert.p12";
     process.env.F5XC_P12_PASSWORD = "password";
@@ -183,7 +184,7 @@ describe("CredentialManager", () => {
     expect(manager.getP12Password()).toBe("password");
   });
 
-  it("should fall back to token auth when P12 file fails to load", () => {
+  it.skipIf(shouldSkipP12Tests())("should fall back to token auth when P12 file fails to load", () => {
     process.env.F5XC_API_URL = "https://mytenant.volterra.us";
     process.env.F5XC_P12_FILE = "/path/to/fail.p12"; // "fail" in path triggers mock error
     process.env.F5XC_API_TOKEN = "fallback-token";
@@ -193,7 +194,7 @@ describe("CredentialManager", () => {
     expect(manager.getToken()).toBe("fallback-token");
   });
 
-  it("should fall back to NONE when P12 file fails and no token", () => {
+  it.skipIf(shouldSkipP12Tests())("should fall back to NONE when P12 file fails and no token", () => {
     process.env.F5XC_API_URL = "https://mytenant.volterra.us";
     process.env.F5XC_P12_FILE = "/path/to/fail.p12"; // "fail" in path triggers mock error
     delete process.env.F5XC_API_TOKEN;

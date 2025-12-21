@@ -2,7 +2,9 @@
 
 ## Overview
 
-The documentation system has been refactored to provide better organization and navigation through **enriched domain-based structure**. This document explains the changes, what's new, and how it affects users and developers.
+The documentation system has been refactored to provide better organization and
+navigation through **enriched domain-based structure**. This document explains the
+changes, what's new, and how it affects users and developers.
 
 ## What Changed
 
@@ -34,9 +36,10 @@ The documentation system has been refactored to provide better organization and 
 
 ### Documentation Site Navigation
 
-The documentation site at https://robinmordasiewicz.github.io/f5xc-api-mcp now features:
+The documentation site at <https://robinmordasiewicz.github.io/f5xc-api-mcp> now features:
 
 **Improved Navigation Structure:**
+
 - Cleaner left sidebar with 23 well-organized domain sections
 - Large domains (>50 tools) automatically subdivided into categories
 - Consistent, professional domain naming (e.g., "Load Balancing" instead of "load_balancer")
@@ -53,7 +56,8 @@ The documentation site at https://robinmordasiewicz.github.io/f5xc-api-mcp now f
 ### Examples of New Organization
 
 #### Small Domains (2-level: Domain → Resource)
-```
+
+```text
 VPN
 ├── IPsec Gateway
 ├── VPN Connection
@@ -61,7 +65,8 @@ VPN
 ```
 
 #### Large Domains (3-level: Domain → Category → Resource)
-```
+
+```text
 Observability
 ├── Alerts & Events
 │   ├── Alert Policy
@@ -79,6 +84,7 @@ Observability
 ### Tool Changes
 
 **No breaking changes to tool functionality:**
+
 - Tool names remain unchanged (e.g., `f5xc-api-loadbalancer-http-loadbalancer-create`)
 - Tool behavior and parameters are identical
 - API responses and error handling unchanged
@@ -102,6 +108,7 @@ mkdocs serve
 ```
 
 **What the generator now handles automatically:**
+
 - ✅ Converts domain titles (snake_case → Title Case)
 - ✅ Updates `mkdocs.yml` nav section completely
 - ✅ Creates hierarchical directories for large domains
@@ -111,15 +118,18 @@ mkdocs serve
 ### Files That Changed
 
 #### Added Files
+
 - `scripts/validate-categories.ts` - Validation script for domain categorization
 
 #### Modified Files
+
 - `scripts/category-mapping.ts` - Added domain title conversion and metadata functions (+250 lines)
 - `scripts/generate-docs.ts` - Refactored with automated mkdocs.yml generation (+400 lines modified)
 - `mkdocs.yml` - Now automatically generated, no manual nav entries needed
 - `README.md` - Updated documentation structure section, updated domains from 22 to 23
 
 #### Removed Files
+
 - None (fully backward compatible)
 
 ### New Functions in category-mapping.ts
@@ -167,17 +177,20 @@ nav:
 ## Migration Checklist
 
 ### For Users
+
 - ✅ No action required
 - ✅ Updated documentation site automatically deployed
 - ✅ All existing tools and workflows continue working
 
 ### For Developers
+
 - ✅ Review new functions in `category-mapping.ts`
 - ✅ Understand `CategoryPath` interface for hierarchical navigation
 - ✅ No longer manually edit navigation sections
 - ✅ Run `npm run generate-docs` to refresh documentation
 
 ### For CI/CD
+
 - ✅ Documentation deployment remains same (push to deploy on GitHub Pages)
 - ✅ Build system still uses `mkdocs build` and `mkdocs serve`
 - ✅ Pre-commit hooks: Use `git commit --no-verify` if needed
@@ -256,14 +269,16 @@ interface CategoryPath {
 ### Directory Structure Pattern
 
 **Small domain (2-level):**
-```
+
+```text
 docs/tools/{kebab-case-domain}/
 ├── resource1.md
 └── resource2.md
 ```
 
 **Large domain (3-level):**
-```
+
+```text
 docs/tools/{kebab-case-domain}/
 ├── {subdivision-kebab-case}/
 │   ├── resource1.md
@@ -275,21 +290,27 @@ docs/tools/{kebab-case-domain}/
 ## FAQ
 
 ### Q: Will existing tool names change?
-**A:** No. Tool names like `f5xc-api-loadbalancer-http-loadbalancer-create` remain unchanged. Only documentation organization changed.
+
+**A:** No. Tool names remain unchanged. Only documentation organization changed.
 
 ### Q: Do I need to update my scripts?
+
 **A:** No. All tool invocations work exactly the same. Script compatibility is 100%.
 
 ### Q: How do I regenerate documentation?
+
 **A:** Run `npm run generate-docs` to regenerate all documentation with updated navigation.
 
 ### Q: What if I want to customize domain titles?
+
 **A:** Edit `DOMAIN_TITLE_OVERRIDES` in `scripts/category-mapping.ts` and regenerate.
 
 ### Q: How are large domains subdivided?
+
 **A:** Using OpenAPI operation tags from enriched specs. If tags are missing, pattern-based fallback applies.
 
 ### Q: Can I disable subdivision for a large domain?
+
 **A:** Not through configuration. Modify `LARGE_DOMAIN_THRESHOLD` constant in `category-mapping.ts`.
 
 ## Rollback (If Needed)
@@ -307,6 +328,7 @@ git checkout <previous-commit> -- mkdocs.yml docs/.pages
 ## Support
 
 For issues or questions about the refactoring:
+
 - Review `scripts/category-mapping.ts` and `scripts/generate-docs.ts` for implementation details
 - Run `npm run validate-categories` to check domain configuration
 - Check this migration guide for common scenarios
@@ -315,7 +337,7 @@ For issues or questions about the refactoring:
 
 The refactoring was implemented in a single comprehensive commit:
 
-```
+```text
 feat: implement domain-based documentation refactoring with automated mkdocs navigation
 
 - Add domain title conversion with acronym handling

@@ -38,7 +38,7 @@ export default defineConfig({
 
     // Global setup/teardown
     globalSetup: undefined,
-    setupFiles: [],
+    setupFiles: ["tests/setup.ts"],
 
     // Type checking
     typecheck: {

@@ -549,8 +549,8 @@ export class F5XCApiServer {
 /**
  * Create and configure the F5XC API MCP Server
  */
-export function createServer(): F5XCApiServer {
-  const credentialManager = new CredentialManager();
+export function createServer(configManager?: any): F5XCApiServer {
+  const credentialManager = new CredentialManager(configManager);
 
   return new F5XCApiServer({
     name: "f5xc-api-mcp",

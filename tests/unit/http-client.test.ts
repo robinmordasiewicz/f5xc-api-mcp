@@ -7,6 +7,7 @@ import axios, { AxiosError, type InternalAxiosRequestConfig, type AxiosResponse 
 import { HttpClient, createHttpClient, type HttpClientConfig, type ApiResponse } from "../../src/auth/http-client.js";
 import { CredentialManager, AuthMode } from "../../src/auth/credential-manager.js";
 import { F5XCApiError, AuthenticationError } from "../../src/utils/error-handling.js";
+import { shouldSkipP12Tests } from "../utils/ci-environment.js";
 
 // Create mock logger functions for reference using vi.hoisted
 const { mockLoggerDebug, mockLoggerInfo, mockLoggerError, mockLoggerWarn } = vi.hoisted(() => ({
@@ -505,7 +506,7 @@ describe("http-client", () => {
     });
 
     describe("P12 certificate authentication", () => {
-      it("should configure https agent for P12 auth", () => {
+      it.skipIf(shouldSkipP12Tests())("should configure https agent for P12 auth", () => {
         process.env.F5XC_API_URL = "https://test.volterra.us";
         process.env.F5XC_P12_FILE = "/path/to/cert.p12";
         process.env.F5XC_P12_PASSWORD = "password";

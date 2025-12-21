@@ -7,6 +7,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { F5XCApiServer, createServer } from "../../src/server.js";
 import { CredentialManager, AuthMode } from "../../src/auth/credential-manager.js";
+import { isCI, createEmptyConfigManager } from "../../tests/utils/ci-environment.js";
 
 describe("MCP Protocol Compliance", () => {
   beforeEach(() => {
@@ -16,24 +17,33 @@ describe("MCP Protocol Compliance", () => {
     delete process.env.F5XC_API_TOKEN;
     delete process.env.F5XC_P12_FILE;
     delete process.env.F5XC_P12_PASSWORD;
+    delete process.env.F5XC_PROFILE;
+
+    // In CI mode, prevent loading from config file by setting a non-existent profile
+    if (isCI()) {
+      process.env.F5XC_PROFILE = "__nonexistent__";
+    }
   });
 
   describe("Server Creation", () => {
     it("should create server with valid configuration", () => {
-      const server = createServer();
+      const configManager = isCI() ? createEmptyConfigManager() : undefined;
+      const server = createServer(configManager as any);
 
       expect(server).toBeInstanceOf(F5XCApiServer);
       expect(server.getMcpServer()).toBeDefined();
     });
 
     it("should have credential manager", () => {
-      const server = createServer();
+      const configManager = isCI() ? createEmptyConfigManager() : undefined;
+      const server = createServer(configManager as any);
 
       expect(server.getCredentialManager()).toBeInstanceOf(CredentialManager);
     });
 
     it("should default to documentation mode without credentials", () => {
-      const server = createServer();
+      const configManager = isCI() ? createEmptyConfigManager() : undefined;
+      const server = createServer(configManager as any);
       const credManager = server.getCredentialManager();
 
       expect(credManager.getAuthMode()).toBe(AuthMode.NONE);
@@ -42,7 +52,8 @@ describe("MCP Protocol Compliance", () => {
 
   describe("Server Configuration", () => {
     it("should have correct server name", () => {
-      const server = createServer();
+      const configManager = isCI() ? createEmptyConfigManager() : undefined;
+      const server = createServer(configManager as any);
       const mcpServer = server.getMcpServer();
 
       // The MCP server should be configured with our server name
@@ -50,7 +61,8 @@ describe("MCP Protocol Compliance", () => {
     });
 
     it("should support STDIO transport", () => {
-      const server = createServer();
+      const configManager = isCI() ? createEmptyConfigManager() : undefined;
+      const server = createServer(configManager as any);
 
       // Server should be able to start (we won't actually start it in tests)
       expect(typeof server.start).toBe("function");
@@ -60,7 +72,8 @@ describe("MCP Protocol Compliance", () => {
 
   describe("Capability Registration", () => {
     it("should have tools capability", () => {
-      const server = createServer();
+      const configManager = isCI() ? createEmptyConfigManager() : undefined;
+      const server = createServer(configManager as any);
       const mcpServer = server.getMcpServer();
 
       // MCP server should have tool method for registration
@@ -68,7 +81,8 @@ describe("MCP Protocol Compliance", () => {
     });
 
     it("should have resources capability", () => {
-      const server = createServer();
+      const configManager = isCI() ? createEmptyConfigManager() : undefined;
+      const server = createServer(configManager as any);
       const mcpServer = server.getMcpServer();
 
       // MCP server should have resource method for registration
@@ -76,7 +90,8 @@ describe("MCP Protocol Compliance", () => {
     });
 
     it("should have prompts capability", () => {
-      const server = createServer();
+      const configManager = isCI() ? createEmptyConfigManager() : undefined;
+      const server = createServer(configManager as any);
       const mcpServer = server.getMcpServer();
 
       // MCP server should have prompt method for registration
