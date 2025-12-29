@@ -35,22 +35,23 @@ describe("registry", () => {
 
   describe("getToolsByDomain", () => {
     it("should return tools for a valid domain", () => {
-      const lbTools = getToolsByDomain("load_balancer");
-      expect(Array.isArray(lbTools)).toBe(true);
-      expect(lbTools.length).toBeGreaterThan(0);
-      expect(lbTools.every((t) => t.domain === "load_balancer")).toBe(true);
+      // Use "virtual" domain which contains load balancer tools in v1.0.63
+      const virtualTools = getToolsByDomain("virtual");
+      expect(Array.isArray(virtualTools)).toBe(true);
+      expect(virtualTools.length).toBeGreaterThan(0);
+      expect(virtualTools.every((t) => t.domain === "virtual")).toBe(true);
     });
 
-    it("should return tools for networking domain", () => {
-      const networkingTools = getToolsByDomain("networking");
-      expect(networkingTools.length).toBeGreaterThan(0);
-      expect(networkingTools.every((t) => t.domain === "networking")).toBe(true);
+    it("should return tools for network domain", () => {
+      const networkTools = getToolsByDomain("network");
+      expect(networkTools.length).toBeGreaterThan(0);
+      expect(networkTools.every((t) => t.domain === "network")).toBe(true);
     });
 
-    it("should return tools for security domain", () => {
-      const securityTools = getToolsByDomain("security");
+    it("should return tools for network_security domain", () => {
+      const securityTools = getToolsByDomain("network_security");
       expect(securityTools.length).toBeGreaterThan(0);
-      expect(securityTools.every((t) => t.domain === "security")).toBe(true);
+      expect(securityTools.every((t) => t.domain === "network_security")).toBe(true);
     });
 
     it("should return empty array for non-existent domain", () => {
@@ -93,21 +94,22 @@ describe("registry", () => {
 
     it("should include expected domains", () => {
       const domains = getAllDomains();
-      expect(domains).toContain("load_balancer");
-      expect(domains).toContain("networking");
-      expect(domains).toContain("security");
+      // Updated for v1.0.63 domain names
+      expect(domains).toContain("virtual");
+      expect(domains).toContain("network");
+      expect(domains).toContain("network_security");
     });
 
     it("should return known domains", () => {
       const domains = getAllDomains();
+      // Updated for v1.0.63 domain names
       const expectedDomains = [
-        "api_security",
-        "infrastructure",
-        "load_balancer",
-        "networking",
+        "cloud_infrastructure",
+        "network",
+        "network_security",
         "observability",
-        "security",
-        "vpn",
+        "virtual",
+        "waf",
       ];
 
       for (const expected of expectedDomains) {

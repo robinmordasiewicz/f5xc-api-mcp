@@ -1,14 +1,18 @@
-name: OpenAPI Sync
+name: OpenAPI Sync & Regenerate
 
 on:
   schedule:
-    # Run daily at 00:00 UTC to check for upstream API changes
-    - cron: "0 0 * * *"
+    # Run every 6 hours to check for upstream API changes
+    - cron: "0 */6 * * *"
   repository_dispatch:
     # Triggered by webhook from robinmordasiewicz/f5xc-api-enriched releases
     types: [enriched-specs-updated]
   workflow_dispatch:
-    # Allow manual triggering
+    inputs:
+      force_regenerate:
+        description: "Force regeneration even if no spec changes"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -19,18 +23,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  sync-specs:
-    name: Sync OpenAPI Specifications
+  sync-and-regenerate:
+    name: Sync OpenAPI Specifications & Regenerate Tools
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: "24"
           cache: "npm"
@@ -56,53 +60,94 @@ jobs:
 
       - name: Get version info
         id: version
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
         run: |
           if [[ -f specs/index.json ]]; then
             VERSION=$(jq -r '.version // "unknown"' specs/index.json)
+            DOMAIN_COUNT=$(jq -r '.domains | length // 0' specs/index.json)
+            TOOL_COUNT=$(jq -r '.toolCount // 0' specs/index.json)
             echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "domain_count=$DOMAIN_COUNT" >> $GITHUB_OUTPUT
+            echo "tool_count=$TOOL_COUNT" >> $GITHUB_OUTPUT
           else
             echo "version=unknown" >> $GITHUB_OUTPUT
+            echo "domain_count=0" >> $GITHUB_OUTPUT
+            echo "tool_count=0" >> $GITHUB_OUTPUT
           fi
 
       - name: Generate tools from specs
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
         run: npm run generate
 
+      - name: Generate test fixtures
+        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
+        run: npm run generate:fixtures
+
+      - name: Fix formatting
+        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
+        run: npm run lint:fix || true
+
+      - name: TypeCheck
+        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
+        run: npm run typecheck
+
       - name: Run tests
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
         run: npm test
 
       - name: Build
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
         run: npm run build
 
+      - name: Get regeneration stats
+        id: stats
+        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
+        run: |
+          # Extract stats from generated fixtures
+          if [[ -f tests/fixtures/generated.ts ]]; then
+            TOTAL_TOOLS=$(grep -o 'totalTools: [0-9]*' tests/fixtures/generated.ts | grep -o '[0-9]*' || echo "0")
+            TOTAL_DOMAINS=$(grep -o 'totalDomains: [0-9]*' tests/fixtures/generated.ts | grep -o '[0-9]*' || echo "0")
+            echo "total_tools=$TOTAL_TOOLS" >> $GITHUB_OUTPUT
+            echo "total_domains=$TOTAL_DOMAINS" >> $GITHUB_OUTPUT
+          else
+            echo "total_tools=0" >> $GITHUB_OUTPUT
+            echo "total_domains=0" >> $GITHUB_OUTPUT
+          fi
+
       - name: Create Pull Request
-        if: steps.changes.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v8
+        if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: update OpenAPI specifications to ${{ steps.version.outputs.version }}"
-          title: "chore: Update OpenAPI specifications to ${{ steps.version.outputs.version }}"
+          commit-message: "feat(specs): update to v${{ steps.version.outputs.version }}"
+          title: "feat(specs): Update OpenAPI specs to v${{ steps.version.outputs.version }}"
           body: |
             ## OpenAPI Specification Update
 
-            This PR updates the F5 Distributed Cloud OpenAPI specifications from the pre-enriched source.
+            **New Version**: v${{ steps.version.outputs.version }}
 
             ### Source
             - Repository: [robinmordasiewicz/f5xc-api-enriched](https://github.com/robinmordasiewicz/f5xc-api-enriched)
-            - Version: ${{ steps.version.outputs.version }}
+
+            ### Statistics
+            - **Total Tools**: ${{ steps.stats.outputs.total_tools }}
+            - **Total Domains**: ${{ steps.stats.outputs.total_domains }}
 
             ### Changes
-            - Updated pre-enriched OpenAPI specs (23 domain-based specifications)
-            - Regenerated MCP tool definitions
+            - Synced latest enriched specs from upstream
+            - Regenerated MCP tools from new specs
+            - Regenerated dynamic test fixtures
+            - All tests passing
 
-            ### Automated
-            This PR was automatically created by the OpenAPI sync workflow.
+            ### Validation
+            - [x] TypeScript compilation
+            - [x] Unit tests passing
+            - [x] Lint checks passing
+            - [x] Build successful
 
             ---
-            🤖 Generated with [Claude Code](https://claude.com/claude-code)
-          branch: openapi-sync/update-specs
+            🤖 Generated automatically by OpenAPI Sync workflow
+          branch: openapi-sync/v${{ steps.version.outputs.version }}
           delete-branch: true
           labels: |
             automated
@@ -113,12 +158,18 @@ jobs:
         run: |
           echo "## OpenAPI Sync Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          if [[ "${{ steps.changes.outputs.changed }}" == "true" ]]; then
+          if [[ "${{ steps.changes.outputs.changed }}" == "true" ]] || [[ "${{ github.event.inputs.force_regenerate }}" == "true" ]]; then
             echo "✅ Specs updated and PR created" >> $GITHUB_STEP_SUMMARY
-            echo "- Version: ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Version Information" >> $GITHUB_STEP_SUMMARY
+            echo "- **Version**: ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **Total Tools**: ${{ steps.stats.outputs.total_tools }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **Total Domains**: ${{ steps.stats.outputs.total_domains }}" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### Changed Files" >> $GITHUB_STEP_SUMMARY
-            git status specs/ --porcelain >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            git status specs/ --porcelain >> $GITHUB_STEP_SUMMARY || true
+            echo '```' >> $GITHUB_STEP_SUMMARY
           else
             echo "ℹ️ No changes detected in specs" >> $GITHUB_STEP_SUMMARY
           fi

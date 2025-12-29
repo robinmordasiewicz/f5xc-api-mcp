@@ -6,6 +6,9 @@ description: GET DNS Monitor Summary.
 
 # DNS Monitor Summary
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns the DNS monitor health status, latency, and trend.
 
 ## Tools
@@ -18,17 +21,17 @@ Returns the DNS monitor health status, latency, and trend.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `end_time` | End_time. |
-| `monitor_name` | Monitor_name. |
-| `start_time` | Start_time. X-required |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | End_time. | `2020-11-17T13:41:49.083255Z.` |
+| `monitor_name` | Monitor_name. | `Monitor1` |
+| `start_time` | Start_time. X-required | `2020-11-17T12:41:49.083255Z.` |
 
 ## Example Usage
 
@@ -37,6 +40,18 @@ Ask Claude to help you work with DNS Monitor Summary resources:
 ### List DNS Monitor Summarys
 
 > "List all dns-monitor-summarys in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability dns-monitor-summary list --namespace {namespace}
+```
+
+List all dns-monitor-summarys
 
 ## f5xcctl Equivalent
 

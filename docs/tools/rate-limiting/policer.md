@@ -1,0 +1,162 @@
+---
+page_title: f5xc_policer - f5xc-api-mcp
+subcategory: Rate Limiting
+description: Create Policer.
+---
+
+# Policer
+
+!!! danger "High Risk Operation"
+    This resource includes operations that may cause significant changes. Review carefully before executing.
+
+!!! note "Confirmation Required"
+    Some operations on this resource require explicit confirmation before execution.
+
+Replace a given policer with changed traffic rate limits.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-ratelimiting-policer-create` | Create Policer. |
+| `f5xc-api-ratelimiting-policer-get` | GET Policer. |
+| `f5xc-api-ratelimiting-policer-list` | List Policer. |
+| `f5xc-api-ratelimiting-policer-update` | Replace Policer. |
+| `f5xc-api-ratelimiting-policer-delete` | DELETE Policer. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `Staging` |
+| `name` | Name | `Name` |
+| `namespace` | Namespace | `Ns1` |
+| `metadata.name` | Name | `Example-corp-web.` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- policer
+
+**Modifies:**
+
+- policer
+
+**Deletes:**
+
+- policer
+- contained_resources
+
+## Example Usage
+
+Ask Claude to help you work with Policer resources:
+
+### Create Policer
+
+> "Create a policer named 'example' in the 'production' namespace"
+
+### List Policers
+
+> "List all policers in the 'production' namespace"
+
+### Get Policer Details
+
+> "Get details of the policer named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl config policer create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl config policer create {name} --namespace {namespace}
+```
+
+Create policer
+
+### delete
+
+```bash
+f5xcctl config policer delete {name} --namespace {namespace}
+```
+
+Delete policer
+
+### get_specific
+
+```bash
+f5xcctl config policer get {name} --namespace {namespace}
+```
+
+Get specific policer
+
+### list_all
+
+```bash
+f5xcctl config policer list --namespace {namespace}
+```
+
+List all policers
+
+### update
+
+```bash
+f5xcctl config policer update {name} --namespace {namespace} -f {file}.yaml
+```
+
+Update policer
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl rate_limiting create policer -n <namespace> -i policer.yaml
+
+# Get
+f5xcctl rate_limiting get policer <name> -n <namespace>
+
+# List
+f5xcctl rate_limiting list policer -n <namespace>
+
+# Delete
+f5xcctl rate_limiting delete policer <name> -n <namespace>
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_policer" "example" {
+  name      = "example-policer"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

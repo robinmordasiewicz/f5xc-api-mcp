@@ -120,6 +120,26 @@ function validateMkDocsConfig(filePath: string): boolean {
 }
 
 /**
+ * Rich metadata aggregated from tools
+ */
+interface AggregatedMetadata {
+  /** Highest danger level across all tools */
+  maxDangerLevel: "low" | "medium" | "high" | null;
+  /** Whether any tool requires confirmation */
+  requiresConfirmation: boolean;
+  /** Aggregated side effects */
+  sideEffects: {
+    creates: string[];
+    modifies: string[];
+    deletes: string[];
+  };
+  /** CLI examples from all tools */
+  cliExamples: Array<{ description?: string; command?: string; use_case?: string }>;
+  /** Parameter examples */
+  parameterExamples: Record<string, string>;
+}
+
+/**
  * Resource documentation data grouped from tools
  */
 interface ResourceDoc {
@@ -131,6 +151,8 @@ interface ResourceDoc {
   tools: ParsedOperation[];
   summary: string;
   description: string;
+  /** Rich metadata from enriched specs */
+  metadata: AggregatedMetadata;
 }
 
 /**
@@ -173,10 +195,103 @@ function generateTerraformExample(resource: string): string {
 }
 
 /**
+ * Get danger level badge for markdown
+ */
+function getDangerBadge(level: "low" | "medium" | "high" | null): string {
+  switch (level) {
+    case "high":
+      return "!!! danger \"High Risk Operation\"\n    This resource includes operations that may cause significant changes. Review carefully before executing.\n\n";
+    case "medium":
+      return "!!! warning \"Medium Risk\"\n    Some operations on this resource may modify or delete data.\n\n";
+    case "low":
+      return "!!! info \"Low Risk\"\n    Operations on this resource are generally safe.\n\n";
+    default:
+      return "";
+  }
+}
+
+/**
+ * Format side effects for markdown display
+ */
+function formatSideEffects(sideEffects: AggregatedMetadata["sideEffects"]): string {
+  const hasEffects =
+    sideEffects.creates.length > 0 ||
+    sideEffects.modifies.length > 0 ||
+    sideEffects.deletes.length > 0;
+
+  if (!hasEffects) {
+    return "";
+  }
+
+  let content = "\n## Side Effects\n\n";
+  content += "Operations on this resource may have the following effects:\n\n";
+
+  if (sideEffects.creates.length > 0) {
+    content += "**Creates:**\n\n";
+    for (const item of sideEffects.creates) {
+      content += `- ${item}\n`;
+    }
+    content += "\n";
+  }
+
+  if (sideEffects.modifies.length > 0) {
+    content += "**Modifies:**\n\n";
+    for (const item of sideEffects.modifies) {
+      content += `- ${item}\n`;
+    }
+    content += "\n";
+  }
+
+  if (sideEffects.deletes.length > 0) {
+    content += "**Deletes:**\n\n";
+    for (const item of sideEffects.deletes) {
+      content += `- ${item}\n`;
+    }
+    content += "\n";
+  }
+
+  return content;
+}
+
+/**
+ * Format CLI examples from enriched specs
+ */
+function formatCliExamples(
+  cliExamples: AggregatedMetadata["cliExamples"]
+): string {
+  if (cliExamples.length === 0) {
+    return "";
+  }
+
+  let content = "\n## CLI Examples\n\n";
+  content += "Examples from the enriched OpenAPI specifications:\n\n";
+
+  for (const example of cliExamples) {
+    if (example.use_case) {
+      content += `### ${example.use_case}\n\n`;
+    } else if (example.description) {
+      content += `### ${example.description}\n\n`;
+    }
+
+    if (example.command) {
+      content += "```bash\n";
+      content += `${example.command}\n`;
+      content += "```\n\n";
+    }
+
+    if (example.description && example.use_case) {
+      content += `${example.description}\n\n`;
+    }
+  }
+
+  return content;
+}
+
+/**
  * Generate markdown content for a resource
  */
 function generateMarkdown(resourceDoc: ResourceDoc): string {
-  const { resource, categoryPath, title, tools, summary, description } = resourceDoc;
+  const { resource, categoryPath, title, tools, summary, description, metadata } = resourceDoc;
 
   // Generate front matter - wrap long descriptions to avoid line length issues
   const rawDescription = summary || `Manage ${title} resources in F5 Distributed Cloud.`;
@@ -208,6 +323,12 @@ function generateMarkdown(resourceDoc: ResourceDoc): string {
     description: wrappedDescription,
   };
 
+  // Generate danger badge and confirmation warning
+  const dangerBadge = getDangerBadge(metadata.maxDangerLevel);
+  const confirmationWarning = metadata.requiresConfirmation
+    ? "!!! note \"Confirmation Required\"\n    Some operations on this resource require explicit confirmation before execution.\n\n"
+    : "";
+
   // Tools table
   const toolRows = tools
     .sort((a, b) => {
@@ -236,28 +357,35 @@ function generateMarkdown(resourceDoc: ResourceDoc): string {
     }
   }
 
-  // Parameters section
+  // Parameters section with examples from enriched specs
   let parametersSection = "";
   if (pathParams.size > 0 || queryParams.size > 0) {
     parametersSection = "\n## Parameters\n\n";
 
+    // Helper to escape pipe characters in table cells
+    const escapeTableCell = (text: string): string => text.replace(/\|/g, "\\|");
+
     if (pathParams.size > 0) {
       parametersSection += "### Path Parameters\n\n";
-      parametersSection += "| Parameter | Description |\n|-----------|-------------|\n";
+      parametersSection += "| Parameter | Description | Example |\n|-----------|-------------|--------|\n";
       for (const [name, desc] of pathParams) {
-        // Clean up description - take first sentence only
-        const cleanDesc = desc.split("\n")[0].replace(/x-example:.*$/i, "").trim() || `The ${name} identifier`;
-        parametersSection += `| \`${name}\` | ${cleanDesc} |\n`;
+        // Clean up description - take first sentence only, escape pipes
+        const cleanDesc = escapeTableCell(desc.split("\n")[0].replace(/x-example:.*$/i, "").trim() || `The ${name} identifier`);
+        // Get example from aggregated metadata
+        const example = escapeTableCell(metadata.parameterExamples[name] || "-");
+        parametersSection += `| \`${name}\` | ${cleanDesc} | \`${example}\` |\n`;
       }
       parametersSection += "\n";
     }
 
     if (queryParams.size > 0) {
       parametersSection += "### Query Parameters\n\n";
-      parametersSection += "| Parameter | Description |\n|-----------|-------------|\n";
+      parametersSection += "| Parameter | Description | Example |\n|-----------|-------------|--------|\n";
       for (const [name, desc] of queryParams) {
-        const cleanDesc = desc.split("\n")[0].replace(/x-example:.*$/i, "").trim() || `The ${name} parameter`;
-        parametersSection += `| \`${name}\` | ${cleanDesc} |\n`;
+        const cleanDesc = escapeTableCell(desc.split("\n")[0].replace(/x-example:.*$/i, "").trim() || `The ${name} parameter`);
+        // Get example from aggregated metadata
+        const example = escapeTableCell(metadata.parameterExamples[name] || "-");
+        parametersSection += `| \`${name}\` | ${cleanDesc} | \`${example}\` |\n`;
       }
       parametersSection += "\n";
     }
@@ -332,8 +460,21 @@ See the [F5XC Terraform Provider documentation][tf-docs] for detailed configurat
 `;
 
   // Wrap body description too for line length compliance
-  const bodyDescription = description || summary || `Manage ${title} resources in F5 Distributed Cloud.`;
+  // Sanitize description to fix markdown issues (unbalanced lists, etc.)
+  const sanitizeDescription = (text: string): string => {
+    // Replace numbered list markers that might cause issues
+    let sanitized = text.replace(/^\d+\)\s*/gm, "- ");
+    // Ensure blank lines before list items
+    sanitized = sanitized.replace(/([^\n])\n(- )/g, "$1\n\n$2");
+    return sanitized;
+  };
+
+  const bodyDescription = sanitizeDescription(description || summary || `Manage ${title} resources in F5 Distributed Cloud.`);
   const wrappedBodyDescription = wrapText(bodyDescription, 100);
+
+  // Generate side effects and CLI examples from enriched specs
+  const sideEffectsSection = formatSideEffects(metadata.sideEffects);
+  const enrichedCliExamples = formatCliExamples(metadata.cliExamples);
 
   // Build the full markdown with YAML lineWidth to wrap long descriptions
   const markdown = `---
@@ -342,14 +483,14 @@ ${YAML.stringify(frontMatter, { lineWidth: 100 }).trim()}
 
 # ${title}
 
-${wrappedBodyDescription}
+${dangerBadge}${confirmationWarning}${wrappedBodyDescription}
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
 ${toolRows}
-${parametersSection}${exampleSection}${cliSection}${terraformSection}`;
+${parametersSection}${sideEffectsSection}${exampleSection}${enrichedCliExamples}${cliSection}${terraformSection}`;
 
   return markdown;
 }
@@ -402,6 +543,88 @@ function subdivideByTags(
 }
 
 /**
+ * Aggregate rich metadata from multiple tools
+ */
+function aggregateMetadata(tools: ParsedOperation[]): AggregatedMetadata {
+  const dangerLevels: Array<"low" | "medium" | "high"> = [];
+  let requiresConfirmation = false;
+  const creates = new Set<string>();
+  const modifies = new Set<string>();
+  const deletes = new Set<string>();
+  const cliExamples: Array<{ description?: string; command?: string; use_case?: string }> = [];
+  const parameterExamples: Record<string, string> = {};
+
+  for (const tool of tools) {
+    // Aggregate danger level (track all for finding max)
+    if (tool.dangerLevel) {
+      dangerLevels.push(tool.dangerLevel);
+    }
+
+    // Any tool requiring confirmation triggers the flag
+    if (tool.confirmationRequired) {
+      requiresConfirmation = true;
+    }
+
+    // Aggregate side effects
+    if (tool.sideEffects) {
+      if (tool.sideEffects.creates) {
+        for (const item of tool.sideEffects.creates) {
+          creates.add(item);
+        }
+      }
+      if (tool.sideEffects.modifies) {
+        for (const item of tool.sideEffects.modifies) {
+          modifies.add(item);
+        }
+      }
+      if (tool.sideEffects.deletes) {
+        for (const item of tool.sideEffects.deletes) {
+          deletes.add(item);
+        }
+      }
+    }
+
+    // Collect CLI examples
+    if (tool.cliExamples && tool.cliExamples.length > 0) {
+      for (const example of tool.cliExamples) {
+        cliExamples.push(example);
+      }
+    }
+
+    // Merge parameter examples
+    if (tool.parameterExamples) {
+      for (const [param, example] of Object.entries(tool.parameterExamples)) {
+        if (!parameterExamples[param]) {
+          parameterExamples[param] = example;
+        }
+      }
+    }
+  }
+
+  // Determine max danger level
+  let maxDangerLevel: "low" | "medium" | "high" | null = null;
+  if (dangerLevels.includes("high")) {
+    maxDangerLevel = "high";
+  } else if (dangerLevels.includes("medium")) {
+    maxDangerLevel = "medium";
+  } else if (dangerLevels.includes("low")) {
+    maxDangerLevel = "low";
+  }
+
+  return {
+    maxDangerLevel,
+    requiresConfirmation,
+    sideEffects: {
+      creates: Array.from(creates),
+      modifies: Array.from(modifies),
+      deletes: Array.from(deletes),
+    },
+    cliExamples,
+    parameterExamples,
+  };
+}
+
+/**
  * Group tools by resource
  */
 function groupToolsByResource(tools: ParsedOperation[]): Map<string, ResourceDoc> {
@@ -427,6 +650,13 @@ function groupToolsByResource(tools: ParsedOperation[]): Map<string, ResourceDoc
         tools: [],
         summary: tool.summary,
         description: tool.description,
+        metadata: {
+          maxDangerLevel: null,
+          requiresConfirmation: false,
+          sideEffects: { creates: [], modifies: [], deletes: [] },
+          cliExamples: [],
+          parameterExamples: {},
+        },
       });
     }
 
@@ -437,6 +667,11 @@ function groupToolsByResource(tools: ParsedOperation[]): Map<string, ResourceDoc
     if (tool.description && tool.description.length > (doc.description?.length ?? 0)) {
       doc.description = tool.description;
     }
+  }
+
+  // After grouping, aggregate metadata for each resource
+  for (const doc of resourceMap.values()) {
+    doc.metadata = aggregateMetadata(doc.tools);
   }
 
   return resourceMap;
@@ -527,7 +762,7 @@ function updateMkDocsNavigation(
     // Build complete nav structure
     const completeNav = [
       { Home: 'index.md' },
-      { 'Getting Started': 'getting-started.md' },
+      { 'Getting Started': 'getting-started/installation.md' },
       { Tools: [
         { Overview: 'tools/index.md' },
         ...navigation

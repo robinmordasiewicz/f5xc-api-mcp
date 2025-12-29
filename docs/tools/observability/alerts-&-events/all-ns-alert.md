@@ -6,6 +6,9 @@ description: GET Alerts.
 
 # All Ns Alert
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 For system namespace, all the alerts for the tenant matching the filter specified in the
 request
 will be returned in the response.
@@ -20,14 +23,14 @@ will be returned in the response.
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `filter` | HighDiskUsage\", severity=\"critical\"}" |
-| `inactive` | If set to true, active alerts will not be returned in the response. |
-| `inhibited` | Show inhibited alerts - alerts that are suppressed if certain other alerts are firing. |
-| `namespace` | Namespace to scope the listing of alerts. |
-| `silenced` | Show silenced alerts - alerts that are muted based on the matchers configured in the alert manager. |
-| `unprocessed` | Show unprocessed alerts. |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `filter` | HighDiskUsage\", severity=\"critical\"}" | `{alertname=\.` |
+| `inactive` | If set to true, active alerts will not be returned in the response. | `False` |
+| `inhibited` | Show inhibited alerts - alerts that are suppressed if certain other alerts are firing. | `False` |
+| `namespace` | Namespace to scope the listing of alerts. | `Value` |
+| `silenced` | Show silenced alerts - alerts that are muted based on the matchers configured in the alert manager. | `True` |
+| `unprocessed` | Show unprocessed alerts. | `False` |
 
 ## Example Usage
 
@@ -36,6 +39,18 @@ Ask Claude to help you work with All Ns Alert resources:
 ### List All Ns Alerts
 
 > "List all all-ns-alerts in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl data all-ns-alert list --namespace {namespace}
+```
+
+List all all-ns-alerts
 
 ## f5xcctl Equivalent
 

@@ -6,6 +6,12 @@ description: Specification.
 
 # Bigip Irule
 
+!!! danger "High Risk Operation"
+    This resource includes operations that may cause significant changes. Review carefully before executing.
+
+!!! note "Confirmation Required"
+    Some operations on this resource require explicit confirmation before execution.
+
 List the set of bigip_irule in a namespace.
 
 ## Tools
@@ -22,21 +28,38 @@ List the set of bigip_irule in a namespace.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `metadata.namespace` | Namespace |
-| `name` | Name |
-| `namespace` | Namespace |
-| `metadata.name` | Name |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `Staging` |
+| `name` | Name | `Name` |
+| `namespace` | Namespace | `Ns1` |
+| `metadata.name` | Name | `Example-corp-web.` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
-| `report_fields` | The report_fields parameter |
-| `report_status_fields` | The report_status_fields parameter |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- bigip-irule
+
+**Modifies:**
+
+- bigip-irule
+
+**Deletes:**
+
+- bigip-irule
+- contained_resources
 
 ## Example Usage
 
@@ -53,6 +76,58 @@ Ask Claude to help you work with Bigip Irule resources:
 ### Get Bigip Irule Details
 
 > "Get details of the bigip-irule named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl bigipconnector bigip-irule create {name} --namespace {namespace}
+```
+
+Create bigip-irule
+
+### file_based
+
+```bash
+f5xcctl bigipconnector bigip-irule create -f {file}.yaml
+```
+
+Create from YAML file
+
+### delete
+
+```bash
+f5xcctl bigipconnector bigip-irule delete {name} --namespace {namespace}
+```
+
+Delete bigip-irule
+
+### get_specific
+
+```bash
+f5xcctl bigipconnector bigip-irule get {name} --namespace {namespace}
+```
+
+Get specific bigip-irule
+
+### list_all
+
+```bash
+f5xcctl bigipconnector bigip-irule list --namespace {namespace}
+```
+
+List all bigip-irules
+
+### update
+
+```bash
+f5xcctl bigipconnector bigip-irule update {name} --namespace {namespace} -f {file}.yaml
+```
+
+Update bigip-irule
 
 ## f5xcctl Equivalent
 

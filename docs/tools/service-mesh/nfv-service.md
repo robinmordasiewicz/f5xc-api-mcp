@@ -6,6 +6,12 @@ description: Create NFV Service.
 
 # Nfv Service
 
+!!! danger "High Risk Operation"
+    This resource includes operations that may cause significant changes. Review carefully before executing.
+
+!!! note "Confirmation Required"
+    Some operations on this resource require explicit confirmation before execution.
+
 Replaces configured NFV Service with new set of parameters.
 
 ## Tools
@@ -22,21 +28,38 @@ Replaces configured NFV Service with new set of parameters.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `metadata.namespace` | Namespace |
-| `name` | Name |
-| `namespace` | Namespace |
-| `metadata.name` | Name |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `Staging` |
+| `name` | Name | `Name` |
+| `namespace` | Namespace | `Ns1` |
+| `metadata.name` | Name | `Example-corp-web.` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
-| `report_fields` | The report_fields parameter |
-| `report_status_fields` | The report_status_fields parameter |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- nfv-service
+
+**Modifies:**
+
+- nfv-service
+
+**Deletes:**
+
+- nfv-service
+- contained_resources
 
 ## Example Usage
 
@@ -53,6 +76,58 @@ Ask Claude to help you work with Nfv Service resources:
 ### Get Nfv Service Details
 
 > "Get details of the nfv-service named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl config nfv-service create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl config nfv-service create {name} --namespace {namespace}
+```
+
+Create nfv-service
+
+### delete
+
+```bash
+f5xcctl config nfv-service delete {name} --namespace {namespace}
+```
+
+Delete nfv-service
+
+### get_specific
+
+```bash
+f5xcctl config nfv-service get {name} --namespace {namespace}
+```
+
+Get specific nfv-service
+
+### list_all
+
+```bash
+f5xcctl config nfv-service list --namespace {namespace}
+```
+
+List all nfv-services
+
+### update
+
+```bash
+f5xcctl config nfv-service update {name} --namespace {namespace} -f {file}.yaml
+```
+
+Update nfv-service
 
 ## f5xcctl Equivalent
 

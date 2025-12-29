@@ -6,6 +6,9 @@ description: GET Service Operation Status.
 
 # Get Service Operation Statu
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 GET status of an operation command for a given CDN Loadbalancer.
 
 ## Tools
@@ -18,9 +21,17 @@ GET status of an operation command for a given CDN Loadbalancer.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Default` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- get-service-operation-statu
 
 ## Example Usage
 
@@ -29,6 +40,26 @@ Ask Claude to help you work with Get Service Operation Statu resources:
 ### Create Get Service Operation Statu
 
 > "Create a get-service-operation-statu named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl cdn get-service-operation-statu create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl cdn get-service-operation-statu create {name} --namespace {namespace}
+```
+
+Create get-service-operation-statu
 
 ## f5xcctl Equivalent
 

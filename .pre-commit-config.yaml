@@ -17,6 +17,7 @@ repos:
         exclude: ^specs/raw/
       - id: check-added-large-files
         args: ["--maxkb=1024"]
+        exclude: ^specs/domains/
       - id: check-merge-conflict
       - id: detect-private-key
       - id: no-commit-to-branch

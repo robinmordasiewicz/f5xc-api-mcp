@@ -25,6 +25,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -38,6 +40,92 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigip.apm.API.Create",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["apm"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config apm create {name} --namespace {namespace}",
+        description: "Create apm",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl config apm create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Apm resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config apm create {name} --namespace {namespace}",
+          description: "Create apm",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config apm create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new apm",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["apm"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-apm-delete",
@@ -57,6 +145,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -66,6 +156,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -77,6 +169,83 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigip.apm.API.Delete",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["apm", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config apm delete {name} --namespace {namespace}",
+        description: "Delete apm",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config apm delete {name} --namespace {namespace}",
+          description: "Delete apm",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete apm",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["apm", "contained_resources"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-apm-get",
@@ -96,6 +265,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -105,6 +276,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -127,6 +300,7 @@ export const bigipTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
@@ -137,6 +311,79 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigip.apm.API.Get",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config apm get {name} --namespace {namespace}",
+        description: "Get specific apm",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config apm get {name} --namespace {namespace}",
+          description: "Get specific apm",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific apm",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-bigip-apm-list",
@@ -156,6 +403,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -168,6 +417,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -180,6 +431,7 @@ export const bigipTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -192,6 +444,7 @@ export const bigipTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
@@ -202,6 +455,79 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigip.apm.API.List",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config apm list --namespace {namespace}",
+        description: "List all apms",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config apm list --namespace {namespace}",
+          description: "List all apms",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all apms",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-bigip-apm-update",
@@ -221,6 +547,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -231,6 +559,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -244,6 +574,83 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigip.apm.API.Replace",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["apm"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config apm update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update apm",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config apm update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update apm",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing apm",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["apm"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-bigip-irule-create",
@@ -264,6 +671,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -277,6 +686,92 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigip_irule.API.Create",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["bigip-irule"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl bigipconnector bigip-irule create {name} --namespace {namespace}",
+        description: "Create bigip-irule",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl bigipconnector bigip-irule create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Bigip-irule resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl bigipconnector bigip-irule create {name} --namespace {namespace}",
+          description: "Create bigip-irule",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl bigipconnector bigip-irule create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new bigip-irule",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["bigip-irule"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-bigip-irule-delete",
@@ -296,6 +791,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -305,6 +802,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -316,6 +815,83 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigip_irule.API.Delete",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["bigip-irule", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl bigipconnector bigip-irule delete {name} --namespace {namespace}",
+        description: "Delete bigip-irule",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl bigipconnector bigip-irule delete {name} --namespace {namespace}",
+          description: "Delete bigip-irule",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete bigip-irule",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["bigip-irule", "contained_resources"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-bigip-irule-get",
@@ -335,6 +911,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -344,6 +922,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -366,6 +946,7 @@ export const bigipTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
@@ -376,6 +957,79 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigip_irule.API.Get",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl bigipconnector bigip-irule get {name} --namespace {namespace}",
+        description: "Get specific bigip-irule",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl bigipconnector bigip-irule get {name} --namespace {namespace}",
+          description: "Get specific bigip-irule",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific bigip-irule",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-bigip-bigip-irule-list",
@@ -395,6 +1049,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -407,6 +1063,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -419,6 +1077,7 @@ export const bigipTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -431,6 +1090,7 @@ export const bigipTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
@@ -441,6 +1101,79 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigip_irule.API.List",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl bigipconnector bigip-irule list --namespace {namespace}",
+        description: "List all bigip-irules",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl bigipconnector bigip-irule list --namespace {namespace}",
+          description: "List all bigip-irules",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all bigip-irules",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-bigip-bigip-irule-update",
@@ -460,6 +1193,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -470,6 +1205,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -483,6 +1220,85 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigip_irule.API.Replace",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["bigip-irule"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command:
+          "f5xcctl bigipconnector bigip-irule update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update bigip-irule",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl bigipconnector bigip-irule update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update bigip-irule",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing bigip-irule",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["bigip-irule"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-bigip-virtual-server-get",
@@ -502,6 +1318,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -511,6 +1329,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -532,6 +1352,7 @@ export const bigipTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
@@ -542,6 +1363,79 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bigip_virtual_server.API.Get",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config bigip-virtual-server get {name} --namespace {namespace}",
+        description: "Get specific bigip-virtual-server",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config bigip-virtual-server get {name} --namespace {namespace}",
+          description: "Get specific bigip-virtual-server",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific bigip-virtual-server",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-bigip-bigip-virtual-server-list",
@@ -561,6 +1455,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -573,6 +1469,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -585,6 +1483,7 @@ export const bigipTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -597,6 +1496,7 @@ export const bigipTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
@@ -607,6 +1507,79 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bigip_virtual_server.API.List",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config bigip-virtual-server list --namespace {namespace}",
+        description: "List all bigip-virtual-servers",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config bigip-virtual-server list --namespace {namespace}",
+          description: "List all bigip-virtual-servers",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all bigip-virtual-servers",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-bigip-bigip-virtual-server-update",
@@ -626,6 +1599,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -636,6 +1611,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -649,6 +1626,85 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bigip_virtual_server.API.Replace",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["bigip-virtual-server"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command:
+          "f5xcctl config bigip-virtual-server update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update bigip-virtual-server",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl config bigip-virtual-server update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update bigip-virtual-server",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing bigip-virtual-server",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["bigip-virtual-server"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-data-group-create",
@@ -670,6 +1726,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -683,6 +1741,92 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.data_group.API.Create",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["data-group"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config data-group create {name} --namespace {namespace}",
+        description: "Create data-group",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl config data-group create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Data-group resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config data-group create {name} --namespace {namespace}",
+          description: "Create data-group",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config data-group create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new data-group",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["data-group"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-data-group-delete",
@@ -702,6 +1846,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -711,6 +1857,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -722,6 +1870,83 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.data_group.API.Delete",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["data-group", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config data-group delete {name} --namespace {namespace}",
+        description: "Delete data-group",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config data-group delete {name} --namespace {namespace}",
+          description: "Delete data-group",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete data-group",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["data-group", "contained_resources"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-data-group-get",
@@ -741,6 +1966,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -750,6 +1977,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -771,6 +2000,7 @@ export const bigipTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
@@ -781,6 +2011,79 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.data_group.API.Get",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config data-group get {name} --namespace {namespace}",
+        description: "Get specific data-group",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config data-group get {name} --namespace {namespace}",
+          description: "Get specific data-group",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific data-group",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-bigip-data-group-list",
@@ -800,6 +2103,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -812,6 +2117,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -824,6 +2131,7 @@ export const bigipTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -836,6 +2144,7 @@ export const bigipTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
@@ -846,6 +2155,79 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.data_group.API.List",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config data-group list --namespace {namespace}",
+        description: "List all data-groups",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config data-group list --namespace {namespace}",
+          description: "List all data-groups",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all data-groups",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-bigip-data-group-update",
@@ -865,6 +2247,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -875,6 +2259,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -888,6 +2274,83 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.data_group.API.Replace",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["data-group"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config data-group update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update data-group",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config data-group update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update data-group",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing data-group",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["data-group"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-get-security-config-create",
@@ -908,6 +2371,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -921,6 +2386,95 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.bigip_virtual_server.CustomAPI.GetSecurityConfig",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["get-security-config"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config get-security-config create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl config get-security-config create {name} --namespace {namespace}",
+        description: "Create get-security-config",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [
+          "Get-security-config resource created",
+          "Resource assigned unique identifier",
+        ],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config get-security-config create {name} --namespace {namespace}",
+          description: "Create get-security-config",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config get-security-config create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new get-security-config",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["get-security-config"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-irule-create",
@@ -941,6 +2495,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -954,6 +2510,92 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.irule.API.Create",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["irule"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config irule create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl config irule create {name} --namespace {namespace}",
+        description: "Create irule",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Irule resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config irule create {name} --namespace {namespace}",
+          description: "Create irule",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config irule create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new irule",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["irule"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-irule-delete",
@@ -973,6 +2615,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -982,6 +2626,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -993,6 +2639,83 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.irule.API.Delete",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["irule", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config irule delete {name} --namespace {namespace}",
+        description: "Delete irule",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config irule delete {name} --namespace {namespace}",
+          description: "Delete irule",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete irule",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["irule", "contained_resources"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-irule-get",
@@ -1012,6 +2735,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1021,6 +2746,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1042,6 +2769,7 @@ export const bigipTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
@@ -1052,6 +2780,79 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.irule.API.Get",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config irule get {name} --namespace {namespace}",
+        description: "Get specific irule",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config irule get {name} --namespace {namespace}",
+          description: "Get specific irule",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific irule",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-bigip-irule-list",
@@ -1071,6 +2872,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1083,6 +2886,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -1095,6 +2900,7 @@ export const bigipTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -1107,6 +2913,7 @@ export const bigipTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
@@ -1117,6 +2924,79 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.irule.API.List",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config irule list --namespace {namespace}",
+        description: "List all irules",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config irule list --namespace {namespace}",
+          description: "List all irules",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all irules",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-bigip-irule-update",
@@ -1136,6 +3016,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -1146,6 +3028,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1159,6 +3043,83 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigcne.irule.API.Replace",
     tags: ["Other"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["irule"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config irule update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update irule",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config irule update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update irule",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing irule",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["irule"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-bigip-metric-create",
@@ -1178,6 +3139,8 @@ export const bigipTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -1191,6 +3154,92 @@ export const bigipTools: ParsedOperation[] = [
     operationId: "ves.io.schema.bigip.apm.CustomDataAPI.Metrics",
     tags: ["BIG-IP"],
     sourceFile: "domains/bigip.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["metric"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl data metric create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl data metric create {name} --namespace {namespace}",
+        description: "Create metric",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "System",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Metric resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl data metric create {name} --namespace {namespace}",
+          description: "Create metric",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl data metric create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new metric",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["metric"],
+      },
+    },
   },
 ];
 

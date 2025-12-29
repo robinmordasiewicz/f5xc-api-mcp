@@ -7,15 +7,302 @@ import type { ParsedOperation } from "../../../generator/openapi-parser.js";
 
 export const service_meshTools: ParsedOperation[] = [
   {
-    toolName: "f5xc-api-servicemesh-cluster-create",
+    toolName: "f5xc-api-servicemesh-api-endpoint-create",
     method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/clusters",
+    path: "/api/ml/data/namespaces/{namespace}/app_types/{app_type_name}/services/{service_name}/api_endpoints",
     operation: "create",
     domain: "service_mesh",
-    resource: "cluster",
-    summary: "Create Cluster.",
-    description:
-      "Create cluster will create the object in the storage backend for namespace metadata.namespace.",
+    resource: "api-endpoint",
+    summary: "GET Service API Endpoints.",
+    description: "GET all autodiscovered API endpoints for Service.",
+    pathParameters: [
+      {
+        description: "App Type\nApp Type for current request.",
+        in: "path",
+        name: "app_type_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "App Type",
+        "x-ves-example": "Blogging-app.",
+      },
+      {
+        description: "Namespace\nNamespace of the App type for current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
+      },
+      {
+        description: "Service\nIdentifies the destination service.",
+        in: "path",
+        name: "service_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Service Name.",
+        "x-ves-example": "N:public or S:productpage.",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/app_typeServiceAPIEndpointsReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/app_typeAPIEndpointsRsp",
+    },
+    requiredParams: ["app_type_name", "body", "namespace", "service_name"],
+    operationId: "ves.io.schema.app_type.CustomAPI.GetServiceAPIEndpoints",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["api-endpoint"],
+    },
+    requiredFields: [
+      "metadata.name",
+      "metadata.namespace",
+      "path.app_type_name",
+      "path.namespace",
+      "path.service_name",
+    ],
+    cliExamples: [
+      {
+        command: "f5xcctl ml api-endpoint create {name} --namespace {namespace}",
+        description: "Create api-endpoint",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl ml api-endpoint create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      app_type_name: "Blogging-app.",
+      namespace: "Shared",
+      service_name: "N:public or S:productpage.",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Api-endpoint resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl ml api-endpoint create {name} --namespace {namespace}",
+          description: "Create api-endpoint",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl ml api-endpoint create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new api-endpoint",
+      required_fields: [
+        "metadata.name",
+        "metadata.namespace",
+        "path.app_type_name",
+        "path.namespace",
+        "path.service_name",
+      ],
+      side_effects: {
+        creates: ["api-endpoint"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-api-endpoint-list",
+    method: "GET",
+    path: "/api/ml/data/namespaces/{namespace}/app_types/{app_type_name}/api_endpoints",
+    operation: "list",
+    domain: "service_mesh",
+    resource: "api-endpoint",
+    summary: "GET API endpoints.",
+    description: "GET all auto discovered API endpoints for App type.",
+    pathParameters: [
+      {
+        description: "App Type\nApp Type for current request.",
+        in: "path",
+        name: "app_type_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "App Type",
+        "x-ves-example": "Blogging-app.",
+      },
+      {
+        description: "Namespace\nNamespace of the App type for current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "List of additional things that needs to be sent as part of the request\n\nAPI ENDPOINT INFO NONE option is used to disable any additional info request per API endpoint response\nAPI ENDPOINT INFO PDF SPARKLINES option is used to enable pdf sparkline info along with the API endpoint response.",
+        in: "query",
+        name: "api_endpoint_info_request",
+        required: false,
+        schema: {
+          items: {
+            enum: ["API_ENDPOINT_INFO_NONE", "API_ENDPOINT_INFO_PDF_SPARKLINES"],
+            type: "string",
+          },
+          type: "array",
+        },
+        "x-displayname": "API Endpoint Info PDF Sparklines.",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_typeAPIEndpointsRsp",
+    },
+    requiredParams: ["app_type_name", "namespace"],
+    operationId: "ves.io.schema.app_type.CustomAPI.APIEndpoints",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.app_type_name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl ml api-endpoint list --namespace {namespace}",
+        description: "List all api-endpoints",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      app_type_name: "Blogging-app.",
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl ml api-endpoint list --namespace {namespace}",
+          description: "List all api-endpoints",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all api-endpoints",
+      required_fields: ["path.app_type_name", "path.namespace"],
+      side_effects: {},
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-app-setting-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/app_settings",
+    operation: "create",
+    domain: "service_mesh",
+    resource: "app-setting",
+    summary: "Create App Setting.",
+    description: "Create App setting configuration in namespace metadata.namespace.",
     pathParameters: [
       {
         description:
@@ -26,29 +313,117 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/clusterCreateRequest",
+      $ref: "#/components/schemas/app_settingCreateRequest",
     },
     responseSchema: {
-      $ref: "#/components/schemas/clusterCreateResponse",
+      $ref: "#/components/schemas/app_settingCreateResponse",
     },
     requiredParams: ["body", "metadata.namespace"],
-    operationId: "ves.io.schema.cluster.API.Create",
+    operationId: "ves.io.schema.app_setting.API.Create",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["app-setting"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config app-setting create {name} --namespace {namespace}",
+        description: "Create app-setting",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl config app-setting create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["App-setting resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config app-setting create {name} --namespace {namespace}",
+          description: "Create app-setting",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config app-setting create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new app-setting",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["app-setting"],
+      },
+    },
   },
   {
-    toolName: "f5xc-api-servicemesh-cluster-delete",
+    toolName: "f5xc-api-servicemesh-app-setting-delete",
     method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/clusters/{name}",
+    path: "/api/config/namespaces/{namespace}/app_settings/{name}",
     operation: "delete",
     domain: "service_mesh",
-    resource: "cluster",
-    summary: "DELETE Cluster.",
-    description: "DELETE the specified cluster.",
+    resource: "app-setting",
+    summary: "DELETE App Setting.",
+    description: "DELETE the specified app_setting.",
     pathParameters: [
       {
         description: "Name\nName of the configuration object.",
@@ -58,6 +433,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -67,28 +444,107 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/clusterDeleteRequest",
+      $ref: "#/components/schemas/app_settingDeleteRequest",
     },
     responseSchema: {},
     requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.cluster.API.Delete",
+    operationId: "ves.io.schema.app_setting.API.Delete",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["app-setting", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config app-setting delete {name} --namespace {namespace}",
+        description: "Delete app-setting",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config app-setting delete {name} --namespace {namespace}",
+          description: "Delete app-setting",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete app-setting",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["app-setting", "contained_resources"],
+      },
+    },
   },
   {
-    toolName: "f5xc-api-servicemesh-cluster-get",
+    toolName: "f5xc-api-servicemesh-app-setting-get",
     method: "GET",
-    path: "/api/config/namespaces/{namespace}/clusters/{name}",
+    path: "/api/config/namespaces/{namespace}/app_settings/{name}",
     operation: "get",
     domain: "service_mesh",
-    resource: "cluster",
-    summary: "GET Cluster.",
+    resource: "app-setting",
+    summary: "GET App Setting.",
     description:
-      "GET cluster will GET the object from the storage backend for namespace metadata.namespace.",
+      "GET App setting will retrieve the configuration from namespace metadata.namespace.",
     pathParameters: [
       {
         description: "Name\nThe name of the configuration object to be fetched.",
@@ -98,6 +554,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -107,6 +565,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -129,35 +589,111 @@ export const service_meshTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/clusterGetResponse",
+      $ref: "#/components/schemas/app_settingGetResponse",
     },
     requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.cluster.API.Get",
+    operationId: "ves.io.schema.app_setting.API.Get",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config app-setting get {name} --namespace {namespace}",
+        description: "Get specific app-setting",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config app-setting get {name} --namespace {namespace}",
+          description: "Get specific app-setting",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific app-setting",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
-    toolName: "f5xc-api-servicemesh-cluster-list",
+    toolName: "f5xc-api-servicemesh-app-setting-list",
     method: "GET",
-    path: "/api/config/namespaces/{namespace}/clusters",
+    path: "/api/config/namespaces/{namespace}/app_settings",
     operation: "list",
     domain: "service_mesh",
-    resource: "cluster",
-    summary: "List Cluster.",
-    description: "List the set of cluster in a namespace.",
+    resource: "app-setting",
+    summary: "List App Setting.",
+    description: "List the set of app_setting in a namespace.",
     pathParameters: [
       {
-        description: "Namespace\nNamespace to scope the listing of cluster.",
+        description: "Namespace\nNamespace to scope the listing of app_setting.",
         in: "path",
         name: "namespace",
         required: true,
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -170,6 +706,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -182,6 +720,7 @@ export const service_meshTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -194,27 +733,101 @@ export const service_meshTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/clusterListResponse",
+      $ref: "#/components/schemas/app_settingListResponse",
     },
     requiredParams: ["namespace"],
-    operationId: "ves.io.schema.cluster.API.List",
+    operationId: "ves.io.schema.app_setting.API.List",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config app-setting list --namespace {namespace}",
+        description: "List all app-settings",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config app-setting list --namespace {namespace}",
+          description: "List all app-settings",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all app-settings",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
-    toolName: "f5xc-api-servicemesh-cluster-update",
+    toolName: "f5xc-api-servicemesh-app-setting-update",
     method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/clusters/{metadata.name}",
+    path: "/api/config/namespaces/{metadata.namespace}/app_settings/{metadata.name}",
     operation: "update",
     domain: "service_mesh",
-    resource: "cluster",
-    summary: "Replace Cluster.",
+    resource: "app-setting",
+    summary: "Replace App Setting.",
     description:
-      "Replacing an cluster object will update the object by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write.",
+      "Replacing an App setting will update the configuration by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write.",
     pathParameters: [
       {
         description: "Name\nThe configuration object to be replaced will be looked up by name.",
@@ -224,6 +837,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -234,29 +849,109 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/clusterReplaceRequest",
+      $ref: "#/components/schemas/app_settingReplaceRequest",
     },
     responseSchema: {
-      $ref: "#/components/schemas/clusterReplaceResponse",
+      $ref: "#/components/schemas/app_settingReplaceResponse",
     },
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
-    operationId: "ves.io.schema.cluster.API.Replace",
+    operationId: "ves.io.schema.app_setting.API.Replace",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["app-setting"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config app-setting update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update app-setting",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl config app-setting update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update app-setting",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing app-setting",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["app-setting"],
+      },
+    },
   },
   {
-    toolName: "f5xc-api-servicemesh-container-registry-create",
+    toolName: "f5xc-api-servicemesh-app-type-create",
     method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/container_registrys",
+    path: "/api/config/namespaces/{metadata.namespace}/app_types",
     operation: "create",
     domain: "service_mesh",
-    resource: "container-registry",
-    summary: "Create Container Registry.",
-    description: "Shape of Container Registry.",
+    resource: "app-type",
+    summary: "Create App Type.",
+    description: "Create App type will create the configuration in namespace metadata.namespace.",
     pathParameters: [
       {
         description:
@@ -267,29 +962,117 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/container_registryCreateRequest",
+      $ref: "#/components/schemas/app_typeCreateRequest",
     },
     responseSchema: {
-      $ref: "#/components/schemas/container_registryCreateResponse",
+      $ref: "#/components/schemas/app_typeCreateResponse",
     },
     requiredParams: ["body", "metadata.namespace"],
-    operationId: "ves.io.schema.container_registry.API.Create",
+    operationId: "ves.io.schema.app_type.API.Create",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["app-type"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config app-type create {name} --namespace {namespace}",
+        description: "Create app-type",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl config app-type create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["App-type resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config app-type create {name} --namespace {namespace}",
+          description: "Create app-type",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config app-type create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new app-type",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["app-type"],
+      },
+    },
   },
   {
-    toolName: "f5xc-api-servicemesh-container-registry-delete",
+    toolName: "f5xc-api-servicemesh-app-type-delete",
     method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/container_registrys/{name}",
+    path: "/api/config/namespaces/{namespace}/app_types/{name}",
     operation: "delete",
     domain: "service_mesh",
-    resource: "container-registry",
-    summary: "DELETE Container Registry.",
-    description: "DELETE the specified container_registry.",
+    resource: "app-type",
+    summary: "DELETE App Type.",
+    description: "DELETE the specified app_type.",
     pathParameters: [
       {
         description: "Name\nName of the configuration object.",
@@ -299,6 +1082,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -308,27 +1093,106 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/container_registryDeleteRequest",
+      $ref: "#/components/schemas/app_typeDeleteRequest",
     },
     responseSchema: {},
     requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.container_registry.API.Delete",
+    operationId: "ves.io.schema.app_type.API.Delete",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["app-type", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config app-type delete {name} --namespace {namespace}",
+        description: "Delete app-type",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config app-type delete {name} --namespace {namespace}",
+          description: "Delete app-type",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete app-type",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["app-type", "contained_resources"],
+      },
+    },
   },
   {
-    toolName: "f5xc-api-servicemesh-container-registry-get",
+    toolName: "f5xc-api-servicemesh-app-type-get",
     method: "GET",
-    path: "/api/config/namespaces/{namespace}/container_registrys/{name}",
+    path: "/api/config/namespaces/{namespace}/app_types/{name}",
     operation: "get",
     domain: "service_mesh",
-    resource: "container-registry",
-    summary: "GET Container Registry.",
-    description: "Shape of Container Registry.",
+    resource: "app-type",
+    summary: "GET App Type.",
+    description: "GET App type will read the configuration from namespace metadata.namespace.",
     pathParameters: [
       {
         description: "Name\nThe name of the configuration object to be fetched.",
@@ -338,6 +1202,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -347,6 +1213,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -369,35 +1237,111 @@ export const service_meshTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/container_registryGetResponse",
+      $ref: "#/components/schemas/app_typeGetResponse",
     },
     requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.container_registry.API.Get",
+    operationId: "ves.io.schema.app_type.API.Get",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config app-type get {name} --namespace {namespace}",
+        description: "Get specific app-type",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config app-type get {name} --namespace {namespace}",
+          description: "Get specific app-type",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific app-type",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
-    toolName: "f5xc-api-servicemesh-container-registry-list",
+    toolName: "f5xc-api-servicemesh-app-type-list",
     method: "GET",
-    path: "/api/config/namespaces/{namespace}/container_registrys",
+    path: "/api/config/namespaces/{namespace}/app_types",
     operation: "list",
     domain: "service_mesh",
-    resource: "container-registry",
-    summary: "List Container Registry.",
-    description: "List the set of container_registry in a namespace.",
+    resource: "app-type",
+    summary: "List App Type.",
+    description: "List the set of app_type in a namespace.",
     pathParameters: [
       {
-        description: "Namespace\nNamespace to scope the listing of container_registry.",
+        description: "Namespace\nNamespace to scope the listing of app_type.",
         in: "path",
         name: "namespace",
         required: true,
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -410,6 +1354,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -422,6 +1368,7 @@ export const service_meshTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -434,26 +1381,101 @@ export const service_meshTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
     responseSchema: {
-      $ref: "#/components/schemas/container_registryListResponse",
+      $ref: "#/components/schemas/app_typeListResponse",
     },
     requiredParams: ["namespace"],
-    operationId: "ves.io.schema.container_registry.API.List",
+    operationId: "ves.io.schema.app_type.API.List",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config app-type list --namespace {namespace}",
+        description: "List all app-types",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config app-type list --namespace {namespace}",
+          description: "List all app-types",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all app-types",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
-    toolName: "f5xc-api-servicemesh-container-registry-update",
+    toolName: "f5xc-api-servicemesh-app-type-update",
     method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/container_registrys/{metadata.name}",
+    path: "/api/config/namespaces/{metadata.namespace}/app_types/{metadata.name}",
     operation: "update",
     domain: "service_mesh",
-    resource: "container-registry",
-    summary: "Replace Container Registry.",
-    description: "Shape of Container Registry.",
+    resource: "app-type",
+    summary: "Replace App Type.",
+    description:
+      "Update the configuration by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write.",
     pathParameters: [
       {
         description: "Name\nThe configuration object to be replaced will be looked up by name.",
@@ -463,6 +1485,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -473,581 +1497,98 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/container_registryReplaceRequest",
+      $ref: "#/components/schemas/app_typeReplaceRequest",
     },
     responseSchema: {
-      $ref: "#/components/schemas/container_registryReplaceResponse",
+      $ref: "#/components/schemas/app_typeReplaceResponse",
     },
     requiredParams: ["body", "metadata.name", "metadata.namespace"],
-    operationId: "ves.io.schema.container_registry.API.Replace",
+    operationId: "ves.io.schema.app_type.API.Replace",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-create-http-load-balancer-create",
-    method: "POST",
-    path: "/api/discovery/namespaces/{namespace}/discovered_services/{name}/create_http_load_balancer",
-    operation: "create",
-    domain: "service_mesh",
-    resource: "create-http-load-balancer",
-    summary: "Create HTTP/HTTPS load balancer.",
-    description:
-      "Create HTTP/HTTPS load balancer using the discovered virtual server as an origin server.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["app-type"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
       {
-        description: "Service Name\nx-required\nIdentifies the discovered service name.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          "Namespace\nx-required\nNamespace of the discovered service for current request.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl config app-type update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update app-type",
+        use_case: "update",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/discovered_serviceCreateHTTPLoadBalancerRequest",
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
     },
-    responseSchema: {
-      $ref: "#/components/schemas/discovered_serviceCreateHTTPLoadBalancerResponse",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config app-type update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update app-type",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing app-type",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["app-type"],
+      },
     },
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.discovered_service.CustomAPI.CreateHTTPLoadBalancer",
-    tags: ["Service Mesh"],
-    sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-create-tcp-load-balancer-create",
-    method: "POST",
-    path: "/api/discovery/namespaces/{namespace}/discovered_services/{name}/create_tcp_load_balancer",
-    operation: "create",
-    domain: "service_mesh",
-    resource: "create-tcp-load-balancer",
-    summary: "Create TCP load balancer.",
-    description:
-      "Create TCP load balancer using the discovered virtual server as an origin server.",
-    pathParameters: [
-      {
-        description: "Service Name\nx-required\nIdentifies the discovered service name.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          "Namespace\nx-required\nNamespace of the discovered service for current request.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/discovered_serviceCreateTCPLoadBalancerRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/discovered_serviceCreateTCPLoadBalancerResponse",
-    },
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.discovered_service.CustomAPI.CreateTCPLoadBalancer",
-    tags: ["Service Mesh"],
-    sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-disable-visibility-create",
-    method: "POST",
-    path: "/api/discovery/namespaces/{namespace}/discovered_services/{name}/disable_visibility",
-    operation: "create",
-    domain: "service_mesh",
-    resource: "disable-visibility",
-    summary: "Disable visibility in all workspaces.",
-    description:
-      "Disable Visibility of the service in all workspaces. This will remove the discovered service\nfrom being visible in other wokspaces like WAAP.",
-    pathParameters: [
-      {
-        description: "Service Name\nx-required\nIdentifies the discovered service name.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          "Namespace\nx-required\nNamespace of the discovered service for current request.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/discovered_serviceDisableVisibilityRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/discovered_serviceDisableVisibilityResponse",
-    },
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.discovered_service.CustomAPI.DisableVisibility",
-    tags: ["Service Mesh"],
-    sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-discovered-service-get",
-    method: "GET",
-    path: "/api/discovery/namespaces/{namespace}/discovered_services/{name}",
-    operation: "get",
-    domain: "service_mesh",
-    resource: "discovered-service",
-    summary: "GET Discovered Service Object.",
-    description: "GET Discovered Service Object.",
-    pathParameters: [
-      {
-        description: "Name\nThe name of the configuration object to be fetched.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nThe namespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
-        in: "query",
-        name: "response_format",
-        required: false,
-        schema: {
-          default: "GET_RSP_FORMAT_DEFAULT",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/discovered_serviceGetResponse",
-    },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.discovered_service.API.Get",
-    tags: ["Service Mesh"],
-    sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-discovered-service-list",
-    method: "GET",
-    path: "/api/discovery/custom/namespaces/{namespace}/discovered_services",
-    operation: "list",
-    domain: "service_mesh",
-    resource: "discovered-service",
-    summary: "List discovered services of specific type.",
-    description:
-      "List the discovered services of specific type like virtual-servers, K8s, consul, NGINX server, etc.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\nx-required\nNamespace of the discovered service for current request.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description: "Filter results to only include items referencing this discovery object name.",
-        in: "query",
-        name: "discovery_name",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Identifies the discovered service type. Omit for all types.",
-        in: "query",
-        name: "service_type",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/discovered_serviceListServicesResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.discovered_service.CustomAPI.ListDiscoveredServices",
-    tags: ["Service Mesh"],
-    sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-discovery-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/discoverys",
-    operation: "create",
-    domain: "service_mesh",
-    resource: "discovery",
-    summary: "Create Discovery.",
-    description: "API to create discovery object for a site or virtual site in system namespace.",
-    pathParameters: [
-      {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/discoveryCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/discoveryCreateResponse",
-    },
-    requiredParams: ["body", "metadata.namespace"],
-    operationId: "ves.io.schema.discovery.API.Create",
-    tags: ["Other"],
-    sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-discovery-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/discoverys/{name}",
-    operation: "delete",
-    domain: "service_mesh",
-    resource: "discovery",
-    summary: "DELETE Discovery.",
-    description: "DELETE the specified discovery.",
-    pathParameters: [
-      {
-        description: "Name\nName of the configuration object.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nNamespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/discoveryDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.discovery.API.Delete",
-    tags: ["Other"],
-    sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-discovery-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/discoverys/{name}",
-    operation: "get",
-    domain: "service_mesh",
-    resource: "discovery",
-    summary: "GET Discovery.",
-    description: "API to GET discovery object for a site or virtual site in system namespace.",
-    pathParameters: [
-      {
-        description: "Name\nThe name of the configuration object to be fetched.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nThe namespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
-        in: "query",
-        name: "response_format",
-        required: false,
-        schema: {
-          default: "GET_RSP_FORMAT_DEFAULT",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/discoveryGetResponse",
-    },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.discovery.API.Get",
-    tags: ["Other"],
-    sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-discovery-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/discoverys",
-    operation: "list",
-    domain: "service_mesh",
-    resource: "discovery",
-    summary: "List Discovery.",
-    description: "List the set of discovery in a namespace.",
-    pathParameters: [
-      {
-        description: "Namespace\nNamespace to scope the listing of discovery.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "A LabelSelectorType expression that every item in list response will satisfy.",
-        in: "query",
-        name: "label_filter",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra fields to return along with summary fields.',
-        in: "query",
-        name: "report_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
-        in: "query",
-        name: "report_status_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/discoveryListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.discovery.API.List",
-    tags: ["Other"],
-    sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-discovery-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/discoverys/{metadata.name}",
-    operation: "update",
-    domain: "service_mesh",
-    resource: "discovery",
-    summary: "Replace Discovery.",
-    description: "API to replace discovery object for a site or virtual site in system namespace.",
-    pathParameters: [
-      {
-        description: "Name\nThe configuration object to be replaced will be looked up by name.",
-        in: "path",
-        name: "metadata.name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/discoveryReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/discoveryReplaceResponse",
-    },
-    requiredParams: ["body", "metadata.name", "metadata.namespace"],
-    operationId: "ves.io.schema.discovery.API.Replace",
-    tags: ["Other"],
-    sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-download-certificate-create",
-    method: "POST",
-    path: "/api/config/namespaces/{namespace}/discovery/{name}/download_certificates",
-    operation: "create",
-    domain: "service_mesh",
-    resource: "download-certificate",
-    summary: "Download Certificates.",
-    description:
-      "Download the cerificates files for the Log Collerctor\nIn order to establish connection from the third party application server to the\nLog Colletor the user should download a zip file with the certificates files:\n- client.crt\n- client.key\n- server_ca.crt.",
-    pathParameters: [
-      {
-        description: "Discovery Name\nx-required\nIdentifies the discovery name.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          "Namespace\nx-required\nNamespace of the discovered service for current request.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/discoveryDownloadCertificatesRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/discoveryDownloadCertificatesResponse",
-    },
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.discovery.CustomAPI.DownloadCertificates",
-    tags: ["Service Mesh"],
-    sourceFile: "domains/service_mesh.json",
-  },
-  {
-    toolName: "f5xc-api-servicemesh-enable-visibility-create",
-    method: "POST",
-    path: "/api/discovery/namespaces/{namespace}/discovered_services/{name}/enable_visibility",
-    operation: "create",
-    domain: "service_mesh",
-    resource: "enable-visibility",
-    summary: "Enable visibility in all workspaces.",
-    description:
-      "Enable Visibility of the service in all workspaces. This action will make the\ndiscovered service visible within WAAP, App Connect where the user can perform\nthe workspace specific actions.",
-    pathParameters: [
-      {
-        description: "Service Name\nx-required\nIdentifies the discovered service name.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          "Namespace\nx-required\nNamespace of the discovered service for current request.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/discovered_serviceEnableVisibilityRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/discovered_serviceEnableVisibilityResponse",
-    },
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.discovered_service.CustomAPI.EnableVisibility",
-    tags: ["Service Mesh"],
-    sourceFile: "domains/service_mesh.json",
   },
   {
     toolName: "f5xc-api-servicemesh-endpoint-create",
@@ -1069,6 +1610,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1082,6 +1625,92 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.endpoint.API.Create",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["endpoint"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config endpoint create {name} --namespace {namespace}",
+        description: "Create endpoint",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl config endpoint create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Endpoint resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config endpoint create {name} --namespace {namespace}",
+          description: "Create endpoint",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config endpoint create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new endpoint",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["endpoint"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-servicemesh-endpoint-delete",
@@ -1101,6 +1730,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -1110,6 +1741,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -1121,6 +1754,83 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.endpoint.API.Delete",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["endpoint", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config endpoint delete {name} --namespace {namespace}",
+        description: "Delete endpoint",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config endpoint delete {name} --namespace {namespace}",
+          description: "Delete endpoint",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete endpoint",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["endpoint", "contained_resources"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-servicemesh-endpoint-get",
@@ -1141,6 +1851,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1150,6 +1862,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1172,6 +1886,7 @@ export const service_meshTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
@@ -1182,6 +1897,79 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.endpoint.API.Get",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config endpoint get {name} --namespace {namespace}",
+        description: "Get specific endpoint",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config endpoint get {name} --namespace {namespace}",
+          description: "Get specific endpoint",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific endpoint",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-servicemesh-endpoint-list",
@@ -1201,6 +1989,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1213,6 +2003,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -1225,6 +2017,7 @@ export const service_meshTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -1237,6 +2030,7 @@ export const service_meshTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
@@ -1247,6 +2041,79 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.endpoint.API.List",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config endpoint list --namespace {namespace}",
+        description: "List all endpoints",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config endpoint list --namespace {namespace}",
+          description: "List all endpoints",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all endpoints",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-servicemesh-endpoint-update",
@@ -1267,6 +2134,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -1277,6 +2146,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1290,6 +2161,83 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.endpoint.API.Replace",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["endpoint"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config endpoint update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update endpoint",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config endpoint update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update endpoint",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing endpoint",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["endpoint"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-servicemesh-force-delete-create",
@@ -1309,6 +2257,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Nfv-service-1.",
       },
     ],
     queryParameters: [],
@@ -1322,46 +2272,230 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nfv_service.CustomAPI.ForceDeleteNFVService",
     tags: ["Service Mesh"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["force-delete"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.name"],
+    cliExamples: [
+      {
+        command: "f5xcctl config force-delete create {name} --namespace {namespace}",
+        description: "Create force-delete",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl config force-delete create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Nfv-service-1.",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Force-delete resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config force-delete create {name} --namespace {namespace}",
+          description: "Create force-delete",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config force-delete create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new force-delete",
+      required_fields: ["metadata.name", "metadata.namespace", "path.name"],
+      side_effects: {
+        creates: ["force-delete"],
+      },
+    },
   },
   {
-    toolName: "f5xc-api-servicemesh-health-statu-get",
-    method: "GET",
-    path: "/api/data/namespaces/{namespace}/discovered_services/{name}/health_status",
-    operation: "get",
+    toolName: "f5xc-api-servicemesh-learnt-schema-create",
+    method: "POST",
+    path: "/api/ml/data/namespaces/{namespace}/app_types/{app_type_name}/api_endpoint/learnt_schema",
+    operation: "create",
     domain: "service_mesh",
-    resource: "health-statu",
-    summary: "Discovered Service Health Status.",
-    description: "GET Discovered Service Health status.",
+    resource: "learnt-schema",
+    summary: "GET Learnt Schema per API endpoint.",
+    description:
+      "GET Learnt Schema per API endpoint for a given auto discovered API endpoint for Service.",
     pathParameters: [
       {
-        description: "Name\n\nx-required\nName of the Discovered Service.",
+        description: "App Type\nApp Type for current request.",
         in: "path",
-        name: "name",
+        name: "app_type_name",
         required: true,
         schema: {
           type: "string",
         },
+        "x-displayname": "App Type",
+        "x-ves-example": "Blogging-app.",
       },
       {
-        description:
-          "Namespace\n\nx-required\nNamespace in which the Discovered Service is present.",
+        description: "Namespace\nNamespace of the App type for current request.",
         in: "path",
         name: "namespace",
         required: true,
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/discovered_serviceDiscoveredServiceHealthStatusResponse",
+    requestBodySchema: {
+      $ref: "#/components/schemas/app_typeAPIEndpointLearntSchemaReq",
     },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.discovered_service.CustomDataAPI.DiscoveredServiceHealthStatus",
+    responseSchema: {
+      $ref: "#/components/schemas/app_typeAPIEndpointLearntSchemaRsp",
+    },
+    requiredParams: ["app_type_name", "body", "namespace"],
+    operationId: "ves.io.schema.app_type.CustomAPI.GetAPIEndpointLearntSchema",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["learnt-schema"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.app_type_name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl ml learnt-schema create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl ml learnt-schema create {name} --namespace {namespace}",
+        description: "Create learnt-schema",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      app_type_name: "Blogging-app.",
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Learnt-schema resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl ml learnt-schema create {name} --namespace {namespace}",
+          description: "Create learnt-schema",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl ml learnt-schema create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new learnt-schema",
+      required_fields: [
+        "metadata.name",
+        "metadata.namespace",
+        "path.app_type_name",
+        "path.namespace",
+      ],
+      side_effects: {
+        creates: ["learnt-schema"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-servicemesh-metric-create",
@@ -1381,6 +2515,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -1394,6 +2530,92 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nfv_service.CustomDataAPI.Metrics",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["metric"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl data metric create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl data metric create {name} --namespace {namespace}",
+        description: "Create metric",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "System",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Metric resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl data metric create {name} --namespace {namespace}",
+          description: "Create metric",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl data metric create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new metric",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["metric"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-servicemesh-nfv-service-create",
@@ -1414,6 +2636,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1427,6 +2651,92 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nfv_service.API.Create",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["nfv-service"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config nfv-service create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl config nfv-service create {name} --namespace {namespace}",
+        description: "Create nfv-service",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Nfv-service resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config nfv-service create {name} --namespace {namespace}",
+          description: "Create nfv-service",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config nfv-service create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new nfv-service",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["nfv-service"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-servicemesh-nfv-service-delete",
@@ -1446,6 +2756,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -1455,6 +2767,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -1466,6 +2780,83 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nfv_service.API.Delete",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["nfv-service", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config nfv-service delete {name} --namespace {namespace}",
+        description: "Delete nfv-service",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config nfv-service delete {name} --namespace {namespace}",
+          description: "Delete nfv-service",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete nfv-service",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["nfv-service", "contained_resources"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-servicemesh-nfv-service-get",
@@ -1485,6 +2876,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1494,6 +2887,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1516,6 +2911,7 @@ export const service_meshTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
@@ -1526,6 +2922,79 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nfv_service.API.Get",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config nfv-service get {name} --namespace {namespace}",
+        description: "Get specific nfv-service",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config nfv-service get {name} --namespace {namespace}",
+          description: "Get specific nfv-service",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific nfv-service",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-servicemesh-nfv-service-list",
@@ -1545,6 +3014,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1557,6 +3028,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -1569,6 +3042,7 @@ export const service_meshTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -1581,6 +3055,7 @@ export const service_meshTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
@@ -1591,6 +3066,79 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nfv_service.API.List",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config nfv-service list --namespace {namespace}",
+        description: "List all nfv-services",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config nfv-service list --namespace {namespace}",
+          description: "List all nfv-services",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all nfv-services",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-servicemesh-nfv-service-update",
@@ -1610,6 +3158,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -1620,6 +3170,8 @@ export const service_meshTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1633,39 +3185,2585 @@ export const service_meshTools: ParsedOperation[] = [
     operationId: "ves.io.schema.nfv_service.API.Replace",
     tags: ["Other"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["nfv-service"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config nfv-service update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update nfv-service",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl config nfv-service update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update nfv-service",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing nfv-service",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["nfv-service"],
+      },
+    },
   },
   {
-    toolName: "f5xc-api-servicemesh-suggest-value-create",
-    method: "POST",
-    path: "/api/discovery/namespaces/{namespace}/suggest-values",
-    operation: "create",
+    toolName: "f5xc-api-servicemesh-override-list",
+    method: "GET",
+    path: "/api/ml/data/namespaces/{namespace}/app_types/{app_type_name}/overrides",
+    operation: "list",
     domain: "service_mesh",
-    resource: "suggest-value",
-    summary: "Suggest Values.",
-    description:
-      "SuggestValues returns suggested values for the specified field in the given Create/Replace/Custom request.",
+    resource: "override",
+    summary: "GET Override.",
+    description: "GET all override for API endpoints configured for this App type.",
     pathParameters: [
       {
-        description: "Namespace\nNamespace in which the suggestions are scoped.",
+        description: "App Type\nApp Type for current request.",
+        in: "path",
+        name: "app_type_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "App Type",
+        "x-ves-example": "Blogging-app.",
+      },
+      {
+        description: "Namespace\nNamespace of the App type for current request.",
         in: "path",
         name: "namespace",
         required: true,
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_typeOverridesRsp",
+    },
+    requiredParams: ["app_type_name", "namespace"],
+    operationId: "ves.io.schema.app_type.CustomAPI.Overrides",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.app_type_name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl ml override list --namespace {namespace}",
+        description: "List all overrides",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      app_type_name: "Blogging-app.",
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl ml override list --namespace {namespace}",
+          description: "List all overrides",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all overrides",
+      required_fields: ["path.app_type_name", "path.namespace"],
+      side_effects: {},
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-pdf-create",
+    method: "POST",
+    path: "/api/ml/data/namespaces/{namespace}/app_types/{app_type_name}/services/{service_name}/api_endpoint/pdf",
+    operation: "create",
+    domain: "service_mesh",
+    resource: "pdf",
+    summary: "GET Service API Endpoint PDF.",
+    description: "GET PDF of all metrics for a given auto discovered API endpoint for Service.",
+    pathParameters: [
+      {
+        description: "App Type\nApp Type for current request.",
+        in: "path",
+        name: "app_type_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "App Type",
+        "x-ves-example": "Blogging-app.",
+      },
+      {
+        description: "Namespace\nNamespace of the App type for current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
+      },
+      {
+        description: "Service\nIdentifies the destination service.",
+        in: "path",
+        name: "service_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Service Name.",
+        "x-ves-example": "N:public or S:productpage.",
       },
     ],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/discovered_serviceSuggestValuesReq",
+      $ref: "#/components/schemas/app_typeServiceAPIEndpointPDFReq",
     },
     responseSchema: {
-      $ref: "#/components/schemas/schemadiscovered_serviceSuggestValuesResp",
+      $ref: "#/components/schemas/app_typeAPIEndpointPDFRsp",
+    },
+    requiredParams: ["app_type_name", "body", "namespace", "service_name"],
+    operationId: "ves.io.schema.app_type.CustomAPI.GetServiceAPIEndpointPDF",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["pdf"],
+    },
+    requiredFields: [
+      "metadata.name",
+      "metadata.namespace",
+      "path.app_type_name",
+      "path.namespace",
+      "path.service_name",
+    ],
+    cliExamples: [
+      {
+        command: "f5xcctl ml pdf create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl ml pdf create {name} --namespace {namespace}",
+        description: "Create pdf",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      app_type_name: "Blogging-app.",
+      namespace: "Shared",
+      service_name: "N:public or S:productpage.",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Pdf resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl ml pdf create {name} --namespace {namespace}",
+          description: "Create pdf",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl ml pdf create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new pdf",
+      required_fields: [
+        "metadata.name",
+        "metadata.namespace",
+        "path.app_type_name",
+        "path.namespace",
+        "path.service_name",
+      ],
+      side_effects: {
+        creates: ["pdf"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-pdf-list",
+    method: "GET",
+    path: "/api/ml/data/namespaces/{namespace}/app_types/{app_type_name}/api_endpoint/pdf",
+    operation: "list",
+    domain: "service_mesh",
+    resource: "pdf",
+    summary: "GET PDF",
+    description: "GET PDF of all metrics for a given auto discovered API endpoint for App type.",
+    pathParameters: [
+      {
+        description: "App Type\nApp Type for current request.",
+        in: "path",
+        name: "app_type_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "App Type",
+        "x-ves-example": "Blogging-app.",
+      },
+      {
+        description: "Namespace\nNamespace of the App type for current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
+      },
+    ],
+    queryParameters: [
+      {
+        description: "API endpoint for which PDFs are requested.",
+        in: "query",
+        name: "collapsed_url",
+        required: false,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "API URL",
+        "x-ves-example": "Value",
+      },
+      {
+        description: "Method of API endpoint for which PDFs are requested.",
+        in: "query",
+        name: "method",
+        required: false,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Method",
+        "x-ves-example": "Value",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_typeAPIEndpointPDFRsp",
+    },
+    requiredParams: ["app_type_name", "namespace"],
+    operationId: "ves.io.schema.app_type.CustomAPI.APIEndpointPDF",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.app_type_name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl ml pdf list --namespace {namespace}",
+        description: "List all pdfs",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      app_type_name: "Blogging-app.",
+      collapsed_url: "Value",
+      method: "Value",
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl ml pdf list --namespace {namespace}",
+          description: "List all pdfs",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all pdfs",
+      required_fields: ["path.app_type_name", "path.namespace"],
+      side_effects: {},
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-pop-create",
+    method: "POST",
+    path: "/api/ml/data/namespaces/{namespace}/app_types/{app_type_name}/override/pop",
+    operation: "create",
+    domain: "service_mesh",
+    resource: "pop",
+    summary: "Remove Override.",
+    description:
+      "Remove override for dynamic component for API endpoints discovered for this App type.",
+    pathParameters: [
+      {
+        description: "App Type\nApp Type for current request.",
+        in: "path",
+        name: "app_type_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "App Type",
+        "x-ves-example": "Blogging-app.",
+      },
+      {
+        description: "Namespace\nNamespace of the App type for current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/app_typeOverridePopReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/app_typeOverridePopRsp",
+    },
+    requiredParams: ["app_type_name", "body", "namespace"],
+    operationId: "ves.io.schema.app_type.CustomAPI.OverridePop",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["pop"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.app_type_name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl ml pop create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl ml pop create {name} --namespace {namespace}",
+        description: "Create pop",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      app_type_name: "Blogging-app.",
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Pop resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl ml pop create {name} --namespace {namespace}",
+          description: "Create pop",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl ml pop create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new pop",
+      required_fields: [
+        "metadata.name",
+        "metadata.namespace",
+        "path.app_type_name",
+        "path.namespace",
+      ],
+      side_effects: {
+        creates: ["pop"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-push-create",
+    method: "POST",
+    path: "/api/ml/data/namespaces/{namespace}/app_types/{app_type_name}/override/push",
+    operation: "create",
+    domain: "service_mesh",
+    resource: "push",
+    summary: "Add Override.",
+    description:
+      "Add override for dynamic component for API endpoints discovered for this App type.",
+    pathParameters: [
+      {
+        description: "App Type\nApp Type for current request.",
+        in: "path",
+        name: "app_type_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "App Type",
+        "x-ves-example": "Blogging-app.",
+      },
+      {
+        description: "Namespace\nNamespace of the App type for current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/app_typeOverridePushReq",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/app_typeOverridePushRsp",
+    },
+    requiredParams: ["app_type_name", "body", "namespace"],
+    operationId: "ves.io.schema.app_type.CustomAPI.OverridePush",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["push"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.app_type_name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl ml push create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl ml push create {name} --namespace {namespace}",
+        description: "Create push",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      app_type_name: "Blogging-app.",
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Push resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl ml push create {name} --namespace {namespace}",
+          description: "Create push",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl ml push create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new push",
+      required_fields: [
+        "metadata.name",
+        "metadata.namespace",
+        "path.app_type_name",
+        "path.namespace",
+      ],
+      side_effects: {
+        creates: ["push"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-sid-counter-create",
+    method: "POST",
+    path: "/api/data/namespaces/{namespace}/virtual_network/sid_counters",
+    operation: "create",
+    domain: "service_mesh",
+    resource: "sid-counter",
+    summary: "SID Counters.",
+    description: "API to GET SID Counters.",
+    pathParameters: [
+      {
+        description: "Namespace\nOnly `system` namespace is supported.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "System",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/virtual_networkSIDCounterRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/virtual_networkSIDCounterResponse",
     },
     requiredParams: ["body", "namespace"],
-    operationId: "ves.io.schema.discovered_service.CustomAPI.SuggestValues",
-    tags: ["Service Mesh"],
+    operationId: "ves.io.schema.virtual_network.CustomDataAPI.SIDCounters",
+    tags: ["Networking"],
     sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["sid-counter"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl data sid-counter create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl data sid-counter create {name} --namespace {namespace}",
+        description: "Create sid-counter",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "System",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Sid-counter resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl data sid-counter create {name} --namespace {namespace}",
+          description: "Create sid-counter",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl data sid-counter create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new sid-counter",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["sid-counter"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-site-mesh-group-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/site_mesh_groups",
+    operation: "create",
+    domain: "service_mesh",
+    resource: "site-mesh-group",
+    summary: "Create Site Mesh Group.",
+    description: "Create a Site Mesh Group in system namespace of user.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/site_mesh_groupCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/site_mesh_groupCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.site_mesh_group.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["site-mesh-group"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config site-mesh-group create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl config site-mesh-group create {name} --namespace {namespace}",
+        description: "Create site-mesh-group",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Site-mesh-group resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config site-mesh-group create {name} --namespace {namespace}",
+          description: "Create site-mesh-group",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config site-mesh-group create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new site-mesh-group",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["site-mesh-group"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-site-mesh-group-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/site_mesh_groups/{name}",
+    operation: "delete",
+    domain: "service_mesh",
+    resource: "site-mesh-group",
+    summary: "DELETE Site Mesh Group.",
+    description: "DELETE the specified site_mesh_group.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/site_mesh_groupDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.site_mesh_group.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["site-mesh-group", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config site-mesh-group delete {name} --namespace {namespace}",
+        description: "Delete site-mesh-group",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config site-mesh-group delete {name} --namespace {namespace}",
+          description: "Delete site-mesh-group",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete site-mesh-group",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["site-mesh-group", "contained_resources"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-site-mesh-group-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/site_mesh_groups/{name}",
+    operation: "get",
+    domain: "service_mesh",
+    resource: "site-mesh-group",
+    summary: "GET Site Mesh Group.",
+    description: "Gets Site Mesh Group object from system namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+        "x-displayname": "Broken Referred Objects.",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/site_mesh_groupGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.site_mesh_group.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config site-mesh-group get {name} --namespace {namespace}",
+        description: "Get specific site-mesh-group",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config site-mesh-group get {name} --namespace {namespace}",
+          description: "Get specific site-mesh-group",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific site-mesh-group",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-site-mesh-group-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/site_mesh_groups",
+    operation: "list",
+    domain: "service_mesh",
+    resource: "site-mesh-group",
+    summary: "List Site Mesh Group.",
+    description: "List the set of site_mesh_group in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of site_mesh_group.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+        "x-displayname": "Report Fields.",
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+        "x-displayname": "Report Status Fields.",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/site_mesh_groupListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.site_mesh_group.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config site-mesh-group list --namespace {namespace}",
+        description: "List all site-mesh-groups",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config site-mesh-group list --namespace {namespace}",
+          description: "List all site-mesh-groups",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all site-mesh-groups",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-site-mesh-group-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/site_mesh_groups/{metadata.name}",
+    operation: "update",
+    domain: "service_mesh",
+    resource: "site-mesh-group",
+    summary: "Replace Site Mesh Group.",
+    description: "Replace contents of a Site Mesh Group object.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/site_mesh_groupReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/site_mesh_groupReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.site_mesh_group.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["site-mesh-group"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command:
+          "f5xcctl config site-mesh-group update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update site-mesh-group",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl config site-mesh-group update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update site-mesh-group",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing site-mesh-group",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["site-mesh-group"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-software-os-version-create",
+    method: "POST",
+    path: "/api/maurice/software_os_version",
+    operation: "create",
+    domain: "service_mesh",
+    resource: "software-os-version",
+    summary: "GET OS based on SW_VERSION.",
+    description: "API to GET OS IMAGE based on the software version.",
+    pathParameters: [],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/virtual_applianceGetImageRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/virtual_applianceGetImageResponse",
+    },
+    requiredParams: ["body"],
+    operationId: "ves.io.schema.virtual_appliance.SoftwareVersionOsImageCustomApi.GetImage",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["software-os-version"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl maurice software-os-version create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl maurice software-os-version create {name} --namespace {namespace}",
+        description: "Create software-os-version",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [
+          "Software-os-version resource created",
+          "Resource assigned unique identifier",
+        ],
+        prerequisites: [],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl maurice software-os-version create {name} --namespace {namespace}",
+          description: "Create software-os-version",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl maurice software-os-version create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new software-os-version",
+      required_fields: ["metadata.name", "metadata.namespace"],
+      side_effects: {
+        creates: ["software-os-version"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-suspicious-user-get",
+    method: "GET",
+    path: "/api/ml/data/namespaces/{namespace}/app_settings/{name}/suspicious_users",
+    operation: "get",
+    domain: "service_mesh",
+    resource: "suspicious-user",
+    summary: "GET Status of Suspicious users.",
+    description: "GET status of suspicious users.",
+    pathParameters: [
+      {
+        description: "Name\nfetch suspicious users based on a given app setting.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+        "x-ves-example": "Value",
+      },
+      {
+        description: "Namespace\n\nfetch suspicious users for a given namespace.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Suspicious User Status Request.",
+        "x-ves-example": "Bloggin-app-namespace-1.",
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "Fetch suspicious users during timestamp <= end_time\nformat: unix_timestamp|RFC 3339\n\nOptional: If not specified, then the end_time will be evaluated to start_time+10m\nIf start_time is not specified, then the end_time will be evaluated to <current time>",
+        in: "query",
+        name: "end_time",
+        required: false,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "End Time",
+        "x-ves-example": "1570007981.",
+      },
+      {
+        description:
+          'Blogging_app"}"\nquery is used to specify the list of matchers\nsyntax for query := {[<matcher>]}\n<matcher> := <field_name><operator>"<value>"\n<field_name> := string\nOne or more of these fields in the security event may be specified in the query.\nApp_type - application type\nvh_name - name of the virtual host\n<value> := string\n<operator> := ["="|"!="]\n= : equal to\n!= : not equal to\nWhen more than one matcher is specified in the query, then security events matching ALL the matchers will be returned in the response.\nExample: query={country="United States", city="California"} will return all security events originating from California, United States.\n\nOptional: If not specified, all the security events matching the given tenant and namespace will be returned in the response.',
+        in: "query",
+        name: "query",
+        required: false,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Query",
+        "x-ves-example": "Query={app_type=.",
+      },
+      {
+        description:
+          "Fetch suspicious users during timestamp >= start_time\nformat: unix_timestamp|RFC 3339\n\nOptional: If not specified, then the start_time will be evaluated to end_time-10m\nIf end_time is not specified, then the start_time will be evaluated to <current time>-10m.",
+        in: "query",
+        name: "start_time",
+        required: false,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Start Time.",
+        "x-ves-example": "1570007981.",
+      },
+      {
+        description:
+          "X-example: 10\nfetch top 10 suspicious users\n\nNumber of top field values to be returned in the response.\nOptional: If not specified, top 5 values will be returned in the response.",
+        in: "query",
+        name: "topn",
+        required: false,
+        schema: {
+          format: "int64",
+          type: "integer",
+        },
+        "x-displayname": "TopN",
+        "x-ves-example":
+          "None of int32 samples [0 1 10 42 100 1024 2048] satisfied rules map[VES.I/o.schema.rules.uint32.gte:1 VES.I/o.schema.rules.uint32.lte:100]",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_settingSuspiciousUserStatusRsp",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.app_setting.CustomAPI.SuspiciousUserStatus",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl ml suspicious-user get {name} --namespace {namespace}",
+        description: "Get specific suspicious-user",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      end_time: "1570007981.",
+      name: "Value",
+      namespace: "Bloggin-app-namespace-1.",
+      query: "Query={app_type=.",
+      start_time: "1570007981.",
+      topn: "None of int32 samples [0 1 10 42 100 1024 2048] satisfied rules map[VES.I/o.schema.rules.uint32.gte:1 VES.I/o.schema.rules.uint32.lte:100]",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl ml suspicious-user get {name} --namespace {namespace}",
+          description: "Get specific suspicious-user",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "Retrieve specific suspicious-user",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-swagger-spec-list",
+    method: "GET",
+    path: "/api/ml/data/namespaces/{namespace}/app_types/{app_type_name}/api_endpoints/swagger_spec",
+    operation: "list",
+    domain: "service_mesh",
+    resource: "swagger-spec",
+    summary: "GET Swagger Spec for App Type.",
+    description: "GET the corresponding Swagger spec for the given app type.",
+    pathParameters: [
+      {
+        description: "App Type\nApp Type for current request.",
+        in: "path",
+        name: "app_type_name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "App Type",
+        "x-ves-example": "Blogging-app.",
+      },
+      {
+        description: "Namespace\nNamespace of the App type for current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/apiHttpBody",
+    },
+    requiredParams: ["app_type_name", "namespace"],
+    operationId: "ves.io.schema.app_type.CustomAPI.GetSwaggerSpec",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.app_type_name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl ml swagger-spec list --namespace {namespace}",
+        description: "List all swagger-specs",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      app_type_name: "Blogging-app.",
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl ml swagger-spec list --namespace {namespace}",
+          description: "List all swagger-specs",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all swagger-specs",
+      required_fields: ["path.app_type_name", "path.namespace"],
+      side_effects: {},
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-virtual-network-create",
+    method: "POST",
+    path: "/api/config/namespaces/{metadata.namespace}/virtual_networks",
+    operation: "create",
+    domain: "service_mesh",
+    resource: "virtual-network",
+    summary: "Create Virtual Network.",
+    description: "Create virtual network in given namespace.",
+    pathParameters: [
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/virtual_networkCreateRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/virtual_networkCreateResponse",
+    },
+    requiredParams: ["body", "metadata.namespace"],
+    operationId: "ves.io.schema.virtual_network.API.Create",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["virtual-network"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config virtual-network create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl config virtual-network create {name} --namespace {namespace}",
+        description: "Create virtual-network",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Virtual-network resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config virtual-network create {name} --namespace {namespace}",
+          description: "Create virtual-network",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config virtual-network create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new virtual-network",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["virtual-network"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-virtual-network-delete",
+    method: "DELETE",
+    path: "/api/config/namespaces/{namespace}/virtual_networks/{name}",
+    operation: "delete",
+    domain: "service_mesh",
+    resource: "virtual-network",
+    summary: "DELETE Virtual Network.",
+    description: "DELETE the specified virtual_network.",
+    pathParameters: [
+      {
+        description: "Name\nName of the configuration object.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
+      },
+      {
+        description: "Namespace\nNamespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/virtual_networkDeleteRequest",
+    },
+    responseSchema: {},
+    requiredParams: ["body", "name", "namespace"],
+    operationId: "ves.io.schema.virtual_network.API.Delete",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["virtual-network", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config virtual-network delete {name} --namespace {namespace}",
+        description: "Delete virtual-network",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config virtual-network delete {name} --namespace {namespace}",
+          description: "Delete virtual-network",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete virtual-network",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["virtual-network", "contained_resources"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-virtual-network-get",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/virtual_networks/{name}",
+    operation: "get",
+    domain: "service_mesh",
+    resource: "virtual-network",
+    summary: "GET Virtual Network.",
+    description: "Gets virtual network in given namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe name of the configuration object to be fetched.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
+      },
+      {
+        description: "Namespace\nThe namespace in which the configuration object is present.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
+        in: "query",
+        name: "response_format",
+        required: false,
+        schema: {
+          default: "GET_RSP_FORMAT_DEFAULT",
+          enum: [
+            "GET_RSP_FORMAT_DEFAULT",
+            "GET_RSP_FORMAT_FOR_CREATE",
+            "GET_RSP_FORMAT_FOR_REPLACE",
+            "GET_RSP_FORMAT_STATUS",
+            "GET_RSP_FORMAT_READ",
+            "GET_RSP_FORMAT_REFERRING_OBJECTS",
+            "GET_RSP_FORMAT_BROKEN_REFERENCES",
+          ],
+          type: "string",
+        },
+        "x-displayname": "Broken Referred Objects.",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/virtual_networkGetResponse",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId: "ves.io.schema.virtual_network.API.Get",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config virtual-network get {name} --namespace {namespace}",
+        description: "Get specific virtual-network",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config virtual-network get {name} --namespace {namespace}",
+          description: "Get specific virtual-network",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific virtual-network",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-virtual-network-list",
+    method: "GET",
+    path: "/api/config/namespaces/{namespace}/virtual_networks",
+    operation: "list",
+    domain: "service_mesh",
+    resource: "virtual-network",
+    summary: "List Virtual Network.",
+    description: "List the set of virtual_network in a namespace.",
+    pathParameters: [
+      {
+        description: "Namespace\nNamespace to scope the listing of virtual_network.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
+      },
+    ],
+    queryParameters: [
+      {
+        description:
+          "A LabelSelectorType expression that every item in list response will satisfy.",
+        in: "query",
+        name: "label_filter",
+        required: false,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
+      },
+      {
+        description: 'X-example: ""\nExtra fields to return along with summary fields.',
+        in: "query",
+        name: "report_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+        "x-displayname": "Report Fields.",
+      },
+      {
+        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
+        in: "query",
+        name: "report_status_fields",
+        required: false,
+        schema: {
+          items: {
+            type: "string",
+          },
+          type: "array",
+        },
+        "x-displayname": "Report Status Fields.",
+      },
+    ],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/virtual_networkListResponse",
+    },
+    requiredParams: ["namespace"],
+    operationId: "ves.io.schema.virtual_network.API.List",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config virtual-network list --namespace {namespace}",
+        description: "List all virtual-networks",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config virtual-network list --namespace {namespace}",
+          description: "List all virtual-networks",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all virtual-networks",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
+  },
+  {
+    toolName: "f5xc-api-servicemesh-virtual-network-update",
+    method: "PUT",
+    path: "/api/config/namespaces/{metadata.namespace}/virtual_networks/{metadata.name}",
+    operation: "update",
+    domain: "service_mesh",
+    resource: "virtual-network",
+    summary: "Replace Virtual Network.",
+    description: "Replace given virtual network in given namespace.",
+    pathParameters: [
+      {
+        description: "Name\nThe configuration object to be replaced will be looked up by name.",
+        in: "path",
+        name: "metadata.name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
+      },
+      {
+        description:
+          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
+        in: "path",
+        name: "metadata.namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: {
+      $ref: "#/components/schemas/virtual_networkReplaceRequest",
+    },
+    responseSchema: {
+      $ref: "#/components/schemas/virtual_networkReplaceResponse",
+    },
+    requiredParams: ["body", "metadata.name", "metadata.namespace"],
+    operationId: "ves.io.schema.virtual_network.API.Replace",
+    tags: ["Other"],
+    sourceFile: "domains/service_mesh.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["virtual-network"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command:
+          "f5xcctl config virtual-network update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update virtual-network",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl config virtual-network update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update virtual-network",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing virtual-network",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["virtual-network"],
+      },
+    },
   },
 ];
 

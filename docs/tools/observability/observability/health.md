@@ -6,6 +6,9 @@ description: GET Synthetic Monitoring Health Check.
 
 # Health
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns 200 Ok if the service is healthy.
 
 ## Tools
@@ -18,9 +21,9 @@ Returns 200 Ok if the service is healthy.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ## Example Usage
 
@@ -29,6 +32,18 @@ Ask Claude to help you work with Health resources:
 ### List Healths
 
 > "List all healths in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability health list --namespace {namespace}
+```
+
+List all healths
 
 ## f5xcctl Equivalent
 

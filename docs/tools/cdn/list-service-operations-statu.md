@@ -6,6 +6,9 @@ description: List of CDN Operation Commands.
 
 # List Service Operations Statu
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 List of service operations for a given CDN LB.
 
 ## Tools
@@ -18,9 +21,17 @@ List of service operations for a given CDN LB.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Ns1` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- list-service-operations-statu
 
 ## Example Usage
 
@@ -29,6 +40,26 @@ Ask Claude to help you work with List Service Operations Statu resources:
 ### Create List Service Operations Statu
 
 > "Create a list-service-operations-statu named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl cdn list-service-operations-statu create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl cdn list-service-operations-statu create {name} --namespace {namespace}
+```
+
+Create list-service-operations-statu
 
 ## f5xcctl Equivalent
 

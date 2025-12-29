@@ -6,6 +6,9 @@ description: GET Global Summary.
 
 # Global Summary
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns a healthy and critical count of all monitors in namespace, based on monitor type.
 
 ## Tools
@@ -18,15 +21,15 @@ Returns a healthy and critical count of all monitors in namespace, based on moni
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `monitor_type` | Monitor_type. |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `monitor_type` | Monitor_type. | `HTTP` |
 
 ## Example Usage
 
@@ -35,6 +38,18 @@ Ask Claude to help you work with Global Summary resources:
 ### List Global Summarys
 
 > "List all global-summarys in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability global-summary list --namespace {namespace}
+```
+
+List all global-summarys
 
 ## f5xcctl Equivalent
 

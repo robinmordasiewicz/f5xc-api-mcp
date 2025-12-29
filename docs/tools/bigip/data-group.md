@@ -6,6 +6,12 @@ description: Create Data group.
 
 # Data Group
 
+!!! danger "High Risk Operation"
+    This resource includes operations that may cause significant changes. Review carefully before executing.
+
+!!! note "Confirmation Required"
+    Some operations on this resource require explicit confirmation before execution.
+
 Create data group in a given namespace. If one already exists it will give an error.
 
 ## Tools
@@ -22,21 +28,38 @@ Create data group in a given namespace. If one already exists it will give an er
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `metadata.namespace` | Namespace |
-| `name` | Name |
-| `namespace` | Namespace |
-| `metadata.name` | Name |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `Staging` |
+| `name` | Name | `Name` |
+| `namespace` | Namespace | `Ns1` |
+| `metadata.name` | Name | `Example-corp-web.` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
-| `report_fields` | The report_fields parameter |
-| `report_status_fields` | The report_status_fields parameter |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- data-group
+
+**Modifies:**
+
+- data-group
+
+**Deletes:**
+
+- data-group
+- contained_resources
 
 ## Example Usage
 
@@ -53,6 +76,58 @@ Ask Claude to help you work with Data Group resources:
 ### Get Data Group Details
 
 > "Get details of the data-group named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl config data-group create {name} --namespace {namespace}
+```
+
+Create data-group
+
+### file_based
+
+```bash
+f5xcctl config data-group create -f {file}.yaml
+```
+
+Create from YAML file
+
+### delete
+
+```bash
+f5xcctl config data-group delete {name} --namespace {namespace}
+```
+
+Delete data-group
+
+### get_specific
+
+```bash
+f5xcctl config data-group get {name} --namespace {namespace}
+```
+
+Get specific data-group
+
+### list_all
+
+```bash
+f5xcctl config data-group list --namespace {namespace}
+```
+
+List all data-groups
+
+### update
+
+```bash
+f5xcctl config data-group update {name} --namespace {namespace} -f {file}.yaml
+```
+
+Update data-group
 
 ## f5xcctl Equivalent
 

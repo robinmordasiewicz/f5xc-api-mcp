@@ -6,6 +6,9 @@ description: GET Source Summary.
 
 # Source Summary
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns the healthy and critical status count, latency, and coordinates for each source region.
 
 ## Tools
@@ -18,17 +21,17 @@ Returns the healthy and critical status count, latency, and coordinates for each
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `label_filter` | Label_filter. |
-| `monitor_name` | Monitor_name. |
-| `monitor_type` | Monitor_type. X-required |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `label_filter` | Label_filter. | `F5 XC/country in (VES-I/O-usa), F5 XC/siteType=VES-I/O-RE.` |
+| `monitor_name` | Monitor_name. | `Monitor1` |
+| `monitor_type` | Monitor_type. X-required | `HTTP` |
 
 ## Example Usage
 
@@ -37,6 +40,18 @@ Ask Claude to help you work with Source Summary resources:
 ### List Source Summarys
 
 > "List all source-summarys in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability source-summary list --namespace {namespace}
+```
+
+List all source-summarys
 
 ## f5xcctl Equivalent
 

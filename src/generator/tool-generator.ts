@@ -7,7 +7,13 @@
 
 import { z } from "zod";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { ParsedOperation, OpenApiParameter } from "./openapi-parser.js";
+import {
+  ParsedOperation,
+  OpenApiParameter,
+  SideEffects,
+  CliExample,
+  OperationMetadata,
+} from "./openapi-parser.js";
 import { CredentialManager, AuthMode } from "../auth/credential-manager.js";
 import { HttpClient } from "../auth/http-client.js";
 import { formatErrorForMcp } from "../utils/error-handling.js";
@@ -30,6 +36,17 @@ export interface DocumentationResponse {
   terraformExample: string;
   prerequisites: string[];
   subscriptionTier: string;
+  // Rich metadata from enriched specs v1.0.63
+  displayName: string | null;
+  dangerLevel: "low" | "medium" | "high" | null;
+  dangerWarning: string | null;
+  sideEffects: SideEffects | null;
+  confirmationRequired: boolean;
+  cliExamples: CliExample[];
+  parameterExamples: Record<string, string>;
+  validationRules: Record<string, Record<string, string>>;
+  requiredFields: string[];
+  operationMetadata: OperationMetadata | null;
 }
 
 /**
@@ -53,6 +70,10 @@ export interface ParameterInfo {
   type: string;
   required: boolean;
   description: string;
+  // Rich metadata from enriched specs
+  displayName: string | null;
+  example: string | null;
+  validationRules: Record<string, string> | null;
 }
 
 /**
@@ -62,6 +83,87 @@ export interface RequestBodyInfo {
   required: boolean;
   contentType: string;
   schema: Record<string, unknown>;
+}
+
+/**
+ * Validation result from parameter validation
+ */
+export interface ValidationResult {
+  valid: boolean;
+  errors: string[];
+}
+
+/**
+ * Validate parameters against x-ves-validation-rules
+ */
+export function validateParameters(
+  params: Record<string, unknown>,
+  rules: Record<string, Record<string, string>>
+): ValidationResult {
+  const errors: string[] = [];
+
+  for (const [paramName, paramRules] of Object.entries(rules)) {
+    const value = params[paramName];
+
+    // Check max_len for strings
+    if (paramRules["ves.io.schema.rules.string.max_len"]) {
+      const maxLen = parseInt(paramRules["ves.io.schema.rules.string.max_len"]);
+      if (typeof value === "string" && value.length > maxLen) {
+        errors.push(`${paramName} exceeds max length of ${maxLen}`);
+      }
+    }
+
+    // Check min_len for strings
+    if (paramRules["ves.io.schema.rules.string.min_len"]) {
+      const minLen = parseInt(paramRules["ves.io.schema.rules.string.min_len"]);
+      if (typeof value === "string" && value.length < minLen) {
+        errors.push(`${paramName} must be at least ${minLen} characters`);
+      }
+    }
+
+    // Check required
+    if (paramRules["ves.io.schema.rules.message.required"] === "true") {
+      if (value === undefined || value === null || value === "") {
+        errors.push(`${paramName} is required`);
+      }
+    }
+
+    // Check max_items for arrays
+    if (paramRules["ves.io.schema.rules.repeated.max_items"]) {
+      const maxItems = parseInt(paramRules["ves.io.schema.rules.repeated.max_items"]);
+      if (Array.isArray(value) && value.length > maxItems) {
+        errors.push(`${paramName} exceeds max items of ${maxItems}`);
+      }
+    }
+
+    // Check unique for arrays
+    if (paramRules["ves.io.schema.rules.repeated.unique"] === "true") {
+      if (Array.isArray(value)) {
+        const uniqueSet = new Set(value.map((v) => JSON.stringify(v)));
+        if (uniqueSet.size !== value.length) {
+          errors.push(`${paramName} must contain unique items`);
+        }
+      }
+    }
+  }
+
+  return { valid: errors.length === 0, errors };
+}
+
+/**
+ * Generate danger level warning message
+ */
+export function getDangerWarning(level: "low" | "medium" | "high" | null): string | null {
+  switch (level) {
+    case "high":
+      return "⚠️ HIGH RISK: This operation may cause significant changes. Confirm before proceeding.";
+    case "medium":
+      return "⚡ MEDIUM RISK: This operation will modify resources. Review parameters carefully.";
+    case "low":
+      return null;
+    default:
+      return null;
+  }
 }
 
 /**
@@ -266,7 +368,7 @@ function buildToolSchema(operation: ParsedOperation): z.ZodObject<Record<string,
 function buildDocumentationResponse(operation: ParsedOperation): DocumentationResponse {
   const parameters: ParameterInfo[] = [];
 
-  // Add path parameters
+  // Add path parameters with rich metadata
   for (const param of operation.pathParameters) {
     parameters.push({
       name: param.name,
@@ -274,10 +376,13 @@ function buildDocumentationResponse(operation: ParsedOperation): DocumentationRe
       type: ((param.schema as Record<string, unknown>)?.type as string) ?? "string",
       required: param.required ?? true,
       description: param.description ?? "",
+      displayName: param["x-displayname"] ?? null,
+      example: operation.parameterExamples[param.name] ?? null,
+      validationRules: operation.validationRules[param.name] ?? null,
     });
   }
 
-  // Add query parameters
+  // Add query parameters with rich metadata
   for (const param of operation.queryParameters) {
     parameters.push({
       name: param.name,
@@ -285,6 +390,9 @@ function buildDocumentationResponse(operation: ParsedOperation): DocumentationRe
       type: ((param.schema as Record<string, unknown>)?.type as string) ?? "string",
       required: param.required ?? false,
       description: param.description ?? "",
+      displayName: param["x-displayname"] ?? null,
+      example: operation.parameterExamples[param.name] ?? null,
+      validationRules: operation.validationRules[param.name] ?? null,
     });
   }
 
@@ -303,37 +411,77 @@ function buildDocumentationResponse(operation: ParsedOperation): DocumentationRe
       type: "object",
       required: operation.requiredParams.includes("body"),
       description: "Request body as JSON object",
+      displayName: null,
+      example: null,
+      validationRules: null,
     });
   }
+
+  // Generate danger warning if applicable
+  const dangerWarning = getDangerWarning(operation.dangerLevel);
+
+  // Use f5xcctl examples from spec if available, otherwise generate
+  const firstCliExample = operation.cliExamples[0];
+  const f5xcctlCommand = firstCliExample?.command
+    ? firstCliExample.command
+    : generateF5xcctlCommand(operation);
+
+  // Use prerequisites from operation metadata if available
+  const prerequisites =
+    operation.operationMetadata?.conditions?.prerequisites ?? generatePrerequisites(operation);
 
   return {
     mode: "documentation",
     tool: operation.toolName,
-    description: operation.summary,
+    description: operation.displayName ?? operation.summary,
     httpMethod: operation.method,
     apiPath: operation.path,
     parameters,
     requestBody,
     exampleRequest: generateExampleRequest(operation),
-    f5xcctlCommand: generateF5xcctlCommand(operation),
+    f5xcctlCommand,
     terraformResource: generateTerraformResource(operation),
     terraformExample: generateTerraformExample(operation),
-    prerequisites: generatePrerequisites(operation),
+    prerequisites,
     subscriptionTier: getSubscriptionTier(operation.resource),
+    // Rich metadata from enriched specs
+    displayName: operation.displayName,
+    dangerLevel: operation.dangerLevel,
+    dangerWarning,
+    sideEffects: operation.sideEffects,
+    confirmationRequired: operation.confirmationRequired,
+    cliExamples: operation.cliExamples,
+    parameterExamples: operation.parameterExamples,
+    validationRules: operation.validationRules,
+    requiredFields: operation.requiredFields,
+    operationMetadata: operation.operationMetadata,
   };
 }
 
 /**
  * Generate example request for documentation
+ * Uses x-ves-example values from enriched specs when available
  */
 function generateExampleRequest(operation: ParsedOperation): Record<string, unknown> | null {
   if (operation.operation !== "create" && operation.operation !== "update") {
     return null;
   }
 
-  // Generate a basic example based on the resource type
   const resource = operation.resource.toLowerCase();
+  const examples = operation.parameterExamples;
 
+  // If we have parameter examples from the spec, use them
+  if (Object.keys(examples).length > 0) {
+    return {
+      metadata: {
+        name: examples["name"] ?? examples["metadata.name"] ?? `example-${resource}`,
+        namespace: examples["namespace"] ?? examples["metadata.namespace"] ?? "default",
+      },
+      spec: {},
+    };
+  }
+
+  // Fallback to resource-specific examples
   if (resource.includes("loadbalancer") || resource.includes("lb")) {
     return {
       metadata: {
@@ -386,6 +534,54 @@ function generateExampleRequest(operation: ParsedOperation): Record<string, unkn
 }
 
 /**
+ * Build tool description with rich metadata
+ */
+function buildToolDescription(operation: ParsedOperation): string {
+  const parts: string[] = [];
+
+  // Use displayName if available, otherwise summary
+  parts.push(operation.displayName ?? operation.summary);
+
+  // Add danger warning if applicable
+  const dangerWarning = getDangerWarning(operation.dangerLevel);
+  if (dangerWarning) {
+    parts.push("");
+    parts.push(dangerWarning);
+  }
+
+  // Add confirmation required notice
+  if (operation.confirmationRequired) {
+    parts.push("🔒 Confirmation required before execution.");
+  }
+
+  // Add side effects info
+  if (operation.sideEffects) {
+    const effects: string[] = [];
+    if (operation.sideEffects.creates?.length) {
+      effects.push(`Creates: ${operation.sideEffects.creates.join(", ")}`);
+    }
+    if (operation.sideEffects.modifies?.length) {
+      effects.push(`Modifies: ${operation.sideEffects.modifies.join(", ")}`);
+    }
+    if (operation.sideEffects.deletes?.length) {
+      effects.push(`Deletes: ${operation.sideEffects.deletes.join(", ")}`);
+    }
+    if (effects.length) {
+      parts.push("");
+      parts.push(`Side Effects: ${effects.join("; ")}`);
+    }
+  }
+
+  // Add standard metadata
+  parts.push("");
+  parts.push(`Domain: ${operation.domain}`);
+  parts.push(`Resource: ${operation.resource}`);
+  parts.push(`HTTP: ${operation.method} ${operation.path}`);
+
+  return parts.join("\n");
+}
+
+/**
  * Register a tool on the MCP server
  */
 export function registerTool(
@@ -395,7 +591,7 @@ export function registerTool(
   httpClient: HttpClient | null
 ): void {
   const schema = buildToolSchema(operation);
-  const description = `${operation.summary}\n\nDomain: ${operation.domain}\nResource: ${operation.resource}\nHTTP: ${operation.method} ${operation.path}`;
+  const description = buildToolDescription(operation);
 
   server.tool(
     operation.toolName,

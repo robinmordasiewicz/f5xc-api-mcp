@@ -6,6 +6,9 @@ description: GET CDN Access Logs.
 
 # Access Log
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Retrieve CDN Load-Balancer Access logs.
 
 ## Tools
@@ -18,9 +21,17 @@ Retrieve CDN Load-Balancer Access logs.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Value` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- access-log
 
 ## Example Usage
 
@@ -29,6 +40,26 @@ Ask Claude to help you work with Access Log resources:
 ### Create Access Log
 
 > "Create a access-log named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl cdn access-log create {name} --namespace {namespace}
+```
+
+Create access-log
+
+### file_based
+
+```bash
+f5xcctl cdn access-log create -f {file}.yaml
+```
+
+Create from YAML file
 
 ## f5xcctl Equivalent
 

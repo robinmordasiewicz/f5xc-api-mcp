@@ -6,6 +6,12 @@ description: Create APM Service.
 
 # Apm
 
+!!! danger "High Risk Operation"
+    This resource includes operations that may cause significant changes. Review carefully before executing.
+
+!!! note "Confirmation Required"
+    Some operations on this resource require explicit confirmation before execution.
+
 Replaces configured APM Service with new set of parameters.
 
 ## Tools
@@ -22,21 +28,38 @@ Replaces configured APM Service with new set of parameters.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `metadata.namespace` | Namespace |
-| `name` | Name |
-| `namespace` | Namespace |
-| `metadata.name` | Name |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `Staging` |
+| `name` | Name | `Name` |
+| `namespace` | Namespace | `Ns1` |
+| `metadata.name` | Name | `Example-corp-web.` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
-| `report_fields` | The report_fields parameter |
-| `report_status_fields` | The report_status_fields parameter |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- apm
+
+**Modifies:**
+
+- apm
+
+**Deletes:**
+
+- apm
+- contained_resources
 
 ## Example Usage
 
@@ -53,6 +76,58 @@ Ask Claude to help you work with Apm resources:
 ### Get Apm Details
 
 > "Get details of the apm named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl config apm create {name} --namespace {namespace}
+```
+
+Create apm
+
+### file_based
+
+```bash
+f5xcctl config apm create -f {file}.yaml
+```
+
+Create from YAML file
+
+### delete
+
+```bash
+f5xcctl config apm delete {name} --namespace {namespace}
+```
+
+Delete apm
+
+### get_specific
+
+```bash
+f5xcctl config apm get {name} --namespace {namespace}
+```
+
+Get specific apm
+
+### list_all
+
+```bash
+f5xcctl config apm list --namespace {namespace}
+```
+
+List all apms
+
+### update
+
+```bash
+f5xcctl config apm update {name} --namespace {namespace} -f {file}.yaml
+```
+
+Update apm
 
 ## f5xcctl Equivalent
 

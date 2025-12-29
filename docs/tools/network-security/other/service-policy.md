@@ -1,0 +1,162 @@
+---
+page_title: f5xc_service_policy - f5xc-api-mcp
+subcategory: Network Security
+description: Create Service Policy.
+---
+
+# Service Policy
+
+!!! danger "High Risk Operation"
+    This resource includes operations that may cause significant changes. Review carefully before executing.
+
+!!! note "Confirmation Required"
+    Some operations on this resource require explicit confirmation before execution.
+
+Replace service_policy replaces an existing object in the storage backend for metadata.namespace.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-networksecurity-service-policy-create` | Create Service Policy. |
+| `f5xc-api-networksecurity-service-policy-get` | GET Service Policy. |
+| `f5xc-api-networksecurity-service-policy-list` | List Service Policy. |
+| `f5xc-api-networksecurity-service-policy-update` | Replace Service Policy. |
+| `f5xc-api-networksecurity-service-policy-delete` | DELETE Service Policy. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `Staging` |
+| `name` | Name | `Name` |
+| `namespace` | Namespace | `Ns1` |
+| `metadata.name` | Name | `Example-corp-web.` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- service-policy
+
+**Modifies:**
+
+- service-policy
+
+**Deletes:**
+
+- service-policy
+- contained_resources
+
+## Example Usage
+
+Ask Claude to help you work with Service Policy resources:
+
+### Create Service Policy
+
+> "Create a service-policy named 'example' in the 'production' namespace"
+
+### List Service Policys
+
+> "List all service-policys in the 'production' namespace"
+
+### Get Service Policy Details
+
+> "Get details of the service-policy named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl config service-policy create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl config service-policy create {name} --namespace {namespace}
+```
+
+Create service-policy
+
+### delete
+
+```bash
+f5xcctl config service-policy delete {name} --namespace {namespace}
+```
+
+Delete service-policy
+
+### get_specific
+
+```bash
+f5xcctl config service-policy get {name} --namespace {namespace}
+```
+
+Get specific service-policy
+
+### list_all
+
+```bash
+f5xcctl config service-policy list --namespace {namespace}
+```
+
+List all service-policys
+
+### update
+
+```bash
+f5xcctl config service-policy update {name} --namespace {namespace} -f {file}.yaml
+```
+
+Update service-policy
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl network_security create service_policy -n <namespace> -i service_policy.yaml
+
+# Get
+f5xcctl network_security get service_policy <name> -n <namespace>
+
+# List
+f5xcctl network_security list service_policy -n <namespace>
+
+# Delete
+f5xcctl network_security delete service_policy <name> -n <namespace>
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_service_policy" "example" {
+  name      = "example-service-policy"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

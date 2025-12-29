@@ -6,6 +6,9 @@ description: GET Security Config for CDN Load Balancer.
 
 # Get Security Config
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Fetch the corresponding Security Config for the given CDN load balancers.
 
 ## Tools
@@ -18,9 +21,17 @@ Fetch the corresponding Security Config for the given CDN load balancers.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Shared` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- get-security-config
 
 ## Example Usage
 
@@ -29,6 +40,26 @@ Ask Claude to help you work with Get Security Config resources:
 ### Create Get Security Config
 
 > "Create a get-security-config named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl config get-security-config create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl config get-security-config create {name} --namespace {namespace}
+```
+
+Create get-security-config
 
 ## f5xcctl Equivalent
 

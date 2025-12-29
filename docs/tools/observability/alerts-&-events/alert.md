@@ -6,6 +6,9 @@ description: GET Alerts.
 
 # Alert
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 GET alerts matching the filter for the given namespace.
 
 ## Tools
@@ -18,19 +21,19 @@ GET alerts matching the filter for the given namespace.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Value` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `filter` | HighDiskUsage\", severity=\"critical\"}" |
-| `inactive` | If set to true, active alerts will not be returned in the response. |
-| `inhibited` | Show inhibited alerts - alerts that are suppressed if certain other alerts are firing. |
-| `silenced` | Show silenced alerts - alerts that are muted based on the matchers configured in the alert manager. |
-| `unprocessed` | Show unprocessed alerts. |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `filter` | HighDiskUsage\", severity=\"critical\"}" | `{alertname=\.` |
+| `inactive` | If set to true, active alerts will not be returned in the response. | `False` |
+| `inhibited` | Show inhibited alerts - alerts that are suppressed if certain other alerts are firing. | `False` |
+| `silenced` | Show silenced alerts - alerts that are muted based on the matchers configured in the alert manager. | `True` |
+| `unprocessed` | Show unprocessed alerts. | `False` |
 
 ## Example Usage
 
@@ -39,6 +42,18 @@ Ask Claude to help you work with Alert resources:
 ### List Alerts
 
 > "List all alerts in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl data alert list --namespace {namespace}
+```
+
+List all alerts
 
 ## f5xcctl Equivalent
 

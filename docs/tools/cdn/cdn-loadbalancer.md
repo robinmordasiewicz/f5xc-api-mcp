@@ -6,6 +6,12 @@ description: Create CDN Loadbalancer.
 
 # Cdn Loadbalancer
 
+!!! danger "High Risk Operation"
+    This resource includes operations that may cause significant changes. Review carefully before executing.
+
+!!! note "Confirmation Required"
+    Some operations on this resource require explicit confirmation before execution.
+
 List the set of cdn_loadbalancer in a namespace.
 
 ## Tools
@@ -22,21 +28,38 @@ List the set of cdn_loadbalancer in a namespace.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `metadata.namespace` | Namespace |
-| `name` | Name |
-| `namespace` | Namespace |
-| `metadata.name` | Name |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `Staging` |
+| `name` | Name | `Name` |
+| `namespace` | Namespace | `Ns1` |
+| `metadata.name` | Name | `Example-corp-web.` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
-| `report_fields` | The report_fields parameter |
-| `report_status_fields` | The report_status_fields parameter |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- cdn-loadbalancer
+
+**Modifies:**
+
+- cdn-loadbalancer
+
+**Deletes:**
+
+- cdn-loadbalancer
+- contained_resources
 
 ## Example Usage
 
@@ -53,6 +76,58 @@ Ask Claude to help you work with Cdn Loadbalancer resources:
 ### Get Cdn Loadbalancer Details
 
 > "Get details of the cdn-loadbalancer named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl config cdn-loadbalancer create {name} --namespace {namespace}
+```
+
+Create cdn-loadbalancer
+
+### file_based
+
+```bash
+f5xcctl config cdn-loadbalancer create -f {file}.yaml
+```
+
+Create from YAML file
+
+### delete
+
+```bash
+f5xcctl config cdn-loadbalancer delete {name} --namespace {namespace}
+```
+
+Delete cdn-loadbalancer
+
+### get_specific
+
+```bash
+f5xcctl config cdn-loadbalancer get {name} --namespace {namespace}
+```
+
+Get specific cdn-loadbalancer
+
+### list_all
+
+```bash
+f5xcctl config cdn-loadbalancer list --namespace {namespace}
+```
+
+List all cdn-loadbalancers
+
+### update
+
+```bash
+f5xcctl config cdn-loadbalancer update {name} --namespace {namespace} -f {file}.yaml
+```
+
+Update cdn-loadbalancer
 
 ## f5xcctl Equivalent
 

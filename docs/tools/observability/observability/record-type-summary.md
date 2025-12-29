@@ -6,6 +6,9 @@ description: GET Record Type Summary.
 
 # Record Type Summary
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns record type summary for DNS monitor including record type and count.
 
 ## Tools
@@ -18,9 +21,9 @@ Returns record type summary for DNS monitor including record type and count.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ## Example Usage
 
@@ -29,6 +32,18 @@ Ask Claude to help you work with Record Type Summary resources:
 ### List Record Type Summarys
 
 > "List all record-type-summarys in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability record-type-summary list --namespace {namespace}
+```
+
+List all record-type-summarys
 
 ## f5xcctl Equivalent
 

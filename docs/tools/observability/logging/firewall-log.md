@@ -6,6 +6,9 @@ description: Firewall Logs Query.
 
 # Firewall Log
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Request to GET access logs and network logs with policy hits.
 By default, the firewall logs in the
 response are sorted in the reverse chronological order.
@@ -20,9 +23,17 @@ response are sorted in the reverse chronological order.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Value` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- firewall-log
 
 ## Example Usage
 
@@ -31,6 +42,26 @@ Ask Claude to help you work with Firewall Log resources:
 ### Create Firewall Log
 
 > "Create a firewall-log named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl data firewall-log create {name} --namespace {namespace}
+```
+
+Create firewall-log
+
+### file_based
+
+```bash
+f5xcctl data firewall-log create -f {file}.yaml
+```
+
+Create from YAML file
 
 ## f5xcctl Equivalent
 

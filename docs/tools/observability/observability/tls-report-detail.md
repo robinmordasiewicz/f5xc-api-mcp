@@ -6,6 +6,9 @@ description: GET TLS Report Detail.
 
 # TLS Report Detail
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns the HTML encoding of the generated TLS report.
 
 ## Tools
@@ -18,15 +21,15 @@ Returns the HTML encoding of the generated TLS report.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `monitor_name` | Monitor_name. X-required |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `monitor_name` | Monitor_name. X-required | `Monitor1` |
 
 ## Example Usage
 
@@ -35,6 +38,18 @@ Ask Claude to help you work with TLS Report Detail resources:
 ### List TLS Report Details
 
 > "List all tls-report-details in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability tls-report-detail list --namespace {namespace}
+```
+
+List all tls-report-details
 
 ## f5xcctl Equivalent
 

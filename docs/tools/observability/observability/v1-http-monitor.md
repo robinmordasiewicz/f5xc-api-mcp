@@ -6,6 +6,12 @@ description: Create HTTP Monitor.
 
 # V1 HTTP Monitor
 
+!!! danger "High Risk Operation"
+    This resource includes operations that may cause significant changes. Review carefully before executing.
+
+!!! note "Confirmation Required"
+    Some operations on this resource require explicit confirmation before execution.
+
 List the set of v1_http_monitor in a namespace.
 
 ## Tools
@@ -22,21 +28,38 @@ List the set of v1_http_monitor in a namespace.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `metadata.namespace` | Namespace |
-| `name` | Name |
-| `namespace` | Namespace |
-| `metadata.name` | Name |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `Staging` |
+| `name` | Name | `Name` |
+| `namespace` | Namespace | `Ns1` |
+| `metadata.name` | Name | `Example-corp-web.` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
-| `report_fields` | The report_fields parameter |
-| `report_status_fields` | The report_status_fields parameter |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- v1-http-monitor
+
+**Modifies:**
+
+- v1-http-monitor
+
+**Deletes:**
+
+- v1-http-monitor
+- contained_resources
 
 ## Example Usage
 
@@ -53,6 +76,58 @@ Ask Claude to help you work with V1 HTTP Monitor resources:
 ### Get V1 HTTP Monitor Details
 
 > "Get details of the v1-http-monitor named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl observability v1-http-monitor create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl observability v1-http-monitor create {name} --namespace {namespace}
+```
+
+Create v1-http-monitor
+
+### delete
+
+```bash
+f5xcctl observability v1-http-monitor delete {name} --namespace {namespace}
+```
+
+Delete v1-http-monitor
+
+### get_specific
+
+```bash
+f5xcctl observability v1-http-monitor get {name} --namespace {namespace}
+```
+
+Get specific v1-http-monitor
+
+### list_all
+
+```bash
+f5xcctl observability v1-http-monitor list --namespace {namespace}
+```
+
+List all v1-http-monitors
+
+### update
+
+```bash
+f5xcctl observability v1-http-monitor update {name} --namespace {namespace} -f {file}.yaml
+```
+
+Update v1-http-monitor
 
 ## f5xcctl Equivalent
 

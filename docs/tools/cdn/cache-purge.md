@@ -6,6 +6,9 @@ description: Purge CDN Cache.
 
 # Cache Purge
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Initiate Purge for Edge CDN Cache.
 
 ## Tools
@@ -18,10 +21,18 @@ Initiate Purge for Edge CDN Cache.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `name` | CDN Distribution Name |
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | CDN Distribution Name | `CDN-1` |
+| `namespace` | Namespace | `Default` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- cache-purge
 
 ## Example Usage
 
@@ -30,6 +41,26 @@ Ask Claude to help you work with Cache Purge resources:
 ### Create Cache Purge
 
 > "Create a cache-purge named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl cdn cache-purge create {name} --namespace {namespace}
+```
+
+Create cache-purge
+
+### file_based
+
+```bash
+f5xcctl cdn cache-purge create -f {file}.yaml
+```
+
+Create from YAML file
 
 ## f5xcctl Equivalent
 

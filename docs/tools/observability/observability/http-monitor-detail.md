@@ -6,6 +6,9 @@ description: GET HTTP Monitor Detail.
 
 # HTTP Monitor Detail
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns the monitor latency, trend, and health by region.
 
 ## Tools
@@ -18,17 +21,17 @@ Returns the monitor latency, trend, and health by region.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `end_time` | End_time. |
-| `monitor_name` | Monitor_name. X-required |
-| `start_time` | Start_time. X-required |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | End_time. | `2020-11-17T13:41:49.083255Z.` |
+| `monitor_name` | Monitor_name. X-required | `Monitor1` |
+| `start_time` | Start_time. X-required | `2020-11-17T12:41:49.083255Z.` |
 
 ## Example Usage
 
@@ -37,6 +40,18 @@ Ask Claude to help you work with HTTP Monitor Detail resources:
 ### List HTTP Monitor Details
 
 > "List all http-monitor-details in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability http-monitor-detail list --namespace {namespace}
+```
+
+List all http-monitor-details
 
 ## f5xcctl Equivalent
 

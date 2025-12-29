@@ -1766,6 +1766,16 @@ function createMockParsedOperation(
     operationId: null,
     tags: [],
     sourceFile: "test.json",
+    // Rich metadata properties from enriched specs v1.0.63
+    displayName: null,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    cliExamples: [],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: null,
     ...overrides,
   };
 }

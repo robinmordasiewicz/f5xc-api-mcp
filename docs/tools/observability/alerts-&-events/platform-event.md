@@ -6,6 +6,9 @@ description: Platform event Query.
 
 # Platform Event
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Request to GET platform event that matches the criteria in request for a given namespace.
 If no
 match conditions are specified in the request, then the response contains all
@@ -24,9 +27,17 @@ across all namespaces for a given tenant.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Value` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- platform-event
 
 ## Example Usage
 
@@ -35,6 +46,26 @@ Ask Claude to help you work with Platform Event resources:
 ### Create Platform Event
 
 > "Create a platform-event named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl data platform-event create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl data platform-event create {name} --namespace {namespace}
+```
+
+Create platform-event
 
 ## f5xcctl Equivalent
 

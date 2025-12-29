@@ -29,6 +29,11 @@ const OpenApiParameterSchema = z.object({
   required: z.boolean().optional(),
   description: z.string().optional(),
   schema: z.record(z.string(), z.unknown()).optional(),
+  // Rich metadata fields from enriched specs
+  "x-displayname": z.string().optional(),
+  "x-ves-example": z.string().optional(),
+  "x-ves-validation-rules": z.record(z.string(), z.string()).optional(),
+  "x-ves-required": z.boolean().optional(),
 });
 
 const OpenApiRequestBodySchema = z.object({
@@ -56,6 +61,59 @@ const OpenApiResponseSchema = z.object({
     .optional(),
 });
 
+/**
+ * Side effects schema for operations
+ */
+const SideEffectsSchema = z.object({
+  creates: z.array(z.string()).optional(),
+  modifies: z.array(z.string()).optional(),
+  deletes: z.array(z.string()).optional(),
+});
+
+/**
+ * CLI example schema
+ */
+const CliExampleSchema = z.object({
+  description: z.string().optional(),
+  command: z.string().optional(),
+  use_case: z.string().optional(),
+});
+
+/**
+ * Operation metadata schema from enriched specs
+ */
+const OperationMetadataSchema = z.object({
+  purpose: z.string().optional(),
+  required_fields: z.array(z.string()).optional(),
+  optional_fields: z.array(z.string()).optional(),
+  field_docs: z.record(z.string(), z.unknown()).optional(),
+  conditions: z
+    .object({
+      prerequisites: z.array(z.string()).optional(),
+      postconditions: z.array(z.string()).optional(),
+    })
+    .optional(),
+  side_effects: SideEffectsSchema.optional(),
+  danger_level: z.enum(["low", "medium", "high"]).optional(),
+  confirmation_required: z.boolean().optional(),
+  common_errors: z
+    .array(
+      z.object({
+        code: z.number(),
+        message: z.string(),
+        solution: z.string().optional(),
+      })
+    )
+    .optional(),
+  performance_impact: z
+    .object({
+      latency: z.string().optional(),
+      resource_usage: z.string().optional(),
+    })
+    .optional(),
+  examples: z.array(CliExampleSchema).optional(),
+});
+
 const OpenApiOperationSchema = z.object({
   operationId: z.string().optional(),
   summary: z.string().optional(),
@@ -65,7 +123,16 @@ const OpenApiOperationSchema = z.object({
   requestBody: OpenApiRequestBodySchema.optional(),
   responses: z.record(z.string(), OpenApiResponseSchema).optional(),
   security: z.array(z.record(z.string(), z.array(z.string()))).optional(),
+  // Existing x-* field
   "x-ves-proto-rpc": z.string().optional(),
+  // Rich metadata fields from enriched specs v1.0.63
+  "x-ves-danger-level": z.enum(["low", "medium", "high"]).optional(),
+  "x-ves-side-effects": SideEffectsSchema.optional(),
+  "x-ves-required-fields": z.array(z.string()).optional(),
+  "x-ves-cli-examples": z.array(CliExampleSchema).optional(),
+  "x-ves-cli-example": z.string().optional(),
+  "x-ves-confirmation-required": z.boolean().optional(),
+  "x-ves-operation-metadata": OperationMetadataSchema.optional(),
 });
 
 const OpenApiPathItemSchema = z.object({
@@ -97,6 +164,61 @@ const OpenApiSpecSchema = z.object({
 export type OpenApiSpec = z.infer<typeof OpenApiSpecSchema>;
 export type OpenApiOperation = z.infer<typeof OpenApiOperationSchema>;
 export type OpenApiParameter = z.infer<typeof OpenApiParameterSchema>;
+
+/**
+ * Side effects type from enriched specs
+ */
+export interface SideEffects {
+  creates?: string[];
+  modifies?: string[];
+  deletes?: string[];
+}
+
+/**
+ * CLI example from enriched specs
+ */
+export interface CliExample {
+  description?: string;
+  command?: string;
+  use_case?: string;
+}
+
+/**
+ * Common error from operation metadata
+ */
+export interface CommonError {
+  code: number;
+  message: string;
+  solution?: string;
+}
+
+/**
+ * Performance impact from operation metadata
+ */
+export interface PerformanceImpact {
+  latency?: string;
+  resource_usage?: string;
+}
+
+/**
+ * Operation metadata from enriched specs
+ */
+export interface OperationMetadata {
+  purpose?: string;
+  required_fields?: string[];
+  optional_fields?: string[];
+  field_docs?: Record<string, unknown>;
+  conditions?: {
+    prerequisites?: string[];
+    postconditions?: string[];
+  };
+  side_effects?: SideEffects;
+  danger_level?: "low" | "medium" | "high";
+  confirmation_required?: boolean;
+  common_errors?: CommonError[];
+  performance_impact?: PerformanceImpact;
+  examples?: CliExample[];
+}
 
 /**
  * Parsed operation with metadata for tool generation
@@ -134,6 +256,26 @@ export interface ParsedOperation {
   tags: string[];
   /** Source spec file */
   sourceFile: string;
+
+  // Rich metadata from enriched specs v1.0.63
+  /** Human-readable display name (x-displayname) */
+  displayName: string | null;
+  /** Risk level for the operation (x-ves-danger-level) */
+  dangerLevel: "low" | "medium" | "high" | null;
+  /** Side effects of the operation (x-ves-side-effects) */
+  sideEffects: SideEffects | null;
+  /** Required fields for the operation (x-ves-required-fields) */
+  requiredFields: string[];
+  /** CLI examples for the operation (x-ves-cli-examples) */
+  cliExamples: CliExample[];
+  /** Whether confirmation is required (x-ves-confirmation-required) */
+  confirmationRequired: boolean;
+  /** Example values for parameters from x-ves-example */
+  parameterExamples: Record<string, string>;
+  /** Validation rules for parameters from x-ves-validation-rules */
+  validationRules: Record<string, Record<string, string>>;
+  /** Full operation metadata from x-ves-operation-metadata */
+  operationMetadata: OperationMetadata | null;
 }
 
 /**
@@ -290,6 +432,34 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
         description: p.description ? normalizeExamples(p.description) : p.description,
       }));
 
+      // Extract rich metadata from x-* fields (if present in older specs)
+      const dangerLevel = operation["x-ves-danger-level"] ?? null;
+      const sideEffects = operation["x-ves-side-effects"] ?? null;
+      const requiredFields = operation["x-ves-required-fields"] ?? [];
+      const cliExamples = operation["x-ves-cli-examples"] ?? [];
+      const confirmationRequired = operation["x-ves-confirmation-required"] ?? false;
+      const operationMetadata = operation["x-ves-operation-metadata"] ?? null;
+
+      // Extract parameter-level metadata
+      const parameterExamples: Record<string, string> = {};
+      const validationRules: Record<string, Record<string, string>> = {};
+      let displayName: string | null = null;
+
+      for (const param of allParams) {
+        if (param["x-ves-example"]) {
+          parameterExamples[param.name] = param["x-ves-example"];
+        }
+        if (param["x-ves-validation-rules"]) {
+          validationRules[param.name] = param["x-ves-validation-rules"];
+        }
+      }
+
+      // Get path-level displayname if available
+      const pathItemAny = pathItem as Record<string, unknown>;
+      if (pathItemAny["x-displayname"] && typeof pathItemAny["x-displayname"] === "string") {
+        displayName = pathItemAny["x-displayname"];
+      }
+
       operations.push({
         toolName,
         method: method.toUpperCase(),
@@ -307,6 +477,16 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
         operationId: operation.operationId ?? null,
         tags: operation.tags ?? [],
         sourceFile,
+        // Rich metadata (defaults for backward compatibility)
+        displayName,
+        dangerLevel,
+        sideEffects,
+        requiredFields,
+        cliExamples,
+        confirmationRequired,
+        parameterExamples,
+        validationRules,
+        operationMetadata,
       });
     }
   }
@@ -493,6 +673,36 @@ function extractDomainOperations(
       const summary = operation.summary ?? `${operationType} ${resource}`;
       const description = operation.description ?? "";
 
+      // Extract rich metadata from x-* fields (v1.0.63 enriched specs)
+      const dangerLevel = operation["x-ves-danger-level"] ?? null;
+      const sideEffects = operation["x-ves-side-effects"] ?? null;
+      const requiredFields = operation["x-ves-required-fields"] ?? [];
+      const cliExamples = operation["x-ves-cli-examples"] ?? [];
+      const confirmationRequired = operation["x-ves-confirmation-required"] ?? false;
+      const operationMetadata = operation["x-ves-operation-metadata"] ?? null;
+
+      // Extract parameter-level metadata (examples, validation rules, displaynames)
+      const parameterExamples: Record<string, string> = {};
+      const validationRules: Record<string, Record<string, string>> = {};
+      let displayName: string | null = null;
+
+      for (const param of allParams) {
+        // Extract parameter examples
+        if (param["x-ves-example"]) {
+          parameterExamples[param.name] = param["x-ves-example"];
+        }
+        // Extract validation rules
+        if (param["x-ves-validation-rules"]) {
+          validationRules[param.name] = param["x-ves-validation-rules"];
+        }
+      }
+
+      // Get path-level displayname if available (from pathItem)
+      const pathItemAny = pathItem as Record<string, unknown>;
+      if (pathItemAny["x-displayname"] && typeof pathItemAny["x-displayname"] === "string") {
+        displayName = pathItemAny["x-displayname"];
+      }
+
       operations.push({
         toolName,
         method: method.toUpperCase(),
@@ -510,6 +720,16 @@ function extractDomainOperations(
         operationId: operation.operationId ?? null,
         tags: operation.tags ?? [],
         sourceFile,
+        // Rich metadata from enriched specs
+        displayName,
+        dangerLevel,
+        sideEffects,
+        requiredFields,
+        cliExamples,
+        confirmationRequired,
+        parameterExamples,
+        validationRules,
+        operationMetadata,
       });
     }
   }

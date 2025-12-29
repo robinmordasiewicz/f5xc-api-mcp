@@ -6,6 +6,12 @@ description: Create CDN cache rule.
 
 # Cdn Cache Rule
 
+!!! danger "High Risk Operation"
+    This resource includes operations that may cause significant changes. Review carefully before executing.
+
+!!! note "Confirmation Required"
+    Some operations on this resource require explicit confirmation before execution.
+
 List the set of cdn_cache_rule in a namespace.
 
 ## Tools
@@ -22,21 +28,38 @@ List the set of cdn_cache_rule in a namespace.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `metadata.namespace` | Namespace |
-| `name` | Name |
-| `namespace` | Namespace |
-| `metadata.name` | Name |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `Staging` |
+| `name` | Name | `Name` |
+| `namespace` | Namespace | `Ns1` |
+| `metadata.name` | Name | `Example-corp-web.` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
-| `report_fields` | The report_fields parameter |
-| `report_status_fields` | The report_status_fields parameter |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- cdn-cache-rule
+
+**Modifies:**
+
+- cdn-cache-rule
+
+**Deletes:**
+
+- cdn-cache-rule
+- contained_resources
 
 ## Example Usage
 
@@ -53,6 +76,58 @@ Ask Claude to help you work with Cdn Cache Rule resources:
 ### Get Cdn Cache Rule Details
 
 > "Get details of the cdn-cache-rule named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl config cdn-cache-rule create {name} --namespace {namespace}
+```
+
+Create cdn-cache-rule
+
+### file_based
+
+```bash
+f5xcctl config cdn-cache-rule create -f {file}.yaml
+```
+
+Create from YAML file
+
+### delete
+
+```bash
+f5xcctl config cdn-cache-rule delete {name} --namespace {namespace}
+```
+
+Delete cdn-cache-rule
+
+### get_specific
+
+```bash
+f5xcctl config cdn-cache-rule get {name} --namespace {namespace}
+```
+
+Get specific cdn-cache-rule
+
+### list_all
+
+```bash
+f5xcctl config cdn-cache-rule list --namespace {namespace}
+```
+
+List all cdn-cache-rules
+
+### update
+
+```bash
+f5xcctl config cdn-cache-rule update {name} --namespace {namespace} -f {file}.yaml
+```
+
+Update cdn-cache-rule
 
 ## f5xcctl Equivalent
 
