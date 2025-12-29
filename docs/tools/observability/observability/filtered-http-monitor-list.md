@@ -6,6 +6,9 @@ description: GET Filtered HTTP Monitor List.
 
 # Filtered HTTP Monitor List
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 List v1_http_monitor in a namespace based on filter.
 
 ## Tools
@@ -18,18 +21,18 @@ List v1_http_monitor in a namespace based on filter.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Foobar` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `filter` | Monitor filter. |
-| `limit` | Limit. |
-| `page` | Page. |
-| `sort` | Sort. |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `filter` | Monitor filter. | `Monitor_name eq 'tester-name'` |
+| `limit` | Limit. | `-` |
+| `page` | Page. | `-` |
+| `sort` | Sort. | `-name, ID` |
 
 ## Example Usage
 
@@ -38,6 +41,18 @@ Ask Claude to help you work with Filtered HTTP Monitor List resources:
 ### List Filtered HTTP Monitor Lists
 
 > "List all filtered-http-monitor-lists in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability filtered-http-monitor-list list --namespace {namespace}
+```
+
+List all filtered-http-monitor-lists
 
 ## f5xcctl Equivalent
 

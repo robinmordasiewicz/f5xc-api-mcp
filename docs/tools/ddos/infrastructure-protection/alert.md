@@ -1,0 +1,110 @@
+---
+page_title: f5xc_alert - f5xc-api-mcp
+subcategory: Ddos
+description: DDoS Alerts.
+---
+
+# Alert
+
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
+RPC to GET a list of Alerts. Alerts are raised when an attack is detected by L3/L4 provider.
+Alerts
+help to start investigate and mitigate any malicious or suspicious activate.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-ddos-alert-create` | DDoS Alerts. |
+| `f5xc-api-ddos-alert-list` | DDoS Alert. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Value` |
+| `alert_id` | Alert ID | `12345` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- alert
+
+## Example Usage
+
+Ask Claude to help you work with Alert resources:
+
+### Create Alert
+
+> "Create a alert named 'example' in the 'production' namespace"
+
+### List Alerts
+
+> "List all alerts in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl infraprotect alert create {name} --namespace {namespace}
+```
+
+Create alert
+
+### file_based
+
+```bash
+f5xcctl infraprotect alert create -f {file}.yaml
+```
+
+Create from YAML file
+
+### list_all
+
+```bash
+f5xcctl infraprotect alert list --namespace {namespace}
+```
+
+List all alerts
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl ddos create alert -n <namespace> -i alert.yaml
+
+# Get
+f5xcctl ddos get alert <name> -n <namespace>
+
+# List
+f5xcctl ddos list alert -n <namespace>
+
+# Delete
+f5xcctl ddos delete alert <name> -n <namespace>
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_alert" "example" {
+  name      = "example-alert"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

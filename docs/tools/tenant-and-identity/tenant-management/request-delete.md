@@ -1,0 +1,86 @@
+---
+page_title: f5xc_request_delete - f5xc-api-mcp
+subcategory: Tenant And Identity
+description: DELETE Tenant.
+---
+
+# Request Delete
+
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
+Request to mark Tenant for deletion queue, after approve it will completely removed from the system.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-tenantandidentity-request-delete-create` | DELETE Tenant. |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- request-delete
+
+## Example Usage
+
+Ask Claude to help you work with Request Delete resources:
+
+### Create Request Delete
+
+> "Create a request-delete named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl web request-delete create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl web request-delete create {name} --namespace {namespace}
+```
+
+Create request-delete
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl tenant_and_identity create request_delete -n <namespace> -i request_delete.yaml
+
+# Get
+f5xcctl tenant_and_identity get request_delete <name> -n <namespace>
+
+# List
+f5xcctl tenant_and_identity list request_delete -n <namespace>
+
+# Delete
+f5xcctl tenant_and_identity delete request_delete <name> -n <namespace>
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_request_delete" "example" {
+  name      = "example-request-delete"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

@@ -6,6 +6,9 @@ description: GET Global History.
 
 # Global History
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns a time series of critical monitor counts in namespace.
 
 ## Tools
@@ -18,18 +21,18 @@ Returns a time series of critical monitor counts in namespace.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `end_time` | End_time. |
-| `monitor_type` | Monitor_type. |
-| `start_time` | Start_time. |
-| `step_size` | Step_size. |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | End_time. | `2020-11-17T13:41:49.083255Z.` |
+| `monitor_type` | Monitor_type. | `HTTP` |
+| `start_time` | Start_time. | `2020-11-17T12:41:49.083255Z.` |
+| `step_size` | Step_size. | `300s` |
 
 ## Example Usage
 
@@ -38,6 +41,18 @@ Ask Claude to help you work with Global History resources:
 ### List Global Historys
 
 > "List all global-historys in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability global-history list --namespace {namespace}
+```
+
+List all global-historys
 
 ## f5xcctl Equivalent
 

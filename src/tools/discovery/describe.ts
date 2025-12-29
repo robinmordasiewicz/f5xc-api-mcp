@@ -7,7 +7,7 @@
 
 import type { ParsedOperation } from "../../generator/openapi-parser.js";
 import { getToolByName } from "../registry.js";
-import { toolExists, getToolEntry } from "./index-loader.js";
+import { toolExists, getToolEntry, getToolIndex } from "./index-loader.js";
 
 /**
  * Simplified tool description for MCP response
@@ -265,18 +265,21 @@ export function describeToolCompact(toolName: string): CompactToolDescription | 
 
 /**
  * Calculate token savings from schema optimization
+ * Uses dynamically selected tools from the registry - no hardcoded tool names
  */
 export function getOptimizationStats(): {
   avgOriginalParamDescLen: number;
   avgOptimizedParamDescLen: number;
   estimatedSavingsPercent: string;
 } {
-  // Sample a few tools to estimate savings
-  const sampleTools = [
-    "f5xc-api-loadbalancer-forward-proxy-policy-create",
-    "f5xc-api-loadbalancer-forward-proxy-policy-list",
-    "f5xc-api-networking-network-interface-create",
-  ];
+  // Dynamically get sample tools with path parameters from the registry
+  const allTools = getToolIndex().tools;
+
+  // Find tools that likely have path parameters (create and list operations)
+  const sampleTools = allTools
+    .filter((t: { operation: string }) => t.operation === "create" || t.operation === "list")
+    .slice(0, 5)
+    .map((t: { name: string }) => t.name);
 
   let originalTotal = 0;
   let optimizedTotal = 0;
@@ -284,7 +287,7 @@ export function getOptimizationStats(): {
 
   for (const name of sampleTools) {
     const tool = getToolByName(name);
-    if (tool) {
+    if (tool && tool.pathParameters.length > 0) {
       for (const param of tool.pathParameters) {
         originalTotal += (param.description ?? "").length;
         optimizedTotal += optimizeDescription(param.name, param.description ?? "").length;

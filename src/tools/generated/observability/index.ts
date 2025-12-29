@@ -25,6 +25,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -38,78 +40,92 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.log.CustomAPI.AccessLogQueryV2",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-action-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/traffic/malicious/overview/actions",
-    operation: "create",
-    domain: "observability",
-    resource: "action",
-    summary: "Malicious Traffic Overview in actions.",
-    description: "GET Malicious Traffic Overview in Actions.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["access-log"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
       {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope the query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl data access-log create {name} --namespace {namespace}",
+        description: "Create access-log",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl data access-log create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingMaliciousTrafficOverviewActionsResponse",
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Value",
     },
-    requiredParams: ["namespace"],
-    operationId:
-      "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousTrafficOverviewActions",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-active-staged-signature-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/virtual_hosts/{vh_name}/active_staged_signatures",
-    operation: "list",
-    domain: "observability",
-    resource: "active-staged-signature",
-    summary: "Active Staged Signatures.",
-    description: "API to GET active Staged Signatures.",
-    pathParameters: [
-      {
-        description: "Namespace\nFetch WAF signatures changelog for the given namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
         },
-      },
-      {
-        description: "Vh_name\nVirtual Host for current request.",
-        in: "path",
-        name: "vh_name",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
         },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Access-log resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
       },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/waf_signatures_changelogReleasedSignaturesRsp",
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl data access-log create {name} --namespace {namespace}",
+          description: "Create access-log",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl data access-log create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new access-log",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["access-log"],
+      },
     },
-    requiredParams: ["namespace", "vh_name"],
-    operationId:
-      "ves.io.schema.waf_signatures_changelog.WafSignatureChangelogCustomApi.GetActiveStagedSignatures",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-aggregation-create",
@@ -130,6 +146,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -143,6 +161,92 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.log.CustomAPI.AccessLogAggregationQuery",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["aggregation"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl data aggregation create {name} --namespace {namespace}",
+        description: "Create aggregation",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl data aggregation create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Value",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Aggregation resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl data aggregation create {name} --namespace {namespace}",
+          description: "Create aggregation",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl data aggregation create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new aggregation",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["aggregation"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-alert-list",
@@ -163,6 +267,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [
@@ -175,6 +281,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Filter",
+        "x-ves-example": "{alertname=\\.",
       },
       {
         description: "If set to true, active alerts will not be returned in the response.",
@@ -185,6 +293,8 @@ export const observabilityTools: ParsedOperation[] = [
           format: "boolean",
           type: "boolean",
         },
+        "x-displayname": "Inactive",
+        "x-ves-example": "False",
       },
       {
         description:
@@ -196,6 +306,8 @@ export const observabilityTools: ParsedOperation[] = [
           format: "boolean",
           type: "boolean",
         },
+        "x-displayname": "Inhibited",
+        "x-ves-example": "False",
       },
       {
         description:
@@ -207,6 +319,8 @@ export const observabilityTools: ParsedOperation[] = [
           format: "boolean",
           type: "boolean",
         },
+        "x-displayname": "Silenced",
+        "x-ves-example": "True",
       },
       {
         description: "Show unprocessed alerts.",
@@ -217,6 +331,8 @@ export const observabilityTools: ParsedOperation[] = [
           format: "boolean",
           type: "boolean",
         },
+        "x-displayname": "Unprocessed.",
+        "x-ves-example": "False",
       },
     ],
     requestBodySchema: null,
@@ -227,484 +343,83 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.alert.CustomAPI.Alerts",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-alert-policy-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/alert_policys",
-    operation: "create",
-    domain: "observability",
-    resource: "alert-policy",
-    summary: "Create Alert Policy.",
-    description: "Creates a new Alert Policy Object.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
       {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl data alert list --namespace {namespace}",
+        description: "List all alerts",
+        use_case: "list_all",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/alert_policyCreateRequest",
+    confirmationRequired: false,
+    parameterExamples: {
+      filter: "{alertname=\\.",
+      inactive: "False",
+      inhibited: "False",
+      namespace: "Value",
+      silenced: "True",
+      unprocessed: "False",
     },
-    responseSchema: {
-      $ref: "#/components/schemas/alert_policyCreateResponse",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl data alert list --namespace {namespace}",
+          description: "List all alerts",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all alerts",
+      required_fields: ["path.namespace"],
+      side_effects: {},
     },
-    requiredParams: ["body", "metadata.namespace"],
-    operationId: "ves.io.schema.alert_policy.API.Create",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-alert-policy-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/alert_policys/{name}",
-    operation: "delete",
-    domain: "observability",
-    resource: "alert-policy",
-    summary: "DELETE Alert Policy.",
-    description: "DELETE the specified alert_policy.",
-    pathParameters: [
-      {
-        description: "Name\nName of the configuration object.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nNamespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/alert_policyDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.alert_policy.API.Delete",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-alert-policy-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/alert_policys/{name}",
-    operation: "get",
-    domain: "observability",
-    resource: "alert-policy",
-    summary: "GET Alert Policy.",
-    description: "GET the Alert Policy Object.",
-    pathParameters: [
-      {
-        description: "Name\nThe name of the configuration object to be fetched.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nThe namespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
-        in: "query",
-        name: "response_format",
-        required: false,
-        schema: {
-          default: "GET_RSP_FORMAT_DEFAULT",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/alert_policyGetResponse",
-    },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.alert_policy.API.Get",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-alert-policy-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/alert_policys",
-    operation: "list",
-    domain: "observability",
-    resource: "alert-policy",
-    summary: "List Alert Policy.",
-    description: "List the set of alert_policy in a namespace.",
-    pathParameters: [
-      {
-        description: "Namespace\nNamespace to scope the listing of alert_policy.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "A LabelSelectorType expression that every item in list response will satisfy.",
-        in: "query",
-        name: "label_filter",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra fields to return along with summary fields.',
-        in: "query",
-        name: "report_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
-        in: "query",
-        name: "report_status_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/alert_policyListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.alert_policy.API.List",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-alert-policy-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/alert_policys/{metadata.name}",
-    operation: "update",
-    domain: "observability",
-    resource: "alert-policy",
-    summary: "Replace Alert Policy.",
-    description: "Replaces the content of the Alert Policy Object.",
-    pathParameters: [
-      {
-        description: "Name\nThe configuration object to be replaced will be looked up by name.",
-        in: "path",
-        name: "metadata.name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/alert_policyReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/alert_policyReplaceResponse",
-    },
-    requiredParams: ["body", "metadata.name", "metadata.namespace"],
-    operationId: "ves.io.schema.alert_policy.API.Replace",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-alert-receiver-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/alert_receivers",
-    operation: "create",
-    domain: "observability",
-    resource: "alert-receiver",
-    summary: "Create Alert Receiver.",
-    description: "Creates a new Alert Receiver object.",
-    pathParameters: [
-      {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/alert_receiverCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/alert_receiverCreateResponse",
-    },
-    requiredParams: ["body", "metadata.namespace"],
-    operationId: "ves.io.schema.alert_receiver.API.Create",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-alert-receiver-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/alert_receivers/{name}",
-    operation: "delete",
-    domain: "observability",
-    resource: "alert-receiver",
-    summary: "DELETE Alert Receiver.",
-    description: "DELETE the specified alert_receiver.",
-    pathParameters: [
-      {
-        description: "Name\nName of the configuration object.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nNamespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/alert_receiverDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.alert_receiver.API.Delete",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-alert-receiver-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/alert_receivers/{name}",
-    operation: "get",
-    domain: "observability",
-    resource: "alert-receiver",
-    summary: "GET Alert Receiver.",
-    description: "GET the Alert Receiver object.",
-    pathParameters: [
-      {
-        description: "Name\nThe name of the configuration object to be fetched.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nThe namespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
-        in: "query",
-        name: "response_format",
-        required: false,
-        schema: {
-          default: "GET_RSP_FORMAT_DEFAULT",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/alert_receiverGetResponse",
-    },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.alert_receiver.API.Get",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-alert-receiver-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/alert_receivers",
-    operation: "list",
-    domain: "observability",
-    resource: "alert-receiver",
-    summary: "List Alert Receiver.",
-    description: "List the set of alert_receiver in a namespace.",
-    pathParameters: [
-      {
-        description: "Namespace\nNamespace to scope the listing of alert_receiver.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "A LabelSelectorType expression that every item in list response will satisfy.",
-        in: "query",
-        name: "label_filter",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra fields to return along with summary fields.',
-        in: "query",
-        name: "report_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
-        in: "query",
-        name: "report_status_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/alert_receiverListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.alert_receiver.API.List",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-alert-receiver-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/alert_receivers/{metadata.name}",
-    operation: "update",
-    domain: "observability",
-    resource: "alert-receiver",
-    summary: "Replace Alert Receiver.",
-    description: "Replaces the content of an Alert Receiver object.",
-    pathParameters: [
-      {
-        description: "Name\nThe configuration object to be replaced will be looked up by name.",
-        in: "path",
-        name: "metadata.name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/alert_receiverReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/alert_receiverReplaceResponse",
-    },
-    requiredParams: ["body", "metadata.name", "metadata.namespace"],
-    operationId: "ves.io.schema.alert_receiver.API.Replace",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-all-ns-alert-list",
@@ -727,6 +442,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Filter",
+        "x-ves-example": "{alertname=\\.",
       },
       {
         description: "If set to true, active alerts will not be returned in the response.",
@@ -737,6 +454,8 @@ export const observabilityTools: ParsedOperation[] = [
           format: "boolean",
           type: "boolean",
         },
+        "x-displayname": "Inactive",
+        "x-ves-example": "False",
       },
       {
         description:
@@ -748,6 +467,8 @@ export const observabilityTools: ParsedOperation[] = [
           format: "boolean",
           type: "boolean",
         },
+        "x-displayname": "Inhibited",
+        "x-ves-example": "False",
       },
       {
         description:
@@ -758,6 +479,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
       {
         description:
@@ -769,6 +492,8 @@ export const observabilityTools: ParsedOperation[] = [
           format: "boolean",
           type: "boolean",
         },
+        "x-displayname": "Silenced",
+        "x-ves-example": "True",
       },
       {
         description: "Show unprocessed alerts.",
@@ -779,6 +504,8 @@ export const observabilityTools: ParsedOperation[] = [
           format: "boolean",
           type: "boolean",
         },
+        "x-displayname": "Unprocessed.",
+        "x-ves-example": "False",
       },
     ],
     requestBodySchema: null,
@@ -789,279 +516,83 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.alert.CustomAPI.AlertsAllNamespaces",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-all-ns-service-create",
-    method: "POST",
-    path: "/api/data/namespaces/system/graph/all_ns_service",
-    operation: "create",
-    domain: "observability",
-    resource: "all-ns-service",
-    summary: "Service Graph Query All Namespaces.",
-    description: "Request to GET monitoring data for a service mesh of a given application.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/serviceResponse",
-    },
-    requiredParams: [],
-    operationId: "ves.io.schema.graph.service.CustomAPI.QueryAllNamespaces",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-app-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/latency/overview/apps",
-    operation: "create",
-    domain: "observability",
-    resource: "app",
-    summary: "Top Latency Overview Apps.",
-    description: "GET top latency overview apps.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: [],
+    cliExamples: [
       {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl data all-ns-alert list --namespace {namespace}",
+        description: "List all all-ns-alerts",
+        use_case: "list_all",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTopLatencyOverviewAppsResponse",
+    confirmationRequired: false,
+    parameterExamples: {
+      filter: "{alertname=\\.",
+      inactive: "False",
+      inhibited: "False",
+      namespace: "Value",
+      silenced: "True",
+      unprocessed: "False",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopLatencyOverviewApps",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-app-type-list",
-    method: "GET",
-    path: "/api/data/namespaces/{namespace}/graph/service/app_types",
-    operation: "list",
-    domain: "observability",
-    resource: "app-type",
-    summary: "Application Types.",
-    description:
-      "Request to GET list of application types for a given namespace.\nFor system namespace, all the application types for the tenant\nwill be returned in the response.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\nnamespace is used to scope the listing of app types\nFor system namespace, all the app_types for the tenant will be returned in the response.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
         },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "End time of metric collection from which data will be considered to build graph.\nFormat: unix_timestamp|RFC 3339\n\nOptional: If not specified, then the end_time will be evaluated to start_time+10m\nIf start_time is not specified, then the end_time will be evaluated to <current time>",
-        in: "query",
-        name: "end_time",
-        required: false,
-        schema: {
-          type: "string",
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
         },
-      },
-      {
-        description:
-          "Start time of metric collection from which data will be considered to build graph.\nFormat: unix_timestamp|RFC 3339\n\nOptional: If not specified, then the start_time will be evaluated to end_time-10m\nIf end_time is not specified, then the start_time will be evaluated to <current time>-10m.",
-        in: "query",
-        name: "start_time",
-        required: false,
-        schema: {
-          type: "string",
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
         },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
       },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/serviceAppTypeListResponse",
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl data all-ns-alert list --namespace {namespace}",
+          description: "List all all-ns-alerts",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all all-ns-alerts",
+      required_fields: [],
+      side_effects: {},
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.graph.service.CustomAPI.AppTypeList",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-asn-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/malicious/transactions/asn",
-    operation: "create",
-    domain: "observability",
-    resource: "asn",
-    summary: "Malicious Report Transactions ASN.",
-    description: "Malicious Report Transactions ASN.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingMaliciousReportTransactionsResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId:
-      "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousReportTransactionsASN",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-asorg-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/malicious/asorg",
-    operation: "create",
-    domain: "observability",
-    resource: "asorg",
-    summary: "Top Malicious Bots by ASOrg.",
-    description: "GET top malicious bots by AS Organization.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTopMaliciousBotsByASOrgResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopMaliciousBotsByASOrg",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-atb-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/atb",
-    operation: "create",
-    domain: "observability",
-    resource: "atb",
-    summary: "ATB",
-    description: "Enable/disable ATB.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/reportingATBRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/reportingATBResponse",
-    },
-    requiredParams: ["body", "namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.ATB",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-atb-list",
-    method: "GET",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/atb",
-    operation: "list",
-    domain: "observability",
-    resource: "atb",
-    summary: "ATB Status.",
-    description: "ATB Status.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description: "Name of Virtual Host to scope traffic overview query.",
-        in: "query",
-        name: "virtual_host",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingATBResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.ATBStatus",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-attackintent-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/type/malicious/dimension/attackintent",
-    operation: "create",
-    domain: "observability",
-    resource: "attackintent",
-    summary: "Top Malicious Bots by Attack Intent.",
-    description: "Top Malicious Bots by Attack Intent.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTopAttackIntentResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId:
-      "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopMaliciousBotByAttackIntent",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-audit-log-create",
@@ -1082,6 +613,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1095,347 +628,92 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.log.CustomAPI.AuditLogQueryV2",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-automation-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/malicious/automation",
-    operation: "create",
-    domain: "observability",
-    resource: "automation",
-    summary: "Top Malicious Bot Automation Types.",
-    description: "GET top malicious bots automation types.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["audit-log"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
       {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl data audit-log create {name} --namespace {namespace}",
+        description: "Create audit-log",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl data audit-log create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTopAutomationTypesResponse",
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Value",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopAutomationTypes",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-bad-bot-reduction-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/insight/event/bad-bot-reduction",
-    operation: "create",
-    domain: "observability",
-    resource: "bad-bot-reduction",
-    summary: "Insight Bad Bot Reduction.",
-    description: "Insight Bad Bot Reduction.",
-    pathParameters: [
-      {
-        description: "Namespace\n\nx-required\nNamespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingInsightBadBotReductionResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.InsightBadBotReduction",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-bfp-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/type/malicious/dimension/bfp",
-    operation: "create",
-    domain: "observability",
-    resource: "bfp",
-    summary: "Top Attacked BFP.",
-    description: "Top Attacked BFP.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTopAttackedBFPResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopAttackedBFP",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-browser-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/malicious/transactions/browser",
-    operation: "create",
-    domain: "observability",
-    resource: "browser",
-    summary: "Malicious Report Transactions Browser.",
-    description: "Malicious Report Transactions Browser.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingMaliciousReportTransactionsResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId:
-      "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousReportTransactionsBrowser",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-by-application-create",
-    method: "POST",
-    path: "/api/infraprotect/namespaces/{namespace}/graph/l3l4/by_application/{network_id}",
-    operation: "create",
-    domain: "observability",
-    resource: "by-application",
-    summary: "L3l4 Application traffic Query.",
-    description: "Request to GET l3l4 Application traffic data.",
-    pathParameters: [
-      {
-        description: "Namespace\nThis request is supported only in system namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
         },
-      },
-      {
-        description: "NetworkId\nThe network ID.",
-        in: "path",
-        name: "network_id",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/l3l4ByApplicationRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/l3l4ByApplicationResponse",
-    },
-    requiredParams: ["body", "namespace", "network_id"],
-    operationId: "ves.io.schema.graph.l3l4.CustomAPI.ByApplication",
-    tags: ["Infrastructure Protection"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-by-mitigation-create",
-    method: "POST",
-    path: "/api/infraprotect/namespaces/{namespace}/graph/l3l4/by_mitigation/{mitigation_id}",
-    operation: "create",
-    domain: "observability",
-    resource: "by-mitigation",
-    summary: "L3l4 Mitigation Traffic Query.",
-    description: "Request to GET l3l4 Mitigation Traffic data.",
-    pathParameters: [
-      {
-        description: "MitigationId\nThe mitigation ID.",
-        in: "path",
-        name: "mitigation_id",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
         },
+      ],
+      conditions: {
+        postconditions: ["Audit-log resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
       },
-      {
-        description: "Namespace\nThis request is supported only in system namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl data audit-log create {name} --namespace {namespace}",
+          description: "Create audit-log",
+          use_case: "basic_create",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/l3l4ByMitigationRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/l3l4ByMitigationResponse",
-    },
-    requiredParams: ["body", "mitigation_id", "namespace"],
-    operationId: "ves.io.schema.graph.l3l4.CustomAPI.ByMitigation",
-    tags: ["Infrastructure Protection"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-by-network-create",
-    method: "POST",
-    path: "/api/infraprotect/namespaces/{namespace}/graph/l3l4/by_network/{network_id}",
-    operation: "create",
-    domain: "observability",
-    resource: "by-network",
-    summary: "L3l4 Network Traffic Query.",
-    description: "Request to GET l3l4 Network Traffic data.",
-    pathParameters: [
-      {
-        description: "Namespace\nThis request is supported only in system namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          command: "f5xcctl data audit-log create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
         },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
       },
-      {
-        description: "NetworkId\nThe network ID.",
-        in: "path",
-        name: "network_id",
-        required: true,
-        schema: {
-          type: "string",
-        },
+      purpose: "Create new audit-log",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["audit-log"],
       },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/l3l4ByNetworkRequest",
     },
-    responseSchema: {
-      $ref: "#/components/schemas/l3l4ByNetworkResponse",
-    },
-    requiredParams: ["body", "namespace", "network_id"],
-    operationId: "ves.io.schema.graph.l3l4.CustomAPI.ByNetwork",
-    tags: ["Infrastructure Protection"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-by-zone-create",
-    method: "POST",
-    path: "/api/infraprotect/namespaces/{namespace}/graph/l3l4/by_zone/{network_id}",
-    operation: "create",
-    domain: "observability",
-    resource: "by-zone",
-    summary: "L3l4 Zone Traffic Query.",
-    description: "Request to GET l3l4 zone destination Traffic data.",
-    pathParameters: [
-      {
-        description: "Namespace\nThis request is supported only in system namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "NetworkId\nThe network ID.",
-        in: "path",
-        name: "network_id",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/l3l4ByZoneRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/l3l4ByZoneResponse",
-    },
-    requiredParams: ["body", "namespace", "network_id"],
-    operationId: "ves.io.schema.graph.l3l4.CustomAPI.ByZone",
-    tags: ["Infrastructure Protection"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-catalog-update",
-    method: "PUT",
-    path: "/api/web/namespaces/system/catalogs",
-    operation: "update",
-    domain: "observability",
-    resource: "catalog",
-    summary: "List",
-    description: "Retrieves service catalog tailor for the currently logged-in user.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/catalogListRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/catalogListResponse",
-    },
-    requiredParams: ["body"],
-    operationId: "ves.io.schema.pbac.catalog.CustomAPI.List",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-categorie-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/endpoint/categories",
-    operation: "create",
-    domain: "observability",
-    resource: "categorie",
-    summary: "Endpoint Categories.",
-    description: "GET Endpoint Category Breakdown.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope the query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingEndpointCategoryResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.EndpointCategories",
-    tags: ["Service Mesh"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-certificate-report-detail-list",
@@ -1455,6 +733,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -1467,6 +747,78 @@ export const observabilityTools: ParsedOperation[] = [
       "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetCertificateReportDetail",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability certificate-report-detail list --namespace {namespace}",
+        description: "List all certificate-report-details",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Demo",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace", "Certificate file or data"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability certificate-report-detail list --namespace {namespace}",
+          description: "List all certificate-report-details",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all certificate-report-details",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-certificate-summary-list",
@@ -1487,6 +839,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -1499,6 +853,8 @@ export const observabilityTools: ParsedOperation[] = [
           format: "int32",
           type: "integer",
         },
+        "x-displayname": "Period in days.",
+        "x-ves-example": "30",
       },
     ],
     requestBodySchema: null,
@@ -1509,215 +865,79 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetCertSummary",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-check-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/system/reporting/peers/check",
-    operation: "create",
-    domain: "observability",
-    resource: "check",
-    summary: "Check Peer Status.",
-    description: "Check if the tenant has the peer or not.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/reportingPeerStatusRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/reportingPeerStatusResponse",
-    },
-    requiredParams: ["body"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.PeerStatusCheck",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-confirm-create",
-    method: "POST",
-    path: "/api/alert/namespaces/{namespace}/alert_receivers/{name}/confirm",
-    operation: "create",
-    domain: "observability",
-    resource: "confirm",
-    summary: "Confirm Alert Receiver.",
-    description: "API to confirm the Alert Receiver - applicable only for email and sms.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
       {
-        description: "Name\nName of the alert receiver.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          "Namespace\n\nx-required\nNamespace in which the alert receiver is configured.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl observability certificate-summary list --namespace {namespace}",
+        description: "List all certificate-summarys",
+        use_case: "list_all",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/alert_receiverConfirmAlertReceiverRequest",
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Demo",
+      period_in_days: "30",
     },
-    responseSchema: {
-      $ref: "#/components/schemas/alert_receiverConfirmAlertReceiverResponse",
-    },
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.alert_receiver.CustomAPI.ConfirmAlertReceiver",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-connectivity-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/graph/connectivity",
-    operation: "create",
-    domain: "observability",
-    resource: "connectivity",
-    summary: "Connectivity Graph Query.",
-    description: "Request to GET Connectivity data between the sites.",
-    pathParameters: [
-      {
-        description: "Namespace\nThis request is supported only in system namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/connectivityRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/connectivityResponse",
-    },
-    requiredParams: ["body", "namespace"],
-    operationId: "ves.io.schema.graph.connectivity.CustomAPI.Query",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-credential-stuffing-attack-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/insight/credential-stuffing-attack",
-    operation: "create",
-    domain: "observability",
-    resource: "credential-stuffing-attack",
-    summary: "Insight Event: Credential Stuffing Attack.",
-    description: "GET Insight Credential Stuffing Attack.",
-    pathParameters: [
-      {
-        description: "Namespace\n\nx-required\nNamespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingCredentialStuffingAttackResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.CredentialStuffingAttack",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-dc-cluster-group-create",
-    method: "POST",
-    path: "/api/data/namespaces/system/topology/dc_cluster_group/{dc_cluster_group}",
-    operation: "create",
-    domain: "observability",
-    resource: "dc-cluster-group",
-    summary: "DC Cluster Topology.",
-    description: "GET topology of a DC Cluster.",
-    pathParameters: [
-      {
-        description: "DC Cluster group\nName of the DC Cluster group.",
-        in: "path",
-        name: "dc_cluster_group",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/topologyDCClusterTopologyRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/topologyTopologyResponse",
-    },
-    requiredParams: ["body", "dc_cluster_group"],
-    operationId: "ves.io.schema.topology.CustomDataAPI.DCClusterTopology",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-dc-cluster-group-list",
-    method: "GET",
-    path: "/api/data/namespaces/system/topology/dc_cluster_groups",
-    operation: "list",
-    domain: "observability",
-    resource: "dc-cluster-group",
-    summary: "DC Cluster Groups Summary.",
-    description: "GET summary of all DC Cluster groups.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/topologyTopologyResponse",
-    },
-    requiredParams: [],
-    operationId: "ves.io.schema.topology.CustomDataAPI.DCClusterGroupsSummary",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-device-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/type/human/dimension/device",
-    operation: "create",
-    domain: "observability",
-    resource: "device",
-    summary: "Top Human Device.",
-    description: "GET top human device.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
         },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace", "Certificate file or data"],
       },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTopHumanDeviceResponse",
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability certificate-summary list --namespace {namespace}",
+          description: "List all certificate-summarys",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all certificate-summarys",
+      required_fields: ["path.namespace"],
+      side_effects: {},
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopHumanDevice",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-dns-monitor-summary-list",
@@ -1737,6 +957,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -1748,6 +970,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "End time",
+        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_name.\nMonitor name.",
@@ -1757,6 +981,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor_name.",
+        "x-ves-example": "Monitor1",
       },
       {
         description: "Start_time. X-required\nStart time for requested monitor data.",
@@ -1766,6 +992,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Start time.",
+        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
     ],
     requestBodySchema: null,
@@ -1776,6 +1004,81 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetDNSMonitorSummary",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability dns-monitor-summary list --namespace {namespace}",
+        description: "List all dns-monitor-summarys",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      end_time: "2020-11-17T13:41:49.083255Z.",
+      monitor_name: "Monitor1",
+      namespace: "Demo",
+      start_time: "2020-11-17T12:41:49.083255Z.",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability dns-monitor-summary list --namespace {namespace}",
+          description: "List all dns-monitor-summarys",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all dns-monitor-summarys",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-dns-monitors-health-create",
@@ -1795,6 +1098,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -1808,246 +1113,96 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetDNSMonitorHealth",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-download-get",
-    method: "GET",
-    path: "/api/report/namespaces/{namespace}/reports/{name}/download",
-    operation: "get",
-    domain: "observability",
-    resource: "download",
-    summary: "Download Report.",
-    description: "Download report.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["dns-monitors-health"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
       {
-        description: "Report Name\n\nx-required\nName of the report which has to be downloadd.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl observability dns-monitors-health create {name} --namespace {namespace}",
+        description: "Create dns-monitors-health",
+        use_case: "basic_create",
       },
       {
-        description: "Namespace\n\nx-required\nNamespace for this request.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl observability dns-monitors-health create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportDownloadReportResponse",
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Demo",
     },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.report.CustomAPI.DownloadReport",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-edge-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/graph/connectivity/edge",
-    operation: "create",
-    domain: "observability",
-    resource: "edge",
-    summary: "Connectivity Edge Query.",
-    description:
-      "Request to GET Connectivity data for an edge.\nThis query is used to GET time-series data for a given edge.",
-    pathParameters: [
-      {
-        description: "Namespace\nThis request is supported only in system namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/connectivityEdgeRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/connectivityEdgeResponse",
-    },
-    requiredParams: ["body", "namespace"],
-    operationId: "ves.io.schema.graph.connectivity.CustomAPI.EdgeQuery",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-endpoint-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/endpoints",
-    operation: "create",
-    domain: "observability",
-    resource: "endpoint",
-    summary: "Report Endpoints.",
-    description: "Report Endpoints.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingReportEndpointsResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.ReportEndpoints",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-endpointlabel-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/transactions/endpointlabels",
-    operation: "create",
-    domain: "observability",
-    resource: "endpointlabel",
-    summary: "Top Endpoint Labels.",
-    description: "GET top Endpoint labels.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTopEndpointLabelsResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopEndpointLabels",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-event-count-create",
-    method: "POST",
-    path: "/api/infraprotect/namespaces/{namespace}/graph/l3l4/event_count/{network_id}",
-    operation: "create",
-    domain: "observability",
-    resource: "event-count",
-    summary: "L3l4 Event count.",
-    description: "Request to GET l3l4 Event counts over a period of time.",
-    pathParameters: [
-      {
-        description: "Namespace\nThis request is supported only in system namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
         },
-      },
-      {
-        description:
-          "NetworkId\nThe network ID we want the data for. If empty or * is provided then all networks data is returned.",
-        in: "path",
-        name: "network_id",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/l3l4EventCountRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/l3l4EventCountResponse",
-    },
-    requiredParams: ["body", "namespace", "network_id"],
-    operationId: "ves.io.schema.graph.l3l4.CustomAPI.EventCount",
-    tags: ["Infrastructure Protection"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-expanded-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/traffic/overview/expanded",
-    operation: "create",
-    domain: "observability",
-    resource: "expanded",
-    summary: "Expanded Traffic Overview.",
-    description: "GET expanded traffic overview.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope the query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
         },
+      ],
+      conditions: {
+        postconditions: [
+          "Dns-monitors-health resource created",
+          "Resource assigned unique identifier",
+        ],
+        prerequisites: ["Active namespace"],
       },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTrafficOverviewExpandedResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TrafficOverviewExpanded",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-field-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/v1/reporting/forensic/fields",
-    operation: "create",
-    domain: "observability",
-    resource: "field",
-    summary: "Forensic Fields.",
-    description: "GET",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope the query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl observability dns-monitors-health create {name} --namespace {namespace}",
+          description: "Create dns-monitors-health",
+          use_case: "basic_create",
         },
+        {
+          command: "f5xcctl observability dns-monitors-health create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
       },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/reportingForensicFieldsRequest",
+      purpose: "Create new dns-monitors-health",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["dns-monitors-health"],
+      },
     },
-    responseSchema: {
-      $ref: "#/components/schemas/reportingForensicFieldsResponse",
-    },
-    requiredParams: ["body", "namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.ForensicFields",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-filtered-dns-monitor-list-list",
@@ -2067,6 +1222,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Foobar",
       },
     ],
     queryParameters: [
@@ -2078,6 +1235,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Filter",
+        "x-ves-example": "Monitor_name eq 'tester-name'",
       },
       {
         description:
@@ -2089,6 +1248,7 @@ export const observabilityTools: ParsedOperation[] = [
           format: "int32",
           type: "integer",
         },
+        "x-displayname": "Limit",
       },
       {
         description:
@@ -2100,6 +1260,7 @@ export const observabilityTools: ParsedOperation[] = [
           format: "int32",
           type: "integer",
         },
+        "x-displayname": "Page",
       },
       {
         description: "Sort.\nReturn data should by ORDER BY the sort field.",
@@ -2109,6 +1270,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Sort",
+        "x-ves-example": "-name, ID",
       },
     ],
     requestBodySchema: null,
@@ -2120,6 +1283,80 @@ export const observabilityTools: ParsedOperation[] = [
       "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.CustomAPI.GetFilteredDNSMonitorList",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability filtered-dns-monitor-list list --namespace {namespace}",
+        description: "List all filtered-dns-monitor-lists",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      filter: "Monitor_name eq 'tester-name'",
+      namespace: "Foobar",
+      sort: "-name, ID",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability filtered-dns-monitor-list list --namespace {namespace}",
+          description: "List all filtered-dns-monitor-lists",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all filtered-dns-monitor-lists",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-filtered-http-monitor-list-list",
@@ -2139,6 +1376,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Foobar",
       },
     ],
     queryParameters: [
@@ -2150,6 +1389,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Filter",
+        "x-ves-example": "Monitor_name eq 'tester-name'",
       },
       {
         description:
@@ -2161,6 +1402,7 @@ export const observabilityTools: ParsedOperation[] = [
           format: "int32",
           type: "integer",
         },
+        "x-displayname": "Limit",
       },
       {
         description:
@@ -2172,6 +1414,7 @@ export const observabilityTools: ParsedOperation[] = [
           format: "int32",
           type: "integer",
         },
+        "x-displayname": "Page",
       },
       {
         description: "Sort.\nReturn data should by ORDER BY the sort field.",
@@ -2181,6 +1424,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Sort",
+        "x-ves-example": "-name, ID",
       },
     ],
     requestBodySchema: null,
@@ -2192,6 +1437,80 @@ export const observabilityTools: ParsedOperation[] = [
       "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.CustomAPI.GetFilteredHTTPMonitorList",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability filtered-http-monitor-list list --namespace {namespace}",
+        description: "List all filtered-http-monitor-lists",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      filter: "Monitor_name eq 'tester-name'",
+      namespace: "Foobar",
+      sort: "-name, ID",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability filtered-http-monitor-list list --namespace {namespace}",
+          description: "List all filtered-http-monitor-lists",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all filtered-http-monitor-lists",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-firewall-log-create",
@@ -2212,6 +1531,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -2225,222 +1546,92 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.log.CustomAPI.FirewallLogQuery",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-flow-anomaly-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/flow_anomalys/{name}",
-    operation: "get",
-    domain: "observability",
-    resource: "flow-anomaly",
-    summary: "GET Flow Anomaly.",
-    description: "Shape of the flow anomaly specification.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["firewall-log"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
       {
-        description: "Name\nThe name of the configuration object to be fetched.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl data firewall-log create {name} --namespace {namespace}",
+        description: "Create firewall-log",
+        use_case: "basic_create",
       },
       {
-        description: "Namespace\nThe namespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl data firewall-log create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
       },
     ],
-    queryParameters: [
-      {
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
-        in: "query",
-        name: "response_format",
-        required: false,
-        schema: {
-          default: "GET_RSP_FORMAT_DEFAULT",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/flow_anomalyGetResponse",
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Value",
     },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.flow_anomaly.API.Get",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-flow-anomaly-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/flow_anomalys",
-    operation: "list",
-    domain: "observability",
-    resource: "flow-anomaly",
-    summary: "List Flow Anomaly.",
-    description: "List the set of flow_anomaly in a namespace.",
-    pathParameters: [
-      {
-        description: "Namespace\nNamespace to scope the listing of flow_anomaly.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
         },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "A LabelSelectorType expression that every item in list response will satisfy.",
-        in: "query",
-        name: "label_filter",
-        required: false,
-        schema: {
-          type: "string",
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
         },
-      },
-      {
-        description: 'X-example: ""\nExtra fields to return along with summary fields.',
-        in: "query",
-        name: "report_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
         },
-      },
-      {
-        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
-        in: "query",
-        name: "report_status_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
         },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Firewall-log resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
       },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/flow_anomalyListResponse",
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl data firewall-log create {name} --namespace {namespace}",
+          description: "Create firewall-log",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl data firewall-log create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new firewall-log",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["firewall-log"],
+      },
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.flow_anomaly.API.List",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-flow-collection-create",
-    method: "POST",
-    path: "/api/data/namespaces/system/flows/flow_collection",
-    operation: "create",
-    domain: "observability",
-    resource: "flow-collection",
-    summary: "Flow Collection.",
-    description: "Request to GET flow collection from the flow records.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/flowTopTalkersResponse",
-    },
-    requiredParams: [],
-    operationId: "ves.io.schema.flow.CustomAPI.FlowCollection",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-generate-create",
-    method: "POST",
-    path: "/api/report/namespaces/{namespace}/report_configs/{name}/generate",
-    operation: "create",
-    domain: "observability",
-    resource: "generate",
-    summary: "Generate Report Now.",
-    description: "Generate report now.",
-    pathParameters: [
-      {
-        description:
-          "Name\n\nx-required\nName of the report config for which report has to be generated.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\n\nx-required\nNamespace for this request.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/report_configGenerateReportRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/report_configGenerateReportResponse",
-    },
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.report_config.CustomAPI.GenerateReport",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-geolocation-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/type/human/dimension/geolocation",
-    operation: "create",
-    domain: "observability",
-    resource: "geolocation",
-    summary: "Top Human Geolocation.",
-    description: "GET top human geolocation.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTopHumanGeolocationResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopHumanGeolocation",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-global-history-list",
@@ -2460,6 +1651,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -2471,6 +1664,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "End time",
+        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_type.\nMonitor type.",
@@ -2480,6 +1675,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor type.",
+        "x-ves-example": "HTTP",
       },
       {
         description: "Start_time.\nStart time for requested history.",
@@ -2489,6 +1686,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Start time.",
+        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
       {
         description: "Step_size.\nStep size for time series aggregation.",
@@ -2498,6 +1697,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Step size",
+        "x-ves-example": "300s",
       },
     ],
     requestBodySchema: null,
@@ -2508,245 +1709,82 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetGlobalHistory",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-global-log-receiver-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/global_log_receivers",
-    operation: "create",
-    domain: "observability",
-    resource: "global-log-receiver",
-    summary: "Create Global Log Receiver.",
-    description: "Creates a new Global Log Receiver object.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
       {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl observability global-history list --namespace {namespace}",
+        description: "List all global-historys",
+        use_case: "list_all",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/global_log_receiverCreateRequest",
+    confirmationRequired: false,
+    parameterExamples: {
+      end_time: "2020-11-17T13:41:49.083255Z.",
+      monitor_type: "HTTP",
+      namespace: "Demo",
+      start_time: "2020-11-17T12:41:49.083255Z.",
+      step_size: "300s",
     },
-    responseSchema: {
-      $ref: "#/components/schemas/global_log_receiverCreateResponse",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability global-history list --namespace {namespace}",
+          description: "List all global-historys",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all global-historys",
+      required_fields: ["path.namespace"],
+      side_effects: {},
     },
-    requiredParams: ["body", "metadata.namespace"],
-    operationId: "ves.io.schema.global_log_receiver.API.Create",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-global-log-receiver-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/global_log_receivers/{name}",
-    operation: "delete",
-    domain: "observability",
-    resource: "global-log-receiver",
-    summary: "DELETE Global Log Receiver.",
-    description: "DELETE the specified global_log_receiver.",
-    pathParameters: [
-      {
-        description: "Name\nName of the configuration object.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nNamespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/global_log_receiverDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.global_log_receiver.API.Delete",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-global-log-receiver-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/global_log_receivers/{name}",
-    operation: "get",
-    domain: "observability",
-    resource: "global-log-receiver",
-    summary: "GET Global Log Receiver.",
-    description: "GET the Global Log Receiver object.",
-    pathParameters: [
-      {
-        description: "Name\nThe name of the configuration object to be fetched.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nThe namespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
-        in: "query",
-        name: "response_format",
-        required: false,
-        schema: {
-          default: "GET_RSP_FORMAT_DEFAULT",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/global_log_receiverGetResponse",
-    },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.global_log_receiver.API.Get",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-global-log-receiver-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/global_log_receivers",
-    operation: "list",
-    domain: "observability",
-    resource: "global-log-receiver",
-    summary: "List Global Log Receiver.",
-    description: "List the set of global_log_receiver in a namespace.",
-    pathParameters: [
-      {
-        description: "Namespace\nNamespace to scope the listing of global_log_receiver.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "A LabelSelectorType expression that every item in list response will satisfy.",
-        in: "query",
-        name: "label_filter",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra fields to return along with summary fields.',
-        in: "query",
-        name: "report_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
-        in: "query",
-        name: "report_status_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/global_log_receiverListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.global_log_receiver.API.List",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-global-log-receiver-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/global_log_receivers/{metadata.name}",
-    operation: "update",
-    domain: "observability",
-    resource: "global-log-receiver",
-    summary: "Replace Global Log Receiver.",
-    description: "Replaces the content of an Global Log Receiver object.",
-    pathParameters: [
-      {
-        description: "Name\nThe configuration object to be replaced will be looked up by name.",
-        in: "path",
-        name: "metadata.name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/global_log_receiverReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/global_log_receiverReplaceResponse",
-    },
-    requiredParams: ["body", "metadata.name", "metadata.namespace"],
-    operationId: "ves.io.schema.global_log_receiver.API.Replace",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-global-summary-list",
@@ -2767,6 +1805,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -2778,6 +1818,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor type.",
+        "x-ves-example": "HTTP",
       },
     ],
     requestBodySchema: null,
@@ -2788,37 +1830,79 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetGlobalSummary",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-good-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/type/good",
-    operation: "create",
-    domain: "observability",
-    resource: "good",
-    summary: "Top Good Bots.",
-    description: "GET top good bots.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
       {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl observability global-summary list --namespace {namespace}",
+        description: "List all global-summarys",
+        use_case: "list_all",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTopGoodBotsResponse",
+    confirmationRequired: false,
+    parameterExamples: {
+      monitor_type: "HTTP",
+      namespace: "Demo",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopGoodBots",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability global-summary list --namespace {namespace}",
+          description: "List all global-summarys",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all global-summarys",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-health-list",
@@ -2838,6 +1922,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -2849,6 +1935,78 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetHealth",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability health list --namespace {namespace}",
+        description: "List all healths",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Demo",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability health list --namespace {namespace}",
+          description: "List all healths",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all healths",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-history-list",
@@ -2870,6 +2028,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2882,6 +2042,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "End Time",
+        "x-ves-example": "2019-09-24T12:30:11.733Z.",
       },
       {
         description:
@@ -2892,6 +2054,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Filter",
+        "x-ves-example": "{alertname=\\.",
       },
       {
         description:
@@ -2902,6 +2066,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Start Time.",
+        "x-ves-example": "2019-09-23T12:30:11.733Z.",
       },
     ],
     requestBodySchema: null,
@@ -2912,6 +2078,81 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.alert.CustomAPI.AlertsHistory",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl data history list --namespace {namespace}",
+        description: "List all historys",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      end_time: "2019-09-24T12:30:11.733Z.",
+      filter: "{alertname=\\.",
+      namespace: "Ns1",
+      start_time: "2019-09-23T12:30:11.733Z.",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl data history list --namespace {namespace}",
+          description: "List all historys",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all historys",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-http-monitor-detail-list",
@@ -2931,6 +2172,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -2942,6 +2185,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "End time",
+        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_name. X-required\nMonitor name.",
@@ -2951,6 +2196,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor_name.",
+        "x-ves-example": "Monitor1",
       },
       {
         description: "Start_time. X-required\nStart time for requested monitor data.",
@@ -2960,6 +2207,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Start time.",
+        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
     ],
     requestBodySchema: null,
@@ -2970,6 +2219,81 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetHTTPMonitorDetail",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability http-monitor-detail list --namespace {namespace}",
+        description: "List all http-monitor-details",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      end_time: "2020-11-17T13:41:49.083255Z.",
+      monitor_name: "Monitor1",
+      namespace: "Demo",
+      start_time: "2020-11-17T12:41:49.083255Z.",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability http-monitor-detail list --namespace {namespace}",
+          description: "List all http-monitor-details",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all http-monitor-details",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-http-monitor-summary-list",
@@ -2989,6 +2313,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -3000,6 +2326,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "EndTime",
+        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_name. X-required\nMonitor name.",
@@ -3009,6 +2337,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor_name.",
+        "x-ves-example": "Monitor1",
       },
       {
         description: "Start_time. X-required\nStart time for requested monitor data.",
@@ -3018,6 +2348,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Start time.",
+        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
     ],
     requestBodySchema: null,
@@ -3028,6 +2360,81 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetHTTPMonitorSummary",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability http-monitor-summary list --namespace {namespace}",
+        description: "List all http-monitor-summarys",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      end_time: "2020-11-17T13:41:49.083255Z.",
+      monitor_name: "Monitor1",
+      namespace: "Demo",
+      start_time: "2020-11-17T12:41:49.083255Z.",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability http-monitor-summary list --namespace {namespace}",
+          description: "List all http-monitor-summarys",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all http-monitor-summarys",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-http-monitors-health-create",
@@ -3047,6 +2454,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -3060,831 +2469,96 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetHTTPMonitorHealth",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-instance-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/graph/service/node/instance",
-    operation: "create",
-    domain: "observability",
-    resource: "instance",
-    summary: "Service Instance Query.",
-    description: "Request to GET time-series data for a service instance.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["http-monitors-health"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
       {
-        description:
-          "Namespace\nnamespace is used to scope application traffic to a given namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl observability http-monitors-health create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl observability http-monitors-health create {name} --namespace {namespace}",
+        description: "Create http-monitors-health",
+        use_case: "basic_create",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/serviceInstanceRequest",
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Demo",
     },
-    responseSchema: {
-      $ref: "#/components/schemas/serviceInstanceResponse",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [
+          "Http-monitors-health resource created",
+          "Resource assigned unique identifier",
+        ],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl observability http-monitors-health create {name} --namespace {namespace}",
+          description: "Create http-monitors-health",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl observability http-monitors-health create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new http-monitors-health",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["http-monitors-health"],
+      },
     },
-    requiredParams: ["body", "namespace"],
-    operationId: "ves.io.schema.graph.service.CustomAPI.InstanceQuery",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-ip-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/malicious/transactions/ip",
-    operation: "create",
-    domain: "observability",
-    resource: "ip",
-    summary: "Malicious Report Transactions IP.",
-    description: "Malicious Report Transactions IP.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingMaliciousReportTransactionsResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId:
-      "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousReportTransactionsIP",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-k8s-audit-log-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/site/{site}/k8s_audit_logs",
-    operation: "create",
-    domain: "observability",
-    resource: "k8s-audit-log",
-    summary: "K8s Audit Log Query.",
-    description:
-      "Request to GET Physical K8s audit logs that matches the criteria in request for a given namespace.\nIf no match conditions are specified in the request, then the response contains all\nCRUD operations performed in the namespace. User with access to the `system` namespace\nmay query for audit logs across all namespaces in a K8s Cluster.",
-    pathParameters: [
-      {
-        description: "Namespace\nfetch K8s audit logs for a given namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Site\nSite where the K8s Cluster is running.",
-        in: "path",
-        name: "site",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/logK8SAuditLogRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/logLogResponse",
-    },
-    requiredParams: ["body", "namespace", "site"],
-    operationId: "ves.io.schema.log.CustomAPI.K8SAuditLogQuery",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-k8s-event-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/site/{site}/k8s_events",
-    operation: "create",
-    domain: "observability",
-    resource: "k8s-event",
-    summary: "K8s Events Query.",
-    description:
-      "Request to GET physical K8s events that matches the criteria in request for a given namespace.\nIf no match conditions are specified in the request, then the response contains all\nK8s events in the namespace. User with access to the `system` namespace may query for K8s events across\nall namespaces in a K8s Cluster.",
-    pathParameters: [
-      {
-        description: "Namespace\nfetch K8s events for the given namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Site\nSite where the K8s Cluster is running.",
-        in: "path",
-        name: "site",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/logK8SEventsRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/logLogResponse",
-    },
-    requiredParams: ["body", "namespace", "site"],
-    operationId: "ves.io.schema.log.CustomAPI.K8SEventsQuery",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-lb-cache-content-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/graph/lb_cache_content",
-    operation: "create",
-    domain: "observability",
-    resource: "lb-cache-content",
-    summary: "Cacheability query Query.",
-    description: "Request to GET time-series cacheable data for HTTP-LBs.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\nnamespace is used to scope load balancers. Only LB's in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/serviceLBCacheContentRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/serviceLBCacheContentResponse",
-    },
-    requiredParams: ["body", "namespace"],
-    operationId: "ves.io.schema.graph.service.CustomAPI.LBCacheContent",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-list-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/endpoint/list",
-    operation: "create",
-    domain: "observability",
-    resource: "list",
-    summary: "All Protected Endpoints.",
-    description: "GET All Protected Endpoints.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope the query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingEndpointListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.EndpointList",
-    tags: ["Service Mesh"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-list-reports-history-bot-defence-create",
-    method: "POST",
-    path: "/api/report/namespaces/{namespace}/report_configs/list-reports-history-bot-defence",
-    operation: "create",
-    domain: "observability",
-    resource: "list-reports-history-bot-defence",
-    summary: "List Reports History Bot Defence.",
-    description:
-      "List Reports history bot defence for the list of report configurations in the given namespace.",
-    pathParameters: [
-      {
-        description: "Namespace\n\nx-required\nNamespace for this request.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/report_configListReportsHistoryResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.report_config.CustomAPI.ListReportsHistoryBotDefence",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-list-reports-history-create",
-    method: "POST",
-    path: "/api/report/namespaces/{namespace}/report_configs/list-reports-history",
-    operation: "create",
-    domain: "observability",
-    resource: "list-reports-history",
-    summary: "List Reports History.",
-    description:
-      "List Reports history for the list of report configurations in the given namespace.",
-    pathParameters: [
-      {
-        description: "Namespace\n\nx-required\nNamespace for this request.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/report_configListReportsHistoryResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.report_config.CustomAPI.ListReportsHistory",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-list-reports-history-waap-create",
-    method: "POST",
-    path: "/api/report/namespaces/{namespace}/report_configs/list-reports-history-waap",
-    operation: "create",
-    domain: "observability",
-    resource: "list-reports-history-waap",
-    summary: "List Reports History Waap.",
-    description:
-      "List Reports history waap for the list of report configurations in the given namespace.",
-    pathParameters: [
-      {
-        description: "Namespace\n\nx-required\nNamespace for this request.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/report_configListReportsHistoryResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.report_config.CustomAPI.ListReportsHistoryWaap",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-lma-region-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/lma_regions/{name}",
-    operation: "get",
-    domain: "observability",
-    resource: "lma-region",
-    summary: "GET LMA Region.",
-    description: "Shape of the lma region specification.",
-    pathParameters: [
-      {
-        description: "Name\nThe name of the configuration object to be fetched.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nThe namespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
-        in: "query",
-        name: "response_format",
-        required: false,
-        schema: {
-          default: "GET_RSP_FORMAT_DEFAULT",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/lma_regionGetResponse",
-    },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.data_privacy.lma_region.API.Get",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-lma-region-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/lma_regions",
-    operation: "list",
-    domain: "observability",
-    resource: "lma-region",
-    summary: "List LMA Region.",
-    description: "List the set of lma_region in a namespace.",
-    pathParameters: [
-      {
-        description: "Namespace\nNamespace to scope the listing of lma_region.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "A LabelSelectorType expression that every item in list response will satisfy.",
-        in: "query",
-        name: "label_filter",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra fields to return along with summary fields.',
-        in: "query",
-        name: "report_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
-        in: "query",
-        name: "report_status_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/lma_regionListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.data_privacy.lma_region.API.List",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-log-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/site/{site}/external_connector/{external_connector}/logs",
-    operation: "create",
-    domain: "observability",
-    resource: "log",
-    summary: "External connector log query.",
-    description:
-      "Request to GET external connector logs that matches the criteria in request for a given namespace.\nThe logs are per site per external connector is specified as match condition in the request to GET the logs for a external connector.",
-    pathParameters: [
-      {
-        description: "External connector\nExternal connector for which logs has to be fetched.",
-        in: "path",
-        name: "external_connector",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nGET aggregation data for a given namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Site\nSite where the K8s Cluster is running.",
-        in: "path",
-        name: "site",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/logExternalConnectorRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/logLogResponse",
-    },
-    requiredParams: ["body", "external_connector", "namespace", "site"],
-    operationId: "ves.io.schema.log.CustomAPI.ExternalConnectorLogQuery",
-    tags: ["Networking"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-log-receiver-create",
-    method: "POST",
-    path: "/api/config/namespaces/{metadata.namespace}/log_receivers",
-    operation: "create",
-    domain: "observability",
-    resource: "log-receiver",
-    summary: "Create Log Receiver.",
-    description: "Creates a new Log Receiver object.",
-    pathParameters: [
-      {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/log_receiverCreateRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/log_receiverCreateResponse",
-    },
-    requiredParams: ["body", "metadata.namespace"],
-    operationId: "ves.io.schema.log_receiver.API.Create",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-log-receiver-delete",
-    method: "DELETE",
-    path: "/api/config/namespaces/{namespace}/log_receivers/{name}",
-    operation: "delete",
-    domain: "observability",
-    resource: "log-receiver",
-    summary: "DELETE Log Receiver.",
-    description: "DELETE the specified log_receiver.",
-    pathParameters: [
-      {
-        description: "Name\nName of the configuration object.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nNamespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/log_receiverDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.log_receiver.API.Delete",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-log-receiver-get",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/log_receivers/{name}",
-    operation: "get",
-    domain: "observability",
-    resource: "log-receiver",
-    summary: "GET Log Receiver.",
-    description: "GET the Log Receiver object.",
-    pathParameters: [
-      {
-        description: "Name\nThe name of the configuration object to be fetched.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nThe namespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
-        in: "query",
-        name: "response_format",
-        required: false,
-        schema: {
-          default: "GET_RSP_FORMAT_DEFAULT",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/log_receiverGetResponse",
-    },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.log_receiver.API.Get",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-log-receiver-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/log_receivers",
-    operation: "list",
-    domain: "observability",
-    resource: "log-receiver",
-    summary: "List Log Receiver.",
-    description: "List the set of log_receiver in a namespace.",
-    pathParameters: [
-      {
-        description: "Namespace\nNamespace to scope the listing of log_receiver.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "A LabelSelectorType expression that every item in list response will satisfy.",
-        in: "query",
-        name: "label_filter",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra fields to return along with summary fields.',
-        in: "query",
-        name: "report_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
-        in: "query",
-        name: "report_status_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/log_receiverListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.log_receiver.API.List",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-log-receiver-update",
-    method: "PUT",
-    path: "/api/config/namespaces/{metadata.namespace}/log_receivers/{metadata.name}",
-    operation: "update",
-    domain: "observability",
-    resource: "log-receiver",
-    summary: "Replace Log Receiver.",
-    description: "Replaces the content of an Log Receiver object.",
-    pathParameters: [
-      {
-        description: "Name\nThe configuration object to be replaced will be looked up by name.",
-        in: "path",
-        name: "metadata.name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/log_receiverReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/log_receiverReplaceResponse",
-    },
-    requiredParams: ["body", "metadata.name", "metadata.namespace"],
-    operationId: "ves.io.schema.log_receiver.API.Replace",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-match-create",
-    method: "POST",
-    path: "/api/alert/namespaces/{namespace}/alert_policy/match",
-    operation: "create",
-    domain: "observability",
-    resource: "match",
-    summary: "GET Alert Policy Match.",
-    description: "GET Alert Policies that match to a set of alert labels for a namespace.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nThe namespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/alert_policyAlertPolicyMatchRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/alert_policyAlertPolicyMatchResponse",
-    },
-    requiredParams: ["body", "namespace"],
-    operationId: "ves.io.schema.alert_policy.CustomAPI.GetAlertPolicyMatch",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-matching-flow-create",
-    method: "POST",
-    path: "/api/operate/namespaces/{namespace}/sites/{site}/ver/matching_flows",
-    operation: "create",
-    domain: "observability",
-    resource: "matching-flow",
-    summary: "Show Matching Flows.",
-    description: "Show VER flows matching the request.",
-    pathParameters: [
-      {
-        description: "Namespace\nNamespace for which the request is sent (system)",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Site Name\nName of the site from which flows are requested.",
-        in: "path",
-        name: "site",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/flowFlowMatchRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/flowFlows",
-    },
-    requiredParams: ["body", "namespace", "site"],
-    operationId: "ves.io.schema.operate.flow.CustomPublicAPI.ShowMatchingFlows",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-metric-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/traffic/malicious/overview/metrics",
-    operation: "create",
-    domain: "observability",
-    resource: "metric",
-    summary: "Malicious Traffic Overview Metrics.",
-    description: "Malicious Traffic Overview Metrics.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingMaliciousTrafficOverviewMetricsResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId:
-      "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousTrafficOverviewMetrics",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-metric-query-create",
@@ -3904,6 +2578,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -3917,6 +2593,92 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetMetricQueryData",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["metric-query"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability metric-query create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl observability metric-query create {name} --namespace {namespace}",
+        description: "Create metric-query",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Demo",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Metric-query resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl observability metric-query create {name} --namespace {namespace}",
+          description: "Create metric-query",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl observability metric-query create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new metric-query",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["metric-query"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-monitor-event-list",
@@ -3936,6 +2698,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -3947,6 +2711,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "End time",
+        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_name. X-required\nMonitor name.",
@@ -3956,6 +2722,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor name.",
+        "x-ves-example": "Monitor1",
       },
       {
         description: "Monitor_type. X-required\nMonitor type.",
@@ -3965,6 +2733,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor type.",
+        "x-ves-example": "HTTP",
       },
       {
         description: "Start_time. X-required\nStart time for requested events.",
@@ -3974,6 +2744,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Start time.",
+        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
     ],
     requestBodySchema: null,
@@ -3984,6 +2756,82 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetMonitorEvents",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability monitor-event list --namespace {namespace}",
+        description: "List all monitor-events",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      end_time: "2020-11-17T13:41:49.083255Z.",
+      monitor_name: "Monitor1",
+      monitor_type: "HTTP",
+      namespace: "Demo",
+      start_time: "2020-11-17T12:41:49.083255Z.",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability monitor-event list --namespace {namespace}",
+          description: "List all monitor-events",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all monitor-events",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-monitor-history-list",
@@ -4003,6 +2851,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -4014,6 +2864,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "End time",
+        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_name. X-required\nMonitor name.",
@@ -4023,6 +2875,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor_name.",
+        "x-ves-example": "Monitor1",
       },
       {
         description: "Monitor_type. X-required\nMonitor type.",
@@ -4032,6 +2886,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor type.",
+        "x-ves-example": "HTTP",
       },
       {
         description: "Start_time. X-required\nStart time for requested history.",
@@ -4041,6 +2897,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Start time.",
+        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
       {
         description: "Step_size.\nStep size for time series aggregation.",
@@ -4050,6 +2908,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Step size",
+        "x-ves-example": "30s",
       },
     ],
     requestBodySchema: null,
@@ -4060,193 +2920,83 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetMonitorHistory",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-network-get",
-    method: "GET",
-    path: "/api/data/namespaces/system/topology/site/{name}/networks",
-    operation: "get",
-    domain: "observability",
-    resource: "network",
-    summary: "GET Site Networks.",
-    description: "Gets Networks Associated to Site.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
       {
-        description: "Name\n\nx-required\nSite name.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl observability monitor-history list --namespace {namespace}",
+        description: "List all monitor-historys",
+        use_case: "list_all",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/topologySiteNetworksResponse",
+    confirmationRequired: false,
+    parameterExamples: {
+      end_time: "2020-11-17T13:41:49.083255Z.",
+      monitor_name: "Monitor1",
+      monitor_type: "HTTP",
+      namespace: "Demo",
+      start_time: "2020-11-17T12:41:49.083255Z.",
+      step_size: "30s",
     },
-    requiredParams: ["name"],
-    operationId: "ves.io.schema.topology.CustomDataAPI.GetSiteNetworks",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-node-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/graph/connectivity/node",
-    operation: "create",
-    domain: "observability",
-    resource: "node",
-    summary: "Connectivity Node Query.",
-    description:
-      "Request to GET Connectivity data for a site.\nThis query is used to GET time-series data for a given site.",
-    pathParameters: [
-      {
-        description: "Namespace\nThis request is supported only in system namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/connectivityNodeRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/connectivityNodeResponse",
-    },
-    requiredParams: ["body", "namespace"],
-    operationId: "ves.io.schema.graph.connectivity.CustomAPI.NodeQuery",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-o-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/malicious/transactions/os",
-    operation: "create",
-    domain: "observability",
-    resource: "o",
-    summary: "Malicious Report Transactions OS.",
-    description: "Malicious Report Transactions OS.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingMaliciousReportTransactionsResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId:
-      "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousReportTransactionsOS",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-overview-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/latency/overview",
-    operation: "create",
-    domain: "observability",
-    resource: "overview",
-    summary: "Top Latency Overview.",
-    description: "GET top latency overview.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTopLatencyOverviewResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopLatencyOverview",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-personal-stat-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/insight/personal-stats",
-    operation: "create",
-    domain: "observability",
-    resource: "personal-stat",
-    summary: "Insight Personal Stats.",
-    description: "Insight Personal Stats.",
-    pathParameters: [
-      {
-        description: "Namespace\n\nx-required\nNamespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingInsightPersonalStatsResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.InsightPersonalStats",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-platform-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/type/human/dimension/platform",
-    operation: "create",
-    domain: "observability",
-    resource: "platform",
-    summary: "Top Human Platform.",
-    description: "GET top human platform.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
         },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
       },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTopHumanPlatformResponse",
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability monitor-history list --namespace {namespace}",
+          description: "List all monitor-historys",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all monitor-historys",
+      required_fields: ["path.namespace"],
+      side_effects: {},
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TopHumanPlatform",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-platform-event-create",
@@ -4267,6 +3017,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -4280,6 +3032,92 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.log.CustomAPI.PlatformEventQuery",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["platform-event"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl data platform-event create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl data platform-event create {name} --namespace {namespace}",
+        description: "Create platform-event",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Value",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Platform-event resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl data platform-event create {name} --namespace {namespace}",
+          description: "Create platform-event",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl data platform-event create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new platform-event",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["platform-event"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-record-type-summary-list",
@@ -4299,6 +3137,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -4310,432 +3150,78 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetRecordTypeSummary",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-released-signature-list",
-    method: "GET",
-    path: "/api/config/namespaces/{namespace}/virtual_hosts/{vh_name}/released_signatures",
-    operation: "list",
-    domain: "observability",
-    resource: "released-signature",
-    summary: "Released Signatures.",
-    description: "API to GET Released Signatures.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
       {
-        description: "Namespace\nFetch WAF signatures changelog for the given namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Vh_name\nVirtual Host for current request.",
-        in: "path",
-        name: "vh_name",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl observability record-type-summary list --namespace {namespace}",
+        description: "List all record-type-summarys",
+        use_case: "list_all",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/waf_signatures_changelogReleasedSignaturesRsp",
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Demo",
     },
-    requiredParams: ["namespace", "vh_name"],
-    operationId:
-      "ves.io.schema.waf_signatures_changelog.WafSignatureChangelogCustomApi.GetReleasedSignatures",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-report-config-create",
-    method: "POST",
-    path: "/api/report/namespaces/{metadata.namespace}/report_configs",
-    operation: "create",
-    domain: "observability",
-    resource: "report-config",
-    summary: "Create Report Configuration.",
-    description:
-      "Report configuration is used to schedule report generation at a later point in time.",
-    pathParameters: [
-      {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
         },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
       },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/report_configCreateRequest",
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability record-type-summary list --namespace {namespace}",
+          description: "List all record-type-summarys",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all record-type-summarys",
+      required_fields: ["path.namespace"],
+      side_effects: {},
     },
-    responseSchema: {
-      $ref: "#/components/schemas/report_configCreateResponse",
-    },
-    requiredParams: ["body", "metadata.namespace"],
-    operationId: "ves.io.schema.report_config.API.Create",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-report-config-delete",
-    method: "DELETE",
-    path: "/api/report/namespaces/{namespace}/report_configs/{name}",
-    operation: "delete",
-    domain: "observability",
-    resource: "report-config",
-    summary: "DELETE Report Configuration.",
-    description: "DELETE the specified report_config.",
-    pathParameters: [
-      {
-        description: "Name\nName of the configuration object.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nNamespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/report_configDeleteRequest",
-    },
-    responseSchema: {},
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.report_config.API.Delete",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-report-config-get",
-    method: "GET",
-    path: "/api/report/namespaces/{namespace}/report_configs/{name}",
-    operation: "get",
-    domain: "observability",
-    resource: "report-config",
-    summary: "GET Report Configuration.",
-    description: "GET Report Configuration will read the configuration.",
-    pathParameters: [
-      {
-        description: "Name\nThe name of the configuration object to be fetched.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nThe namespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in CreateRequest format\nResponse should be in ReplaceRequest format\nResponse should be in StatusObject(s) format\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
-        in: "query",
-        name: "response_format",
-        required: false,
-        schema: {
-          default: "GET_RSP_FORMAT_DEFAULT",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_FOR_CREATE",
-            "GET_RSP_FORMAT_FOR_REPLACE",
-            "GET_RSP_FORMAT_STATUS",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/report_configGetResponse",
-    },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.report_config.API.Get",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-report-config-list",
-    method: "GET",
-    path: "/api/report/namespaces/{namespace}/report_configs",
-    operation: "list",
-    domain: "observability",
-    resource: "report-config",
-    summary: "List Report Configuration.",
-    description: "List the set of report_config in a namespace.",
-    pathParameters: [
-      {
-        description: "Namespace\nNamespace to scope the listing of report_config.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "A LabelSelectorType expression that every item in list response will satisfy.",
-        in: "query",
-        name: "label_filter",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra fields to return along with summary fields.',
-        in: "query",
-        name: "report_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-      {
-        description: 'X-example: ""\nExtra status fields to return along with summary fields.',
-        in: "query",
-        name: "report_status_fields",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/report_configListResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.report_config.API.List",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-report-config-update",
-    method: "PUT",
-    path: "/api/report/namespaces/{metadata.namespace}/report_configs/{metadata.name}",
-    operation: "update",
-    domain: "observability",
-    resource: "report-config",
-    summary: "Replace Report Configuration.",
-    description:
-      "Update the configuration by replacing the existing spec with the provided one.\nFor read-then-write operations a resourceVersion mismatch will occur if the object was modified between the read and write.",
-    pathParameters: [
-      {
-        description: "Name\nThe configuration object to be replaced will be looked up by name.",
-        in: "path",
-        name: "metadata.name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          'Namespace\nThis defines the workspace within which each the configuration object is to be created.\nMust be a DNS_LABEL format. For a namespace object itself, namespace value will be ""',
-        in: "path",
-        name: "metadata.namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/report_configReplaceRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/report_configReplaceResponse",
-    },
-    requiredParams: ["body", "metadata.name", "metadata.namespace"],
-    operationId: "ves.io.schema.report_config.API.Replace",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-report-get",
-    method: "GET",
-    path: "/api/report/namespaces/{namespace}/reports/{name}",
-    operation: "get",
-    domain: "observability",
-    resource: "report",
-    summary: "GET Report.",
-    description: "GET Report will read the report metadata.",
-    pathParameters: [
-      {
-        description: "Name\nThe name of the configuration object to be fetched.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\nThe namespace in which the configuration object is present.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          "The format in which the configuration object is to be fetched. This could be for example\n - in GetSpec form for the contents of object\n - in CreateRequest form to create a new similar object\n - to ReplaceRequest form to replace changeable values\n\nDefault format of returned resource\nResponse should be in format of GetSpecType\nResponse should have other objects referring to this object\nResponse should have deleted and disabled objects referrred by this object.",
-        in: "query",
-        name: "response_format",
-        required: false,
-        schema: {
-          default: "GET_RSP_FORMAT_DEFAULT",
-          enum: [
-            "GET_RSP_FORMAT_DEFAULT",
-            "GET_RSP_FORMAT_READ",
-            "GET_RSP_FORMAT_REFERRING_OBJECTS",
-            "GET_RSP_FORMAT_BROKEN_REFERENCES",
-          ],
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportGetResponse",
-    },
-    requiredParams: ["name", "namespace"],
-    operationId: "ves.io.schema.report.API.Get",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-route-table-get",
-    method: "GET",
-    path: "/api/data/namespaces/system/topology/network/{id}/route_tables",
-    operation: "get",
-    domain: "observability",
-    resource: "route-table",
-    summary: "GET Network Route Tables.",
-    description: "Gets Route Tables Associated with a Network.",
-    pathParameters: [
-      {
-        description: "ID\nx-required\nNetwork ID.",
-        in: "path",
-        name: "id",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description: "Regions used as filters.",
-        in: "query",
-        name: "regions",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-      {
-        description: "Route Table IDs used as filters.",
-        in: "query",
-        name: "route_table_ids",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-      {
-        description: "Site Name",
-        in: "query",
-        name: "site",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Subnet cidrs used as filters.",
-        in: "query",
-        name: "subnet_cidrs",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-      {
-        description: "Subnet IDs used as filters.",
-        in: "query",
-        name: "subnet_ids",
-        required: false,
-        schema: {
-          items: {
-            type: "string",
-          },
-          type: "array",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/topologyNetworkRouteTablesResponse",
-    },
-    requiredParams: ["id"],
-    operationId: "ves.io.schema.topology.CustomDataAPI.GetNetworkRouteTables",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-scroll-create",
@@ -4756,6 +3242,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -4768,6 +3256,92 @@ export const observabilityTools: ParsedOperation[] = [
       "docs_cloud_f5_com_0151_public_ves_io_schema_log_ves_swagger_ves.io.schema.log.CustomAPI.AccessLogScrollQuery",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["scroll"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl data scroll create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl data scroll create {name} --namespace {namespace}",
+        description: "Create scroll",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Value",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Scroll resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl data scroll create {name} --namespace {namespace}",
+          description: "Create scroll",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl data scroll create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new scroll",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["scroll"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-scroll-list",
@@ -4788,6 +3362,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [
@@ -4800,6 +3376,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Scroll ID",
+        "x-ves-example": "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.",
       },
     ],
     requestBodySchema: null,
@@ -4810,122 +3388,79 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.log.CustomAPI.AccessLogScrollQuery",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-service-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/graph/service",
-    operation: "create",
-    domain: "observability",
-    resource: "service",
-    summary: "Service Graph Query.",
-    description: "Request to GET monitoring data for a service mesh of a given application.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
       {
-        description:
-          "Namespace\nnamespace is used to scope service mesh. Only services and virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl data scroll list --namespace {namespace}",
+        description: "List all scrolls",
+        use_case: "list_all",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/serviceResponse",
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Value",
+      scroll_id: "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.graph.service.CustomAPI.Query",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-site-create",
-    method: "POST",
-    path: "/api/data/namespaces/system/topology/site/{site}",
-    operation: "create",
-    domain: "observability",
-    resource: "site",
-    summary: "Site Topology.",
-    description:
-      "GET topology of a site and the resources associated/connected to the site such as other Customer sites,\nRegional Sites, VPCs (Virtual Private Cloud) networks, etc., and the associated metrics.",
-    pathParameters: [
-      {
-        description: "Site\nName of the site.",
-        in: "path",
-        name: "site",
-        required: true,
-        schema: {
-          type: "string",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/topologySiteTopologyRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/topologyTopologyResponse",
-    },
-    requiredParams: ["body", "site"],
-    operationId: "ves.io.schema.topology.CustomDataAPI.SiteTopology",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-site-mesh-group-create",
-    method: "POST",
-    path: "/api/data/namespaces/system/topology/site_mesh_group/{site_mesh_group}",
-    operation: "create",
-    domain: "observability",
-    resource: "site-mesh-group",
-    summary: "Site Mesh Topology.",
-    description: "GET topology of a site mesh.",
-    pathParameters: [
-      {
-        description: "Site Mesh Group\nName of the site mesh group.",
-        in: "path",
-        name: "site_mesh_group",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
         },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
       },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/topologySiteMeshTopologyRequest",
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl data scroll list --namespace {namespace}",
+          description: "List all scrolls",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all scrolls",
+      required_fields: ["path.namespace"],
+      side_effects: {},
     },
-    responseSchema: {
-      $ref: "#/components/schemas/topologyTopologyResponse",
-    },
-    requiredParams: ["body", "site_mesh_group"],
-    operationId: "ves.io.schema.topology.CustomDataAPI.SiteMeshTopology",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-site-mesh-group-list",
-    method: "GET",
-    path: "/api/data/namespaces/system/topology/site_mesh_groups",
-    operation: "list",
-    domain: "observability",
-    resource: "site-mesh-group",
-    summary: "Site Mesh Groups Summary.",
-    description: "GET summary of all site mesh groups.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/topologyTopologyResponse",
-    },
-    requiredParams: [],
-    operationId: "ves.io.schema.topology.CustomDataAPI.SiteMeshGroupsSummary",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-source-summary-list",
@@ -4946,6 +3481,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -4957,6 +3494,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label filter.",
+        "x-ves-example": "F5 XC/country in (VES-I/O-usa), F5 XC/siteType=VES-I/O-RE.",
       },
       {
         description: "Monitor_name.\nMonitor name.",
@@ -4966,6 +3505,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor name.",
+        "x-ves-example": "Monitor1",
       },
       {
         description: "Monitor_type. X-required\nMonitor type.",
@@ -4975,6 +3516,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor type.",
+        "x-ves-example": "HTTP",
       },
     ],
     requestBodySchema: null,
@@ -4985,191 +3528,187 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetSourceSummary",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-staged-signature-create",
-    method: "POST",
-    path: "/api/ml/data/namespaces/{namespace}/virtual_hosts/{vh_name}/staged_signatures",
-    operation: "create",
-    domain: "observability",
-    resource: "staged-signature",
-    summary: "Staged Signatures.",
-    description: "API to GET Staged Signatures.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
       {
-        description: "Namespace\nFetch staged signatures for the given namespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Vh_name\nVirtual Host for current request.",
-        in: "path",
-        name: "vh_name",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl observability source-summary list --namespace {namespace}",
+        description: "List all source-summarys",
+        use_case: "list_all",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/waf_signatures_changelogStagedSignaturesReq",
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "F5 XC/country in (VES-I/O-usa), F5 XC/siteType=VES-I/O-RE.",
+      monitor_name: "Monitor1",
+      monitor_type: "HTTP",
+      namespace: "Demo",
     },
-    responseSchema: {
-      $ref: "#/components/schemas/waf_signatures_changelogStagedSignaturesRsp",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability source-summary list --namespace {namespace}",
+          description: "List all source-summarys",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all source-summarys",
+      required_fields: ["path.namespace"],
+      side_effects: {},
     },
-    requiredParams: ["body", "namespace", "vh_name"],
-    operationId: "ves.io.schema.waf_signatures_changelog.SignatureCustomApi.GetStagedSignatures",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-statu-create",
-    method: "POST",
-    path: "/api/data/namespaces/{namespace}/global_log_receiver/status",
-    operation: "create",
-    domain: "observability",
-    resource: "statu",
-    summary: "Global Log Receiver Status.",
-    description: "GET status for global log receivers.",
-    pathParameters: [
-      {
-        description: "Namespace\n\nx-required\nNamespace of the configured object.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/global_log_receiverGlobalLogReceiverStatusRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/global_log_receiverGlobalLogReceiverStatusResponse",
-    },
-    requiredParams: ["body", "namespace"],
-    operationId: "ves.io.schema.global_log_receiver.CustomDataAPI.GlobalLogReceiverStatus",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-status-at-site-get",
-    method: "GET",
-    path: "/api/data/namespaces/{namespace}/{kind}/{name}/status_at_site",
-    operation: "get",
-    domain: "observability",
-    resource: "status-at-site",
-    summary: "GET Status.",
-    description: "GET status of an object in a given site.",
-    pathParameters: [
-      {
-        description: "Kind\n\nx-required\nObject type.",
-        in: "path",
-        name: "kind",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Name\n\nx-required\nObject name.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description: "Namespace\n\nx-required\nNamespace of the configured object.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [
-      {
-        description: "Site name",
-        in: "query",
-        name: "site",
-        required: false,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          "Site type indicates whether the site is CE or RE\noptional: If not specified, the value for site_type defaults to CUSTOMER_EDGE\n\nInvalid type of site\nRegional Edge site\nCustomer Edge site.",
-        in: "query",
-        name: "site_type",
-        required: false,
-        schema: {
-          default: "INVALID",
-          enum: ["INVALID", "REGIONAL_EDGE", "CUSTOMER_EDGE", "NGINX_ONE"],
-          type: "string",
-        },
-      },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/status_at_siteStatusResponse",
-    },
-    requiredParams: ["kind", "name", "namespace"],
-    operationId: "ves.io.schema.status_at_site.CustomAPI.GetStatus",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-subscribe-create",
     method: "POST",
-    path: "/api/config/namespaces/system/flow-collection/addon/subscribe",
+    path: "/api/observability/connector/namespaces/system/observability/subscribe",
     operation: "create",
     domain: "observability",
     resource: "subscribe",
-    summary: "Subscribe to Flow Collection.",
-    description: "Subscribe to Flow Collection.",
+    summary: "Subscribe to Observability service.",
+    description: "Subscribe to Observability Synthetic Monitor.",
     pathParameters: [],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/flowSubscribeRequest",
+      $ref: "#/components/schemas/subscriptionSubscribeRequest",
     },
     responseSchema: {
-      $ref: "#/components/schemas/flowSubscribeResponse",
+      $ref: "#/components/schemas/subscriptionSubscribeResponse",
     },
     requiredParams: ["body"],
-    operationId: "ves.io.schema.flow.CustomFlowConnectionAPI.Subscribe",
+    operationId: "ves.io.schema.observability.subscription.CustomAPI.Subscribe",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-subscription-statu-list",
-    method: "GET",
-    path: "/api/config/namespaces/system/flow-collection/addon/subscription-status",
-    operation: "list",
-    domain: "observability",
-    resource: "subscription-statu",
-    summary: "Check subscription status for Flow Collection.",
-    description: "Check subscription status flow Flow Collection.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/flowSubscriptionStatusResponse",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["subscribe"],
     },
-    requiredParams: [],
-    operationId: "ves.io.schema.flow.CustomFlowConnectionAPI.GetSubscriptionStatus",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
+    requiredFields: ["metadata.name", "metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability subscribe create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl observability subscribe create {name} --namespace {namespace}",
+        description: "Create subscribe",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Subscribe resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl observability subscribe create {name} --namespace {namespace}",
+          description: "Create subscribe",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl observability subscribe create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new subscribe",
+      required_fields: ["metadata.name", "metadata.namespace"],
+      side_effects: {
+        creates: ["subscribe"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-suggest-value-create",
@@ -5190,6 +3729,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Foobar",
       },
     ],
     queryParameters: [],
@@ -5203,182 +3744,92 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.SuggestValues",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-summary-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/endpoint/summary",
-    operation: "create",
-    domain: "observability",
-    resource: "summary",
-    summary: "Endpoint Summary.",
-    description: "GET Endpoint Summary.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["suggest-value"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
       {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope the query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl observability suggest-value create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl observability suggest-value create {name} --namespace {namespace}",
+        description: "Create suggest-value",
+        use_case: "basic_create",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingEndpointSummaryResponse",
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Foobar",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.EndpointSummary",
-    tags: ["Service Mesh"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-summary-list",
-    method: "GET",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/consumption/summary",
-    operation: "list",
-    domain: "observability",
-    resource: "summary",
-    summary: "Consumption Summary.",
-    description: "GET Consumption summary.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic usage query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
         },
-      },
-    ],
-    queryParameters: [
-      {
-        description:
-          'Or "2022-09-30"\nThe end date of the query period.\nFormat: YYYY-MM or YYYY-MM-DD.',
-        in: "query",
-        name: "end",
-        required: false,
-        schema: {
-          type: "string",
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
         },
-      },
-      {
-        description:
-          'Or "2022-08-01"\nThe start date of the query period.\nFormat: YYYY-MM or YYYY-MM-DD.',
-        in: "query",
-        name: "start",
-        required: false,
-        schema: {
-          type: "string",
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
         },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Suggest-value resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
       },
-    ],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingConsumptionSummaryResponse",
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl observability suggest-value create {name} --namespace {namespace}",
+          description: "Create suggest-value",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl observability suggest-value create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new suggest-value",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["suggest-value"],
+      },
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.ConsumptionSummary",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-test-create",
-    method: "POST",
-    path: "/api/alert/namespaces/{namespace}/alert_receivers/{name}/test",
-    operation: "create",
-    domain: "observability",
-    resource: "test",
-    summary: "Test Alert Receiver.",
-    description: "API to send test alert.",
-    pathParameters: [
-      {
-        description: "Name\nName of the alert receiver.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          "Namespace\n\nx-required\nNamespace in which the alert receiver is configured.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/alert_receiverTestAlertReceiverRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/alert_receiverTestAlertReceiverResponse",
-    },
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.alert_receiver.CustomAPI.TestAlertReceiver",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-threat-type-create",
-    method: "POST",
-    path: "/api/shape/bot/reporting/peers/threat-types",
-    operation: "create",
-    domain: "observability",
-    resource: "threat-type",
-    summary: "Peergroup By Threat Types.",
-    description: "GetThreat Types traffic count for Peergroup Benchmarking.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingPeerGroupResponse",
-    },
-    requiredParams: [],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.PeersThreatTypes",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-timeserie-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/top/type/malicious/dimension/apps/timeseries",
-    operation: "create",
-    domain: "observability",
-    resource: "timeserie",
-    summary: "Malicious Report APP Time Series.",
-    description: "Malicious Report APP Time Series.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingMaliciousReportAPPTimeSeriesResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousReportAPPTimeSeries",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-tls-report-detail-list",
@@ -5398,6 +3849,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -5409,6 +3862,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor_name.",
+        "x-ves-example": "Monitor1",
       },
     ],
     requestBodySchema: null,
@@ -5419,6 +3874,79 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetTLSReportDetail",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability tls-report-detail list --namespace {namespace}",
+        description: "List all tls-report-details",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      monitor_name: "Monitor1",
+      namespace: "Demo",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability tls-report-detail list --namespace {namespace}",
+          description: "List all tls-report-details",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all tls-report-details",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-tls-report-summary-list",
@@ -5438,6 +3966,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -5449,6 +3979,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Monitor_name.",
+        "x-ves-example": "Monitor1",
       },
     ],
     requestBodySchema: null,
@@ -5459,6 +3991,79 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetTLSReportSummary",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability tls-report-summary list --namespace {namespace}",
+        description: "List all tls-report-summarys",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      monitor_name: "Monitor1",
+      namespace: "Demo",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability tls-report-summary list --namespace {namespace}",
+          description: "List all tls-report-summarys",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all tls-report-summarys",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-tls-summary-list",
@@ -5478,6 +4083,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -5489,203 +4096,184 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.CustomAPI.GetTLSSummary",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-top-flow-anomalie-create",
-    method: "POST",
-    path: "/api/data/namespaces/system/flows/top_flow_anomalies",
-    operation: "create",
-    domain: "observability",
-    resource: "top-flow-anomalie",
-    summary: "Flow Anomaly detection.",
-    description: "Request to GET flow anomaly records.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/flowTopFlowAnomaliesRequest",
-    },
-    responseSchema: {
-      $ref: "#/components/schemas/flowTopFlowAnomaliesResponse",
-    },
-    requiredParams: ["body"],
-    operationId: "ves.io.schema.flow.CustomAPI.TopFlowAnomalies",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-top-good-bot-create",
-    method: "POST",
-    path: "/api/shape/bot/reporting/peers/top-good-bots",
-    operation: "create",
-    domain: "observability",
-    resource: "top-good-bot",
-    summary: "Peer Group Top Good Bots.",
-    description: "GET Peer Group Top Good Bots.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingPeerGroupResponse",
-    },
-    requiredParams: [],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.PeersTopGoodBots",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-top-reason-code-create",
-    method: "POST",
-    path: "/api/shape/bot/reporting/peers/top-reason-codes",
-    operation: "create",
-    domain: "observability",
-    resource: "top-reason-code",
-    summary: "Peergroup Top Reason Codes.",
-    description: "GET Top Reason Codes.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingPeerGroupResponse",
-    },
-    requiredParams: [],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.PeersTopReasonCodes",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-top-talker-create",
-    method: "POST",
-    path: "/api/data/namespaces/system/flows/top_talkers",
-    operation: "create",
-    domain: "observability",
-    resource: "top-talker",
-    summary: "Top Talkers.",
-    description: "Request to GET top talkers from the flow records.",
-    pathParameters: [],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/flowTopTalkersResponse",
-    },
-    requiredParams: [],
-    operationId: "ves.io.schema.flow.CustomAPI.TopTalkers",
-    tags: ["Other"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-total-automation-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/insight/total-automation",
-    operation: "create",
-    domain: "observability",
-    resource: "total-automation",
-    summary: "Insight Event: Total Automation.",
-    description: "GET Insight Totol Automation data.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
       {
-        description: "Namespace\n\nx-required\nNamespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command: "f5xcctl observability tls-summary list --namespace {namespace}",
+        description: "List all tls-summarys",
+        use_case: "list_all",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingTotalAutomationResponse",
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Demo",
     },
-    requiredParams: ["namespace"],
-    operationId: "ves.io.schema.shape.bot_defense.reporting.CustomAPI.TotalAutomation",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-ua-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/malicious/transactions/ua",
-    operation: "create",
-    domain: "observability",
-    resource: "ua",
-    summary: "Malicious Report Transactions UA.",
-    description: "Malicious Report Transactions UA.",
-    pathParameters: [
-      {
-        description:
-          "Namespace\n\nx-required\nnamespace is used to scope traffic overview query. Only virtual_host in given namespace will be considered.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
         },
-      },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingMaliciousReportTransactionsResponse",
-    },
-    requiredParams: ["namespace"],
-    operationId:
-      "ves.io.schema.shape.bot_defense.reporting.CustomAPI.MaliciousReportTransactionsUA",
-    tags: ["Security"],
-    sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-unaddressed-automation-create",
-    method: "POST",
-    path: "/api/shape/bot/namespaces/{namespace}/reporting/insight/event/unaddressed-automations",
-    operation: "create",
-    domain: "observability",
-    resource: "unaddressed-automation",
-    summary: "Insight Unaddressed Automations.",
-    description: "Insight Unaddressed Automations.",
-    pathParameters: [
-      {
-        description: "Namespace\n\nx-required\nNamespace.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
         },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
       },
-    ],
-    queryParameters: [],
-    requestBodySchema: null,
-    responseSchema: {
-      $ref: "#/components/schemas/reportingInsightUnaddressedAutomationsResponse",
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability tls-summary list --namespace {namespace}",
+          description: "List all tls-summarys",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all tls-summarys",
+      required_fields: ["path.namespace"],
+      side_effects: {},
     },
-    requiredParams: ["namespace"],
-    operationId:
-      "ves.io.schema.shape.bot_defense.reporting.CustomAPI.InsightUnaddressedAutomations",
-    tags: ["Shape Security"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-unsubscribe-create",
     method: "POST",
-    path: "/api/config/namespaces/system/flow-collection/addon/unsubscribe",
+    path: "/api/observability/connector/namespaces/system/observability/unsubscribe",
     operation: "create",
     domain: "observability",
     resource: "unsubscribe",
-    summary: "Unsubscribe to Flow Collection.",
-    description: "Unsubscribe to Flow Collection.",
+    summary: "Unsubscribe to Observability Synthetic Monitor.",
+    description: "Unsubscribe to Observability Synthetic Monitor.",
     pathParameters: [],
     queryParameters: [],
     requestBodySchema: {
-      $ref: "#/components/schemas/flowUnsubscribeRequest",
+      $ref: "#/components/schemas/subscriptionUnsubscribeRequest",
     },
     responseSchema: {
-      $ref: "#/components/schemas/flowUnsubscribeResponse",
+      $ref: "#/components/schemas/subscriptionUnsubscribeResponse",
     },
     requiredParams: ["body"],
-    operationId: "ves.io.schema.flow.CustomFlowConnectionAPI.Unsubscribe",
+    operationId: "ves.io.schema.observability.subscription.CustomAPI.Unsubscribe",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["unsubscribe"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability unsubscribe create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl observability unsubscribe create {name} --namespace {namespace}",
+        description: "Create unsubscribe",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Unsubscribe resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl observability unsubscribe create {name} --namespace {namespace}",
+          description: "Create unsubscribe",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl observability unsubscribe create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new unsubscribe",
+      required_fields: ["metadata.name", "metadata.namespace"],
+      side_effects: {
+        creates: ["unsubscribe"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-v1-dns-monitor-create",
@@ -5706,6 +4294,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5719,6 +4309,92 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.API.Create",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["v1-dns-monitor"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability v1-dns-monitor create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl observability v1-dns-monitor create {name} --namespace {namespace}",
+        description: "Create v1-dns-monitor",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["V1-dns-monitor resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl observability v1-dns-monitor create {name} --namespace {namespace}",
+          description: "Create v1-dns-monitor",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl observability v1-dns-monitor create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new v1-dns-monitor",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["v1-dns-monitor"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-v1-dns-monitor-delete",
@@ -5738,6 +4414,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -5747,6 +4425,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -5758,6 +4438,83 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.API.Delete",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["v1-dns-monitor", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability v1-dns-monitor delete {name} --namespace {namespace}",
+        description: "Delete v1-dns-monitor",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl observability v1-dns-monitor delete {name} --namespace {namespace}",
+          description: "Delete v1-dns-monitor",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete v1-dns-monitor",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["v1-dns-monitor", "contained_resources"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-v1-dns-monitor-get",
@@ -5777,6 +4534,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -5786,6 +4545,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5808,6 +4569,7 @@ export const observabilityTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
@@ -5818,6 +4580,79 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.API.Get",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability v1-dns-monitor get {name} --namespace {namespace}",
+        description: "Get specific v1-dns-monitor",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability v1-dns-monitor get {name} --namespace {namespace}",
+          description: "Get specific v1-dns-monitor",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific v1-dns-monitor",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-v1-dns-monitor-list",
@@ -5837,6 +4672,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5849,6 +4686,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -5861,6 +4700,7 @@ export const observabilityTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -5873,6 +4713,7 @@ export const observabilityTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
@@ -5883,6 +4724,79 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.API.List",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability v1-dns-monitor list --namespace {namespace}",
+        description: "List all v1-dns-monitors",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability v1-dns-monitor list --namespace {namespace}",
+          description: "List all v1-dns-monitors",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all v1-dns-monitors",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-v1-dns-monitor-update",
@@ -5902,6 +4816,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -5912,6 +4828,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5925,6 +4843,85 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_dns_monitor.API.Replace",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["v1-dns-monitor"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command:
+          "f5xcctl observability v1-dns-monitor update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update v1-dns-monitor",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl observability v1-dns-monitor update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update v1-dns-monitor",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing v1-dns-monitor",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["v1-dns-monitor"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-v1-http-monitor-create",
@@ -5945,6 +4942,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5958,6 +4957,92 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.API.Create",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["v1-http-monitor"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability v1-http-monitor create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl observability v1-http-monitor create {name} --namespace {namespace}",
+        description: "Create v1-http-monitor",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["V1-http-monitor resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl observability v1-http-monitor create {name} --namespace {namespace}",
+          description: "Create v1-http-monitor",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl observability v1-http-monitor create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new v1-http-monitor",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["v1-http-monitor"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-v1-http-monitor-delete",
@@ -5977,6 +5062,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -5986,6 +5073,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -5997,6 +5086,83 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.API.Delete",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["v1-http-monitor", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability v1-http-monitor delete {name} --namespace {namespace}",
+        description: "Delete v1-http-monitor",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl observability v1-http-monitor delete {name} --namespace {namespace}",
+          description: "Delete v1-http-monitor",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete v1-http-monitor",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["v1-http-monitor", "contained_resources"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-v1-http-monitor-get",
@@ -6016,6 +5182,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -6025,6 +5193,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -6047,6 +5217,7 @@ export const observabilityTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
@@ -6057,6 +5228,79 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.API.Get",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability v1-http-monitor get {name} --namespace {namespace}",
+        description: "Get specific v1-http-monitor",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability v1-http-monitor get {name} --namespace {namespace}",
+          description: "Get specific v1-http-monitor",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific v1-http-monitor",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-v1-http-monitor-list",
@@ -6076,6 +5320,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -6088,6 +5334,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -6100,6 +5348,7 @@ export const observabilityTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -6112,6 +5361,7 @@ export const observabilityTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
@@ -6122,6 +5372,79 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.API.List",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl observability v1-http-monitor list --namespace {namespace}",
+        description: "List all v1-http-monitors",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl observability v1-http-monitor list --namespace {namespace}",
+          description: "List all v1-http-monitors",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all v1-http-monitors",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-observability-v1-http-monitor-update",
@@ -6141,6 +5464,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -6151,6 +5476,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -6164,49 +5491,85 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.observability.synthetic_monitor.v1_http_monitor.API.Replace",
     tags: ["Observability"],
     sourceFile: "domains/observability.json",
-  },
-  {
-    toolName: "f5xc-api-observability-verify-create",
-    method: "POST",
-    path: "/api/alert/namespaces/{namespace}/alert_receivers/{name}/verify",
-    operation: "create",
-    domain: "observability",
-    resource: "verify",
-    summary: "Verify Alert Receiver.",
-    description:
-      "API to send request to verify Alert Receiver - applicable only for email and sms.",
-    pathParameters: [
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["v1-http-monitor"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
       {
-        description: "Name\nName of the alert receiver.",
-        in: "path",
-        name: "name",
-        required: true,
-        schema: {
-          type: "string",
-        },
-      },
-      {
-        description:
-          "Namespace\n\nx-required\nNamespace in which the alert receiver is configured.",
-        in: "path",
-        name: "namespace",
-        required: true,
-        schema: {
-          type: "string",
-        },
+        command:
+          "f5xcctl observability v1-http-monitor update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update v1-http-monitor",
+        use_case: "update",
       },
     ],
-    queryParameters: [],
-    requestBodySchema: {
-      $ref: "#/components/schemas/alert_receiverVerifyAlertReceiverRequest",
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
     },
-    responseSchema: {
-      $ref: "#/components/schemas/alert_receiverVerifyAlertReceiverResponse",
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl observability v1-http-monitor update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update v1-http-monitor",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing v1-http-monitor",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["v1-http-monitor"],
+      },
     },
-    requiredParams: ["body", "name", "namespace"],
-    operationId: "ves.io.schema.alert_receiver.CustomAPI.VerifyAlertReceiver",
-    tags: ["Observability"],
-    sourceFile: "domains/observability.json",
   },
   {
     toolName: "f5xc-api-observability-vk8s-audit-log-create",
@@ -6227,6 +5590,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -6240,6 +5605,92 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.log.CustomAPI.VK8SAuditLogQuery",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["vk8s-audit-log"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl data vk8s-audit-log create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl data vk8s-audit-log create {name} --namespace {namespace}",
+        description: "Create vk8s-audit-log",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Value",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Vk8s-audit-log resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl data vk8s-audit-log create {name} --namespace {namespace}",
+          description: "Create vk8s-audit-log",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl data vk8s-audit-log create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new vk8s-audit-log",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["vk8s-audit-log"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-observability-vk8s-event-create",
@@ -6260,6 +5711,8 @@ export const observabilityTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -6273,6 +5726,92 @@ export const observabilityTools: ParsedOperation[] = [
     operationId: "ves.io.schema.log.CustomAPI.VK8SEventsQuery",
     tags: ["Other"],
     sourceFile: "domains/observability.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["vk8s-event"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl data vk8s-event create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl data vk8s-event create {name} --namespace {namespace}",
+        description: "Create vk8s-event",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Value",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Vk8s-event resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl data vk8s-event create {name} --namespace {namespace}",
+          description: "Create vk8s-event",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl data vk8s-event create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new vk8s-event",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["vk8s-event"],
+      },
+    },
   },
 ];
 

@@ -6,6 +6,9 @@ description: GET TLS Report Summary.
 
 # TLS Report Summary
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns the TLS report summary including grade, score, and protocol names.
 
 ## Tools
@@ -18,15 +21,15 @@ Returns the TLS report summary including grade, score, and protocol names.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `monitor_name` | Monitor_name. X-required |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `monitor_name` | Monitor_name. X-required | `Monitor1` |
 
 ## Example Usage
 
@@ -35,6 +38,18 @@ Ask Claude to help you work with TLS Report Summary resources:
 ### List TLS Report Summarys
 
 > "List all tls-report-summarys in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability tls-report-summary list --namespace {namespace}
+```
+
+List all tls-report-summarys
 
 ## f5xcctl Equivalent
 

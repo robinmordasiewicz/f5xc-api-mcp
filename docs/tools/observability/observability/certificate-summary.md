@@ -6,6 +6,9 @@ description: GET Certificate Summary.
 
 # Certificate Summary
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns list of TLS certificate expirations in specified time window for HTTPS monitors running in
 namespace.
 
@@ -19,15 +22,15 @@ namespace.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `period_in_days` | Period_in_days. |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `period_in_days` | Period_in_days. | `30` |
 
 ## Example Usage
 
@@ -36,6 +39,18 @@ Ask Claude to help you work with Certificate Summary resources:
 ### List Certificate Summarys
 
 > "List all certificate-summarys in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability certificate-summary list --namespace {namespace}
+```
+
+List all certificate-summarys
 
 ## f5xcctl Equivalent
 

@@ -6,6 +6,9 @@ description: Subscribe to CDN Loadbalancer.
 
 # Subscribe
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Subscribe to CDN Loadbalancer.
 
 ## Tools
@@ -14,6 +17,14 @@ Subscribe to CDN Loadbalancer.
 |------|-------------|
 | `f5xc-api-cdn-subscribe-create` | Subscribe to CDN Loadbalancer. |
 
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- subscribe
+
 ## Example Usage
 
 Ask Claude to help you work with Subscribe resources:
@@ -21,6 +32,26 @@ Ask Claude to help you work with Subscribe resources:
 ### Create Subscribe
 
 > "Create a subscribe named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl cdn subscribe create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl cdn subscribe create {name} --namespace {namespace}
+```
+
+Create subscribe
 
 ## f5xcctl Equivalent
 

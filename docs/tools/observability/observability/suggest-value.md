@@ -6,6 +6,9 @@ description: Suggest Values.
 
 # Suggest Value
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Returns suggested values for the specified field in the given Create/Replace/Custom request.
 
 ## Tools
@@ -18,9 +21,17 @@ Returns suggested values for the specified field in the given Create/Replace/Cus
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Foobar` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- suggest-value
 
 ## Example Usage
 
@@ -29,6 +40,26 @@ Ask Claude to help you work with Suggest Value resources:
 ### Create Suggest Value
 
 > "Create a suggest-value named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl observability suggest-value create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl observability suggest-value create {name} --namespace {namespace}
+```
+
+Create suggest-value
 
 ## f5xcctl Equivalent
 

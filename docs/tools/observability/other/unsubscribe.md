@@ -1,18 +1,29 @@
 ---
 page_title: f5xc_unsubscribe - f5xc-api-mcp
 subcategory: Observability
-description: Unsubscribe to Flow Collection.
+description: Unsubscribe to Observability Synthetic Monitor.
 ---
 
 # Unsubscribe
 
-Unsubscribe to Flow Collection.
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
+Unsubscribe to Observability Synthetic Monitor.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `f5xc-api-observability-unsubscribe-create` | Unsubscribe to Flow Collection. |
+| `f5xc-api-observability-unsubscribe-create` | Unsubscribe to Observability Synthetic Monitor. |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- unsubscribe
 
 ## Example Usage
 
@@ -21,6 +32,26 @@ Ask Claude to help you work with Unsubscribe resources:
 ### Create Unsubscribe
 
 > "Create a unsubscribe named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl observability unsubscribe create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl observability unsubscribe create {name} --namespace {namespace}
+```
+
+Create unsubscribe
 
 ## f5xcctl Equivalent
 

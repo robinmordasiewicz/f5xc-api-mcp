@@ -6,6 +6,9 @@ description: GET BIG-IP virtual server.
 
 # Bigip Virtual Server
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 List the set of bigip_virtual_server in a namespace.
 
 ## Tools
@@ -20,21 +23,29 @@ List the set of bigip_virtual_server in a namespace.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `name` | Name |
-| `namespace` | Namespace |
-| `metadata.name` | Name |
-| `metadata.namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `Name` |
+| `namespace` | Namespace | `Ns1` |
+| `metadata.name` | Name | `Example-corp-web.` |
+| `metadata.namespace` | Namespace | `Staging` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
-| `report_fields` | The report_fields parameter |
-| `report_status_fields` | The report_status_fields parameter |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Modifies:**
+
+- bigip-virtual-server
 
 ## Example Usage
 
@@ -47,6 +58,34 @@ Ask Claude to help you work with Bigip Virtual Server resources:
 ### Get Bigip Virtual Server Details
 
 > "Get details of the bigip-virtual-server named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### get_specific
+
+```bash
+f5xcctl config bigip-virtual-server get {name} --namespace {namespace}
+```
+
+Get specific bigip-virtual-server
+
+### list_all
+
+```bash
+f5xcctl config bigip-virtual-server list --namespace {namespace}
+```
+
+List all bigip-virtual-servers
+
+### update
+
+```bash
+f5xcctl config bigip-virtual-server update {name} --namespace {namespace} -f {file}.yaml
+```
+
+Update bigip-virtual-server
 
 ## f5xcctl Equivalent
 

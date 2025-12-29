@@ -6,6 +6,9 @@ description: GET Certificate Report Detail.
 
 # Certificate Report Detail
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns the certificate report detail.
 
 ## Tools
@@ -18,9 +21,9 @@ Returns the certificate report detail.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ## Example Usage
 
@@ -29,6 +32,18 @@ Ask Claude to help you work with Certificate Report Detail resources:
 ### List Certificate Report Details
 
 > "List all certificate-report-details in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability certificate-report-detail list --namespace {namespace}
+```
+
+List all certificate-report-details
 
 ## f5xcctl Equivalent
 

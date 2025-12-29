@@ -6,6 +6,9 @@ description: GET DNS Monitor Health.
 
 # DNS Monitors Health
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Returns list of DNS monitors in namespace with corresponding region health(s)
 
 ## Tools
@@ -18,9 +21,17 @@ Returns list of DNS monitors in namespace with corresponding region health(s)
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- dns-monitors-health
 
 ## Example Usage
 
@@ -29,6 +40,26 @@ Ask Claude to help you work with DNS Monitors Health resources:
 ### Create DNS Monitors Health
 
 > "Create a dns-monitors-health named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl observability dns-monitors-health create {name} --namespace {namespace}
+```
+
+Create dns-monitors-health
+
+### file_based
+
+```bash
+f5xcctl observability dns-monitors-health create -f {file}.yaml
+```
+
+Create from YAML file
 
 ## f5xcctl Equivalent
 

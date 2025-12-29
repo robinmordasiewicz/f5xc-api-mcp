@@ -1,190 +1,1237 @@
 {
-  "version": "1.0.16",
-  "timestamp": "2025-12-21T10:30:59.157351+00:00",
+  "version": "1.0.63",
+  "timestamp": "2025-12-29T06:22:42.585702+00:00",
   "specifications": [
     {
-      "domain": "ai_intelligence",
-      "title": "F5 XC Ai Intelligence API",
-      "description": "F5 Distributed Cloud Ai Intelligence API specifications",
-      "file": "ai_intelligence.json",
-      "path_count": 11,
-      "schema_count": 66
+      "domain": "admin_console_and_ui",
+      "title": "F5 XC Admin Console And Ui API",
+      "description": "Provides management capabilities for static components used in the F5 XC admin console and user interface. Enables operations to deploy, retrieve, update, and list static UI assets within namespace boundaries. Supports configuration of console interface elements, component metadata management, and asset lifecycle operations. Use this domain to manage custom UI components, static resources, and interface configurations that extend or customize the admin console experience.",
+      "description_short": "Static UI component and console asset management",
+      "description_medium": "Manage static components for the admin console interface. Deploy, retrieve, and list UI assets and configuration elements within namespaces.",
+      "file": "admin_console_and_ui.json",
+      "path_count": 2,
+      "schema_count": 16,
+      "complexity": "simple",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Other",
+      "aliases": [],
+      "use_cases": [],
+      "related_domains": []
     },
     {
-      "domain": "api_security",
-      "title": "F5 XC Api Security API",
-      "description": "F5 Distributed Cloud Api Security API specifications",
-      "file": "api_security.json",
-      "path_count": 34,
-      "schema_count": 206
+      "domain": "api",
+      "title": "F5 XC Api API",
+      "description": "Comprehensive API lifecycle management including automatic discovery and cataloging of APIs across your infrastructure, security testing to identify vulnerabilities and validate behavior, credential management for secure API access, and policy-driven API grouping. Define testing policies to continuously validate API security posture, organize APIs into logical groups for governance, and integrate with WAF and network security controls. Supports marking endpoints as non-API traffic and...",
+      "description_short": "API discovery, security testing, and credential management",
+      "description_medium": "Discover and catalog APIs, test security behavior, manage credentials, and define API groups with testing policies for comprehensive API lifecycle...",
+      "file": "api.json",
+      "path_count": 45,
+      "schema_count": 299,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Security",
+      "aliases": [
+        "apisec",
+        "api-discovery"
+      ],
+      "use_cases": [
+        "Discover and catalog APIs",
+        "Test API security and behavior",
+        "Manage API credentials",
+        "Define API groups and testing policies"
+      ],
+      "related_domains": [
+        "waf",
+        "network_security"
+      ],
+      "cli_metadata": {
+        "quick_start": {
+          "command": "curl $F5XC_API_URL/api/config/namespaces/default/api_catalogs -H 'Authorization: APIToken $F5XC_API_TOKEN'",
+          "description": "List all API catalogs in default namespace",
+          "expected_output": "JSON array of API catalog objects"
+        },
+        "common_workflows": [
+          {
+            "name": "Protect API with Security Policy",
+            "description": "Discover and protect APIs with WAF security policies",
+            "steps": [
+              {
+                "step": 1,
+                "command": "curl -X POST $F5XC_API_URL/api/config/namespaces/default/api_catalogs -H 'Authorization: APIToken $F5XC_API_TOKEN' -H 'Content-Type: application/json' -d '{...catalog_config...}'",
+                "description": "Create API catalog for API discovery and documentation"
+              },
+              {
+                "step": 2,
+                "command": "curl -X POST $F5XC_API_URL/api/config/namespaces/default/api_definitions -H 'Authorization: APIToken $F5XC_API_TOKEN' -H 'Content-Type: application/json' -d '{...api_config...}'",
+                "description": "Create API definition with security enforcement"
+              }
+            ],
+            "prerequisites": [
+              "API endpoints documented",
+              "Security policies defined",
+              "WAF rules configured"
+            ],
+            "expected_outcome": "APIs protected, violations logged and blocked"
+          }
+        ],
+        "troubleshooting": [
+          {
+            "problem": "API traffic blocked by security policy",
+            "symptoms": [
+              "HTTP 403 Forbidden",
+              "Requests rejected at edge"
+            ],
+            "diagnosis_commands": [
+              "curl $F5XC_API_URL/api/config/namespaces/default/api_definitions/{api} -H 'Authorization: APIToken $F5XC_API_TOKEN'",
+              "Check security policy enforcement rules"
+            ],
+            "solutions": [
+              "Review API definition and security policy rules",
+              "Adjust rule sensitivity to reduce false positives",
+              "Add exception rules for legitimate traffic patterns"
+            ]
+          }
+        ],
+        "icon": "🔐"
+      }
     },
     {
-      "domain": "applications",
-      "title": "F5 XC Applications API",
-      "description": "F5 Distributed Cloud Applications API specifications",
-      "file": "applications.json",
-      "path_count": 29,
-      "schema_count": 245
+      "domain": "authentication",
+      "title": "F5 XC Authentication API",
+      "description": "F5 Distributed Cloud Authentication API specifications",
+      "description_short": "Authentication API",
+      "description_medium": "F5 Distributed Cloud Authentication API specifications",
+      "file": "authentication.json",
+      "path_count": 14,
+      "schema_count": 39,
+      "complexity": "simple",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Platform",
+      "aliases": [
+        "authn",
+        "oidc",
+        "sso"
+      ],
+      "use_cases": [
+        "Configure authentication mechanisms",
+        "Manage OIDC and OAuth providers",
+        "Configure SCIM user provisioning",
+        "Manage API credentials and access",
+        "Configure account signup policies"
+      ],
+      "related_domains": [
+        "system",
+        "users"
+      ]
     },
     {
       "domain": "bigip",
       "title": "F5 XC Bigip API",
-      "description": "F5 Distributed Cloud Bigip API specifications",
+      "description": "Configure and manage BigIP F5 appliance integration with Distributed Cloud infrastructure. Create and deploy iRule scripts for advanced traffic manipulation, manage data groups for dynamic configuration, configure Access Policy Manager (APM) settings for authentication and access control, and define BigIP virtual servers. Provides metrics collection for APM performance monitoring and enables seamless hybrid deployments combining traditional BigIP infrastructure with cloud-native services...",
+      "description_short": "BigIP appliance management, iRules, and data groups",
+      "description_medium": "Manage BigIP F5 appliances including iRule script configuration, data groups, APM policies, and virtual server integration with Distributed Cloud.",
       "file": "bigip.json",
       "path_count": 21,
-      "schema_count": 179
+      "schema_count": 179,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Platform",
+      "aliases": [
+        "f5-bigip",
+        "irule",
+        "ltm"
+      ],
+      "use_cases": [
+        "Manage BigIP F5 appliances",
+        "Configure iRule scripts",
+        "Manage data groups",
+        "Integrate BigIP CNE"
+      ],
+      "related_domains": [
+        "marketplace"
+      ]
     },
     {
-      "domain": "billing",
-      "title": "F5 XC Billing API",
-      "description": "F5 Distributed Cloud Billing API specifications",
-      "file": "billing.json",
-      "path_count": 22,
-      "schema_count": 97
+      "domain": "billing_and_usage",
+      "title": "F5 XC Billing And Usage API",
+      "description": "Comprehensive billing and usage management for F5 XC tenants. Handle subscription plan transitions between tiers, configure primary and secondary payment methods, and download invoice PDFs. Monitor resource quota limits and current usage across namespaces. Supports custom invoice listing, quota configuration per namespace, and contact management for billing communications. Essential for financial operations, capacity planning, and subscription lifecycle management.",
+      "description_short": "Subscription billing, payment methods, and usage tracking",
+      "description_medium": "Manage subscription plans, payment methods, invoices, and resource quotas. Track usage limits and billing transitions across namespaces.",
+      "file": "billing_and_usage.json",
+      "path_count": 24,
+      "schema_count": 101,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Other",
+      "aliases": [],
+      "use_cases": [],
+      "related_domains": []
+    },
+    {
+      "domain": "blindfold",
+      "title": "F5 XC Blindfold API",
+      "description": "Configure and manage cryptographic secret protection with policy-based access controls. Create secret policies and policy rules that govern how sensitive data is encrypted, shared, and accessed across namespaces. Retrieve public keys for encryption operations, process policy information for secret sharing workflows, and decrypt secrets with proper authorization. Monitor secret access through comprehensive audit logs with aggregation and scrolling capabilities. Enforce data protection...",
+      "description_short": "Secret encryption and policy-based data protection",
+      "description_medium": "Manage encryption keys, secret policies, and sensitive data protection. Configure policy rules for secure secret sharing with audit logging.",
+      "file": "blindfold.json",
+      "path_count": 27,
+      "schema_count": 177,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Security",
+      "aliases": [
+        "bf",
+        "encrypt",
+        "secrets"
+      ],
+      "use_cases": [
+        "Configure secret policies for encryption",
+        "Manage sensitive data encryption",
+        "Enforce data protection policies"
+      ],
+      "related_domains": [
+        "client_side_defense",
+        "certificates"
+      ]
+    },
+    {
+      "domain": "bot_and_threat_defense",
+      "title": "F5 XC Bot And Threat Defense API",
+      "description": "Manage comprehensive bot and threat defense capabilities including Shape bot defense instance configuration, threat protection manager (TPM) categories for threat classification, and API key provisioning for automated defense systems. Create and manage TPM categories to organize threats by type, configure bot defense instances per namespace, and handle TPM manager lifecycle operations. Supports preauthorization and provisioning workflows for integrating threat intelligence services with...",
+      "description_short": "Bot detection, threat categorization, and defense management",
+      "description_medium": "Configure bot defense instances, manage threat categories, and provision TPM API keys for automated threat detection and mitigation.",
+      "file": "bot_and_threat_defense.json",
+      "path_count": 19,
+      "schema_count": 79,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Other",
+      "aliases": [],
+      "use_cases": [],
+      "related_domains": []
     },
     {
       "domain": "cdn",
       "title": "F5 XC Cdn API",
-      "description": "F5 Distributed Cloud Cdn API specifications",
+      "description": "Content Delivery Network services for global content distribution and edge caching. Configure CDN load balancers with custom caching rules based on paths, headers, cookies, and query parameters. Define cache TTL policies, eligibility options, and cache-control behaviors. Monitor CDN performance through access logs and metrics aggregation. Perform cache purge operations for content invalidation. Manage addon subscriptions and track service operation status for CDN deployments.",
+      "description_short": "CDN load balancing, caching rules, and content delivery",
+      "description_medium": "Configure CDN load balancers and caching rules for content delivery. Manage cache policies, purge operations, and access logs for optimized...",
       "file": "cdn.json",
-      "path_count": 19,
-      "schema_count": 384
+      "path_count": 26,
+      "schema_count": 618,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Networking",
+      "aliases": [
+        "cache",
+        "content"
+      ],
+      "use_cases": [
+        "Configure CDN load balancing",
+        "Manage content delivery network services",
+        "Configure caching policies",
+        "Manage data delivery and distribution"
+      ],
+      "related_domains": [
+        "virtual"
+      ]
     },
     {
-      "domain": "config",
-      "title": "F5 XC Config API",
-      "description": "F5 Distributed Cloud Config API specifications",
-      "file": "config.json",
-      "path_count": 8,
-      "schema_count": 22
+      "domain": "ce_management",
+      "title": "F5 XC Ce Management API",
+      "description": "Configure and manage Customer Edge (CE) site infrastructure across distributed deployments. Define network interfaces with DHCP, IPv6, and dedicated management settings. Organize sites into fleets for coordinated management. Handle site registration workflows including token-based registration, image downloads, and suggested configuration values. Monitor and execute site upgrades with pre-upgrade checks and status tracking. Supports both dedicated and Ethernet interface types with...",
+      "description_short": "Customer Edge site lifecycle and network configuration",
+      "description_medium": "Manage Customer Edge sites including network interfaces, fleet configurations, site upgrades, and registration workflows for distributed deployments.",
+      "file": "ce_management.json",
+      "path_count": 28,
+      "schema_count": 238,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Other",
+      "aliases": [],
+      "use_cases": [],
+      "related_domains": []
     },
     {
-      "domain": "identity",
-      "title": "F5 XC Identity API",
-      "description": "F5 Distributed Cloud Identity API specifications",
-      "file": "identity.json",
-      "path_count": 137,
-      "schema_count": 445
+      "domain": "certificates",
+      "title": "F5 XC Certificates API",
+      "description": "Comprehensive certificate lifecycle management for securing application communications. Configure SSL/TLS certificates and certificate chains for endpoints, manage trusted Certificate Authority (CA) lists for client verification, and maintain Certificate Revocation Lists (CRLs) to invalidate compromised certificates. Supports certificate manifests for organized deployment across namespaces, enabling mTLS authentication, HTTPS termination, and secure service-to-service communication patterns.",
+      "description_short": "SSL/TLS certificate and trusted CA management",
+      "description_medium": "Manage SSL/TLS certificates, certificate chains, trusted CA lists, and certificate revocation lists for secure communications.",
+      "file": "certificates.json",
+      "path_count": 16,
+      "schema_count": 80,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Security",
+      "aliases": [
+        "cert",
+        "certs",
+        "ssl",
+        "tls"
+      ],
+      "use_cases": [
+        "Manage SSL/TLS certificates",
+        "Configure trusted CAs",
+        "Manage certificate revocation lists (CRL)",
+        "Configure certificate manifests"
+      ],
+      "related_domains": [
+        "blindfold",
+        "system"
+      ]
     },
     {
-      "domain": "infrastructure",
-      "title": "F5 XC Infrastructure API",
-      "description": "F5 Distributed Cloud Infrastructure API specifications",
-      "file": "infrastructure.json",
-      "path_count": 134,
-      "schema_count": 1015
+      "domain": "cloud_infrastructure",
+      "title": "F5 XC Cloud Infrastructure API",
+      "description": "Establish and manage connectivity to major cloud providers including AWS, Azure, and GCP. Configure cloud credentials and authentication for secure provider access. Create and manage VPC attachments, transit gateways, and route tables for cross-cloud networking. Support elastic provisioning with automatic resource discovery and reapplication workflows. Monitor cloud connection metrics and segment performance. Integrate with Customer Edge sites for hybrid cloud deployments across multiple...",
+      "description_short": "Multi-cloud provider connectivity and credential management",
+      "description_medium": "Connect to AWS, Azure, and GCP cloud providers. Manage cloud credentials, VPC attachments, transit gateways, and cross-cloud networking with...",
+      "file": "cloud_infrastructure.json",
+      "path_count": 31,
+      "schema_count": 222,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Infrastructure",
+      "aliases": [
+        "cloud",
+        "infra",
+        "provider"
+      ],
+      "use_cases": [
+        "Connect to cloud providers (AWS, Azure, GCP)",
+        "Manage cloud credentials and authentication",
+        "Configure cloud connectivity and elastic provisioning",
+        "Link and manage cloud regions"
+      ],
+      "related_domains": [
+        "sites",
+        "customer_edge"
+      ]
     },
     {
-      "domain": "infrastructure_protection",
-      "title": "F5 XC Infrastructure Protection API",
-      "description": "F5 Distributed Cloud Infrastructure Protection API specifications",
-      "file": "infrastructure_protection.json",
-      "path_count": 59,
-      "schema_count": 223
-    },
-    {
-      "domain": "integrations",
-      "title": "F5 XC Integrations API",
-      "description": "F5 Distributed Cloud Integrations API specifications",
-      "file": "integrations.json",
-      "path_count": 39,
-      "schema_count": 184
-    },
-    {
-      "domain": "load_balancer",
-      "title": "F5 XC Load Balancer API",
-      "description": "F5 Distributed Cloud Load Balancer API specifications",
-      "file": "load_balancer.json",
-      "path_count": 46,
-      "schema_count": 515
-    },
-    {
-      "domain": "networking",
-      "title": "F5 XC Networking API",
-      "description": "F5 Distributed Cloud Networking API specifications",
-      "file": "networking.json",
-      "path_count": 220,
-      "schema_count": 1267
-    },
-    {
-      "domain": "nginx",
-      "title": "F5 XC Nginx API",
-      "description": "F5 Distributed Cloud Nginx API specifications",
-      "file": "nginx.json",
+      "domain": "container_services",
+      "title": "F5 XC Container Services API",
+      "description": "Container Services (XCCS) enables deployment and management of containerized applications across distributed edge sites without requiring full Kubernetes complexity. Create virtual Kubernetes clusters for isolated multi-tenant environments, define workload flavors for resource allocation, and deploy container workloads with simplified orchestration. Monitor workload usage and PVC metrics, manage namespace isolation, and integrate with site infrastructure for edge-native container...",
+      "description_short": "Edge container workloads and virtual Kubernetes management",
+      "description_medium": "Deploy and manage containerized workloads at the edge with simplified orchestration. Configure virtual Kubernetes clusters, workload flavors, and...",
+      "file": "container_services.json",
       "path_count": 13,
-      "schema_count": 63
+      "schema_count": 165,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Infrastructure",
+      "aliases": [
+        "vk8s",
+        "containers",
+        "workloads"
+      ],
+      "use_cases": [
+        "Deploy XCCS (Container Services) namespaces for multi-tenant workloads",
+        "Manage container workloads with simplified orchestration",
+        "Configure distributed edge container deployments",
+        "Run containerized applications without full K8s complexity"
+      ],
+      "related_domains": [
+        "managed_kubernetes",
+        "sites",
+        "service_mesh"
+      ]
+    },
+    {
+      "domain": "data_and_privacy_security",
+      "title": "F5 XC Data And Privacy Security API",
+      "description": "Manage comprehensive data privacy and security controls including sensitive data detection policies, custom data type definitions, and log management analytics (LMA) region configurations. Define patterns for identifying PII, financial data, and other sensitive information with configurable actions for masking, alerting, or blocking. Configure LMA regions with Elasticsearch, Kafka, or ClickHouse backends for centralized security logging and compliance auditing. Integrate geo-configurations...",
+      "description_short": "Sensitive data detection, classification, and privacy...",
+      "description_medium": "Configure data types, sensitive data policies, and LMA regions for detecting, classifying, and protecting personally identifiable information and...",
+      "file": "data_and_privacy_security.json",
+      "path_count": 11,
+      "schema_count": 70,
+      "complexity": "simple",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Other",
+      "aliases": [],
+      "use_cases": [],
+      "related_domains": []
+    },
+    {
+      "domain": "data_intelligence",
+      "title": "F5 XC Data Intelligence API",
+      "description": "F5 Distributed Cloud Data Intelligence API specifications",
+      "description_short": "Data Intelligence API",
+      "description_medium": "F5 Distributed Cloud Data Intelligence API specifications",
+      "file": "data_intelligence.json",
+      "path_count": 15,
+      "schema_count": 77,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Operations",
+      "aliases": [
+        "di",
+        "intelligence",
+        "insights"
+      ],
+      "use_cases": [
+        "Analyze security and traffic data",
+        "Generate intelligent insights from logs",
+        "Configure data analytics policies"
+      ],
+      "related_domains": [
+        "statistics",
+        "observability"
+      ]
+    },
+    {
+      "domain": "ddos",
+      "title": "F5 XC Ddos API",
+      "description": "Comprehensive DDoS protection and infrastructure security management. Configure deny list rules to block malicious traffic sources, create firewall rule groups for granular traffic filtering, and manage protection tunnels for secure infrastructure connectivity. The infraprotect APIs enable proactive threat mitigation through customizable security policies, real-time tunnel status monitoring, and namespace-scoped rule management. Integrates with network security and virtual load balancing for...",
+      "description_short": "DDoS protection and infrastructure security policies",
+      "description_medium": "Configure DDoS protection policies, deny lists, and firewall rules. Monitor infrastructure threats and manage protection tunnels for network security.",
+      "file": "ddos.json",
+      "path_count": 59,
+      "schema_count": 223,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Security",
+      "aliases": [
+        "dos",
+        "ddos-protect"
+      ],
+      "use_cases": [
+        "Configure DDoS protection policies",
+        "Monitor and analyze DDoS threats",
+        "Configure infrastructure protection"
+      ],
+      "related_domains": [
+        "network_security",
+        "virtual"
+      ]
+    },
+    {
+      "domain": "dns",
+      "title": "F5 XC Dns API",
+      "description": "Comprehensive DNS management for zones, domains, and resource records. Configure DNS load balancing with health checks for high availability. Import and export zone files via BIND format or AXFR transfers. Manage resource record sets including A, AAAA, CNAME, CAA, CERT, AFSDB, and DLV records. Monitor DNS performance through metrics and request logs. Clone zones from existing domains and enforce DNS compliance policies across namespaces.",
+      "description_short": "DNS zone management, load balancing, and record...",
+      "description_medium": "Manage DNS zones, configure DNS load balancing with health checks, and control resource record sets. Supports zone imports, BIND file handling,...",
+      "file": "dns.json",
+      "path_count": 45,
+      "schema_count": 251,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Networking",
+      "aliases": [
+        "dns-zone",
+        "zones"
+      ],
+      "use_cases": [
+        "Configure DNS load balancing",
+        "Manage DNS zones and domains",
+        "Configure DNS compliance policies",
+        "Manage resource record sets (RRSets)"
+      ],
+      "related_domains": [
+        "virtual",
+        "network"
+      ],
+      "cli_metadata": {
+        "quick_start": {
+          "command": "curl $F5XC_API_URL/api/config/namespaces/default/dns_domains -H 'Authorization: APIToken $F5XC_API_TOKEN'",
+          "description": "List all DNS domains configured in default namespace",
+          "expected_output": "JSON array of DNS domain objects"
+        },
+        "common_workflows": [
+          {
+            "name": "Create DNS Domain",
+            "description": "Configure DNS domain with load balancer backend",
+            "steps": [
+              {
+                "step": 1,
+                "command": "Create load balancer endpoint first (virtual domain)",
+                "description": "Ensure target load balancer exists"
+              },
+              {
+                "step": 2,
+                "command": "curl -X POST $F5XC_API_URL/api/config/namespaces/default/dns_domains -H 'Authorization: APIToken $F5XC_API_TOKEN' -H 'Content-Type: application/json' -d '{...dns_config...}'",
+                "description": "Create DNS domain pointing to load balancer"
+              }
+            ],
+            "prerequisites": [
+              "DNS domain registered",
+              "Load balancer configured",
+              "SOA and NS records prepared"
+            ],
+            "expected_outcome": "DNS domain in Active status, queries resolving to load balancer"
+          }
+        ],
+        "troubleshooting": [
+          {
+            "problem": "DNS queries not resolving",
+            "symptoms": [
+              "NXDOMAIN responses",
+              "Timeout on DNS queries"
+            ],
+            "diagnosis_commands": [
+              "curl $F5XC_API_URL/api/config/namespaces/default/dns_domains/{domain} -H 'Authorization: APIToken $F5XC_API_TOKEN'",
+              "nslookup {domain} @ns-server"
+            ],
+            "solutions": [
+              "Verify domain delegation to F5 XC nameservers",
+              "Check DNS domain configuration and backend load balancer status",
+              "Validate zone file and record configuration"
+            ]
+          }
+        ],
+        "icon": "🌐"
+      }
+    },
+    {
+      "domain": "generative_ai",
+      "title": "F5 XC Generative Ai API",
+      "description": "Generative AI services providing intelligent automation and analysis capabilities. Configure AI assistant policies and submit queries with feedback tracking for continuous improvement. Enable flow anomaly detection powered by machine learning. Manage AI data collection through the BFDP subsystem including feature enablement, token management, and subscription controls. Supports IP allocation for GIA services. Integrates dashboard visualization with customizable displays, filters, and link...",
+      "description_short": "AI-powered features, assistants, and data collection",
+      "description_medium": "Access generative AI capabilities including AI assistant queries, flow anomaly detection, and AI data collection with feedback mechanisms.",
+      "file": "generative_ai.json",
+      "path_count": 11,
+      "schema_count": 66,
+      "complexity": "simple",
+      "is_preview": true,
+      "requires_tier": "Advanced",
+      "domain_category": "AI",
+      "aliases": [
+        "ai",
+        "genai",
+        "assistant"
+      ],
+      "use_cases": [
+        "Access AI-powered features",
+        "Configure AI assistant policies",
+        "Enable flow anomaly detection",
+        "Manage AI data collection"
+      ],
+      "related_domains": []
+    },
+    {
+      "domain": "managed_kubernetes",
+      "title": "F5 XC Managed Kubernetes API",
+      "description": "Configure and manage Managed Kubernetes (XCKS) security and access controls. Define cluster roles with fine-grained permissions for API resources and non-resource URLs. Create role bindings to associate users and groups with cluster-wide permissions. Enforce pod security standards through admission controllers with configurable enforcement levels. Manage private container registries for secure image distribution. Integrates with external Kubernetes clusters including EKS, AKS, and GKE for...",
+      "description_short": "Kubernetes RBAC, pod security, and container registries",
+      "description_medium": "Manage Kubernetes cluster roles, RBAC bindings, pod security admission policies, and container registries for enterprise deployments.",
+      "file": "managed_kubernetes.json",
+      "path_count": 20,
+      "schema_count": 104,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Infrastructure",
+      "aliases": [
+        "mk8s",
+        "appstack",
+        "k8s-mgmt"
+      ],
+      "use_cases": [
+        "Manage XCKS (Managed Kubernetes) cluster RBAC and security",
+        "Configure pod security policies and admission controllers",
+        "Manage container registries for enterprise deployments",
+        "Integrate with external Kubernetes clusters (EKS, AKS, GKE)"
+      ],
+      "related_domains": [
+        "container_services",
+        "sites",
+        "service_mesh"
+      ]
+    },
+    {
+      "domain": "marketplace",
+      "title": "F5 XC Marketplace API",
+      "description": "Access and manage the marketplace ecosystem including third-party integrations, add-on services, and external connectors. Configure connection types for direct, GRE tunnel, and IPSec connectivity with customizable IKE parameters and DPD keepalive settings. Manage navigation tiles for custom UI extensions, activate and monitor add-on service status across namespaces, and integrate with external platforms like Terraform. Supports TPM policy management and configuration management instances for...",
+      "description_short": "Third-party integrations, add-ons, and extensions",
+      "description_medium": "Manage marketplace extensions, external connectors, and third-party add-on services. Configure Terraform integrations and TPM policies.",
+      "file": "marketplace.json",
+      "path_count": 36,
+      "schema_count": 200,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Platform",
+      "aliases": [
+        "market",
+        "addons",
+        "extensions"
+      ],
+      "use_cases": [
+        "Access third-party integrations and add-ons",
+        "Manage marketplace extensions",
+        "Configure Terraform and external integrations",
+        "Manage TPM policies"
+      ],
+      "related_domains": [
+        "bigip",
+        "admin"
+      ]
+    },
+    {
+      "domain": "network",
+      "title": "F5 XC Network API",
+      "description": "Comprehensive network infrastructure management including BGP routing with ASN configuration and peering policies, IPsec tunnel establishment with full IKE phase 1 and phase 2 parameter control, and network connector configuration for hybrid cloud connectivity. Supports SRv6 segment routing, subnet management, DC cluster groups for data center integration, static and dynamic route definitions, and IP prefix set policies. Enables secure site-to-site VPN connections, multi-cloud network...",
+      "description_short": "BGP routing, IPsec tunnels, and network connectivity",
+      "description_medium": "Configure BGP routing policies, IPsec tunnels with IKE phases, network connectors, SRv6, and IP prefix sets for secure site-to-site connectivity.",
+      "file": "network.json",
+      "path_count": 81,
+      "schema_count": 478,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Networking",
+      "aliases": [
+        "net",
+        "routing",
+        "bgp"
+      ],
+      "use_cases": [
+        "Configure BGP routing and ASN management",
+        "Manage IPsec tunnels and IKE phases",
+        "Configure network connectors and routes",
+        "Manage SRv6 and subnetting",
+        "Define segment connections and policies",
+        "Configure IP prefix sets"
+      ],
+      "related_domains": [
+        "virtual",
+        "network_security",
+        "dns"
+      ]
+    },
+    {
+      "domain": "network_security",
+      "title": "F5 XC Network Security API",
+      "description": "Network security controls for protecting traffic at the network layer. Configure network firewalls with stateful inspection and ACL rules. Define NAT policies for address translation, port forwarding, and dynamic pool management. Create network policy sets for segmentation and micro-segmentation between workloads. Implement policy-based routing to direct traffic based on source, destination, or application criteria. Manage segment connections for multi-site network isolation. Configure...",
+      "description_short": "Network firewall, NAT, ACL, and policy-based routing",
+      "description_medium": "Configure network firewalls, NAT policies, ACLs, and policy-based routing. Manage network segmentation, port forwarding, and forward proxy policies.",
+      "file": "network_security.json",
+      "path_count": 61,
+      "schema_count": 402,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Security",
+      "aliases": [
+        "netsec",
+        "nfw"
+      ],
+      "use_cases": [
+        "Configure network firewall and ACL policies",
+        "Manage NAT policies and port forwarding",
+        "Configure policy-based routing",
+        "Define network segments and policies",
+        "Configure forward proxy policies"
+      ],
+      "related_domains": [
+        "waf",
+        "api",
+        "network"
+      ]
+    },
+    {
+      "domain": "nginx_one",
+      "title": "F5 XC Nginx One API",
+      "description": "Integrate and manage NGINX One platform capabilities including subscription lifecycle management, NGINX Plus instance provisioning, and server configuration. Configure dataplane servers, manage nginx instances with WAF and API discovery specifications, and enable service discovery integrations. Supports NGINX Configuration Sync Gateway (CSG) configurations for centralized management workflows. Typical operations include subscribing to NGINX One services, retrieving server status and...",
+      "description_short": "NGINX One platform integration and instance management",
+      "description_medium": "Manage NGINX One platform subscriptions, configure NGINX Plus instances and servers, and integrate service discovery with centralized...",
+      "file": "nginx_one.json",
+      "path_count": 13,
+      "schema_count": 63,
+      "complexity": "simple",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Platform",
+      "aliases": [
+        "nginx",
+        "nms",
+        "nginx-plus"
+      ],
+      "use_cases": [
+        "Manage NGINX One platform integrations",
+        "Configure NGINX Plus instances",
+        "Integrate NGINX configuration management"
+      ],
+      "related_domains": [
+        "marketplace"
+      ]
+    },
+    {
+      "domain": "object_storage",
+      "title": "F5 XC Object Storage API",
+      "description": "Manage versioned object storage for mobile application components and platform integrations. Upload and retrieve mobile app shield configurations, SDK integrations, and custom artifacts organized by namespace and object type. Support for multiple versions of each object enables rollback and version-specific deployments. Presigned URLs provide secure, time-limited access for direct object downloads. Object types include mobile-app-shield for application protection, mobile-integrator for...",
+      "description_short": "Object storage for mobile SDK artifacts and integrations",
+      "description_medium": "Store and retrieve versioned objects including mobile app shields, SDK integrations, and custom artifacts with presigned URL access.",
+      "file": "object_storage.json",
+      "path_count": 7,
+      "schema_count": 18,
+      "complexity": "simple",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Platform",
+      "aliases": [
+        "storage",
+        "s3",
+        "buckets"
+      ],
+      "use_cases": [
+        "Manage object storage services",
+        "Configure stored objects and buckets",
+        "Manage storage policies"
+      ],
+      "related_domains": [
+        "marketplace"
+      ]
     },
     {
       "domain": "observability",
       "title": "F5 XC Observability API",
-      "description": "F5 Distributed Cloud Observability API specifications",
+      "description": "Comprehensive synthetic monitoring and observability capabilities for proactive infrastructure health assessment. Configure DNS monitors to validate resolution across AWS regions, set up HTTP monitors for endpoint availability testing, and track SSL/TLS certificate expiration status. Access real-time health summaries at global and namespace levels, review historical monitoring data, and generate detailed reports for DNS and HTTP monitors. Integrate with dashboards to visualize monitoring...",
+      "description_short": "Synthetic monitoring, health checks, and observability...",
+      "description_medium": "Configure synthetic monitoring with DNS and HTTP health checks. Track certificate status, monitor global health summaries, and analyze monitoring...",
       "file": "observability.json",
-      "path_count": 235,
-      "schema_count": 838
+      "path_count": 56,
+      "schema_count": 223,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Operations",
+      "aliases": [
+        "obs",
+        "monitoring",
+        "synth"
+      ],
+      "use_cases": [
+        "Configure synthetic monitoring",
+        "Define monitoring and testing policies",
+        "Manage observability dashboards"
+      ],
+      "related_domains": [
+        "statistics",
+        "support"
+      ]
     },
     {
-      "domain": "operations",
-      "title": "F5 XC Operations API",
-      "description": "F5 Distributed Cloud Operations API specifications",
-      "file": "operations.json",
-      "path_count": 45,
-      "schema_count": 147
+      "domain": "rate_limiting",
+      "title": "F5 XC Rate Limiting API",
+      "description": "Manage rate limiting policies to protect applications from traffic surges and abuse. Configure rate limiters with customizable thresholds, time periods, and enforcement actions including blocking or throttling. Implement policers using leaky bucket algorithms for smooth traffic shaping. Define protocol-specific policers for granular control over different traffic types. Integrate with virtual hosts and load balancers to enforce rate limits at the edge, preventing resource exhaustion and...",
+      "description_short": "Traffic rate limiting, policers, and throttling controls",
+      "description_medium": "Configure rate limiters and policers to control traffic flow. Define request thresholds, leaky bucket algorithms, and enforcement actions for API...",
+      "file": "rate_limiting.json",
+      "path_count": 12,
+      "schema_count": 73,
+      "complexity": "simple",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Networking",
+      "aliases": [
+        "ratelimit",
+        "throttle",
+        "policer"
+      ],
+      "use_cases": [
+        "Configure rate limiter policies",
+        "Manage policer configurations",
+        "Control traffic flow and queuing"
+      ],
+      "related_domains": [
+        "virtual",
+        "network_security"
+      ]
     },
     {
-      "domain": "other",
-      "title": "F5 XC Other API",
-      "description": "F5 Distributed Cloud Other API specifications",
-      "file": "other.json",
-      "path_count": 0,
-      "schema_count": 0
-    },
-    {
-      "domain": "security",
-      "title": "F5 XC Security API",
-      "description": "F5 Distributed Cloud Security API specifications",
-      "file": "security.json",
-      "path_count": 210,
-      "schema_count": 1108
+      "domain": "secops_and_incident_response",
+      "title": "F5 XC Secops And Incident Response API",
+      "description": "Security operations and incident response capabilities for detecting and mitigating malicious user activity. Create mitigation policies that define automated responses based on user threat levels, including blocking, challenging, or rate limiting suspicious users. Configure rules that match specific malicious user types and threat severity levels to appropriate mitigation actions. Supports namespace-scoped configurations for managing security policies across different application...",
+      "description_short": "Malicious user detection and automated threat mitigation",
+      "description_medium": "Configure automated responses to malicious user behavior. Define mitigation rules based on threat levels and apply actions like blocking or rate...",
+      "file": "secops_and_incident_response.json",
+      "path_count": 4,
+      "schema_count": 33,
+      "complexity": "simple",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Other",
+      "aliases": [],
+      "use_cases": [],
+      "related_domains": []
     },
     {
       "domain": "service_mesh",
       "title": "F5 XC Service Mesh API",
-      "description": "F5 Distributed Cloud Service Mesh API specifications",
+      "description": "Manage service mesh infrastructure including endpoint discovery and intelligent routing between distributed services. Define application types with learned API schemas, security risk classifications, and authentication configurations. Configure NFV (Network Function Virtualization) services with lifecycle management including force-delete operations. Leverage machine learning capabilities for automatic API endpoint detection, schema learning, and traffic pattern analysis. Integrate with...",
+      "description_short": "Service mesh connectivity, discovery, and NFV management",
+      "description_medium": "Configure service mesh networking with endpoint discovery, application type definitions, API endpoint learning, and NFV service lifecycle management.",
       "file": "service_mesh.json",
-      "path_count": 32,
-      "schema_count": 271
+      "path_count": 38,
+      "schema_count": 281,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Infrastructure",
+      "aliases": [
+        "mesh",
+        "svc-mesh"
+      ],
+      "use_cases": [
+        "Configure service mesh connectivity",
+        "Manage endpoint discovery and routing",
+        "Configure NFV services",
+        "Define application settings and types"
+      ],
+      "related_domains": [
+        "managed_kubernetes",
+        "container_services",
+        "virtual"
+      ]
     },
     {
-      "domain": "shape_security",
-      "title": "F5 XC Shape Security API",
-      "description": "F5 Distributed Cloud Shape Security API specifications",
-      "file": "shape_security.json",
-      "path_count": 124,
-      "schema_count": 341
+      "domain": "shape",
+      "title": "F5 XC Shape API",
+      "description": "Shape Security integration for advanced bot defense and threat prevention capabilities. Configure bot infrastructure deployments with policy management, deployment history tracking, and status monitoring. Manage mobile SDK attributes for application shielding and integrator configurations. Subscribe to bot defense add-ons and client-side defense services. Includes SafeAP policy configuration, threat recognition rules, and automated bot mitigation across namespaces with comprehensive...",
+      "description_short": "Bot defense and threat prevention with Shape Security",
+      "description_medium": "Configure Shape Security policies for bot defense, threat recognition, and mobile SDK protection. Manage bot infrastructure deployments and SafeAP...",
+      "file": "shape.json",
+      "path_count": 268,
+      "schema_count": 829,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Security",
+      "aliases": [
+        "shape-sec",
+        "safeap"
+      ],
+      "use_cases": [
+        "Configure Shape Security policies",
+        "Manage bot and threat prevention",
+        "Configure SafeAP policies",
+        "Enable threat recognition"
+      ],
+      "related_domains": [
+        "bot_defense",
+        "waf"
+      ]
     },
     {
-      "domain": "subscriptions",
-      "title": "F5 XC Subscriptions API",
-      "description": "F5 Distributed Cloud Subscriptions API specifications",
-      "file": "subscriptions.json",
-      "path_count": 24,
-      "schema_count": 89
+      "domain": "sites",
+      "title": "F5 XC Sites API",
+      "description": "Comprehensive site infrastructure management for deploying F5 XC across multiple cloud providers and edge locations. Configure AWS Transit Gateway sites with VPN tunnels, VPC IP prefixes, and security settings. Manage virtual sites for logical grouping and policy application. Deploy Secure Mesh sites for networking-focused edge deployments, integrate external Kubernetes clusters as Customer Edge nodes, and configure cloud-specific resources including AWS VPC, Azure VNet, and GCP VPC sites....",
+      "description_short": "Multi-cloud site deployment and edge infrastructure",
+      "description_medium": "Deploy and manage F5 XC sites across AWS, Azure, and GCP. Configure AWS TGW sites, virtual sites, managed Kubernetes, and Customer Edge integrations.",
+      "file": "sites.json",
+      "path_count": 132,
+      "schema_count": 1046,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Infrastructure",
+      "aliases": [
+        "site",
+        "deployment"
+      ],
+      "use_cases": [
+        "Deploy F5 XC across cloud providers (AWS, Azure, GCP)",
+        "Manage XCKS (Managed Kubernetes) site deployments (formerly AppStack)",
+        "Deploy Secure Mesh sites for networking-focused edge deployments",
+        "Integrate external Kubernetes clusters as Customer Edge",
+        "Configure AWS VPC, Azure VNet, and GCP VPC sites",
+        "Manage virtual sites and site policies"
+      ],
+      "related_domains": [
+        "cloud_infrastructure",
+        "customer_edge",
+        "managed_kubernetes"
+      ],
+      "cli_metadata": {
+        "quick_start": {
+          "command": "curl $F5XC_API_URL/api/config/namespaces/default/sites -H 'Authorization: APIToken $F5XC_API_TOKEN'",
+          "description": "List all configured sites in default namespace",
+          "expected_output": "JSON array of site objects with deployment status"
+        },
+        "common_workflows": [
+          {
+            "name": "Deploy AWS Cloud Site",
+            "description": "Deploy F5 XC in AWS for traffic management",
+            "steps": [
+              {
+                "step": 1,
+                "command": "curl -X POST $F5XC_API_URL/api/config/namespaces/default/cloud_credentials -H 'Authorization: APIToken $F5XC_API_TOKEN' -H 'Content-Type: application/json' -d '{...aws_credentials...}'",
+                "description": "Create cloud credentials for AWS access"
+              },
+              {
+                "step": 2,
+                "command": "curl -X POST $F5XC_API_URL/api/config/namespaces/default/sites -H 'Authorization: APIToken $F5XC_API_TOKEN' -H 'Content-Type: application/json' -d '{...site_config...}'",
+                "description": "Create site definition for AWS deployment"
+              }
+            ],
+            "prerequisites": [
+              "AWS account configured",
+              "Cloud credentials created",
+              "VPC and security groups prepared"
+            ],
+            "expected_outcome": "Site deployed in AWS, nodes connected and healthy"
+          }
+        ],
+        "troubleshooting": [
+          {
+            "problem": "Site deployment fails",
+            "symptoms": [
+              "Status: Error",
+              "Nodes not coming online",
+              "Connectivity issues"
+            ],
+            "diagnosis_commands": [
+              "curl $F5XC_API_URL/api/config/namespaces/default/sites/{site} -H 'Authorization: APIToken $F5XC_API_TOKEN'",
+              "Check site events and node status"
+            ],
+            "solutions": [
+              "Verify cloud credentials have required permissions",
+              "Check VPC and security group configuration",
+              "Review site logs for deployment errors",
+              "Ensure sufficient cloud resources available"
+            ]
+          }
+        ],
+        "icon": "🌍"
+      }
     },
     {
-      "domain": "tenant_management",
-      "title": "F5 XC Tenant Management API",
-      "description": "F5 Distributed Cloud Tenant Management API specifications",
-      "file": "tenant_management.json",
-      "path_count": 71,
-      "schema_count": 189
+      "domain": "statistics",
+      "title": "F5 XC Statistics API",
+      "description": "Comprehensive operational analytics and monitoring capabilities for distributed cloud infrastructure. Configure alert policies with custom matchers and grouping rules to detect anomalies across namespaces. Manage alert receivers with confirmation, testing, and verification workflows for reliable notification delivery. Access flow statistics, view historical alerts, generate reports and graphs for capacity planning, track service topology and discovery patterns, and monitor real-time status...",
+      "description_short": "Flow statistics, alerts, logs, and operational analytics",
+      "description_medium": "Access flow statistics and analytics, configure alert policies and receivers, view logs, generate reports and graphs, and monitor site status.",
+      "file": "statistics.json",
+      "path_count": 77,
+      "schema_count": 622,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Operations",
+      "aliases": [
+        "stats",
+        "metrics",
+        "logs"
+      ],
+      "use_cases": [
+        "Access flow statistics and analytics",
+        "Manage alerts and alerting policies",
+        "View logs and log receivers",
+        "Generate reports and graphs",
+        "Track topology and service discovery",
+        "Monitor status at sites"
+      ],
+      "related_domains": [
+        "observability",
+        "support"
+      ]
     },
     {
-      "domain": "vpn",
-      "title": "F5 XC Vpn API",
-      "description": "F5 Distributed Cloud Vpn API specifications",
-      "file": "vpn.json",
-      "path_count": 20,
-      "schema_count": 120
+      "domain": "support",
+      "title": "F5 XC Support API",
+      "description": "Manage the complete customer support ticket lifecycle including creation, commenting, priority adjustment, escalation, and closure. Submit specialized requests such as tax exemption verification. Access site-level diagnostic capabilities including TCP dump capture, listing, and management for network troubleshooting. Integrates with operational workflows to enable support teams to gather diagnostic data directly from distributed sites while maintaining ticket-based tracking of all customer...",
+      "description_short": "Customer support ticket lifecycle and site diagnostics",
+      "description_medium": "Create, track, and manage support tickets with escalation workflows. Includes site diagnostic tools for packet capture and troubleshooting.",
+      "file": "support.json",
+      "path_count": 51,
+      "schema_count": 169,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Operations",
+      "aliases": [
+        "tickets",
+        "help-desk"
+      ],
+      "use_cases": [
+        "Submit and manage support tickets",
+        "Track customer support requests",
+        "Access operational support documentation"
+      ],
+      "related_domains": [
+        "statistics",
+        "observability"
+      ]
+    },
+    {
+      "domain": "telemetry_and_insights",
+      "title": "F5 XC Telemetry And Insights API",
+      "description": "F5 Distributed Cloud Telemetry And Insights API specifications",
+      "description_short": "Telemetry And Insights API",
+      "description_medium": "F5 Distributed Cloud Telemetry And Insights API specifications",
+      "file": "telemetry_and_insights.json",
+      "path_count": 27,
+      "schema_count": 186,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Operations",
+      "aliases": [
+        "telemetry",
+        "ti"
+      ],
+      "use_cases": [
+        "Collect and analyze telemetry data",
+        "Generate actionable insights from metrics",
+        "Configure telemetry collection policies"
+      ],
+      "related_domains": [
+        "observability",
+        "statistics"
+      ]
+    },
+    {
+      "domain": "tenant_and_identity",
+      "title": "F5 XC Tenant And Identity API",
+      "description": "Comprehensive user and tenant identity management for F5 Distributed Cloud. Configure user settings including profile images, notification preferences (admin and combined), and view preferences. Manage user sessions with listing and control capabilities. Handle OTP (one-time password) administration including admin resets. Support identity management (IDM) enable/disable operations. Process initial access requests for new users. Manage customer support ticket attachments and interactions for...",
+      "description_short": "User settings, notifications, sessions, and identity...",
+      "description_medium": "Manage user profiles, notification preferences, session controls, OTP settings, and customer support interactions. Configure identity management...",
+      "file": "tenant_and_identity.json",
+      "path_count": 174,
+      "schema_count": 508,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Other",
+      "aliases": [],
+      "use_cases": [],
+      "related_domains": []
+    },
+    {
+      "domain": "threat_campaign",
+      "title": "F5 XC Threat Campaign API",
+      "description": "F5 Distributed Cloud Threat Campaign API specifications",
+      "description_short": "Threat Campaign API",
+      "description_medium": "F5 Distributed Cloud Threat Campaign API specifications",
+      "file": "threat_campaign.json",
+      "path_count": 1,
+      "schema_count": 177,
+      "complexity": "moderate",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Security",
+      "aliases": [
+        "threats",
+        "campaigns",
+        "threat-intel"
+      ],
+      "use_cases": [
+        "Track and analyze threat campaigns",
+        "Monitor active threats and attack patterns",
+        "Configure threat intelligence integration"
+      ],
+      "related_domains": [
+        "bot_defense",
+        "ddos"
+      ]
+    },
+    {
+      "domain": "users",
+      "title": "F5 XC Users API",
+      "description": "Comprehensive user and identity management for the F5 XC platform. Create and manage registration tokens for site and node onboarding, including cloud-init configuration retrieval. Define known label keys and values to establish consistent resource tagging taxonomies across namespaces. Configure implicit labels for automatic resource classification. Supports full lifecycle management of user-related configuration objects with metadata tracking, state management, and condition monitoring for...",
+      "description_short": "User accounts, tokens, and label management",
+      "description_medium": "Manage user accounts, registration tokens, and label systems. Configure known and implicit labels for resource organization and user identification.",
+      "file": "users.json",
+      "path_count": 13,
+      "schema_count": 56,
+      "complexity": "simple",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Platform",
+      "aliases": [
+        "user",
+        "accounts",
+        "iam"
+      ],
+      "use_cases": [
+        "Manage user accounts and tokens",
+        "Configure user identification",
+        "Manage user settings and preferences",
+        "Configure implicit and known labels"
+      ],
+      "related_domains": [
+        "system",
+        "admin"
+      ]
+    },
+    {
+      "domain": "virtual",
+      "title": "F5 XC Virtual API",
+      "description": "Comprehensive application delivery and traffic management capabilities including HTTP/HTTPS/TCP/UDP load balancers, origin pool configuration, virtual host management, and advanced routing rules. Supports rate limiting policies, service policy enforcement, geo-location-based routing, and proxy forwarding configurations. Integrates with security features including malware protection, threat campaign detection, and WAF policy attachment. Provides health check configuration, endpoint...",
+      "description_short": "HTTP/HTTPS load balancing and traffic management",
+      "description_medium": "Configure HTTP, TCP, and UDP load balancers with origin pools, virtual hosts, routing rules, rate limiting, and service policies for application...",
+      "file": "virtual.json",
+      "path_count": 85,
+      "schema_count": 743,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Networking",
+      "aliases": [
+        "lb",
+        "loadbalancer",
+        "vhost"
+      ],
+      "use_cases": [
+        "Configure HTTP/TCP/UDP load balancers",
+        "Manage origin pools and services",
+        "Configure virtual hosts and routing",
+        "Define rate limiter and service policies",
+        "Manage geo-location-based routing",
+        "Configure proxy and forwarding policies",
+        "Manage malware protection and threat campaigns",
+        "Configure health checks and endpoint monitoring"
+      ],
+      "related_domains": [
+        "dns",
+        "service_policy",
+        "network"
+      ],
+      "cli_metadata": {
+        "quick_start": {
+          "command": "curl $F5XC_API_URL/api/config/namespaces/default/http_loadbalancers -H 'Authorization: APIToken $F5XC_API_TOKEN'",
+          "description": "List all HTTP load balancers in default namespace",
+          "expected_output": "JSON array of load balancer objects with status"
+        },
+        "common_workflows": [
+          {
+            "name": "Create HTTP Load Balancer",
+            "description": "Deploy basic HTTP load balancer with origin pool backend",
+            "steps": [
+              {
+                "step": 1,
+                "command": "curl -X POST $F5XC_API_URL/api/config/namespaces/default/origin_pools -H 'Authorization: APIToken $F5XC_API_TOKEN' -H 'Content-Type: application/json' -d '{...pool_config...}'",
+                "description": "Create backend origin pool with target endpoints"
+              },
+              {
+                "step": 2,
+                "command": "curl -X POST $F5XC_API_URL/api/config/namespaces/default/http_loadbalancers -H 'Authorization: APIToken $F5XC_API_TOKEN' -H 'Content-Type: application/json' -d '{...lb_config...}'",
+                "description": "Create HTTP load balancer pointing to origin pool"
+              }
+            ],
+            "prerequisites": [
+              "Active namespace",
+              "Origin pool targets reachable",
+              "DNS domain configured"
+            ],
+            "expected_outcome": "Load balancer in Active status, traffic routed to origins"
+          }
+        ],
+        "troubleshooting": [
+          {
+            "problem": "Load balancer shows Configuration Error status",
+            "symptoms": [
+              "Status: Configuration Error",
+              "No traffic routing",
+              "Requests timeout"
+            ],
+            "diagnosis_commands": [
+              "curl $F5XC_API_URL/api/config/namespaces/default/http_loadbalancers/{name} -H 'Authorization: APIToken $F5XC_API_TOKEN'",
+              "Check origin_pool status and endpoint connectivity"
+            ],
+            "solutions": [
+              "Verify origin pool targets are reachable from edge",
+              "Check DNS configuration and domain propagation",
+              "Validate certificate configuration if using HTTPS",
+              "Review security policies not blocking traffic"
+            ]
+          }
+        ],
+        "icon": "⚖️"
+      }
+    },
+    {
+      "domain": "vpm_and_node_management",
+      "title": "F5 XC Vpm And Node Management API",
+      "description": "F5 Distributed Cloud Vpm And Node Management API specifications",
+      "description_short": "Vpm And Node Management API",
+      "description_medium": "F5 Distributed Cloud Vpm And Node Management API specifications",
+      "file": "vpm_and_node_management.json",
+      "path_count": 1,
+      "schema_count": 2,
+      "complexity": "simple",
+      "is_preview": false,
+      "requires_tier": "Standard",
+      "domain_category": "Platform",
+      "aliases": [
+        "vpm",
+        "nodes",
+        "node-mgmt"
+      ],
+      "use_cases": [
+        "Manage Virtual Private Mesh (VPM) configuration",
+        "Configure node lifecycle and management",
+        "Monitor VPM and node status"
+      ],
+      "related_domains": [
+        "sites",
+        "system"
+      ]
+    },
+    {
+      "domain": "waf",
+      "title": "F5 XC Waf API",
+      "description": "Web Application Firewall (WAF) configuration and management for protecting applications against common attacks and vulnerabilities. Define application firewall policies with attack type detection, bot protection settings, and custom blocking pages. Manage WAF exclusion policies for legitimate traffic patterns, configure signature staging and release workflows, and monitor security events with detailed rule hit metrics. Supports AI-powered risk-based blocking, anonymization settings for...",
+      "description_short": "Web application firewall rules and security policies",
+      "description_medium": "Configure web application firewall rules, manage security policies, and enable attack detection with customizable blocking actions and signature...",
+      "file": "waf.json",
+      "path_count": 40,
+      "schema_count": 314,
+      "complexity": "advanced",
+      "is_preview": false,
+      "requires_tier": "Advanced",
+      "domain_category": "Security",
+      "aliases": [
+        "firewall",
+        "appfw"
+      ],
+      "use_cases": [
+        "Configure web application firewall rules",
+        "Manage application security policies",
+        "Enable enhanced firewall capabilities",
+        "Configure protocol inspection"
+      ],
+      "related_domains": [
+        "api",
+        "network_security",
+        "virtual"
+      ]
     }
+  ],
+  "x-ves-critical-resources": [
+    "http_loadbalancer",
+    "tcp_loadbalancer",
+    "origin_pool",
+    "healthcheck",
+    "app_firewall",
+    "service_policy",
+    "network_policy",
+    "dns_zone",
+    "dns_load_balancer",
+    "certificate",
+    "namespace",
+    "virtual_site",
+    "aws_vpc_site",
+    "azure_vnet_site",
+    "gcp_vpc_site"
   ]
 }

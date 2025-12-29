@@ -6,6 +6,12 @@ description: Create Endpoint.
 
 # Endpoint
 
+!!! danger "High Risk Operation"
+    This resource includes operations that may cause significant changes. Review carefully before executing.
+
+!!! note "Confirmation Required"
+    Some operations on this resource require explicit confirmation before execution.
+
 Replacing an endpoint object will update the object by replacing the existing spec with the provided
 one.
 For read-then-write operations a resourceVersion mismatch will occur if the object was modified
@@ -25,21 +31,38 @@ between the read and write.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `metadata.namespace` | Namespace |
-| `name` | Name |
-| `namespace` | Namespace |
-| `metadata.name` | Name |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `metadata.namespace` | Namespace | `Staging` |
+| `name` | Name | `Name` |
+| `namespace` | Namespace | `Ns1` |
+| `metadata.name` | Name | `Example-corp-web.` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `response_format` | The format in which the configuration object is to be fetched. This could be for example |
-| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. |
-| `report_fields` | The report_fields parameter |
-| `report_status_fields` | The report_status_fields parameter |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `report_fields` | The report_fields parameter | `-` |
+| `report_status_fields` | The report_status_fields parameter | `-` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- endpoint
+
+**Modifies:**
+
+- endpoint
+
+**Deletes:**
+
+- endpoint
+- contained_resources
 
 ## Example Usage
 
@@ -56,6 +79,58 @@ Ask Claude to help you work with Endpoint resources:
 ### Get Endpoint Details
 
 > "Get details of the endpoint named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl config endpoint create {name} --namespace {namespace}
+```
+
+Create endpoint
+
+### file_based
+
+```bash
+f5xcctl config endpoint create -f {file}.yaml
+```
+
+Create from YAML file
+
+### delete
+
+```bash
+f5xcctl config endpoint delete {name} --namespace {namespace}
+```
+
+Delete endpoint
+
+### get_specific
+
+```bash
+f5xcctl config endpoint get {name} --namespace {namespace}
+```
+
+Get specific endpoint
+
+### list_all
+
+```bash
+f5xcctl config endpoint list --namespace {namespace}
+```
+
+List all endpoints
+
+### update
+
+```bash
+f5xcctl config endpoint update {name} --namespace {namespace} -f {file}.yaml
+```
+
+Update endpoint
 
 ## f5xcctl Equivalent
 

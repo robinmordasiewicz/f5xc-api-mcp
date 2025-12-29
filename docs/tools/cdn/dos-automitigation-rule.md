@@ -6,6 +6,12 @@ description: DELETE DoS Auto-Mitigation Rule for CDN Load Balancer.
 
 # Dos Automitigation Rule
 
+!!! danger "High Risk Operation"
+    This resource includes operations that may cause significant changes. Review carefully before executing.
+
+!!! note "Confirmation Required"
+    Some operations on this resource require explicit confirmation before execution.
+
 DELETE the corresponding DoS Auto-Mitigation Rule for the given CDN load balancer.
 
 ## Tools
@@ -19,11 +25,20 @@ DELETE the corresponding DoS Auto-Mitigation Rule for the given CDN load balance
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `name` | Name |
-| `namespace` | Namespace |
-| `dos_automitigation_rule_name` | DoS Mitigation Rule Name |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `Blogging-app.` |
+| `namespace` | Namespace | `Shared` |
+| `dos_automitigation_rule_name` | DoS Mitigation Rule Name | `Dos-auto-mitigation-VES-I/O-HTTP-loadbalancer-ce22.` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Deletes:**
+
+- dos-automitigation-rule
+- contained_resources
 
 ## Example Usage
 
@@ -32,6 +47,26 @@ Ask Claude to help you work with Dos Automitigation Rule resources:
 ### Get Dos Automitigation Rule Details
 
 > "Get details of the dos-automitigation-rule named 'example' in namespace 'production'"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### delete
+
+```bash
+f5xcctl config dos-automitigation-rule delete {name} --namespace {namespace}
+```
+
+Delete dos-automitigation-rule
+
+### get_specific
+
+```bash
+f5xcctl config dos-automitigation-rule get {name} --namespace {namespace}
+```
+
+Get specific dos-automitigation-rule
 
 ## f5xcctl Equivalent
 

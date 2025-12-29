@@ -6,6 +6,9 @@ description: GET Metric Query Data.
 
 # Metric Query
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Returns time series data of monitor metric query by region.
 
 ## Tools
@@ -18,9 +21,17 @@ Returns time series data of monitor metric query by region.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- metric-query
 
 ## Example Usage
 
@@ -29,6 +40,26 @@ Ask Claude to help you work with Metric Query resources:
 ### Create Metric Query
 
 > "Create a metric-query named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl observability metric-query create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl observability metric-query create {name} --namespace {namespace}
+```
+
+Create metric-query
 
 ## f5xcctl Equivalent
 

@@ -5,55 +5,87 @@
 
 import type { ParsedOperation } from "../generator/openapi-parser.js";
 
-import { ai_intelligenceTools } from "./generated/ai_intelligence/index.js";
-import { api_securityTools } from "./generated/api_security/index.js";
-import { applicationsTools } from "./generated/applications/index.js";
+import { admin_console_and_uiTools } from "./generated/admin_console_and_ui/index.js";
+import { apiTools } from "./generated/api/index.js";
+import { authenticationTools } from "./generated/authentication/index.js";
 import { bigipTools } from "./generated/bigip/index.js";
-import { billingTools } from "./generated/billing/index.js";
+import { billing_and_usageTools } from "./generated/billing_and_usage/index.js";
+import { blindfoldTools } from "./generated/blindfold/index.js";
+import { bot_and_threat_defenseTools } from "./generated/bot_and_threat_defense/index.js";
 import { cdnTools } from "./generated/cdn/index.js";
-import { configTools } from "./generated/config/index.js";
-import { identityTools } from "./generated/identity/index.js";
-import { infrastructureTools } from "./generated/infrastructure/index.js";
-import { infrastructure_protectionTools } from "./generated/infrastructure_protection/index.js";
-import { integrationsTools } from "./generated/integrations/index.js";
-import { load_balancerTools } from "./generated/load_balancer/index.js";
-import { networkingTools } from "./generated/networking/index.js";
-import { nginxTools } from "./generated/nginx/index.js";
+import { ce_managementTools } from "./generated/ce_management/index.js";
+import { certificatesTools } from "./generated/certificates/index.js";
+import { cloud_infrastructureTools } from "./generated/cloud_infrastructure/index.js";
+import { container_servicesTools } from "./generated/container_services/index.js";
+import { data_and_privacy_securityTools } from "./generated/data_and_privacy_security/index.js";
+import { data_intelligenceTools } from "./generated/data_intelligence/index.js";
+import { ddosTools } from "./generated/ddos/index.js";
+import { dnsTools } from "./generated/dns/index.js";
+import { generative_aiTools } from "./generated/generative_ai/index.js";
+import { managed_kubernetesTools } from "./generated/managed_kubernetes/index.js";
+import { marketplaceTools } from "./generated/marketplace/index.js";
+import { networkTools } from "./generated/network/index.js";
+import { network_securityTools } from "./generated/network_security/index.js";
+import { nginx_oneTools } from "./generated/nginx_one/index.js";
+import { object_storageTools } from "./generated/object_storage/index.js";
 import { observabilityTools } from "./generated/observability/index.js";
-import { operationsTools } from "./generated/operations/index.js";
-import { securityTools } from "./generated/security/index.js";
+import { rate_limitingTools } from "./generated/rate_limiting/index.js";
+import { secops_and_incident_responseTools } from "./generated/secops_and_incident_response/index.js";
 import { service_meshTools } from "./generated/service_mesh/index.js";
-import { shape_securityTools } from "./generated/shape_security/index.js";
-import { subscriptionsTools } from "./generated/subscriptions/index.js";
-import { tenant_managementTools } from "./generated/tenant_management/index.js";
-import { vpnTools } from "./generated/vpn/index.js";
+import { shapeTools } from "./generated/shape/index.js";
+import { sitesTools } from "./generated/sites/index.js";
+import { statisticsTools } from "./generated/statistics/index.js";
+import { supportTools } from "./generated/support/index.js";
+import { telemetry_and_insightsTools } from "./generated/telemetry_and_insights/index.js";
+import { tenant_and_identityTools } from "./generated/tenant_and_identity/index.js";
+import { threat_campaignTools } from "./generated/threat_campaign/index.js";
+import { usersTools } from "./generated/users/index.js";
+import { virtualTools } from "./generated/virtual/index.js";
+import { vpm_and_node_managementTools } from "./generated/vpm_and_node_management/index.js";
+import { wafTools } from "./generated/waf/index.js";
 
 /**
  * All registered tools from all domains
  */
 export const allTools: ParsedOperation[] = [
-  ...ai_intelligenceTools,
-  ...api_securityTools,
-  ...applicationsTools,
+  ...admin_console_and_uiTools,
+  ...apiTools,
+  ...authenticationTools,
   ...bigipTools,
-  ...billingTools,
+  ...billing_and_usageTools,
+  ...blindfoldTools,
+  ...bot_and_threat_defenseTools,
   ...cdnTools,
-  ...configTools,
-  ...identityTools,
-  ...infrastructureTools,
-  ...infrastructure_protectionTools,
-  ...integrationsTools,
-  ...load_balancerTools,
-  ...networkingTools,
-  ...nginxTools,
+  ...ce_managementTools,
+  ...certificatesTools,
+  ...cloud_infrastructureTools,
+  ...container_servicesTools,
+  ...data_and_privacy_securityTools,
+  ...data_intelligenceTools,
+  ...ddosTools,
+  ...dnsTools,
+  ...generative_aiTools,
+  ...managed_kubernetesTools,
+  ...marketplaceTools,
+  ...networkTools,
+  ...network_securityTools,
+  ...nginx_oneTools,
+  ...object_storageTools,
   ...observabilityTools,
-  ...operationsTools,
-  ...securityTools,
+  ...rate_limitingTools,
+  ...secops_and_incident_responseTools,
   ...service_meshTools,
-  ...shape_securityTools,
-  ...subscriptionsTools,
-  ...tenant_managementTools,
-  ...vpnTools,
+  ...shapeTools,
+  ...sitesTools,
+  ...statisticsTools,
+  ...supportTools,
+  ...telemetry_and_insightsTools,
+  ...tenant_and_identityTools,
+  ...threat_campaignTools,
+  ...usersTools,
+  ...virtualTools,
+  ...vpm_and_node_managementTools,
+  ...wafTools,
 ];
 
 /**

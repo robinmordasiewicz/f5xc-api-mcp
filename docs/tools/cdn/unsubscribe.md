@@ -6,6 +6,9 @@ description: Unsubscribe to CDN Loadbalancer.
 
 # Unsubscribe
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Unsubscribe to CDN Loadbalancer.
 
 ## Tools
@@ -14,6 +17,14 @@ Unsubscribe to CDN Loadbalancer.
 |------|-------------|
 | `f5xc-api-cdn-unsubscribe-create` | Unsubscribe to CDN Loadbalancer. |
 
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- unsubscribe
+
 ## Example Usage
 
 Ask Claude to help you work with Unsubscribe resources:
@@ -21,6 +32,26 @@ Ask Claude to help you work with Unsubscribe resources:
 ### Create Unsubscribe
 
 > "Create a unsubscribe named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl cdn unsubscribe create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl cdn unsubscribe create {name} --namespace {namespace}
+```
+
+Create unsubscribe
 
 ## f5xcctl Equivalent
 

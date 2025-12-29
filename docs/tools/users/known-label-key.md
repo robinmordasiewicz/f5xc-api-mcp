@@ -1,0 +1,90 @@
+---
+page_title: f5xc_known_label_key - f5xc-api-mcp
+subcategory: Users
+description: GET
+---
+
+# Known Label Key
+
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
+GET is generic label key query. Two types of queries are supported
+Return label with exact matching
+entry label key.
+Return list of labels that have prefix of label key .
+Returns list of label keys.
+Query will look into current tenants shared namespace and VES-I/O shared.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-users-known-label-key-list` | GET |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Value` |
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `key` | Key to retrieve. | `Value` |
+| `query` | Query Type | `-` |
+
+## Example Usage
+
+Ask Claude to help you work with Known Label Key resources:
+
+### List Known Label Keys
+
+> "List all known-label-keys in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl config known-label-key list --namespace {namespace}
+```
+
+List all known-label-keys
+
+## f5xcctl Equivalent
+
+```bash
+# Create/Update
+f5xcctl users create known_label_key -n <namespace> -i known_label_key.yaml
+
+# Get
+f5xcctl users get known_label_key <name> -n <namespace>
+
+# List
+f5xcctl users list known_label_key -n <namespace>
+
+# Delete
+f5xcctl users delete known_label_key <name> -n <namespace>
+```
+
+## Terraform Resource
+
+```hcl
+resource "volterra_known_label_key" "example" {
+  name      = "example-known-label-key"
+  namespace = "default"
+
+  # Add resource-specific configuration
+  # See F5XC Terraform Provider documentation for details
+}
+```
+
+See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
+
+[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

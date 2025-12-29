@@ -6,6 +6,9 @@ description: Force DELETE NFV Service.
 
 # Force Delete
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Force DELETE NFV Service.
 
 ## Tools
@@ -18,9 +21,17 @@ Force DELETE NFV Service.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `name` | Name |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `name` | Name | `Nfv-service-1.` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- force-delete
 
 ## Example Usage
 
@@ -29,6 +40,26 @@ Ask Claude to help you work with Force Delete resources:
 ### Create Force Delete
 
 > "Create a force-delete named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### basic_create
+
+```bash
+f5xcctl config force-delete create {name} --namespace {namespace}
+```
+
+Create force-delete
+
+### file_based
+
+```bash
+f5xcctl config force-delete create -f {file}.yaml
+```
+
+Create from YAML file
 
 ## f5xcctl Equivalent
 

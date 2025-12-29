@@ -6,6 +6,9 @@ description: GET Monitor Events.
 
 # Monitor Event
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns the healthy and critical events for the specified monitor.
 
 ## Tools
@@ -18,18 +21,18 @@ Returns the healthy and critical events for the specified monitor.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `end_time` | End_time. |
-| `monitor_name` | Monitor_name. X-required |
-| `monitor_type` | Monitor_type. X-required |
-| `start_time` | Start_time. X-required |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | End_time. | `2020-11-17T13:41:49.083255Z.` |
+| `monitor_name` | Monitor_name. X-required | `Monitor1` |
+| `monitor_type` | Monitor_type. X-required | `HTTP` |
+| `start_time` | Start_time. X-required | `2020-11-17T12:41:49.083255Z.` |
 
 ## Example Usage
 
@@ -38,6 +41,18 @@ Ask Claude to help you work with Monitor Event resources:
 ### List Monitor Events
 
 > "List all monitor-events in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability monitor-event list --namespace {namespace}
+```
+
+List all monitor-events
 
 ## f5xcctl Equivalent
 

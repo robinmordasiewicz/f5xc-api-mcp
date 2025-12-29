@@ -6,6 +6,9 @@ description: GET Alerts History.
 
 # History
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 GET the history of alert notifications sent to the end-user between the start_time and end_time that
 matches the
 filter specified in the request.
@@ -20,17 +23,17 @@ filter specified in the request.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Ns1` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `end_time` | Fetch alerts whose timestamp <= end_time |
-| `filter` | HighDiskUsage\", severity=\"critical\"}" |
-| `start_time` | Fetch alerts whose timestamp >= start_time |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `end_time` | Fetch alerts whose timestamp <= end_time | `2019-09-24T12:30:11.733Z.` |
+| `filter` | HighDiskUsage\", severity=\"critical\"}" | `{alertname=\.` |
+| `start_time` | Fetch alerts whose timestamp >= start_time | `2019-09-23T12:30:11.733Z.` |
 
 ## Example Usage
 
@@ -39,6 +42,18 @@ Ask Claude to help you work with History resources:
 ### List Historys
 
 > "List all historys in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl data history list --namespace {namespace}
+```
+
+List all historys
 
 ## f5xcctl Equivalent
 

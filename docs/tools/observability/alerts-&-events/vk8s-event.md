@@ -6,6 +6,9 @@ description: VK8s Events Query.
 
 # Vk8s Event
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 Request to GET Virtual K8s events that matches the criteria in request for a given namespace.
 If no
 match conditions are specified in the request, then the response contains all
@@ -24,9 +27,17 @@ given tenant.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Value` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- vk8s-event
 
 ## Example Usage
 
@@ -35,6 +46,26 @@ Ask Claude to help you work with Vk8s Event resources:
 ### Create Vk8s Event
 
 > "Create a vk8s-event named 'example' in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl data vk8s-event create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl data vk8s-event create {name} --namespace {namespace}
+```
+
+Create vk8s-event
 
 ## f5xcctl Equivalent
 

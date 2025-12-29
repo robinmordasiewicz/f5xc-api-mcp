@@ -32,6 +32,8 @@
     "typecheck": "tsc --noEmit",
     "sync-specs": "tsx scripts/sync-specs.ts",
     "generate": "tsx scripts/generate.ts",
+    "generate:fixtures": "tsx scripts/generate-test-fixtures.ts",
+    "validate-generation": "tsx scripts/validate-generation.ts",
     "generate-docs": "tsx scripts/generate-docs.ts",
     "validate-cli-syntax": "tsx scripts/validate-cli-syntax.ts",
     "validate-cli-commands": "bash scripts/validate-f5xcctl-commands.sh",

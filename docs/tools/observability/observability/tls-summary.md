@@ -6,6 +6,9 @@ description: GET TLS Summary.
 
 # TLS Summary
 
+!!! info "Low Risk"
+    Operations on this resource are generally safe.
+
 Returns TLS summary of all HTTPS monitors running in namespace.
 
 ## Tools
@@ -18,9 +21,9 @@ Returns TLS summary of all HTTPS monitors running in namespace.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Demo` |
 
 ## Example Usage
 
@@ -29,6 +32,18 @@ Ask Claude to help you work with TLS Summary resources:
 ### List TLS Summarys
 
 > "List all tls-summarys in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### list_all
+
+```bash
+f5xcctl observability tls-summary list --namespace {namespace}
+```
+
+List all tls-summarys
 
 ## f5xcctl Equivalent
 

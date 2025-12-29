@@ -24,6 +24,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -37,6 +39,92 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.CDNAccessLogs",
     tags: ["CDN"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["access-log"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl cdn access-log create {name} --namespace {namespace}",
+        description: "Create access-log",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl cdn access-log create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Value",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Access-log resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl cdn access-log create {name} --namespace {namespace}",
+          description: "Create access-log",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl cdn access-log create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new access-log",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["access-log"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-aggregation-create",
@@ -57,6 +145,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -70,6 +160,92 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.CDNAccessLogAggregationQuery",
     tags: ["CDN"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["aggregation"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl cdn aggregation create {name} --namespace {namespace}",
+        description: "Create aggregation",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl cdn aggregation create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Value",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Aggregation resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl cdn aggregation create {name} --namespace {namespace}",
+          description: "Create aggregation",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl cdn aggregation create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new aggregation",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["aggregation"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-cache-purge-create",
@@ -89,6 +265,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name of the CDN distrubition.",
+        "x-ves-example": "CDN-1",
       },
       {
         description: "Namespace\nx-required\nNamespace scope of the metric request.",
@@ -98,6 +276,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -111,6 +291,93 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.CDNCachePurge",
     tags: ["CDN"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["cache-purge"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl cdn cache-purge create {name} --namespace {namespace}",
+        description: "Create cache-purge",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl cdn cache-purge create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "CDN-1",
+      namespace: "Default",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Cache-purge resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl cdn cache-purge create {name} --namespace {namespace}",
+          description: "Create cache-purge",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl cdn cache-purge create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new cache-purge",
+      required_fields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
+      side_effects: {
+        creates: ["cache-purge"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-create",
@@ -131,6 +398,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -144,6 +413,92 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.cdn_cache_rule.API.Create",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["cdn-cache-rule"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config cdn-cache-rule create {name} --namespace {namespace}",
+        description: "Create cdn-cache-rule",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl config cdn-cache-rule create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Cdn-cache-rule resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config cdn-cache-rule create {name} --namespace {namespace}",
+          description: "Create cdn-cache-rule",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config cdn-cache-rule create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new cdn-cache-rule",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["cdn-cache-rule"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-delete",
@@ -163,6 +518,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -172,6 +529,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -183,6 +542,83 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.cdn_cache_rule.API.Delete",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["cdn-cache-rule", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config cdn-cache-rule delete {name} --namespace {namespace}",
+        description: "Delete cdn-cache-rule",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config cdn-cache-rule delete {name} --namespace {namespace}",
+          description: "Delete cdn-cache-rule",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete cdn-cache-rule",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["cdn-cache-rule", "contained_resources"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-get",
@@ -202,6 +638,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -211,6 +649,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -232,6 +672,7 @@ export const cdnTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
@@ -242,6 +683,79 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.cdn_cache_rule.API.Get",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config cdn-cache-rule get {name} --namespace {namespace}",
+        description: "Get specific cdn-cache-rule",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config cdn-cache-rule get {name} --namespace {namespace}",
+          description: "Get specific cdn-cache-rule",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific cdn-cache-rule",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-list",
@@ -261,6 +775,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -273,6 +789,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -285,6 +803,7 @@ export const cdnTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -297,6 +816,7 @@ export const cdnTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
@@ -307,6 +827,79 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.cdn_cache_rule.API.List",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config cdn-cache-rule list --namespace {namespace}",
+        description: "List all cdn-cache-rules",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config cdn-cache-rule list --namespace {namespace}",
+          description: "List all cdn-cache-rules",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all cdn-cache-rules",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-update",
@@ -326,6 +919,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -336,6 +931,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -349,6 +946,85 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.cdn_cache_rule.API.Replace",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["cdn-cache-rule"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command:
+          "f5xcctl config cdn-cache-rule update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update cdn-cache-rule",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl config cdn-cache-rule update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update cdn-cache-rule",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing cdn-cache-rule",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["cdn-cache-rule"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-create",
@@ -369,6 +1045,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -382,6 +1060,95 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.API.Create",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["cdn-loadbalancer"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config cdn-loadbalancer create {name} --namespace {namespace}",
+        description: "Create cdn-loadbalancer",
+        use_case: "basic_create",
+      },
+      {
+        command: "f5xcctl config cdn-loadbalancer create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [
+          "Cdn-loadbalancer resource created",
+          "Resource assigned unique identifier",
+        ],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config cdn-loadbalancer create {name} --namespace {namespace}",
+          description: "Create cdn-loadbalancer",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config cdn-loadbalancer create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new cdn-loadbalancer",
+      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+      side_effects: {
+        creates: ["cdn-loadbalancer"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-delete",
@@ -401,6 +1168,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -410,6 +1179,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -421,6 +1192,83 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.API.Delete",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["cdn-loadbalancer", "contained_resources"],
+    },
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config cdn-loadbalancer delete {name} --namespace {namespace}",
+        description: "Delete cdn-loadbalancer",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config cdn-loadbalancer delete {name} --namespace {namespace}",
+          description: "Delete cdn-loadbalancer",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete cdn-loadbalancer",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["cdn-loadbalancer", "contained_resources"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-get",
@@ -440,6 +1288,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -449,6 +1299,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -471,6 +1323,7 @@ export const cdnTools: ParsedOperation[] = [
           ],
           type: "string",
         },
+        "x-displayname": "Broken Referred Objects.",
       },
     ],
     requestBodySchema: null,
@@ -481,6 +1334,79 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.API.Get",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config cdn-loadbalancer get {name} --namespace {namespace}",
+        description: "Get specific cdn-loadbalancer",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Name",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config cdn-loadbalancer get {name} --namespace {namespace}",
+          description: "Get specific cdn-loadbalancer",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Retrieve specific cdn-loadbalancer",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-list",
@@ -500,6 +1426,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -512,6 +1440,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Label Filter.",
+        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -524,6 +1454,7 @@ export const cdnTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Fields.",
       },
       {
         description: 'X-example: ""\nExtra status fields to return along with summary fields.',
@@ -536,6 +1467,7 @@ export const cdnTools: ParsedOperation[] = [
           },
           type: "array",
         },
+        "x-displayname": "Report Status Fields.",
       },
     ],
     requestBodySchema: null,
@@ -546,6 +1478,79 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.API.List",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config cdn-loadbalancer list --namespace {namespace}",
+        description: "List all cdn-loadbalancers",
+        use_case: "list_all",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      label_filter: "Env in (staging, testing), tier in (web, db)",
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config cdn-loadbalancer list --namespace {namespace}",
+          description: "List all cdn-loadbalancers",
+          use_case: "list_all",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "List all cdn-loadbalancers",
+      required_fields: ["path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-update",
@@ -565,6 +1570,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -575,6 +1582,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -588,6 +1597,85 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.API.Replace",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      modifies: ["cdn-loadbalancer"],
+    },
+    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    cliExamples: [
+      {
+        command:
+          "f5xcctl config cdn-loadbalancer update {name} --namespace {namespace} -f {file}.yaml",
+        description: "Update cdn-loadbalancer",
+        use_case: "update",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      "metadata.name": "Example-corp-web.",
+      "metadata.namespace": "Staging",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource updated with new values"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl config cdn-loadbalancer update {name} --namespace {namespace} -f {file}.yaml",
+          description: "Update cdn-loadbalancer",
+          use_case: "update",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Replace existing cdn-loadbalancer",
+      required_fields: ["path.metadata.name", "path.metadata.namespace"],
+      side_effects: {
+        modifies: ["cdn-loadbalancer"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-dos-automitigation-rule-delete",
@@ -608,6 +1696,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "DoS Mitigation Rule Name.",
+        "x-ves-example": "Dos-auto-mitigation-VES-I/O-HTTP-loadbalancer-ce22.",
       },
       {
         description: "Name\nName of the Load Balancer.",
@@ -617,6 +1707,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Blogging-app.",
       },
       {
         description: "Namespace\nNamespace of the Load Balancer.",
@@ -626,6 +1718,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -638,6 +1732,84 @@ export const cdnTools: ParsedOperation[] = [
       "ves.io.schema.views.cdn_loadbalancer.CustomCDNWAAPAPI.DeleteCDNDoSAutoMitigationRule",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "high",
+    sideEffects: {
+      deletes: ["dos-automitigation-rule", "contained_resources"],
+    },
+    requiredFields: ["path.dos_automitigation_rule_name", "path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config dos-automitigation-rule delete {name} --namespace {namespace}",
+        description: "Delete dos-automitigation-rule",
+        use_case: "delete",
+      },
+    ],
+    confirmationRequired: true,
+    parameterExamples: {
+      dos_automitigation_rule_name: "Dos-auto-mitigation-VES-I/O-HTTP-loadbalancer-ce22.",
+      name: "Blogging-app.",
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Resource removed from system", "Associated resources may be affected"],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: true,
+      danger_level: "high",
+      examples: [
+        {
+          command: "f5xcctl config dos-automitigation-rule delete {name} --namespace {namespace}",
+          description: "Delete dos-automitigation-rule",
+          use_case: "delete",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "high",
+        resource_usage: "moderate",
+      },
+      purpose: "Delete dos-automitigation-rule",
+      required_fields: ["path.dos_automitigation_rule_name", "path.name", "path.namespace"],
+      side_effects: {
+        deletes: ["dos-automitigation-rule", "contained_resources"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-dos-automitigation-rule-get",
@@ -657,6 +1829,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Name",
+        "x-ves-example": "Blogging-app.",
       },
       {
         description: "Namespace\nNamespace of the Load Balancer.",
@@ -666,6 +1840,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -678,6 +1854,79 @@ export const cdnTools: ParsedOperation[] = [
       "ves.io.schema.views.cdn_loadbalancer.CustomCDNWAAPAPI.GetCDNDoSAutoMitigationRules",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "low",
+    sideEffects: null,
+    requiredFields: ["path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config dos-automitigation-rule get {name} --namespace {namespace}",
+        description: "Get specific dos-automitigation-rule",
+        use_case: "get_specific",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "Blogging-app.",
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [],
+        prerequisites: ["Active namespace", "Policy parameters defined"],
+      },
+      confirmation_required: false,
+      danger_level: "low",
+      examples: [
+        {
+          command: "f5xcctl config dos-automitigation-rule get {name} --namespace {namespace}",
+          description: "Get specific dos-automitigation-rule",
+          use_case: "get_specific",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "moderate",
+        resource_usage: "moderate",
+      },
+      purpose: "Retrieve specific dos-automitigation-rule",
+      required_fields: ["path.name", "path.namespace"],
+      side_effects: {},
+    },
   },
   {
     toolName: "f5xc-api-cdn-get-security-config-create",
@@ -697,6 +1946,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -710,6 +1961,95 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomCDNWAAPAPI.GetCDNSecurityConfig",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["get-security-config"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config get-security-config create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl config get-security-config create {name} --namespace {namespace}",
+        description: "Create get-security-config",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [
+          "Get-security-config resource created",
+          "Resource assigned unique identifier",
+        ],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config get-security-config create {name} --namespace {namespace}",
+          description: "Create get-security-config",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config get-security-config create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new get-security-config",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["get-security-config"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-get-service-operation-statu-create",
@@ -729,6 +2069,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -742,6 +2084,95 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.GetServiceOperation",
     tags: ["CDN"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["get-service-operation-statu"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl cdn get-service-operation-statu create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl cdn get-service-operation-statu create {name} --namespace {namespace}",
+        description: "Create get-service-operation-statu",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Default",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [
+          "Get-service-operation-statu resource created",
+          "Resource assigned unique identifier",
+        ],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl cdn get-service-operation-statu create {name} --namespace {namespace}",
+          description: "Create get-service-operation-statu",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl cdn get-service-operation-statu create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new get-service-operation-statu",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["get-service-operation-statu"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-list-service-operations-statu-create",
@@ -761,6 +2192,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -774,6 +2207,96 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.ListServiceOperations",
     tags: ["CDN"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["list-service-operations-statu"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl cdn list-service-operations-statu create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl cdn list-service-operations-statu create {name} --namespace {namespace}",
+        description: "Create list-service-operations-statu",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Ns1",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: [
+          "List-service-operations-statu resource created",
+          "Resource assigned unique identifier",
+        ],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command:
+            "f5xcctl cdn list-service-operations-statu create {name} --namespace {namespace}",
+          description: "Create list-service-operations-statu",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl cdn list-service-operations-statu create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new list-service-operations-statu",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["list-service-operations-statu"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-metric-create",
@@ -793,6 +2316,8 @@ export const cdnTools: ParsedOperation[] = [
         schema: {
           type: "string",
         },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -806,6 +2331,92 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.CDNMetrics",
     tags: ["CDN"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["metric"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl cdn metric create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl cdn metric create {name} --namespace {namespace}",
+        description: "Create metric",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      namespace: "Default",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Metric resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl cdn metric create {name} --namespace {namespace}",
+          description: "Create metric",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl cdn metric create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new metric",
+      required_fields: ["metadata.name", "metadata.namespace", "path.namespace"],
+      side_effects: {
+        creates: ["metric"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-subscribe-create",
@@ -828,6 +2439,221 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.Subscribe",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["subscribe"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl cdn subscribe create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl cdn subscribe create {name} --namespace {namespace}",
+        description: "Create subscribe",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Subscribe resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl cdn subscribe create {name} --namespace {namespace}",
+          description: "Create subscribe",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl cdn subscribe create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new subscribe",
+      required_fields: ["metadata.name", "metadata.namespace"],
+      side_effects: {
+        creates: ["subscribe"],
+      },
+    },
+  },
+  {
+    toolName: "f5xc-api-cdn-suggestion-create",
+    method: "POST",
+    path: "/api/config/namespaces/{namespace}/cdn_loadbalancers/{name}/block_client/suggestion",
+    operation: "create",
+    domain: "cdn",
+    resource: "suggestion",
+    summary: "Suggest block client rule.",
+    description: "Suggest blocking SimpleClientSrcRule for a given IP/ASN.",
+    pathParameters: [
+      {
+        description: "Name\nHTTP load balancer for which this WAF exclusion will be applied.",
+        in: "path",
+        name: "name",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "HTTP Load Balancer Name.",
+        "x-ves-example": "VES-I/O-frontend.",
+      },
+      {
+        description: "Namespace\nNamespace of the App type for current request.",
+        in: "path",
+        name: "namespace",
+        required: true,
+        schema: {
+          type: "string",
+        },
+        "x-displayname": "Namespace",
+        "x-ves-example": "Shared",
+      },
+    ],
+    queryParameters: [],
+    requestBodySchema: null,
+    responseSchema: {
+      $ref: "#/components/schemas/app_securityGetSuggestedBlockClientRuleRsp",
+    },
+    requiredParams: ["name", "namespace"],
+    operationId:
+      "ves.io.schema.app_security.AppSecurityClientRuleAPI.GetSuggestedBlockClientRuleForCDN",
+    tags: ["Other"],
+    sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["suggestion"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl config suggestion create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl config suggestion create {name} --namespace {namespace}",
+        description: "Create suggestion",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {
+      name: "VES-I/O-frontend.",
+      namespace: "Shared",
+    },
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Suggestion resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl config suggestion create {name} --namespace {namespace}",
+          description: "Create suggestion",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl config suggestion create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new suggestion",
+      required_fields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
+      side_effects: {
+        creates: ["suggestion"],
+      },
+    },
   },
   {
     toolName: "f5xc-api-cdn-unsubscribe-create",
@@ -850,6 +2676,90 @@ export const cdnTools: ParsedOperation[] = [
     operationId: "ves.io.schema.views.cdn_loadbalancer.CustomAPI.Unsubscribe",
     tags: ["Other"],
     sourceFile: "domains/cdn.json",
+    displayName: null,
+    dangerLevel: "medium",
+    sideEffects: {
+      creates: ["unsubscribe"],
+    },
+    requiredFields: ["metadata.name", "metadata.namespace"],
+    cliExamples: [
+      {
+        command: "f5xcctl cdn unsubscribe create -f {file}.yaml",
+        description: "Create from YAML file",
+        use_case: "file_based",
+      },
+      {
+        command: "f5xcctl cdn unsubscribe create {name} --namespace {namespace}",
+        description: "Create unsubscribe",
+        use_case: "basic_create",
+      },
+    ],
+    confirmationRequired: false,
+    parameterExamples: {},
+    validationRules: {},
+    operationMetadata: {
+      common_errors: [
+        {
+          code: 401,
+          message: "Authentication required",
+          solution: "Provide valid API credentials",
+        },
+        {
+          code: 403,
+          message: "Permission denied",
+          solution: "Check access permissions for this operation",
+        },
+        {
+          code: 404,
+          message: "Resource not found",
+          solution: "Verify resource name, namespace, and path",
+        },
+        {
+          code: 409,
+          message: "Resource already exists",
+          solution: "Use different name or update existing resource",
+        },
+        {
+          code: 429,
+          message: "Rate limit exceeded",
+          solution: "Wait before retrying the operation",
+        },
+        {
+          code: 500,
+          message: "Server error",
+          solution: "Retry operation or contact support",
+        },
+      ],
+      conditions: {
+        postconditions: ["Unsubscribe resource created", "Resource assigned unique identifier"],
+        prerequisites: ["Active namespace"],
+      },
+      confirmation_required: false,
+      danger_level: "medium",
+      examples: [
+        {
+          command: "f5xcctl cdn unsubscribe create {name} --namespace {namespace}",
+          description: "Create unsubscribe",
+          use_case: "basic_create",
+        },
+        {
+          command: "f5xcctl cdn unsubscribe create -f {file}.yaml",
+          description: "Create from YAML file",
+          use_case: "file_based",
+        },
+      ],
+      field_docs: {},
+      optional_fields: [],
+      performance_impact: {
+        latency: "low",
+        resource_usage: "low",
+      },
+      purpose: "Create new unsubscribe",
+      required_fields: ["metadata.name", "metadata.namespace"],
+      side_effects: {
+        creates: ["unsubscribe"],
+      },
+    },
   },
 ];
 

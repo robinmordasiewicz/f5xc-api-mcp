@@ -6,6 +6,9 @@ description: Access Log Scroll Query.
 
 # Scroll
 
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
 The response for access log query contain no more than 500 records.
 Scroll request is used scroll
 through more than 500 records or all records that matched the criteria in the
@@ -23,15 +26,23 @@ multiple batches. EOF is indicated by empty scroll_id in the response.
 
 ### Path Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `namespace` | Namespace |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `Value` |
 
 ### Query Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `scroll_id` | Long Base-64 encoded string which can be used to retrieve next batch of log messages. |
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `scroll_id` | Long Base-64 encoded string which can be used to retrieve next batch of log messages. | `Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- scroll
 
 ## Example Usage
 
@@ -44,6 +55,34 @@ Ask Claude to help you work with Scroll resources:
 ### List Scrolls
 
 > "List all scrolls in the 'production' namespace"
+
+## CLI Examples
+
+Examples from the enriched OpenAPI specifications:
+
+### file_based
+
+```bash
+f5xcctl data scroll create -f {file}.yaml
+```
+
+Create from YAML file
+
+### basic_create
+
+```bash
+f5xcctl data scroll create {name} --namespace {namespace}
+```
+
+Create scroll
+
+### list_all
+
+```bash
+f5xcctl data scroll list --namespace {namespace}
+```
+
+List all scrolls
 
 ## f5xcctl Equivalent
 

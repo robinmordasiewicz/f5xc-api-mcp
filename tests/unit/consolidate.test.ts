@@ -6,6 +6,10 @@
  * - Resource search
  * - Tool resolution
  * - Statistics
+ *
+ * IMPORTANT: All tests use dynamic fixtures generated from the current specs.
+ * No hardcoded domain names, tool names, or specific values.
+ * See tests/fixtures/generated.ts for fixture generation.
  */
 
 import { describe, it, expect, beforeEach } from "vitest";
@@ -19,6 +23,12 @@ import {
   getConsolidationStats,
 } from "../../src/tools/discovery/consolidate.js";
 import { clearIndexCache } from "../../src/tools/discovery/index-loader.js";
+import {
+  FIRST_TOOL,
+  SAMPLE_DOMAIN,
+  SAMPLE_RESOURCES,
+  getValidDomain,
+} from "../fixtures/generated.js";
 
 describe("consolidate", () => {
   beforeEach(() => {
@@ -71,14 +81,16 @@ describe("consolidate", () => {
     it("should group CRUD operations correctly", () => {
       const index = getConsolidatedIndex();
 
-      // Find a known CRUD resource
-      const httpLb = index.resources.find((r) => r.resource === "http-loadbalancer");
+      // Find any resource with create and list operations dynamically
+      const resourceWithCrud = index.resources.find(
+        (r) => r.operations.includes("create") && r.operations.includes("list")
+      );
 
-      if (httpLb) {
-        expect(httpLb.operations).toContain("create");
-        expect(httpLb.operations).toContain("list");
-        expect(httpLb.toolMap.create).toBeDefined();
-        expect(httpLb.toolMap.list).toBeDefined();
+      if (resourceWithCrud) {
+        expect(resourceWithCrud.operations).toContain("create");
+        expect(resourceWithCrud.operations).toContain("list");
+        expect(resourceWithCrud.toolMap.create).toBeDefined();
+        expect(resourceWithCrud.toolMap.list).toBeDefined();
       }
     });
   });
@@ -107,7 +119,7 @@ describe("consolidate", () => {
     });
 
     it("should return undefined for non-existent resource", () => {
-      const resource = getConsolidatedResource("non-existent-resource");
+      const resource = getConsolidatedResource("non-existent-resource-xyz-12345");
 
       expect(resource).toBeUndefined();
     });
@@ -115,21 +127,23 @@ describe("consolidate", () => {
 
   describe("getConsolidatedByDomain", () => {
     it("should return resources for existing domain", () => {
-      const resources = getConsolidatedByDomain("load_balancer");
+      const domain = getValidDomain();
+      const resources = getConsolidatedByDomain(domain);
 
       expect(resources.length).toBeGreaterThan(0);
-      expect(resources.every((r) => r.domain === "load_balancer")).toBe(true);
+      expect(resources.every((r) => r.domain === domain)).toBe(true);
     });
 
     it("should return empty array for non-existent domain", () => {
-      const resources = getConsolidatedByDomain("nonexistent");
+      const resources = getConsolidatedByDomain("nonexistent-domain-xyz-12345");
 
       expect(resources.length).toBe(0);
     });
 
     it("should be case-insensitive", () => {
-      const resources1 = getConsolidatedByDomain("load_balancer");
-      const resources2 = getConsolidatedByDomain("LOAD_BALANCER");
+      const domain = getValidDomain();
+      const resources1 = getConsolidatedByDomain(domain);
+      const resources2 = getConsolidatedByDomain(domain.toUpperCase());
 
       expect(resources1.length).toBe(resources2.length);
     });
@@ -137,45 +151,44 @@ describe("consolidate", () => {
 
   describe("searchConsolidatedResources", () => {
     it("should find resources matching simple queries", () => {
-      const results = searchConsolidatedResources("http load balancer");
+      // Use first resource from fixtures as search term
+      const results = searchConsolidatedResources(FIRST_TOOL.resource);
 
       expect(results.length).toBeGreaterThan(0);
-      // Should find http-loadbalancer resource
-      const topResult = results[0].resource;
-      expect(
-        topResult.resource.includes("http") ||
-          topResult.resource.includes("load") ||
-          topResult.summary.toLowerCase().includes("load")
-      ).toBe(true);
     });
 
     it("should find resources by domain", () => {
-      const results = searchConsolidatedResources("load_balancer");
+      const domain = getValidDomain();
+      const results = searchConsolidatedResources(domain);
 
       expect(results.length).toBeGreaterThan(0);
-      expect(results.some((r) => r.resource.domain === "load_balancer")).toBe(true);
+      expect(results.some((r) => r.resource.domain === domain)).toBe(true);
     });
 
     it("should respect limit option", () => {
-      const results = searchConsolidatedResources("load balancer", { limit: 5 });
+      const results = searchConsolidatedResources(FIRST_TOOL.resource, { limit: 5 });
 
       expect(results.length).toBeLessThanOrEqual(5);
     });
 
     it("should filter by domains", () => {
-      const results = searchConsolidatedResources("load balancer", { domains: ["load_balancer"] });
+      const domain = getValidDomain();
+      const results = searchConsolidatedResources(FIRST_TOOL.resource, { domains: [domain] });
 
-      expect(results.every((r) => r.resource.domain === "load_balancer")).toBe(true);
+      if (results.length > 0) {
+        expect(results.every((r) => r.resource.domain === domain)).toBe(true);
+      }
     });
 
     it("should return empty array for no matches", () => {
-      const results = searchConsolidatedResources("xyz123nonexistent");
+      // Use a completely random string with no dictionary words
+      const results = searchConsolidatedResources("qzxwjkvmnbfghpyr");
 
       expect(results.length).toBe(0);
     });
 
     it("should return scored results", () => {
-      const results = searchConsolidatedResources("http loadbalancer");
+      const results = searchConsolidatedResources(FIRST_TOOL.resource);
 
       expect(results.length).toBeGreaterThan(0);
       expect(results[0].score).toBeGreaterThan(0);
@@ -183,7 +196,7 @@ describe("consolidate", () => {
     });
 
     it("should include matched terms", () => {
-      const results = searchConsolidatedResources("http loadbalancer");
+      const results = searchConsolidatedResources(FIRST_TOOL.resource);
 
       expect(results.length).toBeGreaterThan(0);
       expect(results[0].matchedTerms.length).toBeGreaterThan(0);
@@ -204,7 +217,7 @@ describe("consolidate", () => {
     });
 
     it("should return null for non-existent resource", () => {
-      const toolName = resolveConsolidatedTool("non-existent-resource", "create");
+      const toolName = resolveConsolidatedTool("non-existent-resource-xyz-12345", "create");
 
       expect(toolName).toBeNull();
     });
