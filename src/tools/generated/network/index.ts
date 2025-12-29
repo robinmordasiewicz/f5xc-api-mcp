@@ -106,6 +106,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["address-allocator"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/address_allocators" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-address-allocator-delete",
@@ -212,6 +214,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["address-allocator", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/address_allocators" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-address-allocator-get",
@@ -335,6 +339,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/address_allocators" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-address-allocator-list",
@@ -465,6 +471,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/address_allocators" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-advertise-policy-create",
@@ -566,6 +574,7 @@ export const networkTools: ParsedOperation[] = [
         creates: ["advertise-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-advertise-policy-delete",
@@ -672,6 +681,7 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["advertise-policy", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-advertise-policy-get",
@@ -797,6 +807,7 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-advertise-policy-list",
@@ -927,6 +938,7 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-advertise-policy-update",
@@ -1037,6 +1049,7 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["advertise-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-bgp-asn-set-create",
@@ -1135,6 +1148,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["bgp-asn-set"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bgp_asn_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-bgp-asn-set-delete",
@@ -1241,6 +1256,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["bgp-asn-set", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bgp_asn_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-bgp-asn-set-get",
@@ -1366,6 +1383,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bgp_asn_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-bgp-asn-set-list",
@@ -1496,6 +1515,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bgp_asn_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-bgp-asn-set-update",
@@ -1606,6 +1627,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["bgp-asn-set"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bgp_asn_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-bgp-create",
@@ -1704,6 +1727,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["bgp"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bgps" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-bgp-delete",
@@ -1810,6 +1835,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["bgp", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bgps" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-bgp-get",
@@ -1935,6 +1962,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bgps" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-bgp-list",
@@ -2065,6 +2094,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bgps" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-bgp-peer-list",
@@ -2167,6 +2198,7 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace", "path.site"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-bgp-route-list",
@@ -2269,6 +2301,7 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace", "path.site"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-bgp-routing-policy-create",
@@ -2370,6 +2403,7 @@ export const networkTools: ParsedOperation[] = [
         creates: ["bgp-routing-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-bgp-routing-policy-delete",
@@ -2476,6 +2510,7 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["bgp-routing-policy", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-bgp-routing-policy-get",
@@ -2600,6 +2635,7 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-bgp-routing-policy-list",
@@ -2730,6 +2766,7 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-bgp-routing-policy-update",
@@ -2840,6 +2877,7 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["bgp-routing-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-bgp-update",
@@ -2950,6 +2988,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["bgp"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bgps" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-bgpstatu-list",
@@ -3065,6 +3105,7 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace", "path.view_name"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-dc-cluster-group-create",
@@ -3165,6 +3206,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["dc-cluster-group"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dc_cluster_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-dc-cluster-group-delete",
@@ -3271,6 +3314,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["dc-cluster-group", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dc_cluster_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-dc-cluster-group-get",
@@ -3395,6 +3440,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dc_cluster_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-dc-cluster-group-list",
@@ -3525,6 +3572,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dc_cluster_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-dc-cluster-group-update",
@@ -3634,6 +3683,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["dc-cluster-group"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dc_cluster_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-forwarding-class-create",
@@ -3734,6 +3785,7 @@ export const networkTools: ParsedOperation[] = [
         creates: ["forwarding-class"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-forwarding-class-delete",
@@ -3840,6 +3892,7 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["forwarding-class", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-forwarding-class-get",
@@ -3964,6 +4017,7 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-forwarding-class-list",
@@ -4094,6 +4148,7 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-forwarding-class-update",
@@ -4203,6 +4258,7 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["forwarding-class"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-ike-phase1-profile-create",
@@ -4303,6 +4359,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["ike-phase1-profile"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike_phase1_profiles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike-phase1-profile-delete",
@@ -4409,6 +4467,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["ike-phase1-profile", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike_phase1_profiles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike-phase1-profile-get",
@@ -4533,6 +4593,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike_phase1_profiles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike-phase1-profile-list",
@@ -4663,6 +4725,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike_phase1_profiles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike-phase1-profile-update",
@@ -4772,6 +4836,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["ike-phase1-profile"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike_phase1_profiles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike-phase2-profile-create",
@@ -4872,6 +4938,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["ike-phase2-profile"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike_phase2_profiles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike-phase2-profile-delete",
@@ -4978,6 +5046,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["ike-phase2-profile", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike_phase2_profiles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike-phase2-profile-get",
@@ -5102,6 +5172,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike_phase2_profiles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike-phase2-profile-list",
@@ -5232,6 +5304,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike_phase2_profiles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike-phase2-profile-update",
@@ -5341,6 +5415,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["ike-phase2-profile"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike_phase2_profiles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike1-create",
@@ -5438,6 +5514,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["ike1"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike1s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike1-delete",
@@ -5544,6 +5622,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["ike1", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike1s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike1-get",
@@ -5668,6 +5748,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike1s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike1-list",
@@ -5798,6 +5880,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike1s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike1-update",
@@ -5907,6 +5991,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["ike1"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike1s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike2-create",
@@ -6004,6 +6090,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["ike2"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike2s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike2-delete",
@@ -6110,6 +6198,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["ike2", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike2s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike2-get",
@@ -6234,6 +6324,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike2s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike2-list",
@@ -6364,6 +6456,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike2s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ike2-update",
@@ -6473,6 +6567,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["ike2"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ike2s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ip-prefix-set-create",
@@ -6571,6 +6667,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["ip-prefix-set"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ip_prefix_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ip-prefix-set-delete",
@@ -6677,6 +6775,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["ip-prefix-set", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ip_prefix_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ip-prefix-set-get",
@@ -6802,6 +6902,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ip_prefix_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ip-prefix-set-list",
@@ -6932,6 +7034,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ip_prefix_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-ip-prefix-set-update",
@@ -7042,6 +7146,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["ip-prefix-set"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/ip_prefix_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-metric-create",
@@ -7138,6 +7244,7 @@ export const networkTools: ParsedOperation[] = [
         creates: ["metric"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-network-connector-create",
@@ -7238,6 +7345,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["network-connector"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-network-connector-delete",
@@ -7344,6 +7453,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["network-connector", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-network-connector-get",
@@ -7468,6 +7579,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-network-connector-list",
@@ -7598,6 +7711,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-network-connector-update",
@@ -7707,6 +7822,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["network-connector"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-public-ip-get",
@@ -7831,6 +7948,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/public_ips" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-public-ip-list",
@@ -7961,6 +8080,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/public_ips" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-public-ip-update",
@@ -8071,6 +8192,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["public-ip"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/public_ips" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-route-create",
@@ -8169,6 +8292,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["route"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/routes" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-route-delete",
@@ -8275,6 +8400,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["route", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/routes" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-route-get",
@@ -8400,6 +8527,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/routes" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-route-list",
@@ -8530,6 +8659,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/routes" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-route-update",
@@ -8640,6 +8771,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["route"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/routes" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-simplified-route-create",
@@ -8751,6 +8884,7 @@ export const networkTools: ParsedOperation[] = [
         creates: ["simplified-route"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-srv6-network-slice-create",
@@ -8852,6 +8986,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["srv6-network-slice"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/srv6_network_slices" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-srv6-network-slice-delete",
@@ -8958,6 +9094,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["srv6-network-slice", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/srv6_network_slices" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-srv6-network-slice-get",
@@ -9083,6 +9221,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/srv6_network_slices" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-srv6-network-slice-list",
@@ -9213,6 +9353,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/srv6_network_slices" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-srv6-network-slice-update",
@@ -9323,6 +9465,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["srv6-network-slice"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/srv6_network_slices" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-subnet-create",
@@ -9421,6 +9565,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["subnet"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/subnets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-subnet-delete",
@@ -9527,6 +9673,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["subnet", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/subnets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-subnet-get",
@@ -9651,6 +9799,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/subnets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-subnet-list",
@@ -9781,6 +9931,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/subnets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-subnet-update",
@@ -9890,6 +10042,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["subnet"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/subnets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-traceroute-create",
@@ -9998,6 +10152,7 @@ export const networkTools: ParsedOperation[] = [
         creates: ["traceroute"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-network-tunnel-create",
@@ -10095,6 +10250,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["tunnel"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tunnels" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-tunnel-delete",
@@ -10201,6 +10358,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["tunnel", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tunnels" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-tunnel-get",
@@ -10325,6 +10484,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tunnels" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-tunnel-list",
@@ -10455,6 +10616,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tunnels" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-tunnel-update",
@@ -10564,6 +10727,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["tunnel"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tunnels" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-virtual-network-create",
@@ -10661,6 +10826,8 @@ export const networkTools: ParsedOperation[] = [
         creates: ["virtual-network"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-virtual-network-delete",
@@ -10767,6 +10934,8 @@ export const networkTools: ParsedOperation[] = [
         deletes: ["virtual-network", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-virtual-network-get",
@@ -10891,6 +11060,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-virtual-network-list",
@@ -11021,6 +11192,8 @@ export const networkTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-network-virtual-network-update",
@@ -11130,6 +11303,8 @@ export const networkTools: ParsedOperation[] = [
         modifies: ["virtual-network"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
 ];
 

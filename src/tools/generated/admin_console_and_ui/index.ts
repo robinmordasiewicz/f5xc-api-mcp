@@ -126,6 +126,7 @@ export const admin_console_and_uiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-adminconsoleandui-static-component-list",
@@ -256,6 +257,7 @@ export const admin_console_and_uiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
 ];
 

@@ -102,6 +102,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         creates: ["policer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-delete",
@@ -208,6 +210,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         deletes: ["policer", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-get",
@@ -332,6 +336,8 @@ export const rate_limitingTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-list",
@@ -462,6 +468,8 @@ export const rate_limitingTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-update",
@@ -571,6 +579,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         modifies: ["policer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-create",
@@ -672,6 +682,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         creates: ["protocol-policer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-delete",
@@ -778,6 +790,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         deletes: ["protocol-policer", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-get",
@@ -903,6 +917,8 @@ export const rate_limitingTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-list",
@@ -1033,6 +1049,8 @@ export const rate_limitingTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-update",
@@ -1143,6 +1161,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         modifies: ["protocol-policer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-create",
@@ -1241,6 +1261,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         creates: ["rate-limiter"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-delete",
@@ -1347,6 +1369,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         deletes: ["rate-limiter", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-get",
@@ -1472,6 +1496,8 @@ export const rate_limitingTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-list",
@@ -1602,6 +1628,8 @@ export const rate_limitingTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-update",
@@ -1712,6 +1740,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         modifies: ["rate-limiter"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
 ];
 

@@ -44,6 +44,8 @@ export interface DocumentationResponse {
   validationRules: Record<string, Record<string, string>>;
   requiredFields: string[];
   operationMetadata: OperationMetadata | null;
+  // Curl example from enriched specs v1.0.66
+  curlExample: string | null;
 }
 
 /**
@@ -421,6 +423,7 @@ function buildDocumentationResponse(operation: ParsedOperation): DocumentationRe
     validationRules: operation.validationRules,
     requiredFields: operation.requiredFields,
     operationMetadata: operation.operationMetadata,
+    curlExample: operation.curlExample,
   };
 }
 

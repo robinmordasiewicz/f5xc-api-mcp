@@ -81,6 +81,7 @@ export const vpm_and_node_managementTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
 ];
 

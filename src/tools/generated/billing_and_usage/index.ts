@@ -81,6 +81,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-current-usage-create",
@@ -178,6 +179,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["current-usage"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-custom-list-list",
@@ -254,6 +256,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-hourly-usage-detail-create",
@@ -354,6 +357,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["hourly-usage-detail"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-invoice-pdf-list",
@@ -457,6 +461,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-limit-list",
@@ -547,6 +552,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-monthly-usage-create",
@@ -644,6 +650,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["monthly-usage"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-payment-method-create",
@@ -741,6 +748,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["payment-method"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-payment-method-delete",
@@ -845,6 +853,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         deletes: ["payment-method", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-plan-transition-create",
@@ -942,6 +951,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["plan-transition"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-plan-transition-list",
@@ -1033,6 +1043,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-primary-create",
@@ -1140,6 +1151,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["primary"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-quota-create",
@@ -1237,6 +1249,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["quota"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-quota-delete",
@@ -1343,6 +1356,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         deletes: ["quota", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-quota-get",
@@ -1467,6 +1481,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-quota-list",
@@ -1597,6 +1612,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-quota-update",
@@ -1707,6 +1723,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         modifies: ["quota"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-secondary-create",
@@ -1814,6 +1831,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["secondary"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-subscribe-create",
@@ -1896,6 +1914,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["subscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-swap-primary-create",
@@ -2003,6 +2022,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["swap-primary"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-unsubscribe-create",
@@ -2085,6 +2105,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["unsubscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-usage-detail-create",
@@ -2182,6 +2203,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
         creates: ["usage-detail"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-billingandusage-usage-list",
@@ -2272,6 +2294,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
 ];
 

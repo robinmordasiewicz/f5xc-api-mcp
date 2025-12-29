@@ -3,7 +3,7 @@
   "info": {
     "title": "F5 XC Vpm And Node Management API",
     "description": "F5 Distributed Cloud Vpm And Node Management API specifications",
-    "version": "1.0.65",
+    "version": "1.0.66",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -181,13 +181,6 @@
           "Other"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all upgrade-status",
-            "command": "f5xcctl data upgrade-statu list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all upgrade-status",
           "required_fields": [],
@@ -237,14 +230,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all upgrade-status",
-              "command": "f5xcctl data upgrade-statu list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "F5xC Upgrade Status.",
@@ -289,7 +275,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for maintenance_statusGetUpgradeStatusResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  upgrade_in_progress: value\n  upgrade_in_progress_with_config_downtime: value\n  upgrade_not_in_progress: value",
-          "example_command": "xcsh virtual create maintenance_status -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"upgrade_in_progress\": \"value\",\n    \"upgrade_in_progress_with_config_downtime\": \"value\",\n    \"upgrade_not_in_progress\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/maintenance_statuses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "ce_management"
       },
@@ -304,7 +291,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaEmpty\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create schema_empty -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_empties\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       }

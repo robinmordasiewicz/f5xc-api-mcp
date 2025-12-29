@@ -106,6 +106,8 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
         creates: ["malicious-user-mitigation"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/malicious_user_mitigations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-secopsandincidentresponse-malicious-user-mitigation-delete",
@@ -212,6 +214,8 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
         deletes: ["malicious-user-mitigation", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/malicious_user_mitigations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-secopsandincidentresponse-malicious-user-mitigation-get",
@@ -337,6 +341,8 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/malicious_user_mitigations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-secopsandincidentresponse-malicious-user-mitigation-list",
@@ -467,6 +473,8 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/malicious_user_mitigations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-secopsandincidentresponse-malicious-user-mitigation-update",
@@ -577,6 +585,8 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
         modifies: ["malicious-user-mitigation"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/malicious_user_mitigations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
 ];
 

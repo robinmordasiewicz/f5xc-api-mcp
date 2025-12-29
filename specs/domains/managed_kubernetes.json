@@ -3,7 +3,7 @@
   "info": {
     "title": "F5 XC Managed Kubernetes API",
     "description": "Configure and manage Managed Kubernetes (XCKS) security and access controls. Define cluster roles with fine-grained permissions for API resources and non-resource URLs. Create role bindings to associate users and groups with cluster-wide permissions. Enforce pod security standards through admission controllers with configurable enforcement levels. Manage private container registries for secure image distribution. Integrates with external Kubernetes clusters including EKS, AKS, and GKE for...",
-    "version": "1.0.65",
+    "version": "1.0.66",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -214,18 +214,6 @@
             "container-registry"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create container-registry",
-            "command": "f5xcctl config container-registry create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl config container-registry create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new container-registry",
           "required_fields": [
@@ -286,19 +274,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create container-registry",
-              "command": "f5xcctl config container-registry create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl config container-registry create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Container Registry.",
@@ -462,13 +438,6 @@
             "container-registry"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Update container-registry",
-            "command": "f5xcctl config container-registry update {name} --namespace {namespace} -f {file}.yaml",
-            "use_case": "update"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Replace existing container-registry",
           "required_fields": [
@@ -527,14 +496,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Update container-registry",
-              "command": "f5xcctl config container-registry update {name} --namespace {namespace} -f {file}.yaml",
-              "use_case": "update"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Container Registry.",
@@ -710,13 +672,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all container-registrys",
-            "command": "f5xcctl config container-registry list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all container-registrys",
           "required_fields": [
@@ -768,14 +723,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all container-registrys",
-              "command": "f5xcctl config container-registry list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Container Registry.",
@@ -944,13 +892,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific container-registry",
-            "command": "f5xcctl config container-registry get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific container-registry",
           "required_fields": [
@@ -1003,14 +944,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific container-registry",
-              "command": "f5xcctl config container-registry get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "delete": {
@@ -1169,14 +1103,6 @@
             "contained_resources"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Delete container-registry",
-            "command": "f5xcctl config container-registry delete {name} --namespace {namespace}",
-            "use_case": "delete",
-            "warning": "Permanent operation - cannot be undone"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Delete container-registry",
           "required_fields": [
@@ -1237,15 +1163,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "Delete container-registry",
-              "command": "f5xcctl config container-registry delete {name} --namespace {namespace}",
-              "use_case": "delete",
-              "warning": "Permanent operation - cannot be undone"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Container Registry.",
@@ -1399,18 +1317,6 @@
             "k8s-cluster-role"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create k8s-cluster-role",
-            "command": "f5xcctl config k8s-cluster-role create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl config k8s-cluster-role create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new k8s-cluster-role",
           "required_fields": [
@@ -1471,19 +1377,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create k8s-cluster-role",
-              "command": "f5xcctl config k8s-cluster-role create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl config k8s-cluster-role create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Cluster Role.",
@@ -1647,13 +1541,6 @@
             "k8s-cluster-role"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Update k8s-cluster-role",
-            "command": "f5xcctl config k8s-cluster-role update {name} --namespace {namespace} -f {file}.yaml",
-            "use_case": "update"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Replace existing k8s-cluster-role",
           "required_fields": [
@@ -1712,14 +1599,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Update k8s-cluster-role",
-              "command": "f5xcctl config k8s-cluster-role update {name} --namespace {namespace} -f {file}.yaml",
-              "use_case": "update"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Cluster Role.",
@@ -1895,13 +1775,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all k8s-cluster-roles",
-            "command": "f5xcctl config k8s-cluster-role list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all k8s-cluster-roles",
           "required_fields": [
@@ -1953,14 +1826,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all k8s-cluster-roles",
-              "command": "f5xcctl config k8s-cluster-role list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         },
         "x-discovered-response-time-ms": 153.1,
         "x-discovered-sample-size": 1
@@ -2131,13 +1997,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific k8s-cluster-role",
-            "command": "f5xcctl config k8s-cluster-role get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific k8s-cluster-role",
           "required_fields": [
@@ -2190,14 +2049,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific k8s-cluster-role",
-              "command": "f5xcctl config k8s-cluster-role get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "delete": {
@@ -2356,14 +2208,6 @@
             "contained_resources"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Delete k8s-cluster-role",
-            "command": "f5xcctl config k8s-cluster-role delete {name} --namespace {namespace}",
-            "use_case": "delete",
-            "warning": "Permanent operation - cannot be undone"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Delete k8s-cluster-role",
           "required_fields": [
@@ -2424,15 +2268,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "Delete k8s-cluster-role",
-              "command": "f5xcctl config k8s-cluster-role delete {name} --namespace {namespace}",
-              "use_case": "delete",
-              "warning": "Permanent operation - cannot be undone"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Cluster Role.",
@@ -2586,18 +2422,6 @@
             "k8s-cluster-role-binding"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create k8s-cluster-role-binding",
-            "command": "f5xcctl config k8s-cluster-role-binding create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl config k8s-cluster-role-binding create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new k8s-cluster-role-binding",
           "required_fields": [
@@ -2658,19 +2482,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create k8s-cluster-role-binding",
-              "command": "f5xcctl config k8s-cluster-role-binding create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl config k8s-cluster-role-binding create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Cluster Role Binding.",
@@ -2834,13 +2646,6 @@
             "k8s-cluster-role-binding"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Update k8s-cluster-role-binding",
-            "command": "f5xcctl config k8s-cluster-role-binding update {name} --namespace {namespace} -f {file}.yaml",
-            "use_case": "update"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Replace existing k8s-cluster-role-binding",
           "required_fields": [
@@ -2899,14 +2704,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Update k8s-cluster-role-binding",
-              "command": "f5xcctl config k8s-cluster-role-binding update {name} --namespace {namespace} -f {file}.yaml",
-              "use_case": "update"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Cluster Role Binding.",
@@ -3082,13 +2880,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all k8s-cluster-role-bindings",
-            "command": "f5xcctl config k8s-cluster-role-binding list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all k8s-cluster-role-bindings",
           "required_fields": [
@@ -3140,14 +2931,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all k8s-cluster-role-bindings",
-              "command": "f5xcctl config k8s-cluster-role-binding list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         },
         "x-discovered-response-time-ms": 161.41,
         "x-discovered-sample-size": 1
@@ -3318,13 +3102,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific k8s-cluster-role-binding",
-            "command": "f5xcctl config k8s-cluster-role-binding get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific k8s-cluster-role-binding",
           "required_fields": [
@@ -3377,14 +3154,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific k8s-cluster-role-binding",
-              "command": "f5xcctl config k8s-cluster-role-binding get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "delete": {
@@ -3543,14 +3313,6 @@
             "contained_resources"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Delete k8s-cluster-role-binding",
-            "command": "f5xcctl config k8s-cluster-role-binding delete {name} --namespace {namespace}",
-            "use_case": "delete",
-            "warning": "Permanent operation - cannot be undone"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Delete k8s-cluster-role-binding",
           "required_fields": [
@@ -3611,15 +3373,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "Delete k8s-cluster-role-binding",
-              "command": "f5xcctl config k8s-cluster-role-binding delete {name} --namespace {namespace}",
-              "use_case": "delete",
-              "warning": "Permanent operation - cannot be undone"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Cluster Role Binding.",
@@ -3773,18 +3527,6 @@
             "k8s-pod-security-admission"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create k8s-pod-security-admission",
-            "command": "f5xcctl config k8s-pod-security-admission create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl config k8s-pod-security-admission create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new k8s-pod-security-admission",
           "required_fields": [
@@ -3845,19 +3587,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create k8s-pod-security-admission",
-              "command": "f5xcctl config k8s-pod-security-admission create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl config k8s-pod-security-admission create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Pod Security Admission.",
@@ -4021,13 +3751,6 @@
             "k8s-pod-security-admission"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Update k8s-pod-security-admission",
-            "command": "f5xcctl config k8s-pod-security-admission update {name} --namespace {namespace} -f {file}.yaml",
-            "use_case": "update"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Replace existing k8s-pod-security-admission",
           "required_fields": [
@@ -4086,14 +3809,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Update k8s-pod-security-admission",
-              "command": "f5xcctl config k8s-pod-security-admission update {name} --namespace {namespace} -f {file}.yaml",
-              "use_case": "update"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Pod Security Admission.",
@@ -4269,13 +3985,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all k8s-pod-security-admissions",
-            "command": "f5xcctl config k8s-pod-security-admission list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all k8s-pod-security-admissions",
           "required_fields": [
@@ -4327,14 +4036,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all k8s-pod-security-admissions",
-              "command": "f5xcctl config k8s-pod-security-admission list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         },
         "x-discovered-response-time-ms": 155.68,
         "x-discovered-sample-size": 1
@@ -4505,13 +4207,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific k8s-pod-security-admission",
-            "command": "f5xcctl config k8s-pod-security-admission get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific k8s-pod-security-admission",
           "required_fields": [
@@ -4564,14 +4259,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific k8s-pod-security-admission",
-              "command": "f5xcctl config k8s-pod-security-admission get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "delete": {
@@ -4730,14 +4418,6 @@
             "contained_resources"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Delete k8s-pod-security-admission",
-            "command": "f5xcctl config k8s-pod-security-admission delete {name} --namespace {namespace}",
-            "use_case": "delete",
-            "warning": "Permanent operation - cannot be undone"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Delete k8s-pod-security-admission",
           "required_fields": [
@@ -4798,15 +4478,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "Delete k8s-pod-security-admission",
-              "command": "f5xcctl config k8s-pod-security-admission delete {name} --namespace {namespace}",
-              "use_case": "delete",
-              "warning": "Permanent operation - cannot be undone"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Pod Security Admission.",
@@ -4960,18 +4632,6 @@
             "k8s-pod-security-policy"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create k8s-pod-security-policy",
-            "command": "f5xcctl config k8s-pod-security-policy create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl config k8s-pod-security-policy create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new k8s-pod-security-policy",
           "required_fields": [
@@ -5033,19 +4693,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create k8s-pod-security-policy",
-              "command": "f5xcctl config k8s-pod-security-policy create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl config k8s-pod-security-policy create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Pod Security Policy.",
@@ -5209,13 +4857,6 @@
             "k8s-pod-security-policy"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Update k8s-pod-security-policy",
-            "command": "f5xcctl config k8s-pod-security-policy update {name} --namespace {namespace} -f {file}.yaml",
-            "use_case": "update"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Replace existing k8s-pod-security-policy",
           "required_fields": [
@@ -5275,14 +4916,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Update k8s-pod-security-policy",
-              "command": "f5xcctl config k8s-pod-security-policy update {name} --namespace {namespace} -f {file}.yaml",
-              "use_case": "update"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Pod Security Policy.",
@@ -5458,13 +5092,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all k8s-pod-security-policys",
-            "command": "f5xcctl config k8s-pod-security-policy list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all k8s-pod-security-policys",
           "required_fields": [
@@ -5517,14 +5144,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all k8s-pod-security-policys",
-              "command": "f5xcctl config k8s-pod-security-policy list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Pod Security Policy.",
@@ -5693,13 +5313,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific k8s-pod-security-policy",
-            "command": "f5xcctl config k8s-pod-security-policy get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific k8s-pod-security-policy",
           "required_fields": [
@@ -5753,14 +5366,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific k8s-pod-security-policy",
-              "command": "f5xcctl config k8s-pod-security-policy get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "delete": {
@@ -5919,14 +5525,6 @@
             "contained_resources"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Delete k8s-pod-security-policy",
-            "command": "f5xcctl config k8s-pod-security-policy delete {name} --namespace {namespace}",
-            "use_case": "delete",
-            "warning": "Permanent operation - cannot be undone"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Delete k8s-pod-security-policy",
           "required_fields": [
@@ -5988,15 +5586,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "Delete k8s-pod-security-policy",
-              "command": "f5xcctl config k8s-pod-security-policy delete {name} --namespace {namespace}",
-              "use_case": "delete",
-              "warning": "Permanent operation - cannot be undone"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "K8s Pod Security Policy.",
@@ -6036,7 +5626,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryCreateRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create container_registry -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registries\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6063,7 +5654,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryCreateResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value\n  system_metadata: value",
-          "example_command": "xcsh virtual create container_registry -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\",\n    \"system_metadata\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registries\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6161,7 +5753,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryCreateSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  email: value\n  password: value\n  registry: value\n  user_name: value",
-          "example_command": "xcsh virtual create container_registry -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"email\": \"value\",\n    \"password\": \"value\",\n    \"registry\": \"value\",\n    \"user_name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registries\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6193,8 +5786,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6203,7 +5794,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.631997+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741194+00:00"
           },
           "namespace": {
             "type": "string",
@@ -6213,9 +5804,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6224,7 +5812,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632003+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741201+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -6236,7 +5824,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryDeleteRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  fail_if_referred: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create container_registry -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"fail_if_referred\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registries\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6321,7 +5910,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632020+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741217+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -6342,7 +5931,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryGetResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  create_form: value\n  deleted_referred_objects: value\n  disabled_referred_objects: value\n  referring_objects: value",
-          "example_command": "xcsh virtual create container_registry -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"create_form\": \"value\",\n    \"deleted_referred_objects\": \"value\",\n    \"disabled_referred_objects\": \"value\",\n    \"referring_objects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registries\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6365,7 +5955,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryGetResponseFormatCode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create container_registry -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registries\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6463,7 +6054,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryGetSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  email: value\n  password: value\n  registry: value\n  user_name: value",
-          "example_command": "xcsh virtual create container_registry -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"email\": \"value\",\n    \"password\": \"value\",\n    \"registry\": \"value\",\n    \"user_name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registries\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6513,7 +6105,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryListResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  errors: value\n  items: value",
-          "example_command": "xcsh virtual create container_registry_list_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"errors\": \"value\",\n    \"items\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registry_list_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6551,7 +6144,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632038+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741236+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -6574,9 +6167,6 @@
             "description": "The set of labels present on this container_registry.",
             "title": "Labels",
             "x-displayname": "Labels",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6595,8 +6185,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6605,7 +6193,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632049+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741248+00:00"
           },
           "namespace": {
             "type": "string",
@@ -6615,9 +6203,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6626,7 +6211,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632054+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741253+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -6666,7 +6251,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632062+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741262+00:00"
           },
           "uid": {
             "type": "string",
@@ -6686,7 +6271,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632067+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741267+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -6708,7 +6293,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryListResponseItem\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disabled: value\n  get_spec: value\n  labels: value",
-          "example_command": "xcsh virtual create container_registry_list_response_item -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disabled\": \"value\",\n    \"get_spec\": \"value\",\n    \"labels\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registry_list_response_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6734,7 +6320,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryReplaceRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create container_registry_replace_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registry_replace_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6746,7 +6333,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryReplaceResponse\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create container_registry_replace_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registry_replace_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6844,7 +6432,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryReplaceSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  email: value\n  password: value\n  registry: value\n  user_name: value",
-          "example_command": "xcsh virtual create container_registry_replace_spec_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"email\": \"value\",\n    \"password\": \"value\",\n    \"registry\": \"value\",\n    \"user_name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registry_replace_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6898,7 +6487,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for container_registryStatusObject\nmetadata:\n  name: example\n  namespace: default\nspec:\n  conditions: value\n  object_refs: value",
-          "example_command": "xcsh virtual create container_registry_status_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"conditions\": \"value\",\n    \"object_refs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/container_registry_status_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -6932,7 +6522,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632088+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741289+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -6943,7 +6533,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protobufAny\nmetadata:\n  name: example\n  namespace: default\nspec:\n  type_url: value\n  value: value",
-          "example_command": "xcsh virtual create protobuf_any -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"type_url\": \"value\",\n    \"value\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protobuf_anies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -6997,7 +6588,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632095+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741296+00:00"
           },
           "store_provider": {
             "type": "string",
@@ -7024,7 +6615,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaBlindfoldSecretInfoType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  decryption_provider: value\n  location: value\n  store_provider: value",
-          "example_command": "xcsh virtual create schema_blindfold_secret_info_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"decryption_provider\": \"value\",\n    \"location\": \"value\",\n    \"store_provider\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_blindfold_secret_info_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7052,7 +6644,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632102+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741303+00:00"
           },
           "url": {
             "type": "string",
@@ -7093,7 +6685,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaClearSecretInfoType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  provider: value\n  url: value",
-          "example_command": "xcsh virtual create schema_clear_secret_info_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"provider\": \"value\",\n    \"url\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_clear_secret_info_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7149,7 +6742,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632111+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741313+00:00"
           },
           "service_name": {
             "type": "string",
@@ -7188,7 +6781,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632116+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741319+00:00"
           },
           "type": {
             "type": "string",
@@ -7225,7 +6818,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaConditionType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  hostname: value\n  last_update_time: value\n  reason: value\n  service_name: value\n  status: value",
-          "example_command": "xcsh virtual create schema_condition_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"hostname\": \"value\",\n    \"last_update_time\": \"value\",\n    \"reason\": \"value\",\n    \"service_name\": \"value\",\n    \"status\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_condition_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7252,7 +6846,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaErrorCode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create schema_error_code -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_error_codes\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7294,7 +6889,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaErrorType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  code: value\n  error_obj: value\n  message: value",
-          "example_command": "xcsh virtual create schema_error_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"code\": \"value\",\n    \"error_obj\": \"value\",\n    \"message\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_error_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7313,8 +6909,6 @@
             "x-ves-example": "example-resource",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7323,7 +6917,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632127+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741330+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -7333,7 +6927,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaInitializerType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value",
-          "example_command": "xcsh virtual create schema_initializer_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_initializer_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7371,7 +6966,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaInitializersType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  pending: value\n  result: value",
-          "example_command": "xcsh virtual create schema_initializers_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"pending\": \"value\",\n    \"result\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_initializers_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7434,7 +7030,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632136+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741341+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -7456,9 +7052,6 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "Value",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7482,8 +7075,6 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7492,7 +7083,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632144+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741349+00:00"
           },
           "namespace": {
             "type": "string",
@@ -7502,9 +7093,6 @@
             "x-ves-example": "Staging",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7513,7 +7101,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632148+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741353+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -7528,7 +7116,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaObjectCreateMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disable: value\n  labels: value\n  name: value",
-          "example_command": "xcsh virtual create schema_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disable\": \"value\",\n    \"labels\": \"value\",\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7591,7 +7180,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632154+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741360+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -7613,9 +7202,6 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "Value",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7639,8 +7225,6 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7649,7 +7233,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632162+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741367+00:00"
           },
           "namespace": {
             "type": "string",
@@ -7659,9 +7243,6 @@
             "x-ves-example": "Staging",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7670,7 +7251,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632165+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741371+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -7685,7 +7266,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaObjectGetMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disable: value\n  labels: value\n  name: value",
-          "example_command": "xcsh virtual create schema_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disable\": \"value\",\n    \"labels\": \"value\",\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7713,7 +7295,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632170+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741376+00:00"
           },
           "name": {
             "type": "string",
@@ -7723,8 +7305,6 @@
             "x-ves-example": "Contactus-route.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7733,7 +7313,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632174+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741380+00:00"
           },
           "namespace": {
             "type": "string",
@@ -7743,9 +7323,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7754,7 +7331,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632178+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741384+00:00"
           },
           "tenant": {
             "type": "string",
@@ -7774,7 +7351,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632182+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741389+00:00"
           },
           "uid": {
             "type": "string",
@@ -7795,7 +7372,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632188+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741394+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -7809,7 +7386,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaObjectRefType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value\n  namespace: value\n  tenant: value\n  uid: value",
-          "example_command": "xcsh virtual create schema_object_ref_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"tenant\": \"value\",\n    \"uid\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_object_ref_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7872,7 +7450,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632196+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741402+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -7894,9 +7472,6 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "Value",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7919,8 +7494,6 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7929,7 +7502,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632204+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741410+00:00"
           },
           "namespace": {
             "type": "string",
@@ -7939,9 +7512,6 @@
             "x-ves-example": "Staging",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7950,7 +7520,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632209+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741414+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -7965,7 +7535,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaObjectReplaceMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disable: value\n  labels: value\n  name: value",
-          "example_command": "xcsh virtual create schema_object_replace_meta_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disable\": \"value\",\n    \"labels\": \"value\",\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_object_replace_meta_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7983,7 +7554,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaSecretEncodingType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create schema_secret_encoding_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_secret_encoding_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -8010,7 +7582,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaSecretType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  blindfold_secret_info: value\n  clear_secret_info: value",
-          "example_command": "xcsh virtual create schema_secret_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"blindfold_secret_info\": \"value\",\n    \"clear_secret_info\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_secret_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -8105,7 +7678,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632225+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741430+00:00"
           },
           "vtrp_id": {
             "type": "string",
@@ -8150,7 +7723,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaStatusMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  creation_timestamp: value\n  creator_class: value\n  creator_id: value\n  publish: value\n  status_id: value",
-          "example_command": "xcsh virtual create schema_status_meta_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"creator_class\": \"value\",\n    \"creator_id\": \"value\",\n    \"publish\": \"value\",\n    \"status_id\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_status_meta_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -8170,7 +7744,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaStatusPublishType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create schema_status_publish_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_status_publish_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -8213,7 +7788,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632235+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741440+00:00"
           },
           "status": {
             "type": "string",
@@ -8231,7 +7806,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632239+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741445+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -8243,7 +7818,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaStatusType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  code: value\n  reason: value\n  status: value",
-          "example_command": "xcsh virtual create schema_status_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"code\": \"value\",\n    \"reason\": \"value\",\n    \"status\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_status_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -8342,9 +7918,6 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "'VES.I/O/soft-deleted': 'true'",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8405,7 +7978,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632259+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741464+00:00"
           },
           "uid": {
             "type": "string",
@@ -8425,7 +7998,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632264+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741469+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -8446,7 +8019,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaSystemObjectGetMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  creation_timestamp: value\n  creator_class: value\n  creator_id: value\n  deletion_timestamp: value\n  finalizers: value",
-          "example_command": "xcsh virtual create schema_system_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"creator_class\": \"value\",\n    \"creator_id\": \"value\",\n    \"deletion_timestamp\": \"value\",\n    \"finalizers\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_system_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -8470,7 +8044,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632269+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741473+00:00"
           },
           "location": {
             "type": "string",
@@ -8487,7 +8061,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632273+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741478+00:00"
           },
           "provider": {
             "type": "string",
@@ -8504,7 +8078,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632277+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741482+00:00"
           },
           "secret_encoding": {
             "$ref": "#/components/schemas/schemaSecretEncodingType"
@@ -8526,7 +8100,7 @@
             "maxLength": 1,
             "minLength": 1,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632284+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741489+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -8540,7 +8114,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaVaultSecretInfoType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  key: value\n  location: value\n  provider: value\n  secret_encoding: value\n  version: value",
-          "example_command": "xcsh virtual create schema_vault_secret_info_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"key\": \"value\",\n    \"location\": \"value\",\n    \"provider\": \"value\",\n    \"secret_encoding\": \"value\",\n    \"version\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_vault_secret_info_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -8567,7 +8142,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632289+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741494+00:00"
           },
           "name": {
             "type": "string",
@@ -8577,8 +8152,6 @@
             "x-ves-example": "Contactus-route.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8587,7 +8160,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632293+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741498+00:00"
           },
           "namespace": {
             "type": "string",
@@ -8597,9 +8170,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8608,7 +8178,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632297+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741502+00:00"
           },
           "uid": {
             "type": "string",
@@ -8628,7 +8198,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632302+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741507+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -8641,7 +8211,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaViewRefType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value\n  namespace: value\n  uid: value",
-          "example_command": "xcsh virtual create schema_view_ref_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"uid\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_view_ref_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -8657,8 +8228,6 @@
             "x-ves-example": "ChargeBack-API-Key.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8667,7 +8236,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:17.632307+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:10.741512+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -8677,7 +8246,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaWingmanSecretInfoType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value",
-          "example_command": "xcsh virtual create schema_wingman_secret_info_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_wingman_secret_info_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -8703,7 +8273,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleCreateRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create k8s_cluster_role -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -8730,7 +8301,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleCreateResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value\n  system_metadata: value",
-          "example_command": "xcsh virtual create k8s_cluster_role -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\",\n    \"system_metadata\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -8781,7 +8353,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleCreateSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  k8s_cluster_role_selector: value\n  policy_rule_list: value\n  yaml: value",
-          "example_command": "xcsh virtual create k8s_cluster_role -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"k8s_cluster_role_selector\": \"value\",\n    \"policy_rule_list\": \"value\",\n    \"yaml\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -8813,8 +8386,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8823,7 +8394,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.064816+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.059070+00:00"
           },
           "namespace": {
             "type": "string",
@@ -8833,9 +8404,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8844,7 +8412,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.064823+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.059078+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -8856,7 +8424,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleDeleteRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  fail_if_referred: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create k8s_cluster_role -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"fail_if_referred\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -8941,7 +8510,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.064838+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.059094+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -8962,7 +8531,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleGetResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  create_form: value\n  deleted_referred_objects: value\n  disabled_referred_objects: value\n  referring_objects: value",
-          "example_command": "xcsh virtual create k8s_cluster_role -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"create_form\": \"value\",\n    \"deleted_referred_objects\": \"value\",\n    \"disabled_referred_objects\": \"value\",\n    \"referring_objects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -8985,7 +8555,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleGetResponseFormatCode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create k8s_cluster_role -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9036,7 +8607,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleGetSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  k8s_cluster_role_selector: value\n  policy_rule_list: value\n  yaml: value",
-          "example_command": "xcsh virtual create k8s_cluster_role -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"k8s_cluster_role_selector\": \"value\",\n    \"policy_rule_list\": \"value\",\n    \"yaml\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9086,7 +8658,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleListResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  errors: value\n  items: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_list_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"errors\": \"value\",\n    \"items\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_list_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9124,7 +8697,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.064855+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.059112+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -9147,9 +8720,6 @@
             "description": "The set of labels present on this k8s_cluster_role.",
             "title": "Labels",
             "x-displayname": "Labels",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9168,8 +8738,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9178,7 +8746,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.064865+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.059123+00:00"
           },
           "namespace": {
             "type": "string",
@@ -9188,9 +8756,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9199,7 +8764,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.064870+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.059127+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -9239,7 +8804,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.064878+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.059136+00:00"
           },
           "uid": {
             "type": "string",
@@ -9259,7 +8824,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.064884+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.059142+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -9281,7 +8846,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleListResponseItem\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disabled: value\n  get_spec: value\n  labels: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_list_response_item -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disabled\": \"value\",\n    \"get_spec\": \"value\",\n    \"labels\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_list_response_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9379,7 +8945,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleNonResourceURLListType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  urls: value\n  verbs: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_non_resource_u_r_l_list_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"urls\": \"value\",\n    \"verbs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_non_resource_u_r_l_list_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9432,7 +8999,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_rolePolicyRuleListType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  policy_rule: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_policy_rule_list_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"policy_rule\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_policy_rule_list_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9459,7 +9027,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_rolePolicyRuleType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  non_resource_url_list: value\n  resource_list: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_policy_rule_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"non_resource_url_list\": \"value\",\n    \"resource_list\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_policy_rule_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9485,7 +9054,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleReplaceRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_replace_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_replace_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9497,7 +9067,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleReplaceResponse\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create k8s_cluster_role_replace_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_replace_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9548,7 +9119,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleReplaceSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  k8s_cluster_role_selector: value\n  policy_rule_list: value\n  yaml: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_replace_spec_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"k8s_cluster_role_selector\": \"value\",\n    \"policy_rule_list\": \"value\",\n    \"yaml\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_replace_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9718,7 +9290,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleResourceListType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  api_groups: value\n  resource_instances: value\n  resource_types: value\n  verbs: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_resource_list_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"api_groups\": \"value\",\n    \"resource_instances\": \"value\",\n    \"resource_types\": \"value\",\n    \"verbs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_resource_list_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9772,7 +9345,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_roleStatusObject\nmetadata:\n  name: example\n  namespace: default\nspec:\n  conditions: value\n  object_refs: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_status_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"conditions\": \"value\",\n    \"object_refs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_status_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -9830,7 +9404,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaLabelSelectorType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  expressions: value",
-          "example_command": "xcsh virtual create schema_label_selector_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"expressions\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_label_selector_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "label"
       },
@@ -9858,7 +9433,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377078+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368707+00:00"
           },
           "name": {
             "type": "string",
@@ -9868,8 +9443,6 @@
             "x-ves-example": "Contactus-route.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9878,7 +9451,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377084+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368714+00:00"
           },
           "namespace": {
             "type": "string",
@@ -9888,9 +9461,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9899,7 +9469,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377090+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368719+00:00"
           },
           "tenant": {
             "type": "string",
@@ -9919,7 +9489,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377094+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368723+00:00"
           },
           "uid": {
             "type": "string",
@@ -9940,7 +9510,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377100+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368729+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -9954,7 +9524,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for ioschemaObjectRefType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value\n  namespace: value\n  tenant: value\n  uid: value",
-          "example_command": "xcsh virtual create ioschema_object_ref_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"tenant\": \"value\",\n    \"uid\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ioschema_object_ref_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -9980,7 +9551,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingCreateRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10007,7 +9579,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingCreateResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value\n  system_metadata: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\",\n    \"system_metadata\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10063,7 +9636,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingCreateSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  k8s_cluster_role: value\n  subjects: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"k8s_cluster_role\": \"value\",\n    \"subjects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10095,8 +9669,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10105,7 +9677,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377117+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368747+00:00"
           },
           "namespace": {
             "type": "string",
@@ -10115,9 +9687,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10126,7 +9695,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377121+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368751+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -10138,7 +9707,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingDeleteRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  fail_if_referred: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"fail_if_referred\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10223,7 +9793,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377136+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368765+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -10244,7 +9814,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingGetResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  create_form: value\n  deleted_referred_objects: value\n  disabled_referred_objects: value\n  referring_objects: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"create_form\": \"value\",\n    \"deleted_referred_objects\": \"value\",\n    \"disabled_referred_objects\": \"value\",\n    \"referring_objects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10267,7 +9838,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingGetResponseFormatCode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10323,7 +9895,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingGetSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  k8s_cluster_role: value\n  subjects: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"k8s_cluster_role\": \"value\",\n    \"subjects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10373,7 +9946,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingListResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  errors: value\n  items: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding_list_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"errors\": \"value\",\n    \"items\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_binding_list_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10411,7 +9985,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377150+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368781+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -10434,9 +10008,6 @@
             "description": "The set of labels present on this k8s_cluster_role_binding.",
             "title": "Labels",
             "x-displayname": "Labels",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10455,8 +10026,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10465,7 +10034,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377160+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368791+00:00"
           },
           "namespace": {
             "type": "string",
@@ -10475,9 +10044,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10486,7 +10052,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377164+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368795+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -10526,7 +10092,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377172+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368803+00:00"
           },
           "uid": {
             "type": "string",
@@ -10546,7 +10112,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377177+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368809+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -10568,7 +10134,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingListResponseItem\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disabled: value\n  get_spec: value\n  labels: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding_list_response_item -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disabled\": \"value\",\n    \"get_spec\": \"value\",\n    \"labels\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_binding_list_response_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10594,7 +10161,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingReplaceRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding_replace_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_binding_replace_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10606,7 +10174,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingReplaceResponse\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding_replace_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_binding_replace_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10662,7 +10231,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingReplaceSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  k8s_cluster_role: value\n  subjects: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding_replace_spec_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"k8s_cluster_role\": \"value\",\n    \"subjects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_binding_replace_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10694,8 +10264,6 @@
             "ves.io.schema.rules.message.required": "true",
             "ves.io.schema.rules.string.max_len": "64",
             "ves.io.schema.rules.string.min_len": "1",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10704,7 +10272,7 @@
             },
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377190+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368820+00:00"
           },
           "namespace": {
             "type": "string",
@@ -10728,9 +10296,6 @@
             "ves.io.schema.rules.message.required": "true",
             "ves.io.schema.rules.string.max_len": "64",
             "ves.io.schema.rules.string.min_len": "1",
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10739,7 +10304,7 @@
             },
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377195+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368825+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -10750,7 +10315,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingServiceAccountType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding_service_account_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_binding_service_account_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10804,7 +10370,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingStatusObject\nmetadata:\n  name: example\n  namespace: default\nspec:\n  conditions: value\n  object_refs: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding_status_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"conditions\": \"value\",\n    \"object_refs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_binding_status_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10879,7 +10446,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_cluster_role_bindingSubjectType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  group: value\n  service_account: value\n  user: value",
-          "example_command": "xcsh virtual create k8s_cluster_role_binding_subject_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"group\": \"value\",\n    \"service_account\": \"value\",\n    \"user\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_binding_subject_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -10912,8 +10480,6 @@
             "ves.io.schema.rules.message.required": "true",
             "ves.io.schema.rules.string.max_bytes": "128",
             "ves.io.schema.rules.string.min_bytes": "1",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10922,7 +10488,7 @@
             },
             "x-original-maxLength": 128,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377378+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368993+00:00"
           },
           "namespace": {
             "type": "string",
@@ -10939,9 +10505,6 @@
             },
             "minLength": 0,
             "ves.io.schema.rules.string.max_bytes": "64",
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10950,7 +10513,7 @@
             },
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377383+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.368997+00:00"
           },
           "tenant": {
             "type": "string",
@@ -10977,7 +10540,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.377387+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.369001+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -10989,7 +10552,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaviewsObjectRefType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value\n  namespace: value\n  tenant: value",
-          "example_command": "xcsh virtual create schemaviews_object_ref_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"tenant\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schemaviews_object_ref_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -11004,7 +10568,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for ioschemaEmpty\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create ioschema_empty -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ioschema_empties\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -11030,7 +10595,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionCreateRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11057,7 +10623,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionCreateResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value\n  system_metadata: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\",\n    \"system_metadata\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11109,7 +10676,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionCreateSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  pod_security_admission_specs: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"pod_security_admission_specs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11141,8 +10709,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11151,7 +10717,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.679922+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.667304+00:00"
           },
           "namespace": {
             "type": "string",
@@ -11161,9 +10727,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11172,7 +10735,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.679926+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.667308+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -11184,7 +10747,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionDeleteRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  fail_if_referred: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"fail_if_referred\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11269,7 +10833,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.679940+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.667323+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -11290,7 +10854,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionGetResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  create_form: value\n  deleted_referred_objects: value\n  disabled_referred_objects: value\n  referring_objects: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"create_form\": \"value\",\n    \"deleted_referred_objects\": \"value\",\n    \"disabled_referred_objects\": \"value\",\n    \"referring_objects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11313,7 +10878,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionGetResponseFormatCode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create k8s_pod_security_admission -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11365,7 +10931,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionGetSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  pod_security_admission_specs: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"pod_security_admission_specs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11415,7 +10982,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionListResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  errors: value\n  items: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission_list_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"errors\": \"value\",\n    \"items\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admission_list_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11453,7 +11021,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.679954+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.667336+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -11476,9 +11044,6 @@
             "description": "The set of labels present on this k8s_pod_security_admission.",
             "title": "Labels",
             "x-displayname": "Labels",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11497,8 +11062,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11507,7 +11070,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.679964+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.667346+00:00"
           },
           "namespace": {
             "type": "string",
@@ -11517,9 +11080,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11528,7 +11088,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.679969+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.667351+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -11568,7 +11128,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.679976+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.667359+00:00"
           },
           "uid": {
             "type": "string",
@@ -11588,7 +11148,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:36.679982+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.667364+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -11610,7 +11170,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionListResponseItem\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disabled: value\n  get_spec: value\n  labels: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission_list_response_item -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disabled\": \"value\",\n    \"get_spec\": \"value\",\n    \"labels\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admission_list_response_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11654,7 +11215,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionPodSecurityAdmissionSpec\nmetadata:\n  name: example\n  namespace: default\nspec:\n  audit: value\n  baseline: value\n  enforce: value\n  privileged: value\n  restricted: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission_pod_security_admission_spec -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"audit\": \"value\",\n    \"baseline\": \"value\",\n    \"enforce\": \"value\",\n    \"privileged\": \"value\",\n    \"restricted\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admission_pod_security_admission_specs\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11680,7 +11242,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionReplaceRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission_replace_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admission_replace_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11692,7 +11255,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionReplaceResponse\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create k8s_pod_security_admission_replace_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admission_replace_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11744,7 +11308,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionReplaceSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  pod_security_admission_specs: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission_replace_spec_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"pod_security_admission_specs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admission_replace_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11798,7 +11363,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_admissionStatusObject\nmetadata:\n  name: example\n  namespace: default\nspec:\n  conditions: value\n  object_refs: value",
-          "example_command": "xcsh virtual create k8s_pod_security_admission_status_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"conditions\": \"value\",\n    \"object_refs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admission_status_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11852,7 +11418,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyCapabilityListType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  capabilities: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_capability_list_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"capabilities\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_capability_list_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11878,7 +11445,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyCreateRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11905,7 +11473,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyCreateResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value\n  system_metadata: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\",\n    \"system_metadata\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11952,7 +11521,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyCreateSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  psp_spec: value\n  yaml: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"psp_spec\": \"value\",\n    \"yaml\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -11984,8 +11554,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -11994,7 +11562,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:37.012978+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.997164+00:00"
           },
           "namespace": {
             "type": "string",
@@ -12004,9 +11572,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12015,7 +11580,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:37.012985+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.997171+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -12027,7 +11592,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyDeleteRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  fail_if_referred: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"fail_if_referred\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -12112,7 +11678,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:37.013001+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.997186+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -12133,7 +11699,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyGetResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  create_form: value\n  deleted_referred_objects: value\n  disabled_referred_objects: value\n  referring_objects: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"create_form\": \"value\",\n    \"deleted_referred_objects\": \"value\",\n    \"disabled_referred_objects\": \"value\",\n    \"referring_objects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -12156,7 +11723,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyGetResponseFormatCode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create k8s_pod_security_policy -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -12203,7 +11771,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyGetSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  psp_spec: value\n  yaml: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"psp_spec\": \"value\",\n    \"yaml\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -12265,7 +11834,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyHostPathType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  path_prefix: value\n  read_only: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_host_path_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"path_prefix\": \"value\",\n    \"read_only\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_host_path_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -12346,7 +11916,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyIDRangeType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  max_id: value\n  min_id: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_i_d_range_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"max_id\": \"value\",\n    \"min_id\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_i_d_range_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -12414,7 +11985,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyIDStrategyOptionsType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  id_ranges: value\n  rule: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_i_d_strategy_options_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"id_ranges\": \"value\",\n    \"rule\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_i_d_strategy_options_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -12464,7 +12036,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyListResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  errors: value\n  items: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_list_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"errors\": \"value\",\n    \"items\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_list_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -12502,7 +12075,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:37.013027+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.997213+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -12525,9 +12098,6 @@
             "description": "The set of labels present on this k8s_pod_security_policy.",
             "title": "Labels",
             "x-displayname": "Labels",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12546,8 +12116,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12556,7 +12124,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:37.013038+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.997224+00:00"
           },
           "namespace": {
             "type": "string",
@@ -12566,9 +12134,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -12577,7 +12142,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:37.013042+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.997229+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -12617,7 +12182,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:37.013050+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.997237+00:00"
           },
           "uid": {
             "type": "string",
@@ -12637,7 +12202,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:37.013056+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:29.997243+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -12659,7 +12224,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyListResponseItem\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disabled: value\n  get_spec: value\n  labels: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_list_response_item -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disabled\": \"value\",\n    \"get_spec\": \"value\",\n    \"labels\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_list_response_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -13090,7 +12656,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyPodSecurityPolicySpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  allow_privilege_escalation: value\n  allowed_capabilities: value\n  allowed_csi_drivers: value\n  allowed_flex_volumes: value\n  allowed_host_paths: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_pod_security_policy_spec_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"allow_privilege_escalation\": \"value\",\n    \"allowed_capabilities\": \"value\",\n    \"allowed_csi_drivers\": \"value\",\n    \"allowed_flex_volumes\": \"value\",\n    \"allowed_host_paths\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_pod_security_policy_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -13116,7 +12683,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyReplaceRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_replace_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_replace_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -13128,7 +12696,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyReplaceResponse\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_replace_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_replace_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -13175,7 +12744,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyReplaceSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  psp_spec: value\n  yaml: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_replace_spec_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"psp_spec\": \"value\",\n    \"yaml\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_replace_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -13222,7 +12792,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyRuntimeClassStrategyOptions\nmetadata:\n  name: example\n  namespace: default\nspec:\n  allowed_runtime_class_names: value\n  default_runtime_class_name: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_runtime_class_strategy_options -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"allowed_runtime_class_names\": \"value\",\n    \"default_runtime_class_name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_runtime_class_strategy_optionses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -13313,7 +12884,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policySELinuxStrategyOptions\nmetadata:\n  name: example\n  namespace: default\nspec:\n  Level: value\n  role: value\n  rule: value\n  type: value\n  user: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_s_e_linux_strategy_options -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"Level\": \"value\",\n    \"role\": \"value\",\n    \"rule\": \"value\",\n    \"type\": \"value\",\n    \"user\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_s_e_linux_strategy_optionses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       },
@@ -13367,7 +12939,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for k8s_pod_security_policyStatusObject\nmetadata:\n  name: example\n  namespace: default\nspec:\n  conditions: value\n  object_refs: value",
-          "example_command": "xcsh virtual create k8s_pod_security_policy_status_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"conditions\": \"value\",\n    \"object_refs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_policy_status_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "managed_kubernetes"
       }

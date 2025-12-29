@@ -87,6 +87,7 @@ export const generative_aiTools: ParsedOperation[] = [
         creates: ["allocateip"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-generativeai-deallocateip-delete",
@@ -169,6 +170,7 @@ export const generative_aiTools: ParsedOperation[] = [
         deletes: ["deallocateip"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-generativeai-enable-feature-create",
@@ -251,6 +253,7 @@ export const generative_aiTools: ParsedOperation[] = [
         creates: ["enable-feature"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-generativeai-eval-query-create",
@@ -346,6 +349,7 @@ export const generative_aiTools: ParsedOperation[] = [
         creates: ["eval-query"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-generativeai-eval-query-feedback-create",
@@ -444,6 +448,7 @@ export const generative_aiTools: ParsedOperation[] = [
         creates: ["eval-query-feedback"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-generativeai-gettoken-create",
@@ -526,6 +531,7 @@ export const generative_aiTools: ParsedOperation[] = [
         creates: ["gettoken"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-generativeai-query-create",
@@ -620,6 +626,7 @@ export const generative_aiTools: ParsedOperation[] = [
         creates: ["query"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-generativeai-query-feedback-create",
@@ -714,6 +721,7 @@ export const generative_aiTools: ParsedOperation[] = [
         creates: ["query-feedback"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-generativeai-refresh-token-create",
@@ -796,6 +804,7 @@ export const generative_aiTools: ParsedOperation[] = [
         creates: ["refresh-token"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-generativeai-subscribe-create",
@@ -878,6 +887,7 @@ export const generative_aiTools: ParsedOperation[] = [
         creates: ["subscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-generativeai-unsubscribe-create",
@@ -960,6 +970,7 @@ export const generative_aiTools: ParsedOperation[] = [
         creates: ["unsubscribe"],
       },
     },
+    curlExample: null,
   },
 ];
 

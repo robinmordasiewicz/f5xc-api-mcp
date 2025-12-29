@@ -116,6 +116,7 @@ export const ce_managementTools: ParsedOperation[] = [
         creates: ["approve"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-fleet-create",
@@ -213,6 +214,8 @@ export const ce_managementTools: ParsedOperation[] = [
         creates: ["fleet"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fleets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cemanagement-fleet-delete",
@@ -319,6 +322,8 @@ export const ce_managementTools: ParsedOperation[] = [
         deletes: ["fleet", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fleets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cemanagement-fleet-get",
@@ -443,6 +448,8 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fleets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cemanagement-fleet-list",
@@ -573,6 +580,8 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fleets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cemanagement-fleet-update",
@@ -682,6 +691,8 @@ export const ce_managementTools: ParsedOperation[] = [
         modifies: ["fleet"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fleets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cemanagement-get-image-download-url-create",
@@ -767,6 +778,7 @@ export const ce_managementTools: ParsedOperation[] = [
         creates: ["get-image-download-url"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-get-registrations-by-token-create",
@@ -852,6 +864,7 @@ export const ce_managementTools: ParsedOperation[] = [
         creates: ["get-registrations-by-token"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-listregistrationsbystate-create",
@@ -953,6 +966,7 @@ export const ce_managementTools: ParsedOperation[] = [
         creates: ["listregistrationsbystate"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-network-interface-create",
@@ -1054,6 +1068,8 @@ export const ce_managementTools: ParsedOperation[] = [
         creates: ["network-interface"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_interfaces" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cemanagement-network-interface-delete",
@@ -1160,6 +1176,8 @@ export const ce_managementTools: ParsedOperation[] = [
         deletes: ["network-interface", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_interfaces" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cemanagement-network-interface-get",
@@ -1284,6 +1302,8 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_interfaces" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cemanagement-network-interface-list",
@@ -1414,6 +1434,8 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_interfaces" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cemanagement-network-interface-update",
@@ -1524,6 +1546,8 @@ export const ce_managementTools: ParsedOperation[] = [
         modifies: ["network-interface"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_interfaces" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cemanagement-pre-upgrade-check-get",
@@ -1639,6 +1663,7 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registerbootstrap-create",
@@ -1725,6 +1750,7 @@ export const ce_managementTools: ParsedOperation[] = [
         creates: ["registerBootstrap"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registration-create",
@@ -1822,6 +1848,7 @@ export const ce_managementTools: ParsedOperation[] = [
         creates: ["registration"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registration-delete",
@@ -1938,6 +1965,7 @@ export const ce_managementTools: ParsedOperation[] = [
         deletes: ["registration", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registration-get",
@@ -2061,6 +2089,7 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registration-list",
@@ -2191,6 +2220,7 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registration-update",
@@ -2300,6 +2330,7 @@ export const ce_managementTools: ParsedOperation[] = [
         modifies: ["registration"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registrations-by-site-list",
@@ -2403,6 +2434,7 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.namespace", "path.site_name"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-requestconfig-create",
@@ -2486,6 +2518,7 @@ export const ce_managementTools: ParsedOperation[] = [
         creates: ["requestConfig"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-setting-list",
@@ -2576,6 +2609,7 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-suggest-value-create",
@@ -2659,6 +2693,7 @@ export const ce_managementTools: ParsedOperation[] = [
         creates: ["suggest-value"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-upgradable-sw-version-list",
@@ -2761,6 +2796,7 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-upgrade-statu-get",
@@ -2863,6 +2899,7 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-usb-policy-create",
@@ -2960,6 +2997,7 @@ export const ce_managementTools: ParsedOperation[] = [
         creates: ["usb-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-usb-policy-delete",
@@ -3066,6 +3104,7 @@ export const ce_managementTools: ParsedOperation[] = [
         deletes: ["usb-policy", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-usb-policy-get",
@@ -3190,6 +3229,7 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-usb-policy-list",
@@ -3320,6 +3360,7 @@ export const ce_managementTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cemanagement-usb-policy-update",
@@ -3429,6 +3470,7 @@ export const ce_managementTools: ParsedOperation[] = [
         modifies: ["usb-policy"],
       },
     },
+    curlExample: null,
   },
 ];
 

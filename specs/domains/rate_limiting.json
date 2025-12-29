@@ -3,7 +3,7 @@
   "info": {
     "title": "F5 XC Rate Limiting API",
     "description": "Manage rate limiting policies to protect applications from traffic surges and abuse. Configure rate limiters with customizable thresholds, time periods, and enforcement actions including blocking or throttling. Implement policers using leaky bucket algorithms for smooth traffic shaping. Define protocol-specific policers for granular control over different traffic types. Integrate with virtual hosts and load balancers to enforce rate limits at the edge, preventing resource exhaustion and...",
-    "version": "1.0.65",
+    "version": "1.0.66",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -214,18 +214,6 @@
             "policer"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create policer",
-            "command": "f5xcctl config policer create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl config policer create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new policer",
           "required_fields": [
@@ -286,19 +274,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create policer",
-              "command": "f5xcctl config policer create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl config policer create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Policer",
@@ -462,13 +438,6 @@
             "policer"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Update policer",
-            "command": "f5xcctl config policer update {name} --namespace {namespace} -f {file}.yaml",
-            "use_case": "update"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Replace existing policer",
           "required_fields": [
@@ -527,14 +496,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Update policer",
-              "command": "f5xcctl config policer update {name} --namespace {namespace} -f {file}.yaml",
-              "use_case": "update"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Policer",
@@ -710,13 +672,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all policers",
-            "command": "f5xcctl config policer list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all policers",
           "required_fields": [
@@ -768,14 +723,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all policers",
-              "command": "f5xcctl config policer list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Policer",
@@ -944,13 +892,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific policer",
-            "command": "f5xcctl config policer get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific policer",
           "required_fields": [
@@ -1003,14 +944,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific policer",
-              "command": "f5xcctl config policer get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "delete": {
@@ -1169,14 +1103,6 @@
             "contained_resources"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Delete policer",
-            "command": "f5xcctl config policer delete {name} --namespace {namespace}",
-            "use_case": "delete",
-            "warning": "Permanent operation - cannot be undone"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Delete policer",
           "required_fields": [
@@ -1237,15 +1163,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "Delete policer",
-              "command": "f5xcctl config policer delete {name} --namespace {namespace}",
-              "use_case": "delete",
-              "warning": "Permanent operation - cannot be undone"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Policer",
@@ -1399,18 +1317,6 @@
             "protocol-policer"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create protocol-policer",
-            "command": "f5xcctl config protocol-policer create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl config protocol-policer create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new protocol-policer",
           "required_fields": [
@@ -1471,19 +1377,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create protocol-policer",
-              "command": "f5xcctl config protocol-policer create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl config protocol-policer create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Protocol Policer.",
@@ -1647,13 +1541,6 @@
             "protocol-policer"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Update protocol-policer",
-            "command": "f5xcctl config protocol-policer update {name} --namespace {namespace} -f {file}.yaml",
-            "use_case": "update"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Replace existing protocol-policer",
           "required_fields": [
@@ -1712,14 +1599,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Update protocol-policer",
-              "command": "f5xcctl config protocol-policer update {name} --namespace {namespace} -f {file}.yaml",
-              "use_case": "update"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Protocol Policer.",
@@ -1895,13 +1775,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all protocol-policers",
-            "command": "f5xcctl config protocol-policer list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all protocol-policers",
           "required_fields": [
@@ -1953,14 +1826,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all protocol-policers",
-              "command": "f5xcctl config protocol-policer list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Protocol Policer.",
@@ -2129,13 +1995,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific protocol-policer",
-            "command": "f5xcctl config protocol-policer get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific protocol-policer",
           "required_fields": [
@@ -2188,14 +2047,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific protocol-policer",
-              "command": "f5xcctl config protocol-policer get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "delete": {
@@ -2354,14 +2206,6 @@
             "contained_resources"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Delete protocol-policer",
-            "command": "f5xcctl config protocol-policer delete {name} --namespace {namespace}",
-            "use_case": "delete",
-            "warning": "Permanent operation - cannot be undone"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Delete protocol-policer",
           "required_fields": [
@@ -2422,15 +2266,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "Delete protocol-policer",
-              "command": "f5xcctl config protocol-policer delete {name} --namespace {namespace}",
-              "use_case": "delete",
-              "warning": "Permanent operation - cannot be undone"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Protocol Policer.",
@@ -2584,18 +2420,6 @@
             "rate-limiter"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create rate-limiter",
-            "command": "f5xcctl config rate-limiter create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl config rate-limiter create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new rate-limiter",
           "required_fields": [
@@ -2656,19 +2480,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create rate-limiter",
-              "command": "f5xcctl config rate-limiter create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl config rate-limiter create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Rate Limiter.",
@@ -2832,13 +2644,6 @@
             "rate-limiter"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Update rate-limiter",
-            "command": "f5xcctl config rate-limiter update {name} --namespace {namespace} -f {file}.yaml",
-            "use_case": "update"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Replace existing rate-limiter",
           "required_fields": [
@@ -2897,14 +2702,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Update rate-limiter",
-              "command": "f5xcctl config rate-limiter update {name} --namespace {namespace} -f {file}.yaml",
-              "use_case": "update"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Rate Limiter.",
@@ -3080,13 +2878,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all rate-limiters",
-            "command": "f5xcctl config rate-limiter list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all rate-limiters",
           "required_fields": [
@@ -3138,14 +2929,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all rate-limiters",
-              "command": "f5xcctl config rate-limiter list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Rate Limiter.",
@@ -3314,13 +3098,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific rate-limiter",
-            "command": "f5xcctl config rate-limiter get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific rate-limiter",
           "required_fields": [
@@ -3373,14 +3150,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific rate-limiter",
-              "command": "f5xcctl config rate-limiter get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "delete": {
@@ -3539,14 +3309,6 @@
             "contained_resources"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Delete rate-limiter",
-            "command": "f5xcctl config rate-limiter delete {name} --namespace {namespace}",
-            "use_case": "delete",
-            "warning": "Permanent operation - cannot be undone"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Delete rate-limiter",
           "required_fields": [
@@ -3607,15 +3369,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "Delete rate-limiter",
-              "command": "f5xcctl config rate-limiter delete {name} --namespace {namespace}",
-              "use_case": "delete",
-              "warning": "Permanent operation - cannot be undone"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Rate Limiter.",
@@ -3655,7 +3409,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerCreateRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -3682,7 +3437,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerCreateResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value\n  system_metadata: value",
-          "example_command": "xcsh virtual create policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\",\n    \"system_metadata\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -3766,7 +3522,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerCreateSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  burst_size: value\n  committed_information_rate: value\n  policer_mode: value\n  policer_type: value",
-          "example_command": "xcsh virtual create policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"burst_size\": \"value\",\n    \"committed_information_rate\": \"value\",\n    \"policer_mode\": \"value\",\n    \"policer_type\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -3798,8 +3555,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3808,7 +3563,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504710+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510452+00:00"
           },
           "namespace": {
             "type": "string",
@@ -3818,9 +3573,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3829,7 +3581,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504717+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510459+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -3841,7 +3593,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerDeleteRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  fail_if_referred: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"fail_if_referred\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -3926,7 +3679,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504733+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510474+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -3947,7 +3700,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerGetResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  create_form: value\n  deleted_referred_objects: value\n  disabled_referred_objects: value\n  referring_objects: value",
-          "example_command": "xcsh virtual create policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"create_form\": \"value\",\n    \"deleted_referred_objects\": \"value\",\n    \"disabled_referred_objects\": \"value\",\n    \"referring_objects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -3970,7 +3724,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerGetResponseFormatCode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -4054,7 +3809,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerGetSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  burst_size: value\n  committed_information_rate: value\n  policer_mode: value\n  policer_type: value",
-          "example_command": "xcsh virtual create policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"burst_size\": \"value\",\n    \"committed_information_rate\": \"value\",\n    \"policer_mode\": \"value\",\n    \"policer_type\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -4104,7 +3860,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerListResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  errors: value\n  items: value",
-          "example_command": "xcsh virtual create policer_list_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"errors\": \"value\",\n    \"items\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policer_list_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -4142,7 +3899,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504751+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510493+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -4165,9 +3922,6 @@
             "description": "The set of labels present on this policer.",
             "title": "Labels",
             "x-displayname": "Labels",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4186,8 +3940,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4196,7 +3948,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504761+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510504+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4206,9 +3958,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4217,7 +3966,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504766+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510508+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -4257,7 +4006,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504774+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510516+00:00"
           },
           "uid": {
             "type": "string",
@@ -4277,7 +4026,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504779+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510522+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4299,7 +4048,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerListResponseItem\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disabled: value\n  get_spec: value\n  labels: value",
-          "example_command": "xcsh virtual create policer_list_response_item -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disabled\": \"value\",\n    \"get_spec\": \"value\",\n    \"labels\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policer_list_response_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -4319,7 +4069,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerPolicerMode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create policer_policer_mode -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policer_policer_modes\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -4338,7 +4089,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerPolicerType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create policer_policer_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policer_policer_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -4364,7 +4116,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerReplaceRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create policer_replace_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policer_replace_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -4376,7 +4129,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerReplaceResponse\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create policer_replace_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policer_replace_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -4460,7 +4214,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerReplaceSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  burst_size: value\n  committed_information_rate: value\n  policer_mode: value\n  policer_type: value",
-          "example_command": "xcsh virtual create policer_replace_spec_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"burst_size\": \"value\",\n    \"committed_information_rate\": \"value\",\n    \"policer_mode\": \"value\",\n    \"policer_type\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policer_replace_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -4515,7 +4270,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policerStatusObject\nmetadata:\n  name: example\n  namespace: default\nspec:\n  conditions: value\n  object_refs: value",
-          "example_command": "xcsh virtual create policer_status_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"conditions\": \"value\",\n    \"object_refs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policer_status_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -4549,7 +4305,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504801+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510554+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4560,7 +4316,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protobufAny\nmetadata:\n  name: example\n  namespace: default\nspec:\n  type_url: value\n  value: value",
-          "example_command": "xcsh virtual create protobuf_any -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"type_url\": \"value\",\n    \"value\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protobuf_anies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4616,7 +4373,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504809+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510563+00:00"
           },
           "service_name": {
             "type": "string",
@@ -4655,7 +4412,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504815+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510569+00:00"
           },
           "type": {
             "type": "string",
@@ -4692,7 +4449,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaConditionType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  hostname: value\n  last_update_time: value\n  reason: value\n  service_name: value\n  status: value",
-          "example_command": "xcsh virtual create schema_condition_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"hostname\": \"value\",\n    \"last_update_time\": \"value\",\n    \"reason\": \"value\",\n    \"service_name\": \"value\",\n    \"status\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_condition_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4719,7 +4477,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaErrorCode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create schema_error_code -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_error_codes\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4761,7 +4520,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaErrorType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  code: value\n  error_obj: value\n  message: value",
-          "example_command": "xcsh virtual create schema_error_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"code\": \"value\",\n    \"error_obj\": \"value\",\n    \"message\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_error_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4780,8 +4540,6 @@
             "x-ves-example": "example-resource",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4790,7 +4548,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504826+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510580+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4800,7 +4558,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaInitializerType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value",
-          "example_command": "xcsh virtual create schema_initializer_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_initializer_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4838,7 +4597,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaInitializersType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  pending: value\n  result: value",
-          "example_command": "xcsh virtual create schema_initializers_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"pending\": \"value\",\n    \"result\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_initializers_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4901,7 +4661,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504836+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510590+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -4923,9 +4683,6 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "Value",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4949,8 +4706,6 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4959,7 +4714,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504844+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510597+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4969,9 +4724,6 @@
             "x-ves-example": "Staging",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4980,7 +4732,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504848+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510601+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4995,7 +4747,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaObjectCreateMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disable: value\n  labels: value\n  name: value",
-          "example_command": "xcsh virtual create schema_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disable\": \"value\",\n    \"labels\": \"value\",\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5058,7 +4811,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504854+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510608+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -5080,9 +4833,6 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "Value",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5106,8 +4856,6 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5116,7 +4864,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504863+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510618+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5126,9 +4874,6 @@
             "x-ves-example": "Staging",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5137,7 +4882,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504868+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510622+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -5152,7 +4897,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaObjectGetMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disable: value\n  labels: value\n  name: value",
-          "example_command": "xcsh virtual create schema_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disable\": \"value\",\n    \"labels\": \"value\",\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5180,7 +4926,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504873+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510627+00:00"
           },
           "name": {
             "type": "string",
@@ -5190,8 +4936,6 @@
             "x-ves-example": "Contactus-route.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5200,7 +4944,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504877+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510631+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5210,9 +4954,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5221,7 +4962,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504881+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510635+00:00"
           },
           "tenant": {
             "type": "string",
@@ -5241,7 +4982,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504885+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510639+00:00"
           },
           "uid": {
             "type": "string",
@@ -5262,7 +5003,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504890+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510644+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -5276,7 +5017,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaObjectRefType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value\n  namespace: value\n  tenant: value\n  uid: value",
-          "example_command": "xcsh virtual create schema_object_ref_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"tenant\": \"value\",\n    \"uid\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_object_ref_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5339,7 +5081,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504897+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510651+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -5361,9 +5103,6 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "Value",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5386,8 +5125,6 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5396,7 +5133,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504905+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510659+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5406,9 +5143,6 @@
             "x-ves-example": "Staging",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5417,7 +5151,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504909+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510663+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -5432,7 +5166,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaObjectReplaceMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disable: value\n  labels: value\n  name: value",
-          "example_command": "xcsh virtual create schema_object_replace_meta_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disable\": \"value\",\n    \"labels\": \"value\",\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_object_replace_meta_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5527,7 +5262,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504921+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510675+00:00"
           },
           "vtrp_id": {
             "type": "string",
@@ -5572,7 +5307,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaStatusMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  creation_timestamp: value\n  creator_class: value\n  creator_id: value\n  publish: value\n  status_id: value",
-          "example_command": "xcsh virtual create schema_status_meta_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"creator_class\": \"value\",\n    \"creator_id\": \"value\",\n    \"publish\": \"value\",\n    \"status_id\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_status_meta_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5592,7 +5328,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaStatusPublishType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create schema_status_publish_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_status_publish_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5635,7 +5372,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504931+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510684+00:00"
           },
           "status": {
             "type": "string",
@@ -5653,7 +5390,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504935+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510689+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -5665,7 +5402,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaStatusType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  code: value\n  reason: value\n  status: value",
-          "example_command": "xcsh virtual create schema_status_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"code\": \"value\",\n    \"reason\": \"value\",\n    \"status\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_status_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5764,9 +5502,6 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "'VES.I/O/soft-deleted': 'true'",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5827,7 +5562,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504954+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510708+00:00"
           },
           "uid": {
             "type": "string",
@@ -5847,7 +5582,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504959+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510712+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -5868,7 +5603,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaSystemObjectGetMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  creation_timestamp: value\n  creator_class: value\n  creator_id: value\n  deletion_timestamp: value\n  finalizers: value",
-          "example_command": "xcsh virtual create schema_system_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"creator_class\": \"value\",\n    \"creator_id\": \"value\",\n    \"deletion_timestamp\": \"value\",\n    \"finalizers\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_system_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5895,7 +5631,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504964+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510717+00:00"
           },
           "name": {
             "type": "string",
@@ -5905,8 +5641,6 @@
             "x-ves-example": "Contactus-route.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5915,7 +5649,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504968+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510721+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5925,9 +5659,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5936,7 +5667,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504972+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510725+00:00"
           },
           "uid": {
             "type": "string",
@@ -5956,7 +5687,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:47.504976+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:40.510730+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -5969,7 +5700,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaViewRefType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value\n  namespace: value\n  uid: value",
-          "example_command": "xcsh virtual create schema_view_ref_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"uid\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_view_ref_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5995,7 +5727,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerCreateRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create protocol_policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6022,7 +5755,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerCreateResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value\n  system_metadata: value",
-          "example_command": "xcsh virtual create protocol_policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\",\n    \"system_metadata\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6067,7 +5801,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerCreateSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  protocol_policer: value",
-          "example_command": "xcsh virtual create protocol_policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"protocol_policer\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6099,8 +5834,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6109,7 +5842,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:48.693564+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:41.657088+00:00"
           },
           "namespace": {
             "type": "string",
@@ -6119,9 +5852,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6130,7 +5860,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:48.693570+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:41.657093+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -6142,7 +5872,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerDeleteRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  fail_if_referred: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create protocol_policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"fail_if_referred\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6157,7 +5888,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerDnsType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create protocol_policer_dns_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_dns_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6242,7 +5974,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:48.693585+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:41.657108+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -6263,7 +5995,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerGetResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  create_form: value\n  deleted_referred_objects: value\n  disabled_referred_objects: value\n  referring_objects: value",
-          "example_command": "xcsh virtual create protocol_policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"create_form\": \"value\",\n    \"deleted_referred_objects\": \"value\",\n    \"disabled_referred_objects\": \"value\",\n    \"referring_objects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6286,7 +6019,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerGetResponseFormatCode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create protocol_policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6331,7 +6065,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerGetSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  protocol_policer: value",
-          "example_command": "xcsh virtual create protocol_policer -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"protocol_policer\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policers\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6352,7 +6087,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerIcmpMsgType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create protocol_policer_icmp_msg_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_icmp_msg_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6386,7 +6122,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerIcmpType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  type: value",
-          "example_command": "xcsh virtual create protocol_policer_icmp_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"type\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_icmp_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6436,7 +6173,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerListResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  errors: value\n  items: value",
-          "example_command": "xcsh virtual create protocol_policer_list_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"errors\": \"value\",\n    \"items\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_list_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6474,7 +6212,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:48.693602+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:41.657124+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -6497,9 +6235,6 @@
             "description": "The set of labels present on this protocol_policer.",
             "title": "Labels",
             "x-displayname": "Labels",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6518,8 +6253,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6528,7 +6261,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:48.693613+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:41.657134+00:00"
           },
           "namespace": {
             "type": "string",
@@ -6538,9 +6271,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6549,7 +6279,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:48.693617+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:41.657139+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -6589,7 +6319,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:48.693625+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:41.657148+00:00"
           },
           "uid": {
             "type": "string",
@@ -6609,7 +6339,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:48.693631+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:41.657154+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -6631,7 +6361,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerListResponseItem\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disabled: value\n  get_spec: value\n  labels: value",
-          "example_command": "xcsh virtual create protocol_policer_list_response_item -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disabled\": \"value\",\n    \"get_spec\": \"value\",\n    \"labels\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_list_response_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6685,7 +6416,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerProtocolPolicerType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  policer: value\n  protocol: value",
-          "example_command": "xcsh virtual create protocol_policer_protocol_policer_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"policer\": \"value\",\n    \"protocol\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_protocol_policer_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6720,7 +6452,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerProtocolType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  dns: value\n  icmp: value\n  tcp: value\n  udp: value",
-          "example_command": "xcsh virtual create protocol_policer_protocol_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"dns\": \"value\",\n    \"icmp\": \"value\",\n    \"tcp\": \"value\",\n    \"udp\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_protocol_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6746,7 +6479,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerReplaceRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create protocol_policer_replace_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_replace_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6758,7 +6492,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerReplaceResponse\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create protocol_policer_replace_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_replace_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6803,7 +6538,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerReplaceSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  protocol_policer: value",
-          "example_command": "xcsh virtual create protocol_policer_replace_spec_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"protocol_policer\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_replace_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6858,7 +6594,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerStatusObject\nmetadata:\n  name: example\n  namespace: default\nspec:\n  conditions: value\n  object_refs: value",
-          "example_command": "xcsh virtual create protocol_policer_status_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"conditions\": \"value\",\n    \"object_refs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_status_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6884,7 +6621,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerTcpFlags\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create protocol_policer_tcp_flags -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_tcp_flagses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6918,7 +6656,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerTcpType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  flags: value",
-          "example_command": "xcsh virtual create protocol_policer_tcp_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"flags\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_tcp_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6933,7 +6672,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protocol_policerUdpType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create protocol_policer_udp_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protocol_policer_udp_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -6948,7 +6688,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for ioschemaEmpty\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create ioschema_empty -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ioschema_empties\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -6974,7 +6715,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterCreateRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create rate_limiter -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiters\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7001,7 +6743,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterCreateResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value\n  system_metadata: value",
-          "example_command": "xcsh virtual create rate_limiter -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\",\n    \"system_metadata\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiters\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7070,7 +6813,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterCreateSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  limits: value\n  user_identification: value",
-          "example_command": "xcsh virtual create rate_limiter -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"limits\": \"value\",\n    \"user_identification\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiters\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7102,8 +6846,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7112,7 +6854,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:50.347278+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:43.280778+00:00"
           },
           "namespace": {
             "type": "string",
@@ -7122,9 +6864,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7133,7 +6872,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:50.347283+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:43.280783+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -7145,7 +6884,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterDeleteRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  fail_if_referred: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create rate_limiter -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"fail_if_referred\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiters\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7230,7 +6970,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:50.347298+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:43.280799+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -7251,7 +6991,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterGetResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  create_form: value\n  deleted_referred_objects: value\n  disabled_referred_objects: value\n  referring_objects: value",
-          "example_command": "xcsh virtual create rate_limiter -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"create_form\": \"value\",\n    \"deleted_referred_objects\": \"value\",\n    \"disabled_referred_objects\": \"value\",\n    \"referring_objects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiters\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7274,7 +7015,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterGetResponseFormatCode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create rate_limiter -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiters\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7343,7 +7085,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterGetSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  limits: value\n  user_identification: value",
-          "example_command": "xcsh virtual create rate_limiter -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"limits\": \"value\",\n    \"user_identification\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiters\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7387,7 +7130,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterInputHours\nmetadata:\n  name: example\n  namespace: default\nspec:\n  duration: value",
-          "example_command": "xcsh virtual create rate_limiter_input_hours -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"duration\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_input_hourses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7431,7 +7175,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterInputMinutes\nmetadata:\n  name: example\n  namespace: default\nspec:\n  duration: value",
-          "example_command": "xcsh virtual create rate_limiter_input_minutes -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"duration\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_input_minuteses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7475,7 +7220,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterInputSeconds\nmetadata:\n  name: example\n  namespace: default\nspec:\n  duration: value",
-          "example_command": "xcsh virtual create rate_limiter_input_seconds -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"duration\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_input_secondses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7490,7 +7236,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterLeakyBucketRateLimiter\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create rate_limiter_leaky_bucket_rate_limiter -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_leaky_bucket_rate_limiters\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7540,7 +7287,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterListResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  errors: value\n  items: value",
-          "example_command": "xcsh virtual create rate_limiter_list_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"errors\": \"value\",\n    \"items\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_list_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7578,7 +7326,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:50.347320+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:43.280822+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -7601,9 +7349,6 @@
             "description": "The set of labels present on this rate_limiter.",
             "title": "Labels",
             "x-displayname": "Labels",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7622,8 +7367,6 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7632,7 +7375,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:50.347330+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:43.280833+00:00"
           },
           "namespace": {
             "type": "string",
@@ -7642,9 +7385,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7653,7 +7393,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:50.347346+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:43.280837+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -7693,7 +7433,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:50.347354+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:43.280846+00:00"
           },
           "uid": {
             "type": "string",
@@ -7713,7 +7453,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:22:50.347360+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:43.280851+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -7735,7 +7475,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterListResponseItem\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disabled: value\n  get_spec: value\n  labels: value",
-          "example_command": "xcsh virtual create rate_limiter_list_response_item -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disabled\": \"value\",\n    \"get_spec\": \"value\",\n    \"labels\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_list_response_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7766,7 +7507,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterRateLimitBlockAction\nmetadata:\n  name: example\n  namespace: default\nspec:\n  hours: value\n  minutes: value\n  seconds: value",
-          "example_command": "xcsh virtual create rate_limiter_rate_limit_block_action -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"hours\": \"value\",\n    \"minutes\": \"value\",\n    \"seconds\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_rate_limit_block_actions\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7787,7 +7529,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterRateLimitPeriodUnit\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create rate_limiter_rate_limit_period_unit -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_rate_limit_period_units\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7909,7 +7652,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterRateLimitValue\nmetadata:\n  name: example\n  namespace: default\nspec:\n  action_block: value\n  burst_multiplier: value\n  disabled: value\n  leaky_bucket: value\n  period_multiplier: value",
-          "example_command": "xcsh virtual create rate_limiter_rate_limit_value -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"action_block\": \"value\",\n    \"burst_multiplier\": \"value\",\n    \"disabled\": \"value\",\n    \"leaky_bucket\": \"value\",\n    \"period_multiplier\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_rate_limit_values\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7935,7 +7679,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterReplaceRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value",
-          "example_command": "xcsh virtual create rate_limiter_replace_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_replace_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -7947,7 +7692,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterReplaceResponse\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create rate_limiter_replace_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_replace_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -8016,7 +7762,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterReplaceSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  limits: value\n  user_identification: value",
-          "example_command": "xcsh virtual create rate_limiter_replace_spec_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"limits\": \"value\",\n    \"user_identification\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_replace_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -8070,7 +7817,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterStatusObject\nmetadata:\n  name: example\n  namespace: default\nspec:\n  conditions: value\n  object_refs: value",
-          "example_command": "xcsh virtual create rate_limiter_status_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"conditions\": \"value\",\n    \"object_refs\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_status_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "rate_limiting"
       },
@@ -8085,7 +7833,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for rate_limiterTokenBucketRateLimiter\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create rate_limiter_token_bucket_rate_limiter -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/rate_limiter_token_bucket_rate_limiters\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "users"
       }

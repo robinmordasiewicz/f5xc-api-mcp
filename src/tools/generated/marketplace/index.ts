@@ -96,6 +96,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.addon_service"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-service-get",
@@ -186,6 +187,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.name"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-service-list",
@@ -316,6 +318,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-subscription-create",
@@ -416,6 +419,7 @@ export const marketplaceTools: ParsedOperation[] = [
         creates: ["addon-subscription"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-subscription-delete",
@@ -522,6 +526,7 @@ export const marketplaceTools: ParsedOperation[] = [
         deletes: ["addon-subscription", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-subscription-get",
@@ -646,6 +651,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-subscription-list",
@@ -776,6 +782,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-subscription-update",
@@ -885,6 +892,7 @@ export const marketplaceTools: ParsedOperation[] = [
         modifies: ["addon-subscription"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-all-activation-statu-list",
@@ -976,6 +984,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.addon_service"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-cminstance-create",
@@ -1073,6 +1082,8 @@ export const marketplaceTools: ParsedOperation[] = [
         creates: ["cminstance"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cminstances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-cminstance-delete",
@@ -1179,6 +1190,8 @@ export const marketplaceTools: ParsedOperation[] = [
         deletes: ["cminstance", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cminstances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-cminstance-get",
@@ -1303,6 +1316,8 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cminstances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-cminstance-list",
@@ -1433,6 +1448,8 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cminstances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-cminstance-update",
@@ -1543,6 +1560,8 @@ export const marketplaceTools: ParsedOperation[] = [
         modifies: ["cminstance"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cminstances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-external-connector-create",
@@ -1643,6 +1662,8 @@ export const marketplaceTools: ParsedOperation[] = [
         creates: ["external-connector"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/external_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-external-connector-delete",
@@ -1749,6 +1770,8 @@ export const marketplaceTools: ParsedOperation[] = [
         deletes: ["external-connector", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/external_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-external-connector-get",
@@ -1873,6 +1896,8 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/external_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-external-connector-list",
@@ -2003,6 +2028,8 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/external_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-external-connector-update",
@@ -2112,6 +2139,8 @@ export const marketplaceTools: ParsedOperation[] = [
         modifies: ["external-connector"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/external_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-force-delete-create",
@@ -2245,6 +2274,7 @@ export const marketplaceTools: ParsedOperation[] = [
         creates: ["force-delete"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-generate-token-get",
@@ -2348,6 +2378,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-get-security-config-create",
@@ -2448,6 +2479,7 @@ export const marketplaceTools: ParsedOperation[] = [
         creates: ["get-security-config"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-navigation-tile-get",
@@ -2571,6 +2603,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-navigation-tile-list",
@@ -2701,6 +2734,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-plan-get",
@@ -2823,6 +2857,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-plan-list",
@@ -2953,6 +2988,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-register-create",
@@ -3035,6 +3071,7 @@ export const marketplaceTools: ParsedOperation[] = [
         creates: ["register"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-registration-detail-list",
@@ -3128,6 +3165,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-run-create",
@@ -3262,6 +3300,7 @@ export const marketplaceTools: ParsedOperation[] = [
         creates: ["run"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-send-email-create",
@@ -3345,6 +3384,7 @@ export const marketplaceTools: ParsedOperation[] = [
         creates: ["send-email"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-signup-create",
@@ -3427,6 +3467,7 @@ export const marketplaceTools: ParsedOperation[] = [
         creates: ["signup"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-statu-list",
@@ -3542,6 +3583,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace", "path.view_kind", "path.view_name"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-marketplace-third-party-application-get",
@@ -3665,6 +3707,8 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/third_party_applications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-third-party-application-list",
@@ -3795,6 +3839,8 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/third_party_applications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-third-party-application-update",
@@ -3904,6 +3950,8 @@ export const marketplaceTools: ParsedOperation[] = [
         modifies: ["third-party-application"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/third_party_applications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-marketplace-view-kind-list",
@@ -4019,6 +4067,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace", "path.view_kind", "path.view_name"],
       side_effects: {},
     },
+    curlExample: null,
   },
 ];
 

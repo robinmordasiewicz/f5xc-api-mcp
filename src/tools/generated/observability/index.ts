@@ -102,6 +102,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["access-log"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-aggregation-create",
@@ -199,6 +200,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["aggregation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-alert-list",
@@ -358,6 +360,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-all-ns-alert-list",
@@ -517,6 +520,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-audit-log-create",
@@ -614,6 +618,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["audit-log"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-certificate-report-detail-list",
@@ -705,6 +710,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-certificate-summary-list",
@@ -810,6 +816,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-dns-monitor-summary-list",
@@ -937,6 +944,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-dns-monitors-health-create",
@@ -1036,6 +1044,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["dns-monitors-health"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-filtered-dns-monitor-list-list",
@@ -1176,6 +1185,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-filtered-http-monitor-list-list",
@@ -1316,6 +1326,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-firewall-log-create",
@@ -1413,6 +1424,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["firewall-log"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-global-history-list",
@@ -1552,6 +1564,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-global-summary-list",
@@ -1656,6 +1669,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-health-list",
@@ -1746,6 +1760,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-history-list",
@@ -1878,6 +1893,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-http-monitor-detail-list",
@@ -2005,6 +2021,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-http-monitor-summary-list",
@@ -2132,6 +2149,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-http-monitors-health-create",
@@ -2231,6 +2249,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["http-monitors-health"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-metric-query-create",
@@ -2327,6 +2346,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["metric-query"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-monitor-event-list",
@@ -2466,6 +2486,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-monitor-history-list",
@@ -2617,6 +2638,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-platform-event-create",
@@ -2714,6 +2736,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["platform-event"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-record-type-summary-list",
@@ -2804,6 +2827,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-scroll-create",
@@ -2900,6 +2924,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["scroll"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-scroll-list",
@@ -3005,6 +3030,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-source-summary-list",
@@ -3133,6 +3159,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-subscribe-create",
@@ -3215,6 +3242,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["subscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-suggest-value-create",
@@ -3312,6 +3340,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["suggest-value"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-tls-report-detail-list",
@@ -3415,6 +3444,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-tls-report-summary-list",
@@ -3518,6 +3548,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-tls-summary-list",
@@ -3608,6 +3639,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-unsubscribe-create",
@@ -3690,6 +3722,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["unsubscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-v1-dns-monitor-create",
@@ -3787,6 +3820,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["v1-dns-monitor"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-v1-dns-monitor-delete",
@@ -3893,6 +3927,7 @@ export const observabilityTools: ParsedOperation[] = [
         deletes: ["v1-dns-monitor", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-v1-dns-monitor-get",
@@ -4017,6 +4052,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-v1-dns-monitor-list",
@@ -4147,6 +4183,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-v1-dns-monitor-update",
@@ -4256,6 +4293,7 @@ export const observabilityTools: ParsedOperation[] = [
         modifies: ["v1-dns-monitor"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-v1-http-monitor-create",
@@ -4353,6 +4391,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["v1-http-monitor"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-v1-http-monitor-delete",
@@ -4459,6 +4498,7 @@ export const observabilityTools: ParsedOperation[] = [
         deletes: ["v1-http-monitor", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-v1-http-monitor-get",
@@ -4583,6 +4623,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-v1-http-monitor-list",
@@ -4713,6 +4754,7 @@ export const observabilityTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-v1-http-monitor-update",
@@ -4822,6 +4864,7 @@ export const observabilityTools: ParsedOperation[] = [
         modifies: ["v1-http-monitor"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-vk8s-audit-log-create",
@@ -4919,6 +4962,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["vk8s-audit-log"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-observability-vk8s-event-create",
@@ -5016,6 +5060,7 @@ export const observabilityTools: ParsedOperation[] = [
         creates: ["vk8s-event"],
       },
     },
+    curlExample: null,
   },
 ];
 

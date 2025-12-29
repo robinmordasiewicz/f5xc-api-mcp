@@ -102,6 +102,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["aggregation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-alert-policy-create",
@@ -199,6 +200,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["alert-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-alert-policy-delete",
@@ -305,6 +307,7 @@ export const statisticsTools: ParsedOperation[] = [
         deletes: ["alert-policy", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-alert-policy-get",
@@ -429,6 +432,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-alert-policy-list",
@@ -559,6 +563,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-alert-policy-update",
@@ -668,6 +673,7 @@ export const statisticsTools: ParsedOperation[] = [
         modifies: ["alert-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-alert-receiver-create",
@@ -765,6 +771,8 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["alert-receiver"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/alert_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-alert-receiver-delete",
@@ -871,6 +879,8 @@ export const statisticsTools: ParsedOperation[] = [
         deletes: ["alert-receiver", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/alert_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-alert-receiver-get",
@@ -995,6 +1005,8 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/alert_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-alert-receiver-list",
@@ -1125,6 +1137,8 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/alert_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-alert-receiver-update",
@@ -1234,6 +1248,8 @@ export const statisticsTools: ParsedOperation[] = [
         modifies: ["alert-receiver"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/alert_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-all-ns-alert-list",
@@ -1393,6 +1409,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-all-ns-service-create",
@@ -1473,6 +1490,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["all-ns-service"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-by-application-create",
@@ -1581,6 +1599,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["by-application"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-by-mitigation-create",
@@ -1694,6 +1713,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["by-mitigation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-by-network-create",
@@ -1802,6 +1822,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["by-network"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-by-zone-create",
@@ -1910,6 +1931,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["by-zone"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-catalog-update",
@@ -1992,6 +2014,7 @@ export const statisticsTools: ParsedOperation[] = [
         modifies: ["catalog"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-confirm-create",
@@ -2101,6 +2124,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["confirm"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-create-http-load-balancer-create",
@@ -2214,6 +2238,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["create-http-load-balancer"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-create-tcp-load-balancer-create",
@@ -2327,6 +2352,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["create-tcp-load-balancer"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-dc-cluster-group-create",
@@ -2426,6 +2452,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["dc-cluster-group"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-dc-cluster-group-list",
@@ -2502,6 +2529,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-disable-visibility-create",
@@ -2615,6 +2643,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["disable-visibility"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-discovered-service-get",
@@ -2736,6 +2765,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-discovered-service-list",
@@ -2853,6 +2883,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-download-get",
@@ -2955,6 +2986,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-enable-visibility-create",
@@ -3068,6 +3100,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["enable-visibility"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-event-count-create",
@@ -3177,6 +3210,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["event-count"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-firewall-log-create",
@@ -3274,6 +3308,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["firewall-log"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-flow-anomaly-get",
@@ -3396,6 +3431,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-flow-anomaly-list",
@@ -3526,6 +3562,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-generate-create",
@@ -3635,6 +3672,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["generate"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-global-log-receiver-create",
@@ -3735,6 +3773,8 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["global-log-receiver"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/global_log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-global-log-receiver-delete",
@@ -3841,6 +3881,8 @@ export const statisticsTools: ParsedOperation[] = [
         deletes: ["global-log-receiver", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/global_log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-global-log-receiver-get",
@@ -3965,6 +4007,8 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/global_log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-global-log-receiver-list",
@@ -4095,6 +4139,8 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/global_log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-global-log-receiver-update",
@@ -4204,6 +4250,8 @@ export const statisticsTools: ParsedOperation[] = [
         modifies: ["global-log-receiver"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/global_log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-list-reports-history-bot-defence-create",
@@ -4302,6 +4350,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["list-reports-history-bot-defence"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-list-reports-history-create",
@@ -4400,6 +4449,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["list-reports-history"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-list-reports-history-waap-create",
@@ -4498,6 +4548,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["list-reports-history-waap"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-log-receiver-create",
@@ -4595,6 +4646,8 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["log-receiver"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-log-receiver-delete",
@@ -4701,6 +4754,8 @@ export const statisticsTools: ParsedOperation[] = [
         deletes: ["log-receiver", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-log-receiver-get",
@@ -4825,6 +4880,8 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-log-receiver-list",
@@ -4955,6 +5012,8 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-log-receiver-update",
@@ -5064,6 +5123,8 @@ export const statisticsTools: ParsedOperation[] = [
         modifies: ["log-receiver"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-statistics-match-create",
@@ -5161,6 +5222,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["match"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-matching-flow-create",
@@ -5269,6 +5331,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["matching-flow"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-platform-event-create",
@@ -5366,6 +5429,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["platform-event"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-report-config-create",
@@ -5464,6 +5528,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["report-config"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-report-config-delete",
@@ -5570,6 +5635,7 @@ export const statisticsTools: ParsedOperation[] = [
         deletes: ["report-config", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-report-config-get",
@@ -5694,6 +5760,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-report-config-list",
@@ -5824,6 +5891,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-report-config-update",
@@ -5934,6 +6002,7 @@ export const statisticsTools: ParsedOperation[] = [
         modifies: ["report-config"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-report-get",
@@ -6055,6 +6124,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-route-table-get",
@@ -6218,6 +6288,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.id"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-scroll-create",
@@ -6314,6 +6385,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["scroll"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-scroll-list",
@@ -6419,6 +6491,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-site-mesh-group-create",
@@ -6515,6 +6588,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["site-mesh-group"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-site-mesh-group-list",
@@ -6591,6 +6665,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-statu-create",
@@ -6687,6 +6762,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["statu"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-subscribe-create",
@@ -6769,6 +6845,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["subscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-subscription-statu-list",
@@ -6845,6 +6922,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-suggest-value-create",
@@ -6942,6 +7020,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["suggest-value"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-test-create",
@@ -7051,6 +7130,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["test"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-top-talker-create",
@@ -7159,6 +7239,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["top-talker"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-unsubscribe-create",
@@ -7241,6 +7322,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["unsubscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-verify-create",
@@ -7351,6 +7433,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["verify"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-vk8s-audit-log-create",
@@ -7448,6 +7531,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["vk8s-audit-log"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-statistics-vk8s-event-create",
@@ -7545,6 +7629,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["vk8s-event"],
       },
     },
+    curlExample: null,
   },
 ];
 

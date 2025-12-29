@@ -86,6 +86,7 @@ export const authenticationTools: ParsedOperation[] = [
         creates: ["api-credential"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-authentication-api-credential-get",
@@ -189,6 +190,7 @@ export const authenticationTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-authentication-api-credential-list",
@@ -280,6 +282,7 @@ export const authenticationTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-authentication-scim-token-create",
@@ -376,6 +379,7 @@ export const authenticationTools: ParsedOperation[] = [
         creates: ["scim-token"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-authentication-scim-token-list",
@@ -467,6 +471,7 @@ export const authenticationTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-authentication-service-credential-create",
@@ -551,6 +556,7 @@ export const authenticationTools: ParsedOperation[] = [
         creates: ["service-credential"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-authentication-service-credential-get",
@@ -654,6 +660,7 @@ export const authenticationTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-authentication-service-credential-list",
@@ -744,6 +751,7 @@ export const authenticationTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-authentication-service-credential-update",
@@ -854,6 +862,7 @@ export const authenticationTools: ParsedOperation[] = [
         modifies: ["service-credential"],
       },
     },
+    curlExample: null,
   },
 ];
 

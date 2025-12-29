@@ -102,6 +102,7 @@ export const usersTools: ParsedOperation[] = [
         creates: ["create"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-users-delete-create",
@@ -199,6 +200,7 @@ export const usersTools: ParsedOperation[] = [
         creates: ["delete"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-users-get-cloud-init-config-list",
@@ -299,6 +301,7 @@ export const usersTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-users-implicit-label-list",
@@ -449,6 +452,7 @@ export const usersTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-users-known-label-key-list",
@@ -566,6 +570,7 @@ export const usersTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-users-known-label-list",
@@ -700,6 +705,8 @@ export const usersTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/known_labels" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-users-state-create",
@@ -808,6 +815,7 @@ export const usersTools: ParsedOperation[] = [
         creates: ["state"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-users-token-create",
@@ -906,6 +914,7 @@ export const usersTools: ParsedOperation[] = [
         creates: ["token"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-users-token-delete",
@@ -1012,6 +1021,7 @@ export const usersTools: ParsedOperation[] = [
         deletes: ["token", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-users-token-get",
@@ -1137,6 +1147,7 @@ export const usersTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-users-token-list",
@@ -1267,6 +1278,7 @@ export const usersTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-users-token-update",
@@ -1377,6 +1389,7 @@ export const usersTools: ParsedOperation[] = [
         modifies: ["token"],
       },
     },
+    curlExample: null,
   },
 ];
 

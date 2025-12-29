@@ -101,6 +101,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["access-log"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cdn-aggregation-create",
@@ -198,6 +199,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["aggregation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cdn-cache-purge-create",
@@ -306,6 +308,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["cache-purge"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-create",
@@ -403,6 +406,8 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["cdn-cache-rule"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-delete",
@@ -509,6 +514,8 @@ export const cdnTools: ParsedOperation[] = [
         deletes: ["cdn-cache-rule", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-get",
@@ -632,6 +639,8 @@ export const cdnTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-list",
@@ -762,6 +771,8 @@ export const cdnTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-update",
@@ -871,6 +882,8 @@ export const cdnTools: ParsedOperation[] = [
         modifies: ["cdn-cache-rule"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-create",
@@ -971,6 +984,8 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["cdn-loadbalancer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-delete",
@@ -1077,6 +1092,8 @@ export const cdnTools: ParsedOperation[] = [
         deletes: ["cdn-loadbalancer", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-get",
@@ -1201,6 +1218,8 @@ export const cdnTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-list",
@@ -1331,6 +1350,8 @@ export const cdnTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-update",
@@ -1440,6 +1461,8 @@ export const cdnTools: ParsedOperation[] = [
         modifies: ["cdn-loadbalancer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cdn-dos-automitigation-rule-delete",
@@ -1560,6 +1583,7 @@ export const cdnTools: ParsedOperation[] = [
         deletes: ["dos-automitigation-rule", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cdn-dos-automitigation-rule-get",
@@ -1663,6 +1687,7 @@ export const cdnTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cdn-get-security-config-create",
@@ -1762,6 +1787,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["get-security-config"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cdn-get-service-operation-statu-create",
@@ -1861,6 +1887,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["get-service-operation-statu"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cdn-list-service-operations-statu-create",
@@ -1960,6 +1987,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["list-service-operations-statu"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cdn-metric-create",
@@ -2056,6 +2084,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["metric"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cdn-subscribe-create",
@@ -2138,6 +2167,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["subscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cdn-suggestion-create",
@@ -2245,6 +2275,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["suggestion"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cdn-unsubscribe-create",
@@ -2327,6 +2358,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["unsubscribe"],
       },
     },
+    curlExample: null,
   },
 ];
 

@@ -150,6 +150,7 @@ function generateDomainFile(
     parameterExamples: ${deterministicStringify(op.parameterExamples).replace(/\n/g, "\n    ")},
     validationRules: ${deterministicStringify(op.validationRules).replace(/\n/g, "\n    ")},
     operationMetadata: ${op.operationMetadata ? deterministicStringify(op.operationMetadata).replace(/\n/g, "\n    ") : "null"},
+    curlExample: ${op.curlExample ? JSON.stringify(op.curlExample) : "null"},
   }`;
   });
 

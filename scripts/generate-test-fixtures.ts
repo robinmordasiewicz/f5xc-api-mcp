@@ -132,6 +132,9 @@ async function generateFixtures(): Promise<void> {
     (t: { pathParameters: unknown[]; queryParameters: unknown[] }) =>
       t.pathParameters.length > 0 || t.queryParameters.length > 0
   );
+  const toolWithCurlExample = allTools.find(
+    (t: { curlExample: string | null }) => t.curlExample !== null
+  );
 
   // Generate fixture file content
   const fixtureContent = `/**
@@ -204,6 +207,7 @@ export const RICH_METADATA_SAMPLES = {
   withOperationMetadata: ${toolWithMetadata ? JSON.stringify({ toolName: toolWithMetadata.toolName }) : "null"},
   withValidationRules: ${toolWithValidation ? JSON.stringify({ toolName: toolWithValidation.toolName }) : "null"},
   withParameters: ${toolWithParams ? JSON.stringify({ toolName: toolWithParams.toolName, pathParamCount: toolWithParams.pathParameters.length, queryParamCount: toolWithParams.queryParameters.length }) : "null"},
+  withCurlExample: ${toolWithCurlExample ? JSON.stringify({ toolName: toolWithCurlExample.toolName }) : "null"},
 } as const;
 
 /**

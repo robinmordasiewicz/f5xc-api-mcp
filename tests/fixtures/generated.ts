@@ -5,7 +5,7 @@
  * These fixtures are dynamically generated from the current OpenAPI specs
  * to ensure tests always use real values and don't hardcode spec content.
  *
- * Generated at: 2025-12-29T16:58:50.220Z
+ * Generated at: 2025-12-29T22:13:44.585Z
  * Total tools: 1548
  * Total domains: 38
  */
@@ -227,6 +227,7 @@ export const RICH_METADATA_SAMPLES = {
     pathParamCount: 2,
     queryParamCount: 1,
   },
+  withCurlExample: { toolName: "f5xc-api-api-api-crawler-create" },
 } as const;
 
 /**

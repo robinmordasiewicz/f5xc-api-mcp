@@ -114,6 +114,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["api-endpoint"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-api-endpoint-get",
@@ -298,6 +299,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-assign-create",
@@ -407,6 +409,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["assign"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-available-get",
@@ -510,6 +513,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-ca-certificate-get",
@@ -612,6 +616,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-calls-by-response-code-create",
@@ -723,6 +728,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["calls-by-response-code"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-cluster-create",
@@ -821,6 +827,8 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["cluster"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-cluster-delete",
@@ -927,6 +935,8 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["cluster", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-cluster-get",
@@ -1052,6 +1062,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-cluster-list",
@@ -1182,6 +1194,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-cluster-update",
@@ -1292,6 +1306,8 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["cluster"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-create-ticket-create",
@@ -1398,6 +1414,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["create-ticket"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-dos-automitigation-rule-delete",
@@ -1517,6 +1534,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["dos-automitigation-rule", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-dos-automitigation-rule-get",
@@ -1620,6 +1638,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-geo-location-set-create",
@@ -1720,6 +1739,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["geo-location-set"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-geo-location-set-delete",
@@ -1826,6 +1846,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["geo-location-set", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-geo-location-set-get",
@@ -1950,6 +1971,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-geo-location-set-list",
@@ -2080,6 +2102,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-geo-location-set-update",
@@ -2189,6 +2212,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["geo-location-set"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-get-dns-info-get",
@@ -2291,6 +2315,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-get-schema-update-create",
@@ -2404,6 +2429,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["get-schema-update"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-get-security-config-create",
@@ -2503,6 +2529,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["get-security-config"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-healthcheck-create",
@@ -2601,6 +2628,8 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["healthcheck"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
   },
   {
     toolName: "f5xc-api-virtual-healthcheck-delete",
@@ -2707,6 +2736,8 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["healthcheck", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
   },
   {
     toolName: "f5xc-api-virtual-healthcheck-get",
@@ -2832,6 +2863,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
   },
   {
     toolName: "f5xc-api-virtual-healthcheck-list",
@@ -2962,6 +2995,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
   },
   {
     toolName: "f5xc-api-virtual-healthcheck-update",
@@ -3072,6 +3107,8 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["healthcheck"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
   },
   {
     toolName: "f5xc-api-virtual-http-loadbalancer-create",
@@ -3172,6 +3209,8 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["http-loadbalancer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/http_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @http-lb.json\n',
   },
   {
     toolName: "f5xc-api-virtual-http-loadbalancer-delete",
@@ -3278,6 +3317,8 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["http-loadbalancer", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/http_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @http-lb.json\n',
   },
   {
     toolName: "f5xc-api-virtual-http-loadbalancer-get",
@@ -3402,6 +3443,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/http_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @http-lb.json\n',
   },
   {
     toolName: "f5xc-api-virtual-http-loadbalancer-list",
@@ -3532,6 +3575,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/http_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @http-lb.json\n',
   },
   {
     toolName: "f5xc-api-virtual-http-loadbalancer-update",
@@ -3641,6 +3686,8 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["http-loadbalancer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/http_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @http-lb.json\n',
   },
   {
     toolName: "f5xc-api-virtual-l7ddos-rps-threshold-create",
@@ -3752,6 +3799,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["l7ddos-rps-threshold"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-learnt-schema-get",
@@ -3911,6 +3959,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-origin-pool-create",
@@ -4008,6 +4057,8 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["origin-pool"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
   },
   {
     toolName: "f5xc-api-virtual-origin-pool-delete",
@@ -4114,6 +4165,8 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["origin-pool", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
   },
   {
     toolName: "f5xc-api-virtual-origin-pool-get",
@@ -4237,6 +4290,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
   },
   {
     toolName: "f5xc-api-virtual-origin-pool-list",
@@ -4367,6 +4422,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
   },
   {
     toolName: "f5xc-api-virtual-origin-pool-update",
@@ -4476,6 +4533,8 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["origin-pool"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
   },
   {
     toolName: "f5xc-api-virtual-pdf-get",
@@ -4604,6 +4663,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-proxy-create",
@@ -4701,6 +4761,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["proxy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-proxy-delete",
@@ -4807,6 +4868,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["proxy", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-proxy-get",
@@ -4931,6 +4993,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-proxy-list",
@@ -5061,6 +5124,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-proxy-update",
@@ -5170,6 +5234,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["proxy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-rate-limiter-policy-create",
@@ -5270,6 +5335,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["rate-limiter-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-rate-limiter-policy-delete",
@@ -5376,6 +5442,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["rate-limiter-policy", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-rate-limiter-policy-get",
@@ -5500,6 +5567,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-rate-limiter-policy-list",
@@ -5630,6 +5698,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-rate-limiter-policy-update",
@@ -5739,6 +5808,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["rate-limiter-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-create",
@@ -5837,6 +5907,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["service-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-delete",
@@ -5943,6 +6014,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["service-policy", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-get",
@@ -6068,6 +6140,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-list",
@@ -6198,6 +6271,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-rule-create",
@@ -6299,6 +6373,8 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["service-policy-rule"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-service-policy-rule-delete",
@@ -6405,6 +6481,8 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["service-policy-rule", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-service-policy-rule-get",
@@ -6530,6 +6608,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-service-policy-rule-list",
@@ -6660,6 +6740,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-service-policy-rule-update",
@@ -6770,6 +6852,8 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["service-policy-rule"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-service-policy-set-get",
@@ -6893,6 +6977,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-service-policy-set-list",
@@ -7023,6 +7109,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-service-policy-update",
@@ -7133,6 +7221,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["service-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-sources-openapi-schema-get",
@@ -7261,6 +7350,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-stat-get",
@@ -7363,6 +7453,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-subscribe-create",
@@ -7445,6 +7536,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["subscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-swagger-spec-get",
@@ -7547,6 +7639,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-tcp-loadbalancer-create",
@@ -7647,6 +7740,8 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["tcp-loadbalancer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tcp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @tcp-lb.json\n',
   },
   {
     toolName: "f5xc-api-virtual-tcp-loadbalancer-delete",
@@ -7753,6 +7848,8 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["tcp-loadbalancer", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tcp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @tcp-lb.json\n',
   },
   {
     toolName: "f5xc-api-virtual-tcp-loadbalancer-get",
@@ -7877,6 +7974,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tcp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @tcp-lb.json\n',
   },
   {
     toolName: "f5xc-api-virtual-tcp-loadbalancer-list",
@@ -8007,6 +8106,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tcp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @tcp-lb.json\n',
   },
   {
     toolName: "f5xc-api-virtual-tcp-loadbalancer-update",
@@ -8116,6 +8217,8 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["tcp-loadbalancer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tcp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @tcp-lb.json\n',
   },
   {
     toolName: "f5xc-api-virtual-top-active-create",
@@ -8225,6 +8328,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["top-active"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-top-sensitive-data-create",
@@ -8337,6 +8441,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["top-sensitive-data"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-udp-loadbalancer-create",
@@ -8437,6 +8542,8 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["udp-loadbalancer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/udp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-udp-loadbalancer-delete",
@@ -8543,6 +8650,8 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["udp-loadbalancer", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/udp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-udp-loadbalancer-get",
@@ -8667,6 +8776,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/udp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-udp-loadbalancer-list",
@@ -8797,6 +8908,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/udp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-udp-loadbalancer-update",
@@ -8906,6 +9019,8 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["udp-loadbalancer"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/udp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-unlink-ticket-create",
@@ -9013,6 +9128,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["unlink-ticket"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-unmerge-sources-openapi-schema-create",
@@ -9122,6 +9238,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["unmerge-sources-openapi-schema"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-unsubscribe-create",
@@ -9204,6 +9321,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["unsubscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-update-schema-create",
@@ -9313,6 +9431,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["update-schema"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-update-state-create",
@@ -9421,6 +9540,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["update-state"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-virtual-virtual-host-create",
@@ -9518,6 +9638,8 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["virtual-host"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_hosts" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-virtual-host-delete",
@@ -9624,6 +9746,8 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["virtual-host", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_hosts" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-virtual-host-get",
@@ -9748,6 +9872,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_hosts" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-virtual-host-list",
@@ -9878,6 +10004,8 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_hosts" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-virtual-host-update",
@@ -9987,6 +10115,8 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["virtual-host"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_hosts" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-virtual-vulnerabilitie-create",
@@ -10095,6 +10225,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["vulnerabilitie"],
       },
     },
+    curlExample: null,
   },
 ];
 

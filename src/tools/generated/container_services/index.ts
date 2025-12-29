@@ -102,6 +102,7 @@ export const container_servicesTools: ParsedOperation[] = [
         creates: ["usage"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-containerservices-virtual-k8s-create",
@@ -200,6 +201,7 @@ export const container_servicesTools: ParsedOperation[] = [
         creates: ["virtual-k8s"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-containerservices-virtual-k8s-delete",
@@ -306,6 +308,7 @@ export const container_servicesTools: ParsedOperation[] = [
         deletes: ["virtual-k8s", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-containerservices-virtual-k8s-get",
@@ -431,6 +434,7 @@ export const container_servicesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-containerservices-virtual-k8s-list",
@@ -561,6 +565,7 @@ export const container_servicesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-containerservices-virtual-k8s-update",
@@ -671,6 +676,7 @@ export const container_servicesTools: ParsedOperation[] = [
         modifies: ["virtual-k8s"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-containerservices-workload-create",
@@ -768,6 +774,8 @@ export const container_servicesTools: ParsedOperation[] = [
         creates: ["workload"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-containerservices-workload-delete",
@@ -874,6 +882,8 @@ export const container_servicesTools: ParsedOperation[] = [
         deletes: ["workload", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-containerservices-workload-flavor-create",
@@ -971,6 +981,8 @@ export const container_servicesTools: ParsedOperation[] = [
         creates: ["workload-flavor"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workload_flavors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-containerservices-workload-flavor-delete",
@@ -1077,6 +1089,8 @@ export const container_servicesTools: ParsedOperation[] = [
         deletes: ["workload-flavor", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workload_flavors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-containerservices-workload-flavor-get",
@@ -1201,6 +1215,8 @@ export const container_servicesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workload_flavors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-containerservices-workload-flavor-list",
@@ -1331,6 +1347,8 @@ export const container_servicesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workload_flavors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-containerservices-workload-flavor-update",
@@ -1440,6 +1458,8 @@ export const container_servicesTools: ParsedOperation[] = [
         modifies: ["workload-flavor"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workload_flavors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-containerservices-workload-get",
@@ -1564,6 +1584,8 @@ export const container_servicesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-containerservices-workload-list",
@@ -1694,6 +1716,8 @@ export const container_servicesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-containerservices-workload-update",
@@ -1803,6 +1827,8 @@ export const container_servicesTools: ParsedOperation[] = [
         modifies: ["workload"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
 ];
 
