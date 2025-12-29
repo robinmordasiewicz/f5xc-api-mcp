@@ -96,6 +96,9 @@ export const data_intelligenceTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-dataset-list",
@@ -173,6 +176,9 @@ export const data_intelligenceTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-flowlabel-list",
@@ -264,6 +270,9 @@ export const data_intelligenceTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-init-request-create",
@@ -347,6 +356,9 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-receiver-create",
@@ -445,6 +457,31 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "receiver",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "receiver-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-receiver-delete",
@@ -552,6 +589,17 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "receiver",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-receiver-get",
@@ -677,6 +725,9 @@ export const data_intelligenceTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-receiver-list",
@@ -808,6 +859,9 @@ export const data_intelligenceTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-receiver-update",
@@ -918,6 +972,31 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "receiver",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "receiver-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-statu-create",
@@ -1027,6 +1106,17 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "type",
+        inline: false,
+        required: false,
+        resourceType: "shapedata-delivery-status",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-subscribe-create",
@@ -1110,6 +1200,9 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-suggest-value-create",
@@ -1208,6 +1301,9 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-summary-create",
@@ -1305,6 +1401,9 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-test-create",
@@ -1414,6 +1513,9 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-dataintelligence-unsubscribe-create",
@@ -1497,6 +1599,9 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
 ];
 

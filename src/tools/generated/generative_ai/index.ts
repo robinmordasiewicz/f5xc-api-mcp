@@ -88,6 +88,9 @@ export const generative_aiTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-generativeai-deallocateip-delete",
@@ -171,6 +174,9 @@ export const generative_aiTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-generativeai-enable-feature-create",
@@ -254,6 +260,9 @@ export const generative_aiTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-generativeai-eval-query-create",
@@ -350,6 +359,9 @@ export const generative_aiTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-generativeai-eval-query-feedback-create",
@@ -449,6 +461,9 @@ export const generative_aiTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-generativeai-gettoken-create",
@@ -532,6 +547,16 @@ export const generative_aiTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-generativeai-query-create",
@@ -627,6 +652,9 @@ export const generative_aiTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-generativeai-query-feedback-create",
@@ -722,6 +750,9 @@ export const generative_aiTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-generativeai-refresh-token-create",
@@ -805,6 +836,16 @@ export const generative_aiTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-generativeai-subscribe-create",
@@ -888,6 +929,9 @@ export const generative_aiTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-generativeai-unsubscribe-create",
@@ -971,6 +1015,9 @@ export const generative_aiTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
 ];
 

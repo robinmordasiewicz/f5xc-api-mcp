@@ -104,6 +104,44 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "policer",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "policer-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-delete",
@@ -212,6 +250,30 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "policer",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-get",
@@ -338,6 +400,22 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-list",
@@ -470,6 +548,22 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-update",
@@ -581,6 +675,44 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "policer",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "policer-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-create",
@@ -684,6 +816,44 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "protocol-policer",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "protocol-policer-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-delete",
@@ -792,6 +962,30 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "protocol-policer",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-get",
@@ -919,6 +1113,22 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-list",
@@ -1051,6 +1261,22 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-update",
@@ -1163,6 +1389,44 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_policers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "protocol-policer",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "protocol-policer-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-create",
@@ -1263,6 +1527,44 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "rate-limiter",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "rate-limiter-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-delete",
@@ -1371,6 +1673,30 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "rate-limiter",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-get",
@@ -1498,6 +1824,22 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-list",
@@ -1630,6 +1972,22 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-update",
@@ -1742,6 +2100,44 @@ export const rate_limitingTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "rate-limiter",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "rate-limiter-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
 ];
 

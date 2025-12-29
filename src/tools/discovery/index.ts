@@ -72,6 +72,24 @@ export {
   getConsolidationStats,
 } from "./consolidate.js";
 
+// Dependency discovery exports
+export {
+  loadDependencyGraph,
+  clearDependencyCache,
+  getResourceDependencies,
+  getCreationOrder,
+  getPrerequisiteResources,
+  getDependentResources,
+  getOneOfGroups,
+  getSubscriptionRequirements,
+  getResourcesRequiringSubscription,
+  getAvailableAddonServices,
+  generateDependencyReport,
+  getDependencyStats,
+  getResourcesInDomain,
+  getAllDependencyDomains,
+} from "./dependencies.js";
+
 /**
  * MCP Tool Definitions for the discovery meta-tools
  *
@@ -232,6 +250,52 @@ export const DISCOVERY_TOOLS = {
         },
       },
       required: ["resourceName", "operation"],
+    },
+  },
+
+  dependencies: {
+    name: "f5xc-api-dependencies",
+    description:
+      "Get dependency information for F5XC resources. Returns prerequisites (resources that must exist before creation), " +
+      "dependents (resources that would break if deleted), mutually exclusive field options (oneOf groups), " +
+      "subscription requirements, and recommended creation order. Essential for understanding resource relationships.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        resource: {
+          type: "string",
+          description: "The resource name (e.g., 'http-loadbalancer', 'origin-pool')",
+        },
+        domain: {
+          type: "string",
+          description: "The domain containing the resource (e.g., 'virtual', 'network', 'api')",
+        },
+        action: {
+          type: "string",
+          enum: ["prerequisites", "dependents", "oneOf", "subscriptions", "creationOrder", "full"],
+          description:
+            "Type of information to retrieve: " +
+            "'prerequisites' - resources that must exist before creation, " +
+            "'dependents' - resources that depend on this one, " +
+            "'oneOf' - mutually exclusive field options, " +
+            "'subscriptions' - required addon services, " +
+            "'creationOrder' - topologically sorted creation sequence, " +
+            "'full' - all dependency information (default)",
+          default: "full",
+        },
+      },
+      required: ["resource", "domain"],
+    },
+  },
+
+  dependencyStats: {
+    name: "f5xc-api-dependency-stats",
+    description:
+      "Get statistics about the F5XC resource dependency graph including total resources, " +
+      "dependency counts, available addon services, and graph metadata.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {},
     },
   },
 } as const;

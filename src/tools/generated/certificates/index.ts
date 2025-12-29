@@ -107,6 +107,31 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certificate_chains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "certificate-chain",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "certificate-chain-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-certificate-chain-delete",
@@ -215,6 +240,17 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certificate_chains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "certificate-chain",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-certificate-chain-get",
@@ -341,6 +377,9 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certificate_chains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-certificate-chain-list",
@@ -473,6 +512,9 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certificate_chains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-certificate-chain-update",
@@ -584,6 +626,31 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certificate_chains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "certificate-chain",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "certificate-chain-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-certificate-create",
@@ -683,6 +750,31 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certificates" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "certificates",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "certificate",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "certificate-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-certificate-delete",
@@ -791,6 +883,17 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certificates" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "certificates",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "certificate",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-certificate-get",
@@ -917,6 +1020,9 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certificates" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-certificate-list",
@@ -1049,6 +1155,9 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certificates" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-certificate-update",
@@ -1160,6 +1269,31 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certificates" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "certificates",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "certificate",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "certificate-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-crl-create",
@@ -1259,6 +1393,31 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/crls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "crl",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "crl-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-crl-delete",
@@ -1367,6 +1526,17 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/crls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "crl",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-crl-get",
@@ -1493,6 +1663,9 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/crls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-crl-list",
@@ -1625,6 +1798,9 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/crls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-crl-update",
@@ -1736,6 +1912,31 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/crls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "crl",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "crl-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-trusted-ca-list-create",
@@ -1835,6 +2036,31 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/trusted_ca_lists" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "trusted-ca-list",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "trusted-ca-list-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-trusted-ca-list-delete",
@@ -1943,6 +2169,17 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/trusted_ca_lists" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "trusted-ca-list",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-trusted-ca-list-get",
@@ -2069,6 +2306,9 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/trusted_ca_lists" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-trusted-ca-list-list",
@@ -2201,6 +2441,9 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/trusted_ca_lists" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-certificates-trusted-ca-list-update",
@@ -2312,6 +2555,31 @@ export const certificatesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/trusted_ca_lists" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "trusted-ca-list",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "trusted-ca-list-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
 ];
 

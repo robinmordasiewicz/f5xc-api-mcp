@@ -19,6 +19,14 @@ import {
 import { normalizeTitleAcronyms } from "./naming/acronyms.js";
 import { normalizeExamples } from "./transformers/index.js";
 import { logger } from "../utils/logging.js";
+import type { ResourceReference, OneOfGroup, SubscriptionRequirement } from "./dependency-types.js";
+import {
+  extractOperationDependencies,
+  mapResourceToSubscriptions,
+  formatAddonDisplayName,
+  extractTierFromAddon,
+  resolveResourceDomain,
+} from "./dependency-extractor.js";
 
 /**
  * OpenAPI Schema Types
@@ -267,6 +275,14 @@ export interface ParsedOperation {
   operationMetadata: OperationMetadata | null;
   /** Curl example from schema x-ves-minimum-configuration */
   curlExample: string | null;
+
+  // Dependency intelligence fields (v1.0.67)
+  /** Resource dependencies extracted from $ref patterns */
+  dependencies: ResourceReference[];
+  /** Mutually exclusive field groups from x-ves-oneof-field-* */
+  oneOfGroups: OneOfGroup[];
+  /** Subscription/addon service requirements */
+  subscriptionRequirements: SubscriptionRequirement[];
 }
 
 /**
@@ -551,6 +567,25 @@ function extractOperations(
       // Match curl example for this operation
       const curlExample = matchCurlExample(path, curlMap);
 
+      // Extract dependency intelligence (v1.0.67)
+      const componentSchemas = (spec.components?.schemas as Record<string, unknown>) ?? {};
+      const extractedDeps = extractOperationDependencies(requestBodySchema, componentSchemas);
+
+      // Resolve domain for each reference
+      const dependencies: ResourceReference[] = extractedDeps.references.map((ref) => ({
+        ...ref,
+        domain: ref.domain || resolveResourceDomain(ref.resourceType),
+      }));
+
+      // Get subscription requirements based on resource and domain
+      const subscriptionIds = mapResourceToSubscriptions(resource, domain);
+      const subscriptionRequirements: SubscriptionRequirement[] = subscriptionIds.map((id) => ({
+        addonService: id,
+        displayName: formatAddonDisplayName(id),
+        tier: extractTierFromAddon(id),
+        required: false, // Heuristic mapping, not strictly required
+      }));
+
       operations.push({
         toolName,
         method: method.toUpperCase(),
@@ -578,6 +613,10 @@ function extractOperations(
         validationRules,
         operationMetadata,
         curlExample,
+        // Dependency intelligence (v1.0.67)
+        dependencies,
+        oneOfGroups: extractedDeps.oneOfGroups,
+        subscriptionRequirements,
       });
     }
   }
@@ -802,6 +841,25 @@ function extractDomainOperations(
       // Match curl example for this operation
       const curlExample = matchCurlExample(path, curlMap);
 
+      // Extract dependency intelligence (v1.0.67)
+      const componentSchemas = (spec.components?.schemas as Record<string, unknown>) ?? {};
+      const extractedDeps = extractOperationDependencies(requestBodySchema, componentSchemas);
+
+      // Resolve domain for each reference
+      const dependencies: ResourceReference[] = extractedDeps.references.map((ref) => ({
+        ...ref,
+        domain: ref.domain || resolveResourceDomain(ref.resourceType),
+      }));
+
+      // Get subscription requirements based on resource and domain
+      const subscriptionIds = mapResourceToSubscriptions(resource, domain);
+      const subscriptionRequirements: SubscriptionRequirement[] = subscriptionIds.map((id) => ({
+        addonService: id,
+        displayName: formatAddonDisplayName(id),
+        tier: extractTierFromAddon(id),
+        required: false, // Heuristic mapping, not strictly required
+      }));
+
       operations.push({
         toolName,
         method: method.toUpperCase(),
@@ -829,6 +887,10 @@ function extractDomainOperations(
         validationRules,
         operationMetadata,
         curlExample,
+        // Dependency intelligence (v1.0.67)
+        dependencies,
+        oneOfGroups: extractedDeps.oneOfGroups,
+        subscriptionRequirements,
       });
     }
   }

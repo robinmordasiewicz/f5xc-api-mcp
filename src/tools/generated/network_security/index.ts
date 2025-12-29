@@ -105,6 +105,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fast_acls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "fast-acl",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemafast-acl-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-delete",
@@ -213,6 +251,30 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fast_acls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "fast-acl",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-get",
@@ -339,6 +401,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fast_acls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-list",
@@ -471,6 +549,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fast_acls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-rule-create",
@@ -571,6 +665,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fast_acl_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "fast-acl-rule",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "fast-acl-rule-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-rule-delete",
@@ -679,6 +811,30 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fast_acl_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "fast-acl-rule",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-rule-get",
@@ -805,6 +961,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fast_acl_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-rule-list",
@@ -937,6 +1109,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fast_acl_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-rule-update",
@@ -1049,6 +1237,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fast_acl_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "fast-acl-rule",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "fast-acl-rule-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-update",
@@ -1161,6 +1387,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/fast_acls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "fast-acl",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemafast-acl-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-filter-set-create",
@@ -1260,6 +1524,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/filter_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "filter-set",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "filter-set-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-filter-set-delete",
@@ -1368,6 +1670,30 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/filter_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "filter-set",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-filter-set-get",
@@ -1494,6 +1820,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/filter_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-filter-set-list",
@@ -1626,6 +1968,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/filter_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-filter-set-update",
@@ -1737,6 +2095,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/filter_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "filter-set",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "filter-set-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-find-create",
@@ -1834,6 +2230,22 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-forward-proxy-policy-create",
@@ -1935,6 +2347,44 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "forward-proxy-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsforward-proxy-policy-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-forward-proxy-policy-delete",
@@ -2042,6 +2492,30 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "forward-proxy-policy",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-forward-proxy-policy-get",
@@ -2167,6 +2641,22 @@ export const network_securityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-forward-proxy-policy-list",
@@ -2298,6 +2788,22 @@ export const network_securityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-forward-proxy-policy-update",
@@ -2408,6 +2914,44 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "forward-proxy-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsforward-proxy-policy-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-graph-create",
@@ -2506,6 +3050,22 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-hit-create",
@@ -2603,6 +3163,22 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-latency-create",
@@ -2699,6 +3275,22 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-nat-policy-create",
@@ -2797,6 +3389,44 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "nat-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "nat-policy-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-nat-policy-delete",
@@ -2904,6 +3534,30 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "nat-policy",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-nat-policy-get",
@@ -3030,6 +3684,22 @@ export const network_securityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-nat-policy-list",
@@ -3161,6 +3831,22 @@ export const network_securityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-nat-policy-update",
@@ -3272,6 +3958,44 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "nat-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "nat-policy-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-firewall-create",
@@ -3374,6 +4098,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-firewall",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "network-firewall-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-firewall-delete",
@@ -3482,6 +4244,30 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-firewall",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-firewall-get",
@@ -3608,6 +4394,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-firewall-list",
@@ -3740,6 +4542,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-firewall-update",
@@ -3851,6 +4669,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-firewall",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "network-firewall-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-create",
@@ -3949,6 +4805,44 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemanetwork-policy-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-delete",
@@ -4056,6 +4950,30 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-policy",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-get",
@@ -4181,6 +5099,22 @@ export const network_securityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-list",
@@ -4312,6 +5246,22 @@ export const network_securityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-rule-create",
@@ -4414,6 +5364,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-policy-rule",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "network-policy-rule-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-rule-delete",
@@ -4522,6 +5510,30 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-policy-rule",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-rule-get",
@@ -4648,6 +5660,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-rule-list",
@@ -4780,6 +5808,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-rule-update",
@@ -4892,6 +5936,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-policy-rule",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "network-policy-rule-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-set-get",
@@ -5016,6 +6098,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-set-list",
@@ -5148,6 +6246,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-update",
@@ -5259,6 +6373,44 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemanetwork-policy-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-view-create",
@@ -5361,6 +6513,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_views" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-policy-view",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsnetwork-policy-view-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-view-delete",
@@ -5469,6 +6659,30 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_views" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-policy-view",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-view-get",
@@ -5595,6 +6809,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_views" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-view-list",
@@ -5727,6 +6957,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_views" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-view-update",
@@ -5838,6 +7084,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_policy_views" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "network-policy-view",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsnetwork-policy-view-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-policy-based-routing-create",
@@ -5940,6 +7224,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policy_based_routings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "policy-based-routing",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewspolicy-based-routing-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-policy-based-routing-delete",
@@ -6048,6 +7370,30 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policy_based_routings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "policy-based-routing",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-policy-based-routing-get",
@@ -6174,6 +7520,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policy_based_routings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-policy-based-routing-list",
@@ -6306,6 +7668,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policy_based_routings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-policy-based-routing-update",
@@ -6417,6 +7795,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/policy_based_routings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "policy-based-routing",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewspolicy-based-routing-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-segment-connection-get",
@@ -6542,6 +7958,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/segment_connections" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-segment-connection-list",
@@ -6674,6 +8106,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/segment_connections" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-segment-connection-update",
@@ -6785,6 +8233,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/segment_connections" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "segment-connection",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "segment-connection-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-segment-create",
@@ -6884,6 +8370,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/segments" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "segment",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemasegment-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-segment-delete",
@@ -6992,6 +8516,30 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/segments" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "segment",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-segment-get",
@@ -7118,6 +8666,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/segments" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-segment-list",
@@ -7250,6 +8814,22 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/segments" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-segment-update",
@@ -7361,6 +8941,44 @@ export const network_securityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/segments" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "segment",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemasegment-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-service-policy-create",
@@ -7460,6 +9078,56 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "network_security",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "service-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemaservice-policy-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-service-policy-delete",
@@ -7567,6 +9235,42 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "network_security",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "service-policy",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-service-policy-get",
@@ -7693,6 +9397,34 @@ export const network_securityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-service-policy-list",
@@ -7824,6 +9556,34 @@ export const network_securityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-networksecurity-service-policy-update",
@@ -7935,6 +9695,56 @@ export const network_securityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "network_security",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "service-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemaservice-policy-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
 ];
 

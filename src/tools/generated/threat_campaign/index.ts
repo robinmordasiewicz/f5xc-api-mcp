@@ -96,6 +96,9 @@ export const threat_campaignTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
 ];
 

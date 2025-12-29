@@ -128,6 +128,9 @@ export const nginx_oneTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/nginx_csgs" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-nginx-csg-list",
@@ -260,6 +263,9 @@ export const nginx_oneTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/nginx_csgs" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-nginx-dataplane-server-create",
@@ -360,6 +366,9 @@ export const nginx_oneTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-nginx-instance-get",
@@ -483,6 +492,9 @@ export const nginx_oneTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/nginx_instances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-nginx-instance-list",
@@ -615,6 +627,9 @@ export const nginx_oneTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/nginx_instances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-nginx-server-get",
@@ -739,6 +754,9 @@ export const nginx_oneTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/nginx_servers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-nginx-server-list",
@@ -871,6 +889,9 @@ export const nginx_oneTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/nginx_servers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-nginx-service-discovery-create",
@@ -973,6 +994,31 @@ export const nginx_oneTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "nginx-service-discovery",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "nginx-service-discovery-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-nginx-service-discovery-delete",
@@ -1080,6 +1126,17 @@ export const nginx_oneTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "nginx-service-discovery",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-nginx-service-discovery-get",
@@ -1206,6 +1263,9 @@ export const nginx_oneTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-nginx-service-discovery-list",
@@ -1337,6 +1397,9 @@ export const nginx_oneTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-nginx-service-discovery-update",
@@ -1448,6 +1511,31 @@ export const nginx_oneTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "nginx-service-discovery",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "nginx-service-discovery-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-subscribe-create",
@@ -1531,6 +1619,9 @@ export const nginx_oneTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-nginxone-unsubscribe-create",
@@ -1614,6 +1705,9 @@ export const nginx_oneTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
 ];
 

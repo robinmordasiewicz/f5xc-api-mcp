@@ -87,6 +87,9 @@ export const authenticationTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-authentication-api-credential-get",
@@ -191,6 +194,9 @@ export const authenticationTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-authentication-api-credential-list",
@@ -283,6 +289,9 @@ export const authenticationTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-authentication-scim-token-create",
@@ -380,6 +389,16 @@ export const authenticationTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-authentication-scim-token-list",
@@ -472,6 +491,16 @@ export const authenticationTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-authentication-service-credential-create",
@@ -557,6 +586,9 @@ export const authenticationTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-authentication-service-credential-get",
@@ -661,6 +693,9 @@ export const authenticationTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-authentication-service-credential-list",
@@ -752,6 +787,9 @@ export const authenticationTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-authentication-service-credential-update",
@@ -863,6 +901,17 @@ export const authenticationTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "namespace_access",
+        inline: false,
+        required: false,
+        resourceType: "schema-namespace-access",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
 ];
 

@@ -138,6 +138,22 @@ export const service_meshTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-api-endpoint-list",
@@ -257,6 +273,22 @@ export const service_meshTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-app-setting-create",
@@ -356,6 +388,44 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_settings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "app-setting",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemaapp-setting-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-app-setting-delete",
@@ -464,6 +534,30 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_settings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "app-setting",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-app-setting-get",
@@ -591,6 +685,22 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_settings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-app-setting-list",
@@ -723,6 +833,22 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_settings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-app-setting-update",
@@ -835,6 +961,44 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_settings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "app-setting",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemaapp-setting-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-app-type-create",
@@ -934,6 +1098,44 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_types" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "app-type",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "app-type-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-app-type-delete",
@@ -1042,6 +1244,30 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_types" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "app-type",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-app-type-get",
@@ -1168,6 +1394,22 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_types" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-app-type-list",
@@ -1300,6 +1542,22 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_types" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-app-type-update",
@@ -1412,6 +1670,44 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_types" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "app-type",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "app-type-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-endpoint-create",
@@ -1512,6 +1808,44 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/endpoints" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "endpoint",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemaendpoint-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-endpoint-delete",
@@ -1620,6 +1954,30 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/endpoints" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "endpoint",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-endpoint-get",
@@ -1747,6 +2105,22 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/endpoints" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-endpoint-list",
@@ -1879,6 +2253,22 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/endpoints" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-endpoint-update",
@@ -1991,6 +2381,44 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/endpoints" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "endpoint",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemaendpoint-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-force-delete-create",
@@ -2088,6 +2516,22 @@ export const service_meshTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-learnt-schema-create",
@@ -2203,6 +2647,22 @@ export const service_meshTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-metric-create",
@@ -2300,6 +2760,30 @@ export const service_meshTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "field_selector[]",
+        inline: false,
+        required: false,
+        resourceType: "schemanfv-service-metric",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-nfv-service-create",
@@ -2399,6 +2883,44 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/nfv_services" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "nfv-service",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemanfv-service-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-nfv-service-delete",
@@ -2507,6 +3029,30 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/nfv_services" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "nfv-service",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-nfv-service-get",
@@ -2633,6 +3179,22 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/nfv_services" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-nfv-service-list",
@@ -2765,6 +3327,22 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/nfv_services" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-nfv-service-update",
@@ -2876,6 +3454,44 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/nfv_services" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "nfv-service",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemanfv-service-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-override-list",
@@ -2979,6 +3595,22 @@ export const service_meshTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-pdf-create",
@@ -3112,6 +3744,22 @@ export const service_meshTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-pdf-list",
@@ -3240,6 +3888,22 @@ export const service_meshTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-pop-create",
@@ -3355,6 +4019,22 @@ export const service_meshTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-push-create",
@@ -3470,6 +4150,22 @@ export const service_meshTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-sid-counter-create",
@@ -3567,6 +4263,30 @@ export const service_meshTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "field_selector[]",
+        inline: false,
+        required: false,
+        resourceType: "virtual-network-sidcounter",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-site-mesh-group-create",
@@ -3666,6 +4386,50 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/site_mesh_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "site-mesh-group",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemasite-mesh-group-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-site-mesh-group-delete",
@@ -3774,6 +4538,36 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/site_mesh_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "site-mesh-group",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-site-mesh-group-get",
@@ -3900,6 +4694,28 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/site_mesh_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-site-mesh-group-list",
@@ -4032,6 +4848,28 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/site_mesh_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-site-mesh-group-update",
@@ -4143,6 +4981,50 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/site_mesh_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "site-mesh-group",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemasite-mesh-group-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-software-os-version-create",
@@ -4229,6 +5111,22 @@ export const service_meshTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-suspicious-user-get",
@@ -4387,6 +5285,22 @@ export const service_meshTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-swagger-spec-list",
@@ -4490,6 +5404,22 @@ export const service_meshTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-virtual-network-create",
@@ -4589,6 +5519,44 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "virtual-network",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "virtual-network-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-virtual-network-delete",
@@ -4697,6 +5665,30 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "virtual-network",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-virtual-network-get",
@@ -4823,6 +5815,22 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-virtual-network-list",
@@ -4955,6 +5963,22 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-servicemesh-virtual-network-update",
@@ -5066,6 +6090,44 @@ export const service_meshTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "virtual-network",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "virtual-network-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
 ];
 

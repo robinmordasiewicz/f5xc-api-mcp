@@ -23,6 +23,10 @@ import {
   groupOperationsByDomain,
   ParsedOperation,
 } from "../src/generator/openapi-parser.js";
+import {
+  buildDependencyGraph,
+  serializeDependencyGraph,
+} from "../src/generator/dependency-graph.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -42,6 +46,9 @@ const CONFIG = {
 
   /** Tool index file */
   INDEX_FILE: join(__dirname, "..", "src", "tools", "index.ts"),
+
+  /** Dependency graph JSON file */
+  DEPENDENCY_GRAPH_FILE: join(__dirname, "..", "src", "tools", "generated", "dependency-graph.json"),
 };
 
 /**
@@ -151,6 +158,9 @@ function generateDomainFile(
     validationRules: ${deterministicStringify(op.validationRules).replace(/\n/g, "\n    ")},
     operationMetadata: ${op.operationMetadata ? deterministicStringify(op.operationMetadata).replace(/\n/g, "\n    ") : "null"},
     curlExample: ${op.curlExample ? JSON.stringify(op.curlExample) : "null"},
+    dependencies: ${deterministicStringify(op.dependencies).replace(/\n/g, "\n    ")},
+    oneOfGroups: ${deterministicStringify(op.oneOfGroups).replace(/\n/g, "\n    ")},
+    subscriptionRequirements: ${deterministicStringify(op.subscriptionRequirements).replace(/\n/g, "\n    ")},
   }`;
   });
 
@@ -320,6 +330,13 @@ async function generate(): Promise<void> {
   await writeFormattedFile(CONFIG.INDEX_FILE, generateIndexFile());
   log.info("All generated files formatted with Prettier");
 
+  // Build dependency graph
+  log.info("Building dependency graph...");
+  const dependencyGraph = buildDependencyGraph(specs);
+  const graphJson = serializeDependencyGraph(dependencyGraph);
+  writeFileSync(CONFIG.DEPENDENCY_GRAPH_FILE, graphJson + "\n");
+  log.info(`Dependency graph: ${dependencyGraph.totalResources} resources mapped`);
+
   // Summary
   console.log("=".repeat(60));
   console.log("Generation Summary:");
@@ -328,6 +345,7 @@ async function generate(): Promise<void> {
   for (const [domain, ops] of domainGroups) {
     console.log(`    - ${domain}: ${ops.length} tools`);
   }
+  console.log(`  Dependency graph: ${dependencyGraph.totalResources} resources`);
   console.log(`  Output directory: ${CONFIG.GENERATED_DIR}`);
   console.log("=".repeat(60));
   log.success("Generation complete!");

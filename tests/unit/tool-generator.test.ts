@@ -1589,6 +1589,12 @@ function createMockParsedOperation(
     parameterExamples: {},
     validationRules: {},
     operationMetadata: null,
+    // Curl example from enriched specs v1.0.66
+    curlExample: null,
+    // Dependency intelligence from enriched specs v1.0.67
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
     ...overrides,
   };
 }

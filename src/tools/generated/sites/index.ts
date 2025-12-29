@@ -103,6 +103,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-aws-tgw-site-create",
@@ -202,6 +212,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_tgw_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "aws-tgw-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsaws-tgw-site-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-aws-tgw-site-delete",
@@ -310,6 +352,24 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_tgw_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "aws-tgw-site",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-aws-tgw-site-get",
@@ -436,6 +496,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_tgw_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-aws-tgw-site-list",
@@ -568,6 +638,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_tgw_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-aws-tgw-site-update",
@@ -679,6 +759,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_tgw_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "aws-tgw-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsaws-tgw-site-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-aws-vpc-site-create",
@@ -778,6 +890,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "sites",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "aws-vpc-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsaws-vpc-site-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-aws-vpc-site-delete",
@@ -886,6 +1030,24 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "sites",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "aws-vpc-site",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-aws-vpc-site-get",
@@ -1012,6 +1174,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-aws-vpc-site-list",
@@ -1144,6 +1316,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-aws-vpc-site-update",
@@ -1255,6 +1437,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "sites",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "aws-vpc-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsaws-vpc-site-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-azure-vnet-site-create",
@@ -1354,6 +1568,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/azure_vnet_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "sites",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "azure-vnet-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsazure-vnet-site-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-azure-vnet-site-delete",
@@ -1462,6 +1708,24 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/azure_vnet_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "sites",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "azure-vnet-site",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-azure-vnet-site-get",
@@ -1588,6 +1852,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/azure_vnet_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-azure-vnet-site-list",
@@ -1720,6 +1994,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/azure_vnet_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-azure-vnet-site-update",
@@ -1831,6 +2115,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/azure_vnet_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "sites",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "azure-vnet-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsazure-vnet-site-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-configmap-list",
@@ -1935,6 +2251,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-cronjob-list",
@@ -2039,6 +2365,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-daemonset-list",
@@ -2143,6 +2479,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-dc-cluster-group-create",
@@ -2243,6 +2589,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-dc-cluster-group-list",
@@ -2320,6 +2676,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-deployment-list",
@@ -2424,6 +2790,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-edge-create",
@@ -2522,6 +2898,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-endpoint-list",
@@ -2626,6 +3012,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-firewall-log-create",
@@ -2724,6 +3120,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-gcp-vpc-site-create",
@@ -2823,6 +3229,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/gcp_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "sites",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "gcp-vpc-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsgcp-vpc-site-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-gcp-vpc-site-delete",
@@ -2931,6 +3369,24 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/gcp_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "sites",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "gcp-vpc-site",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-gcp-vpc-site-get",
@@ -3057,6 +3513,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/gcp_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-gcp-vpc-site-list",
@@ -3189,6 +3655,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/gcp_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-gcp-vpc-site-update",
@@ -3300,6 +3776,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/gcp_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "sites",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "gcp-vpc-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsgcp-vpc-site-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-global-kubeconfig-create",
@@ -3386,6 +3894,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-global-kubeconfig-list",
@@ -3478,6 +3996,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-global-network-list",
@@ -3581,6 +4109,28 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-job-list",
@@ -3685,6 +4235,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-k8s-audit-log-create",
@@ -3795,6 +4355,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-k8s-cluster-create",
@@ -3895,6 +4465,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "k8s-cluster",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "k8s-cluster-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-k8s-cluster-delete",
@@ -4003,6 +4605,24 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "k8s-cluster",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-k8s-cluster-get",
@@ -4130,6 +4750,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-k8s-cluster-list",
@@ -4262,6 +4892,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-k8s-cluster-update",
@@ -4374,6 +5014,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "k8s-cluster",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "k8s-cluster-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-k8s-event-create",
@@ -4484,6 +5156,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-local-kubeconfig-create",
@@ -4596,6 +5278,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-local-kubeconfig-get",
@@ -4699,6 +5391,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-log-create",
@@ -4833,6 +5535,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-metric-create",
@@ -4940,6 +5652,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-namespace-list",
@@ -5031,6 +5753,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-network-get",
@@ -5122,6 +5854,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-node-create",
@@ -5220,6 +5962,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-node-list",
@@ -5311,6 +6063,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-persistentvolume-list",
@@ -5402,6 +6164,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-persistentvolumeclaim-list",
@@ -5505,6 +6277,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-platform-event-create",
@@ -5603,6 +6385,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-pod-list",
@@ -5706,6 +6498,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-replicaset-list",
@@ -5809,6 +6611,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-route-table-get",
@@ -5973,6 +6785,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-scroll-create",
@@ -6070,6 +6892,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-scroll-list",
@@ -6176,6 +7008,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-secret-list",
@@ -6279,6 +7121,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-securemesh-site-create",
@@ -6378,6 +7230,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/securemesh_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "securemesh-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewssecuremesh-site-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-securemesh-site-delete",
@@ -6486,6 +7370,24 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/securemesh_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "securemesh-site",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-securemesh-site-get",
@@ -6612,6 +7514,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/securemesh_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-securemesh-site-list",
@@ -6744,6 +7656,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/securemesh_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-securemesh-site-update",
@@ -6855,6 +7777,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/securemesh_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "securemesh-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewssecuremesh-site-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-securemesh-site-v2-create",
@@ -6957,6 +7911,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/securemesh_site_v2s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "securemesh-site-v2",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewssecuremesh-site-v2create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-securemesh-site-v2-delete",
@@ -7065,6 +8051,24 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/securemesh_site_v2s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "securemesh-site-v2",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-securemesh-site-v2-get",
@@ -7191,6 +8195,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/securemesh_site_v2s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-securemesh-site-v2-list",
@@ -7323,6 +8337,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/securemesh_site_v2s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-securemesh-site-v2-update",
@@ -7434,6 +8458,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/securemesh_site_v2s" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "securemesh-site-v2",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewssecuremesh-site-v2replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-segment-list",
@@ -7537,6 +8593,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-selectee-get",
@@ -7642,6 +8708,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-service-list",
@@ -7745,6 +8821,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-set-cloud-site-info-create",
@@ -7858,6 +8944,24 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "aws_vpc_info",
+        inline: false,
+        required: false,
+        resourceType: "aws-vpc-site-awsvpcsite-info",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-set-tgw-info-create",
@@ -7967,6 +9071,24 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "tgw_info",
+        inline: false,
+        required: false,
+        resourceType: "aws-tgw-site-awstgwinfo-config",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-set-vip-info-create",
@@ -8076,6 +9198,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-set-vpc-ip-prefixe-create",
@@ -8188,6 +9320,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-set-vpc-k8s-hostname-create",
@@ -8300,6 +9442,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-set-vpn-tunnel-create",
@@ -8409,6 +9561,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-site-create",
@@ -8507,6 +9669,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-site-get",
@@ -8632,6 +9804,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-site-list",
@@ -8764,6 +9946,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-site-mesh-group-create",
@@ -8861,6 +10053,28 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-site-mesh-group-list",
@@ -8938,6 +10152,28 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_securemesh_standard",
+        displayName: "F5XC Securemesh Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_securemesh_advanced",
+        displayName: "F5XC Securemesh Advanced",
+        required: false,
+        tier: "advanced",
+      },
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-site-update",
@@ -9049,6 +10285,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "sites",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemasite-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-state-create",
@@ -9159,6 +10427,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-statefulset-list",
@@ -9262,6 +10540,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-statu-create",
@@ -9359,6 +10647,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-upgrade-o-create",
@@ -9468,6 +10766,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-upgrade-sw-create",
@@ -9577,6 +10885,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-validate-config-create",
@@ -9686,6 +11004,16 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-virtual-k8s-create",
@@ -9785,6 +11113,38 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "virtual-k8s",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "virtual-k8s-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-virtual-k8s-delete",
@@ -9892,6 +11252,24 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "virtual-k8s",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-virtual-k8s-get",
@@ -10018,6 +11396,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-virtual-k8s-list",
@@ -10149,6 +11537,16 @@ export const sitesTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-virtual-k8s-update",
@@ -10260,6 +11658,38 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "virtual-k8s",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "virtual-k8s-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-virtual-site-create",
@@ -10359,6 +11789,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "virtual-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemavirtual-site-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-virtual-site-delete",
@@ -10467,6 +11929,24 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "virtual-site",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-virtual-site-get",
@@ -10593,6 +12073,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-virtual-site-list",
@@ -10725,6 +12215,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-virtual-site-update",
@@ -10836,6 +12336,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "virtual-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemavirtual-site-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-vk8s-audit-log-create",
@@ -10934,6 +12466,22 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_appstack_standard",
+        displayName: "F5XC Appstack Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-vk8s-event-create",
@@ -11032,6 +12580,22 @@ export const sitesTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_appstack_standard",
+        displayName: "F5XC Appstack Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-voltstack-site-create",
@@ -11131,6 +12695,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/voltstack_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "voltstack-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsvoltstack-site-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-voltstack-site-delete",
@@ -11239,6 +12835,24 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/voltstack_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "voltstack-site",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-voltstack-site-get",
@@ -11365,6 +12979,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/voltstack_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-voltstack-site-list",
@@ -11497,6 +13121,16 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/voltstack_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-sites-voltstack-site-update",
@@ -11608,6 +13242,38 @@ export const sitesTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/voltstack_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "voltstack-site",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewsvoltstack-site-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
 ];
 
