@@ -45,18 +45,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["action"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape action create {name} --namespace {namespace}",
-        description: "Create action",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape action create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -101,18 +89,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape action create {name} --namespace {namespace}",
-          description: "Create action",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape action create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -176,18 +152,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["affectedUser"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.script_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape affectedUser create {name} --namespace {namespace}",
-        description: "Create affectedUser",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape affectedUser create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -233,18 +197,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape affectedUser create {name} --namespace {namespace}",
-          description: "Create affectedUser",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape affectedUser create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -285,18 +237,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["age"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape age create {name} --namespace {namespace}",
-        description: "Create age",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape age create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -339,18 +279,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape age create {name} --namespace {namespace}",
-          description: "Create age",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape age create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -404,18 +332,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["alert-gen-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape alert-gen-policy create {name} --namespace {namespace}",
-        description: "Create alert-gen-policy",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape alert-gen-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -463,18 +379,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape alert-gen-policy create {name} --namespace {namespace}",
-          description: "Create alert-gen-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape alert-gen-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -536,13 +440,6 @@ export const shapeTools: ParsedOperation[] = [
       deletes: ["alert-gen-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape alert-gen-policy delete {name} --namespace {namespace}",
-        description: "Delete alert-gen-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -588,13 +485,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl shape alert-gen-policy delete {name} --namespace {namespace}",
-          description: "Delete alert-gen-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -676,13 +566,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape alert-gen-policy get {name} --namespace {namespace}",
-        description: "Get specific alert-gen-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -728,13 +611,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape alert-gen-policy get {name} --namespace {namespace}",
-          description: "Get specific alert-gen-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -820,13 +696,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape alert-gen-policy list --namespace {namespace}",
-        description: "List all alert-gen-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -872,13 +741,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape alert-gen-policy list --namespace {namespace}",
-          description: "List all alert-gen-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -941,14 +803,6 @@ export const shapeTools: ParsedOperation[] = [
       modifies: ["alert-gen-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl shape alert-gen-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update alert-gen-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -994,14 +848,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl shape alert-gen-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update alert-gen-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1055,18 +901,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["alert-template"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape alert-template create {name} --namespace {namespace}",
-        description: "Create alert-template",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape alert-template create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1111,18 +945,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape alert-template create {name} --namespace {namespace}",
-          description: "Create alert-template",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape alert-template create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1184,13 +1006,6 @@ export const shapeTools: ParsedOperation[] = [
       deletes: ["alert-template", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape alert-template delete {name} --namespace {namespace}",
-        description: "Delete alert-template",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1236,13 +1051,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl shape alert-template delete {name} --namespace {namespace}",
-          description: "Delete alert-template",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1323,13 +1131,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape alert-template get {name} --namespace {namespace}",
-        description: "Get specific alert-template",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1375,13 +1176,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape alert-template get {name} --namespace {namespace}",
-          description: "Get specific alert-template",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1467,13 +1261,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape alert-template list --namespace {namespace}",
-        description: "List all alert-templates",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1519,13 +1306,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape alert-template list --namespace {namespace}",
-          description: "List all alert-templates",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1577,18 +1357,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["allowed-domain"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape allowed-domain create {name} --namespace {namespace}",
-        description: "Create allowed-domain",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape allowed-domain create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1633,18 +1401,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape allowed-domain create {name} --namespace {namespace}",
-          description: "Create allowed-domain",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape allowed-domain create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1706,13 +1462,6 @@ export const shapeTools: ParsedOperation[] = [
       deletes: ["allowed-domain", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape allowed-domain delete {name} --namespace {namespace}",
-        description: "Delete allowed-domain",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1758,13 +1507,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl shape allowed-domain delete {name} --namespace {namespace}",
-          description: "Delete allowed-domain",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1845,13 +1587,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape allowed-domain get {name} --namespace {namespace}",
-        description: "Get specific allowed-domain",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1897,13 +1632,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape allowed-domain get {name} --namespace {namespace}",
-          description: "Get specific allowed-domain",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1989,13 +1717,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape allowed-domain list --namespace {namespace}",
-        description: "List all allowed-domains",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2041,13 +1762,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape allowed-domain list --namespace {namespace}",
-          description: "List all allowed-domains",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2098,18 +1812,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["analysi"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape analysi create {name} --namespace {namespace}",
-        description: "Create analysi",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape analysi create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -2154,18 +1856,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape analysi create {name} --namespace {namespace}",
-          description: "Create analysi",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape analysi create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2202,13 +1892,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl shape apikey list --namespace {namespace}",
-        description: "List all apikeys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2251,13 +1934,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape apikey list --namespace {namespace}",
-          description: "List all apikeys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2307,18 +1983,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["app"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape app create {name} --namespace {namespace}",
-        description: "Create app",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape app create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -2363,18 +2027,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape app create {name} --namespace {namespace}",
-          description: "Create app",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape app create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2415,18 +2067,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["app-provision"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape app-provision create {name} --namespace {namespace}",
-        description: "Create app-provision",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape app-provision create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2469,18 +2109,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape app-provision create {name} --namespace {namespace}",
-          description: "Create app-provision",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape app-provision create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2521,18 +2149,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["application"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape application create {name} --namespace {namespace}",
-        description: "Create application",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape application create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2575,18 +2191,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape application create {name} --namespace {namespace}",
-          description: "Create application",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape application create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2637,13 +2241,6 @@ export const shapeTools: ParsedOperation[] = [
       deletes: ["application", "contained_resources"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl shape application delete {name} --namespace {namespace}",
-        description: "Delete application",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       app_id: "``volt-testing_backenda949ef7c-eda1ab47``",
@@ -2688,13 +2285,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl shape application delete {name} --namespace {namespace}",
-          description: "Delete application",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2731,13 +2321,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl shape application list --namespace {namespace}",
-        description: "List all applications",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2780,13 +2363,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape application list --namespace {namespace}",
-          description: "List all applications",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2837,18 +2413,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["asn"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape asn create {name} --namespace {namespace}",
-        description: "Create asn",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape asn create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -2893,18 +2457,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape asn create {name} --namespace {namespace}",
-          description: "Create asn",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape asn create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2956,18 +2508,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["asorg"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape asorg create {name} --namespace {namespace}",
-        description: "Create asorg",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape asorg create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -3012,18 +2552,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape asorg create {name} --namespace {namespace}",
-          description: "Create asorg",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape asorg create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3077,18 +2605,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["atb"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape atb create {name} --namespace {namespace}",
-        description: "Create atb",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape atb create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -3133,18 +2649,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape atb create {name} --namespace {namespace}",
-          description: "Create atb",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape atb create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3206,13 +2710,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape atb list --namespace {namespace}",
-        description: "List all atbs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -3258,13 +2755,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape atb list --namespace {namespace}",
-          description: "List all atbs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3315,18 +2805,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["attackintent"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape attackintent create {name} --namespace {namespace}",
-        description: "Create attackintent",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape attackintent create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -3371,18 +2849,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape attackintent create {name} --namespace {namespace}",
-          description: "Create attackintent",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape attackintent create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3465,13 +2931,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape audit list --namespace {namespace}",
-        description: "List all audits",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       dimt: "Account_id.",
@@ -3519,13 +2978,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape audit list --namespace {namespace}",
-          description: "List all audits",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3575,18 +3027,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["automation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape automation create {name} --namespace {namespace}",
-        description: "Create automation",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape automation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -3631,18 +3071,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape automation create {name} --namespace {namespace}",
-          description: "Create automation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape automation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3693,18 +3121,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["bad-bot-reduction"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bad-bot-reduction create {name} --namespace {namespace}",
-        description: "Create bad-bot-reduction",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape bad-bot-reduction create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -3752,18 +3168,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape bad-bot-reduction create {name} --namespace {namespace}",
-          description: "Create bad-bot-reduction",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape bad-bot-reduction create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3862,13 +3266,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape behavior get {name} --namespace {namespace}",
-        description: "Get specific behavior",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "1570194300.",
@@ -3917,13 +3314,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape behavior get {name} --namespace {namespace}",
-          description: "Get specific behavior",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3973,18 +3363,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["bfp"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bfp create {name} --namespace {namespace}",
-        description: "Create bfp",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape bfp create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -4029,18 +3407,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape bfp create {name} --namespace {namespace}",
-          description: "Create bfp",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape bfp create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4090,13 +3456,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-allowlist-policie list --namespace {namespace}",
-        description: "List all bot-allowlist-policies",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -4141,13 +3500,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-allowlist-policie list --namespace {namespace}",
-          description: "List all bot-allowlist-policies",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4226,13 +3578,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-allowlist-policy get {name} --namespace {namespace}",
-        description: "Get specific bot-allowlist-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4278,13 +3623,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-allowlist-policy get {name} --namespace {namespace}",
-          description: "Get specific bot-allowlist-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4370,13 +3708,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-allowlist-policy list --namespace {namespace}",
-        description: "List all bot-allowlist-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4422,13 +3753,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-allowlist-policy list --namespace {namespace}",
-          description: "List all bot-allowlist-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4490,14 +3814,6 @@ export const shapeTools: ParsedOperation[] = [
       modifies: ["bot-allowlist-policy"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl shape bot-allowlist-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update bot-allowlist-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -4543,14 +3859,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl shape bot-allowlist-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update bot-allowlist-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4602,18 +3910,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["bot-detection-rule"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-detection-rule create {name} --namespace {namespace}",
-        description: "Create bot-detection-rule",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape bot-detection-rule create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -4661,18 +3957,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape bot-detection-rule create {name} --namespace {namespace}",
-          description: "Create bot-detection-rule",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape bot-detection-rule create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4751,13 +4035,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-detection-rule get {name} --namespace {namespace}",
-        description: "Get specific bot-detection-rule",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4803,13 +4080,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-detection-rule get {name} --namespace {namespace}",
-          description: "Get specific bot-detection-rule",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4895,13 +4165,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-detection-rule list --namespace {namespace}",
-        description: "List all bot-detection-rules",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4947,13 +4210,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-detection-rule list --namespace {namespace}",
-          description: "List all bot-detection-rules",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5001,13 +4257,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-detection-update list --namespace {namespace}",
-        description: "List all bot-detection-updates",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -5052,13 +4301,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-detection-update list --namespace {namespace}",
-          description: "List all bot-detection-updates",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5106,13 +4348,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-endpoint-policie list --namespace {namespace}",
-        description: "List all bot-endpoint-policies",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -5157,13 +4392,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-endpoint-policie list --namespace {namespace}",
-          description: "List all bot-endpoint-policies",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5242,13 +4470,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-endpoint-policy get {name} --namespace {namespace}",
-        description: "Get specific bot-endpoint-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5294,13 +4515,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-endpoint-policy get {name} --namespace {namespace}",
-          description: "Get specific bot-endpoint-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5386,13 +4600,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-endpoint-policy list --namespace {namespace}",
-        description: "List all bot-endpoint-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5438,13 +4645,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-endpoint-policy list --namespace {namespace}",
-          description: "List all bot-endpoint-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5506,14 +4706,6 @@ export const shapeTools: ParsedOperation[] = [
       modifies: ["bot-endpoint-policy"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl shape bot-endpoint-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update bot-endpoint-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -5559,14 +4751,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl shape bot-endpoint-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update bot-endpoint-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5620,18 +4804,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["bot-infrastructure"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-infrastructure create {name} --namespace {namespace}",
-        description: "Create bot-infrastructure",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape bot-infrastructure create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -5679,18 +4851,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape bot-infrastructure create {name} --namespace {namespace}",
-          description: "Create bot-infrastructure",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape bot-infrastructure create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5772,13 +4932,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-infrastructure get {name} --namespace {namespace}",
-        description: "Get specific bot-infrastructure",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5824,13 +4977,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-infrastructure get {name} --namespace {namespace}",
-          description: "Get specific bot-infrastructure",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5916,13 +5062,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-infrastructure list --namespace {namespace}",
-        description: "List all bot-infrastructures",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5968,13 +5107,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-infrastructure list --namespace {namespace}",
-          description: "List all bot-infrastructures",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6037,14 +5169,6 @@ export const shapeTools: ParsedOperation[] = [
       modifies: ["bot-infrastructure"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl shape bot-infrastructure update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update bot-infrastructure",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -6090,14 +5214,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl shape bot-infrastructure update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update bot-infrastructure",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6147,13 +5263,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-network-policie list --namespace {namespace}",
-        description: "List all bot-network-policies",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -6198,13 +5307,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-network-policie list --namespace {namespace}",
-          description: "List all bot-network-policies",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6283,13 +5385,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-network-policy get {name} --namespace {namespace}",
-        description: "Get specific bot-network-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -6335,13 +5430,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-network-policy get {name} --namespace {namespace}",
-          description: "Get specific bot-network-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6427,13 +5515,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape bot-network-policy list --namespace {namespace}",
-        description: "List all bot-network-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -6479,13 +5560,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape bot-network-policy list --namespace {namespace}",
-          description: "List all bot-network-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6547,14 +5621,6 @@ export const shapeTools: ParsedOperation[] = [
       modifies: ["bot-network-policy"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl shape bot-network-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update bot-network-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -6600,14 +5666,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl shape bot-network-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update bot-network-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6660,18 +5718,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["browser"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape browser create {name} --namespace {namespace}",
-        description: "Create browser",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape browser create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -6716,18 +5762,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape browser create {name} --namespace {namespace}",
-          description: "Create browser",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape browser create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6779,18 +5813,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["categorie"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape categorie create {name} --namespace {namespace}",
-        description: "Create categorie",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape categorie create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -6835,18 +5857,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape categorie create {name} --namespace {namespace}",
-          description: "Create categorie",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape categorie create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6887,18 +5897,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["channel"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape channel create {name} --namespace {namespace}",
-        description: "Create channel",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape channel create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -6941,18 +5939,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape channel create {name} --namespace {namespace}",
-          description: "Create channel",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape channel create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6993,18 +5979,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["check"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape check create {name} --namespace {namespace}",
-        description: "Create check",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape check create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -7047,18 +6021,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape check create {name} --namespace {namespace}",
-          description: "Create check",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape check create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7120,18 +6082,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["clone"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape clone create {name} --namespace {namespace}",
-        description: "Create clone",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape clone create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -7174,18 +6124,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape clone create {name} --namespace {namespace}",
-          description: "Create clone",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape clone create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7245,13 +6183,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape config get {name} --namespace {namespace}",
-        description: "Get specific config",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "App 8000",
@@ -7297,13 +6228,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape config get {name} --namespace {namespace}",
-          description: "Get specific config",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7342,18 +6266,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["conversion"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape conversion create {name} --namespace {namespace}",
-        description: "Create conversion",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape conversion create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -7396,18 +6308,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape conversion create {name} --namespace {namespace}",
-          description: "Create conversion",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape conversion create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7448,18 +6348,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["country"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape country create {name} --namespace {namespace}",
-        description: "Create country",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape country create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -7502,18 +6390,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape country create {name} --namespace {namespace}",
-          description: "Create country",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape country create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7564,18 +6440,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["credential-stuffing-attack"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape credential-stuffing-attack create {name} --namespace {namespace}",
-        description: "Create credential-stuffing-attack",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape credential-stuffing-attack create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -7623,18 +6487,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape credential-stuffing-attack create {name} --namespace {namespace}",
-          description: "Create credential-stuffing-attack",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape credential-stuffing-attack create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7733,13 +6585,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape dashboard get {name} --namespace {namespace}",
-        description: "Get specific dashboard",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "1570194300.",
@@ -7788,13 +6633,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape dashboard get {name} --namespace {namespace}",
-          description: "Get specific dashboard",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7852,13 +6690,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape deployment-history get {name} --namespace {namespace}",
-        description: "Get specific deployment-history",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -7904,13 +6735,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape deployment-history get {name} --namespace {namespace}",
-          description: "Get specific deployment-history",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7986,13 +6810,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape deployment list --namespace {namespace}",
-        description: "List all deployments",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -8039,13 +6856,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape deployment list --namespace {namespace}",
-          description: "List all deployments",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8104,13 +6914,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape deployment-statu get {name} --namespace {namespace}",
-        description: "Get specific deployment-statu",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -8156,13 +6959,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape deployment-statu get {name} --namespace {namespace}",
-          description: "Get specific deployment-statu",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8243,13 +7039,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape detail list --namespace {namespace}",
-        description: "List all details",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       account_id: "Test123",
@@ -8297,13 +7086,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape detail list --namespace {namespace}",
-          description: "List all details",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8384,13 +7166,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape detected-domain list --namespace {namespace}",
-        description: "List all detected-domains",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       duration: "15",
@@ -8438,13 +7213,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape detected-domain list --namespace {namespace}",
-          description: "List all detected-domains",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8494,18 +7262,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["device"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape device create {name} --namespace {namespace}",
-        description: "Create device",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape device create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -8550,18 +7306,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape device create {name} --namespace {namespace}",
-          description: "Create device",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape device create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8622,13 +7366,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape domain-detail list --namespace {namespace}",
-        description: "List all domain-details",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "domain.com.",
@@ -8674,13 +7411,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape domain-detail list --namespace {namespace}",
-          description: "List all domain-details",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8740,13 +7470,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape download-release-note list --namespace {namespace}",
-        description: "List all download-release-notes",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       deployment_id: "06957ed8-52b5-43e0-bb56-429db281bfb4.",
@@ -8792,13 +7515,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape download-release-note list --namespace {namespace}",
-          description: "List all download-release-notes",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8848,18 +7564,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["draft"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape draft create {name} --namespace {namespace}",
-        description: "Create draft",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape draft create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -8904,18 +7608,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape draft create {name} --namespace {namespace}",
-          description: "Create draft",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape draft create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8967,13 +7659,6 @@ export const shapeTools: ParsedOperation[] = [
       deletes: ["draft", "contained_resources"],
     },
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape draft delete {name} --namespace {namespace}",
-        description: "Delete draft",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       namespace: "System",
@@ -9018,13 +7703,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl shape draft delete {name} --namespace {namespace}",
-          description: "Delete draft",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9074,13 +7752,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape draft list --namespace {namespace}",
-        description: "List all drafts",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -9125,13 +7796,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape draft list --namespace {namespace}",
-          description: "List all drafts",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9170,18 +7834,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["enable"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape enable create {name} --namespace {namespace}",
-        description: "Create enable",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape enable create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -9224,18 +7876,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape enable create {name} --namespace {namespace}",
-          description: "Create enable",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape enable create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9287,18 +7927,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["endpoint"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape endpoint create {name} --namespace {namespace}",
-        description: "Create endpoint",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape endpoint create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -9343,18 +7971,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape endpoint create {name} --namespace {namespace}",
-          description: "Create endpoint",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape endpoint create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9406,18 +8022,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["endpointlabel"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape endpointlabel create {name} --namespace {namespace}",
-        description: "Create endpointlabel",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape endpointlabel create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -9462,18 +8066,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape endpointlabel create {name} --namespace {namespace}",
-          description: "Create endpointlabel",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape endpointlabel create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9514,18 +8106,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["enjoy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape enjoy create {name} --namespace {namespace}",
-        description: "Create enjoy",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape enjoy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -9568,18 +8148,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape enjoy create {name} --namespace {namespace}",
-          description: "Create enjoy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape enjoy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9632,18 +8200,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["ep"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape ep create {name} --namespace {namespace}",
-        description: "Create ep",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape ep create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -9688,18 +8244,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape ep create {name} --namespace {namespace}",
-          description: "Create ep",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape ep create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9751,18 +8295,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["expanded"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape expanded create {name} --namespace {namespace}",
-        description: "Create expanded",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape expanded create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -9807,18 +8339,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape expanded create {name} --namespace {namespace}",
-          description: "Create expanded",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape expanded create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9871,18 +8391,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["feedback"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape feedback create {name} --namespace {namespace}",
-        description: "Create feedback",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape feedback create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -9927,18 +8435,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape feedback create {name} --namespace {namespace}",
-          description: "Create feedback",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape feedback create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9992,18 +8488,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["field"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape field create {name} --namespace {namespace}",
-        description: "Create field",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape field create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Namespace1.",
@@ -10048,18 +8532,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape field create {name} --namespace {namespace}",
-          description: "Create field",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape field create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10112,18 +8584,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["formField"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape formField create {name} --namespace {namespace}",
-        description: "Create formField",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape formField create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -10168,18 +8628,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape formField create {name} --namespace {namespace}",
-          description: "Create formField",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape formField create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10239,13 +8687,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape formField get {name} --namespace {namespace}",
-        description: "Get specific formField",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       id: "F-ssabcde",
@@ -10291,13 +8732,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape formField get {name} --namespace {namespace}",
-          description: "Get specific formField",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10370,13 +8804,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape formField list --namespace {namespace}",
-        description: "List all formFields",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "1570194300.",
@@ -10423,13 +8850,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape formField list --namespace {namespace}",
-          description: "List all formFields",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10468,18 +8888,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["friction-aggregation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape friction-aggregation create {name} --namespace {namespace}",
-        description: "Create friction-aggregation",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape friction-aggregation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -10525,18 +8933,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape friction-aggregation create {name} --namespace {namespace}",
-          description: "Create friction-aggregation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape friction-aggregation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10577,18 +8973,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["friction-histogram"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape friction-histogram create {name} --namespace {namespace}",
-        description: "Create friction-histogram",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl shape friction-histogram create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -10634,18 +9018,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape friction-histogram create {name} --namespace {namespace}",
-          description: "Create friction-histogram",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape friction-histogram create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10698,18 +9070,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["general-feedback"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape general-feedback create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape general-feedback create {name} --namespace {namespace}",
-        description: "Create general-feedback",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -10757,18 +9117,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape general-feedback create {name} --namespace {namespace}",
-          description: "Create general-feedback",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape general-feedback create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10820,18 +9168,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["geolocation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape geolocation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape geolocation create {name} --namespace {namespace}",
-        description: "Create geolocation",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -10876,18 +9212,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape geolocation create {name} --namespace {namespace}",
-          description: "Create geolocation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape geolocation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10928,18 +9252,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["getcurrentfrauddata"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape getcurrentfrauddata create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape getcurrentfrauddata create {name} --namespace {namespace}",
-        description: "Create getcurrentfrauddata",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -10985,18 +9297,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape getcurrentfrauddata create {name} --namespace {namespace}",
-          description: "Create getcurrentfrauddata",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape getcurrentfrauddata create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11037,18 +9337,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["gettopriskyaccount"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape gettopriskyaccount create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape gettopriskyaccount create {name} --namespace {namespace}",
-        description: "Create gettopriskyaccount",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -11094,18 +9382,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape gettopriskyaccount create {name} --namespace {namespace}",
-          description: "Create gettopriskyaccount",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape gettopriskyaccount create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11146,18 +9422,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["gettopriskydevice"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape gettopriskydevice create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape gettopriskydevice create {name} --namespace {namespace}",
-        description: "Create gettopriskydevice",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -11203,18 +9467,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape gettopriskydevice create {name} --namespace {namespace}",
-          description: "Create gettopriskydevice",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape gettopriskydevice create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11255,18 +9507,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["gettopriskyipaddresse"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape gettopriskyipaddresse create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape gettopriskyipaddresse create {name} --namespace {namespace}",
-        description: "Create gettopriskyipaddresse",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -11312,18 +9552,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape gettopriskyipaddresse create {name} --namespace {namespace}",
-          description: "Create gettopriskyipaddresse",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape gettopriskyipaddresse create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11364,18 +9592,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["gettopriskyreason"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape gettopriskyreason create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape gettopriskyreason create {name} --namespace {namespace}",
-        description: "Create gettopriskyreason",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -11421,18 +9637,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape gettopriskyreason create {name} --namespace {namespace}",
-          description: "Create gettopriskyreason",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape gettopriskyreason create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11473,18 +9677,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["gettransactiondata"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape gettransactiondata create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape gettransactiondata create {name} --namespace {namespace}",
-        description: "Create gettransactiondata",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -11530,18 +9722,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape gettransactiondata create {name} --namespace {namespace}",
-          description: "Create gettransactiondata",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape gettransactiondata create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11593,18 +9773,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["good"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape good create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape good create {name} --namespace {namespace}",
-        description: "Create good",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -11649,18 +9817,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape good create {name} --namespace {namespace}",
-          description: "Create good",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape good create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11697,13 +9853,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl shape health list --namespace {namespace}",
-        description: "List all healths",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -11746,13 +9895,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape health list --namespace {namespace}",
-          description: "List all healths",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11811,13 +9953,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape history get {name} --namespace {namespace}",
-        description: "Get specific history",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       id: "Rule_CB_DUBEXLDQKV.",
@@ -11863,13 +9998,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape history get {name} --namespace {namespace}",
-          description: "Get specific history",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11908,18 +10036,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["init"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape init create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape init create {name} --namespace {namespace}",
-        description: "Create init",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -11962,18 +10078,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape init create {name} --namespace {namespace}",
-          description: "Create init",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape init create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12026,18 +10130,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["ip"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape ip create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape ip create {name} --namespace {namespace}",
-        description: "Create ip",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -12082,18 +10174,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape ip create {name} --namespace {namespace}",
-          description: "Create ip",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape ip create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12154,13 +10234,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape js-configuration list --namespace {namespace}",
-        description: "List all js-configurations",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "ScriptTag",
@@ -12206,13 +10279,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape js-configuration list --namespace {namespace}",
-          description: "List all js-configurations",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12274,18 +10340,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["justification"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.script_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape justification create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape justification create {name} --namespace {namespace}",
-        description: "Create justification",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -12331,18 +10385,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape justification create {name} --namespace {namespace}",
-          description: "Create justification",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape justification create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12404,13 +10446,6 @@ export const shapeTools: ParsedOperation[] = [
       deletes: ["justification", "contained_resources"],
     },
     requiredFields: ["path.justification_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape justification delete {name} --namespace {namespace}",
-        description: "Delete justification",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       justification_id: "J-1234567",
@@ -12456,13 +10491,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl shape justification delete {name} --namespace {namespace}",
-          description: "Delete justification",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12503,18 +10531,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["lift"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape lift create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape lift create {name} --namespace {namespace}",
-        description: "Create lift",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -12557,18 +10573,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape lift create {name} --namespace {namespace}",
-          description: "Create lift",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape lift create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12620,18 +10624,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["list"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape list create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape list create {name} --namespace {namespace}",
-        description: "Create list",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -12676,18 +10668,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape list create {name} --namespace {namespace}",
-          description: "Create list",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape list create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12740,18 +10720,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["metric"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape metric create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape metric create {name} --namespace {namespace}",
-        description: "Create metric",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -12796,18 +10764,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape metric create {name} --namespace {namespace}",
-          description: "Create metric",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape metric create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12861,18 +10817,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["mitigated-domain"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape mitigated-domain create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape mitigated-domain create {name} --namespace {namespace}",
-        description: "Create mitigated-domain",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -12920,18 +10864,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape mitigated-domain create {name} --namespace {namespace}",
-          description: "Create mitigated-domain",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape mitigated-domain create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12993,13 +10925,6 @@ export const shapeTools: ParsedOperation[] = [
       deletes: ["mitigated-domain", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape mitigated-domain delete {name} --namespace {namespace}",
-        description: "Delete mitigated-domain",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -13045,13 +10970,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl shape mitigated-domain delete {name} --namespace {namespace}",
-          description: "Delete mitigated-domain",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13132,13 +11050,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape mitigated-domain get {name} --namespace {namespace}",
-        description: "Get specific mitigated-domain",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -13184,13 +11095,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape mitigated-domain get {name} --namespace {namespace}",
-          description: "Get specific mitigated-domain",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13276,13 +11180,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape mitigated-domain list --namespace {namespace}",
-        description: "List all mitigated-domains",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -13328,13 +11225,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape mitigated-domain list --namespace {namespace}",
-          description: "List all mitigated-domains",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13386,18 +11276,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["mobile-base-config"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl mobile mobile-base-config create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl mobile mobile-base-config create {name} --namespace {namespace}",
-        description: "Create mobile-base-config",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -13445,18 +11323,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl mobile mobile-base-config create {name} --namespace {namespace}",
-          description: "Create mobile-base-config",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl mobile mobile-base-config create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13518,13 +11384,6 @@ export const shapeTools: ParsedOperation[] = [
       deletes: ["mobile-base-config", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl mobile mobile-base-config delete {name} --namespace {namespace}",
-        description: "Delete mobile-base-config",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -13570,13 +11429,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl mobile mobile-base-config delete {name} --namespace {namespace}",
-          description: "Delete mobile-base-config",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13638,13 +11490,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl mobile mobile-base-config-file get {name} --namespace {namespace}",
-        description: "Get specific mobile-base-config-file",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "App 8000",
@@ -13690,13 +11535,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl mobile mobile-base-config-file get {name} --namespace {namespace}",
-          description: "Get specific mobile-base-config-file",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13775,13 +11613,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl mobile mobile-base-config get {name} --namespace {namespace}",
-        description: "Get specific mobile-base-config",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -13827,13 +11658,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl mobile mobile-base-config get {name} --namespace {namespace}",
-          description: "Get specific mobile-base-config",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13919,13 +11743,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl mobile mobile-base-config list --namespace {namespace}",
-        description: "List all mobile-base-configs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -13971,13 +11788,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl mobile mobile-base-config list --namespace {namespace}",
-          description: "List all mobile-base-configs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14040,14 +11850,6 @@ export const shapeTools: ParsedOperation[] = [
       modifies: ["mobile-base-config"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl mobile mobile-base-config update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update mobile-base-config",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -14093,14 +11895,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl mobile mobile-base-config update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update mobile-base-config",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14197,13 +11991,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl object_store mobile-sdk list --namespace {namespace}",
-        description: "List all mobile-sdks",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Example-file, shared/example-file, example-ns/example-file.",
@@ -14250,13 +12037,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl object_store mobile-sdk list --namespace {namespace}",
-          description: "List all mobile-sdks",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14338,13 +12118,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace", "path.version"],
-    cliExamples: [
-      {
-        command: "f5xcctl object_store mobile-sdk get {name} --namespace {namespace}",
-        description: "Get specific mobile-sdk",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Volt-API-specs.",
@@ -14392,13 +12165,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl object_store mobile-sdk get {name} --namespace {namespace}",
-          description: "Get specific mobile-sdk",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14483,13 +12249,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape networkInteraction get {name} --namespace {namespace}",
-        description: "Get specific networkInteraction",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "1570194300.",
@@ -14537,13 +12296,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape networkInteraction get {name} --namespace {namespace}",
-          description: "Get specific networkInteraction",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14594,18 +12346,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["o"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape o create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape o create {name} --namespace {namespace}",
-        description: "Create o",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -14650,18 +12390,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape o create {name} --namespace {namespace}",
-          description: "Create o",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape o create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14713,18 +12441,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["overview"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape overview create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape overview create {name} --namespace {namespace}",
-        description: "Create overview",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -14769,18 +12485,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape overview create {name} --namespace {namespace}",
-          description: "Create overview",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape overview create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14865,13 +12569,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape overview list --namespace {namespace}",
-        description: "List all overviews",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       from: "1638320400000.",
@@ -14919,13 +12616,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape overview list --namespace {namespace}",
-          description: "List all overviews",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14974,18 +12664,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["personal-stat"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape personal-stat create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape personal-stat create {name} --namespace {namespace}",
-        description: "Create personal-stat",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -15030,18 +12708,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape personal-stat create {name} --namespace {namespace}",
-          description: "Create personal-stat",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape personal-stat create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15093,18 +12759,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["platform"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape platform create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape platform create {name} --namespace {namespace}",
-        description: "Create platform",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -15149,18 +12803,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape platform create {name} --namespace {namespace}",
-          description: "Create platform",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape platform create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15225,18 +12867,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["policie"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape policie create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape policie create {name} --namespace {namespace}",
-        description: "Create policie",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Cluster_1",
@@ -15282,18 +12912,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape policie create {name} --namespace {namespace}",
-          description: "Create policie",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape policie create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15347,18 +12965,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["protected-application"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape protected-application create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape protected-application create {name} --namespace {namespace}",
-        description: "Create protected-application",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -15406,18 +13012,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape protected-application create {name} --namespace {namespace}",
-          description: "Create protected-application",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape protected-application create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15479,13 +13073,6 @@ export const shapeTools: ParsedOperation[] = [
       deletes: ["protected-application", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape protected-application delete {name} --namespace {namespace}",
-        description: "Delete protected-application",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -15531,13 +13118,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl shape protected-application delete {name} --namespace {namespace}",
-          description: "Delete protected-application",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15619,13 +13199,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape protected-application get {name} --namespace {namespace}",
-        description: "Get specific protected-application",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -15671,13 +13244,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape protected-application get {name} --namespace {namespace}",
-          description: "Get specific protected-application",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15763,13 +13329,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape protected-application list --namespace {namespace}",
-        description: "List all protected-applications",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -15815,13 +13374,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape protected-application list --namespace {namespace}",
-          description: "List all protected-applications",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15884,14 +13436,6 @@ export const shapeTools: ParsedOperation[] = [
       modifies: ["protected-application"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl shape protected-application update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update protected-application",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -15937,14 +13481,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl shape protected-application update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update protected-application",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15998,18 +13534,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["protected-domain"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape protected-domain create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape protected-domain create {name} --namespace {namespace}",
-        description: "Create protected-domain",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -16057,18 +13581,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape protected-domain create {name} --namespace {namespace}",
-          description: "Create protected-domain",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape protected-domain create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16130,13 +13642,6 @@ export const shapeTools: ParsedOperation[] = [
       deletes: ["protected-domain", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape protected-domain delete {name} --namespace {namespace}",
-        description: "Delete protected-domain",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -16182,13 +13687,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl shape protected-domain delete {name} --namespace {namespace}",
-          description: "Delete protected-domain",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16269,13 +13767,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape protected-domain get {name} --namespace {namespace}",
-        description: "Get specific protected-domain",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -16321,13 +13812,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape protected-domain get {name} --namespace {namespace}",
-          description: "Get specific protected-domain",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16413,13 +13897,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape protected-domain list --namespace {namespace}",
-        description: "List all protected-domains",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -16465,13 +13942,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape protected-domain list --namespace {namespace}",
-          description: "List all protected-domains",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16522,18 +13992,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["provision"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape provision create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape provision create {name} --namespace {namespace}",
-        description: "Create provision",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -16578,18 +14036,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape provision create {name} --namespace {namespace}",
-          description: "Create provision",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape provision create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16626,13 +14072,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl shape provision list --namespace {namespace}",
-        description: "List all provisions",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -16675,13 +14114,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape provision list --namespace {namespace}",
-          description: "List all provisions",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16743,18 +14175,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["readStatu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape readStatu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape readStatu create {name} --namespace {namespace}",
-        description: "Create readStatu",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       id: "S-1234567",
@@ -16800,18 +14220,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape readStatu create {name} --namespace {namespace}",
-          description: "Create readStatu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape readStatu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16848,13 +14256,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl shape region list --namespace {namespace}",
-        description: "List all regions",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -16897,13 +14298,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape region list --namespace {namespace}",
-          description: "List all regions",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16942,18 +14336,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["rescue"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape rescue create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape rescue create {name} --namespace {namespace}",
-        description: "Create rescue",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -16996,18 +14378,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape rescue create {name} --namespace {namespace}",
-          description: "Create rescue",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape rescue create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17060,18 +14430,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["rule"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape rule create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape rule create {name} --namespace {namespace}",
-        description: "Create rule",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -17116,18 +14474,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape rule create {name} --namespace {namespace}",
-          description: "Create rule",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape rule create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17168,18 +14514,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["safecubejsdata"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape safecubejsdata create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape safecubejsdata create {name} --namespace {namespace}",
-        description: "Create safecubejsdata",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -17222,18 +14556,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape safecubejsdata create {name} --namespace {namespace}",
-          description: "Create safecubejsdata",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape safecubejsdata create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17286,18 +14608,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["script"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape script create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape script create {name} --namespace {namespace}",
-        description: "Create script",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -17342,18 +14652,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape script create {name} --namespace {namespace}",
-          description: "Create script",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape script create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17464,13 +14762,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape script list --namespace {namespace}",
-        description: "List all scripts",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "1570194300.",
@@ -17520,13 +14811,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape script list --namespace {namespace}",
-          description: "List all scripts",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17565,18 +14849,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["session"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape session create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape session create {name} --namespace {namespace}",
-        description: "Create session",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -17619,18 +14891,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape session create {name} --namespace {namespace}",
-          description: "Create session",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape session create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17671,18 +14931,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["src-tag-injection"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape src-tag-injection create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape src-tag-injection create {name} --namespace {namespace}",
-        description: "Create src-tag-injection",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -17728,18 +14976,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape src-tag-injection create {name} --namespace {namespace}",
-          description: "Create src-tag-injection",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape src-tag-injection create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17776,13 +15012,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl shape state list --namespace {namespace}",
-        description: "List all states",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -17825,13 +15054,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape state list --namespace {namespace}",
-          description: "List all states",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17891,18 +15113,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["statu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape statu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape statu create {name} --namespace {namespace}",
-        description: "Create statu",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -17945,18 +15155,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape statu create {name} --namespace {namespace}",
-          description: "Create statu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape statu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18005,13 +15203,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape statu list --namespace {namespace}",
-        description: "List all status",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -18056,13 +15247,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape statu list --namespace {namespace}",
-          description: "List all status",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18101,18 +15285,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["subscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl mobile subscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl mobile subscribe create {name} --namespace {namespace}",
-        description: "Create subscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -18155,18 +15327,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl mobile subscribe create {name} --namespace {namespace}",
-          description: "Create subscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl mobile subscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18220,18 +15380,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["suggest-value"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape suggest-value create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape suggest-value create {name} --namespace {namespace}",
-        description: "Create suggest-value",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Foobar",
@@ -18276,18 +15424,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape suggest-value create {name} --namespace {namespace}",
-          description: "Create suggest-value",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape suggest-value create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18339,18 +15475,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["summary"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape summary create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape summary create {name} --namespace {namespace}",
-        description: "Create summary",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -18395,18 +15519,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape summary create {name} --namespace {namespace}",
-          description: "Create summary",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape summary create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18456,13 +15568,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape summary list --namespace {namespace}",
-        description: "List all summarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -18507,13 +15612,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape summary list --namespace {namespace}",
-          description: "List all summarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18607,13 +15705,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape table list --namespace {namespace}",
-        description: "List all tables",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       action: "Block",
@@ -18662,13 +15753,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape table list --namespace {namespace}",
-          description: "List all tables",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18727,13 +15811,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape template get {name} --namespace {namespace}",
-        description: "Get specific template",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Billing-app.",
@@ -18779,13 +15856,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape template get {name} --namespace {namespace}",
-          description: "Get specific template",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18836,18 +15906,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["testj"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape testj create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape testj create {name} --namespace {namespace}",
-        description: "Create testj",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -18892,18 +15950,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape testj create {name} --namespace {namespace}",
-          description: "Create testj",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape testj create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18942,18 +15988,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["threat-type"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape threat-type create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape threat-type create {name} --namespace {namespace}",
-        description: "Create threat-type",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -18996,18 +16030,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape threat-type create {name} --namespace {namespace}",
-          description: "Create threat-type",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape threat-type create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19059,18 +16081,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["timeserie"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape timeserie create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape timeserie create {name} --namespace {namespace}",
-        description: "Create timeserie",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -19115,18 +16125,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape timeserie create {name} --namespace {namespace}",
-          description: "Create timeserie",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape timeserie create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19165,18 +16163,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["top-good-bot"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape top-good-bot create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape top-good-bot create {name} --namespace {namespace}",
-        description: "Create top-good-bot",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -19219,18 +16205,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape top-good-bot create {name} --namespace {namespace}",
-          description: "Create top-good-bot",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape top-good-bot create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19281,18 +16255,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["top-location"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape top-location create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape top-location create {name} --namespace {namespace}",
-        description: "Create top-location",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -19337,18 +16299,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape top-location create {name} --namespace {namespace}",
-          description: "Create top-location",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape top-location create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19445,13 +16395,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape top-location list --namespace {namespace}",
-        description: "List all top-locations",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       from: "1638320400000.",
@@ -19500,13 +16443,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape top-location list --namespace {namespace}",
-          description: "List all top-locations",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19543,18 +16479,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["top-reason-code"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape top-reason-code create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape top-reason-code create {name} --namespace {namespace}",
-        description: "Create top-reason-code",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -19597,18 +16521,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape top-reason-code create {name} --namespace {namespace}",
-          description: "Create top-reason-code",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape top-reason-code create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19659,18 +16571,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["top-source"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape top-source create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape top-source create {name} --namespace {namespace}",
-        description: "Create top-source",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -19715,18 +16615,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape top-source create {name} --namespace {namespace}",
-          description: "Create top-source",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape top-source create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19823,13 +16711,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape top-source list --namespace {namespace}",
-        description: "List all top-sources",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       from: "1638320400000.",
@@ -19878,13 +16759,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape top-source list --namespace {namespace}",
-          description: "List all top-sources",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19933,18 +16807,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["total-automation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape total-automation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape total-automation create {name} --namespace {namespace}",
-        description: "Create total-automation",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -19992,18 +16854,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape total-automation create {name} --namespace {namespace}",
-          description: "Create total-automation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape total-automation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20044,18 +16894,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["transaction"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape transaction create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape transaction create {name} --namespace {namespace}",
-        description: "Create transaction",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -20098,18 +16936,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape transaction create {name} --namespace {namespace}",
-          description: "Create transaction",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape transaction create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20162,18 +16988,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["transaction-detail"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape transaction-detail create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape transaction-detail create {name} --namespace {namespace}",
-        description: "Create transaction-detail",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -20221,18 +17035,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape transaction-detail create {name} --namespace {namespace}",
-          description: "Create transaction-detail",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape transaction-detail create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20304,13 +17106,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape transaction-detail list --namespace {namespace}",
-        description: "List all transaction-details",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -20357,13 +17152,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape transaction-detail list --namespace {namespace}",
-          description: "List all transaction-details",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20414,18 +17202,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["transaction-device-history"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape transaction-device-history create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape transaction-device-history create {name} --namespace {namespace}",
-        description: "Create transaction-device-history",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -20473,18 +17249,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape transaction-device-history create {name} --namespace {namespace}",
-          description: "Create transaction-device-history",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape transaction-device-history create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20537,18 +17301,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["transaction-location"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape transaction-location create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape transaction-location create {name} --namespace {namespace}",
-        description: "Create transaction-location",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -20596,18 +17348,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape transaction-location create {name} --namespace {namespace}",
-          description: "Create transaction-location",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape transaction-location create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20660,18 +17400,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["transaction-related-session"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape transaction-related-session create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape transaction-related-session create {name} --namespace {namespace}",
-        description: "Create transaction-related-session",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -20719,19 +17447,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl shape transaction-related-session create {name} --namespace {namespace}",
-          description: "Create transaction-related-session",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape transaction-related-session create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20784,18 +17499,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["transaction-timeline"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape transaction-timeline create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape transaction-timeline create {name} --namespace {namespace}",
-        description: "Create transaction-timeline",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -20843,18 +17546,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape transaction-timeline create {name} --namespace {namespace}",
-          description: "Create transaction-timeline",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape transaction-timeline create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20907,18 +17598,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["transactions-csv"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape transactions-csv create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape transactions-csv create {name} --namespace {namespace}",
-        description: "Create transactions-csv",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -20966,18 +17645,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape transactions-csv create {name} --namespace {namespace}",
-          description: "Create transactions-csv",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape transactions-csv create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -21030,18 +17697,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["transactions-over-time"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape transactions-over-time create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape transactions-over-time create {name} --namespace {namespace}",
-        description: "Create transactions-over-time",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -21089,18 +17744,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape transactions-over-time create {name} --namespace {namespace}",
-          description: "Create transactions-over-time",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape transactions-over-time create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -21153,18 +17796,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["ua"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape ua create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape ua create {name} --namespace {namespace}",
-        description: "Create ua",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Payment-app-namespace-1.",
@@ -21209,18 +17840,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape ua create {name} --namespace {namespace}",
-          description: "Create ua",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape ua create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -21272,18 +17891,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["unaddressed-automation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape unaddressed-automation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape unaddressed-automation create {name} --namespace {namespace}",
-        description: "Create unaddressed-automation",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -21331,18 +17938,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape unaddressed-automation create {name} --namespace {namespace}",
-          description: "Create unaddressed-automation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape unaddressed-automation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -21383,18 +17978,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["unique"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape unique create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape unique create {name} --namespace {namespace}",
-        description: "Create unique",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -21437,18 +18020,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape unique create {name} --namespace {namespace}",
-          description: "Create unique",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape unique create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -21489,18 +18060,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["unsubscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl mobile unsubscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl mobile unsubscribe create {name} --namespace {namespace}",
-        description: "Create unsubscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -21543,18 +18102,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl mobile unsubscribe create {name} --namespace {namespace}",
-          description: "Create unsubscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl mobile unsubscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -21607,18 +18154,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["update-domain"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape update-domain create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape update-domain create {name} --namespace {namespace}",
-        description: "Create update-domain",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -21663,18 +18198,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape update-domain create {name} --namespace {namespace}",
-          description: "Create update-domain",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape update-domain create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -21715,18 +18238,6 @@ export const shapeTools: ParsedOperation[] = [
       creates: ["url"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape url create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl shape url create {name} --namespace {namespace}",
-        description: "Create url",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -21769,18 +18280,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl shape url create {name} --namespace {namespace}",
-          description: "Create url",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl shape url create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -21841,13 +18340,6 @@ export const shapeTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl shape version get {name} --namespace {namespace}",
-        description: "Get specific version",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Web_policy.",
@@ -21893,13 +18385,6 @@ export const shapeTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl shape version get {name} --namespace {namespace}",
-          description: "Get specific version",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

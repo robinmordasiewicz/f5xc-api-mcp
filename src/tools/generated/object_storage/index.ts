@@ -90,13 +90,6 @@ export const object_storageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl object_store mobile-app-shield list --namespace {namespace}",
-        description: "List all mobile-app-shields",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Example-file, shared/example-file, example-ns/example-file.",
@@ -143,13 +136,6 @@ export const object_storageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl object_store mobile-app-shield list --namespace {namespace}",
-          description: "List all mobile-app-shields",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -245,13 +231,6 @@ export const object_storageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl object_store mobile-integrator list --namespace {namespace}",
-        description: "List all mobile-integrators",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Example-file, shared/example-file, example-ns/example-file.",
@@ -298,13 +277,6 @@ export const object_storageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl object_store mobile-integrator list --namespace {namespace}",
-          description: "List all mobile-integrators",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -402,13 +374,6 @@ export const object_storageTools: ParsedOperation[] = [
       deletes: ["stored-object", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace", "path.object_type", "path.version"],
-    cliExamples: [
-      {
-        command: "f5xcctl object_store stored-object delete {name} --namespace {namespace}",
-        description: "Delete stored-object",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       force_delete: "Value",
@@ -457,13 +422,6 @@ export const object_storageTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl object_store stored-object delete {name} --namespace {namespace}",
-          description: "Delete stored-object",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -548,13 +506,6 @@ export const object_storageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace", "path.version"],
-    cliExamples: [
-      {
-        command: "f5xcctl object_store mobile-app-shield get {name} --namespace {namespace}",
-        description: "Get specific mobile-app-shield",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Volt-API-specs.",
@@ -602,13 +553,6 @@ export const object_storageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl object_store mobile-app-shield get {name} --namespace {namespace}",
-          description: "Get specific mobile-app-shield",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -705,13 +649,6 @@ export const object_storageTools: ParsedOperation[] = [
       deletes: ["stored-object", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace", "path.object_type"],
-    cliExamples: [
-      {
-        command: "f5xcctl object_store stored-object delete {name} --namespace {namespace}",
-        description: "Delete stored-object",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       force_delete: "Value",
@@ -760,13 +697,6 @@ export const object_storageTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl object_store stored-object delete {name} --namespace {namespace}",
-          description: "Delete stored-object",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -842,14 +772,6 @@ export const object_storageTools: ParsedOperation[] = [
       modifies: ["stored-object"],
     },
     requiredFields: ["path.name", "path.namespace", "path.object_type"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl object_store stored-object update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update stored-object",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Volt-API-specs.",
@@ -896,14 +818,6 @@ export const object_storageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl object_store stored-object update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update stored-object",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1000,13 +914,6 @@ export const object_storageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.object_type"],
-    cliExamples: [
-      {
-        command: "f5xcctl object_store stored-object list --namespace {namespace}",
-        description: "List all stored-objects",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Example-file, shared/example-file, example-ns/example-file.",
@@ -1053,13 +960,6 @@ export const object_storageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl object_store stored-object list --namespace {namespace}",
-          description: "List all stored-objects",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

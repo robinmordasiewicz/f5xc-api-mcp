@@ -41,13 +41,6 @@ export const threat_campaignTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id"],
-    cliExamples: [
-      {
-        command: "f5xcctl waf threat-campaign get {name} --namespace {namespace}",
-        description: "Get specific threat-campaign",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       id: "Cmp5641a5adbeabaf2708ce7663ad937df8.",
@@ -92,13 +85,6 @@ export const threat_campaignTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl waf threat-campaign get {name} --namespace {namespace}",
-          description: "Get specific threat-campaign",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

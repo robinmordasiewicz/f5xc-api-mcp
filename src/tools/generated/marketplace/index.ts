@@ -42,13 +42,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.addon_service"],
-    cliExamples: [
-      {
-        command: "f5xcctl web activation-statu list --namespace {namespace}",
-        description: "List all activation-status",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       addon_service: "Addon-service-1.",
@@ -93,13 +86,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web activation-statu list --namespace {namespace}",
-          description: "List all activation-status",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -146,13 +132,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl web addon-service get {name} --namespace {namespace}",
-        description: "Get specific addon-service",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Addon-service-1.",
@@ -197,13 +176,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web addon-service get {name} --namespace {namespace}",
-          description: "Get specific addon-service",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -289,13 +261,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web addon-service list --namespace {namespace}",
-        description: "List all addon-services",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -341,13 +306,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web addon-service list --namespace {namespace}",
-          description: "List all addon-services",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -399,18 +357,6 @@ export const marketplaceTools: ParsedOperation[] = [
       creates: ["addon-subscription"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web addon-subscription create {name} --namespace {namespace}",
-        description: "Create addon-subscription",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web addon-subscription create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -458,18 +404,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web addon-subscription create {name} --namespace {namespace}",
-          description: "Create addon-subscription",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web addon-subscription create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -531,13 +465,6 @@ export const marketplaceTools: ParsedOperation[] = [
       deletes: ["addon-subscription", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web addon-subscription delete {name} --namespace {namespace}",
-        description: "Delete addon-subscription",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -583,13 +510,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web addon-subscription delete {name} --namespace {namespace}",
-          description: "Delete addon-subscription",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -671,13 +591,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web addon-subscription get {name} --namespace {namespace}",
-        description: "Get specific addon-subscription",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -723,13 +636,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web addon-subscription get {name} --namespace {namespace}",
-          description: "Get specific addon-subscription",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -815,13 +721,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web addon-subscription list --namespace {namespace}",
-        description: "List all addon-subscriptions",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -867,13 +766,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web addon-subscription list --namespace {namespace}",
-          description: "List all addon-subscriptions",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -936,14 +828,6 @@ export const marketplaceTools: ParsedOperation[] = [
       modifies: ["addon-subscription"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl web addon-subscription update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update addon-subscription",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -989,14 +873,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web addon-subscription update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update addon-subscription",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1046,13 +922,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.addon_service"],
-    cliExamples: [
-      {
-        command: "f5xcctl web all-activation-statu list --namespace {namespace}",
-        description: "List all all-activation-status",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       addon_service: "Addon-service-1.",
@@ -1097,13 +966,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web all-activation-statu list --namespace {namespace}",
-          description: "List all all-activation-status",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1155,18 +1017,6 @@ export const marketplaceTools: ParsedOperation[] = [
       creates: ["cminstance"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cminstance create {name} --namespace {namespace}",
-        description: "Create cminstance",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config cminstance create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1211,18 +1061,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config cminstance create {name} --namespace {namespace}",
-          description: "Create cminstance",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config cminstance create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1284,13 +1122,6 @@ export const marketplaceTools: ParsedOperation[] = [
       deletes: ["cminstance", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cminstance delete {name} --namespace {namespace}",
-        description: "Delete cminstance",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1336,13 +1167,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config cminstance delete {name} --namespace {namespace}",
-          description: "Delete cminstance",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1424,13 +1248,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cminstance get {name} --namespace {namespace}",
-        description: "Get specific cminstance",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1476,13 +1293,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cminstance get {name} --namespace {namespace}",
-          description: "Get specific cminstance",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1568,13 +1378,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cminstance list --namespace {namespace}",
-        description: "List all cminstances",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1620,13 +1423,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cminstance list --namespace {namespace}",
-          description: "List all cminstances",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1690,13 +1486,6 @@ export const marketplaceTools: ParsedOperation[] = [
       modifies: ["cminstance"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cminstance update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update cminstance",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1742,13 +1531,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config cminstance update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update cminstance",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1802,18 +1584,6 @@ export const marketplaceTools: ParsedOperation[] = [
       creates: ["external-connector"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config external-connector create {name} --namespace {namespace}",
-        description: "Create external-connector",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config external-connector create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1861,18 +1631,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config external-connector create {name} --namespace {namespace}",
-          description: "Create external-connector",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config external-connector create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1934,13 +1692,6 @@ export const marketplaceTools: ParsedOperation[] = [
       deletes: ["external-connector", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config external-connector delete {name} --namespace {namespace}",
-        description: "Delete external-connector",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1986,13 +1737,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config external-connector delete {name} --namespace {namespace}",
-          description: "Delete external-connector",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2074,13 +1818,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config external-connector get {name} --namespace {namespace}",
-        description: "Get specific external-connector",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2126,13 +1863,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config external-connector get {name} --namespace {namespace}",
-          description: "Get specific external-connector",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2218,13 +1948,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config external-connector list --namespace {namespace}",
-        description: "List all external-connectors",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2270,13 +1993,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config external-connector list --namespace {namespace}",
-          description: "List all external-connectors",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2339,14 +2055,6 @@ export const marketplaceTools: ParsedOperation[] = [
       modifies: ["external-connector"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config external-connector update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update external-connector",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2392,14 +2100,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config external-connector update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update external-connector",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2481,18 +2181,6 @@ export const marketplaceTools: ParsedOperation[] = [
       "path.view_kind",
       "path.view_name",
     ],
-    cliExamples: [
-      {
-        command: "f5xcctl terraform force-delete create {name} --namespace {namespace}",
-        description: "Create force-delete",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl terraform force-delete create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -2539,18 +2227,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl terraform force-delete create {name} --namespace {namespace}",
-          description: "Create force-delete",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl terraform force-delete create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2617,13 +2293,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config generate-token get {name} --namespace {namespace}",
-        description: "Get specific generate-token",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Vs1",
@@ -2669,13 +2338,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config generate-token get {name} --namespace {namespace}",
-          description: "Get specific generate-token",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2727,18 +2389,6 @@ export const marketplaceTools: ParsedOperation[] = [
       creates: ["get-security-config"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config get-security-config create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config get-security-config create {name} --namespace {namespace}",
-        description: "Create get-security-config",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -2786,18 +2436,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config get-security-config create {name} --namespace {namespace}",
-          description: "Create get-security-config",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config get-security-config create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2878,13 +2516,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web navigation-tile get {name} --namespace {namespace}",
-        description: "Get specific navigation-tile",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2930,13 +2561,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web navigation-tile get {name} --namespace {namespace}",
-          description: "Get specific navigation-tile",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3022,13 +2646,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web navigation-tile list --namespace {namespace}",
-        description: "List all navigation-tiles",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3074,13 +2691,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web navigation-tile list --namespace {namespace}",
-          description: "List all navigation-tiles",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3158,13 +2768,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web plan get {name} --namespace {namespace}",
-        description: "Get specific plan",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3210,13 +2813,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web plan get {name} --namespace {namespace}",
-          description: "Get specific plan",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3302,13 +2898,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web plan list --namespace {namespace}",
-        description: "List all plans",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3354,13 +2943,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web plan list --namespace {namespace}",
-          description: "List all plans",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3399,18 +2981,6 @@ export const marketplaceTools: ParsedOperation[] = [
       creates: ["register"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl default register create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl default register create {name} --namespace {namespace}",
-        description: "Create register",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -3453,18 +3023,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl default register create {name} --namespace {namespace}",
-          description: "Create register",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl default register create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3515,13 +3073,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl default registration-detail list --namespace {namespace}",
-        description: "List all registration-details",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       token:
@@ -3567,13 +3118,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl default registration-detail list --namespace {namespace}",
-          description: "List all registration-details",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3654,18 +3198,6 @@ export const marketplaceTools: ParsedOperation[] = [
       "path.view_kind",
       "path.view_name",
     ],
-    cliExamples: [
-      {
-        command: "f5xcctl terraform run create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl terraform run create {name} --namespace {namespace}",
-        description: "Create run",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -3712,18 +3244,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl terraform run create {name} --namespace {namespace}",
-          description: "Create run",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl terraform run create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3771,18 +3291,6 @@ export const marketplaceTools: ParsedOperation[] = [
       creates: ["send-email"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl default send-email create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl default send-email create {name} --namespace {namespace}",
-        description: "Create send-email",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -3825,18 +3333,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl default send-email create {name} --namespace {namespace}",
-          description: "Create send-email",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl default send-email create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3877,18 +3373,6 @@ export const marketplaceTools: ParsedOperation[] = [
       creates: ["signup"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl default signup create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl default signup create {name} --namespace {namespace}",
-        description: "Create signup",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -3931,18 +3415,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl default signup create {name} --namespace {namespace}",
-          description: "Create signup",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl default signup create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4014,13 +3486,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.view_kind", "path.view_name"],
-    cliExamples: [
-      {
-        command: "f5xcctl config statu list --namespace {namespace}",
-        description: "List all status",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -4067,13 +3532,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config statu list --namespace {namespace}",
-          description: "List all status",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4152,13 +3610,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config third-party-application get {name} --namespace {namespace}",
-        description: "Get specific third-party-application",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4204,13 +3655,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config third-party-application get {name} --namespace {namespace}",
-          description: "Get specific third-party-application",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4296,13 +3740,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config third-party-application list --namespace {namespace}",
-        description: "List all third-party-applications",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4348,13 +3785,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config third-party-application list --namespace {namespace}",
-          description: "List all third-party-applications",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4417,14 +3847,6 @@ export const marketplaceTools: ParsedOperation[] = [
       modifies: ["third-party-application"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config third-party-application update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update third-party-application",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4470,14 +3892,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config third-party-application update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update third-party-application",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4549,13 +3963,6 @@ export const marketplaceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.view_kind", "path.view_name"],
-    cliExamples: [
-      {
-        command: "f5xcctl config terraform-parameter list --namespace {namespace}",
-        description: "List all terraform-parameters",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -4602,13 +4009,6 @@ export const marketplaceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config terraform-parameter list --namespace {namespace}",
-          description: "List all terraform-parameters",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

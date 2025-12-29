@@ -281,7 +281,6 @@ describe("Dual-Mode Operation Contract", () => {
           namespace: { type: "string", required: true },
           name: { type: "string", required: true },
         },
-        f5xcctl_command: "f5xcctl apply -f config.yaml",
         terraform_resource: "volterra_http_loadbalancer",
         terraform_example: 'resource "volterra_http_loadbalancer" "example" {...}',
         prerequisites: ["namespace must exist"],
@@ -289,7 +288,6 @@ describe("Dual-Mode Operation Contract", () => {
       };
 
       expect(docResponse.mode).toBe("documentation");
-      expect(docResponse.f5xcctl_command).toBeDefined();
       expect(docResponse.terraform_resource).toBeDefined();
     });
   });

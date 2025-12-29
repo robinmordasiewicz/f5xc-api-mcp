@@ -47,18 +47,6 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
       creates: ["malicious-user-mitigation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config malicious-user-mitigation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config malicious-user-mitigation create {name} --namespace {namespace}",
-        description: "Create malicious-user-mitigation",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -106,18 +94,6 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config malicious-user-mitigation create {name} --namespace {namespace}",
-          description: "Create malicious-user-mitigation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config malicious-user-mitigation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -179,13 +155,6 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
       deletes: ["malicious-user-mitigation", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config malicious-user-mitigation delete {name} --namespace {namespace}",
-        description: "Delete malicious-user-mitigation",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -231,13 +200,6 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config malicious-user-mitigation delete {name} --namespace {namespace}",
-          description: "Delete malicious-user-mitigation",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -320,13 +282,6 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config malicious-user-mitigation get {name} --namespace {namespace}",
-        description: "Get specific malicious-user-mitigation",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -372,13 +327,6 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config malicious-user-mitigation get {name} --namespace {namespace}",
-          description: "Get specific malicious-user-mitigation",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -464,13 +412,6 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config malicious-user-mitigation list --namespace {namespace}",
-        description: "List all malicious-user-mitigations",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -516,13 +457,6 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config malicious-user-mitigation list --namespace {namespace}",
-          description: "List all malicious-user-mitigations",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -586,14 +520,6 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
       modifies: ["malicious-user-mitigation"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config malicious-user-mitigation update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update malicious-user-mitigation",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -639,14 +565,6 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config malicious-user-mitigation update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update malicious-user-mitigation",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

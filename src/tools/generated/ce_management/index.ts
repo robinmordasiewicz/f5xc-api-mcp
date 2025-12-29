@@ -59,18 +59,6 @@ export const ce_managementTools: ParsedOperation[] = [
       creates: ["approve"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register approve create {name} --namespace {namespace}",
-        description: "Create approve",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl register approve create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "R-e9030963-639e-41cd-aba6-261504f4a6be.",
@@ -116,18 +104,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl register approve create {name} --namespace {namespace}",
-          description: "Create approve",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl register approve create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -181,18 +157,6 @@ export const ce_managementTools: ParsedOperation[] = [
       creates: ["fleet"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fleet create {name} --namespace {namespace}",
-        description: "Create fleet",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config fleet create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -237,18 +201,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config fleet create {name} --namespace {namespace}",
-          description: "Create fleet",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config fleet create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -310,13 +262,6 @@ export const ce_managementTools: ParsedOperation[] = [
       deletes: ["fleet", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fleet delete {name} --namespace {namespace}",
-        description: "Delete fleet",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -362,13 +307,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config fleet delete {name} --namespace {namespace}",
-          description: "Delete fleet",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -450,13 +388,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fleet get {name} --namespace {namespace}",
-        description: "Get specific fleet",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -502,13 +433,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config fleet get {name} --namespace {namespace}",
-          description: "Get specific fleet",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -594,13 +518,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fleet list --namespace {namespace}",
-        description: "List all fleets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -646,13 +563,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config fleet list --namespace {namespace}",
-          description: "List all fleets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -715,13 +625,6 @@ export const ce_managementTools: ParsedOperation[] = [
       modifies: ["fleet"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fleet update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update fleet",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -767,13 +670,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config fleet update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update fleet",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -814,18 +710,6 @@ export const ce_managementTools: ParsedOperation[] = [
       creates: ["get-image-download-url"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register get-image-download-url create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl register get-image-download-url create {name} --namespace {namespace}",
-        description: "Create get-image-download-url",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -871,18 +755,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl register get-image-download-url create {name} --namespace {namespace}",
-          description: "Create get-image-download-url",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl register get-image-download-url create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -923,19 +795,6 @@ export const ce_managementTools: ParsedOperation[] = [
       creates: ["get-registrations-by-token"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register get-registrations-by-token create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl register get-registrations-by-token create {name} --namespace {namespace}",
-        description: "Create get-registrations-by-token",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -981,19 +840,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl register get-registrations-by-token create {name} --namespace {namespace}",
-          description: "Create get-registrations-by-token",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl register get-registrations-by-token create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1048,18 +894,6 @@ export const ce_managementTools: ParsedOperation[] = [
       creates: ["listregistrationsbystate"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register listregistrationsbystate create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl register listregistrationsbystate create {name} --namespace {namespace}",
-        description: "Create listregistrationsbystate",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -1107,19 +941,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl register listregistrationsbystate create {name} --namespace {namespace}",
-          description: "Create listregistrationsbystate",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl register listregistrationsbystate create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1174,18 +995,6 @@ export const ce_managementTools: ParsedOperation[] = [
       creates: ["network-interface"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-interface create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config network-interface create {name} --namespace {namespace}",
-        description: "Create network-interface",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1233,18 +1042,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config network-interface create {name} --namespace {namespace}",
-          description: "Create network-interface",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config network-interface create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1306,13 +1103,6 @@ export const ce_managementTools: ParsedOperation[] = [
       deletes: ["network-interface", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-interface delete {name} --namespace {namespace}",
-        description: "Delete network-interface",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1358,13 +1148,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config network-interface delete {name} --namespace {namespace}",
-          description: "Delete network-interface",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1446,13 +1229,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-interface get {name} --namespace {namespace}",
-        description: "Get specific network-interface",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1498,13 +1274,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-interface get {name} --namespace {namespace}",
-          description: "Get specific network-interface",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1590,13 +1359,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-interface list --namespace {namespace}",
-        description: "List all network-interfaces",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1642,13 +1404,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-interface list --namespace {namespace}",
-          description: "List all network-interfaces",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1712,14 +1467,6 @@ export const ce_managementTools: ParsedOperation[] = [
       modifies: ["network-interface"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config network-interface update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update network-interface",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1765,14 +1512,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config network-interface update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update network-interface",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1844,13 +1583,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl maurice pre-upgrade-check get {name} --namespace {namespace}",
-        description: "Get specific pre-upgrade-check",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Blogging-app.",
@@ -1897,13 +1629,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl maurice pre-upgrade-check get {name} --namespace {namespace}",
-          description: "Get specific pre-upgrade-check",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1943,18 +1668,6 @@ export const ce_managementTools: ParsedOperation[] = [
       creates: ["registerBootstrap"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register registerBootstrap create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl register registerBootstrap create {name} --namespace {namespace}",
-        description: "Create registerBootstrap",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2000,18 +1713,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl register registerBootstrap create {name} --namespace {namespace}",
-          description: "Create registerBootstrap",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl register registerBootstrap create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2065,18 +1766,6 @@ export const ce_managementTools: ParsedOperation[] = [
       creates: ["registration"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register registration create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl register registration create {name} --namespace {namespace}",
-        description: "Create registration",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2121,18 +1810,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl register registration create {name} --namespace {namespace}",
-          description: "Create registration",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl register registration create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2204,13 +1881,6 @@ export const ce_managementTools: ParsedOperation[] = [
       deletes: ["registration", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register registration delete {name} --namespace {namespace}",
-        description: "Delete registration",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2256,13 +1926,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl register registration delete {name} --namespace {namespace}",
-          description: "Delete registration",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2343,13 +2006,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register registration get {name} --namespace {namespace}",
-        description: "Get specific registration",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2395,13 +2051,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl register registration get {name} --namespace {namespace}",
-          description: "Get specific registration",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2487,13 +2136,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register registration list --namespace {namespace}",
-        description: "List all registrations",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2539,13 +2181,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl register registration list --namespace {namespace}",
-          description: "List all registrations",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2608,14 +2243,6 @@ export const ce_managementTools: ParsedOperation[] = [
       modifies: ["registration"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl register registration update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update registration",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2661,14 +2288,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl register registration update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update registration",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2729,13 +2348,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site_name"],
-    cliExamples: [
-      {
-        command: "f5xcctl register registrations-by-site list --namespace {namespace}",
-        description: "List all registrations-by-sites",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -2781,13 +2393,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl register registrations-by-site list --namespace {namespace}",
-          description: "List all registrations-by-sites",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2827,18 +2432,6 @@ export const ce_managementTools: ParsedOperation[] = [
       creates: ["requestConfig"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register requestConfig create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl register requestConfig create {name} --namespace {namespace}",
-        description: "Create requestConfig",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2881,18 +2474,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl register requestConfig create {name} --namespace {namespace}",
-          description: "Create requestConfig",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl register requestConfig create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2941,13 +2522,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config setting list --namespace {namespace}",
-        description: "List all settings",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -2992,13 +2566,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config setting list --namespace {namespace}",
-          description: "List all settings",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3038,18 +2605,6 @@ export const ce_managementTools: ParsedOperation[] = [
       creates: ["suggest-value"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register suggest-value create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl register suggest-value create {name} --namespace {namespace}",
-        description: "Create suggest-value",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -3092,18 +2647,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl register suggest-value create {name} --namespace {namespace}",
-          description: "Create suggest-value",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl register suggest-value create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3163,13 +2706,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl maurice upgradable-sw-version list --namespace {namespace}",
-        description: "List all upgradable-sw-versions",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       current_os_version: "9.2023.23",
@@ -3215,13 +2751,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl maurice upgradable-sw-version list --namespace {namespace}",
-          description: "List all upgradable-sw-versions",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3279,13 +2808,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl maurice upgrade-statu get {name} --namespace {namespace}",
-        description: "Get specific upgrade-statu",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Blogging-app.",
@@ -3331,13 +2853,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl maurice upgrade-statu get {name} --namespace {namespace}",
-          description: "Get specific upgrade-statu",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3389,18 +2904,6 @@ export const ce_managementTools: ParsedOperation[] = [
       creates: ["usb-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config usb-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config usb-policy create {name} --namespace {namespace}",
-        description: "Create usb-policy",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3445,18 +2948,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config usb-policy create {name} --namespace {namespace}",
-          description: "Create usb-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config usb-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3518,13 +3009,6 @@ export const ce_managementTools: ParsedOperation[] = [
       deletes: ["usb-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config usb-policy delete {name} --namespace {namespace}",
-        description: "Delete usb-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3570,13 +3054,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config usb-policy delete {name} --namespace {namespace}",
-          description: "Delete usb-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3658,13 +3135,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config usb-policy get {name} --namespace {namespace}",
-        description: "Get specific usb-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3710,13 +3180,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config usb-policy get {name} --namespace {namespace}",
-          description: "Get specific usb-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3802,13 +3265,6 @@ export const ce_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config usb-policy list --namespace {namespace}",
-        description: "List all usb-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3854,13 +3310,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config usb-policy list --namespace {namespace}",
-          description: "List all usb-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3923,13 +3372,6 @@ export const ce_managementTools: ParsedOperation[] = [
       modifies: ["usb-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config usb-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update usb-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3975,13 +3417,6 @@ export const ce_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config usb-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update usb-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

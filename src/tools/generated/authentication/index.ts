@@ -32,18 +32,6 @@ export const authenticationTools: ParsedOperation[] = [
       creates: ["api-credential"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web api-credential create {name} --namespace {namespace}",
-        description: "Create api-credential",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web api-credential create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -86,18 +74,6 @@ export const authenticationTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web api-credential create {name} --namespace {namespace}",
-          description: "Create api-credential",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web api-credential create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -158,13 +134,6 @@ export const authenticationTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web api-credential get {name} --namespace {namespace}",
-        description: "Get specific api-credential",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -210,13 +179,6 @@ export const authenticationTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web api-credential get {name} --namespace {namespace}",
-          description: "Get specific api-credential",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -264,13 +226,6 @@ export const authenticationTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web api-credential list --namespace {namespace}",
-        description: "List all api-credentials",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -315,13 +270,6 @@ export const authenticationTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web api-credential list --namespace {namespace}",
-          description: "List all api-credentials",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -372,18 +320,6 @@ export const authenticationTools: ParsedOperation[] = [
       creates: ["scim-token"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web scim-token create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web scim-token create {name} --namespace {namespace}",
-        description: "Create scim-token",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -428,18 +364,6 @@ export const authenticationTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web scim-token create {name} --namespace {namespace}",
-          description: "Create scim-token",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web scim-token create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -489,13 +413,6 @@ export const authenticationTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web scim-token list --namespace {namespace}",
-        description: "List all scim-tokens",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -540,13 +457,6 @@ export const authenticationTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web scim-token list --namespace {namespace}",
-          description: "List all scim-tokens",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -584,18 +494,6 @@ export const authenticationTools: ParsedOperation[] = [
       creates: ["service-credential"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web service-credential create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web service-credential create {name} --namespace {namespace}",
-        description: "Create service-credential",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -641,18 +539,6 @@ export const authenticationTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web service-credential create {name} --namespace {namespace}",
-          description: "Create service-credential",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web service-credential create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -713,13 +599,6 @@ export const authenticationTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web service-credential get {name} --namespace {namespace}",
-        description: "Get specific service-credential",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -765,13 +644,6 @@ export const authenticationTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web service-credential get {name} --namespace {namespace}",
-          description: "Get specific service-credential",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -818,13 +690,6 @@ export const authenticationTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web service-credential list --namespace {namespace}",
-        description: "List all service-credentials",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -869,13 +734,6 @@ export const authenticationTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web service-credential list --namespace {namespace}",
-          description: "List all service-credentials",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -939,14 +797,6 @@ export const authenticationTools: ParsedOperation[] = [
       modifies: ["service-credential"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl web service-credential update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update service-credential",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "API-cred-73c7cbd9-1342-4ce0-97a5-6c515c0b147a.",
@@ -992,14 +842,6 @@ export const authenticationTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web service-credential update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update service-credential",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

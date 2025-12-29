@@ -46,18 +46,6 @@ export const certificatesTools: ParsedOperation[] = [
       creates: ["certificate-chain"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config certificate-chain create {name} --namespace {namespace}",
-        description: "Create certificate-chain",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config certificate-chain create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -105,18 +93,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config certificate-chain create {name} --namespace {namespace}",
-          description: "Create certificate-chain",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config certificate-chain create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -178,13 +154,6 @@ export const certificatesTools: ParsedOperation[] = [
       deletes: ["certificate-chain", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config certificate-chain delete {name} --namespace {namespace}",
-        description: "Delete certificate-chain",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -230,13 +199,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config certificate-chain delete {name} --namespace {namespace}",
-          description: "Delete certificate-chain",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -318,13 +280,6 @@ export const certificatesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config certificate-chain get {name} --namespace {namespace}",
-        description: "Get specific certificate-chain",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -370,13 +325,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config certificate-chain get {name} --namespace {namespace}",
-          description: "Get specific certificate-chain",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -462,13 +410,6 @@ export const certificatesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config certificate-chain list --namespace {namespace}",
-        description: "List all certificate-chains",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -514,13 +455,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config certificate-chain list --namespace {namespace}",
-          description: "List all certificate-chains",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -583,14 +517,6 @@ export const certificatesTools: ParsedOperation[] = [
       modifies: ["certificate-chain"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config certificate-chain update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update certificate-chain",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -636,14 +562,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config certificate-chain update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update certificate-chain",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -697,18 +615,6 @@ export const certificatesTools: ParsedOperation[] = [
       creates: ["certificate"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config certificate create {name} --namespace {namespace}",
-        description: "Create certificate",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config certificate create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -753,18 +659,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config certificate create {name} --namespace {namespace}",
-          description: "Create certificate",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config certificate create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -826,13 +720,6 @@ export const certificatesTools: ParsedOperation[] = [
       deletes: ["certificate", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config certificate delete {name} --namespace {namespace}",
-        description: "Delete certificate",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -878,13 +765,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config certificate delete {name} --namespace {namespace}",
-          description: "Delete certificate",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -966,13 +846,6 @@ export const certificatesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config certificate get {name} --namespace {namespace}",
-        description: "Get specific certificate",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1018,13 +891,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config certificate get {name} --namespace {namespace}",
-          description: "Get specific certificate",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1110,13 +976,6 @@ export const certificatesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config certificate list --namespace {namespace}",
-        description: "List all certificates",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1162,13 +1021,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config certificate list --namespace {namespace}",
-          description: "List all certificates",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1231,13 +1083,6 @@ export const certificatesTools: ParsedOperation[] = [
       modifies: ["certificate"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config certificate update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update certificate",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1283,14 +1128,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config certificate update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update certificate",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1344,18 +1181,6 @@ export const certificatesTools: ParsedOperation[] = [
       creates: ["crl"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config crl create {name} --namespace {namespace}",
-        description: "Create crl",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config crl create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1400,18 +1225,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config crl create {name} --namespace {namespace}",
-          description: "Create crl",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config crl create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1473,13 +1286,6 @@ export const certificatesTools: ParsedOperation[] = [
       deletes: ["crl", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config crl delete {name} --namespace {namespace}",
-        description: "Delete crl",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1525,13 +1331,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config crl delete {name} --namespace {namespace}",
-          description: "Delete crl",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1613,13 +1412,6 @@ export const certificatesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config crl get {name} --namespace {namespace}",
-        description: "Get specific crl",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1665,13 +1457,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config crl get {name} --namespace {namespace}",
-          description: "Get specific crl",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1757,13 +1542,6 @@ export const certificatesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config crl list --namespace {namespace}",
-        description: "List all crls",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1809,13 +1587,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config crl list --namespace {namespace}",
-          description: "List all crls",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1878,13 +1649,6 @@ export const certificatesTools: ParsedOperation[] = [
       modifies: ["crl"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config crl update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update crl",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1930,13 +1694,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config crl update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update crl",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1990,18 +1747,6 @@ export const certificatesTools: ParsedOperation[] = [
       creates: ["trusted-ca-list"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config trusted-ca-list create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config trusted-ca-list create {name} --namespace {namespace}",
-        description: "Create trusted-ca-list",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2046,18 +1791,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config trusted-ca-list create {name} --namespace {namespace}",
-          description: "Create trusted-ca-list",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config trusted-ca-list create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2119,13 +1852,6 @@ export const certificatesTools: ParsedOperation[] = [
       deletes: ["trusted-ca-list", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config trusted-ca-list delete {name} --namespace {namespace}",
-        description: "Delete trusted-ca-list",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2171,13 +1897,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config trusted-ca-list delete {name} --namespace {namespace}",
-          description: "Delete trusted-ca-list",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2259,13 +1978,6 @@ export const certificatesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config trusted-ca-list get {name} --namespace {namespace}",
-        description: "Get specific trusted-ca-list",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2311,13 +2023,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config trusted-ca-list get {name} --namespace {namespace}",
-          description: "Get specific trusted-ca-list",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2403,13 +2108,6 @@ export const certificatesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config trusted-ca-list list --namespace {namespace}",
-        description: "List all trusted-ca-lists",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2455,13 +2153,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config trusted-ca-list list --namespace {namespace}",
-          description: "List all trusted-ca-lists",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2524,14 +2215,6 @@ export const certificatesTools: ParsedOperation[] = [
       modifies: ["trusted-ca-list"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config trusted-ca-list update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update trusted-ca-list",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2577,14 +2260,6 @@ export const certificatesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config trusted-ca-list update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update trusted-ca-list",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

@@ -46,18 +46,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       creates: ["policer"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config policer create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config policer create {name} --namespace {namespace}",
-        description: "Create policer",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -102,18 +90,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config policer create {name} --namespace {namespace}",
-          description: "Create policer",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config policer create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -175,13 +151,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       deletes: ["policer", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config policer delete {name} --namespace {namespace}",
-        description: "Delete policer",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -227,13 +196,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config policer delete {name} --namespace {namespace}",
-          description: "Delete policer",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -315,13 +277,6 @@ export const rate_limitingTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config policer get {name} --namespace {namespace}",
-        description: "Get specific policer",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -367,13 +322,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config policer get {name} --namespace {namespace}",
-          description: "Get specific policer",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -459,13 +407,6 @@ export const rate_limitingTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config policer list --namespace {namespace}",
-        description: "List all policers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -511,13 +452,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config policer list --namespace {namespace}",
-          description: "List all policers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -580,13 +514,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       modifies: ["policer"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config policer update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update policer",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -632,13 +559,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config policer update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update policer",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -693,18 +613,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       creates: ["protocol-policer"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config protocol-policer create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config protocol-policer create {name} --namespace {namespace}",
-        description: "Create protocol-policer",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -752,18 +660,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config protocol-policer create {name} --namespace {namespace}",
-          description: "Create protocol-policer",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config protocol-policer create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -825,13 +721,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       deletes: ["protocol-policer", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config protocol-policer delete {name} --namespace {namespace}",
-        description: "Delete protocol-policer",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -877,13 +766,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config protocol-policer delete {name} --namespace {namespace}",
-          description: "Delete protocol-policer",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -966,13 +848,6 @@ export const rate_limitingTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config protocol-policer get {name} --namespace {namespace}",
-        description: "Get specific protocol-policer",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1018,13 +893,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config protocol-policer get {name} --namespace {namespace}",
-          description: "Get specific protocol-policer",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1110,13 +978,6 @@ export const rate_limitingTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config protocol-policer list --namespace {namespace}",
-        description: "List all protocol-policers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1162,13 +1023,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config protocol-policer list --namespace {namespace}",
-          description: "List all protocol-policers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1232,14 +1086,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       modifies: ["protocol-policer"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config protocol-policer update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update protocol-policer",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1285,14 +1131,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config protocol-policer update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update protocol-policer",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1347,18 +1185,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       creates: ["rate-limiter"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config rate-limiter create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config rate-limiter create {name} --namespace {namespace}",
-        description: "Create rate-limiter",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1403,18 +1229,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config rate-limiter create {name} --namespace {namespace}",
-          description: "Create rate-limiter",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config rate-limiter create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1476,13 +1290,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       deletes: ["rate-limiter", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config rate-limiter delete {name} --namespace {namespace}",
-        description: "Delete rate-limiter",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1528,13 +1335,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config rate-limiter delete {name} --namespace {namespace}",
-          description: "Delete rate-limiter",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1617,13 +1417,6 @@ export const rate_limitingTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config rate-limiter get {name} --namespace {namespace}",
-        description: "Get specific rate-limiter",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1669,13 +1462,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config rate-limiter get {name} --namespace {namespace}",
-          description: "Get specific rate-limiter",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1761,13 +1547,6 @@ export const rate_limitingTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config rate-limiter list --namespace {namespace}",
-        description: "List all rate-limiters",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1813,13 +1592,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config rate-limiter list --namespace {namespace}",
-          description: "List all rate-limiters",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1883,13 +1655,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       modifies: ["rate-limiter"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config rate-limiter update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update rate-limiter",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1935,14 +1700,6 @@ export const rate_limitingTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config rate-limiter update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update rate-limiter",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

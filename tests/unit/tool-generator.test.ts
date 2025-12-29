@@ -61,7 +61,6 @@ describe("tool-generator", () => {
         parameters: [],
         requestBody: null,
         exampleRequest: null,
-        f5xcctlCommand: "f5xcctl apply -f http_loadbalancer.yaml",
         terraformResource: "volterra_http_loadbalancer",
         terraformExample: "resource block",
         prerequisites: [],
@@ -151,33 +150,6 @@ describe("tool-generator", () => {
 
       expect(operation.requestBodySchema).not.toBeNull();
       expect(operation.requiredParams).toContain("body");
-    });
-  });
-
-  describe("F5xcctl Command Generation Logic", () => {
-    it("should format list command correctly", () => {
-      // Test the expected output format for list operations
-      const expectedPattern = /f5xcctl get \w+s -n \{namespace\}/;
-      const listCommand = "f5xcctl get http_loadbalancers -n {namespace}";
-      expect(listCommand).toMatch(expectedPattern);
-    });
-
-    it("should format get command correctly", () => {
-      const expectedPattern = /f5xcctl get \w+ \{name\} -n \{namespace\}/;
-      const getCommand = "f5xcctl get http_loadbalancer {name} -n {namespace}";
-      expect(getCommand).toMatch(expectedPattern);
-    });
-
-    it("should format create command correctly", () => {
-      const createCommand = "f5xcctl apply -f http_loadbalancer.yaml";
-      expect(createCommand).toContain("apply");
-      expect(createCommand).toContain("-f");
-    });
-
-    it("should format delete command correctly", () => {
-      const expectedPattern = /f5xcctl delete \w+ \{name\} -n \{namespace\}/;
-      const deleteCommand = "f5xcctl delete http_loadbalancer {name} -n {namespace}";
-      expect(deleteCommand).toMatch(expectedPattern);
     });
   });
 
@@ -679,7 +651,6 @@ describe("tool-generator", () => {
         const response = JSON.parse(result.content[0].text) as DocumentationResponse;
         expect(response.mode).toBe("documentation");
         expect(response.tool).toBe(operation.toolName);
-        expect(response.f5xcctlCommand).toContain("f5xcctl");
         expect(response.terraformResource).toContain("volterra_");
       });
 
@@ -1335,163 +1306,6 @@ describe("tool-generator", () => {
       });
     });
 
-    describe("f5xcctl command generation", () => {
-      it("should generate list command", async () => {
-        mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
-
-        const operation = createMockParsedOperation({
-          operation: "list",
-          resource: "http-loadbalancer",
-          domain: "load_balancer",
-        });
-
-        registerTool(
-          mockServer as unknown as McpServer,
-          operation,
-          mockCredentialManager as unknown as CredentialManager,
-          null
-        );
-
-        const handler = mockServer.tool.mock.calls[0][3] as (
-          params: Record<string, unknown>
-        ) => Promise<{ content: Array<{ type: string; text: string }> }>;
-
-        const result = await handler({});
-
-        const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl load_balancer list http_loadbalancer -n {namespace}");
-      });
-
-      it("should generate get command", async () => {
-        mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
-
-        const operation = createMockParsedOperation({
-          operation: "get",
-          resource: "http-loadbalancer",
-          domain: "load_balancer",
-        });
-
-        registerTool(
-          mockServer as unknown as McpServer,
-          operation,
-          mockCredentialManager as unknown as CredentialManager,
-          null
-        );
-
-        const handler = mockServer.tool.mock.calls[0][3] as (
-          params: Record<string, unknown>
-        ) => Promise<{ content: Array<{ type: string; text: string }> }>;
-
-        const result = await handler({});
-
-        const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl load_balancer get http_loadbalancer {name} -n {namespace}");
-      });
-
-      it("should generate delete command", async () => {
-        mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
-
-        const operation = createMockParsedOperation({
-          operation: "delete",
-          resource: "http-loadbalancer",
-          domain: "load_balancer",
-        });
-
-        registerTool(
-          mockServer as unknown as McpServer,
-          operation,
-          mockCredentialManager as unknown as CredentialManager,
-          null
-        );
-
-        const handler = mockServer.tool.mock.calls[0][3] as (
-          params: Record<string, unknown>
-        ) => Promise<{ content: Array<{ type: string; text: string }> }>;
-
-        const result = await handler({});
-
-        const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl load_balancer delete http_loadbalancer {name} -n {namespace}");
-      });
-
-      it("should generate default command for unknown operations", async () => {
-        mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
-
-        const operation = createMockParsedOperation({
-          operation: "custom",
-          resource: "test",
-        });
-
-        registerTool(
-          mockServer as unknown as McpServer,
-          operation,
-          mockCredentialManager as unknown as CredentialManager,
-          null
-        );
-
-        const handler = mockServer.tool.mock.calls[0][3] as (
-          params: Record<string, unknown>
-        ) => Promise<{ content: Array<{ type: string; text: string }> }>;
-
-        const result = await handler({});
-
-        const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl core custom test");
-      });
-
-      it("should generate create command for create operations", async () => {
-        mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
-
-        const operation = createMockParsedOperation({
-          operation: "create",
-          resource: "http-loadbalancer",
-          domain: "load_balancer",
-        });
-
-        registerTool(
-          mockServer as unknown as McpServer,
-          operation,
-          mockCredentialManager as unknown as CredentialManager,
-          null
-        );
-
-        const handler = mockServer.tool.mock.calls[0][3] as (
-          params: Record<string, unknown>
-        ) => Promise<{ content: Array<{ type: string; text: string }> }>;
-
-        const result = await handler({});
-
-        const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl load_balancer create http_loadbalancer -n {namespace} -i http_loadbalancer.yaml");
-      });
-
-      it("should generate update command for update operations", async () => {
-        mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
-
-        const operation = createMockParsedOperation({
-          operation: "update",
-          resource: "http-loadbalancer",
-          domain: "load_balancer",
-        });
-
-        registerTool(
-          mockServer as unknown as McpServer,
-          operation,
-          mockCredentialManager as unknown as CredentialManager,
-          null
-        );
-
-        const handler = mockServer.tool.mock.calls[0][3] as (
-          params: Record<string, unknown>
-        ) => Promise<{ content: Array<{ type: string; text: string }> }>;
-
-        const result = await handler({});
-
-        const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.f5xcctlCommand).toBe("f5xcctl load_balancer apply http_loadbalancer -n {namespace} -i http_loadbalancer.yaml");
-      });
-    });
-
     describe("path parameters in documentation", () => {
       it("should include path parameters in documentation response", async () => {
         mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
@@ -1771,7 +1585,6 @@ function createMockParsedOperation(
     dangerLevel: null,
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},

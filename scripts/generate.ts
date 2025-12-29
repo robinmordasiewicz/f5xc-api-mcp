@@ -124,11 +124,6 @@ function generateDomainFile(
 
     // Sort new rich metadata arrays for deterministic output
     const sortedRequiredFields = [...op.requiredFields].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
-    const sortedCliExamples = [...op.cliExamples].sort((a, b) => {
-      const aDesc = a.description ?? "";
-      const bDesc = b.description ?? "";
-      return aDesc < bDesc ? -1 : aDesc > bDesc ? 1 : 0;
-    });
 
     return `  {
     toolName: "${op.toolName}",
@@ -151,7 +146,6 @@ function generateDomainFile(
     dangerLevel: ${op.dangerLevel ? `"${op.dangerLevel}"` : "null"},
     sideEffects: ${op.sideEffects ? deterministicStringify(op.sideEffects).replace(/\n/g, "\n    ") : "null"},
     requiredFields: ${JSON.stringify(sortedRequiredFields)},
-    cliExamples: ${deterministicStringify(sortedCliExamples).replace(/\n/g, "\n    ")},
     confirmationRequired: ${op.confirmationRequired},
     parameterExamples: ${deterministicStringify(op.parameterExamples).replace(/\n/g, "\n    ")},
     validationRules: ${deterministicStringify(op.validationRules).replace(/\n/g, "\n    ")},

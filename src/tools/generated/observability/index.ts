@@ -46,18 +46,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["access-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data access-log create {name} --namespace {namespace}",
-        description: "Create access-log",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data access-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -102,18 +90,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data access-log create {name} --namespace {namespace}",
-          description: "Create access-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data access-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -167,18 +143,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["aggregation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data aggregation create {name} --namespace {namespace}",
-        description: "Create aggregation",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data aggregation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -223,18 +187,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data aggregation create {name} --namespace {namespace}",
-          description: "Create aggregation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data aggregation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -347,13 +299,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data alert list --namespace {namespace}",
-        description: "List all alerts",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       filter: "{alertname=\\.",
@@ -403,13 +348,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data alert list --namespace {namespace}",
-          description: "List all alerts",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -520,13 +458,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl data all-ns-alert list --namespace {namespace}",
-        description: "List all all-ns-alerts",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       filter: "{alertname=\\.",
@@ -576,13 +507,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data all-ns-alert list --namespace {namespace}",
-          description: "List all all-ns-alerts",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -634,18 +558,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["audit-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data audit-log create {name} --namespace {namespace}",
-        description: "Create audit-log",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data audit-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -690,18 +602,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data audit-log create {name} --namespace {namespace}",
-          description: "Create audit-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data audit-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -751,13 +651,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability certificate-report-detail list --namespace {namespace}",
-        description: "List all certificate-report-details",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Demo",
@@ -802,13 +695,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability certificate-report-detail list --namespace {namespace}",
-          description: "List all certificate-report-details",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -869,13 +755,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability certificate-summary list --namespace {namespace}",
-        description: "List all certificate-summarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Demo",
@@ -921,13 +800,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability certificate-summary list --namespace {namespace}",
-          description: "List all certificate-summarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1008,13 +880,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability dns-monitor-summary list --namespace {namespace}",
-        description: "List all dns-monitor-summarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "2020-11-17T13:41:49.083255Z.",
@@ -1062,13 +927,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability dns-monitor-summary list --namespace {namespace}",
-          description: "List all dns-monitor-summarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1119,18 +977,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["dns-monitors-health"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability dns-monitors-health create {name} --namespace {namespace}",
-        description: "Create dns-monitors-health",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl observability dns-monitors-health create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Demo",
@@ -1178,19 +1024,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl observability dns-monitors-health create {name} --namespace {namespace}",
-          description: "Create dns-monitors-health",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl observability dns-monitors-health create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1287,13 +1120,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability filtered-dns-monitor-list list --namespace {namespace}",
-        description: "List all filtered-dns-monitor-lists",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       filter: "Monitor_name eq 'tester-name'",
@@ -1340,13 +1166,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability filtered-dns-monitor-list list --namespace {namespace}",
-          description: "List all filtered-dns-monitor-lists",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1441,13 +1260,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability filtered-http-monitor-list list --namespace {namespace}",
-        description: "List all filtered-http-monitor-lists",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       filter: "Monitor_name eq 'tester-name'",
@@ -1494,13 +1306,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability filtered-http-monitor-list list --namespace {namespace}",
-          description: "List all filtered-http-monitor-lists",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1552,18 +1357,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["firewall-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data firewall-log create {name} --namespace {namespace}",
-        description: "Create firewall-log",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data firewall-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -1608,18 +1401,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data firewall-log create {name} --namespace {namespace}",
-          description: "Create firewall-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data firewall-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1713,13 +1494,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability global-history list --namespace {namespace}",
-        description: "List all global-historys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "2020-11-17T13:41:49.083255Z.",
@@ -1768,13 +1542,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability global-history list --namespace {namespace}",
-          description: "List all global-historys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1834,13 +1601,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability global-summary list --namespace {namespace}",
-        description: "List all global-summarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       monitor_type: "HTTP",
@@ -1886,13 +1646,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability global-summary list --namespace {namespace}",
-          description: "List all global-summarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1939,13 +1692,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability health list --namespace {namespace}",
-        description: "List all healths",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Demo",
@@ -1990,13 +1736,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability health list --namespace {namespace}",
-          description: "List all healths",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2082,13 +1821,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data history list --namespace {namespace}",
-        description: "List all historys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "2019-09-24T12:30:11.733Z.",
@@ -2136,13 +1868,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data history list --namespace {namespace}",
-          description: "List all historys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2223,13 +1948,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability http-monitor-detail list --namespace {namespace}",
-        description: "List all http-monitor-details",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "2020-11-17T13:41:49.083255Z.",
@@ -2277,13 +1995,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability http-monitor-detail list --namespace {namespace}",
-          description: "List all http-monitor-details",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2364,13 +2075,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability http-monitor-summary list --namespace {namespace}",
-        description: "List all http-monitor-summarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "2020-11-17T13:41:49.083255Z.",
@@ -2418,13 +2122,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability http-monitor-summary list --namespace {namespace}",
-          description: "List all http-monitor-summarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2475,18 +2172,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["http-monitors-health"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability http-monitors-health create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl observability http-monitors-health create {name} --namespace {namespace}",
-        description: "Create http-monitors-health",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Demo",
@@ -2534,19 +2219,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl observability http-monitors-health create {name} --namespace {namespace}",
-          description: "Create http-monitors-health",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl observability http-monitors-health create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2599,18 +2271,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["metric-query"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability metric-query create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl observability metric-query create {name} --namespace {namespace}",
-        description: "Create metric-query",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Demo",
@@ -2655,18 +2315,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl observability metric-query create {name} --namespace {namespace}",
-          description: "Create metric-query",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl observability metric-query create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2760,13 +2408,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability monitor-event list --namespace {namespace}",
-        description: "List all monitor-events",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "2020-11-17T13:41:49.083255Z.",
@@ -2815,13 +2456,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability monitor-event list --namespace {namespace}",
-          description: "List all monitor-events",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2924,13 +2558,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability monitor-history list --namespace {namespace}",
-        description: "List all monitor-historys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "2020-11-17T13:41:49.083255Z.",
@@ -2980,13 +2607,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability monitor-history list --namespace {namespace}",
-          description: "List all monitor-historys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3038,18 +2658,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["platform-event"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data platform-event create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data platform-event create {name} --namespace {namespace}",
-        description: "Create platform-event",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -3094,18 +2702,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data platform-event create {name} --namespace {namespace}",
-          description: "Create platform-event",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data platform-event create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3154,13 +2750,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability record-type-summary list --namespace {namespace}",
-        description: "List all record-type-summarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Demo",
@@ -3205,13 +2794,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability record-type-summary list --namespace {namespace}",
-          description: "List all record-type-summarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3262,18 +2844,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["scroll"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data scroll create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data scroll create {name} --namespace {namespace}",
-        description: "Create scroll",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -3318,18 +2888,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data scroll create {name} --namespace {namespace}",
-          description: "Create scroll",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data scroll create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3392,13 +2950,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data scroll list --namespace {namespace}",
-        description: "List all scrolls",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -3444,13 +2995,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data scroll list --namespace {namespace}",
-          description: "List all scrolls",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3532,13 +3076,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability source-summary list --namespace {namespace}",
-        description: "List all source-summarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "F5 XC/country in (VES-I/O-usa), F5 XC/siteType=VES-I/O-RE.",
@@ -3586,13 +3123,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability source-summary list --namespace {namespace}",
-          description: "List all source-summarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3631,18 +3161,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["subscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability subscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl observability subscribe create {name} --namespace {namespace}",
-        description: "Create subscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -3685,18 +3203,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl observability subscribe create {name} --namespace {namespace}",
-          description: "Create subscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl observability subscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3750,18 +3256,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["suggest-value"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability suggest-value create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl observability suggest-value create {name} --namespace {namespace}",
-        description: "Create suggest-value",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Foobar",
@@ -3806,18 +3300,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl observability suggest-value create {name} --namespace {namespace}",
-          description: "Create suggest-value",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl observability suggest-value create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3878,13 +3360,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability tls-report-detail list --namespace {namespace}",
-        description: "List all tls-report-details",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       monitor_name: "Monitor1",
@@ -3930,13 +3405,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability tls-report-detail list --namespace {namespace}",
-          description: "List all tls-report-details",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3995,13 +3463,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability tls-report-summary list --namespace {namespace}",
-        description: "List all tls-report-summarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       monitor_name: "Monitor1",
@@ -4047,13 +3508,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability tls-report-summary list --namespace {namespace}",
-          description: "List all tls-report-summarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4100,13 +3554,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability tls-summary list --namespace {namespace}",
-        description: "List all tls-summarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Demo",
@@ -4151,13 +3598,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability tls-summary list --namespace {namespace}",
-          description: "List all tls-summarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4196,18 +3636,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["unsubscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability unsubscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl observability unsubscribe create {name} --namespace {namespace}",
-        description: "Create unsubscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -4250,18 +3678,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl observability unsubscribe create {name} --namespace {namespace}",
-          description: "Create unsubscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl observability unsubscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4315,18 +3731,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["v1-dns-monitor"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability v1-dns-monitor create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl observability v1-dns-monitor create {name} --namespace {namespace}",
-        description: "Create v1-dns-monitor",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -4371,18 +3775,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl observability v1-dns-monitor create {name} --namespace {namespace}",
-          description: "Create v1-dns-monitor",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl observability v1-dns-monitor create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4444,13 +3836,6 @@ export const observabilityTools: ParsedOperation[] = [
       deletes: ["v1-dns-monitor", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability v1-dns-monitor delete {name} --namespace {namespace}",
-        description: "Delete v1-dns-monitor",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -4496,13 +3881,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl observability v1-dns-monitor delete {name} --namespace {namespace}",
-          description: "Delete v1-dns-monitor",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4584,13 +3962,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability v1-dns-monitor get {name} --namespace {namespace}",
-        description: "Get specific v1-dns-monitor",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4636,13 +4007,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability v1-dns-monitor get {name} --namespace {namespace}",
-          description: "Get specific v1-dns-monitor",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4728,13 +4092,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability v1-dns-monitor list --namespace {namespace}",
-        description: "List all v1-dns-monitors",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4780,13 +4137,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability v1-dns-monitor list --namespace {namespace}",
-          description: "List all v1-dns-monitors",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4849,14 +4199,6 @@ export const observabilityTools: ParsedOperation[] = [
       modifies: ["v1-dns-monitor"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl observability v1-dns-monitor update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update v1-dns-monitor",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4902,14 +4244,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl observability v1-dns-monitor update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update v1-dns-monitor",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4963,18 +4297,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["v1-http-monitor"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability v1-http-monitor create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl observability v1-http-monitor create {name} --namespace {namespace}",
-        description: "Create v1-http-monitor",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -5019,18 +4341,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl observability v1-http-monitor create {name} --namespace {namespace}",
-          description: "Create v1-http-monitor",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl observability v1-http-monitor create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5092,13 +4402,6 @@ export const observabilityTools: ParsedOperation[] = [
       deletes: ["v1-http-monitor", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability v1-http-monitor delete {name} --namespace {namespace}",
-        description: "Delete v1-http-monitor",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -5144,13 +4447,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl observability v1-http-monitor delete {name} --namespace {namespace}",
-          description: "Delete v1-http-monitor",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5232,13 +4528,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability v1-http-monitor get {name} --namespace {namespace}",
-        description: "Get specific v1-http-monitor",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5284,13 +4573,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability v1-http-monitor get {name} --namespace {namespace}",
-          description: "Get specific v1-http-monitor",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5376,13 +4658,6 @@ export const observabilityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl observability v1-http-monitor list --namespace {namespace}",
-        description: "List all v1-http-monitors",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5428,13 +4703,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl observability v1-http-monitor list --namespace {namespace}",
-          description: "List all v1-http-monitors",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5497,14 +4765,6 @@ export const observabilityTools: ParsedOperation[] = [
       modifies: ["v1-http-monitor"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl observability v1-http-monitor update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update v1-http-monitor",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -5550,14 +4810,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl observability v1-http-monitor update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update v1-http-monitor",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5611,18 +4863,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["vk8s-audit-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data vk8s-audit-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data vk8s-audit-log create {name} --namespace {namespace}",
-        description: "Create vk8s-audit-log",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -5667,18 +4907,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data vk8s-audit-log create {name} --namespace {namespace}",
-          description: "Create vk8s-audit-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data vk8s-audit-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5732,18 +4960,6 @@ export const observabilityTools: ParsedOperation[] = [
       creates: ["vk8s-event"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data vk8s-event create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data vk8s-event create {name} --namespace {namespace}",
-        description: "Create vk8s-event",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -5788,18 +5004,6 @@ export const observabilityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data vk8s-event create {name} --namespace {namespace}",
-          description: "Create vk8s-event",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data vk8s-event create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

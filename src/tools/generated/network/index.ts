@@ -47,18 +47,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["address-allocator"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config address-allocator create {name} --namespace {namespace}",
-        description: "Create address-allocator",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config address-allocator create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -106,18 +94,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config address-allocator create {name} --namespace {namespace}",
-          description: "Create address-allocator",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config address-allocator create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -179,13 +155,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["address-allocator", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config address-allocator delete {name} --namespace {namespace}",
-        description: "Delete address-allocator",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -231,13 +200,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config address-allocator delete {name} --namespace {namespace}",
-          description: "Delete address-allocator",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -318,13 +280,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config address-allocator get {name} --namespace {namespace}",
-        description: "Get specific address-allocator",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -370,13 +325,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config address-allocator get {name} --namespace {namespace}",
-          description: "Get specific address-allocator",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -462,13 +410,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config address-allocator list --namespace {namespace}",
-        description: "List all address-allocators",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -514,13 +455,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config address-allocator list --namespace {namespace}",
-          description: "List all address-allocators",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -573,18 +507,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["advertise-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config advertise-policy create {name} --namespace {namespace}",
-        description: "Create advertise-policy",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config advertise-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -632,18 +554,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config advertise-policy create {name} --namespace {namespace}",
-          description: "Create advertise-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config advertise-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -705,13 +615,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["advertise-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config advertise-policy delete {name} --namespace {namespace}",
-        description: "Delete advertise-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -757,13 +660,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config advertise-policy delete {name} --namespace {namespace}",
-          description: "Delete advertise-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -846,13 +742,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config advertise-policy get {name} --namespace {namespace}",
-        description: "Get specific advertise-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -898,13 +787,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config advertise-policy get {name} --namespace {namespace}",
-          description: "Get specific advertise-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -990,13 +872,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config advertise-policy list --namespace {namespace}",
-        description: "List all advertise-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1042,13 +917,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config advertise-policy list --namespace {namespace}",
-          description: "List all advertise-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1112,14 +980,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["advertise-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config advertise-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update advertise-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1165,14 +1025,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config advertise-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update advertise-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1227,18 +1079,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["bgp-asn-set"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp-asn-set create {name} --namespace {namespace}",
-        description: "Create bgp-asn-set",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config bgp-asn-set create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1283,18 +1123,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config bgp-asn-set create {name} --namespace {namespace}",
-          description: "Create bgp-asn-set",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config bgp-asn-set create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1356,13 +1184,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["bgp-asn-set", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp-asn-set delete {name} --namespace {namespace}",
-        description: "Delete bgp-asn-set",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1408,13 +1229,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config bgp-asn-set delete {name} --namespace {namespace}",
-          description: "Delete bgp-asn-set",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1497,13 +1311,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp-asn-set get {name} --namespace {namespace}",
-        description: "Get specific bgp-asn-set",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1549,13 +1356,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config bgp-asn-set get {name} --namespace {namespace}",
-          description: "Get specific bgp-asn-set",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1641,13 +1441,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp-asn-set list --namespace {namespace}",
-        description: "List all bgp-asn-sets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1693,13 +1486,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config bgp-asn-set list --namespace {namespace}",
-          description: "List all bgp-asn-sets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1763,13 +1549,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["bgp-asn-set"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp-asn-set update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update bgp-asn-set",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1815,14 +1594,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config bgp-asn-set update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update bgp-asn-set",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1877,18 +1648,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["bgp"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp create {name} --namespace {namespace}",
-        description: "Create bgp",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config bgp create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1933,18 +1692,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config bgp create {name} --namespace {namespace}",
-          description: "Create bgp",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config bgp create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2006,13 +1753,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["bgp", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp delete {name} --namespace {namespace}",
-        description: "Delete bgp",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2058,13 +1798,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config bgp delete {name} --namespace {namespace}",
-          description: "Delete bgp",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2147,13 +1880,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp get {name} --namespace {namespace}",
-        description: "Get specific bgp",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2199,13 +1925,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config bgp get {name} --namespace {namespace}",
-          description: "Get specific bgp",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2291,13 +2010,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp list --namespace {namespace}",
-        description: "List all bgps",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2343,13 +2055,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config bgp list --namespace {namespace}",
-          description: "List all bgps",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2407,13 +2112,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl operate bgp-peer list --namespace {namespace}",
-        description: "List all bgp-peers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -2459,13 +2157,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl operate bgp-peer list --namespace {namespace}",
-          description: "List all bgp-peers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2523,13 +2214,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl operate bgp-route list --namespace {namespace}",
-        description: "List all bgp-routes",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -2575,13 +2259,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl operate bgp-route list --namespace {namespace}",
-          description: "List all bgp-routes",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2634,18 +2311,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["bgp-routing-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp-routing-policy create {name} --namespace {namespace}",
-        description: "Create bgp-routing-policy",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config bgp-routing-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2693,18 +2358,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config bgp-routing-policy create {name} --namespace {namespace}",
-          description: "Create bgp-routing-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config bgp-routing-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2766,13 +2419,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["bgp-routing-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp-routing-policy delete {name} --namespace {namespace}",
-        description: "Delete bgp-routing-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2818,13 +2464,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config bgp-routing-policy delete {name} --namespace {namespace}",
-          description: "Delete bgp-routing-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2906,13 +2545,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp-routing-policy get {name} --namespace {namespace}",
-        description: "Get specific bgp-routing-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2958,13 +2590,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config bgp-routing-policy get {name} --namespace {namespace}",
-          description: "Get specific bgp-routing-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3050,13 +2675,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp-routing-policy list --namespace {namespace}",
-        description: "List all bgp-routing-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3102,13 +2720,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config bgp-routing-policy list --namespace {namespace}",
-          description: "List all bgp-routing-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3172,14 +2783,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["bgp-routing-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config bgp-routing-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update bgp-routing-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3225,14 +2828,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config bgp-routing-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update bgp-routing-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3298,13 +2893,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["bgp"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgp update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update bgp",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3350,13 +2938,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config bgp update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update bgp",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3428,13 +3009,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.view_name"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bgpstatu list --namespace {namespace}",
-        description: "List all bgpstatus",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -3481,13 +3055,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config bgpstatu list --namespace {namespace}",
-          description: "List all bgpstatus",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3539,18 +3106,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["dc-cluster-group"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dc-cluster-group create {name} --namespace {namespace}",
-        description: "Create dc-cluster-group",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config dc-cluster-group create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3598,18 +3153,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config dc-cluster-group create {name} --namespace {namespace}",
-          description: "Create dc-cluster-group",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config dc-cluster-group create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3671,13 +3214,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["dc-cluster-group", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dc-cluster-group delete {name} --namespace {namespace}",
-        description: "Delete dc-cluster-group",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3723,13 +3259,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config dc-cluster-group delete {name} --namespace {namespace}",
-          description: "Delete dc-cluster-group",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3811,13 +3340,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dc-cluster-group get {name} --namespace {namespace}",
-        description: "Get specific dc-cluster-group",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3863,13 +3385,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dc-cluster-group get {name} --namespace {namespace}",
-          description: "Get specific dc-cluster-group",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3955,13 +3470,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dc-cluster-group list --namespace {namespace}",
-        description: "List all dc-cluster-groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4007,13 +3515,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dc-cluster-group list --namespace {namespace}",
-          description: "List all dc-cluster-groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4076,14 +3577,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["dc-cluster-group"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config dc-cluster-group update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update dc-cluster-group",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4129,14 +3622,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config dc-cluster-group update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update dc-cluster-group",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4190,18 +3675,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["forwarding-class"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config forwarding-class create {name} --namespace {namespace}",
-        description: "Create forwarding-class",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config forwarding-class create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -4249,18 +3722,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config forwarding-class create {name} --namespace {namespace}",
-          description: "Create forwarding-class",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config forwarding-class create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4322,13 +3783,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["forwarding-class", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config forwarding-class delete {name} --namespace {namespace}",
-        description: "Delete forwarding-class",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -4374,13 +3828,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config forwarding-class delete {name} --namespace {namespace}",
-          description: "Delete forwarding-class",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4462,13 +3909,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config forwarding-class get {name} --namespace {namespace}",
-        description: "Get specific forwarding-class",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4514,13 +3954,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config forwarding-class get {name} --namespace {namespace}",
-          description: "Get specific forwarding-class",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4606,13 +4039,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config forwarding-class list --namespace {namespace}",
-        description: "List all forwarding-classs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4658,13 +4084,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config forwarding-class list --namespace {namespace}",
-          description: "List all forwarding-classs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4727,14 +4146,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["forwarding-class"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config forwarding-class update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update forwarding-class",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4780,14 +4191,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config forwarding-class update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update forwarding-class",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4841,18 +4244,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["ike-phase1-profile"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike-phase1-profile create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config ike-phase1-profile create {name} --namespace {namespace}",
-        description: "Create ike-phase1-profile",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -4900,18 +4291,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config ike-phase1-profile create {name} --namespace {namespace}",
-          description: "Create ike-phase1-profile",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config ike-phase1-profile create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4973,13 +4352,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["ike-phase1-profile", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike-phase1-profile delete {name} --namespace {namespace}",
-        description: "Delete ike-phase1-profile",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -5025,13 +4397,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config ike-phase1-profile delete {name} --namespace {namespace}",
-          description: "Delete ike-phase1-profile",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5113,13 +4478,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike-phase1-profile get {name} --namespace {namespace}",
-        description: "Get specific ike-phase1-profile",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5165,13 +4523,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config ike-phase1-profile get {name} --namespace {namespace}",
-          description: "Get specific ike-phase1-profile",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5257,13 +4608,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike-phase1-profile list --namespace {namespace}",
-        description: "List all ike-phase1-profiles",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5309,13 +4653,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config ike-phase1-profile list --namespace {namespace}",
-          description: "List all ike-phase1-profiles",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5378,14 +4715,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["ike-phase1-profile"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config ike-phase1-profile update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update ike-phase1-profile",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -5431,14 +4760,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config ike-phase1-profile update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update ike-phase1-profile",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5492,18 +4813,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["ike-phase2-profile"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike-phase2-profile create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config ike-phase2-profile create {name} --namespace {namespace}",
-        description: "Create ike-phase2-profile",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -5551,18 +4860,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config ike-phase2-profile create {name} --namespace {namespace}",
-          description: "Create ike-phase2-profile",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config ike-phase2-profile create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5624,13 +4921,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["ike-phase2-profile", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike-phase2-profile delete {name} --namespace {namespace}",
-        description: "Delete ike-phase2-profile",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -5676,13 +4966,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config ike-phase2-profile delete {name} --namespace {namespace}",
-          description: "Delete ike-phase2-profile",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5764,13 +5047,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike-phase2-profile get {name} --namespace {namespace}",
-        description: "Get specific ike-phase2-profile",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5816,13 +5092,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config ike-phase2-profile get {name} --namespace {namespace}",
-          description: "Get specific ike-phase2-profile",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5908,13 +5177,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike-phase2-profile list --namespace {namespace}",
-        description: "List all ike-phase2-profiles",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5960,13 +5222,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config ike-phase2-profile list --namespace {namespace}",
-          description: "List all ike-phase2-profiles",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6029,14 +5284,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["ike-phase2-profile"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config ike-phase2-profile update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update ike-phase2-profile",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -6082,14 +5329,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config ike-phase2-profile update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update ike-phase2-profile",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6143,18 +5382,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["ike1"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike1 create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config ike1 create {name} --namespace {namespace}",
-        description: "Create ike1",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -6199,18 +5426,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config ike1 create {name} --namespace {namespace}",
-          description: "Create ike1",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config ike1 create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6272,13 +5487,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["ike1", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike1 delete {name} --namespace {namespace}",
-        description: "Delete ike1",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -6324,13 +5532,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config ike1 delete {name} --namespace {namespace}",
-          description: "Delete ike1",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6412,13 +5613,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike1 get {name} --namespace {namespace}",
-        description: "Get specific ike1",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -6464,13 +5658,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config ike1 get {name} --namespace {namespace}",
-          description: "Get specific ike1",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6556,13 +5743,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike1 list --namespace {namespace}",
-        description: "List all ike1s",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -6608,13 +5788,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config ike1 list --namespace {namespace}",
-          description: "List all ike1s",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6677,13 +5850,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["ike1"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike1 update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update ike1",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -6729,13 +5895,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config ike1 update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update ike1",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6789,18 +5948,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["ike2"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike2 create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config ike2 create {name} --namespace {namespace}",
-        description: "Create ike2",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -6845,18 +5992,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config ike2 create {name} --namespace {namespace}",
-          description: "Create ike2",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config ike2 create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6918,13 +6053,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["ike2", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike2 delete {name} --namespace {namespace}",
-        description: "Delete ike2",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -6970,13 +6098,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config ike2 delete {name} --namespace {namespace}",
-          description: "Delete ike2",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7058,13 +6179,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike2 get {name} --namespace {namespace}",
-        description: "Get specific ike2",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -7110,13 +6224,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config ike2 get {name} --namespace {namespace}",
-          description: "Get specific ike2",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7202,13 +6309,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike2 list --namespace {namespace}",
-        description: "List all ike2s",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -7254,13 +6354,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config ike2 list --namespace {namespace}",
-          description: "List all ike2s",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7323,13 +6416,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["ike2"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ike2 update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update ike2",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -7375,13 +6461,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config ike2 update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update ike2",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7436,18 +6515,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["ip-prefix-set"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ip-prefix-set create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config ip-prefix-set create {name} --namespace {namespace}",
-        description: "Create ip-prefix-set",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -7492,18 +6559,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config ip-prefix-set create {name} --namespace {namespace}",
-          description: "Create ip-prefix-set",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config ip-prefix-set create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7565,13 +6620,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["ip-prefix-set", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ip-prefix-set delete {name} --namespace {namespace}",
-        description: "Delete ip-prefix-set",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -7617,13 +6665,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config ip-prefix-set delete {name} --namespace {namespace}",
-          description: "Delete ip-prefix-set",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7706,13 +6747,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ip-prefix-set get {name} --namespace {namespace}",
-        description: "Get specific ip-prefix-set",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -7758,13 +6792,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config ip-prefix-set get {name} --namespace {namespace}",
-          description: "Get specific ip-prefix-set",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7850,13 +6877,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config ip-prefix-set list --namespace {namespace}",
-        description: "List all ip-prefix-sets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -7902,13 +6922,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config ip-prefix-set list --namespace {namespace}",
-          description: "List all ip-prefix-sets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7972,14 +6985,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["ip-prefix-set"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config ip-prefix-set update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update ip-prefix-set",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -8025,14 +7030,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config ip-prefix-set update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update ip-prefix-set",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8085,18 +7082,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["metric"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data metric create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data metric create {name} --namespace {namespace}",
-        description: "Create metric",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -8141,18 +7126,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data metric create {name} --namespace {namespace}",
-          description: "Create metric",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data metric create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8206,18 +7179,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["network-connector"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-connector create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config network-connector create {name} --namespace {namespace}",
-        description: "Create network-connector",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -8265,18 +7226,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config network-connector create {name} --namespace {namespace}",
-          description: "Create network-connector",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config network-connector create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8338,13 +7287,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["network-connector", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-connector delete {name} --namespace {namespace}",
-        description: "Delete network-connector",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -8390,13 +7332,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config network-connector delete {name} --namespace {namespace}",
-          description: "Delete network-connector",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8478,13 +7413,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-connector get {name} --namespace {namespace}",
-        description: "Get specific network-connector",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -8530,13 +7458,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-connector get {name} --namespace {namespace}",
-          description: "Get specific network-connector",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8622,13 +7543,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-connector list --namespace {namespace}",
-        description: "List all network-connectors",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -8674,13 +7588,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-connector list --namespace {namespace}",
-          description: "List all network-connectors",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8743,14 +7650,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["network-connector"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config network-connector update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update network-connector",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -8796,14 +7695,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config network-connector update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update network-connector",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8885,13 +7776,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config public-ip get {name} --namespace {namespace}",
-        description: "Get specific public-ip",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -8937,13 +7821,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config public-ip get {name} --namespace {namespace}",
-          description: "Get specific public-ip",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9029,13 +7906,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config public-ip list --namespace {namespace}",
-        description: "List all public-ips",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -9081,13 +7951,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config public-ip list --namespace {namespace}",
-          description: "List all public-ips",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9151,13 +8014,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["public-ip"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config public-ip update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update public-ip",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -9203,13 +8059,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config public-ip update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update public-ip",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9264,18 +8113,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["route"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config route create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config route create {name} --namespace {namespace}",
-        description: "Create route",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -9320,18 +8157,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config route create {name} --namespace {namespace}",
-          description: "Create route",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config route create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9393,13 +8218,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["route", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config route delete {name} --namespace {namespace}",
-        description: "Delete route",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -9445,13 +8263,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config route delete {name} --namespace {namespace}",
-          description: "Delete route",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9534,13 +8345,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config route get {name} --namespace {namespace}",
-        description: "Get specific route",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -9586,13 +8390,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config route get {name} --namespace {namespace}",
-          description: "Get specific route",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9678,13 +8475,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config route list --namespace {namespace}",
-        description: "List all routes",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -9730,13 +8520,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config route list --namespace {namespace}",
-          description: "List all routes",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9800,13 +8583,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["route"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config route update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update route",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -9852,13 +8628,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config route update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update route",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9922,18 +8691,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["simplified-route"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl operate simplified-route create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl operate simplified-route create {name} --namespace {namespace}",
-        description: "Create simplified-route",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -9982,18 +8739,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl operate simplified-route create {name} --namespace {namespace}",
-          description: "Create simplified-route",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl operate simplified-route create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10048,18 +8793,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["srv6-network-slice"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config srv6-network-slice create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config srv6-network-slice create {name} --namespace {namespace}",
-        description: "Create srv6-network-slice",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -10107,18 +8840,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config srv6-network-slice create {name} --namespace {namespace}",
-          description: "Create srv6-network-slice",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config srv6-network-slice create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10180,13 +8901,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["srv6-network-slice", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config srv6-network-slice delete {name} --namespace {namespace}",
-        description: "Delete srv6-network-slice",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -10232,13 +8946,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config srv6-network-slice delete {name} --namespace {namespace}",
-          description: "Delete srv6-network-slice",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10321,13 +9028,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config srv6-network-slice get {name} --namespace {namespace}",
-        description: "Get specific srv6-network-slice",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -10373,13 +9073,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config srv6-network-slice get {name} --namespace {namespace}",
-          description: "Get specific srv6-network-slice",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10465,13 +9158,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config srv6-network-slice list --namespace {namespace}",
-        description: "List all srv6-network-slices",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -10517,13 +9203,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config srv6-network-slice list --namespace {namespace}",
-          description: "List all srv6-network-slices",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10587,14 +9266,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["srv6-network-slice"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config srv6-network-slice update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update srv6-network-slice",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -10640,14 +9311,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config srv6-network-slice update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update srv6-network-slice",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10702,18 +9365,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["subnet"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config subnet create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config subnet create {name} --namespace {namespace}",
-        description: "Create subnet",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -10758,18 +9409,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config subnet create {name} --namespace {namespace}",
-          description: "Create subnet",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config subnet create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10831,13 +9470,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["subnet", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config subnet delete {name} --namespace {namespace}",
-        description: "Delete subnet",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -10883,13 +9515,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config subnet delete {name} --namespace {namespace}",
-          description: "Delete subnet",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10971,13 +9596,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config subnet get {name} --namespace {namespace}",
-        description: "Get specific subnet",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -11023,13 +9641,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config subnet get {name} --namespace {namespace}",
-          description: "Get specific subnet",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11115,13 +9726,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config subnet list --namespace {namespace}",
-        description: "List all subnets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -11167,13 +9771,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config subnet list --namespace {namespace}",
-          description: "List all subnets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11236,13 +9833,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["subnet"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config subnet update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update subnet",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -11288,13 +9878,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config subnet update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update subnet",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11358,18 +9941,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["traceroute"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl operate traceroute create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl operate traceroute create {name} --namespace {namespace}",
-        description: "Create traceroute",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -11415,18 +9986,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl operate traceroute create {name} --namespace {namespace}",
-          description: "Create traceroute",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl operate traceroute create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11480,18 +10039,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["tunnel"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config tunnel create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config tunnel create {name} --namespace {namespace}",
-        description: "Create tunnel",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -11536,18 +10083,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config tunnel create {name} --namespace {namespace}",
-          description: "Create tunnel",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config tunnel create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11609,13 +10144,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["tunnel", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config tunnel delete {name} --namespace {namespace}",
-        description: "Delete tunnel",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -11661,13 +10189,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config tunnel delete {name} --namespace {namespace}",
-          description: "Delete tunnel",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11749,13 +10270,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config tunnel get {name} --namespace {namespace}",
-        description: "Get specific tunnel",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -11801,13 +10315,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config tunnel get {name} --namespace {namespace}",
-          description: "Get specific tunnel",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11893,13 +10400,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config tunnel list --namespace {namespace}",
-        description: "List all tunnels",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -11945,13 +10445,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config tunnel list --namespace {namespace}",
-          description: "List all tunnels",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12014,13 +10507,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["tunnel"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config tunnel update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update tunnel",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -12066,13 +10552,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config tunnel update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update tunnel",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12126,18 +10605,6 @@ export const networkTools: ParsedOperation[] = [
       creates: ["virtual-network"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-network create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config virtual-network create {name} --namespace {namespace}",
-        description: "Create virtual-network",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -12182,18 +10649,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config virtual-network create {name} --namespace {namespace}",
-          description: "Create virtual-network",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config virtual-network create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12255,13 +10710,6 @@ export const networkTools: ParsedOperation[] = [
       deletes: ["virtual-network", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-network delete {name} --namespace {namespace}",
-        description: "Delete virtual-network",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -12307,13 +10755,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config virtual-network delete {name} --namespace {namespace}",
-          description: "Delete virtual-network",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12395,13 +10836,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-network get {name} --namespace {namespace}",
-        description: "Get specific virtual-network",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -12447,13 +10881,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config virtual-network get {name} --namespace {namespace}",
-          description: "Get specific virtual-network",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12539,13 +10966,6 @@ export const networkTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-network list --namespace {namespace}",
-        description: "List all virtual-networks",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -12591,13 +11011,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config virtual-network list --namespace {namespace}",
-          description: "List all virtual-networks",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12660,14 +11073,6 @@ export const networkTools: ParsedOperation[] = [
       modifies: ["virtual-network"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config virtual-network update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update virtual-network",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -12713,14 +11118,6 @@ export const networkTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config virtual-network update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update virtual-network",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

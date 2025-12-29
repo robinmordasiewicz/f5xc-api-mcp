@@ -31,18 +31,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["all-ns-service"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data all-ns-service create {name} --namespace {namespace}",
-        description: "Create all-ns-service",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data all-ns-service create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -85,18 +73,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data all-ns-service create {name} --namespace {namespace}",
-          description: "Create all-ns-service",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data all-ns-service create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -172,13 +148,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data app-type list --namespace {namespace}",
-        description: "List all app-types",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "1570197600.",
@@ -225,13 +194,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data app-type list --namespace {namespace}",
-          description: "List all app-types",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -282,18 +244,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["connectivity"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data connectivity create {name} --namespace {namespace}",
-        description: "Create connectivity",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data connectivity create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -338,18 +288,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data connectivity create {name} --namespace {namespace}",
-          description: "Create connectivity",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data connectivity create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -415,19 +353,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["create-http-load-balancer"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl discovery create-http-load-balancer create {name} --namespace {namespace}",
-        description: "Create create-http-load-balancer",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl discovery create-http-load-balancer create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Vs1",
@@ -476,19 +401,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl discovery create-http-load-balancer create {name} --namespace {namespace}",
-          description: "Create create-http-load-balancer",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl discovery create-http-load-balancer create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -554,18 +466,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["create-tcp-load-balancer"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery create-tcp-load-balancer create {name} --namespace {namespace}",
-        description: "Create create-tcp-load-balancer",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl discovery create-tcp-load-balancer create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Vs1",
@@ -614,19 +514,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl discovery create-tcp-load-balancer create {name} --namespace {namespace}",
-          description: "Create create-tcp-load-balancer",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl discovery create-tcp-load-balancer create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -692,18 +579,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["disable-visibility"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery disable-visibility create {name} --namespace {namespace}",
-        description: "Create disable-visibility",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl discovery disable-visibility create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Vs1",
@@ -752,18 +627,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl discovery disable-visibility create {name} --namespace {namespace}",
-          description: "Create disable-visibility",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl discovery disable-visibility create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -842,13 +705,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery discovered-service get {name} --namespace {namespace}",
-        description: "Get specific discovered-service",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -894,13 +750,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl discovery discovered-service get {name} --namespace {namespace}",
-          description: "Get specific discovered-service",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -972,13 +821,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery discovered-service list --namespace {namespace}",
-        description: "List all discovered-services",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       discovery_name: "Disc-cbip-1.",
@@ -1025,13 +867,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl discovery discovered-service list --namespace {namespace}",
-          description: "List all discovered-services",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1083,18 +918,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["edge"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data edge create {name} --namespace {namespace}",
-        description: "Create edge",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data edge create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -1139,18 +962,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data edge create {name} --namespace {namespace}",
-          description: "Create edge",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data edge create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1216,18 +1027,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["enable-visibility"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery enable-visibility create {name} --namespace {namespace}",
-        description: "Create enable-visibility",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl discovery enable-visibility create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Vs1",
@@ -1276,18 +1075,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl discovery enable-visibility create {name} --namespace {namespace}",
-          description: "Create enable-visibility",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl discovery enable-visibility create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1326,18 +1113,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["flow-collection"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data flow-collection create {name} --namespace {namespace}",
-        description: "Create flow-collection",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data flow-collection create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1380,18 +1155,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data flow-collection create {name} --namespace {namespace}",
-          description: "Create flow-collection",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data flow-collection create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1452,13 +1215,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data health-statu get {name} --namespace {namespace}",
-        description: "Get specific health-statu",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Vs1",
@@ -1504,13 +1260,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data health-statu get {name} --namespace {namespace}",
-          description: "Get specific health-statu",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1562,18 +1311,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["instance"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data instance create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data instance create {name} --namespace {namespace}",
-        description: "Create instance",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -1618,18 +1355,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data instance create {name} --namespace {namespace}",
-          description: "Create instance",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data instance create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1683,18 +1408,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["lb-cache-content"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data lb-cache-content create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data lb-cache-content create {name} --namespace {namespace}",
-        description: "Create lb-cache-content",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -1742,18 +1455,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data lb-cache-content create {name} --namespace {namespace}",
-          description: "Create lb-cache-content",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data lb-cache-content create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1807,18 +1508,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["node"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data node create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data node create {name} --namespace {namespace}",
-        description: "Create node",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -1863,18 +1552,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data node create {name} --namespace {namespace}",
-          description: "Create node",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data node create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1926,18 +1603,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["service"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data service create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data service create {name} --namespace {namespace}",
-        description: "Create service",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -1982,18 +1647,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data service create {name} --namespace {namespace}",
-          description: "Create service",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data service create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2089,13 +1742,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.kind", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data status-at-site get {name} --namespace {namespace}",
-        description: "Get specific status-at-site",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       kind: "Virtual_host.",
@@ -2143,13 +1789,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data status-at-site get {name} --namespace {namespace}",
-          description: "Get specific status-at-site",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2188,18 +1827,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["subscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config subscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config subscribe create {name} --namespace {namespace}",
-        description: "Create subscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2242,18 +1869,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config subscribe create {name} --namespace {namespace}",
-          description: "Create subscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config subscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2290,13 +1905,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl config subscription-statu list --namespace {namespace}",
-        description: "List all subscription-status",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2339,13 +1947,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config subscription-statu list --namespace {namespace}",
-          description: "List all subscription-status",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2397,18 +1998,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["suggest-value"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery suggest-value create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl discovery suggest-value create {name} --namespace {namespace}",
-        description: "Create suggest-value",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Foobar",
@@ -2453,18 +2042,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl discovery suggest-value create {name} --namespace {namespace}",
-          description: "Create suggest-value",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl discovery suggest-value create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2505,18 +2082,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["top-flow-anomalie"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data top-flow-anomalie create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data top-flow-anomalie create {name} --namespace {namespace}",
-        description: "Create top-flow-anomalie",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2562,18 +2127,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data top-flow-anomalie create {name} --namespace {namespace}",
-          description: "Create top-flow-anomalie",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data top-flow-anomalie create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2612,18 +2165,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["top-talker"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data top-talker create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data top-talker create {name} --namespace {namespace}",
-        description: "Create top-talker",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2666,18 +2207,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data top-talker create {name} --namespace {namespace}",
-          description: "Create top-talker",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data top-talker create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2718,18 +2247,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       creates: ["unsubscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config unsubscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config unsubscribe create {name} --namespace {namespace}",
-        description: "Create unsubscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2772,18 +2289,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config unsubscribe create {name} --namespace {namespace}",
-          description: "Create unsubscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config unsubscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

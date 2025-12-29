@@ -220,7 +220,6 @@ export const RICH_METADATA_SAMPLES = {
     toolName: "f5xc-api-adminconsoleandui-static-component-get",
     dangerLevel: "low",
   },
-  withCliExamples: { toolName: "f5xc-api-adminconsoleandui-static-component-get", exampleCount: 1 },
   withOperationMetadata: { toolName: "f5xc-api-adminconsoleandui-static-component-get" },
   withValidationRules: null,
   withParameters: {

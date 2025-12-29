@@ -45,18 +45,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["access-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl cdn access-log create {name} --namespace {namespace}",
-        description: "Create access-log",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl cdn access-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -101,18 +89,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl cdn access-log create {name} --namespace {namespace}",
-          description: "Create access-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl cdn access-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -166,18 +142,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["aggregation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl cdn aggregation create {name} --namespace {namespace}",
-        description: "Create aggregation",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl cdn aggregation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -222,18 +186,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl cdn aggregation create {name} --namespace {namespace}",
-          description: "Create aggregation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl cdn aggregation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -297,18 +249,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["cache-purge"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl cdn cache-purge create {name} --namespace {namespace}",
-        description: "Create cache-purge",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl cdn cache-purge create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "CDN-1",
@@ -354,18 +294,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl cdn cache-purge create {name} --namespace {namespace}",
-          description: "Create cache-purge",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl cdn cache-purge create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -419,18 +347,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["cdn-cache-rule"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cdn-cache-rule create {name} --namespace {namespace}",
-        description: "Create cdn-cache-rule",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config cdn-cache-rule create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -475,18 +391,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config cdn-cache-rule create {name} --namespace {namespace}",
-          description: "Create cdn-cache-rule",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config cdn-cache-rule create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -548,13 +452,6 @@ export const cdnTools: ParsedOperation[] = [
       deletes: ["cdn-cache-rule", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cdn-cache-rule delete {name} --namespace {namespace}",
-        description: "Delete cdn-cache-rule",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -600,13 +497,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config cdn-cache-rule delete {name} --namespace {namespace}",
-          description: "Delete cdn-cache-rule",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -687,13 +577,6 @@ export const cdnTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cdn-cache-rule get {name} --namespace {namespace}",
-        description: "Get specific cdn-cache-rule",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -739,13 +622,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cdn-cache-rule get {name} --namespace {namespace}",
-          description: "Get specific cdn-cache-rule",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -831,13 +707,6 @@ export const cdnTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cdn-cache-rule list --namespace {namespace}",
-        description: "List all cdn-cache-rules",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -883,13 +752,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cdn-cache-rule list --namespace {namespace}",
-          description: "List all cdn-cache-rules",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -952,14 +814,6 @@ export const cdnTools: ParsedOperation[] = [
       modifies: ["cdn-cache-rule"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config cdn-cache-rule update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update cdn-cache-rule",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1005,14 +859,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config cdn-cache-rule update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update cdn-cache-rule",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1066,18 +912,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["cdn-loadbalancer"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cdn-loadbalancer create {name} --namespace {namespace}",
-        description: "Create cdn-loadbalancer",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config cdn-loadbalancer create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1125,18 +959,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config cdn-loadbalancer create {name} --namespace {namespace}",
-          description: "Create cdn-loadbalancer",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config cdn-loadbalancer create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1198,13 +1020,6 @@ export const cdnTools: ParsedOperation[] = [
       deletes: ["cdn-loadbalancer", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cdn-loadbalancer delete {name} --namespace {namespace}",
-        description: "Delete cdn-loadbalancer",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1250,13 +1065,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config cdn-loadbalancer delete {name} --namespace {namespace}",
-          description: "Delete cdn-loadbalancer",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1338,13 +1146,6 @@ export const cdnTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cdn-loadbalancer get {name} --namespace {namespace}",
-        description: "Get specific cdn-loadbalancer",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1390,13 +1191,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cdn-loadbalancer get {name} --namespace {namespace}",
-          description: "Get specific cdn-loadbalancer",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1482,13 +1276,6 @@ export const cdnTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cdn-loadbalancer list --namespace {namespace}",
-        description: "List all cdn-loadbalancers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1534,13 +1321,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cdn-loadbalancer list --namespace {namespace}",
-          description: "List all cdn-loadbalancers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1603,14 +1383,6 @@ export const cdnTools: ParsedOperation[] = [
       modifies: ["cdn-loadbalancer"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config cdn-loadbalancer update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update cdn-loadbalancer",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1656,14 +1428,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config cdn-loadbalancer update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update cdn-loadbalancer",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1738,13 +1502,6 @@ export const cdnTools: ParsedOperation[] = [
       deletes: ["dos-automitigation-rule", "contained_resources"],
     },
     requiredFields: ["path.dos_automitigation_rule_name", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dos-automitigation-rule delete {name} --namespace {namespace}",
-        description: "Delete dos-automitigation-rule",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       dos_automitigation_rule_name: "Dos-auto-mitigation-VES-I/O-HTTP-loadbalancer-ce22.",
@@ -1791,13 +1548,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config dos-automitigation-rule delete {name} --namespace {namespace}",
-          description: "Delete dos-automitigation-rule",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1858,13 +1608,6 @@ export const cdnTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dos-automitigation-rule get {name} --namespace {namespace}",
-        description: "Get specific dos-automitigation-rule",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Blogging-app.",
@@ -1910,13 +1653,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dos-automitigation-rule get {name} --namespace {namespace}",
-          description: "Get specific dos-automitigation-rule",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1967,18 +1703,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["get-security-config"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config get-security-config create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config get-security-config create {name} --namespace {namespace}",
-        description: "Create get-security-config",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -2026,18 +1750,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config get-security-config create {name} --namespace {namespace}",
-          description: "Create get-security-config",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config get-security-config create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2090,18 +1802,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["get-service-operation-statu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl cdn get-service-operation-statu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl cdn get-service-operation-statu create {name} --namespace {namespace}",
-        description: "Create get-service-operation-statu",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -2149,18 +1849,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl cdn get-service-operation-statu create {name} --namespace {namespace}",
-          description: "Create get-service-operation-statu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl cdn get-service-operation-statu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2213,18 +1901,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["list-service-operations-statu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl cdn list-service-operations-statu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl cdn list-service-operations-statu create {name} --namespace {namespace}",
-        description: "Create list-service-operations-statu",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -2272,19 +1948,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl cdn list-service-operations-statu create {name} --namespace {namespace}",
-          description: "Create list-service-operations-statu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl cdn list-service-operations-statu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2337,18 +2000,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["metric"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl cdn metric create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl cdn metric create {name} --namespace {namespace}",
-        description: "Create metric",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Default",
@@ -2393,18 +2044,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl cdn metric create {name} --namespace {namespace}",
-          description: "Create metric",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl cdn metric create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2445,18 +2084,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["subscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl cdn subscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl cdn subscribe create {name} --namespace {namespace}",
-        description: "Create subscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2499,18 +2126,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl cdn subscribe create {name} --namespace {namespace}",
-          description: "Create subscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl cdn subscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2573,18 +2188,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["suggestion"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config suggestion create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config suggestion create {name} --namespace {namespace}",
-        description: "Create suggestion",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "VES-I/O-frontend.",
@@ -2630,18 +2233,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config suggestion create {name} --namespace {namespace}",
-          description: "Create suggestion",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config suggestion create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2682,18 +2273,6 @@ export const cdnTools: ParsedOperation[] = [
       creates: ["unsubscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl cdn unsubscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl cdn unsubscribe create {name} --namespace {namespace}",
-        description: "Create unsubscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2736,18 +2315,6 @@ export const cdnTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl cdn unsubscribe create {name} --namespace {namespace}",
-          description: "Create unsubscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl cdn unsubscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

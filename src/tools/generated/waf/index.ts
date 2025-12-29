@@ -53,13 +53,6 @@ export const wafTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.vh_name"],
-    cliExamples: [
-      {
-        command: "f5xcctl config active-staged-signature list --namespace {namespace}",
-        description: "List all active-staged-signatures",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -105,13 +98,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config active-staged-signature list --namespace {namespace}",
-          description: "List all active-staged-signatures",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -150,18 +136,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["aggregation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data aggregation create {name} --namespace {namespace}",
-        description: "Create aggregation",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data aggregation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -204,18 +178,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data aggregation create {name} --namespace {namespace}",
-          description: "Create aggregation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data aggregation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -256,18 +218,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["all-ns-event"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data all-ns-event create {name} --namespace {namespace}",
-        description: "Create all-ns-event",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data all-ns-event create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -310,18 +260,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data all-ns-event create {name} --namespace {namespace}",
-          description: "Create all-ns-event",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data all-ns-event create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -360,18 +298,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["all-ns-metric"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data all-ns-metric create {name} --namespace {namespace}",
-        description: "Create all-ns-metric",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data all-ns-metric create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -414,18 +340,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data all-ns-metric create {name} --namespace {namespace}",
-          description: "Create all-ns-metric",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data all-ns-metric create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -479,18 +393,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["app-firewall"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-firewall create {name} --namespace {namespace}",
-        description: "Create app-firewall",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config app-firewall create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -535,18 +437,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config app-firewall create {name} --namespace {namespace}",
-          description: "Create app-firewall",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config app-firewall create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -608,13 +498,6 @@ export const wafTools: ParsedOperation[] = [
       deletes: ["app-firewall", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-firewall delete {name} --namespace {namespace}",
-        description: "Delete app-firewall",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -660,13 +543,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config app-firewall delete {name} --namespace {namespace}",
-          description: "Delete app-firewall",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -748,13 +624,6 @@ export const wafTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-firewall get {name} --namespace {namespace}",
-        description: "Get specific app-firewall",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -800,13 +669,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config app-firewall get {name} --namespace {namespace}",
-          description: "Get specific app-firewall",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -892,13 +754,6 @@ export const wafTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-firewall list --namespace {namespace}",
-        description: "List all app-firewalls",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -944,13 +799,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config app-firewall list --namespace {namespace}",
-          description: "List all app-firewalls",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1013,13 +861,6 @@ export const wafTools: ParsedOperation[] = [
       modifies: ["app-firewall"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-firewall update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update app-firewall",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1065,14 +906,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config app-firewall update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update app-firewall",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1126,18 +959,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["enhanced-firewall-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config enhanced-firewall-policy create {name} --namespace {namespace}",
-        description: "Create enhanced-firewall-policy",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config enhanced-firewall-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1185,18 +1006,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config enhanced-firewall-policy create {name} --namespace {namespace}",
-          description: "Create enhanced-firewall-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config enhanced-firewall-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1258,13 +1067,6 @@ export const wafTools: ParsedOperation[] = [
       deletes: ["enhanced-firewall-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config enhanced-firewall-policy delete {name} --namespace {namespace}",
-        description: "Delete enhanced-firewall-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1310,13 +1112,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config enhanced-firewall-policy delete {name} --namespace {namespace}",
-          description: "Delete enhanced-firewall-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1398,13 +1193,6 @@ export const wafTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config enhanced-firewall-policy get {name} --namespace {namespace}",
-        description: "Get specific enhanced-firewall-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1450,13 +1238,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config enhanced-firewall-policy get {name} --namespace {namespace}",
-          description: "Get specific enhanced-firewall-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1542,13 +1323,6 @@ export const wafTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config enhanced-firewall-policy list --namespace {namespace}",
-        description: "List all enhanced-firewall-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1594,13 +1368,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config enhanced-firewall-policy list --namespace {namespace}",
-          description: "List all enhanced-firewall-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1663,14 +1430,6 @@ export const wafTools: ParsedOperation[] = [
       modifies: ["enhanced-firewall-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config enhanced-firewall-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update enhanced-firewall-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1716,14 +1475,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config enhanced-firewall-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update enhanced-firewall-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1775,18 +1526,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["event"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data event create {name} --namespace {namespace}",
-        description: "Create event",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data event create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Bloggin-app-namespace-1.",
@@ -1831,18 +1570,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data event create {name} --namespace {namespace}",
-          description: "Create event",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data event create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1896,18 +1623,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["hit"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data hit create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data hit create {name} --namespace {namespace}",
-        description: "Create hit",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -1952,18 +1667,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data hit create {name} --namespace {namespace}",
-          description: "Create hit",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data hit create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2017,18 +1720,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["incident"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data incident create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data incident create {name} --namespace {namespace}",
-        description: "Create incident",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Bloggin-app-namespace-1.",
@@ -2073,18 +1764,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data incident create {name} --namespace {namespace}",
-          description: "Create incident",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data incident create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2124,18 +1803,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["loadbalancer"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data loadbalancer create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data loadbalancer create {name} --namespace {namespace}",
-        description: "Create loadbalancer",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2178,18 +1845,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data loadbalancer create {name} --namespace {namespace}",
-          description: "Create loadbalancer",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data loadbalancer create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2240,18 +1895,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["metric"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data metric create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data metric create {name} --namespace {namespace}",
-        description: "Create metric",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -2296,18 +1939,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data metric create {name} --namespace {namespace}",
-          description: "Create metric",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data metric create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2362,18 +1993,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["protocol-inspection"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config protocol-inspection create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config protocol-inspection create {name} --namespace {namespace}",
-        description: "Create protocol-inspection",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2421,18 +2040,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config protocol-inspection create {name} --namespace {namespace}",
-          description: "Create protocol-inspection",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config protocol-inspection create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2494,13 +2101,6 @@ export const wafTools: ParsedOperation[] = [
       deletes: ["protocol-inspection", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config protocol-inspection delete {name} --namespace {namespace}",
-        description: "Delete protocol-inspection",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2546,13 +2146,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config protocol-inspection delete {name} --namespace {namespace}",
-          description: "Delete protocol-inspection",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2634,13 +2227,6 @@ export const wafTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config protocol-inspection get {name} --namespace {namespace}",
-        description: "Get specific protocol-inspection",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2686,13 +2272,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config protocol-inspection get {name} --namespace {namespace}",
-          description: "Get specific protocol-inspection",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2778,13 +2357,6 @@ export const wafTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config protocol-inspection list --namespace {namespace}",
-        description: "List all protocol-inspections",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2830,13 +2402,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config protocol-inspection list --namespace {namespace}",
-          description: "List all protocol-inspections",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2899,14 +2464,6 @@ export const wafTools: ParsedOperation[] = [
       modifies: ["protocol-inspection"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config protocol-inspection update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update protocol-inspection",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2952,14 +2509,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config protocol-inspection update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update protocol-inspection",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3020,13 +2569,6 @@ export const wafTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.vh_name"],
-    cliExamples: [
-      {
-        command: "f5xcctl config released-signature list --namespace {namespace}",
-        description: "List all released-signatures",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -3072,13 +2614,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config released-signature list --namespace {namespace}",
-          description: "List all released-signatures",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3129,18 +2664,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["rule-hit"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data rule-hit create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data rule-hit create {name} --namespace {namespace}",
-        description: "Create rule-hit",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Bloggin-app-namespace-1.",
@@ -3185,18 +2708,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data rule-hit create {name} --namespace {namespace}",
-          description: "Create rule-hit",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data rule-hit create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3251,18 +2762,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["scroll"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data scroll create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data scroll create {name} --namespace {namespace}",
-        description: "Create scroll",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Bloggin-app-namespace-1.",
@@ -3307,18 +2806,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data scroll create {name} --namespace {namespace}",
-          description: "Create scroll",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data scroll create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3381,13 +2868,6 @@ export const wafTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data scroll list --namespace {namespace}",
-        description: "List all scrolls",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Bloggin-app-namespace-1.",
@@ -3433,13 +2913,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data scroll list --namespace {namespace}",
-          description: "List all scrolls",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3490,18 +2963,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["security-event"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data security-event create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data security-event create {name} --namespace {namespace}",
-        description: "Create security-event",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Bloggin-app-namespace-1.",
@@ -3546,18 +3007,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data security-event create {name} --namespace {namespace}",
-          description: "Create security-event",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data security-event create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3621,18 +3070,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["staged-signature"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.vh_name"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml staged-signature create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl ml staged-signature create {name} --namespace {namespace}",
-        description: "Create staged-signature",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -3681,18 +3118,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ml staged-signature create {name} --namespace {namespace}",
-          description: "Create staged-signature",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ml staged-signature create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3746,18 +3171,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["suspicious-user-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data suspicious-user-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data suspicious-user-log create {name} --namespace {namespace}",
-        description: "Create suspicious-user-log",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Bloggin-app-namespace-1.",
@@ -3805,18 +3218,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data suspicious-user-log create {name} --namespace {namespace}",
-          description: "Create suspicious-user-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data suspicious-user-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3870,18 +3271,6 @@ export const wafTools: ParsedOperation[] = [
       creates: ["waf-exclusion-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config waf-exclusion-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config waf-exclusion-policy create {name} --namespace {namespace}",
-        description: "Create waf-exclusion-policy",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3929,18 +3318,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config waf-exclusion-policy create {name} --namespace {namespace}",
-          description: "Create waf-exclusion-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config waf-exclusion-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4002,13 +3379,6 @@ export const wafTools: ParsedOperation[] = [
       deletes: ["waf-exclusion-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config waf-exclusion-policy delete {name} --namespace {namespace}",
-        description: "Delete waf-exclusion-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -4054,13 +3424,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config waf-exclusion-policy delete {name} --namespace {namespace}",
-          description: "Delete waf-exclusion-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4142,13 +3505,6 @@ export const wafTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config waf-exclusion-policy get {name} --namespace {namespace}",
-        description: "Get specific waf-exclusion-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4194,13 +3550,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config waf-exclusion-policy get {name} --namespace {namespace}",
-          description: "Get specific waf-exclusion-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4286,13 +3635,6 @@ export const wafTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config waf-exclusion-policy list --namespace {namespace}",
-        description: "List all waf-exclusion-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4338,13 +3680,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config waf-exclusion-policy list --namespace {namespace}",
-          description: "List all waf-exclusion-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4407,14 +3742,6 @@ export const wafTools: ParsedOperation[] = [
       modifies: ["waf-exclusion-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config waf-exclusion-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update waf-exclusion-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4460,14 +3787,6 @@ export const wafTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config waf-exclusion-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update waf-exclusion-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

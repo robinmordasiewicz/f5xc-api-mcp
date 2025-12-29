@@ -46,19 +46,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       creates: ["bot-defense-app-infrastructure"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config bot-defense-app-infrastructure create {name} --namespace {namespace}",
-        description: "Create bot-defense-app-infrastructure",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config bot-defense-app-infrastructure create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -106,19 +93,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config bot-defense-app-infrastructure create {name} --namespace {namespace}",
-          description: "Create bot-defense-app-infrastructure",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config bot-defense-app-infrastructure create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -180,14 +154,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       deletes: ["bot-defense-app-infrastructure", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config bot-defense-app-infrastructure delete {name} --namespace {namespace}",
-        description: "Delete bot-defense-app-infrastructure",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -233,14 +199,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command:
-            "f5xcctl config bot-defense-app-infrastructure delete {name} --namespace {namespace}",
-          description: "Delete bot-defense-app-infrastructure",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -321,13 +279,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bot-defense-app-infrastructure get {name} --namespace {namespace}",
-        description: "Get specific bot-defense-app-infrastructure",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -373,14 +324,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl config bot-defense-app-infrastructure get {name} --namespace {namespace}",
-          description: "Get specific bot-defense-app-infrastructure",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -466,13 +409,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bot-defense-app-infrastructure list --namespace {namespace}",
-        description: "List all bot-defense-app-infrastructures",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -518,13 +454,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config bot-defense-app-infrastructure list --namespace {namespace}",
-          description: "List all bot-defense-app-infrastructures",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -587,14 +516,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       modifies: ["bot-defense-app-infrastructure"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config bot-defense-app-infrastructure update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update bot-defense-app-infrastructure",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -640,14 +561,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config bot-defense-app-infrastructure update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update bot-defense-app-infrastructure",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -688,18 +601,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       creates: ["preauth"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm preauth create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl tpm preauth create {name} --namespace {namespace}",
-        description: "Create preauth",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -742,18 +643,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl tpm preauth create {name} --namespace {namespace}",
-          description: "Create preauth",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl tpm preauth create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -794,18 +683,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       creates: ["provision"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm provision create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl tpm provision create {name} --namespace {namespace}",
-        description: "Create provision",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -848,18 +725,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl tpm provision create {name} --namespace {namespace}",
-          description: "Create provision",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl tpm provision create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -938,13 +803,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config shape-bot-defense-instance get {name} --namespace {namespace}",
-        description: "Get specific shape-bot-defense-instance",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -990,13 +848,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config shape-bot-defense-instance get {name} --namespace {namespace}",
-          description: "Get specific shape-bot-defense-instance",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1082,13 +933,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config shape-bot-defense-instance list --namespace {namespace}",
-        description: "List all shape-bot-defense-instances",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1134,13 +978,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config shape-bot-defense-instance list --namespace {namespace}",
-          description: "List all shape-bot-defense-instances",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1193,18 +1030,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       creates: ["tpm-api-key"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm tpm-api-key create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl tpm tpm-api-key create {name} --namespace {namespace}",
-        description: "Create tpm-api-key",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1249,18 +1074,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl tpm tpm-api-key create {name} --namespace {namespace}",
-          description: "Create tpm-api-key",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl tpm tpm-api-key create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1342,13 +1155,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm tpm-api-key get {name} --namespace {namespace}",
-        description: "Get specific tpm-api-key",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1394,13 +1200,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl tpm tpm-api-key get {name} --namespace {namespace}",
-          description: "Get specific tpm-api-key",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1486,13 +1285,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm tpm-api-key list --namespace {namespace}",
-        description: "List all tpm-api-keys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1538,13 +1330,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl tpm tpm-api-key list --namespace {namespace}",
-          description: "List all tpm-api-keys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1608,13 +1393,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       modifies: ["tpm-api-key"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm tpm-api-key update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update tpm-api-key",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1660,13 +1438,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl tpm tpm-api-key update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update tpm-api-key",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1721,18 +1492,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       creates: ["tpm-category"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm tpm-category create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl tpm tpm-category create {name} --namespace {namespace}",
-        description: "Create tpm-category",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1777,18 +1536,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl tpm tpm-category create {name} --namespace {namespace}",
-          description: "Create tpm-category",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl tpm tpm-category create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1870,13 +1617,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm tpm-category get {name} --namespace {namespace}",
-        description: "Get specific tpm-category",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1922,13 +1662,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl tpm tpm-category get {name} --namespace {namespace}",
-          description: "Get specific tpm-category",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2014,13 +1747,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm tpm-category list --namespace {namespace}",
-        description: "List all tpm-categorys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2066,13 +1792,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl tpm tpm-category list --namespace {namespace}",
-          description: "List all tpm-categorys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2135,13 +1854,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       modifies: ["tpm-category"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm tpm-category update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update tpm-category",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2187,13 +1899,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl tpm tpm-category update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update tpm-category",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2247,18 +1952,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       creates: ["tpm-manager"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm tpm-manager create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl tpm tpm-manager create {name} --namespace {namespace}",
-        description: "Create tpm-manager",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2303,18 +1996,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl tpm tpm-manager create {name} --namespace {namespace}",
-          description: "Create tpm-manager",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl tpm tpm-manager create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2395,13 +2076,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm tpm-manager get {name} --namespace {namespace}",
-        description: "Get specific tpm-manager",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2447,13 +2121,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl tpm tpm-manager get {name} --namespace {namespace}",
-          description: "Get specific tpm-manager",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2539,13 +2206,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl tpm tpm-manager list --namespace {namespace}",
-        description: "List all tpm-managers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2591,13 +2251,6 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl tpm tpm-manager list --namespace {namespace}",
-          description: "List all tpm-managers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

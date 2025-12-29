@@ -29,13 +29,6 @@ export const vpm_and_node_managementTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl data upgrade-statu list --namespace {namespace}",
-        description: "List all upgrade-status",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -78,13 +71,6 @@ export const vpm_and_node_managementTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data upgrade-statu list --namespace {namespace}",
-          description: "List all upgrade-status",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

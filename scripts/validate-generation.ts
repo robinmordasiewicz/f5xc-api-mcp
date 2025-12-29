@@ -154,7 +154,6 @@ async function main(): Promise<void> {
       interface ToolWithMetadata {
         dangerLevel: unknown;
         sideEffects: unknown;
-        cliExamples: unknown[];
         operationMetadata: unknown;
         parameterExamples: Record<string, unknown>;
       }
@@ -162,7 +161,6 @@ async function main(): Promise<void> {
       const coverage = {
         dangerLevel: allTools.filter((t: ToolWithMetadata) => t.dangerLevel !== null).length,
         sideEffects: allTools.filter((t: ToolWithMetadata) => t.sideEffects !== null).length,
-        cliExamples: allTools.filter((t: ToolWithMetadata) => t.cliExamples?.length > 0).length,
         operationMetadata: allTools.filter((t: ToolWithMetadata) => t.operationMetadata !== null).length,
         parameterExamples: allTools.filter(
           (t: ToolWithMetadata) => Object.keys(t.parameterExamples || {}).length > 0

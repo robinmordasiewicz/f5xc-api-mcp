@@ -102,7 +102,6 @@ describe("handlers", () => {
           const content = JSON.parse(result.content) as ResourceDocumentation;
           expect(content.resourceType).toBeDefined();
           expect(content.apiPath).toContain("http_loadbalancers");
-          expect(content.f5xcctlCommand).toMatch(/f5xcctl\s+\w+\s+get/);
           expect(content.terraformDataSource).toContain("volterra_http_loadbalancer");
           expect(content.exampleResource).toBeDefined();
           expect(content.exampleResource.metadata).toBeDefined();
@@ -398,7 +397,6 @@ describe("handlers", () => {
 
           const content = JSON.parse(result.content);
           expect(content.note).toContain("documentation mode");
-          expect(content.f5xcctlCommand).toContain("f5xcctl get");
           expect(content.apiPath).toBeDefined();
         });
 
@@ -625,40 +623,6 @@ describe("handlers", () => {
       expect(example.metadata.name).toBe("example-cert");
       expect(example.spec).toBeDefined();
       expect(example.system_metadata).toBeDefined();
-    });
-  });
-
-  describe("f5xcctl command generation", () => {
-    it("should generate correct f5xcctl command format", async () => {
-      mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
-
-      const handler = new ResourceHandler(
-        mockCredentialManager as unknown as CredentialManager,
-        null
-      );
-
-      const result = await handler.readResource(
-        "f5xc://test-tenant/default/http_loadbalancer/example-lb"
-      );
-
-      const content = JSON.parse(result.content) as ResourceDocumentation;
-      expect(content.f5xcctlCommand).toBe("f5xcctl load_balancer get http_loadbalancer example-lb -n default");
-    });
-
-    it("should handle resource types with hyphens", async () => {
-      mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
-
-      const handler = new ResourceHandler(
-        mockCredentialManager as unknown as CredentialManager,
-        null
-      );
-
-      const result = await handler.readResource(
-        "f5xc://test-tenant/default/origin_pool/example-pool"
-      );
-
-      const content = JSON.parse(result.content) as ResourceDocumentation;
-      expect(content.f5xcctlCommand).toBe("f5xcctl load_balancer get origin_pool example-pool -n default");
     });
   });
 

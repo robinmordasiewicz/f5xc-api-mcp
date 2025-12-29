@@ -72,13 +72,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config certified-hardware get {name} --namespace {namespace}",
-        description: "Get specific certified-hardware",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -124,13 +117,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config certified-hardware get {name} --namespace {namespace}",
-          description: "Get specific certified-hardware",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -216,13 +202,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config certified-hardware list --namespace {namespace}",
-        description: "List all certified-hardwares",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -268,13 +247,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config certified-hardware list --namespace {namespace}",
-          description: "List all certified-hardwares",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -326,18 +298,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       creates: ["cloud-connect"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-connect create {name} --namespace {namespace}",
-        description: "Create cloud-connect",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config cloud-connect create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -382,18 +342,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config cloud-connect create {name} --namespace {namespace}",
-          description: "Create cloud-connect",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config cloud-connect create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -455,13 +403,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       deletes: ["cloud-connect", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-connect delete {name} --namespace {namespace}",
-        description: "Delete cloud-connect",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -507,13 +448,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config cloud-connect delete {name} --namespace {namespace}",
-          description: "Delete cloud-connect",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -595,13 +529,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-connect get {name} --namespace {namespace}",
-        description: "Get specific cloud-connect",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -647,13 +574,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cloud-connect get {name} --namespace {namespace}",
-          description: "Get specific cloud-connect",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -739,13 +659,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-connect list --namespace {namespace}",
-        description: "List all cloud-connects",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -791,13 +704,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cloud-connect list --namespace {namespace}",
-          description: "List all cloud-connects",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -836,20 +742,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       creates: ["cloud-connect-reapply-vpc-attachment"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl sync-cloud-data cloud-connect-reapply-vpc-attachment create {name} --namespace {namespace}",
-        description: "Create cloud-connect-reapply-vpc-attachment",
-        use_case: "basic_create",
-      },
-      {
-        command:
-          "f5xcctl sync-cloud-data cloud-connect-reapply-vpc-attachment create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -895,20 +787,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl sync-cloud-data cloud-connect-reapply-vpc-attachment create {name} --namespace {namespace}",
-          description: "Create cloud-connect-reapply-vpc-attachment",
-          use_case: "basic_create",
-        },
-        {
-          command:
-            "f5xcctl sync-cloud-data cloud-connect-reapply-vpc-attachment create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -973,14 +851,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       modifies: ["cloud-connect"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config cloud-connect update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update cloud-connect",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1026,14 +896,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config cloud-connect update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update cloud-connect",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1087,18 +949,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       creates: ["cloud-credentials"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-credentials create {name} --namespace {namespace}",
-        description: "Create cloud-credentials",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config cloud-credentials create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1146,18 +996,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config cloud-credentials create {name} --namespace {namespace}",
-          description: "Create cloud-credentials",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config cloud-credentials create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1219,13 +1057,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       deletes: ["cloud-credentials", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-credentials delete {name} --namespace {namespace}",
-        description: "Delete cloud-credentials",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1271,13 +1102,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config cloud-credentials delete {name} --namespace {namespace}",
-          description: "Delete cloud-credentials",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1359,13 +1183,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-credentials get {name} --namespace {namespace}",
-        description: "Get specific cloud-credentials",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1411,13 +1228,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cloud-credentials get {name} --namespace {namespace}",
-          description: "Get specific cloud-credentials",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1503,13 +1313,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-credentials list --namespace {namespace}",
-        description: "List all cloud-credentialss",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1555,13 +1358,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cloud-credentials list --namespace {namespace}",
-          description: "List all cloud-credentialss",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1624,14 +1420,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       modifies: ["cloud-credentials"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config cloud-credentials update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update cloud-credentials",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1677,14 +1465,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config cloud-credentials update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update cloud-credentials",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1739,18 +1519,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       creates: ["cloud-elastic-ip"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-elastic-ip create {name} --namespace {namespace}",
-        description: "Create cloud-elastic-ip",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config cloud-elastic-ip create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1798,18 +1566,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config cloud-elastic-ip create {name} --namespace {namespace}",
-          description: "Create cloud-elastic-ip",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config cloud-elastic-ip create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1871,13 +1627,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       deletes: ["cloud-elastic-ip", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-elastic-ip delete {name} --namespace {namespace}",
-        description: "Delete cloud-elastic-ip",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1923,13 +1672,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config cloud-elastic-ip delete {name} --namespace {namespace}",
-          description: "Delete cloud-elastic-ip",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2012,13 +1754,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-elastic-ip get {name} --namespace {namespace}",
-        description: "Get specific cloud-elastic-ip",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2064,13 +1799,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cloud-elastic-ip get {name} --namespace {namespace}",
-          description: "Get specific cloud-elastic-ip",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2156,13 +1884,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-elastic-ip list --namespace {namespace}",
-        description: "List all cloud-elastic-ips",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2208,13 +1929,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cloud-elastic-ip list --namespace {namespace}",
-          description: "List all cloud-elastic-ips",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2277,14 +1991,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       modifies: ["cloud-elastic-ip"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config cloud-elastic-ip update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update cloud-elastic-ip",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2330,14 +2036,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config cloud-elastic-ip update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update cloud-elastic-ip",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2391,18 +2089,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       creates: ["cloud-link"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-link create {name} --namespace {namespace}",
-        description: "Create cloud-link",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config cloud-link create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2447,18 +2133,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config cloud-link create {name} --namespace {namespace}",
-          description: "Create cloud-link",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config cloud-link create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2520,13 +2194,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       deletes: ["cloud-link", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-link delete {name} --namespace {namespace}",
-        description: "Delete cloud-link",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2572,13 +2239,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config cloud-link delete {name} --namespace {namespace}",
-          description: "Delete cloud-link",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2660,13 +2320,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-link get {name} --namespace {namespace}",
-        description: "Get specific cloud-link",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2712,13 +2365,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cloud-link get {name} --namespace {namespace}",
-          description: "Get specific cloud-link",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2804,13 +2450,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-link list --namespace {namespace}",
-        description: "List all cloud-links",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2856,13 +2495,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cloud-link list --namespace {namespace}",
-          description: "List all cloud-links",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2925,13 +2557,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       modifies: ["cloud-link"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-link update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update cloud-link",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2977,13 +2602,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config cloud-link update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update cloud-link",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3064,13 +2682,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-region get {name} --namespace {namespace}",
-        description: "Get specific cloud-region",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3116,13 +2727,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cloud-region get {name} --namespace {namespace}",
-          description: "Get specific cloud-region",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3208,13 +2812,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-region list --namespace {namespace}",
-        description: "List all cloud-regions",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3260,13 +2857,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config cloud-region list --namespace {namespace}",
-          description: "List all cloud-regions",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3329,13 +2919,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       modifies: ["cloud-region"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config cloud-region update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update cloud-region",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3381,14 +2964,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config cloud-region update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update cloud-region",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3430,18 +3005,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       creates: ["discover-vpc"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl sync-cloud-data discover-vpc create {name} --namespace {namespace}",
-        description: "Create discover-vpc",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl sync-cloud-data discover-vpc create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -3484,18 +3047,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl sync-cloud-data discover-vpc create {name} --namespace {namespace}",
-          description: "Create discover-vpc",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl sync-cloud-data discover-vpc create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3536,18 +3087,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       creates: ["edge-credential"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config edge-credential create {name} --namespace {namespace}",
-        description: "Create edge-credential",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config edge-credential create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -3590,18 +3129,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config edge-credential create {name} --namespace {namespace}",
-          description: "Create edge-credential",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config edge-credential create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3638,13 +3165,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl config edge-list list --namespace {namespace}",
-        description: "List all edge-lists",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -3687,13 +3207,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config edge-list list --namespace {namespace}",
-          description: "List all edge-lists",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3744,18 +3257,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       creates: ["force-delete"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl config force-delete create {name} --namespace {namespace}",
-        description: "Create force-delete",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config force-delete create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Cloud-elastic-IP-1.",
@@ -3800,18 +3301,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config force-delete create {name} --namespace {namespace}",
-          description: "Create force-delete",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config force-delete create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3852,18 +3341,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       creates: ["metric"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data metric create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data metric create {name} --namespace {namespace}",
-        description: "Create metric",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -3906,18 +3383,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data metric create {name} --namespace {namespace}",
-          description: "Create metric",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data metric create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3970,18 +3435,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       creates: ["reapply-config"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl config reapply-config create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config reapply-config create {name} --namespace {namespace}",
-        description: "Create reapply-config",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "AWS-cloud-link-east.",
@@ -4026,18 +3479,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config reapply-config create {name} --namespace {namespace}",
-          description: "Create reapply-config",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config reapply-config create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4078,18 +3519,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       creates: ["segment-metric"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data segment-metric create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data segment-metric create {name} --namespace {namespace}",
-        description: "Create segment-metric",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -4132,18 +3561,6 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data segment-metric create {name} --namespace {namespace}",
-          description: "Create segment-metric",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data segment-metric create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

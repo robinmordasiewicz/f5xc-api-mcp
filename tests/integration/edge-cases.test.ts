@@ -10,7 +10,6 @@ import * as path from "path";
 import * as os from "os";
 import { ConfigManager } from "../../src/config";
 import { CredentialManager } from "../../src/auth/credential-manager";
-import { validateProfileName } from "../../src/cli/setup";
 
 describe("Edge Cases and Error Handling", () => {
   let tempDir: string;
@@ -44,47 +43,6 @@ describe("Edge Cases and Error Handling", () => {
     delete process.env.F5XC_P12_FILE;
     delete process.env.F5XC_P12_PASSWORD;
     delete process.env.F5XC_PROFILE;
-  });
-
-  describe("Invalid Profile Names", () => {
-    it("should reject profile names with spaces", () => {
-      const result = validateProfileName("prod uat");
-      expect(result.valid).toBe(false);
-      expect(result.error).toBeDefined();
-    });
-
-    it("should reject profile names with special characters", () => {
-      expect(validateProfileName("prod@us").valid).toBe(false);
-      expect(validateProfileName("test.staging").valid).toBe(false);
-      expect(validateProfileName("prod!").valid).toBe(false);
-      expect(validateProfileName("test#prod").valid).toBe(false);
-    });
-
-    it("should reject empty profile names", () => {
-      const result = validateProfileName("");
-      expect(result.valid).toBe(false);
-      expect(result.error?.toLowerCase()).toContain("empty");
-    });
-
-    it("should allow reasonably long profile names", () => {
-      // Profile name validation only checks for valid characters, not length
-      const longName = "prod-" + "a".repeat(50);
-      const result = validateProfileName(longName);
-      // Valid characters (alphanumeric, dash, underscore) should pass
-      expect(result.valid).toBe(true);
-    });
-
-    it("should accept valid profile names with hyphens and underscores", () => {
-      expect(validateProfileName("prod-us").valid).toBe(true);
-      expect(validateProfileName("test_staging").valid).toBe(true);
-      expect(validateProfileName("prod-us-east-1").valid).toBe(true);
-    });
-
-    it("should accept profile names with numbers", () => {
-      expect(validateProfileName("prod1").valid).toBe(true);
-      expect(validateProfileName("test123").valid).toBe(true);
-      expect(validateProfileName("2024-prod").valid).toBe(true);
-    });
   });
 
   describe("Corrupted Configuration Files", () => {

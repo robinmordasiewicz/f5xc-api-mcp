@@ -7,17 +7,9 @@
  * with F5 XC APIs via Model Context Protocol.
  *
  * Supports dual-mode operation:
- * - Documentation mode: No credentials required - provides API documentation,
- *   f5xcctl equivalents, and Terraform examples
+ * - Documentation mode: No credentials required - provides API documentation
+ *   and Terraform examples
  * - Execution mode: When F5XC credentials are provided, enables direct API calls
- *
- * CLI Commands:
- * - --setup: Interactive credential setup wizard
- * - --list-profiles: List configured profiles
- * - --show-config: Display configuration
- * - --delete-profile <name>: Delete a profile
- * - --set-default <name>: Set default profile
- * - --test-profile <name>: Test profile connection
  *
  * Environment Variables:
  * - F5XC_API_URL: Tenant URL (auto-normalized)
@@ -29,7 +21,6 @@
 
 import { createServer } from "./server.js";
 import { logger } from "./utils/logging.js";
-import { handleCliCommand, showVersion } from "./cli/index.js";
 
 /** Server version - synchronized with package.json */
 export const VERSION = "0.1.0";
@@ -42,29 +33,33 @@ async function main(): Promise<void> {
     // Get command-line arguments (skip node executable and script name)
     const args = process.argv.slice(2);
 
-    // Handle CLI commands first
-    if (args.length > 0) {
-      // Check for version flag
-      if (args.includes("--version") || args.includes("-v")) {
-        showVersion();
-        console.log(`v${VERSION}\n`);
-        process.exit(0);
-      }
+    // Handle version flag
+    if (args.includes("--version") || args.includes("-v")) {
+      console.log(`f5xc-api-mcp v${VERSION}\n`);
+      process.exit(0);
+    }
 
-      // Check for help flag
-      if (args.includes("--help") || args.includes("-h")) {
-        await handleCliCommand(args);
-        process.exit(0);
-      }
+    // Handle help flag
+    if (args.includes("--help") || args.includes("-h")) {
+      console.log(`F5 Distributed Cloud API MCP Server v${VERSION}
 
-      // Handle all other CLI commands
-      const cliHandled = await handleCliCommand(args);
-      if (cliHandled === undefined && !args[0]?.startsWith("-")) {
-        // No recognized CLI command, fall through to start server
-      } else {
-        // CLI command was handled or error occurred
-        return;
-      }
+Usage: f5xc-api-mcp [options]
+
+Options:
+  -v, --version    Show version number
+  -h, --help       Show help
+
+Environment Variables:
+  F5XC_API_URL        Tenant URL (e.g., https://tenant.console.ves.volterra.io)
+  F5XC_API_TOKEN      API token for authentication
+  F5XC_P12_FILE       Path to P12 certificate file (alternative to token)
+  F5XC_P12_PASSWORD   Password for P12 certificate
+  F5XC_PROFILE        Profile name to use
+
+The server runs in documentation mode when no credentials are provided,
+allowing exploration of the API without authentication.
+`);
+      process.exit(0);
     }
 
     // Start MCP server (default behavior)

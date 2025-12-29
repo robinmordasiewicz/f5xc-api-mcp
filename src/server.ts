@@ -46,7 +46,7 @@ export interface ServerConfig {
  *
  * Provides tools, resources, and prompts for interacting with F5 Distributed Cloud APIs.
  * Works in two modes:
- * - Documentation mode: Returns API documentation, schemas, f5xcctl equivalents, Terraform examples
+ * - Documentation mode: Returns API documentation, schemas, and Terraform examples
  * - Execution mode: Directly executes API calls when authenticated
  */
 export class F5XCApiServer {
@@ -120,7 +120,6 @@ export class F5XCApiServer {
                   tenantUrl: isAuthenticated ? tenantUrl : null,
                   capabilities: {
                     documentation: true,
-                    f5xcctl_equivalents: true,
                     terraform_examples: true,
                     api_execution: isAuthenticated,
                   },

@@ -47,18 +47,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["access-count"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management access-count create {name} --namespace {namespace}",
-        description: "Create access-count",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl secret_management access-count create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Blogging-app-namespace-1.",
@@ -103,18 +91,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl secret_management access-count create {name} --namespace {namespace}",
-          description: "Create access-count",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl secret_management access-count create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -168,18 +144,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["aggregation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management aggregation create {name} --namespace {namespace}",
-        description: "Create aggregation",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl secret_management aggregation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -224,18 +188,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl secret_management aggregation create {name} --namespace {namespace}",
-          description: "Create aggregation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl secret_management aggregation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -289,18 +241,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["audit-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management audit-log create {name} --namespace {namespace}",
-        description: "Create audit-log",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl secret_management audit-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -345,18 +285,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl secret_management audit-log create {name} --namespace {namespace}",
-          description: "Create audit-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl secret_management audit-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -398,18 +326,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["decrypt-secret"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management decrypt-secret create {name} --namespace {namespace}",
-        description: "Create decrypt-secret",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl secret_management decrypt-secret create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -452,18 +368,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl secret_management decrypt-secret create {name} --namespace {namespace}",
-          description: "Create decrypt-secret",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl secret_management decrypt-secret create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -524,13 +428,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management get-policy-document get {name} --namespace {namespace}",
-        description: "Get specific get-policy-document",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Site-secret-policy.",
@@ -576,14 +473,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl secret_management get-policy-document get {name} --namespace {namespace}",
-          description: "Get specific get-policy-document",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -632,13 +521,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management get-public-key list --namespace {namespace}",
-        description: "List all get-public-keys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       key_version: "0",
@@ -683,13 +565,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl secret_management get-public-key list --namespace {namespace}",
-          description: "List all get-public-keys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -747,13 +622,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.policy_state"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management list-policy list --namespace {namespace}",
-        description: "List all list-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -799,13 +667,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl secret_management list-policy list --namespace {namespace}",
-          description: "List all list-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -845,19 +706,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["process-policy-information"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management process-policy-information create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl secret_management process-policy-information create {name} --namespace {namespace}",
-        description: "Create process-policy-information",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -903,19 +751,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl secret_management process-policy-information create {name} --namespace {namespace}",
-          description: "Create process-policy-information",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl secret_management process-policy-information create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -979,18 +814,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["recover"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management recover create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl secret_management recover create {name} --namespace {namespace}",
-        description: "Create recover",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Site-secret-policy.",
@@ -1036,18 +859,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl secret_management recover create {name} --namespace {namespace}",
-          description: "Create recover",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl secret_management recover create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1102,18 +913,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["scroll"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management scroll create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl secret_management scroll create {name} --namespace {namespace}",
-        description: "Create scroll",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -1158,18 +957,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl secret_management scroll create {name} --namespace {namespace}",
-          description: "Create scroll",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl secret_management scroll create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1232,13 +1019,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management scroll list --namespace {namespace}",
-        description: "List all scrolls",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -1284,13 +1064,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl secret_management scroll list --namespace {namespace}",
-          description: "List all scrolls",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1343,18 +1116,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["secret-management-access"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config secret-management-access create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config secret-management-access create {name} --namespace {namespace}",
-        description: "Create secret-management-access",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1402,18 +1163,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config secret-management-access create {name} --namespace {namespace}",
-          description: "Create secret-management-access",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config secret-management-access create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1475,13 +1224,6 @@ export const blindfoldTools: ParsedOperation[] = [
       deletes: ["secret-management-access", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config secret-management-access delete {name} --namespace {namespace}",
-        description: "Delete secret-management-access",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1527,13 +1269,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config secret-management-access delete {name} --namespace {namespace}",
-          description: "Delete secret-management-access",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1616,13 +1351,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config secret-management-access get {name} --namespace {namespace}",
-        description: "Get specific secret-management-access",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1668,13 +1396,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config secret-management-access get {name} --namespace {namespace}",
-          description: "Get specific secret-management-access",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1760,13 +1481,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config secret-management-access list --namespace {namespace}",
-        description: "List all secret-management-accesss",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1812,13 +1526,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config secret-management-access list --namespace {namespace}",
-          description: "List all secret-management-accesss",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1882,14 +1589,6 @@ export const blindfoldTools: ParsedOperation[] = [
       modifies: ["secret-management-access"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config secret-management-access update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update secret-management-access",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1935,14 +1634,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config secret-management-access update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update secret-management-access",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1997,18 +1688,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["secret-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management secret-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl secret_management secret-policy create {name} --namespace {namespace}",
-        description: "Create secret-policy",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2053,18 +1732,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl secret_management secret-policy create {name} --namespace {namespace}",
-          description: "Create secret-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl secret_management secret-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2126,13 +1793,6 @@ export const blindfoldTools: ParsedOperation[] = [
       deletes: ["secret-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management secret-policy delete {name} --namespace {namespace}",
-        description: "Delete secret-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2178,13 +1838,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl secret_management secret-policy delete {name} --namespace {namespace}",
-          description: "Delete secret-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2267,13 +1920,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management secret-policy get {name} --namespace {namespace}",
-        description: "Get specific secret-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2319,13 +1965,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl secret_management secret-policy get {name} --namespace {namespace}",
-          description: "Get specific secret-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2411,13 +2050,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management secret-policy list --namespace {namespace}",
-        description: "List all secret-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2463,13 +2095,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl secret_management secret-policy list --namespace {namespace}",
-          description: "List all secret-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2522,19 +2147,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["secret-policy-rule"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management secret-policy-rule create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl secret_management secret-policy-rule create {name} --namespace {namespace}",
-        description: "Create secret-policy-rule",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2582,19 +2194,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl secret_management secret-policy-rule create {name} --namespace {namespace}",
-          description: "Create secret-policy-rule",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl secret_management secret-policy-rule create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2656,14 +2255,6 @@ export const blindfoldTools: ParsedOperation[] = [
       deletes: ["secret-policy-rule", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl secret_management secret-policy-rule delete {name} --namespace {namespace}",
-        description: "Delete secret-policy-rule",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2709,14 +2300,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command:
-            "f5xcctl secret_management secret-policy-rule delete {name} --namespace {namespace}",
-          description: "Delete secret-policy-rule",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2799,13 +2382,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management secret-policy-rule get {name} --namespace {namespace}",
-        description: "Get specific secret-policy-rule",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2851,14 +2427,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl secret_management secret-policy-rule get {name} --namespace {namespace}",
-          description: "Get specific secret-policy-rule",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2944,13 +2512,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management secret-policy-rule list --namespace {namespace}",
-        description: "List all secret-policy-rules",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2996,13 +2557,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl secret_management secret-policy-rule list --namespace {namespace}",
-          description: "List all secret-policy-rules",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3066,14 +2620,6 @@ export const blindfoldTools: ParsedOperation[] = [
       modifies: ["secret-policy-rule"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl secret_management secret-policy-rule update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update secret-policy-rule",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3119,14 +2665,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl secret_management secret-policy-rule update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update secret-policy-rule",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3192,14 +2730,6 @@ export const blindfoldTools: ParsedOperation[] = [
       modifies: ["secret-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl secret_management secret-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update secret-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3245,14 +2775,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl secret_management secret-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update secret-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3316,18 +2838,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["softdelete"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management softdelete create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl secret_management softdelete create {name} --namespace {namespace}",
-        description: "Create softdelete",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Site-secret-policy.",
@@ -3373,18 +2883,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl secret_management softdelete create {name} --namespace {namespace}",
-          description: "Create softdelete",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl secret_management softdelete create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3439,19 +2937,6 @@ export const blindfoldTools: ParsedOperation[] = [
       creates: ["voltshare-admin-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management voltshare-admin-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl secret_management voltshare-admin-policy create {name} --namespace {namespace}",
-        description: "Create voltshare-admin-policy",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3499,19 +2984,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl secret_management voltshare-admin-policy create {name} --namespace {namespace}",
-          description: "Create voltshare-admin-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl secret_management voltshare-admin-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3573,14 +3045,6 @@ export const blindfoldTools: ParsedOperation[] = [
       deletes: ["voltshare-admin-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl secret_management voltshare-admin-policy delete {name} --namespace {namespace}",
-        description: "Delete voltshare-admin-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3626,14 +3090,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command:
-            "f5xcctl secret_management voltshare-admin-policy delete {name} --namespace {namespace}",
-          description: "Delete voltshare-admin-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3716,14 +3172,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl secret_management voltshare-admin-policy get {name} --namespace {namespace}",
-        description: "Get specific voltshare-admin-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3769,14 +3217,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl secret_management voltshare-admin-policy get {name} --namespace {namespace}",
-          description: "Get specific voltshare-admin-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3862,13 +3302,6 @@ export const blindfoldTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl secret_management voltshare-admin-policy list --namespace {namespace}",
-        description: "List all voltshare-admin-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3914,13 +3347,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl secret_management voltshare-admin-policy list --namespace {namespace}",
-          description: "List all voltshare-admin-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3984,14 +3410,6 @@ export const blindfoldTools: ParsedOperation[] = [
       modifies: ["voltshare-admin-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl secret_management voltshare-admin-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update voltshare-admin-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4037,14 +3455,6 @@ export const blindfoldTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl secret_management voltshare-admin-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update voltshare-admin-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
