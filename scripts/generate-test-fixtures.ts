@@ -121,9 +121,6 @@ async function generateFixtures(): Promise<void> {
   const toolWithDangerLevel = allTools.find(
     (t: { dangerLevel: string | null }) => t.dangerLevel !== null
   );
-  const toolWithExamples = allTools.find(
-    (t: { cliExamples: unknown[] }) => t.cliExamples && t.cliExamples.length > 0
-  );
   const toolWithMetadata = allTools.find(
     (t: { operationMetadata: unknown }) => t.operationMetadata !== null
   );
@@ -204,7 +201,6 @@ export const FIRST_TOOL = ${JSON.stringify(
  */
 export const RICH_METADATA_SAMPLES = {
   withDangerLevel: ${toolWithDangerLevel ? JSON.stringify({ toolName: toolWithDangerLevel.toolName, dangerLevel: toolWithDangerLevel.dangerLevel }) : "null"},
-  withCliExamples: ${toolWithExamples ? JSON.stringify({ toolName: toolWithExamples.toolName, exampleCount: toolWithExamples.cliExamples.length }) : "null"},
   withOperationMetadata: ${toolWithMetadata ? JSON.stringify({ toolName: toolWithMetadata.toolName }) : "null"},
   withValidationRules: ${toolWithValidation ? JSON.stringify({ toolName: toolWithValidation.toolName }) : "null"},
   withParameters: ${toolWithParams ? JSON.stringify({ toolName: toolWithParams.toolName, pathParamCount: toolWithParams.pathParameters.length, queryParamCount: toolWithParams.queryParameters.length }) : "null"},

@@ -46,18 +46,6 @@ export const container_servicesTools: ParsedOperation[] = [
       creates: ["usage"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data usage create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data usage create {name} --namespace {namespace}",
-        description: "Create usage",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -102,18 +90,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data usage create {name} --namespace {namespace}",
-          description: "Create usage",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data usage create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -168,18 +144,6 @@ export const container_servicesTools: ParsedOperation[] = [
       creates: ["virtual-k8s"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-k8s create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config virtual-k8s create {name} --namespace {namespace}",
-        description: "Create virtual-k8s",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -224,18 +188,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config virtual-k8s create {name} --namespace {namespace}",
-          description: "Create virtual-k8s",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config virtual-k8s create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -297,13 +249,6 @@ export const container_servicesTools: ParsedOperation[] = [
       deletes: ["virtual-k8s", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-k8s delete {name} --namespace {namespace}",
-        description: "Delete virtual-k8s",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -349,13 +294,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config virtual-k8s delete {name} --namespace {namespace}",
-          description: "Delete virtual-k8s",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -438,13 +376,6 @@ export const container_servicesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-k8s get {name} --namespace {namespace}",
-        description: "Get specific virtual-k8s",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -490,13 +421,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config virtual-k8s get {name} --namespace {namespace}",
-          description: "Get specific virtual-k8s",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -582,13 +506,6 @@ export const container_servicesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-k8s list --namespace {namespace}",
-        description: "List all virtual-k8ss",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -634,13 +551,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config virtual-k8s list --namespace {namespace}",
-          description: "List all virtual-k8ss",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -704,13 +614,6 @@ export const container_servicesTools: ParsedOperation[] = [
       modifies: ["virtual-k8s"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-k8s update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update virtual-k8s",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -756,14 +659,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config virtual-k8s update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update virtual-k8s",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -817,18 +712,6 @@ export const container_servicesTools: ParsedOperation[] = [
       creates: ["workload"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config workload create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config workload create {name} --namespace {namespace}",
-        description: "Create workload",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -873,18 +756,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config workload create {name} --namespace {namespace}",
-          description: "Create workload",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config workload create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -946,13 +817,6 @@ export const container_servicesTools: ParsedOperation[] = [
       deletes: ["workload", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config workload delete {name} --namespace {namespace}",
-        description: "Delete workload",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -998,13 +862,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config workload delete {name} --namespace {namespace}",
-          description: "Delete workload",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1058,18 +915,6 @@ export const container_servicesTools: ParsedOperation[] = [
       creates: ["workload-flavor"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config workload-flavor create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config workload-flavor create {name} --namespace {namespace}",
-        description: "Create workload-flavor",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1114,18 +959,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config workload-flavor create {name} --namespace {namespace}",
-          description: "Create workload-flavor",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config workload-flavor create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1187,13 +1020,6 @@ export const container_servicesTools: ParsedOperation[] = [
       deletes: ["workload-flavor", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config workload-flavor delete {name} --namespace {namespace}",
-        description: "Delete workload-flavor",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1239,13 +1065,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config workload-flavor delete {name} --namespace {namespace}",
-          description: "Delete workload-flavor",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1327,13 +1146,6 @@ export const container_servicesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config workload-flavor get {name} --namespace {namespace}",
-        description: "Get specific workload-flavor",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1379,13 +1191,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config workload-flavor get {name} --namespace {namespace}",
-          description: "Get specific workload-flavor",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1471,13 +1276,6 @@ export const container_servicesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config workload-flavor list --namespace {namespace}",
-        description: "List all workload-flavors",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1523,13 +1321,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config workload-flavor list --namespace {namespace}",
-          description: "List all workload-flavors",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1592,14 +1383,6 @@ export const container_servicesTools: ParsedOperation[] = [
       modifies: ["workload-flavor"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config workload-flavor update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update workload-flavor",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1645,14 +1428,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config workload-flavor update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update workload-flavor",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1734,13 +1509,6 @@ export const container_servicesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config workload get {name} --namespace {namespace}",
-        description: "Get specific workload",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1786,13 +1554,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config workload get {name} --namespace {namespace}",
-          description: "Get specific workload",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1878,13 +1639,6 @@ export const container_servicesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config workload list --namespace {namespace}",
-        description: "List all workloads",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1930,13 +1684,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config workload list --namespace {namespace}",
-          description: "List all workloads",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1999,13 +1746,6 @@ export const container_servicesTools: ParsedOperation[] = [
       modifies: ["workload"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config workload update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update workload",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2051,13 +1791,6 @@ export const container_servicesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config workload update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update workload",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

@@ -51,7 +51,6 @@ describe("Rich Metadata Extraction", () => {
       expect(tool).toHaveProperty("dangerLevel");
       expect(tool).toHaveProperty("sideEffects");
       expect(tool).toHaveProperty("requiredFields");
-      expect(tool).toHaveProperty("cliExamples");
       expect(tool).toHaveProperty("confirmationRequired");
       expect(tool).toHaveProperty("parameterExamples");
       expect(tool).toHaveProperty("validationRules");
@@ -76,7 +75,6 @@ describe("Rich Metadata Extraction", () => {
       }
 
       expect(Array.isArray(tool!.requiredFields)).toBe(true);
-      expect(Array.isArray(tool!.cliExamples)).toBe(true);
       expect(typeof tool!.confirmationRequired).toBe("boolean");
       expect(typeof tool!.parameterExamples).toBe("object");
       expect(typeof tool!.validationRules).toBe("object");
@@ -110,45 +108,6 @@ describe("Rich Metadata Extraction", () => {
       // Just validating that IF they exist, they have valid values
       for (const tool of toolsWithDanger) {
         expect(["low", "medium", "high"]).toContain(tool.dangerLevel);
-      }
-    });
-  });
-
-  describe("x-ves-cli-examples", () => {
-    it("should be an array for all tools", () => {
-      for (const tool of allTools) {
-        expect(Array.isArray(tool.cliExamples)).toBe(true);
-      }
-    });
-
-    it("should have valid CLI example structure when present", () => {
-      const toolsWithExamples = findToolsWithProperty(
-        "cliExamples",
-        (examples) => examples.length > 0
-      );
-
-      for (const tool of toolsWithExamples) {
-        for (const example of tool.cliExamples) {
-          expect(typeof example).toBe("object");
-          // CLI examples may have description, command, use_case
-          if (example.description) {
-            expect(typeof example.description).toBe("string");
-          }
-          if (example.command) {
-            expect(typeof example.command).toBe("string");
-          }
-          if (example.use_case) {
-            expect(typeof example.use_case).toBe("string");
-          }
-        }
-      }
-    });
-
-    it("should have tools with CLI examples from fixtures if available", () => {
-      if (RICH_METADATA_SAMPLES.withCliExamples) {
-        const tool = getToolByName(RICH_METADATA_SAMPLES.withCliExamples.toolName);
-        expect(tool).toBeDefined();
-        expect(tool!.cliExamples.length).toBe(RICH_METADATA_SAMPLES.withCliExamples.exampleCount);
       }
     });
   });
@@ -387,7 +346,6 @@ describe("Rich Metadata Coverage Statistics", () => {
       dangerLevel: allTools.filter((t) => t.dangerLevel !== null).length,
       sideEffects: allTools.filter((t) => t.sideEffects !== null).length,
       requiredFields: allTools.filter((t) => t.requiredFields.length > 0).length,
-      cliExamples: allTools.filter((t) => t.cliExamples.length > 0).length,
       confirmationRequired: allTools.filter((t) => t.confirmationRequired).length,
       parameterExamples: allTools.filter((t) => Object.keys(t.parameterExamples).length > 0).length,
       validationRules: allTools.filter((t) => Object.keys(t.validationRules).length > 0).length,

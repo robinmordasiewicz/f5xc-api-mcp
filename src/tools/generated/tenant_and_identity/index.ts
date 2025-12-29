@@ -45,18 +45,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["accept-to"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web accept-to create {name} --namespace {namespace}",
-        description: "Create accept-to",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web accept-to create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -101,18 +89,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web accept-to create {name} --namespace {namespace}",
-          description: "Create accept-to",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web accept-to create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -155,18 +131,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["acces"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web acces create {name} --namespace {namespace}",
-        description: "Create acces",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web acces create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -209,18 +173,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web acces create {name} --namespace {namespace}",
-          description: "Create acces",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web acces create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -257,13 +209,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web acces list --namespace {namespace}",
-        description: "List all access",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -306,13 +251,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web acces list --namespace {namespace}",
-          description: "List all access",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -364,18 +302,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["active-alert-policie"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config active-alert-policie create {name} --namespace {namespace}",
-        description: "Create active-alert-policie",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config active-alert-policie create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -423,18 +349,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config active-alert-policie create {name} --namespace {namespace}",
-          description: "Create active-alert-policie",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config active-alert-policie create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -484,13 +398,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config active-alert-policie list --namespace {namespace}",
-        description: "List all active-alert-policies",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -535,13 +442,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config active-alert-policie list --namespace {namespace}",
-          description: "List all active-alert-policies",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -593,18 +493,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["active-network-policie"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config active-network-policie create {name} --namespace {namespace}",
-        description: "Create active-network-policie",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config active-network-policie create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -652,18 +540,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config active-network-policie create {name} --namespace {namespace}",
-          description: "Create active-network-policie",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config active-network-policie create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -713,13 +589,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config active-network-policie list --namespace {namespace}",
-        description: "List all active-network-policies",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -764,13 +633,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config active-network-policie list --namespace {namespace}",
-          description: "List all active-network-policies",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -822,18 +684,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["active-service-policie"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config active-service-policie create {name} --namespace {namespace}",
-        description: "Create active-service-policie",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config active-service-policie create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -881,18 +731,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config active-service-policie create {name} --namespace {namespace}",
-          description: "Create active-service-policie",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config active-service-policie create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -942,13 +780,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config active-service-policie list --namespace {namespace}",
-        description: "List all active-service-policies",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -993,13 +824,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config active-service-policie list --namespace {namespace}",
-          description: "List all active-service-policies",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1035,13 +859,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web admin-notification list --namespace {namespace}",
-        description: "List all admin-notifications",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1084,13 +901,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web admin-notification list --namespace {namespace}",
-          description: "List all admin-notifications",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1128,14 +938,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["admin-notification"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl web admin-notification update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update admin-notification",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1178,14 +980,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web admin-notification update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update admin-notification",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1227,18 +1021,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["admin-reset"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web admin-reset create {name} --namespace {namespace}",
-        description: "Create admin-reset",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web admin-reset create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1281,18 +1063,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web admin-reset create {name} --namespace {namespace}",
-          description: "Create admin-reset",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web admin-reset create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1331,13 +1101,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["admin-reset"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web admin-reset update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update admin-reset",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1380,13 +1143,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web admin-reset update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update admin-reset",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1428,18 +1184,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["all-application-inventory"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config all-application-inventory create {name} --namespace {namespace}",
-        description: "Create all-application-inventory",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config all-application-inventory create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1485,18 +1229,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config all-application-inventory create {name} --namespace {namespace}",
-          description: "Create all-application-inventory",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config all-application-inventory create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1538,19 +1270,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["all-application-inventory-waf-filter"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config all-application-inventory-waf-filter create {name} --namespace {namespace}",
-        description: "Create all-application-inventory-waf-filter",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config all-application-inventory-waf-filter create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1596,19 +1315,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config all-application-inventory-waf-filter create {name} --namespace {namespace}",
-          description: "Create all-application-inventory-waf-filter",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config all-application-inventory-waf-filter create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1650,18 +1356,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["all-ns-stat"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml all-ns-stat create {name} --namespace {namespace}",
-        description: "Create all-ns-stat",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl ml all-ns-stat create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1704,18 +1398,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ml all-ns-stat create {name} --namespace {namespace}",
-          description: "Create all-ns-stat",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ml all-ns-stat create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1770,18 +1452,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["allowed-tenant"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web allowed-tenant create {name} --namespace {namespace}",
-        description: "Create allowed-tenant",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web allowed-tenant create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1826,18 +1496,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web allowed-tenant create {name} --namespace {namespace}",
-          description: "Create allowed-tenant",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web allowed-tenant create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1899,13 +1557,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["allowed-tenant", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web allowed-tenant delete {name} --namespace {namespace}",
-        description: "Delete allowed-tenant",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1951,13 +1602,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web allowed-tenant delete {name} --namespace {namespace}",
-          description: "Delete allowed-tenant",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2040,13 +1684,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web allowed-tenant get {name} --namespace {namespace}",
-        description: "Get specific allowed-tenant",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2092,13 +1729,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web allowed-tenant get {name} --namespace {namespace}",
-          description: "Get specific allowed-tenant",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2184,13 +1814,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web allowed-tenant list --namespace {namespace}",
-        description: "List all allowed-tenants",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2236,13 +1859,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web allowed-tenant list --namespace {namespace}",
-          description: "List all allowed-tenants",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2306,13 +1922,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["allowed-tenant"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web allowed-tenant update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update allowed-tenant",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2358,14 +1967,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web allowed-tenant update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update allowed-tenant",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2407,18 +2008,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["analyze-for-deletion"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web analyze-for-deletion create {name} --namespace {namespace}",
-        description: "Create analyze-for-deletion",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web analyze-for-deletion create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2464,18 +2053,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web analyze-for-deletion create {name} --namespace {namespace}",
-          description: "Create analyze-for-deletion",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web analyze-for-deletion create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2529,18 +2106,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["application-inventory"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config application-inventory create {name} --namespace {namespace}",
-        description: "Create application-inventory",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config application-inventory create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -2588,18 +2153,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config application-inventory create {name} --namespace {namespace}",
-          description: "Create application-inventory",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config application-inventory create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2641,18 +2194,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["assign"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web assign create {name} --namespace {namespace}",
-        description: "Create assign",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web assign create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2695,18 +2236,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web assign create {name} --namespace {namespace}",
-          description: "Create assign",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web assign create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2757,14 +2286,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["assign-namespace-role"],
     },
     requiredFields: ["path.name"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl web assign-namespace-role update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update assign-namespace-role",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
@@ -2809,14 +2330,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web assign-namespace-role update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update assign-namespace-role",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2870,18 +2383,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["authentication"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config authentication create {name} --namespace {namespace}",
-        description: "Create authentication",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config authentication create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2926,18 +2427,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config authentication create {name} --namespace {namespace}",
-          description: "Create authentication",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config authentication create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2999,13 +2488,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["authentication", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config authentication delete {name} --namespace {namespace}",
-        description: "Delete authentication",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3051,13 +2533,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config authentication delete {name} --namespace {namespace}",
-          description: "Delete authentication",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3139,13 +2614,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config authentication get {name} --namespace {namespace}",
-        description: "Get specific authentication",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3191,13 +2659,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config authentication get {name} --namespace {namespace}",
-          description: "Get specific authentication",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3283,13 +2744,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config authentication list --namespace {namespace}",
-        description: "List all authentications",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3335,13 +2789,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config authentication list --namespace {namespace}",
-          description: "List all authentications",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3404,14 +2851,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["authentication"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config authentication update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update authentication",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3457,14 +2896,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config authentication update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update authentication",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3518,18 +2949,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["cascade-delete"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web cascade-delete create {name} --namespace {namespace}",
-        description: "Create cascade-delete",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web cascade-delete create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -3574,18 +2993,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web cascade-delete create {name} --namespace {namespace}",
-          description: "Create cascade-delete",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web cascade-delete create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3640,18 +3047,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["child-tenant"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web child-tenant create {name} --namespace {namespace}",
-        description: "Create child-tenant",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web child-tenant create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3696,18 +3091,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web child-tenant create {name} --namespace {namespace}",
-          description: "Create child-tenant",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web child-tenant create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3769,13 +3152,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["child-tenant", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web child-tenant delete {name} --namespace {namespace}",
-        description: "Delete child-tenant",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3821,13 +3197,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web child-tenant delete {name} --namespace {namespace}",
-          description: "Delete child-tenant",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3876,13 +3245,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl web child-tenant get {name} --namespace {namespace}",
-        description: "Get specific child-tenant",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -3927,13 +3289,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web child-tenant get {name} --namespace {namespace}",
-          description: "Get specific child-tenant",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4018,13 +3373,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web child-tenant list --namespace {namespace}",
-        description: "List all child-tenants",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       ctm: "Value",
@@ -4072,13 +3420,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web child-tenant list --namespace {namespace}",
-          description: "List all child-tenants",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4131,18 +3472,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["child-tenant-manager"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web child-tenant-manager create {name} --namespace {namespace}",
-        description: "Create child-tenant-manager",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web child-tenant-manager create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -4190,18 +3519,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web child-tenant-manager create {name} --namespace {namespace}",
-          description: "Create child-tenant-manager",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web child-tenant-manager create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4263,13 +3580,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["child-tenant-manager", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web child-tenant-manager delete {name} --namespace {namespace}",
-        description: "Delete child-tenant-manager",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -4315,13 +3625,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web child-tenant-manager delete {name} --namespace {namespace}",
-          description: "Delete child-tenant-manager",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4403,13 +3706,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web child-tenant-manager get {name} --namespace {namespace}",
-        description: "Get specific child-tenant-manager",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4455,13 +3751,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web child-tenant-manager get {name} --namespace {namespace}",
-          description: "Get specific child-tenant-manager",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4547,13 +3836,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web child-tenant-manager list --namespace {namespace}",
-        description: "List all child-tenant-managers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4599,13 +3881,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web child-tenant-manager list --namespace {namespace}",
-          description: "List all child-tenant-managers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4668,14 +3943,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["child-tenant-manager"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl web child-tenant-manager update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update child-tenant-manager",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4721,14 +3988,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web child-tenant-manager update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update child-tenant-manager",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4793,13 +4052,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["child-tenant"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web child-tenant update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update child-tenant",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4845,13 +4097,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web child-tenant update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update child-tenant",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4926,13 +4171,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.country_code", "path.prefix", "path.state_code"],
-    cliExamples: [
-      {
-        command: "f5xcctl web citie list --namespace {namespace}",
-        description: "List all cities",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       country_code: "US",
@@ -4979,13 +4217,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web citie list --namespace {namespace}",
-          description: "List all cities",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5035,18 +4266,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["close"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.tp_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl web close create {name} --namespace {namespace}",
-        description: "Create close",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web close create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       tp_id: "123",
@@ -5091,18 +4310,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web close create {name} --namespace {namespace}",
-          description: "Create close",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web close create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5140,13 +4347,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web combined-notification list --namespace {namespace}",
-        description: "List all combined-notifications",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -5189,13 +4389,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web combined-notification list --namespace {namespace}",
-          description: "List all combined-notifications",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5233,14 +4426,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["combined-notification"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl web combined-notification update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update combined-notification",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -5283,14 +4468,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web combined-notification update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update combined-notification",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5344,18 +4521,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["comment"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.tp_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl web comment create {name} --namespace {namespace}",
-        description: "Create comment",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web comment create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       tp_id: "123",
@@ -5400,18 +4565,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web comment create {name} --namespace {namespace}",
-          description: "Create comment",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web comment create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5466,18 +4619,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["contact"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web contact create {name} --namespace {namespace}",
-        description: "Create contact",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web contact create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -5522,18 +4663,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web contact create {name} --namespace {namespace}",
-          description: "Create contact",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web contact create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5595,13 +4724,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["contact", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web contact delete {name} --namespace {namespace}",
-        description: "Delete contact",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -5647,13 +4769,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web contact delete {name} --namespace {namespace}",
-          description: "Delete contact",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5736,13 +4851,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web contact get {name} --namespace {namespace}",
-        description: "Get specific contact",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5788,13 +4896,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web contact get {name} --namespace {namespace}",
-          description: "Get specific contact",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5880,13 +4981,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web contact list --namespace {namespace}",
-        description: "List all contacts",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5932,13 +5026,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web contact list --namespace {namespace}",
-          description: "List all contacts",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6001,13 +5088,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["contact"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web contact update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update contact",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -6053,13 +5133,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web contact update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update contact",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6111,13 +5184,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.prefix"],
-    cliExamples: [
-      {
-        command: "f5xcctl web countrie list --namespace {namespace}",
-        description: "List all countries",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       prefix: "US for USA.",
@@ -6162,13 +5228,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web countrie list --namespace {namespace}",
-          description: "List all countries",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6207,18 +5266,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["customer-support"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web customer-support create {name} --namespace {namespace}",
-        description: "Create customer-support",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web customer-support create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -6264,18 +5311,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web customer-support create {name} --namespace {namespace}",
-          description: "Create customer-support",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web customer-support create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6312,13 +5347,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web customer-support list --namespace {namespace}",
-        description: "List all customer-supports",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -6361,13 +5389,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web customer-support list --namespace {namespace}",
-          description: "List all customer-supports",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6407,13 +5428,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["deactivate"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl saas deactivate update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update deactivate",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -6456,13 +5470,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl saas deactivate update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update deactivate",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6525,18 +5532,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["delete"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web delete create {name} --namespace {namespace}",
-        description: "Create delete",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web delete create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -6582,18 +5577,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web delete create {name} --namespace {namespace}",
-          description: "Create delete",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web delete create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6633,13 +5616,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["disable"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web disable update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update disable",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -6682,13 +5658,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web disable update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update disable",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6728,13 +5697,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["enable"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web enable update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update enable",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -6777,13 +5739,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web enable update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update enable",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6835,18 +5790,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["escalate"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.tp_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl web escalate create {name} --namespace {namespace}",
-        description: "Create escalate",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web escalate create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       tp_id: "123",
@@ -6891,18 +5834,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web escalate create {name} --namespace {namespace}",
-          description: "Create escalate",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web escalate create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6944,18 +5875,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["evaluate-api-acces"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web evaluate-api-acces create {name} --namespace {namespace}",
-        description: "Create evaluate-api-acces",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web evaluate-api-acces create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -7001,18 +5920,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web evaluate-api-acces create {name} --namespace {namespace}",
-          description: "Create evaluate-api-acces",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web evaluate-api-acces create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7054,18 +5961,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["evaluate-batch-api-acces"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web evaluate-batch-api-acces create {name} --namespace {namespace}",
-        description: "Create evaluate-batch-api-acces",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web evaluate-batch-api-acces create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -7111,18 +6006,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web evaluate-batch-api-acces create {name} --namespace {namespace}",
-          description: "Create evaluate-batch-api-acces",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web evaluate-batch-api-acces create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7176,18 +6059,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["fast-acls-for-internet-vip"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fast-acls-for-internet-vip create {name} --namespace {namespace}",
-        description: "Create fast-acls-for-internet-vip",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config fast-acls-for-internet-vip create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -7235,19 +6106,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config fast-acls-for-internet-vip create {name} --namespace {namespace}",
-          description: "Create fast-acls-for-internet-vip",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config fast-acls-for-internet-vip create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7297,13 +6155,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fast-acls-for-internet-vip list --namespace {namespace}",
-        description: "List all fast-acls-for-internet-vips",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -7348,13 +6199,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config fast-acls-for-internet-vip list --namespace {namespace}",
-          description: "List all fast-acls-for-internet-vips",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7389,13 +6233,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web favicon list --namespace {namespace}",
-        description: "List all favicons",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -7438,13 +6275,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web favicon list --namespace {namespace}",
-          description: "List all favicons",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7481,13 +6311,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["group-add"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web group-add update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update group-add",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -7530,13 +6353,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web group-add update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update group-add",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7577,18 +6393,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["Group"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl scim Group create {name} --namespace {namespace}",
-        description: "Create Group",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl scim Group create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -7631,18 +6435,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl scim Group create {name} --namespace {namespace}",
-          description: "Create Group",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl scim Group create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7709,13 +6501,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["Group", "contained_resources"],
     },
     requiredFields: ["path.id"],
-    cliExamples: [
-      {
-        command: "f5xcctl scim Group delete {name} --namespace {namespace}",
-        description: "Delete Group",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       excludedAttributes: "[",
@@ -7761,13 +6546,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl scim Group delete {name} --namespace {namespace}",
-          description: "Delete Group",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7832,13 +6610,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id"],
-    cliExamples: [
-      {
-        command: "f5xcctl scim Group get {name} --namespace {namespace}",
-        description: "Get specific Group",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       excludedAttributes: "[",
@@ -7884,13 +6655,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl scim Group get {name} --namespace {namespace}",
-          description: "Get specific Group",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7976,13 +6740,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl scim Group list --namespace {namespace}",
-        description: "List all Groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       count: "8",
@@ -8030,13 +6787,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl scim Group list --namespace {namespace}",
-          description: "List all Groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8087,7 +6837,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["Group"],
     },
     requiredFields: ["path.id"],
-    cliExamples: [],
     confirmationRequired: false,
     parameterExamples: {
       id: "Value",
@@ -8132,7 +6881,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8171,13 +6919,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["group-remove"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web group-remove update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update group-remove",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -8220,13 +6961,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web group-remove update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update group-remove",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8279,13 +7013,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["Group"],
     },
     requiredFields: ["path.id"],
-    cliExamples: [
-      {
-        command: "f5xcctl scim Group update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update Group",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       id: "Value",
@@ -8330,13 +7057,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl scim Group update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update Group",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8375,13 +7095,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["image", "contained_resources"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web image delete {name} --namespace {namespace}",
-        description: "Delete image",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {},
     validationRules: {},
@@ -8424,13 +7137,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web image delete {name} --namespace {namespace}",
-          description: "Delete image",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8467,13 +7173,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web image list --namespace {namespace}",
-        description: "List all images",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -8516,13 +7215,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web image list --namespace {namespace}",
-          description: "List all images",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8561,13 +7253,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["image"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web image update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update image",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -8610,13 +7295,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web image update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update image",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8654,13 +7332,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web inactive list --namespace {namespace}",
-        description: "List all inactives",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -8703,13 +7374,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web inactive list --namespace {namespace}",
-          description: "List all inactives",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8744,13 +7408,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web last-login list --namespace {namespace}",
-        description: "List all last-logins",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -8793,13 +7450,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web last-login list --namespace {namespace}",
-          description: "List all last-logins",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8839,18 +7489,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["login-in-time"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web login-in-time create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web login-in-time create {name} --namespace {namespace}",
-        description: "Create login-in-time",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -8893,18 +7531,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web login-in-time create {name} --namespace {namespace}",
-          description: "Create login-in-time",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web login-in-time create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8967,13 +7593,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web login list --namespace {namespace}",
-        description: "List all logins",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       first: "100",
@@ -9019,13 +7638,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web login list --namespace {namespace}",
-          description: "List all logins",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9060,13 +7672,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web logo list --namespace {namespace}",
-        description: "List all logos",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -9109,13 +7714,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web logo list --namespace {namespace}",
-          description: "List all logos",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9174,13 +7772,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web lookup list --namespace {namespace}",
-        description: "List all lookups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       cname: "Domain1",
@@ -9226,13 +7817,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web lookup list --namespace {namespace}",
-          description: "List all lookups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9271,18 +7855,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["lookup-user-role"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web lookup-user-role create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web lookup-user-role create {name} --namespace {namespace}",
-        description: "Create lookup-user-role",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -9328,18 +7900,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web lookup-user-role create {name} --namespace {namespace}",
-          description: "Create lookup-user-role",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web lookup-user-role create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9394,18 +7954,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["managed-tenant"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web managed-tenant create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web managed-tenant create {name} --namespace {namespace}",
-        description: "Create managed-tenant",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -9450,18 +7998,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web managed-tenant create {name} --namespace {namespace}",
-          description: "Create managed-tenant",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web managed-tenant create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9523,13 +8059,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["managed-tenant", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web managed-tenant delete {name} --namespace {namespace}",
-        description: "Delete managed-tenant",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -9575,13 +8104,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web managed-tenant delete {name} --namespace {namespace}",
-          description: "Delete managed-tenant",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9664,13 +8186,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web managed-tenant get {name} --namespace {namespace}",
-        description: "Get specific managed-tenant",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -9716,13 +8231,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web managed-tenant get {name} --namespace {namespace}",
-          description: "Get specific managed-tenant",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9795,13 +8303,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web managed-tenant list --namespace {namespace}",
-        description: "List all managed-tenants",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       page_limit: "100",
@@ -9848,13 +8349,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web managed-tenant list --namespace {namespace}",
-          description: "List all managed-tenants",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9918,13 +8412,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["managed-tenant"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web managed-tenant update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update managed-tenant",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -9970,14 +8457,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web managed-tenant update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update managed-tenant",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10053,13 +8532,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web managed-tenants-by-user list --namespace {namespace}",
-        description: "List all managed-tenants-by-users",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       page_limit: "100",
@@ -10106,13 +8578,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web managed-tenants-by-user list --namespace {namespace}",
-          description: "List all managed-tenants-by-users",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10185,13 +8650,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web managed-tenants-list list --namespace {namespace}",
-        description: "List all managed-tenants-lists",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       page_limit: "100",
@@ -10238,13 +8696,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web managed-tenants-list list --namespace {namespace}",
-          description: "List all managed-tenants-lists",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10305,18 +8756,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["mapper"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web mapper create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web mapper create {name} --namespace {namespace}",
-        description: "Create mapper",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "[OIDC, google, Azure-OIDC]",
@@ -10362,18 +8801,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web mapper create {name} --namespace {namespace}",
-          description: "Create mapper",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web mapper create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10434,13 +8861,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web mapper get {name} --namespace {namespace}",
-        description: "Get specific mapper",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "[OIDC, google, Azure-OIDC]",
@@ -10486,13 +8906,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web mapper get {name} --namespace {namespace}",
-          description: "Get specific mapper",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10544,18 +8957,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["migrate"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl web migrate create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web migrate create {name} --namespace {namespace}",
-        description: "Create migrate",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -10600,18 +9001,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web migrate create {name} --namespace {namespace}",
-          description: "Create migrate",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web migrate create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10652,18 +9041,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["namespace"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web namespace create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web namespace create {name} --namespace {namespace}",
-        description: "Create namespace",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -10706,18 +9083,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web namespace create {name} --namespace {namespace}",
-          description: "Create namespace",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web namespace create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10799,13 +9164,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl web namespace get {name} --namespace {namespace}",
-        description: "Get specific namespace",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -10851,13 +9209,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web namespace get {name} --namespace {namespace}",
-          description: "Get specific namespace",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10942,13 +9293,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web namespace list --namespace {namespace}",
-        description: "List all namespaces",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -10994,13 +9338,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web namespace list --namespace {namespace}",
-          description: "List all namespaces",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11078,13 +9415,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web namespace-role get {name} --namespace {namespace}",
-        description: "Get specific namespace-role",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -11130,13 +9460,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web namespace-role get {name} --namespace {namespace}",
-          description: "Get specific namespace-role",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11222,13 +9545,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web namespace-role list --namespace {namespace}",
-        description: "List all namespace-roles",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -11274,13 +9590,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web namespace-role list --namespace {namespace}",
-          description: "List all namespace-roles",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11332,13 +9641,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["namespace"],
     },
     requiredFields: ["path.metadata.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl web namespace update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update namespace",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -11383,13 +9685,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web namespace update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update namespace",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11431,18 +9726,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["networking-inventory"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config networking-inventory create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config networking-inventory create {name} --namespace {namespace}",
-        description: "Create networking-inventory",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -11488,18 +9771,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config networking-inventory create {name} --namespace {namespace}",
-          description: "Create networking-inventory",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config networking-inventory create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11537,13 +9808,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web notification list --namespace {namespace}",
-        description: "List all notifications",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -11586,13 +9850,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web notification list --namespace {namespace}",
-          description: "List all notifications",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11630,13 +9887,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["notification"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web notification update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update notification",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -11679,13 +9929,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web notification update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update notification",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11739,18 +9982,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["oidc-provider"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web oidc-provider create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web oidc-provider create {name} --namespace {namespace}",
-        description: "Create oidc-provider",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -11795,18 +10026,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web oidc-provider create {name} --namespace {namespace}",
-          description: "Create oidc-provider",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web oidc-provider create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11867,13 +10086,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web oidc-provider get {name} --namespace {namespace}",
-        description: "Get specific oidc-provider",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -11919,13 +10131,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web oidc-provider get {name} --namespace {namespace}",
-          description: "Get specific oidc-provider",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11973,13 +10178,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web oidc-provider list --namespace {namespace}",
-        description: "List all oidc-providers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -12024,13 +10222,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web oidc-provider list --namespace {namespace}",
-          description: "List all oidc-providers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12092,13 +10283,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["oidc-provider"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web oidc-provider update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update oidc-provider",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Google",
@@ -12144,13 +10328,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web oidc-provider update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update oidc-provider",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12199,13 +10376,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl default password-policy list --namespace {namespace}",
-        description: "List all password-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       realm_id: "3d05688b-f560-4f70-9af1-384a0ec0ff15.",
@@ -12250,13 +10420,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl default password-policy list --namespace {namespace}",
-          description: "List all password-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12307,18 +10470,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["priority"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.tp_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl web priority create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web priority create {name} --namespace {namespace}",
-        description: "Create priority",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       tp_id: "123",
@@ -12363,18 +10514,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web priority create {name} --namespace {namespace}",
-          description: "Create priority",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web priority create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12455,13 +10594,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web rbac-policy get {name} --namespace {namespace}",
-        description: "Get specific rbac-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -12507,13 +10639,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web rbac-policy get {name} --namespace {namespace}",
-          description: "Get specific rbac-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12599,13 +10724,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web rbac-policy list --namespace {namespace}",
-        description: "List all rbac-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -12651,13 +10769,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web rbac-policy list --namespace {namespace}",
-          description: "List all rbac-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12706,14 +10817,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["remove-namespace-role"],
     },
     requiredFields: ["path.name"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl web remove-namespace-role update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update remove-namespace-role",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
@@ -12758,14 +10861,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web remove-namespace-role update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update remove-namespace-role",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12816,18 +10911,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["reopen"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.tp_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl web reopen create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web reopen create {name} --namespace {namespace}",
-        description: "Create reopen",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       tp_id: "123",
@@ -12872,18 +10955,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web reopen create {name} --namespace {namespace}",
-          description: "Create reopen",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web reopen create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12925,18 +10996,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["request-delete"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web request-delete create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web request-delete create {name} --namespace {namespace}",
-        description: "Create request-delete",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -12979,18 +11038,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web request-delete create {name} --namespace {namespace}",
-          description: "Create request-delete",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web request-delete create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13032,14 +11079,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["request-initial-acces"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl web request-initial-acces update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update request-initial-acces",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -13082,14 +11121,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web request-initial-acces update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update request-initial-acces",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13128,18 +11159,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["reset"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web reset create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web reset create {name} --namespace {namespace}",
-        description: "Create reset",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -13182,18 +11201,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web reset create {name} --namespace {namespace}",
-          description: "Create reset",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web reset create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13258,13 +11265,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id"],
-    cliExamples: [
-      {
-        command: "f5xcctl scim ResourceType get {name} --namespace {namespace}",
-        description: "Get specific ResourceType",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       excludedAttributes: "[",
@@ -13310,13 +11310,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl scim ResourceType get {name} --namespace {namespace}",
-          description: "Get specific ResourceType",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13351,13 +11344,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl scim ResourceType list --namespace {namespace}",
-        description: "List all ResourceTypes",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -13400,13 +11386,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl scim ResourceType list --namespace {namespace}",
-          description: "List all ResourceTypes",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13457,18 +11436,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["role"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web role create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web role create {name} --namespace {namespace}",
-        description: "Create role",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -13513,18 +11480,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web role create {name} --namespace {namespace}",
-          description: "Create role",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web role create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13586,13 +11541,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["role", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web role delete {name} --namespace {namespace}",
-        description: "Delete role",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -13638,13 +11586,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web role delete {name} --namespace {namespace}",
-          description: "Delete role",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13704,13 +11645,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web role get {name} --namespace {namespace}",
-        description: "Get specific role",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -13756,13 +11690,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web role get {name} --namespace {namespace}",
-          description: "Get specific role",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13809,13 +11736,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web role list --namespace {namespace}",
-        description: "List all roles",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -13860,13 +11780,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web role list --namespace {namespace}",
-          description: "List all roles",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13928,13 +11841,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["role"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web role update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update role",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -13980,13 +11886,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web role update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update role",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14039,18 +11938,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["role-user"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web role-user create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web role-user create {name} --namespace {namespace}",
-        description: "Create role-user",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -14095,18 +11982,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web role-user create {name} --namespace {namespace}",
-          description: "Create role-user",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web role-user create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14171,13 +12046,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id"],
-    cliExamples: [
-      {
-        command: "f5xcctl scim Schema get {name} --namespace {namespace}",
-        description: "Get specific Schema",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       excludedAttributes: "[",
@@ -14223,13 +12091,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl scim Schema get {name} --namespace {namespace}",
-          description: "Get specific Schema",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14264,13 +12125,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl scim Schema list --namespace {namespace}",
-        description: "List all Schemas",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -14313,13 +12167,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl scim Schema list --namespace {namespace}",
-          description: "List all Schemas",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14381,13 +12228,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["scim"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web scim update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update scim",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -14433,13 +12273,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web scim update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update scim",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14493,18 +12326,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["send-password-email"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web send-password-email create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web send-password-email create {name} --namespace {namespace}",
-        description: "Create send-password-email",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -14552,18 +12373,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web send-password-email create {name} --namespace {namespace}",
-          description: "Create send-password-email",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web send-password-email create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14600,13 +12409,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl scim ServiceProviderConfig list --namespace {namespace}",
-        description: "List all ServiceProviderConfigs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -14649,13 +12451,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl scim ServiceProviderConfig list --namespace {namespace}",
-          description: "List all ServiceProviderConfigs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14690,13 +12485,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web session list --namespace {namespace}",
-        description: "List all sessions",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -14739,13 +12527,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web session list --namespace {namespace}",
-          description: "List all sessions",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14781,13 +12562,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web setting list --namespace {namespace}",
-        description: "List all settings",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -14830,13 +12604,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web setting list --namespace {namespace}",
-          description: "List all settings",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14876,13 +12643,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["setting"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web setting update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update setting",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -14925,13 +12685,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web setting update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update setting",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -14982,13 +12735,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl default signup get {name} --namespace {namespace}",
-        description: "Get specific signup",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Signup-1234-5678-9012-3456.",
@@ -15033,13 +12779,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl default signup get {name} --namespace {namespace}",
-          description: "Get specific signup",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15090,18 +12829,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["stat"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml stat create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl ml stat create {name} --namespace {namespace}",
-        description: "Create stat",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -15146,18 +12873,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ml stat create {name} --namespace {namespace}",
-          description: "Create stat",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ml stat create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15221,13 +12936,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.country_code", "path.prefix"],
-    cliExamples: [
-      {
-        command: "f5xcctl web state list --namespace {namespace}",
-        description: "List all states",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       country_code: "US",
@@ -15273,13 +12981,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web state list --namespace {namespace}",
-          description: "List all states",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15319,18 +13020,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["subscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web subscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web subscribe create {name} --namespace {namespace}",
-        description: "Create subscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -15373,18 +13062,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web subscribe create {name} --namespace {namespace}",
-          description: "Create subscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web subscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15424,18 +13101,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["suggest-value"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl cloud-data suggest-value create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl cloud-data suggest-value create {name} --namespace {namespace}",
-        description: "Create suggest-value",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -15478,18 +13143,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl cloud-data suggest-value create {name} --namespace {namespace}",
-          description: "Create suggest-value",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl cloud-data suggest-value create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15537,13 +13190,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.tenant"],
-    cliExamples: [
-      {
-        command: "f5xcctl config summary list --namespace {namespace}",
-        description: "List all summarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -15586,13 +13232,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config summary list --namespace {namespace}",
-          description: "List all summarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15627,13 +13266,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web support-info list --namespace {namespace}",
-        description: "List all support-infos",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -15676,13 +13308,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web support-info list --namespace {namespace}",
-          description: "List all support-infos",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15720,18 +13345,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["sync"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web sync create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web sync create {name} --namespace {namespace}",
-        description: "Create sync",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -15774,18 +13387,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web sync create {name} --namespace {namespace}",
-          description: "Create sync",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web sync create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15839,18 +13440,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["tenant-configuration"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config tenant-configuration create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config tenant-configuration create {name} --namespace {namespace}",
-        description: "Create tenant-configuration",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -15898,18 +13487,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config tenant-configuration create {name} --namespace {namespace}",
-          description: "Create tenant-configuration",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config tenant-configuration create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -15971,13 +13548,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["tenant-configuration", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config tenant-configuration delete {name} --namespace {namespace}",
-        description: "Delete tenant-configuration",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -16023,13 +13593,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config tenant-configuration delete {name} --namespace {namespace}",
-          description: "Delete tenant-configuration",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16111,13 +13674,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config tenant-configuration get {name} --namespace {namespace}",
-        description: "Get specific tenant-configuration",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -16163,13 +13719,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config tenant-configuration get {name} --namespace {namespace}",
-          description: "Get specific tenant-configuration",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16255,13 +13804,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config tenant-configuration list --namespace {namespace}",
-        description: "List all tenant-configurations",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -16307,13 +13849,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config tenant-configuration list --namespace {namespace}",
-          description: "List all tenant-configurations",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16376,14 +13911,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["tenant-configuration"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config tenant-configuration update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update tenant-configuration",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -16429,14 +13956,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config tenant-configuration update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update tenant-configuration",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16473,13 +13992,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web tenant-escalation-doc list --namespace {namespace}",
-        description: "List all tenant-escalation-docs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -16522,13 +14034,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web tenant-escalation-doc list --namespace {namespace}",
-          description: "List all tenant-escalation-docs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16581,18 +14086,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["tenant-profile"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web tenant-profile create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web tenant-profile create {name} --namespace {namespace}",
-        description: "Create tenant-profile",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -16637,18 +14130,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web tenant-profile create {name} --namespace {namespace}",
-          description: "Create tenant-profile",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web tenant-profile create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16710,13 +14191,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["tenant-profile", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web tenant-profile delete {name} --namespace {namespace}",
-        description: "Delete tenant-profile",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -16762,13 +14236,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web tenant-profile delete {name} --namespace {namespace}",
-          description: "Delete tenant-profile",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16850,13 +14317,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web tenant-profile get {name} --namespace {namespace}",
-        description: "Get specific tenant-profile",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -16902,13 +14362,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web tenant-profile get {name} --namespace {namespace}",
-          description: "Get specific tenant-profile",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -16994,13 +14447,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web tenant-profile list --namespace {namespace}",
-        description: "List all tenant-profiles",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -17046,13 +14492,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web tenant-profile list --namespace {namespace}",
-          description: "List all tenant-profiles",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17115,13 +14554,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["tenant-profile"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web tenant-profile update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update tenant-profile",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -17167,14 +14599,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web tenant-profile update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update tenant-profile",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17223,13 +14647,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web to list --namespace {namespace}",
-        description: "List all tos",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -17274,13 +14691,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web to list --namespace {namespace}",
-          description: "List all tos",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17320,18 +14730,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["unassign"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web unassign create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web unassign create {name} --namespace {namespace}",
-        description: "Create unassign",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -17374,18 +14772,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web unassign create {name} --namespace {namespace}",
-          description: "Create unassign",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web unassign create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17425,13 +14811,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["unset"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web unset update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update unset",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -17474,13 +14853,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web unset update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update unset",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17522,18 +14894,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["unsubscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web unsubscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web unsubscribe create {name} --namespace {namespace}",
-        description: "Create unsubscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -17576,18 +14936,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web unsubscribe create {name} --namespace {namespace}",
-          description: "Create unsubscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web unsubscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17628,19 +14976,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["update-allow-advertise-on-public"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config update-allow-advertise-on-public create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl config update-allow-advertise-on-public create {name} --namespace {namespace}",
-        description: "Create update-allow-advertise-on-public",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -17686,19 +15021,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config update-allow-advertise-on-public create {name} --namespace {namespace}",
-          description: "Create update-allow-advertise-on-public",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config update-allow-advertise-on-public create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17739,18 +15061,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["User"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl scim User create {name} --namespace {namespace}",
-        description: "Create User",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl scim User create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -17793,18 +15103,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl scim User create {name} --namespace {namespace}",
-          description: "Create User",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl scim User create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17871,13 +15169,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["User", "contained_resources"],
     },
     requiredFields: ["path.id"],
-    cliExamples: [
-      {
-        command: "f5xcctl scim User delete {name} --namespace {namespace}",
-        description: "Delete User",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       excludedAttributes: "[",
@@ -17923,13 +15214,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl scim User delete {name} --namespace {namespace}",
-          description: "Delete User",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -17994,13 +15278,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id"],
-    cliExamples: [
-      {
-        command: "f5xcctl scim User get {name} --namespace {namespace}",
-        description: "Get specific User",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       excludedAttributes: "[",
@@ -18046,13 +15323,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl scim User get {name} --namespace {namespace}",
-          description: "Get specific User",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18089,18 +15359,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["user-group"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web user-group create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web user-group create {name} --namespace {namespace}",
-        description: "Create user-group",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -18143,18 +15401,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web user-group create {name} --namespace {namespace}",
-          description: "Create user-group",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web user-group create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18219,13 +15465,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["user-group", "contained_resources"],
     },
     requiredFields: ["path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl web user-group delete {name} --namespace {namespace}",
-        description: "Delete user-group",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
@@ -18270,13 +15509,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web user-group delete {name} --namespace {namespace}",
-          description: "Delete user-group",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18326,13 +15558,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl web user-group get {name} --namespace {namespace}",
-        description: "Get specific user-group",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
@@ -18377,13 +15602,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web user-group get {name} --namespace {namespace}",
-          description: "Get specific user-group",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18418,13 +15636,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web user-group list --namespace {namespace}",
-        description: "List all user-groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -18467,13 +15678,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web user-group list --namespace {namespace}",
-          description: "List all user-groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18523,13 +15727,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["user-group"],
     },
     requiredFields: ["path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl web user-group update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update user-group",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Sales",
@@ -18574,13 +15771,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web user-group update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update user-group",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18635,18 +15825,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["user-identification"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config user-identification create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config user-identification create {name} --namespace {namespace}",
-        description: "Create user-identification",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -18694,18 +15872,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config user-identification create {name} --namespace {namespace}",
-          description: "Create user-identification",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config user-identification create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18767,13 +15933,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       deletes: ["user-identification", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config user-identification delete {name} --namespace {namespace}",
-        description: "Delete user-identification",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -18819,13 +15978,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config user-identification delete {name} --namespace {namespace}",
-          description: "Delete user-identification",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -18908,13 +16060,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config user-identification get {name} --namespace {namespace}",
-        description: "Get specific user-identification",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -18960,13 +16105,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config user-identification get {name} --namespace {namespace}",
-          description: "Get specific user-identification",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19052,13 +16190,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config user-identification list --namespace {namespace}",
-        description: "List all user-identifications",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -19104,13 +16235,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config user-identification list --namespace {namespace}",
-          description: "List all user-identifications",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19174,14 +16298,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["user-identification"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config user-identification update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update user-identification",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -19227,14 +16343,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config user-identification update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update user-identification",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19322,13 +16430,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl scim User list --namespace {namespace}",
-        description: "List all Users",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       count: "8",
@@ -19376,13 +16477,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl scim User list --namespace {namespace}",
-          description: "List all Users",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19433,7 +16527,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["User"],
     },
     requiredFields: ["path.id"],
-    cliExamples: [],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -19476,7 +16569,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19528,18 +16620,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["user-role"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web user-role create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web user-role create {name} --namespace {namespace}",
-        description: "Create user-role",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -19584,18 +16664,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web user-role create {name} --namespace {namespace}",
-          description: "Create user-role",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web user-role create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19644,13 +16712,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web user-role list --namespace {namespace}",
-        description: "List all user-roles",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -19695,13 +16756,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web user-role list --namespace {namespace}",
-          description: "List all user-roles",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19751,13 +16805,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["user-role"],
     },
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web user-role update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update user-role",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -19802,13 +16849,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web user-role update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update user-role",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19845,13 +16885,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl config user-token list --namespace {namespace}",
-        description: "List all user-tokens",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -19894,13 +16927,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config user-token list --namespace {namespace}",
-          description: "List all user-tokens",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -19951,13 +16977,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["User"],
     },
     requiredFields: ["path.id"],
-    cliExamples: [
-      {
-        command: "f5xcctl scim User update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update User",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       id: "123-456-789012.",
@@ -20002,13 +17021,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl scim User update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update User",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20050,18 +17062,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["validate-contact"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl default validate-contact create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl default validate-contact create {name} --namespace {namespace}",
-        description: "Create validate-contact",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -20107,18 +17107,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl default validate-contact create {name} --namespace {namespace}",
-          description: "Create validate-contact",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl default validate-contact create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20160,18 +17148,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["validate-registration"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl default validate-registration create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl default validate-registration create {name} --namespace {namespace}",
-        description: "Create validate-registration",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -20217,18 +17193,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl default validate-registration create {name} --namespace {namespace}",
-          description: "Create validate-registration",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl default validate-registration create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20270,18 +17234,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       creates: ["validate-rule"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config validate-rule create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config validate-rule create {name} --namespace {namespace}",
-        description: "Create validate-rule",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -20324,18 +17276,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config validate-rule create {name} --namespace {namespace}",
-          description: "Create validate-rule",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config validate-rule create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20372,13 +17312,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web view-preference list --namespace {namespace}",
-        description: "List all view-preferences",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -20421,13 +17354,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web view-preference list --namespace {namespace}",
-          description: "List all view-preferences",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20466,13 +17392,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       modifies: ["view-preference"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web view-preference update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update view-preference",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -20515,14 +17434,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl web view-preference update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update view-preference",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -20573,13 +17484,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web whoami list --namespace {namespace}",
-        description: "List all whoamis",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -20624,13 +17528,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web whoami list --namespace {namespace}",
-          description: "List all whoamis",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

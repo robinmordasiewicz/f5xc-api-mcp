@@ -46,18 +46,6 @@ export const bigipTools: ParsedOperation[] = [
       creates: ["apm"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config apm create {name} --namespace {namespace}",
-        description: "Create apm",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config apm create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -102,18 +90,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config apm create {name} --namespace {namespace}",
-          description: "Create apm",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config apm create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -175,13 +151,6 @@ export const bigipTools: ParsedOperation[] = [
       deletes: ["apm", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config apm delete {name} --namespace {namespace}",
-        description: "Delete apm",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -227,13 +196,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config apm delete {name} --namespace {namespace}",
-          description: "Delete apm",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -315,13 +277,6 @@ export const bigipTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config apm get {name} --namespace {namespace}",
-        description: "Get specific apm",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -367,13 +322,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config apm get {name} --namespace {namespace}",
-          description: "Get specific apm",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -459,13 +407,6 @@ export const bigipTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config apm list --namespace {namespace}",
-        description: "List all apms",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -511,13 +452,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config apm list --namespace {namespace}",
-          description: "List all apms",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -580,13 +514,6 @@ export const bigipTools: ParsedOperation[] = [
       modifies: ["apm"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config apm update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update apm",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -632,13 +559,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config apm update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update apm",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -692,18 +612,6 @@ export const bigipTools: ParsedOperation[] = [
       creates: ["bigip-irule"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl bigipconnector bigip-irule create {name} --namespace {namespace}",
-        description: "Create bigip-irule",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl bigipconnector bigip-irule create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -748,18 +656,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl bigipconnector bigip-irule create {name} --namespace {namespace}",
-          description: "Create bigip-irule",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl bigipconnector bigip-irule create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -821,13 +717,6 @@ export const bigipTools: ParsedOperation[] = [
       deletes: ["bigip-irule", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl bigipconnector bigip-irule delete {name} --namespace {namespace}",
-        description: "Delete bigip-irule",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -873,13 +762,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl bigipconnector bigip-irule delete {name} --namespace {namespace}",
-          description: "Delete bigip-irule",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -961,13 +843,6 @@ export const bigipTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl bigipconnector bigip-irule get {name} --namespace {namespace}",
-        description: "Get specific bigip-irule",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1013,13 +888,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl bigipconnector bigip-irule get {name} --namespace {namespace}",
-          description: "Get specific bigip-irule",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1105,13 +973,6 @@ export const bigipTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl bigipconnector bigip-irule list --namespace {namespace}",
-        description: "List all bigip-irules",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1157,13 +1018,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl bigipconnector bigip-irule list --namespace {namespace}",
-          description: "List all bigip-irules",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1226,14 +1080,6 @@ export const bigipTools: ParsedOperation[] = [
       modifies: ["bigip-irule"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl bigipconnector bigip-irule update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update bigip-irule",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1279,14 +1125,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl bigipconnector bigip-irule update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update bigip-irule",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1367,13 +1205,6 @@ export const bigipTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bigip-virtual-server get {name} --namespace {namespace}",
-        description: "Get specific bigip-virtual-server",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1419,13 +1250,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config bigip-virtual-server get {name} --namespace {namespace}",
-          description: "Get specific bigip-virtual-server",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1511,13 +1335,6 @@ export const bigipTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config bigip-virtual-server list --namespace {namespace}",
-        description: "List all bigip-virtual-servers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1563,13 +1380,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config bigip-virtual-server list --namespace {namespace}",
-          description: "List all bigip-virtual-servers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1632,14 +1442,6 @@ export const bigipTools: ParsedOperation[] = [
       modifies: ["bigip-virtual-server"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config bigip-virtual-server update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update bigip-virtual-server",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1685,14 +1487,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config bigip-virtual-server update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update bigip-virtual-server",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1747,18 +1541,6 @@ export const bigipTools: ParsedOperation[] = [
       creates: ["data-group"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config data-group create {name} --namespace {namespace}",
-        description: "Create data-group",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config data-group create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1803,18 +1585,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config data-group create {name} --namespace {namespace}",
-          description: "Create data-group",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config data-group create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1876,13 +1646,6 @@ export const bigipTools: ParsedOperation[] = [
       deletes: ["data-group", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config data-group delete {name} --namespace {namespace}",
-        description: "Delete data-group",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1928,13 +1691,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config data-group delete {name} --namespace {namespace}",
-          description: "Delete data-group",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2015,13 +1771,6 @@ export const bigipTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config data-group get {name} --namespace {namespace}",
-        description: "Get specific data-group",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2067,13 +1816,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config data-group get {name} --namespace {namespace}",
-          description: "Get specific data-group",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2159,13 +1901,6 @@ export const bigipTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config data-group list --namespace {namespace}",
-        description: "List all data-groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2211,13 +1946,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config data-group list --namespace {namespace}",
-          description: "List all data-groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2280,13 +2008,6 @@ export const bigipTools: ParsedOperation[] = [
       modifies: ["data-group"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config data-group update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update data-group",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2332,13 +2053,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config data-group update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update data-group",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2392,18 +2106,6 @@ export const bigipTools: ParsedOperation[] = [
       creates: ["get-security-config"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config get-security-config create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config get-security-config create {name} --namespace {namespace}",
-        description: "Create get-security-config",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -2451,18 +2153,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config get-security-config create {name} --namespace {namespace}",
-          description: "Create get-security-config",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config get-security-config create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2516,18 +2206,6 @@ export const bigipTools: ParsedOperation[] = [
       creates: ["irule"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config irule create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config irule create {name} --namespace {namespace}",
-        description: "Create irule",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2572,18 +2250,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config irule create {name} --namespace {namespace}",
-          description: "Create irule",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config irule create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2645,13 +2311,6 @@ export const bigipTools: ParsedOperation[] = [
       deletes: ["irule", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config irule delete {name} --namespace {namespace}",
-        description: "Delete irule",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2697,13 +2356,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config irule delete {name} --namespace {namespace}",
-          description: "Delete irule",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2784,13 +2436,6 @@ export const bigipTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config irule get {name} --namespace {namespace}",
-        description: "Get specific irule",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2836,13 +2481,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config irule get {name} --namespace {namespace}",
-          description: "Get specific irule",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2928,13 +2566,6 @@ export const bigipTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config irule list --namespace {namespace}",
-        description: "List all irules",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2980,13 +2611,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config irule list --namespace {namespace}",
-          description: "List all irules",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3049,13 +2673,6 @@ export const bigipTools: ParsedOperation[] = [
       modifies: ["irule"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config irule update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update irule",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3101,13 +2718,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config irule update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update irule",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3160,18 +2770,6 @@ export const bigipTools: ParsedOperation[] = [
       creates: ["metric"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data metric create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data metric create {name} --namespace {namespace}",
-        description: "Create metric",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -3216,18 +2814,6 @@ export const bigipTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data metric create {name} --namespace {namespace}",
-          description: "Create metric",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data metric create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

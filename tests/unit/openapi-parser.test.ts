@@ -703,7 +703,6 @@ function createMockOperation(toolName: string, domain: string = "core"): ParsedO
     dangerLevel: null,
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},

@@ -46,18 +46,6 @@ export const usersTools: ParsedOperation[] = [
       creates: ["create"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config create create {name} --namespace {namespace}",
-        description: "Create create",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config create create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -102,18 +90,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config create create {name} --namespace {namespace}",
-          description: "Create create",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config create create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -167,18 +143,6 @@ export const usersTools: ParsedOperation[] = [
       creates: ["delete"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config delete create {name} --namespace {namespace}",
-        description: "Create delete",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config delete create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -223,18 +187,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config delete create {name} --namespace {namespace}",
-          description: "Create delete",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config delete create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -293,13 +245,6 @@ export const usersTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl register get-cloud-init-config list --namespace {namespace}",
-        description: "List all get-cloud-init-configs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       provider: "Kvm",
@@ -344,13 +289,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl register get-cloud-init-config list --namespace {namespace}",
-          description: "List all get-cloud-init-configs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -455,13 +393,6 @@ export const usersTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl config implicit-label list --namespace {namespace}",
-        description: "List all implicit-labels",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       key: "Value",
@@ -508,13 +439,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config implicit-label list --namespace {namespace}",
-          description: "List all implicit-labels",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -587,13 +511,6 @@ export const usersTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config known-label-key list --namespace {namespace}",
-        description: "List all known-label-keys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       key: "Value",
@@ -639,13 +556,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config known-label-key list --namespace {namespace}",
-          description: "List all known-label-keys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -734,13 +644,6 @@ export const usersTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config known-label list --namespace {namespace}",
-        description: "List all known-labels",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       key: "F5 XC/region.",
@@ -787,13 +690,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config known-label list --namespace {namespace}",
-          description: "List all known-labels",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -855,18 +751,6 @@ export const usersTools: ParsedOperation[] = [
       creates: ["state"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register state create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl register state create {name} --namespace {namespace}",
-        description: "Create state",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -912,18 +796,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl register state create {name} --namespace {namespace}",
-          description: "Create state",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl register state create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -978,18 +850,6 @@ export const usersTools: ParsedOperation[] = [
       creates: ["token"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register token create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl register token create {name} --namespace {namespace}",
-        description: "Create token",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1034,18 +894,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl register token create {name} --namespace {namespace}",
-          description: "Create token",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl register token create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1107,13 +955,6 @@ export const usersTools: ParsedOperation[] = [
       deletes: ["token", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register token delete {name} --namespace {namespace}",
-        description: "Delete token",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1159,13 +1000,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl register token delete {name} --namespace {namespace}",
-          description: "Delete token",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1248,13 +1082,6 @@ export const usersTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register token get {name} --namespace {namespace}",
-        description: "Get specific token",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1300,13 +1127,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl register token get {name} --namespace {namespace}",
-          description: "Get specific token",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1392,13 +1212,6 @@ export const usersTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register token list --namespace {namespace}",
-        description: "List all tokens",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1444,13 +1257,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl register token list --namespace {namespace}",
-          description: "List all tokens",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1514,13 +1320,6 @@ export const usersTools: ParsedOperation[] = [
       modifies: ["token"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register token update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update token",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1566,13 +1365,6 @@ export const usersTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl register token update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update token",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

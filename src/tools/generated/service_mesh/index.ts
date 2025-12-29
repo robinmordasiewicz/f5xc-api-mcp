@@ -73,18 +73,6 @@ export const service_meshTools: ParsedOperation[] = [
       "path.namespace",
       "path.service_name",
     ],
-    cliExamples: [
-      {
-        command: "f5xcctl ml api-endpoint create {name} --namespace {namespace}",
-        description: "Create api-endpoint",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl ml api-endpoint create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       app_type_name: "Blogging-app.",
@@ -131,18 +119,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ml api-endpoint create {name} --namespace {namespace}",
-          description: "Create api-endpoint",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ml api-endpoint create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -224,13 +200,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.app_type_name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml api-endpoint list --namespace {namespace}",
-        description: "List all api-endpoints",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       app_type_name: "Blogging-app.",
@@ -276,13 +245,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl ml api-endpoint list --namespace {namespace}",
-          description: "List all api-endpoints",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -334,18 +296,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["app-setting"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-setting create {name} --namespace {namespace}",
-        description: "Create app-setting",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config app-setting create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -390,18 +340,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config app-setting create {name} --namespace {namespace}",
-          description: "Create app-setting",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config app-setting create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -463,13 +401,6 @@ export const service_meshTools: ParsedOperation[] = [
       deletes: ["app-setting", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-setting delete {name} --namespace {namespace}",
-        description: "Delete app-setting",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -515,13 +446,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config app-setting delete {name} --namespace {namespace}",
-          description: "Delete app-setting",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -604,13 +528,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-setting get {name} --namespace {namespace}",
-        description: "Get specific app-setting",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -656,13 +573,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config app-setting get {name} --namespace {namespace}",
-          description: "Get specific app-setting",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -748,13 +658,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-setting list --namespace {namespace}",
-        description: "List all app-settings",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -800,13 +703,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config app-setting list --namespace {namespace}",
-          description: "List all app-settings",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -870,13 +766,6 @@ export const service_meshTools: ParsedOperation[] = [
       modifies: ["app-setting"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-setting update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update app-setting",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -922,14 +811,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config app-setting update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update app-setting",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -983,18 +864,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["app-type"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-type create {name} --namespace {namespace}",
-        description: "Create app-type",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config app-type create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1039,18 +908,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config app-type create {name} --namespace {namespace}",
-          description: "Create app-type",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config app-type create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1112,13 +969,6 @@ export const service_meshTools: ParsedOperation[] = [
       deletes: ["app-type", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-type delete {name} --namespace {namespace}",
-        description: "Delete app-type",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1164,13 +1014,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config app-type delete {name} --namespace {namespace}",
-          description: "Delete app-type",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1252,13 +1095,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-type get {name} --namespace {namespace}",
-        description: "Get specific app-type",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1304,13 +1140,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config app-type get {name} --namespace {namespace}",
-          description: "Get specific app-type",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1396,13 +1225,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-type list --namespace {namespace}",
-        description: "List all app-types",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1448,13 +1270,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config app-type list --namespace {namespace}",
-          description: "List all app-types",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1518,13 +1333,6 @@ export const service_meshTools: ParsedOperation[] = [
       modifies: ["app-type"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-type update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update app-type",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1570,13 +1378,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config app-type update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update app-type",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1631,18 +1432,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["endpoint"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config endpoint create {name} --namespace {namespace}",
-        description: "Create endpoint",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config endpoint create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1687,18 +1476,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config endpoint create {name} --namespace {namespace}",
-          description: "Create endpoint",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config endpoint create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1760,13 +1537,6 @@ export const service_meshTools: ParsedOperation[] = [
       deletes: ["endpoint", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config endpoint delete {name} --namespace {namespace}",
-        description: "Delete endpoint",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1812,13 +1582,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config endpoint delete {name} --namespace {namespace}",
-          description: "Delete endpoint",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1901,13 +1664,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config endpoint get {name} --namespace {namespace}",
-        description: "Get specific endpoint",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1953,13 +1709,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config endpoint get {name} --namespace {namespace}",
-          description: "Get specific endpoint",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2045,13 +1794,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config endpoint list --namespace {namespace}",
-        description: "List all endpoints",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2097,13 +1839,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config endpoint list --namespace {namespace}",
-          description: "List all endpoints",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2167,13 +1902,6 @@ export const service_meshTools: ParsedOperation[] = [
       modifies: ["endpoint"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config endpoint update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update endpoint",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2219,13 +1947,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config endpoint update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update endpoint",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2278,18 +1999,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["force-delete"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl config force-delete create {name} --namespace {namespace}",
-        description: "Create force-delete",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config force-delete create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Nfv-service-1.",
@@ -2334,18 +2043,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config force-delete create {name} --namespace {namespace}",
-          description: "Create force-delete",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config force-delete create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2410,18 +2107,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["learnt-schema"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.app_type_name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml learnt-schema create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl ml learnt-schema create {name} --namespace {namespace}",
-        description: "Create learnt-schema",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       app_type_name: "Blogging-app.",
@@ -2467,18 +2152,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ml learnt-schema create {name} --namespace {namespace}",
-          description: "Create learnt-schema",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ml learnt-schema create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2536,18 +2209,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["metric"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data metric create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data metric create {name} --namespace {namespace}",
-        description: "Create metric",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -2592,18 +2253,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data metric create {name} --namespace {namespace}",
-          description: "Create metric",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data metric create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2657,18 +2306,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["nfv-service"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config nfv-service create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config nfv-service create {name} --namespace {namespace}",
-        description: "Create nfv-service",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2713,18 +2350,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config nfv-service create {name} --namespace {namespace}",
-          description: "Create nfv-service",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config nfv-service create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2786,13 +2411,6 @@ export const service_meshTools: ParsedOperation[] = [
       deletes: ["nfv-service", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config nfv-service delete {name} --namespace {namespace}",
-        description: "Delete nfv-service",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2838,13 +2456,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config nfv-service delete {name} --namespace {namespace}",
-          description: "Delete nfv-service",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2926,13 +2537,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config nfv-service get {name} --namespace {namespace}",
-        description: "Get specific nfv-service",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2978,13 +2582,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config nfv-service get {name} --namespace {namespace}",
-          description: "Get specific nfv-service",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3070,13 +2667,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config nfv-service list --namespace {namespace}",
-        description: "List all nfv-services",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3122,13 +2712,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config nfv-service list --namespace {namespace}",
-          description: "List all nfv-services",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3191,13 +2774,6 @@ export const service_meshTools: ParsedOperation[] = [
       modifies: ["nfv-service"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config nfv-service update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update nfv-service",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3243,14 +2819,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config nfv-service update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update nfv-service",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3310,13 +2878,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.app_type_name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml override list --namespace {namespace}",
-        description: "List all overrides",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       app_type_name: "Blogging-app.",
@@ -3362,13 +2923,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl ml override list --namespace {namespace}",
-          description: "List all overrides",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3447,18 +3001,6 @@ export const service_meshTools: ParsedOperation[] = [
       "path.namespace",
       "path.service_name",
     ],
-    cliExamples: [
-      {
-        command: "f5xcctl ml pdf create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl ml pdf create {name} --namespace {namespace}",
-        description: "Create pdf",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       app_type_name: "Blogging-app.",
@@ -3505,18 +3047,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ml pdf create {name} --namespace {namespace}",
-          description: "Create pdf",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ml pdf create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3605,13 +3135,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.app_type_name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml pdf list --namespace {namespace}",
-        description: "List all pdfs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       app_type_name: "Blogging-app.",
@@ -3659,13 +3182,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl ml pdf list --namespace {namespace}",
-          description: "List all pdfs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3728,18 +3244,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["pop"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.app_type_name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml pop create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl ml pop create {name} --namespace {namespace}",
-        description: "Create pop",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       app_type_name: "Blogging-app.",
@@ -3785,18 +3289,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ml pop create {name} --namespace {namespace}",
-          description: "Create pop",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ml pop create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3866,18 +3358,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["push"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.app_type_name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml push create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl ml push create {name} --namespace {namespace}",
-        description: "Create push",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       app_type_name: "Blogging-app.",
@@ -3923,18 +3403,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ml push create {name} --namespace {namespace}",
-          description: "Create push",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ml push create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3992,18 +3460,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["sid-counter"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data sid-counter create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data sid-counter create {name} --namespace {namespace}",
-        description: "Create sid-counter",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -4048,18 +3504,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data sid-counter create {name} --namespace {namespace}",
-          description: "Create sid-counter",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data sid-counter create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4113,18 +3557,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["site-mesh-group"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config site-mesh-group create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config site-mesh-group create {name} --namespace {namespace}",
-        description: "Create site-mesh-group",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -4169,18 +3601,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config site-mesh-group create {name} --namespace {namespace}",
-          description: "Create site-mesh-group",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config site-mesh-group create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4242,13 +3662,6 @@ export const service_meshTools: ParsedOperation[] = [
       deletes: ["site-mesh-group", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config site-mesh-group delete {name} --namespace {namespace}",
-        description: "Delete site-mesh-group",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -4294,13 +3707,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config site-mesh-group delete {name} --namespace {namespace}",
-          description: "Delete site-mesh-group",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4382,13 +3788,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config site-mesh-group get {name} --namespace {namespace}",
-        description: "Get specific site-mesh-group",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4434,13 +3833,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config site-mesh-group get {name} --namespace {namespace}",
-          description: "Get specific site-mesh-group",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4526,13 +3918,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config site-mesh-group list --namespace {namespace}",
-        description: "List all site-mesh-groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4578,13 +3963,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config site-mesh-group list --namespace {namespace}",
-          description: "List all site-mesh-groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4647,14 +4025,6 @@ export const service_meshTools: ParsedOperation[] = [
       modifies: ["site-mesh-group"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config site-mesh-group update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update site-mesh-group",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4700,14 +4070,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config site-mesh-group update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update site-mesh-group",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4748,18 +4110,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["software-os-version"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl maurice software-os-version create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl maurice software-os-version create {name} --namespace {namespace}",
-        description: "Create software-os-version",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -4805,18 +4155,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl maurice software-os-version create {name} --namespace {namespace}",
-          description: "Create software-os-version",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl maurice software-os-version create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4927,13 +4265,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml suspicious-user get {name} --namespace {namespace}",
-        description: "Get specific suspicious-user",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       end_time: "1570007981.",
@@ -4983,13 +4314,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl ml suspicious-user get {name} --namespace {namespace}",
-          description: "Get specific suspicious-user",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5047,13 +4371,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.app_type_name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml swagger-spec list --namespace {namespace}",
-        description: "List all swagger-specs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       app_type_name: "Blogging-app.",
@@ -5099,13 +4416,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl ml swagger-spec list --namespace {namespace}",
-          description: "List all swagger-specs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5157,18 +4467,6 @@ export const service_meshTools: ParsedOperation[] = [
       creates: ["virtual-network"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-network create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config virtual-network create {name} --namespace {namespace}",
-        description: "Create virtual-network",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -5213,18 +4511,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config virtual-network create {name} --namespace {namespace}",
-          description: "Create virtual-network",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config virtual-network create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5286,13 +4572,6 @@ export const service_meshTools: ParsedOperation[] = [
       deletes: ["virtual-network", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-network delete {name} --namespace {namespace}",
-        description: "Delete virtual-network",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -5338,13 +4617,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config virtual-network delete {name} --namespace {namespace}",
-          description: "Delete virtual-network",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5426,13 +4698,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-network get {name} --namespace {namespace}",
-        description: "Get specific virtual-network",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5478,13 +4743,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config virtual-network get {name} --namespace {namespace}",
-          description: "Get specific virtual-network",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5570,13 +4828,6 @@ export const service_meshTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-network list --namespace {namespace}",
-        description: "List all virtual-networks",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5622,13 +4873,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config virtual-network list --namespace {namespace}",
-          description: "List all virtual-networks",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5691,14 +4935,6 @@ export const service_meshTools: ParsedOperation[] = [
       modifies: ["virtual-network"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config virtual-network update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update virtual-network",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -5744,14 +4980,6 @@ export const service_meshTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config virtual-network update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update virtual-network",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

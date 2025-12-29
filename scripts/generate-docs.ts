@@ -133,8 +133,6 @@ interface AggregatedMetadata {
     modifies: string[];
     deletes: string[];
   };
-  /** CLI examples from all tools */
-  cliExamples: Array<{ description?: string; command?: string; use_case?: string }>;
   /** Parameter examples */
   parameterExamples: Record<string, string>;
 }
@@ -248,40 +246,6 @@ function formatSideEffects(sideEffects: AggregatedMetadata["sideEffects"]): stri
       content += `- ${item}\n`;
     }
     content += "\n";
-  }
-
-  return content;
-}
-
-/**
- * Format CLI examples from enriched specs
- */
-function formatCliExamples(
-  cliExamples: AggregatedMetadata["cliExamples"]
-): string {
-  if (cliExamples.length === 0) {
-    return "";
-  }
-
-  let content = "\n## CLI Examples\n\n";
-  content += "Examples from the enriched OpenAPI specifications:\n\n";
-
-  for (const example of cliExamples) {
-    if (example.use_case) {
-      content += `### ${example.use_case}\n\n`;
-    } else if (example.description) {
-      content += `### ${example.description}\n\n`;
-    }
-
-    if (example.command) {
-      content += "```bash\n";
-      content += `${example.command}\n`;
-      content += "```\n\n";
-    }
-
-    if (example.description && example.use_case) {
-      content += `${example.description}\n\n`;
-    }
   }
 
   return content;
@@ -472,9 +436,8 @@ See the [F5XC Terraform Provider documentation][tf-docs] for detailed configurat
   const bodyDescription = sanitizeDescription(description || summary || `Manage ${title} resources in F5 Distributed Cloud.`);
   const wrappedBodyDescription = wrapText(bodyDescription, 100);
 
-  // Generate side effects and CLI examples from enriched specs
+  // Generate side effects from enriched specs
   const sideEffectsSection = formatSideEffects(metadata.sideEffects);
-  const enrichedCliExamples = formatCliExamples(metadata.cliExamples);
 
   // Build the full markdown with YAML lineWidth to wrap long descriptions
   const markdown = `---
@@ -490,7 +453,7 @@ ${dangerBadge}${confirmationWarning}${wrappedBodyDescription}
 | Tool | Description |
 |------|-------------|
 ${toolRows}
-${parametersSection}${sideEffectsSection}${exampleSection}${enrichedCliExamples}${cliSection}${terraformSection}`;
+${parametersSection}${sideEffectsSection}${exampleSection}${cliSection}${terraformSection}`;
 
   return markdown;
 }
@@ -551,7 +514,6 @@ function aggregateMetadata(tools: ParsedOperation[]): AggregatedMetadata {
   const creates = new Set<string>();
   const modifies = new Set<string>();
   const deletes = new Set<string>();
-  const cliExamples: Array<{ description?: string; command?: string; use_case?: string }> = [];
   const parameterExamples: Record<string, string> = {};
 
   for (const tool of tools) {
@@ -584,13 +546,6 @@ function aggregateMetadata(tools: ParsedOperation[]): AggregatedMetadata {
       }
     }
 
-    // Collect CLI examples
-    if (tool.cliExamples && tool.cliExamples.length > 0) {
-      for (const example of tool.cliExamples) {
-        cliExamples.push(example);
-      }
-    }
-
     // Merge parameter examples
     if (tool.parameterExamples) {
       for (const [param, example] of Object.entries(tool.parameterExamples)) {
@@ -619,7 +574,6 @@ function aggregateMetadata(tools: ParsedOperation[]): AggregatedMetadata {
       modifies: Array.from(modifies),
       deletes: Array.from(deletes),
     },
-    cliExamples,
     parameterExamples,
   };
 }
@@ -654,7 +608,6 @@ function groupToolsByResource(tools: ParsedOperation[]): Map<string, ResourceDoc
           maxDangerLevel: null,
           requiresConfirmation: false,
           sideEffects: { creates: [], modifies: [], deletes: [] },
-          cliExamples: [],
           parameterExamples: {},
         },
       });

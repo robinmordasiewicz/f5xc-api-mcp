@@ -33,18 +33,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["clone-from-dns-domain"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config clone-from-dns-domain create {name} --namespace {namespace}",
-        description: "Create clone-from-dns-domain",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config clone-from-dns-domain create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -90,18 +78,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config clone-from-dns-domain create {name} --namespace {namespace}",
-          description: "Create clone-from-dns-domain",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config clone-from-dns-domain create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -156,18 +132,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["dns-compliance-checks"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-compliance-checks create {name} --namespace {namespace}",
-        description: "Create dns-compliance-checks",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config dns-compliance-checks create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -215,18 +179,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config dns-compliance-checks create {name} --namespace {namespace}",
-          description: "Create dns-compliance-checks",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config dns-compliance-checks create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -288,13 +240,6 @@ export const dnsTools: ParsedOperation[] = [
       deletes: ["dns-compliance-checks", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-compliance-checks delete {name} --namespace {namespace}",
-        description: "Delete dns-compliance-checks",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -340,13 +285,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config dns-compliance-checks delete {name} --namespace {namespace}",
-          description: "Delete dns-compliance-checks",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -428,13 +366,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-compliance-checks get {name} --namespace {namespace}",
-        description: "Get specific dns-compliance-checks",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -480,13 +411,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-compliance-checks get {name} --namespace {namespace}",
-          description: "Get specific dns-compliance-checks",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -572,13 +496,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-compliance-checks list --namespace {namespace}",
-        description: "List all dns-compliance-checkss",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -624,13 +541,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-compliance-checks list --namespace {namespace}",
-          description: "List all dns-compliance-checkss",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -693,14 +603,6 @@ export const dnsTools: ParsedOperation[] = [
       modifies: ["dns-compliance-checks"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config dns-compliance-checks update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update dns-compliance-checks",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -746,14 +648,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config dns-compliance-checks update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update dns-compliance-checks",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -808,18 +702,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["dns-domain"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-domain create {name} --namespace {namespace}",
-        description: "Create dns-domain",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config dns-domain create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -864,18 +746,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config dns-domain create {name} --namespace {namespace}",
-          description: "Create dns-domain",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config dns-domain create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -937,13 +807,6 @@ export const dnsTools: ParsedOperation[] = [
       deletes: ["dns-domain", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-domain delete {name} --namespace {namespace}",
-        description: "Delete dns-domain",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -989,13 +852,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config dns-domain delete {name} --namespace {namespace}",
-          description: "Delete dns-domain",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1077,13 +933,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-domain get {name} --namespace {namespace}",
-        description: "Get specific dns-domain",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1129,13 +978,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-domain get {name} --namespace {namespace}",
-          description: "Get specific dns-domain",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1221,13 +1063,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-domain list --namespace {namespace}",
-        description: "List all dns-domains",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1273,13 +1108,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-domain list --namespace {namespace}",
-          description: "List all dns-domains",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1342,13 +1170,6 @@ export const dnsTools: ParsedOperation[] = [
       modifies: ["dns-domain"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-domain update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update dns-domain",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1394,13 +1215,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config dns-domain update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update dns-domain",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1455,18 +1269,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["dns-lb-health-check"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-lb-health-check create {name} --namespace {namespace}",
-        description: "Create dns-lb-health-check",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config dns-lb-health-check create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1514,18 +1316,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config dns-lb-health-check create {name} --namespace {namespace}",
-          description: "Create dns-lb-health-check",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config dns-lb-health-check create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1587,13 +1377,6 @@ export const dnsTools: ParsedOperation[] = [
       deletes: ["dns-lb-health-check", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-lb-health-check delete {name} --namespace {namespace}",
-        description: "Delete dns-lb-health-check",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1639,13 +1422,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config dns-lb-health-check delete {name} --namespace {namespace}",
-          description: "Delete dns-lb-health-check",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1727,13 +1503,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-lb-health-check get {name} --namespace {namespace}",
-        description: "Get specific dns-lb-health-check",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1779,13 +1548,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-lb-health-check get {name} --namespace {namespace}",
-          description: "Get specific dns-lb-health-check",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1871,13 +1633,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-lb-health-check list --namespace {namespace}",
-        description: "List all dns-lb-health-checks",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1923,13 +1678,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-lb-health-check list --namespace {namespace}",
-          description: "List all dns-lb-health-checks",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1992,14 +1740,6 @@ export const dnsTools: ParsedOperation[] = [
       modifies: ["dns-lb-health-check"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config dns-lb-health-check update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update dns-lb-health-check",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2045,14 +1785,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config dns-lb-health-check update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update dns-lb-health-check",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2107,18 +1839,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["dns-lb-pool"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-lb-pool create {name} --namespace {namespace}",
-        description: "Create dns-lb-pool",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config dns-lb-pool create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2163,18 +1883,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config dns-lb-pool create {name} --namespace {namespace}",
-          description: "Create dns-lb-pool",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config dns-lb-pool create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2236,13 +1944,6 @@ export const dnsTools: ParsedOperation[] = [
       deletes: ["dns-lb-pool", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-lb-pool delete {name} --namespace {namespace}",
-        description: "Delete dns-lb-pool",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2288,13 +1989,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config dns-lb-pool delete {name} --namespace {namespace}",
-          description: "Delete dns-lb-pool",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2376,13 +2070,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-lb-pool get {name} --namespace {namespace}",
-        description: "Get specific dns-lb-pool",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2428,13 +2115,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-lb-pool get {name} --namespace {namespace}",
-          description: "Get specific dns-lb-pool",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2520,13 +2200,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-lb-pool list --namespace {namespace}",
-        description: "List all dns-lb-pools",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2572,13 +2245,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-lb-pool list --namespace {namespace}",
-          description: "List all dns-lb-pools",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2641,13 +2307,6 @@ export const dnsTools: ParsedOperation[] = [
       modifies: ["dns-lb-pool"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-lb-pool update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update dns-lb-pool",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2693,14 +2352,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config dns-lb-pool update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update dns-lb-pool",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2755,18 +2406,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["dns-load-balancer"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-load-balancer create {name} --namespace {namespace}",
-        description: "Create dns-load-balancer",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config dns-load-balancer create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2814,18 +2453,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config dns-load-balancer create {name} --namespace {namespace}",
-          description: "Create dns-load-balancer",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config dns-load-balancer create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2887,13 +2514,6 @@ export const dnsTools: ParsedOperation[] = [
       deletes: ["dns-load-balancer", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-load-balancer delete {name} --namespace {namespace}",
-        description: "Delete dns-load-balancer",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2939,13 +2559,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config dns-load-balancer delete {name} --namespace {namespace}",
-          description: "Delete dns-load-balancer",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3027,13 +2640,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-load-balancer get {name} --namespace {namespace}",
-        description: "Get specific dns-load-balancer",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3079,13 +2685,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-load-balancer get {name} --namespace {namespace}",
-          description: "Get specific dns-load-balancer",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3171,13 +2770,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-load-balancer list --namespace {namespace}",
-        description: "List all dns-load-balancers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3223,13 +2815,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-load-balancer list --namespace {namespace}",
-          description: "List all dns-load-balancers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3292,14 +2877,6 @@ export const dnsTools: ParsedOperation[] = [
       modifies: ["dns-load-balancer"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config dns-load-balancer update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update dns-load-balancer",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3345,14 +2922,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config dns-load-balancer update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update dns-load-balancer",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3406,18 +2975,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["dns-zone"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-zone create {name} --namespace {namespace}",
-        description: "Create dns-zone",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config dns-zone create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3462,18 +3019,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config dns-zone create {name} --namespace {namespace}",
-          description: "Create dns-zone",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config dns-zone create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3535,13 +3080,6 @@ export const dnsTools: ParsedOperation[] = [
       deletes: ["dns-zone", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-zone delete {name} --namespace {namespace}",
-        description: "Delete dns-zone",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3587,13 +3125,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config dns-zone delete {name} --namespace {namespace}",
-          description: "Delete dns-zone",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3675,13 +3206,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-zone get {name} --namespace {namespace}",
-        description: "Get specific dns-zone",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3727,13 +3251,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-zone get {name} --namespace {namespace}",
-          description: "Get specific dns-zone",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3819,13 +3336,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-zone list --namespace {namespace}",
-        description: "List all dns-zones",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3871,13 +3381,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config dns-zone list --namespace {namespace}",
-          description: "List all dns-zones",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3940,13 +3443,6 @@ export const dnsTools: ParsedOperation[] = [
       modifies: ["dns-zone"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config dns-zone update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update dns-zone",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3992,13 +3488,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config dns-zone update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update dns-zone",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4058,13 +3547,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.dns_zone_name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config export list --namespace {namespace}",
-        description: "List all exports",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       dns_zone_name: "example.com.",
@@ -4110,13 +3592,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config export list --namespace {namespace}",
-          description: "List all exports",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4174,13 +3649,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data health-statu get {name} --namespace {namespace}",
-        description: "Get specific health-statu",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Dns_lb1",
@@ -4226,13 +3694,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data health-statu get {name} --namespace {namespace}",
-          description: "Get specific health-statu",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4279,13 +3740,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data health-statu list --namespace {namespace}",
-        description: "List all health-status",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -4330,13 +3784,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data health-statu list --namespace {namespace}",
-          description: "List all health-status",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4424,13 +3871,6 @@ export const dnsTools: ParsedOperation[] = [
       "path.namespace",
       "path.pool_member_address",
     ],
-    cliExamples: [
-      {
-        command: "f5xcctl data health-status-change-event list --namespace {namespace}",
-        description: "List all health-status-change-events",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       dns_lb_name: "Dns_lb1",
@@ -4478,13 +3918,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data health-status-change-event list --namespace {namespace}",
-          description: "List all health-status-change-events",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4528,18 +3961,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["import-axfr"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config import-axfr create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config import-axfr create {name} --namespace {namespace}",
-        description: "Create import-axfr",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -4582,18 +4003,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config import-axfr create {name} --namespace {namespace}",
-          description: "Create import-axfr",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config import-axfr create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4634,18 +4043,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["import-bind-create"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config import-bind-create create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config import-bind-create create {name} --namespace {namespace}",
-        description: "Create import-bind-create",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -4691,18 +4088,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config import-bind-create create {name} --namespace {namespace}",
-          description: "Create import-bind-create",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config import-bind-create create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4743,18 +4128,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["import-bind-validate"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config import-bind-validate create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config import-bind-validate create {name} --namespace {namespace}",
-        description: "Create import-bind-validate",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -4800,18 +4173,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config import-bind-validate create {name} --namespace {namespace}",
-          description: "Create import-bind-validate",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config import-bind-validate create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4852,18 +4213,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["import"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config import create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config import create {name} --namespace {namespace}",
-        description: "Create import",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -4906,18 +4255,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config import create {name} --namespace {namespace}",
-          description: "Create import",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config import create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4977,13 +4314,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.dns_zone_name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config local-zone-file list --namespace {namespace}",
-        description: "List all local-zone-files",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       dns_zone_name: "example.com.",
@@ -5029,13 +4359,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config local-zone-file list --namespace {namespace}",
-          description: "List all local-zone-files",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5086,18 +4409,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["metric"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data metric create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data metric create {name} --namespace {namespace}",
-        description: "Create metric",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -5142,18 +4453,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data metric create {name} --namespace {namespace}",
-          description: "Create metric",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data metric create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5202,13 +4501,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data pool-members-health-statu list --namespace {namespace}",
-        description: "List all pool-members-health-status",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -5253,13 +4545,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data pool-members-health-statu list --namespace {namespace}",
-          description: "List all pool-members-health-status",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5337,13 +4622,6 @@ export const dnsTools: ParsedOperation[] = [
       deletes: ["rrset", "contained_resources"],
     },
     requiredFields: ["path.dns_zone_name", "path.group_name", "path.record_name", "path.type"],
-    cliExamples: [
-      {
-        command: "f5xcctl config rrset delete {name} --namespace {namespace}",
-        description: "Delete rrset",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {},
     validationRules: {},
@@ -5386,13 +4664,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config rrset delete {name} --namespace {namespace}",
-          description: "Delete rrset",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5470,13 +4741,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.dns_zone_name", "path.group_name", "path.record_name", "path.type"],
-    cliExamples: [
-      {
-        command: "f5xcctl config rrset list --namespace {namespace}",
-        description: "List all rrsets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -5519,13 +4783,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config rrset list --namespace {namespace}",
-          description: "List all rrsets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5605,13 +4862,6 @@ export const dnsTools: ParsedOperation[] = [
       modifies: ["rrset"],
     },
     requiredFields: ["path.dns_zone_name", "path.group_name", "path.record_name", "path.type"],
-    cliExamples: [
-      {
-        command: "f5xcctl config rrset update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update rrset",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -5654,13 +4904,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config rrset update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update rrset",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5720,13 +4963,6 @@ export const dnsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.dns_zone_name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config remote-zone-file list --namespace {namespace}",
-        description: "List all remote-zone-files",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       dns_zone_name: "example.com.",
@@ -5772,13 +5008,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config remote-zone-file list --namespace {namespace}",
-          description: "List all remote-zone-files",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5829,18 +5058,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["request-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data request-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data request-log create {name} --namespace {namespace}",
-        description: "Create request-log",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -5885,18 +5102,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data request-log create {name} --namespace {namespace}",
-          description: "Create request-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data request-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5963,18 +5168,6 @@ export const dnsTools: ParsedOperation[] = [
       "path.dns_zone_name",
       "path.group_name",
     ],
-    cliExamples: [
-      {
-        command: "f5xcctl config rrset create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config rrset create {name} --namespace {namespace}",
-        description: "Create rrset",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -6017,18 +5210,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config rrset create {name} --namespace {namespace}",
-          description: "Create rrset",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config rrset create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6074,18 +5255,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["subscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config subscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config subscribe create {name} --namespace {namespace}",
-        description: "Create subscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -6128,18 +5297,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config subscribe create {name} --namespace {namespace}",
-          description: "Create subscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config subscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6181,18 +5338,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["suggest-value"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config suggest-value create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config suggest-value create {name} --namespace {namespace}",
-        description: "Create suggest-value",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -6235,18 +5380,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config suggest-value create {name} --namespace {namespace}",
-          description: "Create suggest-value",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config suggest-value create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6287,18 +5420,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["unsubscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config unsubscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config unsubscribe create {name} --namespace {namespace}",
-        description: "Create unsubscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -6341,18 +5462,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config unsubscribe create {name} --namespace {namespace}",
-          description: "Create unsubscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config unsubscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6416,18 +5525,6 @@ export const dnsTools: ParsedOperation[] = [
       creates: ["verify"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config verify create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config verify create {name} --namespace {namespace}",
-        description: "Create verify",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "example.com.",
@@ -6473,18 +5570,6 @@ export const dnsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config verify create {name} --namespace {namespace}",
-          description: "Create verify",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config verify create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

@@ -46,18 +46,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["api-crawler"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-crawler create {name} --namespace {namespace}",
-        description: "Create api-crawler",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config api-crawler create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -102,18 +90,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config api-crawler create {name} --namespace {namespace}",
-          description: "Create api-crawler",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config api-crawler create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -175,13 +151,6 @@ export const apiTools: ParsedOperation[] = [
       deletes: ["api-crawler", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-crawler delete {name} --namespace {namespace}",
-        description: "Delete api-crawler",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -227,13 +196,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config api-crawler delete {name} --namespace {namespace}",
-          description: "Delete api-crawler",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -315,13 +277,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-crawler get {name} --namespace {namespace}",
-        description: "Get specific api-crawler",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -367,13 +322,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config api-crawler get {name} --namespace {namespace}",
-          description: "Get specific api-crawler",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -459,13 +407,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-crawler list --namespace {namespace}",
-        description: "List all api-crawlers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -511,13 +452,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config api-crawler list --namespace {namespace}",
-          description: "List all api-crawlers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -580,13 +514,6 @@ export const apiTools: ParsedOperation[] = [
       modifies: ["api-crawler"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-crawler update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update api-crawler",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -632,14 +559,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config api-crawler update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update api-crawler",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -693,18 +612,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["api-definition"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-definition create {name} --namespace {namespace}",
-        description: "Create api-definition",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config api-definition create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -749,18 +656,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config api-definition create {name} --namespace {namespace}",
-          description: "Create api-definition",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config api-definition create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -822,13 +717,6 @@ export const apiTools: ParsedOperation[] = [
       deletes: ["api-definition", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-definition delete {name} --namespace {namespace}",
-        description: "Delete api-definition",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -874,13 +762,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config api-definition delete {name} --namespace {namespace}",
-          description: "Delete api-definition",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -962,13 +843,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-definition get {name} --namespace {namespace}",
-        description: "Get specific api-definition",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1014,13 +888,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config api-definition get {name} --namespace {namespace}",
-          description: "Get specific api-definition",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1106,13 +973,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-definition list --namespace {namespace}",
-        description: "List all api-definitions",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1158,13 +1018,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config api-definition list --namespace {namespace}",
-          description: "List all api-definitions",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1227,14 +1080,6 @@ export const apiTools: ParsedOperation[] = [
       modifies: ["api-definition"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config api-definition update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update api-definition",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1280,14 +1125,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config api-definition update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update api-definition",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1339,13 +1176,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-definitions-without-shared list --namespace {namespace}",
-        description: "List all api-definitions-without-shareds",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -1390,13 +1220,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config api-definitions-without-shared list --namespace {namespace}",
-          description: "List all api-definitions-without-shareds",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1449,18 +1272,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["api-discovery"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-discovery create {name} --namespace {namespace}",
-        description: "Create api-discovery",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config api-discovery create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1505,18 +1316,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config api-discovery create {name} --namespace {namespace}",
-          description: "Create api-discovery",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config api-discovery create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1578,13 +1377,6 @@ export const apiTools: ParsedOperation[] = [
       deletes: ["api-discovery", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-discovery delete {name} --namespace {namespace}",
-        description: "Delete api-discovery",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1630,13 +1422,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config api-discovery delete {name} --namespace {namespace}",
-          description: "Delete api-discovery",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1719,13 +1504,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-discovery get {name} --namespace {namespace}",
-        description: "Get specific api-discovery",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1771,13 +1549,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config api-discovery get {name} --namespace {namespace}",
-          description: "Get specific api-discovery",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1863,13 +1634,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-discovery list --namespace {namespace}",
-        description: "List all api-discoverys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1915,13 +1679,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config api-discovery list --namespace {namespace}",
-          description: "List all api-discoverys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1985,14 +1742,6 @@ export const apiTools: ParsedOperation[] = [
       modifies: ["api-discovery"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config api-discovery update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update api-discovery",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2038,14 +1787,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config api-discovery update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update api-discovery",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2099,18 +1840,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["api-endpoint-protection"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-endpoint-protection create {name} --namespace {namespace}",
-        description: "Create api-endpoint-protection",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config api-endpoint-protection create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -2158,18 +1887,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config api-endpoint-protection create {name} --namespace {namespace}",
-          description: "Create api-endpoint-protection",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config api-endpoint-protection create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2250,13 +1967,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web api-group-element get {name} --namespace {namespace}",
-        description: "Get specific api-group-element",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2302,13 +2012,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web api-group-element get {name} --namespace {namespace}",
-          description: "Get specific api-group-element",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2394,13 +2097,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web api-group-element list --namespace {namespace}",
-        description: "List all api-group-elements",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2446,13 +2142,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web api-group-element list --namespace {namespace}",
-          description: "List all api-group-elements",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2530,13 +2219,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web api-group get {name} --namespace {namespace}",
-        description: "Get specific api-group",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2582,13 +2264,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web api-group get {name} --namespace {namespace}",
-          description: "Get specific api-group",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2674,13 +2349,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web api-group list --namespace {namespace}",
-        description: "List all api-groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2726,13 +2394,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web api-group list --namespace {namespace}",
-          description: "List all api-groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2784,18 +2445,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["api-testing"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-testing create {name} --namespace {namespace}",
-        description: "Create api-testing",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config api-testing create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2840,18 +2489,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config api-testing create {name} --namespace {namespace}",
-          description: "Create api-testing",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config api-testing create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2913,13 +2550,6 @@ export const apiTools: ParsedOperation[] = [
       deletes: ["api-testing", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-testing delete {name} --namespace {namespace}",
-        description: "Delete api-testing",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2965,13 +2595,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config api-testing delete {name} --namespace {namespace}",
-          description: "Delete api-testing",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3053,13 +2676,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-testing get {name} --namespace {namespace}",
-        description: "Get specific api-testing",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3105,13 +2721,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config api-testing get {name} --namespace {namespace}",
-          description: "Get specific api-testing",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3197,13 +2806,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-testing list --namespace {namespace}",
-        description: "List all api-testings",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3249,13 +2851,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config api-testing list --namespace {namespace}",
-          description: "List all api-testings",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3318,13 +2913,6 @@ export const apiTools: ParsedOperation[] = [
       modifies: ["api-testing"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config api-testing update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update api-testing",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3370,14 +2958,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config api-testing update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update api-testing",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3432,18 +3012,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["app-api-group"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-api-group create {name} --namespace {namespace}",
-        description: "Create app-api-group",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config app-api-group create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3488,18 +3056,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config app-api-group create {name} --namespace {namespace}",
-          description: "Create app-api-group",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config app-api-group create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3561,13 +3117,6 @@ export const apiTools: ParsedOperation[] = [
       deletes: ["app-api-group", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-api-group delete {name} --namespace {namespace}",
-        description: "Delete app-api-group",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3613,13 +3162,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config app-api-group delete {name} --namespace {namespace}",
-          description: "Delete app-api-group",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3702,13 +3244,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-api-group get {name} --namespace {namespace}",
-        description: "Get specific app-api-group",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3754,13 +3289,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config app-api-group get {name} --namespace {namespace}",
-          description: "Get specific app-api-group",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3846,13 +3374,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config app-api-group list --namespace {namespace}",
-        description: "List all app-api-groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3898,13 +3419,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config app-api-group list --namespace {namespace}",
-          description: "List all app-api-groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3968,14 +3482,6 @@ export const apiTools: ParsedOperation[] = [
       modifies: ["app-api-group"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config app-api-group update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update app-api-group",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4021,14 +3527,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config app-api-group update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update app-api-group",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4082,18 +3580,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["code-base-integration"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config code-base-integration create {name} --namespace {namespace}",
-        description: "Create code-base-integration",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config code-base-integration create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -4141,18 +3627,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config code-base-integration create {name} --namespace {namespace}",
-          description: "Create code-base-integration",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config code-base-integration create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4214,13 +3688,6 @@ export const apiTools: ParsedOperation[] = [
       deletes: ["code-base-integration", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config code-base-integration delete {name} --namespace {namespace}",
-        description: "Delete code-base-integration",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -4266,13 +3733,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config code-base-integration delete {name} --namespace {namespace}",
-          description: "Delete code-base-integration",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4354,13 +3814,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config code-base-integration get {name} --namespace {namespace}",
-        description: "Get specific code-base-integration",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4406,13 +3859,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config code-base-integration get {name} --namespace {namespace}",
-          description: "Get specific code-base-integration",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4498,13 +3944,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config code-base-integration list --namespace {namespace}",
-        description: "List all code-base-integrations",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4550,13 +3989,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config code-base-integration list --namespace {namespace}",
-          description: "List all code-base-integrations",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4619,14 +4051,6 @@ export const apiTools: ParsedOperation[] = [
       modifies: ["code-base-integration"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config code-base-integration update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update code-base-integration",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4672,14 +4096,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config code-base-integration update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update code-base-integration",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4733,18 +4149,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["data-exposure"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config data-exposure create {name} --namespace {namespace}",
-        description: "Create data-exposure",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config data-exposure create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -4789,18 +4193,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config data-exposure create {name} --namespace {namespace}",
-          description: "Create data-exposure",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config data-exposure create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4854,18 +4246,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["discovery"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config discovery create {name} --namespace {namespace}",
-        description: "Create discovery",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config discovery create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -4910,18 +4290,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config discovery create {name} --namespace {namespace}",
-          description: "Create discovery",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config discovery create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4983,13 +4351,6 @@ export const apiTools: ParsedOperation[] = [
       deletes: ["discovery", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config discovery delete {name} --namespace {namespace}",
-        description: "Delete discovery",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -5035,13 +4396,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config discovery delete {name} --namespace {namespace}",
-          description: "Delete discovery",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5123,13 +4477,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config discovery get {name} --namespace {namespace}",
-        description: "Get specific discovery",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5175,13 +4522,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config discovery get {name} --namespace {namespace}",
-          description: "Get specific discovery",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5267,13 +4607,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config discovery list --namespace {namespace}",
-        description: "List all discoverys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5319,13 +4652,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config discovery list --namespace {namespace}",
-          description: "List all discoverys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5388,13 +4714,6 @@ export const apiTools: ParsedOperation[] = [
       modifies: ["discovery"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config discovery update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update discovery",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -5440,13 +4759,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config discovery update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update discovery",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5512,18 +4824,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["download-certificate"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config download-certificate create {name} --namespace {namespace}",
-        description: "Create download-certificate",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config download-certificate create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Ds1",
@@ -5572,18 +4872,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config download-certificate create {name} --namespace {namespace}",
-          description: "Create download-certificate",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config download-certificate create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5637,18 +4925,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["evaluate"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml evaluate create {name} --namespace {namespace}",
-        description: "Create evaluate",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl ml evaluate create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -5693,18 +4969,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ml evaluate create {name} --namespace {namespace}",
-          description: "Create evaluate",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ml evaluate create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5765,13 +5029,6 @@ export const apiTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config loadbalancer get {name} --namespace {namespace}",
-        description: "Get specific loadbalancer",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5817,13 +5074,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config loadbalancer get {name} --namespace {namespace}",
-          description: "Get specific loadbalancer",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5883,18 +5133,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["mark-as-non-api"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config mark-as-non-api create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config mark-as-non-api create {name} --namespace {namespace}",
-        description: "Create mark-as-non-api",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5940,18 +5178,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config mark-as-non-api create {name} --namespace {namespace}",
-          description: "Create mark-as-non-api",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config mark-as-non-api create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6013,18 +5239,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["move-to-inventory"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config move-to-inventory create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config move-to-inventory create {name} --namespace {namespace}",
-        description: "Create move-to-inventory",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -6073,18 +5287,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config move-to-inventory create {name} --namespace {namespace}",
-          description: "Create move-to-inventory",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config move-to-inventory create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6138,18 +5340,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["oas-validation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config oas-validation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config oas-validation create {name} --namespace {namespace}",
-        description: "Create oas-validation",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -6194,18 +5384,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config oas-validation create {name} --namespace {namespace}",
-          description: "Create oas-validation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config oas-validation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6259,18 +5437,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["rate-limit"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config rate-limit create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config rate-limit create {name} --namespace {namespace}",
-        description: "Create rate-limit",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -6315,18 +5481,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config rate-limit create {name} --namespace {namespace}",
-          description: "Create rate-limit",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config rate-limit create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6388,18 +5542,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["remove-from-inventory"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config remove-from-inventory create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config remove-from-inventory create {name} --namespace {namespace}",
-        description: "Create remove-from-inventory",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -6448,18 +5590,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config remove-from-inventory create {name} --namespace {namespace}",
-          description: "Create remove-from-inventory",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config remove-from-inventory create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6513,18 +5643,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["stat"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ml stat create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl ml stat create {name} --namespace {namespace}",
-        description: "Create stat",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Shared",
@@ -6569,18 +5687,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ml stat create {name} --namespace {namespace}",
-          description: "Create stat",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ml stat create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6642,18 +5748,6 @@ export const apiTools: ParsedOperation[] = [
       creates: ["unmark-as-non-api"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config unmark-as-non-api create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config unmark-as-non-api create {name} --namespace {namespace}",
-        description: "Create unmark-as-non-api",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -6702,18 +5796,6 @@ export const apiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config unmark-as-non-api create {name} --namespace {namespace}",
-          description: "Create unmark-as-non-api",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config unmark-as-non-api create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

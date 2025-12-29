@@ -46,18 +46,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["aggregation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data aggregation create {name} --namespace {namespace}",
-        description: "Create aggregation",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data aggregation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -102,18 +90,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data aggregation create {name} --namespace {namespace}",
-          description: "Create aggregation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data aggregation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -167,18 +143,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["aws-tgw-site"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config aws-tgw-site create {name} --namespace {namespace}",
-        description: "Create aws-tgw-site",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config aws-tgw-site create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -223,18 +187,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config aws-tgw-site create {name} --namespace {namespace}",
-          description: "Create aws-tgw-site",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config aws-tgw-site create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -296,13 +248,6 @@ export const sitesTools: ParsedOperation[] = [
       deletes: ["aws-tgw-site", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config aws-tgw-site delete {name} --namespace {namespace}",
-        description: "Delete aws-tgw-site",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -348,13 +293,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config aws-tgw-site delete {name} --namespace {namespace}",
-          description: "Delete aws-tgw-site",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -436,13 +374,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config aws-tgw-site get {name} --namespace {namespace}",
-        description: "Get specific aws-tgw-site",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -488,13 +419,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config aws-tgw-site get {name} --namespace {namespace}",
-          description: "Get specific aws-tgw-site",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -580,13 +504,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config aws-tgw-site list --namespace {namespace}",
-        description: "List all aws-tgw-sites",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -632,13 +549,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config aws-tgw-site list --namespace {namespace}",
-          description: "List all aws-tgw-sites",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -701,13 +611,6 @@ export const sitesTools: ParsedOperation[] = [
       modifies: ["aws-tgw-site"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config aws-tgw-site update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update aws-tgw-site",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -753,14 +656,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config aws-tgw-site update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update aws-tgw-site",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -814,18 +709,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["aws-vpc-site"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config aws-vpc-site create {name} --namespace {namespace}",
-        description: "Create aws-vpc-site",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config aws-vpc-site create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -870,18 +753,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config aws-vpc-site create {name} --namespace {namespace}",
-          description: "Create aws-vpc-site",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config aws-vpc-site create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -943,13 +814,6 @@ export const sitesTools: ParsedOperation[] = [
       deletes: ["aws-vpc-site", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config aws-vpc-site delete {name} --namespace {namespace}",
-        description: "Delete aws-vpc-site",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -995,13 +859,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config aws-vpc-site delete {name} --namespace {namespace}",
-          description: "Delete aws-vpc-site",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1083,13 +940,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config aws-vpc-site get {name} --namespace {namespace}",
-        description: "Get specific aws-vpc-site",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1135,13 +985,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config aws-vpc-site get {name} --namespace {namespace}",
-          description: "Get specific aws-vpc-site",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1227,13 +1070,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config aws-vpc-site list --namespace {namespace}",
-        description: "List all aws-vpc-sites",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1279,13 +1115,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config aws-vpc-site list --namespace {namespace}",
-          description: "List all aws-vpc-sites",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1348,13 +1177,6 @@ export const sitesTools: ParsedOperation[] = [
       modifies: ["aws-vpc-site"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config aws-vpc-site update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update aws-vpc-site",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1400,14 +1222,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config aws-vpc-site update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update aws-vpc-site",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1461,18 +1275,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["azure-vnet-site"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config azure-vnet-site create {name} --namespace {namespace}",
-        description: "Create azure-vnet-site",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config azure-vnet-site create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1517,18 +1319,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config azure-vnet-site create {name} --namespace {namespace}",
-          description: "Create azure-vnet-site",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config azure-vnet-site create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1590,13 +1380,6 @@ export const sitesTools: ParsedOperation[] = [
       deletes: ["azure-vnet-site", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config azure-vnet-site delete {name} --namespace {namespace}",
-        description: "Delete azure-vnet-site",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1642,13 +1425,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config azure-vnet-site delete {name} --namespace {namespace}",
-          description: "Delete azure-vnet-site",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1730,13 +1506,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config azure-vnet-site get {name} --namespace {namespace}",
-        description: "Get specific azure-vnet-site",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1782,13 +1551,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config azure-vnet-site get {name} --namespace {namespace}",
-          description: "Get specific azure-vnet-site",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1874,13 +1636,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config azure-vnet-site list --namespace {namespace}",
-        description: "List all azure-vnet-sites",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1926,13 +1681,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config azure-vnet-site list --namespace {namespace}",
-          description: "List all azure-vnet-sites",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1995,14 +1743,6 @@ export const sitesTools: ParsedOperation[] = [
       modifies: ["azure-vnet-site"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config azure-vnet-site update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update azure-vnet-site",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2048,14 +1788,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config azure-vnet-site update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update azure-vnet-site",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2116,13 +1848,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data configmap list --namespace {namespace}",
-        description: "List all configmaps",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -2168,13 +1893,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data configmap list --namespace {namespace}",
-          description: "List all configmaps",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2233,13 +1951,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data cronjob list --namespace {namespace}",
-        description: "List all cronjobs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -2285,13 +1996,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data cronjob list --namespace {namespace}",
-          description: "List all cronjobs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2350,13 +2054,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data daemonset list --namespace {namespace}",
-        description: "List all daemonsets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -2402,13 +2099,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data daemonset list --namespace {namespace}",
-          description: "List all daemonsets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2459,18 +2149,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["dc-cluster-group"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.dc_cluster_group"],
-    cliExamples: [
-      {
-        command: "f5xcctl data dc-cluster-group create {name} --namespace {namespace}",
-        description: "Create dc-cluster-group",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data dc-cluster-group create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       dc_cluster_group: "Dcg-1",
@@ -2518,18 +2196,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data dc-cluster-group create {name} --namespace {namespace}",
-          description: "Create dc-cluster-group",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data dc-cluster-group create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2566,13 +2232,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl data dc-cluster-group list --namespace {namespace}",
-        description: "List all dc-cluster-groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2615,13 +2274,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data dc-cluster-group list --namespace {namespace}",
-          description: "List all dc-cluster-groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2680,13 +2332,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data deployment list --namespace {namespace}",
-        description: "List all deployments",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -2732,13 +2377,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data deployment list --namespace {namespace}",
-          description: "List all deployments",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2790,18 +2428,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["edge"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data edge create {name} --namespace {namespace}",
-        description: "Create edge",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data edge create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -2846,18 +2472,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data edge create {name} --namespace {namespace}",
-          description: "Create edge",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data edge create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2918,13 +2532,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data endpoint list --namespace {namespace}",
-        description: "List all endpoints",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -2970,13 +2577,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data endpoint list --namespace {namespace}",
-          description: "List all endpoints",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3028,18 +2628,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["firewall-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data firewall-log create {name} --namespace {namespace}",
-        description: "Create firewall-log",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data firewall-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -3084,18 +2672,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data firewall-log create {name} --namespace {namespace}",
-          description: "Create firewall-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data firewall-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3149,18 +2725,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["gcp-vpc-site"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config gcp-vpc-site create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config gcp-vpc-site create {name} --namespace {namespace}",
-        description: "Create gcp-vpc-site",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3205,18 +2769,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config gcp-vpc-site create {name} --namespace {namespace}",
-          description: "Create gcp-vpc-site",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config gcp-vpc-site create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3278,13 +2830,6 @@ export const sitesTools: ParsedOperation[] = [
       deletes: ["gcp-vpc-site", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config gcp-vpc-site delete {name} --namespace {namespace}",
-        description: "Delete gcp-vpc-site",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3330,13 +2875,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config gcp-vpc-site delete {name} --namespace {namespace}",
-          description: "Delete gcp-vpc-site",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3418,13 +2956,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config gcp-vpc-site get {name} --namespace {namespace}",
-        description: "Get specific gcp-vpc-site",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3470,13 +3001,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config gcp-vpc-site get {name} --namespace {namespace}",
-          description: "Get specific gcp-vpc-site",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3562,13 +3086,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config gcp-vpc-site list --namespace {namespace}",
-        description: "List all gcp-vpc-sites",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3614,13 +3131,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config gcp-vpc-site list --namespace {namespace}",
-          description: "List all gcp-vpc-sites",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3683,13 +3193,6 @@ export const sitesTools: ParsedOperation[] = [
       modifies: ["gcp-vpc-site"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config gcp-vpc-site update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update gcp-vpc-site",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3735,14 +3238,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config gcp-vpc-site update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update gcp-vpc-site",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3783,18 +3278,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["global-kubeconfig"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web global-kubeconfig create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web global-kubeconfig create {name} --namespace {namespace}",
-        description: "Create global-kubeconfig",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -3840,18 +3323,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web global-kubeconfig create {name} --namespace {namespace}",
-          description: "Create global-kubeconfig",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web global-kubeconfig create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3901,13 +3372,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl web global-kubeconfig list --namespace {namespace}",
-        description: "List all global-kubeconfigs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       site: "Ce398",
@@ -3952,13 +3416,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web global-kubeconfig list --namespace {namespace}",
-          description: "List all global-kubeconfigs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4016,13 +3473,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl config global-network list --namespace {namespace}",
-        description: "List all global-networks",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -4068,13 +3518,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config global-network list --namespace {namespace}",
-          description: "List all global-networks",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4133,13 +3576,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data job list --namespace {namespace}",
-        description: "List all jobs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -4185,13 +3621,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data job list --namespace {namespace}",
-          description: "List all jobs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4254,18 +3683,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["k8s-audit-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data k8s-audit-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data k8s-audit-log create {name} --namespace {namespace}",
-        description: "Create k8s-audit-log",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -4311,18 +3728,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data k8s-audit-log create {name} --namespace {namespace}",
-          description: "Create k8s-audit-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data k8s-audit-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4377,18 +3782,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["k8s-cluster"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config k8s-cluster create {name} --namespace {namespace}",
-        description: "Create k8s-cluster",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -4433,18 +3826,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster create {name} --namespace {namespace}",
-          description: "Create k8s-cluster",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config k8s-cluster create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4506,13 +3887,6 @@ export const sitesTools: ParsedOperation[] = [
       deletes: ["k8s-cluster", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster delete {name} --namespace {namespace}",
-        description: "Delete k8s-cluster",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -4558,13 +3932,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster delete {name} --namespace {namespace}",
-          description: "Delete k8s-cluster",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4647,13 +4014,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster get {name} --namespace {namespace}",
-        description: "Get specific k8s-cluster",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4699,13 +4059,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster get {name} --namespace {namespace}",
-          description: "Get specific k8s-cluster",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4791,13 +4144,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster list --namespace {namespace}",
-        description: "List all k8s-clusters",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4843,13 +4189,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster list --namespace {namespace}",
-          description: "List all k8s-clusters",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4913,13 +4252,6 @@ export const sitesTools: ParsedOperation[] = [
       modifies: ["k8s-cluster"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update k8s-cluster",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4965,14 +4297,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config k8s-cluster update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update k8s-cluster",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5037,18 +4361,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["k8s-event"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data k8s-event create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data k8s-event create {name} --namespace {namespace}",
-        description: "Create k8s-event",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -5094,18 +4406,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data k8s-event create {name} --namespace {namespace}",
-          description: "Create k8s-event",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data k8s-event create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5169,18 +4469,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["local-kubeconfig"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config local-kubeconfig create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config local-kubeconfig create {name} --namespace {namespace}",
-        description: "Create local-kubeconfig",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Ce398",
@@ -5229,18 +4517,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config local-kubeconfig create {name} --namespace {namespace}",
-          description: "Create local-kubeconfig",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config local-kubeconfig create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5300,13 +4576,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config local-kubeconfig get {name} --namespace {namespace}",
-        description: "Get specific local-kubeconfig",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Ce398",
@@ -5352,13 +4621,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config local-kubeconfig get {name} --namespace {namespace}",
-          description: "Get specific local-kubeconfig",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5438,18 +4700,6 @@ export const sitesTools: ParsedOperation[] = [
       "path.namespace",
       "path.site",
     ],
-    cliExamples: [
-      {
-        command: "f5xcctl data log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data log create {name} --namespace {namespace}",
-        description: "Create log",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       external_connector: "Connector-1.",
@@ -5496,18 +4746,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data log create {name} --namespace {namespace}",
-          description: "Create log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5575,18 +4813,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["metric"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data metric create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data metric create {name} --namespace {namespace}",
-        description: "Create metric",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -5632,18 +4858,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data metric create {name} --namespace {namespace}",
-          description: "Create metric",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data metric create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5692,13 +4906,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data namespace list --namespace {namespace}",
-        description: "List all namespaces",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       site: "Site-1",
@@ -5743,13 +4950,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data namespace list --namespace {namespace}",
-          description: "List all namespaces",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5796,13 +4996,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl data network get {name} --namespace {namespace}",
-        description: "Get specific network",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Site-1",
@@ -5847,13 +5040,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data network get {name} --namespace {namespace}",
-          description: "Get specific network",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5905,18 +5091,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["node"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data node create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data node create {name} --namespace {namespace}",
-        description: "Create node",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -5961,18 +5135,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data node create {name} --namespace {namespace}",
-          description: "Create node",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data node create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6021,13 +5183,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data node list --namespace {namespace}",
-        description: "List all nodes",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       site: "Site-1",
@@ -6072,13 +5227,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data node list --namespace {namespace}",
-          description: "List all nodes",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6125,13 +5273,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data persistentvolume list --namespace {namespace}",
-        description: "List all persistentvolumes",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       site: "Site-1",
@@ -6176,13 +5317,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data persistentvolume list --namespace {namespace}",
-          description: "List all persistentvolumes",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6240,13 +5374,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data persistentvolumeclaim list --namespace {namespace}",
-        description: "List all persistentvolumeclaims",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -6292,13 +5419,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data persistentvolumeclaim list --namespace {namespace}",
-          description: "List all persistentvolumeclaims",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6350,18 +5470,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["platform-event"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data platform-event create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data platform-event create {name} --namespace {namespace}",
-        description: "Create platform-event",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -6406,18 +5514,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data platform-event create {name} --namespace {namespace}",
-          description: "Create platform-event",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data platform-event create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6477,13 +5573,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data pod list --namespace {namespace}",
-        description: "List all pods",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -6529,13 +5618,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data pod list --namespace {namespace}",
-          description: "List all pods",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6593,13 +5675,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data replicaset list --namespace {namespace}",
-        description: "List all replicasets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -6645,13 +5720,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data replicaset list --namespace {namespace}",
-          description: "List all replicasets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6766,13 +5834,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id"],
-    cliExamples: [
-      {
-        command: "f5xcctl data route-table get {name} --namespace {namespace}",
-        description: "Get specific route-table",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       id: "VPC-1234567898.",
@@ -6822,13 +5883,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data route-table get {name} --namespace {namespace}",
-          description: "Get specific route-table",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6879,18 +5933,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["scroll"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data scroll create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data scroll create {name} --namespace {namespace}",
-        description: "Create scroll",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -6935,18 +5977,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data scroll create {name} --namespace {namespace}",
-          description: "Create scroll",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data scroll create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7009,13 +6039,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data scroll list --namespace {namespace}",
-        description: "List all scrolls",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -7061,13 +6084,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data scroll list --namespace {namespace}",
-          description: "List all scrolls",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7125,13 +6141,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data secret list --namespace {namespace}",
-        description: "List all secrets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -7177,13 +6186,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data secret list --namespace {namespace}",
-          description: "List all secrets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7235,18 +6237,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["securemesh-site"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config securemesh-site create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config securemesh-site create {name} --namespace {namespace}",
-        description: "Create securemesh-site",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -7291,18 +6281,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config securemesh-site create {name} --namespace {namespace}",
-          description: "Create securemesh-site",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config securemesh-site create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7364,13 +6342,6 @@ export const sitesTools: ParsedOperation[] = [
       deletes: ["securemesh-site", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config securemesh-site delete {name} --namespace {namespace}",
-        description: "Delete securemesh-site",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -7416,13 +6387,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config securemesh-site delete {name} --namespace {namespace}",
-          description: "Delete securemesh-site",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7504,13 +6468,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config securemesh-site get {name} --namespace {namespace}",
-        description: "Get specific securemesh-site",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -7556,13 +6513,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config securemesh-site get {name} --namespace {namespace}",
-          description: "Get specific securemesh-site",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7648,13 +6598,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config securemesh-site list --namespace {namespace}",
-        description: "List all securemesh-sites",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -7700,13 +6643,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config securemesh-site list --namespace {namespace}",
-          description: "List all securemesh-sites",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7769,14 +6705,6 @@ export const sitesTools: ParsedOperation[] = [
       modifies: ["securemesh-site"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config securemesh-site update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update securemesh-site",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -7822,14 +6750,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config securemesh-site update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update securemesh-site",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7883,18 +6803,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["securemesh-site-v2"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config securemesh-site-v2 create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config securemesh-site-v2 create {name} --namespace {namespace}",
-        description: "Create securemesh-site-v2",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -7942,18 +6850,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config securemesh-site-v2 create {name} --namespace {namespace}",
-          description: "Create securemesh-site-v2",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config securemesh-site-v2 create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8015,13 +6911,6 @@ export const sitesTools: ParsedOperation[] = [
       deletes: ["securemesh-site-v2", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config securemesh-site-v2 delete {name} --namespace {namespace}",
-        description: "Delete securemesh-site-v2",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -8067,13 +6956,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config securemesh-site-v2 delete {name} --namespace {namespace}",
-          description: "Delete securemesh-site-v2",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8155,13 +7037,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config securemesh-site-v2 get {name} --namespace {namespace}",
-        description: "Get specific securemesh-site-v2",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -8207,13 +7082,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config securemesh-site-v2 get {name} --namespace {namespace}",
-          description: "Get specific securemesh-site-v2",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8299,13 +7167,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config securemesh-site-v2 list --namespace {namespace}",
-        description: "List all securemesh-site-v2s",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -8351,13 +7212,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config securemesh-site-v2 list --namespace {namespace}",
-          description: "List all securemesh-site-v2s",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8420,14 +7274,6 @@ export const sitesTools: ParsedOperation[] = [
       modifies: ["securemesh-site-v2"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config securemesh-site-v2 update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update securemesh-site-v2",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -8473,14 +7319,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config securemesh-site-v2 update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update securemesh-site-v2",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8540,13 +7378,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl config segment list --namespace {namespace}",
-        description: "List all segments",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -8592,13 +7423,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config segment list --namespace {namespace}",
-          description: "List all segments",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8658,13 +7482,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config selectee get {name} --namespace {namespace}",
-        description: "Get specific selectee",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Value",
@@ -8710,13 +7527,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config selectee get {name} --namespace {namespace}",
-          description: "Get specific selectee",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8774,13 +7584,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data service list --namespace {namespace}",
-        description: "List all services",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -8826,13 +7629,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data service list --namespace {namespace}",
-          description: "List all services",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8895,18 +7691,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["set-cloud-site-info"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config set-cloud-site-info create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config set-cloud-site-info create {name} --namespace {namespace}",
-        description: "Create set-cloud-site-info",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "AWS-VPC-site-1.",
@@ -8955,18 +7739,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config set-cloud-site-info create {name} --namespace {namespace}",
-          description: "Create set-cloud-site-info",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config set-cloud-site-info create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9030,18 +7802,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["set-tgw-info"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config set-tgw-info create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config set-tgw-info create {name} --namespace {namespace}",
-        description: "Create set-tgw-info",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "AWS-tgw-site-1.",
@@ -9087,18 +7847,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config set-tgw-info create {name} --namespace {namespace}",
-          description: "Create set-tgw-info",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config set-tgw-info create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9162,18 +7910,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["set-vip-info"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config set-vip-info create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config set-vip-info create {name} --namespace {namespace}",
-        description: "Create set-vip-info",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "AWS-tgw-site-1.",
@@ -9219,18 +7955,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config set-vip-info create {name} --namespace {namespace}",
-          description: "Create set-vip-info",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config set-vip-info create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9294,18 +8018,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["set-vpc-ip-prefixe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config set-vpc-ip-prefixe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config set-vpc-ip-prefixe create {name} --namespace {namespace}",
-        description: "Create set-vpc-ip-prefixe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "AWS-tgw-site-1.",
@@ -9354,18 +8066,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config set-vpc-ip-prefixe create {name} --namespace {namespace}",
-          description: "Create set-vpc-ip-prefixe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config set-vpc-ip-prefixe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9429,18 +8129,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["set-vpc-k8s-hostname"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config set-vpc-k8s-hostname create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config set-vpc-k8s-hostname create {name} --namespace {namespace}",
-        description: "Create set-vpc-k8s-hostname",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "AWS-VPC-site-1.",
@@ -9489,18 +8177,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config set-vpc-k8s-hostname create {name} --namespace {namespace}",
-          description: "Create set-vpc-k8s-hostname",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config set-vpc-k8s-hostname create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9564,18 +8240,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["set-vpn-tunnel"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config set-vpn-tunnel create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config set-vpn-tunnel create {name} --namespace {namespace}",
-        description: "Create set-vpn-tunnel",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "AWS-tgw-site-1.",
@@ -9621,18 +8285,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config set-vpn-tunnel create {name} --namespace {namespace}",
-          description: "Create set-vpn-tunnel",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config set-vpn-tunnel create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9686,18 +8338,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["site"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data site create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data site create {name} --namespace {namespace}",
-        description: "Create site",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       site: "Ce01",
@@ -9742,18 +8382,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data site create {name} --namespace {namespace}",
-          description: "Create site",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data site create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9834,13 +8462,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config site get {name} --namespace {namespace}",
-        description: "Get specific site",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -9886,13 +8507,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config site get {name} --namespace {namespace}",
-          description: "Get specific site",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -9978,13 +8592,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config site list --namespace {namespace}",
-        description: "List all sites",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -10030,13 +8637,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config site list --namespace {namespace}",
-          description: "List all sites",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10087,18 +8687,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["site-mesh-group"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.site_mesh_group"],
-    cliExamples: [
-      {
-        command: "f5xcctl data site-mesh-group create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data site-mesh-group create {name} --namespace {namespace}",
-        description: "Create site-mesh-group",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       site_mesh_group: "Smg-1",
@@ -10143,18 +8731,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data site-mesh-group create {name} --namespace {namespace}",
-          description: "Create site-mesh-group",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data site-mesh-group create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10191,13 +8767,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl data site-mesh-group list --namespace {namespace}",
-        description: "List all site-mesh-groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -10240,13 +8809,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data site-mesh-group list --namespace {namespace}",
-          description: "List all site-mesh-groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10309,13 +8871,6 @@ export const sitesTools: ParsedOperation[] = [
       modifies: ["site"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config site update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update site",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -10361,13 +8916,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config site update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update site",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10432,18 +8980,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["state"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl register state create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl register state create {name} --namespace {namespace}",
-        description: "Create state",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Ce398",
@@ -10489,18 +9025,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl register state create {name} --namespace {namespace}",
-          description: "Create state",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl register state create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10560,13 +9084,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl data statefulset list --namespace {namespace}",
-        description: "List all statefulsets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -10612,13 +9129,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data statefulset list --namespace {namespace}",
-          description: "List all statefulsets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10669,18 +9179,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["statu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name"],
-    cliExamples: [
-      {
-        command: "f5xcctl data statu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data statu create {name} --namespace {namespace}",
-        description: "Create statu",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Ce01",
@@ -10725,18 +9223,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data statu create {name} --namespace {namespace}",
-          description: "Create statu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data statu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10800,18 +9286,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["upgrade-o"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config upgrade-o create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config upgrade-o create {name} --namespace {namespace}",
-        description: "Create upgrade-o",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Ce398",
@@ -10857,18 +9331,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config upgrade-o create {name} --namespace {namespace}",
-          description: "Create upgrade-o",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config upgrade-o create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -10932,18 +9394,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["upgrade-sw"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config upgrade-sw create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config upgrade-sw create {name} --namespace {namespace}",
-        description: "Create upgrade-sw",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Ce398",
@@ -10989,18 +9439,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config upgrade-sw create {name} --namespace {namespace}",
-          description: "Create upgrade-sw",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config upgrade-sw create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11064,18 +9502,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["validate-config"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config validate-config create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config validate-config create {name} --namespace {namespace}",
-        description: "Create validate-config",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "AWS-VPC-site-1.",
@@ -11121,18 +9547,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config validate-config create {name} --namespace {namespace}",
-          description: "Create validate-config",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config validate-config create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11187,18 +9601,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["virtual-k8s"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-k8s create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config virtual-k8s create {name} --namespace {namespace}",
-        description: "Create virtual-k8s",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -11243,18 +9645,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config virtual-k8s create {name} --namespace {namespace}",
-          description: "Create virtual-k8s",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config virtual-k8s create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11316,13 +9706,6 @@ export const sitesTools: ParsedOperation[] = [
       deletes: ["virtual-k8s", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-k8s delete {name} --namespace {namespace}",
-        description: "Delete virtual-k8s",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -11368,13 +9751,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config virtual-k8s delete {name} --namespace {namespace}",
-          description: "Delete virtual-k8s",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11457,13 +9833,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-k8s get {name} --namespace {namespace}",
-        description: "Get specific virtual-k8s",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -11509,13 +9878,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config virtual-k8s get {name} --namespace {namespace}",
-          description: "Get specific virtual-k8s",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11601,13 +9963,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-k8s list --namespace {namespace}",
-        description: "List all virtual-k8ss",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -11653,13 +10008,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config virtual-k8s list --namespace {namespace}",
-          description: "List all virtual-k8ss",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11723,13 +10071,6 @@ export const sitesTools: ParsedOperation[] = [
       modifies: ["virtual-k8s"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-k8s update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update virtual-k8s",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -11775,14 +10116,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config virtual-k8s update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update virtual-k8s",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11836,18 +10169,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["virtual-site"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-site create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config virtual-site create {name} --namespace {namespace}",
-        description: "Create virtual-site",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -11892,18 +10213,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config virtual-site create {name} --namespace {namespace}",
-          description: "Create virtual-site",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config virtual-site create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -11965,13 +10274,6 @@ export const sitesTools: ParsedOperation[] = [
       deletes: ["virtual-site", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-site delete {name} --namespace {namespace}",
-        description: "Delete virtual-site",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -12017,13 +10319,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config virtual-site delete {name} --namespace {namespace}",
-          description: "Delete virtual-site",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12105,13 +10400,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-site get {name} --namespace {namespace}",
-        description: "Get specific virtual-site",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -12157,13 +10445,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config virtual-site get {name} --namespace {namespace}",
-          description: "Get specific virtual-site",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12249,13 +10530,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-site list --namespace {namespace}",
-        description: "List all virtual-sites",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -12301,13 +10575,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config virtual-site list --namespace {namespace}",
-          description: "List all virtual-sites",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12370,13 +10637,6 @@ export const sitesTools: ParsedOperation[] = [
       modifies: ["virtual-site"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config virtual-site update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update virtual-site",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -12422,14 +10682,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config virtual-site update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update virtual-site",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12483,18 +10735,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["vk8s-audit-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data vk8s-audit-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data vk8s-audit-log create {name} --namespace {namespace}",
-        description: "Create vk8s-audit-log",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -12539,18 +10779,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data vk8s-audit-log create {name} --namespace {namespace}",
-          description: "Create vk8s-audit-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data vk8s-audit-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12604,18 +10832,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["vk8s-event"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data vk8s-event create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data vk8s-event create {name} --namespace {namespace}",
-        description: "Create vk8s-event",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -12660,18 +10876,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data vk8s-event create {name} --namespace {namespace}",
-          description: "Create vk8s-event",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data vk8s-event create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12725,18 +10929,6 @@ export const sitesTools: ParsedOperation[] = [
       creates: ["voltstack-site"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config voltstack-site create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config voltstack-site create {name} --namespace {namespace}",
-        description: "Create voltstack-site",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -12781,18 +10973,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config voltstack-site create {name} --namespace {namespace}",
-          description: "Create voltstack-site",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config voltstack-site create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12854,13 +11034,6 @@ export const sitesTools: ParsedOperation[] = [
       deletes: ["voltstack-site", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config voltstack-site delete {name} --namespace {namespace}",
-        description: "Delete voltstack-site",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -12906,13 +11079,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config voltstack-site delete {name} --namespace {namespace}",
-          description: "Delete voltstack-site",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -12994,13 +11160,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config voltstack-site get {name} --namespace {namespace}",
-        description: "Get specific voltstack-site",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -13046,13 +11205,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config voltstack-site get {name} --namespace {namespace}",
-          description: "Get specific voltstack-site",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13138,13 +11290,6 @@ export const sitesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config voltstack-site list --namespace {namespace}",
-        description: "List all voltstack-sites",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -13190,13 +11335,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config voltstack-site list --namespace {namespace}",
-          description: "List all voltstack-sites",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -13259,14 +11397,6 @@ export const sitesTools: ParsedOperation[] = [
       modifies: ["voltstack-site"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config voltstack-site update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update voltstack-site",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -13312,14 +11442,6 @@ export const sitesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config voltstack-site update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update voltstack-site",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

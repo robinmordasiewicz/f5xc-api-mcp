@@ -47,18 +47,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["fast-acl"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fast-acl create {name} --namespace {namespace}",
-        description: "Create fast-acl",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config fast-acl create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -103,18 +91,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config fast-acl create {name} --namespace {namespace}",
-          description: "Create fast-acl",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config fast-acl create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -176,13 +152,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["fast-acl", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fast-acl delete {name} --namespace {namespace}",
-        description: "Delete fast-acl",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -228,13 +197,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config fast-acl delete {name} --namespace {namespace}",
-          description: "Delete fast-acl",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -316,13 +278,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fast-acl get {name} --namespace {namespace}",
-        description: "Get specific fast-acl",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -368,13 +323,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config fast-acl get {name} --namespace {namespace}",
-          description: "Get specific fast-acl",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -460,13 +408,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fast-acl list --namespace {namespace}",
-        description: "List all fast-acls",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -512,13 +453,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config fast-acl list --namespace {namespace}",
-          description: "List all fast-acls",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -571,18 +505,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["fast-acl-rule"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fast-acl-rule create {name} --namespace {namespace}",
-        description: "Create fast-acl-rule",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config fast-acl-rule create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -627,18 +549,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config fast-acl-rule create {name} --namespace {namespace}",
-          description: "Create fast-acl-rule",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config fast-acl-rule create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -700,13 +610,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["fast-acl-rule", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fast-acl-rule delete {name} --namespace {namespace}",
-        description: "Delete fast-acl-rule",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -752,13 +655,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config fast-acl-rule delete {name} --namespace {namespace}",
-          description: "Delete fast-acl-rule",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -840,13 +736,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fast-acl-rule get {name} --namespace {namespace}",
-        description: "Get specific fast-acl-rule",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -892,13 +781,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config fast-acl-rule get {name} --namespace {namespace}",
-          description: "Get specific fast-acl-rule",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -984,13 +866,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fast-acl-rule list --namespace {namespace}",
-        description: "List all fast-acl-rules",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1036,13 +911,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config fast-acl-rule list --namespace {namespace}",
-          description: "List all fast-acl-rules",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1106,14 +974,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["fast-acl-rule"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config fast-acl-rule update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update fast-acl-rule",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1159,14 +1019,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config fast-acl-rule update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update fast-acl-rule",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1232,13 +1084,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["fast-acl"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config fast-acl update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update fast-acl",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1284,13 +1129,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config fast-acl update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update fast-acl",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1344,18 +1182,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["filter-set"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config filter-set create {name} --namespace {namespace}",
-        description: "Create filter-set",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config filter-set create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1400,18 +1226,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config filter-set create {name} --namespace {namespace}",
-          description: "Create filter-set",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config filter-set create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1473,13 +1287,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["filter-set", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config filter-set delete {name} --namespace {namespace}",
-        description: "Delete filter-set",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1525,13 +1332,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config filter-set delete {name} --namespace {namespace}",
-          description: "Delete filter-set",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1613,13 +1413,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config filter-set get {name} --namespace {namespace}",
-        description: "Get specific filter-set",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1665,13 +1458,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config filter-set get {name} --namespace {namespace}",
-          description: "Get specific filter-set",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1757,13 +1543,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config filter-set list --namespace {namespace}",
-        description: "List all filter-sets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1809,13 +1588,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config filter-set list --namespace {namespace}",
-          description: "List all filter-sets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1878,13 +1650,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["filter-set"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config filter-set update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update filter-set",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1930,13 +1695,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config filter-set update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update filter-set",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1989,18 +1747,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["find"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config find create {name} --namespace {namespace}",
-        description: "Create find",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config find create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Bot-defense-apac.",
@@ -2045,18 +1791,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config find create {name} --namespace {namespace}",
-          description: "Create find",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config find create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2110,18 +1844,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["forward-proxy-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config forward-proxy-policy create {name} --namespace {namespace}",
-        description: "Create forward-proxy-policy",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config forward-proxy-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2169,18 +1891,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config forward-proxy-policy create {name} --namespace {namespace}",
-          description: "Create forward-proxy-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config forward-proxy-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2242,13 +1952,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["forward-proxy-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config forward-proxy-policy delete {name} --namespace {namespace}",
-        description: "Delete forward-proxy-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2294,13 +1997,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config forward-proxy-policy delete {name} --namespace {namespace}",
-          description: "Delete forward-proxy-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2382,13 +2078,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config forward-proxy-policy get {name} --namespace {namespace}",
-        description: "Get specific forward-proxy-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2434,13 +2123,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config forward-proxy-policy get {name} --namespace {namespace}",
-          description: "Get specific forward-proxy-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2526,13 +2208,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config forward-proxy-policy list --namespace {namespace}",
-        description: "List all forward-proxy-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2578,13 +2253,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config forward-proxy-policy list --namespace {namespace}",
-          description: "List all forward-proxy-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2647,14 +2315,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["forward-proxy-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config forward-proxy-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update forward-proxy-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2700,14 +2360,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config forward-proxy-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update forward-proxy-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2761,18 +2413,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["graph"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data graph create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data graph create {name} --namespace {namespace}",
-        description: "Create graph",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -2817,18 +2457,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data graph create {name} --namespace {namespace}",
-          description: "Create graph",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data graph create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2881,18 +2509,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["hit"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data hit create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data hit create {name} --namespace {namespace}",
-        description: "Create hit",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -2937,18 +2553,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data hit create {name} --namespace {namespace}",
-          description: "Create hit",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data hit create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3000,18 +2604,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["latency"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data latency create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data latency create {name} --namespace {namespace}",
-        description: "Create latency",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -3056,18 +2648,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data latency create {name} --namespace {namespace}",
-          description: "Create latency",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data latency create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3121,18 +2701,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["nat-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config nat-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config nat-policy create {name} --namespace {namespace}",
-        description: "Create nat-policy",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3177,18 +2745,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config nat-policy create {name} --namespace {namespace}",
-          description: "Create nat-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config nat-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3250,13 +2806,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["nat-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config nat-policy delete {name} --namespace {namespace}",
-        description: "Delete nat-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3302,13 +2851,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config nat-policy delete {name} --namespace {namespace}",
-          description: "Delete nat-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3391,13 +2933,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config nat-policy get {name} --namespace {namespace}",
-        description: "Get specific nat-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3443,13 +2978,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config nat-policy get {name} --namespace {namespace}",
-          description: "Get specific nat-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3535,13 +3063,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config nat-policy list --namespace {namespace}",
-        description: "List all nat-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3587,13 +3108,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config nat-policy list --namespace {namespace}",
-          description: "List all nat-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3657,13 +3171,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["nat-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config nat-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update nat-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3709,13 +3216,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config nat-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update nat-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3769,18 +3269,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["network-firewall"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-firewall create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config network-firewall create {name} --namespace {namespace}",
-        description: "Create network-firewall",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3828,18 +3316,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config network-firewall create {name} --namespace {namespace}",
-          description: "Create network-firewall",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config network-firewall create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3901,13 +3377,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["network-firewall", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-firewall delete {name} --namespace {namespace}",
-        description: "Delete network-firewall",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3953,13 +3422,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config network-firewall delete {name} --namespace {namespace}",
-          description: "Delete network-firewall",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4041,13 +3503,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-firewall get {name} --namespace {namespace}",
-        description: "Get specific network-firewall",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4093,13 +3548,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-firewall get {name} --namespace {namespace}",
-          description: "Get specific network-firewall",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4185,13 +3633,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-firewall list --namespace {namespace}",
-        description: "List all network-firewalls",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4237,13 +3678,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-firewall list --namespace {namespace}",
-          description: "List all network-firewalls",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4306,14 +3740,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["network-firewall"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config network-firewall update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update network-firewall",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4359,14 +3785,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config network-firewall update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update network-firewall",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4420,18 +3838,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["network-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config network-policy create {name} --namespace {namespace}",
-        description: "Create network-policy",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -4476,18 +3882,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config network-policy create {name} --namespace {namespace}",
-          description: "Create network-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config network-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4549,13 +3943,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["network-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy delete {name} --namespace {namespace}",
-        description: "Delete network-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -4601,13 +3988,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config network-policy delete {name} --namespace {namespace}",
-          description: "Delete network-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4689,13 +4069,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy get {name} --namespace {namespace}",
-        description: "Get specific network-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4741,13 +4114,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-policy get {name} --namespace {namespace}",
-          description: "Get specific network-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4833,13 +4199,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy list --namespace {namespace}",
-        description: "List all network-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4885,13 +4244,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-policy list --namespace {namespace}",
-          description: "List all network-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4943,18 +4295,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["network-policy-rule"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy-rule create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config network-policy-rule create {name} --namespace {namespace}",
-        description: "Create network-policy-rule",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -5002,18 +4342,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config network-policy-rule create {name} --namespace {namespace}",
-          description: "Create network-policy-rule",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config network-policy-rule create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5075,13 +4403,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["network-policy-rule", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy-rule delete {name} --namespace {namespace}",
-        description: "Delete network-policy-rule",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -5127,13 +4448,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config network-policy-rule delete {name} --namespace {namespace}",
-          description: "Delete network-policy-rule",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5215,13 +4529,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy-rule get {name} --namespace {namespace}",
-        description: "Get specific network-policy-rule",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5267,13 +4574,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-policy-rule get {name} --namespace {namespace}",
-          description: "Get specific network-policy-rule",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5359,13 +4659,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy-rule list --namespace {namespace}",
-        description: "List all network-policy-rules",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5411,13 +4704,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-policy-rule list --namespace {namespace}",
-          description: "List all network-policy-rules",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5481,14 +4767,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["network-policy-rule"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config network-policy-rule update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update network-policy-rule",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -5534,14 +4812,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config network-policy-rule update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update network-policy-rule",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5621,13 +4891,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy-set get {name} --namespace {namespace}",
-        description: "Get specific network-policy-set",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5673,13 +4936,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-policy-set get {name} --namespace {namespace}",
-          description: "Get specific network-policy-set",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5765,13 +5021,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy-set list --namespace {namespace}",
-        description: "List all network-policy-sets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5817,13 +5066,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-policy-set list --namespace {namespace}",
-          description: "List all network-policy-sets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5887,14 +5129,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["network-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config network-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update network-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -5940,14 +5174,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config network-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update network-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6001,18 +5227,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["network-policy-view"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy-view create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config network-policy-view create {name} --namespace {namespace}",
-        description: "Create network-policy-view",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -6060,18 +5274,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config network-policy-view create {name} --namespace {namespace}",
-          description: "Create network-policy-view",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config network-policy-view create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6133,13 +5335,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["network-policy-view", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy-view delete {name} --namespace {namespace}",
-        description: "Delete network-policy-view",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -6185,13 +5380,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config network-policy-view delete {name} --namespace {namespace}",
-          description: "Delete network-policy-view",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6273,13 +5461,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy-view get {name} --namespace {namespace}",
-        description: "Get specific network-policy-view",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -6325,13 +5506,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-policy-view get {name} --namespace {namespace}",
-          description: "Get specific network-policy-view",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6417,13 +5591,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config network-policy-view list --namespace {namespace}",
-        description: "List all network-policy-views",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -6469,13 +5636,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config network-policy-view list --namespace {namespace}",
-          description: "List all network-policy-views",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6538,14 +5698,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["network-policy-view"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config network-policy-view update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update network-policy-view",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -6591,14 +5743,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config network-policy-view update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update network-policy-view",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6652,18 +5796,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["policy-based-routing"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config policy-based-routing create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config policy-based-routing create {name} --namespace {namespace}",
-        description: "Create policy-based-routing",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -6711,18 +5843,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config policy-based-routing create {name} --namespace {namespace}",
-          description: "Create policy-based-routing",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config policy-based-routing create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6784,13 +5904,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["policy-based-routing", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config policy-based-routing delete {name} --namespace {namespace}",
-        description: "Delete policy-based-routing",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -6836,13 +5949,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config policy-based-routing delete {name} --namespace {namespace}",
-          description: "Delete policy-based-routing",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6924,13 +6030,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config policy-based-routing get {name} --namespace {namespace}",
-        description: "Get specific policy-based-routing",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -6976,13 +6075,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config policy-based-routing get {name} --namespace {namespace}",
-          description: "Get specific policy-based-routing",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7068,13 +6160,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config policy-based-routing list --namespace {namespace}",
-        description: "List all policy-based-routings",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -7120,13 +6205,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config policy-based-routing list --namespace {namespace}",
-          description: "List all policy-based-routings",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7189,14 +6267,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["policy-based-routing"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config policy-based-routing update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update policy-based-routing",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -7242,14 +6312,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config policy-based-routing update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update policy-based-routing",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7330,13 +6392,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config segment-connection get {name} --namespace {namespace}",
-        description: "Get specific segment-connection",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -7382,13 +6437,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config segment-connection get {name} --namespace {namespace}",
-          description: "Get specific segment-connection",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7474,13 +6522,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config segment-connection list --namespace {namespace}",
-        description: "List all segment-connections",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -7526,13 +6567,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config segment-connection list --namespace {namespace}",
-          description: "List all segment-connections",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7595,14 +6629,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["segment-connection"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config segment-connection update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update segment-connection",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -7648,14 +6674,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config segment-connection update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update segment-connection",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7709,18 +6727,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["segment"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config segment create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config segment create {name} --namespace {namespace}",
-        description: "Create segment",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -7765,18 +6771,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config segment create {name} --namespace {namespace}",
-          description: "Create segment",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config segment create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7838,13 +6832,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["segment", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config segment delete {name} --namespace {namespace}",
-        description: "Delete segment",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -7890,13 +6877,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config segment delete {name} --namespace {namespace}",
-          description: "Delete segment",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7978,13 +6958,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config segment get {name} --namespace {namespace}",
-        description: "Get specific segment",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -8030,13 +7003,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config segment get {name} --namespace {namespace}",
-          description: "Get specific segment",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8122,13 +7088,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config segment list --namespace {namespace}",
-        description: "List all segments",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -8174,13 +7133,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config segment list --namespace {namespace}",
-          description: "List all segments",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8243,13 +7195,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["segment"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config segment update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update segment",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -8295,13 +7240,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config segment update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update segment",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8356,18 +7294,6 @@ export const network_securityTools: ParsedOperation[] = [
       creates: ["service-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config service-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config service-policy create {name} --namespace {namespace}",
-        description: "Create service-policy",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -8412,18 +7338,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config service-policy create {name} --namespace {namespace}",
-          description: "Create service-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config service-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8485,13 +7399,6 @@ export const network_securityTools: ParsedOperation[] = [
       deletes: ["service-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config service-policy delete {name} --namespace {namespace}",
-        description: "Delete service-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -8537,13 +7444,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config service-policy delete {name} --namespace {namespace}",
-          description: "Delete service-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8626,13 +7526,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config service-policy get {name} --namespace {namespace}",
-        description: "Get specific service-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -8678,13 +7571,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config service-policy get {name} --namespace {namespace}",
-          description: "Get specific service-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8770,13 +7656,6 @@ export const network_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config service-policy list --namespace {namespace}",
-        description: "List all service-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -8822,13 +7701,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config service-policy list --namespace {namespace}",
-          description: "List all service-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8892,14 +7764,6 @@ export const network_securityTools: ParsedOperation[] = [
       modifies: ["service-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config service-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update service-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -8945,14 +7809,6 @@ export const network_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config service-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update service-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

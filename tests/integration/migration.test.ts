@@ -8,7 +8,6 @@ import * as path from "path";
 import * as os from "os";
 import { ConfigManager } from "../../src/config";
 import { CredentialManager } from "../../src/auth/credential-manager";
-import { detectEnvironmentCredentials } from "../../src/cli/setup";
 
 describe("Migration Path: Environment Variables to Profiles", () => {
   let tempDir: string;
@@ -58,29 +57,6 @@ describe("Migration Path: Environment Variables to Profiles", () => {
       expect(credManager.getToken()).toBe("legacy-token");
       expect(credManager.getActiveProfile()).toBeNull();
     });
-
-    it("should detect existing environment variables", () => {
-      process.env.F5XC_API_URL = "https://prod.example.com";
-      process.env.F5XC_API_TOKEN = "prod-token";
-
-      const detected = detectEnvironmentCredentials();
-
-      expect(detected.hasCredentials).toBe(true);
-      expect(detected.apiUrl).toBe("https://prod.example.com");
-      expect(detected.apiToken).toBe("prod-token");
-    });
-
-    it("should detect P12 certificates from environment", () => {
-      process.env.F5XC_API_URL = "https://secure.example.com";
-      process.env.F5XC_P12_FILE = "/path/to/cert.p12";
-      process.env.F5XC_P12_PASSWORD = "cert-pass";
-
-      const detected = detectEnvironmentCredentials();
-
-      expect(detected.hasCredentials).toBe(true);
-      expect(detected.p12File).toBe("/path/to/cert.p12");
-      expect(detected.p12Password).toBe("cert-pass");
-    });
   });
 
   describe("Phase 2: Migration - Creating Profile from Env Vars", () => {
@@ -89,14 +65,10 @@ describe("Migration Path: Environment Variables to Profiles", () => {
       process.env.F5XC_API_URL = "https://prod.example.com";
       process.env.F5XC_API_TOKEN = "prod-token";
 
-      // Step 2: User runs setup wizard which detects env vars
-      const detected = detectEnvironmentCredentials();
-      expect(detected.hasCredentials).toBe(true);
-
-      // Step 3: Setup wizard creates profile from env vars
+      // Step 2: Create profile from env vars (simulating migration)
       const credentials = {
-        apiUrl: detected.apiUrl,
-        apiToken: detected.apiToken,
+        apiUrl: process.env.F5XC_API_URL,
+        apiToken: process.env.F5XC_API_TOKEN,
         metadata: {
           description: "Migrated from environment variables",
           createdAt: new Date().toISOString(),
@@ -107,11 +79,11 @@ describe("Migration Path: Environment Variables to Profiles", () => {
       await configManager.setProfile("production", credentials);
       await configManager.setDefaultProfile("production");
 
-      // Step 4: Verify profile was created
+      // Step 3: Verify profile was created
       const profiles = await configManager.listProfiles();
       expect(profiles).toContain("production");
 
-      // Step 5: Clear env vars and use profile
+      // Step 4: Clear env vars and use profile
       delete process.env.F5XC_API_URL;
       delete process.env.F5XC_API_TOKEN;
       process.env.F5XC_PROFILE = "production";
@@ -126,16 +98,11 @@ describe("Migration Path: Environment Variables to Profiles", () => {
       process.env.F5XC_P12_FILE = "/path/to/cert.p12";
       process.env.F5XC_P12_PASSWORD = "cert-pass";
 
-      // Step 2: Setup wizard detects env vars
-      const detected = detectEnvironmentCredentials();
-      expect(detected.hasCredentials).toBe(true);
-      expect(detected.p12File).toBeDefined();
-
-      // Step 3: Create profile from env vars
+      // Step 2: Create profile from env vars (simulating migration)
       const credentials = {
-        apiUrl: detected.apiUrl,
-        p12File: detected.p12File,
-        p12Password: detected.p12Password,
+        apiUrl: process.env.F5XC_API_URL,
+        p12File: process.env.F5XC_P12_FILE,
+        p12Password: process.env.F5XC_P12_PASSWORD,
         metadata: {
           description: "Migrated P12 certificate",
           createdAt: new Date().toISOString(),
@@ -151,7 +118,7 @@ describe("Migration Path: Environment Variables to Profiles", () => {
       expect(savedProfile?.apiUrl).toBeDefined();
       expect(savedProfile?.p12File).toBe("/path/to/cert.p12");
 
-      // Step 4: Clear env vars and use profile
+      // Step 3: Clear env vars and use profile
       delete process.env.F5XC_API_URL;
       delete process.env.F5XC_P12_FILE;
       delete process.env.F5XC_P12_PASSWORD;
@@ -396,14 +363,10 @@ describe("Migration Path: Environment Variables to Profiles", () => {
       process.env.F5XC_API_URL = "https://mycompany.example.com";
       process.env.F5XC_API_TOKEN = "mycompany-token";
 
-      // Simulate running setup wizard
-      const detected = detectEnvironmentCredentials();
-      expect(detected.hasCredentials).toBe(true);
-
-      // Create profile from detected env vars
+      // Create profile from env vars (simulating migration)
       await configManager.setProfile("default", {
-        apiUrl: detected.apiUrl,
-        apiToken: detected.apiToken,
+        apiUrl: process.env.F5XC_API_URL,
+        apiToken: process.env.F5XC_API_TOKEN,
         metadata: {
           description: "Auto-detected from environment",
           createdAt: new Date().toISOString(),

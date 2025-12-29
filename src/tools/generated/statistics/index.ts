@@ -46,18 +46,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["aggregation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data aggregation create {name} --namespace {namespace}",
-        description: "Create aggregation",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data aggregation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -102,18 +90,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data aggregation create {name} --namespace {namespace}",
-          description: "Create aggregation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data aggregation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -167,18 +143,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["alert-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config alert-policy create {name} --namespace {namespace}",
-        description: "Create alert-policy",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config alert-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -223,18 +187,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config alert-policy create {name} --namespace {namespace}",
-          description: "Create alert-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config alert-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -296,13 +248,6 @@ export const statisticsTools: ParsedOperation[] = [
       deletes: ["alert-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config alert-policy delete {name} --namespace {namespace}",
-        description: "Delete alert-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -348,13 +293,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config alert-policy delete {name} --namespace {namespace}",
-          description: "Delete alert-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -436,13 +374,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config alert-policy get {name} --namespace {namespace}",
-        description: "Get specific alert-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -488,13 +419,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config alert-policy get {name} --namespace {namespace}",
-          description: "Get specific alert-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -580,13 +504,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config alert-policy list --namespace {namespace}",
-        description: "List all alert-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -632,13 +549,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config alert-policy list --namespace {namespace}",
-          description: "List all alert-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -701,13 +611,6 @@ export const statisticsTools: ParsedOperation[] = [
       modifies: ["alert-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config alert-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update alert-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -753,14 +656,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config alert-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update alert-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -814,18 +709,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["alert-receiver"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config alert-receiver create {name} --namespace {namespace}",
-        description: "Create alert-receiver",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config alert-receiver create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -870,18 +753,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config alert-receiver create {name} --namespace {namespace}",
-          description: "Create alert-receiver",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config alert-receiver create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -943,13 +814,6 @@ export const statisticsTools: ParsedOperation[] = [
       deletes: ["alert-receiver", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config alert-receiver delete {name} --namespace {namespace}",
-        description: "Delete alert-receiver",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -995,13 +859,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config alert-receiver delete {name} --namespace {namespace}",
-          description: "Delete alert-receiver",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1083,13 +940,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config alert-receiver get {name} --namespace {namespace}",
-        description: "Get specific alert-receiver",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1135,13 +985,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config alert-receiver get {name} --namespace {namespace}",
-          description: "Get specific alert-receiver",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1227,13 +1070,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config alert-receiver list --namespace {namespace}",
-        description: "List all alert-receivers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1279,13 +1115,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config alert-receiver list --namespace {namespace}",
-          description: "List all alert-receivers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1348,14 +1177,6 @@ export const statisticsTools: ParsedOperation[] = [
       modifies: ["alert-receiver"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config alert-receiver update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update alert-receiver",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1401,14 +1222,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config alert-receiver update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update alert-receiver",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1521,13 +1334,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl data all-ns-alert list --namespace {namespace}",
-        description: "List all all-ns-alerts",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       filter: "{alertname=\\.",
@@ -1577,13 +1383,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data all-ns-alert list --namespace {namespace}",
-          description: "List all all-ns-alerts",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1620,18 +1419,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["all-ns-service"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data all-ns-service create {name} --namespace {namespace}",
-        description: "Create all-ns-service",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data all-ns-service create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1674,18 +1461,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data all-ns-service create {name} --namespace {namespace}",
-          description: "Create all-ns-service",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data all-ns-service create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1749,18 +1524,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["by-application"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.network_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect by-application create {name} --namespace {namespace}",
-        description: "Create by-application",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl infraprotect by-application create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -1806,18 +1569,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect by-application create {name} --namespace {namespace}",
-          description: "Create by-application",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect by-application create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1881,18 +1632,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["by-mitigation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.mitigation_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect by-mitigation create {name} --namespace {namespace}",
-        description: "Create by-mitigation",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl infraprotect by-mitigation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       mitigation_id: "Value",
@@ -1938,18 +1677,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect by-mitigation create {name} --namespace {namespace}",
-          description: "Create by-mitigation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect by-mitigation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2018,18 +1745,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["by-network"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.network_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect by-network create {name} --namespace {namespace}",
-        description: "Create by-network",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl infraprotect by-network create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -2075,18 +1790,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect by-network create {name} --namespace {namespace}",
-          description: "Create by-network",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect by-network create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2150,18 +1853,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["by-zone"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.network_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect by-zone create {name} --namespace {namespace}",
-        description: "Create by-zone",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl infraprotect by-zone create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -2207,18 +1898,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect by-zone create {name} --namespace {namespace}",
-          description: "Create by-zone",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect by-zone create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2259,13 +1938,6 @@ export const statisticsTools: ParsedOperation[] = [
       modifies: ["catalog"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web catalog update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update catalog",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2308,13 +1980,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web catalog update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update catalog",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2379,18 +2044,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["confirm"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl alert confirm create {name} --namespace {namespace}",
-        description: "Create confirm",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl alert confirm create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Email1",
@@ -2436,18 +2089,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl alert confirm create {name} --namespace {namespace}",
-          description: "Create confirm",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl alert confirm create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2513,19 +2154,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["create-http-load-balancer"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl discovery create-http-load-balancer create {name} --namespace {namespace}",
-        description: "Create create-http-load-balancer",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl discovery create-http-load-balancer create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Vs1",
@@ -2574,19 +2202,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl discovery create-http-load-balancer create {name} --namespace {namespace}",
-          description: "Create create-http-load-balancer",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl discovery create-http-load-balancer create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2652,18 +2267,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["create-tcp-load-balancer"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery create-tcp-load-balancer create {name} --namespace {namespace}",
-        description: "Create create-tcp-load-balancer",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl discovery create-tcp-load-balancer create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Vs1",
@@ -2712,19 +2315,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl discovery create-tcp-load-balancer create {name} --namespace {namespace}",
-          description: "Create create-tcp-load-balancer",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl discovery create-tcp-load-balancer create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2777,18 +2367,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["dc-cluster-group"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.dc_cluster_group"],
-    cliExamples: [
-      {
-        command: "f5xcctl data dc-cluster-group create {name} --namespace {namespace}",
-        description: "Create dc-cluster-group",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data dc-cluster-group create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       dc_cluster_group: "Dcg-1",
@@ -2836,18 +2414,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data dc-cluster-group create {name} --namespace {namespace}",
-          description: "Create dc-cluster-group",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data dc-cluster-group create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2884,13 +2450,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl data dc-cluster-group list --namespace {namespace}",
-        description: "List all dc-cluster-groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2933,13 +2492,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data dc-cluster-group list --namespace {namespace}",
-          description: "List all dc-cluster-groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3003,18 +2555,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["disable-visibility"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery disable-visibility create {name} --namespace {namespace}",
-        description: "Create disable-visibility",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl discovery disable-visibility create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Vs1",
@@ -3063,18 +2603,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl discovery disable-visibility create {name} --namespace {namespace}",
-          description: "Create disable-visibility",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl discovery disable-visibility create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3153,13 +2681,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery discovered-service get {name} --namespace {namespace}",
-        description: "Get specific discovered-service",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3205,13 +2726,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl discovery discovered-service get {name} --namespace {namespace}",
-          description: "Get specific discovered-service",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3283,13 +2797,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery discovered-service list --namespace {namespace}",
-        description: "List all discovered-services",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       discovery_name: "Disc-cbip-1.",
@@ -3336,13 +2843,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl discovery discovered-service list --namespace {namespace}",
-          description: "List all discovered-services",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3400,13 +2900,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl report download get {name} --namespace {namespace}",
-        description: "Get specific download",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Test-report.",
@@ -3452,13 +2945,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl report download get {name} --namespace {namespace}",
-          description: "Get specific download",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3522,18 +3008,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["enable-visibility"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery enable-visibility create {name} --namespace {namespace}",
-        description: "Create enable-visibility",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl discovery enable-visibility create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Vs1",
@@ -3582,18 +3056,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl discovery enable-visibility create {name} --namespace {namespace}",
-          description: "Create enable-visibility",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl discovery enable-visibility create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3658,18 +3120,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["event-count"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.network_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect event-count create {name} --namespace {namespace}",
-        description: "Create event-count",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl infraprotect event-count create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -3715,18 +3165,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect event-count create {name} --namespace {namespace}",
-          description: "Create event-count",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect event-count create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3780,18 +3218,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["firewall-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data firewall-log create {name} --namespace {namespace}",
-        description: "Create firewall-log",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data firewall-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -3836,18 +3262,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data firewall-log create {name} --namespace {namespace}",
-          description: "Create firewall-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data firewall-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3927,13 +3341,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config flow-anomaly get {name} --namespace {namespace}",
-        description: "Get specific flow-anomaly",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3979,13 +3386,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config flow-anomaly get {name} --namespace {namespace}",
-          description: "Get specific flow-anomaly",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4071,13 +3471,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config flow-anomaly list --namespace {namespace}",
-        description: "List all flow-anomalys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4123,13 +3516,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config flow-anomaly list --namespace {namespace}",
-          description: "List all flow-anomalys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4192,18 +3578,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["generate"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl report generate create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl report generate create {name} --namespace {namespace}",
-        description: "Create generate",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Test-report.",
@@ -4249,18 +3623,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl report generate create {name} --namespace {namespace}",
-          description: "Create generate",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl report generate create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4314,18 +3676,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["global-log-receiver"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config global-log-receiver create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config global-log-receiver create {name} --namespace {namespace}",
-        description: "Create global-log-receiver",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -4373,18 +3723,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config global-log-receiver create {name} --namespace {namespace}",
-          description: "Create global-log-receiver",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config global-log-receiver create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4446,13 +3784,6 @@ export const statisticsTools: ParsedOperation[] = [
       deletes: ["global-log-receiver", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config global-log-receiver delete {name} --namespace {namespace}",
-        description: "Delete global-log-receiver",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -4498,13 +3829,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config global-log-receiver delete {name} --namespace {namespace}",
-          description: "Delete global-log-receiver",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4586,13 +3910,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config global-log-receiver get {name} --namespace {namespace}",
-        description: "Get specific global-log-receiver",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4638,13 +3955,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config global-log-receiver get {name} --namespace {namespace}",
-          description: "Get specific global-log-receiver",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4730,13 +4040,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config global-log-receiver list --namespace {namespace}",
-        description: "List all global-log-receivers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4782,13 +4085,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config global-log-receiver list --namespace {namespace}",
-          description: "List all global-log-receivers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4851,14 +4147,6 @@ export const statisticsTools: ParsedOperation[] = [
       modifies: ["global-log-receiver"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config global-log-receiver update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update global-log-receiver",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4904,14 +4192,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config global-log-receiver update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update global-log-receiver",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4963,19 +4243,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["list-reports-history-bot-defence"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl report list-reports-history-bot-defence create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl report list-reports-history-bot-defence create {name} --namespace {namespace}",
-        description: "Create list-reports-history-bot-defence",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -5023,19 +4290,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl report list-reports-history-bot-defence create {name} --namespace {namespace}",
-          description: "Create list-reports-history-bot-defence",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl report list-reports-history-bot-defence create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5087,18 +4341,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["list-reports-history"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl report list-reports-history create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl report list-reports-history create {name} --namespace {namespace}",
-        description: "Create list-reports-history",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -5146,18 +4388,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl report list-reports-history create {name} --namespace {namespace}",
-          description: "Create list-reports-history",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl report list-reports-history create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5209,18 +4439,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["list-reports-history-waap"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl report list-reports-history-waap create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl report list-reports-history-waap create {name} --namespace {namespace}",
-        description: "Create list-reports-history-waap",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -5268,18 +4486,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl report list-reports-history-waap create {name} --namespace {namespace}",
-          description: "Create list-reports-history-waap",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl report list-reports-history-waap create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5333,18 +4539,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["log-receiver"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config log-receiver create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config log-receiver create {name} --namespace {namespace}",
-        description: "Create log-receiver",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -5389,18 +4583,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config log-receiver create {name} --namespace {namespace}",
-          description: "Create log-receiver",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config log-receiver create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5462,13 +4644,6 @@ export const statisticsTools: ParsedOperation[] = [
       deletes: ["log-receiver", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config log-receiver delete {name} --namespace {namespace}",
-        description: "Delete log-receiver",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -5514,13 +4689,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config log-receiver delete {name} --namespace {namespace}",
-          description: "Delete log-receiver",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5602,13 +4770,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config log-receiver get {name} --namespace {namespace}",
-        description: "Get specific log-receiver",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5654,13 +4815,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config log-receiver get {name} --namespace {namespace}",
-          description: "Get specific log-receiver",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5746,13 +4900,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config log-receiver list --namespace {namespace}",
-        description: "List all log-receivers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5798,13 +4945,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config log-receiver list --namespace {namespace}",
-          description: "List all log-receivers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5867,13 +5007,6 @@ export const statisticsTools: ParsedOperation[] = [
       modifies: ["log-receiver"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config log-receiver update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update log-receiver",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -5919,14 +5052,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config log-receiver update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update log-receiver",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5980,18 +5105,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["match"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl alert match create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl alert match create {name} --namespace {namespace}",
-        description: "Create match",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Ns1",
@@ -6036,18 +5149,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl alert match create {name} --namespace {namespace}",
-          description: "Create match",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl alert match create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6111,18 +5212,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["matching-flow"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
-    cliExamples: [
-      {
-        command: "f5xcctl operate matching-flow create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl operate matching-flow create {name} --namespace {namespace}",
-        description: "Create matching-flow",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -6168,18 +5257,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl operate matching-flow create {name} --namespace {namespace}",
-          description: "Create matching-flow",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl operate matching-flow create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6233,18 +5310,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["platform-event"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data platform-event create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data platform-event create {name} --namespace {namespace}",
-        description: "Create platform-event",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -6289,18 +5354,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data platform-event create {name} --namespace {namespace}",
-          description: "Create platform-event",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data platform-event create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6355,18 +5408,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["report-config"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl report report-config create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl report report-config create {name} --namespace {namespace}",
-        description: "Create report-config",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -6411,18 +5452,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl report report-config create {name} --namespace {namespace}",
-          description: "Create report-config",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl report report-config create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6484,13 +5513,6 @@ export const statisticsTools: ParsedOperation[] = [
       deletes: ["report-config", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl report report-config delete {name} --namespace {namespace}",
-        description: "Delete report-config",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -6536,13 +5558,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl report report-config delete {name} --namespace {namespace}",
-          description: "Delete report-config",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6624,13 +5639,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl report report-config get {name} --namespace {namespace}",
-        description: "Get specific report-config",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -6676,13 +5684,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl report report-config get {name} --namespace {namespace}",
-          description: "Get specific report-config",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6768,13 +5769,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl report report-config list --namespace {namespace}",
-        description: "List all report-configs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -6820,13 +5814,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl report report-config list --namespace {namespace}",
-          description: "List all report-configs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6890,14 +5877,6 @@ export const statisticsTools: ParsedOperation[] = [
       modifies: ["report-config"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl report report-config update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update report-config",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -6943,14 +5922,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl report report-config update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update report-config",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7029,13 +6000,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl report report get {name} --namespace {namespace}",
-        description: "Get specific report",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -7081,13 +6045,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl report report get {name} --namespace {namespace}",
-          description: "Get specific report",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7202,13 +6159,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.id"],
-    cliExamples: [
-      {
-        command: "f5xcctl data route-table get {name} --namespace {namespace}",
-        description: "Get specific route-table",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       id: "VPC-1234567898.",
@@ -7258,13 +6208,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data route-table get {name} --namespace {namespace}",
-          description: "Get specific route-table",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7315,18 +6258,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["scroll"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data scroll create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data scroll create {name} --namespace {namespace}",
-        description: "Create scroll",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -7371,18 +6302,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data scroll create {name} --namespace {namespace}",
-          description: "Create scroll",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data scroll create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7445,13 +6364,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data scroll list --namespace {namespace}",
-        description: "List all scrolls",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -7497,13 +6409,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data scroll list --namespace {namespace}",
-          description: "List all scrolls",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7554,18 +6459,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["site-mesh-group"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.site_mesh_group"],
-    cliExamples: [
-      {
-        command: "f5xcctl data site-mesh-group create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data site-mesh-group create {name} --namespace {namespace}",
-        description: "Create site-mesh-group",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       site_mesh_group: "Smg-1",
@@ -7610,18 +6503,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data site-mesh-group create {name} --namespace {namespace}",
-          description: "Create site-mesh-group",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data site-mesh-group create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7658,13 +6539,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl data site-mesh-group list --namespace {namespace}",
-        description: "List all site-mesh-groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -7707,13 +6581,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data site-mesh-group list --namespace {namespace}",
-          description: "List all site-mesh-groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7764,18 +6631,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["statu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data statu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data statu create {name} --namespace {namespace}",
-        description: "Create statu",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Bookinfo",
@@ -7820,18 +6675,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data statu create {name} --namespace {namespace}",
-          description: "Create statu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data statu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7872,18 +6715,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["subscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config subscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config subscribe create {name} --namespace {namespace}",
-        description: "Create subscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -7926,18 +6757,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config subscribe create {name} --namespace {namespace}",
-          description: "Create subscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config subscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7974,13 +6793,6 @@ export const statisticsTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl config subscription-statu list --namespace {namespace}",
-        description: "List all subscription-status",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -8023,13 +6835,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config subscription-statu list --namespace {namespace}",
-          description: "List all subscription-status",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8081,18 +6886,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["suggest-value"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl discovery suggest-value create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl discovery suggest-value create {name} --namespace {namespace}",
-        description: "Create suggest-value",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Foobar",
@@ -8137,18 +6930,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl discovery suggest-value create {name} --namespace {namespace}",
-          description: "Create suggest-value",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl discovery suggest-value create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8213,18 +6994,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["test"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl alert test create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl alert test create {name} --namespace {namespace}",
-        description: "Create test",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Slack1",
@@ -8270,18 +7039,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl alert test create {name} --namespace {namespace}",
-          description: "Create test",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl alert test create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8345,18 +7102,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["top-talker"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.network_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect top-talker create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl infraprotect top-talker create {name} --namespace {namespace}",
-        description: "Create top-talker",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -8402,18 +7147,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect top-talker create {name} --namespace {namespace}",
-          description: "Create top-talker",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect top-talker create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8454,18 +7187,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["unsubscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config unsubscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config unsubscribe create {name} --namespace {namespace}",
-        description: "Create unsubscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -8508,18 +7229,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config unsubscribe create {name} --namespace {namespace}",
-          description: "Create unsubscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config unsubscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8585,18 +7294,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["verify"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl alert verify create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl alert verify create {name} --namespace {namespace}",
-        description: "Create verify",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Email1",
@@ -8642,18 +7339,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl alert verify create {name} --namespace {namespace}",
-          description: "Create verify",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl alert verify create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8707,18 +7392,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["vk8s-audit-log"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data vk8s-audit-log create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data vk8s-audit-log create {name} --namespace {namespace}",
-        description: "Create vk8s-audit-log",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -8763,18 +7436,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data vk8s-audit-log create {name} --namespace {namespace}",
-          description: "Create vk8s-audit-log",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data vk8s-audit-log create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8828,18 +7489,6 @@ export const statisticsTools: ParsedOperation[] = [
       creates: ["vk8s-event"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data vk8s-event create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data vk8s-event create {name} --namespace {namespace}",
-        description: "Create vk8s-event",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -8884,18 +7533,6 @@ export const statisticsTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data vk8s-event create {name} --namespace {namespace}",
-          description: "Create vk8s-event",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data vk8s-event create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

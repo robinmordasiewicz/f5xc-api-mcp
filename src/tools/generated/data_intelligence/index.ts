@@ -41,13 +41,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.dataset"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence datadictionary list --namespace {namespace}",
-        description: "List all datadictionarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       dataset: "Di_advanced.",
@@ -92,13 +85,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence datadictionary list --namespace {namespace}",
-          description: "List all datadictionarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -133,13 +119,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence dataSet list --namespace {namespace}",
-        description: "List all dataSets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -182,13 +161,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence dataSet list --namespace {namespace}",
-          description: "List all dataSets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -235,13 +207,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence flowlabel list --namespace {namespace}",
-        description: "List all flowlabels",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Foobar",
@@ -286,13 +251,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence flowlabel list --namespace {namespace}",
-          description: "List all flowlabels",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -331,18 +289,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       creates: ["init-request"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence init-request create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data-intelligence init-request create {name} --namespace {namespace}",
-        description: "Create init-request",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -385,18 +331,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence init-request create {name} --namespace {namespace}",
-          description: "Create init-request",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data-intelligence init-request create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -450,18 +384,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       creates: ["receiver"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence receiver create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data-intelligence receiver create {name} --namespace {namespace}",
-        description: "Create receiver",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -506,18 +428,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence receiver create {name} --namespace {namespace}",
-          description: "Create receiver",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data-intelligence receiver create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -579,13 +489,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       deletes: ["receiver", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence receiver delete {name} --namespace {namespace}",
-        description: "Delete receiver",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -631,13 +534,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence receiver delete {name} --namespace {namespace}",
-          description: "Delete receiver",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -719,13 +615,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence receiver get {name} --namespace {namespace}",
-        description: "Get specific receiver",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -771,13 +660,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence receiver get {name} --namespace {namespace}",
-          description: "Get specific receiver",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -863,13 +745,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence receiver list --namespace {namespace}",
-        description: "List all receivers",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -915,13 +790,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence receiver list --namespace {namespace}",
-          description: "List all receivers",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -984,14 +852,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       modifies: ["receiver"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl data-intelligence receiver update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update receiver",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1037,14 +897,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl data-intelligence receiver update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update receiver",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1108,18 +960,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       creates: ["statu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence statu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data-intelligence statu create {name} --namespace {namespace}",
-        description: "Create statu",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       id: "Splunk-cloud-receiver.",
@@ -1165,18 +1005,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence statu create {name} --namespace {namespace}",
-          description: "Create statu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data-intelligence statu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1217,18 +1045,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       creates: ["subscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence subscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data-intelligence subscribe create {name} --namespace {namespace}",
-        description: "Create subscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1271,18 +1087,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence subscribe create {name} --namespace {namespace}",
-          description: "Create subscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data-intelligence subscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1336,18 +1140,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       creates: ["suggest-value"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence suggest-value create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data-intelligence suggest-value create {name} --namespace {namespace}",
-        description: "Create suggest-value",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Foobar",
@@ -1392,18 +1184,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence suggest-value create {name} --namespace {namespace}",
-          description: "Create suggest-value",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data-intelligence suggest-value create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1456,18 +1236,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       creates: ["summary"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence summary create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data-intelligence summary create {name} --namespace {namespace}",
-        description: "Create summary",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Foobar",
@@ -1512,18 +1280,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence summary create {name} --namespace {namespace}",
-          description: "Create summary",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data-intelligence summary create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1587,18 +1343,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       creates: ["test"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence test create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data-intelligence test create {name} --namespace {namespace}",
-        description: "Create test",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       id: "Splunk-cloud-receiver.",
@@ -1644,18 +1388,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence test create {name} --namespace {namespace}",
-          description: "Create test",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data-intelligence test create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1696,18 +1428,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       creates: ["unsubscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data-intelligence unsubscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data-intelligence unsubscribe create {name} --namespace {namespace}",
-        description: "Create unsubscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1750,18 +1470,6 @@ export const data_intelligenceTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data-intelligence unsubscribe create {name} --namespace {namespace}",
-          description: "Create unsubscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data-intelligence unsubscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

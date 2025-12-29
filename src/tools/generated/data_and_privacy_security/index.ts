@@ -47,18 +47,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       creates: ["data-type"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config data-type create {name} --namespace {namespace}",
-        description: "Create data-type",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config data-type create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -103,18 +91,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config data-type create {name} --namespace {namespace}",
-          description: "Create data-type",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config data-type create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -176,13 +152,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       deletes: ["data-type", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config data-type delete {name} --namespace {namespace}",
-        description: "Delete data-type",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -228,13 +197,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config data-type delete {name} --namespace {namespace}",
-          description: "Delete data-type",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -316,13 +278,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config data-type get {name} --namespace {namespace}",
-        description: "Get specific data-type",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -368,13 +323,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config data-type get {name} --namespace {namespace}",
-          description: "Get specific data-type",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -460,13 +408,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config data-type list --namespace {namespace}",
-        description: "List all data-types",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -512,13 +453,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config data-type list --namespace {namespace}",
-          description: "List all data-types",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -582,13 +516,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       modifies: ["data-type"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config data-type update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update data-type",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -634,13 +561,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config data-type update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update data-type",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -720,13 +640,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config geo-config get {name} --namespace {namespace}",
-        description: "Get specific geo-config",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -772,13 +685,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config geo-config get {name} --namespace {namespace}",
-          description: "Get specific geo-config",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -856,13 +762,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config lma-region get {name} --namespace {namespace}",
-        description: "Get specific lma-region",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -908,13 +807,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config lma-region get {name} --namespace {namespace}",
-          description: "Get specific lma-region",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1000,13 +892,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config lma-region list --namespace {namespace}",
-        description: "List all lma-regions",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1052,13 +937,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config lma-region list --namespace {namespace}",
-          description: "List all lma-regions",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1111,18 +989,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       creates: ["sensitive-data-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config sensitive-data-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config sensitive-data-policy create {name} --namespace {namespace}",
-        description: "Create sensitive-data-policy",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1170,18 +1036,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config sensitive-data-policy create {name} --namespace {namespace}",
-          description: "Create sensitive-data-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config sensitive-data-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1243,13 +1097,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       deletes: ["sensitive-data-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config sensitive-data-policy delete {name} --namespace {namespace}",
-        description: "Delete sensitive-data-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1295,13 +1142,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config sensitive-data-policy delete {name} --namespace {namespace}",
-          description: "Delete sensitive-data-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1384,13 +1224,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config sensitive-data-policy get {name} --namespace {namespace}",
-        description: "Get specific sensitive-data-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1436,13 +1269,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config sensitive-data-policy get {name} --namespace {namespace}",
-          description: "Get specific sensitive-data-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1528,13 +1354,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config sensitive-data-policy list --namespace {namespace}",
-        description: "List all sensitive-data-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1580,13 +1399,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config sensitive-data-policy list --namespace {namespace}",
-          description: "List all sensitive-data-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1650,14 +1462,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       modifies: ["sensitive-data-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config sensitive-data-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update sensitive-data-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1703,14 +1507,6 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config sensitive-data-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update sensitive-data-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

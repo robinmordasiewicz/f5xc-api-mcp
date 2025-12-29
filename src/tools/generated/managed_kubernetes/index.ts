@@ -46,18 +46,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       creates: ["container-registry"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config container-registry create {name} --namespace {namespace}",
-        description: "Create container-registry",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl config container-registry create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -105,18 +93,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config container-registry create {name} --namespace {namespace}",
-          description: "Create container-registry",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config container-registry create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -178,13 +154,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       deletes: ["container-registry", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config container-registry delete {name} --namespace {namespace}",
-        description: "Delete container-registry",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -230,13 +199,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config container-registry delete {name} --namespace {namespace}",
-          description: "Delete container-registry",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -318,13 +280,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config container-registry get {name} --namespace {namespace}",
-        description: "Get specific container-registry",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -370,13 +325,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config container-registry get {name} --namespace {namespace}",
-          description: "Get specific container-registry",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -462,13 +410,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config container-registry list --namespace {namespace}",
-        description: "List all container-registrys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -514,13 +455,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config container-registry list --namespace {namespace}",
-          description: "List all container-registrys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -583,14 +517,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       modifies: ["container-registry"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config container-registry update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update container-registry",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -636,14 +562,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config container-registry update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update container-registry",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -698,18 +616,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       creates: ["k8s-cluster-role-binding"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster-role-binding create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config k8s-cluster-role-binding create {name} --namespace {namespace}",
-        description: "Create k8s-cluster-role-binding",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -757,18 +663,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster-role-binding create {name} --namespace {namespace}",
-          description: "Create k8s-cluster-role-binding",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config k8s-cluster-role-binding create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -830,13 +724,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       deletes: ["k8s-cluster-role-binding", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster-role-binding delete {name} --namespace {namespace}",
-        description: "Delete k8s-cluster-role-binding",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -882,13 +769,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster-role-binding delete {name} --namespace {namespace}",
-          description: "Delete k8s-cluster-role-binding",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -971,13 +851,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster-role-binding get {name} --namespace {namespace}",
-        description: "Get specific k8s-cluster-role-binding",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1023,13 +896,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster-role-binding get {name} --namespace {namespace}",
-          description: "Get specific k8s-cluster-role-binding",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1115,13 +981,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster-role-binding list --namespace {namespace}",
-        description: "List all k8s-cluster-role-bindings",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1167,13 +1026,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster-role-binding list --namespace {namespace}",
-          description: "List all k8s-cluster-role-bindings",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1237,14 +1089,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       modifies: ["k8s-cluster-role-binding"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config k8s-cluster-role-binding update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update k8s-cluster-role-binding",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1290,14 +1134,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config k8s-cluster-role-binding update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update k8s-cluster-role-binding",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1352,18 +1188,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       creates: ["k8s-cluster-role"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster-role create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config k8s-cluster-role create {name} --namespace {namespace}",
-        description: "Create k8s-cluster-role",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1411,18 +1235,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster-role create {name} --namespace {namespace}",
-          description: "Create k8s-cluster-role",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config k8s-cluster-role create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1484,13 +1296,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       deletes: ["k8s-cluster-role", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster-role delete {name} --namespace {namespace}",
-        description: "Delete k8s-cluster-role",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1536,13 +1341,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster-role delete {name} --namespace {namespace}",
-          description: "Delete k8s-cluster-role",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1625,13 +1423,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster-role get {name} --namespace {namespace}",
-        description: "Get specific k8s-cluster-role",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1677,13 +1468,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster-role get {name} --namespace {namespace}",
-          description: "Get specific k8s-cluster-role",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1769,13 +1553,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-cluster-role list --namespace {namespace}",
-        description: "List all k8s-cluster-roles",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1821,13 +1598,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config k8s-cluster-role list --namespace {namespace}",
-          description: "List all k8s-cluster-roles",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1891,14 +1661,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       modifies: ["k8s-cluster-role"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config k8s-cluster-role update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update k8s-cluster-role",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1944,14 +1706,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config k8s-cluster-role update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update k8s-cluster-role",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2005,18 +1759,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       creates: ["k8s-pod-security-admission"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-pod-security-admission create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config k8s-pod-security-admission create {name} --namespace {namespace}",
-        description: "Create k8s-pod-security-admission",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2064,19 +1806,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config k8s-pod-security-admission create {name} --namespace {namespace}",
-          description: "Create k8s-pod-security-admission",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config k8s-pod-security-admission create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2138,13 +1867,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       deletes: ["k8s-pod-security-admission", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-pod-security-admission delete {name} --namespace {namespace}",
-        description: "Delete k8s-pod-security-admission",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2190,14 +1912,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command:
-            "f5xcctl config k8s-pod-security-admission delete {name} --namespace {namespace}",
-          description: "Delete k8s-pod-security-admission",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2279,13 +1993,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-pod-security-admission get {name} --namespace {namespace}",
-        description: "Get specific k8s-pod-security-admission",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2331,13 +2038,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config k8s-pod-security-admission get {name} --namespace {namespace}",
-          description: "Get specific k8s-pod-security-admission",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2423,13 +2123,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-pod-security-admission list --namespace {namespace}",
-        description: "List all k8s-pod-security-admissions",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2475,13 +2168,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config k8s-pod-security-admission list --namespace {namespace}",
-          description: "List all k8s-pod-security-admissions",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2545,14 +2231,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       modifies: ["k8s-pod-security-admission"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config k8s-pod-security-admission update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update k8s-pod-security-admission",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2598,14 +2276,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config k8s-pod-security-admission update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update k8s-pod-security-admission",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2660,18 +2330,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       creates: ["k8s-pod-security-policy"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-pod-security-policy create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl config k8s-pod-security-policy create {name} --namespace {namespace}",
-        description: "Create k8s-pod-security-policy",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2719,18 +2377,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl config k8s-pod-security-policy create {name} --namespace {namespace}",
-          description: "Create k8s-pod-security-policy",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl config k8s-pod-security-policy create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2792,13 +2438,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       deletes: ["k8s-pod-security-policy", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-pod-security-policy delete {name} --namespace {namespace}",
-        description: "Delete k8s-pod-security-policy",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2844,13 +2483,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl config k8s-pod-security-policy delete {name} --namespace {namespace}",
-          description: "Delete k8s-pod-security-policy",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2933,13 +2565,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-pod-security-policy get {name} --namespace {namespace}",
-        description: "Get specific k8s-pod-security-policy",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2985,13 +2610,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config k8s-pod-security-policy get {name} --namespace {namespace}",
-          description: "Get specific k8s-pod-security-policy",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3077,13 +2695,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl config k8s-pod-security-policy list --namespace {namespace}",
-        description: "List all k8s-pod-security-policys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3129,13 +2740,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl config k8s-pod-security-policy list --namespace {namespace}",
-          description: "List all k8s-pod-security-policys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3199,14 +2803,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       modifies: ["k8s-pod-security-policy"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl config k8s-pod-security-policy update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update k8s-pod-security-policy",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3252,14 +2848,6 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl config k8s-pod-security-policy update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update k8s-pod-security-policy",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

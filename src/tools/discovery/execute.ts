@@ -61,8 +61,6 @@ export interface DocumentationResponse {
     resource: string;
     operation: string;
   };
-  /** f5xcctl CLI equivalent command */
-  f5xcctlCommand: string;
   /** Terraform resource example (if applicable) */
   terraformExample?: string;
   /** curl command example */
@@ -111,41 +109,6 @@ function buildQueryString(queryParams: Record<string, string | string[]>): strin
 }
 
 /**
- * Generate f5xcctl equivalent command
- */
-function generateF5xcctlCommand(tool: ParsedOperation, params: ExecuteToolParams): string {
-  const { operation, resource, domain } = tool;
-  const pathParams = params.pathParams ?? {};
-
-  // Build resource identifier
-  const namespace = pathParams.namespace ?? pathParams["metadata.namespace"] ?? "{namespace}";
-  const name = pathParams.name ?? pathParams["metadata.name"] ?? "{name}";
-
-  // Normalize domain and resource
-  const normalizedDomain = domain.replace(/-/g, "_");
-  const normalizedResource = resource.replace(/-/g, "_");
-
-  // Map operation to f5xcctl verb
-  const verbMap: Record<string, string> = {
-    create: "create",
-    get: "get",
-    list: "list",
-    update: "apply",
-    delete: "delete",
-  };
-  const verb = verbMap[operation] ?? operation;
-
-  // Build command following standard pattern: f5xcctl {domain} {operation} {resource}
-  if (operation === "list") {
-    return `f5xcctl ${normalizedDomain} ${verb} ${normalizedResource} -n ${namespace}`;
-  } else if (operation === "create" || operation === "update") {
-    return `f5xcctl ${normalizedDomain} ${verb} ${normalizedResource} -n ${namespace} -i ${normalizedResource}.yaml`;
-  } else {
-    return `f5xcctl ${normalizedDomain} ${verb} ${normalizedResource} ${name} -n ${namespace}`;
-  }
-}
-
-/**
  * Generate curl command example
  */
 function generateCurlCommand(
@@ -187,7 +150,6 @@ function generateDocumentationResponse(
       resource: tool.resource,
       operation: tool.operation,
     },
-    f5xcctlCommand: generateF5xcctlCommand(tool, params),
     curlExample: generateCurlCommand(tool, params, apiUrl),
     authMessage: "API execution disabled. Set F5XC_API_URL and F5XC_API_TOKEN to enable execution.",
   };
@@ -197,7 +159,7 @@ function generateDocumentationResponse(
  * Execute a tool by name with the given parameters
  *
  * In authenticated mode: Makes the actual API call
- * In documentation mode: Returns CLI equivalents and examples
+ * In documentation mode: Returns API examples and documentation
  *
  * @param params - Execution parameters
  * @param credentialManager - Optional credential manager for auth

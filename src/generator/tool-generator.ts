@@ -11,7 +11,6 @@ import {
   ParsedOperation,
   OpenApiParameter,
   SideEffects,
-  CliExample,
   OperationMetadata,
 } from "./openapi-parser.js";
 import { CredentialManager, AuthMode } from "../auth/credential-manager.js";
@@ -31,7 +30,6 @@ export interface DocumentationResponse {
   parameters: ParameterInfo[];
   requestBody: RequestBodyInfo | null;
   exampleRequest: Record<string, unknown> | null;
-  f5xcctlCommand: string;
   terraformResource: string;
   terraformExample: string;
   prerequisites: string[];
@@ -42,7 +40,6 @@ export interface DocumentationResponse {
   dangerWarning: string | null;
   sideEffects: SideEffects | null;
   confirmationRequired: boolean;
-  cliExamples: CliExample[];
   parameterExamples: Record<string, string>;
   validationRules: Record<string, Record<string, string>>;
   requiredFields: string[];
@@ -203,29 +200,6 @@ const RESOURCE_TIER_MAP: Record<string, string> = {
 function getSubscriptionTier(resource: string): string {
   const normalizedResource = resource.toLowerCase().replace(/-/g, "_");
   return RESOURCE_TIER_MAP[normalizedResource] ?? SUBSCRIPTION_TIERS.NO_TIER;
-}
-
-/**
- * Generate f5xcctl equivalent command
- */
-function generateF5xcctlCommand(operation: ParsedOperation): string {
-  const resource = operation.resource.replace(/-/g, "_");
-  const domain = operation.domain.replace(/-/g, "_");
-
-  switch (operation.operation) {
-    case "list":
-      return `f5xcctl ${domain} list ${resource} -n {namespace}`;
-    case "get":
-      return `f5xcctl ${domain} get ${resource} {name} -n {namespace}`;
-    case "create":
-      return `f5xcctl ${domain} create ${resource} -n {namespace} -i ${resource}.yaml`;
-    case "update":
-      return `f5xcctl ${domain} apply ${resource} -n {namespace} -i ${resource}.yaml`;
-    case "delete":
-      return `f5xcctl ${domain} delete ${resource} {name} -n {namespace}`;
-    default:
-      return `f5xcctl ${domain} ${operation.operation} ${resource}`;
-  }
 }
 
 /**
@@ -420,12 +394,6 @@ function buildDocumentationResponse(operation: ParsedOperation): DocumentationRe
   // Generate danger warning if applicable
   const dangerWarning = getDangerWarning(operation.dangerLevel);
 
-  // Use f5xcctl examples from spec if available, otherwise generate
-  const firstCliExample = operation.cliExamples[0];
-  const f5xcctlCommand = firstCliExample?.command
-    ? firstCliExample.command
-    : generateF5xcctlCommand(operation);
-
   // Use prerequisites from operation metadata if available
   const prerequisites =
     operation.operationMetadata?.conditions?.prerequisites ?? generatePrerequisites(operation);
@@ -439,7 +407,6 @@ function buildDocumentationResponse(operation: ParsedOperation): DocumentationRe
     parameters,
     requestBody,
     exampleRequest: generateExampleRequest(operation),
-    f5xcctlCommand,
     terraformResource: generateTerraformResource(operation),
     terraformExample: generateTerraformExample(operation),
     prerequisites,
@@ -450,7 +417,6 @@ function buildDocumentationResponse(operation: ParsedOperation): DocumentationRe
     dangerWarning,
     sideEffects: operation.sideEffects,
     confirmationRequired: operation.confirmationRequired,
-    cliExamples: operation.cliExamples,
     parameterExamples: operation.parameterExamples,
     validationRules: operation.validationRules,
     requiredFields: operation.requiredFields,

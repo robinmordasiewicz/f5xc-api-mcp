@@ -33,18 +33,6 @@ export const generative_aiTools: ParsedOperation[] = [
       creates: ["allocateip"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl gia allocateip create {name} --namespace {namespace}",
-        description: "Create allocateip",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl gia allocateip create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -87,18 +75,6 @@ export const generative_aiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl gia allocateip create {name} --namespace {namespace}",
-          description: "Create allocateip",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl gia allocateip create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -139,13 +115,6 @@ export const generative_aiTools: ParsedOperation[] = [
       deletes: ["deallocateip"],
     },
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl gia deallocateip delete {name} --namespace {namespace}",
-        description: "Delete deallocateip",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {},
     validationRules: {},
@@ -188,13 +157,6 @@ export const generative_aiTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl gia deallocateip delete {name} --namespace {namespace}",
-          description: "Delete deallocateip",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -235,18 +197,6 @@ export const generative_aiTools: ParsedOperation[] = [
       creates: ["enable-feature"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ai_data enable-feature create {name} --namespace {namespace}",
-        description: "Create enable-feature",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl ai_data enable-feature create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -289,18 +239,6 @@ export const generative_aiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ai_data enable-feature create {name} --namespace {namespace}",
-          description: "Create enable-feature",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ai_data enable-feature create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -352,18 +290,6 @@ export const generative_aiTools: ParsedOperation[] = [
       creates: ["eval-query"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl gen-ai eval-query create {name} --namespace {namespace}",
-        description: "Create eval-query",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl gen-ai eval-query create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -408,18 +334,6 @@ export const generative_aiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl gen-ai eval-query create {name} --namespace {namespace}",
-          description: "Create eval-query",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl gen-ai eval-query create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -471,18 +385,6 @@ export const generative_aiTools: ParsedOperation[] = [
       creates: ["eval-query-feedback"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl gen-ai eval-query-feedback create {name} --namespace {namespace}",
-        description: "Create eval-query-feedback",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl gen-ai eval-query-feedback create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -530,18 +432,6 @@ export const generative_aiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl gen-ai eval-query-feedback create {name} --namespace {namespace}",
-          description: "Create eval-query-feedback",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl gen-ai eval-query-feedback create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -582,18 +472,6 @@ export const generative_aiTools: ParsedOperation[] = [
       creates: ["gettoken"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ai_data gettoken create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl ai_data gettoken create {name} --namespace {namespace}",
-        description: "Create gettoken",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -636,18 +514,6 @@ export const generative_aiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ai_data gettoken create {name} --namespace {namespace}",
-          description: "Create gettoken",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ai_data gettoken create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -698,18 +564,6 @@ export const generative_aiTools: ParsedOperation[] = [
       creates: ["query"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl gen-ai query create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl gen-ai query create {name} --namespace {namespace}",
-        description: "Create query",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -754,18 +608,6 @@ export const generative_aiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl gen-ai query create {name} --namespace {namespace}",
-          description: "Create query",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl gen-ai query create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -816,18 +658,6 @@ export const generative_aiTools: ParsedOperation[] = [
       creates: ["query-feedback"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl gen-ai query-feedback create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl gen-ai query-feedback create {name} --namespace {namespace}",
-        description: "Create query-feedback",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -872,18 +702,6 @@ export const generative_aiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl gen-ai query-feedback create {name} --namespace {namespace}",
-          description: "Create query-feedback",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl gen-ai query-feedback create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -924,18 +742,6 @@ export const generative_aiTools: ParsedOperation[] = [
       creates: ["refresh-token"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ai_data refresh-token create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl ai_data refresh-token create {name} --namespace {namespace}",
-        description: "Create refresh-token",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -978,18 +784,6 @@ export const generative_aiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ai_data refresh-token create {name} --namespace {namespace}",
-          description: "Create refresh-token",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ai_data refresh-token create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1030,18 +824,6 @@ export const generative_aiTools: ParsedOperation[] = [
       creates: ["subscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ai_data subscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl ai_data subscribe create {name} --namespace {namespace}",
-        description: "Create subscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1084,18 +866,6 @@ export const generative_aiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ai_data subscribe create {name} --namespace {namespace}",
-          description: "Create subscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ai_data subscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1136,18 +906,6 @@ export const generative_aiTools: ParsedOperation[] = [
       creates: ["unsubscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl ai_data unsubscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl ai_data unsubscribe create {name} --namespace {namespace}",
-        description: "Create unsubscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -1190,18 +948,6 @@ export const generative_aiTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl ai_data unsubscribe create {name} --namespace {namespace}",
-          description: "Create unsubscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl ai_data unsubscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

@@ -68,10 +68,6 @@ describe("Workflow Prompts", () => {
       expect(optional.map((a) => a.name)).toContain("enable_waf");
     });
 
-    it("should have template with f5xcctl commands", () => {
-      expect(deployHttpLoadBalancerPrompt.template).toContain("f5xcctl");
-    });
-
     it("should have template with Terraform examples", () => {
       expect(deployHttpLoadBalancerPrompt.template).toContain("Terraform:");
       expect(deployHttpLoadBalancerPrompt.template).toContain("volterra_");
@@ -108,9 +104,10 @@ describe("Workflow Prompts", () => {
 
     it("should have templates for all cloud providers", () => {
       const template = createMultiCloudSitePrompt.template;
-      expect(template).toContain("aws_vpc_site");
-      expect(template).toContain("azure_vnet_site");
-      expect(template).toContain("gcp_vpc_site");
+      // Templates now use API tool names instead of Terraform resource types
+      expect(template).toContain("f5xc-api-sites-aws-vpc-site-create");
+      expect(template).toContain("f5xc-api-sites-azure-vnet-site-create");
+      expect(template).toContain("f5xc-api-sites-gcp-vpc-site-create");
     });
   });
 
@@ -271,7 +268,8 @@ describe("processPromptTemplate", () => {
       expect(result).toContain("app.example.com");
       expect(result).toContain("10.0.0.1");
       expect(result).toContain("8080");
-      expect(result).toContain("app_firewall");
+      // Templates now use API tool names instead of Terraform resource types
+      expect(result).toContain("f5xc-api-waf-app-firewall-create");
     });
 
     it("should process multicloud site template for AWS", () => {
@@ -284,7 +282,8 @@ describe("processPromptTemplate", () => {
       });
 
       expect(result).toContain("us-site");
-      expect(result).toContain("aws_vpc_site");
+      // Templates now use API tool names instead of Terraform resource types
+      expect(result).toContain("f5xc-api-sites-aws-vpc-site-create");
       expect(result).toContain("us-east-1");
       expect(result).toContain("vpc-123456");
     });

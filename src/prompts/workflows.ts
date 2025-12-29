@@ -86,24 +86,7 @@ I'll help you deploy an HTTP Load Balancer in F5 Distributed Cloud.
 ### Step 1: Create Origin Pool
 First, create an origin pool to define your backend servers.
 
-**f5xcctl command:**
-\`\`\`bash
-f5xcctl apply -f - <<EOF
-apiVersion: config.volterra.io/v1
-kind: origin_pool
-metadata:
-  name: {{name}}-origin-pool
-  namespace: {{namespace}}
-spec:
-  origin_servers:
-    - public_ip:
-        ip: {{backend_ip}}
-  port: {{backend_port}}
-  no_tls: {}
-  endpoint_selection: LOCAL_PREFERRED
-  loadbalancer_algorithm: ROUND_ROBIN
-EOF
-\`\`\`
+Use the **f5xc-api-waap-origin-pool-create** tool or Terraform:
 
 **Terraform:**
 \`\`\`hcl
@@ -126,28 +109,7 @@ resource "volterra_origin_pool" "{{name}}" {
 
 ### Step 2: Create HTTP Load Balancer
 
-**f5xcctl command:**
-\`\`\`bash
-f5xcctl apply -f - <<EOF
-apiVersion: config.volterra.io/v1
-kind: http_loadbalancer
-metadata:
-  name: {{name}}
-  namespace: {{namespace}}
-spec:
-  domains:
-    - {{domain}}
-  http:
-    dns_volterra_managed: true
-  default_route_pools:
-    - pool:
-        tenant: \${F5XC_TENANT}
-        namespace: {{namespace}}
-        name: {{name}}-origin-pool
-      weight: 1
-  advertise_on_public_default_vip: {}
-EOF
-\`\`\`
+Use the **f5xc-api-waap-http-loadbalancer-create** tool or Terraform:
 
 **Terraform:**
 \`\`\`hcl
@@ -176,32 +138,14 @@ resource "volterra_http_loadbalancer" "{{name}}" {
 {{#if enable_waf}}
 ### Step 3: Enable WAF Protection
 
-**f5xcctl command:**
-\`\`\`bash
-f5xcctl apply -f - <<EOF
-apiVersion: config.volterra.io/v1
-kind: app_firewall
-metadata:
-  name: {{name}}-waf
-  namespace: {{namespace}}
-spec:
-  detection_settings:
-    signature_selection_setting:
-      default_attack_type_settings: {}
-      high_medium_accuracy_signatures: {}
-    enable_suppression: {}
-    enable_threat_campaigns: {}
-EOF
-\`\`\`
+Use the **f5xc-api-waf-app-firewall-create** tool to create a WAF policy.
 {{/if}}
 
 ## Verification
 
-After deployment, verify with:
-\`\`\`bash
-f5xcctl get http_loadbalancer {{name}} -n {{namespace}}
-f5xcctl get origin_pool {{name}}-origin-pool -n {{namespace}}
-\`\`\`
+After deployment, verify using the following API tools:
+- **f5xc-api-waap-http-loadbalancer-get** with name={{name}}, namespace={{namespace}}
+- **f5xc-api-waap-origin-pool-get** with name={{name}}-origin-pool, namespace={{namespace}}
 
 ## Next Steps
 - Configure DNS to point {{domain}} to the F5XC VIP
@@ -252,28 +196,7 @@ I'll help you configure Web Application Firewall protection for your application
 
 ### Step 1: Create Application Firewall Policy
 
-**f5xcctl command:**
-\`\`\`bash
-f5xcctl apply -f - <<EOF
-apiVersion: config.volterra.io/v1
-kind: app_firewall
-metadata:
-  name: {{name}}
-  namespace: {{namespace}}
-spec:
-  detection_settings:
-    signature_selection_setting:
-      default_attack_type_settings: {}
-      high_medium_accuracy_signatures: {}
-    enable_suppression: {}
-    enable_threat_campaigns: {}
-  bot_protection_setting:
-    malicious_bot_action: BLOCK
-    suspicious_bot_action: REPORT
-    good_bot_action: REPORT
-  blocking: {}
-EOF
-\`\`\`
+Use the **f5xc-api-waf-app-firewall-create** tool or Terraform:
 
 **Terraform:**
 \`\`\`hcl
@@ -306,9 +229,7 @@ Update your HTTP Load Balancer to use the WAF policy.
 
 ## Verification
 
-\`\`\`bash
-f5xcctl get app_firewall {{name}} -n {{namespace}}
-\`\`\`
+Use the **f5xc-api-waf-app-firewall-get** tool with name={{name}}, namespace={{namespace}}.
 
 ## Security Recommendations
 - Start in monitoring mode before enabling blocking
@@ -371,79 +292,25 @@ I'll help you deploy an F5 Distributed Cloud site in {{cloud}}.
 
 ### Step 1: Verify Cloud Credentials
 
-\`\`\`bash
-f5xcctl get cloud_credentials -n {{namespace}}
-\`\`\`
+Use the **f5xc-api-cloud-infrastructure-cloud-credentials-list** tool to verify credentials.
 
 ### Step 2: Create Site
 
+Use the appropriate API tool based on your cloud provider:
+
 {{#if (eq cloud "aws")}}
 **AWS VPC Site:**
-\`\`\`bash
-f5xcctl apply -f - <<EOF
-apiVersion: config.volterra.io/v1
-kind: aws_vpc_site
-metadata:
-  name: {{name}}
-  namespace: {{namespace}}
-spec:
-  aws_region: {{region}}
-  vpc:
-    existing_vpc:
-      vpc_id: {{vpc_id}}
-  instance_type: t3.xlarge
-  ingress_gw:
-    aws_certified_hw: aws-byol-voltmesh
-  logs_streaming_disabled: {}
-  ssh_key: your-ssh-key
-EOF
-\`\`\`
+Use **f5xc-api-sites-aws-vpc-site-create** with appropriate parameters.
 {{/if}}
 
 {{#if (eq cloud "azure")}}
 **Azure VNet Site:**
-\`\`\`bash
-f5xcctl apply -f - <<EOF
-apiVersion: config.volterra.io/v1
-kind: azure_vnet_site
-metadata:
-  name: {{name}}
-  namespace: {{namespace}}
-spec:
-  azure_region: {{region}}
-  resource_group: your-resource-group
-  vnet:
-    existing_vnet:
-      resource_group: your-resource-group
-      vnet_name: {{vpc_id}}
-  machine_type: Standard_D3_v2
-  ingress_gw:
-    azure_certified_hw: azure-byol-voltmesh
-  logs_streaming_disabled: {}
-EOF
-\`\`\`
+Use **f5xc-api-sites-azure-vnet-site-create** with appropriate parameters.
 {{/if}}
 
 {{#if (eq cloud "gcp")}}
 **GCP VPC Site:**
-\`\`\`bash
-f5xcctl apply -f - <<EOF
-apiVersion: config.volterra.io/v1
-kind: gcp_vpc_site
-metadata:
-  name: {{name}}
-  namespace: {{namespace}}
-spec:
-  gcp_region: {{region}}
-  vpc_network:
-    existing_network:
-      name: {{vpc_id}}
-  instance_type: n1-standard-4
-  ingress_gw:
-    gcp_certified_hw: gcp-byol-voltmesh
-  logs_streaming_disabled: {}
-EOF
-\`\`\`
+Use **f5xc-api-sites-gcp-vpc-site-create** with appropriate parameters.
 {{/if}}
 
 ### Step 3: Apply Terraform Configuration
@@ -454,16 +321,14 @@ terraform apply -auto-approve
 
 ### Step 4: Monitor Site Status
 
-\`\`\`bash
-# Wait for site to become online
-f5xcctl get {{cloud}}_vpc_site {{name}} -n {{namespace}} -w
-\`\`\`
+Use the appropriate API get tool to check site status:
+- AWS: **f5xc-api-sites-aws-vpc-site-get**
+- Azure: **f5xc-api-sites-azure-vnet-site-get**
+- GCP: **f5xc-api-sites-gcp-vpc-site-get**
 
 ## Verification
 
-\`\`\`bash
-f5xcctl get sites
-\`\`\`
+Use **f5xc-api-sites-site-list** to view all sites.
 
 ## Next Steps
 - Configure network policies
@@ -508,36 +373,27 @@ I'll help you export F5XC resources as Terraform configuration.
 
 ### Step 1: List Resources
 
-\`\`\`bash
+Use the appropriate list tool to view existing resources:
 {{#if resource_type}}
-f5xcctl get {{resource_type}}s -n {{namespace}} -o json
+- **f5xc-api-*-{{resource_type}}-list** with namespace={{namespace}}
 {{else}}
-# List all resource types
-f5xcctl get http_loadbalancers -n {{namespace}}
-f5xcctl get origin_pools -n {{namespace}}
-f5xcctl get app_firewalls -n {{namespace}}
+- **f5xc-api-waap-http-loadbalancer-list**
+- **f5xc-api-waap-origin-pool-list**
+- **f5xc-api-waf-app-firewall-list**
 {{/if}}
-\`\`\`
 
-### Step 2: Export to Terraform
+### Step 2: Get Resource Details
 
 {{#if name}}
-\`\`\`bash
-f5xcctl get {{resource_type}} {{name}} -n {{namespace}} -o terraform > {{name}}.tf
-\`\`\`
+Use **f5xc-api-*-{{resource_type}}-get** with name={{name}}, namespace={{namespace}} to get full resource configuration.
 {{else}}
-\`\`\`bash
-# Export all resources of type
-f5xcctl get {{resource_type}}s -n {{namespace}} -o terraform > {{resource_type}}.tf
-\`\`\`
+Use the appropriate get tool to retrieve each resource's configuration for Terraform export.
 {{/if}}
 
-### Step 3: Generate Import Statements
+### Step 3: Generate Terraform Configuration
 
-\`\`\`bash
-# Generate terraform import commands
-f5xcctl get {{resource_type}} {{name}} -n {{namespace}} --import-cmd
-\`\`\`
+The API response contains all the configuration data needed to create Terraform resources.
+Use the response structure to populate your Terraform configuration.
 
 ## Example Output
 

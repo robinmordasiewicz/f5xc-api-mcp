@@ -29,13 +29,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web current list --namespace {namespace}",
-        description: "List all currents",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -78,13 +71,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web current list --namespace {namespace}",
-          description: "List all currents",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -136,18 +122,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["current-usage"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web current-usage create {name} --namespace {namespace}",
-        description: "Create current-usage",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl web current-usage create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -192,18 +166,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web current-usage create {name} --namespace {namespace}",
-          description: "Create current-usage",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web current-usage create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -240,13 +202,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl web custom-list list --namespace {namespace}",
-        description: "List all custom-lists",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -289,13 +244,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web custom-list list --namespace {namespace}",
-          description: "List all custom-lists",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -347,18 +295,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["hourly-usage-detail"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web hourly-usage-detail create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web hourly-usage-detail create {name} --namespace {namespace}",
-        description: "Create hourly-usage-detail",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -406,18 +342,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web hourly-usage-detail create {name} --namespace {namespace}",
-          description: "Create hourly-usage-detail",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web hourly-usage-detail create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -478,13 +402,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web invoice-pdf list --namespace {namespace}",
-        description: "List all invoice-pdfs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Invoice-1",
@@ -530,13 +447,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web invoice-pdf list --namespace {namespace}",
-          description: "List all invoice-pdfs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -583,13 +493,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web limit list --namespace {namespace}",
-        description: "List all limits",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -634,13 +537,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web limit list --namespace {namespace}",
-          description: "List all limits",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -692,18 +588,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["monthly-usage"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web monthly-usage create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web monthly-usage create {name} --namespace {namespace}",
-        description: "Create monthly-usage",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -748,18 +632,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web monthly-usage create {name} --namespace {namespace}",
-          description: "Create monthly-usage",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web monthly-usage create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -813,18 +685,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["payment-method"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web payment-method create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web payment-method create {name} --namespace {namespace}",
-        description: "Create payment-method",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -869,18 +729,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web payment-method create {name} --namespace {namespace}",
-          description: "Create payment-method",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web payment-method create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -940,13 +788,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       deletes: ["payment-method", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web payment-method delete {name} --namespace {namespace}",
-        description: "Delete payment-method",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Payment-method-1.",
@@ -992,13 +833,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web payment-method delete {name} --namespace {namespace}",
-          description: "Delete payment-method",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1052,18 +886,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["plan-transition"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web plan-transition create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web plan-transition create {name} --namespace {namespace}",
-        description: "Create plan-transition",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -1108,18 +930,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web plan-transition create {name} --namespace {namespace}",
-          description: "Create plan-transition",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web plan-transition create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1169,13 +979,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl default plan-transition list --namespace {namespace}",
-        description: "List all plan-transitions",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       id: "Dec2417d-adb1-4fcc-8dcd-529b1d31a652.",
@@ -1220,13 +1023,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl default plan-transition list --namespace {namespace}",
-          description: "List all plan-transitions",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1287,18 +1083,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["primary"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web primary create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web primary create {name} --namespace {namespace}",
-        description: "Create primary",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Payment-method-1.",
@@ -1344,18 +1128,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web primary create {name} --namespace {namespace}",
-          description: "Create primary",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web primary create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1409,18 +1181,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["quota"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web quota create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web quota create {name} --namespace {namespace}",
-        description: "Create quota",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1465,18 +1225,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web quota create {name} --namespace {namespace}",
-          description: "Create quota",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web quota create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1538,13 +1286,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       deletes: ["quota", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web quota delete {name} --namespace {namespace}",
-        description: "Delete quota",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1590,13 +1331,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl web quota delete {name} --namespace {namespace}",
-          description: "Delete quota",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1678,13 +1412,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web quota get {name} --namespace {namespace}",
-        description: "Get specific quota",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -1730,13 +1457,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web quota get {name} --namespace {namespace}",
-          description: "Get specific quota",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1822,13 +1542,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web quota list --namespace {namespace}",
-        description: "List all quotas",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -1874,13 +1587,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web quota list --namespace {namespace}",
-          description: "List all quotas",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1944,13 +1650,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       modifies: ["quota"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web quota update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update quota",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -1996,13 +1695,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web quota update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update quota",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2065,18 +1757,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["secondary"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web secondary create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web secondary create {name} --namespace {namespace}",
-        description: "Create secondary",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Payment-method-1.",
@@ -2122,18 +1802,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web secondary create {name} --namespace {namespace}",
-          description: "Create secondary",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web secondary create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2174,18 +1842,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["subscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web subscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web subscribe create {name} --namespace {namespace}",
-        description: "Create subscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2228,18 +1884,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web subscribe create {name} --namespace {namespace}",
-          description: "Create subscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web subscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2302,18 +1946,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["swap-primary"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web swap-primary create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web swap-primary create {name} --namespace {namespace}",
-        description: "Create swap-primary",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Payment-method-1.",
@@ -2359,18 +1991,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web swap-primary create {name} --namespace {namespace}",
-          description: "Create swap-primary",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web swap-primary create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2411,18 +2031,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["unsubscribe"],
     },
     requiredFields: ["metadata.name", "metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web unsubscribe create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web unsubscribe create {name} --namespace {namespace}",
-        description: "Create unsubscribe",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -2465,18 +2073,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web unsubscribe create {name} --namespace {namespace}",
-          description: "Create unsubscribe",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web unsubscribe create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2530,18 +2126,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       creates: ["usage-detail"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web usage-detail create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl web usage-detail create {name} --namespace {namespace}",
-        description: "Create usage-detail",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -2586,18 +2170,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl web usage-detail create {name} --namespace {namespace}",
-          description: "Create usage-detail",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl web usage-detail create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2646,13 +2218,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl web usage list --namespace {namespace}",
-        description: "List all usages",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -2697,13 +2262,6 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl web usage list --namespace {namespace}",
-          description: "List all usages",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

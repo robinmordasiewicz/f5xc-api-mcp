@@ -29,13 +29,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: [],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect acces list --namespace {namespace}",
-        description: "List all access",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
@@ -78,13 +71,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect acces list --namespace {namespace}",
-          description: "List all access",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -136,18 +122,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["alert"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect alert create {name} --namespace {namespace}",
-        description: "Create alert",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl infraprotect alert create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -192,18 +166,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect alert create {name} --namespace {namespace}",
-          description: "Create alert",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect alert create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -263,13 +225,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.alert_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect alert list --namespace {namespace}",
-        description: "List all alerts",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       alert_id: "12345",
@@ -315,13 +270,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect alert list --namespace {namespace}",
-          description: "List all alerts",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -379,13 +327,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.mitigation_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect annotation list --namespace {namespace}",
-        description: "List all annotations",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       mitigation_id: "92d6e1e6-b6e9-46d4-9286-796a6b3fbf6a.",
@@ -431,13 +372,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect annotation list --namespace {namespace}",
-          description: "List all annotations",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -496,13 +430,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.event_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect attachment list --namespace {namespace}",
-        description: "List all attachments",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       event_id: "9ba097cf-35e3-4560-9c00-5a1a36b8f85b.",
@@ -548,13 +475,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect attachment list --namespace {namespace}",
-          description: "List all attachments",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -605,18 +525,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["bgp-peer-statu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data bgp-peer-statu create {name} --namespace {namespace}",
-        description: "Create bgp-peer-statu",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl data bgp-peer-statu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -661,18 +569,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data bgp-peer-statu create {name} --namespace {namespace}",
-          description: "Create bgp-peer-statu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data bgp-peer-statu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -736,18 +632,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["detail"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.event_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect detail create {name} --namespace {namespace}",
-        description: "Create detail",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl infraprotect detail create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       event_id: "8094c17b-80c1-429d-8b17-7232f0e2937c.",
@@ -793,18 +677,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect detail create {name} --namespace {namespace}",
-          description: "Create detail",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect detail create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -877,13 +749,6 @@ export const ddosTools: ParsedOperation[] = [
       deletes: ["detail", "contained_resources"],
     },
     requiredFields: ["path.event_detail_id", "path.event_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect detail delete {name} --namespace {namespace}",
-        description: "Delete detail",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       event_detail_id: "8094c17b-80c1-429d-8b17-7232f0e2937c.",
@@ -930,13 +795,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl infraprotect detail delete {name} --namespace {namespace}",
-          description: "Delete detail",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -997,13 +855,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.event_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect detail list --namespace {namespace}",
-        description: "List all details",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       event_id: "8094c17b-80c1-429d-8b17-7232f0e2937c.",
@@ -1049,13 +900,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect detail list --namespace {namespace}",
-          description: "List all details",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1128,13 +972,6 @@ export const ddosTools: ParsedOperation[] = [
       modifies: ["detail"],
     },
     requiredFields: ["path.event_detail_id", "path.event_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect detail update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update detail",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       event_detail_id: "8094c17b-80c1-429d-8b17-7232f0e2937c.",
@@ -1181,14 +1018,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect detail update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update detail",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1242,18 +1071,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["event"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect event create {name} --namespace {namespace}",
-        description: "Create event",
-        use_case: "basic_create",
-      },
-      {
-        command: "f5xcctl infraprotect event create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -1298,18 +1115,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect event create {name} --namespace {namespace}",
-          description: "Create event",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect event create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1370,13 +1175,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.event_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect event list --namespace {namespace}",
-        description: "List all events",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       event_id: "9ba097cf-35e3-4560-9c00-5a1a36b8f85b.",
@@ -1422,13 +1220,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect event list --namespace {namespace}",
-          description: "List all events",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1491,13 +1282,6 @@ export const ddosTools: ParsedOperation[] = [
       modifies: ["event"],
     },
     requiredFields: ["path.event_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect event update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update event",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       event_id: "9ba097cf-35e3-4560-9c00-5a1a36b8f85b.",
@@ -1543,14 +1327,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect event update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update event",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1612,13 +1388,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect events-summary list --namespace {namespace}",
-        description: "List all events-summarys",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       alert_id: "9ba097cf-35e3-4560-9c00-5a1a36b8f85b.",
@@ -1664,13 +1433,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect events-summary list --namespace {namespace}",
-          description: "List all events-summarys",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1722,18 +1484,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["infraprotect-asn"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-asn create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl infraprotect infraprotect-asn create {name} --namespace {namespace}",
-        description: "Create infraprotect-asn",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -1781,18 +1531,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect infraprotect-asn create {name} --namespace {namespace}",
-          description: "Create infraprotect-asn",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect infraprotect-asn create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1854,13 +1592,6 @@ export const ddosTools: ParsedOperation[] = [
       deletes: ["infraprotect-asn", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-asn delete {name} --namespace {namespace}",
-        description: "Delete infraprotect-asn",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -1906,13 +1637,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl infraprotect infraprotect-asn delete {name} --namespace {namespace}",
-          description: "Delete infraprotect-asn",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -1994,13 +1718,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-asn get {name} --namespace {namespace}",
-        description: "Get specific infraprotect-asn",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2046,13 +1763,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect infraprotect-asn get {name} --namespace {namespace}",
-          description: "Get specific infraprotect-asn",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2138,13 +1848,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-asn list --namespace {namespace}",
-        description: "List all infraprotect-asns",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2190,13 +1893,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect infraprotect-asn list --namespace {namespace}",
-          description: "List all infraprotect-asns",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2248,19 +1944,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["infraprotect-asn-prefix"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-asn-prefix create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-asn-prefix create {name} --namespace {namespace}",
-        description: "Create infraprotect-asn-prefix",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -2308,19 +1991,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-asn-prefix create {name} --namespace {namespace}",
-          description: "Create infraprotect-asn-prefix",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect infraprotect-asn-prefix create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2382,14 +2052,6 @@ export const ddosTools: ParsedOperation[] = [
       deletes: ["infraprotect-asn-prefix", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-asn-prefix delete {name} --namespace {namespace}",
-        description: "Delete infraprotect-asn-prefix",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -2435,14 +2097,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-asn-prefix delete {name} --namespace {namespace}",
-          description: "Delete infraprotect-asn-prefix",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2524,13 +2178,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-asn-prefix get {name} --namespace {namespace}",
-        description: "Get specific infraprotect-asn-prefix",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -2576,14 +2223,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-asn-prefix get {name} --namespace {namespace}",
-          description: "Get specific infraprotect-asn-prefix",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2669,13 +2308,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-asn-prefix list --namespace {namespace}",
-        description: "List all infraprotect-asn-prefixs",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -2721,13 +2353,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect infraprotect-asn-prefix list --namespace {namespace}",
-          description: "List all infraprotect-asn-prefixs",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2790,14 +2415,6 @@ export const ddosTools: ParsedOperation[] = [
       modifies: ["infraprotect-asn-prefix"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-asn-prefix update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update infraprotect-asn-prefix",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2843,14 +2460,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-asn-prefix update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update infraprotect-asn-prefix",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -2915,14 +2524,6 @@ export const ddosTools: ParsedOperation[] = [
       modifies: ["infraprotect-asn"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-asn update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update infraprotect-asn",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -2968,14 +2569,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-asn update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update infraprotect-asn",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3029,19 +2622,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["infraprotect-deny-list-rule"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-deny-list-rule create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-deny-list-rule create {name} --namespace {namespace}",
-        description: "Create infraprotect-deny-list-rule",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3089,19 +2669,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-deny-list-rule create {name} --namespace {namespace}",
-          description: "Create infraprotect-deny-list-rule",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect infraprotect-deny-list-rule create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3163,14 +2730,6 @@ export const ddosTools: ParsedOperation[] = [
       deletes: ["infraprotect-deny-list-rule", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-deny-list-rule delete {name} --namespace {namespace}",
-        description: "Delete infraprotect-deny-list-rule",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3216,14 +2775,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-deny-list-rule delete {name} --namespace {namespace}",
-          description: "Delete infraprotect-deny-list-rule",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3305,14 +2856,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-deny-list-rule get {name} --namespace {namespace}",
-        description: "Get specific infraprotect-deny-list-rule",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -3358,14 +2901,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-deny-list-rule get {name} --namespace {namespace}",
-          description: "Get specific infraprotect-deny-list-rule",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3451,13 +2986,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-deny-list-rule list --namespace {namespace}",
-        description: "List all infraprotect-deny-list-rules",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -3503,13 +3031,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect infraprotect-deny-list-rule list --namespace {namespace}",
-          description: "List all infraprotect-deny-list-rules",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3572,14 +3093,6 @@ export const ddosTools: ParsedOperation[] = [
       modifies: ["infraprotect-deny-list-rule"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-deny-list-rule update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update infraprotect-deny-list-rule",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -3625,14 +3138,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-deny-list-rule update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update infraprotect-deny-list-rule",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3686,19 +3191,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["infraprotect-firewall-rule"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-firewall-rule create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-firewall-rule create {name} --namespace {namespace}",
-        description: "Create infraprotect-firewall-rule",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -3746,19 +3238,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-rule create {name} --namespace {namespace}",
-          description: "Create infraprotect-firewall-rule",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect infraprotect-firewall-rule create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3820,14 +3299,6 @@ export const ddosTools: ParsedOperation[] = [
       deletes: ["infraprotect-firewall-rule", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-firewall-rule delete {name} --namespace {namespace}",
-        description: "Delete infraprotect-firewall-rule",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -3873,14 +3344,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-rule delete {name} --namespace {namespace}",
-          description: "Delete infraprotect-firewall-rule",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -3962,14 +3425,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-firewall-rule get {name} --namespace {namespace}",
-        description: "Get specific infraprotect-firewall-rule",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4015,14 +3470,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-rule get {name} --namespace {namespace}",
-          description: "Get specific infraprotect-firewall-rule",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4074,19 +3521,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["infraprotect-firewall-rule-group"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-firewall-rule-group create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-firewall-rule-group create {name} --namespace {namespace}",
-        description: "Create infraprotect-firewall-rule-group",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -4134,19 +3568,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-rule-group create {name} --namespace {namespace}",
-          description: "Create infraprotect-firewall-rule-group",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect infraprotect-firewall-rule-group create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4208,14 +3629,6 @@ export const ddosTools: ParsedOperation[] = [
       deletes: ["infraprotect-firewall-rule-group", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-firewall-rule-group delete {name} --namespace {namespace}",
-        description: "Delete infraprotect-firewall-rule-group",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -4261,14 +3674,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-rule-group delete {name} --namespace {namespace}",
-          description: "Delete infraprotect-firewall-rule-group",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4350,14 +3755,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-firewall-rule-group get {name} --namespace {namespace}",
-        description: "Get specific infraprotect-firewall-rule-group",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -4403,14 +3800,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-rule-group get {name} --namespace {namespace}",
-          description: "Get specific infraprotect-firewall-rule-group",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4497,14 +3886,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-firewall-rule-group list --namespace {namespace}",
-        description: "List all infraprotect-firewall-rule-groups",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4550,14 +3931,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-rule-group list --namespace {namespace}",
-          description: "List all infraprotect-firewall-rule-groups",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4620,14 +3993,6 @@ export const ddosTools: ParsedOperation[] = [
       modifies: ["infraprotect-firewall-rule-group"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-firewall-rule-group update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update infraprotect-firewall-rule-group",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4673,14 +4038,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-rule-group update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update infraprotect-firewall-rule-group",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4768,13 +4125,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-firewall-rule list --namespace {namespace}",
-        description: "List all infraprotect-firewall-rules",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -4820,13 +4170,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect infraprotect-firewall-rule list --namespace {namespace}",
-          description: "List all infraprotect-firewall-rules",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -4889,14 +4232,6 @@ export const ddosTools: ParsedOperation[] = [
       modifies: ["infraprotect-firewall-rule"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-firewall-rule update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update infraprotect-firewall-rule",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -4942,14 +4277,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-rule update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update infraprotect-firewall-rule",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5030,14 +4357,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-firewall-ruleset get {name} --namespace {namespace}",
-        description: "Get specific infraprotect-firewall-ruleset",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5083,14 +4402,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-ruleset get {name} --namespace {namespace}",
-          description: "Get specific infraprotect-firewall-ruleset",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5176,13 +4487,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-firewall-ruleset list --namespace {namespace}",
-        description: "List all infraprotect-firewall-rulesets",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -5228,14 +4532,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-ruleset list --namespace {namespace}",
-          description: "List all infraprotect-firewall-rulesets",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5298,14 +4594,6 @@ export const ddosTools: ParsedOperation[] = [
       modifies: ["infraprotect-firewall-ruleset"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-firewall-ruleset update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update infraprotect-firewall-ruleset",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -5351,14 +4639,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-firewall-ruleset update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update infraprotect-firewall-ruleset",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5438,13 +4718,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-information get {name} --namespace {namespace}",
-        description: "Get specific infraprotect-information",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5490,14 +4763,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-information get {name} --namespace {namespace}",
-          description: "Get specific infraprotect-information",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5549,20 +4814,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["infraprotect-internet-prefix-advertisement"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-internet-prefix-advertisement create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-internet-prefix-advertisement create {name} --namespace {namespace}",
-        description: "Create infraprotect-internet-prefix-advertisement",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -5610,20 +4861,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-internet-prefix-advertisement create {name} --namespace {namespace}",
-          description: "Create infraprotect-internet-prefix-advertisement",
-          use_case: "basic_create",
-        },
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-internet-prefix-advertisement create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5685,14 +4922,6 @@ export const ddosTools: ParsedOperation[] = [
       deletes: ["infraprotect-internet-prefix-advertisement", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-internet-prefix-advertisement delete {name} --namespace {namespace}",
-        description: "Delete infraprotect-internet-prefix-advertisement",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -5738,14 +4967,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-internet-prefix-advertisement delete {name} --namespace {namespace}",
-          description: "Delete infraprotect-internet-prefix-advertisement",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5827,14 +5048,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-internet-prefix-advertisement get {name} --namespace {namespace}",
-        description: "Get specific infraprotect-internet-prefix-advertisement",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -5880,14 +5093,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-internet-prefix-advertisement get {name} --namespace {namespace}",
-          description: "Get specific infraprotect-internet-prefix-advertisement",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -5974,14 +5179,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-internet-prefix-advertisement list --namespace {namespace}",
-        description: "List all infraprotect-internet-prefix-advertisements",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -6027,14 +5224,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-internet-prefix-advertisement list --namespace {namespace}",
-          description: "List all infraprotect-internet-prefix-advertisements",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6097,14 +5286,6 @@ export const ddosTools: ParsedOperation[] = [
       modifies: ["infraprotect-internet-prefix-advertisement"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-internet-prefix-advertisement update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update infraprotect-internet-prefix-advertisement",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -6150,14 +5331,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-internet-prefix-advertisement update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update infraprotect-internet-prefix-advertisement",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6211,18 +5384,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["infraprotect-tunnel"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-tunnel create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl infraprotect infraprotect-tunnel create {name} --namespace {namespace}",
-        description: "Create infraprotect-tunnel",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.namespace": "Staging",
@@ -6270,18 +5431,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect infraprotect-tunnel create {name} --namespace {namespace}",
-          description: "Create infraprotect-tunnel",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect infraprotect-tunnel create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6343,13 +5492,6 @@ export const ddosTools: ParsedOperation[] = [
       deletes: ["infraprotect-tunnel", "contained_resources"],
     },
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-tunnel delete {name} --namespace {namespace}",
-        description: "Delete infraprotect-tunnel",
-        use_case: "delete",
-      },
-    ],
     confirmationRequired: true,
     parameterExamples: {
       name: "Name",
@@ -6395,13 +5537,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: true,
       danger_level: "high",
-      examples: [
-        {
-          command: "f5xcctl infraprotect infraprotect-tunnel delete {name} --namespace {namespace}",
-          description: "Delete infraprotect-tunnel",
-          use_case: "delete",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6483,13 +5618,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-tunnel get {name} --namespace {namespace}",
-        description: "Get specific infraprotect-tunnel",
-        use_case: "get_specific",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       name: "Name",
@@ -6535,13 +5663,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect infraprotect-tunnel get {name} --namespace {namespace}",
-          description: "Get specific infraprotect-tunnel",
-          use_case: "get_specific",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6627,13 +5748,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect infraprotect-tunnel list --namespace {namespace}",
-        description: "List all infraprotect-tunnels",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       label_filter: "Env in (staging, testing), tier in (web, db)",
@@ -6679,13 +5793,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect infraprotect-tunnel list --namespace {namespace}",
-          description: "List all infraprotect-tunnels",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6748,14 +5855,6 @@ export const ddosTools: ParsedOperation[] = [
       modifies: ["infraprotect-tunnel"],
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect infraprotect-tunnel update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update infraprotect-tunnel",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       "metadata.name": "Example-corp-web.",
@@ -6801,14 +5900,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect infraprotect-tunnel update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update infraprotect-tunnel",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6869,13 +5960,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.mitigation_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect ip list --namespace {namespace}",
-        description: "List all ips",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       mitigation_id: "9ba097cf-35e3-4560-9c00-5a1a36b8f85b.",
@@ -6921,13 +6005,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect ip list --namespace {namespace}",
-          description: "List all ips",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -6985,13 +6062,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.event_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect mitigation-annotation list --namespace {namespace}",
-        description: "List all mitigation-annotations",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       event_id: "9ba097cf-35e3-4560-9c00-5a1a36b8f85b.",
@@ -7037,13 +6107,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect mitigation-annotation list --namespace {namespace}",
-          description: "List all mitigation-annotations",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7094,18 +6157,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["mitigation"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect mitigation create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl infraprotect mitigation create {name} --namespace {namespace}",
-        description: "Create mitigation",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -7150,18 +6201,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect mitigation create {name} --namespace {namespace}",
-          description: "Create mitigation",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect mitigation create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7221,13 +6260,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.mitigation_id", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect mitigation list --namespace {namespace}",
-        description: "List all mitigations",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       mitigation_id: "9ba097cf-35e3-4560-9c00-5a1a36b8f85b.",
@@ -7273,13 +6305,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect mitigation list --namespace {namespace}",
-          description: "List all mitigations",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7327,13 +6352,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect network list --namespace {namespace}",
-        description: "List all networks",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -7378,13 +6396,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect network list --namespace {namespace}",
-          description: "List all networks",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7436,18 +6447,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["report"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect report create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl infraprotect report create {name} --namespace {namespace}",
-        description: "Create report",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -7492,18 +6491,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect report create {name} --namespace {namespace}",
-          description: "Create report",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect report create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7563,13 +6550,6 @@ export const ddosTools: ParsedOperation[] = [
     dangerLevel: "low",
     sideEffects: null,
     requiredFields: ["path.namespace", "path.report_id"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect report list --namespace {namespace}",
-        description: "List all reports",
-        use_case: "list_all",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Value",
@@ -7615,13 +6595,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "low",
-      examples: [
-        {
-          command: "f5xcctl infraprotect report list --namespace {namespace}",
-          description: "List all reports",
-          use_case: "list_all",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7673,18 +6646,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["suggest-value"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect suggest-value create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl infraprotect suggest-value create {name} --namespace {namespace}",
-        description: "Create suggest-value",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "Foobar",
@@ -7729,18 +6690,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect suggest-value create {name} --namespace {namespace}",
-          description: "Create suggest-value",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect suggest-value create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7805,14 +6754,6 @@ export const ddosTools: ParsedOperation[] = [
       modifies: ["to-event"],
     },
     requiredFields: ["path.alert_id", "path.namespace"],
-    cliExamples: [
-      {
-        command:
-          "f5xcctl infraprotect to-event update {name} --namespace {namespace} -f {file}.yaml",
-        description: "Update to-event",
-        use_case: "update",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       alert_id: "9ba097cf-35e3-4560-9c00-5a1a36b8f85b.",
@@ -7858,14 +6799,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect to-event update {name} --namespace {namespace} -f {file}.yaml",
-          description: "Update to-event",
-          use_case: "update",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -7918,18 +6851,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["transit-usage"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl data transit-usage create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl data transit-usage create {name} --namespace {namespace}",
-        description: "Create transit-usage",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -7974,18 +6895,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl data transit-usage create {name} --namespace {namespace}",
-          description: "Create transit-usage",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl data transit-usage create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8040,19 +6949,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["update-advertisement-statu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect update-advertisement-statu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl infraprotect update-advertisement-statu create {name} --namespace {namespace}",
-        description: "Create update-advertisement-statu",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -8100,19 +6996,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect update-advertisement-statu create {name} --namespace {namespace}",
-          description: "Create update-advertisement-statu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect update-advertisement-statu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8166,19 +7049,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["update-asn-prefix-irr-override"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect update-asn-prefix-irr-override create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl infraprotect update-asn-prefix-irr-override create {name} --namespace {namespace}",
-        description: "Create update-asn-prefix-irr-override",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -8226,19 +7096,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect update-asn-prefix-irr-override create {name} --namespace {namespace}",
-          description: "Create update-asn-prefix-irr-override",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect update-asn-prefix-irr-override create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8292,19 +7149,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["update-asn-prefix-review-statu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect update-asn-prefix-review-statu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl infraprotect update-asn-prefix-review-statu create {name} --namespace {namespace}",
-        description: "Create update-asn-prefix-review-statu",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -8352,19 +7196,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect update-asn-prefix-review-statu create {name} --namespace {namespace}",
-          description: "Create update-asn-prefix-review-statu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect update-asn-prefix-review-statu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8418,19 +7249,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["update-asn-review-statu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect update-asn-review-statu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command:
-          "f5xcctl infraprotect update-asn-review-statu create {name} --namespace {namespace}",
-        description: "Create update-asn-review-statu",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -8478,19 +7296,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command:
-            "f5xcctl infraprotect update-asn-review-statu create {name} --namespace {namespace}",
-          description: "Create update-asn-review-statu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect update-asn-review-statu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {
@@ -8544,18 +7349,6 @@ export const ddosTools: ParsedOperation[] = [
       creates: ["update-tunnel-statu"],
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
-    cliExamples: [
-      {
-        command: "f5xcctl infraprotect update-tunnel-statu create -f {file}.yaml",
-        description: "Create from YAML file",
-        use_case: "file_based",
-      },
-      {
-        command: "f5xcctl infraprotect update-tunnel-statu create {name} --namespace {namespace}",
-        description: "Create update-tunnel-statu",
-        use_case: "basic_create",
-      },
-    ],
     confirmationRequired: false,
     parameterExamples: {
       namespace: "System",
@@ -8603,18 +7396,6 @@ export const ddosTools: ParsedOperation[] = [
       },
       confirmation_required: false,
       danger_level: "medium",
-      examples: [
-        {
-          command: "f5xcctl infraprotect update-tunnel-statu create {name} --namespace {namespace}",
-          description: "Create update-tunnel-statu",
-          use_case: "basic_create",
-        },
-        {
-          command: "f5xcctl infraprotect update-tunnel-statu create -f {file}.yaml",
-          description: "Create from YAML file",
-          use_case: "file_based",
-        },
-      ],
       field_docs: {},
       optional_fields: [],
       performance_impact: {

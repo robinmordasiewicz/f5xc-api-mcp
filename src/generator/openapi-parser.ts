@@ -71,15 +71,6 @@ const SideEffectsSchema = z.object({
 });
 
 /**
- * CLI example schema
- */
-const CliExampleSchema = z.object({
-  description: z.string().optional(),
-  command: z.string().optional(),
-  use_case: z.string().optional(),
-});
-
-/**
  * Operation metadata schema from enriched specs
  */
 const OperationMetadataSchema = z.object({
@@ -111,7 +102,6 @@ const OperationMetadataSchema = z.object({
       resource_usage: z.string().optional(),
     })
     .optional(),
-  examples: z.array(CliExampleSchema).optional(),
 });
 
 const OpenApiOperationSchema = z.object({
@@ -129,8 +119,6 @@ const OpenApiOperationSchema = z.object({
   "x-ves-danger-level": z.enum(["low", "medium", "high"]).optional(),
   "x-ves-side-effects": SideEffectsSchema.optional(),
   "x-ves-required-fields": z.array(z.string()).optional(),
-  "x-ves-cli-examples": z.array(CliExampleSchema).optional(),
-  "x-ves-cli-example": z.string().optional(),
   "x-ves-confirmation-required": z.boolean().optional(),
   "x-ves-operation-metadata": OperationMetadataSchema.optional(),
 });
@@ -175,15 +163,6 @@ export interface SideEffects {
 }
 
 /**
- * CLI example from enriched specs
- */
-export interface CliExample {
-  description?: string;
-  command?: string;
-  use_case?: string;
-}
-
-/**
  * Common error from operation metadata
  */
 export interface CommonError {
@@ -217,7 +196,6 @@ export interface OperationMetadata {
   confirmation_required?: boolean;
   common_errors?: CommonError[];
   performance_impact?: PerformanceImpact;
-  examples?: CliExample[];
 }
 
 /**
@@ -266,8 +244,6 @@ export interface ParsedOperation {
   sideEffects: SideEffects | null;
   /** Required fields for the operation (x-ves-required-fields) */
   requiredFields: string[];
-  /** CLI examples for the operation (x-ves-cli-examples) */
-  cliExamples: CliExample[];
   /** Whether confirmation is required (x-ves-confirmation-required) */
   confirmationRequired: boolean;
   /** Example values for parameters from x-ves-example */
@@ -436,7 +412,6 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
       const dangerLevel = operation["x-ves-danger-level"] ?? null;
       const sideEffects = operation["x-ves-side-effects"] ?? null;
       const requiredFields = operation["x-ves-required-fields"] ?? [];
-      const cliExamples = operation["x-ves-cli-examples"] ?? [];
       const confirmationRequired = operation["x-ves-confirmation-required"] ?? false;
       const operationMetadata = operation["x-ves-operation-metadata"] ?? null;
 
@@ -482,7 +457,6 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
         dangerLevel,
         sideEffects,
         requiredFields,
-        cliExamples,
         confirmationRequired,
         parameterExamples,
         validationRules,
@@ -677,7 +651,6 @@ function extractDomainOperations(
       const dangerLevel = operation["x-ves-danger-level"] ?? null;
       const sideEffects = operation["x-ves-side-effects"] ?? null;
       const requiredFields = operation["x-ves-required-fields"] ?? [];
-      const cliExamples = operation["x-ves-cli-examples"] ?? [];
       const confirmationRequired = operation["x-ves-confirmation-required"] ?? false;
       const operationMetadata = operation["x-ves-operation-metadata"] ?? null;
 
@@ -725,7 +698,6 @@ function extractDomainOperations(
         dangerLevel,
         sideEffects,
         requiredFields,
-        cliExamples,
         confirmationRequired,
         parameterExamples,
         validationRules,
