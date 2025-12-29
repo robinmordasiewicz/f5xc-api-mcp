@@ -1,6 +1,6 @@
 {
-  "version": "1.0.63",
-  "timestamp": "2025-12-29T06:22:42.585702+00:00",
+  "version": "1.0.65",
+  "timestamp": "2025-12-29T16:23:20.655277+00:00",
   "specifications": [
     {
       "domain": "admin_console_and_ui",
@@ -220,9 +220,9 @@
     {
       "domain": "cdn",
       "title": "F5 XC Cdn API",
-      "description": "Content Delivery Network services for global content distribution and edge caching. Configure CDN load balancers with custom caching rules based on paths, headers, cookies, and query parameters. Define cache TTL policies, eligibility options, and cache-control behaviors. Monitor CDN performance through access logs and metrics aggregation. Perform cache purge operations for content invalidation. Manage addon subscriptions and track service operation status for CDN deployments.",
-      "description_short": "CDN load balancing, caching rules, and content delivery",
-      "description_medium": "Configure CDN load balancers and caching rules for content delivery. Manage cache policies, purge operations, and access logs for optimized...",
+      "description": "Create cache rules with expression-based matching for paths, headers, cookies, and query parameters. Deploy load balancers optimized for content distribution with configurable TTL settings and cache eligibility options. Monitor access logs and metrics for delivery performance. Purge cached content on demand and track service operation status across namespaces.",
+      "description_short": "Configure content delivery and caching rules",
+      "description_medium": "Define cache rules and load balancers for content distribution. Set TTL policies, path matching, and header-based caching decisions.",
       "file": "cdn.json",
       "path_count": 26,
       "schema_count": 618,
@@ -425,9 +425,9 @@
     {
       "domain": "dns",
       "title": "F5 XC Dns API",
-      "description": "Comprehensive DNS management for zones, domains, and resource records. Configure DNS load balancing with health checks for high availability. Import and export zone files via BIND format or AXFR transfers. Manage resource record sets including A, AAAA, CNAME, CAA, CERT, AFSDB, and DLV records. Monitor DNS performance through metrics and request logs. Clone zones from existing domains and enforce DNS compliance policies across namespaces.",
-      "description_short": "DNS zone management, load balancing, and record...",
-      "description_medium": "Manage DNS zones, configure DNS load balancing with health checks, and control resource record sets. Supports zone imports, BIND file handling,...",
+      "description": "Create and manage authoritative zones with support for standard record types including A, AAAA, CNAME, CAA, CERT, and AFSDB. Import existing configurations through BIND file uploads or zone transfers. Define health check policies that monitor backend availability and automatically adjust record responses. Export zone files for backup or migration. Access request logs and performance metrics to analyze query patterns and troubleshoot resolution issues across namespaces.",
+      "description_short": "Manage zones, records, and resolution policies",
+      "description_medium": "Configure zone imports from BIND files or AXFR transfers. Set up health checks for load-balanced records and monitor query metrics.",
       "file": "dns.json",
       "path_count": 45,
       "schema_count": 251,
@@ -1076,9 +1076,9 @@
     {
       "domain": "virtual",
       "title": "F5 XC Virtual API",
-      "description": "Comprehensive application delivery and traffic management capabilities including HTTP/HTTPS/TCP/UDP load balancers, origin pool configuration, virtual host management, and advanced routing rules. Supports rate limiting policies, service policy enforcement, geo-location-based routing, and proxy forwarding configurations. Integrates with security features including malware protection, threat campaign detection, and WAF policy attachment. Provides health check configuration, endpoint...",
-      "description_short": "HTTP/HTTPS load balancing and traffic management",
-      "description_medium": "Configure HTTP, TCP, and UDP load balancers with origin pools, virtual hosts, routing rules, rate limiting, and service policies for application...",
+      "description": "Set up load balancing for HTTP, TCP, and UDP protocols with origin pool configuration and weighted routing. Create service policies to control access patterns and enforce rate limits on incoming requests. Deploy geo-location routing for region-aware traffic steering. Configure health checks to monitor backend availability and trigger automatic failover. Manage proxy forwarding rules and threat protection including malware scanning and campaign blocking.",
+      "description_short": "Configure HTTP and TCP load balancers",
+      "description_medium": "Manage origin pools and routing rules. Define rate limiting, service policies, and health checks for traffic distribution.",
       "file": "virtual.json",
       "path_count": 85,
       "schema_count": 743,
@@ -1190,9 +1190,9 @@
     {
       "domain": "waf",
       "title": "F5 XC Waf API",
-      "description": "Web Application Firewall (WAF) configuration and management for protecting applications against common attacks and vulnerabilities. Define application firewall policies with attack type detection, bot protection settings, and custom blocking pages. Manage WAF exclusion policies for legitimate traffic patterns, configure signature staging and release workflows, and monitor security events with detailed rule hit metrics. Supports AI-powered risk-based blocking, anonymization settings for...",
-      "description_short": "Web application firewall rules and security policies",
-      "description_medium": "Configure web application firewall rules, manage security policies, and enable attack detection with customizable blocking actions and signature...",
+      "description": "Deploy protection against common web attacks including injection, cross-site scripting, and protocol violations. Set up bot detection with configurable actions for automated traffic handling. Create exclusion policies to whitelist trusted requests and reduce false positives. Monitor security events and rule hits through metrics collection to analyze threat patterns and refine defensive configurations for virtual hosts.",
+      "description_short": "Configure web application firewall rules and policies",
+      "description_medium": "Manage application security through attack detection and blocking settings. Define custom response codes and signature-based threat mitigation.",
       "file": "waf.json",
       "path_count": 40,
       "schema_count": 314,
