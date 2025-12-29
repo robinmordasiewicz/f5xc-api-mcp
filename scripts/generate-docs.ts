@@ -762,7 +762,7 @@ function updateMkDocsNavigation(
     // Build complete nav structure
     const completeNav = [
       { Home: 'index.md' },
-      { 'Getting Started': 'getting-started.md' },
+      { 'Getting Started': 'getting-started/installation.md' },
       { Tools: [
         { Overview: 'tools/index.md' },
         ...navigation
