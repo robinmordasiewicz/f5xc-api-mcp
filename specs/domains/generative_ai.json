@@ -3,7 +3,7 @@
   "info": {
     "title": "F5 XC Generative Ai API",
     "description": "Generative AI services providing intelligent automation and analysis capabilities. Configure AI assistant policies and submit queries with feedback tracking for continuous improvement. Enable flow anomaly detection powered by machine learning. Manage AI data collection through the BFDP subsystem including feature enablement, token management, and subscription controls. Supports IP allocation for GIA services. Integrates dashboard visualization with customizable displays, filters, and link...",
-    "version": "1.0.65",
+    "version": "1.0.66",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -211,18 +211,6 @@
             "eval-query"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create eval-query",
-            "command": "f5xcctl gen-ai eval-query create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl gen-ai eval-query create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new eval-query",
           "required_fields": [
@@ -283,19 +271,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create eval-query",
-              "command": "f5xcctl gen-ai eval-query create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl gen-ai eval-query create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "AI Assistant APIs.",
@@ -442,18 +418,6 @@
             "eval-query-feedback"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create eval-query-feedback",
-            "command": "f5xcctl gen-ai eval-query-feedback create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl gen-ai eval-query-feedback create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new eval-query-feedback",
           "required_fields": [
@@ -514,19 +478,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create eval-query-feedback",
-              "command": "f5xcctl gen-ai eval-query-feedback create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl gen-ai eval-query-feedback create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "AI Assistant APIs.",
@@ -673,18 +625,6 @@
             "query"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create query",
-            "command": "f5xcctl gen-ai query create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl gen-ai query create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new query",
           "required_fields": [
@@ -745,19 +685,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create query",
-              "command": "f5xcctl gen-ai query create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl gen-ai query create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "AI Assistant APIs.",
@@ -904,18 +832,6 @@
             "query-feedback"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create query-feedback",
-            "command": "f5xcctl gen-ai query-feedback create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl gen-ai query-feedback create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new query-feedback",
           "required_fields": [
@@ -976,19 +892,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create query-feedback",
-              "command": "f5xcctl gen-ai query-feedback create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl gen-ai query-feedback create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "AI Assistant APIs.",
@@ -1129,18 +1033,6 @@
             "enable-feature"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create enable-feature",
-            "command": "f5xcctl ai_data enable-feature create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl ai_data enable-feature create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new enable-feature",
           "required_fields": [
@@ -1200,19 +1092,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create enable-feature",
-              "command": "f5xcctl ai_data enable-feature create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl ai_data enable-feature create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "BFDP APIs",
@@ -1352,18 +1232,6 @@
             "refresh-token"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create refresh-token",
-            "command": "f5xcctl ai_data refresh-token create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl ai_data refresh-token create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new refresh-token",
           "required_fields": [
@@ -1423,19 +1291,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create refresh-token",
-              "command": "f5xcctl ai_data refresh-token create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl ai_data refresh-token create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "BFDP APIs",
@@ -1575,18 +1431,6 @@
             "gettoken"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create gettoken",
-            "command": "f5xcctl ai_data gettoken create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl ai_data gettoken create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new gettoken",
           "required_fields": [
@@ -1646,19 +1490,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create gettoken",
-              "command": "f5xcctl ai_data gettoken create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl ai_data gettoken create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "BFDP Subscription API.",
@@ -1798,18 +1630,6 @@
             "subscribe"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create subscribe",
-            "command": "f5xcctl ai_data subscribe create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl ai_data subscribe create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new subscribe",
           "required_fields": [
@@ -1869,19 +1689,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create subscribe",
-              "command": "f5xcctl ai_data subscribe create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl ai_data subscribe create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "BFDP Subscription API.",
@@ -2021,18 +1829,6 @@
             "unsubscribe"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create unsubscribe",
-            "command": "f5xcctl ai_data unsubscribe create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl ai_data unsubscribe create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new unsubscribe",
           "required_fields": [
@@ -2092,19 +1888,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create unsubscribe",
-              "command": "f5xcctl ai_data unsubscribe create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl ai_data unsubscribe create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "BFDP Subscription API.",
@@ -2244,18 +2028,6 @@
             "allocateip"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create allocateip",
-            "command": "f5xcctl gia allocateip create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl gia allocateip create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new allocateip",
           "required_fields": [
@@ -2313,19 +2085,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create allocateip",
-              "command": "f5xcctl gia allocateip create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl gia allocateip create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Global IP Allocator.",
@@ -2462,14 +2222,6 @@
             "deallocateip"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Delete deallocateip",
-            "command": "f5xcctl gia deallocateip delete {name} --namespace {namespace}",
-            "use_case": "delete",
-            "warning": "Permanent operation - cannot be undone"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Delete deallocateip",
           "required_fields": [],
@@ -2523,15 +2275,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Delete deallocateip",
-              "command": "f5xcctl gia deallocateip delete {name} --namespace {namespace}",
-              "use_case": "delete",
-              "warning": "Permanent operation - cannot be undone"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Global IP Allocator.",
@@ -2587,9 +2331,6 @@
             "x-ves-example": "System",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2598,7 +2339,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548365+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631667+00:00"
           },
           "negative_feedback": {
             "$ref": "#/components/schemas/ai_assistantNegativeFeedbackDetails"
@@ -2657,7 +2398,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for ai_assistantAIAssistantQueryFeedbackRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  comment: value\n  namespace: value\n  negative_feedback: value\n  positive_feedback: value\n  query: value",
-          "example_command": "xcsh virtual create ai_assistant_a_i_assistant_query_feedback_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"comment\": \"value\",\n    \"namespace\": \"value\",\n    \"negative_feedback\": \"value\",\n    \"positive_feedback\": \"value\",\n    \"query\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistant_a_i_assistant_query_feedback_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "generative_ai"
       },
@@ -2691,9 +2433,6 @@
             "x-ves-example": "System",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2702,7 +2441,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548387+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631687+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -2713,7 +2452,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for ai_assistantAIAssistantQueryRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  current_query: value\n  namespace: value",
-          "example_command": "xcsh virtual create ai_assistant_a_i_assistant_query_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"current_query\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistant_a_i_assistant_query_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "generative_ai"
       },
@@ -2820,7 +2560,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for ai_assistantAIAssistantQueryResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  current_query: value\n  explain_log: value\n  follow_up_queries: value\n  gen_dashboard_filter: value\n  generic_response: value",
-          "example_command": "xcsh virtual create ai_assistant_a_i_assistant_query_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"current_query\": \"value\",\n    \"explain_log\": \"value\",\n    \"follow_up_queries\": \"value\",\n    \"gen_dashboard_filter\": \"value\",\n    \"generic_response\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistant_a_i_assistant_query_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "generative_ai"
       },
@@ -2865,7 +2606,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for ai_assistantNegativeFeedbackDetails\nmetadata:\n  name: example\n  namespace: default\nspec:\n  remarks: value",
-          "example_command": "xcsh virtual create ai_assistant_negative_feedback_details -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"remarks\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistant_negative_feedback_detailses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "generative_ai"
       },
@@ -2888,7 +2630,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for ai_assistantNegativeFeedbackType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create ai_assistant_negative_feedback_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistant_negative_feedback_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "generative_ai"
       },
@@ -2910,7 +2653,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for ai_assistantcommonUnitType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create ai_assistantcommon_unit_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistantcommon_unit_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "generative_ai"
       },
@@ -2932,7 +2676,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for ai_assistantexplain_log_recordAction\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create ai_assistantexplain_log_record_action -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistantexplain_log_record_actions\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -2951,7 +2696,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonCellProperties\nmetadata:\n  name: example\n  namespace: default\nspec:\n  status_style: value",
-          "example_command": "xcsh virtual create common_cell_properties -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"status_style\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_cell_propertieses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -2976,7 +2722,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonColourType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create common_colour_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_colour_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -2999,7 +2746,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonColumnType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create common_column_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_column_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3034,7 +2782,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548412+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631712+00:00"
           },
           "log_filters": {
             "type": "array",
@@ -3059,9 +2807,6 @@
             "x-ves-example": "System",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3070,7 +2815,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548419+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631719+00:00"
           },
           "object_name": {
             "type": "string",
@@ -3118,7 +2863,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548427+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631727+00:00"
           },
           "type": {
             "$ref": "#/components/schemas/commonDashboardLinkType"
@@ -3137,7 +2882,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonDashboardLink\nmetadata:\n  name: example\n  namespace: default\nspec:\n  key: value\n  log_filters: value\n  namespace: value\n  object_name: value\n  time_range: value",
-          "example_command": "xcsh virtual create common_dashboard_link -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"key\": \"value\",\n    \"log_filters\": \"value\",\n    \"namespace\": \"value\",\n    \"object_name\": \"value\",\n    \"time_range\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_dashboard_links\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3169,7 +2915,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonDashboardLinkType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create common_dashboard_link_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_dashboard_link_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3216,7 +2963,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonDisplay\nmetadata:\n  name: example\n  namespace: default\nspec:\n  colour: value\n  display_type: value\n  formats: value",
-          "example_command": "xcsh virtual create common_display -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"colour\": \"value\",\n    \"display_type\": \"value\",\n    \"formats\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_displaies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3241,7 +2989,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonDisplayType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create common_display_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_display_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3263,8 +3012,6 @@
             "x-ves-example": "Provider",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3273,7 +3020,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548440+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631741+00:00"
           },
           "title": {
             "type": "string",
@@ -3291,7 +3038,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548444+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631745+00:00"
           },
           "tooltip": {
             "type": "string",
@@ -3323,7 +3070,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonFieldProperties\nmetadata:\n  name: example\n  namespace: default\nspec:\n  data_type: value\n  display: value\n  name: value\n  title: value\n  tooltip: value",
-          "example_command": "xcsh virtual create common_field_properties -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"data_type\": \"value\",\n    \"display\": \"value\",\n    \"name\": \"value\",\n    \"title\": \"value\",\n    \"tooltip\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_field_propertieses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3343,7 +3091,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonFilterOperator\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create common_filter_operator -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_filter_operators\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3366,7 +3115,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonFormatType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create common_format_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_format_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3401,7 +3151,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548452+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631753+00:00"
           },
           "title": {
             "type": "string",
@@ -3419,7 +3169,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548456+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631757+00:00"
           },
           "url": {
             "type": "string",
@@ -3447,7 +3197,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonGenericLink\nmetadata:\n  name: example\n  namespace: default\nspec:\n  key: value\n  title: value\n  url: value",
-          "example_command": "xcsh virtual create common_generic_link -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"key\": \"value\",\n    \"title\": \"value\",\n    \"url\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_generic_links\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3500,7 +3251,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonGenericResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  error: value\n  is_error: value\n  summary: value",
-          "example_command": "xcsh virtual create common_generic_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"error\": \"value\",\n    \"is_error\": \"value\",\n    \"summary\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_generic_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3527,7 +3279,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonLink\nmetadata:\n  name: example\n  namespace: default\nspec:\n  dashboard_link: value\n  generic_link: value",
-          "example_command": "xcsh virtual create common_link -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"dashboard_link\": \"value\",\n    \"generic_link\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_links\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3554,7 +3307,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548470+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631771+00:00"
           },
           "op": {
             "$ref": "#/components/schemas/commonFilterOperator"
@@ -3592,7 +3345,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonLogFilter\nmetadata:\n  name: example\n  namespace: default\nspec:\n  key: value\n  op: value\n  values: value",
-          "example_command": "xcsh virtual create common_log_filter -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"key\": \"value\",\n    \"op\": \"value\",\n    \"values\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_log_filters\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -3622,7 +3376,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548479+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631780+00:00"
           },
           "type": {
             "$ref": "#/components/schemas/commonDashboardLinkType"
@@ -3637,7 +3391,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonOverlayContent\nmetadata:\n  name: example\n  namespace: default\nspec:\n  data: value\n  title: value\n  type: value",
-          "example_command": "xcsh virtual create common_overlay_content -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"data\": \"value\",\n    \"title\": \"value\",\n    \"type\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_overlay_contents\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3751,7 +3506,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonOverlayData\nmetadata:\n  name: example\n  namespace: default\nspec:\n  priority: value\n  product_data: value\n  subject: value\n  support_type: value\n  topic: value",
-          "example_command": "xcsh virtual create common_overlay_data -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"priority\": \"value\",\n    \"product_data\": \"value\",\n    \"subject\": \"value\",\n    \"support_type\": \"value\",\n    \"topic\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_overlay_datas\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3775,7 +3531,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonStatusStyle\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create common_status_style -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_status_styles\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3800,7 +3557,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for commonWidgetType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create common_widget_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/common_widget_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -3822,7 +3580,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordAccuracy\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create explain_log_record_accuracy -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_accuracies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -3856,8 +3615,6 @@
             "x-ves-example": "Curl",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3866,7 +3623,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548495+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631796+00:00"
           },
           "type": {
             "type": "string",
@@ -3893,7 +3650,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordBot\nmetadata:\n  name: example\n  namespace: default\nspec:\n  classification: value\n  name: value\n  type: value",
-          "example_command": "xcsh virtual create explain_log_record_bot -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"classification\": \"value\",\n    \"name\": \"value\",\n    \"type\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_bots\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -3979,7 +3737,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordBotDefenseEventDetails\nmetadata:\n  name: example\n  namespace: default\nspec:\n  action: value\n  automation_type: value\n  bot_type: value\n  method: value\n  request_path: value",
-          "example_command": "xcsh virtual create explain_log_record_bot_defense_event_details -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"action\": \"value\",\n    \"automation_type\": \"value\",\n    \"bot_type\": \"value\",\n    \"method\": \"value\",\n    \"request_path\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_bot_defense_event_detailses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -4000,7 +3759,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordEnforcementMode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create explain_log_record_enforcement_mode -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_enforcement_modes\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -4083,7 +3843,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordExplainLogRecordResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  actions: value\n  analysis: value\n  bot_defense_event_details: value\n  request_details: value\n  summary: value",
-          "example_command": "xcsh virtual create explain_log_record_explain_log_record_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"actions\": \"value\",\n    \"analysis\": \"value\",\n    \"bot_defense_event_details\": \"value\",\n    \"request_details\": \"value\",\n    \"summary\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_explain_log_record_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -4104,7 +3865,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordIPReputation\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create explain_log_record_i_p_reputation -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_i_p_reputations\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -4132,7 +3894,7 @@
             "x-original-maxLength": 1024,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548518+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631819+00:00"
           },
           "rsp_code": {
             "type": "integer",
@@ -4191,7 +3953,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordRequestDetails\nmetadata:\n  name: example\n  namespace: default\nspec:\n  domain: value\n  rsp_code: value\n  rsp_code_details: value\n  upstream_protocol_error_reason: value",
-          "example_command": "xcsh virtual create explain_log_record_request_details -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"domain\": \"value\",\n    \"rsp_code\": \"value\",\n    \"rsp_code_details\": \"value\",\n    \"upstream_protocol_error_reason\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_request_detailses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -4275,8 +4038,6 @@
             "x-ves-example": "Shell command processor.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4285,7 +4046,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548534+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631835+00:00"
           },
           "state": {
             "type": "string",
@@ -4316,7 +4077,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordSignature\nmetadata:\n  name: example\n  namespace: default\nspec:\n  accuracy: value\n  attack_type: value\n  context: value\n  id: value\n  matching_info: value",
-          "example_command": "xcsh virtual create explain_log_record_signature -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"accuracy\": \"value\",\n    \"attack_type\": \"value\",\n    \"context\": \"value\",\n    \"id\": \"value\",\n    \"matching_info\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_signatures\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -4411,7 +4173,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordSvcPolicyEventDetails\nmetadata:\n  name: example\n  namespace: default\nspec:\n  action: value\n  ip_risk: value\n  ip_threat_categories: value\n  ip_trustworthiness: value\n  policy: value",
-          "example_command": "xcsh virtual create explain_log_record_svc_policy_event_details -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"action\": \"value\",\n    \"ip_risk\": \"value\",\n    \"ip_threat_categories\": \"value\",\n    \"ip_trustworthiness\": \"value\",\n    \"policy\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_svc_policy_event_detailses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -4462,8 +4225,6 @@
             "x-ves-example": "Nette Framework Remote Code Execution - oshi.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4472,7 +4233,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548552+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631852+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4484,7 +4245,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordThreatCampaign\nmetadata:\n  name: example\n  namespace: default\nspec:\n  attack_type: value\n  id: value\n  name: value",
-          "example_command": "xcsh virtual create explain_log_record_threat_campaign -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"attack_type\": \"value\",\n    \"id\": \"value\",\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_threat_campaigns\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -4548,8 +4310,6 @@
             "x-ves-example": "Illegal filetype.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4558,7 +4318,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548560+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631861+00:00"
           },
           "state": {
             "type": "string",
@@ -4587,7 +4347,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordViolation\nmetadata:\n  name: example\n  namespace: default\nspec:\n  attack_type: value\n  context: value\n  matching_info: value\n  name: value\n  state: value",
-          "example_command": "xcsh virtual create explain_log_record_violation -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"attack_type\": \"value\",\n    \"context\": \"value\",\n    \"matching_info\": \"value\",\n    \"name\": \"value\",\n    \"state\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_violations\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "statistics"
       },
@@ -4681,7 +4442,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for explain_log_recordWAFEventDetails\nmetadata:\n  name: example\n  namespace: default\nspec:\n  action: value\n  app_firewall: value\n  bot: value\n  enforcement_mode: value\n  signatures: value",
-          "example_command": "xcsh virtual create explain_log_record_w_a_f_event_details -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"action\": \"value\",\n    \"app_firewall\": \"value\",\n    \"bot\": \"value\",\n    \"enforcement_mode\": \"value\",\n    \"signatures\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/explain_log_record_w_a_f_event_detailses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "waf"
       },
@@ -4747,7 +4509,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for gen_dashboard_filterGenDashboardFilterResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  actions: value\n  links: value\n  summary: value",
-          "example_command": "xcsh virtual create gen_dashboard_filter_gen_dashboard_filter_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"actions\": \"value\",\n    \"links\": \"value\",\n    \"summary\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/gen_dashboard_filter_gen_dashboard_filter_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4766,7 +4529,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for listItem\nmetadata:\n  name: example\n  namespace: default\nspec:\n  link: value",
-          "example_command": "xcsh virtual create list_item -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"link\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/list_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4792,7 +4556,7 @@
             "maxLength": 26,
             "minLength": 15,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548581+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631882+00:00"
           },
           "title": {
             "type": "string",
@@ -4810,7 +4574,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548586+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631887+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4821,7 +4585,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for listList\nmetadata:\n  name: example\n  namespace: default\nspec:\n  item: value\n  title: value",
-          "example_command": "xcsh virtual create list_list -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"item\": \"value\",\n    \"title\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/list_lists\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4897,7 +4662,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for listListResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  external_links: value\n  items: value\n  summary: value",
-          "example_command": "xcsh virtual create list_list_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"external_links\": \"value\",\n    \"items\": \"value\",\n    \"summary\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/list_list_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4927,7 +4693,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for policyIPThreatCategory\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create policy_i_p_threat_category -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/policy_i_p_threat_categories\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4961,7 +4728,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548598+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631898+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4972,7 +4739,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for protobufAny\nmetadata:\n  name: example\n  namespace: default\nspec:\n  type_url: value\n  value: value",
-          "example_command": "xcsh virtual create protobuf_any -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"type_url\": \"value\",\n    \"value\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protobuf_anies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -4987,7 +4755,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaEmpty\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create schema_empty -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_empties\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5014,7 +4783,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaErrorCode\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create schema_error_code -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_error_codes\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5056,7 +4826,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaErrorType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  code: value\n  error_obj: value\n  message: value",
-          "example_command": "xcsh virtual create schema_error_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"code\": \"value\",\n    \"error_obj\": \"value\",\n    \"message\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_error_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5150,7 +4921,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for site_analysisSiteAnalysisResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  external_links: value\n  internal_links: value\n  overlay_content: value\n  summary: value\n  table_view: value",
-          "example_command": "xcsh virtual create site_analysis_site_analysis_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"external_links\": \"value\",\n    \"internal_links\": \"value\",\n    \"overlay_content\": \"value\",\n    \"summary\": \"value\",\n    \"table_view\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/site_analysis_site_analysis_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5180,7 +4952,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:45.548617+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:38.631917+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -5192,7 +4964,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for widgetCell\nmetadata:\n  name: example\n  namespace: default\nspec:\n  link: value\n  properties: value\n  value: value",
-          "example_command": "xcsh virtual create widget_cell -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"link\": \"value\",\n    \"properties\": \"value\",\n    \"value\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/widget_cells\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5227,7 +5000,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for widgetRow\nmetadata:\n  name: example\n  namespace: default\nspec:\n  cells: value",
-          "example_command": "xcsh virtual create widget_row -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"cells\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/widget_rows\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5286,7 +5060,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for widgetTable\nmetadata:\n  name: example\n  namespace: default\nspec:\n  field_properties: value\n  rows: value\n  widget_type: value",
-          "example_command": "xcsh virtual create widget_table -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"field_properties\": \"value\",\n    \"rows\": \"value\",\n    \"widget_type\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/widget_tables\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5352,7 +5127,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for widgetWidgetResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  item_links: value\n  items: value\n  summary: value",
-          "example_command": "xcsh virtual create widget_widget_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"item_links\": \"value\",\n    \"items\": \"value\",\n    \"summary\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/widget_widget_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5371,7 +5147,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for widgetWidgetView\nmetadata:\n  name: example\n  namespace: default\nspec:\n  item: value",
-          "example_command": "xcsh virtual create widget_widget_view -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"item\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/widget_widget_views\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5386,7 +5163,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for bfdpEnableFeatureRequest\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create bfdp_enable_feature_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/bfdp_enable_feature_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5401,7 +5179,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for bfdpEnableFeatureResponse\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create bfdp_enable_feature_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/bfdp_enable_feature_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5435,7 +5214,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for bfdpRefreshTokenRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  product_name: value",
-          "example_command": "xcsh virtual create bfdp_refresh_token_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"product_name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/bfdp_refresh_token_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "users"
       },
@@ -5469,7 +5249,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for bfdpRefreshTokenResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  result: value",
-          "example_command": "xcsh virtual create bfdp_refresh_token_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"result\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/bfdp_refresh_token_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "users"
       },
@@ -5503,7 +5284,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for subscriptionSubscribeRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  product_name: value",
-          "example_command": "xcsh virtual create subscription_subscribe_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"product_name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/subscription_subscribe_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "billing_and_usage"
       },
@@ -5587,7 +5369,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for subscriptionSubscribeResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  configured_tenant_id: value\n  pipeline_id: value\n  pipeline_name: value\n  token: value",
-          "example_command": "xcsh virtual create subscription_subscribe_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"configured_tenant_id\": \"value\",\n    \"pipeline_id\": \"value\",\n    \"pipeline_name\": \"value\",\n    \"token\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/subscription_subscribe_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "billing_and_usage"
       },
@@ -5621,7 +5404,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for subscriptionTokenRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  product_name: value",
-          "example_command": "xcsh virtual create subscription_token_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"product_name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/subscription_token_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "users"
       },
@@ -5655,7 +5439,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for subscriptionTokenResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  token: value",
-          "example_command": "xcsh virtual create subscription_token_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"token\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/subscription_token_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "users"
       },
@@ -5689,7 +5474,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for subscriptionUnsubscribeRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  product_name: value",
-          "example_command": "xcsh virtual create subscription_unsubscribe_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"product_name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/subscription_unsubscribe_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "billing_and_usage"
       },
@@ -5704,7 +5490,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for subscriptionUnsubscribeResponse\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create subscription_unsubscribe_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/subscription_unsubscribe_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "billing_and_usage"
       },
@@ -5753,7 +5540,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for giaAllocateIPRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  context: value\n  use_v6_range: value",
-          "example_command": "xcsh virtual create gia_allocate_i_p_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"context\": \"value\",\n    \"use_v6_range\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/gia_allocate_i_p_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5803,7 +5591,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for giaAllocateIPResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  error_message: value\n  ip: value",
-          "example_command": "xcsh virtual create gia_allocate_i_p_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"error_message\": \"value\",\n    \"ip\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/gia_allocate_i_p_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5860,7 +5649,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for giaDeallocateIPRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  context: value\n  ip: value",
-          "example_command": "xcsh virtual create gia_deallocate_i_p_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"context\": \"value\",\n    \"ip\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/gia_deallocate_i_p_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -5894,7 +5684,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for giaDeallocateIPResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  message: value",
-          "example_command": "xcsh virtual create gia_deallocate_i_p_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"message\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/gia_deallocate_i_p_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       }

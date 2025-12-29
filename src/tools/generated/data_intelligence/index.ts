@@ -95,6 +95,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
       required_fields: ["path.dataset"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-dataset-list",
@@ -171,6 +172,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-flowlabel-list",
@@ -261,6 +263,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-init-request-create",
@@ -343,6 +346,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
         creates: ["init-request"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-receiver-create",
@@ -440,6 +444,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
         creates: ["receiver"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-receiver-delete",
@@ -546,6 +551,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
         deletes: ["receiver", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-receiver-get",
@@ -670,6 +676,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-receiver-list",
@@ -800,6 +807,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-receiver-update",
@@ -909,6 +917,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
         modifies: ["receiver"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-statu-create",
@@ -1017,6 +1026,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
         creates: ["statu"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-subscribe-create",
@@ -1099,6 +1109,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
         creates: ["subscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-suggest-value-create",
@@ -1196,6 +1207,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
         creates: ["suggest-value"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-summary-create",
@@ -1292,6 +1304,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
         creates: ["summary"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-test-create",
@@ -1400,6 +1413,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
         creates: ["test"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dataintelligence-unsubscribe-create",
@@ -1482,6 +1496,7 @@ export const data_intelligenceTools: ParsedOperation[] = [
         creates: ["unsubscribe"],
       },
     },
+    curlExample: null,
   },
 ];
 

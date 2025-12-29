@@ -127,6 +127,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certified_hardwares" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-certified-hardware-list",
@@ -257,6 +259,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/certified_hardwares" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-create",
@@ -354,6 +358,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         creates: ["cloud-connect"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_connects" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-delete",
@@ -460,6 +466,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         deletes: ["cloud-connect", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_connects" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-get",
@@ -584,6 +592,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_connects" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-list",
@@ -714,6 +724,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_connects" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-reapply-vpc-attachment-create",
@@ -799,6 +811,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         creates: ["cloud-connect-reapply-vpc-attachment"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-update",
@@ -908,6 +921,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         modifies: ["cloud-connect"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_connects" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-credentials-create",
@@ -1008,6 +1023,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         creates: ["cloud-credentials"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-credentials-delete",
@@ -1114,6 +1130,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         deletes: ["cloud-credentials", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-credentials-get",
@@ -1238,6 +1255,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-credentials-list",
@@ -1368,6 +1386,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-credentials-update",
@@ -1477,6 +1496,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         modifies: ["cloud-credentials"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-elastic-ip-create",
@@ -1578,6 +1598,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         creates: ["cloud-elastic-ip"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_elastic_ips" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-elastic-ip-delete",
@@ -1684,6 +1706,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         deletes: ["cloud-elastic-ip", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_elastic_ips" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-elastic-ip-get",
@@ -1809,6 +1833,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_elastic_ips" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-elastic-ip-list",
@@ -1939,6 +1965,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_elastic_ips" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-elastic-ip-update",
@@ -2048,6 +2076,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         modifies: ["cloud-elastic-ip"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_elastic_ips" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-link-create",
@@ -2145,6 +2175,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         creates: ["cloud-link"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_links" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-link-delete",
@@ -2251,6 +2283,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         deletes: ["cloud-link", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_links" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-link-get",
@@ -2375,6 +2409,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_links" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-link-list",
@@ -2505,6 +2541,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_links" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-link-update",
@@ -2614,6 +2652,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         modifies: ["cloud-link"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_links" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-region-get",
@@ -2737,6 +2777,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_regions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-region-list",
@@ -2867,6 +2909,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_regions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-region-update",
@@ -2976,6 +3020,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         modifies: ["cloud-region"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cloud_regions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-discover-vpc-create",
@@ -3059,6 +3105,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         creates: ["discover-vpc"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-edge-credential-create",
@@ -3141,6 +3188,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         creates: ["edge-credential"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-edge-list-list",
@@ -3217,6 +3265,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-force-delete-create",
@@ -3313,6 +3362,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         creates: ["force-delete"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-metric-create",
@@ -3395,6 +3445,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         creates: ["metric"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-reapply-config-create",
@@ -3491,6 +3542,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         creates: ["reapply-config"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-segment-metric-create",
@@ -3573,6 +3625,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
         creates: ["segment-metric"],
       },
     },
+    curlExample: null,
   },
 ];
 

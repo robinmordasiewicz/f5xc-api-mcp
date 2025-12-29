@@ -85,6 +85,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["all-ns-service"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-app-type-list",
@@ -204,6 +205,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-connectivity-create",
@@ -300,6 +302,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["connectivity"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-create-http-load-balancer-create",
@@ -413,6 +416,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["create-http-load-balancer"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-create-tcp-load-balancer-create",
@@ -526,6 +530,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["create-tcp-load-balancer"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-disable-visibility-create",
@@ -639,6 +644,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["disable-visibility"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-discovered-service-get",
@@ -760,6 +766,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-discovered-service-list",
@@ -877,6 +884,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-edge-create",
@@ -974,6 +982,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["edge"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-enable-visibility-create",
@@ -1087,6 +1096,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["enable-visibility"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-flow-collection-create",
@@ -1167,6 +1177,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["flow-collection"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-health-statu-get",
@@ -1270,6 +1281,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-instance-create",
@@ -1367,6 +1379,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["instance"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-lb-cache-content-create",
@@ -1467,6 +1480,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["lb-cache-content"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-node-create",
@@ -1564,6 +1578,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["node"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-service-create",
@@ -1659,6 +1674,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["service"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-status-at-site-get",
@@ -1799,6 +1815,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       required_fields: ["path.kind", "path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-subscribe-create",
@@ -1881,6 +1898,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["subscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-subscription-statu-list",
@@ -1957,6 +1975,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-suggest-value-create",
@@ -2054,6 +2073,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["suggest-value"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-top-flow-anomalie-create",
@@ -2139,6 +2159,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["top-flow-anomalie"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-top-talker-create",
@@ -2219,6 +2240,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["top-talker"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-unsubscribe-create",
@@ -2301,6 +2323,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         creates: ["unsubscribe"],
       },
     },
+    curlExample: null,
   },
 ];
 

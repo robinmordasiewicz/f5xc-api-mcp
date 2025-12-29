@@ -90,6 +90,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["clone-from-dns-domain"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-compliance-checks-create",
@@ -191,6 +192,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["dns-compliance-checks"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-compliance-checks-delete",
@@ -297,6 +299,7 @@ export const dnsTools: ParsedOperation[] = [
         deletes: ["dns-compliance-checks", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-compliance-checks-get",
@@ -421,6 +424,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-compliance-checks-list",
@@ -551,6 +555,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-compliance-checks-update",
@@ -660,6 +665,7 @@ export const dnsTools: ParsedOperation[] = [
         modifies: ["dns-compliance-checks"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-domain-create",
@@ -758,6 +764,8 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["dns-domain"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dns_domains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-dns-dns-domain-delete",
@@ -864,6 +872,8 @@ export const dnsTools: ParsedOperation[] = [
         deletes: ["dns-domain", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dns_domains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-dns-dns-domain-get",
@@ -988,6 +998,8 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dns_domains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-dns-dns-domain-list",
@@ -1118,6 +1130,8 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dns_domains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-dns-dns-domain-update",
@@ -1227,6 +1241,8 @@ export const dnsTools: ParsedOperation[] = [
         modifies: ["dns-domain"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dns_domains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-dns-dns-lb-health-check-create",
@@ -1328,6 +1344,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["dns-lb-health-check"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-health-check-delete",
@@ -1434,6 +1451,7 @@ export const dnsTools: ParsedOperation[] = [
         deletes: ["dns-lb-health-check", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-health-check-get",
@@ -1558,6 +1576,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-health-check-list",
@@ -1688,6 +1707,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-health-check-update",
@@ -1797,6 +1817,7 @@ export const dnsTools: ParsedOperation[] = [
         modifies: ["dns-lb-health-check"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-create",
@@ -1895,6 +1916,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["dns-lb-pool"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-delete",
@@ -2001,6 +2023,7 @@ export const dnsTools: ParsedOperation[] = [
         deletes: ["dns-lb-pool", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-get",
@@ -2125,6 +2148,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-list",
@@ -2255,6 +2279,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-update",
@@ -2364,6 +2389,7 @@ export const dnsTools: ParsedOperation[] = [
         modifies: ["dns-lb-pool"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-create",
@@ -2465,6 +2491,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["dns-load-balancer"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-delete",
@@ -2571,6 +2598,7 @@ export const dnsTools: ParsedOperation[] = [
         deletes: ["dns-load-balancer", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-get",
@@ -2695,6 +2723,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-list",
@@ -2825,6 +2854,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-update",
@@ -2934,6 +2964,7 @@ export const dnsTools: ParsedOperation[] = [
         modifies: ["dns-load-balancer"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-zone-create",
@@ -3031,6 +3062,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["dns-zone"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-zone-delete",
@@ -3137,6 +3169,7 @@ export const dnsTools: ParsedOperation[] = [
         deletes: ["dns-zone", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-zone-get",
@@ -3261,6 +3294,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-zone-list",
@@ -3391,6 +3425,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-dns-zone-update",
@@ -3500,6 +3535,7 @@ export const dnsTools: ParsedOperation[] = [
         modifies: ["dns-zone"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-export-list",
@@ -3602,6 +3638,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.dns_zone_name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-health-statu-get",
@@ -3704,6 +3741,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-health-statu-list",
@@ -3794,6 +3832,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-health-status-change-event-list",
@@ -3933,6 +3972,7 @@ export const dnsTools: ParsedOperation[] = [
       ],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-import-axfr-create",
@@ -4015,6 +4055,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["import-axfr"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-import-bind-create-create",
@@ -4100,6 +4141,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["import-bind-create"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-import-bind-validate-create",
@@ -4185,6 +4227,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["import-bind-validate"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-import-create",
@@ -4267,6 +4310,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["import"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-local-zone-file-list",
@@ -4369,6 +4413,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.dns_zone_name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-metric-create",
@@ -4465,6 +4510,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["metric"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-pool-members-health-statu-list",
@@ -4555,6 +4601,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-record-name-delete",
@@ -4676,6 +4723,7 @@ export const dnsTools: ParsedOperation[] = [
         deletes: ["rrset", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-record-name-list",
@@ -4793,6 +4841,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.dns_zone_name", "path.group_name", "path.record_name", "path.type"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-record-name-update",
@@ -4916,6 +4965,7 @@ export const dnsTools: ParsedOperation[] = [
         modifies: ["rrset"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-remote-zone-file-list",
@@ -5018,6 +5068,7 @@ export const dnsTools: ParsedOperation[] = [
       required_fields: ["path.dns_zone_name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-request-log-create",
@@ -5114,6 +5165,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["request-log"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-rrset-create",
@@ -5227,6 +5279,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["rrset"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-subscribe-create",
@@ -5309,6 +5362,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["subscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-suggest-value-create",
@@ -5392,6 +5446,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["suggest-value"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-unsubscribe-create",
@@ -5474,6 +5529,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["unsubscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-dns-verify-create",
@@ -5582,6 +5638,7 @@ export const dnsTools: ParsedOperation[] = [
         creates: ["verify"],
       },
     },
+    curlExample: null,
   },
 ];
 

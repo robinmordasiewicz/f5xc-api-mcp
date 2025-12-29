@@ -102,6 +102,8 @@ export const apiTools: ParsedOperation[] = [
         creates: ["api-crawler"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_crawlers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-crawler-delete",
@@ -208,6 +210,8 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["api-crawler", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_crawlers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-crawler-get",
@@ -332,6 +336,8 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_crawlers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-crawler-list",
@@ -462,6 +468,8 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_crawlers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-crawler-update",
@@ -571,6 +579,8 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["api-crawler"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_crawlers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-definition-create",
@@ -668,6 +678,8 @@ export const apiTools: ParsedOperation[] = [
         creates: ["api-definition"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_definitions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-definition-delete",
@@ -774,6 +786,8 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["api-definition", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_definitions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-definition-get",
@@ -898,6 +912,8 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_definitions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-definition-list",
@@ -1028,6 +1044,8 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_definitions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-definition-update",
@@ -1137,6 +1155,8 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["api-definition"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_definitions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-definitions-without-shared-list",
@@ -1230,6 +1250,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-api-discovery-create",
@@ -1328,6 +1349,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["api-discovery"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-api-discovery-delete",
@@ -1434,6 +1456,7 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["api-discovery", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-api-discovery-get",
@@ -1559,6 +1582,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-api-discovery-list",
@@ -1689,6 +1713,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-api-discovery-update",
@@ -1799,6 +1824,7 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["api-discovery"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-api-endpoint-protection-create",
@@ -1899,6 +1925,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["api-endpoint-protection"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-api-group-element-get",
@@ -2022,6 +2049,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-api-group-element-list",
@@ -2152,6 +2180,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-api-group-get",
@@ -2274,6 +2303,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-api-group-list",
@@ -2404,6 +2434,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-api-testing-create",
@@ -2501,6 +2532,8 @@ export const apiTools: ParsedOperation[] = [
         creates: ["api-testing"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_testings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-testing-delete",
@@ -2607,6 +2640,8 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["api-testing", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_testings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-testing-get",
@@ -2731,6 +2766,8 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_testings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-testing-list",
@@ -2861,6 +2898,8 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_testings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-api-testing-update",
@@ -2970,6 +3009,8 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["api-testing"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_testings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-app-api-group-create",
@@ -3068,6 +3109,8 @@ export const apiTools: ParsedOperation[] = [
         creates: ["app-api-group"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_api_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-app-api-group-delete",
@@ -3174,6 +3217,8 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["app-api-group", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_api_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-app-api-group-get",
@@ -3299,6 +3344,8 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_api_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-app-api-group-list",
@@ -3429,6 +3476,8 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_api_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-app-api-group-update",
@@ -3539,6 +3588,8 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["app-api-group"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_api_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-code-base-integration-create",
@@ -3639,6 +3690,8 @@ export const apiTools: ParsedOperation[] = [
         creates: ["code-base-integration"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/code_base_integrations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-code-base-integration-delete",
@@ -3745,6 +3798,8 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["code-base-integration", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/code_base_integrations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-code-base-integration-get",
@@ -3869,6 +3924,8 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/code_base_integrations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-code-base-integration-list",
@@ -3999,6 +4056,8 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/code_base_integrations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-code-base-integration-update",
@@ -4108,6 +4167,8 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["code-base-integration"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/code_base_integrations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-api-data-exposure-create",
@@ -4205,6 +4266,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["data-exposure"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-discovery-create",
@@ -4302,6 +4364,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["discovery"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-discovery-delete",
@@ -4408,6 +4471,7 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["discovery", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-discovery-get",
@@ -4532,6 +4596,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-discovery-list",
@@ -4662,6 +4727,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-discovery-update",
@@ -4771,6 +4837,7 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["discovery"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-download-certificate-create",
@@ -4884,6 +4951,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["download-certificate"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-evaluate-create",
@@ -4981,6 +5049,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["evaluate"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-loadbalancer-get",
@@ -5084,6 +5153,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-mark-as-non-api-create",
@@ -5190,6 +5260,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["mark-as-non-api"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-move-to-inventory-create",
@@ -5299,6 +5370,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["move-to-inventory"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-oas-validation-create",
@@ -5396,6 +5468,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["oas-validation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-rate-limit-create",
@@ -5493,6 +5566,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["rate-limit"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-remove-from-inventory-create",
@@ -5602,6 +5676,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["remove-from-inventory"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-stat-create",
@@ -5699,6 +5774,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["stat"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-api-unmark-as-non-api-create",
@@ -5808,6 +5884,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["unmark-as-non-api"],
       },
     },
+    curlExample: null,
   },
 ];
 

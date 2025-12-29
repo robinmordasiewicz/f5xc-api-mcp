@@ -103,6 +103,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["access-count"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-aggregation-create",
@@ -200,6 +201,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["aggregation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-audit-log-create",
@@ -297,6 +299,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["audit-log"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-decrypt-secret-create",
@@ -380,6 +383,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["decrypt-secret"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-get-policy-document-get",
@@ -483,6 +487,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-get-public-key-list",
@@ -575,6 +580,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-list-policy-list",
@@ -677,6 +683,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: ["path.namespace", "path.policy_state"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-process-policy-information-create",
@@ -763,6 +770,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["process-policy-information"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-recover-create",
@@ -871,6 +879,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["recover"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-scroll-create",
@@ -969,6 +978,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["scroll"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-scroll-list",
@@ -1074,6 +1084,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-management-access-create",
@@ -1175,6 +1186,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["secret-management-access"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-management-access-delete",
@@ -1281,6 +1293,7 @@ export const blindfoldTools: ParsedOperation[] = [
         deletes: ["secret-management-access", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-management-access-get",
@@ -1406,6 +1419,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-management-access-list",
@@ -1536,6 +1550,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-management-access-update",
@@ -1646,6 +1661,7 @@ export const blindfoldTools: ParsedOperation[] = [
         modifies: ["secret-management-access"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-create",
@@ -1744,6 +1760,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["secret-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-delete",
@@ -1850,6 +1867,7 @@ export const blindfoldTools: ParsedOperation[] = [
         deletes: ["secret-policy", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-get",
@@ -1975,6 +1993,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-list",
@@ -2105,6 +2124,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-rule-create",
@@ -2206,6 +2226,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["secret-policy-rule"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-rule-delete",
@@ -2312,6 +2333,7 @@ export const blindfoldTools: ParsedOperation[] = [
         deletes: ["secret-policy-rule", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-rule-get",
@@ -2437,6 +2459,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-rule-list",
@@ -2567,6 +2590,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-rule-update",
@@ -2677,6 +2701,7 @@ export const blindfoldTools: ParsedOperation[] = [
         modifies: ["secret-policy-rule"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-update",
@@ -2787,6 +2812,7 @@ export const blindfoldTools: ParsedOperation[] = [
         modifies: ["secret-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-softdelete-create",
@@ -2895,6 +2921,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["softdelete"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-voltshare-admin-policy-create",
@@ -2996,6 +3023,7 @@ export const blindfoldTools: ParsedOperation[] = [
         creates: ["voltshare-admin-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-voltshare-admin-policy-delete",
@@ -3102,6 +3130,7 @@ export const blindfoldTools: ParsedOperation[] = [
         deletes: ["voltshare-admin-policy", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-voltshare-admin-policy-get",
@@ -3227,6 +3256,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-voltshare-admin-policy-list",
@@ -3357,6 +3387,7 @@ export const blindfoldTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-blindfold-voltshare-admin-policy-update",
@@ -3467,6 +3498,7 @@ export const blindfoldTools: ParsedOperation[] = [
         modifies: ["voltshare-admin-policy"],
       },
     },
+    curlExample: null,
   },
 ];
 

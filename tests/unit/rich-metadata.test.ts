@@ -334,6 +334,44 @@ describe("Rich Metadata Extraction", () => {
       }
     });
   });
+
+  describe("curlExample (from x-ves-minimum-configuration)", () => {
+    it("should have valid curl example string when present", () => {
+      const toolsWithCurlExample = findToolsWithProperty(
+        "curlExample",
+        (example) => example !== null
+      );
+
+      for (const tool of toolsWithCurlExample) {
+        expect(typeof tool.curlExample).toBe("string");
+        expect(tool.curlExample!.length).toBeGreaterThan(0);
+      }
+    });
+
+    it("should contain proper curl command structure", () => {
+      const toolsWithCurlExample = findToolsWithProperty(
+        "curlExample",
+        (example) => example !== null
+      );
+
+      for (const tool of toolsWithCurlExample) {
+        // Curl examples should start with 'curl'
+        expect(tool.curlExample).toMatch(/^curl\s/);
+        // Should contain API URL placeholder
+        expect(tool.curlExample).toContain("$F5XC_API_URL");
+        // Should contain authorization header
+        expect(tool.curlExample).toContain("Authorization");
+      }
+    });
+
+    it("should have tools with curl example from fixtures if available", () => {
+      if (RICH_METADATA_SAMPLES.withCurlExample) {
+        const tool = getToolByName(RICH_METADATA_SAMPLES.withCurlExample.toolName);
+        expect(tool).toBeDefined();
+        expect(tool!.curlExample).not.toBeNull();
+      }
+    });
+  });
 });
 
 describe("Rich Metadata Coverage Statistics", () => {
@@ -350,6 +388,7 @@ describe("Rich Metadata Coverage Statistics", () => {
       parameterExamples: allTools.filter((t) => Object.keys(t.parameterExamples).length > 0).length,
       validationRules: allTools.filter((t) => Object.keys(t.validationRules).length > 0).length,
       operationMetadata: allTools.filter((t) => t.operationMetadata !== null).length,
+      curlExample: allTools.filter((t) => t.curlExample !== null).length,
     };
 
     console.log(`\nRich Metadata Coverage (${totalTools} total tools):`);

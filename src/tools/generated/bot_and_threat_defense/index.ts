@@ -105,6 +105,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         creates: ["bot-defense-app-infrastructure"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bot_defense_app_infrastructures" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-delete",
@@ -211,6 +213,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         deletes: ["bot-defense-app-infrastructure", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bot_defense_app_infrastructures" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-get",
@@ -334,6 +338,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bot_defense_app_infrastructures" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-list",
@@ -464,6 +470,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bot_defense_app_infrastructures" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-update",
@@ -573,6 +581,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         modifies: ["bot-defense-app-infrastructure"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bot_defense_app_infrastructures" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-botandthreatdefense-preauth-create",
@@ -655,6 +665,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         creates: ["preauth"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-provision-create",
@@ -737,6 +748,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         creates: ["provision"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-shape-bot-defense-instance-get",
@@ -858,6 +870,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/shape_bot_defense_instances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-botandthreatdefense-shape-bot-defense-instance-list",
@@ -988,6 +1002,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/shape_bot_defense_instances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-create",
@@ -1086,6 +1102,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         creates: ["tpm-api-key"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-get",
@@ -1210,6 +1227,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-list",
@@ -1340,6 +1358,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-update",
@@ -1450,6 +1469,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         modifies: ["tpm-api-key"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-create",
@@ -1548,6 +1568,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         creates: ["tpm-category"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-get",
@@ -1672,6 +1693,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-list",
@@ -1802,6 +1824,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-update",
@@ -1911,6 +1934,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         modifies: ["tpm-category"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-manager-create",
@@ -2008,6 +2032,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         creates: ["tpm-manager"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-manager-get",
@@ -2131,6 +2156,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-manager-list",
@@ -2261,6 +2287,7 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
 ];
 

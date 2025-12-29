@@ -81,6 +81,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-alert-create",
@@ -178,6 +179,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["alert"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-alert-list",
@@ -280,6 +282,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.alert_id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-annotation-list",
@@ -382,6 +385,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.mitigation_id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-attachment-list",
@@ -485,6 +489,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.event_id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-bgp-peer-statu-create",
@@ -581,6 +586,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["bgp-peer-statu"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-detail-create",
@@ -689,6 +695,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["detail"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-detail-delete",
@@ -807,6 +814,7 @@ export const ddosTools: ParsedOperation[] = [
         deletes: ["detail", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-detail-list",
@@ -910,6 +918,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.event_id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-detail-update",
@@ -1030,6 +1039,7 @@ export const ddosTools: ParsedOperation[] = [
         modifies: ["detail"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-event-create",
@@ -1127,6 +1137,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["event"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-event-list",
@@ -1230,6 +1241,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.event_id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-event-update",
@@ -1339,6 +1351,7 @@ export const ddosTools: ParsedOperation[] = [
         modifies: ["event"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-events-summary-list",
@@ -1443,6 +1456,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-create",
@@ -1543,6 +1557,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["infraprotect-asn"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-delete",
@@ -1649,6 +1664,7 @@ export const ddosTools: ParsedOperation[] = [
         deletes: ["infraprotect-asn", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-get",
@@ -1773,6 +1789,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-list",
@@ -1903,6 +1920,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-prefix-create",
@@ -2003,6 +2021,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["infraprotect-asn-prefix"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-prefix-delete",
@@ -2109,6 +2128,7 @@ export const ddosTools: ParsedOperation[] = [
         deletes: ["infraprotect-asn-prefix", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-prefix-get",
@@ -2233,6 +2253,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-prefix-list",
@@ -2363,6 +2384,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-prefix-update",
@@ -2472,6 +2494,7 @@ export const ddosTools: ParsedOperation[] = [
         modifies: ["infraprotect-asn-prefix"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-update",
@@ -2581,6 +2604,7 @@ export const ddosTools: ParsedOperation[] = [
         modifies: ["infraprotect-asn"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-deny-list-rule-create",
@@ -2681,6 +2705,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["infraprotect-deny-list-rule"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-deny-list-rule-delete",
@@ -2787,6 +2812,7 @@ export const ddosTools: ParsedOperation[] = [
         deletes: ["infraprotect-deny-list-rule", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-deny-list-rule-get",
@@ -2911,6 +2937,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-deny-list-rule-list",
@@ -3041,6 +3068,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-deny-list-rule-update",
@@ -3150,6 +3178,7 @@ export const ddosTools: ParsedOperation[] = [
         modifies: ["infraprotect-deny-list-rule"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-create",
@@ -3250,6 +3279,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["infraprotect-firewall-rule"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-delete",
@@ -3356,6 +3386,7 @@ export const ddosTools: ParsedOperation[] = [
         deletes: ["infraprotect-firewall-rule", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-get",
@@ -3480,6 +3511,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-group-create",
@@ -3580,6 +3612,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["infraprotect-firewall-rule-group"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-group-delete",
@@ -3686,6 +3719,7 @@ export const ddosTools: ParsedOperation[] = [
         deletes: ["infraprotect-firewall-rule-group", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-group-get",
@@ -3810,6 +3844,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-group-list",
@@ -3941,6 +3976,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-group-update",
@@ -4050,6 +4086,7 @@ export const ddosTools: ParsedOperation[] = [
         modifies: ["infraprotect-firewall-rule-group"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-list",
@@ -4180,6 +4217,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-update",
@@ -4289,6 +4327,7 @@ export const ddosTools: ParsedOperation[] = [
         modifies: ["infraprotect-firewall-rule"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-ruleset-get",
@@ -4412,6 +4451,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-ruleset-list",
@@ -4542,6 +4582,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-ruleset-update",
@@ -4651,6 +4692,7 @@ export const ddosTools: ParsedOperation[] = [
         modifies: ["infraprotect-firewall-ruleset"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-information-get",
@@ -4773,6 +4815,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-internet-prefix-advertisement-create",
@@ -4873,6 +4916,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["infraprotect-internet-prefix-advertisement"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-internet-prefix-advertisement-delete",
@@ -4979,6 +5023,7 @@ export const ddosTools: ParsedOperation[] = [
         deletes: ["infraprotect-internet-prefix-advertisement", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-internet-prefix-advertisement-get",
@@ -5103,6 +5148,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-internet-prefix-advertisement-list",
@@ -5234,6 +5280,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-internet-prefix-advertisement-update",
@@ -5343,6 +5390,7 @@ export const ddosTools: ParsedOperation[] = [
         modifies: ["infraprotect-internet-prefix-advertisement"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-tunnel-create",
@@ -5443,6 +5491,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["infraprotect-tunnel"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-tunnel-delete",
@@ -5549,6 +5598,7 @@ export const ddosTools: ParsedOperation[] = [
         deletes: ["infraprotect-tunnel", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-tunnel-get",
@@ -5673,6 +5723,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-tunnel-list",
@@ -5803,6 +5854,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-tunnel-update",
@@ -5912,6 +5964,7 @@ export const ddosTools: ParsedOperation[] = [
         modifies: ["infraprotect-tunnel"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-ip-list",
@@ -6015,6 +6068,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.mitigation_id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-mitigation-annotation-list",
@@ -6117,6 +6171,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.event_id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-mitigation-create",
@@ -6213,6 +6268,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["mitigation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-mitigation-list",
@@ -6315,6 +6371,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.mitigation_id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-network-list",
@@ -6406,6 +6463,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-report-create",
@@ -6503,6 +6561,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["report"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-report-list",
@@ -6605,6 +6664,7 @@ export const ddosTools: ParsedOperation[] = [
       required_fields: ["path.namespace", "path.report_id"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-suggest-value-create",
@@ -6702,6 +6762,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["suggest-value"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-to-event-update",
@@ -6811,6 +6872,7 @@ export const ddosTools: ParsedOperation[] = [
         modifies: ["to-event"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-transit-usage-create",
@@ -6907,6 +6969,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["transit-usage"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-update-advertisement-statu-create",
@@ -7008,6 +7071,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["update-advertisement-statu"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-update-asn-prefix-irr-override-create",
@@ -7108,6 +7172,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["update-asn-prefix-irr-override"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-update-asn-prefix-review-statu-create",
@@ -7208,6 +7273,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["update-asn-prefix-review-statu"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-update-asn-review-statu-create",
@@ -7308,6 +7374,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["update-asn-review-statu"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-ddos-update-tunnel-statu-create",
@@ -7408,6 +7475,7 @@ export const ddosTools: ParsedOperation[] = [
         creates: ["update-tunnel-statu"],
       },
     },
+    curlExample: null,
   },
 ];
 

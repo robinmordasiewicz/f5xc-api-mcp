@@ -3,7 +3,7 @@
   "info": {
     "title": "F5 XC Object Storage API",
     "description": "Manage versioned object storage for mobile application components and platform integrations. Upload and retrieve mobile app shield configurations, SDK integrations, and custom artifacts organized by namespace and object type. Support for multiple versions of each object enables rollback and version-specific deployments. Presigned URLs provide secure, time-limited access for direct object downloads. Object types include mobile-app-shield for application protection, mobile-integrator for...",
-    "version": "1.0.65",
+    "version": "1.0.66",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -245,13 +245,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all mobile-app-shields",
-            "command": "f5xcctl object_store mobile-app-shield list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all mobile-app-shields",
           "required_fields": [
@@ -303,14 +296,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all mobile-app-shields",
-              "command": "f5xcctl object_store mobile-app-shield list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Stored Object.",
@@ -482,13 +468,6 @@
           "path.version"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific mobile-app-shield",
-            "command": "f5xcctl object_store mobile-app-shield get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific mobile-app-shield",
           "required_fields": [
@@ -542,14 +521,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific mobile-app-shield",
-              "command": "f5xcctl object_store mobile-app-shield get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Stored Object.",
@@ -734,13 +706,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all mobile-integrators",
-            "command": "f5xcctl object_store mobile-integrator list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all mobile-integrators",
           "required_fields": [
@@ -792,14 +757,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all mobile-integrators",
-              "command": "f5xcctl object_store mobile-integrator list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Stored Object.",
@@ -971,13 +929,6 @@
           "path.version"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific mobile-integrator",
-            "command": "f5xcctl object_store mobile-integrator get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific mobile-integrator",
           "required_fields": [
@@ -1031,14 +982,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific mobile-integrator",
-              "command": "f5xcctl object_store mobile-integrator get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Stored Object.",
@@ -1224,13 +1168,6 @@
           "path.object_type"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all stored-objects",
-            "command": "f5xcctl object_store stored-object list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all stored-objects",
           "required_fields": [
@@ -1283,14 +1220,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "List all stored-objects",
-              "command": "f5xcctl object_store stored-object list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Stored Object.",
@@ -1481,14 +1411,6 @@
             "contained_resources"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Delete stored-object",
-            "command": "f5xcctl object_store stored-object delete {name} --namespace {namespace}",
-            "use_case": "delete",
-            "warning": "Permanent operation - cannot be undone"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Delete stored-object",
           "required_fields": [
@@ -1550,15 +1472,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "Delete stored-object",
-              "command": "f5xcctl object_store stored-object delete {name} --namespace {namespace}",
-              "use_case": "delete",
-              "warning": "Permanent operation - cannot be undone"
-            }
-          ]
+          }
         }
       },
       "put": {
@@ -1729,13 +1643,6 @@
             "stored-object"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Update stored-object",
-            "command": "f5xcctl object_store stored-object update {name} --namespace {namespace} -f {file}.yaml",
-            "use_case": "update"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Replace existing stored-object",
           "required_fields": [
@@ -1795,14 +1702,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Update stored-object",
-              "command": "f5xcctl object_store stored-object update {name} --namespace {namespace} -f {file}.yaml",
-              "use_case": "update"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Stored Object.",
@@ -1975,13 +1875,6 @@
           "path.version"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific stored-object",
-            "command": "f5xcctl object_store stored-object get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific stored-object",
           "required_fields": [
@@ -2036,14 +1929,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific stored-object",
-              "command": "f5xcctl object_store stored-object get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "delete": {
@@ -2230,14 +2116,6 @@
             "contained_resources"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Delete stored-object",
-            "command": "f5xcctl object_store stored-object delete {name} --namespace {namespace}",
-            "use_case": "delete",
-            "warning": "Permanent operation - cannot be undone"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Delete stored-object",
           "required_fields": [
@@ -2300,15 +2178,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "Delete stored-object",
-              "command": "f5xcctl object_store stored-object delete {name} --namespace {namespace}",
-              "use_case": "delete",
-              "warning": "Permanent operation - cannot be undone"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "Stored Object.",
@@ -2337,7 +2207,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaEmpty\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create schema_empty -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_empties\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -2366,7 +2237,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaHttpMethod\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create schema_http_method -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_http_methods\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -2447,7 +2319,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:23:03.896932+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:56.894021+00:00"
           },
           "mobile_app_shield": {
             "$ref": "#/components/schemas/stored_objectMobileAppShieldAttributes"
@@ -2483,8 +2355,6 @@
             "ves.io.schema.rules.string.max_len": "512",
             "ves.io.schema.rules.string.min_len": "1",
             "ves.io.schema.rules.string.ves_object_name": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2493,7 +2363,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:23:03.896942+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:56.894032+00:00"
           },
           "namespace": {
             "type": "string",
@@ -2511,9 +2381,6 @@
             "minLength": 0,
             "maxLength": 6,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2522,7 +2389,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:23:03.896948+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:56.894037+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -2592,7 +2459,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectCreateObjectRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  bytes_value: value\n  content_format: value\n  description: value\n  mobile_app_shield: value\n  mobile_integrator: value",
-          "example_command": "xcsh virtual create stored_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"bytes_value\": \"value\",\n    \"content_format\": \"value\",\n    \"description\": \"value\",\n    \"mobile_app_shield\": \"value\",\n    \"mobile_integrator\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -2627,7 +2495,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectCreateObjectResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  no_additional_info: value\n  presigned_url: value\n  status: value",
-          "example_command": "xcsh virtual create stored_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"no_additional_info\": \"value\",\n    \"presigned_url\": \"value\",\n    \"status\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -2662,7 +2531,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectDeleteObjectResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  deleted_objects: value",
-          "example_command": "xcsh virtual create stored_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"deleted_objects\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -2753,7 +2623,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectGetObjectResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  bytes_value: value\n  content_format: value\n  presigned_url: value\n  string_value: value",
-          "example_command": "xcsh virtual create stored_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"bytes_value\": \"value\",\n    \"content_format\": \"value\",\n    \"presigned_url\": \"value\",\n    \"string_value\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -2782,8 +2653,6 @@
             "x-ves-example": "example-resource",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2792,7 +2661,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:23:03.896975+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:56.894066+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -2814,7 +2683,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:23:03.896981+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:56.894072+00:00"
           },
           "versions": {
             "type": "array",
@@ -2845,7 +2714,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectListItemDescriptor\nmetadata:\n  name: example\n  namespace: default\nspec:\n  mobile_app_shield: value\n  mobile_integrator: value\n  mobile_sdk: value\n  name: value\n  no_attributes: value",
-          "example_command": "xcsh virtual create stored_object_list_item_descriptor -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"mobile_app_shield\": \"value\",\n    \"mobile_integrator\": \"value\",\n    \"mobile_sdk\": \"value\",\n    \"name\": \"value\",\n    \"no_attributes\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_list_item_descriptors\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -2879,7 +2749,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectListObjectsResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  items: value",
-          "example_command": "xcsh virtual create stored_object_list_objects_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"items\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_list_objects_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -2927,7 +2798,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectMobileAppShieldAttributes\nmetadata:\n  name: example\n  namespace: default\nspec:\n  os_type: value\n  release_version: value",
-          "example_command": "xcsh virtual create stored_object_mobile_app_shield_attributes -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"os_type\": \"value\",\n    \"release_version\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_mobile_app_shield_attributeses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -2975,7 +2847,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectMobileIntegratorAttributes\nmetadata:\n  name: example\n  namespace: default\nspec:\n  os_type: value\n  release_version: value",
-          "example_command": "xcsh virtual create stored_object_mobile_integrator_attributes -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"os_type\": \"value\",\n    \"release_version\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_mobile_integrator_attributeses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -3013,7 +2886,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectMobileSDKAttributes\nmetadata:\n  name: example\n  namespace: default\nspec:\n  os_type: value\n  release_version: value",
-          "example_command": "xcsh virtual create stored_object_mobile_s_d_k_attributes -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"os_type\": \"value\",\n    \"release_version\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_mobile_s_d_k_attributeses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -3033,7 +2907,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectOSType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create stored_object_o_s_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_o_s_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -3056,7 +2931,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectPreSignedUrl\nmetadata:\n  name: example\n  namespace: default\nspec:\n  aws: value",
-          "example_command": "xcsh virtual create stored_object_pre_signed_url -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"aws\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_pre_signed_urls\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -3095,7 +2971,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectPresignedUrlData\nmetadata:\n  name: example\n  namespace: default\nspec:\n  method: value\n  url: value",
-          "example_command": "xcsh virtual create stored_object_presigned_url_data -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"method\": \"value\",\n    \"url\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_presigned_url_datas\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -3113,7 +2990,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectQueryType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create stored_object_query_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_query_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -3171,7 +3049,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:23:03.897005+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:56.894097+00:00"
           },
           "mobile_app_shield": {
             "$ref": "#/components/schemas/stored_objectMobileAppShieldAttributes"
@@ -3198,8 +3076,6 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3208,7 +3084,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:23:03.897013+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:56.894105+00:00"
           },
           "namespace": {
             "type": "string",
@@ -3225,9 +3101,6 @@
             "minLength": 0,
             "maxLength": 6,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3236,7 +3109,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:23:03.897017+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:56.894109+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -3288,7 +3161,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:23:03.897024+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:56.894116+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -3307,7 +3180,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectStoredObjectDescriptor\nmetadata:\n  name: example\n  namespace: default\nspec:\n  creation_timestamp: value\n  description: value\n  mobile_app_shield: value\n  mobile_integrator: value\n  mobile_sdk: value",
-          "example_command": "xcsh virtual create stored_object_stored_object_descriptor -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"description\": \"value\",\n    \"mobile_app_shield\": \"value\",\n    \"mobile_integrator\": \"value\",\n    \"mobile_sdk\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_stored_object_descriptors\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -3329,7 +3203,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectStoredObjectResponseStatus\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create stored_object_stored_object_response_status -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_stored_object_response_statuses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       },
@@ -3386,7 +3261,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:23:03.897031+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:56.894123+00:00"
           },
           "latest_version": {
             "type": "boolean",
@@ -3440,7 +3315,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:23:03.897037+00:00"
+            "x-reconciled-at": "2025-12-29T21:58:56.894130+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -3454,7 +3329,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for stored_objectVersionDescriptor\nmetadata:\n  name: example\n  namespace: default\nspec:\n  creation_timestamp: value\n  description: value\n  latest_version: value\n  url: value\n  version: value",
-          "example_command": "xcsh virtual create stored_object_version_descriptor -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"description\": \"value\",\n    \"latest_version\": \"value\",\n    \"url\": \"value\",\n    \"version\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_version_descriptors\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "object_storage"
       }

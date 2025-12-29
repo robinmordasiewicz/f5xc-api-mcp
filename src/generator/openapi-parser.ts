@@ -199,6 +199,19 @@ export interface OperationMetadata {
 }
 
 /**
+ * Minimum configuration from enriched schema x-ves-minimum-configuration
+ * Contains curl, YAML, and JSON examples for API usage
+ */
+export interface MinimumConfiguration {
+  description?: string;
+  required_fields?: string[];
+  mutually_exclusive_groups?: string[][];
+  example_curl?: string;
+  example_yaml?: string;
+  example_json?: string;
+}
+
+/**
  * Parsed operation with metadata for tool generation
  */
 export interface ParsedOperation {
@@ -252,6 +265,8 @@ export interface ParsedOperation {
   validationRules: Record<string, Record<string, string>>;
   /** Full operation metadata from x-ves-operation-metadata */
   operationMetadata: OperationMetadata | null;
+  /** Curl example from schema x-ves-minimum-configuration */
+  curlExample: string | null;
 }
 
 /**
@@ -321,14 +336,112 @@ export function parseSpecFile(filePath: string, basePath?: string): ParsedSpec |
 }
 
 /**
+ * Extract curl examples from component schemas
+ * Returns a map of normalized API path to curl example
+ */
+function extractCurlExamplesFromSchemas(
+  schemas: Record<string, unknown> | undefined
+): Map<string, string> {
+  const curlExamples = new Map<string, string>();
+
+  if (!schemas) {
+    return curlExamples;
+  }
+
+  for (const schema of Object.values(schemas)) {
+    if (!schema || typeof schema !== "object") {
+      continue;
+    }
+
+    const schemaObj = schema as Record<string, unknown>;
+    const minConfig = schemaObj["x-ves-minimum-configuration"];
+
+    if (!minConfig || typeof minConfig !== "object") {
+      continue;
+    }
+
+    const config = minConfig as Record<string, unknown>;
+    const exampleCurl = config["example_curl"];
+
+    if (typeof exampleCurl !== "string") {
+      continue;
+    }
+
+    // Extract the API path from the curl command
+    // Pattern: $F5XC_API_URL/api/...  or "$F5XC_API_URL/api/..."
+    const pathMatch = exampleCurl.match(/\$F5XC_API_URL(\/api\/[^\s"\\]+)/);
+    if (!pathMatch || !pathMatch[1]) {
+      continue;
+    }
+
+    const apiPath = pathMatch[1];
+
+    // Normalize the path by replacing concrete namespace/name values with placeholders
+    // /api/config/namespaces/default/app_firewalls -> /api/config/namespaces/{namespace}/app_firewalls
+    const normalizedPath = apiPath
+      .replace(/\/namespaces\/[^/]+\//, "/namespaces/{namespace}/")
+      .replace(/\/system\//, "/{system_namespace}/");
+
+    // Store if not already present (first match wins)
+    if (!curlExamples.has(normalizedPath)) {
+      curlExamples.set(normalizedPath, exampleCurl);
+    }
+  }
+
+  return curlExamples;
+}
+
+/**
+ * Match an operation path to a curl example
+ * Handles path template differences like {metadata.namespace} vs {namespace}
+ */
+function matchCurlExample(operationPath: string, curlExamples: Map<string, string>): string | null {
+  // Normalize the operation path similarly
+  const normalizedOpPath = operationPath
+    .replace(/\{metadata\.namespace\}/g, "{namespace}")
+    .replace(/\{metadata\.name\}/g, "{name}")
+    .replace(/\{[^}]+\}/g, (match) => {
+      // Keep just the last part of dotted names
+      const simplified = match.replace(/\{[^.]+\./g, "{");
+      return simplified;
+    });
+
+  // Try exact match first
+  if (curlExamples.has(normalizedOpPath)) {
+    return curlExamples.get(normalizedOpPath)!;
+  }
+
+  // Try matching the base path (without trailing name/id parameter)
+  // e.g., /api/config/namespaces/{namespace}/resources/{name} -> /api/config/namespaces/{namespace}/resources
+  const basePathMatch = normalizedOpPath.match(/^(.+?)(?:\/\{[^}]+\})?$/);
+  if (basePathMatch && basePathMatch[1]) {
+    const basePath = basePathMatch[1];
+    if (curlExamples.has(basePath)) {
+      return curlExamples.get(basePath)!;
+    }
+  }
+
+  return null;
+}
+
+/**
  * Extract operations from parsed spec
  */
-function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperation[] {
+function extractOperations(
+  spec: OpenApiSpec,
+  sourceFile: string,
+  curlExamples?: Map<string, string>
+): ParsedOperation[] {
   const operations: ParsedOperation[] = [];
 
   if (!spec.paths) {
     return operations;
   }
+
+  // Extract curl examples from schemas if not provided
+  const curlMap =
+    curlExamples ??
+    extractCurlExamplesFromSchemas(spec.components?.schemas as Record<string, unknown>);
 
   const httpMethods = ["get", "post", "put", "delete", "patch"] as const;
 
@@ -435,6 +548,9 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
         displayName = pathItemAny["x-displayname"];
       }
 
+      // Match curl example for this operation
+      const curlExample = matchCurlExample(path, curlMap);
+
       operations.push({
         toolName,
         method: method.toUpperCase(),
@@ -461,6 +577,7 @@ function extractOperations(spec: OpenApiSpec, sourceFile: string): ParsedOperati
         parameterExamples,
         validationRules,
         operationMetadata,
+        curlExample,
       });
     }
   }
@@ -574,13 +691,19 @@ export function groupOperationsByDomain(
 function extractDomainOperations(
   spec: OpenApiSpec,
   domain: string,
-  sourceFile: string
+  sourceFile: string,
+  curlExamples?: Map<string, string>
 ): ParsedOperation[] {
   const operations: ParsedOperation[] = [];
 
   if (!spec.paths) {
     return operations;
   }
+
+  // Extract curl examples from schemas if not provided
+  const curlMap =
+    curlExamples ??
+    extractCurlExamplesFromSchemas(spec.components?.schemas as Record<string, unknown>);
 
   const httpMethods = ["get", "post", "put", "delete", "patch"] as const;
 
@@ -676,6 +799,9 @@ function extractDomainOperations(
         displayName = pathItemAny["x-displayname"];
       }
 
+      // Match curl example for this operation
+      const curlExample = matchCurlExample(path, curlMap);
+
       operations.push({
         toolName,
         method: method.toUpperCase(),
@@ -702,6 +828,7 @@ function extractDomainOperations(
         parameterExamples,
         validationRules,
         operationMetadata,
+        curlExample,
       });
     }
   }

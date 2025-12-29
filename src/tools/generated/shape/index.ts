@@ -101,6 +101,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["action"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-affecteduser-create",
@@ -209,6 +210,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["affectedUser"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-age-create",
@@ -291,6 +293,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["age"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-alert-gen-policy-create",
@@ -391,6 +394,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["alert-gen-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-alert-gen-policy-delete",
@@ -497,6 +501,7 @@ export const shapeTools: ParsedOperation[] = [
         deletes: ["alert-gen-policy", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-alert-gen-policy-get",
@@ -621,6 +626,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-alert-gen-policy-list",
@@ -751,6 +757,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-alert-gen-policy-update",
@@ -860,6 +867,7 @@ export const shapeTools: ParsedOperation[] = [
         modifies: ["alert-gen-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-alert-template-create",
@@ -957,6 +965,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["alert-template"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-alert-template-delete",
@@ -1063,6 +1072,7 @@ export const shapeTools: ParsedOperation[] = [
         deletes: ["alert-template", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-alert-template-get",
@@ -1186,6 +1196,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-alert-template-list",
@@ -1316,6 +1327,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-allowed-domain-create",
@@ -1413,6 +1425,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["allowed-domain"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-allowed-domain-delete",
@@ -1519,6 +1532,7 @@ export const shapeTools: ParsedOperation[] = [
         deletes: ["allowed-domain", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-allowed-domain-get",
@@ -1642,6 +1656,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-allowed-domain-list",
@@ -1772,6 +1787,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-analysi-create",
@@ -1868,6 +1884,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["analysi"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-apikey-list",
@@ -1944,6 +1961,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-app-create",
@@ -2039,6 +2057,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["app"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-app-provision-create",
@@ -2121,6 +2140,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["app-provision"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-application-create",
@@ -2203,6 +2223,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["application"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-application-delete",
@@ -2297,6 +2318,7 @@ export const shapeTools: ParsedOperation[] = [
         deletes: ["application", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-application-list",
@@ -2373,6 +2395,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-asn-create",
@@ -2469,6 +2492,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["asn"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-asorg-create",
@@ -2564,6 +2588,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["asorg"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-atb-create",
@@ -2661,6 +2686,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["atb"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-atb-list",
@@ -2765,6 +2791,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-attackintent-create",
@@ -2861,6 +2888,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["attackintent"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-audit-list",
@@ -2988,6 +3016,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-automation-create",
@@ -3083,6 +3112,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["automation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bad-bot-reduction-create",
@@ -3180,6 +3210,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["bad-bot-reduction"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-behavior-get",
@@ -3324,6 +3355,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bfp-create",
@@ -3419,6 +3451,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["bfp"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-allowlist-policie-list",
@@ -3510,6 +3543,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-allowlist-policy-get",
@@ -3633,6 +3667,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-allowlist-policy-list",
@@ -3763,6 +3798,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-allowlist-policy-update",
@@ -3871,6 +3907,7 @@ export const shapeTools: ParsedOperation[] = [
         modifies: ["bot-allowlist-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-detection-rule-create",
@@ -3969,6 +4006,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["bot-detection-rule"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-detection-rule-get",
@@ -4090,6 +4128,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-detection-rule-list",
@@ -4220,6 +4259,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-detection-update-list",
@@ -4311,6 +4351,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-endpoint-policie-list",
@@ -4402,6 +4443,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-endpoint-policy-get",
@@ -4525,6 +4567,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-endpoint-policy-list",
@@ -4655,6 +4698,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-endpoint-policy-update",
@@ -4763,6 +4807,7 @@ export const shapeTools: ParsedOperation[] = [
         modifies: ["bot-endpoint-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-infrastructure-create",
@@ -4863,6 +4908,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["bot-infrastructure"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-infrastructure-get",
@@ -4987,6 +5033,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-infrastructure-list",
@@ -5117,6 +5164,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-infrastructure-update",
@@ -5226,6 +5274,7 @@ export const shapeTools: ParsedOperation[] = [
         modifies: ["bot-infrastructure"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-network-policie-list",
@@ -5317,6 +5366,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-network-policy-get",
@@ -5440,6 +5490,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-network-policy-list",
@@ -5570,6 +5621,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-bot-network-policy-update",
@@ -5678,6 +5730,7 @@ export const shapeTools: ParsedOperation[] = [
         modifies: ["bot-network-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-browser-create",
@@ -5774,6 +5827,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["browser"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-categorie-create",
@@ -5869,6 +5923,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["categorie"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-channel-create",
@@ -5951,6 +6006,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["channel"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-check-create",
@@ -6033,6 +6089,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["check"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-clone-create",
@@ -6136,6 +6193,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["clone"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-config-get",
@@ -6238,6 +6296,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-conversion-create",
@@ -6320,6 +6379,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["conversion"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-country-create",
@@ -6402,6 +6462,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["country"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-credential-stuffing-attack-create",
@@ -6499,6 +6560,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["credential-stuffing-attack"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-dashboard-get",
@@ -6643,6 +6705,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-deployment-history-get",
@@ -6745,6 +6808,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-deployment-list",
@@ -6866,6 +6930,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-deployment-statu-get",
@@ -6969,6 +7034,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-detail-list",
@@ -7096,6 +7162,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-detected-domain-list",
@@ -7223,6 +7290,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-device-create",
@@ -7318,6 +7386,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["device"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-domain-detail-list",
@@ -7421,6 +7490,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-download-release-note-list",
@@ -7525,6 +7595,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-draft-create",
@@ -7620,6 +7691,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["draft"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-draft-delete",
@@ -7715,6 +7787,7 @@ export const shapeTools: ParsedOperation[] = [
         deletes: ["draft", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-draft-list",
@@ -7806,6 +7879,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-enable-create",
@@ -7888,6 +7962,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["enable"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-endpoint-create",
@@ -7983,6 +8058,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["endpoint"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-endpointlabel-create",
@@ -8078,6 +8154,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["endpointlabel"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-enjoy-create",
@@ -8160,6 +8237,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["enjoy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-ep-create",
@@ -8256,6 +8334,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["ep"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-expanded-create",
@@ -8351,6 +8430,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["expanded"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-feedback-create",
@@ -8447,6 +8527,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["feedback"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-field-create",
@@ -8544,6 +8625,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["field"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-formfield-create",
@@ -8640,6 +8722,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["formField"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-formfield-get",
@@ -8742,6 +8825,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-formfield-list",
@@ -8860,6 +8944,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-friction-aggregation-create",
@@ -8945,6 +9030,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["friction-aggregation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-friction-histogram-create",
@@ -9030,6 +9116,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["friction-histogram"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-general-feedback-create",
@@ -9129,6 +9216,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["general-feedback"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-geolocation-create",
@@ -9224,6 +9312,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["geolocation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-getcurrentfrauddata-create",
@@ -9309,6 +9398,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["getcurrentfrauddata"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-gettopriskyaccount-create",
@@ -9394,6 +9484,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["gettopriskyaccount"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-gettopriskydevice-create",
@@ -9479,6 +9570,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["gettopriskydevice"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-gettopriskyipaddresse-create",
@@ -9564,6 +9656,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["gettopriskyipaddresse"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-gettopriskyreason-create",
@@ -9649,6 +9742,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["gettopriskyreason"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-gettransactiondata-create",
@@ -9734,6 +9828,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["gettransactiondata"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-good-create",
@@ -9829,6 +9924,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["good"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-health-list",
@@ -9905,6 +10001,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-history-get",
@@ -10008,6 +10105,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-init-create",
@@ -10090,6 +10188,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["init"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-ip-create",
@@ -10186,6 +10285,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["ip"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-js-configuration-list",
@@ -10289,6 +10389,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-justification-create",
@@ -10397,6 +10498,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["justification"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-justification-delete",
@@ -10503,6 +10605,7 @@ export const shapeTools: ParsedOperation[] = [
         deletes: ["justification", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-lift-create",
@@ -10585,6 +10688,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["lift"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-list-create",
@@ -10680,6 +10784,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["list"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-metric-create",
@@ -10776,6 +10881,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["metric"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-mitigated-domain-create",
@@ -10876,6 +10982,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["mitigated-domain"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-mitigated-domain-delete",
@@ -10982,6 +11089,7 @@ export const shapeTools: ParsedOperation[] = [
         deletes: ["mitigated-domain", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-mitigated-domain-get",
@@ -11105,6 +11213,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-mitigated-domain-list",
@@ -11235,6 +11344,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-mobile-base-config-create",
@@ -11335,6 +11445,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["mobile-base-config"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-mobile-base-config-delete",
@@ -11441,6 +11552,7 @@ export const shapeTools: ParsedOperation[] = [
         deletes: ["mobile-base-config", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-mobile-base-config-file-get",
@@ -11545,6 +11657,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-mobile-base-config-get",
@@ -11668,6 +11781,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-mobile-base-config-list",
@@ -11798,6 +11912,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-mobile-base-config-update",
@@ -11907,6 +12022,7 @@ export const shapeTools: ParsedOperation[] = [
         modifies: ["mobile-base-config"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-mobile-sdk-list",
@@ -12047,6 +12163,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-name-get",
@@ -12175,6 +12292,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace", "path.version"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-networkinteraction-get",
@@ -12306,6 +12424,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.id", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-o-create",
@@ -12402,6 +12521,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["o"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-overview-create",
@@ -12497,6 +12617,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["overview"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-overview-list",
@@ -12626,6 +12747,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-personal-stat-create",
@@ -12720,6 +12842,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["personal-stat"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-platform-create",
@@ -12815,6 +12938,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["platform"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-policie-create",
@@ -12924,6 +13048,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["policie"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-protected-application-create",
@@ -13024,6 +13149,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["protected-application"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-protected-application-delete",
@@ -13130,6 +13256,7 @@ export const shapeTools: ParsedOperation[] = [
         deletes: ["protected-application", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-protected-application-get",
@@ -13254,6 +13381,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-protected-application-list",
@@ -13384,6 +13512,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-protected-application-update",
@@ -13493,6 +13622,7 @@ export const shapeTools: ParsedOperation[] = [
         modifies: ["protected-application"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-protected-domain-create",
@@ -13593,6 +13723,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["protected-domain"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-protected-domain-delete",
@@ -13699,6 +13830,7 @@ export const shapeTools: ParsedOperation[] = [
         deletes: ["protected-domain", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-protected-domain-get",
@@ -13822,6 +13954,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-protected-domain-list",
@@ -13952,6 +14085,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-provision-create",
@@ -14048,6 +14182,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["provision"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-provision-list",
@@ -14124,6 +14259,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-readstatu-create",
@@ -14232,6 +14368,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["readStatu"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-region-list",
@@ -14308,6 +14445,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-rescue-create",
@@ -14390,6 +14528,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["rescue"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-rule-create",
@@ -14486,6 +14625,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["rule"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-safecubejsdata-create",
@@ -14568,6 +14708,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["safecubejsdata"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-script-create",
@@ -14664,6 +14805,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["script"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-script-list",
@@ -14821,6 +14963,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-session-create",
@@ -14903,6 +15046,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["session"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-src-tag-injection-create",
@@ -14988,6 +15132,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["src-tag-injection"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-state-list",
@@ -15064,6 +15209,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: [],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-statu-create",
@@ -15167,6 +15313,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["statu"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-statu-list",
@@ -15257,6 +15404,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-subscribe-create",
@@ -15339,6 +15487,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["subscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-suggest-value-create",
@@ -15436,6 +15585,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["suggest-value"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-summary-create",
@@ -15531,6 +15681,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["summary"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-summary-list",
@@ -15622,6 +15773,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-table-list",
@@ -15763,6 +15915,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-template-get",
@@ -15866,6 +16019,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-testj-create",
@@ -15962,6 +16116,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["testj"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-threat-type-create",
@@ -16042,6 +16197,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["threat-type"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-timeserie-create",
@@ -16137,6 +16293,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["timeserie"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-top-good-bot-create",
@@ -16217,6 +16374,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["top-good-bot"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-top-location-create",
@@ -16311,6 +16469,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["top-location"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-top-location-list",
@@ -16453,6 +16612,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-top-reason-code-create",
@@ -16533,6 +16693,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["top-reason-code"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-top-source-create",
@@ -16627,6 +16788,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["top-source"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-top-source-list",
@@ -16769,6 +16931,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-total-automation-create",
@@ -16866,6 +17029,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["total-automation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-transaction-create",
@@ -16948,6 +17112,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["transaction"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-transaction-detail-create",
@@ -17047,6 +17212,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["transaction-detail"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-transaction-detail-list",
@@ -17162,6 +17328,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-transaction-device-history-create",
@@ -17261,6 +17428,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["transaction-device-history"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-transaction-location-create",
@@ -17360,6 +17528,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["transaction-location"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-transaction-related-session-create",
@@ -17459,6 +17628,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["transaction-related-session"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-transaction-timeline-create",
@@ -17558,6 +17728,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["transaction-timeline"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-transactions-csv-create",
@@ -17657,6 +17828,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["transactions-csv"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-transactions-over-time-create",
@@ -17756,6 +17928,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["transactions-over-time"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-ua-create",
@@ -17852,6 +18025,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["ua"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-unaddressed-automation-create",
@@ -17950,6 +18124,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["unaddressed-automation"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-unique-create",
@@ -18032,6 +18207,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["unique"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-unsubscribe-create",
@@ -18114,6 +18290,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["unsubscribe"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-update-domain-create",
@@ -18210,6 +18387,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["update-domain"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-url-create",
@@ -18292,6 +18470,7 @@ export const shapeTools: ParsedOperation[] = [
         creates: ["url"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-shape-version-get",
@@ -18395,6 +18574,7 @@ export const shapeTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
 ];
 

@@ -95,6 +95,7 @@ export const threat_campaignTools: ParsedOperation[] = [
       required_fields: ["path.id"],
       side_effects: {},
     },
+    curlExample: null,
   },
 ];
 

@@ -3,7 +3,7 @@
   "info": {
     "title": "F5 XC Authentication API",
     "description": "F5 Distributed Cloud Authentication API specifications",
-    "version": "1.0.65",
+    "version": "1.0.66",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -193,18 +193,6 @@
             "api-credential"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create api-credential",
-            "command": "f5xcctl web api-credential create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web api-credential create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new api-credential",
           "required_fields": [
@@ -264,19 +252,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "high"
-          },
-          "examples": [
-            {
-              "description": "Create api-credential",
-              "command": "f5xcctl web api-credential create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web api-credential create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -409,18 +385,6 @@
             "service-credential"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create service-credential",
-            "command": "f5xcctl web service-credential create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web service-credential create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new service-credential",
           "required_fields": [
@@ -480,19 +444,7 @@
           "performance_impact": {
             "latency": "high",
             "resource_usage": "high"
-          },
-          "examples": [
-            {
-              "description": "Create service-credential",
-              "command": "f5xcctl web service-credential create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web service-credential create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -639,18 +591,6 @@
             "api-credential"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create api-credential",
-            "command": "f5xcctl web api-credential create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web api-credential create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new api-credential",
           "required_fields": [
@@ -711,19 +651,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create api-credential",
-              "command": "f5xcctl web api-credential create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web api-credential create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -870,18 +798,6 @@
             "service-credential"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create service-credential",
-            "command": "f5xcctl web service-credential create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web service-credential create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new service-credential",
           "required_fields": [
@@ -942,19 +858,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create service-credential",
-              "command": "f5xcctl web service-credential create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web service-credential create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -1091,13 +995,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all api-credentials",
-            "command": "f5xcctl web api-credential list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all api-credentials",
           "required_fields": [
@@ -1149,14 +1046,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all api-credentials",
-              "command": "f5xcctl web api-credential list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "post": {
@@ -1305,18 +1195,6 @@
             "api-credential"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create api-credential",
-            "command": "f5xcctl web api-credential create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web api-credential create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new api-credential",
           "required_fields": [
@@ -1377,19 +1255,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create api-credential",
-              "command": "f5xcctl web api-credential create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web api-credential create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -1538,13 +1404,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific api-credential",
-            "command": "f5xcctl web api-credential get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific api-credential",
           "required_fields": [
@@ -1597,14 +1456,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific api-credential",
-              "command": "f5xcctl web api-credential get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -1751,18 +1603,6 @@
             "api-credential"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create api-credential",
-            "command": "f5xcctl web api-credential create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web api-credential create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new api-credential",
           "required_fields": [
@@ -1823,19 +1663,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create api-credential",
-              "command": "f5xcctl web api-credential create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web api-credential create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -1982,18 +1810,6 @@
             "service-credential"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create service-credential",
-            "command": "f5xcctl web service-credential create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web service-credential create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new service-credential",
           "required_fields": [
@@ -2054,19 +1870,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create service-credential",
-              "command": "f5xcctl web service-credential create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web service-credential create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -2213,18 +2017,6 @@
             "api-credential"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create api-credential",
-            "command": "f5xcctl web api-credential create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web api-credential create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new api-credential",
           "required_fields": [
@@ -2285,19 +2077,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create api-credential",
-              "command": "f5xcctl web api-credential create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web api-credential create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -2451,18 +2231,6 @@
             "scim-token"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create scim-token",
-            "command": "f5xcctl web scim-token create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web scim-token create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new scim-token",
           "required_fields": [
@@ -2523,19 +2291,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create scim-token",
-              "command": "f5xcctl web scim-token create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web scim-token create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -2682,18 +2438,6 @@
             "service-credential"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create service-credential",
-            "command": "f5xcctl web service-credential create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web service-credential create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new service-credential",
           "required_fields": [
@@ -2754,19 +2498,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create service-credential",
-              "command": "f5xcctl web service-credential create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web service-credential create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -2903,13 +2635,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all scim-tokens",
-            "command": "f5xcctl web scim-token list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all scim-tokens",
           "required_fields": [
@@ -2961,14 +2686,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all scim-tokens",
-              "command": "f5xcctl web scim-token list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "post": {
@@ -3117,18 +2835,6 @@
             "scim-token"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create scim-token",
-            "command": "f5xcctl web scim-token create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web scim-token create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new scim-token",
           "required_fields": [
@@ -3189,19 +2895,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create scim-token",
-              "command": "f5xcctl web scim-token create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web scim-token create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -3338,13 +3032,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "List all service-credentials",
-            "command": "f5xcctl web service-credential list --namespace {namespace}",
-            "use_case": "list_all"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "List all service-credentials",
           "required_fields": [
@@ -3396,14 +3083,7 @@
           "performance_impact": {
             "latency": "moderate",
             "resource_usage": "moderate"
-          },
-          "examples": [
-            {
-              "description": "List all service-credentials",
-              "command": "f5xcctl web service-credential list --namespace {namespace}",
-              "use_case": "list_all"
-            }
-          ]
+          }
         }
       },
       "post": {
@@ -3552,18 +3232,6 @@
             "service-credential"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Create service-credential",
-            "command": "f5xcctl web service-credential create {name} --namespace {namespace}",
-            "use_case": "basic_create"
-          },
-          {
-            "description": "Create from YAML file",
-            "command": "f5xcctl web service-credential create -f {file}.yaml",
-            "use_case": "file_based"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Create new service-credential",
           "required_fields": [
@@ -3624,19 +3292,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Create service-credential",
-              "command": "f5xcctl web service-credential create {name} --namespace {namespace}",
-              "use_case": "basic_create"
-            },
-            {
-              "description": "Create from YAML file",
-              "command": "f5xcctl web service-credential create -f {file}.yaml",
-              "use_case": "file_based"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -3785,13 +3441,6 @@
           "path.namespace"
         ],
         "x-ves-danger-level": "low",
-        "x-ves-cli-examples": [
-          {
-            "description": "Get specific service-credential",
-            "command": "f5xcctl web service-credential get {name} --namespace {namespace}",
-            "use_case": "get_specific"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Retrieve specific service-credential",
           "required_fields": [
@@ -3844,14 +3493,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Get specific service-credential",
-              "command": "f5xcctl web service-credential get {name} --namespace {namespace}",
-              "use_case": "get_specific"
-            }
-          ]
+          }
         }
       },
       "put": {
@@ -4010,13 +3652,6 @@
             "service-credential"
           ]
         },
-        "x-ves-cli-examples": [
-          {
-            "description": "Update service-credential",
-            "command": "f5xcctl web service-credential update {name} --namespace {namespace} -f {file}.yaml",
-            "use_case": "update"
-          }
-        ],
         "x-ves-operation-metadata": {
           "purpose": "Replace existing service-credential",
           "required_fields": [
@@ -4075,14 +3710,7 @@
           "performance_impact": {
             "latency": "low",
             "resource_usage": "low"
-          },
-          "examples": [
-            {
-              "description": "Update service-credential",
-              "command": "f5xcctl web service-credential update {name} --namespace {namespace} -f {file}.yaml",
-              "use_case": "update"
-            }
-          ]
+          }
         }
       },
       "x-displayname": "API/Service Credentials.",
@@ -4123,7 +3751,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialAPICredentialType\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create api_credential_a_p_i_credential_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_a_p_i_credential_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -4171,7 +3800,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialApiCertificateType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  password: value",
-          "example_command": "xcsh virtual create api_credential_api_certificate_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"password\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_api_certificate_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -4198,7 +3828,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialBulkRevokeRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  expired_selector: value\n  name_selector: value",
-          "example_command": "xcsh virtual create api_credential_bulk_revoke_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"expired_selector\": \"value\",\n    \"name_selector\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_bulk_revoke_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -4263,7 +3894,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialBulkRevokeResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  credentials_failed: value\n  credentials_marked_for_deletion: value\n  error_message: value",
-          "example_command": "xcsh virtual create api_credential_bulk_revoke_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"credentials_failed\": \"value\",\n    \"credentials_marked_for_deletion\": \"value\",\n    \"error_message\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_bulk_revoke_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -4299,8 +3931,6 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4309,7 +3939,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864709+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937364+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4319,9 +3949,6 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4330,7 +3957,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864716+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937371+00:00"
           },
           "spec": {
             "$ref": "#/components/schemas/api_credentialCustomCreateSpecType"
@@ -4346,7 +3973,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialCreateRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  expiration_days: value\n  name: value\n  namespace: value\n  spec: value",
-          "example_command": "xcsh virtual create api_credential -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"expiration_days\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credentials\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -4401,8 +4029,6 @@
             "x-ves-example": "example-resource",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4411,7 +4037,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864728+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937383+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4424,7 +4050,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialCreateResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  active: value\n  data: value\n  expiration_timestamp: value\n  name: value",
-          "example_command": "xcsh virtual create api_credential -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"active\": \"value\",\n    \"data\": \"value\",\n    \"expiration_timestamp\": \"value\",\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credentials\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -4466,8 +4093,6 @@
             "x-ves-example": "Svc-cred-app1.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4476,7 +4101,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864739+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937393+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4486,9 +4111,6 @@
             "x-ves-example": "System",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4497,7 +4119,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864744+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937397+00:00"
           },
           "namespace_roles": {
             "type": "array",
@@ -4613,7 +4235,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialCreateServiceCredentialsRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  api_certificate: value\n  api_token: value\n  expiration_days: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create api_credential -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"api_certificate\": \"value\",\n    \"api_token\": \"value\",\n    \"expiration_days\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credentials\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -4692,7 +4315,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialCustomCreateSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  password: value\n  type: value\n  virtual_k8s_name: value\n  virtual_k8s_namespace: value",
-          "example_command": "xcsh virtual create api_credential_custom -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"password\": \"value\",\n    \"type\": \"value\",\n    \"virtual_k8s_name\": \"value\",\n    \"virtual_k8s_namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_customs\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -4719,7 +4343,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialExpiredSelector\nmetadata:\n  name: example\n  namespace: default\nspec:\n  all: value\n  credential_type: value",
-          "example_command": "xcsh virtual create api_credential_expired_selector -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"all\": \"value\",\n    \"credential_type\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_expired_selectors\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -4746,8 +4371,6 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4756,7 +4379,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864769+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937421+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4774,9 +4397,6 @@
             "minLength": 0,
             "maxLength": 6,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4785,7 +4405,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864773+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937426+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4796,7 +4416,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialGetRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create api_credential -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credentials\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -4818,7 +4439,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialGetResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  object: value",
-          "example_command": "xcsh virtual create api_credential -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"object\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credentials\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -4881,8 +4503,6 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4891,7 +4511,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864784+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937437+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4901,9 +4521,6 @@
             "x-ves-example": "System",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4912,7 +4529,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864789+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937441+00:00"
           },
           "namespace_access": {
             "$ref": "#/components/schemas/schemaNamespaceAccessType"
@@ -4938,7 +4555,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864798+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937449+00:00"
           },
           "user_email": {
             "type": "string",
@@ -4988,7 +4605,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialGetServiceCredentialsResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  active: value\n  create_timestamp: value\n  expiry_timestamp: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create api_credential -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"active\": \"value\",\n    \"create_timestamp\": \"value\",\n    \"expiry_timestamp\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credentials\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5162,7 +4780,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialGlobalSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  active: value\n  certificate_serial_num: value\n  created_timestamp: value\n  digest: value\n  expiration_timestamp: value",
-          "example_command": "xcsh virtual create api_credential_global_spec_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"active\": \"value\",\n    \"certificate_serial_num\": \"value\",\n    \"created_timestamp\": \"value\",\n    \"digest\": \"value\",\n    \"expiration_timestamp\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_global_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5196,7 +4815,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialListResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  items: value",
-          "example_command": "xcsh virtual create api_credential_list_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"items\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_list_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5259,8 +4879,6 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5269,7 +4887,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864828+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937478+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5279,9 +4897,6 @@
             "x-ves-example": "System",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5290,7 +4905,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864832+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937482+00:00"
           },
           "type": {
             "$ref": "#/components/schemas/api_credentialAPICredentialType"
@@ -5313,7 +4928,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864839+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937488+00:00"
           },
           "user_email": {
             "type": "string",
@@ -5345,7 +4960,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialListResponseItem\nmetadata:\n  name: example\n  namespace: default\nspec:\n  active: value\n  create_timestamp: value\n  expiry_timestamp: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create api_credential_list_response_item -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"active\": \"value\",\n    \"create_timestamp\": \"value\",\n    \"expiry_timestamp\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_list_response_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5379,7 +4995,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialListServiceCredentialsResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  items: value",
-          "example_command": "xcsh virtual create api_credential_list_service_credentials_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"items\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_list_service_credentials_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5442,8 +5059,6 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5452,7 +5067,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864852+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937500+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5462,9 +5077,6 @@
             "x-ves-example": "System",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5473,7 +5085,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864856+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937504+00:00"
           },
           "namespace_access": {
             "$ref": "#/components/schemas/schemaNamespaceAccessType"
@@ -5499,7 +5111,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864863+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937511+00:00"
           },
           "user_email": {
             "type": "string",
@@ -5549,7 +5161,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialListServiceCredentialsResponseItem\nmetadata:\n  name: example\n  namespace: default\nspec:\n  active: value\n  create_timestamp: value\n  expiry_timestamp: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create api_credential_list_service_credentials_response_item -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"active\": \"value\",\n    \"create_timestamp\": \"value\",\n    \"expiry_timestamp\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_list_service_credentials_response_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5602,7 +5215,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialNameSelector\nmetadata:\n  name: example\n  namespace: default\nspec:\n  names: value",
-          "example_command": "xcsh virtual create api_credential_name_selector -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"names\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_name_selectors\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5632,7 +5246,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialObject\nmetadata:\n  name: example\n  namespace: default\nspec:\n  spec: value\n  system_metadata: value",
-          "example_command": "xcsh virtual create api_credential_object -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\",\n    \"system_metadata\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5677,9 +5292,6 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5688,7 +5300,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864879+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937527+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -5699,7 +5311,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialRecreateScimTokenRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  expiration_days: value\n  namespace: value",
-          "example_command": "xcsh virtual create api_credential_recreate_scim_token_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"expiration_days\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_recreate_scim_token_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5742,8 +5355,6 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5752,7 +5363,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864886+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937533+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5770,9 +5381,6 @@
             "minLength": 0,
             "maxLength": 6,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5781,7 +5389,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864890+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937548+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -5793,7 +5401,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialRenewRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  expiration_days: value\n  name: value\n  namespace: value",
-          "example_command": "xcsh virtual create api_credential_renew_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"expiration_days\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_renew_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5820,8 +5429,6 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5830,7 +5437,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864895+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937554+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5840,9 +5447,6 @@
             "x-ves-example": "System",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5851,7 +5455,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864899+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937559+00:00"
           },
           "namespace_access": {
             "$ref": "#/components/schemas/schemaNamespaceAccessType"
@@ -5883,7 +5487,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialReplaceServiceCredentialsRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value\n  namespace: value\n  namespace_access: value\n  user_group_names: value",
-          "example_command": "xcsh virtual create api_credential_replace_service_credentials_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"namespace_access\": \"value\",\n    \"user_group_names\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_replace_service_credentials_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5931,8 +5536,6 @@
             "x-ves-example": "Svc-cred-app1.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5941,7 +5544,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864910+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937569+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -5953,7 +5556,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialReplaceServiceCredentialsResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  active: value\n  expiration_timestamp: value\n  name: value",
-          "example_command": "xcsh virtual create api_credential_replace_service_credentials_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"active\": \"value\",\n    \"expiration_timestamp\": \"value\",\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_replace_service_credentials_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -5980,9 +5584,6 @@
             "minLength": 0,
             "maxLength": 6,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5991,7 +5592,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864915+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937573+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -6001,7 +5602,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialScimTokenRequest\nmetadata:\n  name: example\n  namespace: default\nspec:\n  namespace: value",
-          "example_command": "xcsh virtual create api_credential_scim_token_request -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_scim_token_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -6049,7 +5651,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialSiteKubeconfigType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  site: value",
-          "example_command": "xcsh virtual create api_credential_site_kubeconfig_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"site\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_site_kubeconfig_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -6071,7 +5674,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialSpecType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  gc_spec: value",
-          "example_command": "xcsh virtual create api_credential_spec_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"gc_spec\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -6098,7 +5702,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864927+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937584+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -6108,7 +5712,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialStatusResponse\nmetadata:\n  name: example\n  namespace: default\nspec:\n  status: value",
-          "example_command": "xcsh virtual create api_credential_status_response -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"status\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_status_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -6172,7 +5777,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for api_credentialVk8sKubeconfigType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  vk8s_cluster_name: value\n  vk8s_namespace: value",
-          "example_command": "xcsh virtual create api_credential_vk8s_kubeconfig_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"vk8s_cluster_name\": \"value\",\n    \"vk8s_namespace\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/api_credential_vk8s_kubeconfig_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "api"
       },
@@ -6187,7 +5793,8 @@
           "required_fields": [],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaEmpty\nmetadata:\n  name: example\n  namespace: default",
-          "example_command": "xcsh virtual create schema_empty -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_empties\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -6206,8 +5813,6 @@
             "x-ves-example": "example-resource",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6216,7 +5821,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864936+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937593+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -6226,7 +5831,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaInitializerType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value",
-          "example_command": "xcsh virtual create schema_initializer_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_initializer_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -6264,7 +5870,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaInitializersType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  pending: value\n  result: value",
-          "example_command": "xcsh virtual create schema_initializers_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"pending\": \"value\",\n    \"result\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_initializers_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -6307,7 +5914,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaNamespaceAccessType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  namespace_role_map: value",
-          "example_command": "xcsh virtual create schema_namespace_access_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"namespace_role_map\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_namespace_access_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "tenant_and_identity"
       },
@@ -6337,9 +5945,6 @@
             "minLength": 0,
             "ves.io.schema.rules.message.required": "true",
             "ves.io.schema.rules.string.max_len": "256",
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6348,7 +5953,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864948+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937604+00:00"
           },
           "role": {
             "type": "string",
@@ -6388,7 +5993,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaNamespaceRoleType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  namespace: value\n  role: value",
-          "example_command": "xcsh virtual create schema_namespace_role_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"namespace\": \"value\",\n    \"role\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_namespace_role_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "tenant_and_identity"
       },
@@ -6451,7 +6057,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864957+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937613+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -6473,9 +6079,6 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "Value",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6499,8 +6102,6 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6509,7 +6110,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864965+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937621+00:00"
           },
           "namespace": {
             "type": "string",
@@ -6519,9 +6120,6 @@
             "x-ves-example": "Staging",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6530,7 +6128,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864969+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937625+00:00"
           },
           "uid": {
             "type": "string",
@@ -6551,7 +6149,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864975+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937630+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -6567,7 +6165,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaObjectMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  annotations: value\n  description: value\n  disable: value\n  labels: value\n  name: value",
-          "example_command": "xcsh virtual create schema_object_meta_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disable\": \"value\",\n    \"labels\": \"value\",\n    \"name\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_object_meta_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -6595,7 +6194,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864980+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937635+00:00"
           },
           "name": {
             "type": "string",
@@ -6605,8 +6204,6 @@
             "x-ves-example": "Contactus-route.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6615,7 +6212,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864984+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937639+00:00"
           },
           "namespace": {
             "type": "string",
@@ -6625,9 +6222,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6636,7 +6230,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864988+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937644+00:00"
           },
           "tenant": {
             "type": "string",
@@ -6656,7 +6250,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864993+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937647+00:00"
           },
           "uid": {
             "type": "string",
@@ -6677,7 +6271,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.864997+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937652+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -6691,7 +6285,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaObjectRefType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value\n  namespace: value\n  tenant: value\n  uid: value",
-          "example_command": "xcsh virtual create schema_object_ref_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"tenant\": \"value\",\n    \"uid\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_object_ref_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -6722,7 +6317,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaRoleListType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  names: value",
-          "example_command": "xcsh virtual create schema_role_list_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"names\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_role_list_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "tenant_and_identity"
       },
@@ -6765,7 +6361,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.865007+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937660+00:00"
           },
           "status": {
             "type": "string",
@@ -6783,7 +6379,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.865011+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937664+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -6795,7 +6391,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaStatusType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  code: value\n  reason: value\n  status: value",
-          "example_command": "xcsh virtual create schema_status_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"code\": \"value\",\n    \"reason\": \"value\",\n    \"status\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_status_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -6927,9 +6524,6 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "'VES.I/O/soft-deleted': 'true'",
-            "x-ves-cli-help": "Metadata labels for organization and selection",
-            "x-ves-cli-example": "key=value",
-            "x-ves-cli-completion": "key-value-pairs",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6970,9 +6564,6 @@
               "ves.io.schema.rules.repeated.max_items": "1"
             },
             "ves.io.schema.rules.repeated.max_items": "1",
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6982,7 +6573,7 @@
             "maxLength": 6,
             "minLength": 6,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.865032+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937688+00:00"
           },
           "object_index": {
             "type": "integer",
@@ -7052,7 +6643,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.865042+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937698+00:00"
           },
           "trace_info": {
             "type": "string",
@@ -7088,7 +6679,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.865048+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937705+00:00"
           },
           "vtrp_id": {
             "type": "string",
@@ -7145,7 +6736,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaSystemObjectMetaType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  creation_timestamp: value\n  creator_class: value\n  creator_cookie: value\n  creator_id: value\n  deletion_timestamp: value",
-          "example_command": "xcsh virtual create schema_system_object_meta_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"creator_class\": \"value\",\n    \"creator_cookie\": \"value\",\n    \"creator_id\": \"value\",\n    \"deletion_timestamp\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_system_object_meta_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       },
@@ -7172,7 +6764,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.865056+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937713+00:00"
           },
           "name": {
             "type": "string",
@@ -7182,8 +6774,6 @@
             "x-ves-example": "Contactus-route.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-cli-help": "Resource name (alphanumeric and hyphens)",
-            "x-ves-cli-completion": "string-value",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7192,7 +6782,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.865060+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937717+00:00"
           },
           "namespace": {
             "type": "string",
@@ -7202,9 +6792,6 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-cli-help": "Kubernetes namespace or F5 XC tenant namespace",
-            "x-ves-cli-example": "default",
-            "x-ves-cli-completion": "namespace-list",
             "x-ves-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7213,7 +6800,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.865065+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937722+00:00"
           },
           "uid": {
             "type": "string",
@@ -7233,7 +6820,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-29T16:21:47.865069+00:00"
+            "x-reconciled-at": "2025-12-29T21:57:40.937726+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -7246,7 +6833,8 @@
           ],
           "mutually_exclusive_groups": [],
           "example_yaml": "# Minimal example for schemaViewRefType\nmetadata:\n  name: example\n  namespace: default\nspec:\n  name: value\n  namespace: value\n  uid: value",
-          "example_command": "xcsh virtual create schema_view_ref_type -n default -f example.yaml"
+          "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"uid\": \"value\"\n  }\n}",
+          "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_view_ref_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
         "x-ves-cli-domain": "other"
       }

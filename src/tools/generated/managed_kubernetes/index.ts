@@ -105,6 +105,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         creates: ["container-registry"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-container-registry-delete",
@@ -211,6 +212,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         deletes: ["container-registry", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-container-registry-get",
@@ -335,6 +337,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-container-registry-list",
@@ -465,6 +468,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-container-registry-update",
@@ -574,6 +578,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         modifies: ["container-registry"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-binding-create",
@@ -675,6 +680,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         creates: ["k8s-cluster-role-binding"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-binding-delete",
@@ -781,6 +788,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         deletes: ["k8s-cluster-role-binding", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-binding-get",
@@ -906,6 +915,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-binding-list",
@@ -1036,6 +1047,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-binding-update",
@@ -1146,6 +1159,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         modifies: ["k8s-cluster-role-binding"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-create",
@@ -1247,6 +1262,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         creates: ["k8s-cluster-role"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-delete",
@@ -1353,6 +1370,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         deletes: ["k8s-cluster-role", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-get",
@@ -1478,6 +1497,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-list",
@@ -1608,6 +1629,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-update",
@@ -1718,6 +1741,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         modifies: ["k8s-cluster-role"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-admission-create",
@@ -1818,6 +1843,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         creates: ["k8s-pod-security-admission"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-admission-delete",
@@ -1924,6 +1951,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         deletes: ["k8s-pod-security-admission", "contained_resources"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-admission-get",
@@ -2048,6 +2077,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-admission-list",
@@ -2178,6 +2209,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-admission-update",
@@ -2288,6 +2321,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         modifies: ["k8s-pod-security-admission"],
       },
     },
+    curlExample:
+      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-policy-create",
@@ -2389,6 +2424,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         creates: ["k8s-pod-security-policy"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-policy-delete",
@@ -2495,6 +2531,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         deletes: ["k8s-pod-security-policy", "contained_resources"],
       },
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-policy-get",
@@ -2620,6 +2657,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-policy-list",
@@ -2750,6 +2788,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
+    curlExample: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-policy-update",
@@ -2860,6 +2899,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         modifies: ["k8s-pod-security-policy"],
       },
     },
+    curlExample: null,
   },
 ];
 
