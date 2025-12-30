@@ -2,8 +2,8 @@
   "openapi": "3.0.3",
   "info": {
     "title": "F5 XC Generative Ai API",
-    "description": "Generative AI services providing intelligent automation and analysis capabilities. Configure AI assistant policies and submit queries with feedback tracking for continuous improvement. Enable flow anomaly detection powered by machine learning. Manage AI data collection through the BFDP subsystem including feature enablement, token management, and subscription controls. Supports IP allocation for GIA services. Integrates dashboard visualization with customizable displays, filters, and link...",
-    "version": "1.0.69",
+    "description": "Set up query evaluation and response handling for intelligent assistant workflows. Manage rating collection with positive and negative outcome tracking. Subscribe to data streams for traffic pattern detection and behavioral analysis. Allocate and deallocate IP resources for ML infrastructure. Control feature enablement and token management for telemetry collection paths.",
+    "version": "1.0.72",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -2339,7 +2339,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930227+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721289+00:00"
           },
           "negative_feedback": {
             "$ref": "#/components/schemas/ai_assistantNegativeFeedbackDetails"
@@ -2441,7 +2441,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930247+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721308+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -2782,7 +2782,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930272+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721334+00:00"
           },
           "log_filters": {
             "type": "array",
@@ -2815,7 +2815,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930279+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721341+00:00"
           },
           "object_name": {
             "type": "string",
@@ -2863,7 +2863,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930287+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721348+00:00"
           },
           "type": {
             "$ref": "#/components/schemas/commonDashboardLinkType"
@@ -3020,7 +3020,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930300+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721361+00:00"
           },
           "title": {
             "type": "string",
@@ -3038,7 +3038,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930304+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721365+00:00"
           },
           "tooltip": {
             "type": "string",
@@ -3151,7 +3151,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930334+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721372+00:00"
           },
           "title": {
             "type": "string",
@@ -3169,7 +3169,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930344+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721376+00:00"
           },
           "url": {
             "type": "string",
@@ -3307,7 +3307,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930359+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721390+00:00"
           },
           "op": {
             "$ref": "#/components/schemas/commonFilterOperator"
@@ -3376,7 +3376,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930369+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721399+00:00"
           },
           "type": {
             "$ref": "#/components/schemas/commonDashboardLinkType"
@@ -3623,7 +3623,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930386+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721415+00:00"
           },
           "type": {
             "type": "string",
@@ -3894,7 +3894,7 @@
             "x-original-maxLength": 1024,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930410+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721438+00:00"
           },
           "rsp_code": {
             "type": "integer",
@@ -4046,7 +4046,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930426+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721453+00:00"
           },
           "state": {
             "type": "string",
@@ -4233,7 +4233,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930443+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721471+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4318,7 +4318,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930451+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721479+00:00"
           },
           "state": {
             "type": "string",
@@ -4556,7 +4556,7 @@
             "maxLength": 26,
             "minLength": 15,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930473+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721501+00:00"
           },
           "title": {
             "type": "string",
@@ -4574,7 +4574,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930477+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721506+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4728,7 +4728,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930489+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721517+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4952,7 +4952,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2025-12-30T01:08:04.930507+00:00"
+            "x-reconciled-at": "2025-12-30T05:43:48.721534+00:00"
           }
         },
         "x-ves-minimum-configuration": {
