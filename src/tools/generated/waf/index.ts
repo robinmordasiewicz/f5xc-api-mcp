@@ -109,6 +109,22 @@ export const wafTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-aggregation-create",
@@ -192,6 +208,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-all-ns-event-create",
@@ -275,6 +307,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-all-ns-metric-create",
@@ -356,6 +404,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-app-firewall-create",
@@ -455,6 +519,44 @@ export const wafTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @waf-policy.json\n',
+    dependencies: [
+      {
+        domain: "waf",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "app-firewall",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "app-firewall-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-app-firewall-delete",
@@ -563,6 +665,30 @@ export const wafTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @waf-policy.json\n',
+    dependencies: [
+      {
+        domain: "waf",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "app-firewall",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-app-firewall-get",
@@ -689,6 +815,22 @@ export const wafTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @waf-policy.json\n',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-app-firewall-list",
@@ -821,6 +963,22 @@ export const wafTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @waf-policy.json\n',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-app-firewall-update",
@@ -932,6 +1090,44 @@ export const wafTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @waf-policy.json\n',
+    dependencies: [
+      {
+        domain: "waf",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "app-firewall",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "app-firewall-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-enhanced-firewall-policy-create",
@@ -1033,6 +1229,44 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "enhanced-firewall-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemaenhanced-firewall-policy-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-enhanced-firewall-policy-delete",
@@ -1140,6 +1374,30 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "enhanced-firewall-policy",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-enhanced-firewall-policy-get",
@@ -1265,6 +1523,22 @@ export const wafTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-enhanced-firewall-policy-list",
@@ -1396,6 +1670,22 @@ export const wafTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-enhanced-firewall-policy-update",
@@ -1506,6 +1796,44 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "enhanced-firewall-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemaenhanced-firewall-policy-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-event-create",
@@ -1602,6 +1930,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-hit-create",
@@ -1700,6 +2044,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-incident-create",
@@ -1798,6 +2158,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-loadbalancer-create",
@@ -1880,6 +2256,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-metric-create",
@@ -1975,6 +2367,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-protocol-inspection-create",
@@ -2078,6 +2486,44 @@ export const wafTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_inspections" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "protocol-inspection",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "protocol-inspection-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-protocol-inspection-delete",
@@ -2186,6 +2632,30 @@ export const wafTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_inspections" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "protocol-inspection",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-protocol-inspection-get",
@@ -2312,6 +2782,22 @@ export const wafTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_inspections" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-protocol-inspection-list",
@@ -2444,6 +2930,22 @@ export const wafTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_inspections" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-protocol-inspection-update",
@@ -2555,6 +3057,44 @@ export const wafTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/protocol_inspections" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "protocol-inspection",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "protocol-inspection-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-released-signature-list",
@@ -2659,6 +3199,22 @@ export const wafTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-rule-hit-create",
@@ -2756,6 +3312,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-scroll-create",
@@ -2855,6 +3427,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-scroll-list",
@@ -2961,6 +3549,22 @@ export const wafTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-security-event-create",
@@ -3058,6 +3662,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-staged-signature-create",
@@ -3170,6 +3790,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-suspicious-user-log-create",
@@ -3271,6 +3907,22 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-waf-exclusion-policy-create",
@@ -3372,6 +4024,44 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "waf-exclusion-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemawaf-exclusion-policy-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-waf-exclusion-policy-delete",
@@ -3479,6 +4169,30 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "waf-exclusion-policy",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-waf-exclusion-policy-get",
@@ -3604,6 +4318,22 @@ export const wafTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-waf-exclusion-policy-list",
@@ -3735,6 +4465,22 @@ export const wafTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-waf-waf-exclusion-policy-update",
@@ -3845,6 +4591,44 @@ export const wafTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "waf-exclusion-policy",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemawaf-exclusion-policy-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
 ];
 

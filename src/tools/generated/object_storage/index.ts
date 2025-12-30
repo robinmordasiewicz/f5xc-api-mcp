@@ -147,6 +147,9 @@ export const object_storageTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-objectstorage-mobile-integrator-list",
@@ -289,6 +292,9 @@ export const object_storageTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-objectstorage-name-delete",
@@ -437,6 +443,9 @@ export const object_storageTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-objectstorage-name-get",
@@ -567,6 +576,9 @@ export const object_storageTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-objectstorage-object-type-delete",
@@ -714,6 +726,9 @@ export const object_storageTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-objectstorage-object-type-update",
@@ -836,6 +851,20 @@ export const object_storageTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [
+      {
+        choiceField: "contents",
+        fieldPath: "contents",
+        options: ["bytes_value", "string_value"],
+      },
+      {
+        choiceField: "object_attributes",
+        fieldPath: "object_attributes",
+        options: ["mobile_app_shield", "mobile_integrator", "mobile_sdk", "no_attributes"],
+      },
+    ],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-objectstorage-stored-object-list",
@@ -977,6 +1006,9 @@ export const object_storageTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
 ];
 

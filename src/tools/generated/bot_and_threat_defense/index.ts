@@ -107,6 +107,44 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bot_defense_app_infrastructures" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "bot-defense-app-infrastructure",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "bot-defense-app-infrastructure-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-delete",
@@ -215,6 +253,30 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bot_defense_app_infrastructures" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "bot-defense-app-infrastructure",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-get",
@@ -340,6 +402,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bot_defense_app_infrastructures" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-list",
@@ -472,6 +550,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bot_defense_app_infrastructures" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-update",
@@ -583,6 +677,44 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/bot_defense_app_infrastructures" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "bot-defense-app-infrastructure",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "bot-defense-app-infrastructure-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-preauth-create",
@@ -666,6 +798,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-provision-create",
@@ -749,6 +897,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-shape-bot-defense-instance-get",
@@ -872,6 +1036,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/shape_bot_defense_instances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-shape-bot-defense-instance-list",
@@ -1004,6 +1184,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/shape_bot_defense_instances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-create",
@@ -1103,6 +1299,44 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tpm-api-key",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tpm-api-key-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-get",
@@ -1228,6 +1462,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-list",
@@ -1359,6 +1609,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-update",
@@ -1470,6 +1736,44 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tpm-api-key",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tpm-api-key-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-create",
@@ -1569,6 +1873,44 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tpm-category",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tpm-category-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-get",
@@ -1694,6 +2036,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-list",
@@ -1825,6 +2183,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-update",
@@ -1935,6 +2309,44 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tpm-category",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tpm-category-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-manager-create",
@@ -2033,6 +2445,44 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tpm-manager",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tpm-manager-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-manager-get",
@@ -2157,6 +2607,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-manager-list",
@@ -2288,6 +2754,22 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
 ];
 

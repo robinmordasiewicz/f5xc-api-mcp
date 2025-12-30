@@ -102,6 +102,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-acces-create",
@@ -187,6 +190,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-acces-list",
@@ -264,6 +270,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-alert-policie-create",
@@ -365,6 +374,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "alert_policies[]",
+        inline: false,
+        required: false,
+        resourceType: "schemaviews-object-ref",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-alert-policie-list",
@@ -457,6 +477,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-network-policie-create",
@@ -558,6 +581,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "network_policies[]",
+        inline: false,
+        required: false,
+        resourceType: "schemaviews-object-ref",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-network-policie-list",
@@ -650,6 +684,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-service-policie-create",
@@ -751,6 +788,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "service_policies[]",
+        inline: false,
+        required: false,
+        resourceType: "schemaviews-object-ref",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-service-policie-list",
@@ -843,6 +891,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-admin-notification-list",
@@ -921,6 +972,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-admin-notification-update",
@@ -1003,6 +1057,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-admin-reset-create",
@@ -1087,6 +1144,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-admin-reset-update",
@@ -1168,6 +1228,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-all-application-inventory-create",
@@ -1255,6 +1318,59 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "bigip_virtual_server_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-bigipvirtual-server-inventory-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "cdn_load_balancer_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-httploadbalancer-inventory-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "http_load_balancer_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-httploadbalancer-inventory-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "nginx_one_server_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-nginxone-server-inventory-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "tcp_load_balancer_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-tcploadbalancer-inventory-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "third_party_application_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-third-party-application-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "udp_load_balancer_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-udploadbalancer-inventory-filter",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-all-application-inventory-waf-filter-create",
@@ -1342,6 +1458,36 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "exclusion_violation_type",
+        inline: false,
+        required: false,
+        resourceType: "app-firewall-app-firewall-violation",
+      },
+    ],
+    oneOfGroups: [
+      {
+        choiceField: "waf_filter_choice",
+        fieldPath: "waf_filter_choice",
+        options: ["exclusion_signature_id", "exclusion_violation_type"],
+      },
+    ],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-tenantandidentity-all-ns-stat-create",
@@ -1426,6 +1572,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-allowed-tenant-create",
@@ -1525,6 +1674,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tenant-managementallowed-tenant",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tenant-managementallowed-tenant-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-allowed-tenant-delete",
@@ -1632,6 +1806,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "allowed-tenant",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-allowed-tenant-get",
@@ -1758,6 +1943,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-allowed-tenant-list",
@@ -1889,6 +2077,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-allowed-tenant-update",
@@ -2000,6 +2191,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "allowed-tenant",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "allowed-tenant-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-analyze-for-deletion-create",
@@ -2087,6 +2303,15 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [
+      {
+        choiceField: "object_identifier",
+        fieldPath: "object_identifier",
+        options: ["namespace_name_identifier", "object_uid"],
+      },
+    ],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-application-inventory-create",
@@ -2188,6 +2413,59 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "bigip_virtual_server_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-bigipvirtual-server-inventory-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "cdn_load_balancer_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-httploadbalancer-inventory-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "http_load_balancer_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-httploadbalancer-inventory-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "nginx_one_server_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-nginxone-server-inventory-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "tcp_load_balancer_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-tcploadbalancer-inventory-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "third_party_application_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-third-party-application-filter",
+      },
+      {
+        domain: "",
+        fieldPath: "udp_load_balancer_filter",
+        inline: false,
+        required: false,
+        resourceType: "namespace-udploadbalancer-inventory-filter",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-assign-create",
@@ -2272,6 +2550,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-assign-namespace-role-update",
@@ -2367,6 +2648,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-authentication-create",
@@ -2466,6 +2750,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/authentications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "authentication",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "authentication-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-authentication-delete",
@@ -2574,6 +2883,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/authentications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "authentication",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-authentication-get",
@@ -2700,6 +3020,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/authentications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-authentication-list",
@@ -2832,6 +3155,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/authentications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-authentication-update",
@@ -2943,6 +3269,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/authentications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "authentication",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "authentication-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-cascade-delete-create",
@@ -3041,6 +3392,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "user-cascade",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-create",
@@ -3140,6 +3502,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tenant-managementchild-tenant",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tenant-managementchild-tenant-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-delete",
@@ -3247,6 +3634,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "child-tenant",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-get",
@@ -3338,6 +3736,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-list",
@@ -3470,6 +3871,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-manager-create",
@@ -3572,6 +3976,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tenant-managementchild-tenant-manager",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tenant-managementchild-tenant-manager-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-manager-delete",
@@ -3679,6 +4108,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "child-tenant-manager",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-manager-get",
@@ -3804,6 +4244,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-manager-list",
@@ -3935,6 +4378,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-manager-update",
@@ -4045,6 +4491,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "child-tenant-manager",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tenant-managementchild-tenant-manager-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-update",
@@ -4155,6 +4626,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "child-tenant",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tenant-managementchild-tenant-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-citie-list",
@@ -4274,6 +4770,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-close-create",
@@ -4370,6 +4869,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-combined-notification-list",
@@ -4448,6 +4950,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-combined-notification-update",
@@ -4530,6 +5035,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-comment-create",
@@ -4628,6 +5136,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "attachments[]",
+        inline: false,
+        required: false,
+        resourceType: "customer-support-attachment",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-contact-create",
@@ -4727,6 +5246,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "contact",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "contact-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-contact-delete",
@@ -4834,6 +5378,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "contact",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-contact-get",
@@ -4960,6 +5515,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-contact-list",
@@ -5091,6 +5649,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-contact-update",
@@ -5201,6 +5762,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "contact",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "contact-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-countrie-list",
@@ -5295,6 +5881,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-customer-support-create",
@@ -5381,6 +5970,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "schemacustomer-support",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemacustomer-support-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-customer-support-list",
@@ -5458,6 +6072,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-deactivate-update",
@@ -5542,6 +6159,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-delete-create",
@@ -5650,6 +6270,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-disable-update",
@@ -5732,6 +6355,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-enable-update",
@@ -5814,6 +6440,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-escalate-create",
@@ -5910,6 +6539,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-evaluate-api-acces-create",
@@ -5997,6 +6629,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "access_control_type",
+        inline: false,
+        required: false,
+        resourceType: "namespace-access-control",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-evaluate-batch-api-acces-create",
@@ -6084,6 +6727,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-fast-acls-for-internet-vip-create",
@@ -6185,6 +6831,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "fast_acls[]",
+        inline: false,
+        required: false,
+        resourceType: "schemaviews-object-ref",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-fast-acls-for-internet-vip-list",
@@ -6277,6 +6934,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-favicon-list",
@@ -6354,6 +7014,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-add-update",
@@ -6435,6 +7098,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-create",
@@ -6518,6 +7184,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-delete",
@@ -6630,6 +7299,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-get",
@@ -6738,6 +7410,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-list",
@@ -6871,6 +7546,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-patch",
@@ -6968,6 +7646,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-remove-update",
@@ -7049,6 +7730,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-update",
@@ -7146,6 +7830,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-image-delete",
@@ -7227,6 +7914,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-image-list",
@@ -7304,6 +7994,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-image-update",
@@ -7387,6 +8080,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-inactive-list",
@@ -7465,6 +8161,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-last-login-list",
@@ -7542,6 +8241,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-login-in-time-create",
@@ -7626,6 +8328,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-login-list",
@@ -7732,6 +8437,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-logo-list",
@@ -7809,6 +8517,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-lookup-list",
@@ -7913,6 +8624,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-lookup-user-role-create",
@@ -7999,6 +8713,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenant-create",
@@ -8098,6 +8815,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tenant-managementmanaged-tenant",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tenant-managementmanaged-tenant-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenant-delete",
@@ -8205,6 +8947,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "managed-tenant",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenant-get",
@@ -8331,6 +9084,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenant-list",
@@ -8450,6 +9206,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenant-update",
@@ -8561,6 +9320,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "managed-tenant",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tenant-managementmanaged-tenant-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenants-by-user-list",
@@ -8681,6 +9465,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenants-list-list",
@@ -8800,6 +9587,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-mapper-create",
@@ -8908,6 +9698,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-mapper-get",
@@ -9012,6 +9805,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-migrate-create",
@@ -9110,6 +9906,15 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [
+      {
+        choiceField: "migratectmchildtenantsreqchoice",
+        fieldPath: "migratectmchildtenantsreqchoice",
+        options: ["ct_list_to_target_ctm"],
+      },
+    ],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-create",
@@ -9193,6 +9998,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "tenant_and_identity",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "namespace",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemanamespace-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-get",
@@ -9318,6 +10148,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-list",
@@ -9448,6 +10281,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-role-get",
@@ -9571,6 +10407,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-role-list",
@@ -9702,6 +10541,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-update",
@@ -9800,6 +10642,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "tenant_and_identity",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "namespace",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemanamespace-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-networking-inventory-create",
@@ -9887,6 +10754,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-notification-list",
@@ -9965,6 +10835,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-notification-update",
@@ -10047,6 +10920,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-oidc-provider-create",
@@ -10145,6 +11021,24 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "schemaoidc-provider",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemaoidc-provider-custom-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-oidc-provider-get",
@@ -10249,6 +11143,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-oidc-provider-list",
@@ -10341,6 +11238,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-oidc-provider-update",
@@ -10450,6 +11350,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-password-policy-list",
@@ -10541,6 +11444,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-priority-create",
@@ -10638,6 +11544,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-rbac-policy-get",
@@ -10762,6 +11671,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-rbac-policy-list",
@@ -10893,6 +11805,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-remove-namespace-role-update",
@@ -10988,6 +11903,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-reopen-create",
@@ -11083,6 +12001,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-request-delete-create",
@@ -11167,6 +12088,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-request-initial-acces-update",
@@ -11251,6 +12175,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-reset-create",
@@ -11332,6 +12259,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-resourcetype-get",
@@ -11440,6 +12370,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-resourcetype-list",
@@ -11517,6 +12450,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-create",
@@ -11614,6 +12550,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "role-custom",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "role-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-delete",
@@ -11721,6 +12682,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "role",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-get",
@@ -11824,6 +12796,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-list",
@@ -11915,6 +12890,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-update",
@@ -12024,6 +13002,24 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "role-custom",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "role-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-user-create",
@@ -12121,6 +13117,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "namespaces_role",
+        inline: false,
+        required: false,
+        resourceType: "user-namespaces-role",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-schema-get",
@@ -12229,6 +13236,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-schema-list",
@@ -12306,6 +13316,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-scim-update",
@@ -12415,6 +13428,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-send-password-email-create",
@@ -12516,6 +13532,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-serviceproviderconfig-list",
@@ -12593,6 +13612,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-session-list",
@@ -12670,6 +13692,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-setting-list",
@@ -12748,6 +13773,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-setting-update",
@@ -12832,6 +13860,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "viewstenant-configuration-global",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-signup-get",
@@ -12925,6 +13964,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-stat-create",
@@ -13022,6 +14064,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "vhosts_types_filter[]",
+        inline: false,
+        required: false,
+        resourceType: "virtual-host-virtual-host",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-state-list",
@@ -13129,6 +14182,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-subscribe-create",
@@ -13213,6 +14269,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-suggest-value-create",
@@ -13295,6 +14354,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-summary-list",
@@ -13383,6 +14445,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-support-info-list",
@@ -13460,6 +14525,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-sync-create",
@@ -13542,6 +14610,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-configuration-create",
@@ -13644,6 +14715,24 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tenant_configurations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tenant-configuration",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tenant-configuration-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-configuration-delete",
@@ -13752,6 +14841,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tenant_configurations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tenant-configuration",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-configuration-get",
@@ -13878,6 +14978,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tenant_configurations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-configuration-list",
@@ -14010,6 +15113,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tenant_configurations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-configuration-update",
@@ -14121,6 +15227,24 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tenant_configurations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tenant-configuration",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tenant-configuration-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-escalation-doc-list",
@@ -14198,6 +15322,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-profile-create",
@@ -14297,6 +15424,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tenant-profile",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tenant-profile-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-profile-delete",
@@ -14404,6 +15556,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tenant-profile",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-profile-get",
@@ -14529,6 +15692,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-profile-list",
@@ -14660,6 +15826,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-profile-update",
@@ -14770,6 +15939,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "tenant-profile",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "tenant-profile-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-to-list",
@@ -14861,6 +16055,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-unassign-create",
@@ -14945,6 +16142,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-unset-update",
@@ -15027,6 +16227,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-unsubscribe-create",
@@ -15111,6 +16314,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-update-allow-advertise-on-public-create",
@@ -15197,6 +16403,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-create",
@@ -15280,6 +16489,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "userType",
+        inline: false,
+        required: false,
+        resourceType: "user-user",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-delete",
@@ -15392,6 +16612,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-get",
@@ -15500,6 +16723,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-group-create",
@@ -15581,6 +16807,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-group-delete",
@@ -15690,6 +16919,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-group-get",
@@ -15782,6 +17014,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-group-list",
@@ -15859,6 +17094,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-group-update",
@@ -15955,6 +17193,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-identification-create",
@@ -16058,6 +17299,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/user_identifications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "user-identification",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "user-identification-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-identification-delete",
@@ -16166,6 +17432,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/user_identifications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "user-identification",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-identification-get",
@@ -16293,6 +17570,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/user_identifications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-identification-list",
@@ -16425,6 +17705,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/user_identifications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-identification-update",
@@ -16537,6 +17820,31 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/user_identifications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "user-identification",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "user-identification-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-list",
@@ -16670,6 +17978,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-patch",
@@ -16765,6 +18076,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-role-create",
@@ -16861,6 +18175,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-role-list",
@@ -16952,6 +18269,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-role-update",
@@ -17048,6 +18368,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-token-list",
@@ -17125,6 +18448,16 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-update",
@@ -17222,6 +18555,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "userType",
+        inline: false,
+        required: false,
+        resourceType: "user-user",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-validate-contact-create",
@@ -17309,6 +18653,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemacontact-global",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-validate-registration-create",
@@ -17396,6 +18751,17 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "tenant_type",
+        inline: false,
+        required: false,
+        resourceType: "schema-tenant",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-validate-rule-create",
@@ -17480,6 +18846,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-view-preference-list",
@@ -17557,6 +18926,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-view-preference-update",
@@ -17640,6 +19012,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
   {
     toolName: "f5xc-api-tenantandidentity-whoami-list",
@@ -17733,6 +19108,9 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [],
   },
 ];
 

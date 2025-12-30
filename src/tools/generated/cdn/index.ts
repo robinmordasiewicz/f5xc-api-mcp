@@ -102,6 +102,16 @@ export const cdnTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-aggregation-create",
@@ -200,6 +210,16 @@ export const cdnTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-cache-purge-create",
@@ -309,6 +329,27 @@ export const cdnTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [
+      {
+        choiceField: "pattern_type",
+        fieldPath: "pattern_type",
+        options: ["hostname", "pattern", "purge_all", "url"],
+      },
+      {
+        choiceField: "purge_type",
+        fieldPath: "purge_type",
+        options: ["hard_purge", "soft_purge"],
+      },
+    ],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-create",
@@ -408,6 +449,38 @@ export const cdnTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "cdn-cache-rule",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemacdn-cache-rule-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-delete",
@@ -516,6 +589,24 @@ export const cdnTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "cdn-cache-rule",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-get",
@@ -641,6 +732,16 @@ export const cdnTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-list",
@@ -773,6 +874,16 @@ export const cdnTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-update",
@@ -884,6 +995,38 @@ export const cdnTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "cdn-cache-rule",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "schemacdn-cache-rule-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-create",
@@ -986,6 +1129,38 @@ export const cdnTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "cdn-loadbalancer",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-create-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewscdn-loadbalancer-create",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-delete",
@@ -1094,6 +1269,24 @@ export const cdnTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "cdn-loadbalancer",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-get",
@@ -1220,6 +1413,16 @@ export const cdnTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-list",
@@ -1352,6 +1555,16 @@ export const cdnTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-update",
@@ -1463,6 +1676,38 @@ export const cdnTools: ParsedOperation[] = [
     },
     curlExample:
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    dependencies: [
+      {
+        domain: "",
+        fieldPath: "",
+        inline: false,
+        required: false,
+        resourceType: "cdn-loadbalancer",
+      },
+      {
+        domain: "",
+        fieldPath: "metadata",
+        inline: false,
+        required: false,
+        resourceType: "schema-object-replace-meta",
+      },
+      {
+        domain: "",
+        fieldPath: "spec",
+        inline: false,
+        required: false,
+        resourceType: "viewscdn-loadbalancer-replace",
+      },
+    ],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-dos-automitigation-rule-delete",
@@ -1584,6 +1829,16 @@ export const cdnTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-dos-automitigation-rule-get",
@@ -1688,6 +1943,16 @@ export const cdnTools: ParsedOperation[] = [
       side_effects: {},
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-get-security-config-create",
@@ -1788,6 +2053,22 @@ export const cdnTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [
+      {
+        choiceField: "loadbalancer_choice",
+        fieldPath: "loadbalancer_choice",
+        options: ["all_cdn_loadbalancers", "cdn_loadbalancers_list"],
+      },
+    ],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-get-service-operation-statu-create",
@@ -1888,6 +2169,16 @@ export const cdnTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-list-service-operations-statu-create",
@@ -1988,6 +2279,22 @@ export const cdnTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [
+      {
+        choiceField: "options",
+        fieldPath: "options",
+        options: ["lastn", "time_range"],
+      },
+    ],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-metric-create",
@@ -2085,6 +2392,16 @@ export const cdnTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-subscribe-create",
@@ -2168,6 +2485,16 @@ export const cdnTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-suggestion-create",
@@ -2276,6 +2603,16 @@ export const cdnTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-cdn-unsubscribe-create",
@@ -2359,6 +2696,16 @@ export const cdnTools: ParsedOperation[] = [
       },
     },
     curlExample: null,
+    dependencies: [],
+    oneOfGroups: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_content_delivery_network_standard",
+        displayName: "F5XC Content Delivery Network Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
 ];
 

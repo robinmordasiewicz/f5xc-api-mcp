@@ -1,6 +1,6 @@
 {
-  "version": "1.0.66",
-  "timestamp": "2025-12-29T21:59:13.470839+00:00",
+  "version": "1.0.67",
+  "timestamp": "2025-12-29T23:23:06.306979+00:00",
   "specifications": [
     {
       "domain": "admin_console_and_ui",
@@ -220,9 +220,9 @@
     {
       "domain": "cdn",
       "title": "F5 XC Cdn API",
-      "description": "Create cache rules with expression-based matching for paths, headers, cookies, and query parameters. Deploy load balancers optimized for content distribution with configurable TTL settings and cache eligibility options. Monitor access logs and metrics for delivery performance. Purge cached content on demand and track service operation status across namespaces.",
+      "description": "Create cache rules using path matchers, cookie matching, header conditions, and query parameter filters. Configure TTL settings and cache eligibility options for fine-grained control over cached content. Deploy load balancers with access logging, metrics collection, and cache purge capabilities. Manage subscription services and monitor service operation status for active deployments.",
       "description_short": "Configure content delivery and caching rules",
-      "description_medium": "Define cache rules and load balancers for content distribution. Set TTL policies, path matching, and header-based caching decisions.",
+      "description_medium": "Set up cache rules with path matching and TTL controls. Define load balancers for optimized content distribution across edge locations.",
       "file": "cdn.json",
       "path_count": 26,
       "schema_count": 618,
@@ -1190,9 +1190,9 @@
     {
       "domain": "waf",
       "title": "F5 XC Waf API",
-      "description": "Deploy protection against common web attacks including injection, cross-site scripting, and protocol violations. Set up bot detection with configurable actions for automated traffic handling. Create exclusion policies to whitelist trusted requests and reduce false positives. Monitor security events and rule hits through metrics collection to analyze threat patterns and refine defensive configurations for virtual hosts.",
-      "description_short": "Configure web application firewall rules and policies",
-      "description_medium": "Manage application security through attack detection and blocking settings. Define custom response codes and signature-based threat mitigation.",
+      "description": "Set up firewall configurations with attack type settings and violation detection. Create exclusion policies to tune false positives and customize blocking responses. Deploy staged signatures before production release and monitor rule hits through security event metrics. Integrate with virtual hosts for layered protection using AI-based risk blocking and anonymization settings for sensitive data handling.",
+      "description_short": "Configure application firewall rules and bot protection",
+      "description_medium": "Define security policies for web applications. Manage attack signatures, exclusion rules, and threat detection settings.",
       "file": "waf.json",
       "path_count": 40,
       "schema_count": 314,

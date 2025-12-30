@@ -46,6 +46,14 @@ export interface DocumentationResponse {
   operationMetadata: OperationMetadata | null;
   // Curl example from enriched specs v1.0.66
   curlExample: string | null;
+  // Dependency intelligence from enriched specs v1.0.67
+  dependencies: {
+    requires: Array<{ resource: string; domain: string; required: boolean }>;
+    requiredBy: Array<{ resource: string; domain: string }>;
+  } | null;
+  oneOfFields: Array<{ field: string; options: string[] }> | null;
+  subscriptionRequirements: string[] | null;
+  creationOrder: string[] | null;
 }
 
 /**
@@ -400,6 +408,34 @@ function buildDocumentationResponse(operation: ParsedOperation): DocumentationRe
   const prerequisites =
     operation.operationMetadata?.conditions?.prerequisites ?? generatePrerequisites(operation);
 
+  // Build dependency intelligence from parsed operation
+  const dependencies =
+    operation.dependencies.length > 0
+      ? {
+          requires: operation.dependencies.map((dep) => ({
+            resource: dep.resourceType,
+            domain: dep.domain || "unknown",
+            required: dep.required,
+          })),
+          requiredBy: [], // Populated from dependency graph at runtime
+        }
+      : null;
+
+  const oneOfFields =
+    operation.oneOfGroups.length > 0
+      ? operation.oneOfGroups.map((group) => ({
+          field: group.choiceField,
+          options: group.options,
+        }))
+      : null;
+
+  const subscriptionRequirements =
+    operation.subscriptionRequirements.length > 0
+      ? operation.subscriptionRequirements.map(
+          (sub) => `${sub.displayName} (${sub.tier})${sub.required ? " - required" : ""}`
+        )
+      : null;
+
   return {
     mode: "documentation",
     tool: operation.toolName,
@@ -424,6 +460,11 @@ function buildDocumentationResponse(operation: ParsedOperation): DocumentationRe
     requiredFields: operation.requiredFields,
     operationMetadata: operation.operationMetadata,
     curlExample: operation.curlExample,
+    // Dependency intelligence from enriched specs v1.0.67
+    dependencies,
+    oneOfFields,
+    subscriptionRequirements,
+    creationOrder: null, // Populated from dependency graph at runtime
   };
 }
 
