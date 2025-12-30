@@ -121,7 +121,7 @@ export function buildDependencyGraph(
 
   return {
     version: "1.0.0",
-    generatedAt: new Date().toISOString(),
+    generatedAt: opts.generatedAt || new Date().toISOString(),
     totalResources: Object.keys(dependencies).length,
     dependencies,
     addonServiceMap,

@@ -154,6 +154,8 @@ export interface DependencyGraphOptions {
   buildReverseDeps: boolean;
   /** Maximum depth for dependency chain traversal */
   maxDepth: number;
+  /** Fixed timestamp for deterministic generation (optional) */
+  generatedAt?: string;
 }
 
 /**

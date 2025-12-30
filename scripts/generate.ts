@@ -332,7 +332,15 @@ async function generate(): Promise<void> {
 
   // Build dependency graph
   log.info("Building dependency graph...");
-  const dependencyGraph = buildDependencyGraph(specs);
+  // Read the spec index to get a deterministic timestamp
+  const specsIndexPath = join(__dirname, "..", "specs", "index.json");
+  const specsIndex = JSON.parse(readFileSync(specsIndexPath, "utf-8")) as {
+    version: string;
+    timestamp: string;
+  };
+  const dependencyGraph = buildDependencyGraph(specs, {
+    generatedAt: specsIndex.timestamp,
+  });
   const graphJson = serializeDependencyGraph(dependencyGraph);
   writeFileSync(CONFIG.DEPENDENCY_GRAPH_FILE, graphJson + "\n");
   log.info(`Dependency graph: ${dependencyGraph.totalResources} resources mapped`);
