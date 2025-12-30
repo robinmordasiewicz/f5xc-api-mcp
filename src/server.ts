@@ -26,8 +26,11 @@ import {
   resolveConsolidatedTool,
   getConsolidatedResource,
   getConsolidationStats,
+  generateDependencyReport,
+  getDependencyStats,
   type CrudOperation,
 } from "./tools/discovery/index.js";
+import type { DependencyDiscoveryAction } from "./generator/dependency-types.js";
 
 /**
  * Server configuration options
@@ -135,6 +138,8 @@ export class F5XCApiServer {
                     "f5xc-api-execute-tool",
                     "f5xc-api-search-resources",
                     "f5xc-api-execute-resource",
+                    "f5xc-api-dependencies",
+                    "f5xc-api-dependency-stats",
                   ],
                   message: isAuthenticated
                     ? "Authenticated - API execution enabled. Use f5xc-api-search-tools to find available API tools."
@@ -397,12 +402,58 @@ export class F5XCApiServer {
       }
     );
 
+    // Dependencies tool - get resource dependency information
+    this.server.tool(
+      DISCOVERY_TOOLS.dependencies.name,
+      DISCOVERY_TOOLS.dependencies.description,
+      {
+        resource: z.string().describe("Resource name (e.g., 'http-loadbalancer')"),
+        domain: z.string().describe("Domain containing the resource (e.g., 'virtual')"),
+        action: z
+          .enum(["prerequisites", "dependents", "oneOf", "subscriptions", "creationOrder", "full"])
+          .optional()
+          .describe("Type of dependency information to retrieve (default: 'full')"),
+      },
+      async (args) => {
+        const action = (args.action ?? "full") as DependencyDiscoveryAction;
+        const report = generateDependencyReport(args.domain, args.resource, action);
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(report, null, 2),
+            },
+          ],
+        };
+      }
+    );
+
+    // Dependency stats tool - get graph statistics
+    this.server.tool(
+      DISCOVERY_TOOLS.dependencyStats.name,
+      DISCOVERY_TOOLS.dependencyStats.description,
+      {},
+      async () => {
+        const stats = getDependencyStats();
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(stats, null, 2),
+            },
+          ],
+        };
+      }
+    );
+
     const indexMetadata = getIndexMetadata();
     const consolidationStats = getConsolidationStats();
     logger.info("Tool registration completed (dynamic discovery mode)", {
       authMode,
       authenticated: authMode !== AuthMode.NONE,
-      registeredTools: 6,
+      registeredTools: 8,
       indexedTools: indexMetadata.totalTools,
       consolidatedResources: consolidationStats.consolidatedCount,
       consolidationReduction: consolidationStats.reductionPercent,

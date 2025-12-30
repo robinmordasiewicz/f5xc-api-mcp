@@ -19,7 +19,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp src/tools/generated/*.json dist/tools/generated/",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "test": "vitest run",
