@@ -25,15 +25,15 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     outputs:
-      new_release_published: ${{ steps.semantic.outputs.new_release_published }}
-      new_release_version: ${{ steps.semantic.outputs.new_release_version }}
+      version: ${{ steps.version.outputs.version }}
+      npm_version: ${{ steps.version.outputs.npm_version }}
+      upstream_version: ${{ steps.version.outputs.upstream_version }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
-          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -51,24 +51,76 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Semantic Release
-        id: semantic
-        uses: cycjimmy/semantic-release-action@v6
+      - name: Generate version
+        id: version
+        run: |
+          # Get upstream API version
+          UPSTREAM_VERSION=$(node scripts/version.js upstream)
+          echo "upstream_version=$UPSTREAM_VERSION" >> $GITHUB_OUTPUT
+
+          # Generate full version (v{upstream}-{YYMMDDHHMM})
+          VERSION=$(node scripts/version.js)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+          # npm version (without v prefix)
+          NPM_VERSION="${VERSION#v}"
+          echo "npm_version=$NPM_VERSION" >> $GITHUB_OUTPUT
+
+          echo "Generated version: $VERSION"
+          echo "NPM version: $NPM_VERSION"
+          echo "Upstream API version: $UPSTREAM_VERSION"
+
+      - name: Update package.json version
+        run: |
+          node scripts/version.js update
+          cat package.json | jq '.version'
+
+      - name: Build with updated version
+        run: npm run build
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
-          semantic_version: 23
-          extra_plugins: |
-            @semantic-release/changelog@6
-            @semantic-release/git@10
+          tag_name: ${{ steps.version.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
+          body: |
+            ## F5 XC API MCP Server ${{ steps.version.outputs.version }}
+
+            **Upstream API Version:** ${{ steps.version.outputs.upstream_version }}
+            **Build Timestamp:** ${{ github.run_id }}
+
+            ### Installation
+
+            #### MCPB (Claude Desktop)
+            Download the `.mcpb` file and drag-and-drop to install.
+
+            #### npm
+            ```bash
+            npx @robinmordasiewicz/f5xc-api-mcp@${{ steps.version.outputs.npm_version }}
+            ```
+
+            #### Docker
+            ```bash
+            docker pull ghcr.io/${{ github.repository }}:${{ steps.version.outputs.npm_version }}
+            ```
+
+            ### Changes
+            See [commit history](https://github.com/${{ github.repository }}/commits/${{ steps.version.outputs.version }}) for details.
+          draft: false
+          prerelease: false
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish to npm
+        run: npm publish --access public
+        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   mcpb:
     name: MCPB Bundle
     runs-on: ubuntu-latest
     needs: release
-    if: needs.release.outputs.new_release_published == 'true'
 
     steps:
       - name: Checkout
@@ -83,8 +135,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Clean and build
+      - name: Update version and build
         run: |
+          node scripts/version.js update
           rm -rf dist
           npm run build
           echo "Generated domains:"
@@ -104,14 +157,14 @@ jobs:
         run: |
           echo "Files before packing:"
           ls -la dist/tools/generated/ | tail -5
-          mcpb pack . f5xc-api-mcp-${{ needs.release.outputs.new_release_version }}.mcpb
+          mcpb pack . f5xc-api-mcp-${{ needs.release.outputs.version }}.mcpb
           echo "Created bundle:"
           ls -lh *.mcpb
 
       - name: Upload MCPB to release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ needs.release.outputs.new_release_version }}
+          tag_name: ${{ needs.release.outputs.version }}
           files: "*.mcpb"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -120,11 +173,21 @@ jobs:
     name: Docker Build & Push
     runs-on: ubuntu-latest
     needs: release
-    if: needs.release.outputs.new_release_published == 'true'
 
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install dependencies and update version
+        run: |
+          npm ci
+          node scripts/version.js update
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -145,34 +208,27 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/f5xc-api-mcp
-            ghcr.io/${{ github.repository }}
-          tags: |
-            type=semver,pattern={{version}},value=${{ needs.release.outputs.new_release_version }}
-            type=semver,pattern={{major}}.{{minor}},value=${{ needs.release.outputs.new_release_version }}
-            type=semver,pattern={{major}},value=${{ needs.release.outputs.new_release_version }}
-            type=raw,value=latest
-
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/f5xc-api-mcp:${{ needs.release.outputs.npm_version }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/f5xc-api-mcp:latest
+            ghcr.io/${{ github.repository }}:${{ needs.release.outputs.npm_version }}
+            ghcr.io/${{ github.repository }}:latest
+          labels: |
+            org.opencontainers.image.version=${{ needs.release.outputs.npm_version }}
+            org.opencontainers.image.revision=${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.33.1
         with:
-          image-ref: "ghcr.io/${{ github.repository }}:${{ needs.release.outputs.new_release_version }}"
+          image-ref: "ghcr.io/${{ github.repository }}:${{ needs.release.outputs.npm_version }}"
           severity: "HIGH,CRITICAL"
           exit-code: "0"
           format: "sarif"
@@ -188,17 +244,18 @@ jobs:
     name: Release Notification
     runs-on: ubuntu-latest
     needs: [release, mcpb, docker]
-    if: needs.release.outputs.new_release_published == 'true'
 
     steps:
       - name: Create Summary
         run: |
-          echo "## 🚀 Release v${{ needs.release.outputs.new_release_version }}" >> $GITHUB_STEP_SUMMARY
+          echo "## Release ${{ needs.release.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Upstream API Version:** ${{ needs.release.outputs.upstream_version }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Published Artifacts" >> $GITHUB_STEP_SUMMARY
-          echo "- **MCPB**: Download from [Releases](https://github.com/${{ github.repository }}/releases/tag/v${{ needs.release.outputs.new_release_version }})" >> $GITHUB_STEP_SUMMARY
-          echo "- **npm**: \`npx f5xc-api-mcp\`" >> $GITHUB_STEP_SUMMARY
-          echo "- **Docker**: \`docker pull ghcr.io/${{ github.repository }}:${{ needs.release.outputs.new_release_version }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **MCPB**: Download from [Releases](https://github.com/${{ github.repository }}/releases/tag/${{ needs.release.outputs.version }})" >> $GITHUB_STEP_SUMMARY
+          echo "- **npm**: \`npx @robinmordasiewicz/f5xc-api-mcp@${{ needs.release.outputs.npm_version }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Docker**: \`docker pull ghcr.io/${{ github.repository }}:${{ needs.release.outputs.npm_version }}\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Installation" >> $GITHUB_STEP_SUMMARY
           echo '```bash' >> $GITHUB_STEP_SUMMARY
@@ -206,8 +263,8 @@ jobs:
           echo '# Download .mcpb file from releases and double-click to install' >> $GITHUB_STEP_SUMMARY
           echo '' >> $GITHUB_STEP_SUMMARY
           echo '# npm' >> $GITHUB_STEP_SUMMARY
-          echo 'npx f5xc-api-mcp' >> $GITHUB_STEP_SUMMARY
+          echo "npx @robinmordasiewicz/f5xc-api-mcp@${{ needs.release.outputs.npm_version }}" >> $GITHUB_STEP_SUMMARY
           echo '' >> $GITHUB_STEP_SUMMARY
           echo '# Docker' >> $GITHUB_STEP_SUMMARY
-          echo "docker run -it ghcr.io/${{ github.repository }}:${{ needs.release.outputs.new_release_version }}" >> $GITHUB_STEP_SUMMARY
+          echo "docker run -it ghcr.io/${{ github.repository }}:${{ needs.release.outputs.npm_version }}" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY

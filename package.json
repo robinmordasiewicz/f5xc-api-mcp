@@ -40,7 +40,12 @@
     "validate-docs": "npm run generate-docs && npm run validate-cli-commands",
     "prepare": "npm run build",
     "bundle": "mcpb pack",
-    "bundle:validate": "mcpb validate"
+    "bundle:validate": "mcpb validate",
+    "version:get": "node scripts/version.js",
+    "version:get:beta": "node scripts/version.js --beta",
+    "version:update": "node scripts/version.js update",
+    "version:update:beta": "node scripts/version.js update --beta",
+    "version:upstream": "node scripts/version.js upstream"
   },
   "keywords": [
     "f5",
