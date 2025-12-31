@@ -104,6 +104,25 @@ export type {
 } from "./resolver.js";
 export { resolveDependencies, formatCreationPlan, generateCompactPlan } from "./resolver.js";
 
+// Cost estimator exports (Phase C)
+export type {
+  LatencyLevel,
+  TokenEstimate,
+  LatencyEstimate,
+  ToolCostEstimate,
+  WorkflowCostEstimate,
+  EstimateCostParams,
+} from "./cost-estimator.js";
+export {
+  estimateToolTokens,
+  estimateToolLatency,
+  estimateToolCost,
+  estimateMultipleToolsCost,
+  estimateWorkflowCost,
+  formatCostEstimate,
+  formatWorkflowCostEstimate,
+} from "./cost-estimator.js";
+
 /**
  * MCP Tool Definitions for the discovery meta-tools
  *
@@ -398,6 +417,38 @@ export const DISCOVERY_TOOLS = {
         },
       },
       required: ["resource", "domain"],
+    },
+  },
+
+  estimateCost: {
+    name: "f5xc-api-estimate-cost",
+    description:
+      "Estimate token usage and latency for F5XC API tool calls. Provides cost estimates for individual tools, " +
+      "multiple tools, or complete creation plan workflows. Useful for planning and optimizing API interactions.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        toolName: {
+          type: "string",
+          description:
+            "A single tool name to estimate (e.g., 'f5xc-api-waap-http-loadbalancer-create')",
+        },
+        toolNames: {
+          type: "array",
+          items: { type: "string" },
+          description: "Multiple tool names to estimate costs for",
+        },
+        plan: {
+          type: "object",
+          description:
+            "A CreationPlan object from f5xc-api-resolve-dependencies to estimate workflow costs",
+        },
+        detailed: {
+          type: "boolean",
+          description: "Include detailed breakdown of token usage and latency (default: true)",
+          default: true,
+        },
+      },
     },
   },
 } as const;

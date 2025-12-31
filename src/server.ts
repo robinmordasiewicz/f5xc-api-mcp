@@ -37,7 +37,13 @@ import {
   formatValidationResult,
   resolveDependencies,
   formatCreationPlan,
+  estimateToolCost,
+  estimateMultipleToolsCost,
+  estimateWorkflowCost,
+  formatCostEstimate,
+  formatWorkflowCostEstimate,
   type CrudOperation,
+  type CreationPlan,
 } from "./tools/discovery/index.js";
 import type { DependencyDiscoveryAction } from "./generator/dependency-types.js";
 
@@ -149,6 +155,9 @@ export class F5XCApiServer {
                     "f5xc-api-execute-resource",
                     "f5xc-api-dependencies",
                     "f5xc-api-dependency-stats",
+                    "f5xc-api-validate-params",
+                    "f5xc-api-resolve-dependencies",
+                    "f5xc-api-estimate-cost",
                   ],
                   message: isAuthenticated
                     ? "Authenticated - API execution enabled. Use f5xc-api-search-tools to find available API tools."
@@ -576,12 +585,110 @@ export class F5XCApiServer {
       }
     );
 
+    // Phase C: Cost estimation tool
+    this.server.tool(
+      DISCOVERY_TOOLS.estimateCost.name,
+      DISCOVERY_TOOLS.estimateCost.description,
+      {
+        toolName: z.string().optional().describe("Single tool name to estimate"),
+        toolNames: z.array(z.string()).optional().describe("Multiple tool names to estimate"),
+        plan: z.record(z.string(), z.unknown()).optional().describe("CreationPlan to estimate"),
+        detailed: z.boolean().optional().default(true).describe("Include detailed breakdown"),
+      },
+      async (args) => {
+        // Single tool estimation
+        if (args.toolName) {
+          const estimate = estimateToolCost(args.toolName);
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    type: "single_tool",
+                    estimate,
+                    formatted: args.detailed ? formatCostEstimate(estimate) : undefined,
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        // Multiple tools estimation
+        if (args.toolNames && args.toolNames.length > 0) {
+          const estimates = estimateMultipleToolsCost(args.toolNames);
+          const totalTokens = estimates.reduce((sum, e) => sum + e.tokens.totalTokens, 0);
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    type: "multiple_tools",
+                    toolCount: estimates.length,
+                    totalTokens,
+                    estimates,
+                    formatted: args.detailed
+                      ? estimates.map((e) => formatCostEstimate(e)).join("\n\n---\n\n")
+                      : undefined,
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        // Workflow/plan estimation
+        if (args.plan) {
+          const estimate = estimateWorkflowCost(args.plan as unknown as CreationPlan);
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    type: "workflow",
+                    estimate,
+                    formatted: args.detailed ? formatWorkflowCostEstimate(estimate) : undefined,
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        // No valid input provided
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  error: "No valid input provided",
+                  hint: "Provide either 'toolName', 'toolNames', or 'plan' parameter",
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
+    );
+
     const indexMetadata = getIndexMetadata();
     const consolidationStats = getConsolidationStats();
     logger.info("Tool registration completed (dynamic discovery mode)", {
       authMode,
       authenticated: authMode !== AuthMode.NONE,
-      registeredTools: 10,
+      registeredTools: 11,
       indexedTools: indexMetadata.totalTools,
       consolidatedResources: consolidationStats.consolidatedCount,
       consolidationReduction: consolidationStats.reductionPercent,
