@@ -35,6 +35,8 @@ import {
   getDependencyStats,
   validateToolParams,
   formatValidationResult,
+  resolveDependencies,
+  formatCreationPlan,
   type CrudOperation,
 } from "./tools/discovery/index.js";
 import type { DependencyDiscoveryAction } from "./generator/dependency-types.js";
@@ -511,12 +513,75 @@ export class F5XCApiServer {
       }
     );
 
+    // Phase C: Dependency resolver tool
+    this.server.tool(
+      DISCOVERY_TOOLS.resolveDependencies.name,
+      DISCOVERY_TOOLS.resolveDependencies.description,
+      {
+        resource: z.string().describe("Target resource to create"),
+        domain: z.string().describe("Domain containing the resource"),
+        existingResources: z
+          .array(z.string())
+          .optional()
+          .describe("Resources that already exist (will be skipped)"),
+        includeOptional: z
+          .boolean()
+          .optional()
+          .default(false)
+          .describe("Include optional dependencies"),
+        maxDepth: z.number().optional().default(10).describe("Maximum dependency traversal depth"),
+        expandAlternatives: z
+          .boolean()
+          .optional()
+          .default(false)
+          .describe("Include alternative paths for oneOf choices"),
+      },
+      async (args) => {
+        const result = resolveDependencies({
+          resource: args.resource,
+          domain: args.domain,
+          existingResources: args.existingResources,
+          includeOptional: args.includeOptional,
+          maxDepth: args.maxDepth,
+          expandAlternatives: args.expandAlternatives,
+        });
+
+        if (!result.success || !result.plan) {
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify({ success: false, error: result.error }, null, 2),
+              },
+            ],
+          };
+        }
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  success: true,
+                  plan: result.plan,
+                  formatted: formatCreationPlan(result.plan),
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
+    );
+
     const indexMetadata = getIndexMetadata();
     const consolidationStats = getConsolidationStats();
     logger.info("Tool registration completed (dynamic discovery mode)", {
       authMode,
       authenticated: authMode !== AuthMode.NONE,
-      registeredTools: 9,
+      registeredTools: 10,
       indexedTools: indexMetadata.totalTools,
       consolidatedResources: consolidationStats.consolidatedCount,
       consolidationReduction: consolidationStats.reductionPercent,

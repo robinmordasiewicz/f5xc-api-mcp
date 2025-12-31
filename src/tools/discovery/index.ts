@@ -94,6 +94,16 @@ export {
 export type { ValidationError, ValidationResult, ValidateParams } from "./validate.js";
 export { validateToolParams, formatValidationResult } from "./validate.js";
 
+// Resolver exports (Phase C)
+export type {
+  WorkflowStep,
+  AlternativePath,
+  CreationPlan,
+  ResolveParams,
+  ResolveResult,
+} from "./resolver.js";
+export { resolveDependencies, formatCreationPlan, generateCompactPlan } from "./resolver.js";
+
 /**
  * MCP Tool Definitions for the discovery meta-tools
  *
@@ -344,6 +354,50 @@ export const DISCOVERY_TOOLS = {
         },
       },
       required: ["toolName"],
+    },
+  },
+
+  resolveDependencies: {
+    name: "f5xc-api-resolve-dependencies",
+    description:
+      "Generate a complete creation plan for an F5XC resource with all transitive dependencies. " +
+      "Returns step-by-step workflow with tool names, required inputs, and oneOf choices. " +
+      "Essential for understanding what resources must be created before the target resource.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        resource: {
+          type: "string",
+          description: "The target resource to create (e.g., 'http-loadbalancer', 'origin-pool')",
+        },
+        domain: {
+          type: "string",
+          description: "The domain containing the resource (e.g., 'virtual', 'network')",
+        },
+        existingResources: {
+          type: "array",
+          items: { type: "string" },
+          description:
+            "Resources that already exist (will be skipped). Format: 'domain/resource' " +
+            "(e.g., ['network/origin-pool', 'certificates/certificate'])",
+        },
+        includeOptional: {
+          type: "boolean",
+          description: "Include optional dependencies in the plan (default: false)",
+          default: false,
+        },
+        maxDepth: {
+          type: "number",
+          description: "Maximum depth for dependency traversal (default: 10)",
+          default: 10,
+        },
+        expandAlternatives: {
+          type: "boolean",
+          description: "Include alternative paths for oneOf choices (default: false)",
+          default: false,
+        },
+      },
+      required: ["resource", "domain"],
     },
   },
 } as const;
