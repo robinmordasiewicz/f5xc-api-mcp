@@ -132,6 +132,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-certified-hardware-list",
@@ -267,6 +269,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-create",
@@ -391,6 +395,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-delete",
@@ -510,6 +516,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-get",
@@ -639,6 +647,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-list",
@@ -774,6 +784,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-reapply-vpc-attachment-create",
@@ -878,6 +890,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-connect-update",
@@ -1014,6 +1028,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-credentials-create",
@@ -1140,6 +1156,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-credentials-delete",
@@ -1258,6 +1276,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-credentials-get",
@@ -1386,6 +1406,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-credentials-list",
@@ -1520,6 +1542,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-credentials-update",
@@ -1655,6 +1679,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-elastic-ip-create",
@@ -1783,6 +1809,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-elastic-ip-delete",
@@ -1902,6 +1930,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-elastic-ip-get",
@@ -2032,6 +2062,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-elastic-ip-list",
@@ -2167,6 +2199,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-elastic-ip-update",
@@ -2303,6 +2337,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-link-create",
@@ -2427,6 +2463,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-link-delete",
@@ -2546,6 +2584,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-link-get",
@@ -2675,6 +2715,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-link-list",
@@ -2810,6 +2852,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-link-update",
@@ -2946,6 +2990,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-region-get",
@@ -3074,6 +3120,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-region-list",
@@ -3209,6 +3257,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-cloud-region-update",
@@ -3345,6 +3395,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-discover-vpc-create",
@@ -3454,6 +3506,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-edge-credential-create",
@@ -3548,6 +3602,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-edge-list-list",
@@ -3628,6 +3684,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-force-delete-create",
@@ -3728,6 +3786,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-metric-create",
@@ -3814,6 +3874,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-reapply-config-create",
@@ -3914,6 +3976,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cloudinfrastructure-segment-metric-create",
@@ -4000,6 +4064,8 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

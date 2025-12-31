@@ -5,7 +5,8 @@
  * This implements lazy loading to avoid upfront token consumption.
  */
 
-import type { ParsedOperation } from "../../generator/openapi-parser.js";
+import type { ParsedOperation, CommonError } from "../../generator/openapi-parser.js";
+import type { OneOfGroup } from "../../generator/dependency-types.js";
 import { getToolByName } from "../registry.js";
 import { toolExists, getToolEntry, getToolIndex } from "./index-loader.js";
 
@@ -40,6 +41,17 @@ export interface ToolDescription {
   hasRequestBody: boolean;
   /** Request body schema reference (if any) */
   requestBodyRef: string | null;
+  // Phase A enhancement fields
+  /** Risk level for the operation */
+  dangerLevel: "low" | "medium" | "high" | null;
+  /** Whether this operation is deprecated */
+  isDeprecated: boolean;
+  /** Deprecation message with migration guidance */
+  deprecationMessage: string | null;
+  /** Mutually exclusive field groups (choose one of) */
+  oneOfGroups: OneOfGroup[];
+  /** Common errors that may occur with this operation */
+  commonErrors: CommonError[];
 }
 
 /**
@@ -148,6 +160,12 @@ export function describeTool(toolName: string): ToolDescription | null {
     queryParameters: tool.queryParameters.map(extractParameterDescription),
     hasRequestBody: tool.requestBodySchema !== null,
     requestBodyRef,
+    // Phase A enhancement fields
+    dangerLevel: tool.dangerLevel,
+    isDeprecated: tool.isDeprecated,
+    deprecationMessage: tool.deprecationMessage,
+    oneOfGroups: tool.oneOfGroups,
+    commonErrors: tool.operationMetadata?.common_errors ?? [],
   };
 }
 

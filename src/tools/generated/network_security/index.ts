@@ -143,6 +143,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-delete",
@@ -275,6 +277,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-get",
@@ -417,6 +421,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-list",
@@ -565,6 +571,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-rule-create",
@@ -703,6 +711,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-rule-delete",
@@ -835,6 +845,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-rule-get",
@@ -977,6 +989,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-rule-list",
@@ -1125,6 +1139,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-rule-update",
@@ -1275,6 +1291,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-fast-acl-update",
@@ -1425,6 +1443,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-filter-set-create",
@@ -1562,6 +1582,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-filter-set-delete",
@@ -1694,6 +1716,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-filter-set-get",
@@ -1836,6 +1860,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-filter-set-list",
@@ -1984,6 +2010,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-filter-set-update",
@@ -2133,6 +2161,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-find-create",
@@ -2246,6 +2276,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-forward-proxy-policy-create",
@@ -2385,6 +2417,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-forward-proxy-policy-delete",
@@ -2516,6 +2550,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-forward-proxy-policy-get",
@@ -2657,6 +2693,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-forward-proxy-policy-list",
@@ -2804,6 +2842,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-forward-proxy-policy-update",
@@ -2952,6 +2992,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-graph-create",
@@ -3066,6 +3108,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-hit-create",
@@ -3179,6 +3223,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-latency-create",
@@ -3291,6 +3337,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-nat-policy-create",
@@ -3427,6 +3475,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-nat-policy-delete",
@@ -3558,6 +3608,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-nat-policy-get",
@@ -3700,6 +3752,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-nat-policy-list",
@@ -3847,6 +3901,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-nat-policy-update",
@@ -3996,6 +4052,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-firewall-create",
@@ -4136,6 +4194,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-firewall-delete",
@@ -4268,6 +4328,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-firewall-get",
@@ -4410,6 +4472,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-firewall-list",
@@ -4558,6 +4622,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-firewall-update",
@@ -4707,6 +4773,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-create",
@@ -4843,6 +4911,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-delete",
@@ -4974,6 +5044,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-get",
@@ -5115,6 +5187,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-list",
@@ -5262,6 +5336,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-rule-create",
@@ -5402,6 +5478,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-rule-delete",
@@ -5534,6 +5612,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-rule-get",
@@ -5676,6 +5756,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-rule-list",
@@ -5824,6 +5906,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-rule-update",
@@ -5974,6 +6058,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-set-get",
@@ -6114,6 +6200,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-set-list",
@@ -6262,6 +6350,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-update",
@@ -6411,6 +6501,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-view-create",
@@ -6551,6 +6643,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-view-delete",
@@ -6683,6 +6777,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-view-get",
@@ -6825,6 +6921,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-view-list",
@@ -6973,6 +7071,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-network-policy-view-update",
@@ -7122,6 +7222,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-policy-based-routing-create",
@@ -7262,6 +7364,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-policy-based-routing-delete",
@@ -7394,6 +7498,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-policy-based-routing-get",
@@ -7536,6 +7642,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-policy-based-routing-list",
@@ -7684,6 +7792,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-policy-based-routing-update",
@@ -7833,6 +7943,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-segment-connection-get",
@@ -7974,6 +8086,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-segment-connection-list",
@@ -8122,6 +8236,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-segment-connection-update",
@@ -8271,6 +8387,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-segment-create",
@@ -8408,6 +8526,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-segment-delete",
@@ -8540,6 +8660,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-segment-get",
@@ -8682,6 +8804,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-segment-list",
@@ -8830,6 +8954,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-segment-update",
@@ -8979,6 +9105,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-service-policy-create",
@@ -9128,6 +9256,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-service-policy-delete",
@@ -9271,6 +9401,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-service-policy-get",
@@ -9425,6 +9557,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-service-policy-list",
@@ -9584,6 +9718,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-networksecurity-service-policy-update",
@@ -9745,6 +9881,8 @@ export const network_securityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

@@ -138,6 +138,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-container-registry-delete",
@@ -263,6 +265,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-container-registry-get",
@@ -398,6 +402,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-container-registry-list",
@@ -539,6 +545,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-container-registry-update",
@@ -681,6 +689,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-binding-create",
@@ -816,6 +826,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-binding-delete",
@@ -942,6 +954,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-binding-get",
@@ -1079,6 +1093,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-binding-list",
@@ -1221,6 +1237,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-binding-update",
@@ -1365,6 +1383,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-create",
@@ -1500,6 +1520,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-delete",
@@ -1626,6 +1648,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-get",
@@ -1763,6 +1787,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-list",
@@ -1905,6 +1931,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-cluster-role-update",
@@ -2049,6 +2077,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-admission-create",
@@ -2183,6 +2213,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-admission-delete",
@@ -2309,6 +2341,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-admission-get",
@@ -2445,6 +2479,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-admission-list",
@@ -2587,6 +2623,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-admission-update",
@@ -2731,6 +2769,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-policy-create",
@@ -2865,6 +2905,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-policy-delete",
@@ -2990,6 +3032,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-policy-get",
@@ -3126,6 +3170,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-policy-list",
@@ -3267,6 +3313,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-managedkubernetes-k8s-pod-security-policy-update",
@@ -3410,6 +3458,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

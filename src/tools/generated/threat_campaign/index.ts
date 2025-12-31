@@ -99,6 +99,8 @@ export const threat_campaignTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

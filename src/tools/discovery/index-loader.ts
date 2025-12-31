@@ -21,6 +21,9 @@ function generateIndex(): ToolIndex {
     resource: tool.resource,
     operation: tool.operation,
     summary: tool.summary,
+    // Phase A enhancement fields
+    dangerLevel: tool.dangerLevel,
+    isDeprecated: tool.isDeprecated,
   }));
 
   // Calculate domain counts

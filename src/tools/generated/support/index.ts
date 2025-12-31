@@ -141,6 +141,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-change-password-create",
@@ -266,6 +268,8 @@ export const supportTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-check-debug-info-collection-list",
@@ -360,6 +364,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-close-create",
@@ -473,6 +479,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-comment-create",
@@ -594,6 +602,8 @@ export const supportTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-config-create",
@@ -730,6 +740,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-config-list",
@@ -848,6 +860,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-customer-support-create",
@@ -974,6 +988,8 @@ export const supportTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-customer-support-get",
@@ -1102,6 +1118,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-customer-support-list",
@@ -1237,6 +1255,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-delete-create",
@@ -1373,6 +1393,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-dhcp-lease-list",
@@ -1479,6 +1501,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-diagnosi-list",
@@ -1586,6 +1610,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-disconnect-create",
@@ -1722,6 +1748,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-download-debug-info-collection-list",
@@ -1816,6 +1844,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-escalate-create",
@@ -1929,6 +1959,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-exec-create",
@@ -2063,6 +2095,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-exec-log-list",
@@ -2195,6 +2229,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-exec-user-create",
@@ -2329,6 +2365,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-fetchdump-create",
@@ -2439,6 +2477,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-health-list",
@@ -2546,6 +2586,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-host-ping-create",
@@ -2682,6 +2724,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-info-list",
@@ -2800,6 +2844,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-jira-projects-issue-type-create",
@@ -2891,6 +2937,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-list-list",
@@ -3009,6 +3057,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-list-service-list",
@@ -3115,6 +3165,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-list-tcpdump-create",
@@ -3235,6 +3287,8 @@ export const supportTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-log-list",
@@ -3379,6 +3433,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-ping-create",
@@ -3491,6 +3547,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-priority-create",
@@ -3604,6 +3662,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-reboot-create",
@@ -3740,6 +3800,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-reopen-create",
@@ -3852,6 +3914,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-resync-crl-create",
@@ -3970,6 +4034,8 @@ export const supportTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-rule-list",
@@ -4088,6 +4154,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-soft-restart-create",
@@ -4238,6 +4306,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-start-debug-info-collection-list",
@@ -4343,6 +4413,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-statu-list",
@@ -4473,6 +4545,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-stop-tcpdump-create",
@@ -4583,6 +4657,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-support-ticket-create",
@@ -4670,6 +4746,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-tax-exempt-request-create",
@@ -4768,6 +4846,8 @@ export const supportTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-tcpdump-create",
@@ -4880,6 +4960,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-ticket-tracking-system-create",
@@ -5006,6 +5088,8 @@ export const supportTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-ticket-tracking-system-delete",
@@ -5124,6 +5208,8 @@ export const supportTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-ticket-tracking-system-get",
@@ -5251,6 +5337,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-ticket-tracking-system-list",
@@ -5385,6 +5473,8 @@ export const supportTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-ticket-tracking-system-update",
@@ -5520,6 +5610,8 @@ export const supportTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-support-validate-ticket-tracking-system-create",
@@ -5625,6 +5717,8 @@ export const supportTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

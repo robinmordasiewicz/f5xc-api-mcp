@@ -133,6 +133,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-address-allocator-delete",
@@ -252,6 +254,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-address-allocator-get",
@@ -380,6 +384,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-address-allocator-list",
@@ -515,6 +521,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-advertise-policy-create",
@@ -642,6 +650,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-advertise-policy-delete",
@@ -760,6 +770,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-advertise-policy-get",
@@ -889,6 +901,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-advertise-policy-list",
@@ -1023,6 +1037,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-advertise-policy-update",
@@ -1159,6 +1175,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-asn-set-create",
@@ -1284,6 +1302,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-asn-set-delete",
@@ -1403,6 +1423,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-asn-set-get",
@@ -1533,6 +1555,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-asn-set-list",
@@ -1668,6 +1692,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-asn-set-update",
@@ -1805,6 +1831,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-create",
@@ -1930,6 +1958,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-delete",
@@ -2049,6 +2079,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-get",
@@ -2179,6 +2211,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-list",
@@ -2314,6 +2348,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-peer-list",
@@ -2420,6 +2456,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-route-list",
@@ -2526,6 +2564,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-routing-policy-create",
@@ -2653,6 +2693,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-routing-policy-delete",
@@ -2771,6 +2813,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-routing-policy-get",
@@ -2899,6 +2943,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-routing-policy-list",
@@ -3033,6 +3079,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-routing-policy-update",
@@ -3169,6 +3217,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgp-update",
@@ -3306,6 +3356,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-bgpstatu-list",
@@ -3425,6 +3477,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-dc-cluster-group-create",
@@ -3552,6 +3606,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-dc-cluster-group-delete",
@@ -3671,6 +3727,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-dc-cluster-group-get",
@@ -3800,6 +3858,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-dc-cluster-group-list",
@@ -3935,6 +3995,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-dc-cluster-group-update",
@@ -4071,6 +4133,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-forwarding-class-create",
@@ -4197,6 +4261,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-forwarding-class-delete",
@@ -4315,6 +4381,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-forwarding-class-get",
@@ -4443,6 +4511,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-forwarding-class-list",
@@ -4577,6 +4647,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-forwarding-class-update",
@@ -4712,6 +4784,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike-phase1-profile-create",
@@ -4839,6 +4913,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike-phase1-profile-delete",
@@ -4958,6 +5034,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike-phase1-profile-get",
@@ -5087,6 +5165,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike-phase1-profile-list",
@@ -5222,6 +5302,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike-phase1-profile-update",
@@ -5358,6 +5440,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike-phase2-profile-create",
@@ -5485,6 +5569,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike-phase2-profile-delete",
@@ -5604,6 +5690,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike-phase2-profile-get",
@@ -5733,6 +5821,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike-phase2-profile-list",
@@ -5868,6 +5958,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike-phase2-profile-update",
@@ -6004,6 +6096,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike1-create",
@@ -6128,6 +6222,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike1-delete",
@@ -6247,6 +6343,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike1-get",
@@ -6376,6 +6474,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike1-list",
@@ -6511,6 +6611,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike1-update",
@@ -6647,6 +6749,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike2-create",
@@ -6771,6 +6875,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike2-delete",
@@ -6890,6 +6996,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike2-get",
@@ -7019,6 +7127,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike2-list",
@@ -7154,6 +7264,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ike2-update",
@@ -7290,6 +7402,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ip-prefix-set-create",
@@ -7415,6 +7529,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ip-prefix-set-delete",
@@ -7534,6 +7650,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ip-prefix-set-get",
@@ -7664,6 +7782,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ip-prefix-set-list",
@@ -7799,6 +7919,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-ip-prefix-set-update",
@@ -7936,6 +8058,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-metric-create",
@@ -8044,6 +8168,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-network-connector-create",
@@ -8171,6 +8297,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-network-connector-delete",
@@ -8290,6 +8418,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-network-connector-get",
@@ -8419,6 +8549,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-network-connector-list",
@@ -8554,6 +8686,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-network-connector-update",
@@ -8690,6 +8824,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-public-ip-get",
@@ -8819,6 +8955,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-public-ip-list",
@@ -8954,6 +9092,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-public-ip-update",
@@ -9091,6 +9231,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-route-create",
@@ -9216,6 +9358,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-route-delete",
@@ -9335,6 +9479,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-route-get",
@@ -9465,6 +9611,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-route-list",
@@ -9600,6 +9748,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-route-update",
@@ -9737,6 +9887,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-simplified-route-create",
@@ -9871,6 +10023,8 @@ export const networkTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-srv6-network-slice-create",
@@ -9999,6 +10153,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-srv6-network-slice-delete",
@@ -10118,6 +10274,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-srv6-network-slice-get",
@@ -10248,6 +10406,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-srv6-network-slice-list",
@@ -10383,6 +10543,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-srv6-network-slice-update",
@@ -10520,6 +10682,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-subnet-create",
@@ -10645,6 +10809,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-subnet-delete",
@@ -10764,6 +10930,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-subnet-get",
@@ -10893,6 +11061,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-subnet-list",
@@ -11028,6 +11198,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-subnet-update",
@@ -11164,6 +11336,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-traceroute-create",
@@ -11276,6 +11450,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-tunnel-create",
@@ -11407,6 +11583,8 @@ export const networkTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-tunnel-delete",
@@ -11533,6 +11711,8 @@ export const networkTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-tunnel-get",
@@ -11669,6 +11849,8 @@ export const networkTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-tunnel-list",
@@ -11811,6 +11993,8 @@ export const networkTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-tunnel-update",
@@ -11954,6 +12138,8 @@ export const networkTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-virtual-network-create",
@@ -12078,6 +12264,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-virtual-network-delete",
@@ -12197,6 +12385,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-virtual-network-get",
@@ -12326,6 +12516,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-virtual-network-list",
@@ -12461,6 +12653,8 @@ export const networkTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-network-virtual-network-update",
@@ -12597,6 +12791,8 @@ export const networkTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

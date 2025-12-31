@@ -85,6 +85,8 @@ export const vpm_and_node_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

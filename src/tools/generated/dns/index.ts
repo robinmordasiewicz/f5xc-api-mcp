@@ -94,6 +94,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-compliance-checks-create",
@@ -221,6 +223,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-compliance-checks-delete",
@@ -339,6 +343,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-compliance-checks-get",
@@ -467,6 +473,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-compliance-checks-list",
@@ -601,6 +609,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-compliance-checks-update",
@@ -736,6 +746,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-domain-create",
@@ -861,6 +873,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-domain-delete",
@@ -980,6 +994,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-domain-get",
@@ -1109,6 +1125,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-domain-list",
@@ -1244,6 +1262,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-domain-update",
@@ -1380,6 +1400,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-health-check-create",
@@ -1507,6 +1529,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-health-check-delete",
@@ -1625,6 +1649,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-health-check-get",
@@ -1753,6 +1779,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-health-check-list",
@@ -1887,6 +1915,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-health-check-update",
@@ -2022,6 +2052,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-create",
@@ -2146,6 +2178,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-delete",
@@ -2264,6 +2298,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-get",
@@ -2392,6 +2428,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-list",
@@ -2526,6 +2564,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-lb-pool-update",
@@ -2661,6 +2701,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-create",
@@ -2788,6 +2830,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-delete",
@@ -2906,6 +2950,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-get",
@@ -3034,6 +3080,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-list",
@@ -3168,6 +3216,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-load-balancer-update",
@@ -3303,6 +3353,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-zone-create",
@@ -3426,6 +3478,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-zone-delete",
@@ -3544,6 +3598,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-zone-get",
@@ -3672,6 +3728,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-zone-list",
@@ -3806,6 +3864,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-dns-zone-update",
@@ -3941,6 +4001,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-export-list",
@@ -4047,6 +4109,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-health-statu-get",
@@ -4153,6 +4217,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-health-statu-list",
@@ -4247,6 +4313,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-health-status-change-event-list",
@@ -4390,6 +4458,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-import-axfr-create",
@@ -4476,6 +4546,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-import-bind-create-create",
@@ -4573,6 +4645,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-import-bind-validate-create",
@@ -4662,6 +4736,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-import-create",
@@ -4748,6 +4824,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-local-zone-file-list",
@@ -4854,6 +4932,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-metric-create",
@@ -4954,6 +5034,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-pool-members-health-statu-list",
@@ -5048,6 +5130,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-record-name-delete",
@@ -5173,6 +5257,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-record-name-list",
@@ -5294,6 +5380,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-record-name-update",
@@ -5429,6 +5517,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-remote-zone-file-list",
@@ -5535,6 +5625,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-request-log-create",
@@ -5635,6 +5727,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-rrset-create",
@@ -5760,6 +5854,8 @@ export const dnsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-subscribe-create",
@@ -5846,6 +5942,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-suggest-value-create",
@@ -5933,6 +6031,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-unsubscribe-create",
@@ -6019,6 +6119,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dns-verify-create",
@@ -6131,6 +6233,8 @@ export const dnsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

@@ -128,6 +128,8 @@ export const ce_managementTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-fleet-create",
@@ -259,6 +261,8 @@ export const ce_managementTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-fleet-delete",
@@ -385,6 +389,8 @@ export const ce_managementTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-fleet-get",
@@ -521,6 +527,8 @@ export const ce_managementTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-fleet-list",
@@ -663,6 +671,8 @@ export const ce_managementTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-fleet-update",
@@ -806,6 +816,8 @@ export const ce_managementTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-get-image-download-url-create",
@@ -895,6 +907,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-get-registrations-by-token-create",
@@ -991,6 +1005,8 @@ export const ce_managementTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-listregistrationsbystate-create",
@@ -1096,6 +1112,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-network-interface-create",
@@ -1224,6 +1242,8 @@ export const ce_managementTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-network-interface-delete",
@@ -1343,6 +1363,8 @@ export const ce_managementTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-network-interface-get",
@@ -1472,6 +1494,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-network-interface-list",
@@ -1607,6 +1631,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-network-interface-update",
@@ -1744,6 +1770,8 @@ export const ce_managementTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-pre-upgrade-check-get",
@@ -1863,6 +1891,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registerbootstrap-create",
@@ -1975,6 +2005,8 @@ export const ce_managementTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registration-create",
@@ -2098,6 +2130,8 @@ export const ce_managementTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registration-delete",
@@ -2218,6 +2252,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registration-get",
@@ -2345,6 +2381,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registration-list",
@@ -2479,6 +2517,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registration-update",
@@ -2614,6 +2654,8 @@ export const ce_managementTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-registrations-by-site-list",
@@ -2728,6 +2770,8 @@ export const ce_managementTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-requestconfig-create",
@@ -2815,6 +2859,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-setting-list",
@@ -2909,6 +2955,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-suggest-value-create",
@@ -2996,6 +3044,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-upgradable-sw-version-list",
@@ -3102,6 +3152,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-upgrade-statu-get",
@@ -3208,6 +3260,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-usb-policy-create",
@@ -3331,6 +3385,8 @@ export const ce_managementTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-usb-policy-delete",
@@ -3449,6 +3505,8 @@ export const ce_managementTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-usb-policy-get",
@@ -3577,6 +3635,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-usb-policy-list",
@@ -3711,6 +3771,8 @@ export const ce_managementTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cemanagement-usb-policy-update",
@@ -3846,6 +3908,8 @@ export const ce_managementTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

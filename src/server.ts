@@ -163,12 +163,16 @@ export class F5XCApiServer {
         limit: z.number().optional().describe("Maximum results (default: 10)"),
         domains: z.array(z.string()).optional().describe("Filter by domains"),
         operations: z.array(z.string()).optional().describe("Filter by operations"),
+        excludeDangerous: z.boolean().optional().describe("Exclude high-danger operations"),
+        excludeDeprecated: z.boolean().optional().describe("Exclude deprecated operations"),
       },
       async (args) => {
         const results = searchTools(args.query, {
           limit: Math.min(args.limit ?? 10, 50),
           domains: args.domains,
           operations: args.operations,
+          excludeDangerous: args.excludeDangerous,
+          excludeDeprecated: args.excludeDeprecated,
         });
 
         return {
@@ -186,6 +190,9 @@ export class F5XCApiServer {
                     operation: r.tool.operation,
                     summary: r.tool.summary,
                     score: Math.round(r.score * 100) / 100,
+                    // Phase A enhancement fields
+                    dangerLevel: r.tool.dangerLevel,
+                    isDeprecated: r.tool.isDeprecated,
                   })),
                   hint: "Use f5xc-api-describe-tool to get full schema for a specific tool.",
                 },

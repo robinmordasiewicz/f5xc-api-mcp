@@ -125,6 +125,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-aggregation-create",
@@ -224,6 +226,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-all-ns-event-create",
@@ -323,6 +327,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-all-ns-metric-create",
@@ -420,6 +426,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-app-firewall-create",
@@ -557,6 +565,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-app-firewall-delete",
@@ -689,6 +699,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-app-firewall-get",
@@ -831,6 +843,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-app-firewall-list",
@@ -979,6 +993,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-app-firewall-update",
@@ -1128,6 +1144,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-enhanced-firewall-policy-create",
@@ -1267,6 +1285,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-enhanced-firewall-policy-delete",
@@ -1398,6 +1418,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-enhanced-firewall-policy-get",
@@ -1539,6 +1561,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-enhanced-firewall-policy-list",
@@ -1686,6 +1710,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-enhanced-firewall-policy-update",
@@ -1834,6 +1860,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-event-create",
@@ -1946,6 +1974,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-hit-create",
@@ -2060,6 +2090,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-incident-create",
@@ -2174,6 +2206,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-loadbalancer-create",
@@ -2272,6 +2306,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-metric-create",
@@ -2383,6 +2419,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-protocol-inspection-create",
@@ -2524,6 +2562,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-protocol-inspection-delete",
@@ -2656,6 +2696,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-protocol-inspection-get",
@@ -2798,6 +2840,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-protocol-inspection-list",
@@ -2946,6 +2990,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-protocol-inspection-update",
@@ -3095,6 +3141,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-released-signature-list",
@@ -3215,6 +3263,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-rule-hit-create",
@@ -3328,6 +3378,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-scroll-create",
@@ -3443,6 +3495,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-scroll-list",
@@ -3565,6 +3619,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-security-event-create",
@@ -3678,6 +3734,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-staged-signature-create",
@@ -3806,6 +3864,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-suspicious-user-log-create",
@@ -3923,6 +3983,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-waf-exclusion-policy-create",
@@ -4062,6 +4124,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-waf-exclusion-policy-delete",
@@ -4193,6 +4257,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-waf-exclusion-policy-get",
@@ -4334,6 +4400,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-waf-exclusion-policy-list",
@@ -4481,6 +4549,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-waf-waf-exclusion-policy-update",
@@ -4629,6 +4699,8 @@ export const wafTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

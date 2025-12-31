@@ -142,6 +142,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-delete",
@@ -274,6 +276,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-get",
@@ -416,6 +420,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-list",
@@ -564,6 +570,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-policer-update",
@@ -713,6 +721,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-create",
@@ -854,6 +864,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-delete",
@@ -986,6 +998,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-get",
@@ -1129,6 +1143,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-list",
@@ -1277,6 +1293,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-protocol-policer-update",
@@ -1427,6 +1445,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-create",
@@ -1565,6 +1585,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-delete",
@@ -1697,6 +1719,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-get",
@@ -1840,6 +1864,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-list",
@@ -1988,6 +2014,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-ratelimiting-rate-limiter-update",
@@ -2138,6 +2166,8 @@ export const rate_limitingTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

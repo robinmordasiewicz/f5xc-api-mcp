@@ -89,6 +89,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-app-type-list",
@@ -212,6 +214,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-connectivity-create",
@@ -312,6 +316,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-create-http-load-balancer-create",
@@ -429,6 +435,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-create-tcp-load-balancer-create",
@@ -546,6 +554,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-disable-visibility-create",
@@ -663,6 +673,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-discovered-service-get",
@@ -788,6 +800,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-discovered-service-list",
@@ -909,6 +923,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-edge-create",
@@ -1010,6 +1026,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-enable-visibility-create",
@@ -1127,6 +1145,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-flow-collection-create",
@@ -1211,6 +1231,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-health-statu-get",
@@ -1318,6 +1340,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-instance-create",
@@ -1419,6 +1443,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-lb-cache-content-create",
@@ -1531,6 +1557,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-node-create",
@@ -1632,6 +1660,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-service-create",
@@ -1731,6 +1761,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-status-at-site-get",
@@ -1882,6 +1914,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-subscribe-create",
@@ -1976,6 +2010,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-subscription-statu-list",
@@ -2056,6 +2092,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-suggest-value-create",
@@ -2157,6 +2195,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-top-flow-anomalie-create",
@@ -2246,6 +2286,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-top-talker-create",
@@ -2330,6 +2372,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-telemetryandinsights-unsubscribe-create",
@@ -2424,6 +2468,8 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

@@ -130,6 +130,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-data-type-delete",
@@ -249,6 +251,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-data-type-get",
@@ -378,6 +382,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-data-type-list",
@@ -513,6 +519,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-data-type-update",
@@ -650,6 +658,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-geo-config-get",
@@ -777,6 +787,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-lma-region-get",
@@ -904,6 +916,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-lma-region-list",
@@ -1039,6 +1053,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-sensitive-data-policy-create",
@@ -1166,6 +1182,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-sensitive-data-policy-delete",
@@ -1284,6 +1302,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-sensitive-data-policy-get",
@@ -1413,6 +1433,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-sensitive-data-policy-list",
@@ -1547,6 +1569,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-sensitive-data-policy-update",
@@ -1683,6 +1707,8 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

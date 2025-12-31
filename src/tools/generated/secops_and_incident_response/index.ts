@@ -146,6 +146,8 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-secopsandincidentresponse-malicious-user-mitigation-delete",
@@ -278,6 +280,8 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-secopsandincidentresponse-malicious-user-mitigation-get",
@@ -421,6 +425,8 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-secopsandincidentresponse-malicious-user-mitigation-list",
@@ -569,6 +575,8 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-secopsandincidentresponse-malicious-user-mitigation-update",
@@ -719,6 +727,8 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

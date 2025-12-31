@@ -125,6 +125,14 @@ export const DISCOVERY_TOOLS = {
           items: { type: "string" },
           description: "Filter by operation type(s): create, get, list, update, delete",
         },
+        excludeDangerous: {
+          type: "boolean",
+          description: "Exclude high-danger operations from results",
+        },
+        excludeDeprecated: {
+          type: "boolean",
+          description: "Exclude deprecated operations from results",
+        },
       },
       required: ["query"],
     },

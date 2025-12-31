@@ -161,6 +161,8 @@ function generateDomainFile(
     dependencies: ${deterministicStringify(op.dependencies).replace(/\n/g, "\n    ")},
     oneOfGroups: ${deterministicStringify(op.oneOfGroups).replace(/\n/g, "\n    ")},
     subscriptionRequirements: ${deterministicStringify(op.subscriptionRequirements).replace(/\n/g, "\n    ")},
+    isDeprecated: ${op.isDeprecated},
+    deprecationMessage: ${op.deprecationMessage ? JSON.stringify(op.deprecationMessage) : "null"},
   }`;
   });
 

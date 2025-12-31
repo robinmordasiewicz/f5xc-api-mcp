@@ -145,6 +145,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-delete",
@@ -277,6 +279,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-get",
@@ -418,6 +422,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-list",
@@ -566,6 +572,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-bot-defense-app-infrastructure-update",
@@ -715,6 +723,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-preauth-create",
@@ -814,6 +824,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-provision-create",
@@ -913,6 +925,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-shape-bot-defense-instance-get",
@@ -1052,6 +1066,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-shape-bot-defense-instance-list",
@@ -1200,6 +1216,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-create",
@@ -1337,6 +1355,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-get",
@@ -1478,6 +1498,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-list",
@@ -1625,6 +1647,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-api-key-update",
@@ -1774,6 +1798,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-create",
@@ -1911,6 +1937,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-get",
@@ -2052,6 +2080,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-list",
@@ -2199,6 +2229,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-category-update",
@@ -2347,6 +2379,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-manager-create",
@@ -2483,6 +2517,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-manager-get",
@@ -2623,6 +2659,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-botandthreatdefense-tpm-manager-list",
@@ -2770,6 +2808,8 @@ export const bot_and_threat_defenseTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

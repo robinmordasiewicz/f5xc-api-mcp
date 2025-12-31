@@ -118,7 +118,14 @@ function calculateScore(
  * ```
  */
 export function searchTools(query: string, options: SearchOptions = {}): SearchResult[] {
-  const { limit = 10, domains, operations, minScore = 0.1 } = options;
+  const {
+    limit = 10,
+    domains,
+    operations,
+    minScore = 0.1,
+    excludeDangerous,
+    excludeDeprecated,
+  } = options;
 
   const index = getToolIndex();
   let tools = index.tools;
@@ -133,6 +140,16 @@ export function searchTools(query: string, options: SearchOptions = {}): SearchR
   if (operations && operations.length > 0) {
     const opSet = new Set(operations.map((o) => o.toLowerCase()));
     tools = tools.filter((t) => opSet.has(t.operation.toLowerCase()));
+  }
+
+  // Phase A enhancement: Apply danger filter
+  if (excludeDangerous) {
+    tools = tools.filter((t) => t.dangerLevel !== "high");
+  }
+
+  // Phase A enhancement: Apply deprecation filter
+  if (excludeDeprecated) {
+    tools = tools.filter((t) => !t.isDeprecated);
   }
 
   // Score and rank tools

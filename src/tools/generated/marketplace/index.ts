@@ -100,6 +100,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-service-get",
@@ -194,6 +196,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-service-list",
@@ -328,6 +332,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-subscription-create",
@@ -454,6 +460,8 @@ export const marketplaceTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-subscription-delete",
@@ -572,6 +580,8 @@ export const marketplaceTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-subscription-get",
@@ -700,6 +710,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-subscription-list",
@@ -834,6 +846,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-addon-subscription-update",
@@ -969,6 +983,8 @@ export const marketplaceTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-all-activation-statu-list",
@@ -1064,6 +1080,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-cminstance-create",
@@ -1188,6 +1206,8 @@ export const marketplaceTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-cminstance-delete",
@@ -1307,6 +1327,8 @@ export const marketplaceTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-cminstance-get",
@@ -1436,6 +1458,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-cminstance-list",
@@ -1571,6 +1595,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-cminstance-update",
@@ -1708,6 +1734,8 @@ export const marketplaceTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-external-connector-create",
@@ -1835,6 +1863,8 @@ export const marketplaceTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-external-connector-delete",
@@ -1954,6 +1984,8 @@ export const marketplaceTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-external-connector-get",
@@ -2083,6 +2115,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-external-connector-list",
@@ -2218,6 +2252,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-external-connector-update",
@@ -2354,6 +2390,8 @@ export const marketplaceTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-force-delete-create",
@@ -2499,6 +2537,8 @@ export const marketplaceTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-generate-token-get",
@@ -2613,6 +2653,8 @@ export const marketplaceTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-get-security-config-create",
@@ -2723,6 +2765,8 @@ export const marketplaceTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-navigation-tile-get",
@@ -2850,6 +2894,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-navigation-tile-list",
@@ -2984,6 +3030,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-plan-get",
@@ -3110,6 +3158,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-plan-list",
@@ -3244,6 +3294,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-register-create",
@@ -3330,6 +3382,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-registration-detail-list",
@@ -3427,6 +3481,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-run-create",
@@ -3565,6 +3621,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-send-email-create",
@@ -3652,6 +3710,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-signup-create",
@@ -3738,6 +3798,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-statu-list",
@@ -3857,6 +3919,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-third-party-application-get",
@@ -3985,6 +4049,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-third-party-application-list",
@@ -4120,6 +4186,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-third-party-application-update",
@@ -4256,6 +4324,8 @@ export const marketplaceTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-marketplace-view-kind-list",
@@ -4375,6 +4445,8 @@ export const marketplaceTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

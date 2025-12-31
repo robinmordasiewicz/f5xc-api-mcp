@@ -131,6 +131,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-nginx-csg-list",
@@ -266,6 +268,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-nginx-dataplane-server-create",
@@ -369,6 +373,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-nginx-instance-get",
@@ -495,6 +501,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-nginx-instance-list",
@@ -630,6 +638,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-nginx-server-get",
@@ -757,6 +767,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-nginx-server-list",
@@ -892,6 +904,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-nginx-service-discovery-create",
@@ -1019,6 +1033,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-nginx-service-discovery-delete",
@@ -1137,6 +1153,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-nginx-service-discovery-get",
@@ -1266,6 +1284,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-nginx-service-discovery-list",
@@ -1400,6 +1420,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-nginx-service-discovery-update",
@@ -1536,6 +1558,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-subscribe-create",
@@ -1622,6 +1646,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-nginxone-unsubscribe-create",
@@ -1708,6 +1734,8 @@ export const nginx_oneTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

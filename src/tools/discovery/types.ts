@@ -21,6 +21,11 @@ export interface ToolIndexEntry {
   operation: string;
   /** Brief summary for search matching */
   summary: string;
+  // Phase A enhancement fields
+  /** Risk level for the operation (from x-ves-danger-level) */
+  dangerLevel: "low" | "medium" | "high" | null;
+  /** Whether this operation is deprecated */
+  isDeprecated: boolean;
 }
 
 /**
@@ -47,6 +52,11 @@ export interface SearchOptions {
   operations?: string[];
   /** Minimum relevance score threshold (default: 0.1) */
   minScore?: number;
+  // Phase A enhancement filters
+  /** Exclude high-danger operations from results */
+  excludeDangerous?: boolean;
+  /** Exclude deprecated operations from results */
+  excludeDeprecated?: boolean;
 }
 
 /**

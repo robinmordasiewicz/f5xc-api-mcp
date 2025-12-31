@@ -105,6 +105,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-acces-create",
@@ -193,6 +195,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-acces-list",
@@ -273,6 +277,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-alert-policie-create",
@@ -385,6 +391,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-alert-policie-list",
@@ -480,6 +488,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-network-policie-create",
@@ -592,6 +602,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-network-policie-list",
@@ -687,6 +699,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-service-policie-create",
@@ -799,6 +813,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-active-service-policie-list",
@@ -894,6 +910,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-admin-notification-list",
@@ -975,6 +993,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-admin-notification-update",
@@ -1060,6 +1080,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-admin-reset-create",
@@ -1147,6 +1169,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-admin-reset-update",
@@ -1231,6 +1255,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-all-application-inventory-create",
@@ -1371,6 +1397,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-all-application-inventory-waf-filter-create",
@@ -1488,6 +1516,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-all-ns-stat-create",
@@ -1575,6 +1605,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-allowed-tenant-create",
@@ -1699,6 +1731,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-allowed-tenant-delete",
@@ -1817,6 +1851,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-allowed-tenant-get",
@@ -1946,6 +1982,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-allowed-tenant-list",
@@ -2080,6 +2118,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-allowed-tenant-update",
@@ -2216,6 +2256,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-analyze-for-deletion-create",
@@ -2312,6 +2354,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-application-inventory-create",
@@ -2466,6 +2510,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-assign-create",
@@ -2553,6 +2599,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-assign-namespace-role-update",
@@ -2651,6 +2699,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-authentication-create",
@@ -2775,6 +2825,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-authentication-delete",
@@ -2894,6 +2946,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-authentication-get",
@@ -3023,6 +3077,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-authentication-list",
@@ -3158,6 +3214,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-authentication-update",
@@ -3294,6 +3352,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-cascade-delete-create",
@@ -3403,6 +3463,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-create",
@@ -3527,6 +3589,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-delete",
@@ -3645,6 +3709,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-get",
@@ -3739,6 +3805,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-list",
@@ -3874,6 +3942,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-manager-create",
@@ -4001,6 +4071,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-manager-delete",
@@ -4119,6 +4191,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-manager-get",
@@ -4247,6 +4321,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-manager-list",
@@ -4381,6 +4457,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-manager-update",
@@ -4516,6 +4594,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-child-tenant-update",
@@ -4651,6 +4731,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-citie-list",
@@ -4773,6 +4855,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-close-create",
@@ -4872,6 +4956,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-combined-notification-list",
@@ -4953,6 +5039,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-combined-notification-update",
@@ -5038,6 +5126,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-comment-create",
@@ -5147,6 +5237,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-contact-create",
@@ -5271,6 +5363,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-contact-delete",
@@ -5389,6 +5483,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-contact-get",
@@ -5518,6 +5614,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-contact-list",
@@ -5652,6 +5750,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-contact-update",
@@ -5787,6 +5887,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-countrie-list",
@@ -5884,6 +5986,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-customer-support-create",
@@ -5995,6 +6099,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-customer-support-list",
@@ -6075,6 +6181,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-deactivate-update",
@@ -6162,6 +6270,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-delete-create",
@@ -6273,6 +6383,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-disable-update",
@@ -6358,6 +6470,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-enable-update",
@@ -6443,6 +6557,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-escalate-create",
@@ -6542,6 +6658,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-evaluate-api-acces-create",
@@ -6640,6 +6758,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-evaluate-batch-api-acces-create",
@@ -6730,6 +6850,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-fast-acls-for-internet-vip-create",
@@ -6842,6 +6964,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-fast-acls-for-internet-vip-list",
@@ -6937,6 +7061,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-favicon-list",
@@ -7017,6 +7143,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-add-update",
@@ -7101,6 +7229,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-create",
@@ -7187,6 +7317,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-delete",
@@ -7302,6 +7434,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-get",
@@ -7413,6 +7547,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-list",
@@ -7549,6 +7685,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-patch",
@@ -7649,6 +7787,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-remove-update",
@@ -7733,6 +7873,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-group-update",
@@ -7833,6 +7975,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-image-delete",
@@ -7917,6 +8061,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-image-list",
@@ -7997,6 +8143,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-image-update",
@@ -8083,6 +8231,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-inactive-list",
@@ -8164,6 +8314,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-last-login-list",
@@ -8244,6 +8396,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-login-in-time-create",
@@ -8331,6 +8485,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-login-list",
@@ -8440,6 +8596,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-logo-list",
@@ -8520,6 +8678,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-lookup-list",
@@ -8627,6 +8787,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-lookup-user-role-create",
@@ -8716,6 +8878,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenant-create",
@@ -8840,6 +9004,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenant-delete",
@@ -8958,6 +9124,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenant-get",
@@ -9087,6 +9255,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenant-list",
@@ -9209,6 +9379,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenant-update",
@@ -9345,6 +9517,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenants-by-user-list",
@@ -9468,6 +9642,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-managed-tenants-list-list",
@@ -9590,6 +9766,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-mapper-create",
@@ -9701,6 +9879,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-mapper-get",
@@ -9808,6 +9988,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-migrate-create",
@@ -9915,6 +10097,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-create",
@@ -10023,6 +10207,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-get",
@@ -10151,6 +10337,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-list",
@@ -10284,6 +10472,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-role-get",
@@ -10410,6 +10600,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-role-list",
@@ -10544,6 +10736,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-namespace-update",
@@ -10667,6 +10861,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-networking-inventory-create",
@@ -10757,6 +10953,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-notification-list",
@@ -10838,6 +11036,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-notification-update",
@@ -10923,6 +11123,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-oidc-provider-create",
@@ -11039,6 +11241,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-oidc-provider-get",
@@ -11146,6 +11350,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-oidc-provider-list",
@@ -11241,6 +11447,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-oidc-provider-update",
@@ -11353,6 +11561,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-password-policy-list",
@@ -11447,6 +11657,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-priority-create",
@@ -11547,6 +11759,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-rbac-policy-get",
@@ -11674,6 +11888,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-rbac-policy-list",
@@ -11808,6 +12024,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-remove-namespace-role-update",
@@ -11906,6 +12124,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-reopen-create",
@@ -12004,6 +12224,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-request-delete-create",
@@ -12091,6 +12313,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-request-initial-acces-update",
@@ -12178,6 +12402,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-reset-create",
@@ -12262,6 +12488,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-resourcetype-get",
@@ -12373,6 +12601,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-resourcetype-list",
@@ -12453,6 +12683,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-create",
@@ -12575,6 +12807,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-delete",
@@ -12693,6 +12927,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-get",
@@ -12799,6 +13035,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-list",
@@ -12893,6 +13131,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-update",
@@ -13020,6 +13260,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-role-user-create",
@@ -13128,6 +13370,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-schema-get",
@@ -13239,6 +13483,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-schema-list",
@@ -13319,6 +13565,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-scim-update",
@@ -13431,6 +13679,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-send-password-email-create",
@@ -13535,6 +13785,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-serviceproviderconfig-list",
@@ -13615,6 +13867,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-session-list",
@@ -13695,6 +13949,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-setting-list",
@@ -13776,6 +14032,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-setting-update",
@@ -13871,6 +14129,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-signup-get",
@@ -13967,6 +14227,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-stat-create",
@@ -14075,6 +14337,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-state-list",
@@ -14185,6 +14449,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-subscribe-create",
@@ -14272,6 +14538,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-suggest-value-create",
@@ -14357,6 +14625,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-summary-list",
@@ -14448,6 +14718,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-support-info-list",
@@ -14528,6 +14800,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-sync-create",
@@ -14613,6 +14887,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-configuration-create",
@@ -14733,6 +15009,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-configuration-delete",
@@ -14852,6 +15130,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-configuration-get",
@@ -14981,6 +15261,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-configuration-list",
@@ -15116,6 +15398,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-configuration-update",
@@ -15245,6 +15529,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-escalation-doc-list",
@@ -15325,6 +15611,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-profile-create",
@@ -15449,6 +15737,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-profile-delete",
@@ -15567,6 +15857,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-profile-get",
@@ -15695,6 +15987,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-profile-list",
@@ -15829,6 +16123,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-tenant-profile-update",
@@ -15964,6 +16260,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-to-list",
@@ -16058,6 +16356,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-unassign-create",
@@ -16145,6 +16445,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-unset-update",
@@ -16230,6 +16532,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-unsubscribe-create",
@@ -16317,6 +16621,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-update-allow-advertise-on-public-create",
@@ -16406,6 +16712,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-create",
@@ -16500,6 +16808,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-delete",
@@ -16615,6 +16925,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-get",
@@ -16726,6 +17038,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-group-create",
@@ -16810,6 +17124,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-group-delete",
@@ -16922,6 +17238,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-group-get",
@@ -17017,6 +17335,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-group-list",
@@ -17097,6 +17417,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-group-update",
@@ -17196,6 +17518,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-identification-create",
@@ -17324,6 +17648,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-identification-delete",
@@ -17443,6 +17769,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-identification-get",
@@ -17573,6 +17901,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-identification-list",
@@ -17708,6 +18038,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-identification-update",
@@ -17845,6 +18177,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-list",
@@ -17981,6 +18315,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-patch",
@@ -18079,6 +18415,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-role-create",
@@ -18178,6 +18516,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-role-list",
@@ -18272,6 +18612,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-role-update",
@@ -18371,6 +18713,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-token-list",
@@ -18458,6 +18802,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-user-update",
@@ -18566,6 +18912,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-validate-contact-create",
@@ -18664,6 +19012,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-validate-registration-create",
@@ -18762,6 +19112,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-validate-rule-create",
@@ -18849,6 +19201,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-view-preference-list",
@@ -18929,6 +19283,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-view-preference-update",
@@ -19015,6 +19371,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-tenantandidentity-whoami-list",
@@ -19111,6 +19469,8 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

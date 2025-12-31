@@ -118,6 +118,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: true,
+    deprecationMessage: "Use GetAPIEndpoints in virtual_host.ApiepCustomAPI",
   },
   {
     toolName: "f5xc-api-virtual-api-endpoint-get",
@@ -306,6 +308,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-assign-create",
@@ -427,6 +431,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: true,
+    deprecationMessage: "instead use virtual host public custom api - AssignAPIDefinition",
   },
   {
     toolName: "f5xc-api-virtual-available-get",
@@ -534,6 +540,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: true,
+    deprecationMessage: "instead use public crud api definition - GET List",
   },
   {
     toolName: "f5xc-api-virtual-ca-certificate-get",
@@ -640,6 +648,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-calls-by-response-code-create",
@@ -755,6 +765,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-cluster-create",
@@ -880,6 +892,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-cluster-delete",
@@ -999,6 +1013,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-cluster-get",
@@ -1129,6 +1145,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-cluster-list",
@@ -1264,6 +1282,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-cluster-update",
@@ -1401,6 +1421,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-create-ticket-create",
@@ -1511,6 +1533,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-dos-automitigation-rule-delete",
@@ -1634,6 +1658,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-dos-automitigation-rule-get",
@@ -1741,6 +1767,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-geo-location-set-create",
@@ -1867,6 +1895,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-geo-location-set-delete",
@@ -1985,6 +2015,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-geo-location-set-get",
@@ -2113,6 +2145,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-geo-location-set-list",
@@ -2247,6 +2281,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-geo-location-set-update",
@@ -2382,6 +2418,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-get-dns-info-get",
@@ -2488,6 +2526,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-get-schema-update-create",
@@ -2613,6 +2653,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: true,
+    deprecationMessage: "USE virtual host custom api GetAPIEndpointsSchemaUpdates",
   },
   {
     toolName: "f5xc-api-virtual-get-security-config-create",
@@ -2722,6 +2764,8 @@ export const virtualTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-healthcheck-create",
@@ -2847,6 +2891,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-healthcheck-delete",
@@ -2966,6 +3012,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-healthcheck-get",
@@ -3096,6 +3144,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-healthcheck-list",
@@ -3231,6 +3281,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-healthcheck-update",
@@ -3368,6 +3420,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-http-loadbalancer-create",
@@ -3495,6 +3549,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-http-loadbalancer-delete",
@@ -3614,6 +3670,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-http-loadbalancer-get",
@@ -3743,6 +3801,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-http-loadbalancer-list",
@@ -3878,6 +3938,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-http-loadbalancer-update",
@@ -4014,6 +4076,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-l7ddos-rps-threshold-create",
@@ -4129,6 +4193,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-learnt-schema-get",
@@ -4292,6 +4358,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-origin-pool-create",
@@ -4416,6 +4484,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-origin-pool-delete",
@@ -4535,6 +4605,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-origin-pool-get",
@@ -4663,6 +4735,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-origin-pool-list",
@@ -4798,6 +4872,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-origin-pool-update",
@@ -4934,6 +5010,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-pdf-get",
@@ -5066,6 +5144,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-proxy-create",
@@ -5189,6 +5269,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-proxy-delete",
@@ -5307,6 +5389,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-proxy-get",
@@ -5435,6 +5519,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-proxy-list",
@@ -5569,6 +5655,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-proxy-update",
@@ -5704,6 +5792,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-rate-limiter-policy-create",
@@ -5843,6 +5933,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-rate-limiter-policy-delete",
@@ -5974,6 +6066,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-rate-limiter-policy-get",
@@ -6115,6 +6209,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-rate-limiter-policy-list",
@@ -6262,6 +6358,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-rate-limiter-policy-update",
@@ -6410,6 +6508,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-create",
@@ -6547,6 +6647,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-delete",
@@ -6678,6 +6780,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-get",
@@ -6820,6 +6924,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-list",
@@ -6967,6 +7073,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-rule-create",
@@ -7108,6 +7216,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-rule-delete",
@@ -7240,6 +7350,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-rule-get",
@@ -7383,6 +7495,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-rule-list",
@@ -7531,6 +7645,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-rule-update",
@@ -7681,6 +7797,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-set-get",
@@ -7822,6 +7940,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-set-list",
@@ -7970,6 +8090,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-service-policy-update",
@@ -8119,6 +8241,8 @@ export const virtualTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-sources-openapi-schema-get",
@@ -8251,6 +8375,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-stat-get",
@@ -8357,6 +8483,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-subscribe-create",
@@ -8443,6 +8571,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-swagger-spec-get",
@@ -8549,6 +8679,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-tcp-loadbalancer-create",
@@ -8676,6 +8808,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-tcp-loadbalancer-delete",
@@ -8795,6 +8929,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-tcp-loadbalancer-get",
@@ -8924,6 +9060,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-tcp-loadbalancer-list",
@@ -9059,6 +9197,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-tcp-loadbalancer-update",
@@ -9195,6 +9335,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-top-active-create",
@@ -9316,6 +9458,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-top-sensitive-data-create",
@@ -9432,6 +9576,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-udp-loadbalancer-create",
@@ -9559,6 +9705,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-udp-loadbalancer-delete",
@@ -9678,6 +9826,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-udp-loadbalancer-get",
@@ -9807,6 +9957,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-udp-loadbalancer-list",
@@ -9942,6 +10094,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-udp-loadbalancer-update",
@@ -10078,6 +10232,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-unlink-ticket-create",
@@ -10195,6 +10351,8 @@ export const virtualTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-unmerge-sources-openapi-schema-create",
@@ -10308,6 +10466,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-unsubscribe-create",
@@ -10394,6 +10554,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-update-schema-create",
@@ -10507,6 +10669,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: true,
+    deprecationMessage: "USE virtual host custom api UpdateAPIEndpointsSchemas",
   },
   {
     toolName: "f5xc-api-virtual-update-state-create",
@@ -10625,6 +10789,8 @@ export const virtualTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-virtual-host-create",
@@ -10749,6 +10915,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-virtual-host-delete",
@@ -10868,6 +11036,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-virtual-host-get",
@@ -10997,6 +11167,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-virtual-host-list",
@@ -11132,6 +11304,8 @@ export const virtualTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-virtual-host-update",
@@ -11268,6 +11442,8 @@ export const virtualTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-virtual-vulnerabilitie-create",
@@ -11386,6 +11562,8 @@ export const virtualTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

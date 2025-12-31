@@ -142,6 +142,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-crawler-delete",
@@ -274,6 +276,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-crawler-get",
@@ -416,6 +420,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-crawler-list",
@@ -564,6 +570,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-crawler-update",
@@ -713,6 +721,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-definition-create",
@@ -850,6 +860,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-definition-delete",
@@ -982,6 +994,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-definition-get",
@@ -1124,6 +1138,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-definition-list",
@@ -1272,6 +1288,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-definition-update",
@@ -1421,6 +1439,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-definitions-without-shared-list",
@@ -1531,6 +1551,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-discovery-create",
@@ -1668,6 +1690,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-discovery-delete",
@@ -1799,6 +1823,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-discovery-get",
@@ -1941,6 +1967,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-discovery-list",
@@ -2088,6 +2116,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-discovery-update",
@@ -2237,6 +2267,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-endpoint-protection-create",
@@ -2354,6 +2386,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-group-element-get",
@@ -2494,6 +2528,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-group-element-list",
@@ -2641,6 +2677,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-group-get",
@@ -2780,6 +2818,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-group-list",
@@ -2927,6 +2967,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-testing-create",
@@ -3064,6 +3106,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-testing-delete",
@@ -3196,6 +3240,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-testing-get",
@@ -3338,6 +3384,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-testing-list",
@@ -3486,6 +3534,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-api-testing-update",
@@ -3635,6 +3685,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-app-api-group-create",
@@ -3773,6 +3825,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-app-api-group-delete",
@@ -3905,6 +3959,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-app-api-group-get",
@@ -4048,6 +4104,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-app-api-group-list",
@@ -4196,6 +4254,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-app-api-group-update",
@@ -4346,6 +4406,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-code-base-integration-create",
@@ -4486,6 +4548,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-code-base-integration-delete",
@@ -4618,6 +4682,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-code-base-integration-get",
@@ -4760,6 +4826,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-code-base-integration-list",
@@ -4908,6 +4976,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-code-base-integration-update",
@@ -5057,6 +5127,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-data-exposure-create",
@@ -5171,6 +5243,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-discovery-create",
@@ -5307,6 +5381,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-discovery-delete",
@@ -5438,6 +5514,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-discovery-get",
@@ -5579,6 +5657,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-discovery-list",
@@ -5726,6 +5806,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-discovery-update",
@@ -5874,6 +5956,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-download-certificate-create",
@@ -6004,6 +6088,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-evaluate-create",
@@ -6126,6 +6212,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-loadbalancer-get",
@@ -6246,6 +6334,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-mark-as-non-api-create",
@@ -6369,6 +6459,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-move-to-inventory-create",
@@ -6495,6 +6587,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-oas-validation-create",
@@ -6609,6 +6703,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-rate-limit-create",
@@ -6723,6 +6819,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-remove-from-inventory-create",
@@ -6849,6 +6947,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-stat-create",
@@ -6963,6 +7063,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-api-unmark-as-non-api-create",
@@ -7089,6 +7191,8 @@ export const apiTools: ParsedOperation[] = [
         tier: "advanced",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

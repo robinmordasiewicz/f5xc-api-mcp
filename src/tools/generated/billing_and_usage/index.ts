@@ -85,6 +85,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-current-usage-create",
@@ -186,6 +188,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-custom-list-list",
@@ -266,6 +270,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-hourly-usage-detail-create",
@@ -370,6 +376,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-invoice-pdf-list",
@@ -477,6 +485,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-limit-list",
@@ -571,6 +581,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-monthly-usage-create",
@@ -672,6 +684,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-payment-method-create",
@@ -781,6 +795,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-payment-method-delete",
@@ -889,6 +905,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-plan-transition-create",
@@ -990,6 +1008,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-plan-transition-list",
@@ -1085,6 +1105,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-primary-create",
@@ -1196,6 +1218,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-quota-create",
@@ -1319,6 +1343,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-quota-delete",
@@ -1437,6 +1463,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-quota-get",
@@ -1565,6 +1593,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-quota-list",
@@ -1699,6 +1729,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-quota-update",
@@ -1835,6 +1867,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     ],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-secondary-create",
@@ -1946,6 +1980,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-subscribe-create",
@@ -2052,6 +2088,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-swap-primary-create",
@@ -2163,6 +2201,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-unsubscribe-create",
@@ -2269,6 +2309,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
       },
     ],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-usage-detail-create",
@@ -2370,6 +2412,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-billingandusage-usage-list",
@@ -2464,6 +2508,8 @@ export const billing_and_usageTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 

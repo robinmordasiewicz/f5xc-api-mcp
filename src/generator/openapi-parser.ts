@@ -129,6 +129,8 @@ const OpenApiOperationSchema = z.object({
   "x-ves-required-fields": z.array(z.string()).optional(),
   "x-ves-confirmation-required": z.boolean().optional(),
   "x-ves-operation-metadata": OperationMetadataSchema.optional(),
+  // Deprecation field from enriched specs
+  "x-ves-deprecated": z.string().optional(),
 });
 
 const OpenApiPathItemSchema = z.object({
@@ -283,6 +285,12 @@ export interface ParsedOperation {
   oneOfGroups: OneOfGroup[];
   /** Subscription/addon service requirements */
   subscriptionRequirements: SubscriptionRequirement[];
+
+  // Deprecation fields (Phase A enhancement)
+  /** Whether this operation is deprecated */
+  isDeprecated: boolean;
+  /** Deprecation message with migration guidance */
+  deprecationMessage: string | null;
 }
 
 /**
@@ -617,6 +625,9 @@ function extractOperations(
         dependencies,
         oneOfGroups: extractedDeps.oneOfGroups,
         subscriptionRequirements,
+        // Deprecation (Phase A enhancement) - defaults for legacy parser
+        isDeprecated: false,
+        deprecationMessage: null,
       });
     }
   }
@@ -816,6 +827,10 @@ function extractDomainOperations(
       const confirmationRequired = operation["x-ves-confirmation-required"] ?? false;
       const operationMetadata = operation["x-ves-operation-metadata"] ?? null;
 
+      // Extract deprecation status (Phase A enhancement)
+      const deprecationMessage = operation["x-ves-deprecated"] ?? null;
+      const isDeprecated = deprecationMessage !== null;
+
       // Extract parameter-level metadata (examples, validation rules, displaynames)
       const parameterExamples: Record<string, string> = {};
       const validationRules: Record<string, Record<string, string>> = {};
@@ -891,6 +906,9 @@ function extractDomainOperations(
         dependencies,
         oneOfGroups: extractedDeps.oneOfGroups,
         subscriptionRequirements,
+        // Deprecation (Phase A enhancement)
+        isDeprecated,
+        deprecationMessage,
       });
     }
   }

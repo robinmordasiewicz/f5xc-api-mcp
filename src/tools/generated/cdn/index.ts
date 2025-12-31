@@ -112,6 +112,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-aggregation-create",
@@ -220,6 +222,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-cache-purge-create",
@@ -350,6 +354,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-create",
@@ -481,6 +487,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-delete",
@@ -607,6 +615,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-get",
@@ -742,6 +752,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-list",
@@ -884,6 +896,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-cdn-cache-rule-update",
@@ -1027,6 +1041,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-create",
@@ -1161,6 +1177,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-delete",
@@ -1287,6 +1305,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-get",
@@ -1423,6 +1443,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-list",
@@ -1565,6 +1587,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-cdn-loadbalancer-update",
@@ -1708,6 +1732,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-dos-automitigation-rule-delete",
@@ -1839,6 +1865,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-dos-automitigation-rule-get",
@@ -1953,6 +1981,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-get-security-config-create",
@@ -2069,6 +2099,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-get-service-operation-statu-create",
@@ -2179,6 +2211,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-list-service-operations-statu-create",
@@ -2295,6 +2329,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-metric-create",
@@ -2402,6 +2438,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-subscribe-create",
@@ -2495,6 +2533,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-suggestion-create",
@@ -2613,6 +2653,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
   {
     toolName: "f5xc-api-cdn-unsubscribe-create",
@@ -2706,6 +2748,8 @@ export const cdnTools: ParsedOperation[] = [
         tier: "standard",
       },
     ],
+    isDeprecated: false,
+    deprecationMessage: null,
   },
 ];
 
