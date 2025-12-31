@@ -7,6 +7,7 @@
 
 import type { ToolIndexEntry, SearchResult, SearchOptions } from "./types.js";
 import { getToolIndex } from "./index-loader.js";
+import { getPrerequisiteResources } from "./dependencies.js";
 
 /**
  * Normalize text for search matching
@@ -118,7 +119,15 @@ function calculateScore(
  * ```
  */
 export function searchTools(query: string, options: SearchOptions = {}): SearchResult[] {
-  const { limit = 10, domains, operations, minScore = 0.1 } = options;
+  const {
+    limit = 10,
+    domains,
+    operations,
+    minScore = 0.1,
+    excludeDangerous,
+    excludeDeprecated,
+    includeDependencies,
+  } = options;
 
   const index = getToolIndex();
   let tools = index.tools;
@@ -135,6 +144,16 @@ export function searchTools(query: string, options: SearchOptions = {}): SearchR
     tools = tools.filter((t) => opSet.has(t.operation.toLowerCase()));
   }
 
+  // Phase A: Apply danger level filter
+  if (excludeDangerous) {
+    tools = tools.filter((t) => t.dangerLevel !== "high");
+  }
+
+  // Phase A: Apply deprecation filter
+  if (excludeDeprecated) {
+    tools = tools.filter((t) => !t.isDeprecated);
+  }
+
   // Score and rank tools
   const results: SearchResult[] = [];
 
@@ -142,7 +161,21 @@ export function searchTools(query: string, options: SearchOptions = {}): SearchR
     const { score, matchedTerms } = calculateScore(query, tool);
 
     if (score >= minScore) {
-      results.push({ tool, score, matchedTerms });
+      const result: SearchResult = { tool, score, matchedTerms };
+
+      // Phase B: Add prerequisite hints for create operations
+      if (includeDependencies && tool.operation === "create") {
+        const prereqs = getPrerequisiteResources(tool.domain, tool.resource);
+        if (prereqs.length > 0) {
+          const resourceNames = prereqs.map((p) => `${p.domain}/${p.resourceType}`);
+          result.prerequisites = {
+            resources: resourceNames,
+            hint: `To create ${tool.resource}, you first need: ${prereqs.map((p) => p.resourceType).join(", ")}`,
+          };
+        }
+      }
+
+      results.push(result);
     }
   }
 

@@ -21,6 +21,20 @@ export interface ToolIndexEntry {
   operation: string;
   /** Brief summary for search matching */
   summary: string;
+  /** Danger level (Phase A): low, medium, high */
+  dangerLevel: "low" | "medium" | "high";
+  /** Deprecation status (Phase A) */
+  isDeprecated: boolean;
+}
+
+/**
+ * Prerequisite hint for create operations (Phase B)
+ */
+export interface PrerequisiteHint {
+  /** Required resources before creating this resource */
+  resources: string[];
+  /** Human-readable hint about prerequisites */
+  hint: string;
 }
 
 /**
@@ -33,6 +47,8 @@ export interface SearchResult {
   score: number;
   /** Matched terms for highlighting */
   matchedTerms: string[];
+  /** Prerequisite hints for create operations (Phase B) */
+  prerequisites?: PrerequisiteHint;
 }
 
 /**
@@ -47,6 +63,12 @@ export interface SearchOptions {
   operations?: string[];
   /** Minimum relevance score threshold (default: 0.1) */
   minScore?: number;
+  /** Exclude high-danger operations from results (Phase A) */
+  excludeDangerous?: boolean;
+  /** Exclude deprecated operations from results (Phase A) */
+  excludeDeprecated?: boolean;
+  /** Include prerequisite hints for create operations (Phase B) */
+  includeDependencies?: boolean;
 }
 
 /**

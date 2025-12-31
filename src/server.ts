@@ -13,7 +13,12 @@ import { CredentialManager, AuthMode } from "./auth/credential-manager.js";
 import { HttpClient, createHttpClient } from "./auth/http-client.js";
 import { logger } from "./utils/logging.js";
 import { VERSION } from "./index.js";
-import { WORKFLOW_PROMPTS, processPromptTemplate } from "./prompts/index.js";
+import {
+  WORKFLOW_PROMPTS,
+  processPromptTemplate,
+  ERROR_PROMPTS,
+  processErrorTemplate,
+} from "./prompts/index.js";
 import { RESOURCE_TYPES, createResourceHandler, ResourceHandler } from "./resources/index.js";
 import {
   DISCOVERY_TOOLS,
@@ -28,6 +33,8 @@ import {
   getConsolidationStats,
   generateDependencyReport,
   getDependencyStats,
+  validateToolParams,
+  formatValidationResult,
   type CrudOperation,
 } from "./tools/discovery/index.js";
 import type { DependencyDiscoveryAction } from "./generator/dependency-types.js";
@@ -163,12 +170,21 @@ export class F5XCApiServer {
         limit: z.number().optional().describe("Maximum results (default: 10)"),
         domains: z.array(z.string()).optional().describe("Filter by domains"),
         operations: z.array(z.string()).optional().describe("Filter by operations"),
+        excludeDangerous: z.boolean().optional().describe("Exclude high-danger operations"),
+        excludeDeprecated: z.boolean().optional().describe("Exclude deprecated operations"),
+        includeDependencies: z
+          .boolean()
+          .optional()
+          .describe("Include prerequisite hints for create operations"),
       },
       async (args) => {
         const results = searchTools(args.query, {
           limit: Math.min(args.limit ?? 10, 50),
           domains: args.domains,
           operations: args.operations,
+          excludeDangerous: args.excludeDangerous,
+          excludeDeprecated: args.excludeDeprecated,
+          includeDependencies: args.includeDependencies,
         });
 
         return {
@@ -186,6 +202,11 @@ export class F5XCApiServer {
                     operation: r.tool.operation,
                     summary: r.tool.summary,
                     score: Math.round(r.score * 100) / 100,
+                    // Phase A enhancement fields
+                    dangerLevel: r.tool.dangerLevel,
+                    isDeprecated: r.tool.isDeprecated,
+                    // Phase B enhancement: prerequisites for create operations
+                    ...(r.prerequisites && { prerequisites: r.prerequisites }),
                   })),
                   hint: "Use f5xc-api-describe-tool to get full schema for a specific tool.",
                 },
@@ -448,12 +469,54 @@ export class F5XCApiServer {
       }
     );
 
+    // Phase B: Parameter validation tool
+    this.server.tool(
+      DISCOVERY_TOOLS.validateParams.name,
+      DISCOVERY_TOOLS.validateParams.description,
+      {
+        toolName: z.string().describe("Tool name to validate parameters for"),
+        pathParams: z
+          .record(z.string(), z.string())
+          .optional()
+          .describe("Path parameters to validate"),
+        queryParams: z
+          .record(z.string(), z.string())
+          .optional()
+          .describe("Query parameters to validate"),
+        body: z.record(z.string(), z.unknown()).optional().describe("Request body to validate"),
+      },
+      async (args) => {
+        const result = validateToolParams({
+          toolName: args.toolName,
+          pathParams: args.pathParams,
+          queryParams: args.queryParams,
+          body: args.body as Record<string, unknown> | undefined,
+        });
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  ...result,
+                  formatted: formatValidationResult(result),
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
+    );
+
     const indexMetadata = getIndexMetadata();
     const consolidationStats = getConsolidationStats();
     logger.info("Tool registration completed (dynamic discovery mode)", {
       authMode,
       authenticated: authMode !== AuthMode.NONE,
-      registeredTools: 8,
+      registeredTools: 9,
       indexedTools: indexMetadata.totalTools,
       consolidatedResources: consolidationStats.consolidatedCount,
       consolidationReduction: consolidationStats.reductionPercent,
@@ -549,8 +612,44 @@ export class F5XCApiServer {
       });
     }
 
+    // Phase B: Register error resolution prompts
+    for (const errorPrompt of ERROR_PROMPTS) {
+      // Build Zod schema for arguments
+      const argSchema: Record<string, z.ZodTypeAny> = {};
+      for (const arg of errorPrompt.arguments) {
+        argSchema[arg.name] = arg.required
+          ? z.string().describe(arg.description)
+          : z.string().optional().describe(arg.description);
+      }
+
+      this.server.prompt(errorPrompt.name, errorPrompt.description, argSchema, async (args) => {
+        // Process template with provided arguments
+        const processedArgs: Record<string, string> = {};
+        for (const [key, value] of Object.entries(args as Record<string, unknown>)) {
+          if (typeof value === "string") {
+            processedArgs[key] = value;
+          }
+        }
+
+        const processedTemplate = processErrorTemplate(errorPrompt, processedArgs);
+
+        return {
+          messages: [
+            {
+              role: "user" as const,
+              content: {
+                type: "text" as const,
+                text: processedTemplate,
+              },
+            },
+          ],
+        };
+      });
+    }
+
     logger.info("Prompt registration completed", {
       workflows: WORKFLOW_PROMPTS.length,
+      errorPrompts: ERROR_PROMPTS.length,
     });
   }
 
