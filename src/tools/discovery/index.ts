@@ -94,6 +94,51 @@ export {
 export type { ValidationError, ValidationResult, ValidateParams } from "./validate.js";
 export { validateToolParams, formatValidationResult } from "./validate.js";
 
+// Resolver exports (Phase C)
+export type {
+  WorkflowStep,
+  AlternativePath,
+  CreationPlan,
+  ResolveParams,
+  ResolveResult,
+} from "./resolver.js";
+export { resolveDependencies, formatCreationPlan, generateCompactPlan } from "./resolver.js";
+
+// Cost estimator exports (Phase C)
+export type {
+  LatencyLevel,
+  TokenEstimate,
+  LatencyEstimate,
+  ToolCostEstimate,
+  WorkflowCostEstimate,
+  EstimateCostParams,
+} from "./cost-estimator.js";
+export {
+  estimateToolTokens,
+  estimateToolLatency,
+  estimateToolCost,
+  estimateMultipleToolsCost,
+  estimateWorkflowCost,
+  formatCostEstimate,
+  formatWorkflowCostEstimate,
+} from "./cost-estimator.js";
+
+// Best practices exports (Phase C)
+export type {
+  CommonError,
+  DangerAnalysis,
+  RecommendedWorkflow,
+  DomainBestPractices,
+  BestPracticesQuery,
+  BestPracticesResult,
+} from "./best-practices.js";
+export {
+  getDomainBestPractices,
+  queryBestPractices,
+  getAllDomainsSummary,
+  formatBestPractices,
+} from "./best-practices.js";
+
 /**
  * MCP Tool Definitions for the discovery meta-tools
  *
@@ -344,6 +389,113 @@ export const DISCOVERY_TOOLS = {
         },
       },
       required: ["toolName"],
+    },
+  },
+
+  resolveDependencies: {
+    name: "f5xc-api-resolve-dependencies",
+    description:
+      "Generate a complete creation plan for an F5XC resource with all transitive dependencies. " +
+      "Returns step-by-step workflow with tool names, required inputs, and oneOf choices. " +
+      "Essential for understanding what resources must be created before the target resource.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        resource: {
+          type: "string",
+          description: "The target resource to create (e.g., 'http-loadbalancer', 'origin-pool')",
+        },
+        domain: {
+          type: "string",
+          description: "The domain containing the resource (e.g., 'virtual', 'network')",
+        },
+        existingResources: {
+          type: "array",
+          items: { type: "string" },
+          description:
+            "Resources that already exist (will be skipped). Format: 'domain/resource' " +
+            "(e.g., ['network/origin-pool', 'certificates/certificate'])",
+        },
+        includeOptional: {
+          type: "boolean",
+          description: "Include optional dependencies in the plan (default: false)",
+          default: false,
+        },
+        maxDepth: {
+          type: "number",
+          description: "Maximum depth for dependency traversal (default: 10)",
+          default: 10,
+        },
+        expandAlternatives: {
+          type: "boolean",
+          description: "Include alternative paths for oneOf choices (default: false)",
+          default: false,
+        },
+      },
+      required: ["resource", "domain"],
+    },
+  },
+
+  estimateCost: {
+    name: "f5xc-api-estimate-cost",
+    description:
+      "Estimate token usage and latency for F5XC API tool calls. Provides cost estimates for individual tools, " +
+      "multiple tools, or complete creation plan workflows. Useful for planning and optimizing API interactions.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        toolName: {
+          type: "string",
+          description:
+            "A single tool name to estimate (e.g., 'f5xc-api-waap-http-loadbalancer-create')",
+        },
+        toolNames: {
+          type: "array",
+          items: { type: "string" },
+          description: "Multiple tool names to estimate costs for",
+        },
+        plan: {
+          type: "object",
+          description:
+            "A CreationPlan object from f5xc-api-resolve-dependencies to estimate workflow costs",
+        },
+        detailed: {
+          type: "boolean",
+          description: "Include detailed breakdown of token usage and latency (default: true)",
+          default: true,
+        },
+      },
+    },
+  },
+
+  bestPractices: {
+    name: "f5xc-api-best-practices",
+    description:
+      "Get domain-specific best practices for F5XC API operations. Includes common errors with resolutions, " +
+      "recommended workflows, danger level analysis, security notes, and performance tips.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        domain: {
+          type: "string",
+          description:
+            "Domain to get best practices for (e.g., 'virtual', 'dns', 'certificates'). " +
+            "Omit to list available domains.",
+        },
+        aspect: {
+          type: "string",
+          enum: ["errors", "workflows", "danger", "security", "performance", "all"],
+          description:
+            "Specific aspect to retrieve: 'errors' (common errors), 'workflows' (recommended workflows), " +
+            "'danger' (danger level analysis), 'security' (security notes), 'performance' (tips), 'all' (default)",
+          default: "all",
+        },
+        detailed: {
+          type: "boolean",
+          description: "Include detailed breakdowns (default: true)",
+          default: true,
+        },
+      },
     },
   },
 } as const;

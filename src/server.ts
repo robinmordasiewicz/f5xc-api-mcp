@@ -35,7 +35,18 @@ import {
   getDependencyStats,
   validateToolParams,
   formatValidationResult,
+  resolveDependencies,
+  formatCreationPlan,
+  estimateToolCost,
+  estimateMultipleToolsCost,
+  estimateWorkflowCost,
+  formatCostEstimate,
+  formatWorkflowCostEstimate,
+  queryBestPractices,
+  getAllDomainsSummary,
+  formatBestPractices,
   type CrudOperation,
+  type CreationPlan,
 } from "./tools/discovery/index.js";
 import type { DependencyDiscoveryAction } from "./generator/dependency-types.js";
 
@@ -147,6 +158,10 @@ export class F5XCApiServer {
                     "f5xc-api-execute-resource",
                     "f5xc-api-dependencies",
                     "f5xc-api-dependency-stats",
+                    "f5xc-api-validate-params",
+                    "f5xc-api-resolve-dependencies",
+                    "f5xc-api-estimate-cost",
+                    "f5xc-api-best-practices",
                   ],
                   message: isAuthenticated
                     ? "Authenticated - API execution enabled. Use f5xc-api-search-tools to find available API tools."
@@ -511,12 +526,248 @@ export class F5XCApiServer {
       }
     );
 
+    // Phase C: Dependency resolver tool
+    this.server.tool(
+      DISCOVERY_TOOLS.resolveDependencies.name,
+      DISCOVERY_TOOLS.resolveDependencies.description,
+      {
+        resource: z.string().describe("Target resource to create"),
+        domain: z.string().describe("Domain containing the resource"),
+        existingResources: z
+          .array(z.string())
+          .optional()
+          .describe("Resources that already exist (will be skipped)"),
+        includeOptional: z
+          .boolean()
+          .optional()
+          .default(false)
+          .describe("Include optional dependencies"),
+        maxDepth: z.number().optional().default(10).describe("Maximum dependency traversal depth"),
+        expandAlternatives: z
+          .boolean()
+          .optional()
+          .default(false)
+          .describe("Include alternative paths for oneOf choices"),
+      },
+      async (args) => {
+        const result = resolveDependencies({
+          resource: args.resource,
+          domain: args.domain,
+          existingResources: args.existingResources,
+          includeOptional: args.includeOptional,
+          maxDepth: args.maxDepth,
+          expandAlternatives: args.expandAlternatives,
+        });
+
+        if (!result.success || !result.plan) {
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify({ success: false, error: result.error }, null, 2),
+              },
+            ],
+          };
+        }
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  success: true,
+                  plan: result.plan,
+                  formatted: formatCreationPlan(result.plan),
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
+    );
+
+    // Phase C: Cost estimation tool
+    this.server.tool(
+      DISCOVERY_TOOLS.estimateCost.name,
+      DISCOVERY_TOOLS.estimateCost.description,
+      {
+        toolName: z.string().optional().describe("Single tool name to estimate"),
+        toolNames: z.array(z.string()).optional().describe("Multiple tool names to estimate"),
+        plan: z.record(z.string(), z.unknown()).optional().describe("CreationPlan to estimate"),
+        detailed: z.boolean().optional().default(true).describe("Include detailed breakdown"),
+      },
+      async (args) => {
+        // Single tool estimation
+        if (args.toolName) {
+          const estimate = estimateToolCost(args.toolName);
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    type: "single_tool",
+                    estimate,
+                    formatted: args.detailed ? formatCostEstimate(estimate) : undefined,
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        // Multiple tools estimation
+        if (args.toolNames && args.toolNames.length > 0) {
+          const estimates = estimateMultipleToolsCost(args.toolNames);
+          const totalTokens = estimates.reduce((sum, e) => sum + e.tokens.totalTokens, 0);
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    type: "multiple_tools",
+                    toolCount: estimates.length,
+                    totalTokens,
+                    estimates,
+                    formatted: args.detailed
+                      ? estimates.map((e) => formatCostEstimate(e)).join("\n\n---\n\n")
+                      : undefined,
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        // Workflow/plan estimation
+        if (args.plan) {
+          const estimate = estimateWorkflowCost(args.plan as unknown as CreationPlan);
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    type: "workflow",
+                    estimate,
+                    formatted: args.detailed ? formatWorkflowCostEstimate(estimate) : undefined,
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        // No valid input provided
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  error: "No valid input provided",
+                  hint: "Provide either 'toolName', 'toolNames', or 'plan' parameter",
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
+    );
+
+    // Phase C: Best practices tool
+    this.server.tool(
+      DISCOVERY_TOOLS.bestPractices.name,
+      DISCOVERY_TOOLS.bestPractices.description,
+      {
+        domain: z.string().optional().describe("Domain to get best practices for"),
+        aspect: z
+          .enum(["errors", "workflows", "danger", "security", "performance", "all"])
+          .optional()
+          .default("all")
+          .describe("Specific aspect to retrieve"),
+        detailed: z.boolean().optional().default(true).describe("Include detailed breakdowns"),
+      },
+      async (args) => {
+        // If no domain specified, return domain summary
+        if (!args.domain) {
+          const summary = getAllDomainsSummary();
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    type: "domain_summary",
+                    hint: "Specify a domain to get detailed best practices",
+                    domains: summary,
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        // Query best practices for specified domain
+        const result = queryBestPractices({
+          domain: args.domain,
+          aspect: args.aspect,
+          detailed: args.detailed,
+        });
+
+        if (!result.success) {
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify({ success: false, error: result.error }, null, 2),
+              },
+            ],
+          };
+        }
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  success: true,
+                  practices: result.practices,
+                  formatted:
+                    args.detailed && result.practices
+                      ? formatBestPractices(result.practices)
+                      : undefined,
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
+    );
+
     const indexMetadata = getIndexMetadata();
     const consolidationStats = getConsolidationStats();
     logger.info("Tool registration completed (dynamic discovery mode)", {
       authMode,
       authenticated: authMode !== AuthMode.NONE,
-      registeredTools: 9,
+      registeredTools: 12,
       indexedTools: indexMetadata.totalTools,
       consolidatedResources: consolidationStats.consolidatedCount,
       consolidationReduction: consolidationStats.reductionPercent,
