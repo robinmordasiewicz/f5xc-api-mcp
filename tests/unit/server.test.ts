@@ -507,8 +507,8 @@ describe("server", () => {
 
         new F5XCApiServer(config);
 
-        // Should have registered 4 workflow prompts
-        expect(mockPrompt.mock.calls.length).toBe(4);
+        // Should have registered 9 prompts (4 workflow + 5 error resolution)
+        expect(mockPrompt.mock.calls.length).toBe(9);
       });
 
       it("should register deploy-http-loadbalancer prompt", () => {

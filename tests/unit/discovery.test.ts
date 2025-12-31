@@ -470,9 +470,17 @@ describe("Token Efficiency Validation", () => {
     const index = getToolIndex();
     const sampleEntry = index.tools[0];
 
-    // Each entry should only have 5 fields for minimal tokens
+    // Each entry should have 7 fields (5 core + Phase A metadata)
     const fields = Object.keys(sampleEntry);
-    expect(fields).toEqual(["name", "domain", "resource", "operation", "summary"]);
+    expect(fields).toEqual([
+      "name",
+      "domain",
+      "resource",
+      "operation",
+      "summary",
+      "dangerLevel",
+      "isDeprecated",
+    ]);
   });
 
   it("should have significantly fewer tokens than full tools", () => {

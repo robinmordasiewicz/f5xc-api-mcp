@@ -90,6 +90,10 @@ export {
   getAllDependencyDomains,
 } from "./dependencies.js";
 
+// Validation exports (Phase B)
+export type { ValidationError, ValidationResult, ValidateParams } from "./validate.js";
+export { validateToolParams, formatValidationResult } from "./validate.js";
+
 /**
  * MCP Tool Definitions for the discovery meta-tools
  *
@@ -124,6 +128,18 @@ export const DISCOVERY_TOOLS = {
           type: "array",
           items: { type: "string" },
           description: "Filter by operation type(s): create, get, list, update, delete",
+        },
+        excludeDangerous: {
+          type: "boolean",
+          description: "Exclude high-danger operations from results",
+        },
+        excludeDeprecated: {
+          type: "boolean",
+          description: "Exclude deprecated operations from results",
+        },
+        includeDependencies: {
+          type: "boolean",
+          description: "Include prerequisite hints for create operations",
         },
       },
       required: ["query"],
@@ -296,6 +312,38 @@ export const DISCOVERY_TOOLS = {
     inputSchema: {
       type: "object" as const,
       properties: {},
+    },
+  },
+
+  validateParams: {
+    name: "f5xc-api-validate-params",
+    description:
+      "Validate parameters for an F5XC API tool before execution. Checks required fields, " +
+      "parameter types, and oneOf constraints. Returns detailed error messages for invalid inputs.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        toolName: {
+          type: "string",
+          description: "The exact tool name to validate parameters for",
+        },
+        pathParams: {
+          type: "object",
+          description:
+            "Path parameters to validate (e.g., { namespace: 'default', name: 'my-resource' })",
+          additionalProperties: { type: "string" },
+        },
+        queryParams: {
+          type: "object",
+          description: "Query parameters to validate",
+          additionalProperties: { type: "string" },
+        },
+        body: {
+          type: "object",
+          description: "Request body to validate",
+        },
+      },
+      required: ["toolName"],
     },
   },
 } as const;

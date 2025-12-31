@@ -21,6 +21,9 @@ function generateIndex(): ToolIndex {
     resource: tool.resource,
     operation: tool.operation,
     summary: tool.summary,
+    dangerLevel: tool.dangerLevel ?? "low",
+    // Note: isDeprecated not yet extracted from x-ves-deprecated in parser
+    isDeprecated: false,
   }));
 
   // Calculate domain counts
