@@ -123,6 +123,22 @@ export {
   formatWorkflowCostEstimate,
 } from "./cost-estimator.js";
 
+// Best practices exports (Phase C)
+export type {
+  CommonError,
+  DangerAnalysis,
+  RecommendedWorkflow,
+  DomainBestPractices,
+  BestPracticesQuery,
+  BestPracticesResult,
+} from "./best-practices.js";
+export {
+  getDomainBestPractices,
+  queryBestPractices,
+  getAllDomainsSummary,
+  formatBestPractices,
+} from "./best-practices.js";
+
 /**
  * MCP Tool Definitions for the discovery meta-tools
  *
@@ -446,6 +462,37 @@ export const DISCOVERY_TOOLS = {
         detailed: {
           type: "boolean",
           description: "Include detailed breakdown of token usage and latency (default: true)",
+          default: true,
+        },
+      },
+    },
+  },
+
+  bestPractices: {
+    name: "f5xc-api-best-practices",
+    description:
+      "Get domain-specific best practices for F5XC API operations. Includes common errors with resolutions, " +
+      "recommended workflows, danger level analysis, security notes, and performance tips.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        domain: {
+          type: "string",
+          description:
+            "Domain to get best practices for (e.g., 'virtual', 'dns', 'certificates'). " +
+            "Omit to list available domains.",
+        },
+        aspect: {
+          type: "string",
+          enum: ["errors", "workflows", "danger", "security", "performance", "all"],
+          description:
+            "Specific aspect to retrieve: 'errors' (common errors), 'workflows' (recommended workflows), " +
+            "'danger' (danger level analysis), 'security' (security notes), 'performance' (tips), 'all' (default)",
+          default: "all",
+        },
+        detailed: {
+          type: "boolean",
+          description: "Include detailed breakdowns (default: true)",
           default: true,
         },
       },

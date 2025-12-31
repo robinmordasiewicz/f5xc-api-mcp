@@ -42,6 +42,9 @@ import {
   estimateWorkflowCost,
   formatCostEstimate,
   formatWorkflowCostEstimate,
+  queryBestPractices,
+  getAllDomainsSummary,
+  formatBestPractices,
   type CrudOperation,
   type CreationPlan,
 } from "./tools/discovery/index.js";
@@ -158,6 +161,7 @@ export class F5XCApiServer {
                     "f5xc-api-validate-params",
                     "f5xc-api-resolve-dependencies",
                     "f5xc-api-estimate-cost",
+                    "f5xc-api-best-practices",
                   ],
                   message: isAuthenticated
                     ? "Authenticated - API execution enabled. Use f5xc-api-search-tools to find available API tools."
@@ -683,12 +687,87 @@ export class F5XCApiServer {
       }
     );
 
+    // Phase C: Best practices tool
+    this.server.tool(
+      DISCOVERY_TOOLS.bestPractices.name,
+      DISCOVERY_TOOLS.bestPractices.description,
+      {
+        domain: z.string().optional().describe("Domain to get best practices for"),
+        aspect: z
+          .enum(["errors", "workflows", "danger", "security", "performance", "all"])
+          .optional()
+          .default("all")
+          .describe("Specific aspect to retrieve"),
+        detailed: z.boolean().optional().default(true).describe("Include detailed breakdowns"),
+      },
+      async (args) => {
+        // If no domain specified, return domain summary
+        if (!args.domain) {
+          const summary = getAllDomainsSummary();
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    type: "domain_summary",
+                    hint: "Specify a domain to get detailed best practices",
+                    domains: summary,
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        // Query best practices for specified domain
+        const result = queryBestPractices({
+          domain: args.domain,
+          aspect: args.aspect,
+          detailed: args.detailed,
+        });
+
+        if (!result.success) {
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify({ success: false, error: result.error }, null, 2),
+              },
+            ],
+          };
+        }
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  success: true,
+                  practices: result.practices,
+                  formatted:
+                    args.detailed && result.practices
+                      ? formatBestPractices(result.practices)
+                      : undefined,
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
+    );
+
     const indexMetadata = getIndexMetadata();
     const consolidationStats = getConsolidationStats();
     logger.info("Tool registration completed (dynamic discovery mode)", {
       authMode,
       authenticated: authMode !== AuthMode.NONE,
-      registeredTools: 11,
+      registeredTools: 12,
       indexedTools: indexMetadata.totalTools,
       consolidatedResources: consolidationStats.consolidatedCount,
       consolidationReduction: consolidationStats.reductionPercent,
