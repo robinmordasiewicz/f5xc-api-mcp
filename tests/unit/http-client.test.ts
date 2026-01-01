@@ -7,7 +7,11 @@ import axios, { AxiosError, type InternalAxiosRequestConfig, type AxiosResponse 
 import { HttpClient, createHttpClient, type HttpClientConfig, type ApiResponse } from "../../src/auth/http-client.js";
 import { CredentialManager, AuthMode } from "../../src/auth/credential-manager.js";
 import { F5XCApiError, AuthenticationError } from "../../src/utils/error-handling.js";
-import { shouldSkipP12Tests } from "../utils/ci-environment.js";
+import {
+  shouldSkipP12Tests,
+  setupDocumentationModeEnv,
+  setupAuthenticatedModeEnv,
+} from "../utils/ci-environment.js";
 
 // Create mock logger functions for reference using vi.hoisted
 const { mockLoggerDebug, mockLoggerInfo, mockLoggerError, mockLoggerWarn } = vi.hoisted(() => ({
@@ -56,10 +60,8 @@ describe("http-client", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     process.env = { ...originalEnv };
-    delete process.env.F5XC_API_URL;
-    delete process.env.F5XC_API_TOKEN;
-    delete process.env.F5XC_P12_FILE;
-    delete process.env.F5XC_P12_PASSWORD;
+    // Clear all F5XC environment variables
+    setupDocumentationModeEnv();
 
     mockRequest = vi.fn();
     const mockAxiosInstance = {
@@ -90,30 +92,31 @@ describe("http-client", () => {
 
   describe("HttpClient", () => {
     describe("constructor", () => {
-      it("should not create client when not authenticated", () => {
+      it("should not create client when not authenticated", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const httpClient = new HttpClient(credentialManager);
 
         expect(httpClient.isAvailable()).toBe(false);
         expect(httpClient.getAxiosInstance()).toBeNull();
       });
 
-      it("should create client when authenticated with token", () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      it("should create client when authenticated with token", async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const httpClient = new HttpClient(credentialManager);
 
         expect(httpClient.isAvailable()).toBe(true);
         expect(mockedAxios.create).toHaveBeenCalled();
       });
 
-      it("should configure client with custom timeout", () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      it("should configure client with custom timeout", async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         new HttpClient(credentialManager, { timeout: 60000 });
 
         expect(mockedAxios.create).toHaveBeenCalledWith(
@@ -123,11 +126,11 @@ describe("http-client", () => {
         );
       });
 
-      it("should configure client with custom headers", () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      it("should configure client with custom headers", async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         new HttpClient(credentialManager, { headers: { "X-Custom-Header": "value" } });
 
         expect(mockedAxios.create).toHaveBeenCalledWith(
@@ -139,39 +142,42 @@ describe("http-client", () => {
         );
       });
 
-      it("should throw AuthenticationError when API URL not configured", () => {
+      it("should throw AuthenticationError when API URL not configured", async () => {
         // Set only token but not URL
         process.env.F5XC_API_TOKEN = "test-token";
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         // The credential manager won't be authenticated without URL
 
         expect(credentialManager.getAuthMode()).toBe(AuthMode.NONE);
       });
 
-      it("should throw AuthenticationError when token not configured", () => {
+      it("should throw AuthenticationError when token not configured", async () => {
         // Set only URL but not token
         process.env.F5XC_API_URL = "https://test.volterra.us";
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
 
         expect(credentialManager.getAuthMode()).toBe(AuthMode.NONE);
       });
     });
 
     describe("isAvailable", () => {
-      it("should return false when not authenticated", () => {
+      it("should return false when not authenticated", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const httpClient = new HttpClient(credentialManager);
 
         expect(httpClient.isAvailable()).toBe(false);
       });
 
-      it("should return true when authenticated", () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      it("should return true when authenticated", async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const httpClient = new HttpClient(credentialManager);
 
         expect(httpClient.isAvailable()).toBe(true);
@@ -179,18 +185,19 @@ describe("http-client", () => {
     });
 
     describe("getAxiosInstance", () => {
-      it("should return null when not authenticated", () => {
+      it("should return null when not authenticated", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const httpClient = new HttpClient(credentialManager);
 
         expect(httpClient.getAxiosInstance()).toBeNull();
       });
 
-      it("should return axios instance when authenticated", () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      it("should return axios instance when authenticated", async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const httpClient = new HttpClient(credentialManager);
 
         expect(httpClient.getAxiosInstance()).toBeDefined();
@@ -200,6 +207,7 @@ describe("http-client", () => {
     describe("request methods - unauthenticated", () => {
       it("should throw AuthenticationError on GET when not authenticated", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const httpClient = new HttpClient(credentialManager);
 
         await expect(httpClient.get("/test")).rejects.toThrow(AuthenticationError);
@@ -208,6 +216,7 @@ describe("http-client", () => {
 
       it("should throw AuthenticationError on POST when not authenticated", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const httpClient = new HttpClient(credentialManager);
 
         await expect(httpClient.post("/test", {})).rejects.toThrow(AuthenticationError);
@@ -215,6 +224,7 @@ describe("http-client", () => {
 
       it("should throw AuthenticationError on PUT when not authenticated", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const httpClient = new HttpClient(credentialManager);
 
         await expect(httpClient.put("/test", {})).rejects.toThrow(AuthenticationError);
@@ -222,6 +232,7 @@ describe("http-client", () => {
 
       it("should throw AuthenticationError on DELETE when not authenticated", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const httpClient = new HttpClient(credentialManager);
 
         await expect(httpClient.delete("/test")).rejects.toThrow(AuthenticationError);
@@ -231,11 +242,11 @@ describe("http-client", () => {
     describe("request methods - authenticated", () => {
       let httpClient: HttpClient;
 
-      beforeEach(() => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      beforeEach(async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         httpClient = new HttpClient(credentialManager);
       });
 
@@ -338,11 +349,11 @@ describe("http-client", () => {
     });
 
     describe("request interceptors", () => {
-      it("should add metadata to request config", () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      it("should add metadata to request config", async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         new HttpClient(credentialManager);
 
         const config = requestInterceptorFulfilled({
@@ -354,11 +365,11 @@ describe("http-client", () => {
         expect((config as any).metadata.startTime).toBeGreaterThan(0);
       });
 
-      it("should log request in debug mode", () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      it("should log request in debug mode", async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         new HttpClient(credentialManager, { debug: true });
 
         requestInterceptorFulfilled({
@@ -371,10 +382,10 @@ describe("http-client", () => {
       });
 
       it("should reject errors in request interceptor", async () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         new HttpClient(credentialManager);
 
         const error = new Error("Request error");
@@ -383,11 +394,11 @@ describe("http-client", () => {
     });
 
     describe("response interceptors", () => {
-      it("should pass through successful responses", () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      it("should pass through successful responses", async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         new HttpClient(credentialManager);
 
         const response = {
@@ -400,11 +411,11 @@ describe("http-client", () => {
         expect(result).toBe(response);
       });
 
-      it("should log response in debug mode", () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      it("should log response in debug mode", async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         new HttpClient(credentialManager, { debug: true });
 
         const response = {
@@ -418,11 +429,11 @@ describe("http-client", () => {
         expect(mockLoggerDebug).toHaveBeenCalledWith("API Response", expect.any(Object));
       });
 
-      it("should calculate duration without metadata", () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      it("should calculate duration without metadata", async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         new HttpClient(credentialManager, { debug: true });
 
         const response = {
@@ -436,10 +447,10 @@ describe("http-client", () => {
       });
 
       it("should transform Axios errors to F5XCApiError", async () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         new HttpClient(credentialManager);
 
         // Mock axios.isAxiosError to return true
@@ -464,10 +475,10 @@ describe("http-client", () => {
       });
 
       it("should handle Axios error without response", async () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         new HttpClient(credentialManager);
 
         mockedAxios.isAxiosError.mockReturnValue(true);
@@ -487,10 +498,10 @@ describe("http-client", () => {
       });
 
       it("should pass through non-Axios errors", async () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         new HttpClient(credentialManager);
 
         mockedAxios.isAxiosError.mockReturnValue(false);
@@ -506,12 +517,12 @@ describe("http-client", () => {
     });
 
     describe("P12 certificate authentication", () => {
-      it.skipIf(shouldSkipP12Tests())("should configure https agent for P12 auth", () => {
+      it.skipIf(shouldSkipP12Tests())("should configure https agent for P12 auth", async () => {
         process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_P12_FILE = "/path/to/cert.p12";
-        process.env.F5XC_P12_PASSWORD = "password";
+        process.env.F5XC_P12_BUNDLE = "/path/to/cert.p12";
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         expect(credentialManager.getAuthMode()).toBe(AuthMode.CERTIFICATE);
 
         // Create HTTP client with P12 auth
@@ -537,14 +548,15 @@ describe("http-client", () => {
           getToken: vi.fn().mockReturnValue(null),
           getTenant: vi.fn().mockReturnValue("test"),
           getP12Certificate: vi.fn().mockReturnValue(null),
-          getP12Password: vi.fn().mockReturnValue(null),
+          getCert: vi.fn().mockReturnValue(null),
+          getKey: vi.fn().mockReturnValue(null),
         } as unknown as CredentialManager;
 
         expect(() => new HttpClient(mockCredManager)).toThrow(AuthenticationError);
         expect(() => new HttpClient(mockCredManager)).toThrow("API token not configured");
       });
 
-      it("should throw AuthenticationError when P12 certificate is null but auth mode is CERTIFICATE", () => {
+      it("should throw AuthenticationError when certificate is null but auth mode is CERTIFICATE", () => {
         // Create a mock credential manager that returns CERTIFICATE mode but null certificate
         const mockCredManager = {
           isAuthenticated: vi.fn().mockReturnValue(true),
@@ -553,11 +565,12 @@ describe("http-client", () => {
           getToken: vi.fn().mockReturnValue(null),
           getTenant: vi.fn().mockReturnValue("test"),
           getP12Certificate: vi.fn().mockReturnValue(null),
-          getP12Password: vi.fn().mockReturnValue(null),
+          getCert: vi.fn().mockReturnValue(null),
+          getKey: vi.fn().mockReturnValue(null),
         } as unknown as CredentialManager;
 
         expect(() => new HttpClient(mockCredManager)).toThrow(AuthenticationError);
-        expect(() => new HttpClient(mockCredManager)).toThrow("P12 certificate not loaded");
+        expect(() => new HttpClient(mockCredManager)).toThrow("Certificate not loaded - provide P12 bundle or cert/key pair");
       });
 
       it("should throw AuthenticationError when API URL is null but authenticated", () => {
@@ -569,7 +582,8 @@ describe("http-client", () => {
           getToken: vi.fn().mockReturnValue("test-token"),
           getTenant: vi.fn().mockReturnValue("test"),
           getP12Certificate: vi.fn().mockReturnValue(null),
-          getP12Password: vi.fn().mockReturnValue(null),
+          getCert: vi.fn().mockReturnValue(null),
+          getKey: vi.fn().mockReturnValue(null),
         } as unknown as CredentialManager;
 
         expect(() => new HttpClient(mockCredManager)).toThrow(AuthenticationError);
@@ -579,18 +593,19 @@ describe("http-client", () => {
   });
 
   describe("createHttpClient", () => {
-    it("should create HttpClient instance", () => {
+    it("should create HttpClient instance", async () => {
       const credentialManager = new CredentialManager();
+      await credentialManager.initialize();
       const httpClient = createHttpClient(credentialManager);
 
       expect(httpClient).toBeInstanceOf(HttpClient);
     });
 
-    it("should pass config to HttpClient", () => {
-      process.env.F5XC_API_URL = "https://test.volterra.us";
-      process.env.F5XC_API_TOKEN = "test-token";
+    it("should pass config to HttpClient", async () => {
+      setupAuthenticatedModeEnv();
 
       const credentialManager = new CredentialManager();
+      await credentialManager.initialize();
       const httpClient = createHttpClient(credentialManager, { timeout: 60000 });
 
       expect(mockedAxios.create).toHaveBeenCalledWith(

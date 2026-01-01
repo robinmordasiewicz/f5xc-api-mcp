@@ -5,7 +5,12 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { F5XCApiServer, createServer, ServerConfig } from "../../src/server.js";
 import { CredentialManager, AuthMode } from "../../src/auth/credential-manager.js";
-import { isCI, createEmptyConfigManager } from "../../tests/utils/ci-environment.js";
+import {
+  isCI,
+  setupDocumentationModeEnv,
+  setupAuthenticatedModeEnv,
+  clearF5XCEnvVars,
+} from "../../tests/utils/ci-environment.js";
 
 // Mock dependencies
 vi.mock("../../src/utils/logging.js", () => ({
@@ -106,16 +111,8 @@ describe("server", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     process.env = { ...originalEnv };
-    delete process.env.F5XC_API_URL;
-    delete process.env.F5XC_API_TOKEN;
-    delete process.env.F5XC_P12_FILE;
-    delete process.env.F5XC_P12_PASSWORD;
-    delete process.env.F5XC_PROFILE;
-
-    // In CI mode, prevent loading from config file by setting a non-existent profile
-    if (isCI()) {
-      process.env.F5XC_PROFILE = "__nonexistent__";
-    }
+    // Use helper to clear F5XC env vars and set up documentation mode
+    setupDocumentationModeEnv();
   });
 
   afterEach(() => {
@@ -124,8 +121,9 @@ describe("server", () => {
 
   describe("F5XCApiServer", () => {
     describe("constructor", () => {
-      it("should create server with valid configuration", () => {
+      it("should create server with valid configuration", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -139,8 +137,9 @@ describe("server", () => {
         expect(server.getCredentialManager()).toBe(credentialManager);
       });
 
-      it("should register tools, resources, and prompts on construction", () => {
+      it("should register tools, resources, and prompts on construction", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -159,11 +158,11 @@ describe("server", () => {
         expect(mockPrompt).toHaveBeenCalled();
       });
 
-      it("should create HTTP client when authenticated", () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+      it("should create HTTP client when authenticated", async () => {
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -175,9 +174,9 @@ describe("server", () => {
         expect(server.getCredentialManager().getAuthMode()).toBe(AuthMode.TOKEN);
       });
 
-      it("should not create HTTP client in documentation mode", () => {
-        const configManager = isCI() ? createEmptyConfigManager() : undefined;
-        const credentialManager = new CredentialManager(configManager as any);
+      it("should not create HTTP client in documentation mode", async () => {
+        const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -191,8 +190,9 @@ describe("server", () => {
     });
 
     describe("getMcpServer", () => {
-      it("should return the underlying MCP server instance", () => {
+      it("should return the underlying MCP server instance", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -210,8 +210,9 @@ describe("server", () => {
     });
 
     describe("getCredentialManager", () => {
-      it("should return the credential manager", () => {
+      it("should return the credential manager", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -227,6 +228,7 @@ describe("server", () => {
     describe("start", () => {
       it("should start server with STDIO transport", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -243,6 +245,7 @@ describe("server", () => {
     describe("stop", () => {
       it("should stop server when started", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -258,6 +261,7 @@ describe("server", () => {
 
       it("should do nothing when not started", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -272,8 +276,9 @@ describe("server", () => {
     });
 
     describe("tool registration", () => {
-      it("should register f5xc-api-server-info tool", () => {
+      it("should register f5xc-api-server-info tool", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -291,8 +296,8 @@ describe("server", () => {
       });
 
       it("should execute server-info tool handler in documentation mode", async () => {
-        const configManager = isCI() ? createEmptyConfigManager() : undefined;
-        const credentialManager = new CredentialManager(configManager as any);
+        const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -322,10 +327,10 @@ describe("server", () => {
       });
 
       it("should execute server-info tool handler in execution mode", async () => {
-        process.env.F5XC_API_URL = "https://test.volterra.us";
-        process.env.F5XC_API_TOKEN = "test-token";
+        setupAuthenticatedModeEnv();
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -352,8 +357,9 @@ describe("server", () => {
     });
 
     describe("resource registration", () => {
-      it("should register resources for all resource types", () => {
+      it("should register resources for all resource types", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -366,8 +372,9 @@ describe("server", () => {
         expect(mockResource.mock.calls.length).toBeGreaterThan(0);
       });
 
-      it("should register namespace-scoped resources with correct URI template", () => {
+      it("should register namespace-scoped resources with correct URI template", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -383,8 +390,9 @@ describe("server", () => {
         expect(namespacedResource).toBeDefined();
       });
 
-      it("should register system resources with correct URI template", () => {
+      it("should register system resources with correct URI template", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -400,8 +408,9 @@ describe("server", () => {
         expect(systemResource).toBeDefined();
       });
 
-      it("should register resource handler function", () => {
+      it("should register resource handler function", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -427,6 +436,7 @@ describe("server", () => {
         });
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -455,6 +465,7 @@ describe("server", () => {
         mockReadResource.mockRejectedValue(testError);
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -477,6 +488,7 @@ describe("server", () => {
         mockReadResource.mockRejectedValue("string error");
 
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -497,8 +509,9 @@ describe("server", () => {
     });
 
     describe("prompt registration", () => {
-      it("should register all workflow prompts", () => {
+      it("should register all workflow prompts", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -511,8 +524,9 @@ describe("server", () => {
         expect(mockPrompt.mock.calls.length).toBe(9);
       });
 
-      it("should register deploy-http-loadbalancer prompt", () => {
+      it("should register deploy-http-loadbalancer prompt", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -529,6 +543,7 @@ describe("server", () => {
 
       it("should process prompt template with arguments", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -558,6 +573,7 @@ describe("server", () => {
 
       it("should handle missing optional arguments with defaults", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -586,6 +602,7 @@ describe("server", () => {
 
       it("should apply default values for optional arguments", async () => {
         const credentialManager = new CredentialManager();
+        await credentialManager.initialize();
         const config: ServerConfig = {
           name: "test-server",
           version: "1.0.0",
@@ -616,26 +633,23 @@ describe("server", () => {
   });
 
   describe("createServer", () => {
-    it("should create server with default configuration", () => {
-      const configManager = isCI() ? createEmptyConfigManager() : undefined;
-      const server = createServer(configManager as any);
+    it("should create server with default configuration", async () => {
+      const server = await createServer();
 
       expect(server).toBeInstanceOf(F5XCApiServer);
       expect(server.getCredentialManager()).toBeInstanceOf(CredentialManager);
     });
 
-    it("should create server in documentation mode without credentials", () => {
-      const configManager = isCI() ? createEmptyConfigManager() : undefined;
-      const server = createServer(configManager as any);
+    it("should create server in documentation mode without credentials", async () => {
+      const server = await createServer();
 
       expect(server.getCredentialManager().getAuthMode()).toBe(AuthMode.NONE);
     });
 
-    it("should create server in execution mode with credentials", () => {
-      process.env.F5XC_API_URL = "https://test.volterra.us";
-      process.env.F5XC_API_TOKEN = "test-token";
+    it("should create server in execution mode with credentials", async () => {
+      setupAuthenticatedModeEnv();
 
-      const server = createServer();
+      const server = await createServer();
 
       expect(server.getCredentialManager().getAuthMode()).toBe(AuthMode.TOKEN);
     });

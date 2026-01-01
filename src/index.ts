@@ -11,12 +11,18 @@
  *   and Terraform examples
  * - Execution mode: When F5XC credentials are provided, enables direct API calls
  *
- * Environment Variables:
- * - F5XC_API_URL: Tenant URL (auto-normalized)
- * - F5XC_API_TOKEN: API token for authentication
- * - F5XC_P12_FILE: Path to P12 certificate file (alternative to token)
- * - F5XC_P12_PASSWORD: Password for P12 certificate
- * - F5XC_PROFILE: Profile name to use (default: F5XC_DEFAULT_PROFILE)
+ * Credential Sources (in priority order):
+ * 1. Environment Variables (highest priority):
+ *    - F5XC_API_URL: Tenant URL (auto-normalized)
+ *    - F5XC_API_TOKEN: API token for authentication
+ *    - F5XC_P12_BUNDLE: Path to P12 certificate bundle
+ *    - F5XC_CERT: Path to certificate file (for mTLS)
+ *    - F5XC_KEY: Path to private key file (for mTLS)
+ *    - F5XC_NAMESPACE: Default namespace
+ *
+ * 2. Profile from ~/.config/xcsh/ (cross-compatible with f5xc-xcsh CLI):
+ *    - Uses active profile from ~/.config/xcsh/active_profile
+ *    - Individual profiles stored in ~/.config/xcsh/profiles/
  */
 
 import { createServer } from "./server.js";
@@ -49,12 +55,17 @@ Options:
   -v, --version    Show version number
   -h, --help       Show help
 
-Environment Variables:
+Environment Variables (override profile settings):
   F5XC_API_URL        Tenant URL (e.g., https://tenant.console.ves.volterra.io)
   F5XC_API_TOKEN      API token for authentication
-  F5XC_P12_FILE       Path to P12 certificate file (alternative to token)
-  F5XC_P12_PASSWORD   Password for P12 certificate
-  F5XC_PROFILE        Profile name to use
+  F5XC_P12_BUNDLE     Path to P12 certificate bundle
+  F5XC_CERT           Path to certificate file (for mTLS)
+  F5XC_KEY            Path to private key file (for mTLS)
+  F5XC_NAMESPACE      Default namespace
+
+Profile Configuration (cross-compatible with f5xc-xcsh CLI):
+  Profiles are stored in ~/.config/xcsh/profiles/
+  Active profile is tracked in ~/.config/xcsh/active_profile
 
 The server runs in documentation mode when no credentials are provided,
 allowing exploration of the API without authentication.
@@ -63,7 +74,7 @@ allowing exploration of the API without authentication.
     }
 
     // Start MCP server (default behavior)
-    const server = createServer();
+    const server = await createServer();
     await server.start();
 
     // Handle graceful shutdown

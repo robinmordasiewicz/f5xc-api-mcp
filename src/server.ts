@@ -948,9 +948,15 @@ export class F5XCApiServer {
 
 /**
  * Create and configure the F5XC API MCP Server
+ *
+ * Credentials are loaded asynchronously from:
+ * 1. Environment variables (highest priority)
+ * 2. Active profile from ~/.config/xcsh/ (cross-compatible with xcsh CLI)
+ * 3. No credentials - documentation mode (lowest priority)
  */
-export function createServer(configManager?: any): F5XCApiServer {
-  const credentialManager = new CredentialManager(configManager);
+export async function createServer(): Promise<F5XCApiServer> {
+  const credentialManager = new CredentialManager();
+  await credentialManager.initialize();
 
   return new F5XCApiServer({
     name: "f5xc-api-mcp",
