@@ -45,11 +45,11 @@ export function shouldSkipP12Tests(): boolean {
   // Skip if in CI and actual P12 file doesn't exist
   if (!isCI()) return false;
 
-  const p12File = process.env.F5XC_P12_FILE;
-  if (!p12File) return true; // P12 not configured at all
+  const p12Bundle = process.env.F5XC_P12_BUNDLE;
+  if (!p12Bundle) return true; // P12 not configured at all
 
   // Check if it's a real file path vs a test mock
-  return !p12File.includes("mock");
+  return !p12Bundle.includes("mock");
 }
 
 /**
@@ -65,28 +65,36 @@ export function shouldSkipTokenAuthTests(): boolean {
 }
 
 /**
- * Get a ConfigManager mock for CI tests that prevents loading profiles from disk
- * This is used to ensure tests that expect documentation mode don't accidentally
- * load real credentials from ~/.f5xc/credentials.json
+ * Clear all F5XC environment variables
+ * Use in test setup/teardown to ensure clean state
  */
-export function createEmptyConfigManager() {
-  // Return a mock ConfigManager that has no profiles
-  return {
-    readSync: () => ({
-      version: "1.0",
-      defaultProfile: null,
-      profiles: {},
-      metadata: { lastModifiedAt: new Date().toISOString() },
-    }),
-    read: async () => ({
-      version: "1.0",
-      defaultProfile: null,
-      profiles: {},
-      metadata: { lastModifiedAt: new Date().toISOString() },
-    }),
-    setProfile: async () => {},
-    deleteProfile: async () => {},
-    setDefaultProfile: async () => {},
-    touchProfile: async () => {},
-  };
+export function clearF5XCEnvVars(): void {
+  delete process.env.F5XC_API_URL;
+  delete process.env.F5XC_API_TOKEN;
+  delete process.env.F5XC_P12_BUNDLE;
+  delete process.env.F5XC_CERT;
+  delete process.env.F5XC_KEY;
+  delete process.env.F5XC_NAMESPACE;
+}
+
+/**
+ * Set up environment for documentation mode testing
+ * Clears all auth env vars and disables profile loading
+ */
+export function setupDocumentationModeEnv(): void {
+  clearF5XCEnvVars();
+  // Set XDG_CONFIG_HOME to a non-existent directory to prevent loading real profiles
+  process.env.XDG_CONFIG_HOME = "/tmp/__nonexistent_test_config__";
+}
+
+/**
+ * Set up environment for authenticated mode testing
+ */
+export function setupAuthenticatedModeEnv(options?: {
+  apiUrl?: string;
+  apiToken?: string;
+}): void {
+  clearF5XCEnvVars();
+  process.env.F5XC_API_URL = options?.apiUrl ?? "https://test.console.ves.volterra.io";
+  process.env.F5XC_API_TOKEN = options?.apiToken ?? "test-token";
 }

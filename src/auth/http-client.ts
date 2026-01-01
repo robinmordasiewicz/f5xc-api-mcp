@@ -104,18 +104,28 @@ export class HttpClient {
       };
     } else if (authMode === AuthMode.CERTIFICATE) {
       const p12Buffer = this.credentialManager.getP12Certificate();
-      const p12Password = this.credentialManager.getP12Password();
+      const cert = this.credentialManager.getCert();
+      const key = this.credentialManager.getKey();
 
-      if (!p12Buffer) {
-        throw new AuthenticationError("P12 certificate not loaded");
+      if (p12Buffer) {
+        // Create HTTPS agent with P12 certificate for mTLS
+        // F5XC P12 certificates typically don't require a password
+        axiosConfig.httpsAgent = new https.Agent({
+          pfx: p12Buffer,
+          rejectUnauthorized: true,
+        });
+      } else if (cert && key) {
+        // Create HTTPS agent with separate cert/key for mTLS
+        axiosConfig.httpsAgent = new https.Agent({
+          cert,
+          key,
+          rejectUnauthorized: true,
+        });
+      } else {
+        throw new AuthenticationError(
+          "Certificate not loaded - provide P12 bundle or cert/key pair"
+        );
       }
-
-      // Create HTTPS agent with P12 certificate for mTLS
-      axiosConfig.httpsAgent = new https.Agent({
-        pfx: p12Buffer,
-        passphrase: p12Password ?? undefined,
-        rejectUnauthorized: true,
-      });
     }
 
     const client = axios.create(axiosConfig);
@@ -245,7 +255,7 @@ export class HttpClient {
     if (!this.client) {
       throw new AuthenticationError(
         "HTTP client not available - server is in documentation mode. " +
-          "Set F5XC_API_URL and F5XC_API_TOKEN or F5XC_P12_FILE to enable API execution."
+          "Set F5XC_API_URL and F5XC_API_TOKEN (or F5XC_P12_BUNDLE for certificate auth) to enable API execution."
       );
     }
 

@@ -10,7 +10,11 @@ import {
   CredentialManager,
   AuthMode,
 } from "../../src/auth/credential-manager.js";
-import { shouldSkipP12Tests, shouldSkipTokenAuthTests } from "../utils/ci-environment.js";
+import {
+  shouldSkipP12Tests,
+  setupDocumentationModeEnv,
+  setupAuthenticatedModeEnv,
+} from "../utils/ci-environment.js";
 
 // Mock fs for P12 file testing
 vi.mock("fs", async (importOriginal) => {
@@ -94,73 +98,85 @@ describe("CredentialManager", () => {
   beforeEach(() => {
     vi.resetModules();
     process.env = { ...originalEnv };
+    setupDocumentationModeEnv();
   });
 
   afterEach(() => {
     process.env = originalEnv;
   });
 
-  it("should default to NONE auth mode when no credentials provided", () => {
-    delete process.env.F5XC_API_URL;
-    delete process.env.F5XC_API_TOKEN;
-
+  it("should default to NONE auth mode when no credentials provided", async () => {
     const manager = new CredentialManager();
+    await manager.initialize();
     expect(manager.getAuthMode()).toBe(AuthMode.NONE);
     expect(manager.isAuthenticated()).toBe(false);
   });
 
-  it("should use token auth when URL and token provided", () => {
-    process.env.F5XC_API_URL = "https://mytenant.volterra.us";
-    process.env.F5XC_API_TOKEN = "test-token";
+  it("should use token auth when URL and token provided", async () => {
+    setupAuthenticatedModeEnv({
+      apiUrl: "https://mytenant.volterra.us",
+      apiToken: "test-token",
+    });
 
     const manager = new CredentialManager();
+    await manager.initialize();
     expect(manager.getAuthMode()).toBe(AuthMode.TOKEN);
     expect(manager.isAuthenticated()).toBe(true);
     expect(manager.getToken()).toBe("test-token");
     expect(manager.getTenant()).toBe("mytenant");
   });
 
-  it("should normalize API URL", () => {
-    process.env.F5XC_API_URL = "https://mytenant.volterra.us";
-    process.env.F5XC_API_TOKEN = "test-token";
+  it("should normalize API URL", async () => {
+    setupAuthenticatedModeEnv({
+      apiUrl: "https://mytenant.volterra.us",
+      apiToken: "test-token",
+    });
 
     const manager = new CredentialManager();
+    await manager.initialize();
     expect(manager.getApiUrl()).toBe(
       "https://mytenant.console.ves.volterra.io/api"
     );
   });
 
-  it("should return null tenant when not authenticated", () => {
-    delete process.env.F5XC_API_URL;
-
+  it("should return null tenant when not authenticated", async () => {
     const manager = new CredentialManager();
+    await manager.initialize();
     expect(manager.getTenant()).toBeNull();
   });
 
-  it("should reload credentials", () => {
-    process.env.F5XC_API_URL = "https://mytenant.volterra.us";
-    process.env.F5XC_API_TOKEN = "test-token";
+  it("should reload credentials", async () => {
+    setupAuthenticatedModeEnv({
+      apiUrl: "https://mytenant.volterra.us",
+      apiToken: "test-token",
+    });
 
     const manager = new CredentialManager();
+    await manager.initialize();
     expect(manager.isAuthenticated()).toBe(true);
 
     // Change environment
     delete process.env.F5XC_API_TOKEN;
-    manager.reload();
+    await manager.reload();
 
     expect(manager.getAuthMode()).toBe(AuthMode.NONE);
   });
 
-  it("should return null for P12 password when not configured", () => {
+  it("should return null for cert when not configured", async () => {
     const manager = new CredentialManager();
-    expect(manager.getP12Password()).toBeNull();
+    await manager.initialize();
+    expect(manager.getCert()).toBeNull();
+    expect(manager.getKey()).toBeNull();
   });
 
-  it("should return frozen credentials object", () => {
-    process.env.F5XC_API_URL = "https://mytenant.volterra.us";
-    process.env.F5XC_API_TOKEN = "test-token";
+  it("should return frozen credentials object", async () => {
+    setupAuthenticatedModeEnv({
+      apiUrl: "https://mytenant.volterra.us",
+      apiToken: "test-token",
+    });
 
     const manager = new CredentialManager();
+    await manager.initialize();
     const credentials = manager.getCredentials();
 
     expect(credentials).toBeDefined();
@@ -168,38 +184,42 @@ describe("CredentialManager", () => {
     expect(credentials.token).toBe("test-token");
   });
 
-  it("should return null P12 certificate when not configured", () => {
+  it("should return null P12 certificate when not configured", async () => {
     const manager = new CredentialManager();
+    await manager.initialize();
     expect(manager.getP12Certificate()).toBeNull();
   });
 
-  it.skipIf(shouldSkipP12Tests())("should use certificate auth when P12 file is provided", () => {
+  it.skipIf(shouldSkipP12Tests())("should use certificate auth when P12 bundle is provided", async () => {
+    setupDocumentationModeEnv();
     process.env.F5XC_API_URL = "https://mytenant.volterra.us";
-    process.env.F5XC_P12_FILE = "/path/to/cert.p12";
-    process.env.F5XC_P12_PASSWORD = "password";
+    process.env.F5XC_P12_BUNDLE = "/path/to/cert.p12";
 
     const manager = new CredentialManager();
+    await manager.initialize();
     expect(manager.getAuthMode()).toBe(AuthMode.CERTIFICATE);
     expect(manager.getP12Certificate()).toEqual(Buffer.from("mock-p12-data"));
-    expect(manager.getP12Password()).toBe("password");
   });
 
-  it.skipIf(shouldSkipP12Tests())("should fall back to token auth when P12 file fails to load", () => {
+  it.skipIf(shouldSkipP12Tests())("should fall back to token auth when P12 bundle fails to load", async () => {
+    setupDocumentationModeEnv();
     process.env.F5XC_API_URL = "https://mytenant.volterra.us";
-    process.env.F5XC_P12_FILE = "/path/to/fail.p12"; // "fail" in path triggers mock error
+    process.env.F5XC_P12_BUNDLE = "/path/to/fail.p12"; // "fail" in path triggers mock error
     process.env.F5XC_API_TOKEN = "fallback-token";
 
     const manager = new CredentialManager();
+    await manager.initialize();
     expect(manager.getAuthMode()).toBe(AuthMode.TOKEN);
     expect(manager.getToken()).toBe("fallback-token");
   });
 
-  it.skipIf(shouldSkipP12Tests())("should fall back to NONE when P12 file fails and no token", () => {
+  it.skipIf(shouldSkipP12Tests())("should fall back to NONE when P12 bundle fails and no token", async () => {
+    setupDocumentationModeEnv();
     process.env.F5XC_API_URL = "https://mytenant.volterra.us";
-    process.env.F5XC_P12_FILE = "/path/to/fail.p12"; // "fail" in path triggers mock error
-    delete process.env.F5XC_API_TOKEN;
+    process.env.F5XC_P12_BUNDLE = "/path/to/fail.p12"; // "fail" in path triggers mock error
 
     const manager = new CredentialManager();
+    await manager.initialize();
     expect(manager.getAuthMode()).toBe(AuthMode.NONE);
   });
 });

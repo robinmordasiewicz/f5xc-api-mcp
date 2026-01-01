@@ -4,8 +4,9 @@
 
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import axios from "axios";
-import { createHttpClient } from "../../src/auth/http-client.js";
+import { HttpClient, createHttpClient } from "../../src/auth/http-client.js";
 import { CredentialManager } from "../../src/auth/credential-manager.js";
+import { setupDocumentationModeEnv, setupAuthenticatedModeEnv } from "../utils/ci-environment.js";
 
 // Mock axios
 vi.mock("axios");
@@ -16,16 +17,16 @@ describe("HttpClient Integration", () => {
   let httpClient: HttpClient;
   let mockRequest: ReturnType<typeof vi.fn>;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     vi.resetAllMocks();
+    setupDocumentationModeEnv();
 
     // Setup environment for token auth
     process.env.F5XC_API_URL = "https://test-tenant.console.ves.volterra.io";
     process.env.F5XC_API_TOKEN = "test-token-12345";
-    delete process.env.F5XC_P12_FILE;
-    delete process.env.F5XC_P12_PASSWORD;
 
     credentialManager = new CredentialManager();
+    await credentialManager.initialize();
 
     // Mock axios.create to return a mock instance with request method
     mockRequest = vi.fn();
@@ -265,6 +266,7 @@ describe("Mock API Scenarios", () => {
 
   beforeEach(() => {
     vi.resetAllMocks();
+    setupDocumentationModeEnv();
     process.env.F5XC_API_URL = "https://test-tenant.console.ves.volterra.io";
     process.env.F5XC_API_TOKEN = "test-token";
 
@@ -296,6 +298,7 @@ describe("Mock API Scenarios", () => {
     mockRequest.mockResolvedValue({ data: mockNamespaces, status: 200, headers: {} });
 
     const credentialManager = new CredentialManager();
+    await credentialManager.initialize();
     const httpClient = createHttpClient(credentialManager);
 
     const result = await httpClient.get("/web/namespaces");
@@ -342,6 +345,7 @@ describe("Mock API Scenarios", () => {
     mockRequest.mockResolvedValue({ data: mockResponse, status: 201, headers: {} });
 
     const credentialManager = new CredentialManager();
+    await credentialManager.initialize();
     const httpClient = createHttpClient(credentialManager);
 
     const result = await httpClient.post(
@@ -373,6 +377,7 @@ describe("Mock API Scenarios", () => {
     mockRequest.mockResolvedValue({ data: mockLbWithStatus, status: 200, headers: {} });
 
     const credentialManager = new CredentialManager();
+    await credentialManager.initialize();
     const httpClient = createHttpClient(credentialManager);
 
     const result = await httpClient.get(

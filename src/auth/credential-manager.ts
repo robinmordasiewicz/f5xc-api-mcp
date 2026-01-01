@@ -4,13 +4,14 @@
  * Handles authentication configuration and URL normalization.
  * Supports dual-mode operation:
  * - Documentation mode: No credentials required
- * - Execution mode: API token or P12 certificate authentication
+ * - Execution mode: API token or P12/Certificate authentication
+ *
+ * Cross-compatible with f5xc-xcsh CLI profiles.
  */
 
 import { readFileSync } from "fs";
 import { logger } from "../utils/logging.js";
-import { ConfigManager } from "../config/index.js";
-import type { ConfigFile } from "../config/index.js";
+import { getProfileManager, type Profile } from "../profile/index.js";
 
 /**
  * Authentication modes supported by the server
@@ -26,25 +27,16 @@ export enum AuthMode {
 
 /**
  * Environment variable names for authentication
+ * These take priority over profile settings
  */
 export const AUTH_ENV_VARS = {
   API_URL: "F5XC_API_URL",
   API_TOKEN: "F5XC_API_TOKEN",
-  P12_FILE: "F5XC_P12_FILE",
-  P12_PASSWORD: "F5XC_P12_PASSWORD",
-  PROFILE: "F5XC_PROFILE",
+  P12_BUNDLE: "F5XC_P12_BUNDLE",
+  CERT: "F5XC_CERT",
+  KEY: "F5XC_KEY",
+  NAMESPACE: "F5XC_NAMESPACE",
 } as const;
-
-/**
- * Raw credentials as loaded from environment or config
- * Used internally for credential processing
- */
-interface RawCredentials {
-  apiUrl?: string;
-  token?: string;
-  p12File?: string;
-  p12Password?: string;
-}
 
 /**
  * Credential configuration for API access
@@ -58,8 +50,12 @@ export interface Credentials {
   token: string | null;
   /** P12 certificate buffer (for cert auth) */
   p12Certificate: Buffer | null;
-  /** P12 certificate password */
-  p12Password: string | null;
+  /** Certificate content (for mTLS) */
+  cert: string | null;
+  /** Private key content (for mTLS) */
+  key: string | null;
+  /** Default namespace */
+  namespace: string | null;
 }
 
 /**
@@ -125,69 +121,80 @@ export function extractTenantFromUrl(url: string): string | null {
  * Credential Manager
  *
  * Manages authentication credentials for F5 Distributed Cloud API.
- * Supports dual-layer credential loading with priority:
+ * Supports credential loading with priority:
  * 1. Environment variables (highest priority - overrides all)
- * 2. Named profiles from ~/.f5xc/credentials.json
+ * 2. Active profile from ~/.config/xcsh/ (cross-compatible with xcsh CLI)
  * 3. No credentials (documentation mode - lowest priority)
  */
 export class CredentialManager {
   private credentials: Credentials;
-  private activeProfile: string | null = null;
-  private configManager: ConfigManager;
+  private activeProfileName: string | null = null;
+  private initialized = false;
 
-  constructor(configManager?: ConfigManager) {
-    this.configManager = configManager ?? new ConfigManager();
-    this.credentials = this.loadCredentials();
+  constructor() {
+    // Initialize with empty credentials - will be loaded async
+    this.credentials = {
+      mode: AuthMode.NONE,
+      apiUrl: null,
+      token: null,
+      p12Certificate: null,
+      cert: null,
+      key: null,
+      namespace: null,
+    };
+  }
+
+  /**
+   * Initialize credentials asynchronously
+   * Must be called before using credentials
+   */
+  async initialize(): Promise<void> {
+    if (this.initialized) return;
+    this.credentials = await this.loadCredentials();
+    this.initialized = true;
   }
 
   /**
    * Load credentials from environment variables
    */
-  private loadFromEnvironment(): RawCredentials {
+  private loadFromEnvironment(): Partial<Profile> & { hasAuth: boolean } {
+    const apiUrl = process.env[AUTH_ENV_VARS.API_URL];
+    const apiToken = process.env[AUTH_ENV_VARS.API_TOKEN];
+    const p12Bundle = process.env[AUTH_ENV_VARS.P12_BUNDLE];
+    const cert = process.env[AUTH_ENV_VARS.CERT];
+    const key = process.env[AUTH_ENV_VARS.KEY];
+    const defaultNamespace = process.env[AUTH_ENV_VARS.NAMESPACE];
+
+    const hasAuth = !!(apiToken || p12Bundle || (cert && key));
+
     return {
-      apiUrl: process.env[AUTH_ENV_VARS.API_URL],
-      token: process.env[AUTH_ENV_VARS.API_TOKEN],
-      p12File: process.env[AUTH_ENV_VARS.P12_FILE],
-      p12Password: process.env[AUTH_ENV_VARS.P12_PASSWORD],
+      name: "__env__",
+      apiUrl: apiUrl || "",
+      apiToken,
+      p12Bundle,
+      cert,
+      key,
+      defaultNamespace,
+      hasAuth,
     };
   }
 
   /**
-   * Load credentials from configuration file
+   * Load credentials from active profile
    */
-  private loadFromConfigFile(): RawCredentials | null {
+  private async loadFromProfile(): Promise<Profile | null> {
     try {
-      const config = this.configManager.readSync();
+      const profileManager = getProfileManager();
+      const profile = await profileManager.getActiveProfile();
 
-      if (!config || Object.keys(config.profiles).length === 0) {
-        return null;
+      if (profile) {
+        this.activeProfileName = profile.name;
+        return profile;
       }
 
-      const profileName = this.selectProfile(config);
-      if (!profileName) {
-        return null;
-      }
-
-      const profile = config.profiles[profileName];
-      if (!profile) {
-        return null;
-      }
-
-      this.activeProfile = profileName;
-
-      // Touch the profile to update lastUsedAt (async, but don't block)
-      this.configManager.touchProfile(profileName).catch(() => {
-        // Silently ignore touch errors
-      });
-
-      return {
-        apiUrl: profile.apiUrl,
-        token: profile.apiToken,
-        p12File: profile.p12File,
-        p12Password: profile.p12Password,
-      };
+      return null;
     } catch (error) {
-      logger.debug("Failed to load credentials from config file", {
+      logger.debug("Failed to load credentials from profile", {
         error: error instanceof Error ? error.message : String(error),
       });
       return null;
@@ -195,69 +202,62 @@ export class CredentialManager {
   }
 
   /**
-   * Select which profile to use based on environment or config
+   * Build credentials object from profile data
    */
-  private selectProfile(config: ConfigFile): string | null {
-    // Check if F5XC_PROFILE is explicitly set
-    const envProfile = process.env[AUTH_ENV_VARS.PROFILE];
-    if (envProfile && config.profiles[envProfile]) {
-      return envProfile;
-    }
-
-    // Fall back to default profile if set
-    return config.defaultProfile ?? null;
-  }
-
-  /**
-   * Merge raw credentials from environment and config
-   * Environment variables override profile settings
-   */
-  private mergeCredentials(envCreds: RawCredentials, profileCreds: RawCredentials): RawCredentials {
-    return {
-      apiUrl: envCreds.apiUrl ?? profileCreds.apiUrl,
-      token: envCreds.token ?? profileCreds.token,
-      p12File: envCreds.p12File ?? profileCreds.p12File,
-      p12Password: envCreds.p12Password ?? profileCreds.p12Password,
-    };
-  }
-
-  /**
-   * Build credentials object from raw credentials
-   */
-  private buildCredentials(rawCreds: RawCredentials): Credentials {
-    const apiUrl = rawCreds.apiUrl;
-    const token = rawCreds.token;
-    const p12File = rawCreds.p12File;
-    const p12Password = rawCreds.p12Password;
+  private buildCredentials(profile: Profile): Credentials {
+    const apiUrl = profile.apiUrl;
 
     // Determine authentication mode
     let mode = AuthMode.NONE;
     let normalizedUrl: string | null = null;
     let p12Certificate: Buffer | null = null;
+    let cert: string | null = null;
+    let key: string | null = null;
 
     if (apiUrl) {
       normalizedUrl = normalizeApiUrl(apiUrl);
 
-      if (p12File) {
-        // Certificate authentication takes precedence
+      if (profile.p12Bundle) {
+        // P12 certificate authentication
         mode = AuthMode.CERTIFICATE;
         try {
-          p12Certificate = readFileSync(p12File);
-          logger.info("Loaded P12 certificate", { file: p12File });
+          p12Certificate = readFileSync(profile.p12Bundle);
+          logger.info("Loaded P12 certificate", { file: profile.p12Bundle });
         } catch (error) {
           logger.error("Failed to load P12 certificate", {
-            file: p12File,
+            file: profile.p12Bundle,
             error: error instanceof Error ? error.message : String(error),
           });
           // Fall back to token auth if certificate load fails
-          if (token) {
+          if (profile.apiToken) {
             mode = AuthMode.TOKEN;
             logger.info("Falling back to token authentication");
           } else {
             mode = AuthMode.NONE;
           }
         }
-      } else if (token) {
+      } else if (profile.cert && profile.key) {
+        // Certificate + key authentication
+        mode = AuthMode.CERTIFICATE;
+        try {
+          cert = readFileSync(profile.cert, "utf-8");
+          key = readFileSync(profile.key, "utf-8");
+          logger.info("Loaded certificate and key", {
+            cert: profile.cert,
+            key: profile.key,
+          });
+        } catch (error) {
+          logger.error("Failed to load certificate/key", {
+            error: error instanceof Error ? error.message : String(error),
+          });
+          if (profile.apiToken) {
+            mode = AuthMode.TOKEN;
+            logger.info("Falling back to token authentication");
+          } else {
+            mode = AuthMode.NONE;
+          }
+        }
+      } else if (profile.apiToken) {
         mode = AuthMode.TOKEN;
       }
     }
@@ -265,44 +265,44 @@ export class CredentialManager {
     return {
       mode,
       apiUrl: normalizedUrl,
-      token: token ?? null,
+      token: profile.apiToken ?? null,
       p12Certificate,
-      p12Password: p12Password ?? null,
+      cert,
+      key,
+      namespace: profile.defaultNamespace ?? null,
     };
   }
 
   /**
    * Load credentials with priority order:
    * 1. Environment variables (highest)
-   * 2. Profile from config file
+   * 2. Active profile from ~/.config/xcsh/
    * 3. No credentials - documentation mode (lowest)
    */
-  private loadCredentials(): Credentials {
-    // Step 1: Try environment variables first (highest priority)
+  private async loadCredentials(): Promise<Credentials> {
+    // Step 1: Check environment variables first (highest priority)
     const envCreds = this.loadFromEnvironment();
-    if (envCreds.apiUrl && (envCreds.token || envCreds.p12File)) {
-      const credentials = this.buildCredentials(envCreds);
+    if (envCreds.apiUrl && envCreds.hasAuth) {
+      const credentials = this.buildCredentials(envCreds as Profile);
       const tenant = credentials.apiUrl ? extractTenantFromUrl(credentials.apiUrl) : null;
       logger.info("Credentials loaded from environment variables", {
         mode: credentials.mode,
         tenant,
-        profile: this.activeProfile,
       });
       return credentials;
     }
 
-    // Step 2: Try config file profile (medium priority)
-    const profileCreds = this.loadFromConfigFile();
-    if (profileCreds) {
-      const merged = this.mergeCredentials(envCreds, profileCreds);
-      const credentials = this.buildCredentials(merged);
+    // Step 2: Try active profile from ~/.config/xcsh/
+    const profile = await this.loadFromProfile();
+    if (profile) {
+      const credentials = this.buildCredentials(profile);
 
       if (credentials.mode !== AuthMode.NONE) {
         const tenant = credentials.apiUrl ? extractTenantFromUrl(credentials.apiUrl) : null;
-        logger.info("Credentials loaded from config profile", {
+        logger.info("Credentials loaded from profile", {
           mode: credentials.mode,
           tenant,
-          profile: this.activeProfile,
+          profile: this.activeProfileName,
         });
         return credentials;
       }
@@ -315,7 +315,9 @@ export class CredentialManager {
       apiUrl: null,
       token: null,
       p12Certificate: null,
-      p12Password: null,
+      cert: null,
+      key: null,
+      namespace: null,
     };
   }
 
@@ -324,7 +326,7 @@ export class CredentialManager {
    * Returns null if credentials are from environment variables or no profile is active
    */
   getActiveProfile(): string | null {
-    return this.activeProfile;
+    return this.activeProfileName;
   }
 
   /**
@@ -370,10 +372,24 @@ export class CredentialManager {
   }
 
   /**
-   * Get P12 certificate password
+   * Get certificate content (for mTLS)
    */
-  getP12Password(): string | null {
-    return this.credentials.p12Password;
+  getCert(): string | null {
+    return this.credentials.cert;
+  }
+
+  /**
+   * Get private key content (for mTLS)
+   */
+  getKey(): string | null {
+    return this.credentials.key;
+  }
+
+  /**
+   * Get default namespace
+   */
+  getNamespace(): string | null {
+    return this.credentials.namespace;
   }
 
   /**
@@ -384,10 +400,12 @@ export class CredentialManager {
   }
 
   /**
-   * Reload credentials from environment
+   * Reload credentials from environment/profile
    * Useful for testing or when credentials change
    */
-  reload(): void {
-    this.credentials = this.loadCredentials();
+  async reload(): Promise<void> {
+    this.initialized = false;
+    this.activeProfileName = null;
+    await this.initialize();
   }
 }
