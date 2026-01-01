@@ -36,6 +36,9 @@ export const AUTH_ENV_VARS = {
   CERT: "F5XC_CERT",
   KEY: "F5XC_KEY",
   NAMESPACE: "F5XC_NAMESPACE",
+  // TLS configuration
+  TLS_INSECURE: "F5XC_TLS_INSECURE",
+  CA_BUNDLE: "F5XC_CA_BUNDLE",
 } as const;
 
 /**
@@ -56,6 +59,10 @@ export interface Credentials {
   key: string | null;
   /** Default namespace */
   namespace: string | null;
+  /** Disable TLS certificate verification (staging/development only) */
+  tlsInsecure: boolean;
+  /** Custom CA bundle for TLS verification */
+  caBundle: Buffer | null;
 }
 
 /**
@@ -141,6 +148,8 @@ export class CredentialManager {
       cert: null,
       key: null,
       namespace: null,
+      tlsInsecure: false,
+      caBundle: null,
     };
   }
 
@@ -157,13 +166,15 @@ export class CredentialManager {
   /**
    * Load credentials from environment variables
    */
-  private loadFromEnvironment(): Partial<Profile> & { hasAuth: boolean } {
+  private loadFromEnvironment(): Partial<Profile> & { hasAuth: boolean; tlsInsecure: boolean; caBundle: string | undefined } {
     const apiUrl = process.env[AUTH_ENV_VARS.API_URL];
     const apiToken = process.env[AUTH_ENV_VARS.API_TOKEN];
     const p12Bundle = process.env[AUTH_ENV_VARS.P12_BUNDLE];
     const cert = process.env[AUTH_ENV_VARS.CERT];
     const key = process.env[AUTH_ENV_VARS.KEY];
     const defaultNamespace = process.env[AUTH_ENV_VARS.NAMESPACE];
+    const tlsInsecure = process.env[AUTH_ENV_VARS.TLS_INSECURE]?.toLowerCase() === "true";
+    const caBundle = process.env[AUTH_ENV_VARS.CA_BUNDLE];
 
     const hasAuth = !!(apiToken || p12Bundle || (cert && key));
 
@@ -176,6 +187,8 @@ export class CredentialManager {
       key,
       defaultNamespace,
       hasAuth,
+      tlsInsecure,
+      caBundle,
     };
   }
 
@@ -204,7 +217,7 @@ export class CredentialManager {
   /**
    * Build credentials object from profile data
    */
-  private buildCredentials(profile: Profile): Credentials {
+  private buildCredentials(profile: Profile & { tlsInsecure?: boolean; caBundle?: string }): Credentials {
     const apiUrl = profile.apiUrl;
 
     // Determine authentication mode
@@ -213,6 +226,30 @@ export class CredentialManager {
     let p12Certificate: Buffer | null = null;
     let cert: string | null = null;
     let key: string | null = null;
+
+    // TLS configuration
+    const tlsInsecure = profile.tlsInsecure ?? false;
+    let caBundle: Buffer | null = null;
+
+    // Load CA bundle if specified
+    if (profile.caBundle) {
+      try {
+        caBundle = readFileSync(profile.caBundle);
+        logger.info("Loaded CA bundle", { file: profile.caBundle });
+      } catch (error) {
+        logger.warn("Failed to load CA bundle", {
+          file: profile.caBundle,
+          error: error instanceof Error ? error.message : String(error),
+        });
+      }
+    }
+
+    // Log TLS insecure mode warning
+    if (tlsInsecure) {
+      logger.warn(
+        "TLS certificate verification is DISABLED. This is insecure and should only be used for staging/development environments."
+      );
+    }
 
     if (apiUrl) {
       normalizedUrl = normalizeApiUrl(apiUrl);
@@ -270,6 +307,8 @@ export class CredentialManager {
       cert,
       key,
       namespace: profile.defaultNamespace ?? null,
+      tlsInsecure,
+      caBundle,
     };
   }
 
@@ -318,6 +357,8 @@ export class CredentialManager {
       cert: null,
       key: null,
       namespace: null,
+      tlsInsecure: false,
+      caBundle: null,
     };
   }
 
@@ -390,6 +431,21 @@ export class CredentialManager {
    */
   getNamespace(): string | null {
     return this.credentials.namespace;
+  }
+
+  /**
+   * Check if TLS certificate verification is disabled
+   * WARNING: Only use for staging/development environments
+   */
+  getTlsInsecure(): boolean {
+    return this.credentials.tlsInsecure;
+  }
+
+  /**
+   * Get custom CA bundle for TLS verification
+   */
+  getCaBundle(): Buffer | null {
+    return this.credentials.caBundle;
   }
 
   /**

@@ -14,7 +14,7 @@ import axios, {
 import https from "https";
 import { CredentialManager, AuthMode } from "./credential-manager.js";
 import { logger } from "../utils/logging.js";
-import { F5XCApiError, AuthenticationError } from "../utils/error-handling.js";
+import { F5XCApiError, AuthenticationError, wrapSSLError } from "../utils/error-handling.js";
 
 /**
  * HTTP client configuration options
@@ -72,6 +72,34 @@ export class HttpClient {
   }
 
   /**
+   * Build HTTPS agent options from credential manager TLS configuration
+   * Handles SSL/TLS configuration including insecure mode and custom CA
+   */
+  private buildHttpsAgentOptions(): https.AgentOptions {
+    const options: https.AgentOptions = {
+      rejectUnauthorized: true, // Secure default
+    };
+
+    // Check for custom CA bundle
+    const caBundle = this.credentialManager.getCaBundle();
+    if (caBundle) {
+      options.ca = caBundle;
+      logger.info("Using custom CA bundle for TLS verification");
+    }
+
+    // Check for insecure mode (staging/development ONLY)
+    const tlsInsecure = this.credentialManager.getTlsInsecure();
+    if (tlsInsecure) {
+      options.rejectUnauthorized = false;
+      logger.warn(
+        "TLS certificate verification DISABLED - this is insecure and should only be used for staging/development"
+      );
+    }
+
+    return options;
+  }
+
+  /**
    * Create configured Axios client
    */
   private createClient(): AxiosInstance {
@@ -92,6 +120,9 @@ export class HttpClient {
       },
     };
 
+    // Get TLS configuration options
+    const tlsOptions = this.buildHttpsAgentOptions();
+
     // Configure authentication
     if (authMode === AuthMode.TOKEN) {
       const token = this.credentialManager.getToken();
@@ -102,6 +133,11 @@ export class HttpClient {
         ...axiosConfig.headers,
         Authorization: `APIToken ${token}`,
       };
+
+      // Apply TLS configuration for token auth (needed for custom CA or insecure mode)
+      if (tlsOptions.ca || !tlsOptions.rejectUnauthorized) {
+        axiosConfig.httpsAgent = new https.Agent(tlsOptions);
+      }
     } else if (authMode === AuthMode.CERTIFICATE) {
       const p12Buffer = this.credentialManager.getP12Certificate();
       const cert = this.credentialManager.getCert();
@@ -111,15 +147,15 @@ export class HttpClient {
         // Create HTTPS agent with P12 certificate for mTLS
         // F5XC P12 certificates typically don't require a password
         axiosConfig.httpsAgent = new https.Agent({
+          ...tlsOptions,
           pfx: p12Buffer,
-          rejectUnauthorized: true,
         });
       } else if (cert && key) {
         // Create HTTPS agent with separate cert/key for mTLS
         axiosConfig.httpsAgent = new https.Agent({
+          ...tlsOptions,
           cert,
           key,
-          rejectUnauthorized: true,
         });
       } else {
         throw new AuthenticationError(
@@ -174,6 +210,23 @@ export class HttpClient {
       },
       (error: unknown) => {
         if (axios.isAxiosError(error)) {
+          // Check for SSL/TLS certificate errors first
+          const errorCode = error.code?.toLowerCase() ?? "";
+          const errorMessage = error.message.toLowerCase();
+
+          if (
+            errorCode === "err_tls_cert_altname_invalid" ||
+            errorCode === "unable_to_verify_leaf_signature" ||
+            errorCode === "depth_zero_self_signed_cert" ||
+            errorCode === "cert_has_expired" ||
+            errorMessage.includes("certificate") ||
+            errorMessage.includes("altnames") ||
+            errorMessage.includes("self signed")
+          ) {
+            // Wrap SSL error with actionable guidance
+            throw wrapSSLError(error, baseURL);
+          }
+
           const status = error.response?.status;
           const message = error.response?.data?.message ?? error.message;
 

@@ -550,6 +550,8 @@ describe("http-client", () => {
           getP12Certificate: vi.fn().mockReturnValue(null),
           getCert: vi.fn().mockReturnValue(null),
           getKey: vi.fn().mockReturnValue(null),
+          getCaBundle: vi.fn().mockReturnValue(null),
+          getTlsInsecure: vi.fn().mockReturnValue(false),
         } as unknown as CredentialManager;
 
         expect(() => new HttpClient(mockCredManager)).toThrow(AuthenticationError);
@@ -567,6 +569,8 @@ describe("http-client", () => {
           getP12Certificate: vi.fn().mockReturnValue(null),
           getCert: vi.fn().mockReturnValue(null),
           getKey: vi.fn().mockReturnValue(null),
+          getCaBundle: vi.fn().mockReturnValue(null),
+          getTlsInsecure: vi.fn().mockReturnValue(false),
         } as unknown as CredentialManager;
 
         expect(() => new HttpClient(mockCredManager)).toThrow(AuthenticationError);
@@ -584,6 +588,8 @@ describe("http-client", () => {
           getP12Certificate: vi.fn().mockReturnValue(null),
           getCert: vi.fn().mockReturnValue(null),
           getKey: vi.fn().mockReturnValue(null),
+          getCaBundle: vi.fn().mockReturnValue(null),
+          getTlsInsecure: vi.fn().mockReturnValue(false),
         } as unknown as CredentialManager;
 
         expect(() => new HttpClient(mockCredManager)).toThrow(AuthenticationError);

@@ -24,6 +24,10 @@ export interface Profile {
   key?: string;
   /** Default namespace for API operations */
   defaultNamespace?: string;
+  /** Disable TLS certificate verification (staging/development only) */
+  tlsInsecure?: boolean;
+  /** Path to custom CA bundle for TLS verification */
+  caBundle?: string;
 }
 
 /**

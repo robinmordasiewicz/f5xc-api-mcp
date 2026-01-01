@@ -11,10 +11,12 @@ import {
   ValidationError,
   ToolExecutionError,
   SpecificationError,
+  SSLCertificateError,
   ErrorCategory,
   categorizeError,
   formatErrorForMcp,
   withErrorHandling,
+  wrapSSLError,
 } from "../../src/utils/error-handling.js";
 
 describe("error-handling", () => {
@@ -180,6 +182,50 @@ describe("error-handling", () => {
     });
   });
 
+  describe("SSLCertificateError", () => {
+    it("should create an SSL error with hostname and cert info", () => {
+      const error = new SSLCertificateError(
+        "Certificate mismatch",
+        "tenant.staging.console.ves.volterra.io",
+        { subject: "CN=*.console.ves.volterra.io" }
+      );
+      expect(error.message).toBe("Certificate mismatch");
+      expect(error.code).toBe("SSL_CERT_ERROR");
+      expect(error.name).toBe("SSLCertificateError");
+      expect(error.hostname).toBe("tenant.staging.console.ves.volterra.io");
+      expect(error.certInfo?.subject).toBe("CN=*.console.ves.volterra.io");
+    });
+
+    it("should create SSL error without hostname or cert info", () => {
+      const error = new SSLCertificateError("SSL error occurred");
+      expect(error.hostname).toBeUndefined();
+      expect(error.certInfo).toBeUndefined();
+    });
+
+    it("should convert to JSON with hostname and cert info", () => {
+      const error = new SSLCertificateError(
+        "Test",
+        "example.com",
+        { altNames: ["*.example.com"] },
+        { attempt: 1 }
+      );
+      const json = error.toJSON();
+      expect(json).toEqual({
+        name: "SSLCertificateError",
+        message: "Test",
+        code: "SSL_CERT_ERROR",
+        context: { attempt: 1 },
+        hostname: "example.com",
+        certInfo: { altNames: ["*.example.com"] },
+      });
+    });
+
+    it("should extend F5XCError", () => {
+      const error = new SSLCertificateError("Test");
+      expect(error).toBeInstanceOf(F5XCError);
+    });
+  });
+
   describe("ErrorCategory", () => {
     it("should have expected values", () => {
       expect(ErrorCategory.VALIDATION).toBe("validation");
@@ -187,6 +233,7 @@ describe("error-handling", () => {
       expect(ErrorCategory.SERVER).toBe("server");
       expect(ErrorCategory.NETWORK).toBe("network");
       expect(ErrorCategory.CONFIGURATION).toBe("configuration");
+      expect(ErrorCategory.SSL_CERTIFICATE).toBe("ssl_certificate");
       expect(ErrorCategory.UNKNOWN).toBe("unknown");
     });
   });
@@ -205,6 +252,28 @@ describe("error-handling", () => {
     it("should categorize ConfigurationError as CONFIGURATION", () => {
       const error = new ConfigurationError("Test");
       expect(categorizeError(error)).toBe(ErrorCategory.CONFIGURATION);
+    });
+
+    it("should categorize SSLCertificateError as SSL_CERTIFICATE", () => {
+      const error = new SSLCertificateError("Certificate error");
+      expect(categorizeError(error)).toBe(ErrorCategory.SSL_CERTIFICATE);
+    });
+
+    it("should categorize SSL-related errors as SSL_CERTIFICATE", () => {
+      const certError = new Error("Hostname/IP does not match certificate's altnames");
+      expect(categorizeError(certError)).toBe(ErrorCategory.SSL_CERTIFICATE);
+
+      const selfSignedError = new Error("self signed certificate in certificate chain");
+      expect(categorizeError(selfSignedError)).toBe(ErrorCategory.SSL_CERTIFICATE);
+
+      const sslError = new Error("SSL connection failed");
+      expect(categorizeError(sslError)).toBe(ErrorCategory.SSL_CERTIFICATE);
+
+      const tlsError = new Error("TLS handshake failed");
+      expect(categorizeError(tlsError)).toBe(ErrorCategory.SSL_CERTIFICATE);
+
+      const verifyError = new Error("unable to verify the first certificate");
+      expect(categorizeError(verifyError)).toBe(ErrorCategory.SSL_CERTIFICATE);
     });
 
     it("should categorize F5XCApiError with 401 as AUTHENTICATION", () => {
@@ -369,6 +438,84 @@ describe("error-handling", () => {
       const wrapped = withErrorHandling(fn);
       const result = await wrapped("test", 42);
       expect(result).toBe("test-42");
+    });
+  });
+
+  describe("wrapSSLError", () => {
+    it("should wrap altname errors with staging guidance", () => {
+      const originalError = new Error("Hostname/IP does not match certificate's altnames");
+      const wrapped = wrapSSLError(
+        originalError,
+        "https://tenant.staging.console.ves.volterra.io/api"
+      );
+
+      expect(wrapped).toBeInstanceOf(SSLCertificateError);
+      expect(wrapped.message).toContain("F5XC_TLS_INSECURE");
+      expect(wrapped.message).toContain("staging");
+      expect((wrapped as SSLCertificateError).hostname).toBe(
+        "tenant.staging.console.ves.volterra.io"
+      );
+    });
+
+    it("should wrap altname errors without staging guidance for non-staging URLs", () => {
+      const originalError = new Error("Hostname/IP does not match certificate's altnames");
+      const wrapped = wrapSSLError(
+        originalError,
+        "https://tenant.console.ves.volterra.io/api"
+      );
+
+      expect(wrapped).toBeInstanceOf(SSLCertificateError);
+      expect(wrapped.message).not.toContain("staging environments");
+      expect(wrapped.message).toContain("F5XC_CA_BUNDLE");
+    });
+
+    it("should wrap self-signed certificate errors", () => {
+      const originalError = new Error("self signed certificate in certificate chain");
+      const wrapped = wrapSSLError(originalError);
+
+      expect(wrapped).toBeInstanceOf(SSLCertificateError);
+      expect(wrapped.message).toContain("Self-signed certificate");
+      expect(wrapped.message).toContain("F5XC_CA_BUNDLE");
+      expect(wrapped.message).toContain("F5XC_TLS_INSECURE");
+    });
+
+    it("should wrap expired certificate errors", () => {
+      const originalError = new Error("certificate has expired");
+      const wrapped = wrapSSLError(originalError);
+
+      expect(wrapped).toBeInstanceOf(SSLCertificateError);
+      expect(wrapped.message).toContain("expired");
+      expect(wrapped.message).toContain("administrator");
+    });
+
+    it("should wrap generic SSL/TLS errors", () => {
+      const originalError = new Error("SSL connection failed");
+      const wrapped = wrapSSLError(originalError);
+
+      expect(wrapped).toBeInstanceOf(SSLCertificateError);
+      expect(wrapped.message).toContain("SSL/TLS Error");
+    });
+
+    it("should return original error for non-SSL errors", () => {
+      const originalError = new Error("Connection refused");
+      const wrapped = wrapSSLError(originalError);
+
+      expect(wrapped).toBe(originalError);
+      expect(wrapped).not.toBeInstanceOf(SSLCertificateError);
+    });
+
+    it("should handle non-Error input", () => {
+      const wrapped = wrapSSLError("string error");
+      expect(wrapped).toBeInstanceOf(Error);
+      expect(wrapped.message).toBe("string error");
+    });
+
+    it("should handle invalid URL gracefully", () => {
+      const originalError = new Error("Hostname/IP does not match certificate's altnames");
+      const wrapped = wrapSSLError(originalError, "not-a-valid-url");
+
+      expect(wrapped).toBeInstanceOf(SSLCertificateError);
+      // Should still work, just without hostname extraction
     });
   });
 });

@@ -91,6 +91,8 @@ Add to your MCP settings:
 | `F5XC_P12_FILE` | For cert auth | Path to P12 certificate file |
 | `F5XC_P12_PASSWORD` | For cert auth | Password for P12 certificate |
 | `F5XC_PROFILE` | No | Profile name to use (default: `defaultProfile` from config) |
+| `F5XC_TLS_INSECURE` | No | Disable SSL verification (staging only, set to `true`) |
+| `F5XC_CA_BUNDLE` | No | Path to custom CA certificate bundle |
 | `LOG_LEVEL` | No | Logging verbosity (debug, info, warn, error) |
 
 ## Profile-Based Configuration
@@ -364,6 +366,49 @@ The server automatically normalizes various URL formats:
 | `tenant.volterra.us` | `tenant.console.ves.volterra.io/api` |
 | `tenant.console.ves.volterra.io` | `tenant.console.ves.volterra.io/api` |
 | `https://tenant.volterra.us/` | `https://tenant.console.ves.volterra.io/api` |
+
+## SSL/TLS Configuration
+
+### Staging Environment Certificate Issue
+
+F5 XC staging environments use URLs like `tenant.staging.console.ves.volterra.io`, but the SSL
+certificate only covers `*.console.ves.volterra.io`. This causes SSL validation failures because
+wildcards only match a single subdomain level, not two levels (`tenant.staging`).
+
+**Error Example:**
+
+```
+Hostname/IP does not match certificate's altnames:
+Host: tenant.staging.console.ves.volterra.io
+Cert covers: DNS:*.console.ves.volterra.io, DNS:console.ves.volterra.io
+```
+
+### Solutions
+
+#### Option 1: Custom CA Bundle (Recommended)
+
+If your organization uses a custom CA:
+
+```bash
+export F5XC_CA_BUNDLE=/path/to/your/ca-bundle.crt
+```
+
+#### Option 2: Disable Verification (Development Only)
+
+**WARNING: Never use in production!**
+
+```bash
+export F5XC_TLS_INSECURE=true
+```
+
+### Troubleshooting SSL Errors
+
+| Error | Cause | Solution |
+|-------|-------|----------|
+| `Hostname/IP does not match certificate's altnames` | Staging URL mismatch | Use `F5XC_TLS_INSECURE=true` or custom CA |
+| `self signed certificate` | Custom CA not trusted | Set `F5XC_CA_BUNDLE` |
+| `certificate has expired` | Expired certificate | Contact F5 XC admin |
+| `unable to verify the first certificate` | Missing intermediate CA | Add intermediates to CA bundle |
 
 ## Development
 
