@@ -34,32 +34,20 @@ Ask Claude to help you work with Download resources:
 
 > "Get details of the download named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl report download get {name} --namespace {namespace}
-```
-
-Get specific download
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create download -n <namespace> -i download.yaml
+xcsh statistics create download -n <namespace> -i download.yaml
 
 # Get
-f5xcctl statistics get download <name> -n <namespace>
+xcsh statistics get download <name> -n <namespace>
 
 # List
-f5xcctl statistics list download -n <namespace>
+xcsh statistics list download -n <namespace>
 
 # Delete
-f5xcctl statistics delete download <name> -n <namespace>
+xcsh statistics delete download <name> -n <namespace>
 ```
 
 ## Terraform Resource

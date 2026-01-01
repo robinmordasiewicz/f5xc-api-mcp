@@ -41,40 +41,20 @@ Ask Claude to help you work with Platform resources:
 
 > "Create a platform named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape platform create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape platform create {name} --namespace {namespace}
-```
-
-Create platform
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create platform -n <namespace> -i platform.yaml
+xcsh shape create platform -n <namespace> -i platform.yaml
 
 # Get
-f5xcctl shape get platform <name> -n <namespace>
+xcsh shape get platform <name> -n <namespace>
 
 # List
-f5xcctl shape list platform -n <namespace>
+xcsh shape list platform -n <namespace>
 
 # Delete
-f5xcctl shape delete platform <name> -n <namespace>
+xcsh shape delete platform <name> -n <namespace>
 ```
 
 ## Terraform Resource

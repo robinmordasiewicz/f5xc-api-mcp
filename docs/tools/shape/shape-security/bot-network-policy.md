@@ -57,48 +57,20 @@ Ask Claude to help you work with Bot Network Policy resources:
 
 > "Get details of the bot-network-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl shape bot-network-policy get {name} --namespace {namespace}
-```
-
-Get specific bot-network-policy
-
-### list_all
-
-```bash
-f5xcctl shape bot-network-policy list --namespace {namespace}
-```
-
-List all bot-network-policys
-
-### update
-
-```bash
-f5xcctl shape bot-network-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update bot-network-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create bot_network_policy -n <namespace> -i bot_network_policy.yaml
+xcsh shape create bot_network_policy -n <namespace> -i bot_network_policy.yaml
 
 # Get
-f5xcctl shape get bot_network_policy <name> -n <namespace>
+xcsh shape get bot_network_policy <name> -n <namespace>
 
 # List
-f5xcctl shape list bot_network_policy -n <namespace>
+xcsh shape list bot_network_policy -n <namespace>
 
 # Delete
-f5xcctl shape delete bot_network_policy <name> -n <namespace>
+xcsh shape delete bot_network_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

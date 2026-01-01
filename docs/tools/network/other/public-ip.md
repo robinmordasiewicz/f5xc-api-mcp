@@ -62,48 +62,20 @@ Ask Claude to help you work with Public IP resources:
 
 > "Get details of the public-ip named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config public-ip get {name} --namespace {namespace}
-```
-
-Get specific public-ip
-
-### list_all
-
-```bash
-f5xcctl config public-ip list --namespace {namespace}
-```
-
-List all public-ips
-
-### update
-
-```bash
-f5xcctl config public-ip update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update public-ip
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create public_ip -n <namespace> -i public_ip.yaml
+xcsh network create public_ip -n <namespace> -i public_ip.yaml
 
 # Get
-f5xcctl network get public_ip <name> -n <namespace>
+xcsh network get public_ip <name> -n <namespace>
 
 # List
-f5xcctl network list public_ip -n <namespace>
+xcsh network list public_ip -n <namespace>
 
 # Delete
-f5xcctl network delete public_ip <name> -n <namespace>
+xcsh network delete public_ip <name> -n <namespace>
 ```
 
 ## Terraform Resource

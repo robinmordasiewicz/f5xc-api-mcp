@@ -38,32 +38,20 @@ Ask Claude to help you work with Available resources:
 
 > "Get details of the available named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config available get {name} --namespace {namespace}
-```
-
-Get specific available
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create available -n <namespace> -i available.yaml
+xcsh virtual create available -n <namespace> -i available.yaml
 
 # Get
-f5xcctl virtual get available <name> -n <namespace>
+xcsh virtual get available <name> -n <namespace>
 
 # List
-f5xcctl virtual list available -n <namespace>
+xcsh virtual list available -n <namespace>
 
 # Delete
-f5xcctl virtual delete available <name> -n <namespace>
+xcsh virtual delete available <name> -n <namespace>
 ```
 
 ## Terraform Resource

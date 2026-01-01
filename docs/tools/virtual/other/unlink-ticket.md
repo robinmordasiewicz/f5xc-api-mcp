@@ -44,40 +44,20 @@ Ask Claude to help you work with Unlink Ticket resources:
 
 > "Create a unlink-ticket named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml unlink-ticket create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml unlink-ticket create {name} --namespace {namespace}
-```
-
-Create unlink-ticket
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create unlink_ticket -n <namespace> -i unlink_ticket.yaml
+xcsh virtual create unlink_ticket -n <namespace> -i unlink_ticket.yaml
 
 # Get
-f5xcctl virtual get unlink_ticket <name> -n <namespace>
+xcsh virtual get unlink_ticket <name> -n <namespace>
 
 # List
-f5xcctl virtual list unlink_ticket -n <namespace>
+xcsh virtual list unlink_ticket -n <namespace>
 
 # Delete
-f5xcctl virtual delete unlink_ticket <name> -n <namespace>
+xcsh virtual delete unlink_ticket <name> -n <namespace>
 ```
 
 ## Terraform Resource

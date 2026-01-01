@@ -25,32 +25,20 @@ Ask Claude to help you work with Acces resources:
 
 > "List all access in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl infraprotect acces list --namespace {namespace}
-```
-
-List all access
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create acces -n <namespace> -i acces.yaml
+xcsh ddos create acces -n <namespace> -i acces.yaml
 
 # Get
-f5xcctl ddos get acces <name> -n <namespace>
+xcsh ddos get acces <name> -n <namespace>
 
 # List
-f5xcctl ddos list acces -n <namespace>
+xcsh ddos list acces -n <namespace>
 
 # Delete
-f5xcctl ddos delete acces <name> -n <namespace>
+xcsh ddos delete acces <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -34,32 +34,20 @@ Ask Claude to help you work with Upgrade Statu resources:
 
 > "Get details of the upgrade-statu named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl maurice upgrade-statu get {name} --namespace {namespace}
-```
-
-Get specific upgrade-statu
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create upgrade_statu -n <namespace> -i upgrade_statu.yaml
+xcsh ce_management create upgrade_statu -n <namespace> -i upgrade_statu.yaml
 
 # Get
-f5xcctl ce_management get upgrade_statu <name> -n <namespace>
+xcsh ce_management get upgrade_statu <name> -n <namespace>
 
 # List
-f5xcctl ce_management list upgrade_statu -n <namespace>
+xcsh ce_management list upgrade_statu -n <namespace>
 
 # Delete
-f5xcctl ce_management delete upgrade_statu <name> -n <namespace>
+xcsh ce_management delete upgrade_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

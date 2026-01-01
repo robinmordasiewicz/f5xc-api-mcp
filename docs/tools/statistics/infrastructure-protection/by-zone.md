@@ -42,40 +42,20 @@ Ask Claude to help you work with By Zone resources:
 
 > "Create a by-zone named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl infraprotect by-zone create {name} --namespace {namespace}
-```
-
-Create by-zone
-
-### file_based
-
-```bash
-f5xcctl infraprotect by-zone create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create by_zone -n <namespace> -i by_zone.yaml
+xcsh statistics create by_zone -n <namespace> -i by_zone.yaml
 
 # Get
-f5xcctl statistics get by_zone <name> -n <namespace>
+xcsh statistics get by_zone <name> -n <namespace>
 
 # List
-f5xcctl statistics list by_zone -n <namespace>
+xcsh statistics list by_zone -n <namespace>
 
 # Delete
-f5xcctl statistics delete by_zone <name> -n <namespace>
+xcsh statistics delete by_zone <name> -n <namespace>
 ```
 
 ## Terraform Resource

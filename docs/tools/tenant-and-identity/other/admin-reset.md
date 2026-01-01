@@ -40,48 +40,20 @@ Ask Claude to help you work with Admin Reset resources:
 
 > "Create a admin-reset named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web admin-reset create {name} --namespace {namespace}
-```
-
-Create admin-reset
-
-### file_based
-
-```bash
-f5xcctl web admin-reset create -f {file}.yaml
-```
-
-Create from YAML file
-
-### update
-
-```bash
-f5xcctl web admin-reset update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update admin-reset
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create admin_reset -n <namespace> -i admin_reset.yaml
+xcsh tenant_and_identity create admin_reset -n <namespace> -i admin_reset.yaml
 
 # Get
-f5xcctl tenant_and_identity get admin_reset <name> -n <namespace>
+xcsh tenant_and_identity get admin_reset <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list admin_reset -n <namespace>
+xcsh tenant_and_identity list admin_reset -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete admin_reset <name> -n <namespace>
+xcsh tenant_and_identity delete admin_reset <name> -n <namespace>
 ```
 
 ## Terraform Resource

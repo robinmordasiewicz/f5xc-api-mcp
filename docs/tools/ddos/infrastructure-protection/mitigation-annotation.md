@@ -34,32 +34,20 @@ Ask Claude to help you work with Mitigation Annotation resources:
 
 > "List all mitigation-annotations in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl infraprotect mitigation-annotation list --namespace {namespace}
-```
-
-List all mitigation-annotations
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create mitigation_annotation -n <namespace> -i mitigation_annotation.yaml
+xcsh ddos create mitigation_annotation -n <namespace> -i mitigation_annotation.yaml
 
 # Get
-f5xcctl ddos get mitigation_annotation <name> -n <namespace>
+xcsh ddos get mitigation_annotation <name> -n <namespace>
 
 # List
-f5xcctl ddos list mitigation_annotation -n <namespace>
+xcsh ddos list mitigation_annotation -n <namespace>
 
 # Delete
-f5xcctl ddos delete mitigation_annotation <name> -n <namespace>
+xcsh ddos delete mitigation_annotation <name> -n <namespace>
 ```
 
 ## Terraform Resource

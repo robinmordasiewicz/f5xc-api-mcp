@@ -41,40 +41,20 @@ Ask Claude to help you work with DNS Monitors Health resources:
 
 > "Create a dns-monitors-health named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl observability dns-monitors-health create {name} --namespace {namespace}
-```
-
-Create dns-monitors-health
-
-### file_based
-
-```bash
-f5xcctl observability dns-monitors-health create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create dns_monitors_health -n <namespace> -i dns_monitors_health.yaml
+xcsh observability create dns_monitors_health -n <namespace> -i dns_monitors_health.yaml
 
 # Get
-f5xcctl observability get dns_monitors_health <name> -n <namespace>
+xcsh observability get dns_monitors_health <name> -n <namespace>
 
 # List
-f5xcctl observability list dns_monitors_health -n <namespace>
+xcsh observability list dns_monitors_health -n <namespace>
 
 # Delete
-f5xcctl observability delete dns_monitors_health <name> -n <namespace>
+xcsh observability delete dns_monitors_health <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with Network Connector resources:
 
 > "Get details of the network-connector named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config network-connector create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config network-connector create {name} --namespace {namespace}
-```
-
-Create network-connector
-
-### delete
-
-```bash
-f5xcctl config network-connector delete {name} --namespace {namespace}
-```
-
-Delete network-connector
-
-### get_specific
-
-```bash
-f5xcctl config network-connector get {name} --namespace {namespace}
-```
-
-Get specific network-connector
-
-### list_all
-
-```bash
-f5xcctl config network-connector list --namespace {namespace}
-```
-
-List all network-connectors
-
-### update
-
-```bash
-f5xcctl config network-connector update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update network-connector
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create network_connector -n <namespace> -i network_connector.yaml
+xcsh network create network_connector -n <namespace> -i network_connector.yaml
 
 # Get
-f5xcctl network get network_connector <name> -n <namespace>
+xcsh network get network_connector <name> -n <namespace>
 
 # List
-f5xcctl network list network_connector -n <namespace>
+xcsh network list network_connector -n <namespace>
 
 # Delete
-f5xcctl network delete network_connector <name> -n <namespace>
+xcsh network delete network_connector <name> -n <namespace>
 ```
 
 ## Terraform Resource

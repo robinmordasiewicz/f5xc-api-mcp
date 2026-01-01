@@ -37,32 +37,20 @@ Operations on this resource may have the following effects:
 
 Ask Claude to help you work with Remove Namespace Role resources:
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### update
-
-```bash
-f5xcctl web remove-namespace-role update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update remove-namespace-role
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create remove_namespace_role -n <namespace> -i remove_namespace_role.yaml
+xcsh tenant_and_identity create remove_namespace_role -n <namespace> -i remove_namespace_role.yaml
 
 # Get
-f5xcctl tenant_and_identity get remove_namespace_role <name> -n <namespace>
+xcsh tenant_and_identity get remove_namespace_role <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list remove_namespace_role -n <namespace>
+xcsh tenant_and_identity list remove_namespace_role -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete remove_namespace_role <name> -n <namespace>
+xcsh tenant_and_identity delete remove_namespace_role <name> -n <namespace>
 ```
 
 ## Terraform Resource

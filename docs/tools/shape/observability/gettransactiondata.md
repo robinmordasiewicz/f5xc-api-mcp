@@ -33,40 +33,20 @@ Ask Claude to help you work with Gettransactiondata resources:
 
 > "Create a gettransactiondata named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape gettransactiondata create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape gettransactiondata create {name} --namespace {namespace}
-```
-
-Create gettransactiondata
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create gettransactiondata -n <namespace> -i gettransactiondata.yaml
+xcsh shape create gettransactiondata -n <namespace> -i gettransactiondata.yaml
 
 # Get
-f5xcctl shape get gettransactiondata <name> -n <namespace>
+xcsh shape get gettransactiondata <name> -n <namespace>
 
 # List
-f5xcctl shape list gettransactiondata -n <namespace>
+xcsh shape list gettransactiondata -n <namespace>
 
 # Delete
-f5xcctl shape delete gettransactiondata <name> -n <namespace>
+xcsh shape delete gettransactiondata <name> -n <namespace>
 ```
 
 ## Terraform Resource

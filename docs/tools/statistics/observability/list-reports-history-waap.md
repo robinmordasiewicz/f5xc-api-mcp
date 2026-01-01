@@ -41,40 +41,20 @@ Ask Claude to help you work with List Reports History Waap resources:
 
 > "Create a list-reports-history-waap named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl report list-reports-history-waap create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl report list-reports-history-waap create {name} --namespace {namespace}
-```
-
-Create list-reports-history-waap
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create list_reports_history_waap -n <namespace> -i list_reports_history_waap.yaml
+xcsh statistics create list_reports_history_waap -n <namespace> -i list_reports_history_waap.yaml
 
 # Get
-f5xcctl statistics get list_reports_history_waap <name> -n <namespace>
+xcsh statistics get list_reports_history_waap <name> -n <namespace>
 
 # List
-f5xcctl statistics list list_reports_history_waap -n <namespace>
+xcsh statistics list list_reports_history_waap -n <namespace>
 
 # Delete
-f5xcctl statistics delete list_reports_history_waap <name> -n <namespace>
+xcsh statistics delete list_reports_history_waap <name> -n <namespace>
 ```
 
 ## Terraform Resource

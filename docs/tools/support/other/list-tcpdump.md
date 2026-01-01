@@ -42,40 +42,20 @@ Ask Claude to help you work with List Tcpdump resources:
 
 > "Create a list-tcpdump named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl operate list-tcpdump create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl operate list-tcpdump create {name} --namespace {namespace}
-```
-
-Create list-tcpdump
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create list_tcpdump -n <namespace> -i list_tcpdump.yaml
+xcsh support create list_tcpdump -n <namespace> -i list_tcpdump.yaml
 
 # Get
-f5xcctl support get list_tcpdump <name> -n <namespace>
+xcsh support get list_tcpdump <name> -n <namespace>
 
 # List
-f5xcctl support list list_tcpdump -n <namespace>
+xcsh support list list_tcpdump -n <namespace>
 
 # Delete
-f5xcctl support delete list_tcpdump <name> -n <namespace>
+xcsh support delete list_tcpdump <name> -n <namespace>
 ```
 
 ## Terraform Resource

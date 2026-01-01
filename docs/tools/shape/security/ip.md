@@ -41,40 +41,20 @@ Ask Claude to help you work with IP resources:
 
 > "Create a ip named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape ip create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape ip create {name} --namespace {namespace}
-```
-
-Create ip
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create ip -n <namespace> -i ip.yaml
+xcsh shape create ip -n <namespace> -i ip.yaml
 
 # Get
-f5xcctl shape get ip <name> -n <namespace>
+xcsh shape get ip <name> -n <namespace>
 
 # List
-f5xcctl shape list ip -n <namespace>
+xcsh shape list ip -n <namespace>
 
 # Delete
-f5xcctl shape delete ip <name> -n <namespace>
+xcsh shape delete ip <name> -n <namespace>
 ```
 
 ## Terraform Resource

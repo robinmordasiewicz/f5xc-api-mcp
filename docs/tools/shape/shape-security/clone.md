@@ -42,40 +42,20 @@ Ask Claude to help you work with Clone resources:
 
 > "Create a clone named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape clone create {name} --namespace {namespace}
-```
-
-Create clone
-
-### file_based
-
-```bash
-f5xcctl shape clone create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create clone -n <namespace> -i clone.yaml
+xcsh shape create clone -n <namespace> -i clone.yaml
 
 # Get
-f5xcctl shape get clone <name> -n <namespace>
+xcsh shape get clone <name> -n <namespace>
 
 # List
-f5xcctl shape list clone -n <namespace>
+xcsh shape list clone -n <namespace>
 
 # Delete
-f5xcctl shape delete clone <name> -n <namespace>
+xcsh shape delete clone <name> -n <namespace>
 ```
 
 ## Terraform Resource

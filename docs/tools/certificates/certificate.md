@@ -77,72 +77,20 @@ Ask Claude to help you work with Certificate resources:
 
 > "Get details of the certificate named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config certificate create {name} --namespace {namespace}
-```
-
-Create certificate
-
-### file_based
-
-```bash
-f5xcctl config certificate create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config certificate delete {name} --namespace {namespace}
-```
-
-Delete certificate
-
-### get_specific
-
-```bash
-f5xcctl config certificate get {name} --namespace {namespace}
-```
-
-Get specific certificate
-
-### list_all
-
-```bash
-f5xcctl config certificate list --namespace {namespace}
-```
-
-List all certificates
-
-### update
-
-```bash
-f5xcctl config certificate update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update certificate
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl certificates create certificate -n <namespace> -i certificate.yaml
+xcsh certificates create certificate -n <namespace> -i certificate.yaml
 
 # Get
-f5xcctl certificates get certificate <name> -n <namespace>
+xcsh certificates get certificate <name> -n <namespace>
 
 # List
-f5xcctl certificates list certificate -n <namespace>
+xcsh certificates list certificate -n <namespace>
 
 # Delete
-f5xcctl certificates delete certificate <name> -n <namespace>
+xcsh certificates delete certificate <name> -n <namespace>
 ```
 
 ## Terraform Resource

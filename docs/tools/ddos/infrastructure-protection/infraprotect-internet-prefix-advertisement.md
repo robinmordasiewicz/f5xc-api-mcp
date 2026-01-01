@@ -77,72 +77,20 @@ Ask Claude to help you work with Infraprotect Internet Prefix Advertisement reso
 
 > "Get details of the infraprotect-internet-prefix-advertisement named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl infraprotect infraprotect-internet-prefix-advertisement create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl infraprotect infraprotect-internet-prefix-advertisement create {name} --namespace {namespace}
-```
-
-Create infraprotect-internet-prefix-advertisement
-
-### delete
-
-```bash
-f5xcctl infraprotect infraprotect-internet-prefix-advertisement delete {name} --namespace {namespace}
-```
-
-Delete infraprotect-internet-prefix-advertisement
-
-### get_specific
-
-```bash
-f5xcctl infraprotect infraprotect-internet-prefix-advertisement get {name} --namespace {namespace}
-```
-
-Get specific infraprotect-internet-prefix-advertisement
-
-### list_all
-
-```bash
-f5xcctl infraprotect infraprotect-internet-prefix-advertisement list --namespace {namespace}
-```
-
-List all infraprotect-internet-prefix-advertisements
-
-### update
-
-```bash
-f5xcctl infraprotect infraprotect-internet-prefix-advertisement update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update infraprotect-internet-prefix-advertisement
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create infraprotect_internet_prefix_advertisement -n <namespace> -i infraprotect_internet_prefix_advertisement.yaml
+xcsh ddos create infraprotect_internet_prefix_advertisement -n <namespace> -i infraprotect_internet_prefix_advertisement.yaml
 
 # Get
-f5xcctl ddos get infraprotect_internet_prefix_advertisement <name> -n <namespace>
+xcsh ddos get infraprotect_internet_prefix_advertisement <name> -n <namespace>
 
 # List
-f5xcctl ddos list infraprotect_internet_prefix_advertisement -n <namespace>
+xcsh ddos list infraprotect_internet_prefix_advertisement -n <namespace>
 
 # Delete
-f5xcctl ddos delete infraprotect_internet_prefix_advertisement <name> -n <namespace>
+xcsh ddos delete infraprotect_internet_prefix_advertisement <name> -n <namespace>
 ```
 
 ## Terraform Resource

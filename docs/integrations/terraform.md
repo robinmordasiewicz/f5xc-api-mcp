@@ -20,7 +20,7 @@ terraform {
   required_providers {
     volterra = {
       source  = "volterraedge/volterra"
-      version = "~> 0.11"
+      version = ">= 0.11"
     }
   }
 }
@@ -197,11 +197,11 @@ terraform import volterra_http_loadbalancer.example_app production/example-app
 terraform import volterra_http_loadbalancer.api production/api
 ```
 
-### Convert f5xcctl to Terraform
+### Convert xcsh to Terraform
 
 Ask Claude:
 
-> "Convert this f5xcctl config to Terraform:
+> "Convert this xcsh config to Terraform:
 >
 > ```yaml
 > kind: http_loadbalancer
@@ -350,6 +350,6 @@ terraform import volterra_http_loadbalancer.app production/example-app
 
 ## Next Steps
 
-- [f5xcctl Integration](f5xcctl.md)
+- [xcsh Integration](xcsh.md)
 - [Tools Reference](../tools/index.md)
 - [Authentication](../configuration/authentication.md)

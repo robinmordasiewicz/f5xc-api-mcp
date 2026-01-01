@@ -42,40 +42,20 @@ Ask Claude to help you work with L7ddos Rps Threshold resources:
 
 > "Create a l7ddos-rps-threshold named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config l7ddos-rps-threshold create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config l7ddos-rps-threshold create {name} --namespace {namespace}
-```
-
-Create l7ddos-rps-threshold
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create l7ddos_rps_threshold -n <namespace> -i l7ddos_rps_threshold.yaml
+xcsh virtual create l7ddos_rps_threshold -n <namespace> -i l7ddos_rps_threshold.yaml
 
 # Get
-f5xcctl virtual get l7ddos_rps_threshold <name> -n <namespace>
+xcsh virtual get l7ddos_rps_threshold <name> -n <namespace>
 
 # List
-f5xcctl virtual list l7ddos_rps_threshold -n <namespace>
+xcsh virtual list l7ddos_rps_threshold -n <namespace>
 
 # Delete
-f5xcctl virtual delete l7ddos_rps_threshold <name> -n <namespace>
+xcsh virtual delete l7ddos_rps_threshold <name> -n <namespace>
 ```
 
 ## Terraform Resource

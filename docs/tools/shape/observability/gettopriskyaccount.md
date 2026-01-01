@@ -33,40 +33,20 @@ Ask Claude to help you work with Gettopriskyaccount resources:
 
 > "Create a gettopriskyaccount named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape gettopriskyaccount create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape gettopriskyaccount create {name} --namespace {namespace}
-```
-
-Create gettopriskyaccount
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create gettopriskyaccount -n <namespace> -i gettopriskyaccount.yaml
+xcsh shape create gettopriskyaccount -n <namespace> -i gettopriskyaccount.yaml
 
 # Get
-f5xcctl shape get gettopriskyaccount <name> -n <namespace>
+xcsh shape get gettopriskyaccount <name> -n <namespace>
 
 # List
-f5xcctl shape list gettopriskyaccount -n <namespace>
+xcsh shape list gettopriskyaccount -n <namespace>
 
 # Delete
-f5xcctl shape delete gettopriskyaccount <name> -n <namespace>
+xcsh shape delete gettopriskyaccount <name> -n <namespace>
 ```
 
 ## Terraform Resource

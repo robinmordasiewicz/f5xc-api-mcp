@@ -77,72 +77,20 @@ Ask Claude to help you work with Rate Limiter Policy resources:
 
 > "Get details of the rate-limiter-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config rate-limiter-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config rate-limiter-policy create {name} --namespace {namespace}
-```
-
-Create rate-limiter-policy
-
-### delete
-
-```bash
-f5xcctl config rate-limiter-policy delete {name} --namespace {namespace}
-```
-
-Delete rate-limiter-policy
-
-### get_specific
-
-```bash
-f5xcctl config rate-limiter-policy get {name} --namespace {namespace}
-```
-
-Get specific rate-limiter-policy
-
-### list_all
-
-```bash
-f5xcctl config rate-limiter-policy list --namespace {namespace}
-```
-
-List all rate-limiter-policys
-
-### update
-
-```bash
-f5xcctl config rate-limiter-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update rate-limiter-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create rate_limiter_policy -n <namespace> -i rate_limiter_policy.yaml
+xcsh virtual create rate_limiter_policy -n <namespace> -i rate_limiter_policy.yaml
 
 # Get
-f5xcctl virtual get rate_limiter_policy <name> -n <namespace>
+xcsh virtual get rate_limiter_policy <name> -n <namespace>
 
 # List
-f5xcctl virtual list rate_limiter_policy -n <namespace>
+xcsh virtual list rate_limiter_policy -n <namespace>
 
 # Delete
-f5xcctl virtual delete rate_limiter_policy <name> -n <namespace>
+xcsh virtual delete rate_limiter_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

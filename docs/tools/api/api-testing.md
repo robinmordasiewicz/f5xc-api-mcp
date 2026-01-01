@@ -77,72 +77,20 @@ Ask Claude to help you work with API Testing resources:
 
 > "Get details of the api-testing named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config api-testing create {name} --namespace {namespace}
-```
-
-Create api-testing
-
-### file_based
-
-```bash
-f5xcctl config api-testing create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config api-testing delete {name} --namespace {namespace}
-```
-
-Delete api-testing
-
-### get_specific
-
-```bash
-f5xcctl config api-testing get {name} --namespace {namespace}
-```
-
-Get specific api-testing
-
-### list_all
-
-```bash
-f5xcctl config api-testing list --namespace {namespace}
-```
-
-List all api-testings
-
-### update
-
-```bash
-f5xcctl config api-testing update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update api-testing
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create api_testing -n <namespace> -i api_testing.yaml
+xcsh api create api_testing -n <namespace> -i api_testing.yaml
 
 # Get
-f5xcctl api get api_testing <name> -n <namespace>
+xcsh api get api_testing <name> -n <namespace>
 
 # List
-f5xcctl api list api_testing -n <namespace>
+xcsh api list api_testing -n <namespace>
 
 # Delete
-f5xcctl api delete api_testing <name> -n <namespace>
+xcsh api delete api_testing <name> -n <namespace>
 ```
 
 ## Terraform Resource

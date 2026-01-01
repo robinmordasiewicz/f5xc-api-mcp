@@ -39,32 +39,20 @@ Operations on this resource may have the following effects:
 
 Ask Claude to help you work with To Event resources:
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### update
-
-```bash
-f5xcctl infraprotect to-event update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update to-event
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create to_event -n <namespace> -i to_event.yaml
+xcsh ddos create to_event -n <namespace> -i to_event.yaml
 
 # Get
-f5xcctl ddos get to_event <name> -n <namespace>
+xcsh ddos get to_event <name> -n <namespace>
 
 # List
-f5xcctl ddos list to_event -n <namespace>
+xcsh ddos list to_event -n <namespace>
 
 # Delete
-f5xcctl ddos delete to_event <name> -n <namespace>
+xcsh ddos delete to_event <name> -n <namespace>
 ```
 
 ## Terraform Resource

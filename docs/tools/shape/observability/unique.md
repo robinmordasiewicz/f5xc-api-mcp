@@ -33,40 +33,20 @@ Ask Claude to help you work with Unique resources:
 
 > "Create a unique named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape unique create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape unique create {name} --namespace {namespace}
-```
-
-Create unique
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create unique -n <namespace> -i unique.yaml
+xcsh shape create unique -n <namespace> -i unique.yaml
 
 # Get
-f5xcctl shape get unique <name> -n <namespace>
+xcsh shape get unique <name> -n <namespace>
 
 # List
-f5xcctl shape list unique -n <namespace>
+xcsh shape list unique -n <namespace>
 
 # Delete
-f5xcctl shape delete unique <name> -n <namespace>
+xcsh shape delete unique <name> -n <namespace>
 ```
 
 ## Terraform Resource

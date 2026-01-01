@@ -77,72 +77,20 @@ Ask Claude to help you work with Secret Policy Rule resources:
 
 > "Get details of the secret-policy-rule named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl secret_management secret-policy-rule create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl secret_management secret-policy-rule create {name} --namespace {namespace}
-```
-
-Create secret-policy-rule
-
-### delete
-
-```bash
-f5xcctl secret_management secret-policy-rule delete {name} --namespace {namespace}
-```
-
-Delete secret-policy-rule
-
-### get_specific
-
-```bash
-f5xcctl secret_management secret-policy-rule get {name} --namespace {namespace}
-```
-
-Get specific secret-policy-rule
-
-### list_all
-
-```bash
-f5xcctl secret_management secret-policy-rule list --namespace {namespace}
-```
-
-List all secret-policy-rules
-
-### update
-
-```bash
-f5xcctl secret_management secret-policy-rule update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update secret-policy-rule
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create secret_policy_rule -n <namespace> -i secret_policy_rule.yaml
+xcsh blindfold create secret_policy_rule -n <namespace> -i secret_policy_rule.yaml
 
 # Get
-f5xcctl blindfold get secret_policy_rule <name> -n <namespace>
+xcsh blindfold get secret_policy_rule <name> -n <namespace>
 
 # List
-f5xcctl blindfold list secret_policy_rule -n <namespace>
+xcsh blindfold list secret_policy_rule -n <namespace>
 
 # Delete
-f5xcctl blindfold delete secret_policy_rule <name> -n <namespace>
+xcsh blindfold delete secret_policy_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

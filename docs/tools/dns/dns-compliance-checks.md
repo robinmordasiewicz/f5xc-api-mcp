@@ -78,72 +78,20 @@ Ask Claude to help you work with DNS Compliance Checks resources:
 
 > "Get details of the dns-compliance-checks named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config dns-compliance-checks create {name} --namespace {namespace}
-```
-
-Create dns-compliance-checks
-
-### file_based
-
-```bash
-f5xcctl config dns-compliance-checks create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config dns-compliance-checks delete {name} --namespace {namespace}
-```
-
-Delete dns-compliance-checks
-
-### get_specific
-
-```bash
-f5xcctl config dns-compliance-checks get {name} --namespace {namespace}
-```
-
-Get specific dns-compliance-checks
-
-### list_all
-
-```bash
-f5xcctl config dns-compliance-checks list --namespace {namespace}
-```
-
-List all dns-compliance-checkss
-
-### update
-
-```bash
-f5xcctl config dns-compliance-checks update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update dns-compliance-checks
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create dns_compliance_checks -n <namespace> -i dns_compliance_checks.yaml
+xcsh dns create dns_compliance_checks -n <namespace> -i dns_compliance_checks.yaml
 
 # Get
-f5xcctl dns get dns_compliance_checks <name> -n <namespace>
+xcsh dns get dns_compliance_checks <name> -n <namespace>
 
 # List
-f5xcctl dns list dns_compliance_checks -n <namespace>
+xcsh dns list dns_compliance_checks -n <namespace>
 
 # Delete
-f5xcctl dns delete dns_compliance_checks <name> -n <namespace>
+xcsh dns delete dns_compliance_checks <name> -n <namespace>
 ```
 
 ## Terraform Resource

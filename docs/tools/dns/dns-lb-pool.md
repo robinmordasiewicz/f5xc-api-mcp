@@ -77,72 +77,20 @@ Ask Claude to help you work with DNS Lb Pool resources:
 
 > "Get details of the dns-lb-pool named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config dns-lb-pool create {name} --namespace {namespace}
-```
-
-Create dns-lb-pool
-
-### file_based
-
-```bash
-f5xcctl config dns-lb-pool create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config dns-lb-pool delete {name} --namespace {namespace}
-```
-
-Delete dns-lb-pool
-
-### get_specific
-
-```bash
-f5xcctl config dns-lb-pool get {name} --namespace {namespace}
-```
-
-Get specific dns-lb-pool
-
-### list_all
-
-```bash
-f5xcctl config dns-lb-pool list --namespace {namespace}
-```
-
-List all dns-lb-pools
-
-### update
-
-```bash
-f5xcctl config dns-lb-pool update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update dns-lb-pool
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create dns_lb_pool -n <namespace> -i dns_lb_pool.yaml
+xcsh dns create dns_lb_pool -n <namespace> -i dns_lb_pool.yaml
 
 # Get
-f5xcctl dns get dns_lb_pool <name> -n <namespace>
+xcsh dns get dns_lb_pool <name> -n <namespace>
 
 # List
-f5xcctl dns list dns_lb_pool -n <namespace>
+xcsh dns list dns_lb_pool -n <namespace>
 
 # Delete
-f5xcctl dns delete dns_lb_pool <name> -n <namespace>
+xcsh dns delete dns_lb_pool <name> -n <namespace>
 ```
 
 ## Terraform Resource

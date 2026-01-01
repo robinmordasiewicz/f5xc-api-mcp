@@ -77,72 +77,20 @@ Ask Claude to help you work with Tunnel resources:
 
 > "Get details of the tunnel named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config tunnel create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config tunnel create {name} --namespace {namespace}
-```
-
-Create tunnel
-
-### delete
-
-```bash
-f5xcctl config tunnel delete {name} --namespace {namespace}
-```
-
-Delete tunnel
-
-### get_specific
-
-```bash
-f5xcctl config tunnel get {name} --namespace {namespace}
-```
-
-Get specific tunnel
-
-### list_all
-
-```bash
-f5xcctl config tunnel list --namespace {namespace}
-```
-
-List all tunnels
-
-### update
-
-```bash
-f5xcctl config tunnel update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update tunnel
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create tunnel -n <namespace> -i tunnel.yaml
+xcsh network create tunnel -n <namespace> -i tunnel.yaml
 
 # Get
-f5xcctl network get tunnel <name> -n <namespace>
+xcsh network get tunnel <name> -n <namespace>
 
 # List
-f5xcctl network list tunnel -n <namespace>
+xcsh network list tunnel -n <namespace>
 
 # Delete
-f5xcctl network delete tunnel <name> -n <namespace>
+xcsh network delete tunnel <name> -n <namespace>
 ```
 
 ## Terraform Resource

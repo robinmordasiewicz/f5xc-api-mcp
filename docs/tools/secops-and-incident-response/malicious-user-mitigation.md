@@ -78,72 +78,20 @@ Ask Claude to help you work with Malicious User Mitigation resources:
 
 > "Get details of the malicious-user-mitigation named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config malicious-user-mitigation create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config malicious-user-mitigation create {name} --namespace {namespace}
-```
-
-Create malicious-user-mitigation
-
-### delete
-
-```bash
-f5xcctl config malicious-user-mitigation delete {name} --namespace {namespace}
-```
-
-Delete malicious-user-mitigation
-
-### get_specific
-
-```bash
-f5xcctl config malicious-user-mitigation get {name} --namespace {namespace}
-```
-
-Get specific malicious-user-mitigation
-
-### list_all
-
-```bash
-f5xcctl config malicious-user-mitigation list --namespace {namespace}
-```
-
-List all malicious-user-mitigations
-
-### update
-
-```bash
-f5xcctl config malicious-user-mitigation update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update malicious-user-mitigation
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl secops_and_incident_response create malicious_user_mitigation -n <namespace> -i malicious_user_mitigation.yaml
+xcsh secops_and_incident_response create malicious_user_mitigation -n <namespace> -i malicious_user_mitigation.yaml
 
 # Get
-f5xcctl secops_and_incident_response get malicious_user_mitigation <name> -n <namespace>
+xcsh secops_and_incident_response get malicious_user_mitigation <name> -n <namespace>
 
 # List
-f5xcctl secops_and_incident_response list malicious_user_mitigation -n <namespace>
+xcsh secops_and_incident_response list malicious_user_mitigation -n <namespace>
 
 # Delete
-f5xcctl secops_and_incident_response delete malicious_user_mitigation <name> -n <namespace>
+xcsh secops_and_incident_response delete malicious_user_mitigation <name> -n <namespace>
 ```
 
 ## Terraform Resource

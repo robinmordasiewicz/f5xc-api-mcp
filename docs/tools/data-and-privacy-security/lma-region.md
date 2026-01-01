@@ -48,40 +48,20 @@ Ask Claude to help you work with Lma Region resources:
 
 > "Get details of the lma-region named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config lma-region get {name} --namespace {namespace}
-```
-
-Get specific lma-region
-
-### list_all
-
-```bash
-f5xcctl config lma-region list --namespace {namespace}
-```
-
-List all lma-regions
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl data_and_privacy_security create lma_region -n <namespace> -i lma_region.yaml
+xcsh data_and_privacy_security create lma_region -n <namespace> -i lma_region.yaml
 
 # Get
-f5xcctl data_and_privacy_security get lma_region <name> -n <namespace>
+xcsh data_and_privacy_security get lma_region <name> -n <namespace>
 
 # List
-f5xcctl data_and_privacy_security list lma_region -n <namespace>
+xcsh data_and_privacy_security list lma_region -n <namespace>
 
 # Delete
-f5xcctl data_and_privacy_security delete lma_region <name> -n <namespace>
+xcsh data_and_privacy_security delete lma_region <name> -n <namespace>
 ```
 
 ## Terraform Resource

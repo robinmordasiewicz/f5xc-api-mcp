@@ -25,32 +25,20 @@ Ask Claude to help you work with Subscription Statu resources:
 
 > "List all subscription-status in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config subscription-statu list --namespace {namespace}
-```
-
-List all subscription-status
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create subscription_statu -n <namespace> -i subscription_statu.yaml
+xcsh statistics create subscription_statu -n <namespace> -i subscription_statu.yaml
 
 # Get
-f5xcctl statistics get subscription_statu <name> -n <namespace>
+xcsh statistics get subscription_statu <name> -n <namespace>
 
 # List
-f5xcctl statistics list subscription_statu -n <namespace>
+xcsh statistics list subscription_statu -n <namespace>
 
 # Delete
-f5xcctl statistics delete subscription_statu <name> -n <namespace>
+xcsh statistics delete subscription_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

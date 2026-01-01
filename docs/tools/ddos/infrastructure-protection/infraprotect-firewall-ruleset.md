@@ -59,48 +59,20 @@ Ask Claude to help you work with Infraprotect Firewall Ruleset resources:
 
 > "Get details of the infraprotect-firewall-ruleset named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-ruleset get {name} --namespace {namespace}
-```
-
-Get specific infraprotect-firewall-ruleset
-
-### list_all
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-ruleset list --namespace {namespace}
-```
-
-List all infraprotect-firewall-rulesets
-
-### update
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-ruleset update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update infraprotect-firewall-ruleset
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create infraprotect_firewall_ruleset -n <namespace> -i infraprotect_firewall_ruleset.yaml
+xcsh ddos create infraprotect_firewall_ruleset -n <namespace> -i infraprotect_firewall_ruleset.yaml
 
 # Get
-f5xcctl ddos get infraprotect_firewall_ruleset <name> -n <namespace>
+xcsh ddos get infraprotect_firewall_ruleset <name> -n <namespace>
 
 # List
-f5xcctl ddos list infraprotect_firewall_ruleset -n <namespace>
+xcsh ddos list infraprotect_firewall_ruleset -n <namespace>
 
 # Delete
-f5xcctl ddos delete infraprotect_firewall_ruleset <name> -n <namespace>
+xcsh ddos delete infraprotect_firewall_ruleset <name> -n <namespace>
 ```
 
 ## Terraform Resource

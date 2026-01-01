@@ -33,32 +33,20 @@ Ask Claude to help you work with Bot Detection Update resources:
 
 > "List all bot-detection-updates in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape bot-detection-update list --namespace {namespace}
-```
-
-List all bot-detection-updates
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create bot_detection_update -n <namespace> -i bot_detection_update.yaml
+xcsh shape create bot_detection_update -n <namespace> -i bot_detection_update.yaml
 
 # Get
-f5xcctl shape get bot_detection_update <name> -n <namespace>
+xcsh shape get bot_detection_update <name> -n <namespace>
 
 # List
-f5xcctl shape list bot_detection_update -n <namespace>
+xcsh shape list bot_detection_update -n <namespace>
 
 # Delete
-f5xcctl shape delete bot_detection_update <name> -n <namespace>
+xcsh shape delete bot_detection_update <name> -n <namespace>
 ```
 
 ## Terraform Resource

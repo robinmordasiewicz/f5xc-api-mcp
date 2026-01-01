@@ -78,72 +78,20 @@ Ask Claude to help you work with User Identification resources:
 
 > "Get details of the user-identification named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config user-identification create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config user-identification create {name} --namespace {namespace}
-```
-
-Create user-identification
-
-### delete
-
-```bash
-f5xcctl config user-identification delete {name} --namespace {namespace}
-```
-
-Delete user-identification
-
-### get_specific
-
-```bash
-f5xcctl config user-identification get {name} --namespace {namespace}
-```
-
-Get specific user-identification
-
-### list_all
-
-```bash
-f5xcctl config user-identification list --namespace {namespace}
-```
-
-List all user-identifications
-
-### update
-
-```bash
-f5xcctl config user-identification update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update user-identification
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create user_identification -n <namespace> -i user_identification.yaml
+xcsh tenant_and_identity create user_identification -n <namespace> -i user_identification.yaml
 
 # Get
-f5xcctl tenant_and_identity get user_identification <name> -n <namespace>
+xcsh tenant_and_identity get user_identification <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list user_identification -n <namespace>
+xcsh tenant_and_identity list user_identification -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete user_identification <name> -n <namespace>
+xcsh tenant_and_identity delete user_identification <name> -n <namespace>
 ```
 
 ## Terraform Resource

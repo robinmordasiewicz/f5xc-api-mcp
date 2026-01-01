@@ -75,72 +75,20 @@ Ask Claude to help you work with User resources:
 
 > "Get details of the User named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl scim User create {name} --namespace {namespace}
-```
-
-Create User
-
-### file_based
-
-```bash
-f5xcctl scim User create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl scim User delete {name} --namespace {namespace}
-```
-
-Delete User
-
-### get_specific
-
-```bash
-f5xcctl scim User get {name} --namespace {namespace}
-```
-
-Get specific User
-
-### list_all
-
-```bash
-f5xcctl scim User list --namespace {namespace}
-```
-
-List all Users
-
-### update
-
-```bash
-f5xcctl scim User update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update User
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create User -n <namespace> -i User.yaml
+xcsh tenant_and_identity create User -n <namespace> -i User.yaml
 
 # Get
-f5xcctl tenant_and_identity get User <name> -n <namespace>
+xcsh tenant_and_identity get User <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list User -n <namespace>
+xcsh tenant_and_identity list User -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete User <name> -n <namespace>
+xcsh tenant_and_identity delete User <name> -n <namespace>
 ```
 
 ## Terraform Resource

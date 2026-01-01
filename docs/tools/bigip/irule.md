@@ -77,72 +77,20 @@ Ask Claude to help you work with Irule resources:
 
 > "Get details of the irule named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config irule create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config irule create {name} --namespace {namespace}
-```
-
-Create irule
-
-### delete
-
-```bash
-f5xcctl config irule delete {name} --namespace {namespace}
-```
-
-Delete irule
-
-### get_specific
-
-```bash
-f5xcctl config irule get {name} --namespace {namespace}
-```
-
-Get specific irule
-
-### list_all
-
-```bash
-f5xcctl config irule list --namespace {namespace}
-```
-
-List all irules
-
-### update
-
-```bash
-f5xcctl config irule update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update irule
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl bigip create irule -n <namespace> -i irule.yaml
+xcsh bigip create irule -n <namespace> -i irule.yaml
 
 # Get
-f5xcctl bigip get irule <name> -n <namespace>
+xcsh bigip get irule <name> -n <namespace>
 
 # List
-f5xcctl bigip list irule -n <namespace>
+xcsh bigip list irule -n <namespace>
 
 # Delete
-f5xcctl bigip delete irule <name> -n <namespace>
+xcsh bigip delete irule <name> -n <namespace>
 ```
 
 ## Terraform Resource

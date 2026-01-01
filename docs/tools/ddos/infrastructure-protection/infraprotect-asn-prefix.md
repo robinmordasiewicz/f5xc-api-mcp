@@ -77,72 +77,20 @@ Ask Claude to help you work with Infraprotect Asn Prefix resources:
 
 > "Get details of the infraprotect-asn-prefix named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl infraprotect infraprotect-asn-prefix create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl infraprotect infraprotect-asn-prefix create {name} --namespace {namespace}
-```
-
-Create infraprotect-asn-prefix
-
-### delete
-
-```bash
-f5xcctl infraprotect infraprotect-asn-prefix delete {name} --namespace {namespace}
-```
-
-Delete infraprotect-asn-prefix
-
-### get_specific
-
-```bash
-f5xcctl infraprotect infraprotect-asn-prefix get {name} --namespace {namespace}
-```
-
-Get specific infraprotect-asn-prefix
-
-### list_all
-
-```bash
-f5xcctl infraprotect infraprotect-asn-prefix list --namespace {namespace}
-```
-
-List all infraprotect-asn-prefixs
-
-### update
-
-```bash
-f5xcctl infraprotect infraprotect-asn-prefix update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update infraprotect-asn-prefix
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create infraprotect_asn_prefix -n <namespace> -i infraprotect_asn_prefix.yaml
+xcsh ddos create infraprotect_asn_prefix -n <namespace> -i infraprotect_asn_prefix.yaml
 
 # Get
-f5xcctl ddos get infraprotect_asn_prefix <name> -n <namespace>
+xcsh ddos get infraprotect_asn_prefix <name> -n <namespace>
 
 # List
-f5xcctl ddos list infraprotect_asn_prefix -n <namespace>
+xcsh ddos list infraprotect_asn_prefix -n <namespace>
 
 # Delete
-f5xcctl ddos delete infraprotect_asn_prefix <name> -n <namespace>
+xcsh ddos delete infraprotect_asn_prefix <name> -n <namespace>
 ```
 
 ## Terraform Resource

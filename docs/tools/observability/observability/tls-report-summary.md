@@ -39,32 +39,20 @@ Ask Claude to help you work with TLS Report Summary resources:
 
 > "List all tls-report-summarys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl observability tls-report-summary list --namespace {namespace}
-```
-
-List all tls-report-summarys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create tls_report_summary -n <namespace> -i tls_report_summary.yaml
+xcsh observability create tls_report_summary -n <namespace> -i tls_report_summary.yaml
 
 # Get
-f5xcctl observability get tls_report_summary <name> -n <namespace>
+xcsh observability get tls_report_summary <name> -n <namespace>
 
 # List
-f5xcctl observability list tls_report_summary -n <namespace>
+xcsh observability list tls_report_summary -n <namespace>
 
 # Delete
-f5xcctl observability delete tls_report_summary <name> -n <namespace>
+xcsh observability delete tls_report_summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

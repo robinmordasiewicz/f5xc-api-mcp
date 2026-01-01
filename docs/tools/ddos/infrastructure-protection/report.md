@@ -48,48 +48,20 @@ Ask Claude to help you work with Report resources:
 
 > "List all reports in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl infraprotect report create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl infraprotect report create {name} --namespace {namespace}
-```
-
-Create report
-
-### list_all
-
-```bash
-f5xcctl infraprotect report list --namespace {namespace}
-```
-
-List all reports
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create report -n <namespace> -i report.yaml
+xcsh ddos create report -n <namespace> -i report.yaml
 
 # Get
-f5xcctl ddos get report <name> -n <namespace>
+xcsh ddos get report <name> -n <namespace>
 
 # List
-f5xcctl ddos list report -n <namespace>
+xcsh ddos list report -n <namespace>
 
 # Delete
-f5xcctl ddos delete report <name> -n <namespace>
+xcsh ddos delete report <name> -n <namespace>
 ```
 
 ## Terraform Resource

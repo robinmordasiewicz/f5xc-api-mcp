@@ -41,40 +41,20 @@ Ask Claude to help you work with Find resources:
 
 > "Create a find named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config find create {name} --namespace {namespace}
-```
-
-Create find
-
-### file_based
-
-```bash
-f5xcctl config find create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create find -n <namespace> -i find.yaml
+xcsh network_security create find -n <namespace> -i find.yaml
 
 # Get
-f5xcctl network_security get find <name> -n <namespace>
+xcsh network_security get find <name> -n <namespace>
 
 # List
-f5xcctl network_security list find -n <namespace>
+xcsh network_security list find -n <namespace>
 
 # Delete
-f5xcctl network_security delete find <name> -n <namespace>
+xcsh network_security delete find <name> -n <namespace>
 ```
 
 ## Terraform Resource

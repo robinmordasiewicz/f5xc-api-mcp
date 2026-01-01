@@ -35,32 +35,20 @@ Ask Claude to help you work with Whoami resources:
 
 > "List all whoamis in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web whoami list --namespace {namespace}
-```
-
-List all whoamis
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create whoami -n <namespace> -i whoami.yaml
+xcsh tenant_and_identity create whoami -n <namespace> -i whoami.yaml
 
 # Get
-f5xcctl tenant_and_identity get whoami <name> -n <namespace>
+xcsh tenant_and_identity get whoami <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list whoami -n <namespace>
+xcsh tenant_and_identity list whoami -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete whoami <name> -n <namespace>
+xcsh tenant_and_identity delete whoami <name> -n <namespace>
 ```
 
 ## Terraform Resource

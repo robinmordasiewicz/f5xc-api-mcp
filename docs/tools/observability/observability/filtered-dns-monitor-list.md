@@ -42,32 +42,20 @@ Ask Claude to help you work with Filtered DNS Monitor List resources:
 
 > "List all filtered-dns-monitor-lists in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl observability filtered-dns-monitor-list list --namespace {namespace}
-```
-
-List all filtered-dns-monitor-lists
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create filtered_dns_monitor_list -n <namespace> -i filtered_dns_monitor_list.yaml
+xcsh observability create filtered_dns_monitor_list -n <namespace> -i filtered_dns_monitor_list.yaml
 
 # Get
-f5xcctl observability get filtered_dns_monitor_list <name> -n <namespace>
+xcsh observability get filtered_dns_monitor_list <name> -n <namespace>
 
 # List
-f5xcctl observability list filtered_dns_monitor_list -n <namespace>
+xcsh observability list filtered_dns_monitor_list -n <namespace>
 
 # Delete
-f5xcctl observability delete filtered_dns_monitor_list <name> -n <namespace>
+xcsh observability delete filtered_dns_monitor_list <name> -n <namespace>
 ```
 
 ## Terraform Resource

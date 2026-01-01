@@ -34,32 +34,20 @@ Ask Claude to help you work with Replicaset resources:
 
 > "List all replicasets in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data replicaset list --namespace {namespace}
-```
-
-List all replicasets
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create replicaset -n <namespace> -i replicaset.yaml
+xcsh sites create replicaset -n <namespace> -i replicaset.yaml
 
 # Get
-f5xcctl sites get replicaset <name> -n <namespace>
+xcsh sites get replicaset <name> -n <namespace>
 
 # List
-f5xcctl sites list replicaset -n <namespace>
+xcsh sites list replicaset -n <namespace>
 
 # Delete
-f5xcctl sites delete replicaset <name> -n <namespace>
+xcsh sites delete replicaset <name> -n <namespace>
 ```
 
 ## Terraform Resource

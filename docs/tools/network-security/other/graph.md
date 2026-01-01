@@ -43,40 +43,20 @@ Ask Claude to help you work with Graph resources:
 
 > "Create a graph named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data graph create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data graph create {name} --namespace {namespace}
-```
-
-Create graph
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create graph -n <namespace> -i graph.yaml
+xcsh network_security create graph -n <namespace> -i graph.yaml
 
 # Get
-f5xcctl network_security get graph <name> -n <namespace>
+xcsh network_security get graph <name> -n <namespace>
 
 # List
-f5xcctl network_security list graph -n <namespace>
+xcsh network_security list graph -n <namespace>
 
 # Delete
-f5xcctl network_security delete graph <name> -n <namespace>
+xcsh network_security delete graph <name> -n <namespace>
 ```
 
 ## Terraform Resource

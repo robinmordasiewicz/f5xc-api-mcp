@@ -29,32 +29,20 @@ Operations on this resource may have the following effects:
 
 Ask Claude to help you work with Group Add resources:
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### update
-
-```bash
-f5xcctl web group-add update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update group-add
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create group_add -n <namespace> -i group_add.yaml
+xcsh tenant_and_identity create group_add -n <namespace> -i group_add.yaml
 
 # Get
-f5xcctl tenant_and_identity get group_add <name> -n <namespace>
+xcsh tenant_and_identity get group_add <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list group_add -n <namespace>
+xcsh tenant_and_identity list group_add -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete group_add <name> -n <namespace>
+xcsh tenant_and_identity delete group_add <name> -n <namespace>
 ```
 
 ## Terraform Resource

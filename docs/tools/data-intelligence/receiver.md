@@ -77,72 +77,20 @@ Ask Claude to help you work with Receiver resources:
 
 > "Get details of the receiver named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data-intelligence receiver create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data-intelligence receiver create {name} --namespace {namespace}
-```
-
-Create receiver
-
-### delete
-
-```bash
-f5xcctl data-intelligence receiver delete {name} --namespace {namespace}
-```
-
-Delete receiver
-
-### get_specific
-
-```bash
-f5xcctl data-intelligence receiver get {name} --namespace {namespace}
-```
-
-Get specific receiver
-
-### list_all
-
-```bash
-f5xcctl data-intelligence receiver list --namespace {namespace}
-```
-
-List all receivers
-
-### update
-
-```bash
-f5xcctl data-intelligence receiver update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update receiver
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl data_intelligence create receiver -n <namespace> -i receiver.yaml
+xcsh data_intelligence create receiver -n <namespace> -i receiver.yaml
 
 # Get
-f5xcctl data_intelligence get receiver <name> -n <namespace>
+xcsh data_intelligence get receiver <name> -n <namespace>
 
 # List
-f5xcctl data_intelligence list receiver -n <namespace>
+xcsh data_intelligence list receiver -n <namespace>
 
 # Delete
-f5xcctl data_intelligence delete receiver <name> -n <namespace>
+xcsh data_intelligence delete receiver <name> -n <namespace>
 ```
 
 ## Terraform Resource

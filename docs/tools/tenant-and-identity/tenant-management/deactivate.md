@@ -30,32 +30,20 @@ Operations on this resource may have the following effects:
 
 Ask Claude to help you work with Deactivate resources:
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### update
-
-```bash
-f5xcctl saas deactivate update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update deactivate
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create deactivate -n <namespace> -i deactivate.yaml
+xcsh tenant_and_identity create deactivate -n <namespace> -i deactivate.yaml
 
 # Get
-f5xcctl tenant_and_identity get deactivate <name> -n <namespace>
+xcsh tenant_and_identity get deactivate <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list deactivate -n <namespace>
+xcsh tenant_and_identity list deactivate -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete deactivate <name> -n <namespace>
+xcsh tenant_and_identity delete deactivate <name> -n <namespace>
 ```
 
 ## Terraform Resource

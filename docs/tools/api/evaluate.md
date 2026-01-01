@@ -44,40 +44,20 @@ Ask Claude to help you work with Evaluate resources:
 
 > "Create a evaluate named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl ml evaluate create {name} --namespace {namespace}
-```
-
-Create evaluate
-
-### file_based
-
-```bash
-f5xcctl ml evaluate create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create evaluate -n <namespace> -i evaluate.yaml
+xcsh api create evaluate -n <namespace> -i evaluate.yaml
 
 # Get
-f5xcctl api get evaluate <name> -n <namespace>
+xcsh api get evaluate <name> -n <namespace>
 
 # List
-f5xcctl api list evaluate -n <namespace>
+xcsh api list evaluate -n <namespace>
 
 # Delete
-f5xcctl api delete evaluate <name> -n <namespace>
+xcsh api delete evaluate <name> -n <namespace>
 ```
 
 ## Terraform Resource

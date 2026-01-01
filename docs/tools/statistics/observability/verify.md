@@ -42,40 +42,20 @@ Ask Claude to help you work with Verify resources:
 
 > "Create a verify named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl alert verify create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl alert verify create {name} --namespace {namespace}
-```
-
-Create verify
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create verify -n <namespace> -i verify.yaml
+xcsh statistics create verify -n <namespace> -i verify.yaml
 
 # Get
-f5xcctl statistics get verify <name> -n <namespace>
+xcsh statistics get verify <name> -n <namespace>
 
 # List
-f5xcctl statistics list verify -n <namespace>
+xcsh statistics list verify -n <namespace>
 
 # Delete
-f5xcctl statistics delete verify <name> -n <namespace>
+xcsh statistics delete verify <name> -n <namespace>
 ```
 
 ## Terraform Resource

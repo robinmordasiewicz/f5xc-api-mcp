@@ -34,32 +34,20 @@ Ask Claude to help you work with All Activation Statu resources:
 
 > "List all all-activation-status in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web all-activation-statu list --namespace {namespace}
-```
-
-List all all-activation-status
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create all_activation_statu -n <namespace> -i all_activation_statu.yaml
+xcsh marketplace create all_activation_statu -n <namespace> -i all_activation_statu.yaml
 
 # Get
-f5xcctl marketplace get all_activation_statu <name> -n <namespace>
+xcsh marketplace get all_activation_statu <name> -n <namespace>
 
 # List
-f5xcctl marketplace list all_activation_statu -n <namespace>
+xcsh marketplace list all_activation_statu -n <namespace>
 
 # Delete
-f5xcctl marketplace delete all_activation_statu <name> -n <namespace>
+xcsh marketplace delete all_activation_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

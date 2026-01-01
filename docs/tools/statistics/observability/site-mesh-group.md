@@ -46,48 +46,20 @@ Ask Claude to help you work with Site Mesh Group resources:
 
 > "List all site-mesh-groups in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data site-mesh-group create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data site-mesh-group create {name} --namespace {namespace}
-```
-
-Create site-mesh-group
-
-### list_all
-
-```bash
-f5xcctl data site-mesh-group list --namespace {namespace}
-```
-
-List all site-mesh-groups
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create site_mesh_group -n <namespace> -i site_mesh_group.yaml
+xcsh statistics create site_mesh_group -n <namespace> -i site_mesh_group.yaml
 
 # Get
-f5xcctl statistics get site_mesh_group <name> -n <namespace>
+xcsh statistics get site_mesh_group <name> -n <namespace>
 
 # List
-f5xcctl statistics list site_mesh_group -n <namespace>
+xcsh statistics list site_mesh_group -n <namespace>
 
 # Delete
-f5xcctl statistics delete site_mesh_group <name> -n <namespace>
+xcsh statistics delete site_mesh_group <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with IP Prefix Set resources:
 
 > "Get details of the ip-prefix-set named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config ip-prefix-set create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config ip-prefix-set create {name} --namespace {namespace}
-```
-
-Create ip-prefix-set
-
-### delete
-
-```bash
-f5xcctl config ip-prefix-set delete {name} --namespace {namespace}
-```
-
-Delete ip-prefix-set
-
-### get_specific
-
-```bash
-f5xcctl config ip-prefix-set get {name} --namespace {namespace}
-```
-
-Get specific ip-prefix-set
-
-### list_all
-
-```bash
-f5xcctl config ip-prefix-set list --namespace {namespace}
-```
-
-List all ip-prefix-sets
-
-### update
-
-```bash
-f5xcctl config ip-prefix-set update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update ip-prefix-set
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create ip_prefix_set -n <namespace> -i ip_prefix_set.yaml
+xcsh network create ip_prefix_set -n <namespace> -i ip_prefix_set.yaml
 
 # Get
-f5xcctl network get ip_prefix_set <name> -n <namespace>
+xcsh network get ip_prefix_set <name> -n <namespace>
 
 # List
-f5xcctl network list ip_prefix_set -n <namespace>
+xcsh network list ip_prefix_set -n <namespace>
 
 # Delete
-f5xcctl network delete ip_prefix_set <name> -n <namespace>
+xcsh network delete ip_prefix_set <name> -n <namespace>
 ```
 
 ## Terraform Resource

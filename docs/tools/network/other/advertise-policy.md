@@ -78,72 +78,20 @@ Ask Claude to help you work with Advertise Policy resources:
 
 > "Get details of the advertise-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config advertise-policy create {name} --namespace {namespace}
-```
-
-Create advertise-policy
-
-### file_based
-
-```bash
-f5xcctl config advertise-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config advertise-policy delete {name} --namespace {namespace}
-```
-
-Delete advertise-policy
-
-### get_specific
-
-```bash
-f5xcctl config advertise-policy get {name} --namespace {namespace}
-```
-
-Get specific advertise-policy
-
-### list_all
-
-```bash
-f5xcctl config advertise-policy list --namespace {namespace}
-```
-
-List all advertise-policys
-
-### update
-
-```bash
-f5xcctl config advertise-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update advertise-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create advertise_policy -n <namespace> -i advertise_policy.yaml
+xcsh network create advertise_policy -n <namespace> -i advertise_policy.yaml
 
 # Get
-f5xcctl network get advertise_policy <name> -n <namespace>
+xcsh network get advertise_policy <name> -n <namespace>
 
 # List
-f5xcctl network list advertise_policy -n <namespace>
+xcsh network list advertise_policy -n <namespace>
 
 # Delete
-f5xcctl network delete advertise_policy <name> -n <namespace>
+xcsh network delete advertise_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

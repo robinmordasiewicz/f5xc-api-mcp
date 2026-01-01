@@ -48,48 +48,20 @@ Ask Claude to help you work with Config resources:
 
 > "List all configs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl operate config create {name} --namespace {namespace}
-```
-
-Create config
-
-### file_based
-
-```bash
-f5xcctl operate config create -f {file}.yaml
-```
-
-Create from YAML file
-
-### list_all
-
-```bash
-f5xcctl operate config list --namespace {namespace}
-```
-
-List all configs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create config -n <namespace> -i config.yaml
+xcsh support create config -n <namespace> -i config.yaml
 
 # Get
-f5xcctl support get config <name> -n <namespace>
+xcsh support get config <name> -n <namespace>
 
 # List
-f5xcctl support list config -n <namespace>
+xcsh support list config -n <namespace>
 
 # Delete
-f5xcctl support delete config <name> -n <namespace>
+xcsh support delete config <name> -n <namespace>
 ```
 
 ## Terraform Resource

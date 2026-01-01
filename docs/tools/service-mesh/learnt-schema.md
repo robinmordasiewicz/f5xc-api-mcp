@@ -42,40 +42,20 @@ Ask Claude to help you work with Learnt Schema resources:
 
 > "Create a learnt-schema named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml learnt-schema create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml learnt-schema create {name} --namespace {namespace}
-```
-
-Create learnt-schema
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create learnt_schema -n <namespace> -i learnt_schema.yaml
+xcsh service_mesh create learnt_schema -n <namespace> -i learnt_schema.yaml
 
 # Get
-f5xcctl service_mesh get learnt_schema <name> -n <namespace>
+xcsh service_mesh get learnt_schema <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list learnt_schema -n <namespace>
+xcsh service_mesh list learnt_schema -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete learnt_schema <name> -n <namespace>
+xcsh service_mesh delete learnt_schema <name> -n <namespace>
 ```
 
 ## Terraform Resource

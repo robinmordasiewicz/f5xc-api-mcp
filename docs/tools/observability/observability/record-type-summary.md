@@ -33,32 +33,20 @@ Ask Claude to help you work with Record Type Summary resources:
 
 > "List all record-type-summarys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl observability record-type-summary list --namespace {namespace}
-```
-
-List all record-type-summarys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create record_type_summary -n <namespace> -i record_type_summary.yaml
+xcsh observability create record_type_summary -n <namespace> -i record_type_summary.yaml
 
 # Get
-f5xcctl observability get record_type_summary <name> -n <namespace>
+xcsh observability get record_type_summary <name> -n <namespace>
 
 # List
-f5xcctl observability list record_type_summary -n <namespace>
+xcsh observability list record_type_summary -n <namespace>
 
 # Delete
-f5xcctl observability delete record_type_summary <name> -n <namespace>
+xcsh observability delete record_type_summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

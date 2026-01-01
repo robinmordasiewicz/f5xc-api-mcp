@@ -42,40 +42,20 @@ Ask Claude to help you work with Softdelete resources:
 
 > "Create a softdelete named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl secret_management softdelete create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl secret_management softdelete create {name} --namespace {namespace}
-```
-
-Create softdelete
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create softdelete -n <namespace> -i softdelete.yaml
+xcsh blindfold create softdelete -n <namespace> -i softdelete.yaml
 
 # Get
-f5xcctl blindfold get softdelete <name> -n <namespace>
+xcsh blindfold get softdelete <name> -n <namespace>
 
 # List
-f5xcctl blindfold list softdelete -n <namespace>
+xcsh blindfold list softdelete -n <namespace>
 
 # Delete
-f5xcctl blindfold delete softdelete <name> -n <namespace>
+xcsh blindfold delete softdelete <name> -n <namespace>
 ```
 
 ## Terraform Resource

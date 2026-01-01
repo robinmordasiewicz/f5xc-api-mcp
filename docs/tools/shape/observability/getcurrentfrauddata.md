@@ -33,40 +33,20 @@ Ask Claude to help you work with Getcurrentfrauddata resources:
 
 > "Create a getcurrentfrauddata named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape getcurrentfrauddata create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape getcurrentfrauddata create {name} --namespace {namespace}
-```
-
-Create getcurrentfrauddata
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create getcurrentfrauddata -n <namespace> -i getcurrentfrauddata.yaml
+xcsh shape create getcurrentfrauddata -n <namespace> -i getcurrentfrauddata.yaml
 
 # Get
-f5xcctl shape get getcurrentfrauddata <name> -n <namespace>
+xcsh shape get getcurrentfrauddata <name> -n <namespace>
 
 # List
-f5xcctl shape list getcurrentfrauddata -n <namespace>
+xcsh shape list getcurrentfrauddata -n <namespace>
 
 # Delete
-f5xcctl shape delete getcurrentfrauddata <name> -n <namespace>
+xcsh shape delete getcurrentfrauddata <name> -n <namespace>
 ```
 
 ## Terraform Resource

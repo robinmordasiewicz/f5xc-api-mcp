@@ -35,40 +35,20 @@ Ask Claude to help you work with Combined Notification resources:
 
 > "List all combined-notifications in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web combined-notification list --namespace {namespace}
-```
-
-List all combined-notifications
-
-### update
-
-```bash
-f5xcctl web combined-notification update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update combined-notification
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create combined_notification -n <namespace> -i combined_notification.yaml
+xcsh tenant_and_identity create combined_notification -n <namespace> -i combined_notification.yaml
 
 # Get
-f5xcctl tenant_and_identity get combined_notification <name> -n <namespace>
+xcsh tenant_and_identity get combined_notification <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list combined_notification -n <namespace>
+xcsh tenant_and_identity list combined_notification -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete combined_notification <name> -n <namespace>
+xcsh tenant_and_identity delete combined_notification <name> -n <namespace>
 ```
 
 ## Terraform Resource

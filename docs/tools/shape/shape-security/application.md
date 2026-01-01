@@ -55,56 +55,20 @@ Ask Claude to help you work with Application resources:
 
 > "List all applications in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape application create {name} --namespace {namespace}
-```
-
-Create application
-
-### file_based
-
-```bash
-f5xcctl shape application create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl shape application delete {name} --namespace {namespace}
-```
-
-Delete application
-
-### list_all
-
-```bash
-f5xcctl shape application list --namespace {namespace}
-```
-
-List all applications
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create application -n <namespace> -i application.yaml
+xcsh shape create application -n <namespace> -i application.yaml
 
 # Get
-f5xcctl shape get application <name> -n <namespace>
+xcsh shape get application <name> -n <namespace>
 
 # List
-f5xcctl shape list application -n <namespace>
+xcsh shape list application -n <namespace>
 
 # Delete
-f5xcctl shape delete application <name> -n <namespace>
+xcsh shape delete application <name> -n <namespace>
 ```
 
 ## Terraform Resource

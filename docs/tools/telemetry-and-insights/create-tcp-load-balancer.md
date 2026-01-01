@@ -42,40 +42,20 @@ Ask Claude to help you work with Create TCP Load Balancer resources:
 
 > "Create a create-tcp-load-balancer named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl discovery create-tcp-load-balancer create {name} --namespace {namespace}
-```
-
-Create create-tcp-load-balancer
-
-### file_based
-
-```bash
-f5xcctl discovery create-tcp-load-balancer create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl telemetry_and_insights create create_tcp_load_balancer -n <namespace> -i create_tcp_load_balancer.yaml
+xcsh telemetry_and_insights create create_tcp_load_balancer -n <namespace> -i create_tcp_load_balancer.yaml
 
 # Get
-f5xcctl telemetry_and_insights get create_tcp_load_balancer <name> -n <namespace>
+xcsh telemetry_and_insights get create_tcp_load_balancer <name> -n <namespace>
 
 # List
-f5xcctl telemetry_and_insights list create_tcp_load_balancer -n <namespace>
+xcsh telemetry_and_insights list create_tcp_load_balancer -n <namespace>
 
 # Delete
-f5xcctl telemetry_and_insights delete create_tcp_load_balancer <name> -n <namespace>
+xcsh telemetry_and_insights delete create_tcp_load_balancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

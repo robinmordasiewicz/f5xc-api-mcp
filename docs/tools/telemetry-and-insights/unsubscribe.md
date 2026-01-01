@@ -33,40 +33,20 @@ Ask Claude to help you work with Unsubscribe resources:
 
 > "Create a unsubscribe named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config unsubscribe create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config unsubscribe create {name} --namespace {namespace}
-```
-
-Create unsubscribe
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl telemetry_and_insights create unsubscribe -n <namespace> -i unsubscribe.yaml
+xcsh telemetry_and_insights create unsubscribe -n <namespace> -i unsubscribe.yaml
 
 # Get
-f5xcctl telemetry_and_insights get unsubscribe <name> -n <namespace>
+xcsh telemetry_and_insights get unsubscribe <name> -n <namespace>
 
 # List
-f5xcctl telemetry_and_insights list unsubscribe -n <namespace>
+xcsh telemetry_and_insights list unsubscribe -n <namespace>
 
 # Delete
-f5xcctl telemetry_and_insights delete unsubscribe <name> -n <namespace>
+xcsh telemetry_and_insights delete unsubscribe <name> -n <namespace>
 ```
 
 ## Terraform Resource

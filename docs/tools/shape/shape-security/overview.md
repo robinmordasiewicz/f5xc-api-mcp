@@ -54,48 +54,20 @@ Ask Claude to help you work with Overview resources:
 
 > "List all overviews in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape overview create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape overview create {name} --namespace {namespace}
-```
-
-Create overview
-
-### list_all
-
-```bash
-f5xcctl shape overview list --namespace {namespace}
-```
-
-List all overviews
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create overview -n <namespace> -i overview.yaml
+xcsh shape create overview -n <namespace> -i overview.yaml
 
 # Get
-f5xcctl shape get overview <name> -n <namespace>
+xcsh shape get overview <name> -n <namespace>
 
 # List
-f5xcctl shape list overview -n <namespace>
+xcsh shape list overview -n <namespace>
 
 # Delete
-f5xcctl shape delete overview <name> -n <namespace>
+xcsh shape delete overview <name> -n <namespace>
 ```
 
 ## Terraform Resource

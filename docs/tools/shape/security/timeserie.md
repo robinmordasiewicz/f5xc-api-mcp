@@ -41,40 +41,20 @@ Ask Claude to help you work with Timeserie resources:
 
 > "Create a timeserie named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape timeserie create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape timeserie create {name} --namespace {namespace}
-```
-
-Create timeserie
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create timeserie -n <namespace> -i timeserie.yaml
+xcsh shape create timeserie -n <namespace> -i timeserie.yaml
 
 # Get
-f5xcctl shape get timeserie <name> -n <namespace>
+xcsh shape get timeserie <name> -n <namespace>
 
 # List
-f5xcctl shape list timeserie -n <namespace>
+xcsh shape list timeserie -n <namespace>
 
 # Delete
-f5xcctl shape delete timeserie <name> -n <namespace>
+xcsh shape delete timeserie <name> -n <namespace>
 ```
 
 ## Terraform Resource

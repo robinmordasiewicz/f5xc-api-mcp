@@ -4,7 +4,7 @@ Get the F5XC API MCP Server running in 5 minutes.
 
 ## Prerequisites
 
-- Node.js 18+ (for npx) OR Docker
+- Node.js 24+ (for npx) OR Docker
 - An MCP-compatible AI assistant (Claude Desktop, Claude Code, VS Code, etc.)
 
 ## Step 1: Choose Your Installation
@@ -126,7 +126,7 @@ Once configured, try these example prompts:
 
 > "What's the Terraform resource for an origin pool?"
 
-> "Give me the f5xcctl command to list namespaces"
+> "Give me the xcsh command to list namespaces"
 
 ### Execution Mode (With Auth)
 

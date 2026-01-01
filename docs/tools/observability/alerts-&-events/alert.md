@@ -43,32 +43,20 @@ Ask Claude to help you work with Alert resources:
 
 > "List all alerts in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data alert list --namespace {namespace}
-```
-
-List all alerts
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create alert -n <namespace> -i alert.yaml
+xcsh observability create alert -n <namespace> -i alert.yaml
 
 # Get
-f5xcctl observability get alert <name> -n <namespace>
+xcsh observability get alert <name> -n <namespace>
 
 # List
-f5xcctl observability list alert -n <namespace>
+xcsh observability list alert -n <namespace>
 
 # Delete
-f5xcctl observability delete alert <name> -n <namespace>
+xcsh observability delete alert <name> -n <namespace>
 ```
 
 ## Terraform Resource

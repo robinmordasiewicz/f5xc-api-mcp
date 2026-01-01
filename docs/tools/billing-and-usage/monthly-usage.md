@@ -42,40 +42,20 @@ Ask Claude to help you work with Monthly Usage resources:
 
 > "Create a monthly-usage named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web monthly-usage create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web monthly-usage create {name} --namespace {namespace}
-```
-
-Create monthly-usage
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create monthly_usage -n <namespace> -i monthly_usage.yaml
+xcsh billing_and_usage create monthly_usage -n <namespace> -i monthly_usage.yaml
 
 # Get
-f5xcctl billing_and_usage get monthly_usage <name> -n <namespace>
+xcsh billing_and_usage get monthly_usage <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list monthly_usage -n <namespace>
+xcsh billing_and_usage list monthly_usage -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete monthly_usage <name> -n <namespace>
+xcsh billing_and_usage delete monthly_usage <name> -n <namespace>
 ```
 
 ## Terraform Resource

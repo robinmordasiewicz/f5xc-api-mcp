@@ -40,32 +40,20 @@ Ask Claude to help you work with Pre Upgrade Check resources:
 
 > "Get details of the pre-upgrade-check named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl maurice pre-upgrade-check get {name} --namespace {namespace}
-```
-
-Get specific pre-upgrade-check
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create pre_upgrade_check -n <namespace> -i pre_upgrade_check.yaml
+xcsh ce_management create pre_upgrade_check -n <namespace> -i pre_upgrade_check.yaml
 
 # Get
-f5xcctl ce_management get pre_upgrade_check <name> -n <namespace>
+xcsh ce_management get pre_upgrade_check <name> -n <namespace>
 
 # List
-f5xcctl ce_management list pre_upgrade_check -n <namespace>
+xcsh ce_management list pre_upgrade_check -n <namespace>
 
 # Delete
-f5xcctl ce_management delete pre_upgrade_check <name> -n <namespace>
+xcsh ce_management delete pre_upgrade_check <name> -n <namespace>
 ```
 
 ## Terraform Resource

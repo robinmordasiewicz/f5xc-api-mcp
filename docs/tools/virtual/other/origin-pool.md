@@ -77,72 +77,20 @@ Ask Claude to help you work with Origin Pool resources:
 
 > "Get details of the origin-pool named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config origin-pool create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config origin-pool create {name} --namespace {namespace}
-```
-
-Create origin-pool
-
-### delete
-
-```bash
-f5xcctl config origin-pool delete {name} --namespace {namespace}
-```
-
-Delete origin-pool
-
-### get_specific
-
-```bash
-f5xcctl config origin-pool get {name} --namespace {namespace}
-```
-
-Get specific origin-pool
-
-### list_all
-
-```bash
-f5xcctl config origin-pool list --namespace {namespace}
-```
-
-List all origin-pools
-
-### update
-
-```bash
-f5xcctl config origin-pool update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update origin-pool
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create origin_pool -n <namespace> -i origin_pool.yaml
+xcsh virtual create origin_pool -n <namespace> -i origin_pool.yaml
 
 # Get
-f5xcctl virtual get origin_pool <name> -n <namespace>
+xcsh virtual get origin_pool <name> -n <namespace>
 
 # List
-f5xcctl virtual list origin_pool -n <namespace>
+xcsh virtual list origin_pool -n <namespace>
 
 # Delete
-f5xcctl virtual delete origin_pool <name> -n <namespace>
+xcsh virtual delete origin_pool <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -41,40 +41,20 @@ Ask Claude to help you work with Update Advertisement Statu resources:
 
 > "Create a update-advertisement-statu named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl infraprotect update-advertisement-statu create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl infraprotect update-advertisement-statu create {name} --namespace {namespace}
-```
-
-Create update-advertisement-statu
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create update_advertisement_statu -n <namespace> -i update_advertisement_statu.yaml
+xcsh ddos create update_advertisement_statu -n <namespace> -i update_advertisement_statu.yaml
 
 # Get
-f5xcctl ddos get update_advertisement_statu <name> -n <namespace>
+xcsh ddos get update_advertisement_statu <name> -n <namespace>
 
 # List
-f5xcctl ddos list update_advertisement_statu -n <namespace>
+xcsh ddos list update_advertisement_statu -n <namespace>
 
 # Delete
-f5xcctl ddos delete update_advertisement_statu <name> -n <namespace>
+xcsh ddos delete update_advertisement_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

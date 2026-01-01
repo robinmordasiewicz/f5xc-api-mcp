@@ -41,32 +41,20 @@ Ask Claude to help you work with Exec Log resources:
 
 > "List all exec-logs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl operate exec-log list --namespace {namespace}
-```
-
-List all exec-logs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create exec_log -n <namespace> -i exec_log.yaml
+xcsh support create exec_log -n <namespace> -i exec_log.yaml
 
 # Get
-f5xcctl support get exec_log <name> -n <namespace>
+xcsh support get exec_log <name> -n <namespace>
 
 # List
-f5xcctl support list exec_log -n <namespace>
+xcsh support list exec_log -n <namespace>
 
 # Delete
-f5xcctl support delete exec_log <name> -n <namespace>
+xcsh support delete exec_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

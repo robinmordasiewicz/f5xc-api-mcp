@@ -75,72 +75,20 @@ Ask Claude to help you work with Group resources:
 
 > "Get details of the Group named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl scim Group create {name} --namespace {namespace}
-```
-
-Create Group
-
-### file_based
-
-```bash
-f5xcctl scim Group create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl scim Group delete {name} --namespace {namespace}
-```
-
-Delete Group
-
-### get_specific
-
-```bash
-f5xcctl scim Group get {name} --namespace {namespace}
-```
-
-Get specific Group
-
-### list_all
-
-```bash
-f5xcctl scim Group list --namespace {namespace}
-```
-
-List all Groups
-
-### update
-
-```bash
-f5xcctl scim Group update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update Group
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create Group -n <namespace> -i Group.yaml
+xcsh tenant_and_identity create Group -n <namespace> -i Group.yaml
 
 # Get
-f5xcctl tenant_and_identity get Group <name> -n <namespace>
+xcsh tenant_and_identity get Group <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list Group -n <namespace>
+xcsh tenant_and_identity list Group -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete Group <name> -n <namespace>
+xcsh tenant_and_identity delete Group <name> -n <namespace>
 ```
 
 ## Terraform Resource

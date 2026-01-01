@@ -41,40 +41,20 @@ Ask Claude to help you work with Role User resources:
 
 > "Create a role-user named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web role-user create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web role-user create {name} --namespace {namespace}
-```
-
-Create role-user
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create role_user -n <namespace> -i role_user.yaml
+xcsh tenant_and_identity create role_user -n <namespace> -i role_user.yaml
 
 # Get
-f5xcctl tenant_and_identity get role_user <name> -n <namespace>
+xcsh tenant_and_identity get role_user <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list role_user -n <namespace>
+xcsh tenant_and_identity list role_user -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete role_user <name> -n <namespace>
+xcsh tenant_and_identity delete role_user <name> -n <namespace>
 ```
 
 ## Terraform Resource

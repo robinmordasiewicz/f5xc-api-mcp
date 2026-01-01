@@ -42,40 +42,20 @@ Ask Claude to help you work with State resources:
 
 > "Create a state named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl register state create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl register state create {name} --namespace {namespace}
-```
-
-Create state
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl users create state -n <namespace> -i state.yaml
+xcsh users create state -n <namespace> -i state.yaml
 
 # Get
-f5xcctl users get state <name> -n <namespace>
+xcsh users get state <name> -n <namespace>
 
 # List
-f5xcctl users list state -n <namespace>
+xcsh users list state -n <namespace>
 
 # Delete
-f5xcctl users delete state <name> -n <namespace>
+xcsh users delete state <name> -n <namespace>
 ```
 
 ## Terraform Resource

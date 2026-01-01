@@ -48,40 +48,20 @@ Ask Claude to help you work with Navigation Tile resources:
 
 > "Get details of the navigation-tile named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl web navigation-tile get {name} --namespace {namespace}
-```
-
-Get specific navigation-tile
-
-### list_all
-
-```bash
-f5xcctl web navigation-tile list --namespace {namespace}
-```
-
-List all navigation-tiles
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create navigation_tile -n <namespace> -i navigation_tile.yaml
+xcsh marketplace create navigation_tile -n <namespace> -i navigation_tile.yaml
 
 # Get
-f5xcctl marketplace get navigation_tile <name> -n <namespace>
+xcsh marketplace get navigation_tile <name> -n <namespace>
 
 # List
-f5xcctl marketplace list navigation_tile -n <namespace>
+xcsh marketplace list navigation_tile -n <namespace>
 
 # Delete
-f5xcctl marketplace delete navigation_tile <name> -n <namespace>
+xcsh marketplace delete navigation_tile <name> -n <namespace>
 ```
 
 ## Terraform Resource

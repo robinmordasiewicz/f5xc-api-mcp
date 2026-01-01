@@ -41,40 +41,20 @@ Ask Claude to help you work with Metric resources:
 
 > "Create a metric named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data metric create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data metric create {name} --namespace {namespace}
-```
-
-Create metric
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create metric -n <namespace> -i metric.yaml
+xcsh network create metric -n <namespace> -i metric.yaml
 
 # Get
-f5xcctl network get metric <name> -n <namespace>
+xcsh network get metric <name> -n <namespace>
 
 # List
-f5xcctl network list metric -n <namespace>
+xcsh network list metric -n <namespace>
 
 # Delete
-f5xcctl network delete metric <name> -n <namespace>
+xcsh network delete metric <name> -n <namespace>
 ```
 
 ## Terraform Resource

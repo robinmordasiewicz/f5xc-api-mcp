@@ -56,40 +56,20 @@ Ask Claude to help you work with {name} resources:
 
 > "Get details of the {name} named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### delete
-
-```bash
-f5xcctl object_store stored-object delete {name} --namespace {namespace}
-```
-
-Delete stored-object
-
-### get_specific
-
-```bash
-f5xcctl object_store mobile-app-shield get {name} --namespace {namespace}
-```
-
-Get specific mobile-app-shield
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl object_storage create {name} -n <namespace> -i {name}.yaml
+xcsh object_storage create {name} -n <namespace> -i {name}.yaml
 
 # Get
-f5xcctl object_storage get {name} <name> -n <namespace>
+xcsh object_storage get {name} <name> -n <namespace>
 
 # List
-f5xcctl object_storage list {name} -n <namespace>
+xcsh object_storage list {name} -n <namespace>
 
 # Delete
-f5xcctl object_storage delete {name} <name> -n <namespace>
+xcsh object_storage delete {name} <name> -n <namespace>
 ```
 
 ## Terraform Resource

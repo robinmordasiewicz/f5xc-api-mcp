@@ -42,40 +42,20 @@ Ask Claude to help you work with Update State resources:
 
 > "Create a update-state named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml update-state create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml update-state create {name} --namespace {namespace}
-```
-
-Create update-state
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create update_state -n <namespace> -i update_state.yaml
+xcsh virtual create update_state -n <namespace> -i update_state.yaml
 
 # Get
-f5xcctl virtual get update_state <name> -n <namespace>
+xcsh virtual get update_state <name> -n <namespace>
 
 # List
-f5xcctl virtual list update_state -n <namespace>
+xcsh virtual list update_state -n <namespace>
 
 # Delete
-f5xcctl virtual delete update_state <name> -n <namespace>
+xcsh virtual delete update_state <name> -n <namespace>
 ```
 
 ## Terraform Resource

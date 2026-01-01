@@ -42,40 +42,20 @@ Ask Claude to help you work with By Network resources:
 
 > "Create a by-network named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl infraprotect by-network create {name} --namespace {namespace}
-```
-
-Create by-network
-
-### file_based
-
-```bash
-f5xcctl infraprotect by-network create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create by_network -n <namespace> -i by_network.yaml
+xcsh statistics create by_network -n <namespace> -i by_network.yaml
 
 # Get
-f5xcctl statistics get by_network <name> -n <namespace>
+xcsh statistics get by_network <name> -n <namespace>
 
 # List
-f5xcctl statistics list by_network -n <namespace>
+xcsh statistics list by_network -n <namespace>
 
 # Delete
-f5xcctl statistics delete by_network <name> -n <namespace>
+xcsh statistics delete by_network <name> -n <namespace>
 ```
 
 ## Terraform Resource

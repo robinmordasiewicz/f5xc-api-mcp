@@ -33,40 +33,20 @@ Ask Claude to help you work with Lift resources:
 
 > "Create a lift named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape lift create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape lift create {name} --namespace {namespace}
-```
-
-Create lift
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create lift -n <namespace> -i lift.yaml
+xcsh shape create lift -n <namespace> -i lift.yaml
 
 # Get
-f5xcctl shape get lift <name> -n <namespace>
+xcsh shape get lift <name> -n <namespace>
 
 # List
-f5xcctl shape list lift -n <namespace>
+xcsh shape list lift -n <namespace>
 
 # Delete
-f5xcctl shape delete lift <name> -n <namespace>
+xcsh shape delete lift <name> -n <namespace>
 ```
 
 ## Terraform Resource

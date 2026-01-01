@@ -34,32 +34,20 @@ Ask Claude to help you work with Pod resources:
 
 > "List all pods in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data pod list --namespace {namespace}
-```
-
-List all pods
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create pod -n <namespace> -i pod.yaml
+xcsh sites create pod -n <namespace> -i pod.yaml
 
 # Get
-f5xcctl sites get pod <name> -n <namespace>
+xcsh sites get pod <name> -n <namespace>
 
 # List
-f5xcctl sites list pod -n <namespace>
+xcsh sites list pod -n <namespace>
 
 # Delete
-f5xcctl sites delete pod <name> -n <namespace>
+xcsh sites delete pod <name> -n <namespace>
 ```
 
 ## Terraform Resource

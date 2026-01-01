@@ -55,48 +55,20 @@ Ask Claude to help you work with Top Source resources:
 
 > "List all top-sources in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape top-source create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape top-source create {name} --namespace {namespace}
-```
-
-Create top-source
-
-### list_all
-
-```bash
-f5xcctl shape top-source list --namespace {namespace}
-```
-
-List all top-sources
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create top_source -n <namespace> -i top_source.yaml
+xcsh shape create top_source -n <namespace> -i top_source.yaml
 
 # Get
-f5xcctl shape get top_source <name> -n <namespace>
+xcsh shape get top_source <name> -n <namespace>
 
 # List
-f5xcctl shape list top_source -n <namespace>
+xcsh shape list top_source -n <namespace>
 
 # Delete
-f5xcctl shape delete top_source <name> -n <namespace>
+xcsh shape delete top_source <name> -n <namespace>
 ```
 
 ## Terraform Resource

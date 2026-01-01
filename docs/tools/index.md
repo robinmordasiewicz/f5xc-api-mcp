@@ -1,6 +1,6 @@
 # Tools Reference
 
-The F5XC API MCP Server exposes **1,426 API tools** across 7 domains through a dynamic discovery
+The F5XC API MCP Server exposes **1,500+ API tools** across 23 domains through a dynamic discovery
 architecture that reduces token consumption by 95%+.
 
 !!! info "Dynamic Discovery Architecture"
@@ -21,7 +21,59 @@ flowchart LR
 
 ## Meta-Tools
 
-These 6 tools are always available and provide access to all 1,426 API operations.
+These 7 tools are always available and provide access to all 1,500+ API operations.
+
+### f5xc-api-configure-auth
+
+Configure F5XC API authentication. Check status, save credentials, list profiles, or switch active profile.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `action` | string | No | Action: `status`, `configure`, `list-profiles`, `set-active` (default: `status`) |
+| `tenantUrl` | string | No | F5XC tenant URL (required for `configure`) |
+| `apiToken` | string | No | API token (required for `configure`) |
+| `profileName` | string | No | Profile name (default: `default`) |
+
+**Example - Check Status:**
+
+```json
+{
+  "action": "status"
+}
+```
+
+**Response (unauthenticated):**
+
+```json
+{
+  "authenticated": false,
+  "mode": "documentation",
+  "message": "No credentials configured. Use action='configure' with tenantUrl and apiToken to authenticate."
+}
+```
+
+**Example - Configure Credentials:**
+
+```json
+{
+  "action": "configure",
+  "tenantUrl": "https://tenant.console.ves.volterra.io",
+  "apiToken": "your-api-token",
+  "profileName": "production"
+}
+```
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "profileName": "production",
+  "message": "Credentials saved to profile 'production' and set as active. API execution is now enabled."
+}
+```
+
+---
 
 ### f5xc-api-server-info
 
@@ -84,7 +136,7 @@ Get full schema and documentation for a specific tool.
 
 - Full parameter schema with types and validation
 - Request body JSON schema
-- f5xcctl CLI equivalent command
+- xcsh CLI equivalent command
 - Terraform resource example
 - Prerequisites and dependencies
 
@@ -245,7 +297,7 @@ When credentials are not configured, tools return documentation:
   "tool": "f5xc-api-waap-http-loadbalancer-create",
   "description": "Creates an HTTP Load Balancer",
   "parameters": {},
-  "f5xcctl_command": "f5xcctl load_balancer create http_loadbalancer -n production -i http_lb.yaml",
+  "xcsh_command": "xcsh load_balancer create http_loadbalancer -n production -i http_lb.yaml",
   "terraform_resource": "volterra_http_loadbalancer",
   "terraform_example": "resource \"volterra_http_loadbalancer\" {...}",
   "prerequisites": ["namespace must exist", "origin_pool required"],
@@ -339,5 +391,5 @@ Export F5XC resources as Terraform configuration.
 - [HTTP Load Balancer](virtual/other/http-loadbalancer.md) - Detailed load balancer documentation
 - [Origin Pool](virtual/other/origin-pool.md) - Backend pool configuration
 - [App Firewall](waf/app-firewall.md) - WAF configuration
-- [f5xcctl Integration](../integrations/f5xcctl.md) - CLI equivalents
+- [xcsh Integration](../integrations/xcsh.md) - CLI equivalents
 - [Terraform Integration](../integrations/terraform.md) - Infrastructure as code

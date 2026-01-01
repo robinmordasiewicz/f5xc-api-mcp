@@ -4,7 +4,7 @@ Multiple ways to install and run the F5XC API MCP Server.
 
 ## System Requirements
 
-- **Node.js**: 18.0 or higher (for npm/npx installation)
+- **Node.js**: 24.0 or higher (for npm/npx installation)
 - **Docker**: 20.10 or higher (for container installation)
 - **Operating System**: macOS, Linux, or Windows
 
@@ -100,7 +100,7 @@ npx @robinmordasiewicz/f5xc-api-mcp@latest
 ### Specific Version
 
 ```bash
-npx @robinmordasiewicz/f5xc-api-mcp@3.0.0
+npx @robinmordasiewicz/f5xc-api-mcp@1.0.0
 ```
 
 ### Docker Tags
@@ -136,19 +136,19 @@ Check your Node.js version:
 node --version
 ```
 
-If below 18.0, upgrade using:
+If below 24.0, upgrade using:
 
 === "macOS (Homebrew)"
 
     ```bash
-    brew install node@20
+    brew install node@24
     ```
 
 === "Linux (nvm)"
 
     ```bash
-    nvm install 20
-    nvm use 20
+    nvm install 24
+    nvm use 24
     ```
 
 === "Windows"
@@ -184,6 +184,6 @@ Then log out and back in.
 ## Next Steps
 
 - [Claude Desktop Setup](claude-desktop.md)
-- [Claude Code Setup](claude-code.md)
+- [Claude CLI Setup](claude-cli.md)
 - [VS Code Setup](vscode.md)
 - [Authentication Configuration](../configuration/authentication.md)

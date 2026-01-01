@@ -41,32 +41,20 @@ Ask Claude to help you work with Source Summary resources:
 
 > "List all source-summarys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl observability source-summary list --namespace {namespace}
-```
-
-List all source-summarys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create source_summary -n <namespace> -i source_summary.yaml
+xcsh observability create source_summary -n <namespace> -i source_summary.yaml
 
 # Get
-f5xcctl observability get source_summary <name> -n <namespace>
+xcsh observability get source_summary <name> -n <namespace>
 
 # List
-f5xcctl observability list source_summary -n <namespace>
+xcsh observability list source_summary -n <namespace>
 
 # Delete
-f5xcctl observability delete source_summary <name> -n <namespace>
+xcsh observability delete source_summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

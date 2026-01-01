@@ -61,56 +61,20 @@ Ask Claude to help you work with Bot Detection Rule resources:
 
 > "Get details of the bot-detection-rule named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape bot-detection-rule create {name} --namespace {namespace}
-```
-
-Create bot-detection-rule
-
-### file_based
-
-```bash
-f5xcctl shape bot-detection-rule create -f {file}.yaml
-```
-
-Create from YAML file
-
-### get_specific
-
-```bash
-f5xcctl shape bot-detection-rule get {name} --namespace {namespace}
-```
-
-Get specific bot-detection-rule
-
-### list_all
-
-```bash
-f5xcctl shape bot-detection-rule list --namespace {namespace}
-```
-
-List all bot-detection-rules
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create bot_detection_rule -n <namespace> -i bot_detection_rule.yaml
+xcsh shape create bot_detection_rule -n <namespace> -i bot_detection_rule.yaml
 
 # Get
-f5xcctl shape get bot_detection_rule <name> -n <namespace>
+xcsh shape get bot_detection_rule <name> -n <namespace>
 
 # List
-f5xcctl shape list bot_detection_rule -n <namespace>
+xcsh shape list bot_detection_rule -n <namespace>
 
 # Delete
-f5xcctl shape delete bot_detection_rule <name> -n <namespace>
+xcsh shape delete bot_detection_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

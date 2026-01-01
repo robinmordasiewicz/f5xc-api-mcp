@@ -78,72 +78,20 @@ Ask Claude to help you work with Secret Management Access resources:
 
 > "Get details of the secret-management-access named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config secret-management-access create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config secret-management-access create {name} --namespace {namespace}
-```
-
-Create secret-management-access
-
-### delete
-
-```bash
-f5xcctl config secret-management-access delete {name} --namespace {namespace}
-```
-
-Delete secret-management-access
-
-### get_specific
-
-```bash
-f5xcctl config secret-management-access get {name} --namespace {namespace}
-```
-
-Get specific secret-management-access
-
-### list_all
-
-```bash
-f5xcctl config secret-management-access list --namespace {namespace}
-```
-
-List all secret-management-accesss
-
-### update
-
-```bash
-f5xcctl config secret-management-access update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update secret-management-access
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create secret_management_access -n <namespace> -i secret_management_access.yaml
+xcsh blindfold create secret_management_access -n <namespace> -i secret_management_access.yaml
 
 # Get
-f5xcctl blindfold get secret_management_access <name> -n <namespace>
+xcsh blindfold get secret_management_access <name> -n <namespace>
 
 # List
-f5xcctl blindfold list secret_management_access -n <namespace>
+xcsh blindfold list secret_management_access -n <namespace>
 
 # Delete
-f5xcctl blindfold delete secret_management_access <name> -n <namespace>
+xcsh blindfold delete secret_management_access <name> -n <namespace>
 ```
 
 ## Terraform Resource

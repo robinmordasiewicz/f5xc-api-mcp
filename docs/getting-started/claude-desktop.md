@@ -4,7 +4,7 @@ Configure the F5XC API MCP Server with Claude Desktop.
 
 !!! note "Prerequisites"
     - [Claude Desktop](https://claude.ai/download) installed
-    - Node.js 18+ installed (for npx)
+    - Node.js 24+ installed (for npx)
 
 ## Configuration
 
@@ -123,7 +123,7 @@ You can run multiple MCP servers alongside F5XC:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"]
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
     },
     "filesystem": {
       "command": "npx",
@@ -165,7 +165,7 @@ If npx fails to find the package:
 npx clear-npx-cache
 
 # Or use full package path
-npx -y f5xc-api-mcp
+npx -y @robinmordasiewicz/f5xc-api-mcp
 ```
 
 ## Advanced Configuration
@@ -194,7 +194,7 @@ Enable debug logging:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"],
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "env": {
         "LOG_LEVEL": "debug"
       }

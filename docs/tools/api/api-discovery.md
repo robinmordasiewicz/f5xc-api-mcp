@@ -77,72 +77,20 @@ Ask Claude to help you work with API Discovery resources:
 
 > "Get details of the api-discovery named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config api-discovery create {name} --namespace {namespace}
-```
-
-Create api-discovery
-
-### file_based
-
-```bash
-f5xcctl config api-discovery create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config api-discovery delete {name} --namespace {namespace}
-```
-
-Delete api-discovery
-
-### get_specific
-
-```bash
-f5xcctl config api-discovery get {name} --namespace {namespace}
-```
-
-Get specific api-discovery
-
-### list_all
-
-```bash
-f5xcctl config api-discovery list --namespace {namespace}
-```
-
-List all api-discoverys
-
-### update
-
-```bash
-f5xcctl config api-discovery update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update api-discovery
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create api_discovery -n <namespace> -i api_discovery.yaml
+xcsh api create api_discovery -n <namespace> -i api_discovery.yaml
 
 # Get
-f5xcctl api get api_discovery <name> -n <namespace>
+xcsh api get api_discovery <name> -n <namespace>
 
 # List
-f5xcctl api list api_discovery -n <namespace>
+xcsh api list api_discovery -n <namespace>
 
 # Delete
-f5xcctl api delete api_discovery <name> -n <namespace>
+xcsh api delete api_discovery <name> -n <namespace>
 ```
 
 ## Terraform Resource

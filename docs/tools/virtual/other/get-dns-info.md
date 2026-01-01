@@ -34,32 +34,20 @@ Ask Claude to help you work with Get DNS Info resources:
 
 > "Get details of the get-dns-info named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config get-dns-info get {name} --namespace {namespace}
-```
-
-Get specific get-dns-info
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create get_dns_info -n <namespace> -i get_dns_info.yaml
+xcsh virtual create get_dns_info -n <namespace> -i get_dns_info.yaml
 
 # Get
-f5xcctl virtual get get_dns_info <name> -n <namespace>
+xcsh virtual get get_dns_info <name> -n <namespace>
 
 # List
-f5xcctl virtual list get_dns_info -n <namespace>
+xcsh virtual list get_dns_info -n <namespace>
 
 # Delete
-f5xcctl virtual delete get_dns_info <name> -n <namespace>
+xcsh virtual delete get_dns_info <name> -n <namespace>
 ```
 
 ## Terraform Resource

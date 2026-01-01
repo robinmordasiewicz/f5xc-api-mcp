@@ -33,32 +33,20 @@ Ask Claude to help you work with Summary resources:
 
 > "List all summarys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config summary list --namespace {namespace}
-```
-
-List all summarys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create summary -n <namespace> -i summary.yaml
+xcsh tenant_and_identity create summary -n <namespace> -i summary.yaml
 
 # Get
-f5xcctl tenant_and_identity get summary <name> -n <namespace>
+xcsh tenant_and_identity get summary <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list summary -n <namespace>
+xcsh tenant_and_identity list summary -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete summary <name> -n <namespace>
+xcsh tenant_and_identity delete summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

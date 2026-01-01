@@ -41,40 +41,20 @@ Ask Claude to help you work with Service resources:
 
 > "Create a service named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data service create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data service create {name} --namespace {namespace}
-```
-
-Create service
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl telemetry_and_insights create service -n <namespace> -i service.yaml
+xcsh telemetry_and_insights create service -n <namespace> -i service.yaml
 
 # Get
-f5xcctl telemetry_and_insights get service <name> -n <namespace>
+xcsh telemetry_and_insights get service <name> -n <namespace>
 
 # List
-f5xcctl telemetry_and_insights list service -n <namespace>
+xcsh telemetry_and_insights list service -n <namespace>
 
 # Delete
-f5xcctl telemetry_and_insights delete service <name> -n <namespace>
+xcsh telemetry_and_insights delete service <name> -n <namespace>
 ```
 
 ## Terraform Resource

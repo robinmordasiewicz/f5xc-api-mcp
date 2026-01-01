@@ -79,72 +79,20 @@ Ask Claude to help you work with Network Interface resources:
 
 > "Get details of the network-interface named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config network-interface create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config network-interface create {name} --namespace {namespace}
-```
-
-Create network-interface
-
-### delete
-
-```bash
-f5xcctl config network-interface delete {name} --namespace {namespace}
-```
-
-Delete network-interface
-
-### get_specific
-
-```bash
-f5xcctl config network-interface get {name} --namespace {namespace}
-```
-
-Get specific network-interface
-
-### list_all
-
-```bash
-f5xcctl config network-interface list --namespace {namespace}
-```
-
-List all network-interfaces
-
-### update
-
-```bash
-f5xcctl config network-interface update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update network-interface
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create network_interface -n <namespace> -i network_interface.yaml
+xcsh ce_management create network_interface -n <namespace> -i network_interface.yaml
 
 # Get
-f5xcctl ce_management get network_interface <name> -n <namespace>
+xcsh ce_management get network_interface <name> -n <namespace>
 
 # List
-f5xcctl ce_management list network_interface -n <namespace>
+xcsh ce_management list network_interface -n <namespace>
 
 # Delete
-f5xcctl ce_management delete network_interface <name> -n <namespace>
+xcsh ce_management delete network_interface <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -49,40 +49,20 @@ Ask Claude to help you work with Unassign resources:
 
 > "Create a unassign named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web unassign create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web unassign create {name} --namespace {namespace}
-```
-
-Create unassign
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create unassign -n <namespace> -i unassign.yaml
+xcsh tenant_and_identity create unassign -n <namespace> -i unassign.yaml
 
 # Get
-f5xcctl tenant_and_identity get unassign <name> -n <namespace>
+xcsh tenant_and_identity get unassign <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list unassign -n <namespace>
+xcsh tenant_and_identity list unassign -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete unassign <name> -n <namespace>
+xcsh tenant_and_identity delete unassign <name> -n <namespace>
 ```
 
 ## Terraform Resource

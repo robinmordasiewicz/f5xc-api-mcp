@@ -42,40 +42,20 @@ Ask Claude to help you work with Calls By Response Code resources:
 
 > "Create a calls-by-response-code named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl ml calls-by-response-code create {name} --namespace {namespace}
-```
-
-Create calls-by-response-code
-
-### file_based
-
-```bash
-f5xcctl ml calls-by-response-code create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create calls_by_response_code -n <namespace> -i calls_by_response_code.yaml
+xcsh virtual create calls_by_response_code -n <namespace> -i calls_by_response_code.yaml
 
 # Get
-f5xcctl virtual get calls_by_response_code <name> -n <namespace>
+xcsh virtual get calls_by_response_code <name> -n <namespace>
 
 # List
-f5xcctl virtual list calls_by_response_code -n <namespace>
+xcsh virtual list calls_by_response_code -n <namespace>
 
 # Delete
-f5xcctl virtual delete calls_by_response_code <name> -n <namespace>
+xcsh virtual delete calls_by_response_code <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with Data Type resources:
 
 > "Get details of the data-type named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config data-type create {name} --namespace {namespace}
-```
-
-Create data-type
-
-### file_based
-
-```bash
-f5xcctl config data-type create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config data-type delete {name} --namespace {namespace}
-```
-
-Delete data-type
-
-### get_specific
-
-```bash
-f5xcctl config data-type get {name} --namespace {namespace}
-```
-
-Get specific data-type
-
-### list_all
-
-```bash
-f5xcctl config data-type list --namespace {namespace}
-```
-
-List all data-types
-
-### update
-
-```bash
-f5xcctl config data-type update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update data-type
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl data_and_privacy_security create data_type -n <namespace> -i data_type.yaml
+xcsh data_and_privacy_security create data_type -n <namespace> -i data_type.yaml
 
 # Get
-f5xcctl data_and_privacy_security get data_type <name> -n <namespace>
+xcsh data_and_privacy_security get data_type <name> -n <namespace>
 
 # List
-f5xcctl data_and_privacy_security list data_type -n <namespace>
+xcsh data_and_privacy_security list data_type -n <namespace>
 
 # Delete
-f5xcctl data_and_privacy_security delete data_type <name> -n <namespace>
+xcsh data_and_privacy_security delete data_type <name> -n <namespace>
 ```
 
 ## Terraform Resource

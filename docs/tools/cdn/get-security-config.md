@@ -41,40 +41,20 @@ Ask Claude to help you work with Get Security Config resources:
 
 > "Create a get-security-config named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config get-security-config create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config get-security-config create {name} --namespace {namespace}
-```
-
-Create get-security-config
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cdn create get_security_config -n <namespace> -i get_security_config.yaml
+xcsh cdn create get_security_config -n <namespace> -i get_security_config.yaml
 
 # Get
-f5xcctl cdn get get_security_config <name> -n <namespace>
+xcsh cdn get get_security_config <name> -n <namespace>
 
 # List
-f5xcctl cdn list get_security_config -n <namespace>
+xcsh cdn list get_security_config -n <namespace>
 
 # Delete
-f5xcctl cdn delete get_security_config <name> -n <namespace>
+xcsh cdn delete get_security_config <name> -n <namespace>
 ```
 
 ## Terraform Resource

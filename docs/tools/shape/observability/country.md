@@ -33,40 +33,20 @@ Ask Claude to help you work with Country resources:
 
 > "Create a country named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape country create {name} --namespace {namespace}
-```
-
-Create country
-
-### file_based
-
-```bash
-f5xcctl shape country create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create country -n <namespace> -i country.yaml
+xcsh shape create country -n <namespace> -i country.yaml
 
 # Get
-f5xcctl shape get country <name> -n <namespace>
+xcsh shape get country <name> -n <namespace>
 
 # List
-f5xcctl shape list country -n <namespace>
+xcsh shape list country -n <namespace>
 
 # Delete
-f5xcctl shape delete country <name> -n <namespace>
+xcsh shape delete country <name> -n <namespace>
 ```
 
 ## Terraform Resource

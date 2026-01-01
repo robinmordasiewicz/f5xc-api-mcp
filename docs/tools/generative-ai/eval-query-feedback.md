@@ -41,40 +41,20 @@ Ask Claude to help you work with Eval Query Feedback resources:
 
 > "Create a eval-query-feedback named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl gen-ai eval-query-feedback create {name} --namespace {namespace}
-```
-
-Create eval-query-feedback
-
-### file_based
-
-```bash
-f5xcctl gen-ai eval-query-feedback create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl generative_ai create eval_query_feedback -n <namespace> -i eval_query_feedback.yaml
+xcsh generative_ai create eval_query_feedback -n <namespace> -i eval_query_feedback.yaml
 
 # Get
-f5xcctl generative_ai get eval_query_feedback <name> -n <namespace>
+xcsh generative_ai get eval_query_feedback <name> -n <namespace>
 
 # List
-f5xcctl generative_ai list eval_query_feedback -n <namespace>
+xcsh generative_ai list eval_query_feedback -n <namespace>
 
 # Delete
-f5xcctl generative_ai delete eval_query_feedback <name> -n <namespace>
+xcsh generative_ai delete eval_query_feedback <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -80,72 +80,20 @@ Ask Claude to help you work with App Type resources:
 
 > "Get details of the app-type named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config app-type create {name} --namespace {namespace}
-```
-
-Create app-type
-
-### file_based
-
-```bash
-f5xcctl config app-type create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config app-type delete {name} --namespace {namespace}
-```
-
-Delete app-type
-
-### get_specific
-
-```bash
-f5xcctl config app-type get {name} --namespace {namespace}
-```
-
-Get specific app-type
-
-### list_all
-
-```bash
-f5xcctl config app-type list --namespace {namespace}
-```
-
-List all app-types
-
-### update
-
-```bash
-f5xcctl config app-type update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update app-type
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create app_type -n <namespace> -i app_type.yaml
+xcsh service_mesh create app_type -n <namespace> -i app_type.yaml
 
 # Get
-f5xcctl service_mesh get app_type <name> -n <namespace>
+xcsh service_mesh get app_type <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list app_type -n <namespace>
+xcsh service_mesh list app_type -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete app_type <name> -n <namespace>
+xcsh service_mesh delete app_type <name> -n <namespace>
 ```
 
 ## Terraform Resource

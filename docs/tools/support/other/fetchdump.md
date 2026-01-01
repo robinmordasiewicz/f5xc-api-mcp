@@ -42,40 +42,20 @@ Ask Claude to help you work with Fetchdump resources:
 
 > "Create a fetchdump named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl operate fetchdump create {name} --namespace {namespace}
-```
-
-Create fetchdump
-
-### file_based
-
-```bash
-f5xcctl operate fetchdump create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create fetchdump -n <namespace> -i fetchdump.yaml
+xcsh support create fetchdump -n <namespace> -i fetchdump.yaml
 
 # Get
-f5xcctl support get fetchdump <name> -n <namespace>
+xcsh support get fetchdump <name> -n <namespace>
 
 # List
-f5xcctl support list fetchdump -n <namespace>
+xcsh support list fetchdump -n <namespace>
 
 # Delete
-f5xcctl support delete fetchdump <name> -n <namespace>
+xcsh support delete fetchdump <name> -n <namespace>
 ```
 
 ## Terraform Resource

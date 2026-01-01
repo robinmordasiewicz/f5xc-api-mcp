@@ -42,40 +42,20 @@ Ask Claude to help you work with Push resources:
 
 > "Create a push named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml push create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml push create {name} --namespace {namespace}
-```
-
-Create push
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create push -n <namespace> -i push.yaml
+xcsh service_mesh create push -n <namespace> -i push.yaml
 
 # Get
-f5xcctl service_mesh get push <name> -n <namespace>
+xcsh service_mesh get push <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list push -n <namespace>
+xcsh service_mesh list push -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete push <name> -n <namespace>
+xcsh service_mesh delete push <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with Infraprotect Firewall Rule resources:
 
 > "Get details of the infraprotect-firewall-rule named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule create {name} --namespace {namespace}
-```
-
-Create infraprotect-firewall-rule
-
-### delete
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule delete {name} --namespace {namespace}
-```
-
-Delete infraprotect-firewall-rule
-
-### get_specific
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule get {name} --namespace {namespace}
-```
-
-Get specific infraprotect-firewall-rule
-
-### list_all
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule list --namespace {namespace}
-```
-
-List all infraprotect-firewall-rules
-
-### update
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update infraprotect-firewall-rule
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create infraprotect_firewall_rule -n <namespace> -i infraprotect_firewall_rule.yaml
+xcsh ddos create infraprotect_firewall_rule -n <namespace> -i infraprotect_firewall_rule.yaml
 
 # Get
-f5xcctl ddos get infraprotect_firewall_rule <name> -n <namespace>
+xcsh ddos get infraprotect_firewall_rule <name> -n <namespace>
 
 # List
-f5xcctl ddos list infraprotect_firewall_rule -n <namespace>
+xcsh ddos list infraprotect_firewall_rule -n <namespace>
 
 # Delete
-f5xcctl ddos delete infraprotect_firewall_rule <name> -n <namespace>
+xcsh ddos delete infraprotect_firewall_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

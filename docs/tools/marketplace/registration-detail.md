@@ -34,32 +34,20 @@ Ask Claude to help you work with Registration Detail resources:
 
 > "List all registration-details in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl default registration-detail list --namespace {namespace}
-```
-
-List all registration-details
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create registration_detail -n <namespace> -i registration_detail.yaml
+xcsh marketplace create registration_detail -n <namespace> -i registration_detail.yaml
 
 # Get
-f5xcctl marketplace get registration_detail <name> -n <namespace>
+xcsh marketplace get registration_detail <name> -n <namespace>
 
 # List
-f5xcctl marketplace list registration_detail -n <namespace>
+xcsh marketplace list registration_detail -n <namespace>
 
 # Delete
-f5xcctl marketplace delete registration_detail <name> -n <namespace>
+xcsh marketplace delete registration_detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

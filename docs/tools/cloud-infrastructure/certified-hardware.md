@@ -48,40 +48,20 @@ Ask Claude to help you work with Certified Hardware resources:
 
 > "Get details of the certified-hardware named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config certified-hardware get {name} --namespace {namespace}
-```
-
-Get specific certified-hardware
-
-### list_all
-
-```bash
-f5xcctl config certified-hardware list --namespace {namespace}
-```
-
-List all certified-hardwares
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cloud_infrastructure create certified_hardware -n <namespace> -i certified_hardware.yaml
+xcsh cloud_infrastructure create certified_hardware -n <namespace> -i certified_hardware.yaml
 
 # Get
-f5xcctl cloud_infrastructure get certified_hardware <name> -n <namespace>
+xcsh cloud_infrastructure get certified_hardware <name> -n <namespace>
 
 # List
-f5xcctl cloud_infrastructure list certified_hardware -n <namespace>
+xcsh cloud_infrastructure list certified_hardware -n <namespace>
 
 # Delete
-f5xcctl cloud_infrastructure delete certified_hardware <name> -n <namespace>
+xcsh cloud_infrastructure delete certified_hardware <name> -n <namespace>
 ```
 
 ## Terraform Resource

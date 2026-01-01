@@ -39,32 +39,20 @@ Ask Claude to help you work with Js Configuration resources:
 
 > "List all js-configurations in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape js-configuration list --namespace {namespace}
-```
-
-List all js-configurations
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create js_configuration -n <namespace> -i js_configuration.yaml
+xcsh shape create js_configuration -n <namespace> -i js_configuration.yaml
 
 # Get
-f5xcctl shape get js_configuration <name> -n <namespace>
+xcsh shape get js_configuration <name> -n <namespace>
 
 # List
-f5xcctl shape list js_configuration -n <namespace>
+xcsh shape list js_configuration -n <namespace>
 
 # Delete
-f5xcctl shape delete js_configuration <name> -n <namespace>
+xcsh shape delete js_configuration <name> -n <namespace>
 ```
 
 ## Terraform Resource

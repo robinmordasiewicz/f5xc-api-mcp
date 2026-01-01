@@ -41,40 +41,20 @@ Ask Claude to help you work with Usage resources:
 
 > "Create a usage named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data usage create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data usage create {name} --namespace {namespace}
-```
-
-Create usage
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl container_services create usage -n <namespace> -i usage.yaml
+xcsh container_services create usage -n <namespace> -i usage.yaml
 
 # Get
-f5xcctl container_services get usage <name> -n <namespace>
+xcsh container_services get usage <name> -n <namespace>
 
 # List
-f5xcctl container_services list usage -n <namespace>
+xcsh container_services list usage -n <namespace>
 
 # Delete
-f5xcctl container_services delete usage <name> -n <namespace>
+xcsh container_services delete usage <name> -n <namespace>
 ```
 
 ## Terraform Resource

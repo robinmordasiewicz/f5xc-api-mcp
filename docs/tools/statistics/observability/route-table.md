@@ -43,32 +43,20 @@ Ask Claude to help you work with Route Table resources:
 
 > "Get details of the route-table named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl data route-table get {name} --namespace {namespace}
-```
-
-Get specific route-table
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create route_table -n <namespace> -i route_table.yaml
+xcsh statistics create route_table -n <namespace> -i route_table.yaml
 
 # Get
-f5xcctl statistics get route_table <name> -n <namespace>
+xcsh statistics get route_table <name> -n <namespace>
 
 # List
-f5xcctl statistics list route_table -n <namespace>
+xcsh statistics list route_table -n <namespace>
 
 # Delete
-f5xcctl statistics delete route_table <name> -n <namespace>
+xcsh statistics delete route_table <name> -n <namespace>
 ```
 
 ## Terraform Resource

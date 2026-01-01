@@ -33,40 +33,20 @@ Ask Claude to help you work with Url resources:
 
 > "Create a url named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape url create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape url create {name} --namespace {namespace}
-```
-
-Create url
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create url -n <namespace> -i url.yaml
+xcsh shape create url -n <namespace> -i url.yaml
 
 # Get
-f5xcctl shape get url <name> -n <namespace>
+xcsh shape get url <name> -n <namespace>
 
 # List
-f5xcctl shape list url -n <namespace>
+xcsh shape list url -n <namespace>
 
 # Delete
-f5xcctl shape delete url <name> -n <namespace>
+xcsh shape delete url <name> -n <namespace>
 ```
 
 ## Terraform Resource

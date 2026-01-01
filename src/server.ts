@@ -48,6 +48,11 @@ import {
   type CrudOperation,
   type CreationPlan,
 } from "./tools/discovery/index.js";
+import {
+  CONFIGURE_AUTH_TOOL,
+  configureAuthSchema,
+  handleConfigureAuth,
+} from "./tools/configure-auth.js";
 import type { DependencyDiscoveryAction } from "./generator/dependency-types.js";
 
 /**
@@ -151,6 +156,7 @@ export class F5XCApiServer {
                   },
                   consolidation: getConsolidationStats(),
                   discoveryTools: [
+                    "f5xc-api-configure-auth",
                     "f5xc-api-search-tools",
                     "f5xc-api-describe-tool",
                     "f5xc-api-execute-tool",
@@ -170,6 +176,38 @@ export class F5XCApiServer {
                 null,
                 2
               ),
+            },
+          ],
+        };
+      }
+    );
+
+    // Configure auth tool - manage authentication and profiles
+    this.server.tool(
+      CONFIGURE_AUTH_TOOL.name,
+      CONFIGURE_AUTH_TOOL.description,
+      {
+        action: configureAuthSchema.action,
+        tenantUrl: configureAuthSchema.tenantUrl,
+        apiToken: configureAuthSchema.apiToken,
+        profileName: configureAuthSchema.profileName,
+      },
+      async (args) => {
+        const result = await handleConfigureAuth(
+          args as {
+            action?: "status" | "configure" | "list-profiles" | "set-active";
+            tenantUrl?: string;
+            apiToken?: string;
+            profileName?: string;
+          },
+          this.credentialManager
+        );
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(result, null, 2),
             },
           ],
         };

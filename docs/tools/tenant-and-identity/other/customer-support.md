@@ -38,48 +38,20 @@ Ask Claude to help you work with Customer Support resources:
 
 > "List all customer-supports in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web customer-support create {name} --namespace {namespace}
-```
-
-Create customer-support
-
-### file_based
-
-```bash
-f5xcctl web customer-support create -f {file}.yaml
-```
-
-Create from YAML file
-
-### list_all
-
-```bash
-f5xcctl web customer-support list --namespace {namespace}
-```
-
-List all customer-supports
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create customer_support -n <namespace> -i customer_support.yaml
+xcsh tenant_and_identity create customer_support -n <namespace> -i customer_support.yaml
 
 # Get
-f5xcctl tenant_and_identity get customer_support <name> -n <namespace>
+xcsh tenant_and_identity get customer_support <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list customer_support -n <namespace>
+xcsh tenant_and_identity list customer_support -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete customer_support <name> -n <namespace>
+xcsh tenant_and_identity delete customer_support <name> -n <namespace>
 ```
 
 ## Terraform Resource

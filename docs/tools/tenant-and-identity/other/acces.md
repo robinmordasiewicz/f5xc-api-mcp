@@ -44,48 +44,20 @@ Ask Claude to help you work with Acces resources:
 
 > "List all access in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web acces create {name} --namespace {namespace}
-```
-
-Create acces
-
-### file_based
-
-```bash
-f5xcctl web acces create -f {file}.yaml
-```
-
-Create from YAML file
-
-### list_all
-
-```bash
-f5xcctl web acces list --namespace {namespace}
-```
-
-List all access
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create acces -n <namespace> -i acces.yaml
+xcsh tenant_and_identity create acces -n <namespace> -i acces.yaml
 
 # Get
-f5xcctl tenant_and_identity get acces <name> -n <namespace>
+xcsh tenant_and_identity get acces <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list acces -n <namespace>
+xcsh tenant_and_identity list acces -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete acces <name> -n <namespace>
+xcsh tenant_and_identity delete acces <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with TCP Loadbalancer resources:
 
 > "Get details of the tcp-loadbalancer named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config tcp-loadbalancer create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config tcp-loadbalancer create {name} --namespace {namespace}
-```
-
-Create tcp-loadbalancer
-
-### delete
-
-```bash
-f5xcctl config tcp-loadbalancer delete {name} --namespace {namespace}
-```
-
-Delete tcp-loadbalancer
-
-### get_specific
-
-```bash
-f5xcctl config tcp-loadbalancer get {name} --namespace {namespace}
-```
-
-Get specific tcp-loadbalancer
-
-### list_all
-
-```bash
-f5xcctl config tcp-loadbalancer list --namespace {namespace}
-```
-
-List all tcp-loadbalancers
-
-### update
-
-```bash
-f5xcctl config tcp-loadbalancer update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update tcp-loadbalancer
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create tcp_loadbalancer -n <namespace> -i tcp_loadbalancer.yaml
+xcsh virtual create tcp_loadbalancer -n <namespace> -i tcp_loadbalancer.yaml
 
 # Get
-f5xcctl virtual get tcp_loadbalancer <name> -n <namespace>
+xcsh virtual get tcp_loadbalancer <name> -n <namespace>
 
 # List
-f5xcctl virtual list tcp_loadbalancer -n <namespace>
+xcsh virtual list tcp_loadbalancer -n <namespace>
 
 # Delete
-f5xcctl virtual delete tcp_loadbalancer <name> -n <namespace>
+xcsh virtual delete tcp_loadbalancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

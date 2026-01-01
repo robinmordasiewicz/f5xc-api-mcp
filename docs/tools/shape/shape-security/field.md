@@ -41,40 +41,20 @@ Ask Claude to help you work with Field resources:
 
 > "Create a field named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape field create {name} --namespace {namespace}
-```
-
-Create field
-
-### file_based
-
-```bash
-f5xcctl shape field create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create field -n <namespace> -i field.yaml
+xcsh shape create field -n <namespace> -i field.yaml
 
 # Get
-f5xcctl shape get field <name> -n <namespace>
+xcsh shape get field <name> -n <namespace>
 
 # List
-f5xcctl shape list field -n <namespace>
+xcsh shape list field -n <namespace>
 
 # Delete
-f5xcctl shape delete field <name> -n <namespace>
+xcsh shape delete field <name> -n <namespace>
 ```
 
 ## Terraform Resource

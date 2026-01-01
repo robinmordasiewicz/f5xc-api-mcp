@@ -53,48 +53,20 @@ Ask Claude to help you work with Transaction Detail resources:
 
 > "List all transaction-details in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape transaction-detail create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape transaction-detail create {name} --namespace {namespace}
-```
-
-Create transaction-detail
-
-### list_all
-
-```bash
-f5xcctl shape transaction-detail list --namespace {namespace}
-```
-
-List all transaction-details
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create transaction_detail -n <namespace> -i transaction_detail.yaml
+xcsh shape create transaction_detail -n <namespace> -i transaction_detail.yaml
 
 # Get
-f5xcctl shape get transaction_detail <name> -n <namespace>
+xcsh shape get transaction_detail <name> -n <namespace>
 
 # List
-f5xcctl shape list transaction_detail -n <namespace>
+xcsh shape list transaction_detail -n <namespace>
 
 # Delete
-f5xcctl shape delete transaction_detail <name> -n <namespace>
+xcsh shape delete transaction_detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

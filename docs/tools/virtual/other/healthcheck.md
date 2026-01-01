@@ -79,72 +79,20 @@ Ask Claude to help you work with Healthcheck resources:
 
 > "Get details of the healthcheck named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config healthcheck create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config healthcheck create {name} --namespace {namespace}
-```
-
-Create healthcheck
-
-### delete
-
-```bash
-f5xcctl config healthcheck delete {name} --namespace {namespace}
-```
-
-Delete healthcheck
-
-### get_specific
-
-```bash
-f5xcctl config healthcheck get {name} --namespace {namespace}
-```
-
-Get specific healthcheck
-
-### list_all
-
-```bash
-f5xcctl config healthcheck list --namespace {namespace}
-```
-
-List all healthchecks
-
-### update
-
-```bash
-f5xcctl config healthcheck update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update healthcheck
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create healthcheck -n <namespace> -i healthcheck.yaml
+xcsh virtual create healthcheck -n <namespace> -i healthcheck.yaml
 
 # Get
-f5xcctl virtual get healthcheck <name> -n <namespace>
+xcsh virtual get healthcheck <name> -n <namespace>
 
 # List
-f5xcctl virtual list healthcheck -n <namespace>
+xcsh virtual list healthcheck -n <namespace>
 
 # Delete
-f5xcctl virtual delete healthcheck <name> -n <namespace>
+xcsh virtual delete healthcheck <name> -n <namespace>
 ```
 
 ## Terraform Resource

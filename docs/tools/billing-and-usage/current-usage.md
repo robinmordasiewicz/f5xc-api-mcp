@@ -42,40 +42,20 @@ Ask Claude to help you work with Current Usage resources:
 
 > "Create a current-usage named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web current-usage create {name} --namespace {namespace}
-```
-
-Create current-usage
-
-### file_based
-
-```bash
-f5xcctl web current-usage create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create current_usage -n <namespace> -i current_usage.yaml
+xcsh billing_and_usage create current_usage -n <namespace> -i current_usage.yaml
 
 # Get
-f5xcctl billing_and_usage get current_usage <name> -n <namespace>
+xcsh billing_and_usage get current_usage <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list current_usage -n <namespace>
+xcsh billing_and_usage list current_usage -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete current_usage <name> -n <namespace>
+xcsh billing_and_usage delete current_usage <name> -n <namespace>
 ```
 
 ## Terraform Resource

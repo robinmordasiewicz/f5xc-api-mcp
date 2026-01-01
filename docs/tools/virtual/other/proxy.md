@@ -77,72 +77,20 @@ Ask Claude to help you work with Proxy resources:
 
 > "Get details of the proxy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config proxy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config proxy create {name} --namespace {namespace}
-```
-
-Create proxy
-
-### delete
-
-```bash
-f5xcctl config proxy delete {name} --namespace {namespace}
-```
-
-Delete proxy
-
-### get_specific
-
-```bash
-f5xcctl config proxy get {name} --namespace {namespace}
-```
-
-Get specific proxy
-
-### list_all
-
-```bash
-f5xcctl config proxy list --namespace {namespace}
-```
-
-List all proxys
-
-### update
-
-```bash
-f5xcctl config proxy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update proxy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create proxy -n <namespace> -i proxy.yaml
+xcsh virtual create proxy -n <namespace> -i proxy.yaml
 
 # Get
-f5xcctl virtual get proxy <name> -n <namespace>
+xcsh virtual get proxy <name> -n <namespace>
 
 # List
-f5xcctl virtual list proxy -n <namespace>
+xcsh virtual list proxy -n <namespace>
 
 # Delete
-f5xcctl virtual delete proxy <name> -n <namespace>
+xcsh virtual delete proxy <name> -n <namespace>
 ```
 
 ## Terraform Resource

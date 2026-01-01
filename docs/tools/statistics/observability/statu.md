@@ -41,40 +41,20 @@ Ask Claude to help you work with Statu resources:
 
 > "Create a statu named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data statu create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data statu create {name} --namespace {namespace}
-```
-
-Create statu
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create statu -n <namespace> -i statu.yaml
+xcsh statistics create statu -n <namespace> -i statu.yaml
 
 # Get
-f5xcctl statistics get statu <name> -n <namespace>
+xcsh statistics get statu <name> -n <namespace>
 
 # List
-f5xcctl statistics list statu -n <namespace>
+xcsh statistics list statu -n <namespace>
 
 # Delete
-f5xcctl statistics delete statu <name> -n <namespace>
+xcsh statistics delete statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

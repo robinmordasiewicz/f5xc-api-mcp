@@ -39,32 +39,20 @@ Ask Claude to help you work with Configmap resources:
 
 > "List all configmaps in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data configmap list --namespace {namespace}
-```
-
-List all configmaps
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create configmap -n <namespace> -i configmap.yaml
+xcsh sites create configmap -n <namespace> -i configmap.yaml
 
 # Get
-f5xcctl sites get configmap <name> -n <namespace>
+xcsh sites get configmap <name> -n <namespace>
 
 # List
-f5xcctl sites list configmap -n <namespace>
+xcsh sites list configmap -n <namespace>
 
 # Delete
-f5xcctl sites delete configmap <name> -n <namespace>
+xcsh sites delete configmap <name> -n <namespace>
 ```
 
 ## Terraform Resource

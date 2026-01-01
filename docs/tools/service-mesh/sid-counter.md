@@ -41,40 +41,20 @@ Ask Claude to help you work with Sid Counter resources:
 
 > "Create a sid-counter named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data sid-counter create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data sid-counter create {name} --namespace {namespace}
-```
-
-Create sid-counter
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create sid_counter -n <namespace> -i sid_counter.yaml
+xcsh service_mesh create sid_counter -n <namespace> -i sid_counter.yaml
 
 # Get
-f5xcctl service_mesh get sid_counter <name> -n <namespace>
+xcsh service_mesh get sid_counter <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list sid_counter -n <namespace>
+xcsh service_mesh list sid_counter -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete sid_counter <name> -n <namespace>
+xcsh service_mesh delete sid_counter <name> -n <namespace>
 ```
 
 ## Terraform Resource

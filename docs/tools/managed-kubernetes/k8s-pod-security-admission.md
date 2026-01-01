@@ -80,72 +80,20 @@ Ask Claude to help you work with K8S Pod Security Admission resources:
 
 > "Get details of the k8s-pod-security-admission named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config k8s-pod-security-admission create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config k8s-pod-security-admission create {name} --namespace {namespace}
-```
-
-Create k8s-pod-security-admission
-
-### delete
-
-```bash
-f5xcctl config k8s-pod-security-admission delete {name} --namespace {namespace}
-```
-
-Delete k8s-pod-security-admission
-
-### get_specific
-
-```bash
-f5xcctl config k8s-pod-security-admission get {name} --namespace {namespace}
-```
-
-Get specific k8s-pod-security-admission
-
-### list_all
-
-```bash
-f5xcctl config k8s-pod-security-admission list --namespace {namespace}
-```
-
-List all k8s-pod-security-admissions
-
-### update
-
-```bash
-f5xcctl config k8s-pod-security-admission update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update k8s-pod-security-admission
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl managed_kubernetes create k8s_pod_security_admission -n <namespace> -i k8s_pod_security_admission.yaml
+xcsh managed_kubernetes create k8s_pod_security_admission -n <namespace> -i k8s_pod_security_admission.yaml
 
 # Get
-f5xcctl managed_kubernetes get k8s_pod_security_admission <name> -n <namespace>
+xcsh managed_kubernetes get k8s_pod_security_admission <name> -n <namespace>
 
 # List
-f5xcctl managed_kubernetes list k8s_pod_security_admission -n <namespace>
+xcsh managed_kubernetes list k8s_pod_security_admission -n <namespace>
 
 # Delete
-f5xcctl managed_kubernetes delete k8s_pod_security_admission <name> -n <namespace>
+xcsh managed_kubernetes delete k8s_pod_security_admission <name> -n <namespace>
 ```
 
 ## Terraform Resource

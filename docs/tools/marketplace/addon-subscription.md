@@ -77,72 +77,20 @@ Ask Claude to help you work with Addon Subscription resources:
 
 > "Get details of the addon-subscription named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web addon-subscription create {name} --namespace {namespace}
-```
-
-Create addon-subscription
-
-### file_based
-
-```bash
-f5xcctl web addon-subscription create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl web addon-subscription delete {name} --namespace {namespace}
-```
-
-Delete addon-subscription
-
-### get_specific
-
-```bash
-f5xcctl web addon-subscription get {name} --namespace {namespace}
-```
-
-Get specific addon-subscription
-
-### list_all
-
-```bash
-f5xcctl web addon-subscription list --namespace {namespace}
-```
-
-List all addon-subscriptions
-
-### update
-
-```bash
-f5xcctl web addon-subscription update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update addon-subscription
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create addon_subscription -n <namespace> -i addon_subscription.yaml
+xcsh marketplace create addon_subscription -n <namespace> -i addon_subscription.yaml
 
 # Get
-f5xcctl marketplace get addon_subscription <name> -n <namespace>
+xcsh marketplace get addon_subscription <name> -n <namespace>
 
 # List
-f5xcctl marketplace list addon_subscription -n <namespace>
+xcsh marketplace list addon_subscription -n <namespace>
 
 # Delete
-f5xcctl marketplace delete addon_subscription <name> -n <namespace>
+xcsh marketplace delete addon_subscription <name> -n <namespace>
 ```
 
 ## Terraform Resource

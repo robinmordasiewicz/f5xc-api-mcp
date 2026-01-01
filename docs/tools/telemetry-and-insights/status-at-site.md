@@ -42,32 +42,20 @@ Ask Claude to help you work with Status At Site resources:
 
 > "Get details of the status-at-site named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl data status-at-site get {name} --namespace {namespace}
-```
-
-Get specific status-at-site
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl telemetry_and_insights create status_at_site -n <namespace> -i status_at_site.yaml
+xcsh telemetry_and_insights create status_at_site -n <namespace> -i status_at_site.yaml
 
 # Get
-f5xcctl telemetry_and_insights get status_at_site <name> -n <namespace>
+xcsh telemetry_and_insights get status_at_site <name> -n <namespace>
 
 # List
-f5xcctl telemetry_and_insights list status_at_site -n <namespace>
+xcsh telemetry_and_insights list status_at_site -n <namespace>
 
 # Delete
-f5xcctl telemetry_and_insights delete status_at_site <name> -n <namespace>
+xcsh telemetry_and_insights delete status_at_site <name> -n <namespace>
 ```
 
 ## Terraform Resource

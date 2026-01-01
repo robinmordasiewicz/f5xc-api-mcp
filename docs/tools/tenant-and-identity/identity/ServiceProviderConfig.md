@@ -25,32 +25,20 @@ Ask Claude to help you work with ServiceProviderConfig resources:
 
 > "List all ServiceProviderConfigs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl scim ServiceProviderConfig list --namespace {namespace}
-```
-
-List all ServiceProviderConfigs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create ServiceProviderConfig -n <namespace> -i ServiceProviderConfig.yaml
+xcsh tenant_and_identity create ServiceProviderConfig -n <namespace> -i ServiceProviderConfig.yaml
 
 # Get
-f5xcctl tenant_and_identity get ServiceProviderConfig <name> -n <namespace>
+xcsh tenant_and_identity get ServiceProviderConfig <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list ServiceProviderConfig -n <namespace>
+xcsh tenant_and_identity list ServiceProviderConfig -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete ServiceProviderConfig <name> -n <namespace>
+xcsh tenant_and_identity delete ServiceProviderConfig <name> -n <namespace>
 ```
 
 ## Terraform Resource

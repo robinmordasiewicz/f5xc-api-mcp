@@ -77,72 +77,20 @@ Ask Claude to help you work with API Crawler resources:
 
 > "Get details of the api-crawler named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config api-crawler create {name} --namespace {namespace}
-```
-
-Create api-crawler
-
-### file_based
-
-```bash
-f5xcctl config api-crawler create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config api-crawler delete {name} --namespace {namespace}
-```
-
-Delete api-crawler
-
-### get_specific
-
-```bash
-f5xcctl config api-crawler get {name} --namespace {namespace}
-```
-
-Get specific api-crawler
-
-### list_all
-
-```bash
-f5xcctl config api-crawler list --namespace {namespace}
-```
-
-List all api-crawlers
-
-### update
-
-```bash
-f5xcctl config api-crawler update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update api-crawler
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create api_crawler -n <namespace> -i api_crawler.yaml
+xcsh api create api_crawler -n <namespace> -i api_crawler.yaml
 
 # Get
-f5xcctl api get api_crawler <name> -n <namespace>
+xcsh api get api_crawler <name> -n <namespace>
 
 # List
-f5xcctl api list api_crawler -n <namespace>
+xcsh api list api_crawler -n <namespace>
 
 # Delete
-f5xcctl api delete api_crawler <name> -n <namespace>
+xcsh api delete api_crawler <name> -n <namespace>
 ```
 
 ## Terraform Resource

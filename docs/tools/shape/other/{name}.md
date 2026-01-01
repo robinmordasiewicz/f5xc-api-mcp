@@ -41,32 +41,20 @@ Ask Claude to help you work with {name} resources:
 
 > "Get details of the {name} named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl object_store mobile-sdk get {name} --namespace {namespace}
-```
-
-Get specific mobile-sdk
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create {name} -n <namespace> -i {name}.yaml
+xcsh shape create {name} -n <namespace> -i {name}.yaml
 
 # Get
-f5xcctl shape get {name} <name> -n <namespace>
+xcsh shape get {name} <name> -n <namespace>
 
 # List
-f5xcctl shape list {name} -n <namespace>
+xcsh shape list {name} -n <namespace>
 
 # Delete
-f5xcctl shape delete {name} <name> -n <namespace>
+xcsh shape delete {name} <name> -n <namespace>
 ```
 
 ## Terraform Resource

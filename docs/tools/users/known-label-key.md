@@ -45,32 +45,20 @@ Ask Claude to help you work with Known Label Key resources:
 
 > "List all known-label-keys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config known-label-key list --namespace {namespace}
-```
-
-List all known-label-keys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl users create known_label_key -n <namespace> -i known_label_key.yaml
+xcsh users create known_label_key -n <namespace> -i known_label_key.yaml
 
 # Get
-f5xcctl users get known_label_key <name> -n <namespace>
+xcsh users get known_label_key <name> -n <namespace>
 
 # List
-f5xcctl users list known_label_key -n <namespace>
+xcsh users list known_label_key -n <namespace>
 
 # Delete
-f5xcctl users delete known_label_key <name> -n <namespace>
+xcsh users delete known_label_key <name> -n <namespace>
 ```
 
 ## Terraform Resource

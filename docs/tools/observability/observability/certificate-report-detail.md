@@ -33,32 +33,20 @@ Ask Claude to help you work with Certificate Report Detail resources:
 
 > "List all certificate-report-details in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl observability certificate-report-detail list --namespace {namespace}
-```
-
-List all certificate-report-details
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create certificate_report_detail -n <namespace> -i certificate_report_detail.yaml
+xcsh observability create certificate_report_detail -n <namespace> -i certificate_report_detail.yaml
 
 # Get
-f5xcctl observability get certificate_report_detail <name> -n <namespace>
+xcsh observability get certificate_report_detail <name> -n <namespace>
 
 # List
-f5xcctl observability list certificate_report_detail -n <namespace>
+xcsh observability list certificate_report_detail -n <namespace>
 
 # Delete
-f5xcctl observability delete certificate_report_detail <name> -n <namespace>
+xcsh observability delete certificate_report_detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

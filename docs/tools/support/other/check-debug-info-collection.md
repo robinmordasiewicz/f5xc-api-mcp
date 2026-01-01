@@ -33,32 +33,20 @@ Ask Claude to help you work with Check Debug Info Collection resources:
 
 > "List all check-debug-info-collections in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl operate check-debug-info-collection list --namespace {namespace}
-```
-
-List all check-debug-info-collections
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create check_debug_info_collection -n <namespace> -i check_debug_info_collection.yaml
+xcsh support create check_debug_info_collection -n <namespace> -i check_debug_info_collection.yaml
 
 # Get
-f5xcctl support get check_debug_info_collection <name> -n <namespace>
+xcsh support get check_debug_info_collection <name> -n <namespace>
 
 # List
-f5xcctl support list check_debug_info_collection -n <namespace>
+xcsh support list check_debug_info_collection -n <namespace>
 
 # Delete
-f5xcctl support delete check_debug_info_collection <name> -n <namespace>
+xcsh support delete check_debug_info_collection <name> -n <namespace>
 ```
 
 ## Terraform Resource

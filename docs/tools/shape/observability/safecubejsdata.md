@@ -33,40 +33,20 @@ Ask Claude to help you work with Safecubejsdata resources:
 
 > "Create a safecubejsdata named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape safecubejsdata create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape safecubejsdata create {name} --namespace {namespace}
-```
-
-Create safecubejsdata
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create safecubejsdata -n <namespace> -i safecubejsdata.yaml
+xcsh shape create safecubejsdata -n <namespace> -i safecubejsdata.yaml
 
 # Get
-f5xcctl shape get safecubejsdata <name> -n <namespace>
+xcsh shape get safecubejsdata <name> -n <namespace>
 
 # List
-f5xcctl shape list safecubejsdata -n <namespace>
+xcsh shape list safecubejsdata -n <namespace>
 
 # Delete
-f5xcctl shape delete safecubejsdata <name> -n <namespace>
+xcsh shape delete safecubejsdata <name> -n <namespace>
 ```
 
 ## Terraform Resource

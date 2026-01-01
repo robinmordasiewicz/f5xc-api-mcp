@@ -52,48 +52,20 @@ Ask Claude to help you work with Atb resources:
 
 > "List all atbs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape atb create {name} --namespace {namespace}
-```
-
-Create atb
-
-### file_based
-
-```bash
-f5xcctl shape atb create -f {file}.yaml
-```
-
-Create from YAML file
-
-### list_all
-
-```bash
-f5xcctl shape atb list --namespace {namespace}
-```
-
-List all atbs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create atb -n <namespace> -i atb.yaml
+xcsh shape create atb -n <namespace> -i atb.yaml
 
 # Get
-f5xcctl shape get atb <name> -n <namespace>
+xcsh shape get atb <name> -n <namespace>
 
 # List
-f5xcctl shape list atb -n <namespace>
+xcsh shape list atb -n <namespace>
 
 # Delete
-f5xcctl shape delete atb <name> -n <namespace>
+xcsh shape delete atb <name> -n <namespace>
 ```
 
 ## Terraform Resource

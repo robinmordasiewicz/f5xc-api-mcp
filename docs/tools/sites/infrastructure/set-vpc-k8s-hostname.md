@@ -42,40 +42,20 @@ Ask Claude to help you work with Set VPC K8S Hostname resources:
 
 > "Create a set-vpc-k8s-hostname named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config set-vpc-k8s-hostname create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config set-vpc-k8s-hostname create {name} --namespace {namespace}
-```
-
-Create set-vpc-k8s-hostname
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create set_vpc_k8s_hostname -n <namespace> -i set_vpc_k8s_hostname.yaml
+xcsh sites create set_vpc_k8s_hostname -n <namespace> -i set_vpc_k8s_hostname.yaml
 
 # Get
-f5xcctl sites get set_vpc_k8s_hostname <name> -n <namespace>
+xcsh sites get set_vpc_k8s_hostname <name> -n <namespace>
 
 # List
-f5xcctl sites list set_vpc_k8s_hostname -n <namespace>
+xcsh sites list set_vpc_k8s_hostname -n <namespace>
 
 # Delete
-f5xcctl sites delete set_vpc_k8s_hostname <name> -n <namespace>
+xcsh sites delete set_vpc_k8s_hostname <name> -n <namespace>
 ```
 
 ## Terraform Resource

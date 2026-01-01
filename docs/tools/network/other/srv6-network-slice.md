@@ -78,72 +78,20 @@ Ask Claude to help you work with Srv6 Network Slice resources:
 
 > "Get details of the srv6-network-slice named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config srv6-network-slice create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config srv6-network-slice create {name} --namespace {namespace}
-```
-
-Create srv6-network-slice
-
-### delete
-
-```bash
-f5xcctl config srv6-network-slice delete {name} --namespace {namespace}
-```
-
-Delete srv6-network-slice
-
-### get_specific
-
-```bash
-f5xcctl config srv6-network-slice get {name} --namespace {namespace}
-```
-
-Get specific srv6-network-slice
-
-### list_all
-
-```bash
-f5xcctl config srv6-network-slice list --namespace {namespace}
-```
-
-List all srv6-network-slices
-
-### update
-
-```bash
-f5xcctl config srv6-network-slice update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update srv6-network-slice
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create srv6_network_slice -n <namespace> -i srv6_network_slice.yaml
+xcsh network create srv6_network_slice -n <namespace> -i srv6_network_slice.yaml
 
 # Get
-f5xcctl network get srv6_network_slice <name> -n <namespace>
+xcsh network get srv6_network_slice <name> -n <namespace>
 
 # List
-f5xcctl network list srv6_network_slice -n <namespace>
+xcsh network list srv6_network_slice -n <namespace>
 
 # Delete
-f5xcctl network delete srv6_network_slice <name> -n <namespace>
+xcsh network delete srv6_network_slice <name> -n <namespace>
 ```
 
 ## Terraform Resource

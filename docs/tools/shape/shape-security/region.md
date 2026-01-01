@@ -25,32 +25,20 @@ Ask Claude to help you work with Region resources:
 
 > "List all regions in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape region list --namespace {namespace}
-```
-
-List all regions
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create region -n <namespace> -i region.yaml
+xcsh shape create region -n <namespace> -i region.yaml
 
 # Get
-f5xcctl shape get region <name> -n <namespace>
+xcsh shape get region <name> -n <namespace>
 
 # List
-f5xcctl shape list region -n <namespace>
+xcsh shape list region -n <namespace>
 
 # Delete
-f5xcctl shape delete region <name> -n <namespace>
+xcsh shape delete region <name> -n <namespace>
 ```
 
 ## Terraform Resource

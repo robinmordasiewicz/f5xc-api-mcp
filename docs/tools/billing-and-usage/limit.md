@@ -33,32 +33,20 @@ Ask Claude to help you work with Limit resources:
 
 > "List all limits in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web limit list --namespace {namespace}
-```
-
-List all limits
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create limit -n <namespace> -i limit.yaml
+xcsh billing_and_usage create limit -n <namespace> -i limit.yaml
 
 # Get
-f5xcctl billing_and_usage get limit <name> -n <namespace>
+xcsh billing_and_usage get limit <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list limit -n <namespace>
+xcsh billing_and_usage list limit -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete limit <name> -n <namespace>
+xcsh billing_and_usage delete limit <name> -n <namespace>
 ```
 
 ## Terraform Resource

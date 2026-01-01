@@ -77,72 +77,20 @@ Ask Claude to help you work with Cloud Link resources:
 
 > "Get details of the cloud-link named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config cloud-link create {name} --namespace {namespace}
-```
-
-Create cloud-link
-
-### file_based
-
-```bash
-f5xcctl config cloud-link create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config cloud-link delete {name} --namespace {namespace}
-```
-
-Delete cloud-link
-
-### get_specific
-
-```bash
-f5xcctl config cloud-link get {name} --namespace {namespace}
-```
-
-Get specific cloud-link
-
-### list_all
-
-```bash
-f5xcctl config cloud-link list --namespace {namespace}
-```
-
-List all cloud-links
-
-### update
-
-```bash
-f5xcctl config cloud-link update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update cloud-link
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cloud_infrastructure create cloud_link -n <namespace> -i cloud_link.yaml
+xcsh cloud_infrastructure create cloud_link -n <namespace> -i cloud_link.yaml
 
 # Get
-f5xcctl cloud_infrastructure get cloud_link <name> -n <namespace>
+xcsh cloud_infrastructure get cloud_link <name> -n <namespace>
 
 # List
-f5xcctl cloud_infrastructure list cloud_link -n <namespace>
+xcsh cloud_infrastructure list cloud_link -n <namespace>
 
 # Delete
-f5xcctl cloud_infrastructure delete cloud_link <name> -n <namespace>
+xcsh cloud_infrastructure delete cloud_link <name> -n <namespace>
 ```
 
 ## Terraform Resource

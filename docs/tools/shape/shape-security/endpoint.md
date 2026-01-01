@@ -41,40 +41,20 @@ Ask Claude to help you work with Endpoint resources:
 
 > "Create a endpoint named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape endpoint create {name} --namespace {namespace}
-```
-
-Create endpoint
-
-### file_based
-
-```bash
-f5xcctl shape endpoint create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create endpoint -n <namespace> -i endpoint.yaml
+xcsh shape create endpoint -n <namespace> -i endpoint.yaml
 
 # Get
-f5xcctl shape get endpoint <name> -n <namespace>
+xcsh shape get endpoint <name> -n <namespace>
 
 # List
-f5xcctl shape list endpoint -n <namespace>
+xcsh shape list endpoint -n <namespace>
 
 # Delete
-f5xcctl shape delete endpoint <name> -n <namespace>
+xcsh shape delete endpoint <name> -n <namespace>
 ```
 
 ## Terraform Resource

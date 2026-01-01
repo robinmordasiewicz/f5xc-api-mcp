@@ -77,72 +77,20 @@ Ask Claude to help you work with Cloud Credentials resources:
 
 > "Get details of the cloud-credentials named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config cloud-credentials create {name} --namespace {namespace}
-```
-
-Create cloud-credentials
-
-### file_based
-
-```bash
-f5xcctl config cloud-credentials create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config cloud-credentials delete {name} --namespace {namespace}
-```
-
-Delete cloud-credentials
-
-### get_specific
-
-```bash
-f5xcctl config cloud-credentials get {name} --namespace {namespace}
-```
-
-Get specific cloud-credentials
-
-### list_all
-
-```bash
-f5xcctl config cloud-credentials list --namespace {namespace}
-```
-
-List all cloud-credentialss
-
-### update
-
-```bash
-f5xcctl config cloud-credentials update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update cloud-credentials
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cloud_infrastructure create cloud_credentials -n <namespace> -i cloud_credentials.yaml
+xcsh cloud_infrastructure create cloud_credentials -n <namespace> -i cloud_credentials.yaml
 
 # Get
-f5xcctl cloud_infrastructure get cloud_credentials <name> -n <namespace>
+xcsh cloud_infrastructure get cloud_credentials <name> -n <namespace>
 
 # List
-f5xcctl cloud_infrastructure list cloud_credentials -n <namespace>
+xcsh cloud_infrastructure list cloud_credentials -n <namespace>
 
 # Delete
-f5xcctl cloud_infrastructure delete cloud_credentials <name> -n <namespace>
+xcsh cloud_infrastructure delete cloud_credentials <name> -n <namespace>
 ```
 
 ## Terraform Resource

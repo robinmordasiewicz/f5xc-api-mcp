@@ -47,48 +47,20 @@ Ask Claude to help you work with Mitigation resources:
 
 > "List all mitigations in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl infraprotect mitigation create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl infraprotect mitigation create {name} --namespace {namespace}
-```
-
-Create mitigation
-
-### list_all
-
-```bash
-f5xcctl infraprotect mitigation list --namespace {namespace}
-```
-
-List all mitigations
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create mitigation -n <namespace> -i mitigation.yaml
+xcsh ddos create mitigation -n <namespace> -i mitigation.yaml
 
 # Get
-f5xcctl ddos get mitigation <name> -n <namespace>
+xcsh ddos get mitigation <name> -n <namespace>
 
 # List
-f5xcctl ddos list mitigation -n <namespace>
+xcsh ddos list mitigation -n <namespace>
 
 # Delete
-f5xcctl ddos delete mitigation <name> -n <namespace>
+xcsh ddos delete mitigation <name> -n <namespace>
 ```
 
 ## Terraform Resource

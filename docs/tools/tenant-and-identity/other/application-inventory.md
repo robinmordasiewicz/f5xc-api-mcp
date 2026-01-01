@@ -44,40 +44,20 @@ Ask Claude to help you work with Application Inventory resources:
 
 > "Create a application-inventory named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config application-inventory create {name} --namespace {namespace}
-```
-
-Create application-inventory
-
-### file_based
-
-```bash
-f5xcctl config application-inventory create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create application_inventory -n <namespace> -i application_inventory.yaml
+xcsh tenant_and_identity create application_inventory -n <namespace> -i application_inventory.yaml
 
 # Get
-f5xcctl tenant_and_identity get application_inventory <name> -n <namespace>
+xcsh tenant_and_identity get application_inventory <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list application_inventory -n <namespace>
+xcsh tenant_and_identity list application_inventory -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete application_inventory <name> -n <namespace>
+xcsh tenant_and_identity delete application_inventory <name> -n <namespace>
 ```
 
 ## Terraform Resource

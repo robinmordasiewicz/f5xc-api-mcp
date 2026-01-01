@@ -33,40 +33,20 @@ Ask Claude to help you work with Import resources:
 
 > "Create a import named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config import create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config import create {name} --namespace {namespace}
-```
-
-Create import
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create import -n <namespace> -i import.yaml
+xcsh dns create import -n <namespace> -i import.yaml
 
 # Get
-f5xcctl dns get import <name> -n <namespace>
+xcsh dns get import <name> -n <namespace>
 
 # List
-f5xcctl dns list import -n <namespace>
+xcsh dns list import -n <namespace>
 
 # Delete
-f5xcctl dns delete import <name> -n <namespace>
+xcsh dns delete import <name> -n <namespace>
 ```
 
 ## Terraform Resource

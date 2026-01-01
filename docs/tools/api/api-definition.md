@@ -77,72 +77,20 @@ Ask Claude to help you work with API Definition resources:
 
 > "Get details of the api-definition named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config api-definition create {name} --namespace {namespace}
-```
-
-Create api-definition
-
-### file_based
-
-```bash
-f5xcctl config api-definition create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config api-definition delete {name} --namespace {namespace}
-```
-
-Delete api-definition
-
-### get_specific
-
-```bash
-f5xcctl config api-definition get {name} --namespace {namespace}
-```
-
-Get specific api-definition
-
-### list_all
-
-```bash
-f5xcctl config api-definition list --namespace {namespace}
-```
-
-List all api-definitions
-
-### update
-
-```bash
-f5xcctl config api-definition update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update api-definition
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create api_definition -n <namespace> -i api_definition.yaml
+xcsh api create api_definition -n <namespace> -i api_definition.yaml
 
 # Get
-f5xcctl api get api_definition <name> -n <namespace>
+xcsh api get api_definition <name> -n <namespace>
 
 # List
-f5xcctl api list api_definition -n <namespace>
+xcsh api list api_definition -n <namespace>
 
 # Delete
-f5xcctl api delete api_definition <name> -n <namespace>
+xcsh api delete api_definition <name> -n <namespace>
 ```
 
 ## Terraform Resource

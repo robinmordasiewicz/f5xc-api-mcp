@@ -40,40 +40,20 @@ Ask Claude to help you work with All Ns Event resources:
 
 > "Create a all-ns-event named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl data all-ns-event create {name} --namespace {namespace}
-```
-
-Create all-ns-event
-
-### file_based
-
-```bash
-f5xcctl data all-ns-event create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create all_ns_event -n <namespace> -i all_ns_event.yaml
+xcsh waf create all_ns_event -n <namespace> -i all_ns_event.yaml
 
 # Get
-f5xcctl waf get all_ns_event <name> -n <namespace>
+xcsh waf get all_ns_event <name> -n <namespace>
 
 # List
-f5xcctl waf list all_ns_event -n <namespace>
+xcsh waf list all_ns_event -n <namespace>
 
 # Delete
-f5xcctl waf delete all_ns_event <name> -n <namespace>
+xcsh waf delete all_ns_event <name> -n <namespace>
 ```
 
 ## Terraform Resource

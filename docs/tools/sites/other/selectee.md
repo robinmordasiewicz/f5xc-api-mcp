@@ -34,32 +34,20 @@ Ask Claude to help you work with Selectee resources:
 
 > "Get details of the selectee named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config selectee get {name} --namespace {namespace}
-```
-
-Get specific selectee
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create selectee -n <namespace> -i selectee.yaml
+xcsh sites create selectee -n <namespace> -i selectee.yaml
 
 # Get
-f5xcctl sites get selectee <name> -n <namespace>
+xcsh sites get selectee <name> -n <namespace>
 
 # List
-f5xcctl sites list selectee -n <namespace>
+xcsh sites list selectee -n <namespace>
 
 # Delete
-f5xcctl sites delete selectee <name> -n <namespace>
+xcsh sites delete selectee <name> -n <namespace>
 ```
 
 ## Terraform Resource

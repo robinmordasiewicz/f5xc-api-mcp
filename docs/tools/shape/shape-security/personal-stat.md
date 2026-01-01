@@ -41,40 +41,20 @@ Ask Claude to help you work with Personal Stat resources:
 
 > "Create a personal-stat named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape personal-stat create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape personal-stat create {name} --namespace {namespace}
-```
-
-Create personal-stat
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create personal_stat -n <namespace> -i personal_stat.yaml
+xcsh shape create personal_stat -n <namespace> -i personal_stat.yaml
 
 # Get
-f5xcctl shape get personal_stat <name> -n <namespace>
+xcsh shape get personal_stat <name> -n <namespace>
 
 # List
-f5xcctl shape list personal_stat -n <namespace>
+xcsh shape list personal_stat -n <namespace>
 
 # Delete
-f5xcctl shape delete personal_stat <name> -n <namespace>
+xcsh shape delete personal_stat <name> -n <namespace>
 ```
 
 ## Terraform Resource

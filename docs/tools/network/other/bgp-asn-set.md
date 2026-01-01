@@ -77,72 +77,20 @@ Ask Claude to help you work with Bgp Asn Set resources:
 
 > "Get details of the bgp-asn-set named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config bgp-asn-set create {name} --namespace {namespace}
-```
-
-Create bgp-asn-set
-
-### file_based
-
-```bash
-f5xcctl config bgp-asn-set create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config bgp-asn-set delete {name} --namespace {namespace}
-```
-
-Delete bgp-asn-set
-
-### get_specific
-
-```bash
-f5xcctl config bgp-asn-set get {name} --namespace {namespace}
-```
-
-Get specific bgp-asn-set
-
-### list_all
-
-```bash
-f5xcctl config bgp-asn-set list --namespace {namespace}
-```
-
-List all bgp-asn-sets
-
-### update
-
-```bash
-f5xcctl config bgp-asn-set update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update bgp-asn-set
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create bgp_asn_set -n <namespace> -i bgp_asn_set.yaml
+xcsh network create bgp_asn_set -n <namespace> -i bgp_asn_set.yaml
 
 # Get
-f5xcctl network get bgp_asn_set <name> -n <namespace>
+xcsh network get bgp_asn_set <name> -n <namespace>
 
 # List
-f5xcctl network list bgp_asn_set -n <namespace>
+xcsh network list bgp_asn_set -n <namespace>
 
 # Delete
-f5xcctl network delete bgp_asn_set <name> -n <namespace>
+xcsh network delete bgp_asn_set <name> -n <namespace>
 ```
 
 ## Terraform Resource

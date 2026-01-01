@@ -77,72 +77,20 @@ Ask Claude to help you work with Network Firewall resources:
 
 > "Get details of the network-firewall named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config network-firewall create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config network-firewall create {name} --namespace {namespace}
-```
-
-Create network-firewall
-
-### delete
-
-```bash
-f5xcctl config network-firewall delete {name} --namespace {namespace}
-```
-
-Delete network-firewall
-
-### get_specific
-
-```bash
-f5xcctl config network-firewall get {name} --namespace {namespace}
-```
-
-Get specific network-firewall
-
-### list_all
-
-```bash
-f5xcctl config network-firewall list --namespace {namespace}
-```
-
-List all network-firewalls
-
-### update
-
-```bash
-f5xcctl config network-firewall update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update network-firewall
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create network_firewall -n <namespace> -i network_firewall.yaml
+xcsh network_security create network_firewall -n <namespace> -i network_firewall.yaml
 
 # Get
-f5xcctl network_security get network_firewall <name> -n <namespace>
+xcsh network_security get network_firewall <name> -n <namespace>
 
 # List
-f5xcctl network_security list network_firewall -n <namespace>
+xcsh network_security list network_firewall -n <namespace>
 
 # Delete
-f5xcctl network_security delete network_firewall <name> -n <namespace>
+xcsh network_security delete network_firewall <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -80,72 +80,20 @@ Ask Claude to help you work with K8S Pod Security Policy resources:
 
 > "Get details of the k8s-pod-security-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config k8s-pod-security-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config k8s-pod-security-policy create {name} --namespace {namespace}
-```
-
-Create k8s-pod-security-policy
-
-### delete
-
-```bash
-f5xcctl config k8s-pod-security-policy delete {name} --namespace {namespace}
-```
-
-Delete k8s-pod-security-policy
-
-### get_specific
-
-```bash
-f5xcctl config k8s-pod-security-policy get {name} --namespace {namespace}
-```
-
-Get specific k8s-pod-security-policy
-
-### list_all
-
-```bash
-f5xcctl config k8s-pod-security-policy list --namespace {namespace}
-```
-
-List all k8s-pod-security-policys
-
-### update
-
-```bash
-f5xcctl config k8s-pod-security-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update k8s-pod-security-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl managed_kubernetes create k8s_pod_security_policy -n <namespace> -i k8s_pod_security_policy.yaml
+xcsh managed_kubernetes create k8s_pod_security_policy -n <namespace> -i k8s_pod_security_policy.yaml
 
 # Get
-f5xcctl managed_kubernetes get k8s_pod_security_policy <name> -n <namespace>
+xcsh managed_kubernetes get k8s_pod_security_policy <name> -n <namespace>
 
 # List
-f5xcctl managed_kubernetes list k8s_pod_security_policy -n <namespace>
+xcsh managed_kubernetes list k8s_pod_security_policy -n <namespace>
 
 # Delete
-f5xcctl managed_kubernetes delete k8s_pod_security_policy <name> -n <namespace>
+xcsh managed_kubernetes delete k8s_pod_security_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

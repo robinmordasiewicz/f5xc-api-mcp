@@ -35,32 +35,20 @@ Ask Claude to help you work with Citie resources:
 
 > "List all cities in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web citie list --namespace {namespace}
-```
-
-List all cities
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create citie -n <namespace> -i citie.yaml
+xcsh tenant_and_identity create citie -n <namespace> -i citie.yaml
 
 # Get
-f5xcctl tenant_and_identity get citie <name> -n <namespace>
+xcsh tenant_and_identity get citie <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list citie -n <namespace>
+xcsh tenant_and_identity list citie -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete citie <name> -n <namespace>
+xcsh tenant_and_identity delete citie <name> -n <namespace>
 ```
 
 ## Terraform Resource

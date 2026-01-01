@@ -80,72 +80,20 @@ Ask Claude to help you work with Endpoint resources:
 
 > "Get details of the endpoint named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config endpoint create {name} --namespace {namespace}
-```
-
-Create endpoint
-
-### file_based
-
-```bash
-f5xcctl config endpoint create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config endpoint delete {name} --namespace {namespace}
-```
-
-Delete endpoint
-
-### get_specific
-
-```bash
-f5xcctl config endpoint get {name} --namespace {namespace}
-```
-
-Get specific endpoint
-
-### list_all
-
-```bash
-f5xcctl config endpoint list --namespace {namespace}
-```
-
-List all endpoints
-
-### update
-
-```bash
-f5xcctl config endpoint update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update endpoint
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create endpoint -n <namespace> -i endpoint.yaml
+xcsh service_mesh create endpoint -n <namespace> -i endpoint.yaml
 
 # Get
-f5xcctl service_mesh get endpoint <name> -n <namespace>
+xcsh service_mesh get endpoint <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list endpoint -n <namespace>
+xcsh service_mesh list endpoint -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete endpoint <name> -n <namespace>
+xcsh service_mesh delete endpoint <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -48,40 +48,20 @@ Ask Claude to help you work with Service Policy Set resources:
 
 > "Get details of the service-policy-set named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config service-policy-set get {name} --namespace {namespace}
-```
-
-Get specific service-policy-set
-
-### list_all
-
-```bash
-f5xcctl config service-policy-set list --namespace {namespace}
-```
-
-List all service-policy-sets
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create service_policy_set -n <namespace> -i service_policy_set.yaml
+xcsh virtual create service_policy_set -n <namespace> -i service_policy_set.yaml
 
 # Get
-f5xcctl virtual get service_policy_set <name> -n <namespace>
+xcsh virtual get service_policy_set <name> -n <namespace>
 
 # List
-f5xcctl virtual list service_policy_set -n <namespace>
+xcsh virtual list service_policy_set -n <namespace>
 
 # Delete
-f5xcctl virtual delete service_policy_set <name> -n <namespace>
+xcsh virtual delete service_policy_set <name> -n <namespace>
 ```
 
 ## Terraform Resource

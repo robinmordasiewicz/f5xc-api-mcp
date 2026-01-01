@@ -41,40 +41,20 @@ Ask Claude to help you work with Transaction Related Session resources:
 
 > "Create a transaction-related-session named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape transaction-related-session create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape transaction-related-session create {name} --namespace {namespace}
-```
-
-Create transaction-related-session
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create transaction_related_session -n <namespace> -i transaction_related_session.yaml
+xcsh shape create transaction_related_session -n <namespace> -i transaction_related_session.yaml
 
 # Get
-f5xcctl shape get transaction_related_session <name> -n <namespace>
+xcsh shape get transaction_related_session <name> -n <namespace>
 
 # List
-f5xcctl shape list transaction_related_session -n <namespace>
+xcsh shape list transaction_related_session -n <namespace>
 
 # Delete
-f5xcctl shape delete transaction_related_session <name> -n <namespace>
+xcsh shape delete transaction_related_session <name> -n <namespace>
 ```
 
 ## Terraform Resource

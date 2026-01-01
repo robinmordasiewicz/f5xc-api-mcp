@@ -42,40 +42,20 @@ Ask Claude to help you work with Policie resources:
 
 > "Create a policie named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape policie create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape policie create {name} --namespace {namespace}
-```
-
-Create policie
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create policie -n <namespace> -i policie.yaml
+xcsh shape create policie -n <namespace> -i policie.yaml
 
 # Get
-f5xcctl shape get policie <name> -n <namespace>
+xcsh shape get policie <name> -n <namespace>
 
 # List
-f5xcctl shape list policie -n <namespace>
+xcsh shape list policie -n <namespace>
 
 # Delete
-f5xcctl shape delete policie <name> -n <namespace>
+xcsh shape delete policie <name> -n <namespace>
 ```
 
 ## Terraform Resource

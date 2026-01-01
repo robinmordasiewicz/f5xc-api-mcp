@@ -33,40 +33,20 @@ Ask Claude to help you work with Age resources:
 
 > "Create a age named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape age create {name} --namespace {namespace}
-```
-
-Create age
-
-### file_based
-
-```bash
-f5xcctl shape age create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create age -n <namespace> -i age.yaml
+xcsh shape create age -n <namespace> -i age.yaml
 
 # Get
-f5xcctl shape get age <name> -n <namespace>
+xcsh shape get age <name> -n <namespace>
 
 # List
-f5xcctl shape list age -n <namespace>
+xcsh shape list age -n <namespace>
 
 # Delete
-f5xcctl shape delete age <name> -n <namespace>
+xcsh shape delete age <name> -n <namespace>
 ```
 
 ## Terraform Resource

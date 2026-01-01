@@ -41,40 +41,20 @@ Ask Claude to help you work with Match resources:
 
 > "Create a match named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl alert match create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl alert match create {name} --namespace {namespace}
-```
-
-Create match
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create match -n <namespace> -i match.yaml
+xcsh statistics create match -n <namespace> -i match.yaml
 
 # Get
-f5xcctl statistics get match <name> -n <namespace>
+xcsh statistics get match <name> -n <namespace>
 
 # List
-f5xcctl statistics list match -n <namespace>
+xcsh statistics list match -n <namespace>
 
 # Delete
-f5xcctl statistics delete match <name> -n <namespace>
+xcsh statistics delete match <name> -n <namespace>
 ```
 
 ## Terraform Resource

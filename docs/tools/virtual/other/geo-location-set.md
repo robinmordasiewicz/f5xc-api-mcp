@@ -77,72 +77,20 @@ Ask Claude to help you work with Geo Location Set resources:
 
 > "Get details of the geo-location-set named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config geo-location-set create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config geo-location-set create {name} --namespace {namespace}
-```
-
-Create geo-location-set
-
-### delete
-
-```bash
-f5xcctl config geo-location-set delete {name} --namespace {namespace}
-```
-
-Delete geo-location-set
-
-### get_specific
-
-```bash
-f5xcctl config geo-location-set get {name} --namespace {namespace}
-```
-
-Get specific geo-location-set
-
-### list_all
-
-```bash
-f5xcctl config geo-location-set list --namespace {namespace}
-```
-
-List all geo-location-sets
-
-### update
-
-```bash
-f5xcctl config geo-location-set update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update geo-location-set
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create geo_location_set -n <namespace> -i geo_location_set.yaml
+xcsh virtual create geo_location_set -n <namespace> -i geo_location_set.yaml
 
 # Get
-f5xcctl virtual get geo_location_set <name> -n <namespace>
+xcsh virtual get geo_location_set <name> -n <namespace>
 
 # List
-f5xcctl virtual list geo_location_set -n <namespace>
+xcsh virtual list geo_location_set -n <namespace>
 
 # Delete
-f5xcctl virtual delete geo_location_set <name> -n <namespace>
+xcsh virtual delete geo_location_set <name> -n <namespace>
 ```
 
 ## Terraform Resource

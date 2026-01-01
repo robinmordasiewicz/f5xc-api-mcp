@@ -49,48 +49,20 @@ Ask Claude to help you work with Alert resources:
 
 > "List all alerts in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl infraprotect alert create {name} --namespace {namespace}
-```
-
-Create alert
-
-### file_based
-
-```bash
-f5xcctl infraprotect alert create -f {file}.yaml
-```
-
-Create from YAML file
-
-### list_all
-
-```bash
-f5xcctl infraprotect alert list --namespace {namespace}
-```
-
-List all alerts
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create alert -n <namespace> -i alert.yaml
+xcsh ddos create alert -n <namespace> -i alert.yaml
 
 # Get
-f5xcctl ddos get alert <name> -n <namespace>
+xcsh ddos get alert <name> -n <namespace>
 
 # List
-f5xcctl ddos list alert -n <namespace>
+xcsh ddos list alert -n <namespace>
 
 # Delete
-f5xcctl ddos delete alert <name> -n <namespace>
+xcsh ddos delete alert <name> -n <namespace>
 ```
 
 ## Terraform Resource

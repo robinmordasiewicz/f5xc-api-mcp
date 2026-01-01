@@ -79,72 +79,20 @@ Ask Claude to help you work with Subnet resources:
 
 > "Get details of the subnet named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config subnet create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config subnet create {name} --namespace {namespace}
-```
-
-Create subnet
-
-### delete
-
-```bash
-f5xcctl config subnet delete {name} --namespace {namespace}
-```
-
-Delete subnet
-
-### get_specific
-
-```bash
-f5xcctl config subnet get {name} --namespace {namespace}
-```
-
-Get specific subnet
-
-### list_all
-
-```bash
-f5xcctl config subnet list --namespace {namespace}
-```
-
-List all subnets
-
-### update
-
-```bash
-f5xcctl config subnet update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update subnet
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create subnet -n <namespace> -i subnet.yaml
+xcsh network create subnet -n <namespace> -i subnet.yaml
 
 # Get
-f5xcctl network get subnet <name> -n <namespace>
+xcsh network get subnet <name> -n <namespace>
 
 # List
-f5xcctl network list subnet -n <namespace>
+xcsh network list subnet -n <namespace>
 
 # Delete
-f5xcctl network delete subnet <name> -n <namespace>
+xcsh network delete subnet <name> -n <namespace>
 ```
 
 ## Terraform Resource

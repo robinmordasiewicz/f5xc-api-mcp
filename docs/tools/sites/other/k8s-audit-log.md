@@ -48,40 +48,20 @@ Ask Claude to help you work with K8S Audit Log resources:
 
 > "Create a k8s-audit-log named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data k8s-audit-log create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data k8s-audit-log create {name} --namespace {namespace}
-```
-
-Create k8s-audit-log
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create k8s_audit_log -n <namespace> -i k8s_audit_log.yaml
+xcsh sites create k8s_audit_log -n <namespace> -i k8s_audit_log.yaml
 
 # Get
-f5xcctl sites get k8s_audit_log <name> -n <namespace>
+xcsh sites get k8s_audit_log <name> -n <namespace>
 
 # List
-f5xcctl sites list k8s_audit_log -n <namespace>
+xcsh sites list k8s_audit_log -n <namespace>
 
 # Delete
-f5xcctl sites delete k8s_audit_log <name> -n <namespace>
+xcsh sites delete k8s_audit_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

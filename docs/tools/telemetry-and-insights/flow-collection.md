@@ -33,40 +33,20 @@ Ask Claude to help you work with Flow Collection resources:
 
 > "Create a flow-collection named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl data flow-collection create {name} --namespace {namespace}
-```
-
-Create flow-collection
-
-### file_based
-
-```bash
-f5xcctl data flow-collection create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl telemetry_and_insights create flow_collection -n <namespace> -i flow_collection.yaml
+xcsh telemetry_and_insights create flow_collection -n <namespace> -i flow_collection.yaml
 
 # Get
-f5xcctl telemetry_and_insights get flow_collection <name> -n <namespace>
+xcsh telemetry_and_insights get flow_collection <name> -n <namespace>
 
 # List
-f5xcctl telemetry_and_insights list flow_collection -n <namespace>
+xcsh telemetry_and_insights list flow_collection -n <namespace>
 
 # Delete
-f5xcctl telemetry_and_insights delete flow_collection <name> -n <namespace>
+xcsh telemetry_and_insights delete flow_collection <name> -n <namespace>
 ```
 
 ## Terraform Resource

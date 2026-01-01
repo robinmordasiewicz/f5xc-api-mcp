@@ -77,72 +77,20 @@ Ask Claude to help you work with Alert Gen Policy resources:
 
 > "Get details of the alert-gen-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape alert-gen-policy create {name} --namespace {namespace}
-```
-
-Create alert-gen-policy
-
-### file_based
-
-```bash
-f5xcctl shape alert-gen-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl shape alert-gen-policy delete {name} --namespace {namespace}
-```
-
-Delete alert-gen-policy
-
-### get_specific
-
-```bash
-f5xcctl shape alert-gen-policy get {name} --namespace {namespace}
-```
-
-Get specific alert-gen-policy
-
-### list_all
-
-```bash
-f5xcctl shape alert-gen-policy list --namespace {namespace}
-```
-
-List all alert-gen-policys
-
-### update
-
-```bash
-f5xcctl shape alert-gen-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update alert-gen-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create alert_gen_policy -n <namespace> -i alert_gen_policy.yaml
+xcsh shape create alert_gen_policy -n <namespace> -i alert_gen_policy.yaml
 
 # Get
-f5xcctl shape get alert_gen_policy <name> -n <namespace>
+xcsh shape get alert_gen_policy <name> -n <namespace>
 
 # List
-f5xcctl shape list alert_gen_policy -n <namespace>
+xcsh shape list alert_gen_policy -n <namespace>
 
 # Delete
-f5xcctl shape delete alert_gen_policy <name> -n <namespace>
+xcsh shape delete alert_gen_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

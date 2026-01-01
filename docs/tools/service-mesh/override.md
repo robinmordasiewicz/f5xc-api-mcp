@@ -34,32 +34,20 @@ Ask Claude to help you work with Override resources:
 
 > "List all overrides in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl ml override list --namespace {namespace}
-```
-
-List all overrides
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create override -n <namespace> -i override.yaml
+xcsh service_mesh create override -n <namespace> -i override.yaml
 
 # Get
-f5xcctl service_mesh get override <name> -n <namespace>
+xcsh service_mesh get override <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list override -n <namespace>
+xcsh service_mesh list override -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete override <name> -n <namespace>
+xcsh service_mesh delete override <name> -n <namespace>
 ```
 
 ## Terraform Resource

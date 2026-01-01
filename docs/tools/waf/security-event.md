@@ -45,40 +45,20 @@ Ask Claude to help you work with Security Event resources:
 
 > "Create a security-event named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data security-event create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data security-event create {name} --namespace {namespace}
-```
-
-Create security-event
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create security_event -n <namespace> -i security_event.yaml
+xcsh waf create security_event -n <namespace> -i security_event.yaml
 
 # Get
-f5xcctl waf get security_event <name> -n <namespace>
+xcsh waf get security_event <name> -n <namespace>
 
 # List
-f5xcctl waf list security_event -n <namespace>
+xcsh waf list security_event -n <namespace>
 
 # Delete
-f5xcctl waf delete security_event <name> -n <namespace>
+xcsh waf delete security_event <name> -n <namespace>
 ```
 
 ## Terraform Resource

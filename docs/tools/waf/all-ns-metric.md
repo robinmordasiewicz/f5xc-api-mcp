@@ -33,40 +33,20 @@ Ask Claude to help you work with All Ns Metric resources:
 
 > "Create a all-ns-metric named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl data all-ns-metric create {name} --namespace {namespace}
-```
-
-Create all-ns-metric
-
-### file_based
-
-```bash
-f5xcctl data all-ns-metric create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create all_ns_metric -n <namespace> -i all_ns_metric.yaml
+xcsh waf create all_ns_metric -n <namespace> -i all_ns_metric.yaml
 
 # Get
-f5xcctl waf get all_ns_metric <name> -n <namespace>
+xcsh waf get all_ns_metric <name> -n <namespace>
 
 # List
-f5xcctl waf list all_ns_metric -n <namespace>
+xcsh waf list all_ns_metric -n <namespace>
 
 # Delete
-f5xcctl waf delete all_ns_metric <name> -n <namespace>
+xcsh waf delete all_ns_metric <name> -n <namespace>
 ```
 
 ## Terraform Resource

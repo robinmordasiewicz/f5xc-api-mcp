@@ -34,32 +34,20 @@ Ask Claude to help you work with Stat resources:
 
 > "Get details of the stat named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl ml stat get {name} --namespace {namespace}
-```
-
-Get specific stat
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create stat -n <namespace> -i stat.yaml
+xcsh virtual create stat -n <namespace> -i stat.yaml
 
 # Get
-f5xcctl virtual get stat <name> -n <namespace>
+xcsh virtual get stat <name> -n <namespace>
 
 # List
-f5xcctl virtual list stat -n <namespace>
+xcsh virtual list stat -n <namespace>
 
 # Delete
-f5xcctl virtual delete stat <name> -n <namespace>
+xcsh virtual delete stat <name> -n <namespace>
 ```
 
 ## Terraform Resource

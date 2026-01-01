@@ -77,72 +77,20 @@ Ask Claude to help you work with Tenant Configuration resources:
 
 > "Get details of the tenant-configuration named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config tenant-configuration create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config tenant-configuration create {name} --namespace {namespace}
-```
-
-Create tenant-configuration
-
-### delete
-
-```bash
-f5xcctl config tenant-configuration delete {name} --namespace {namespace}
-```
-
-Delete tenant-configuration
-
-### get_specific
-
-```bash
-f5xcctl config tenant-configuration get {name} --namespace {namespace}
-```
-
-Get specific tenant-configuration
-
-### list_all
-
-```bash
-f5xcctl config tenant-configuration list --namespace {namespace}
-```
-
-List all tenant-configurations
-
-### update
-
-```bash
-f5xcctl config tenant-configuration update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update tenant-configuration
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create tenant_configuration -n <namespace> -i tenant_configuration.yaml
+xcsh tenant_and_identity create tenant_configuration -n <namespace> -i tenant_configuration.yaml
 
 # Get
-f5xcctl tenant_and_identity get tenant_configuration <name> -n <namespace>
+xcsh tenant_and_identity get tenant_configuration <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list tenant_configuration -n <namespace>
+xcsh tenant_and_identity list tenant_configuration -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete tenant_configuration <name> -n <namespace>
+xcsh tenant_and_identity delete tenant_configuration <name> -n <namespace>
 ```
 
 ## Terraform Resource

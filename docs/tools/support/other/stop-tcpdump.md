@@ -42,40 +42,20 @@ Ask Claude to help you work with Stop Tcpdump resources:
 
 > "Create a stop-tcpdump named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl operate stop-tcpdump create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl operate stop-tcpdump create {name} --namespace {namespace}
-```
-
-Create stop-tcpdump
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create stop_tcpdump -n <namespace> -i stop_tcpdump.yaml
+xcsh support create stop_tcpdump -n <namespace> -i stop_tcpdump.yaml
 
 # Get
-f5xcctl support get stop_tcpdump <name> -n <namespace>
+xcsh support get stop_tcpdump <name> -n <namespace>
 
 # List
-f5xcctl support list stop_tcpdump -n <namespace>
+xcsh support list stop_tcpdump -n <namespace>
 
 # Delete
-f5xcctl support delete stop_tcpdump <name> -n <namespace>
+xcsh support delete stop_tcpdump <name> -n <namespace>
 ```
 
 ## Terraform Resource

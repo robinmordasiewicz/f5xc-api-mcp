@@ -33,40 +33,20 @@ Ask Claude to help you work with Gettopriskydevice resources:
 
 > "Create a gettopriskydevice named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape gettopriskydevice create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape gettopriskydevice create {name} --namespace {namespace}
-```
-
-Create gettopriskydevice
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create gettopriskydevice -n <namespace> -i gettopriskydevice.yaml
+xcsh shape create gettopriskydevice -n <namespace> -i gettopriskydevice.yaml
 
 # Get
-f5xcctl shape get gettopriskydevice <name> -n <namespace>
+xcsh shape get gettopriskydevice <name> -n <namespace>
 
 # List
-f5xcctl shape list gettopriskydevice -n <namespace>
+xcsh shape list gettopriskydevice -n <namespace>
 
 # Delete
-f5xcctl shape delete gettopriskydevice <name> -n <namespace>
+xcsh shape delete gettopriskydevice <name> -n <namespace>
 ```
 
 ## Terraform Resource

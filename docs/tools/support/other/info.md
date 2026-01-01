@@ -35,32 +35,20 @@ Ask Claude to help you work with Info resources:
 
 > "List all infos in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl operate info list --namespace {namespace}
-```
-
-List all infos
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create info -n <namespace> -i info.yaml
+xcsh support create info -n <namespace> -i info.yaml
 
 # Get
-f5xcctl support get info <name> -n <namespace>
+xcsh support get info <name> -n <namespace>
 
 # List
-f5xcctl support list info -n <namespace>
+xcsh support list info -n <namespace>
 
 # Delete
-f5xcctl support delete info <name> -n <namespace>
+xcsh support delete info <name> -n <namespace>
 ```
 
 ## Terraform Resource

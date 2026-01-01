@@ -71,64 +71,20 @@ Ask Claude to help you work with Mitigated Domain resources:
 
 > "Get details of the mitigated-domain named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape mitigated-domain create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape mitigated-domain create {name} --namespace {namespace}
-```
-
-Create mitigated-domain
-
-### delete
-
-```bash
-f5xcctl shape mitigated-domain delete {name} --namespace {namespace}
-```
-
-Delete mitigated-domain
-
-### get_specific
-
-```bash
-f5xcctl shape mitigated-domain get {name} --namespace {namespace}
-```
-
-Get specific mitigated-domain
-
-### list_all
-
-```bash
-f5xcctl shape mitigated-domain list --namespace {namespace}
-```
-
-List all mitigated-domains
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create mitigated_domain -n <namespace> -i mitigated_domain.yaml
+xcsh shape create mitigated_domain -n <namespace> -i mitigated_domain.yaml
 
 # Get
-f5xcctl shape get mitigated_domain <name> -n <namespace>
+xcsh shape get mitigated_domain <name> -n <namespace>
 
 # List
-f5xcctl shape list mitigated_domain -n <namespace>
+xcsh shape list mitigated_domain -n <namespace>
 
 # Delete
-f5xcctl shape delete mitigated_domain <name> -n <namespace>
+xcsh shape delete mitigated_domain <name> -n <namespace>
 ```
 
 ## Terraform Resource

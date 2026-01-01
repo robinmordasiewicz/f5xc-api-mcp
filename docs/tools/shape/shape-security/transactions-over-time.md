@@ -41,40 +41,20 @@ Ask Claude to help you work with Transactions Over Time resources:
 
 > "Create a transactions-over-time named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape transactions-over-time create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape transactions-over-time create {name} --namespace {namespace}
-```
-
-Create transactions-over-time
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create transactions_over_time -n <namespace> -i transactions_over_time.yaml
+xcsh shape create transactions_over_time -n <namespace> -i transactions_over_time.yaml
 
 # Get
-f5xcctl shape get transactions_over_time <name> -n <namespace>
+xcsh shape get transactions_over_time <name> -n <namespace>
 
 # List
-f5xcctl shape list transactions_over_time -n <namespace>
+xcsh shape list transactions_over_time -n <namespace>
 
 # Delete
-f5xcctl shape delete transactions_over_time <name> -n <namespace>
+xcsh shape delete transactions_over_time <name> -n <namespace>
 ```
 
 ## Terraform Resource

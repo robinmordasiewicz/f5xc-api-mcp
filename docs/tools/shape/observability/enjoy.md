@@ -33,40 +33,20 @@ Ask Claude to help you work with Enjoy resources:
 
 > "Create a enjoy named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape enjoy create {name} --namespace {namespace}
-```
-
-Create enjoy
-
-### file_based
-
-```bash
-f5xcctl shape enjoy create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create enjoy -n <namespace> -i enjoy.yaml
+xcsh shape create enjoy -n <namespace> -i enjoy.yaml
 
 # Get
-f5xcctl shape get enjoy <name> -n <namespace>
+xcsh shape get enjoy <name> -n <namespace>
 
 # List
-f5xcctl shape list enjoy -n <namespace>
+xcsh shape list enjoy -n <namespace>
 
 # Delete
-f5xcctl shape delete enjoy <name> -n <namespace>
+xcsh shape delete enjoy <name> -n <namespace>
 ```
 
 ## Terraform Resource

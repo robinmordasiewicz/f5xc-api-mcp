@@ -61,56 +61,20 @@ Ask Claude to help you work with API Credential resources:
 
 > "Get details of the api-credential named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web api-credential create {name} --namespace {namespace}
-```
-
-Create api-credential
-
-### file_based
-
-```bash
-f5xcctl web api-credential create -f {file}.yaml
-```
-
-Create from YAML file
-
-### get_specific
-
-```bash
-f5xcctl web api-credential get {name} --namespace {namespace}
-```
-
-Get specific api-credential
-
-### list_all
-
-```bash
-f5xcctl web api-credential list --namespace {namespace}
-```
-
-List all api-credentials
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl authentication create api_credential -n <namespace> -i api_credential.yaml
+xcsh authentication create api_credential -n <namespace> -i api_credential.yaml
 
 # Get
-f5xcctl authentication get api_credential <name> -n <namespace>
+xcsh authentication get api_credential <name> -n <namespace>
 
 # List
-f5xcctl authentication list api_credential -n <namespace>
+xcsh authentication list api_credential -n <namespace>
 
 # Delete
-f5xcctl authentication delete api_credential <name> -n <namespace>
+xcsh authentication delete api_credential <name> -n <namespace>
 ```
 
 ## Terraform Resource

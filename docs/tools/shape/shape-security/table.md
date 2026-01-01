@@ -42,32 +42,20 @@ Ask Claude to help you work with Table resources:
 
 > "List all tables in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape table list --namespace {namespace}
-```
-
-List all tables
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create table -n <namespace> -i table.yaml
+xcsh shape create table -n <namespace> -i table.yaml
 
 # Get
-f5xcctl shape get table <name> -n <namespace>
+xcsh shape get table <name> -n <namespace>
 
 # List
-f5xcctl shape list table -n <namespace>
+xcsh shape list table -n <namespace>
 
 # Delete
-f5xcctl shape delete table <name> -n <namespace>
+xcsh shape delete table <name> -n <namespace>
 ```
 
 ## Terraform Resource

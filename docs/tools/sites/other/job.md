@@ -39,32 +39,20 @@ Ask Claude to help you work with Job resources:
 
 > "List all jobs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data job list --namespace {namespace}
-```
-
-List all jobs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create job -n <namespace> -i job.yaml
+xcsh sites create job -n <namespace> -i job.yaml
 
 # Get
-f5xcctl sites get job <name> -n <namespace>
+xcsh sites get job <name> -n <namespace>
 
 # List
-f5xcctl sites list job -n <namespace>
+xcsh sites list job -n <namespace>
 
 # Delete
-f5xcctl sites delete job <name> -n <namespace>
+xcsh sites delete job <name> -n <namespace>
 ```
 
 ## Terraform Resource

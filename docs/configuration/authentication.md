@@ -12,13 +12,13 @@ The server operates in two modes based on authentication status:
 
 - API documentation and schema information
 - Parameter descriptions and validation
-- f5xcctl command equivalents
+- xcsh command equivalents
 - Terraform HCL examples
 - Dependency and prerequisite guidance
 
 This mode is ideal for users who:
 
-- Authenticate via f5xcctl CLI
+- Authenticate via xcsh CLI
 - Use Terraform with separate provider authentication
 - Want to explore the API without credentials
 
@@ -61,7 +61,7 @@ Or in MCP configuration:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"],
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "env": {
         "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
         "F5XC_API_TOKEN": "your-api-token-here"
@@ -69,6 +69,15 @@ Or in MCP configuration:
     }
   }
 }
+```
+
+Or via `claude mcp add`:
+
+```bash
+claude mcp add --transport stdio f5xc-api \
+  --env F5XC_API_URL=https://your-tenant.console.ves.volterra.io \
+  --env F5XC_API_TOKEN=your-api-token-here \
+  -- npx @robinmordasiewicz/f5xc-api-mcp
 ```
 
 ### P12 Certificate (mTLS)
@@ -98,7 +107,7 @@ Or in MCP configuration:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"],
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "env": {
         "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
         "F5XC_P12_FILE": "/absolute/path/to/certificate.p12",
@@ -107,6 +116,16 @@ Or in MCP configuration:
     }
   }
 }
+```
+
+Or via `claude mcp add`:
+
+```bash
+claude mcp add --transport stdio f5xc-api \
+  --env F5XC_API_URL=https://your-tenant.console.ves.volterra.io \
+  --env F5XC_P12_FILE=/absolute/path/to/certificate.p12 \
+  --env F5XC_P12_PASSWORD=your-certificate-password \
+  -- npx @robinmordasiewicz/f5xc-api-mcp
 ```
 
 !!! warning "Use Absolute Paths"
@@ -128,56 +147,64 @@ You can use any of these formats - the server handles the conversion.
 
 ## Profile-Based Configuration
 
-For managing multiple F5XC tenant credentials, use profiles stored in `~/.f5xc/credentials.json`.
+For managing multiple F5XC tenant credentials, use xcsh-compatible profiles stored in `~/.config/xcsh/profiles/`.
 
-### Interactive Setup
+### Using the Configure Auth Tool
 
-Run the setup wizard to create profiles with auto-detection of existing environment variables:
+The easiest way to configure authentication is through Claude. Ask Claude to configure authentication:
 
-```bash
-f5xc-api-mcp --setup
+> "Configure F5XC authentication with my tenant"
+
+Claude will use the `f5xc-api-configure-auth` tool to:
+
+1. Check current authentication status
+2. Prompt you for tenant URL and API token
+3. Save credentials to an xcsh profile
+4. Set the profile as active
+
+### MCP Tool Actions
+
+| Action | Description |
+|--------|-------------|
+| `status` | Check current authentication state |
+| `configure` | Save credentials to a new or existing profile |
+| `list-profiles` | List all available xcsh profiles |
+| `set-active` | Switch to a different profile |
+
+**Example - Configure Credentials:**
+
+Ask Claude:
+
+> "Use the configure-auth tool with action='configure',
+> tenantUrl='<https://tenant.console.ves.volterra.io>',
+> apiToken='your-token', profileName='production'"
+
+**Example - Switch Profiles:**
+
+> "Use configure-auth to switch to the 'staging' profile"
+
+### Profile Storage
+
+Profiles are stored in `~/.config/xcsh/profiles/` (XDG Base Directory compliant):
+
+```text
+~/.config/xcsh/
+├── active_profile          # Name of the active profile
+└── profiles/
+    ├── default.json        # Default profile
+    ├── production.json     # Production tenant
+    └── staging.json        # Staging tenant
 ```
 
-The wizard will:
+This location is cross-compatible with the xcsh CLI.
 
-1. Detect any existing `F5XC_API_URL`, `F5XC_API_TOKEN`, `F5XC_P12_FILE`, and `F5XC_P12_PASSWORD` environment variables
-2. Offer to create a profile from them (saves manual entry)
-3. Allow creating additional profiles for different tenants
-4. Set a default profile
+### Credential Priority
 
-### Using Profiles
+The server loads credentials in this order:
 
-After creating profiles:
-
-```bash
-# Use default profile
-f5xc-api-mcp
-
-# Use specific profile
-F5XC_PROFILE=staging f5xc-api-mcp
-
-# Override profile credentials with environment variables (highest priority)
-F5XC_PROFILE=production F5XC_API_TOKEN=override-token f5xc-api-mcp
-```
-
-### Profile Management
-
-```bash
-# List all profiles
-f5xc-api-mcp --list-profiles
-
-# Set default profile
-f5xc-api-mcp --set-default staging
-
-# Test profile connection
-f5xc-api-mcp --test-profile production
-
-# Delete a profile
-f5xc-api-mcp --delete-profile old-profile
-
-# View configuration
-f5xc-api-mcp --show-config
-```
+1. **Environment variables** (highest priority) - Always override profiles
+2. **Active xcsh profile** - From `~/.config/xcsh/`
+3. **No credentials** - Documentation mode (lowest priority)
 
 See [Security Best Practices](../security.md) for credential storage and management guidance.
 

@@ -35,32 +35,20 @@ Ask Claude to help you work with API Definitions Without Shared resources:
 
 > "List all api-definitions-without-shareds in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config api-definitions-without-shared list --namespace {namespace}
-```
-
-List all api-definitions-without-shareds
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create api_definitions_without_shared -n <namespace> -i api_definitions_without_shared.yaml
+xcsh api create api_definitions_without_shared -n <namespace> -i api_definitions_without_shared.yaml
 
 # Get
-f5xcctl api get api_definitions_without_shared <name> -n <namespace>
+xcsh api get api_definitions_without_shared <name> -n <namespace>
 
 # List
-f5xcctl api list api_definitions_without_shared -n <namespace>
+xcsh api list api_definitions_without_shared -n <namespace>
 
 # Delete
-f5xcctl api delete api_definitions_without_shared <name> -n <namespace>
+xcsh api delete api_definitions_without_shared <name> -n <namespace>
 ```
 
 ## Terraform Resource

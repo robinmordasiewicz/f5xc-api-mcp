@@ -39,32 +39,20 @@ Ask Claude to help you work with Daemonset resources:
 
 > "List all daemonsets in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data daemonset list --namespace {namespace}
-```
-
-List all daemonsets
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create daemonset -n <namespace> -i daemonset.yaml
+xcsh sites create daemonset -n <namespace> -i daemonset.yaml
 
 # Get
-f5xcctl sites get daemonset <name> -n <namespace>
+xcsh sites get daemonset <name> -n <namespace>
 
 # List
-f5xcctl sites list daemonset -n <namespace>
+xcsh sites list daemonset -n <namespace>
 
 # Delete
-f5xcctl sites delete daemonset <name> -n <namespace>
+xcsh sites delete daemonset <name> -n <namespace>
 ```
 
 ## Terraform Resource

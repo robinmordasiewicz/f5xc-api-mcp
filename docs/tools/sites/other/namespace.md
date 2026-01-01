@@ -33,32 +33,20 @@ Ask Claude to help you work with Namespace resources:
 
 > "List all namespaces in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data namespace list --namespace {namespace}
-```
-
-List all namespaces
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create namespace -n <namespace> -i namespace.yaml
+xcsh sites create namespace -n <namespace> -i namespace.yaml
 
 # Get
-f5xcctl sites get namespace <name> -n <namespace>
+xcsh sites get namespace <name> -n <namespace>
 
 # List
-f5xcctl sites list namespace -n <namespace>
+xcsh sites list namespace -n <namespace>
 
 # Delete
-f5xcctl sites delete namespace <name> -n <namespace>
+xcsh sites delete namespace <name> -n <namespace>
 ```
 
 ## Terraform Resource

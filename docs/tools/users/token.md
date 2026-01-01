@@ -79,72 +79,20 @@ Ask Claude to help you work with Token resources:
 
 > "Get details of the token named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl register token create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl register token create {name} --namespace {namespace}
-```
-
-Create token
-
-### delete
-
-```bash
-f5xcctl register token delete {name} --namespace {namespace}
-```
-
-Delete token
-
-### get_specific
-
-```bash
-f5xcctl register token get {name} --namespace {namespace}
-```
-
-Get specific token
-
-### list_all
-
-```bash
-f5xcctl register token list --namespace {namespace}
-```
-
-List all tokens
-
-### update
-
-```bash
-f5xcctl register token update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update token
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl users create token -n <namespace> -i token.yaml
+xcsh users create token -n <namespace> -i token.yaml
 
 # Get
-f5xcctl users get token <name> -n <namespace>
+xcsh users get token <name> -n <namespace>
 
 # List
-f5xcctl users list token -n <namespace>
+xcsh users list token -n <namespace>
 
 # Delete
-f5xcctl users delete token <name> -n <namespace>
+xcsh users delete token <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -41,40 +41,20 @@ Ask Claude to help you work with Notification resources:
 
 > "List all notifications in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web notification list --namespace {namespace}
-```
-
-List all notifications
-
-### update
-
-```bash
-f5xcctl web notification update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update notification
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create notification -n <namespace> -i notification.yaml
+xcsh tenant_and_identity create notification -n <namespace> -i notification.yaml
 
 # Get
-f5xcctl tenant_and_identity get notification <name> -n <namespace>
+xcsh tenant_and_identity get notification <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list notification -n <namespace>
+xcsh tenant_and_identity list notification -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete notification <name> -n <namespace>
+xcsh tenant_and_identity delete notification <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -41,32 +41,20 @@ Ask Claude to help you work with DNS Monitor Summary resources:
 
 > "List all dns-monitor-summarys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl observability dns-monitor-summary list --namespace {namespace}
-```
-
-List all dns-monitor-summarys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create dns_monitor_summary -n <namespace> -i dns_monitor_summary.yaml
+xcsh observability create dns_monitor_summary -n <namespace> -i dns_monitor_summary.yaml
 
 # Get
-f5xcctl observability get dns_monitor_summary <name> -n <namespace>
+xcsh observability get dns_monitor_summary <name> -n <namespace>
 
 # List
-f5xcctl observability list dns_monitor_summary -n <namespace>
+xcsh observability list dns_monitor_summary -n <namespace>
 
 # Delete
-f5xcctl observability delete dns_monitor_summary <name> -n <namespace>
+xcsh observability delete dns_monitor_summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

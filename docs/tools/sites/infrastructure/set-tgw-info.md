@@ -42,40 +42,20 @@ Ask Claude to help you work with Set Tgw Info resources:
 
 > "Create a set-tgw-info named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config set-tgw-info create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config set-tgw-info create {name} --namespace {namespace}
-```
-
-Create set-tgw-info
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create set_tgw_info -n <namespace> -i set_tgw_info.yaml
+xcsh sites create set_tgw_info -n <namespace> -i set_tgw_info.yaml
 
 # Get
-f5xcctl sites get set_tgw_info <name> -n <namespace>
+xcsh sites get set_tgw_info <name> -n <namespace>
 
 # List
-f5xcctl sites list set_tgw_info -n <namespace>
+xcsh sites list set_tgw_info -n <namespace>
 
 # Delete
-f5xcctl sites delete set_tgw_info <name> -n <namespace>
+xcsh sites delete set_tgw_info <name> -n <namespace>
 ```
 
 ## Terraform Resource

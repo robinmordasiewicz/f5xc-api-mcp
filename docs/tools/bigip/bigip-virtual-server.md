@@ -59,48 +59,20 @@ Ask Claude to help you work with Bigip Virtual Server resources:
 
 > "Get details of the bigip-virtual-server named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config bigip-virtual-server get {name} --namespace {namespace}
-```
-
-Get specific bigip-virtual-server
-
-### list_all
-
-```bash
-f5xcctl config bigip-virtual-server list --namespace {namespace}
-```
-
-List all bigip-virtual-servers
-
-### update
-
-```bash
-f5xcctl config bigip-virtual-server update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update bigip-virtual-server
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl bigip create bigip_virtual_server -n <namespace> -i bigip_virtual_server.yaml
+xcsh bigip create bigip_virtual_server -n <namespace> -i bigip_virtual_server.yaml
 
 # Get
-f5xcctl bigip get bigip_virtual_server <name> -n <namespace>
+xcsh bigip get bigip_virtual_server <name> -n <namespace>
 
 # List
-f5xcctl bigip list bigip_virtual_server -n <namespace>
+xcsh bigip list bigip_virtual_server -n <namespace>
 
 # Delete
-f5xcctl bigip delete bigip_virtual_server <name> -n <namespace>
+xcsh bigip delete bigip_virtual_server <name> -n <namespace>
 ```
 
 ## Terraform Resource

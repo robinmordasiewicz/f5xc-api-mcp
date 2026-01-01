@@ -77,72 +77,20 @@ Ask Claude to help you work with HTTP Loadbalancer resources:
 
 > "Get details of the http-loadbalancer named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config http-loadbalancer create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config http-loadbalancer create {name} --namespace {namespace}
-```
-
-Create http-loadbalancer
-
-### delete
-
-```bash
-f5xcctl config http-loadbalancer delete {name} --namespace {namespace}
-```
-
-Delete http-loadbalancer
-
-### get_specific
-
-```bash
-f5xcctl config http-loadbalancer get {name} --namespace {namespace}
-```
-
-Get specific http-loadbalancer
-
-### list_all
-
-```bash
-f5xcctl config http-loadbalancer list --namespace {namespace}
-```
-
-List all http-loadbalancers
-
-### update
-
-```bash
-f5xcctl config http-loadbalancer update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update http-loadbalancer
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create http_loadbalancer -n <namespace> -i http_loadbalancer.yaml
+xcsh virtual create http_loadbalancer -n <namespace> -i http_loadbalancer.yaml
 
 # Get
-f5xcctl virtual get http_loadbalancer <name> -n <namespace>
+xcsh virtual get http_loadbalancer <name> -n <namespace>
 
 # List
-f5xcctl virtual list http_loadbalancer -n <namespace>
+xcsh virtual list http_loadbalancer -n <namespace>
 
 # Delete
-f5xcctl virtual delete http_loadbalancer <name> -n <namespace>
+xcsh virtual delete http_loadbalancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

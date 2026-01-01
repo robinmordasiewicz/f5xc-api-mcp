@@ -49,40 +49,20 @@ Ask Claude to help you work with Assign resources:
 
 > "Create a assign named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web assign create {name} --namespace {namespace}
-```
-
-Create assign
-
-### file_based
-
-```bash
-f5xcctl web assign create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create assign -n <namespace> -i assign.yaml
+xcsh tenant_and_identity create assign -n <namespace> -i assign.yaml
 
 # Get
-f5xcctl tenant_and_identity get assign <name> -n <namespace>
+xcsh tenant_and_identity get assign <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list assign -n <namespace>
+xcsh tenant_and_identity list assign -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete assign <name> -n <namespace>
+xcsh tenant_and_identity delete assign <name> -n <namespace>
 ```
 
 ## Terraform Resource

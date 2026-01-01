@@ -33,40 +33,20 @@ Ask Claude to help you work with Src Tag Injection resources:
 
 > "Create a src-tag-injection named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape src-tag-injection create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape src-tag-injection create {name} --namespace {namespace}
-```
-
-Create src-tag-injection
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create src_tag_injection -n <namespace> -i src_tag_injection.yaml
+xcsh shape create src_tag_injection -n <namespace> -i src_tag_injection.yaml
 
 # Get
-f5xcctl shape get src_tag_injection <name> -n <namespace>
+xcsh shape get src_tag_injection <name> -n <namespace>
 
 # List
-f5xcctl shape list src_tag_injection -n <namespace>
+xcsh shape list src_tag_injection -n <namespace>
 
 # Delete
-f5xcctl shape delete src_tag_injection <name> -n <namespace>
+xcsh shape delete src_tag_injection <name> -n <namespace>
 ```
 
 ## Terraform Resource

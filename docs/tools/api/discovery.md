@@ -77,72 +77,20 @@ Ask Claude to help you work with Discovery resources:
 
 > "Get details of the discovery named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config discovery create {name} --namespace {namespace}
-```
-
-Create discovery
-
-### file_based
-
-```bash
-f5xcctl config discovery create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config discovery delete {name} --namespace {namespace}
-```
-
-Delete discovery
-
-### get_specific
-
-```bash
-f5xcctl config discovery get {name} --namespace {namespace}
-```
-
-Get specific discovery
-
-### list_all
-
-```bash
-f5xcctl config discovery list --namespace {namespace}
-```
-
-List all discoverys
-
-### update
-
-```bash
-f5xcctl config discovery update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update discovery
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create discovery -n <namespace> -i discovery.yaml
+xcsh api create discovery -n <namespace> -i discovery.yaml
 
 # Get
-f5xcctl api get discovery <name> -n <namespace>
+xcsh api get discovery <name> -n <namespace>
 
 # List
-f5xcctl api list discovery -n <namespace>
+xcsh api list discovery -n <namespace>
 
 # Delete
-f5xcctl api delete discovery <name> -n <namespace>
+xcsh api delete discovery <name> -n <namespace>
 ```
 
 ## Terraform Resource

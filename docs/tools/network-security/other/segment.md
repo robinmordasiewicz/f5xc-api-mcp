@@ -77,72 +77,20 @@ Ask Claude to help you work with Segment resources:
 
 > "Get details of the segment named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config segment create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config segment create {name} --namespace {namespace}
-```
-
-Create segment
-
-### delete
-
-```bash
-f5xcctl config segment delete {name} --namespace {namespace}
-```
-
-Delete segment
-
-### get_specific
-
-```bash
-f5xcctl config segment get {name} --namespace {namespace}
-```
-
-Get specific segment
-
-### list_all
-
-```bash
-f5xcctl config segment list --namespace {namespace}
-```
-
-List all segments
-
-### update
-
-```bash
-f5xcctl config segment update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update segment
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create segment -n <namespace> -i segment.yaml
+xcsh network_security create segment -n <namespace> -i segment.yaml
 
 # Get
-f5xcctl network_security get segment <name> -n <namespace>
+xcsh network_security get segment <name> -n <namespace>
 
 # List
-f5xcctl network_security list segment -n <namespace>
+xcsh network_security list segment -n <namespace>
 
 # Delete
-f5xcctl network_security delete segment <name> -n <namespace>
+xcsh network_security delete segment <name> -n <namespace>
 ```
 
 ## Terraform Resource

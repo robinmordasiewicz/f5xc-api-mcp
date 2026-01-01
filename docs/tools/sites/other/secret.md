@@ -34,32 +34,20 @@ Ask Claude to help you work with Secret resources:
 
 > "List all secrets in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data secret list --namespace {namespace}
-```
-
-List all secrets
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create secret -n <namespace> -i secret.yaml
+xcsh sites create secret -n <namespace> -i secret.yaml
 
 # Get
-f5xcctl sites get secret <name> -n <namespace>
+xcsh sites get secret <name> -n <namespace>
 
 # List
-f5xcctl sites list secret -n <namespace>
+xcsh sites list secret -n <namespace>
 
 # Delete
-f5xcctl sites delete secret <name> -n <namespace>
+xcsh sites delete secret <name> -n <namespace>
 ```
 
 ## Terraform Resource

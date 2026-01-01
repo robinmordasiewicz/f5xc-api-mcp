@@ -36,40 +36,20 @@ Ask Claude to help you work with Tax Exempt Request resources:
 
 > "Create a tax-exempt-request named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web tax-exempt-request create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web tax-exempt-request create {name} --namespace {namespace}
-```
-
-Create tax-exempt-request
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create tax_exempt_request -n <namespace> -i tax_exempt_request.yaml
+xcsh support create tax_exempt_request -n <namespace> -i tax_exempt_request.yaml
 
 # Get
-f5xcctl support get tax_exempt_request <name> -n <namespace>
+xcsh support get tax_exempt_request <name> -n <namespace>
 
 # List
-f5xcctl support list tax_exempt_request -n <namespace>
+xcsh support list tax_exempt_request -n <namespace>
 
 # Delete
-f5xcctl support delete tax_exempt_request <name> -n <namespace>
+xcsh support delete tax_exempt_request <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -42,40 +42,20 @@ Ask Claude to help you work with Create Ticket resources:
 
 > "Create a create-ticket named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl ml create-ticket create {name} --namespace {namespace}
-```
-
-Create create-ticket
-
-### file_based
-
-```bash
-f5xcctl ml create-ticket create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create create_ticket -n <namespace> -i create_ticket.yaml
+xcsh virtual create create_ticket -n <namespace> -i create_ticket.yaml
 
 # Get
-f5xcctl virtual get create_ticket <name> -n <namespace>
+xcsh virtual get create_ticket <name> -n <namespace>
 
 # List
-f5xcctl virtual list create_ticket -n <namespace>
+xcsh virtual list create_ticket -n <namespace>
 
 # Delete
-f5xcctl virtual delete create_ticket <name> -n <namespace>
+xcsh virtual delete create_ticket <name> -n <namespace>
 ```
 
 ## Terraform Resource

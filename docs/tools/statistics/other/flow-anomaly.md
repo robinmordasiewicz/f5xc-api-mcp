@@ -48,40 +48,20 @@ Ask Claude to help you work with Flow Anomaly resources:
 
 > "Get details of the flow-anomaly named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config flow-anomaly get {name} --namespace {namespace}
-```
-
-Get specific flow-anomaly
-
-### list_all
-
-```bash
-f5xcctl config flow-anomaly list --namespace {namespace}
-```
-
-List all flow-anomalys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create flow_anomaly -n <namespace> -i flow_anomaly.yaml
+xcsh statistics create flow_anomaly -n <namespace> -i flow_anomaly.yaml
 
 # Get
-f5xcctl statistics get flow_anomaly <name> -n <namespace>
+xcsh statistics get flow_anomaly <name> -n <namespace>
 
 # List
-f5xcctl statistics list flow_anomaly -n <namespace>
+xcsh statistics list flow_anomaly -n <namespace>
 
 # Delete
-f5xcctl statistics delete flow_anomaly <name> -n <namespace>
+xcsh statistics delete flow_anomaly <name> -n <namespace>
 ```
 
 ## Terraform Resource

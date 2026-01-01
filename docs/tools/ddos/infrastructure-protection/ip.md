@@ -34,32 +34,20 @@ Ask Claude to help you work with IP resources:
 
 > "List all ips in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl infraprotect ip list --namespace {namespace}
-```
-
-List all ips
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create ip -n <namespace> -i ip.yaml
+xcsh ddos create ip -n <namespace> -i ip.yaml
 
 # Get
-f5xcctl ddos get ip <name> -n <namespace>
+xcsh ddos get ip <name> -n <namespace>
 
 # List
-f5xcctl ddos list ip -n <namespace>
+xcsh ddos list ip -n <namespace>
 
 # Delete
-f5xcctl ddos delete ip <name> -n <namespace>
+xcsh ddos delete ip <name> -n <namespace>
 ```
 
 ## Terraform Resource

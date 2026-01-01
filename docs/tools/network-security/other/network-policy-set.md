@@ -48,40 +48,20 @@ Ask Claude to help you work with Network Policy Set resources:
 
 > "Get details of the network-policy-set named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config network-policy-set get {name} --namespace {namespace}
-```
-
-Get specific network-policy-set
-
-### list_all
-
-```bash
-f5xcctl config network-policy-set list --namespace {namespace}
-```
-
-List all network-policy-sets
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create network_policy_set -n <namespace> -i network_policy_set.yaml
+xcsh network_security create network_policy_set -n <namespace> -i network_policy_set.yaml
 
 # Get
-f5xcctl network_security get network_policy_set <name> -n <namespace>
+xcsh network_security get network_policy_set <name> -n <namespace>
 
 # List
-f5xcctl network_security list network_policy_set -n <namespace>
+xcsh network_security list network_policy_set -n <namespace>
 
 # Delete
-f5xcctl network_security delete network_policy_set <name> -n <namespace>
+xcsh network_security delete network_policy_set <name> -n <namespace>
 ```
 
 ## Terraform Resource

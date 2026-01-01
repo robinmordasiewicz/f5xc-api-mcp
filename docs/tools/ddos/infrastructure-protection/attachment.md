@@ -36,32 +36,20 @@ Ask Claude to help you work with Attachment resources:
 
 > "List all attachments in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl infraprotect attachment list --namespace {namespace}
-```
-
-List all attachments
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create attachment -n <namespace> -i attachment.yaml
+xcsh ddos create attachment -n <namespace> -i attachment.yaml
 
 # Get
-f5xcctl ddos get attachment <name> -n <namespace>
+xcsh ddos get attachment <name> -n <namespace>
 
 # List
-f5xcctl ddos list attachment -n <namespace>
+xcsh ddos list attachment -n <namespace>
 
 # Delete
-f5xcctl ddos delete attachment <name> -n <namespace>
+xcsh ddos delete attachment <name> -n <namespace>
 ```
 
 ## Terraform Resource

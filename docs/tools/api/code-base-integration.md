@@ -77,72 +77,20 @@ Ask Claude to help you work with Code Base Integration resources:
 
 > "Get details of the code-base-integration named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config code-base-integration create {name} --namespace {namespace}
-```
-
-Create code-base-integration
-
-### file_based
-
-```bash
-f5xcctl config code-base-integration create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config code-base-integration delete {name} --namespace {namespace}
-```
-
-Delete code-base-integration
-
-### get_specific
-
-```bash
-f5xcctl config code-base-integration get {name} --namespace {namespace}
-```
-
-Get specific code-base-integration
-
-### list_all
-
-```bash
-f5xcctl config code-base-integration list --namespace {namespace}
-```
-
-List all code-base-integrations
-
-### update
-
-```bash
-f5xcctl config code-base-integration update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update code-base-integration
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create code_base_integration -n <namespace> -i code_base_integration.yaml
+xcsh api create code_base_integration -n <namespace> -i code_base_integration.yaml
 
 # Get
-f5xcctl api get code_base_integration <name> -n <namespace>
+xcsh api get code_base_integration <name> -n <namespace>
 
 # List
-f5xcctl api list code_base_integration -n <namespace>
+xcsh api list code_base_integration -n <namespace>
 
 # Delete
-f5xcctl api delete code_base_integration <name> -n <namespace>
+xcsh api delete code_base_integration <name> -n <namespace>
 ```
 
 ## Terraform Resource

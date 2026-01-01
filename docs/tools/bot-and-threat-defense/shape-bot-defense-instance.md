@@ -48,40 +48,20 @@ Ask Claude to help you work with Shape Bot Defense Instance resources:
 
 > "Get details of the shape-bot-defense-instance named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config shape-bot-defense-instance get {name} --namespace {namespace}
-```
-
-Get specific shape-bot-defense-instance
-
-### list_all
-
-```bash
-f5xcctl config shape-bot-defense-instance list --namespace {namespace}
-```
-
-List all shape-bot-defense-instances
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl bot_and_threat_defense create shape_bot_defense_instance -n <namespace> -i shape_bot_defense_instance.yaml
+xcsh bot_and_threat_defense create shape_bot_defense_instance -n <namespace> -i shape_bot_defense_instance.yaml
 
 # Get
-f5xcctl bot_and_threat_defense get shape_bot_defense_instance <name> -n <namespace>
+xcsh bot_and_threat_defense get shape_bot_defense_instance <name> -n <namespace>
 
 # List
-f5xcctl bot_and_threat_defense list shape_bot_defense_instance -n <namespace>
+xcsh bot_and_threat_defense list shape_bot_defense_instance -n <namespace>
 
 # Delete
-f5xcctl bot_and_threat_defense delete shape_bot_defense_instance <name> -n <namespace>
+xcsh bot_and_threat_defense delete shape_bot_defense_instance <name> -n <namespace>
 ```
 
 ## Terraform Resource

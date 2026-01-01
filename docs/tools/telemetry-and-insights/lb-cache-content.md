@@ -41,40 +41,20 @@ Ask Claude to help you work with Lb Cache Content resources:
 
 > "Create a lb-cache-content named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data lb-cache-content create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data lb-cache-content create {name} --namespace {namespace}
-```
-
-Create lb-cache-content
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl telemetry_and_insights create lb_cache_content -n <namespace> -i lb_cache_content.yaml
+xcsh telemetry_and_insights create lb_cache_content -n <namespace> -i lb_cache_content.yaml
 
 # Get
-f5xcctl telemetry_and_insights get lb_cache_content <name> -n <namespace>
+xcsh telemetry_and_insights get lb_cache_content <name> -n <namespace>
 
 # List
-f5xcctl telemetry_and_insights list lb_cache_content -n <namespace>
+xcsh telemetry_and_insights list lb_cache_content -n <namespace>
 
 # Delete
-f5xcctl telemetry_and_insights delete lb_cache_content <name> -n <namespace>
+xcsh telemetry_and_insights delete lb_cache_content <name> -n <namespace>
 ```
 
 ## Terraform Resource

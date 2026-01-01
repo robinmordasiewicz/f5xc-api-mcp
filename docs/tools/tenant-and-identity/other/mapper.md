@@ -47,48 +47,20 @@ Ask Claude to help you work with Mapper resources:
 
 > "Get details of the mapper named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web mapper create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web mapper create {name} --namespace {namespace}
-```
-
-Create mapper
-
-### get_specific
-
-```bash
-f5xcctl web mapper get {name} --namespace {namespace}
-```
-
-Get specific mapper
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create mapper -n <namespace> -i mapper.yaml
+xcsh tenant_and_identity create mapper -n <namespace> -i mapper.yaml
 
 # Get
-f5xcctl tenant_and_identity get mapper <name> -n <namespace>
+xcsh tenant_and_identity get mapper <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list mapper -n <namespace>
+xcsh tenant_and_identity list mapper -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete mapper <name> -n <namespace>
+xcsh tenant_and_identity delete mapper <name> -n <namespace>
 ```
 
 ## Terraform Resource

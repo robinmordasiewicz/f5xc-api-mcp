@@ -80,72 +80,20 @@ Ask Claude to help you work with Report Config resources:
 
 > "Get details of the report-config named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl report report-config create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl report report-config create {name} --namespace {namespace}
-```
-
-Create report-config
-
-### delete
-
-```bash
-f5xcctl report report-config delete {name} --namespace {namespace}
-```
-
-Delete report-config
-
-### get_specific
-
-```bash
-f5xcctl report report-config get {name} --namespace {namespace}
-```
-
-Get specific report-config
-
-### list_all
-
-```bash
-f5xcctl report report-config list --namespace {namespace}
-```
-
-List all report-configs
-
-### update
-
-```bash
-f5xcctl report report-config update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update report-config
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create report_config -n <namespace> -i report_config.yaml
+xcsh statistics create report_config -n <namespace> -i report_config.yaml
 
 # Get
-f5xcctl statistics get report_config <name> -n <namespace>
+xcsh statistics get report_config <name> -n <namespace>
 
 # List
-f5xcctl statistics list report_config -n <namespace>
+xcsh statistics list report_config -n <namespace>
 
 # Delete
-f5xcctl statistics delete report_config <name> -n <namespace>
+xcsh statistics delete report_config <name> -n <namespace>
 ```
 
 ## Terraform Resource

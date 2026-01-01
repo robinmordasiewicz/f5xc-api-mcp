@@ -34,32 +34,20 @@ Ask Claude to help you work with Network resources:
 
 > "List all networks in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl infraprotect network list --namespace {namespace}
-```
-
-List all networks
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create network -n <namespace> -i network.yaml
+xcsh ddos create network -n <namespace> -i network.yaml
 
 # Get
-f5xcctl ddos get network <name> -n <namespace>
+xcsh ddos get network <name> -n <namespace>
 
 # List
-f5xcctl ddos list network -n <namespace>
+xcsh ddos list network -n <namespace>
 
 # Delete
-f5xcctl ddos delete network <name> -n <namespace>
+xcsh ddos delete network <name> -n <namespace>
 ```
 
 ## Terraform Resource

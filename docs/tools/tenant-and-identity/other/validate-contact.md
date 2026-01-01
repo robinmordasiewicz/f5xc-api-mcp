@@ -38,40 +38,20 @@ Ask Claude to help you work with Validate Contact resources:
 
 > "Create a validate-contact named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl default validate-contact create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl default validate-contact create {name} --namespace {namespace}
-```
-
-Create validate-contact
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create validate_contact -n <namespace> -i validate_contact.yaml
+xcsh tenant_and_identity create validate_contact -n <namespace> -i validate_contact.yaml
 
 # Get
-f5xcctl tenant_and_identity get validate_contact <name> -n <namespace>
+xcsh tenant_and_identity get validate_contact <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list validate_contact -n <namespace>
+xcsh tenant_and_identity list validate_contact -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete validate_contact <name> -n <namespace>
+xcsh tenant_and_identity delete validate_contact <name> -n <namespace>
 ```
 
 ## Terraform Resource

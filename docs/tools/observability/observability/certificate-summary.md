@@ -40,32 +40,20 @@ Ask Claude to help you work with Certificate Summary resources:
 
 > "List all certificate-summarys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl observability certificate-summary list --namespace {namespace}
-```
-
-List all certificate-summarys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create certificate_summary -n <namespace> -i certificate_summary.yaml
+xcsh observability create certificate_summary -n <namespace> -i certificate_summary.yaml
 
 # Get
-f5xcctl observability get certificate_summary <name> -n <namespace>
+xcsh observability get certificate_summary <name> -n <namespace>
 
 # List
-f5xcctl observability list certificate_summary -n <namespace>
+xcsh observability list certificate_summary -n <namespace>
 
 # Delete
-f5xcctl observability delete certificate_summary <name> -n <namespace>
+xcsh observability delete certificate_summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

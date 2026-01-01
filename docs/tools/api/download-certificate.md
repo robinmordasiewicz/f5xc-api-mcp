@@ -52,40 +52,20 @@ Ask Claude to help you work with Download Certificate resources:
 
 > "Create a download-certificate named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config download-certificate create {name} --namespace {namespace}
-```
-
-Create download-certificate
-
-### file_based
-
-```bash
-f5xcctl config download-certificate create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create download_certificate -n <namespace> -i download_certificate.yaml
+xcsh api create download_certificate -n <namespace> -i download_certificate.yaml
 
 # Get
-f5xcctl api get download_certificate <name> -n <namespace>
+xcsh api get download_certificate <name> -n <namespace>
 
 # List
-f5xcctl api list download_certificate -n <namespace>
+xcsh api list download_certificate -n <namespace>
 
 # Delete
-f5xcctl api delete download_certificate <name> -n <namespace>
+xcsh api delete download_certificate <name> -n <namespace>
 ```
 
 ## Terraform Resource

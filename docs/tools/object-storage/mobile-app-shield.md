@@ -42,32 +42,20 @@ Ask Claude to help you work with Mobile App Shield resources:
 
 > "List all mobile-app-shields in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl object_store mobile-app-shield list --namespace {namespace}
-```
-
-List all mobile-app-shields
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl object_storage create mobile_app_shield -n <namespace> -i mobile_app_shield.yaml
+xcsh object_storage create mobile_app_shield -n <namespace> -i mobile_app_shield.yaml
 
 # Get
-f5xcctl object_storage get mobile_app_shield <name> -n <namespace>
+xcsh object_storage get mobile_app_shield <name> -n <namespace>
 
 # List
-f5xcctl object_storage list mobile_app_shield -n <namespace>
+xcsh object_storage list mobile_app_shield -n <namespace>
 
 # Delete
-f5xcctl object_storage delete mobile_app_shield <name> -n <namespace>
+xcsh object_storage delete mobile_app_shield <name> -n <namespace>
 ```
 
 ## Terraform Resource

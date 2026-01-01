@@ -43,48 +43,20 @@ Ask Claude to help you work with Image resources:
 
 > "List all images in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### delete
-
-```bash
-f5xcctl web image delete {name} --namespace {namespace}
-```
-
-Delete image
-
-### list_all
-
-```bash
-f5xcctl web image list --namespace {namespace}
-```
-
-List all images
-
-### update
-
-```bash
-f5xcctl web image update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update image
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create image -n <namespace> -i image.yaml
+xcsh tenant_and_identity create image -n <namespace> -i image.yaml
 
 # Get
-f5xcctl tenant_and_identity get image <name> -n <namespace>
+xcsh tenant_and_identity get image <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list image -n <namespace>
+xcsh tenant_and_identity list image -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete image <name> -n <namespace>
+xcsh tenant_and_identity delete image <name> -n <namespace>
 ```
 
 ## Terraform Resource

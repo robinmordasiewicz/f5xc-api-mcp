@@ -77,72 +77,20 @@ Ask Claude to help you work with Forwarding Class resources:
 
 > "Get details of the forwarding-class named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config forwarding-class create {name} --namespace {namespace}
-```
-
-Create forwarding-class
-
-### file_based
-
-```bash
-f5xcctl config forwarding-class create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config forwarding-class delete {name} --namespace {namespace}
-```
-
-Delete forwarding-class
-
-### get_specific
-
-```bash
-f5xcctl config forwarding-class get {name} --namespace {namespace}
-```
-
-Get specific forwarding-class
-
-### list_all
-
-```bash
-f5xcctl config forwarding-class list --namespace {namespace}
-```
-
-List all forwarding-classs
-
-### update
-
-```bash
-f5xcctl config forwarding-class update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update forwarding-class
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create forwarding_class -n <namespace> -i forwarding_class.yaml
+xcsh network create forwarding_class -n <namespace> -i forwarding_class.yaml
 
 # Get
-f5xcctl network get forwarding_class <name> -n <namespace>
+xcsh network get forwarding_class <name> -n <namespace>
 
 # List
-f5xcctl network list forwarding_class -n <namespace>
+xcsh network list forwarding_class -n <namespace>
 
 # Delete
-f5xcctl network delete forwarding_class <name> -n <namespace>
+xcsh network delete forwarding_class <name> -n <namespace>
 ```
 
 ## Terraform Resource

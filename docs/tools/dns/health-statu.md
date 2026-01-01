@@ -39,40 +39,20 @@ Ask Claude to help you work with Health Statu resources:
 
 > "Get details of the health-statu named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl data health-statu get {name} --namespace {namespace}
-```
-
-Get specific health-statu
-
-### list_all
-
-```bash
-f5xcctl data health-statu list --namespace {namespace}
-```
-
-List all health-status
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create health_statu -n <namespace> -i health_statu.yaml
+xcsh dns create health_statu -n <namespace> -i health_statu.yaml
 
 # Get
-f5xcctl dns get health_statu <name> -n <namespace>
+xcsh dns get health_statu <name> -n <namespace>
 
 # List
-f5xcctl dns list health_statu -n <namespace>
+xcsh dns list health_statu -n <namespace>
 
 # Delete
-f5xcctl dns delete health_statu <name> -n <namespace>
+xcsh dns delete health_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

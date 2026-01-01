@@ -47,40 +47,20 @@ Ask Claude to help you work with Discovered Service resources:
 
 > "Get details of the discovered-service named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl discovery discovered-service get {name} --namespace {namespace}
-```
-
-Get specific discovered-service
-
-### list_all
-
-```bash
-f5xcctl discovery discovered-service list --namespace {namespace}
-```
-
-List all discovered-services
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create discovered_service -n <namespace> -i discovered_service.yaml
+xcsh statistics create discovered_service -n <namespace> -i discovered_service.yaml
 
 # Get
-f5xcctl statistics get discovered_service <name> -n <namespace>
+xcsh statistics get discovered_service <name> -n <namespace>
 
 # List
-f5xcctl statistics list discovered_service -n <namespace>
+xcsh statistics list discovered_service -n <namespace>
 
 # Delete
-f5xcctl statistics delete discovered_service <name> -n <namespace>
+xcsh statistics delete discovered_service <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -41,40 +41,20 @@ Ask Claude to help you work with General Feedback resources:
 
 > "Create a general-feedback named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape general-feedback create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape general-feedback create {name} --namespace {namespace}
-```
-
-Create general-feedback
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create general_feedback -n <namespace> -i general_feedback.yaml
+xcsh shape create general_feedback -n <namespace> -i general_feedback.yaml
 
 # Get
-f5xcctl shape get general_feedback <name> -n <namespace>
+xcsh shape get general_feedback <name> -n <namespace>
 
 # List
-f5xcctl shape list general_feedback -n <namespace>
+xcsh shape list general_feedback -n <namespace>
 
 # Delete
-f5xcctl shape delete general_feedback <name> -n <namespace>
+xcsh shape delete general_feedback <name> -n <namespace>
 ```
 
 ## Terraform Resource

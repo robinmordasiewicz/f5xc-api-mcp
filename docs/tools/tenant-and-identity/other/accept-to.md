@@ -41,40 +41,20 @@ Ask Claude to help you work with Accept To resources:
 
 > "Create a accept-to named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web accept-to create {name} --namespace {namespace}
-```
-
-Create accept-to
-
-### file_based
-
-```bash
-f5xcctl web accept-to create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create accept_to -n <namespace> -i accept_to.yaml
+xcsh tenant_and_identity create accept_to -n <namespace> -i accept_to.yaml
 
 # Get
-f5xcctl tenant_and_identity get accept_to <name> -n <namespace>
+xcsh tenant_and_identity get accept_to <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list accept_to -n <namespace>
+xcsh tenant_and_identity list accept_to -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete accept_to <name> -n <namespace>
+xcsh tenant_and_identity delete accept_to <name> -n <namespace>
 ```
 
 ## Terraform Resource

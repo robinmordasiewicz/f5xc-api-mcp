@@ -33,40 +33,20 @@ Ask Claude to help you work with Get Registrations By Token resources:
 
 > "Create a get-registrations-by-token named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl register get-registrations-by-token create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl register get-registrations-by-token create {name} --namespace {namespace}
-```
-
-Create get-registrations-by-token
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create get_registrations_by_token -n <namespace> -i get_registrations_by_token.yaml
+xcsh ce_management create get_registrations_by_token -n <namespace> -i get_registrations_by_token.yaml
 
 # Get
-f5xcctl ce_management get get_registrations_by_token <name> -n <namespace>
+xcsh ce_management get get_registrations_by_token <name> -n <namespace>
 
 # List
-f5xcctl ce_management list get_registrations_by_token -n <namespace>
+xcsh ce_management list get_registrations_by_token -n <namespace>
 
 # Delete
-f5xcctl ce_management delete get_registrations_by_token <name> -n <namespace>
+xcsh ce_management delete get_registrations_by_token <name> -n <namespace>
 ```
 
 ## Terraform Resource

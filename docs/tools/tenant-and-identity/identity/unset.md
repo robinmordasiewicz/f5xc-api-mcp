@@ -31,32 +31,20 @@ Operations on this resource may have the following effects:
 
 Ask Claude to help you work with Unset resources:
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### update
-
-```bash
-f5xcctl web unset update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update unset
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create unset -n <namespace> -i unset.yaml
+xcsh tenant_and_identity create unset -n <namespace> -i unset.yaml
 
 # Get
-f5xcctl tenant_and_identity get unset <name> -n <namespace>
+xcsh tenant_and_identity get unset <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list unset -n <namespace>
+xcsh tenant_and_identity list unset -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete unset <name> -n <namespace>
+xcsh tenant_and_identity delete unset <name> -n <namespace>
 ```
 
 ## Terraform Resource

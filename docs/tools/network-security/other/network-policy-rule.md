@@ -77,72 +77,20 @@ Ask Claude to help you work with Network Policy Rule resources:
 
 > "Get details of the network-policy-rule named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config network-policy-rule create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config network-policy-rule create {name} --namespace {namespace}
-```
-
-Create network-policy-rule
-
-### delete
-
-```bash
-f5xcctl config network-policy-rule delete {name} --namespace {namespace}
-```
-
-Delete network-policy-rule
-
-### get_specific
-
-```bash
-f5xcctl config network-policy-rule get {name} --namespace {namespace}
-```
-
-Get specific network-policy-rule
-
-### list_all
-
-```bash
-f5xcctl config network-policy-rule list --namespace {namespace}
-```
-
-List all network-policy-rules
-
-### update
-
-```bash
-f5xcctl config network-policy-rule update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update network-policy-rule
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create network_policy_rule -n <namespace> -i network_policy_rule.yaml
+xcsh network_security create network_policy_rule -n <namespace> -i network_policy_rule.yaml
 
 # Get
-f5xcctl network_security get network_policy_rule <name> -n <namespace>
+xcsh network_security get network_policy_rule <name> -n <namespace>
 
 # List
-f5xcctl network_security list network_policy_rule -n <namespace>
+xcsh network_security list network_policy_rule -n <namespace>
 
 # Delete
-f5xcctl network_security delete network_policy_rule <name> -n <namespace>
+xcsh network_security delete network_policy_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

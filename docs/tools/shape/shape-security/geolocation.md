@@ -41,40 +41,20 @@ Ask Claude to help you work with Geolocation resources:
 
 > "Create a geolocation named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape geolocation create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape geolocation create {name} --namespace {namespace}
-```
-
-Create geolocation
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create geolocation -n <namespace> -i geolocation.yaml
+xcsh shape create geolocation -n <namespace> -i geolocation.yaml
 
 # Get
-f5xcctl shape get geolocation <name> -n <namespace>
+xcsh shape get geolocation <name> -n <namespace>
 
 # List
-f5xcctl shape list geolocation -n <namespace>
+xcsh shape list geolocation -n <namespace>
 
 # Delete
-f5xcctl shape delete geolocation <name> -n <namespace>
+xcsh shape delete geolocation <name> -n <namespace>
 ```
 
 ## Terraform Resource

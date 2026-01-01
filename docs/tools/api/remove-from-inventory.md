@@ -42,40 +42,20 @@ Ask Claude to help you work with Remove From Inventory resources:
 
 > "Create a remove-from-inventory named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config remove-from-inventory create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config remove-from-inventory create {name} --namespace {namespace}
-```
-
-Create remove-from-inventory
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create remove_from_inventory -n <namespace> -i remove_from_inventory.yaml
+xcsh api create remove_from_inventory -n <namespace> -i remove_from_inventory.yaml
 
 # Get
-f5xcctl api get remove_from_inventory <name> -n <namespace>
+xcsh api get remove_from_inventory <name> -n <namespace>
 
 # List
-f5xcctl api list remove_from_inventory -n <namespace>
+xcsh api list remove_from_inventory -n <namespace>
 
 # Delete
-f5xcctl api delete remove_from_inventory <name> -n <namespace>
+xcsh api delete remove_from_inventory <name> -n <namespace>
 ```
 
 ## Terraform Resource

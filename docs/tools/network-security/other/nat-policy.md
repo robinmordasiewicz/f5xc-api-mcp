@@ -80,72 +80,20 @@ Ask Claude to help you work with Nat Policy resources:
 
 > "Get details of the nat-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config nat-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config nat-policy create {name} --namespace {namespace}
-```
-
-Create nat-policy
-
-### delete
-
-```bash
-f5xcctl config nat-policy delete {name} --namespace {namespace}
-```
-
-Delete nat-policy
-
-### get_specific
-
-```bash
-f5xcctl config nat-policy get {name} --namespace {namespace}
-```
-
-Get specific nat-policy
-
-### list_all
-
-```bash
-f5xcctl config nat-policy list --namespace {namespace}
-```
-
-List all nat-policys
-
-### update
-
-```bash
-f5xcctl config nat-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update nat-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create nat_policy -n <namespace> -i nat_policy.yaml
+xcsh network_security create nat_policy -n <namespace> -i nat_policy.yaml
 
 # Get
-f5xcctl network_security get nat_policy <name> -n <namespace>
+xcsh network_security get nat_policy <name> -n <namespace>
 
 # List
-f5xcctl network_security list nat_policy -n <namespace>
+xcsh network_security list nat_policy -n <namespace>
 
 # Delete
-f5xcctl network_security delete nat_policy <name> -n <namespace>
+xcsh network_security delete nat_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

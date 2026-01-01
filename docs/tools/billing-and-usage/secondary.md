@@ -43,40 +43,20 @@ Ask Claude to help you work with Secondary resources:
 
 > "Create a secondary named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web secondary create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web secondary create {name} --namespace {namespace}
-```
-
-Create secondary
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create secondary -n <namespace> -i secondary.yaml
+xcsh billing_and_usage create secondary -n <namespace> -i secondary.yaml
 
 # Get
-f5xcctl billing_and_usage get secondary <name> -n <namespace>
+xcsh billing_and_usage get secondary <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list secondary -n <namespace>
+xcsh billing_and_usage list secondary -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete secondary <name> -n <namespace>
+xcsh billing_and_usage delete secondary <name> -n <namespace>
 ```
 
 ## Terraform Resource

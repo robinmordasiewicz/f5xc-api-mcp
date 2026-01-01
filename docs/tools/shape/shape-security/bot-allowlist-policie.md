@@ -33,32 +33,20 @@ Ask Claude to help you work with Bot Allowlist Policie resources:
 
 > "List all bot-allowlist-policies in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape bot-allowlist-policie list --namespace {namespace}
-```
-
-List all bot-allowlist-policies
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create bot_allowlist_policie -n <namespace> -i bot_allowlist_policie.yaml
+xcsh shape create bot_allowlist_policie -n <namespace> -i bot_allowlist_policie.yaml
 
 # Get
-f5xcctl shape get bot_allowlist_policie <name> -n <namespace>
+xcsh shape get bot_allowlist_policie <name> -n <namespace>
 
 # List
-f5xcctl shape list bot_allowlist_policie -n <namespace>
+xcsh shape list bot_allowlist_policie -n <namespace>
 
 # Delete
-f5xcctl shape delete bot_allowlist_policie <name> -n <namespace>
+xcsh shape delete bot_allowlist_policie <name> -n <namespace>
 ```
 
 ## Terraform Resource

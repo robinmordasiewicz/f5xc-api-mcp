@@ -81,72 +81,20 @@ Ask Claude to help you work with Managed Tenant resources:
 
 > "Get details of the managed-tenant named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web managed-tenant create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web managed-tenant create {name} --namespace {namespace}
-```
-
-Create managed-tenant
-
-### delete
-
-```bash
-f5xcctl web managed-tenant delete {name} --namespace {namespace}
-```
-
-Delete managed-tenant
-
-### get_specific
-
-```bash
-f5xcctl web managed-tenant get {name} --namespace {namespace}
-```
-
-Get specific managed-tenant
-
-### list_all
-
-```bash
-f5xcctl web managed-tenant list --namespace {namespace}
-```
-
-List all managed-tenants
-
-### update
-
-```bash
-f5xcctl web managed-tenant update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update managed-tenant
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create managed_tenant -n <namespace> -i managed_tenant.yaml
+xcsh tenant_and_identity create managed_tenant -n <namespace> -i managed_tenant.yaml
 
 # Get
-f5xcctl tenant_and_identity get managed_tenant <name> -n <namespace>
+xcsh tenant_and_identity get managed_tenant <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list managed_tenant -n <namespace>
+xcsh tenant_and_identity list managed_tenant -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete managed_tenant <name> -n <namespace>
+xcsh tenant_and_identity delete managed_tenant <name> -n <namespace>
 ```
 
 ## Terraform Resource

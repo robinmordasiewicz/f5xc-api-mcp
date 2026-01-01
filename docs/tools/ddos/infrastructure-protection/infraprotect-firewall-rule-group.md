@@ -77,72 +77,20 @@ Ask Claude to help you work with Infraprotect Firewall Rule Group resources:
 
 > "Get details of the infraprotect-firewall-rule-group named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule-group create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule-group create {name} --namespace {namespace}
-```
-
-Create infraprotect-firewall-rule-group
-
-### delete
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule-group delete {name} --namespace {namespace}
-```
-
-Delete infraprotect-firewall-rule-group
-
-### get_specific
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule-group get {name} --namespace {namespace}
-```
-
-Get specific infraprotect-firewall-rule-group
-
-### list_all
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule-group list --namespace {namespace}
-```
-
-List all infraprotect-firewall-rule-groups
-
-### update
-
-```bash
-f5xcctl infraprotect infraprotect-firewall-rule-group update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update infraprotect-firewall-rule-group
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create infraprotect_firewall_rule_group -n <namespace> -i infraprotect_firewall_rule_group.yaml
+xcsh ddos create infraprotect_firewall_rule_group -n <namespace> -i infraprotect_firewall_rule_group.yaml
 
 # Get
-f5xcctl ddos get infraprotect_firewall_rule_group <name> -n <namespace>
+xcsh ddos get infraprotect_firewall_rule_group <name> -n <namespace>
 
 # List
-f5xcctl ddos list infraprotect_firewall_rule_group -n <namespace>
+xcsh ddos list infraprotect_firewall_rule_group -n <namespace>
 
 # Delete
-f5xcctl ddos delete infraprotect_firewall_rule_group <name> -n <namespace>
+xcsh ddos delete infraprotect_firewall_rule_group <name> -n <namespace>
 ```
 
 ## Terraform Resource

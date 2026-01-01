@@ -43,32 +43,20 @@ Ask Claude to help you work with Implicit Label resources:
 
 > "List all implicit-labels in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config implicit-label list --namespace {namespace}
-```
-
-List all implicit-labels
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl users create implicit_label -n <namespace> -i implicit_label.yaml
+xcsh users create implicit_label -n <namespace> -i implicit_label.yaml
 
 # Get
-f5xcctl users get implicit_label <name> -n <namespace>
+xcsh users get implicit_label <name> -n <namespace>
 
 # List
-f5xcctl users list implicit_label -n <namespace>
+xcsh users list implicit_label -n <namespace>
 
 # Delete
-f5xcctl users delete implicit_label <name> -n <namespace>
+xcsh users delete implicit_label <name> -n <namespace>
 ```
 
 ## Terraform Resource

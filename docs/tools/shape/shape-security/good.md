@@ -41,40 +41,20 @@ Ask Claude to help you work with Good resources:
 
 > "Create a good named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape good create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape good create {name} --namespace {namespace}
-```
-
-Create good
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create good -n <namespace> -i good.yaml
+xcsh shape create good -n <namespace> -i good.yaml
 
 # Get
-f5xcctl shape get good <name> -n <namespace>
+xcsh shape get good <name> -n <namespace>
 
 # List
-f5xcctl shape list good -n <namespace>
+xcsh shape list good -n <namespace>
 
 # Delete
-f5xcctl shape delete good <name> -n <namespace>
+xcsh shape delete good <name> -n <namespace>
 ```
 
 ## Terraform Resource

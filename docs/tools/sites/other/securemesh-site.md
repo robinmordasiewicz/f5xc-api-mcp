@@ -77,72 +77,20 @@ Ask Claude to help you work with Securemesh Site resources:
 
 > "Get details of the securemesh-site named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config securemesh-site create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config securemesh-site create {name} --namespace {namespace}
-```
-
-Create securemesh-site
-
-### delete
-
-```bash
-f5xcctl config securemesh-site delete {name} --namespace {namespace}
-```
-
-Delete securemesh-site
-
-### get_specific
-
-```bash
-f5xcctl config securemesh-site get {name} --namespace {namespace}
-```
-
-Get specific securemesh-site
-
-### list_all
-
-```bash
-f5xcctl config securemesh-site list --namespace {namespace}
-```
-
-List all securemesh-sites
-
-### update
-
-```bash
-f5xcctl config securemesh-site update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update securemesh-site
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create securemesh_site -n <namespace> -i securemesh_site.yaml
+xcsh sites create securemesh_site -n <namespace> -i securemesh_site.yaml
 
 # Get
-f5xcctl sites get securemesh_site <name> -n <namespace>
+xcsh sites get securemesh_site <name> -n <namespace>
 
 # List
-f5xcctl sites list securemesh_site -n <namespace>
+xcsh sites list securemesh_site -n <namespace>
 
 # Delete
-f5xcctl sites delete securemesh_site <name> -n <namespace>
+xcsh sites delete securemesh_site <name> -n <namespace>
 ```
 
 ## Terraform Resource

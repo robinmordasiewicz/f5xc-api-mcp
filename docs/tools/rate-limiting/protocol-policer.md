@@ -79,72 +79,20 @@ Ask Claude to help you work with Protocol Policer resources:
 
 > "Get details of the protocol-policer named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config protocol-policer create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config protocol-policer create {name} --namespace {namespace}
-```
-
-Create protocol-policer
-
-### delete
-
-```bash
-f5xcctl config protocol-policer delete {name} --namespace {namespace}
-```
-
-Delete protocol-policer
-
-### get_specific
-
-```bash
-f5xcctl config protocol-policer get {name} --namespace {namespace}
-```
-
-Get specific protocol-policer
-
-### list_all
-
-```bash
-f5xcctl config protocol-policer list --namespace {namespace}
-```
-
-List all protocol-policers
-
-### update
-
-```bash
-f5xcctl config protocol-policer update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update protocol-policer
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl rate_limiting create protocol_policer -n <namespace> -i protocol_policer.yaml
+xcsh rate_limiting create protocol_policer -n <namespace> -i protocol_policer.yaml
 
 # Get
-f5xcctl rate_limiting get protocol_policer <name> -n <namespace>
+xcsh rate_limiting get protocol_policer <name> -n <namespace>
 
 # List
-f5xcctl rate_limiting list protocol_policer -n <namespace>
+xcsh rate_limiting list protocol_policer -n <namespace>
 
 # Delete
-f5xcctl rate_limiting delete protocol_policer <name> -n <namespace>
+xcsh rate_limiting delete protocol_policer <name> -n <namespace>
 ```
 
 ## Terraform Resource

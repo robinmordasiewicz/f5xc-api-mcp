@@ -34,32 +34,20 @@ Ask Claude to help you work with Registrations By Site resources:
 
 > "List all registrations-by-sites in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl register registrations-by-site list --namespace {namespace}
-```
-
-List all registrations-by-sites
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create registrations_by_site -n <namespace> -i registrations_by_site.yaml
+xcsh ce_management create registrations_by_site -n <namespace> -i registrations_by_site.yaml
 
 # Get
-f5xcctl ce_management get registrations_by_site <name> -n <namespace>
+xcsh ce_management get registrations_by_site <name> -n <namespace>
 
 # List
-f5xcctl ce_management list registrations_by_site -n <namespace>
+xcsh ce_management list registrations_by_site -n <namespace>
 
 # Delete
-f5xcctl ce_management delete registrations_by_site <name> -n <namespace>
+xcsh ce_management delete registrations_by_site <name> -n <namespace>
 ```
 
 ## Terraform Resource

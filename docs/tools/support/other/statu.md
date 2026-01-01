@@ -41,32 +41,20 @@ Ask Claude to help you work with Statu resources:
 
 > "List all status in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl operate statu list --namespace {namespace}
-```
-
-List all status
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create statu -n <namespace> -i statu.yaml
+xcsh support create statu -n <namespace> -i statu.yaml
 
 # Get
-f5xcctl support get statu <name> -n <namespace>
+xcsh support get statu <name> -n <namespace>
 
 # List
-f5xcctl support list statu -n <namespace>
+xcsh support list statu -n <namespace>
 
 # Delete
-f5xcctl support delete statu <name> -n <namespace>
+xcsh support delete statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

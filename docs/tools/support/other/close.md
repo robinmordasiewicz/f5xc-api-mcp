@@ -43,40 +43,20 @@ Ask Claude to help you work with Close resources:
 
 > "Create a close named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web close create {name} --namespace {namespace}
-```
-
-Create close
-
-### file_based
-
-```bash
-f5xcctl web close create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create close -n <namespace> -i close.yaml
+xcsh support create close -n <namespace> -i close.yaml
 
 # Get
-f5xcctl support get close <name> -n <namespace>
+xcsh support get close <name> -n <namespace>
 
 # List
-f5xcctl support list close -n <namespace>
+xcsh support list close -n <namespace>
 
 # Delete
-f5xcctl support delete close <name> -n <namespace>
+xcsh support delete close <name> -n <namespace>
 ```
 
 ## Terraform Resource

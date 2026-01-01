@@ -48,48 +48,20 @@ Ask Claude to help you work with Active Network Policie resources:
 
 > "List all active-network-policies in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config active-network-policie create {name} --namespace {namespace}
-```
-
-Create active-network-policie
-
-### file_based
-
-```bash
-f5xcctl config active-network-policie create -f {file}.yaml
-```
-
-Create from YAML file
-
-### list_all
-
-```bash
-f5xcctl config active-network-policie list --namespace {namespace}
-```
-
-List all active-network-policies
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create active_network_policie -n <namespace> -i active_network_policie.yaml
+xcsh tenant_and_identity create active_network_policie -n <namespace> -i active_network_policie.yaml
 
 # Get
-f5xcctl tenant_and_identity get active_network_policie <name> -n <namespace>
+xcsh tenant_and_identity get active_network_policie <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list active_network_policie -n <namespace>
+xcsh tenant_and_identity list active_network_policie -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete active_network_policie <name> -n <namespace>
+xcsh tenant_and_identity delete active_network_policie <name> -n <namespace>
 ```
 
 ## Terraform Resource

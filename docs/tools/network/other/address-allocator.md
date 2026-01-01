@@ -71,64 +71,20 @@ Ask Claude to help you work with Address Allocator resources:
 
 > "Get details of the address-allocator named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config address-allocator create {name} --namespace {namespace}
-```
-
-Create address-allocator
-
-### file_based
-
-```bash
-f5xcctl config address-allocator create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config address-allocator delete {name} --namespace {namespace}
-```
-
-Delete address-allocator
-
-### get_specific
-
-```bash
-f5xcctl config address-allocator get {name} --namespace {namespace}
-```
-
-Get specific address-allocator
-
-### list_all
-
-```bash
-f5xcctl config address-allocator list --namespace {namespace}
-```
-
-List all address-allocators
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create address_allocator -n <namespace> -i address_allocator.yaml
+xcsh network create address_allocator -n <namespace> -i address_allocator.yaml
 
 # Get
-f5xcctl network get address_allocator <name> -n <namespace>
+xcsh network get address_allocator <name> -n <namespace>
 
 # List
-f5xcctl network list address_allocator -n <namespace>
+xcsh network list address_allocator -n <namespace>
 
 # Delete
-f5xcctl network delete address_allocator <name> -n <namespace>
+xcsh network delete address_allocator <name> -n <namespace>
 ```
 
 ## Terraform Resource

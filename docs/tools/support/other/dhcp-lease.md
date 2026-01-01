@@ -34,32 +34,20 @@ Ask Claude to help you work with Dhcp Lease resources:
 
 > "List all dhcp-leases in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl operate dhcp-lease list --namespace {namespace}
-```
-
-List all dhcp-leases
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create dhcp_lease -n <namespace> -i dhcp_lease.yaml
+xcsh support create dhcp_lease -n <namespace> -i dhcp_lease.yaml
 
 # Get
-f5xcctl support get dhcp_lease <name> -n <namespace>
+xcsh support get dhcp_lease <name> -n <namespace>
 
 # List
-f5xcctl support list dhcp_lease -n <namespace>
+xcsh support list dhcp_lease -n <namespace>
 
 # Delete
-f5xcctl support delete dhcp_lease <name> -n <namespace>
+xcsh support delete dhcp_lease <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -33,40 +33,20 @@ Ask Claude to help you work with Channel resources:
 
 > "Create a channel named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape channel create {name} --namespace {namespace}
-```
-
-Create channel
-
-### file_based
-
-```bash
-f5xcctl shape channel create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create channel -n <namespace> -i channel.yaml
+xcsh shape create channel -n <namespace> -i channel.yaml
 
 # Get
-f5xcctl shape get channel <name> -n <namespace>
+xcsh shape get channel <name> -n <namespace>
 
 # List
-f5xcctl shape list channel -n <namespace>
+xcsh shape list channel -n <namespace>
 
 # Delete
-f5xcctl shape delete channel <name> -n <namespace>
+xcsh shape delete channel <name> -n <namespace>
 ```
 
 ## Terraform Resource

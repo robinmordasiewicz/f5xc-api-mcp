@@ -80,72 +80,20 @@ Ask Claude to help you work with K8S Cluster Role Binding resources:
 
 > "Get details of the k8s-cluster-role-binding named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config k8s-cluster-role-binding create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config k8s-cluster-role-binding create {name} --namespace {namespace}
-```
-
-Create k8s-cluster-role-binding
-
-### delete
-
-```bash
-f5xcctl config k8s-cluster-role-binding delete {name} --namespace {namespace}
-```
-
-Delete k8s-cluster-role-binding
-
-### get_specific
-
-```bash
-f5xcctl config k8s-cluster-role-binding get {name} --namespace {namespace}
-```
-
-Get specific k8s-cluster-role-binding
-
-### list_all
-
-```bash
-f5xcctl config k8s-cluster-role-binding list --namespace {namespace}
-```
-
-List all k8s-cluster-role-bindings
-
-### update
-
-```bash
-f5xcctl config k8s-cluster-role-binding update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update k8s-cluster-role-binding
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl managed_kubernetes create k8s_cluster_role_binding -n <namespace> -i k8s_cluster_role_binding.yaml
+xcsh managed_kubernetes create k8s_cluster_role_binding -n <namespace> -i k8s_cluster_role_binding.yaml
 
 # Get
-f5xcctl managed_kubernetes get k8s_cluster_role_binding <name> -n <namespace>
+xcsh managed_kubernetes get k8s_cluster_role_binding <name> -n <namespace>
 
 # List
-f5xcctl managed_kubernetes list k8s_cluster_role_binding -n <namespace>
+xcsh managed_kubernetes list k8s_cluster_role_binding -n <namespace>
 
 # Delete
-f5xcctl managed_kubernetes delete k8s_cluster_role_binding <name> -n <namespace>
+xcsh managed_kubernetes delete k8s_cluster_role_binding <name> -n <namespace>
 ```
 
 ## Terraform Resource

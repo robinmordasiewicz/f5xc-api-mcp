@@ -43,40 +43,20 @@ Ask Claude to help you work with Host Ping resources:
 
 > "Create a host-ping named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl operate host-ping create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl operate host-ping create {name} --namespace {namespace}
-```
-
-Create host-ping
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create host_ping -n <namespace> -i host_ping.yaml
+xcsh support create host_ping -n <namespace> -i host_ping.yaml
 
 # Get
-f5xcctl support get host_ping <name> -n <namespace>
+xcsh support get host_ping <name> -n <namespace>
 
 # List
-f5xcctl support list host_ping -n <namespace>
+xcsh support list host_ping -n <namespace>
 
 # Delete
-f5xcctl support delete host_ping <name> -n <namespace>
+xcsh support delete host_ping <name> -n <namespace>
 ```
 
 ## Terraform Resource

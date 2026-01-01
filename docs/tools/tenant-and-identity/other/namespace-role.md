@@ -48,40 +48,20 @@ Ask Claude to help you work with Namespace Role resources:
 
 > "Get details of the namespace-role named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl web namespace-role get {name} --namespace {namespace}
-```
-
-Get specific namespace-role
-
-### list_all
-
-```bash
-f5xcctl web namespace-role list --namespace {namespace}
-```
-
-List all namespace-roles
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create namespace_role -n <namespace> -i namespace_role.yaml
+xcsh tenant_and_identity create namespace_role -n <namespace> -i namespace_role.yaml
 
 # Get
-f5xcctl tenant_and_identity get namespace_role <name> -n <namespace>
+xcsh tenant_and_identity get namespace_role <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list namespace_role -n <namespace>
+xcsh tenant_and_identity list namespace_role -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete namespace_role <name> -n <namespace>
+xcsh tenant_and_identity delete namespace_role <name> -n <namespace>
 ```
 
 ## Terraform Resource

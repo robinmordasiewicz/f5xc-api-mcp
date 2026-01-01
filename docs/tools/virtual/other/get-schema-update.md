@@ -47,40 +47,20 @@ Ask Claude to help you work with Get Schema Update resources:
 
 > "Create a get-schema-update named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml get-schema-update create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml get-schema-update create {name} --namespace {namespace}
-```
-
-Create get-schema-update
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create get_schema_update -n <namespace> -i get_schema_update.yaml
+xcsh virtual create get_schema_update -n <namespace> -i get_schema_update.yaml
 
 # Get
-f5xcctl virtual get get_schema_update <name> -n <namespace>
+xcsh virtual get get_schema_update <name> -n <namespace>
 
 # List
-f5xcctl virtual list get_schema_update -n <namespace>
+xcsh virtual list get_schema_update -n <namespace>
 
 # Delete
-f5xcctl virtual delete get_schema_update <name> -n <namespace>
+xcsh virtual delete get_schema_update <name> -n <namespace>
 ```
 
 ## Terraform Resource

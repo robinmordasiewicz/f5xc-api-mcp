@@ -41,40 +41,20 @@ Ask Claude to help you work with Suggest Value resources:
 
 > "Create a suggest-value named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data-intelligence suggest-value create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data-intelligence suggest-value create {name} --namespace {namespace}
-```
-
-Create suggest-value
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl data_intelligence create suggest_value -n <namespace> -i suggest_value.yaml
+xcsh data_intelligence create suggest_value -n <namespace> -i suggest_value.yaml
 
 # Get
-f5xcctl data_intelligence get suggest_value <name> -n <namespace>
+xcsh data_intelligence get suggest_value <name> -n <namespace>
 
 # List
-f5xcctl data_intelligence list suggest_value -n <namespace>
+xcsh data_intelligence list suggest_value -n <namespace>
 
 # Delete
-f5xcctl data_intelligence delete suggest_value <name> -n <namespace>
+xcsh data_intelligence delete suggest_value <name> -n <namespace>
 ```
 
 ## Terraform Resource

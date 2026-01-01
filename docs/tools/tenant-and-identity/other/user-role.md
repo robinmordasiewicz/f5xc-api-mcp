@@ -51,56 +51,20 @@ Ask Claude to help you work with User Role resources:
 
 > "List all user-roles in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web user-role create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web user-role create {name} --namespace {namespace}
-```
-
-Create user-role
-
-### list_all
-
-```bash
-f5xcctl web user-role list --namespace {namespace}
-```
-
-List all user-roles
-
-### update
-
-```bash
-f5xcctl web user-role update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update user-role
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create user_role -n <namespace> -i user_role.yaml
+xcsh tenant_and_identity create user_role -n <namespace> -i user_role.yaml
 
 # Get
-f5xcctl tenant_and_identity get user_role <name> -n <namespace>
+xcsh tenant_and_identity get user_role <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list user_role -n <namespace>
+xcsh tenant_and_identity list user_role -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete user_role <name> -n <namespace>
+xcsh tenant_and_identity delete user_role <name> -n <namespace>
 ```
 
 ## Terraform Resource

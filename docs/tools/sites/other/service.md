@@ -34,32 +34,20 @@ Ask Claude to help you work with Service resources:
 
 > "List all services in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data service list --namespace {namespace}
-```
-
-List all services
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create service -n <namespace> -i service.yaml
+xcsh sites create service -n <namespace> -i service.yaml
 
 # Get
-f5xcctl sites get service <name> -n <namespace>
+xcsh sites get service <name> -n <namespace>
 
 # List
-f5xcctl sites list service -n <namespace>
+xcsh sites list service -n <namespace>
 
 # Delete
-f5xcctl sites delete service <name> -n <namespace>
+xcsh sites delete service <name> -n <namespace>
 ```
 
 ## Terraform Resource

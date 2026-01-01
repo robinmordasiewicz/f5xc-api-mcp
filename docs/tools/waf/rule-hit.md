@@ -45,40 +45,20 @@ Ask Claude to help you work with Rule Hit resources:
 
 > "Create a rule-hit named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data rule-hit create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data rule-hit create {name} --namespace {namespace}
-```
-
-Create rule-hit
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create rule_hit -n <namespace> -i rule_hit.yaml
+xcsh waf create rule_hit -n <namespace> -i rule_hit.yaml
 
 # Get
-f5xcctl waf get rule_hit <name> -n <namespace>
+xcsh waf get rule_hit <name> -n <namespace>
 
 # List
-f5xcctl waf list rule_hit -n <namespace>
+xcsh waf list rule_hit -n <namespace>
 
 # Delete
-f5xcctl waf delete rule_hit <name> -n <namespace>
+xcsh waf delete rule_hit <name> -n <namespace>
 ```
 
 ## Terraform Resource

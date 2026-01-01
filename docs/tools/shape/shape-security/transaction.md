@@ -33,40 +33,20 @@ Ask Claude to help you work with Transaction resources:
 
 > "Create a transaction named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape transaction create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape transaction create {name} --namespace {namespace}
-```
-
-Create transaction
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create transaction -n <namespace> -i transaction.yaml
+xcsh shape create transaction -n <namespace> -i transaction.yaml
 
 # Get
-f5xcctl shape get transaction <name> -n <namespace>
+xcsh shape get transaction <name> -n <namespace>
 
 # List
-f5xcctl shape list transaction -n <namespace>
+xcsh shape list transaction -n <namespace>
 
 # Delete
-f5xcctl shape delete transaction <name> -n <namespace>
+xcsh shape delete transaction <name> -n <namespace>
 ```
 
 ## Terraform Resource

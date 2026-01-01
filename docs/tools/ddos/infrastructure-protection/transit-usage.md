@@ -41,40 +41,20 @@ Ask Claude to help you work with Transit Usage resources:
 
 > "Create a transit-usage named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data transit-usage create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data transit-usage create {name} --namespace {namespace}
-```
-
-Create transit-usage
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create transit_usage -n <namespace> -i transit_usage.yaml
+xcsh ddos create transit_usage -n <namespace> -i transit_usage.yaml
 
 # Get
-f5xcctl ddos get transit_usage <name> -n <namespace>
+xcsh ddos get transit_usage <name> -n <namespace>
 
 # List
-f5xcctl ddos list transit_usage -n <namespace>
+xcsh ddos list transit_usage -n <namespace>
 
 # Delete
-f5xcctl ddos delete transit_usage <name> -n <namespace>
+xcsh ddos delete transit_usage <name> -n <namespace>
 ```
 
 ## Terraform Resource

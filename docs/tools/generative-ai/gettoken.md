@@ -33,40 +33,20 @@ Ask Claude to help you work with Gettoken resources:
 
 > "Create a gettoken named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ai_data gettoken create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ai_data gettoken create {name} --namespace {namespace}
-```
-
-Create gettoken
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl generative_ai create gettoken -n <namespace> -i gettoken.yaml
+xcsh generative_ai create gettoken -n <namespace> -i gettoken.yaml
 
 # Get
-f5xcctl generative_ai get gettoken <name> -n <namespace>
+xcsh generative_ai get gettoken <name> -n <namespace>
 
 # List
-f5xcctl generative_ai list gettoken -n <namespace>
+xcsh generative_ai list gettoken -n <namespace>
 
 # Delete
-f5xcctl generative_ai delete gettoken <name> -n <namespace>
+xcsh generative_ai delete gettoken <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -39,32 +39,20 @@ Ask Claude to help you work with Deployment resources:
 
 > "List all deployments in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape deployment list --namespace {namespace}
-```
-
-List all deployments
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create deployment -n <namespace> -i deployment.yaml
+xcsh shape create deployment -n <namespace> -i deployment.yaml
 
 # Get
-f5xcctl shape get deployment <name> -n <namespace>
+xcsh shape get deployment <name> -n <namespace>
 
 # List
-f5xcctl shape list deployment -n <namespace>
+xcsh shape list deployment -n <namespace>
 
 # Delete
-f5xcctl shape delete deployment <name> -n <namespace>
+xcsh shape delete deployment <name> -n <namespace>
 ```
 
 ## Terraform Resource

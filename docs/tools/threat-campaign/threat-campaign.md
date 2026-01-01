@@ -33,32 +33,20 @@ Ask Claude to help you work with Threat Campaign resources:
 
 > "Get details of the threat-campaign named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl waf threat-campaign get {name} --namespace {namespace}
-```
-
-Get specific threat-campaign
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl threat_campaign create threat_campaign -n <namespace> -i threat_campaign.yaml
+xcsh threat_campaign create threat_campaign -n <namespace> -i threat_campaign.yaml
 
 # Get
-f5xcctl threat_campaign get threat_campaign <name> -n <namespace>
+xcsh threat_campaign get threat_campaign <name> -n <namespace>
 
 # List
-f5xcctl threat_campaign list threat_campaign -n <namespace>
+xcsh threat_campaign list threat_campaign -n <namespace>
 
 # Delete
-f5xcctl threat_campaign delete threat_campaign <name> -n <namespace>
+xcsh threat_campaign delete threat_campaign <name> -n <namespace>
 ```
 
 ## Terraform Resource

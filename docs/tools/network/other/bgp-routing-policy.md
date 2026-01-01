@@ -80,72 +80,20 @@ Ask Claude to help you work with Bgp Routing Policy resources:
 
 > "Get details of the bgp-routing-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config bgp-routing-policy create {name} --namespace {namespace}
-```
-
-Create bgp-routing-policy
-
-### file_based
-
-```bash
-f5xcctl config bgp-routing-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config bgp-routing-policy delete {name} --namespace {namespace}
-```
-
-Delete bgp-routing-policy
-
-### get_specific
-
-```bash
-f5xcctl config bgp-routing-policy get {name} --namespace {namespace}
-```
-
-Get specific bgp-routing-policy
-
-### list_all
-
-```bash
-f5xcctl config bgp-routing-policy list --namespace {namespace}
-```
-
-List all bgp-routing-policys
-
-### update
-
-```bash
-f5xcctl config bgp-routing-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update bgp-routing-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create bgp_routing_policy -n <namespace> -i bgp_routing_policy.yaml
+xcsh network create bgp_routing_policy -n <namespace> -i bgp_routing_policy.yaml
 
 # Get
-f5xcctl network get bgp_routing_policy <name> -n <namespace>
+xcsh network get bgp_routing_policy <name> -n <namespace>
 
 # List
-f5xcctl network list bgp_routing_policy -n <namespace>
+xcsh network list bgp_routing_policy -n <namespace>
 
 # Delete
-f5xcctl network delete bgp_routing_policy <name> -n <namespace>
+xcsh network delete bgp_routing_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

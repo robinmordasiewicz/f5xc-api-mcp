@@ -33,40 +33,20 @@ Ask Claude to help you work with Init resources:
 
 > "Create a init named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape init create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape init create {name} --namespace {namespace}
-```
-
-Create init
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create init -n <namespace> -i init.yaml
+xcsh shape create init -n <namespace> -i init.yaml
 
 # Get
-f5xcctl shape get init <name> -n <namespace>
+xcsh shape get init <name> -n <namespace>
 
 # List
-f5xcctl shape list init -n <namespace>
+xcsh shape list init -n <namespace>
 
 # Delete
-f5xcctl shape delete init <name> -n <namespace>
+xcsh shape delete init <name> -n <namespace>
 ```
 
 ## Terraform Resource

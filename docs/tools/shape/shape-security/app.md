@@ -41,40 +41,20 @@ Ask Claude to help you work with App resources:
 
 > "Create a app named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape app create {name} --namespace {namespace}
-```
-
-Create app
-
-### file_based
-
-```bash
-f5xcctl shape app create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create app -n <namespace> -i app.yaml
+xcsh shape create app -n <namespace> -i app.yaml
 
 # Get
-f5xcctl shape get app <name> -n <namespace>
+xcsh shape get app <name> -n <namespace>
 
 # List
-f5xcctl shape list app -n <namespace>
+xcsh shape list app -n <namespace>
 
 # Delete
-f5xcctl shape delete app <name> -n <namespace>
+xcsh shape delete app <name> -n <namespace>
 ```
 
 ## Terraform Resource

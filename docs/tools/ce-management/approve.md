@@ -43,40 +43,20 @@ Ask Claude to help you work with Approve resources:
 
 > "Create a approve named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl register approve create {name} --namespace {namespace}
-```
-
-Create approve
-
-### file_based
-
-```bash
-f5xcctl register approve create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create approve -n <namespace> -i approve.yaml
+xcsh ce_management create approve -n <namespace> -i approve.yaml
 
 # Get
-f5xcctl ce_management get approve <name> -n <namespace>
+xcsh ce_management get approve <name> -n <namespace>
 
 # List
-f5xcctl ce_management list approve -n <namespace>
+xcsh ce_management list approve -n <namespace>
 
 # Delete
-f5xcctl ce_management delete approve <name> -n <namespace>
+xcsh ce_management delete approve <name> -n <namespace>
 ```
 
 ## Terraform Resource

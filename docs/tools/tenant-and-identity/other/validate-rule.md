@@ -33,40 +33,20 @@ Ask Claude to help you work with Validate Rule resources:
 
 > "Create a validate-rule named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config validate-rule create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config validate-rule create {name} --namespace {namespace}
-```
-
-Create validate-rule
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create validate_rule -n <namespace> -i validate_rule.yaml
+xcsh tenant_and_identity create validate_rule -n <namespace> -i validate_rule.yaml
 
 # Get
-f5xcctl tenant_and_identity get validate_rule <name> -n <namespace>
+xcsh tenant_and_identity get validate_rule <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list validate_rule -n <namespace>
+xcsh tenant_and_identity list validate_rule -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete validate_rule <name> -n <namespace>
+xcsh tenant_and_identity delete validate_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with Site Mesh Group resources:
 
 > "Get details of the site-mesh-group named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config site-mesh-group create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config site-mesh-group create {name} --namespace {namespace}
-```
-
-Create site-mesh-group
-
-### delete
-
-```bash
-f5xcctl config site-mesh-group delete {name} --namespace {namespace}
-```
-
-Delete site-mesh-group
-
-### get_specific
-
-```bash
-f5xcctl config site-mesh-group get {name} --namespace {namespace}
-```
-
-Get specific site-mesh-group
-
-### list_all
-
-```bash
-f5xcctl config site-mesh-group list --namespace {namespace}
-```
-
-List all site-mesh-groups
-
-### update
-
-```bash
-f5xcctl config site-mesh-group update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update site-mesh-group
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create site_mesh_group -n <namespace> -i site_mesh_group.yaml
+xcsh service_mesh create site_mesh_group -n <namespace> -i site_mesh_group.yaml
 
 # Get
-f5xcctl service_mesh get site_mesh_group <name> -n <namespace>
+xcsh service_mesh get site_mesh_group <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list site_mesh_group -n <namespace>
+xcsh service_mesh list site_mesh_group -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete site_mesh_group <name> -n <namespace>
+xcsh service_mesh delete site_mesh_group <name> -n <namespace>
 ```
 
 ## Terraform Resource

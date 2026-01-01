@@ -36,40 +36,20 @@ Ask Claude to help you work with Setting resources:
 
 > "List all settings in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web setting list --namespace {namespace}
-```
-
-List all settings
-
-### update
-
-```bash
-f5xcctl web setting update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update setting
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create setting -n <namespace> -i setting.yaml
+xcsh tenant_and_identity create setting -n <namespace> -i setting.yaml
 
 # Get
-f5xcctl tenant_and_identity get setting <name> -n <namespace>
+xcsh tenant_and_identity get setting <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list setting -n <namespace>
+xcsh tenant_and_identity list setting -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete setting <name> -n <namespace>
+xcsh tenant_and_identity delete setting <name> -n <namespace>
 ```
 
 ## Terraform Resource

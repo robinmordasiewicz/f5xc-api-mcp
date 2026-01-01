@@ -41,40 +41,20 @@ Ask Claude to help you work with Bfp resources:
 
 > "Create a bfp named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape bfp create {name} --namespace {namespace}
-```
-
-Create bfp
-
-### file_based
-
-```bash
-f5xcctl shape bfp create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create bfp -n <namespace> -i bfp.yaml
+xcsh shape create bfp -n <namespace> -i bfp.yaml
 
 # Get
-f5xcctl shape get bfp <name> -n <namespace>
+xcsh shape get bfp <name> -n <namespace>
 
 # List
-f5xcctl shape list bfp -n <namespace>
+xcsh shape list bfp -n <namespace>
 
 # Delete
-f5xcctl shape delete bfp <name> -n <namespace>
+xcsh shape delete bfp <name> -n <namespace>
 ```
 
 ## Terraform Resource

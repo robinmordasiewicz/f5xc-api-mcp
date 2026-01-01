@@ -57,48 +57,20 @@ Ask Claude to help you work with Bot Allowlist Policy resources:
 
 > "Get details of the bot-allowlist-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl shape bot-allowlist-policy get {name} --namespace {namespace}
-```
-
-Get specific bot-allowlist-policy
-
-### list_all
-
-```bash
-f5xcctl shape bot-allowlist-policy list --namespace {namespace}
-```
-
-List all bot-allowlist-policys
-
-### update
-
-```bash
-f5xcctl shape bot-allowlist-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update bot-allowlist-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create bot_allowlist_policy -n <namespace> -i bot_allowlist_policy.yaml
+xcsh shape create bot_allowlist_policy -n <namespace> -i bot_allowlist_policy.yaml
 
 # Get
-f5xcctl shape get bot_allowlist_policy <name> -n <namespace>
+xcsh shape get bot_allowlist_policy <name> -n <namespace>
 
 # List
-f5xcctl shape list bot_allowlist_policy -n <namespace>
+xcsh shape list bot_allowlist_policy -n <namespace>
 
 # Delete
-f5xcctl shape delete bot_allowlist_policy <name> -n <namespace>
+xcsh shape delete bot_allowlist_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

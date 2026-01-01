@@ -55,48 +55,20 @@ Ask Claude to help you work with Pdf resources:
 
 > "List all pdfs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml pdf create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml pdf create {name} --namespace {namespace}
-```
-
-Create pdf
-
-### list_all
-
-```bash
-f5xcctl ml pdf list --namespace {namespace}
-```
-
-List all pdfs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create pdf -n <namespace> -i pdf.yaml
+xcsh service_mesh create pdf -n <namespace> -i pdf.yaml
 
 # Get
-f5xcctl service_mesh get pdf <name> -n <namespace>
+xcsh service_mesh get pdf <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list pdf -n <namespace>
+xcsh service_mesh list pdf -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete pdf <name> -n <namespace>
+xcsh service_mesh delete pdf <name> -n <namespace>
 ```
 
 ## Terraform Resource

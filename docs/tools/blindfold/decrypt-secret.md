@@ -34,40 +34,20 @@ Ask Claude to help you work with Decrypt Secret resources:
 
 > "Create a decrypt-secret named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl secret_management decrypt-secret create {name} --namespace {namespace}
-```
-
-Create decrypt-secret
-
-### file_based
-
-```bash
-f5xcctl secret_management decrypt-secret create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create decrypt_secret -n <namespace> -i decrypt_secret.yaml
+xcsh blindfold create decrypt_secret -n <namespace> -i decrypt_secret.yaml
 
 # Get
-f5xcctl blindfold get decrypt_secret <name> -n <namespace>
+xcsh blindfold get decrypt_secret <name> -n <namespace>
 
 # List
-f5xcctl blindfold list decrypt_secret -n <namespace>
+xcsh blindfold list decrypt_secret -n <namespace>
 
 # Delete
-f5xcctl blindfold delete decrypt_secret <name> -n <namespace>
+xcsh blindfold delete decrypt_secret <name> -n <namespace>
 ```
 
 ## Terraform Resource

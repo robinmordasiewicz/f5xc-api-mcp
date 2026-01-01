@@ -41,40 +41,20 @@ Ask Claude to help you work with Nginx Dataplane Server resources:
 
 > "Create a nginx-dataplane-server named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config nginx-dataplane-server create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config nginx-dataplane-server create {name} --namespace {namespace}
-```
-
-Create nginx-dataplane-server
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl nginx_one create nginx_dataplane_server -n <namespace> -i nginx_dataplane_server.yaml
+xcsh nginx_one create nginx_dataplane_server -n <namespace> -i nginx_dataplane_server.yaml
 
 # Get
-f5xcctl nginx_one get nginx_dataplane_server <name> -n <namespace>
+xcsh nginx_one get nginx_dataplane_server <name> -n <namespace>
 
 # List
-f5xcctl nginx_one list nginx_dataplane_server -n <namespace>
+xcsh nginx_one list nginx_dataplane_server -n <namespace>
 
 # Delete
-f5xcctl nginx_one delete nginx_dataplane_server <name> -n <namespace>
+xcsh nginx_one delete nginx_dataplane_server <name> -n <namespace>
 ```
 
 ## Terraform Resource

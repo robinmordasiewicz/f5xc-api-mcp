@@ -77,72 +77,20 @@ Ask Claude to help you work with Cloud Elastic IP resources:
 
 > "Get details of the cloud-elastic-ip named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config cloud-elastic-ip create {name} --namespace {namespace}
-```
-
-Create cloud-elastic-ip
-
-### file_based
-
-```bash
-f5xcctl config cloud-elastic-ip create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config cloud-elastic-ip delete {name} --namespace {namespace}
-```
-
-Delete cloud-elastic-ip
-
-### get_specific
-
-```bash
-f5xcctl config cloud-elastic-ip get {name} --namespace {namespace}
-```
-
-Get specific cloud-elastic-ip
-
-### list_all
-
-```bash
-f5xcctl config cloud-elastic-ip list --namespace {namespace}
-```
-
-List all cloud-elastic-ips
-
-### update
-
-```bash
-f5xcctl config cloud-elastic-ip update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update cloud-elastic-ip
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cloud_infrastructure create cloud_elastic_ip -n <namespace> -i cloud_elastic_ip.yaml
+xcsh cloud_infrastructure create cloud_elastic_ip -n <namespace> -i cloud_elastic_ip.yaml
 
 # Get
-f5xcctl cloud_infrastructure get cloud_elastic_ip <name> -n <namespace>
+xcsh cloud_infrastructure get cloud_elastic_ip <name> -n <namespace>
 
 # List
-f5xcctl cloud_infrastructure list cloud_elastic_ip -n <namespace>
+xcsh cloud_infrastructure list cloud_elastic_ip -n <namespace>
 
 # Delete
-f5xcctl cloud_infrastructure delete cloud_elastic_ip <name> -n <namespace>
+xcsh cloud_infrastructure delete cloud_elastic_ip <name> -n <namespace>
 ```
 
 ## Terraform Resource

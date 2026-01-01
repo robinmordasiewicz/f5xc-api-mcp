@@ -27,32 +27,20 @@ Ask Claude to help you work with Inactive resources:
 
 > "List all inactives in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web inactive list --namespace {namespace}
-```
-
-List all inactives
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create inactive -n <namespace> -i inactive.yaml
+xcsh tenant_and_identity create inactive -n <namespace> -i inactive.yaml
 
 # Get
-f5xcctl tenant_and_identity get inactive <name> -n <namespace>
+xcsh tenant_and_identity get inactive <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list inactive -n <namespace>
+xcsh tenant_and_identity list inactive -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete inactive <name> -n <namespace>
+xcsh tenant_and_identity delete inactive <name> -n <namespace>
 ```
 
 ## Terraform Resource

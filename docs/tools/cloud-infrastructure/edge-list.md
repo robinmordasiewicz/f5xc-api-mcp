@@ -25,32 +25,20 @@ Ask Claude to help you work with Edge List resources:
 
 > "List all edge-lists in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config edge-list list --namespace {namespace}
-```
-
-List all edge-lists
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cloud_infrastructure create edge_list -n <namespace> -i edge_list.yaml
+xcsh cloud_infrastructure create edge_list -n <namespace> -i edge_list.yaml
 
 # Get
-f5xcctl cloud_infrastructure get edge_list <name> -n <namespace>
+xcsh cloud_infrastructure get edge_list <name> -n <namespace>
 
 # List
-f5xcctl cloud_infrastructure list edge_list -n <namespace>
+xcsh cloud_infrastructure list edge_list -n <namespace>
 
 # Delete
-f5xcctl cloud_infrastructure delete edge_list <name> -n <namespace>
+xcsh cloud_infrastructure delete edge_list <name> -n <namespace>
 ```
 
 ## Terraform Resource

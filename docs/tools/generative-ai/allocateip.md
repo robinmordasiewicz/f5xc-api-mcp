@@ -33,40 +33,20 @@ Ask Claude to help you work with Allocateip resources:
 
 > "Create a allocateip named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl gia allocateip create {name} --namespace {namespace}
-```
-
-Create allocateip
-
-### file_based
-
-```bash
-f5xcctl gia allocateip create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl generative_ai create allocateip -n <namespace> -i allocateip.yaml
+xcsh generative_ai create allocateip -n <namespace> -i allocateip.yaml
 
 # Get
-f5xcctl generative_ai get allocateip <name> -n <namespace>
+xcsh generative_ai get allocateip <name> -n <namespace>
 
 # List
-f5xcctl generative_ai list allocateip -n <namespace>
+xcsh generative_ai list allocateip -n <namespace>
 
 # Delete
-f5xcctl generative_ai delete allocateip <name> -n <namespace>
+xcsh generative_ai delete allocateip <name> -n <namespace>
 ```
 
 ## Terraform Resource

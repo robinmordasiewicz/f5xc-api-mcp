@@ -34,32 +34,20 @@ Ask Claude to help you work with Bgp Route resources:
 
 > "List all bgp-routes in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl operate bgp-route list --namespace {namespace}
-```
-
-List all bgp-routes
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create bgp_route -n <namespace> -i bgp_route.yaml
+xcsh network create bgp_route -n <namespace> -i bgp_route.yaml
 
 # Get
-f5xcctl network get bgp_route <name> -n <namespace>
+xcsh network get bgp_route <name> -n <namespace>
 
 # List
-f5xcctl network list bgp_route -n <namespace>
+xcsh network list bgp_route -n <namespace>
 
 # Delete
-f5xcctl network delete bgp_route <name> -n <namespace>
+xcsh network delete bgp_route <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -34,32 +34,20 @@ Ask Claude to help you work with Signup resources:
 
 > "Get details of the signup named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl default signup get {name} --namespace {namespace}
-```
-
-Get specific signup
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create signup -n <namespace> -i signup.yaml
+xcsh tenant_and_identity create signup -n <namespace> -i signup.yaml
 
 # Get
-f5xcctl tenant_and_identity get signup <name> -n <namespace>
+xcsh tenant_and_identity get signup <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list signup -n <namespace>
+xcsh tenant_and_identity list signup -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete signup <name> -n <namespace>
+xcsh tenant_and_identity delete signup <name> -n <namespace>
 ```
 
 ## Terraform Resource

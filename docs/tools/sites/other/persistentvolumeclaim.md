@@ -34,32 +34,20 @@ Ask Claude to help you work with Persistentvolumeclaim resources:
 
 > "List all persistentvolumeclaims in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data persistentvolumeclaim list --namespace {namespace}
-```
-
-List all persistentvolumeclaims
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create persistentvolumeclaim -n <namespace> -i persistentvolumeclaim.yaml
+xcsh sites create persistentvolumeclaim -n <namespace> -i persistentvolumeclaim.yaml
 
 # Get
-f5xcctl sites get persistentvolumeclaim <name> -n <namespace>
+xcsh sites get persistentvolumeclaim <name> -n <namespace>
 
 # List
-f5xcctl sites list persistentvolumeclaim -n <namespace>
+xcsh sites list persistentvolumeclaim -n <namespace>
 
 # Delete
-f5xcctl sites delete persistentvolumeclaim <name> -n <namespace>
+xcsh sites delete persistentvolumeclaim <name> -n <namespace>
 ```
 
 ## Terraform Resource

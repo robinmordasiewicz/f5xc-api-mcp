@@ -34,32 +34,20 @@ Ask Claude to help you work with Get Cloud Init Config resources:
 
 > "List all get-cloud-init-configs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl register get-cloud-init-config list --namespace {namespace}
-```
-
-List all get-cloud-init-configs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl users create get_cloud_init_config -n <namespace> -i get_cloud_init_config.yaml
+xcsh users create get_cloud_init_config -n <namespace> -i get_cloud_init_config.yaml
 
 # Get
-f5xcctl users get get_cloud_init_config <name> -n <namespace>
+xcsh users get get_cloud_init_config <name> -n <namespace>
 
 # List
-f5xcctl users list get_cloud_init_config -n <namespace>
+xcsh users list get_cloud_init_config -n <namespace>
 
 # Delete
-f5xcctl users delete get_cloud_init_config <name> -n <namespace>
+xcsh users delete get_cloud_init_config <name> -n <namespace>
 ```
 
 ## Terraform Resource

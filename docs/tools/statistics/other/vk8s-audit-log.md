@@ -47,40 +47,20 @@ Ask Claude to help you work with Vk8s Audit Log resources:
 
 > "Create a vk8s-audit-log named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data vk8s-audit-log create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data vk8s-audit-log create {name} --namespace {namespace}
-```
-
-Create vk8s-audit-log
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create vk8s_audit_log -n <namespace> -i vk8s_audit_log.yaml
+xcsh statistics create vk8s_audit_log -n <namespace> -i vk8s_audit_log.yaml
 
 # Get
-f5xcctl statistics get vk8s_audit_log <name> -n <namespace>
+xcsh statistics get vk8s_audit_log <name> -n <namespace>
 
 # List
-f5xcctl statistics list vk8s_audit_log -n <namespace>
+xcsh statistics list vk8s_audit_log -n <namespace>
 
 # Delete
-f5xcctl statistics delete vk8s_audit_log <name> -n <namespace>
+xcsh statistics delete vk8s_audit_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

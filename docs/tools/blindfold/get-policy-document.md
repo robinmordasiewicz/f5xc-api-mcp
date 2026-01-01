@@ -37,32 +37,20 @@ Ask Claude to help you work with Get Policy Document resources:
 
 > "Get details of the get-policy-document named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl secret_management get-policy-document get {name} --namespace {namespace}
-```
-
-Get specific get-policy-document
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create get_policy_document -n <namespace> -i get_policy_document.yaml
+xcsh blindfold create get_policy_document -n <namespace> -i get_policy_document.yaml
 
 # Get
-f5xcctl blindfold get get_policy_document <name> -n <namespace>
+xcsh blindfold get get_policy_document <name> -n <namespace>
 
 # List
-f5xcctl blindfold list get_policy_document -n <namespace>
+xcsh blindfold list get_policy_document -n <namespace>
 
 # Delete
-f5xcctl blindfold delete get_policy_document <name> -n <namespace>
+xcsh blindfold delete get_policy_document <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -41,40 +41,20 @@ Ask Claude to help you work with Analysi resources:
 
 > "Create a analysi named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape analysi create {name} --namespace {namespace}
-```
-
-Create analysi
-
-### file_based
-
-```bash
-f5xcctl shape analysi create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create analysi -n <namespace> -i analysi.yaml
+xcsh shape create analysi -n <namespace> -i analysi.yaml
 
 # Get
-f5xcctl shape get analysi <name> -n <namespace>
+xcsh shape get analysi <name> -n <namespace>
 
 # List
-f5xcctl shape list analysi -n <namespace>
+xcsh shape list analysi -n <namespace>
 
 # Delete
-f5xcctl shape delete analysi <name> -n <namespace>
+xcsh shape delete analysi <name> -n <namespace>
 ```
 
 ## Terraform Resource

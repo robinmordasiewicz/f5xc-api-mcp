@@ -41,40 +41,20 @@ Ask Claude to help you work with List Reports History Bot Defence resources:
 
 > "Create a list-reports-history-bot-defence named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl report list-reports-history-bot-defence create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl report list-reports-history-bot-defence create {name} --namespace {namespace}
-```
-
-Create list-reports-history-bot-defence
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create list_reports_history_bot_defence -n <namespace> -i list_reports_history_bot_defence.yaml
+xcsh statistics create list_reports_history_bot_defence -n <namespace> -i list_reports_history_bot_defence.yaml
 
 # Get
-f5xcctl statistics get list_reports_history_bot_defence <name> -n <namespace>
+xcsh statistics get list_reports_history_bot_defence <name> -n <namespace>
 
 # List
-f5xcctl statistics list list_reports_history_bot_defence -n <namespace>
+xcsh statistics list list_reports_history_bot_defence -n <namespace>
 
 # Delete
-f5xcctl statistics delete list_reports_history_bot_defence <name> -n <namespace>
+xcsh statistics delete list_reports_history_bot_defence <name> -n <namespace>
 ```
 
 ## Terraform Resource

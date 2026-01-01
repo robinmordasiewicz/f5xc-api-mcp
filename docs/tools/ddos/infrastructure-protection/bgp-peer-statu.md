@@ -41,40 +41,20 @@ Ask Claude to help you work with Bgp Peer Statu resources:
 
 > "Create a bgp-peer-statu named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl data bgp-peer-statu create {name} --namespace {namespace}
-```
-
-Create bgp-peer-statu
-
-### file_based
-
-```bash
-f5xcctl data bgp-peer-statu create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create bgp_peer_statu -n <namespace> -i bgp_peer_statu.yaml
+xcsh ddos create bgp_peer_statu -n <namespace> -i bgp_peer_statu.yaml
 
 # Get
-f5xcctl ddos get bgp_peer_statu <name> -n <namespace>
+xcsh ddos get bgp_peer_statu <name> -n <namespace>
 
 # List
-f5xcctl ddos list bgp_peer_statu -n <namespace>
+xcsh ddos list bgp_peer_statu -n <namespace>
 
 # Delete
-f5xcctl ddos delete bgp_peer_statu <name> -n <namespace>
+xcsh ddos delete bgp_peer_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

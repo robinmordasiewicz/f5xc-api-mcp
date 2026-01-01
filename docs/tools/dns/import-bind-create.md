@@ -33,40 +33,20 @@ Ask Claude to help you work with Import Bind Create resources:
 
 > "Create a import-bind-create named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config import-bind-create create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config import-bind-create create {name} --namespace {namespace}
-```
-
-Create import-bind-create
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create import_bind_create -n <namespace> -i import_bind_create.yaml
+xcsh dns create import_bind_create -n <namespace> -i import_bind_create.yaml
 
 # Get
-f5xcctl dns get import_bind_create <name> -n <namespace>
+xcsh dns get import_bind_create <name> -n <namespace>
 
 # List
-f5xcctl dns list import_bind_create -n <namespace>
+xcsh dns list import_bind_create -n <namespace>
 
 # Delete
-f5xcctl dns delete import_bind_create <name> -n <namespace>
+xcsh dns delete import_bind_create <name> -n <namespace>
 ```
 
 ## Terraform Resource

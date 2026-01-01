@@ -78,72 +78,20 @@ Ask Claude to help you work with Voltshare Admin Policy resources:
 
 > "Get details of the voltshare-admin-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl secret_management voltshare-admin-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl secret_management voltshare-admin-policy create {name} --namespace {namespace}
-```
-
-Create voltshare-admin-policy
-
-### delete
-
-```bash
-f5xcctl secret_management voltshare-admin-policy delete {name} --namespace {namespace}
-```
-
-Delete voltshare-admin-policy
-
-### get_specific
-
-```bash
-f5xcctl secret_management voltshare-admin-policy get {name} --namespace {namespace}
-```
-
-Get specific voltshare-admin-policy
-
-### list_all
-
-```bash
-f5xcctl secret_management voltshare-admin-policy list --namespace {namespace}
-```
-
-List all voltshare-admin-policys
-
-### update
-
-```bash
-f5xcctl secret_management voltshare-admin-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update voltshare-admin-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create voltshare_admin_policy -n <namespace> -i voltshare_admin_policy.yaml
+xcsh blindfold create voltshare_admin_policy -n <namespace> -i voltshare_admin_policy.yaml
 
 # Get
-f5xcctl blindfold get voltshare_admin_policy <name> -n <namespace>
+xcsh blindfold get voltshare_admin_policy <name> -n <namespace>
 
 # List
-f5xcctl blindfold list voltshare_admin_policy -n <namespace>
+xcsh blindfold list voltshare_admin_policy -n <namespace>
 
 # Delete
-f5xcctl blindfold delete voltshare_admin_policy <name> -n <namespace>
+xcsh blindfold delete voltshare_admin_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -47,48 +47,20 @@ Ask Claude to help you work with Node resources:
 
 > "List all nodes in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data node create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data node create {name} --namespace {namespace}
-```
-
-Create node
-
-### list_all
-
-```bash
-f5xcctl data node list --namespace {namespace}
-```
-
-List all nodes
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create node -n <namespace> -i node.yaml
+xcsh sites create node -n <namespace> -i node.yaml
 
 # Get
-f5xcctl sites get node <name> -n <namespace>
+xcsh sites get node <name> -n <namespace>
 
 # List
-f5xcctl sites list node -n <namespace>
+xcsh sites list node -n <namespace>
 
 # Delete
-f5xcctl sites delete node <name> -n <namespace>
+xcsh sites delete node <name> -n <namespace>
 ```
 
 ## Terraform Resource

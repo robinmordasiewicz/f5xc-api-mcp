@@ -41,40 +41,20 @@ Ask Claude to help you work with Transaction Device History resources:
 
 > "Create a transaction-device-history named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape transaction-device-history create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape transaction-device-history create {name} --namespace {namespace}
-```
-
-Create transaction-device-history
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create transaction_device_history -n <namespace> -i transaction_device_history.yaml
+xcsh shape create transaction_device_history -n <namespace> -i transaction_device_history.yaml
 
 # Get
-f5xcctl shape get transaction_device_history <name> -n <namespace>
+xcsh shape get transaction_device_history <name> -n <namespace>
 
 # List
-f5xcctl shape list transaction_device_history -n <namespace>
+xcsh shape list transaction_device_history -n <namespace>
 
 # Delete
-f5xcctl shape delete transaction_device_history <name> -n <namespace>
+xcsh shape delete transaction_device_history <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -33,40 +33,20 @@ Ask Claude to help you work with Enable resources:
 
 > "Create a enable named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape enable create {name} --namespace {namespace}
-```
-
-Create enable
-
-### file_based
-
-```bash
-f5xcctl shape enable create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create enable -n <namespace> -i enable.yaml
+xcsh shape create enable -n <namespace> -i enable.yaml
 
 # Get
-f5xcctl shape get enable <name> -n <namespace>
+xcsh shape get enable <name> -n <namespace>
 
 # List
-f5xcctl shape list enable -n <namespace>
+xcsh shape list enable -n <namespace>
 
 # Delete
-f5xcctl shape delete enable <name> -n <namespace>
+xcsh shape delete enable <name> -n <namespace>
 ```
 
 ## Terraform Resource

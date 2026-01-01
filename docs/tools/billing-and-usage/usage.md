@@ -33,32 +33,20 @@ Ask Claude to help you work with Usage resources:
 
 > "List all usages in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web usage list --namespace {namespace}
-```
-
-List all usages
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create usage -n <namespace> -i usage.yaml
+xcsh billing_and_usage create usage -n <namespace> -i usage.yaml
 
 # Get
-f5xcctl billing_and_usage get usage <name> -n <namespace>
+xcsh billing_and_usage get usage <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list usage -n <namespace>
+xcsh billing_and_usage list usage -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete usage <name> -n <namespace>
+xcsh billing_and_usage delete usage <name> -n <namespace>
 ```
 
 ## Terraform Resource

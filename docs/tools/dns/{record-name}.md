@@ -54,48 +54,20 @@ Ask Claude to help you work with {record Name} resources:
 
 > "List all {record-name}s in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### delete
-
-```bash
-f5xcctl config rrset delete {name} --namespace {namespace}
-```
-
-Delete rrset
-
-### list_all
-
-```bash
-f5xcctl config rrset list --namespace {namespace}
-```
-
-List all rrsets
-
-### update
-
-```bash
-f5xcctl config rrset update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update rrset
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create {record_name} -n <namespace> -i {record_name}.yaml
+xcsh dns create {record_name} -n <namespace> -i {record_name}.yaml
 
 # Get
-f5xcctl dns get {record_name} <name> -n <namespace>
+xcsh dns get {record_name} <name> -n <namespace>
 
 # List
-f5xcctl dns list {record_name} -n <namespace>
+xcsh dns list {record_name} -n <namespace>
 
 # Delete
-f5xcctl dns delete {record_name} <name> -n <namespace>
+xcsh dns delete {record_name} <name> -n <namespace>
 ```
 
 ## Terraform Resource

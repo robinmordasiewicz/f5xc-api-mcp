@@ -41,40 +41,20 @@ Ask Claude to help you work with Transaction Timeline resources:
 
 > "Create a transaction-timeline named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape transaction-timeline create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape transaction-timeline create {name} --namespace {namespace}
-```
-
-Create transaction-timeline
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create transaction_timeline -n <namespace> -i transaction_timeline.yaml
+xcsh shape create transaction_timeline -n <namespace> -i transaction_timeline.yaml
 
 # Get
-f5xcctl shape get transaction_timeline <name> -n <namespace>
+xcsh shape get transaction_timeline <name> -n <namespace>
 
 # List
-f5xcctl shape list transaction_timeline -n <namespace>
+xcsh shape list transaction_timeline -n <namespace>
 
 # Delete
-f5xcctl shape delete transaction_timeline <name> -n <namespace>
+xcsh shape delete transaction_timeline <name> -n <namespace>
 ```
 
 ## Terraform Resource

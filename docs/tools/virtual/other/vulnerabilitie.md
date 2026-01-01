@@ -42,40 +42,20 @@ Ask Claude to help you work with Vulnerabilitie resources:
 
 > "Create a vulnerabilitie named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml vulnerabilitie create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml vulnerabilitie create {name} --namespace {namespace}
-```
-
-Create vulnerabilitie
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create vulnerabilitie -n <namespace> -i vulnerabilitie.yaml
+xcsh virtual create vulnerabilitie -n <namespace> -i vulnerabilitie.yaml
 
 # Get
-f5xcctl virtual get vulnerabilitie <name> -n <namespace>
+xcsh virtual get vulnerabilitie <name> -n <namespace>
 
 # List
-f5xcctl virtual list vulnerabilitie -n <namespace>
+xcsh virtual list vulnerabilitie -n <namespace>
 
 # Delete
-f5xcctl virtual delete vulnerabilitie <name> -n <namespace>
+xcsh virtual delete vulnerabilitie <name> -n <namespace>
 ```
 
 ## Terraform Resource

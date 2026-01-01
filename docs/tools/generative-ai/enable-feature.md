@@ -33,40 +33,20 @@ Ask Claude to help you work with Enable Feature resources:
 
 > "Create a enable-feature named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl ai_data enable-feature create {name} --namespace {namespace}
-```
-
-Create enable-feature
-
-### file_based
-
-```bash
-f5xcctl ai_data enable-feature create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl generative_ai create enable_feature -n <namespace> -i enable_feature.yaml
+xcsh generative_ai create enable_feature -n <namespace> -i enable_feature.yaml
 
 # Get
-f5xcctl generative_ai get enable_feature <name> -n <namespace>
+xcsh generative_ai get enable_feature <name> -n <namespace>
 
 # List
-f5xcctl generative_ai list enable_feature -n <namespace>
+xcsh generative_ai list enable_feature -n <namespace>
 
 # Delete
-f5xcctl generative_ai delete enable_feature <name> -n <namespace>
+xcsh generative_ai delete enable_feature <name> -n <namespace>
 ```
 
 ## Terraform Resource

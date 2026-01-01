@@ -46,48 +46,20 @@ Ask Claude to help you work with Dc Cluster Group resources:
 
 > "List all dc-cluster-groups in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl data dc-cluster-group create {name} --namespace {namespace}
-```
-
-Create dc-cluster-group
-
-### file_based
-
-```bash
-f5xcctl data dc-cluster-group create -f {file}.yaml
-```
-
-Create from YAML file
-
-### list_all
-
-```bash
-f5xcctl data dc-cluster-group list --namespace {namespace}
-```
-
-List all dc-cluster-groups
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create dc_cluster_group -n <namespace> -i dc_cluster_group.yaml
+xcsh sites create dc_cluster_group -n <namespace> -i dc_cluster_group.yaml
 
 # Get
-f5xcctl sites get dc_cluster_group <name> -n <namespace>
+xcsh sites get dc_cluster_group <name> -n <namespace>
 
 # List
-f5xcctl sites list dc_cluster_group -n <namespace>
+xcsh sites list dc_cluster_group -n <namespace>
 
 # Delete
-f5xcctl sites delete dc_cluster_group <name> -n <namespace>
+xcsh sites delete dc_cluster_group <name> -n <namespace>
 ```
 
 ## Terraform Resource

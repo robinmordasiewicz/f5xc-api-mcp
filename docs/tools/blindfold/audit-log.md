@@ -44,40 +44,20 @@ Ask Claude to help you work with Audit Log resources:
 
 > "Create a audit-log named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl secret_management audit-log create {name} --namespace {namespace}
-```
-
-Create audit-log
-
-### file_based
-
-```bash
-f5xcctl secret_management audit-log create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create audit_log -n <namespace> -i audit_log.yaml
+xcsh blindfold create audit_log -n <namespace> -i audit_log.yaml
 
 # Get
-f5xcctl blindfold get audit_log <name> -n <namespace>
+xcsh blindfold get audit_log <name> -n <namespace>
 
 # List
-f5xcctl blindfold list audit_log -n <namespace>
+xcsh blindfold list audit_log -n <namespace>
 
 # Delete
-f5xcctl blindfold delete audit_log <name> -n <namespace>
+xcsh blindfold delete audit_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

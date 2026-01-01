@@ -41,40 +41,20 @@ Ask Claude to help you work with Testj resources:
 
 > "Create a testj named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape testj create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape testj create {name} --namespace {namespace}
-```
-
-Create testj
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create testj -n <namespace> -i testj.yaml
+xcsh shape create testj -n <namespace> -i testj.yaml
 
 # Get
-f5xcctl shape get testj <name> -n <namespace>
+xcsh shape get testj <name> -n <namespace>
 
 # List
-f5xcctl shape list testj -n <namespace>
+xcsh shape list testj -n <namespace>
 
 # Delete
-f5xcctl shape delete testj <name> -n <namespace>
+xcsh shape delete testj <name> -n <namespace>
 ```
 
 ## Terraform Resource

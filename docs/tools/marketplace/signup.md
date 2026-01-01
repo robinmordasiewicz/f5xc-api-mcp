@@ -33,40 +33,20 @@ Ask Claude to help you work with Signup resources:
 
 > "Create a signup named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl default signup create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl default signup create {name} --namespace {namespace}
-```
-
-Create signup
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create signup -n <namespace> -i signup.yaml
+xcsh marketplace create signup -n <namespace> -i signup.yaml
 
 # Get
-f5xcctl marketplace get signup <name> -n <namespace>
+xcsh marketplace get signup <name> -n <namespace>
 
 # List
-f5xcctl marketplace list signup -n <namespace>
+xcsh marketplace list signup -n <namespace>
 
 # Delete
-f5xcctl marketplace delete signup <name> -n <namespace>
+xcsh marketplace delete signup <name> -n <namespace>
 ```
 
 ## Terraform Resource

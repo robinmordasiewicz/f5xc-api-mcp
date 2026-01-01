@@ -34,32 +34,20 @@ Ask Claude to help you work with Config resources:
 
 > "Get details of the config named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl shape config get {name} --namespace {namespace}
-```
-
-Get specific config
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create config -n <namespace> -i config.yaml
+xcsh shape create config -n <namespace> -i config.yaml
 
 # Get
-f5xcctl shape get config <name> -n <namespace>
+xcsh shape get config <name> -n <namespace>
 
 # List
-f5xcctl shape list config -n <namespace>
+xcsh shape list config -n <namespace>
 
 # Delete
-f5xcctl shape delete config <name> -n <namespace>
+xcsh shape delete config <name> -n <namespace>
 ```
 
 ## Terraform Resource

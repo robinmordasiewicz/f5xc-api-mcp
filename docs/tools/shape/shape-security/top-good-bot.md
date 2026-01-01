@@ -33,40 +33,20 @@ Ask Claude to help you work with Top Good Bot resources:
 
 > "Create a top-good-bot named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape top-good-bot create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape top-good-bot create {name} --namespace {namespace}
-```
-
-Create top-good-bot
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create top_good_bot -n <namespace> -i top_good_bot.yaml
+xcsh shape create top_good_bot -n <namespace> -i top_good_bot.yaml
 
 # Get
-f5xcctl shape get top_good_bot <name> -n <namespace>
+xcsh shape get top_good_bot <name> -n <namespace>
 
 # List
-f5xcctl shape list top_good_bot -n <namespace>
+xcsh shape list top_good_bot -n <namespace>
 
 # Delete
-f5xcctl shape delete top_good_bot <name> -n <namespace>
+xcsh shape delete top_good_bot <name> -n <namespace>
 ```
 
 ## Terraform Resource

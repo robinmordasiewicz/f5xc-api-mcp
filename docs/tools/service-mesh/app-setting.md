@@ -80,72 +80,20 @@ Ask Claude to help you work with App Setting resources:
 
 > "Get details of the app-setting named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config app-setting create {name} --namespace {namespace}
-```
-
-Create app-setting
-
-### file_based
-
-```bash
-f5xcctl config app-setting create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config app-setting delete {name} --namespace {namespace}
-```
-
-Delete app-setting
-
-### get_specific
-
-```bash
-f5xcctl config app-setting get {name} --namespace {namespace}
-```
-
-Get specific app-setting
-
-### list_all
-
-```bash
-f5xcctl config app-setting list --namespace {namespace}
-```
-
-List all app-settings
-
-### update
-
-```bash
-f5xcctl config app-setting update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update app-setting
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create app_setting -n <namespace> -i app_setting.yaml
+xcsh service_mesh create app_setting -n <namespace> -i app_setting.yaml
 
 # Get
-f5xcctl service_mesh get app_setting <name> -n <namespace>
+xcsh service_mesh get app_setting <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list app_setting -n <namespace>
+xcsh service_mesh list app_setting -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete app_setting <name> -n <namespace>
+xcsh service_mesh delete app_setting <name> -n <namespace>
 ```
 
 ## Terraform Resource

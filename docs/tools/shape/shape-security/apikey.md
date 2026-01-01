@@ -25,32 +25,20 @@ Ask Claude to help you work with Apikey resources:
 
 > "List all apikeys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape apikey list --namespace {namespace}
-```
-
-List all apikeys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create apikey -n <namespace> -i apikey.yaml
+xcsh shape create apikey -n <namespace> -i apikey.yaml
 
 # Get
-f5xcctl shape get apikey <name> -n <namespace>
+xcsh shape get apikey <name> -n <namespace>
 
 # List
-f5xcctl shape list apikey -n <namespace>
+xcsh shape list apikey -n <namespace>
 
 # Delete
-f5xcctl shape delete apikey <name> -n <namespace>
+xcsh shape delete apikey <name> -n <namespace>
 ```
 
 ## Terraform Resource

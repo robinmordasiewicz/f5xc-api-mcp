@@ -33,32 +33,20 @@ Ask Claude to help you work with Network resources:
 
 > "Get details of the network named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl data network get {name} --namespace {namespace}
-```
-
-Get specific network
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create network -n <namespace> -i network.yaml
+xcsh sites create network -n <namespace> -i network.yaml
 
 # Get
-f5xcctl sites get network <name> -n <namespace>
+xcsh sites get network <name> -n <namespace>
 
 # List
-f5xcctl sites list network -n <namespace>
+xcsh sites list network -n <namespace>
 
 # Delete
-f5xcctl sites delete network <name> -n <namespace>
+xcsh sites delete network <name> -n <namespace>
 ```
 
 ## Terraform Resource

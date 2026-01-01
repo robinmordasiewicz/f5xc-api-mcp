@@ -34,32 +34,20 @@ Ask Claude to help you work with Released Signature resources:
 
 > "List all released-signatures in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config released-signature list --namespace {namespace}
-```
-
-List all released-signatures
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create released_signature -n <namespace> -i released_signature.yaml
+xcsh waf create released_signature -n <namespace> -i released_signature.yaml
 
 # Get
-f5xcctl waf get released_signature <name> -n <namespace>
+xcsh waf get released_signature <name> -n <namespace>
 
 # List
-f5xcctl waf list released_signature -n <namespace>
+xcsh waf list released_signature -n <namespace>
 
 # Delete
-f5xcctl waf delete released_signature <name> -n <namespace>
+xcsh waf delete released_signature <name> -n <namespace>
 ```
 
 ## Terraform Resource

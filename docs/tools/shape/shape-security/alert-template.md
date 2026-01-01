@@ -71,64 +71,20 @@ Ask Claude to help you work with Alert Template resources:
 
 > "Get details of the alert-template named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape alert-template create {name} --namespace {namespace}
-```
-
-Create alert-template
-
-### file_based
-
-```bash
-f5xcctl shape alert-template create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl shape alert-template delete {name} --namespace {namespace}
-```
-
-Delete alert-template
-
-### get_specific
-
-```bash
-f5xcctl shape alert-template get {name} --namespace {namespace}
-```
-
-Get specific alert-template
-
-### list_all
-
-```bash
-f5xcctl shape alert-template list --namespace {namespace}
-```
-
-List all alert-templates
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create alert_template -n <namespace> -i alert_template.yaml
+xcsh shape create alert_template -n <namespace> -i alert_template.yaml
 
 # Get
-f5xcctl shape get alert_template <name> -n <namespace>
+xcsh shape get alert_template <name> -n <namespace>
 
 # List
-f5xcctl shape list alert_template -n <namespace>
+xcsh shape list alert_template -n <namespace>
 
 # Delete
-f5xcctl shape delete alert_template <name> -n <namespace>
+xcsh shape delete alert_template <name> -n <namespace>
 ```
 
 ## Terraform Resource

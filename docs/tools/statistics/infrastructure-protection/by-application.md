@@ -42,40 +42,20 @@ Ask Claude to help you work with By Application resources:
 
 > "Create a by-application named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl infraprotect by-application create {name} --namespace {namespace}
-```
-
-Create by-application
-
-### file_based
-
-```bash
-f5xcctl infraprotect by-application create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create by_application -n <namespace> -i by_application.yaml
+xcsh statistics create by_application -n <namespace> -i by_application.yaml
 
 # Get
-f5xcctl statistics get by_application <name> -n <namespace>
+xcsh statistics get by_application <name> -n <namespace>
 
 # List
-f5xcctl statistics list by_application -n <namespace>
+xcsh statistics list by_application -n <namespace>
 
 # Delete
-f5xcctl statistics delete by_application <name> -n <namespace>
+xcsh statistics delete by_application <name> -n <namespace>
 ```
 
 ## Terraform Resource

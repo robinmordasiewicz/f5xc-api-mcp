@@ -33,40 +33,20 @@ Ask Claude to help you work with Session resources:
 
 > "Create a session named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape session create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape session create {name} --namespace {namespace}
-```
-
-Create session
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create session -n <namespace> -i session.yaml
+xcsh shape create session -n <namespace> -i session.yaml
 
 # Get
-f5xcctl shape get session <name> -n <namespace>
+xcsh shape get session <name> -n <namespace>
 
 # List
-f5xcctl shape list session -n <namespace>
+xcsh shape list session -n <namespace>
 
 # Delete
-f5xcctl shape delete session <name> -n <namespace>
+xcsh shape delete session <name> -n <namespace>
 ```
 
 ## Terraform Resource

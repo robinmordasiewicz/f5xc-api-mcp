@@ -33,40 +33,20 @@ Ask Claude to help you work with Friction Aggregation resources:
 
 > "Create a friction-aggregation named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape friction-aggregation create {name} --namespace {namespace}
-```
-
-Create friction-aggregation
-
-### file_based
-
-```bash
-f5xcctl shape friction-aggregation create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create friction_aggregation -n <namespace> -i friction_aggregation.yaml
+xcsh shape create friction_aggregation -n <namespace> -i friction_aggregation.yaml
 
 # Get
-f5xcctl shape get friction_aggregation <name> -n <namespace>
+xcsh shape get friction_aggregation <name> -n <namespace>
 
 # List
-f5xcctl shape list friction_aggregation -n <namespace>
+xcsh shape list friction_aggregation -n <namespace>
 
 # Delete
-f5xcctl shape delete friction_aggregation <name> -n <namespace>
+xcsh shape delete friction_aggregation <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -42,40 +42,20 @@ Ask Claude to help you work with Event Count resources:
 
 > "Create a event-count named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl infraprotect event-count create {name} --namespace {namespace}
-```
-
-Create event-count
-
-### file_based
-
-```bash
-f5xcctl infraprotect event-count create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create event_count -n <namespace> -i event_count.yaml
+xcsh statistics create event_count -n <namespace> -i event_count.yaml
 
 # Get
-f5xcctl statistics get event_count <name> -n <namespace>
+xcsh statistics get event_count <name> -n <namespace>
 
 # List
-f5xcctl statistics list event_count -n <namespace>
+xcsh statistics list event_count -n <namespace>
 
 # Delete
-f5xcctl statistics delete event_count <name> -n <namespace>
+xcsh statistics delete event_count <name> -n <namespace>
 ```
 
 ## Terraform Resource

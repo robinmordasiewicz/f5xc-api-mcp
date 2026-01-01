@@ -41,40 +41,20 @@ Ask Claude to help you work with Summary resources:
 
 > "Create a summary named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data-intelligence summary create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data-intelligence summary create {name} --namespace {namespace}
-```
-
-Create summary
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl data_intelligence create summary -n <namespace> -i summary.yaml
+xcsh data_intelligence create summary -n <namespace> -i summary.yaml
 
 # Get
-f5xcctl data_intelligence get summary <name> -n <namespace>
+xcsh data_intelligence get summary <name> -n <namespace>
 
 # List
-f5xcctl data_intelligence list summary -n <namespace>
+xcsh data_intelligence list summary -n <namespace>
 
 # Delete
-f5xcctl data_intelligence delete summary <name> -n <namespace>
+xcsh data_intelligence delete summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

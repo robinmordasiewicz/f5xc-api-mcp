@@ -33,32 +33,20 @@ Ask Claude to help you work with Password Policy resources:
 
 > "List all password-policys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl default password-policy list --namespace {namespace}
-```
-
-List all password-policys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create password_policy -n <namespace> -i password_policy.yaml
+xcsh tenant_and_identity create password_policy -n <namespace> -i password_policy.yaml
 
 # Get
-f5xcctl tenant_and_identity get password_policy <name> -n <namespace>
+xcsh tenant_and_identity get password_policy <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list password_policy -n <namespace>
+xcsh tenant_and_identity list password_policy -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete password_policy <name> -n <namespace>
+xcsh tenant_and_identity delete password_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -34,32 +34,20 @@ Ask Claude to help you work with Get Public Key resources:
 
 > "List all get-public-keys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl secret_management get-public-key list --namespace {namespace}
-```
-
-List all get-public-keys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create get_public_key -n <namespace> -i get_public_key.yaml
+xcsh blindfold create get_public_key -n <namespace> -i get_public_key.yaml
 
 # Get
-f5xcctl blindfold get get_public_key <name> -n <namespace>
+xcsh blindfold get get_public_key <name> -n <namespace>
 
 # List
-f5xcctl blindfold list get_public_key -n <namespace>
+xcsh blindfold list get_public_key -n <namespace>
 
 # Delete
-f5xcctl blindfold delete get_public_key <name> -n <namespace>
+xcsh blindfold delete get_public_key <name> -n <namespace>
 ```
 
 ## Terraform Resource

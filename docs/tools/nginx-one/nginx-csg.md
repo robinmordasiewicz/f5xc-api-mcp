@@ -48,40 +48,20 @@ Ask Claude to help you work with Nginx Csg resources:
 
 > "Get details of the nginx-csg named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config nginx-csg get {name} --namespace {namespace}
-```
-
-Get specific nginx-csg
-
-### list_all
-
-```bash
-f5xcctl config nginx-csg list --namespace {namespace}
-```
-
-List all nginx-csgs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl nginx_one create nginx_csg -n <namespace> -i nginx_csg.yaml
+xcsh nginx_one create nginx_csg -n <namespace> -i nginx_csg.yaml
 
 # Get
-f5xcctl nginx_one get nginx_csg <name> -n <namespace>
+xcsh nginx_one get nginx_csg <name> -n <namespace>
 
 # List
-f5xcctl nginx_one list nginx_csg -n <namespace>
+xcsh nginx_one list nginx_csg -n <namespace>
 
 # Delete
-f5xcctl nginx_one delete nginx_csg <name> -n <namespace>
+xcsh nginx_one delete nginx_csg <name> -n <namespace>
 ```
 
 ## Terraform Resource

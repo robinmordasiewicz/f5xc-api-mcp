@@ -43,40 +43,20 @@ Ask Claude to help you work with Send Password Email resources:
 
 > "Create a send-password-email named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web send-password-email create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web send-password-email create {name} --namespace {namespace}
-```
-
-Create send-password-email
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create send_password_email -n <namespace> -i send_password_email.yaml
+xcsh tenant_and_identity create send_password_email -n <namespace> -i send_password_email.yaml
 
 # Get
-f5xcctl tenant_and_identity get send_password_email <name> -n <namespace>
+xcsh tenant_and_identity get send_password_email <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list send_password_email -n <namespace>
+xcsh tenant_and_identity list send_password_email -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete send_password_email <name> -n <namespace>
+xcsh tenant_and_identity delete send_password_email <name> -n <namespace>
 ```
 
 ## Terraform Resource

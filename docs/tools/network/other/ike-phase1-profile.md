@@ -77,72 +77,20 @@ Ask Claude to help you work with Ike Phase1 Profile resources:
 
 > "Get details of the ike-phase1-profile named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config ike-phase1-profile create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config ike-phase1-profile create {name} --namespace {namespace}
-```
-
-Create ike-phase1-profile
-
-### delete
-
-```bash
-f5xcctl config ike-phase1-profile delete {name} --namespace {namespace}
-```
-
-Delete ike-phase1-profile
-
-### get_specific
-
-```bash
-f5xcctl config ike-phase1-profile get {name} --namespace {namespace}
-```
-
-Get specific ike-phase1-profile
-
-### list_all
-
-```bash
-f5xcctl config ike-phase1-profile list --namespace {namespace}
-```
-
-List all ike-phase1-profiles
-
-### update
-
-```bash
-f5xcctl config ike-phase1-profile update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update ike-phase1-profile
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create ike_phase1_profile -n <namespace> -i ike_phase1_profile.yaml
+xcsh network create ike_phase1_profile -n <namespace> -i ike_phase1_profile.yaml
 
 # Get
-f5xcctl network get ike_phase1_profile <name> -n <namespace>
+xcsh network get ike_phase1_profile <name> -n <namespace>
 
 # List
-f5xcctl network list ike_phase1_profile -n <namespace>
+xcsh network list ike_phase1_profile -n <namespace>
 
 # Delete
-f5xcctl network delete ike_phase1_profile <name> -n <namespace>
+xcsh network delete ike_phase1_profile <name> -n <namespace>
 ```
 
 ## Terraform Resource

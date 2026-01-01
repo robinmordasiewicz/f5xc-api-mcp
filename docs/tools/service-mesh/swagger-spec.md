@@ -34,32 +34,20 @@ Ask Claude to help you work with Swagger Spec resources:
 
 > "List all swagger-specs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl ml swagger-spec list --namespace {namespace}
-```
-
-List all swagger-specs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create swagger_spec -n <namespace> -i swagger_spec.yaml
+xcsh service_mesh create swagger_spec -n <namespace> -i swagger_spec.yaml
 
 # Get
-f5xcctl service_mesh get swagger_spec <name> -n <namespace>
+xcsh service_mesh get swagger_spec <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list swagger_spec -n <namespace>
+xcsh service_mesh list swagger_spec -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete swagger_spec <name> -n <namespace>
+xcsh service_mesh delete swagger_spec <name> -n <namespace>
 ```
 
 ## Terraform Resource

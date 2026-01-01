@@ -41,40 +41,20 @@ Ask Claude to help you work with Query resources:
 
 > "Create a query named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl gen-ai query create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl gen-ai query create {name} --namespace {namespace}
-```
-
-Create query
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl generative_ai create query -n <namespace> -i query.yaml
+xcsh generative_ai create query -n <namespace> -i query.yaml
 
 # Get
-f5xcctl generative_ai get query <name> -n <namespace>
+xcsh generative_ai get query <name> -n <namespace>
 
 # List
-f5xcctl generative_ai list query -n <namespace>
+xcsh generative_ai list query -n <namespace>
 
 # Delete
-f5xcctl generative_ai delete query <name> -n <namespace>
+xcsh generative_ai delete query <name> -n <namespace>
 ```
 
 ## Terraform Resource

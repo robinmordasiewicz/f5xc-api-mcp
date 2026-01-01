@@ -41,40 +41,20 @@ Ask Claude to help you work with Credential Stuffing Attack resources:
 
 > "Create a credential-stuffing-attack named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape credential-stuffing-attack create {name} --namespace {namespace}
-```
-
-Create credential-stuffing-attack
-
-### file_based
-
-```bash
-f5xcctl shape credential-stuffing-attack create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create credential_stuffing_attack -n <namespace> -i credential_stuffing_attack.yaml
+xcsh shape create credential_stuffing_attack -n <namespace> -i credential_stuffing_attack.yaml
 
 # Get
-f5xcctl shape get credential_stuffing_attack <name> -n <namespace>
+xcsh shape get credential_stuffing_attack <name> -n <namespace>
 
 # List
-f5xcctl shape list credential_stuffing_attack -n <namespace>
+xcsh shape list credential_stuffing_attack -n <namespace>
 
 # Delete
-f5xcctl shape delete credential_stuffing_attack <name> -n <namespace>
+xcsh shape delete credential_stuffing_attack <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -40,32 +40,20 @@ Ask Claude to help you work with Geo Config resources:
 
 > "Get details of the geo-config named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config geo-config get {name} --namespace {namespace}
-```
-
-Get specific geo-config
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl data_and_privacy_security create geo_config -n <namespace> -i geo_config.yaml
+xcsh data_and_privacy_security create geo_config -n <namespace> -i geo_config.yaml
 
 # Get
-f5xcctl data_and_privacy_security get geo_config <name> -n <namespace>
+xcsh data_and_privacy_security get geo_config <name> -n <namespace>
 
 # List
-f5xcctl data_and_privacy_security list geo_config -n <namespace>
+xcsh data_and_privacy_security list geo_config -n <namespace>
 
 # Delete
-f5xcctl data_and_privacy_security delete geo_config <name> -n <namespace>
+xcsh data_and_privacy_security delete geo_config <name> -n <namespace>
 ```
 
 ## Terraform Resource

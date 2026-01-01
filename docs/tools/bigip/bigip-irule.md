@@ -77,72 +77,20 @@ Ask Claude to help you work with Bigip Irule resources:
 
 > "Get details of the bigip-irule named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl bigipconnector bigip-irule create {name} --namespace {namespace}
-```
-
-Create bigip-irule
-
-### file_based
-
-```bash
-f5xcctl bigipconnector bigip-irule create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl bigipconnector bigip-irule delete {name} --namespace {namespace}
-```
-
-Delete bigip-irule
-
-### get_specific
-
-```bash
-f5xcctl bigipconnector bigip-irule get {name} --namespace {namespace}
-```
-
-Get specific bigip-irule
-
-### list_all
-
-```bash
-f5xcctl bigipconnector bigip-irule list --namespace {namespace}
-```
-
-List all bigip-irules
-
-### update
-
-```bash
-f5xcctl bigipconnector bigip-irule update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update bigip-irule
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl bigip create bigip_irule -n <namespace> -i bigip_irule.yaml
+xcsh bigip create bigip_irule -n <namespace> -i bigip_irule.yaml
 
 # Get
-f5xcctl bigip get bigip_irule <name> -n <namespace>
+xcsh bigip get bigip_irule <name> -n <namespace>
 
 # List
-f5xcctl bigip list bigip_irule -n <namespace>
+xcsh bigip list bigip_irule -n <namespace>
 
 # Delete
-f5xcctl bigip delete bigip_irule <name> -n <namespace>
+xcsh bigip delete bigip_irule <name> -n <namespace>
 ```
 
 ## Terraform Resource

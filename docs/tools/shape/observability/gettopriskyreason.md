@@ -33,40 +33,20 @@ Ask Claude to help you work with Gettopriskyreason resources:
 
 > "Create a gettopriskyreason named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape gettopriskyreason create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape gettopriskyreason create {name} --namespace {namespace}
-```
-
-Create gettopriskyreason
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create gettopriskyreason -n <namespace> -i gettopriskyreason.yaml
+xcsh shape create gettopriskyreason -n <namespace> -i gettopriskyreason.yaml
 
 # Get
-f5xcctl shape get gettopriskyreason <name> -n <namespace>
+xcsh shape get gettopriskyreason <name> -n <namespace>
 
 # List
-f5xcctl shape list gettopriskyreason -n <namespace>
+xcsh shape list gettopriskyreason -n <namespace>
 
 # Delete
-f5xcctl shape delete gettopriskyreason <name> -n <namespace>
+xcsh shape delete gettopriskyreason <name> -n <namespace>
 ```
 
 ## Terraform Resource

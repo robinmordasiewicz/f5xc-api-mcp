@@ -78,72 +78,20 @@ Ask Claude to help you work with Protocol Inspection resources:
 
 > "Get details of the protocol-inspection named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config protocol-inspection create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config protocol-inspection create {name} --namespace {namespace}
-```
-
-Create protocol-inspection
-
-### delete
-
-```bash
-f5xcctl config protocol-inspection delete {name} --namespace {namespace}
-```
-
-Delete protocol-inspection
-
-### get_specific
-
-```bash
-f5xcctl config protocol-inspection get {name} --namespace {namespace}
-```
-
-Get specific protocol-inspection
-
-### list_all
-
-```bash
-f5xcctl config protocol-inspection list --namespace {namespace}
-```
-
-List all protocol-inspections
-
-### update
-
-```bash
-f5xcctl config protocol-inspection update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update protocol-inspection
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create protocol_inspection -n <namespace> -i protocol_inspection.yaml
+xcsh waf create protocol_inspection -n <namespace> -i protocol_inspection.yaml
 
 # Get
-f5xcctl waf get protocol_inspection <name> -n <namespace>
+xcsh waf get protocol_inspection <name> -n <namespace>
 
 # List
-f5xcctl waf list protocol_inspection -n <namespace>
+xcsh waf list protocol_inspection -n <namespace>
 
 # Delete
-f5xcctl waf delete protocol_inspection <name> -n <namespace>
+xcsh waf delete protocol_inspection <name> -n <namespace>
 ```
 
 ## Terraform Resource

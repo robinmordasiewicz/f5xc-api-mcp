@@ -33,40 +33,20 @@ Ask Claude to help you work with Segment Metric resources:
 
 > "Create a segment-metric named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data segment-metric create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data segment-metric create {name} --namespace {namespace}
-```
-
-Create segment-metric
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cloud_infrastructure create segment_metric -n <namespace> -i segment_metric.yaml
+xcsh cloud_infrastructure create segment_metric -n <namespace> -i segment_metric.yaml
 
 # Get
-f5xcctl cloud_infrastructure get segment_metric <name> -n <namespace>
+xcsh cloud_infrastructure get segment_metric <name> -n <namespace>
 
 # List
-f5xcctl cloud_infrastructure list segment_metric -n <namespace>
+xcsh cloud_infrastructure list segment_metric -n <namespace>
 
 # Delete
-f5xcctl cloud_infrastructure delete segment_metric <name> -n <namespace>
+xcsh cloud_infrastructure delete segment_metric <name> -n <namespace>
 ```
 
 ## Terraform Resource

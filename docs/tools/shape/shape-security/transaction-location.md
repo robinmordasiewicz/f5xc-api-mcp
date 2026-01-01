@@ -41,40 +41,20 @@ Ask Claude to help you work with Transaction Location resources:
 
 > "Create a transaction-location named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape transaction-location create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape transaction-location create {name} --namespace {namespace}
-```
-
-Create transaction-location
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create transaction_location -n <namespace> -i transaction_location.yaml
+xcsh shape create transaction_location -n <namespace> -i transaction_location.yaml
 
 # Get
-f5xcctl shape get transaction_location <name> -n <namespace>
+xcsh shape get transaction_location <name> -n <namespace>
 
 # List
-f5xcctl shape list transaction_location -n <namespace>
+xcsh shape list transaction_location -n <namespace>
 
 # Delete
-f5xcctl shape delete transaction_location <name> -n <namespace>
+xcsh shape delete transaction_location <name> -n <namespace>
 ```
 
 ## Terraform Resource

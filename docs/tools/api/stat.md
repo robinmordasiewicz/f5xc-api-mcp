@@ -42,40 +42,20 @@ Ask Claude to help you work with Stat resources:
 
 > "Create a stat named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml stat create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml stat create {name} --namespace {namespace}
-```
-
-Create stat
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create stat -n <namespace> -i stat.yaml
+xcsh api create stat -n <namespace> -i stat.yaml
 
 # Get
-f5xcctl api get stat <name> -n <namespace>
+xcsh api get stat <name> -n <namespace>
 
 # List
-f5xcctl api list stat -n <namespace>
+xcsh api list stat -n <namespace>
 
 # Delete
-f5xcctl api delete stat <name> -n <namespace>
+xcsh api delete stat <name> -n <namespace>
 ```
 
 ## Terraform Resource

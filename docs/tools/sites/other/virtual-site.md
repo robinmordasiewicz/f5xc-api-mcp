@@ -77,72 +77,20 @@ Ask Claude to help you work with Virtual Site resources:
 
 > "Get details of the virtual-site named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config virtual-site create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config virtual-site create {name} --namespace {namespace}
-```
-
-Create virtual-site
-
-### delete
-
-```bash
-f5xcctl config virtual-site delete {name} --namespace {namespace}
-```
-
-Delete virtual-site
-
-### get_specific
-
-```bash
-f5xcctl config virtual-site get {name} --namespace {namespace}
-```
-
-Get specific virtual-site
-
-### list_all
-
-```bash
-f5xcctl config virtual-site list --namespace {namespace}
-```
-
-List all virtual-sites
-
-### update
-
-```bash
-f5xcctl config virtual-site update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update virtual-site
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create virtual_site -n <namespace> -i virtual_site.yaml
+xcsh sites create virtual_site -n <namespace> -i virtual_site.yaml
 
 # Get
-f5xcctl sites get virtual_site <name> -n <namespace>
+xcsh sites get virtual_site <name> -n <namespace>
 
 # List
-f5xcctl sites list virtual_site -n <namespace>
+xcsh sites list virtual_site -n <namespace>
 
 # Delete
-f5xcctl sites delete virtual_site <name> -n <namespace>
+xcsh sites delete virtual_site <name> -n <namespace>
 ```
 
 ## Terraform Resource

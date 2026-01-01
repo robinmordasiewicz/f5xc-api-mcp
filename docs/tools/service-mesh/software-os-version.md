@@ -33,40 +33,20 @@ Ask Claude to help you work with Software Os Version resources:
 
 > "Create a software-os-version named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl maurice software-os-version create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl maurice software-os-version create {name} --namespace {namespace}
-```
-
-Create software-os-version
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create software_os_version -n <namespace> -i software_os_version.yaml
+xcsh service_mesh create software_os_version -n <namespace> -i software_os_version.yaml
 
 # Get
-f5xcctl service_mesh get software_os_version <name> -n <namespace>
+xcsh service_mesh get software_os_version <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list software_os_version -n <namespace>
+xcsh service_mesh list software_os_version -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete software_os_version <name> -n <namespace>
+xcsh service_mesh delete software_os_version <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with Policer resources:
 
 > "Get details of the policer named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config policer create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config policer create {name} --namespace {namespace}
-```
-
-Create policer
-
-### delete
-
-```bash
-f5xcctl config policer delete {name} --namespace {namespace}
-```
-
-Delete policer
-
-### get_specific
-
-```bash
-f5xcctl config policer get {name} --namespace {namespace}
-```
-
-Get specific policer
-
-### list_all
-
-```bash
-f5xcctl config policer list --namespace {namespace}
-```
-
-List all policers
-
-### update
-
-```bash
-f5xcctl config policer update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update policer
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl rate_limiting create policer -n <namespace> -i policer.yaml
+xcsh rate_limiting create policer -n <namespace> -i policer.yaml
 
 # Get
-f5xcctl rate_limiting get policer <name> -n <namespace>
+xcsh rate_limiting get policer <name> -n <namespace>
 
 # List
-f5xcctl rate_limiting list policer -n <namespace>
+xcsh rate_limiting list policer -n <namespace>
 
 # Delete
-f5xcctl rate_limiting delete policer <name> -n <namespace>
+xcsh rate_limiting delete policer <name> -n <namespace>
 ```
 
 ## Terraform Resource

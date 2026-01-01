@@ -42,40 +42,20 @@ Ask Claude to help you work with Access Count resources:
 
 > "Create a access-count named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl secret_management access-count create {name} --namespace {namespace}
-```
-
-Create access-count
-
-### file_based
-
-```bash
-f5xcctl secret_management access-count create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create access_count -n <namespace> -i access_count.yaml
+xcsh blindfold create access_count -n <namespace> -i access_count.yaml
 
 # Get
-f5xcctl blindfold get access_count <name> -n <namespace>
+xcsh blindfold get access_count <name> -n <namespace>
 
 # List
-f5xcctl blindfold list access_count -n <namespace>
+xcsh blindfold list access_count -n <namespace>
 
 # Delete
-f5xcctl blindfold delete access_count <name> -n <namespace>
+xcsh blindfold delete access_count <name> -n <namespace>
 ```
 
 ## Terraform Resource

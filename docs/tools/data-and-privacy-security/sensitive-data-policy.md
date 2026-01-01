@@ -78,72 +78,20 @@ Ask Claude to help you work with Sensitive Data Policy resources:
 
 > "Get details of the sensitive-data-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config sensitive-data-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config sensitive-data-policy create {name} --namespace {namespace}
-```
-
-Create sensitive-data-policy
-
-### delete
-
-```bash
-f5xcctl config sensitive-data-policy delete {name} --namespace {namespace}
-```
-
-Delete sensitive-data-policy
-
-### get_specific
-
-```bash
-f5xcctl config sensitive-data-policy get {name} --namespace {namespace}
-```
-
-Get specific sensitive-data-policy
-
-### list_all
-
-```bash
-f5xcctl config sensitive-data-policy list --namespace {namespace}
-```
-
-List all sensitive-data-policys
-
-### update
-
-```bash
-f5xcctl config sensitive-data-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update sensitive-data-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl data_and_privacy_security create sensitive_data_policy -n <namespace> -i sensitive_data_policy.yaml
+xcsh data_and_privacy_security create sensitive_data_policy -n <namespace> -i sensitive_data_policy.yaml
 
 # Get
-f5xcctl data_and_privacy_security get sensitive_data_policy <name> -n <namespace>
+xcsh data_and_privacy_security get sensitive_data_policy <name> -n <namespace>
 
 # List
-f5xcctl data_and_privacy_security list sensitive_data_policy -n <namespace>
+xcsh data_and_privacy_security list sensitive_data_policy -n <namespace>
 
 # Delete
-f5xcctl data_and_privacy_security delete sensitive_data_policy <name> -n <namespace>
+xcsh data_and_privacy_security delete sensitive_data_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource
