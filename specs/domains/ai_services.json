@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "F5 XC Generative Ai API",
+    "title": "Ai Services",
     "description": "Query handling through inference routing with production and test modes. Positive and negative quality markers with detailed categorization capture assistant performance. Streaming connections support authenticated access, subscription lifecycles, and feature flags. IP provisioning services allocate infrastructure resources for model workloads across distributed systems.",
-    "version": "1.0.85",
+    "version": "1.0.91",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -12,7 +12,8 @@
       "name": "Proprietary",
       "url": "https://www.f5.com/company/policies/eula"
     },
-    "x-ves-cli-domain": "generative_ai"
+    "summary": "Natural language processing with quality signals and anomaly monitoring. Token authentication for data stream subscriptions.",
+    "x-ves-cli-domain": "ai_services"
   },
   "servers": [
     {
@@ -2339,7 +2340,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478637+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255768+00:00"
           },
           "negative_feedback": {
             "$ref": "#/components/schemas/ai_assistantNegativeFeedbackDetails"
@@ -2401,7 +2402,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"comment\": \"value\",\n    \"namespace\": \"value\",\n    \"negative_feedback\": \"value\",\n    \"positive_feedback\": \"value\",\n    \"query\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistant_a_i_assistant_query_feedback_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "generative_ai"
+        "x-ves-cli-domain": "ai_services"
       },
       "ai_assistantAIAssistantQueryRequest": {
         "type": "object",
@@ -2441,7 +2442,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478658+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255789+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -2455,7 +2456,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"current_query\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistant_a_i_assistant_query_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "generative_ai"
+        "x-ves-cli-domain": "ai_services"
       },
       "ai_assistantAIAssistantQueryResponse": {
         "type": "object",
@@ -2563,7 +2564,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"current_query\": \"value\",\n    \"explain_log\": \"value\",\n    \"follow_up_queries\": \"value\",\n    \"gen_dashboard_filter\": \"value\",\n    \"generic_response\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistant_a_i_assistant_query_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "generative_ai"
+        "x-ves-cli-domain": "ai_services"
       },
       "ai_assistantNegativeFeedbackDetails": {
         "type": "object",
@@ -2609,7 +2610,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"remarks\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistant_negative_feedback_detailses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "generative_ai"
+        "x-ves-cli-domain": "ai_services"
       },
       "ai_assistantNegativeFeedbackType": {
         "type": "string",
@@ -2633,7 +2634,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistant_negative_feedback_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "generative_ai"
+        "x-ves-cli-domain": "ai_services"
       },
       "ai_assistantcommonUnitType": {
         "type": "string",
@@ -2656,7 +2657,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/ai_assistantcommon_unit_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "generative_ai"
+        "x-ves-cli-domain": "ai_services"
       },
       "ai_assistantexplain_log_recordAction": {
         "type": "string",
@@ -2782,7 +2783,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478684+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255815+00:00"
           },
           "log_filters": {
             "type": "array",
@@ -2815,7 +2816,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478691+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255822+00:00"
           },
           "object_name": {
             "type": "string",
@@ -2863,7 +2864,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478698+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255829+00:00"
           },
           "type": {
             "$ref": "#/components/schemas/commonDashboardLinkType"
@@ -3020,7 +3021,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478712+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255843+00:00"
           },
           "title": {
             "type": "string",
@@ -3038,7 +3039,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478716+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255847+00:00"
           },
           "tooltip": {
             "type": "string",
@@ -3151,7 +3152,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478724+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255855+00:00"
           },
           "title": {
             "type": "string",
@@ -3169,7 +3170,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478728+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255859+00:00"
           },
           "url": {
             "type": "string",
@@ -3307,7 +3308,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478743+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255874+00:00"
           },
           "op": {
             "$ref": "#/components/schemas/commonFilterOperator"
@@ -3376,7 +3377,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478752+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255883+00:00"
           },
           "type": {
             "$ref": "#/components/schemas/commonDashboardLinkType"
@@ -3623,7 +3624,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478769+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255900+00:00"
           },
           "type": {
             "type": "string",
@@ -3894,7 +3895,7 @@
             "x-original-maxLength": 1024,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478793+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255923+00:00"
           },
           "rsp_code": {
             "type": "integer",
@@ -4046,7 +4047,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478810+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255939+00:00"
           },
           "state": {
             "type": "string",
@@ -4233,7 +4234,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478828+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255956+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4318,7 +4319,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478836+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255965+00:00"
           },
           "state": {
             "type": "string",
@@ -4556,7 +4557,7 @@
             "maxLength": 26,
             "minLength": 15,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478859+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255987+00:00"
           },
           "title": {
             "type": "string",
@@ -4574,7 +4575,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478863+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.255991+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4728,7 +4729,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478875+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.256003+00:00"
           }
         },
         "x-ves-minimum-configuration": {
@@ -4952,7 +4953,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T06:41:19.478894+00:00"
+            "x-reconciled-at": "2026-01-02T23:08:38.256022+00:00"
           }
         },
         "x-ves-minimum-configuration": {
