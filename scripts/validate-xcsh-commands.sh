@@ -1,16 +1,16 @@
 #!/bin/bash
 
 ##############################################################################
-# F5XCctl Command Syntax Validation Script
+# xcsh Command Syntax Validation Script
 #
-# Validates that all f5xcctl commands in documentation follow correct syntax:
-# - No "f5xcctl configuration" commands (this is a bug pattern)
+# Validates that all xcsh commands in documentation follow correct syntax:
+# - No "xcsh configuration" commands (this is a bug pattern)
 # - All commands use "-i" flag for file input (not "-f")
 # - All resource commands include domain prefix
 # - All commands use "-n" for namespace (not "--namespace")
 #
 # Usage:
-#   ./scripts/validate-f5xcctl-commands.sh
+#   ./scripts/validate-xcsh-commands.sh
 #   npm run validate-cli-commands
 #
 # Exit codes:
@@ -48,43 +48,43 @@ error() {
 
 # Banner
 echo "============================================================"
-echo "F5XCctl Command Syntax Validator"
+echo "xcsh Command Syntax Validator"
 echo "============================================================"
 echo ""
 
 # Define documentation directory
 DOCS_DIR="docs"
 TOOLS_DIR="${DOCS_DIR}/tools"
-INTEGRATION_FILE="${DOCS_DIR}/integrations/f5xcctl.md"
+INTEGRATION_FILE="${DOCS_DIR}/integrations/xcsh.md"
 
 if [ ! -d "${TOOLS_DIR}" ]; then
   error "Documentation directory not found: ${TOOLS_DIR}"
   exit 1
 fi
 
-info "Validating f5xcctl command syntax..."
+info "Validating xcsh command syntax..."
 echo ""
 
-# Check 1: No "f5xcctl configuration" commands (the main bug we fixed)
-echo "Check 1: Verifying no 'f5xcctl configuration' commands..."
-if grep -r "f5xcctl configuration" "${DOCS_DIR}" > /dev/null 2>&1; then
-  CONFIG_COUNT=$(grep -r "f5xcctl configuration" "${DOCS_DIR}" | wc -l)
-  error "Found ${CONFIG_COUNT} instances of 'f5xcctl configuration' (should be 0)"
-  grep -r "f5xcctl configuration" "${DOCS_DIR}" | head -5 | while read line; do
+# Check 1: No "xcsh configuration" commands (the main bug we fixed)
+echo "Check 1: Verifying no 'xcsh configuration' commands..."
+if grep -r "xcsh configuration" "${DOCS_DIR}" > /dev/null 2>&1; then
+  CONFIG_COUNT=$(grep -r "xcsh configuration" "${DOCS_DIR}" | wc -l)
+  error "Found ${CONFIG_COUNT} instances of 'xcsh configuration' (should be 0)"
+  grep -r "xcsh configuration" "${DOCS_DIR}" | head -5 | while read line; do
     echo "  $line"
   done
   [ "$CONFIG_COUNT" -gt 5 ] && echo "  ... and $((CONFIG_COUNT - 5)) more"
 else
-  info "✓ No 'f5xcctl configuration' commands found"
+  info "✓ No 'xcsh configuration' commands found"
 fi
 echo ""
 
 # Check 2: No incorrect "-f" flag usage
 echo "Check 2: Verifying no '-f' flag for file input..."
-if grep -r "f5xcctl.*-f .*\\.yaml" "${DOCS_DIR}" > /dev/null 2>&1; then
-  F_FLAG_COUNT=$(grep -r "f5xcctl.*-f .*\\.yaml" "${DOCS_DIR}" | wc -l)
+if grep -r "xcsh.*-f .*\\.yaml" "${DOCS_DIR}" > /dev/null 2>&1; then
+  F_FLAG_COUNT=$(grep -r "xcsh.*-f .*\\.yaml" "${DOCS_DIR}" | wc -l)
   error "Found ${F_FLAG_COUNT} instances of incorrect '-f' flag (should be 0)"
-  grep -r "f5xcctl.*-f .*\\.yaml" "${DOCS_DIR}" | head -3 | while read line; do
+  grep -r "xcsh.*-f .*\\.yaml" "${DOCS_DIR}" | head -3 | while read line; do
     echo "  $line"
   done
 else
@@ -94,12 +94,12 @@ echo ""
 
 # Check 3: Verify correct "-i" flag usage
 echo "Check 3: Verifying correct '-i' flag usage..."
-I_FLAG_COUNT=$(grep -rc "f5xcctl.*-i .*\\.yaml" "${TOOLS_DIR}" | grep -v ":0" | wc -l)
+I_FLAG_COUNT=$(grep -rc "xcsh.*-i .*\\.yaml" "${TOOLS_DIR}" | grep -v ":0" | wc -l)
 if [ "$I_FLAG_COUNT" -gt 0 ]; then
-  TOTAL_COMMANDS=$(grep -r "f5xcctl.*-i .*\\.yaml" "${DOCS_DIR}" | wc -l)
+  TOTAL_COMMANDS=$(grep -r "xcsh.*-i .*\\.yaml" "${DOCS_DIR}" | wc -l)
   info "✓ Found ${TOTAL_COMMANDS} correct '-i' flag usages"
 else
-  warn "No f5xcctl create/apply commands found with '-i' flag"
+  warn "No xcsh create/apply commands found with '-i' flag"
 fi
 echo ""
 
@@ -117,7 +117,7 @@ for domain in "${DOMAINS[@]}"; do
 
   if [ -d "$DOMAIN_DIR_ALT" ]; then
     # Count files with correct domain prefix
-    CORRECT_COUNT=$(grep -r "f5xcctl ${domain}" "$DOMAIN_DIR_ALT" 2>/dev/null | wc -l || echo 0)
+    CORRECT_COUNT=$(grep -r "xcsh ${domain}" "$DOMAIN_DIR_ALT" 2>/dev/null | wc -l || echo 0)
     if [ "$CORRECT_COUNT" -gt 0 ]; then
       info "✓ Domain '${domain}': Found $CORRECT_COUNT correct commands"
     else
@@ -129,8 +129,8 @@ echo ""
 
 # Check 5: Verify namespace flag usage
 echo "Check 5: Verifying '-n' flag for namespace..."
-N_FLAG_COUNT=$(grep -r "f5xcctl.*-n" "${TOOLS_DIR}" | wc -l)
-LONG_FLAG_COUNT=$(grep -r "f5xcctl.*--namespace" "${DOCS_DIR}" | wc -l)
+N_FLAG_COUNT=$(grep -r "xcsh.*-n" "${TOOLS_DIR}" | wc -l)
+LONG_FLAG_COUNT=$(grep -r "xcsh.*--namespace" "${DOCS_DIR}" | wc -l)
 
 if [ "$LONG_FLAG_COUNT" -gt 0 ]; then
   warn "Found ${LONG_FLAG_COUNT} instances of '--namespace' (should use '-n')"
@@ -146,14 +146,35 @@ echo ""
 # Check 6: Integration documentation validation
 echo "Check 6: Validating integration documentation..."
 if [ -f "$INTEGRATION_FILE" ]; then
-  INTEGRATION_CONFIG=$(grep -c "f5xcctl configuration" "$INTEGRATION_FILE" || true)
+  INTEGRATION_CONFIG=$(grep -c "xcsh configuration" "$INTEGRATION_FILE" || true)
   if [ "$INTEGRATION_CONFIG" -gt 0 ]; then
-    error "Found 'f5xcctl configuration' in integration docs"
+    error "Found 'xcsh configuration' in integration docs"
   else
     info "✓ Integration documentation has correct commands"
   fi
 else
   warn "Integration documentation not found: $INTEGRATION_FILE"
+fi
+echo ""
+
+# Check 7: No deprecated CLI references
+echo "Check 7: Checking for deprecated CLI references..."
+DEPRECATED_COUNT=0
+
+if grep -r "f5xcctl" "${DOCS_DIR}" > /dev/null 2>&1; then
+  F5XCCTL_COUNT=$(grep -r "f5xcctl" "${DOCS_DIR}" | wc -l)
+  error "Found ${F5XCCTL_COUNT} instances of deprecated 'f5xcctl' (should be 'xcsh')"
+  DEPRECATED_COUNT=$((DEPRECATED_COUNT + F5XCCTL_COUNT))
+fi
+
+if grep -r "vesctl" "${DOCS_DIR}" > /dev/null 2>&1; then
+  VESCTL_COUNT=$(grep -r "vesctl" "${DOCS_DIR}" | wc -l)
+  error "Found ${VESCTL_COUNT} instances of deprecated 'vesctl' (should be 'xcsh')"
+  DEPRECATED_COUNT=$((DEPRECATED_COUNT + VESCTL_COUNT))
+fi
+
+if [ "$DEPRECATED_COUNT" -eq 0 ]; then
+  info "✓ No deprecated CLI references found"
 fi
 echo ""
 
@@ -166,21 +187,23 @@ if [ $ERRORS -eq 0 ]; then
   echo -e "${GREEN}✓ All checks passed!${NC}"
   echo ""
   echo "Summary of validations:"
-  echo "  • No 'f5xcctl configuration' commands"
+  echo "  • No 'xcsh configuration' commands"
   echo "  • No incorrect '-f' flag usage"
   echo "  • Correct '-i' flag for file input"
   echo "  • Domain prefixes present in commands"
   echo "  • Namespace flags properly formatted"
+  echo "  • No deprecated CLI references (f5xcctl, vesctl)"
   echo ""
   exit 0
 else
   echo -e "${RED}✗ Found $ERRORS validation error(s)${NC}"
   echo ""
   echo "Issues to fix:"
-  echo "  1. Replace 'f5xcctl configuration' with proper domain (e.g., 'f5xcctl load_balancer')"
+  echo "  1. Replace 'xcsh configuration' with proper domain (e.g., 'xcsh load_balancer')"
   echo "  2. Replace '-f' flag with '-i' for file input"
-  echo "  3. Ensure all commands follow pattern: f5xcctl {domain} {operation} {resource}"
+  echo "  3. Ensure all commands follow pattern: xcsh {domain} {operation} {resource}"
   echo "  4. Use '-n' for namespace, not '--namespace'"
+  echo "  5. Replace deprecated 'f5xcctl' and 'vesctl' with 'xcsh'"
   echo ""
   exit 1
 fi

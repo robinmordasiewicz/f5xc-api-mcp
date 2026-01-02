@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - API token authentication support
 - P12 certificate (mTLS) authentication support
 - Automatic URL normalization for various F5XC URL formats
-- f5xcctl CLI command equivalents in every response
+- xcsh CLI command equivalents in every response
 - Terraform HCL examples in every response
 - MCP Resources for F5XC configuration objects via URI scheme
 - Workflow prompts for common operations:
