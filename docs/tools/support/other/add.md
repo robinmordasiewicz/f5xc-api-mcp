@@ -43,40 +43,20 @@ Ask Claude to help you work with Add resources:
 
 > "Create a add named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl operate add create {name} --namespace {namespace}
-```
-
-Create add
-
-### file_based
-
-```bash
-f5xcctl operate add create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create add -n <namespace> -i add.yaml
+xcsh support create add -n <namespace> -i add.yaml
 
 # Get
-f5xcctl support get add <name> -n <namespace>
+xcsh support get add <name> -n <namespace>
 
 # List
-f5xcctl support list add -n <namespace>
+xcsh support list add -n <namespace>
 
 # Delete
-f5xcctl support delete add <name> -n <namespace>
+xcsh support delete add <name> -n <namespace>
 ```
 
 ## Terraform Resource

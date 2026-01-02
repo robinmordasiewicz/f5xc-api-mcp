@@ -46,40 +46,20 @@ Ask Claude to help you work with Update Schema resources:
 
 > "Create a update-schema named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml update-schema create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml update-schema create {name} --namespace {namespace}
-```
-
-Create update-schema
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create update_schema -n <namespace> -i update_schema.yaml
+xcsh virtual create update_schema -n <namespace> -i update_schema.yaml
 
 # Get
-f5xcctl virtual get update_schema <name> -n <namespace>
+xcsh virtual get update_schema <name> -n <namespace>
 
 # List
-f5xcctl virtual list update_schema -n <namespace>
+xcsh virtual list update_schema -n <namespace>
 
 # Delete
-f5xcctl virtual delete update_schema <name> -n <namespace>
+xcsh virtual delete update_schema <name> -n <namespace>
 ```
 
 ## Terraform Resource

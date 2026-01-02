@@ -36,32 +36,20 @@ Ask Claude to help you work with Health Status Change Event resources:
 
 > "List all health-status-change-events in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data health-status-change-event list --namespace {namespace}
-```
-
-List all health-status-change-events
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create health_status_change_event -n <namespace> -i health_status_change_event.yaml
+xcsh dns create health_status_change_event -n <namespace> -i health_status_change_event.yaml
 
 # Get
-f5xcctl dns get health_status_change_event <name> -n <namespace>
+xcsh dns get health_status_change_event <name> -n <namespace>
 
 # List
-f5xcctl dns list health_status_change_event -n <namespace>
+xcsh dns list health_status_change_event -n <namespace>
 
 # Delete
-f5xcctl dns delete health_status_change_event <name> -n <namespace>
+xcsh dns delete health_status_change_event <name> -n <namespace>
 ```
 
 ## Terraform Resource

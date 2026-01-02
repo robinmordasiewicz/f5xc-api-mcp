@@ -34,32 +34,20 @@ Ask Claude to help you work with Version resources:
 
 > "Get details of the version named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl shape version get {name} --namespace {namespace}
-```
-
-Get specific version
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create version -n <namespace> -i version.yaml
+xcsh shape create version -n <namespace> -i version.yaml
 
 # Get
-f5xcctl shape get version <name> -n <namespace>
+xcsh shape get version <name> -n <namespace>
 
 # List
-f5xcctl shape list version -n <namespace>
+xcsh shape list version -n <namespace>
 
 # Delete
-f5xcctl shape delete version <name> -n <namespace>
+xcsh shape delete version <name> -n <namespace>
 ```
 
 ## Terraform Resource

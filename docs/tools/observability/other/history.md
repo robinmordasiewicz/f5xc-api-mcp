@@ -43,32 +43,20 @@ Ask Claude to help you work with History resources:
 
 > "List all historys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data history list --namespace {namespace}
-```
-
-List all historys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create history -n <namespace> -i history.yaml
+xcsh observability create history -n <namespace> -i history.yaml
 
 # Get
-f5xcctl observability get history <name> -n <namespace>
+xcsh observability get history <name> -n <namespace>
 
 # List
-f5xcctl observability list history -n <namespace>
+xcsh observability list history -n <namespace>
 
 # Delete
-f5xcctl observability delete history <name> -n <namespace>
+xcsh observability delete history <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with V1 DNS Monitor resources:
 
 > "Get details of the v1-dns-monitor named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl observability v1-dns-monitor create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl observability v1-dns-monitor create {name} --namespace {namespace}
-```
-
-Create v1-dns-monitor
-
-### delete
-
-```bash
-f5xcctl observability v1-dns-monitor delete {name} --namespace {namespace}
-```
-
-Delete v1-dns-monitor
-
-### get_specific
-
-```bash
-f5xcctl observability v1-dns-monitor get {name} --namespace {namespace}
-```
-
-Get specific v1-dns-monitor
-
-### list_all
-
-```bash
-f5xcctl observability v1-dns-monitor list --namespace {namespace}
-```
-
-List all v1-dns-monitors
-
-### update
-
-```bash
-f5xcctl observability v1-dns-monitor update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update v1-dns-monitor
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create v1_dns_monitor -n <namespace> -i v1_dns_monitor.yaml
+xcsh observability create v1_dns_monitor -n <namespace> -i v1_dns_monitor.yaml
 
 # Get
-f5xcctl observability get v1_dns_monitor <name> -n <namespace>
+xcsh observability get v1_dns_monitor <name> -n <namespace>
 
 # List
-f5xcctl observability list v1_dns_monitor -n <namespace>
+xcsh observability list v1_dns_monitor -n <namespace>
 
 # Delete
-f5xcctl observability delete v1_dns_monitor <name> -n <namespace>
+xcsh observability delete v1_dns_monitor <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -42,40 +42,20 @@ Ask Claude to help you work with Suggestion resources:
 
 > "Create a suggestion named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config suggestion create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config suggestion create {name} --namespace {namespace}
-```
-
-Create suggestion
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cdn create suggestion -n <namespace> -i suggestion.yaml
+xcsh cdn create suggestion -n <namespace> -i suggestion.yaml
 
 # Get
-f5xcctl cdn get suggestion <name> -n <namespace>
+xcsh cdn get suggestion <name> -n <namespace>
 
 # List
-f5xcctl cdn list suggestion -n <namespace>
+xcsh cdn list suggestion -n <namespace>
 
 # Delete
-f5xcctl cdn delete suggestion <name> -n <namespace>
+xcsh cdn delete suggestion <name> -n <namespace>
 ```
 
 ## Terraform Resource

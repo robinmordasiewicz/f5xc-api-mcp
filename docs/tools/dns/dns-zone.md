@@ -77,72 +77,20 @@ Ask Claude to help you work with DNS Zone resources:
 
 > "Get details of the dns-zone named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config dns-zone create {name} --namespace {namespace}
-```
-
-Create dns-zone
-
-### file_based
-
-```bash
-f5xcctl config dns-zone create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config dns-zone delete {name} --namespace {namespace}
-```
-
-Delete dns-zone
-
-### get_specific
-
-```bash
-f5xcctl config dns-zone get {name} --namespace {namespace}
-```
-
-Get specific dns-zone
-
-### list_all
-
-```bash
-f5xcctl config dns-zone list --namespace {namespace}
-```
-
-List all dns-zones
-
-### update
-
-```bash
-f5xcctl config dns-zone update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update dns-zone
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create dns_zone -n <namespace> -i dns_zone.yaml
+xcsh dns create dns_zone -n <namespace> -i dns_zone.yaml
 
 # Get
-f5xcctl dns get dns_zone <name> -n <namespace>
+xcsh dns get dns_zone <name> -n <namespace>
 
 # List
-f5xcctl dns list dns_zone -n <namespace>
+xcsh dns list dns_zone -n <namespace>
 
 # Delete
-f5xcctl dns delete dns_zone <name> -n <namespace>
+xcsh dns delete dns_zone <name> -n <namespace>
 ```
 
 ## Terraform Resource

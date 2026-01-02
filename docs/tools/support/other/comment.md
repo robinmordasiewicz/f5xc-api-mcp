@@ -43,40 +43,20 @@ Ask Claude to help you work with Comment resources:
 
 > "Create a comment named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web comment create {name} --namespace {namespace}
-```
-
-Create comment
-
-### file_based
-
-```bash
-f5xcctl web comment create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create comment -n <namespace> -i comment.yaml
+xcsh support create comment -n <namespace> -i comment.yaml
 
 # Get
-f5xcctl support get comment <name> -n <namespace>
+xcsh support get comment <name> -n <namespace>
 
 # List
-f5xcctl support list comment -n <namespace>
+xcsh support list comment -n <namespace>
 
 # Delete
-f5xcctl support delete comment <name> -n <namespace>
+xcsh support delete comment <name> -n <namespace>
 ```
 
 ## Terraform Resource

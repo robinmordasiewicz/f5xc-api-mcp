@@ -39,32 +39,20 @@ Ask Claude to help you work with Download Release Note resources:
 
 > "List all download-release-notes in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape download-release-note list --namespace {namespace}
-```
-
-List all download-release-notes
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create download_release_note -n <namespace> -i download_release_note.yaml
+xcsh shape create download_release_note -n <namespace> -i download_release_note.yaml
 
 # Get
-f5xcctl shape get download_release_note <name> -n <namespace>
+xcsh shape get download_release_note <name> -n <namespace>
 
 # List
-f5xcctl shape list download_release_note -n <namespace>
+xcsh shape list download_release_note -n <namespace>
 
 # Delete
-f5xcctl shape delete download_release_note <name> -n <namespace>
+xcsh shape delete download_release_note <name> -n <namespace>
 ```
 
 ## Terraform Resource

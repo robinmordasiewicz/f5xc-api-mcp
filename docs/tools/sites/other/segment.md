@@ -34,32 +34,20 @@ Ask Claude to help you work with Segment resources:
 
 > "List all segments in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config segment list --namespace {namespace}
-```
-
-List all segments
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create segment -n <namespace> -i segment.yaml
+xcsh sites create segment -n <namespace> -i segment.yaml
 
 # Get
-f5xcctl sites get segment <name> -n <namespace>
+xcsh sites get segment <name> -n <namespace>
 
 # List
-f5xcctl sites list segment -n <namespace>
+xcsh sites list segment -n <namespace>
 
 # Delete
-f5xcctl sites delete segment <name> -n <namespace>
+xcsh sites delete segment <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -79,72 +79,20 @@ Ask Claude to help you work with Fast Acl resources:
 
 > "Get details of the fast-acl named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config fast-acl create {name} --namespace {namespace}
-```
-
-Create fast-acl
-
-### file_based
-
-```bash
-f5xcctl config fast-acl create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config fast-acl delete {name} --namespace {namespace}
-```
-
-Delete fast-acl
-
-### get_specific
-
-```bash
-f5xcctl config fast-acl get {name} --namespace {namespace}
-```
-
-Get specific fast-acl
-
-### list_all
-
-```bash
-f5xcctl config fast-acl list --namespace {namespace}
-```
-
-List all fast-acls
-
-### update
-
-```bash
-f5xcctl config fast-acl update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update fast-acl
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create fast_acl -n <namespace> -i fast_acl.yaml
+xcsh network_security create fast_acl -n <namespace> -i fast_acl.yaml
 
 # Get
-f5xcctl network_security get fast_acl <name> -n <namespace>
+xcsh network_security get fast_acl <name> -n <namespace>
 
 # List
-f5xcctl network_security list fast_acl -n <namespace>
+xcsh network_security list fast_acl -n <namespace>
 
 # Delete
-f5xcctl network_security delete fast_acl <name> -n <namespace>
+xcsh network_security delete fast_acl <name> -n <namespace>
 ```
 
 ## Terraform Resource

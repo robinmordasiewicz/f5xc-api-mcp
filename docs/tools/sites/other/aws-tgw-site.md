@@ -77,72 +77,20 @@ Ask Claude to help you work with AWS Tgw Site resources:
 
 > "Get details of the aws-tgw-site named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config aws-tgw-site create {name} --namespace {namespace}
-```
-
-Create aws-tgw-site
-
-### file_based
-
-```bash
-f5xcctl config aws-tgw-site create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config aws-tgw-site delete {name} --namespace {namespace}
-```
-
-Delete aws-tgw-site
-
-### get_specific
-
-```bash
-f5xcctl config aws-tgw-site get {name} --namespace {namespace}
-```
-
-Get specific aws-tgw-site
-
-### list_all
-
-```bash
-f5xcctl config aws-tgw-site list --namespace {namespace}
-```
-
-List all aws-tgw-sites
-
-### update
-
-```bash
-f5xcctl config aws-tgw-site update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update aws-tgw-site
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create aws_tgw_site -n <namespace> -i aws_tgw_site.yaml
+xcsh sites create aws_tgw_site -n <namespace> -i aws_tgw_site.yaml
 
 # Get
-f5xcctl sites get aws_tgw_site <name> -n <namespace>
+xcsh sites get aws_tgw_site <name> -n <namespace>
 
 # List
-f5xcctl sites list aws_tgw_site -n <namespace>
+xcsh sites list aws_tgw_site -n <namespace>
 
 # Delete
-f5xcctl sites delete aws_tgw_site <name> -n <namespace>
+xcsh sites delete aws_tgw_site <name> -n <namespace>
 ```
 
 ## Terraform Resource

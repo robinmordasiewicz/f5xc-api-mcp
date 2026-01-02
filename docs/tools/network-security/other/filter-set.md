@@ -77,72 +77,20 @@ Ask Claude to help you work with Filter Set resources:
 
 > "Get details of the filter-set named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config filter-set create {name} --namespace {namespace}
-```
-
-Create filter-set
-
-### file_based
-
-```bash
-f5xcctl config filter-set create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config filter-set delete {name} --namespace {namespace}
-```
-
-Delete filter-set
-
-### get_specific
-
-```bash
-f5xcctl config filter-set get {name} --namespace {namespace}
-```
-
-Get specific filter-set
-
-### list_all
-
-```bash
-f5xcctl config filter-set list --namespace {namespace}
-```
-
-List all filter-sets
-
-### update
-
-```bash
-f5xcctl config filter-set update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update filter-set
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create filter_set -n <namespace> -i filter_set.yaml
+xcsh network_security create filter_set -n <namespace> -i filter_set.yaml
 
 # Get
-f5xcctl network_security get filter_set <name> -n <namespace>
+xcsh network_security get filter_set <name> -n <namespace>
 
 # List
-f5xcctl network_security list filter_set -n <namespace>
+xcsh network_security list filter_set -n <namespace>
 
 # Delete
-f5xcctl network_security delete filter_set <name> -n <namespace>
+xcsh network_security delete filter_set <name> -n <namespace>
 ```
 
 ## Terraform Resource

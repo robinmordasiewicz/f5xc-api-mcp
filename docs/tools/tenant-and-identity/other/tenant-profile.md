@@ -78,72 +78,20 @@ Ask Claude to help you work with Tenant Profile resources:
 
 > "Get details of the tenant-profile named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web tenant-profile create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web tenant-profile create {name} --namespace {namespace}
-```
-
-Create tenant-profile
-
-### delete
-
-```bash
-f5xcctl web tenant-profile delete {name} --namespace {namespace}
-```
-
-Delete tenant-profile
-
-### get_specific
-
-```bash
-f5xcctl web tenant-profile get {name} --namespace {namespace}
-```
-
-Get specific tenant-profile
-
-### list_all
-
-```bash
-f5xcctl web tenant-profile list --namespace {namespace}
-```
-
-List all tenant-profiles
-
-### update
-
-```bash
-f5xcctl web tenant-profile update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update tenant-profile
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create tenant_profile -n <namespace> -i tenant_profile.yaml
+xcsh tenant_and_identity create tenant_profile -n <namespace> -i tenant_profile.yaml
 
 # Get
-f5xcctl tenant_and_identity get tenant_profile <name> -n <namespace>
+xcsh tenant_and_identity get tenant_profile <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list tenant_profile -n <namespace>
+xcsh tenant_and_identity list tenant_profile -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete tenant_profile <name> -n <namespace>
+xcsh tenant_and_identity delete tenant_profile <name> -n <namespace>
 ```
 
 ## Terraform Resource

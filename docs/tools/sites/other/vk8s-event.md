@@ -47,40 +47,20 @@ Ask Claude to help you work with Vk8s Event resources:
 
 > "Create a vk8s-event named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data vk8s-event create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data vk8s-event create {name} --namespace {namespace}
-```
-
-Create vk8s-event
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create vk8s_event -n <namespace> -i vk8s_event.yaml
+xcsh sites create vk8s_event -n <namespace> -i vk8s_event.yaml
 
 # Get
-f5xcctl sites get vk8s_event <name> -n <namespace>
+xcsh sites get vk8s_event <name> -n <namespace>
 
 # List
-f5xcctl sites list vk8s_event -n <namespace>
+xcsh sites list vk8s_event -n <namespace>
 
 # Delete
-f5xcctl sites delete vk8s_event <name> -n <namespace>
+xcsh sites delete vk8s_event <name> -n <namespace>
 ```
 
 ## Terraform Resource

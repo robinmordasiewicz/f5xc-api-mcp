@@ -48,40 +48,20 @@ Ask Claude to help you work with Nginx Instance resources:
 
 > "Get details of the nginx-instance named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config nginx-instance get {name} --namespace {namespace}
-```
-
-Get specific nginx-instance
-
-### list_all
-
-```bash
-f5xcctl config nginx-instance list --namespace {namespace}
-```
-
-List all nginx-instances
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl nginx_one create nginx_instance -n <namespace> -i nginx_instance.yaml
+xcsh nginx_one create nginx_instance -n <namespace> -i nginx_instance.yaml
 
 # Get
-f5xcctl nginx_one get nginx_instance <name> -n <namespace>
+xcsh nginx_one get nginx_instance <name> -n <namespace>
 
 # List
-f5xcctl nginx_one list nginx_instance -n <namespace>
+xcsh nginx_one list nginx_instance -n <namespace>
 
 # Delete
-f5xcctl nginx_one delete nginx_instance <name> -n <namespace>
+xcsh nginx_one delete nginx_instance <name> -n <namespace>
 ```
 
 ## Terraform Resource

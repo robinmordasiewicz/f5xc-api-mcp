@@ -41,40 +41,20 @@ Ask Claude to help you work with Aggregation resources:
 
 > "Create a aggregation named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl secret_management aggregation create {name} --namespace {namespace}
-```
-
-Create aggregation
-
-### file_based
-
-```bash
-f5xcctl secret_management aggregation create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create aggregation -n <namespace> -i aggregation.yaml
+xcsh blindfold create aggregation -n <namespace> -i aggregation.yaml
 
 # Get
-f5xcctl blindfold get aggregation <name> -n <namespace>
+xcsh blindfold get aggregation <name> -n <namespace>
 
 # List
-f5xcctl blindfold list aggregation -n <namespace>
+xcsh blindfold list aggregation -n <namespace>
 
 # Delete
-f5xcctl blindfold delete aggregation <name> -n <namespace>
+xcsh blindfold delete aggregation <name> -n <namespace>
 ```
 
 ## Terraform Resource

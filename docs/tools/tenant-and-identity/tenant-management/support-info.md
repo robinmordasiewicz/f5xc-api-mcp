@@ -25,32 +25,20 @@ Ask Claude to help you work with Support Info resources:
 
 > "List all support-infos in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web support-info list --namespace {namespace}
-```
-
-List all support-infos
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create support_info -n <namespace> -i support_info.yaml
+xcsh tenant_and_identity create support_info -n <namespace> -i support_info.yaml
 
 # Get
-f5xcctl tenant_and_identity get support_info <name> -n <namespace>
+xcsh tenant_and_identity get support_info <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list support_info -n <namespace>
+xcsh tenant_and_identity list support_info -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete support_info <name> -n <namespace>
+xcsh tenant_and_identity delete support_info <name> -n <namespace>
 ```
 
 ## Terraform Resource

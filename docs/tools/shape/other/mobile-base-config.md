@@ -77,72 +77,20 @@ Ask Claude to help you work with Mobile Base Config resources:
 
 > "Get details of the mobile-base-config named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl mobile mobile-base-config create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl mobile mobile-base-config create {name} --namespace {namespace}
-```
-
-Create mobile-base-config
-
-### delete
-
-```bash
-f5xcctl mobile mobile-base-config delete {name} --namespace {namespace}
-```
-
-Delete mobile-base-config
-
-### get_specific
-
-```bash
-f5xcctl mobile mobile-base-config get {name} --namespace {namespace}
-```
-
-Get specific mobile-base-config
-
-### list_all
-
-```bash
-f5xcctl mobile mobile-base-config list --namespace {namespace}
-```
-
-List all mobile-base-configs
-
-### update
-
-```bash
-f5xcctl mobile mobile-base-config update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update mobile-base-config
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create mobile_base_config -n <namespace> -i mobile_base_config.yaml
+xcsh shape create mobile_base_config -n <namespace> -i mobile_base_config.yaml
 
 # Get
-f5xcctl shape get mobile_base_config <name> -n <namespace>
+xcsh shape get mobile_base_config <name> -n <namespace>
 
 # List
-f5xcctl shape list mobile_base_config -n <namespace>
+xcsh shape list mobile_base_config -n <namespace>
 
 # Delete
-f5xcctl shape delete mobile_base_config <name> -n <namespace>
+xcsh shape delete mobile_base_config <name> -n <namespace>
 ```
 
 ## Terraform Resource

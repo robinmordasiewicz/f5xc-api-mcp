@@ -77,72 +77,20 @@ Ask Claude to help you work with GCP VPC Site resources:
 
 > "Get details of the gcp-vpc-site named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config gcp-vpc-site create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config gcp-vpc-site create {name} --namespace {namespace}
-```
-
-Create gcp-vpc-site
-
-### delete
-
-```bash
-f5xcctl config gcp-vpc-site delete {name} --namespace {namespace}
-```
-
-Delete gcp-vpc-site
-
-### get_specific
-
-```bash
-f5xcctl config gcp-vpc-site get {name} --namespace {namespace}
-```
-
-Get specific gcp-vpc-site
-
-### list_all
-
-```bash
-f5xcctl config gcp-vpc-site list --namespace {namespace}
-```
-
-List all gcp-vpc-sites
-
-### update
-
-```bash
-f5xcctl config gcp-vpc-site update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update gcp-vpc-site
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create gcp_vpc_site -n <namespace> -i gcp_vpc_site.yaml
+xcsh sites create gcp_vpc_site -n <namespace> -i gcp_vpc_site.yaml
 
 # Get
-f5xcctl sites get gcp_vpc_site <name> -n <namespace>
+xcsh sites get gcp_vpc_site <name> -n <namespace>
 
 # List
-f5xcctl sites list gcp_vpc_site -n <namespace>
+xcsh sites list gcp_vpc_site -n <namespace>
 
 # Delete
-f5xcctl sites delete gcp_vpc_site <name> -n <namespace>
+xcsh sites delete gcp_vpc_site <name> -n <namespace>
 ```
 
 ## Terraform Resource

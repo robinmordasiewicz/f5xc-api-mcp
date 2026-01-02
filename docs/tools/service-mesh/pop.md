@@ -42,40 +42,20 @@ Ask Claude to help you work with Pop resources:
 
 > "Create a pop named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml pop create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml pop create {name} --namespace {namespace}
-```
-
-Create pop
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create pop -n <namespace> -i pop.yaml
+xcsh service_mesh create pop -n <namespace> -i pop.yaml
 
 # Get
-f5xcctl service_mesh get pop <name> -n <namespace>
+xcsh service_mesh get pop <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list pop -n <namespace>
+xcsh service_mesh list pop -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete pop <name> -n <namespace>
+xcsh service_mesh delete pop <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with App API Group resources:
 
 > "Get details of the app-api-group named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config app-api-group create {name} --namespace {namespace}
-```
-
-Create app-api-group
-
-### file_based
-
-```bash
-f5xcctl config app-api-group create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config app-api-group delete {name} --namespace {namespace}
-```
-
-Delete app-api-group
-
-### get_specific
-
-```bash
-f5xcctl config app-api-group get {name} --namespace {namespace}
-```
-
-Get specific app-api-group
-
-### list_all
-
-```bash
-f5xcctl config app-api-group list --namespace {namespace}
-```
-
-List all app-api-groups
-
-### update
-
-```bash
-f5xcctl config app-api-group update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update app-api-group
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create app_api_group -n <namespace> -i app_api_group.yaml
+xcsh api create app_api_group -n <namespace> -i app_api_group.yaml
 
 # Get
-f5xcctl api get app_api_group <name> -n <namespace>
+xcsh api get app_api_group <name> -n <namespace>
 
 # List
-f5xcctl api list app_api_group -n <namespace>
+xcsh api list app_api_group -n <namespace>
 
 # Delete
-f5xcctl api delete app_api_group <name> -n <namespace>
+xcsh api delete app_api_group <name> -n <namespace>
 ```
 
 ## Terraform Resource

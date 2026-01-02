@@ -77,72 +77,20 @@ Ask Claude to help you work with Apm resources:
 
 > "Get details of the apm named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config apm create {name} --namespace {namespace}
-```
-
-Create apm
-
-### file_based
-
-```bash
-f5xcctl config apm create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config apm delete {name} --namespace {namespace}
-```
-
-Delete apm
-
-### get_specific
-
-```bash
-f5xcctl config apm get {name} --namespace {namespace}
-```
-
-Get specific apm
-
-### list_all
-
-```bash
-f5xcctl config apm list --namespace {namespace}
-```
-
-List all apms
-
-### update
-
-```bash
-f5xcctl config apm update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update apm
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl bigip create apm -n <namespace> -i apm.yaml
+xcsh bigip create apm -n <namespace> -i apm.yaml
 
 # Get
-f5xcctl bigip get apm <name> -n <namespace>
+xcsh bigip get apm <name> -n <namespace>
 
 # List
-f5xcctl bigip list apm -n <namespace>
+xcsh bigip list apm -n <namespace>
 
 # Delete
-f5xcctl bigip delete apm <name> -n <namespace>
+xcsh bigip delete apm <name> -n <namespace>
 ```
 
 ## Terraform Resource

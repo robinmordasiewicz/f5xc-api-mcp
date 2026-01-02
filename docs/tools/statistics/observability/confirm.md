@@ -42,40 +42,20 @@ Ask Claude to help you work with Confirm resources:
 
 > "Create a confirm named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl alert confirm create {name} --namespace {namespace}
-```
-
-Create confirm
-
-### file_based
-
-```bash
-f5xcctl alert confirm create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create confirm -n <namespace> -i confirm.yaml
+xcsh statistics create confirm -n <namespace> -i confirm.yaml
 
 # Get
-f5xcctl statistics get confirm <name> -n <namespace>
+xcsh statistics get confirm <name> -n <namespace>
 
 # List
-f5xcctl statistics list confirm -n <namespace>
+xcsh statistics list confirm -n <namespace>
 
 # Delete
-f5xcctl statistics delete confirm <name> -n <namespace>
+xcsh statistics delete confirm <name> -n <namespace>
 ```
 
 ## Terraform Resource

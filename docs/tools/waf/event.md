@@ -47,40 +47,20 @@ Ask Claude to help you work with Event resources:
 
 > "Create a event named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl data event create {name} --namespace {namespace}
-```
-
-Create event
-
-### file_based
-
-```bash
-f5xcctl data event create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create event -n <namespace> -i event.yaml
+xcsh waf create event -n <namespace> -i event.yaml
 
 # Get
-f5xcctl waf get event <name> -n <namespace>
+xcsh waf get event <name> -n <namespace>
 
 # List
-f5xcctl waf list event -n <namespace>
+xcsh waf list event -n <namespace>
 
 # Delete
-f5xcctl waf delete event <name> -n <namespace>
+xcsh waf delete event <name> -n <namespace>
 ```
 
 ## Terraform Resource

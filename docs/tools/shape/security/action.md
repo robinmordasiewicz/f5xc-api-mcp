@@ -41,40 +41,20 @@ Ask Claude to help you work with Action resources:
 
 > "Create a action named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape action create {name} --namespace {namespace}
-```
-
-Create action
-
-### file_based
-
-```bash
-f5xcctl shape action create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create action -n <namespace> -i action.yaml
+xcsh shape create action -n <namespace> -i action.yaml
 
 # Get
-f5xcctl shape get action <name> -n <namespace>
+xcsh shape get action <name> -n <namespace>
 
 # List
-f5xcctl shape list action -n <namespace>
+xcsh shape list action -n <namespace>
 
 # Delete
-f5xcctl shape delete action <name> -n <namespace>
+xcsh shape delete action <name> -n <namespace>
 ```
 
 ## Terraform Resource

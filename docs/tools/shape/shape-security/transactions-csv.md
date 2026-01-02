@@ -41,40 +41,20 @@ Ask Claude to help you work with Transactions Csv resources:
 
 > "Create a transactions-csv named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape transactions-csv create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape transactions-csv create {name} --namespace {namespace}
-```
-
-Create transactions-csv
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create transactions_csv -n <namespace> -i transactions_csv.yaml
+xcsh shape create transactions_csv -n <namespace> -i transactions_csv.yaml
 
 # Get
-f5xcctl shape get transactions_csv <name> -n <namespace>
+xcsh shape get transactions_csv <name> -n <namespace>
 
 # List
-f5xcctl shape list transactions_csv -n <namespace>
+xcsh shape list transactions_csv -n <namespace>
 
 # Delete
-f5xcctl shape delete transactions_csv <name> -n <namespace>
+xcsh shape delete transactions_csv <name> -n <namespace>
 ```
 
 ## Terraform Resource

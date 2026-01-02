@@ -35,32 +35,20 @@ Ask Claude to help you work with List resources:
 
 > "List all lists in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl operate list list --namespace {namespace}
-```
-
-List all lists
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create list -n <namespace> -i list.yaml
+xcsh support create list -n <namespace> -i list.yaml
 
 # Get
-f5xcctl support get list <name> -n <namespace>
+xcsh support get list <name> -n <namespace>
 
 # List
-f5xcctl support list list -n <namespace>
+xcsh support list list -n <namespace>
 
 # Delete
-f5xcctl support delete list <name> -n <namespace>
+xcsh support delete list <name> -n <namespace>
 ```
 
 ## Terraform Resource

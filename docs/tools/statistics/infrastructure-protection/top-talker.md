@@ -42,40 +42,20 @@ Ask Claude to help you work with Top Talker resources:
 
 > "Create a top-talker named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl infraprotect top-talker create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl infraprotect top-talker create {name} --namespace {namespace}
-```
-
-Create top-talker
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create top_talker -n <namespace> -i top_talker.yaml
+xcsh statistics create top_talker -n <namespace> -i top_talker.yaml
 
 # Get
-f5xcctl statistics get top_talker <name> -n <namespace>
+xcsh statistics get top_talker <name> -n <namespace>
 
 # List
-f5xcctl statistics list top_talker -n <namespace>
+xcsh statistics list top_talker -n <namespace>
 
 # Delete
-f5xcctl statistics delete top_talker <name> -n <namespace>
+xcsh statistics delete top_talker <name> -n <namespace>
 ```
 
 ## Terraform Resource

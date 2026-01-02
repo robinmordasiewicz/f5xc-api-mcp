@@ -25,32 +25,20 @@ Ask Claude to help you work with Logo resources:
 
 > "List all logos in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web logo list --namespace {namespace}
-```
-
-List all logos
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create logo -n <namespace> -i logo.yaml
+xcsh tenant_and_identity create logo -n <namespace> -i logo.yaml
 
 # Get
-f5xcctl tenant_and_identity get logo <name> -n <namespace>
+xcsh tenant_and_identity get logo <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list logo -n <namespace>
+xcsh tenant_and_identity list logo -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete logo <name> -n <namespace>
+xcsh tenant_and_identity delete logo <name> -n <namespace>
 ```
 
 ## Terraform Resource

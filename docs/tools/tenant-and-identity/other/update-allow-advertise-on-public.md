@@ -33,40 +33,20 @@ Ask Claude to help you work with Update Allow Advertise On Public resources:
 
 > "Create a update-allow-advertise-on-public named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config update-allow-advertise-on-public create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config update-allow-advertise-on-public create {name} --namespace {namespace}
-```
-
-Create update-allow-advertise-on-public
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create update_allow_advertise_on_public -n <namespace> -i update_allow_advertise_on_public.yaml
+xcsh tenant_and_identity create update_allow_advertise_on_public -n <namespace> -i update_allow_advertise_on_public.yaml
 
 # Get
-f5xcctl tenant_and_identity get update_allow_advertise_on_public <name> -n <namespace>
+xcsh tenant_and_identity get update_allow_advertise_on_public <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list update_allow_advertise_on_public -n <namespace>
+xcsh tenant_and_identity list update_allow_advertise_on_public -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete update_allow_advertise_on_public <name> -n <namespace>
+xcsh tenant_and_identity delete update_allow_advertise_on_public <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -30,32 +30,20 @@ Operations on this resource may have the following effects:
 
 Ask Claude to help you work with Enable resources:
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### update
-
-```bash
-f5xcctl web enable update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update enable
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create enable -n <namespace> -i enable.yaml
+xcsh tenant_and_identity create enable -n <namespace> -i enable.yaml
 
 # Get
-f5xcctl tenant_and_identity get enable <name> -n <namespace>
+xcsh tenant_and_identity get enable <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list enable -n <namespace>
+xcsh tenant_and_identity list enable -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete enable <name> -n <namespace>
+xcsh tenant_and_identity delete enable <name> -n <namespace>
 ```
 
 ## Terraform Resource

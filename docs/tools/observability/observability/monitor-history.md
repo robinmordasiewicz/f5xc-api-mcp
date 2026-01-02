@@ -43,32 +43,20 @@ Ask Claude to help you work with Monitor History resources:
 
 > "List all monitor-historys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl observability monitor-history list --namespace {namespace}
-```
-
-List all monitor-historys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create monitor_history -n <namespace> -i monitor_history.yaml
+xcsh observability create monitor_history -n <namespace> -i monitor_history.yaml
 
 # Get
-f5xcctl observability get monitor_history <name> -n <namespace>
+xcsh observability get monitor_history <name> -n <namespace>
 
 # List
-f5xcctl observability list monitor_history -n <namespace>
+xcsh observability list monitor_history -n <namespace>
 
 # Delete
-f5xcctl observability delete monitor_history <name> -n <namespace>
+xcsh observability delete monitor_history <name> -n <namespace>
 ```
 
 ## Terraform Resource

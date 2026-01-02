@@ -77,72 +77,20 @@ Ask Claude to help you work with Workload resources:
 
 > "Get details of the workload named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config workload create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config workload create {name} --namespace {namespace}
-```
-
-Create workload
-
-### delete
-
-```bash
-f5xcctl config workload delete {name} --namespace {namespace}
-```
-
-Delete workload
-
-### get_specific
-
-```bash
-f5xcctl config workload get {name} --namespace {namespace}
-```
-
-Get specific workload
-
-### list_all
-
-```bash
-f5xcctl config workload list --namespace {namespace}
-```
-
-List all workloads
-
-### update
-
-```bash
-f5xcctl config workload update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update workload
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl container_services create workload -n <namespace> -i workload.yaml
+xcsh container_services create workload -n <namespace> -i workload.yaml
 
 # Get
-f5xcctl container_services get workload <name> -n <namespace>
+xcsh container_services get workload <name> -n <namespace>
 
 # List
-f5xcctl container_services list workload -n <namespace>
+xcsh container_services list workload -n <namespace>
 
 # Delete
-f5xcctl container_services delete workload <name> -n <namespace>
+xcsh container_services delete workload <name> -n <namespace>
 ```
 
 ## Terraform Resource

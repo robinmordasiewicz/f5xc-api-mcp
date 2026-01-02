@@ -25,32 +25,20 @@ Ask Claude to help you work with Session resources:
 
 > "List all sessions in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web session list --namespace {namespace}
-```
-
-List all sessions
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create session -n <namespace> -i session.yaml
+xcsh tenant_and_identity create session -n <namespace> -i session.yaml
 
 # Get
-f5xcctl tenant_and_identity get session <name> -n <namespace>
+xcsh tenant_and_identity get session <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list session -n <namespace>
+xcsh tenant_and_identity list session -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete session <name> -n <namespace>
+xcsh tenant_and_identity delete session <name> -n <namespace>
 ```
 
 ## Terraform Resource

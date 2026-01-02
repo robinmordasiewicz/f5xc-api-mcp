@@ -25,32 +25,20 @@ Ask Claude to help you work with Tenant Escalation Doc resources:
 
 > "List all tenant-escalation-docs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web tenant-escalation-doc list --namespace {namespace}
-```
-
-List all tenant-escalation-docs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create tenant_escalation_doc -n <namespace> -i tenant_escalation_doc.yaml
+xcsh tenant_and_identity create tenant_escalation_doc -n <namespace> -i tenant_escalation_doc.yaml
 
 # Get
-f5xcctl tenant_and_identity get tenant_escalation_doc <name> -n <namespace>
+xcsh tenant_and_identity get tenant_escalation_doc <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list tenant_escalation_doc -n <namespace>
+xcsh tenant_and_identity list tenant_escalation_doc -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete tenant_escalation_doc <name> -n <namespace>
+xcsh tenant_and_identity delete tenant_escalation_doc <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -34,40 +34,20 @@ Ask Claude to help you work with View Preference resources:
 
 > "List all view-preferences in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web view-preference list --namespace {namespace}
-```
-
-List all view-preferences
-
-### update
-
-```bash
-f5xcctl web view-preference update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update view-preference
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create view_preference -n <namespace> -i view_preference.yaml
+xcsh tenant_and_identity create view_preference -n <namespace> -i view_preference.yaml
 
 # Get
-f5xcctl tenant_and_identity get view_preference <name> -n <namespace>
+xcsh tenant_and_identity get view_preference <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list view_preference -n <namespace>
+xcsh tenant_and_identity list view_preference -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete view_preference <name> -n <namespace>
+xcsh tenant_and_identity delete view_preference <name> -n <namespace>
 ```
 
 ## Terraform Resource

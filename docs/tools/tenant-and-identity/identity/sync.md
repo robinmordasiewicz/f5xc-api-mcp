@@ -33,40 +33,20 @@ Ask Claude to help you work with Sync resources:
 
 > "Create a sync named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web sync create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web sync create {name} --namespace {namespace}
-```
-
-Create sync
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create sync -n <namespace> -i sync.yaml
+xcsh tenant_and_identity create sync -n <namespace> -i sync.yaml
 
 # Get
-f5xcctl tenant_and_identity get sync <name> -n <namespace>
+xcsh tenant_and_identity get sync <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list sync -n <namespace>
+xcsh tenant_and_identity list sync -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete sync <name> -n <namespace>
+xcsh tenant_and_identity delete sync <name> -n <namespace>
 ```
 
 ## Terraform Resource

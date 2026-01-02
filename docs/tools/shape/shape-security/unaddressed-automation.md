@@ -41,40 +41,20 @@ Ask Claude to help you work with Unaddressed Automation resources:
 
 > "Create a unaddressed-automation named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape unaddressed-automation create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape unaddressed-automation create {name} --namespace {namespace}
-```
-
-Create unaddressed-automation
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create unaddressed_automation -n <namespace> -i unaddressed_automation.yaml
+xcsh shape create unaddressed_automation -n <namespace> -i unaddressed_automation.yaml
 
 # Get
-f5xcctl shape get unaddressed_automation <name> -n <namespace>
+xcsh shape get unaddressed_automation <name> -n <namespace>
 
 # List
-f5xcctl shape list unaddressed_automation -n <namespace>
+xcsh shape list unaddressed_automation -n <namespace>
 
 # Delete
-f5xcctl shape delete unaddressed_automation <name> -n <namespace>
+xcsh shape delete unaddressed_automation <name> -n <namespace>
 ```
 
 ## Terraform Resource

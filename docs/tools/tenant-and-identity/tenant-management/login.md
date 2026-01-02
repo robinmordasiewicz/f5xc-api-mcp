@@ -36,32 +36,20 @@ Ask Claude to help you work with Login resources:
 
 > "List all logins in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web login list --namespace {namespace}
-```
-
-List all logins
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create login -n <namespace> -i login.yaml
+xcsh tenant_and_identity create login -n <namespace> -i login.yaml
 
 # Get
-f5xcctl tenant_and_identity get login <name> -n <namespace>
+xcsh tenant_and_identity get login <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list login -n <namespace>
+xcsh tenant_and_identity list login -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete login <name> -n <namespace>
+xcsh tenant_and_identity delete login <name> -n <namespace>
 ```
 
 ## Terraform Resource

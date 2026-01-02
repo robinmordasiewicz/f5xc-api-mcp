@@ -59,48 +59,20 @@ Ask Claude to help you work with Cloud Region resources:
 
 > "Get details of the cloud-region named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config cloud-region get {name} --namespace {namespace}
-```
-
-Get specific cloud-region
-
-### list_all
-
-```bash
-f5xcctl config cloud-region list --namespace {namespace}
-```
-
-List all cloud-regions
-
-### update
-
-```bash
-f5xcctl config cloud-region update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update cloud-region
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cloud_infrastructure create cloud_region -n <namespace> -i cloud_region.yaml
+xcsh cloud_infrastructure create cloud_region -n <namespace> -i cloud_region.yaml
 
 # Get
-f5xcctl cloud_infrastructure get cloud_region <name> -n <namespace>
+xcsh cloud_infrastructure get cloud_region <name> -n <namespace>
 
 # List
-f5xcctl cloud_infrastructure list cloud_region -n <namespace>
+xcsh cloud_infrastructure list cloud_region -n <namespace>
 
 # Delete
-f5xcctl cloud_infrastructure delete cloud_region <name> -n <namespace>
+xcsh cloud_infrastructure delete cloud_region <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -33,40 +33,20 @@ Ask Claude to help you work with Friction Histogram resources:
 
 > "Create a friction-histogram named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape friction-histogram create {name} --namespace {namespace}
-```
-
-Create friction-histogram
-
-### file_based
-
-```bash
-f5xcctl shape friction-histogram create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create friction_histogram -n <namespace> -i friction_histogram.yaml
+xcsh shape create friction_histogram -n <namespace> -i friction_histogram.yaml
 
 # Get
-f5xcctl shape get friction_histogram <name> -n <namespace>
+xcsh shape get friction_histogram <name> -n <namespace>
 
 # List
-f5xcctl shape list friction_histogram -n <namespace>
+xcsh shape list friction_histogram -n <namespace>
 
 # Delete
-f5xcctl shape delete friction_histogram <name> -n <namespace>
+xcsh shape delete friction_histogram <name> -n <namespace>
 ```
 
 ## Terraform Resource

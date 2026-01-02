@@ -42,32 +42,20 @@ Ask Claude to help you work with Mobile Sdk resources:
 
 > "List all mobile-sdks in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl object_store mobile-sdk list --namespace {namespace}
-```
-
-List all mobile-sdks
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create mobile_sdk -n <namespace> -i mobile_sdk.yaml
+xcsh shape create mobile_sdk -n <namespace> -i mobile_sdk.yaml
 
 # Get
-f5xcctl shape get mobile_sdk <name> -n <namespace>
+xcsh shape get mobile_sdk <name> -n <namespace>
 
 # List
-f5xcctl shape list mobile_sdk -n <namespace>
+xcsh shape list mobile_sdk -n <namespace>
 
 # Delete
-f5xcctl shape delete mobile_sdk <name> -n <namespace>
+xcsh shape delete mobile_sdk <name> -n <namespace>
 ```
 
 ## Terraform Resource

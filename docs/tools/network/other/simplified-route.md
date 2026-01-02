@@ -42,40 +42,20 @@ Ask Claude to help you work with Simplified Route resources:
 
 > "Create a simplified-route named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl operate simplified-route create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl operate simplified-route create {name} --namespace {namespace}
-```
-
-Create simplified-route
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create simplified_route -n <namespace> -i simplified_route.yaml
+xcsh network create simplified_route -n <namespace> -i simplified_route.yaml
 
 # Get
-f5xcctl network get simplified_route <name> -n <namespace>
+xcsh network get simplified_route <name> -n <namespace>
 
 # List
-f5xcctl network list simplified_route -n <namespace>
+xcsh network list simplified_route -n <namespace>
 
 # Delete
-f5xcctl network delete simplified_route <name> -n <namespace>
+xcsh network delete simplified_route <name> -n <namespace>
 ```
 
 ## Terraform Resource

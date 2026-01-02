@@ -78,72 +78,20 @@ Ask Claude to help you work with DNS Lb Health Check resources:
 
 > "Get details of the dns-lb-health-check named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config dns-lb-health-check create {name} --namespace {namespace}
-```
-
-Create dns-lb-health-check
-
-### file_based
-
-```bash
-f5xcctl config dns-lb-health-check create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config dns-lb-health-check delete {name} --namespace {namespace}
-```
-
-Delete dns-lb-health-check
-
-### get_specific
-
-```bash
-f5xcctl config dns-lb-health-check get {name} --namespace {namespace}
-```
-
-Get specific dns-lb-health-check
-
-### list_all
-
-```bash
-f5xcctl config dns-lb-health-check list --namespace {namespace}
-```
-
-List all dns-lb-health-checks
-
-### update
-
-```bash
-f5xcctl config dns-lb-health-check update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update dns-lb-health-check
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create dns_lb_health_check -n <namespace> -i dns_lb_health_check.yaml
+xcsh dns create dns_lb_health_check -n <namespace> -i dns_lb_health_check.yaml
 
 # Get
-f5xcctl dns get dns_lb_health_check <name> -n <namespace>
+xcsh dns get dns_lb_health_check <name> -n <namespace>
 
 # List
-f5xcctl dns list dns_lb_health_check -n <namespace>
+xcsh dns list dns_lb_health_check -n <namespace>
 
 # Delete
-f5xcctl dns delete dns_lb_health_check <name> -n <namespace>
+xcsh dns delete dns_lb_health_check <name> -n <namespace>
 ```
 
 ## Terraform Resource

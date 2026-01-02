@@ -10,7 +10,7 @@ import {
   parseResourceUri,
   getResourceType,
   buildApiPath,
-  RESOURCE_TYPES,
+  getEnhancedResourceTypes,
   ResourceType,
 } from "./templates.js";
 import { CredentialManager, AuthMode } from "../auth/credential-manager.js";
@@ -278,6 +278,7 @@ export class ResourceHandler {
 
   /**
    * List available resource templates
+   * Uses enhanced resource types with domain context from upstream specs
    */
   listResourceTemplates(): Array<{
     uriTemplate: string;
@@ -286,8 +287,9 @@ export class ResourceHandler {
     mimeType: string;
   }> {
     const tenant = this.credentialManager.getTenant() ?? "{tenant}";
+    const enhancedTypes = getEnhancedResourceTypes();
 
-    return Object.values(RESOURCE_TYPES).map((rt) => ({
+    return Object.values(enhancedTypes).map((rt) => ({
       uriTemplate: rt.namespaceScoped
         ? `f5xc://${tenant}/{namespace}/${rt.type}/{name}`
         : `f5xc://${tenant}/system/${rt.type}/{name}`,

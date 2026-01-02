@@ -33,40 +33,20 @@ Ask Claude to help you work with Loadbalancer resources:
 
 > "Create a loadbalancer named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data loadbalancer create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data loadbalancer create {name} --namespace {namespace}
-```
-
-Create loadbalancer
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create loadbalancer -n <namespace> -i loadbalancer.yaml
+xcsh waf create loadbalancer -n <namespace> -i loadbalancer.yaml
 
 # Get
-f5xcctl waf get loadbalancer <name> -n <namespace>
+xcsh waf get loadbalancer <name> -n <namespace>
 
 # List
-f5xcctl waf list loadbalancer -n <namespace>
+xcsh waf list loadbalancer -n <namespace>
 
 # Delete
-f5xcctl waf delete loadbalancer <name> -n <namespace>
+xcsh waf delete loadbalancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

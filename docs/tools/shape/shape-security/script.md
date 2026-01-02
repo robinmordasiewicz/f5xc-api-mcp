@@ -56,48 +56,20 @@ Ask Claude to help you work with Script resources:
 
 > "List all scripts in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape script create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape script create {name} --namespace {namespace}
-```
-
-Create script
-
-### list_all
-
-```bash
-f5xcctl shape script list --namespace {namespace}
-```
-
-List all scripts
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create script -n <namespace> -i script.yaml
+xcsh shape create script -n <namespace> -i script.yaml
 
 # Get
-f5xcctl shape get script <name> -n <namespace>
+xcsh shape get script <name> -n <namespace>
 
 # List
-f5xcctl shape list script -n <namespace>
+xcsh shape list script -n <namespace>
 
 # Delete
-f5xcctl shape delete script <name> -n <namespace>
+xcsh shape delete script <name> -n <namespace>
 ```
 
 ## Terraform Resource

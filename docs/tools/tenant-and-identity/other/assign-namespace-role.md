@@ -37,32 +37,20 @@ Operations on this resource may have the following effects:
 
 Ask Claude to help you work with Assign Namespace Role resources:
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### update
-
-```bash
-f5xcctl web assign-namespace-role update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update assign-namespace-role
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create assign_namespace_role -n <namespace> -i assign_namespace_role.yaml
+xcsh tenant_and_identity create assign_namespace_role -n <namespace> -i assign_namespace_role.yaml
 
 # Get
-f5xcctl tenant_and_identity get assign_namespace_role <name> -n <namespace>
+xcsh tenant_and_identity get assign_namespace_role <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list assign_namespace_role -n <namespace>
+xcsh tenant_and_identity list assign_namespace_role -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete assign_namespace_role <name> -n <namespace>
+xcsh tenant_and_identity delete assign_namespace_role <name> -n <namespace>
 ```
 
 ## Terraform Resource

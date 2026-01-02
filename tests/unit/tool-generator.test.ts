@@ -698,7 +698,12 @@ describe("tool-generator", () => {
         const result = await handler({});
 
         const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.prerequisites).toContain("Origin pool required for backend configuration");
+        // v1.0.84+: Prerequisites derived from upstream dependencies and relationship_hints
+        // http_loadbalancer has origin_pool as required dependency
+        expect(response.prerequisites).toContain("Origin Pool required");
+        expect(response.prerequisites).toContain(
+          "origin_pool: Backend servers for traffic distribution"
+        );
       });
 
       it("should include prerequisites for sites", async () => {
@@ -723,7 +728,9 @@ describe("tool-generator", () => {
         const result = await handler({});
 
         const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.prerequisites).toContain("Cloud credentials must be configured");
+        // v1.0.84+: Prerequisites derived from upstream dependencies
+        // aws_vpc_site has cloud_credentials as required dependency
+        expect(response.prerequisites).toContain("Cloud Credentials required");
       });
 
       it("should include prerequisites for WAF resources", async () => {
@@ -748,7 +755,9 @@ describe("tool-generator", () => {
         const result = await handler({});
 
         const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.prerequisites).toContain("WAAP subscription required");
+        // v1.0.84+: Advanced tier resources get category-based subscription requirement
+        // app_firewall has tier: "Advanced" and category: "Security"
+        expect(response.prerequisites).toContain("Security subscription required");
       });
 
       it("should include example request for create operations", async () => {

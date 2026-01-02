@@ -42,40 +42,20 @@ Ask Claude to help you work with Unmerge Sources Openapi Schema resources:
 
 > "Create a unmerge-sources-openapi-schema named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml unmerge-sources-openapi-schema create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml unmerge-sources-openapi-schema create {name} --namespace {namespace}
-```
-
-Create unmerge-sources-openapi-schema
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create unmerge_sources_openapi_schema -n <namespace> -i unmerge_sources_openapi_schema.yaml
+xcsh virtual create unmerge_sources_openapi_schema -n <namespace> -i unmerge_sources_openapi_schema.yaml
 
 # Get
-f5xcctl virtual get unmerge_sources_openapi_schema <name> -n <namespace>
+xcsh virtual get unmerge_sources_openapi_schema <name> -n <namespace>
 
 # List
-f5xcctl virtual list unmerge_sources_openapi_schema -n <namespace>
+xcsh virtual list unmerge_sources_openapi_schema -n <namespace>
 
 # Delete
-f5xcctl virtual delete unmerge_sources_openapi_schema <name> -n <namespace>
+xcsh virtual delete unmerge_sources_openapi_schema <name> -n <namespace>
 ```
 
 ## Terraform Resource

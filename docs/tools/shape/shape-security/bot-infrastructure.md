@@ -68,64 +68,20 @@ Ask Claude to help you work with Bot Infrastructure resources:
 
 > "Get details of the bot-infrastructure named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape bot-infrastructure create {name} --namespace {namespace}
-```
-
-Create bot-infrastructure
-
-### file_based
-
-```bash
-f5xcctl shape bot-infrastructure create -f {file}.yaml
-```
-
-Create from YAML file
-
-### get_specific
-
-```bash
-f5xcctl shape bot-infrastructure get {name} --namespace {namespace}
-```
-
-Get specific bot-infrastructure
-
-### list_all
-
-```bash
-f5xcctl shape bot-infrastructure list --namespace {namespace}
-```
-
-List all bot-infrastructures
-
-### update
-
-```bash
-f5xcctl shape bot-infrastructure update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update bot-infrastructure
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create bot_infrastructure -n <namespace> -i bot_infrastructure.yaml
+xcsh shape create bot_infrastructure -n <namespace> -i bot_infrastructure.yaml
 
 # Get
-f5xcctl shape get bot_infrastructure <name> -n <namespace>
+xcsh shape get bot_infrastructure <name> -n <namespace>
 
 # List
-f5xcctl shape list bot_infrastructure -n <namespace>
+xcsh shape list bot_infrastructure -n <namespace>
 
 # Delete
-f5xcctl shape delete bot_infrastructure <name> -n <namespace>
+xcsh shape delete bot_infrastructure <name> -n <namespace>
 ```
 
 ## Terraform Resource

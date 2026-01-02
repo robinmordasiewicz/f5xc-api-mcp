@@ -34,32 +34,20 @@ Ask Claude to help you work with Local Zone File resources:
 
 > "List all local-zone-files in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config local-zone-file list --namespace {namespace}
-```
-
-List all local-zone-files
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create local_zone_file -n <namespace> -i local_zone_file.yaml
+xcsh dns create local_zone_file -n <namespace> -i local_zone_file.yaml
 
 # Get
-f5xcctl dns get local_zone_file <name> -n <namespace>
+xcsh dns get local_zone_file <name> -n <namespace>
 
 # List
-f5xcctl dns list local_zone_file -n <namespace>
+xcsh dns list local_zone_file -n <namespace>
 
 # Delete
-f5xcctl dns delete local_zone_file <name> -n <namespace>
+xcsh dns delete local_zone_file <name> -n <namespace>
 ```
 
 ## Terraform Resource

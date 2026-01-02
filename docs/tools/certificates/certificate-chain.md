@@ -77,72 +77,20 @@ Ask Claude to help you work with Certificate Chain resources:
 
 > "Get details of the certificate-chain named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config certificate-chain create {name} --namespace {namespace}
-```
-
-Create certificate-chain
-
-### file_based
-
-```bash
-f5xcctl config certificate-chain create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config certificate-chain delete {name} --namespace {namespace}
-```
-
-Delete certificate-chain
-
-### get_specific
-
-```bash
-f5xcctl config certificate-chain get {name} --namespace {namespace}
-```
-
-Get specific certificate-chain
-
-### list_all
-
-```bash
-f5xcctl config certificate-chain list --namespace {namespace}
-```
-
-List all certificate-chains
-
-### update
-
-```bash
-f5xcctl config certificate-chain update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update certificate-chain
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl certificates create certificate_chain -n <namespace> -i certificate_chain.yaml
+xcsh certificates create certificate_chain -n <namespace> -i certificate_chain.yaml
 
 # Get
-f5xcctl certificates get certificate_chain <name> -n <namespace>
+xcsh certificates get certificate_chain <name> -n <namespace>
 
 # List
-f5xcctl certificates list certificate_chain -n <namespace>
+xcsh certificates list certificate_chain -n <namespace>
 
 # Delete
-f5xcctl certificates delete certificate_chain <name> -n <namespace>
+xcsh certificates delete certificate_chain <name> -n <namespace>
 ```
 
 ## Terraform Resource

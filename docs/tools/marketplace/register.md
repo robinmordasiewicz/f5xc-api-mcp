@@ -33,40 +33,20 @@ Ask Claude to help you work with Register resources:
 
 > "Create a register named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl default register create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl default register create {name} --namespace {namespace}
-```
-
-Create register
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create register -n <namespace> -i register.yaml
+xcsh marketplace create register -n <namespace> -i register.yaml
 
 # Get
-f5xcctl marketplace get register <name> -n <namespace>
+xcsh marketplace get register <name> -n <namespace>
 
 # List
-f5xcctl marketplace list register -n <namespace>
+xcsh marketplace list register -n <namespace>
 
 # Delete
-f5xcctl marketplace delete register <name> -n <namespace>
+xcsh marketplace delete register <name> -n <namespace>
 ```
 
 ## Terraform Resource

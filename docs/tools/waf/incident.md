@@ -46,40 +46,20 @@ Ask Claude to help you work with Incident resources:
 
 > "Create a incident named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data incident create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data incident create {name} --namespace {namespace}
-```
-
-Create incident
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create incident -n <namespace> -i incident.yaml
+xcsh waf create incident -n <namespace> -i incident.yaml
 
 # Get
-f5xcctl waf get incident <name> -n <namespace>
+xcsh waf get incident <name> -n <namespace>
 
 # List
-f5xcctl waf list incident -n <namespace>
+xcsh waf list incident -n <namespace>
 
 # Delete
-f5xcctl waf delete incident <name> -n <namespace>
+xcsh waf delete incident <name> -n <namespace>
 ```
 
 ## Terraform Resource

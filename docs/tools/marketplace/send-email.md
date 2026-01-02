@@ -34,40 +34,20 @@ Ask Claude to help you work with Send Email resources:
 
 > "Create a send-email named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl default send-email create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl default send-email create {name} --namespace {namespace}
-```
-
-Create send-email
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create send_email -n <namespace> -i send_email.yaml
+xcsh marketplace create send_email -n <namespace> -i send_email.yaml
 
 # Get
-f5xcctl marketplace get send_email <name> -n <namespace>
+xcsh marketplace get send_email <name> -n <namespace>
 
 # List
-f5xcctl marketplace list send_email -n <namespace>
+xcsh marketplace list send_email -n <namespace>
 
 # Delete
-f5xcctl marketplace delete send_email <name> -n <namespace>
+xcsh marketplace delete send_email <name> -n <namespace>
 ```
 
 ## Terraform Resource

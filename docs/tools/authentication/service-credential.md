@@ -60,64 +60,20 @@ Ask Claude to help you work with Service Credential resources:
 
 > "Get details of the service-credential named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web service-credential create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web service-credential create {name} --namespace {namespace}
-```
-
-Create service-credential
-
-### get_specific
-
-```bash
-f5xcctl web service-credential get {name} --namespace {namespace}
-```
-
-Get specific service-credential
-
-### list_all
-
-```bash
-f5xcctl web service-credential list --namespace {namespace}
-```
-
-List all service-credentials
-
-### update
-
-```bash
-f5xcctl web service-credential update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update service-credential
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl authentication create service_credential -n <namespace> -i service_credential.yaml
+xcsh authentication create service_credential -n <namespace> -i service_credential.yaml
 
 # Get
-f5xcctl authentication get service_credential <name> -n <namespace>
+xcsh authentication get service_credential <name> -n <namespace>
 
 # List
-f5xcctl authentication list service_credential -n <namespace>
+xcsh authentication list service_credential -n <namespace>
 
 # Delete
-f5xcctl authentication delete service_credential <name> -n <namespace>
+xcsh authentication delete service_credential <name> -n <namespace>
 ```
 
 ## Terraform Resource

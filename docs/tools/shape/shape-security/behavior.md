@@ -42,32 +42,20 @@ Ask Claude to help you work with Behavior resources:
 
 > "Get details of the behavior named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl shape behavior get {name} --namespace {namespace}
-```
-
-Get specific behavior
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create behavior -n <namespace> -i behavior.yaml
+xcsh shape create behavior -n <namespace> -i behavior.yaml
 
 # Get
-f5xcctl shape get behavior <name> -n <namespace>
+xcsh shape get behavior <name> -n <namespace>
 
 # List
-f5xcctl shape list behavior -n <namespace>
+xcsh shape list behavior -n <namespace>
 
 # Delete
-f5xcctl shape delete behavior <name> -n <namespace>
+xcsh shape delete behavior <name> -n <namespace>
 ```
 
 ## Terraform Resource

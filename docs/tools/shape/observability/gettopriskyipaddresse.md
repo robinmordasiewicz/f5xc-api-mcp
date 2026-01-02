@@ -33,40 +33,20 @@ Ask Claude to help you work with Gettopriskyipaddresse resources:
 
 > "Create a gettopriskyipaddresse named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape gettopriskyipaddresse create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape gettopriskyipaddresse create {name} --namespace {namespace}
-```
-
-Create gettopriskyipaddresse
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create gettopriskyipaddresse -n <namespace> -i gettopriskyipaddresse.yaml
+xcsh shape create gettopriskyipaddresse -n <namespace> -i gettopriskyipaddresse.yaml
 
 # Get
-f5xcctl shape get gettopriskyipaddresse <name> -n <namespace>
+xcsh shape get gettopriskyipaddresse <name> -n <namespace>
 
 # List
-f5xcctl shape list gettopriskyipaddresse -n <namespace>
+xcsh shape list gettopriskyipaddresse -n <namespace>
 
 # Delete
-f5xcctl shape delete gettopriskyipaddresse <name> -n <namespace>
+xcsh shape delete gettopriskyipaddresse <name> -n <namespace>
 ```
 
 ## Terraform Resource

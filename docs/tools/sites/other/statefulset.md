@@ -34,32 +34,20 @@ Ask Claude to help you work with Statefulset resources:
 
 > "List all statefulsets in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data statefulset list --namespace {namespace}
-```
-
-List all statefulsets
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create statefulset -n <namespace> -i statefulset.yaml
+xcsh sites create statefulset -n <namespace> -i statefulset.yaml
 
 # Get
-f5xcctl sites get statefulset <name> -n <namespace>
+xcsh sites get statefulset <name> -n <namespace>
 
 # List
-f5xcctl sites list statefulset -n <namespace>
+xcsh sites list statefulset -n <namespace>
 
 # Delete
-f5xcctl sites delete statefulset <name> -n <namespace>
+xcsh sites delete statefulset <name> -n <namespace>
 ```
 
 ## Terraform Resource

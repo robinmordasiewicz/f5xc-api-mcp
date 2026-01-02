@@ -34,40 +34,20 @@ Ask Claude to help you work with Login In Time resources:
 
 > "Create a login-in-time named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web login-in-time create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web login-in-time create {name} --namespace {namespace}
-```
-
-Create login-in-time
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create login_in_time -n <namespace> -i login_in_time.yaml
+xcsh tenant_and_identity create login_in_time -n <namespace> -i login_in_time.yaml
 
 # Get
-f5xcctl tenant_and_identity get login_in_time <name> -n <namespace>
+xcsh tenant_and_identity get login_in_time <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list login_in_time -n <namespace>
+xcsh tenant_and_identity list login_in_time -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete login_in_time <name> -n <namespace>
+xcsh tenant_and_identity delete login_in_time <name> -n <namespace>
 ```
 
 ## Terraform Resource

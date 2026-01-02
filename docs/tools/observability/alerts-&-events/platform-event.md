@@ -47,40 +47,20 @@ Ask Claude to help you work with Platform Event resources:
 
 > "Create a platform-event named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data platform-event create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data platform-event create {name} --namespace {namespace}
-```
-
-Create platform-event
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create platform_event -n <namespace> -i platform_event.yaml
+xcsh observability create platform_event -n <namespace> -i platform_event.yaml
 
 # Get
-f5xcctl observability get platform_event <name> -n <namespace>
+xcsh observability get platform_event <name> -n <namespace>
 
 # List
-f5xcctl observability list platform_event -n <namespace>
+xcsh observability list platform_event -n <namespace>
 
 # Delete
-f5xcctl observability delete platform_event <name> -n <namespace>
+xcsh observability delete platform_event <name> -n <namespace>
 ```
 
 ## Terraform Resource

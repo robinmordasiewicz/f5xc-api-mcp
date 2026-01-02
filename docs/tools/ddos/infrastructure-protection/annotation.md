@@ -34,32 +34,20 @@ Ask Claude to help you work with Annotation resources:
 
 > "List all annotations in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl infraprotect annotation list --namespace {namespace}
-```
-
-List all annotations
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create annotation -n <namespace> -i annotation.yaml
+xcsh ddos create annotation -n <namespace> -i annotation.yaml
 
 # Get
-f5xcctl ddos get annotation <name> -n <namespace>
+xcsh ddos get annotation <name> -n <namespace>
 
 # List
-f5xcctl ddos list annotation -n <namespace>
+xcsh ddos list annotation -n <namespace>
 
 # Delete
-f5xcctl ddos delete annotation <name> -n <namespace>
+xcsh ddos delete annotation <name> -n <namespace>
 ```
 
 ## Terraform Resource

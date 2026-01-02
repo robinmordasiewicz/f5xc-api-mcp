@@ -77,72 +77,20 @@ Ask Claude to help you work with Virtual Host resources:
 
 > "Get details of the virtual-host named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config virtual-host create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config virtual-host create {name} --namespace {namespace}
-```
-
-Create virtual-host
-
-### delete
-
-```bash
-f5xcctl config virtual-host delete {name} --namespace {namespace}
-```
-
-Delete virtual-host
-
-### get_specific
-
-```bash
-f5xcctl config virtual-host get {name} --namespace {namespace}
-```
-
-Get specific virtual-host
-
-### list_all
-
-```bash
-f5xcctl config virtual-host list --namespace {namespace}
-```
-
-List all virtual-hosts
-
-### update
-
-```bash
-f5xcctl config virtual-host update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update virtual-host
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create virtual_host -n <namespace> -i virtual_host.yaml
+xcsh virtual create virtual_host -n <namespace> -i virtual_host.yaml
 
 # Get
-f5xcctl virtual get virtual_host <name> -n <namespace>
+xcsh virtual get virtual_host <name> -n <namespace>
 
 # List
-f5xcctl virtual list virtual_host -n <namespace>
+xcsh virtual list virtual_host -n <namespace>
 
 # Delete
-f5xcctl virtual delete virtual_host <name> -n <namespace>
+xcsh virtual delete virtual_host <name> -n <namespace>
 ```
 
 ## Terraform Resource

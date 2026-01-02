@@ -34,32 +34,20 @@ Ask Claude to help you work with Upgradable Sw Version resources:
 
 > "List all upgradable-sw-versions in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl maurice upgradable-sw-version list --namespace {namespace}
-```
-
-List all upgradable-sw-versions
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create upgradable_sw_version -n <namespace> -i upgradable_sw_version.yaml
+xcsh ce_management create upgradable_sw_version -n <namespace> -i upgradable_sw_version.yaml
 
 # Get
-f5xcctl ce_management get upgradable_sw_version <name> -n <namespace>
+xcsh ce_management get upgradable_sw_version <name> -n <namespace>
 
 # List
-f5xcctl ce_management list upgradable_sw_version -n <namespace>
+xcsh ce_management list upgradable_sw_version -n <namespace>
 
 # Delete
-f5xcctl ce_management delete upgradable_sw_version <name> -n <namespace>
+xcsh ce_management delete upgradable_sw_version <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -48,40 +48,20 @@ Ask Claude to help you work with Nginx Server resources:
 
 > "Get details of the nginx-server named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config nginx-server get {name} --namespace {namespace}
-```
-
-Get specific nginx-server
-
-### list_all
-
-```bash
-f5xcctl config nginx-server list --namespace {namespace}
-```
-
-List all nginx-servers
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl nginx_one create nginx_server -n <namespace> -i nginx_server.yaml
+xcsh nginx_one create nginx_server -n <namespace> -i nginx_server.yaml
 
 # Get
-f5xcctl nginx_one get nginx_server <name> -n <namespace>
+xcsh nginx_one get nginx_server <name> -n <namespace>
 
 # List
-f5xcctl nginx_one list nginx_server -n <namespace>
+xcsh nginx_one list nginx_server -n <namespace>
 
 # Delete
-f5xcctl nginx_one delete nginx_server <name> -n <namespace>
+xcsh nginx_one delete nginx_server <name> -n <namespace>
 ```
 
 ## Terraform Resource

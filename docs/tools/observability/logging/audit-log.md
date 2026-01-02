@@ -47,40 +47,20 @@ Ask Claude to help you work with Audit Log resources:
 
 > "Create a audit-log named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl data audit-log create {name} --namespace {namespace}
-```
-
-Create audit-log
-
-### file_based
-
-```bash
-f5xcctl data audit-log create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create audit_log -n <namespace> -i audit_log.yaml
+xcsh observability create audit_log -n <namespace> -i audit_log.yaml
 
 # Get
-f5xcctl observability get audit_log <name> -n <namespace>
+xcsh observability get audit_log <name> -n <namespace>
 
 # List
-f5xcctl observability list audit_log -n <namespace>
+xcsh observability list audit_log -n <namespace>
 
 # Delete
-f5xcctl observability delete audit_log <name> -n <namespace>
+xcsh observability delete audit_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

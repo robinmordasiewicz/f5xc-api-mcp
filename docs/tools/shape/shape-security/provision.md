@@ -46,48 +46,20 @@ Ask Claude to help you work with Provision resources:
 
 > "List all provisions in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape provision create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape provision create {name} --namespace {namespace}
-```
-
-Create provision
-
-### list_all
-
-```bash
-f5xcctl shape provision list --namespace {namespace}
-```
-
-List all provisions
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create provision -n <namespace> -i provision.yaml
+xcsh shape create provision -n <namespace> -i provision.yaml
 
 # Get
-f5xcctl shape get provision <name> -n <namespace>
+xcsh shape get provision <name> -n <namespace>
 
 # List
-f5xcctl shape list provision -n <namespace>
+xcsh shape list provision -n <namespace>
 
 # Delete
-f5xcctl shape delete provision <name> -n <namespace>
+xcsh shape delete provision <name> -n <namespace>
 ```
 
 ## Terraform Resource

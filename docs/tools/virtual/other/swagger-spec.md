@@ -34,32 +34,20 @@ Ask Claude to help you work with Swagger Spec resources:
 
 > "Get details of the swagger-spec named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl ml swagger-spec get {name} --namespace {namespace}
-```
-
-Get specific swagger-spec
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create swagger_spec -n <namespace> -i swagger_spec.yaml
+xcsh virtual create swagger_spec -n <namespace> -i swagger_spec.yaml
 
 # Get
-f5xcctl virtual get swagger_spec <name> -n <namespace>
+xcsh virtual get swagger_spec <name> -n <namespace>
 
 # List
-f5xcctl virtual list swagger_spec -n <namespace>
+xcsh virtual list swagger_spec -n <namespace>
 
 # Delete
-f5xcctl virtual delete swagger_spec <name> -n <namespace>
+xcsh virtual delete swagger_spec <name> -n <namespace>
 ```
 
 ## Terraform Resource

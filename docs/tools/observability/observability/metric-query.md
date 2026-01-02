@@ -41,40 +41,20 @@ Ask Claude to help you work with Metric Query resources:
 
 > "Create a metric-query named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl observability metric-query create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl observability metric-query create {name} --namespace {namespace}
-```
-
-Create metric-query
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create metric_query -n <namespace> -i metric_query.yaml
+xcsh observability create metric_query -n <namespace> -i metric_query.yaml
 
 # Get
-f5xcctl observability get metric_query <name> -n <namespace>
+xcsh observability get metric_query <name> -n <namespace>
 
 # List
-f5xcctl observability list metric_query -n <namespace>
+xcsh observability list metric_query -n <namespace>
 
 # Delete
-f5xcctl observability delete metric_query <name> -n <namespace>
+xcsh observability delete metric_query <name> -n <namespace>
 ```
 
 ## Terraform Resource

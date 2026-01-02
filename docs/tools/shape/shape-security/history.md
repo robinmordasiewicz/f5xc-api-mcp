@@ -34,32 +34,20 @@ Ask Claude to help you work with History resources:
 
 > "Get details of the history named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl shape history get {name} --namespace {namespace}
-```
-
-Get specific history
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create history -n <namespace> -i history.yaml
+xcsh shape create history -n <namespace> -i history.yaml
 
 # Get
-f5xcctl shape get history <name> -n <namespace>
+xcsh shape get history <name> -n <namespace>
 
 # List
-f5xcctl shape list history -n <namespace>
+xcsh shape list history -n <namespace>
 
 # Delete
-f5xcctl shape delete history <name> -n <namespace>
+xcsh shape delete history <name> -n <namespace>
 ```
 
 ## Terraform Resource

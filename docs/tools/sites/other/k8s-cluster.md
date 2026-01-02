@@ -80,72 +80,20 @@ Ask Claude to help you work with K8S Cluster resources:
 
 > "Get details of the k8s-cluster named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config k8s-cluster create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config k8s-cluster create {name} --namespace {namespace}
-```
-
-Create k8s-cluster
-
-### delete
-
-```bash
-f5xcctl config k8s-cluster delete {name} --namespace {namespace}
-```
-
-Delete k8s-cluster
-
-### get_specific
-
-```bash
-f5xcctl config k8s-cluster get {name} --namespace {namespace}
-```
-
-Get specific k8s-cluster
-
-### list_all
-
-```bash
-f5xcctl config k8s-cluster list --namespace {namespace}
-```
-
-List all k8s-clusters
-
-### update
-
-```bash
-f5xcctl config k8s-cluster update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update k8s-cluster
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create k8s_cluster -n <namespace> -i k8s_cluster.yaml
+xcsh sites create k8s_cluster -n <namespace> -i k8s_cluster.yaml
 
 # Get
-f5xcctl sites get k8s_cluster <name> -n <namespace>
+xcsh sites get k8s_cluster <name> -n <namespace>
 
 # List
-f5xcctl sites list k8s_cluster -n <namespace>
+xcsh sites list k8s_cluster -n <namespace>
 
 # Delete
-f5xcctl sites delete k8s_cluster <name> -n <namespace>
+xcsh sites delete k8s_cluster <name> -n <namespace>
 ```
 
 ## Terraform Resource

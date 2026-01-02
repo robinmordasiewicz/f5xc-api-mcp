@@ -35,40 +35,20 @@ Ask Claude to help you work with RequestConfig resources:
 
 > "Create a requestConfig named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl register requestConfig create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl register requestConfig create {name} --namespace {namespace}
-```
-
-Create requestConfig
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create requestConfig -n <namespace> -i requestConfig.yaml
+xcsh ce_management create requestConfig -n <namespace> -i requestConfig.yaml
 
 # Get
-f5xcctl ce_management get requestConfig <name> -n <namespace>
+xcsh ce_management get requestConfig <name> -n <namespace>
 
 # List
-f5xcctl ce_management list requestConfig -n <namespace>
+xcsh ce_management list requestConfig -n <namespace>
 
 # Delete
-f5xcctl ce_management delete requestConfig <name> -n <namespace>
+xcsh ce_management delete requestConfig <name> -n <namespace>
 ```
 
 ## Terraform Resource

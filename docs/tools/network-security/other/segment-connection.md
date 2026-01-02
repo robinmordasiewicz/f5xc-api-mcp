@@ -59,48 +59,20 @@ Ask Claude to help you work with Segment Connection resources:
 
 > "Get details of the segment-connection named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config segment-connection get {name} --namespace {namespace}
-```
-
-Get specific segment-connection
-
-### list_all
-
-```bash
-f5xcctl config segment-connection list --namespace {namespace}
-```
-
-List all segment-connections
-
-### update
-
-```bash
-f5xcctl config segment-connection update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update segment-connection
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create segment_connection -n <namespace> -i segment_connection.yaml
+xcsh network_security create segment_connection -n <namespace> -i segment_connection.yaml
 
 # Get
-f5xcctl network_security get segment_connection <name> -n <namespace>
+xcsh network_security get segment_connection <name> -n <namespace>
 
 # List
-f5xcctl network_security list segment_connection -n <namespace>
+xcsh network_security list segment_connection -n <namespace>
 
 # Delete
-f5xcctl network_security delete segment_connection <name> -n <namespace>
+xcsh network_security delete segment_connection <name> -n <namespace>
 ```
 
 ## Terraform Resource

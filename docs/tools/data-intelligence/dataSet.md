@@ -25,32 +25,20 @@ Ask Claude to help you work with DataSet resources:
 
 > "List all dataSets in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data-intelligence dataSet list --namespace {namespace}
-```
-
-List all dataSets
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl data_intelligence create dataSet -n <namespace> -i dataSet.yaml
+xcsh data_intelligence create dataSet -n <namespace> -i dataSet.yaml
 
 # Get
-f5xcctl data_intelligence get dataSet <name> -n <namespace>
+xcsh data_intelligence get dataSet <name> -n <namespace>
 
 # List
-f5xcctl data_intelligence list dataSet -n <namespace>
+xcsh data_intelligence list dataSet -n <namespace>
 
 # Delete
-f5xcctl data_intelligence delete dataSet <name> -n <namespace>
+xcsh data_intelligence delete dataSet <name> -n <namespace>
 ```
 
 ## Terraform Resource

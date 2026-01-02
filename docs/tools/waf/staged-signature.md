@@ -42,40 +42,20 @@ Ask Claude to help you work with Staged Signature resources:
 
 > "Create a staged-signature named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml staged-signature create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml staged-signature create {name} --namespace {namespace}
-```
-
-Create staged-signature
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create staged_signature -n <namespace> -i staged_signature.yaml
+xcsh waf create staged_signature -n <namespace> -i staged_signature.yaml
 
 # Get
-f5xcctl waf get staged_signature <name> -n <namespace>
+xcsh waf get staged_signature <name> -n <namespace>
 
 # List
-f5xcctl waf list staged_signature -n <namespace>
+xcsh waf list staged_signature -n <namespace>
 
 # Delete
-f5xcctl waf delete staged_signature <name> -n <namespace>
+xcsh waf delete staged_signature <name> -n <namespace>
 ```
 
 ## Terraform Resource

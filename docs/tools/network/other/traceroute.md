@@ -42,40 +42,20 @@ Ask Claude to help you work with Traceroute resources:
 
 > "Create a traceroute named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl operate traceroute create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl operate traceroute create {name} --namespace {namespace}
-```
-
-Create traceroute
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create traceroute -n <namespace> -i traceroute.yaml
+xcsh network create traceroute -n <namespace> -i traceroute.yaml
 
 # Get
-f5xcctl network get traceroute <name> -n <namespace>
+xcsh network get traceroute <name> -n <namespace>
 
 # List
-f5xcctl network list traceroute -n <namespace>
+xcsh network list traceroute -n <namespace>
 
 # Delete
-f5xcctl network delete traceroute <name> -n <namespace>
+xcsh network delete traceroute <name> -n <namespace>
 ```
 
 ## Terraform Resource

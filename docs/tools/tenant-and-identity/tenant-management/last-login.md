@@ -25,32 +25,20 @@ Ask Claude to help you work with Last Login resources:
 
 > "List all last-logins in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web last-login list --namespace {namespace}
-```
-
-List all last-logins
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create last_login -n <namespace> -i last_login.yaml
+xcsh tenant_and_identity create last_login -n <namespace> -i last_login.yaml
 
 # Get
-f5xcctl tenant_and_identity get last_login <name> -n <namespace>
+xcsh tenant_and_identity get last_login <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list last_login -n <namespace>
+xcsh tenant_and_identity list last_login -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete last_login <name> -n <namespace>
+xcsh tenant_and_identity delete last_login <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -32,32 +32,20 @@ Operations on this resource may have the following effects:
 
 Ask Claude to help you work with Deallocateip resources:
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### delete
-
-```bash
-f5xcctl gia deallocateip delete {name} --namespace {namespace}
-```
-
-Delete deallocateip
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl generative_ai create deallocateip -n <namespace> -i deallocateip.yaml
+xcsh generative_ai create deallocateip -n <namespace> -i deallocateip.yaml
 
 # Get
-f5xcctl generative_ai get deallocateip <name> -n <namespace>
+xcsh generative_ai get deallocateip <name> -n <namespace>
 
 # List
-f5xcctl generative_ai list deallocateip -n <namespace>
+xcsh generative_ai list deallocateip -n <namespace>
 
 # Delete
-f5xcctl generative_ai delete deallocateip <name> -n <namespace>
+xcsh generative_ai delete deallocateip <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -44,40 +44,20 @@ Ask Claude to help you work with ResourceType resources:
 
 > "Get details of the ResourceType named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl scim ResourceType get {name} --namespace {namespace}
-```
-
-Get specific ResourceType
-
-### list_all
-
-```bash
-f5xcctl scim ResourceType list --namespace {namespace}
-```
-
-List all ResourceTypes
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create ResourceType -n <namespace> -i ResourceType.yaml
+xcsh tenant_and_identity create ResourceType -n <namespace> -i ResourceType.yaml
 
 # Get
-f5xcctl tenant_and_identity get ResourceType <name> -n <namespace>
+xcsh tenant_and_identity get ResourceType <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list ResourceType -n <namespace>
+xcsh tenant_and_identity list ResourceType -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete ResourceType <name> -n <namespace>
+xcsh tenant_and_identity delete ResourceType <name> -n <namespace>
 ```
 
 ## Terraform Resource

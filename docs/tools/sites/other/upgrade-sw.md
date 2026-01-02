@@ -42,40 +42,20 @@ Ask Claude to help you work with Upgrade Sw resources:
 
 > "Create a upgrade-sw named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config upgrade-sw create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config upgrade-sw create {name} --namespace {namespace}
-```
-
-Create upgrade-sw
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create upgrade_sw -n <namespace> -i upgrade_sw.yaml
+xcsh sites create upgrade_sw -n <namespace> -i upgrade_sw.yaml
 
 # Get
-f5xcctl sites get upgrade_sw <name> -n <namespace>
+xcsh sites get upgrade_sw <name> -n <namespace>
 
 # List
-f5xcctl sites list upgrade_sw -n <namespace>
+xcsh sites list upgrade_sw -n <namespace>
 
 # Delete
-f5xcctl sites delete upgrade_sw <name> -n <namespace>
+xcsh sites delete upgrade_sw <name> -n <namespace>
 ```
 
 ## Terraform Resource

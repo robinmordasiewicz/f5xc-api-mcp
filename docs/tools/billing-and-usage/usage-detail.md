@@ -42,40 +42,20 @@ Ask Claude to help you work with Usage Detail resources:
 
 > "Create a usage-detail named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web usage-detail create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web usage-detail create {name} --namespace {namespace}
-```
-
-Create usage-detail
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create usage_detail -n <namespace> -i usage_detail.yaml
+xcsh billing_and_usage create usage_detail -n <namespace> -i usage_detail.yaml
 
 # Get
-f5xcctl billing_and_usage get usage_detail <name> -n <namespace>
+xcsh billing_and_usage get usage_detail <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list usage_detail -n <namespace>
+xcsh billing_and_usage list usage_detail -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete usage_detail <name> -n <namespace>
+xcsh billing_and_usage delete usage_detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

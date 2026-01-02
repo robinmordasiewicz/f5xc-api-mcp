@@ -33,40 +33,20 @@ Ask Claude to help you work with Provision resources:
 
 > "Create a provision named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl tpm provision create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl tpm provision create {name} --namespace {namespace}
-```
-
-Create provision
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl bot_and_threat_defense create provision -n <namespace> -i provision.yaml
+xcsh bot_and_threat_defense create provision -n <namespace> -i provision.yaml
 
 # Get
-f5xcctl bot_and_threat_defense get provision <name> -n <namespace>
+xcsh bot_and_threat_defense get provision <name> -n <namespace>
 
 # List
-f5xcctl bot_and_threat_defense list provision -n <namespace>
+xcsh bot_and_threat_defense list provision -n <namespace>
 
 # Delete
-f5xcctl bot_and_threat_defense delete provision <name> -n <namespace>
+xcsh bot_and_threat_defense delete provision <name> -n <namespace>
 ```
 
 ## Terraform Resource

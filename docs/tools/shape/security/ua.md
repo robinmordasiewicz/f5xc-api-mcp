@@ -41,40 +41,20 @@ Ask Claude to help you work with Ua resources:
 
 > "Create a ua named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape ua create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape ua create {name} --namespace {namespace}
-```
-
-Create ua
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create ua -n <namespace> -i ua.yaml
+xcsh shape create ua -n <namespace> -i ua.yaml
 
 # Get
-f5xcctl shape get ua <name> -n <namespace>
+xcsh shape get ua <name> -n <namespace>
 
 # List
-f5xcctl shape list ua -n <namespace>
+xcsh shape list ua -n <namespace>
 
 # Delete
-f5xcctl shape delete ua <name> -n <namespace>
+xcsh shape delete ua <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -1529,7 +1529,7 @@ export const rate_limitingTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "rate_limiting",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1675,7 +1675,7 @@ export const rate_limitingTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "rate_limiting",
         fieldPath: "",
         inline: false,
         required: false,
@@ -2102,7 +2102,7 @@ export const rate_limitingTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/rate_limiters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "rate_limiting",
         fieldPath: "",
         inline: false,
         required: false,

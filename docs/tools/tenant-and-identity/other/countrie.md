@@ -34,32 +34,20 @@ Ask Claude to help you work with Countrie resources:
 
 > "List all countries in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web countrie list --namespace {namespace}
-```
-
-List all countries
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create countrie -n <namespace> -i countrie.yaml
+xcsh tenant_and_identity create countrie -n <namespace> -i countrie.yaml
 
 # Get
-f5xcctl tenant_and_identity get countrie <name> -n <namespace>
+xcsh tenant_and_identity get countrie <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list countrie -n <namespace>
+xcsh tenant_and_identity list countrie -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete countrie <name> -n <namespace>
+xcsh tenant_and_identity delete countrie <name> -n <namespace>
 ```
 
 ## Terraform Resource

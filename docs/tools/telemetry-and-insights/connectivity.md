@@ -41,40 +41,20 @@ Ask Claude to help you work with Connectivity resources:
 
 > "Create a connectivity named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl data connectivity create {name} --namespace {namespace}
-```
-
-Create connectivity
-
-### file_based
-
-```bash
-f5xcctl data connectivity create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl telemetry_and_insights create connectivity -n <namespace> -i connectivity.yaml
+xcsh telemetry_and_insights create connectivity -n <namespace> -i connectivity.yaml
 
 # Get
-f5xcctl telemetry_and_insights get connectivity <name> -n <namespace>
+xcsh telemetry_and_insights get connectivity <name> -n <namespace>
 
 # List
-f5xcctl telemetry_and_insights list connectivity -n <namespace>
+xcsh telemetry_and_insights list connectivity -n <namespace>
 
 # Delete
-f5xcctl telemetry_and_insights delete connectivity <name> -n <namespace>
+xcsh telemetry_and_insights delete connectivity <name> -n <namespace>
 ```
 
 ## Terraform Resource

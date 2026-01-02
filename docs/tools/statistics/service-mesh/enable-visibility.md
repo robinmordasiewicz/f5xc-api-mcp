@@ -45,40 +45,20 @@ Ask Claude to help you work with Enable Visibility resources:
 
 > "Create a enable-visibility named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl discovery enable-visibility create {name} --namespace {namespace}
-```
-
-Create enable-visibility
-
-### file_based
-
-```bash
-f5xcctl discovery enable-visibility create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create enable_visibility -n <namespace> -i enable_visibility.yaml
+xcsh statistics create enable_visibility -n <namespace> -i enable_visibility.yaml
 
 # Get
-f5xcctl statistics get enable_visibility <name> -n <namespace>
+xcsh statistics get enable_visibility <name> -n <namespace>
 
 # List
-f5xcctl statistics list enable_visibility -n <namespace>
+xcsh statistics list enable_visibility -n <namespace>
 
 # Delete
-f5xcctl statistics delete enable_visibility <name> -n <namespace>
+xcsh statistics delete enable_visibility <name> -n <namespace>
 ```
 
 ## Terraform Resource

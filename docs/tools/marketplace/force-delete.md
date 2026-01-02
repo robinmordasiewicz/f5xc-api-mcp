@@ -43,40 +43,20 @@ Ask Claude to help you work with Force Delete resources:
 
 > "Create a force-delete named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl terraform force-delete create {name} --namespace {namespace}
-```
-
-Create force-delete
-
-### file_based
-
-```bash
-f5xcctl terraform force-delete create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create force_delete -n <namespace> -i force_delete.yaml
+xcsh marketplace create force_delete -n <namespace> -i force_delete.yaml
 
 # Get
-f5xcctl marketplace get force_delete <name> -n <namespace>
+xcsh marketplace get force_delete <name> -n <namespace>
 
 # List
-f5xcctl marketplace list force_delete -n <namespace>
+xcsh marketplace list force_delete -n <namespace>
 
 # Delete
-f5xcctl marketplace delete force_delete <name> -n <namespace>
+xcsh marketplace delete force_delete <name> -n <namespace>
 ```
 
 ## Terraform Resource

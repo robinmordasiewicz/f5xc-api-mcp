@@ -77,72 +77,20 @@ Ask Claude to help you work with Quota resources:
 
 > "Get details of the quota named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web quota create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web quota create {name} --namespace {namespace}
-```
-
-Create quota
-
-### delete
-
-```bash
-f5xcctl web quota delete {name} --namespace {namespace}
-```
-
-Delete quota
-
-### get_specific
-
-```bash
-f5xcctl web quota get {name} --namespace {namespace}
-```
-
-Get specific quota
-
-### list_all
-
-```bash
-f5xcctl web quota list --namespace {namespace}
-```
-
-List all quotas
-
-### update
-
-```bash
-f5xcctl web quota update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update quota
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create quota -n <namespace> -i quota.yaml
+xcsh billing_and_usage create quota -n <namespace> -i quota.yaml
 
 # Get
-f5xcctl billing_and_usage get quota <name> -n <namespace>
+xcsh billing_and_usage get quota <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list quota -n <namespace>
+xcsh billing_and_usage list quota -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete quota <name> -n <namespace>
+xcsh billing_and_usage delete quota <name> -n <namespace>
 ```
 
 ## Terraform Resource

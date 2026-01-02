@@ -33,40 +33,20 @@ Ask Claude to help you work with Cloud Connect Reapply VPC Attachment resources:
 
 > "Create a cloud-connect-reapply-vpc-attachment named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl sync-cloud-data cloud-connect-reapply-vpc-attachment create {name} --namespace {namespace}
-```
-
-Create cloud-connect-reapply-vpc-attachment
-
-### file_based
-
-```bash
-f5xcctl sync-cloud-data cloud-connect-reapply-vpc-attachment create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cloud_infrastructure create cloud_connect_reapply_vpc_attachment -n <namespace> -i cloud_connect_reapply_vpc_attachment.yaml
+xcsh cloud_infrastructure create cloud_connect_reapply_vpc_attachment -n <namespace> -i cloud_connect_reapply_vpc_attachment.yaml
 
 # Get
-f5xcctl cloud_infrastructure get cloud_connect_reapply_vpc_attachment <name> -n <namespace>
+xcsh cloud_infrastructure get cloud_connect_reapply_vpc_attachment <name> -n <namespace>
 
 # List
-f5xcctl cloud_infrastructure list cloud_connect_reapply_vpc_attachment -n <namespace>
+xcsh cloud_infrastructure list cloud_connect_reapply_vpc_attachment -n <namespace>
 
 # Delete
-f5xcctl cloud_infrastructure delete cloud_connect_reapply_vpc_attachment <name> -n <namespace>
+xcsh cloud_infrastructure delete cloud_connect_reapply_vpc_attachment <name> -n <namespace>
 ```
 
 ## Terraform Resource

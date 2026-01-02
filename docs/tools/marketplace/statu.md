@@ -35,32 +35,20 @@ Ask Claude to help you work with Statu resources:
 
 > "List all status in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config statu list --namespace {namespace}
-```
-
-List all status
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create statu -n <namespace> -i statu.yaml
+xcsh marketplace create statu -n <namespace> -i statu.yaml
 
 # Get
-f5xcctl marketplace get statu <name> -n <namespace>
+xcsh marketplace get statu <name> -n <namespace>
 
 # List
-f5xcctl marketplace list statu -n <namespace>
+xcsh marketplace list statu -n <namespace>
 
 # Delete
-f5xcctl marketplace delete statu <name> -n <namespace>
+xcsh marketplace delete statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

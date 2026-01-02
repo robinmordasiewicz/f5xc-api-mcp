@@ -25,32 +25,20 @@ Ask Claude to help you work with Favicon resources:
 
 > "List all favicons in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web favicon list --namespace {namespace}
-```
-
-List all favicons
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create favicon -n <namespace> -i favicon.yaml
+xcsh tenant_and_identity create favicon -n <namespace> -i favicon.yaml
 
 # Get
-f5xcctl tenant_and_identity get favicon <name> -n <namespace>
+xcsh tenant_and_identity get favicon <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list favicon -n <namespace>
+xcsh tenant_and_identity list favicon -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete favicon <name> -n <namespace>
+xcsh tenant_and_identity delete favicon <name> -n <namespace>
 ```
 
 ## Terraform Resource

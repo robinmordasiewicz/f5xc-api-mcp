@@ -42,40 +42,20 @@ Ask Claude to help you work with Recover resources:
 
 > "Create a recover named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl secret_management recover create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl secret_management recover create {name} --namespace {namespace}
-```
-
-Create recover
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create recover -n <namespace> -i recover.yaml
+xcsh blindfold create recover -n <namespace> -i recover.yaml
 
 # Get
-f5xcctl blindfold get recover <name> -n <namespace>
+xcsh blindfold get recover <name> -n <namespace>
 
 # List
-f5xcctl blindfold list recover -n <namespace>
+xcsh blindfold list recover -n <namespace>
 
 # Delete
-f5xcctl blindfold delete recover <name> -n <namespace>
+xcsh blindfold delete recover <name> -n <namespace>
 ```
 
 ## Terraform Resource

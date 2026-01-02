@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-31T19:31:31.103341+00:00",
+  "generatedAt": "2026-01-02T02:13:13.490227+00:00",
   "totalResources": 801,
   "dependencies": {
     "admin_console_and_ui/static-component": {
@@ -851,7 +851,7 @@
       "requires": [
         {
           "resourceType": "api-credential",
-          "domain": "",
+          "domain": "authentication",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -864,11 +864,18 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "api-credential",
+          "domain": "authentication",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/api-credential",
         "unknown/api-credential-custom-create",
         "authentication/api-credential"
       ]
@@ -1336,7 +1343,7 @@
       "requires": [
         {
           "resourceType": "quota",
-          "domain": "",
+          "domain": "billing_and_usage",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -1370,11 +1377,18 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "quota",
+          "domain": "billing_and_usage",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/quota",
         "unknown/schema-object-create-meta",
         "unknown/schemaquota-create",
         "unknown/schema-object-replace-meta",
@@ -1565,7 +1579,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/secret-management-access",
         "unknown/schema-object-create-meta",
@@ -1581,7 +1608,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "blindfold/get-public-key"
       ]
@@ -1600,7 +1640,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/voltshare-policy-information",
         "blindfold/decrypt-secret"
@@ -1620,7 +1673,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/voltshare-policy",
         "blindfold/process-policy-information"
@@ -1668,7 +1734,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/secret-policy-rule",
         "unknown/schema-object-create-meta",
@@ -1684,7 +1763,7 @@
       "requires": [
         {
           "resourceType": "secret-policy",
-          "domain": "",
+          "domain": "blindfold",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -1718,11 +1797,31 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "secret-policy",
+          "domain": "blindfold",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
-        "unknown/secret-policy",
         "unknown/schema-object-create-meta",
         "unknown/schemasecret-policy-create",
         "unknown/schema-object-replace-meta",
@@ -1772,7 +1871,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/voltshare-admin-policy",
         "unknown/schema-object-create-meta",
@@ -1788,7 +1900,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "blindfold/list-policy"
       ]
@@ -1799,7 +1924,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "blindfold/recover"
       ]
@@ -1818,7 +1956,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/secret-policy-soft",
         "blindfold/softdelete"
@@ -1830,7 +1981,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "blindfold/get-policy-document"
       ]
@@ -1841,7 +2005,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "blindfold/access-count"
       ]
@@ -1852,7 +2029,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "blindfold/audit-log"
       ]
@@ -1863,7 +2053,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "blindfold/aggregation"
       ]
@@ -1874,7 +2077,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "blindfold/scroll"
       ]
@@ -2432,7 +2648,7 @@
       "requires": [
         {
           "resourceType": "cdn-loadbalancer",
-          "domain": "",
+          "domain": "cdn",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -2466,7 +2682,15 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "cdn-loadbalancer",
+          "domain": "cdn",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [
         {
@@ -2477,7 +2701,6 @@
         }
       ],
       "creationOrder": [
-        "unknown/cdn-loadbalancer",
         "unknown/schema-object-create-meta",
         "unknown/viewscdn-loadbalancer-create",
         "unknown/schema-object-replace-meta",
@@ -2949,7 +3172,7 @@
       "requires": [
         {
           "resourceType": "certificate-chain",
-          "domain": "",
+          "domain": "certificates",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -2983,11 +3206,18 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "certificate-chain",
+          "domain": "certificates",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/certificate-chain",
         "unknown/schema-object-create-meta",
         "unknown/certificate-chain-create",
         "unknown/schema-object-replace-meta",
@@ -3269,7 +3499,7 @@
       "requires": [
         {
           "resourceType": "cloud-credentials",
-          "domain": "",
+          "domain": "cloud_infrastructure",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -3303,11 +3533,18 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "cloud-credentials",
+          "domain": "cloud_infrastructure",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/cloud-credentials",
         "unknown/schema-object-create-meta",
         "unknown/cloud-credentials-create",
         "unknown/schema-object-replace-meta",
@@ -3558,7 +3795,7 @@
       "requires": [
         {
           "resourceType": "virtual-k8s",
-          "domain": "",
+          "domain": "container_services",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -3592,11 +3829,25 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "virtual-k8s",
+          "domain": "container_services",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "virtual-k8s",
+          "domain": "sites",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/virtual-k8s",
         "unknown/schema-object-create-meta",
         "unknown/virtual-k8s-create",
         "unknown/schema-object-replace-meta",
@@ -3662,7 +3913,7 @@
       "requires": [
         {
           "resourceType": "workload",
-          "domain": "",
+          "domain": "container_services",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -3696,11 +3947,18 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "workload",
+          "domain": "container_services",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/workload",
         "unknown/schema-object-create-meta",
         "unknown/viewsworkload-create",
         "unknown/schema-object-replace-meta",
@@ -3786,7 +4044,7 @@
       "requires": [
         {
           "resourceType": "sensitive-data-policy",
-          "domain": "",
+          "domain": "data_and_privacy_security",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -3820,11 +4078,31 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "sensitive-data-policy",
+          "domain": "data_and_privacy_security",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
-        "unknown/sensitive-data-policy",
         "unknown/schema-object-create-meta",
         "unknown/schemasensitive-data-policy-create",
         "unknown/schema-object-replace-meta",
@@ -4990,7 +5268,7 @@
       "requires": [
         {
           "resourceType": "dns-load-balancer",
-          "domain": "",
+          "domain": "dns",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -5024,11 +5302,18 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "dns-load-balancer",
+          "domain": "dns",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/dns-load-balancer",
         "unknown/schema-object-create-meta",
         "unknown/schemadns-load-balancer-create",
         "unknown/schema-object-replace-meta",
@@ -5186,7 +5471,7 @@
       "requires": [
         {
           "resourceType": "dns-domain",
-          "domain": "",
+          "domain": "dns",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -5220,11 +5505,18 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "dns-domain",
+          "domain": "dns",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/dns-domain",
         "unknown/schema-object-create-meta",
         "unknown/dns-domain-create",
         "unknown/schema-object-replace-meta",
@@ -5439,7 +5731,7 @@
       "requires": [
         {
           "resourceType": "container-registry",
-          "domain": "",
+          "domain": "managed_kubernetes",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -5473,7 +5765,15 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "container-registry",
+          "domain": "managed_kubernetes",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [
         {
@@ -5484,7 +5784,6 @@
         }
       ],
       "creationOrder": [
-        "unknown/container-registry",
         "unknown/schema-object-create-meta",
         "unknown/container-registry-create",
         "unknown/schema-object-replace-meta",
@@ -5557,7 +5856,7 @@
       "requires": [
         {
           "resourceType": "k8s-cluster-role",
-          "domain": "",
+          "domain": "managed_kubernetes",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -5591,7 +5890,15 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "k8s-cluster-role",
+          "domain": "managed_kubernetes",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [
         {
@@ -5602,7 +5909,6 @@
         }
       ],
       "creationOrder": [
-        "unknown/k8s-cluster-role",
         "unknown/schema-object-create-meta",
         "unknown/k8s-cluster-role-create",
         "unknown/schema-object-replace-meta",
@@ -6724,7 +7030,7 @@
       "requires": [
         {
           "resourceType": "network-connector",
-          "domain": "",
+          "domain": "network",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -6758,11 +7064,18 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "network-connector",
+          "domain": "network",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/network-connector",
         "unknown/schema-object-create-meta",
         "unknown/network-connector-create",
         "unknown/schema-object-replace-meta",
@@ -7061,7 +7374,7 @@
       "requires": [
         {
           "resourceType": "virtual-network",
-          "domain": "",
+          "domain": "network",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -7095,11 +7408,25 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "virtual-network",
+          "domain": "network",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        },
+        {
+          "resourceType": "virtual-network",
+          "domain": "service_mesh",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/virtual-network",
         "unknown/schema-object-create-meta",
         "unknown/virtual-network-create",
         "unknown/schema-object-replace-meta",
@@ -7254,14 +7581,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -7319,14 +7646,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -7384,14 +7711,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -7411,7 +7738,7 @@
       "requires": [
         {
           "resourceType": "forward-proxy-policy",
-          "domain": "",
+          "domain": "network_security",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -7445,24 +7772,31 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "forward-proxy-policy",
+          "domain": "network_security",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
       ],
       "creationOrder": [
-        "unknown/forward-proxy-policy",
         "unknown/schema-object-create-meta",
         "unknown/viewsforward-proxy-policy-create",
         "unknown/schema-object-replace-meta",
@@ -7514,14 +7848,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -7541,7 +7875,7 @@
       "requires": [
         {
           "resourceType": "network-firewall",
-          "domain": "",
+          "domain": "network_security",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -7575,24 +7909,31 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "network-firewall",
+          "domain": "network_security",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
       ],
       "creationOrder": [
-        "unknown/network-firewall",
         "unknown/schema-object-create-meta",
         "unknown/network-firewall-create",
         "unknown/schema-object-replace-meta",
@@ -7644,14 +7985,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -7709,14 +8050,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -7736,7 +8077,7 @@
       "requires": [
         {
           "resourceType": "network-policy",
-          "domain": "",
+          "domain": "network_security",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -7770,24 +8111,31 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "network-policy",
+          "domain": "network_security",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
       ],
       "creationOrder": [
-        "unknown/network-policy",
         "unknown/schema-object-create-meta",
         "unknown/schemanetwork-policy-create",
         "unknown/schema-object-replace-meta",
@@ -7839,14 +8187,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -7890,14 +8238,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -7953,14 +8301,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -7980,7 +8328,7 @@
       "requires": [
         {
           "resourceType": "service-policy",
-          "domain": "network_security",
+          "domain": "waf",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -8014,22 +8362,7 @@
           "inline": false
         }
       ],
-      "requiredBy": [
-        {
-          "resourceType": "service-policy",
-          "domain": "network_security",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "service-policy",
-          "domain": "virtual",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        }
-      ],
+      "requiredBy": [],
       "oneOfGroups": [],
       "subscriptions": [
         {
@@ -8043,21 +8376,10 @@
           "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
-          "required": false
         }
       ],
       "creationOrder": [
+        "waf/service-policy",
         "unknown/schema-object-create-meta",
         "unknown/schemaservice-policy-create",
         "unknown/schema-object-replace-meta",
@@ -8073,14 +8395,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -8097,14 +8419,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -8121,14 +8443,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -8145,14 +8467,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -8169,14 +8491,14 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
           "required": false
         },
         {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
           "tier": "advanced",
           "required": false
         }
@@ -9021,7 +9343,7 @@
       "requires": [
         {
           "resourceType": "rate-limiter",
-          "domain": "",
+          "domain": "rate_limiting",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -9055,7 +9377,15 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "rate-limiter",
+          "domain": "rate_limiting",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [
         {
@@ -9072,7 +9402,6 @@
         }
       ],
       "creationOrder": [
-        "unknown/rate-limiter",
         "unknown/schema-object-create-meta",
         "unknown/rate-limiter-create",
         "unknown/schema-object-replace-meta",
@@ -9305,7 +9634,7 @@
       "requires": [
         {
           "resourceType": "endpoint",
-          "domain": "",
+          "domain": "service_mesh",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -9339,7 +9668,15 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "endpoint",
+          "domain": "service_mesh",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [
         {
@@ -9356,7 +9693,6 @@
         }
       ],
       "creationOrder": [
-        "unknown/endpoint",
         "unknown/schema-object-create-meta",
         "unknown/schemaendpoint-create",
         "unknown/schema-object-replace-meta",
@@ -9435,7 +9771,7 @@
       "requires": [
         {
           "resourceType": "site-mesh-group",
-          "domain": "",
+          "domain": "sites",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -9473,6 +9809,12 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
           "addonService": "f5xc_securemesh_standard",
           "displayName": "F5XC Securemesh Standard",
           "tier": "standard",
@@ -9483,16 +9825,10 @@
           "displayName": "F5XC Securemesh Advanced",
           "tier": "advanced",
           "required": false
-        },
-        {
-          "addonService": "f5xc_site_management_standard",
-          "displayName": "F5XC Site Management Standard",
-          "tier": "standard",
-          "required": false
         }
       ],
       "creationOrder": [
-        "unknown/site-mesh-group",
+        "sites/site-mesh-group",
         "unknown/schema-object-create-meta",
         "unknown/schemasite-mesh-group-create",
         "unknown/schema-object-replace-meta",
@@ -9506,7 +9842,7 @@
       "requires": [
         {
           "resourceType": "virtual-network",
-          "domain": "",
+          "domain": "network",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -9557,11 +9893,11 @@
         }
       ],
       "creationOrder": [
-        "unknown/virtual-network",
         "unknown/schema-object-create-meta",
         "unknown/virtual-network-create",
         "unknown/schema-object-replace-meta",
         "unknown/virtual-network-replace",
+        "network/virtual-network",
         "service_mesh/virtual-network"
       ]
     },
@@ -11713,7 +12049,7 @@
       "requires": [
         {
           "resourceType": "aws-vpc-site",
-          "domain": "sites",
+          "domain": "cloud_infrastructure",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -11747,15 +12083,7 @@
           "inline": false
         }
       ],
-      "requiredBy": [
-        {
-          "resourceType": "aws-vpc-site",
-          "domain": "sites",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        }
-      ],
+      "requiredBy": [],
       "oneOfGroups": [],
       "subscriptions": [
         {
@@ -11766,6 +12094,7 @@
         }
       ],
       "creationOrder": [
+        "cloud_infrastructure/aws-vpc-site",
         "unknown/schema-object-create-meta",
         "unknown/viewsaws-vpc-site-create",
         "unknown/schema-object-replace-meta",
@@ -11779,7 +12108,7 @@
       "requires": [
         {
           "resourceType": "azure-vnet-site",
-          "domain": "sites",
+          "domain": "cloud_infrastructure",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -11813,15 +12142,7 @@
           "inline": false
         }
       ],
-      "requiredBy": [
-        {
-          "resourceType": "azure-vnet-site",
-          "domain": "sites",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        }
-      ],
+      "requiredBy": [],
       "oneOfGroups": [],
       "subscriptions": [
         {
@@ -11832,6 +12153,7 @@
         }
       ],
       "creationOrder": [
+        "cloud_infrastructure/azure-vnet-site",
         "unknown/schema-object-create-meta",
         "unknown/viewsazure-vnet-site-create",
         "unknown/schema-object-replace-meta",
@@ -11845,7 +12167,7 @@
       "requires": [
         {
           "resourceType": "gcp-vpc-site",
-          "domain": "sites",
+          "domain": "cloud_infrastructure",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -11879,15 +12201,7 @@
           "inline": false
         }
       ],
-      "requiredBy": [
-        {
-          "resourceType": "gcp-vpc-site",
-          "domain": "sites",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        }
-      ],
+      "requiredBy": [],
       "oneOfGroups": [],
       "subscriptions": [
         {
@@ -11898,6 +12212,7 @@
         }
       ],
       "creationOrder": [
+        "cloud_infrastructure/gcp-vpc-site",
         "unknown/schema-object-create-meta",
         "unknown/viewsgcp-vpc-site-create",
         "unknown/schema-object-replace-meta",
@@ -12138,7 +12453,7 @@
       "requires": [
         {
           "resourceType": "virtual-k8s",
-          "domain": "",
+          "domain": "container_services",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -12183,11 +12498,11 @@
         }
       ],
       "creationOrder": [
-        "unknown/virtual-k8s",
         "unknown/schema-object-create-meta",
         "unknown/virtual-k8s-create",
         "unknown/schema-object-replace-meta",
         "unknown/virtual-k8s-replace",
+        "container_services/virtual-k8s",
         "sites/virtual-k8s"
       ]
     },
@@ -12197,7 +12512,7 @@
       "requires": [
         {
           "resourceType": "virtual-site",
-          "domain": "",
+          "domain": "sites",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -12231,7 +12546,15 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "virtual-site",
+          "domain": "sites",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [
         {
@@ -12242,7 +12565,6 @@
         }
       ],
       "creationOrder": [
-        "unknown/virtual-site",
         "unknown/schema-object-create-meta",
         "unknown/schemavirtual-site-create",
         "unknown/schema-object-replace-meta",
@@ -12962,21 +13284,17 @@
       "resource": "site-mesh-group",
       "domain": "sites",
       "requires": [],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "site-mesh-group",
+          "domain": "service_mesh",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [
-        {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
-          "required": false
-        },
         {
           "addonService": "f5xc_site_management_standard",
           "displayName": "F5XC Site Management Standard",
@@ -13317,7 +13635,7 @@
       "requires": [
         {
           "resourceType": "alert-policy",
-          "domain": "",
+          "domain": "observability",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -13355,7 +13673,7 @@
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/alert-policy",
+        "observability/alert-policy",
         "unknown/schema-object-create-meta",
         "unknown/alert-policy-create",
         "unknown/schema-object-replace-meta",
@@ -13473,7 +13791,7 @@
       "requires": [
         {
           "resourceType": "log-receiver",
-          "domain": "",
+          "domain": "observability",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -13511,7 +13829,7 @@
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "unknown/log-receiver",
+        "observability/log-receiver",
         "unknown/schema-object-create-meta",
         "unknown/log-receiver-create",
         "unknown/schema-object-replace-meta",
@@ -13581,18 +13899,6 @@
       "requiredBy": [],
       "oneOfGroups": [],
       "subscriptions": [
-        {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
-          "required": false
-        },
         {
           "addonService": "f5xc_site_management_standard",
           "displayName": "F5XC Site Management Standard",
@@ -17070,7 +17376,7 @@
       "requires": [
         {
           "resourceType": "healthcheck",
-          "domain": "network",
+          "domain": "virtual",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -17104,11 +17410,18 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "healthcheck",
+          "domain": "virtual",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "network/healthcheck",
         "unknown/schema-object-create-meta",
         "unknown/healthcheck-create",
         "unknown/schema-object-replace-meta",
@@ -17181,7 +17494,7 @@
       "requires": [
         {
           "resourceType": "origin-pool",
-          "domain": "network",
+          "domain": "virtual",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -17215,11 +17528,18 @@
           "inline": false
         }
       ],
-      "requiredBy": [],
+      "requiredBy": [
+        {
+          "resourceType": "origin-pool",
+          "domain": "virtual",
+          "fieldPath": "",
+          "required": false,
+          "inline": false
+        }
+      ],
       "oneOfGroups": [],
       "subscriptions": [],
       "creationOrder": [
-        "network/origin-pool",
         "unknown/schema-object-create-meta",
         "unknown/viewsorigin-pool-create",
         "unknown/schema-object-replace-meta",
@@ -17285,7 +17605,7 @@
       "requires": [
         {
           "resourceType": "rate-limiter-policy",
-          "domain": "",
+          "domain": "rate_limiting",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -17336,7 +17656,7 @@
         }
       ],
       "creationOrder": [
-        "unknown/rate-limiter-policy",
+        "rate_limiting/rate-limiter-policy",
         "unknown/schema-object-create-meta",
         "unknown/viewsrate-limiter-policy-create",
         "unknown/schema-object-replace-meta",
@@ -17415,7 +17735,7 @@
       "requires": [
         {
           "resourceType": "service-policy",
-          "domain": "network_security",
+          "domain": "waf",
           "fieldPath": "",
           "required": false,
           "inline": false
@@ -17466,11 +17786,11 @@
         }
       ],
       "creationOrder": [
+        "waf/service-policy",
         "unknown/schema-object-create-meta",
         "unknown/schemaservice-policy-create",
         "unknown/schema-object-replace-meta",
         "unknown/schemaservice-policy-replace",
-        "network_security/service-policy",
         "virtual/service-policy"
       ]
     },
@@ -18653,6 +18973,21 @@
       "api/stat",
       "api/api-group-element",
       "api/api-group",
+      "blindfold/secret-management-access",
+      "blindfold/get-public-key",
+      "blindfold/decrypt-secret",
+      "blindfold/process-policy-information",
+      "blindfold/secret-policy-rule",
+      "blindfold/secret-policy",
+      "blindfold/voltshare-admin-policy",
+      "blindfold/list-policy",
+      "blindfold/recover",
+      "blindfold/softdelete",
+      "blindfold/get-policy-document",
+      "blindfold/access-count",
+      "blindfold/audit-log",
+      "blindfold/aggregation",
+      "blindfold/scroll",
       "bot_and_threat_defense/bot-defense-app-infrastructure",
       "bot_and_threat_defense/shape-bot-defense-instance",
       "bot_and_threat_defense/tpm-api-key",
@@ -18660,7 +18995,25 @@
       "bot_and_threat_defense/tpm-manager",
       "bot_and_threat_defense/preauth",
       "bot_and_threat_defense/provision",
+      "data_and_privacy_security/sensitive-data-policy",
+      "network_security/fast-acl-rule",
+      "network_security/fast-acl",
+      "network_security/filter-set",
+      "network_security/forward-proxy-policy",
+      "network_security/nat-policy",
+      "network_security/network-firewall",
+      "network_security/network-policy-rule",
+      "network_security/network-policy-view",
+      "network_security/network-policy",
+      "network_security/policy-based-routing",
+      "network_security/segment-connection",
+      "network_security/segment",
       "network_security/service-policy",
+      "network_security/find",
+      "network_security/network-policy-set",
+      "network_security/hit",
+      "network_security/graph",
+      "network_security/latency",
       "rate_limiting/policer",
       "rate_limiting/protocol-policer",
       "rate_limiting/rate-limiter",
@@ -18713,6 +19066,21 @@
       "api/stat",
       "api/api-group-element",
       "api/api-group",
+      "blindfold/secret-management-access",
+      "blindfold/get-public-key",
+      "blindfold/decrypt-secret",
+      "blindfold/process-policy-information",
+      "blindfold/secret-policy-rule",
+      "blindfold/secret-policy",
+      "blindfold/voltshare-admin-policy",
+      "blindfold/list-policy",
+      "blindfold/recover",
+      "blindfold/softdelete",
+      "blindfold/get-policy-document",
+      "blindfold/access-count",
+      "blindfold/audit-log",
+      "blindfold/aggregation",
+      "blindfold/scroll",
       "bot_and_threat_defense/bot-defense-app-infrastructure",
       "bot_and_threat_defense/shape-bot-defense-instance",
       "bot_and_threat_defense/tpm-api-key",
@@ -18720,7 +19088,25 @@
       "bot_and_threat_defense/tpm-manager",
       "bot_and_threat_defense/preauth",
       "bot_and_threat_defense/provision",
+      "data_and_privacy_security/sensitive-data-policy",
+      "network_security/fast-acl-rule",
+      "network_security/fast-acl",
+      "network_security/filter-set",
+      "network_security/forward-proxy-policy",
+      "network_security/nat-policy",
+      "network_security/network-firewall",
+      "network_security/network-policy-rule",
+      "network_security/network-policy-view",
+      "network_security/network-policy",
+      "network_security/policy-based-routing",
+      "network_security/segment-connection",
+      "network_security/segment",
       "network_security/service-policy",
+      "network_security/find",
+      "network_security/network-policy-set",
+      "network_security/hit",
+      "network_security/graph",
+      "network_security/latency",
       "rate_limiting/policer",
       "rate_limiting/protocol-policer",
       "rate_limiting/rate-limiter",
@@ -18853,24 +19239,6 @@
       "statistics/vk8s-event"
     ],
     "f5xc_securemesh_standard": [
-      "network_security/fast-acl-rule",
-      "network_security/fast-acl",
-      "network_security/filter-set",
-      "network_security/forward-proxy-policy",
-      "network_security/nat-policy",
-      "network_security/network-firewall",
-      "network_security/network-policy-rule",
-      "network_security/network-policy-view",
-      "network_security/network-policy",
-      "network_security/policy-based-routing",
-      "network_security/segment-connection",
-      "network_security/segment",
-      "network_security/service-policy",
-      "network_security/find",
-      "network_security/network-policy-set",
-      "network_security/hit",
-      "network_security/graph",
-      "network_security/latency",
       "service_mesh/force-delete",
       "service_mesh/app-setting",
       "service_mesh/app-type",
@@ -18889,29 +19257,9 @@
       "service_mesh/pop",
       "service_mesh/push",
       "service_mesh/override",
-      "sites/global-network",
-      "sites/site-mesh-group",
-      "statistics/site-mesh-group"
+      "sites/global-network"
     ],
     "f5xc_securemesh_advanced": [
-      "network_security/fast-acl-rule",
-      "network_security/fast-acl",
-      "network_security/filter-set",
-      "network_security/forward-proxy-policy",
-      "network_security/nat-policy",
-      "network_security/network-firewall",
-      "network_security/network-policy-rule",
-      "network_security/network-policy-view",
-      "network_security/network-policy",
-      "network_security/policy-based-routing",
-      "network_security/segment-connection",
-      "network_security/segment",
-      "network_security/service-policy",
-      "network_security/find",
-      "network_security/network-policy-set",
-      "network_security/hit",
-      "network_security/graph",
-      "network_security/latency",
       "service_mesh/force-delete",
       "service_mesh/app-setting",
       "service_mesh/app-type",
@@ -18930,9 +19278,7 @@
       "service_mesh/pop",
       "service_mesh/push",
       "service_mesh/override",
-      "sites/global-network",
-      "sites/site-mesh-group",
-      "statistics/site-mesh-group"
+      "sites/global-network"
     ]
   },
   "reverseDependencies": {
@@ -21357,7 +21703,7 @@
         "inline": false
       }
     ],
-    "unknown/api-credential": [
+    "authentication/api-credential": [
       {
         "resourceType": "api-credential",
         "domain": "authentication",
@@ -21564,7 +21910,7 @@
         "inline": false
       }
     ],
-    "unknown/quota": [
+    "billing_and_usage/quota": [
       {
         "resourceType": "quota",
         "domain": "billing_and_usage",
@@ -21672,7 +22018,7 @@
         "inline": false
       }
     ],
-    "unknown/secret-policy": [
+    "blindfold/secret-policy": [
       {
         "resourceType": "secret-policy",
         "domain": "blindfold",
@@ -21861,7 +22207,7 @@
         "inline": false
       }
     ],
-    "unknown/cdn-loadbalancer": [
+    "cdn/cdn-loadbalancer": [
       {
         "resourceType": "cdn-loadbalancer",
         "domain": "cdn",
@@ -22021,7 +22367,7 @@
         "inline": false
       }
     ],
-    "unknown/certificate-chain": [
+    "certificates/certificate-chain": [
       {
         "resourceType": "certificate-chain",
         "domain": "certificates",
@@ -22179,7 +22525,7 @@
         "inline": false
       }
     ],
-    "unknown/cloud-credentials": [
+    "cloud_infrastructure/cloud-credentials": [
       {
         "resourceType": "cloud-credentials",
         "domain": "cloud_infrastructure",
@@ -22338,7 +22684,7 @@
         "inline": false
       }
     ],
-    "unknown/virtual-k8s": [
+    "container_services/virtual-k8s": [
       {
         "resourceType": "virtual-k8s",
         "domain": "container_services",
@@ -22413,7 +22759,7 @@
         "inline": false
       }
     ],
-    "unknown/workload": [
+    "container_services/workload": [
       {
         "resourceType": "workload",
         "domain": "container_services",
@@ -22476,7 +22822,7 @@
         "inline": false
       }
     ],
-    "unknown/sensitive-data-policy": [
+    "data_and_privacy_security/sensitive-data-policy": [
       {
         "resourceType": "sensitive-data-policy",
         "domain": "data_and_privacy_security",
@@ -22834,7 +23180,7 @@
         "inline": false
       }
     ],
-    "unknown/dns-load-balancer": [
+    "dns/dns-load-balancer": [
       {
         "resourceType": "dns-load-balancer",
         "domain": "dns",
@@ -22915,7 +23261,7 @@
         "inline": false
       }
     ],
-    "unknown/dns-domain": [
+    "dns/dns-domain": [
       {
         "resourceType": "dns-domain",
         "domain": "dns",
@@ -22942,7 +23288,7 @@
         "inline": false
       }
     ],
-    "unknown/container-registry": [
+    "managed_kubernetes/container-registry": [
       {
         "resourceType": "container-registry",
         "domain": "managed_kubernetes",
@@ -22996,7 +23342,7 @@
         "inline": false
       }
     ],
-    "unknown/k8s-cluster-role": [
+    "managed_kubernetes/k8s-cluster-role": [
       {
         "resourceType": "k8s-cluster-role",
         "domain": "managed_kubernetes",
@@ -23500,7 +23846,7 @@
         "inline": false
       }
     ],
-    "unknown/network-connector": [
+    "network/network-connector": [
       {
         "resourceType": "network-connector",
         "domain": "network",
@@ -23685,7 +24031,7 @@
         "inline": false
       }
     ],
-    "unknown/virtual-network": [
+    "network/virtual-network": [
       {
         "resourceType": "virtual-network",
         "domain": "network",
@@ -23823,7 +24169,7 @@
         "inline": false
       }
     ],
-    "unknown/forward-proxy-policy": [
+    "network_security/forward-proxy-policy": [
       {
         "resourceType": "forward-proxy-policy",
         "domain": "network_security",
@@ -23877,7 +24223,7 @@
         "inline": false
       }
     ],
-    "unknown/network-firewall": [
+    "network_security/network-firewall": [
       {
         "resourceType": "network-firewall",
         "domain": "network_security",
@@ -23958,7 +24304,7 @@
         "inline": false
       }
     ],
-    "unknown/network-policy": [
+    "network_security/network-policy": [
       {
         "resourceType": "network-policy",
         "domain": "network_security",
@@ -24057,7 +24403,7 @@
         "inline": false
       }
     ],
-    "network_security/service-policy": [
+    "waf/service-policy": [
       {
         "resourceType": "service-policy",
         "domain": "network_security",
@@ -24240,7 +24586,7 @@
         "inline": false
       }
     ],
-    "unknown/rate-limiter": [
+    "rate_limiting/rate-limiter": [
       {
         "resourceType": "rate-limiter",
         "domain": "rate_limiting",
@@ -24348,7 +24694,7 @@
         "inline": false
       }
     ],
-    "unknown/endpoint": [
+    "service_mesh/endpoint": [
       {
         "resourceType": "endpoint",
         "domain": "service_mesh",
@@ -24402,7 +24748,7 @@
         "inline": false
       }
     ],
-    "unknown/site-mesh-group": [
+    "sites/site-mesh-group": [
       {
         "resourceType": "site-mesh-group",
         "domain": "service_mesh",
@@ -24735,7 +25081,7 @@
         "inline": false
       }
     ],
-    "sites/aws-vpc-site": [
+    "cloud_infrastructure/aws-vpc-site": [
       {
         "resourceType": "aws-vpc-site",
         "domain": "sites",
@@ -24762,7 +25108,7 @@
         "inline": false
       }
     ],
-    "sites/azure-vnet-site": [
+    "cloud_infrastructure/azure-vnet-site": [
       {
         "resourceType": "azure-vnet-site",
         "domain": "sites",
@@ -24789,7 +25135,7 @@
         "inline": false
       }
     ],
-    "sites/gcp-vpc-site": [
+    "cloud_infrastructure/gcp-vpc-site": [
       {
         "resourceType": "gcp-vpc-site",
         "domain": "sites",
@@ -24915,7 +25261,7 @@
         "inline": false
       }
     ],
-    "unknown/virtual-site": [
+    "sites/virtual-site": [
       {
         "resourceType": "virtual-site",
         "domain": "sites",
@@ -25044,7 +25390,7 @@
         "inline": false
       }
     ],
-    "unknown/alert-policy": [
+    "observability/alert-policy": [
       {
         "resourceType": "alert-policy",
         "domain": "statistics",
@@ -25125,7 +25471,7 @@
         "inline": false
       }
     ],
-    "unknown/log-receiver": [
+    "observability/log-receiver": [
       {
         "resourceType": "log-receiver",
         "domain": "statistics",
@@ -25976,7 +26322,7 @@
         "inline": false
       }
     ],
-    "network/healthcheck": [
+    "virtual/healthcheck": [
       {
         "resourceType": "healthcheck",
         "domain": "virtual",
@@ -26030,7 +26376,7 @@
         "inline": false
       }
     ],
-    "network/origin-pool": [
+    "virtual/origin-pool": [
       {
         "resourceType": "origin-pool",
         "domain": "virtual",
@@ -26084,7 +26430,7 @@
         "inline": false
       }
     ],
-    "unknown/rate-limiter-policy": [
+    "rate_limiting/rate-limiter-policy": [
       {
         "resourceType": "rate-limiter-policy",
         "domain": "virtual",

@@ -41,32 +41,20 @@ Ask Claude to help you work with Detected Domain resources:
 
 > "List all detected-domains in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape detected-domain list --namespace {namespace}
-```
-
-List all detected-domains
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create detected_domain -n <namespace> -i detected_domain.yaml
+xcsh shape create detected_domain -n <namespace> -i detected_domain.yaml
 
 # Get
-f5xcctl shape get detected_domain <name> -n <namespace>
+xcsh shape get detected_domain <name> -n <namespace>
 
 # List
-f5xcctl shape list detected_domain -n <namespace>
+xcsh shape list detected_domain -n <namespace>
 
 # Delete
-f5xcctl shape delete detected_domain <name> -n <namespace>
+xcsh shape delete detected_domain <name> -n <namespace>
 ```
 
 ## Terraform Resource

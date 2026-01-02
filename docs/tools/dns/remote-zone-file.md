@@ -34,32 +34,20 @@ Ask Claude to help you work with Remote Zone File resources:
 
 > "List all remote-zone-files in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config remote-zone-file list --namespace {namespace}
-```
-
-List all remote-zone-files
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create remote_zone_file -n <namespace> -i remote_zone_file.yaml
+xcsh dns create remote_zone_file -n <namespace> -i remote_zone_file.yaml
 
 # Get
-f5xcctl dns get remote_zone_file <name> -n <namespace>
+xcsh dns get remote_zone_file <name> -n <namespace>
 
 # List
-f5xcctl dns list remote_zone_file -n <namespace>
+xcsh dns list remote_zone_file -n <namespace>
 
 # Delete
-f5xcctl dns delete remote_zone_file <name> -n <namespace>
+xcsh dns delete remote_zone_file <name> -n <namespace>
 ```
 
 ## Terraform Resource

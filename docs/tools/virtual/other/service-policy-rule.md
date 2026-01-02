@@ -78,72 +78,20 @@ Ask Claude to help you work with Service Policy Rule resources:
 
 > "Get details of the service-policy-rule named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config service-policy-rule create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config service-policy-rule create {name} --namespace {namespace}
-```
-
-Create service-policy-rule
-
-### delete
-
-```bash
-f5xcctl config service-policy-rule delete {name} --namespace {namespace}
-```
-
-Delete service-policy-rule
-
-### get_specific
-
-```bash
-f5xcctl config service-policy-rule get {name} --namespace {namespace}
-```
-
-Get specific service-policy-rule
-
-### list_all
-
-```bash
-f5xcctl config service-policy-rule list --namespace {namespace}
-```
-
-List all service-policy-rules
-
-### update
-
-```bash
-f5xcctl config service-policy-rule update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update service-policy-rule
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create service_policy_rule -n <namespace> -i service_policy_rule.yaml
+xcsh virtual create service_policy_rule -n <namespace> -i service_policy_rule.yaml
 
 # Get
-f5xcctl virtual get service_policy_rule <name> -n <namespace>
+xcsh virtual get service_policy_rule <name> -n <namespace>
 
 # List
-f5xcctl virtual list service_policy_rule -n <namespace>
+xcsh virtual list service_policy_rule -n <namespace>
 
 # Delete
-f5xcctl virtual delete service_policy_rule <name> -n <namespace>
+xcsh virtual delete service_policy_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

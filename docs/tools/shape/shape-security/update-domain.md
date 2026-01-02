@@ -41,40 +41,20 @@ Ask Claude to help you work with Update Domain resources:
 
 > "Create a update-domain named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape update-domain create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape update-domain create {name} --namespace {namespace}
-```
-
-Create update-domain
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create update_domain -n <namespace> -i update_domain.yaml
+xcsh shape create update_domain -n <namespace> -i update_domain.yaml
 
 # Get
-f5xcctl shape get update_domain <name> -n <namespace>
+xcsh shape get update_domain <name> -n <namespace>
 
 # List
-f5xcctl shape list update_domain -n <namespace>
+xcsh shape list update_domain -n <namespace>
 
 # Delete
-f5xcctl shape delete update_domain <name> -n <namespace>
+xcsh shape delete update_domain <name> -n <namespace>
 ```
 
 ## Terraform Resource

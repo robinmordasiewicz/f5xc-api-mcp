@@ -45,40 +45,20 @@ Ask Claude to help you work with Delete resources:
 
 > "Create a delete named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web delete create {name} --namespace {namespace}
-```
-
-Create delete
-
-### file_based
-
-```bash
-f5xcctl web delete create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create delete -n <namespace> -i delete.yaml
+xcsh tenant_and_identity create delete -n <namespace> -i delete.yaml
 
 # Get
-f5xcctl tenant_and_identity get delete <name> -n <namespace>
+xcsh tenant_and_identity get delete <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list delete -n <namespace>
+xcsh tenant_and_identity list delete -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete delete <name> -n <namespace>
+xcsh tenant_and_identity delete delete <name> -n <namespace>
 ```
 
 ## Terraform Resource

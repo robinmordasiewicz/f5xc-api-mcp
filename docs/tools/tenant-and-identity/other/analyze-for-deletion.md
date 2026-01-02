@@ -33,40 +33,20 @@ Ask Claude to help you work with Analyze For Deletion resources:
 
 > "Create a analyze-for-deletion named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web analyze-for-deletion create {name} --namespace {namespace}
-```
-
-Create analyze-for-deletion
-
-### file_based
-
-```bash
-f5xcctl web analyze-for-deletion create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create analyze_for_deletion -n <namespace> -i analyze_for_deletion.yaml
+xcsh tenant_and_identity create analyze_for_deletion -n <namespace> -i analyze_for_deletion.yaml
 
 # Get
-f5xcctl tenant_and_identity get analyze_for_deletion <name> -n <namespace>
+xcsh tenant_and_identity get analyze_for_deletion <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list analyze_for_deletion -n <namespace>
+xcsh tenant_and_identity list analyze_for_deletion -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete analyze_for_deletion <name> -n <namespace>
+xcsh tenant_and_identity delete analyze_for_deletion <name> -n <namespace>
 ```
 
 ## Terraform Resource

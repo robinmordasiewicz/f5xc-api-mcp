@@ -42,40 +42,20 @@ Ask Claude to help you work with AffectedUser resources:
 
 > "Create a affectedUser named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape affectedUser create {name} --namespace {namespace}
-```
-
-Create affectedUser
-
-### file_based
-
-```bash
-f5xcctl shape affectedUser create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create affectedUser -n <namespace> -i affectedUser.yaml
+xcsh shape create affectedUser -n <namespace> -i affectedUser.yaml
 
 # Get
-f5xcctl shape get affectedUser <name> -n <namespace>
+xcsh shape get affectedUser <name> -n <namespace>
 
 # List
-f5xcctl shape list affectedUser -n <namespace>
+xcsh shape list affectedUser -n <namespace>
 
 # Delete
-f5xcctl shape delete affectedUser <name> -n <namespace>
+xcsh shape delete affectedUser <name> -n <namespace>
 ```
 
 ## Terraform Resource

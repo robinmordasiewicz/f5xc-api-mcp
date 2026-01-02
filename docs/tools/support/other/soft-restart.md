@@ -44,40 +44,20 @@ Ask Claude to help you work with Soft Restart resources:
 
 > "Create a soft-restart named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl operate soft-restart create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl operate soft-restart create {name} --namespace {namespace}
-```
-
-Create soft-restart
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create soft_restart -n <namespace> -i soft_restart.yaml
+xcsh support create soft_restart -n <namespace> -i soft_restart.yaml
 
 # Get
-f5xcctl support get soft_restart <name> -n <namespace>
+xcsh support get soft_restart <name> -n <namespace>
 
 # List
-f5xcctl support list soft_restart -n <namespace>
+xcsh support list soft_restart -n <namespace>
 
 # Delete
-f5xcctl support delete soft_restart <name> -n <namespace>
+xcsh support delete soft_restart <name> -n <namespace>
 ```
 
 ## Terraform Resource

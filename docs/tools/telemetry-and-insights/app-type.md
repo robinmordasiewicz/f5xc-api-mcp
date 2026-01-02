@@ -43,32 +43,20 @@ Ask Claude to help you work with App Type resources:
 
 > "List all app-types in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data app-type list --namespace {namespace}
-```
-
-List all app-types
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl telemetry_and_insights create app_type -n <namespace> -i app_type.yaml
+xcsh telemetry_and_insights create app_type -n <namespace> -i app_type.yaml
 
 # Get
-f5xcctl telemetry_and_insights get app_type <name> -n <namespace>
+xcsh telemetry_and_insights get app_type <name> -n <namespace>
 
 # List
-f5xcctl telemetry_and_insights list app_type -n <namespace>
+xcsh telemetry_and_insights list app_type -n <namespace>
 
 # Delete
-f5xcctl telemetry_and_insights delete app_type <name> -n <namespace>
+xcsh telemetry_and_insights delete app_type <name> -n <namespace>
 ```
 
 ## Terraform Resource

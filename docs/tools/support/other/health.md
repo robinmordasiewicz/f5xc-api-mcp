@@ -39,32 +39,20 @@ Ask Claude to help you work with Health resources:
 
 > "List all healths in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl operate health list --namespace {namespace}
-```
-
-List all healths
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create health -n <namespace> -i health.yaml
+xcsh support create health -n <namespace> -i health.yaml
 
 # Get
-f5xcctl support get health <name> -n <namespace>
+xcsh support get health <name> -n <namespace>
 
 # List
-f5xcctl support list health -n <namespace>
+xcsh support list health -n <namespace>
 
 # Delete
-f5xcctl support delete health <name> -n <namespace>
+xcsh support delete health <name> -n <namespace>
 ```
 
 ## Terraform Resource

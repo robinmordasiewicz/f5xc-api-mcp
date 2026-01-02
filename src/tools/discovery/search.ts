@@ -8,6 +8,7 @@
 import type { ToolIndexEntry, SearchResult, SearchOptions } from "./types.js";
 import { getToolIndex } from "./index-loader.js";
 import { getPrerequisiteResources } from "./dependencies.js";
+import { getResourceMetadata } from "../../generator/domain-metadata.js";
 
 /**
  * Normalize text for search matching
@@ -164,13 +165,26 @@ export function searchTools(query: string, options: SearchOptions = {}): SearchR
       const result: SearchResult = { tool, score, matchedTerms };
 
       // Phase B: Add prerequisite hints for create operations
+      // Enhanced with v1.0.84+ upstream dependency metadata
       if (includeDependencies && tool.operation === "create") {
         const prereqs = getPrerequisiteResources(tool.domain, tool.resource);
-        if (prereqs.length > 0) {
-          const resourceNames = prereqs.map((p) => `${p.domain}/${p.resourceType}`);
+        const resourceNames = prereqs.map((p) => `${p.domain}/${p.resourceType}`);
+
+        // Get rich dependency data from upstream specs (v1.0.84+)
+        const normalizedResource = tool.resource.replace(/-/g, "_");
+        const resourceMeta = getResourceMetadata(normalizedResource);
+
+        if (prereqs.length > 0 || resourceMeta) {
           result.prerequisites = {
-            resources: resourceNames,
-            hint: `To create ${tool.resource}, you first need: ${prereqs.map((p) => p.resourceType).join(", ")}`,
+            resources: resourceNames.length > 0 ? resourceNames : [],
+            hint:
+              prereqs.length > 0
+                ? `To create ${tool.resource}, you first need: ${prereqs.map((p) => p.resourceType).join(", ")}`
+                : `No strict prerequisites for ${tool.resource}`,
+            // v1.0.84+ rich metadata fields
+            required: resourceMeta?.dependencies.required ?? [],
+            optional: resourceMeta?.dependencies.optional ?? [],
+            relationshipHints: resourceMeta?.relationshipHints ?? [],
           };
         }
       }

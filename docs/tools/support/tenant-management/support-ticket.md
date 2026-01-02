@@ -37,40 +37,20 @@ Ask Claude to help you work with Support Ticket resources:
 
 > "Create a support-ticket named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web support-ticket create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web support-ticket create {name} --namespace {namespace}
-```
-
-Create support-ticket
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create support_ticket -n <namespace> -i support_ticket.yaml
+xcsh support create support_ticket -n <namespace> -i support_ticket.yaml
 
 # Get
-f5xcctl support get support_ticket <name> -n <namespace>
+xcsh support get support_ticket <name> -n <namespace>
 
 # List
-f5xcctl support list support_ticket -n <namespace>
+xcsh support list support_ticket -n <namespace>
 
 # Delete
-f5xcctl support delete support_ticket <name> -n <namespace>
+xcsh support delete support_ticket <name> -n <namespace>
 ```
 
 ## Terraform Resource

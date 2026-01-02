@@ -80,64 +80,20 @@ Ask Claude to help you work with Oidc Provider resources:
 
 > "Get details of the oidc-provider named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web oidc-provider create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web oidc-provider create {name} --namespace {namespace}
-```
-
-Create oidc-provider
-
-### get_specific
-
-```bash
-f5xcctl web oidc-provider get {name} --namespace {namespace}
-```
-
-Get specific oidc-provider
-
-### list_all
-
-```bash
-f5xcctl web oidc-provider list --namespace {namespace}
-```
-
-List all oidc-providers
-
-### update
-
-```bash
-f5xcctl web oidc-provider update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update oidc-provider
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create oidc_provider -n <namespace> -i oidc_provider.yaml
+xcsh tenant_and_identity create oidc_provider -n <namespace> -i oidc_provider.yaml
 
 # Get
-f5xcctl tenant_and_identity get oidc_provider <name> -n <namespace>
+xcsh tenant_and_identity get oidc_provider <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list oidc_provider -n <namespace>
+xcsh tenant_and_identity list oidc_provider -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete oidc_provider <name> -n <namespace>
+xcsh tenant_and_identity delete oidc_provider <name> -n <namespace>
 ```
 
 ## Terraform Resource

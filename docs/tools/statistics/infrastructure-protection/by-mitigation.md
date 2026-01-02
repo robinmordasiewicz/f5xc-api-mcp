@@ -42,40 +42,20 @@ Ask Claude to help you work with By Mitigation resources:
 
 > "Create a by-mitigation named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl infraprotect by-mitigation create {name} --namespace {namespace}
-```
-
-Create by-mitigation
-
-### file_based
-
-```bash
-f5xcctl infraprotect by-mitigation create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create by_mitigation -n <namespace> -i by_mitigation.yaml
+xcsh statistics create by_mitigation -n <namespace> -i by_mitigation.yaml
 
 # Get
-f5xcctl statistics get by_mitigation <name> -n <namespace>
+xcsh statistics get by_mitigation <name> -n <namespace>
 
 # List
-f5xcctl statistics list by_mitigation -n <namespace>
+xcsh statistics list by_mitigation -n <namespace>
 
 # Delete
-f5xcctl statistics delete by_mitigation <name> -n <namespace>
+xcsh statistics delete by_mitigation <name> -n <namespace>
 ```
 
 ## Terraform Resource

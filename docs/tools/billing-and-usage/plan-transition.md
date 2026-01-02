@@ -54,48 +54,20 @@ Ask Claude to help you work with Plan Transition resources:
 
 > "List all plan-transitions in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web plan-transition create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web plan-transition create {name} --namespace {namespace}
-```
-
-Create plan-transition
-
-### list_all
-
-```bash
-f5xcctl default plan-transition list --namespace {namespace}
-```
-
-List all plan-transitions
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create plan_transition -n <namespace> -i plan_transition.yaml
+xcsh billing_and_usage create plan_transition -n <namespace> -i plan_transition.yaml
 
 # Get
-f5xcctl billing_and_usage get plan_transition <name> -n <namespace>
+xcsh billing_and_usage get plan_transition <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list plan_transition -n <namespace>
+xcsh billing_and_usage list plan_transition -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete plan_transition <name> -n <namespace>
+xcsh billing_and_usage delete plan_transition <name> -n <namespace>
 ```
 
 ## Terraform Resource

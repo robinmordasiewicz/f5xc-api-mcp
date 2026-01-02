@@ -1,6 +1,6 @@
 {
-  "version": "1.0.82",
-  "timestamp": "2025-12-31T19:31:31.103341+00:00",
+  "version": "1.0.84",
+  "timestamp": "2026-01-02T02:13:13.490227+00:00",
   "specifications": [
     {
       "domain": "admin_console_and_ui",
@@ -34,6 +34,38 @@
       "icon": "🖥️",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238B5CF6'%3E%3Cpath d='M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "ui_component",
+          "description": "UI component for console customization",
+          "description_short": "UI component",
+          "tier": "Standard",
+          "icon": "🎨",
+          "category": "Other",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "static_asset",
+          "description": "Static asset for UI resources",
+          "description_short": "Static asset",
+          "tier": "Standard",
+          "icon": "📁",
+          "category": "Other",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "ui_component",
         "static_asset"
       ]
@@ -69,6 +101,61 @@
       "icon": "🔐",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EF4444'%3E%3Cpath d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "api_definition",
+          "description": "API schema definition for discovery and protection",
+          "description_short": "API definition",
+          "tier": "Advanced",
+          "icon": "📄",
+          "category": "API Management",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "api_endpoint"
+            ]
+          },
+          "relationship_hints": [
+            "api_endpoint: Endpoints defined by this API"
+          ]
+        },
+        {
+          "name": "api_endpoint",
+          "description": "Individual API endpoint configuration and protection",
+          "description_short": "API endpoint",
+          "tier": "Advanced",
+          "icon": "🔌",
+          "category": "API Management",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "api_rate_limit"
+            ]
+          },
+          "relationship_hints": [
+            "api_rate_limit: Rate limiting for this endpoint"
+          ]
+        },
+        {
+          "name": "api_rate_limit",
+          "description": "API rate limiting configuration for traffic control",
+          "description_short": "API rate limit",
+          "tier": "Advanced",
+          "icon": "⏱️",
+          "category": "API Management",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "api_definition",
         "api_endpoint",
         "api_rate_limit"
@@ -157,6 +244,53 @@
       "icon": "🔑",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FBBF24'%3E%3Cpath d='M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "authentication_policy",
+          "description": "Authentication policy for user and API access",
+          "description_short": "Auth policy",
+          "tier": "Standard",
+          "icon": "🔐",
+          "category": "Identity",
+          "supports_logs": true,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "token",
+          "description": "API token for programmatic access",
+          "description_short": "Token",
+          "tier": "Standard",
+          "icon": "🎫",
+          "category": "Identity",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "api_credential",
+          "description": "API credential for service authentication",
+          "description_short": "API credential",
+          "tier": "Standard",
+          "icon": "🔑",
+          "category": "Identity",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "authentication_policy",
         "token",
         "api_credential"
@@ -193,6 +327,38 @@
       "icon": "🏢",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EF4444'%3E%3Cpath d='M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "bigip_pool",
+          "description": "BIG-IP pool for load balancing integration",
+          "description_short": "BIG-IP pool",
+          "tier": "Advanced",
+          "icon": "🎯",
+          "category": "Load Balancing",
+          "supports_logs": false,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "bigip_device",
+          "description": "BIG-IP device registration and management",
+          "description_short": "BIG-IP device",
+          "tier": "Advanced",
+          "icon": "🖥️",
+          "category": "Infrastructure",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "bigip_pool",
         "bigip_device"
       ]
@@ -229,6 +395,53 @@
       "icon": "💳",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310B981'%3E%3Cpath d='M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "subscription",
+          "description": "Subscription for service entitlements",
+          "description_short": "Subscription",
+          "tier": "Standard",
+          "icon": "💳",
+          "category": "Other",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "quota",
+          "description": "Resource quota for usage limits",
+          "description_short": "Quota",
+          "tier": "Standard",
+          "icon": "📊",
+          "category": "Other",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "usage_report",
+          "description": "Usage report for consumption tracking",
+          "description_short": "Usage report",
+          "tier": "Standard",
+          "icon": "📈",
+          "category": "Other",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "subscription",
         "quota",
         "usage_report"
@@ -265,6 +478,53 @@
       "icon": "🔏",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366F1'%3E%3Cpath d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h2c0-1.66 1.34-3 3-3s3 1.34 3 3v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "blindfold_secret",
+          "description": "Encrypted secret using Blindfold encryption",
+          "description_short": "Blindfold secret",
+          "tier": "Standard",
+          "icon": "🔐",
+          "category": "Security",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "secret_policy",
+          "description": "Secret management policy configuration",
+          "description_short": "Secret policy",
+          "tier": "Standard",
+          "icon": "📋",
+          "category": "Security",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "policy_document",
+          "description": "Policy document for access control definitions",
+          "description_short": "Policy document",
+          "tier": "Standard",
+          "icon": "📄",
+          "category": "Security",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "blindfold_secret",
         "secret_policy",
         "policy_document"
@@ -303,6 +563,38 @@
       "icon": "🦠",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EF4444'%3E%3Cpath d='M19.5 5.5 18 4l-1.5 1.5L18 7l1.5-1.5zM12 2v3m0 14v3m10-10h-3M5 12H2m15.5 6.5L18 20l1.5-1.5L18 17l-1.5 1.5zm-11 0L6 20l-1.5-1.5L6 17l-1.5 1.5zm0-11L6 4l-1.5 1.5L6 7 4.5 5.5zM12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "bot_defense_instance",
+          "description": "Bot defense instance for deployment",
+          "description_short": "Bot defense instance",
+          "tier": "Advanced",
+          "icon": "🤖",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "threat_category",
+          "description": "Threat category for classification",
+          "description_short": "Threat category",
+          "tier": "Advanced",
+          "icon": "🎯",
+          "category": "Security",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "bot_defense_instance",
         "threat_category"
       ]
@@ -337,6 +629,42 @@
       "icon": "🚀",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F97316'%3E%3Cpath d='M12 2.5s4.5 2.04 4.5 10c0 3.22-1.67 5.6-3.25 7.08L12 22l-1.25-2.42C9.17 18.1 7.5 15.72 7.5 12.5c0-7.96 4.5-10 4.5-10zm0 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 14.5c0 1.22.57 2.36 1.44 3.22l1.76-1.76c-.43-.43-.7-1.01-.7-1.66 0-.25.04-.49.1-.72L5.21 12.1c-.13.77-.21 1.58-.21 2.4zm14 0c0-.82-.08-1.63-.21-2.4l-2.39 1.48c.06.23.1.47.1.72 0 .65-.27 1.23-.7 1.66l1.76 1.76c.87-.86 1.44-2 1.44-3.22z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "cdn_loadbalancer",
+          "description": "Content delivery network load balancer for edge caching",
+          "description_short": "CDN load balancer",
+          "tier": "Standard",
+          "icon": "🌍",
+          "category": "Load Balancing",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "cdn_origin_pool"
+            ],
+            "optional": []
+          },
+          "relationship_hints": [
+            "cdn_origin_pool: Origin servers for CDN content"
+          ]
+        },
+        {
+          "name": "cdn_origin_pool",
+          "description": "Origin server pool for CDN content sourcing",
+          "description_short": "CDN origin pool",
+          "tier": "Standard",
+          "icon": "🎯",
+          "category": "Load Balancing",
+          "supports_logs": false,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "cdn_loadbalancer",
         "cdn_origin_pool"
       ]
@@ -373,6 +701,53 @@
       "icon": "🔧",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F59E0B'%3E%3Cpath d='M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "site_config",
+          "description": "Site configuration for edge node settings",
+          "description_short": "Site config",
+          "tier": "Standard",
+          "icon": "⚙️",
+          "category": "Infrastructure",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "fleet_config",
+          "description": "Fleet configuration for multi-site management",
+          "description_short": "Fleet config",
+          "tier": "Standard",
+          "icon": "🚀",
+          "category": "Infrastructure",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "registration_token",
+          "description": "Registration token for site onboarding",
+          "description_short": "Registration token",
+          "tier": "Standard",
+          "icon": "🎫",
+          "category": "Infrastructure",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "site_config",
         "fleet_config",
         "registration_token"
@@ -411,6 +786,53 @@
       "icon": "📜",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2314B8A6'%3E%3Cpath d='M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "certificate",
+          "description": "TLS certificate for secure HTTPS connections",
+          "description_short": "Certificate",
+          "tier": "Standard",
+          "icon": "📜",
+          "category": "Security",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "ca_certificate",
+          "description": "Certificate authority certificate for trust chain",
+          "description_short": "CA certificate",
+          "tier": "Standard",
+          "icon": "📜",
+          "category": "Security",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "certificate_chain",
+          "description": "Certificate chain for complete trust verification",
+          "description_short": "Certificate chain",
+          "tier": "Standard",
+          "icon": "🔗",
+          "category": "Security",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "certificate",
         "ca_certificate",
         "certificate_chain"
@@ -448,6 +870,80 @@
       "icon": "☁️",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2306B6D4'%3E%3Cpath d='M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "aws_vpc_site",
+          "description": "AWS VPC site deployment with edge node provisioning",
+          "description_short": "AWS VPC site",
+          "tier": "Standard",
+          "icon": "☁️",
+          "category": "Infrastructure",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "cloud_credentials"
+            ],
+            "optional": []
+          },
+          "relationship_hints": [
+            "cloud_credentials: AWS authentication for deployment"
+          ]
+        },
+        {
+          "name": "azure_vnet_site",
+          "description": "Azure VNet site deployment with edge node provisioning",
+          "description_short": "Azure VNet site",
+          "tier": "Standard",
+          "icon": "☁️",
+          "category": "Infrastructure",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "cloud_credentials"
+            ],
+            "optional": []
+          },
+          "relationship_hints": [
+            "cloud_credentials: Azure authentication for deployment"
+          ]
+        },
+        {
+          "name": "gcp_vpc_site",
+          "description": "Google Cloud VPC site deployment with edge node provisioning",
+          "description_short": "GCP VPC site",
+          "tier": "Standard",
+          "icon": "☁️",
+          "category": "Infrastructure",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "cloud_credentials"
+            ],
+            "optional": []
+          },
+          "relationship_hints": [
+            "cloud_credentials: GCP authentication for deployment"
+          ]
+        },
+        {
+          "name": "cloud_credentials",
+          "description": "Cloud provider authentication credentials for site deployment",
+          "description_short": "Cloud credentials",
+          "tier": "Standard",
+          "icon": "🔑",
+          "category": "Infrastructure",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "aws_vpc_site",
         "azure_vnet_site",
         "gcp_vpc_site",
@@ -487,6 +983,61 @@
       "icon": "📦",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238B5CF6'%3E%3Cpath d='M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9zM12 4.15L5 8.09v7.82l7 3.94 7-3.94V8.09l-7-3.94z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "virtual_k8s",
+          "description": "Virtual Kubernetes namespace for container workloads",
+          "description_short": "Virtual K8s",
+          "tier": "Advanced",
+          "icon": "☸️",
+          "category": "Container",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "workload"
+            ]
+          },
+          "relationship_hints": [
+            "workload: Container workloads in this namespace"
+          ]
+        },
+        {
+          "name": "workload",
+          "description": "Container workload deployment configuration",
+          "description_short": "Workload",
+          "tier": "Advanced",
+          "icon": "📦",
+          "category": "Container",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "virtual_k8s"
+            ],
+            "optional": []
+          },
+          "relationship_hints": [
+            "virtual_k8s: Namespace for workload deployment"
+          ]
+        },
+        {
+          "name": "pod_security_policy",
+          "description": "Pod security policy for container runtime constraints",
+          "description_short": "Pod security policy",
+          "tier": "Advanced",
+          "icon": "🔒",
+          "category": "Container",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "virtual_k8s",
         "workload",
         "pod_security_policy"
@@ -525,6 +1076,38 @@
       "icon": "🔐",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EF4444'%3E%3Cpath d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "sensitive_data_policy",
+          "description": "Sensitive data policy for PII protection",
+          "description_short": "Sensitive data policy",
+          "tier": "Advanced",
+          "icon": "🔐",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "data_classification",
+          "description": "Data classification for content categorization",
+          "description_short": "Data classification",
+          "tier": "Advanced",
+          "icon": "🏷️",
+          "category": "Security",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "sensitive_data_policy",
         "data_classification"
       ]
@@ -560,6 +1143,38 @@
       "icon": "🧠",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A855F7'%3E%3Cpath d='M15.5 14l-1.34-4H9.84L8.5 14H6.09l4.01-10h3.8l4.01 10H15.5zm-4.5-5.4h2l.9-2.35.8 2.35h1.8l-1.45 1.05.55 1.7-1.4-1.02-1.4 1.02.55-1.7L11 8.6z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "analytics_query",
+          "description": "Analytics query for data analysis",
+          "description_short": "Analytics query",
+          "tier": "Standard",
+          "icon": "📊",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "data_export",
+          "description": "Data export configuration for reporting",
+          "description_short": "Data export",
+          "tier": "Standard",
+          "icon": "📤",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "analytics_query",
         "data_export"
       ]
@@ -594,6 +1209,42 @@
       "icon": "🛑",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23DC2626'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "ddos_protection",
+          "description": "DDoS protection configuration for traffic scrubbing",
+          "description_short": "DDoS protection",
+          "tier": "Advanced",
+          "icon": "🛡️",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "ddos_mitigation_rule"
+            ]
+          },
+          "relationship_hints": [
+            "ddos_mitigation_rule: Custom mitigation rules"
+          ]
+        },
+        {
+          "name": "ddos_mitigation_rule",
+          "description": "DDoS mitigation rule for attack response",
+          "description_short": "DDoS mitigation rule",
+          "tier": "Advanced",
+          "icon": "📋",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "ddos_protection",
         "ddos_mitigation_rule"
       ]
@@ -629,6 +1280,61 @@
       "icon": "🌐",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "dns_zone",
+          "description": "Authoritative DNS zone with record management capabilities",
+          "description_short": "DNS zone",
+          "tier": "Standard",
+          "icon": "🌐",
+          "category": "DNS",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "dns_load_balancer"
+            ]
+          },
+          "relationship_hints": [
+            "dns_load_balancer: Geographic or weighted DNS routing"
+          ]
+        },
+        {
+          "name": "dns_domain",
+          "description": "DNS domain delegation and configuration settings",
+          "description_short": "DNS domain",
+          "tier": "Standard",
+          "icon": "🔗",
+          "category": "DNS",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "dns_load_balancer",
+          "description": "DNS-based traffic distribution with geographic routing and failover",
+          "description_short": "DNS load balancer",
+          "tier": "Standard",
+          "icon": "⚖️",
+          "category": "DNS",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "dns_zone"
+            ],
+            "optional": []
+          },
+          "relationship_hints": [
+            "dns_zone: Parent zone for DNS records"
+          ]
+        }
+      ],
+      "primary_resources_simple": [
         "dns_zone",
         "dns_domain",
         "dns_load_balancer"
@@ -713,6 +1419,42 @@
       "icon": "🤖",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366F1'%3E%3Cpath d='M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 1.98-.88 4.55-2.64 6.29-3.51 3.48-9.21 3.48-12.72 0-3.5-3.47-3.53-9.11-.02-12.58s9.14-3.47 12.65 0L21 3v7.12zM12.5 8v4.25l3.5 2.08-.72 1.21L11 13V8h1.5z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "ai_policy",
+          "description": "AI policy for generative AI traffic control",
+          "description_short": "AI policy",
+          "tier": "Advanced",
+          "icon": "🤖",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "ai_gateway",
+          "description": "AI gateway for LLM API management",
+          "description_short": "AI gateway",
+          "tier": "Advanced",
+          "icon": "🚀",
+          "category": "API Management",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "ai_policy"
+            ]
+          },
+          "relationship_hints": [
+            "ai_policy: Policy for AI traffic control"
+          ]
+        }
+      ],
+      "primary_resources_simple": [
         "ai_policy",
         "ai_gateway"
       ]
@@ -750,6 +1492,57 @@
       "icon": "⚙️",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364748B'%3E%3Cpath d='M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "mk8s_cluster",
+          "description": "Managed Kubernetes cluster configuration",
+          "description_short": "MK8s cluster",
+          "tier": "Advanced",
+          "icon": "☸️",
+          "category": "Container",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "k8s_cluster_role"
+            ]
+          },
+          "relationship_hints": [
+            "k8s_cluster_role: RBAC roles for cluster access"
+          ]
+        },
+        {
+          "name": "k8s_cluster_role",
+          "description": "Kubernetes cluster RBAC role configuration",
+          "description_short": "K8s cluster role",
+          "tier": "Advanced",
+          "icon": "👤",
+          "category": "Container",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "container_registry",
+          "description": "Container image registry for workload images",
+          "description_short": "Container registry",
+          "tier": "Advanced",
+          "icon": "📦",
+          "category": "Container",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "mk8s_cluster",
         "k8s_cluster_role",
         "container_registry"
@@ -787,6 +1580,38 @@
       "icon": "🏪",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F97316'%3E%3Cpath d='M18.36 9l.6 3H5.04l.6-3h12.72M20 4H4v2h16V4zm0 3H4l-1 5v2h1v6h10v-6h4v6h2v-6h1v-2l-1-5zM6 18v-4h6v4H6z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "marketplace_item",
+          "description": "Marketplace item for service catalog",
+          "description_short": "Marketplace item",
+          "tier": "Standard",
+          "icon": "🛒",
+          "category": "Other",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "subscription",
+          "description": "Subscription for service entitlements",
+          "description_short": "Subscription",
+          "tier": "Standard",
+          "icon": "💳",
+          "category": "Other",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "marketplace_item",
         "subscription"
       ]
@@ -826,6 +1651,65 @@
       "icon": "🔌",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233B82F6'%3E%3Cpath d='M16 9v4.66l-3.5 3.51V19h-1v-1.83L8 13.65V9h8m0-6h-2v4h-4V3H8v4H6v6.5l3.5 3.5v5h5v-5l3.5-3.5V7h-2V3z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "virtual_network",
+          "description": "Virtual network for site connectivity and segmentation",
+          "description_short": "Virtual network",
+          "tier": "Standard",
+          "icon": "🔗",
+          "category": "Networking",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "network_connector"
+            ]
+          },
+          "relationship_hints": [
+            "network_connector: Connect to external networks"
+          ]
+        },
+        {
+          "name": "network_connector",
+          "description": "Network connector for site-to-site or cloud connectivity",
+          "description_short": "Network connector",
+          "tier": "Advanced",
+          "icon": "🔌",
+          "category": "Networking",
+          "supports_logs": false,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "virtual_network"
+            ],
+            "optional": []
+          },
+          "relationship_hints": [
+            "virtual_network: Network to connect"
+          ]
+        },
+        {
+          "name": "site_mesh_group",
+          "description": "Mesh connectivity configuration between multiple sites",
+          "description_short": "Site mesh group",
+          "tier": "Advanced",
+          "icon": "🕸️",
+          "category": "Infrastructure",
+          "supports_logs": false,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "site"
+            ],
+            "optional": []
+          },
+          "relationship_hints": [
+            "site: Sites to include in mesh connectivity"
+          ]
+        }
+      ],
+      "primary_resources_simple": [
         "virtual_network",
         "network_connector",
         "site_mesh_group"
@@ -864,6 +1748,53 @@
       "icon": "🔒",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F59E0B'%3E%3Cpath d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "network_policy",
+          "description": "Network security policy for traffic filtering",
+          "description_short": "Network policy",
+          "tier": "Standard",
+          "icon": "🔒",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "forward_proxy_policy",
+          "description": "Forward proxy policy for outbound traffic control",
+          "description_short": "Forward proxy policy",
+          "tier": "Advanced",
+          "icon": "➡️",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "network_firewall",
+          "description": "Network firewall for layer 3/4 traffic protection",
+          "description_short": "Network firewall",
+          "tier": "Standard",
+          "icon": "🧱",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "network_policy",
         "forward_proxy_policy",
         "network_firewall"
@@ -899,6 +1830,42 @@
       "icon": "🟢",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2322C55E'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "nginx_config",
+          "description": "NGINX configuration for proxy settings",
+          "description_short": "NGINX config",
+          "tier": "Advanced",
+          "icon": "⚙️",
+          "category": "Load Balancing",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "nginx_upstream"
+            ]
+          },
+          "relationship_hints": [
+            "nginx_upstream: Backend server configuration"
+          ]
+        },
+        {
+          "name": "nginx_upstream",
+          "description": "NGINX upstream for backend server pools",
+          "description_short": "NGINX upstream",
+          "tier": "Advanced",
+          "icon": "🎯",
+          "category": "Load Balancing",
+          "supports_logs": false,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "nginx_config",
         "nginx_upstream"
       ]
@@ -933,6 +1900,46 @@
       "icon": "🗄️",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2378716C'%3E%3Cpath d='M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 20H4v-8h4v8zm6 0h-4v-8h4v8zm6 0h-4v-8h4v8zm0-10H4V4h16v6z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "object_store",
+          "description": "Object store for blob storage management",
+          "description_short": "Object store",
+          "tier": "Standard",
+          "icon": "💾",
+          "category": "Storage",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "bucket"
+            ]
+          },
+          "relationship_hints": [
+            "bucket: Storage buckets in this store"
+          ]
+        },
+        {
+          "name": "bucket",
+          "description": "Storage bucket for object storage",
+          "description_short": "Bucket",
+          "tier": "Standard",
+          "icon": "📦",
+          "category": "Storage",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "object_store"
+            ],
+            "optional": []
+          },
+          "relationship_hints": [
+            "object_store: Parent object store"
+          ]
+        }
+      ],
+      "primary_resources_simple": [
         "object_store",
         "bucket"
       ]
@@ -968,6 +1975,53 @@
       "icon": "📊",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233B82F6'%3E%3Cpath d='M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "log_receiver",
+          "description": "Log receiver for centralized log collection",
+          "description_short": "Log receiver",
+          "tier": "Standard",
+          "icon": "📝",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "metrics_receiver",
+          "description": "Metrics receiver for centralized metrics collection",
+          "description_short": "Metrics receiver",
+          "tier": "Standard",
+          "icon": "📊",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "alert_policy",
+          "description": "Alert policy for monitoring and notification",
+          "description_short": "Alert policy",
+          "tier": "Standard",
+          "icon": "🔔",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "log_receiver",
         "metrics_receiver",
         "alert_policy"
@@ -1004,6 +2058,57 @@
       "icon": "⏱️",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F97316'%3E%3Cpath d='M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61 1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "rate_limiter",
+          "description": "Rate limiter for traffic throttling and protection",
+          "description_short": "Rate limiter",
+          "tier": "Standard",
+          "icon": "⏱️",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "rate_limiter_policy"
+            ]
+          },
+          "relationship_hints": [
+            "rate_limiter_policy: Detailed rate limiting rules"
+          ]
+        },
+        {
+          "name": "rate_limiter_policy",
+          "description": "Rate limiter policy with detailed throttling rules",
+          "description_short": "Rate limiter policy",
+          "tier": "Standard",
+          "icon": "📋",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "rate_limit_threshold",
+          "description": "Rate limit threshold configuration for traffic control",
+          "description_short": "Rate limit threshold",
+          "tier": "Standard",
+          "icon": "📊",
+          "category": "Security",
+          "supports_logs": false,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "rate_limiter",
         "rate_limiter_policy",
         "rate_limit_threshold"
@@ -1042,6 +2147,38 @@
       "icon": "🚨",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23DC2626'%3E%3Cpath d='M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm6 9.09c0 4-2.55 7.7-6 8.83-3.45-1.13-6-4.82-6-8.83V6.31l6-2.25 6 2.25v4.78zM11 7h2v6h-2zm0 8h2v2h-2z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "mitigation_policy",
+          "description": "Mitigation policy for incident response",
+          "description_short": "Mitigation policy",
+          "tier": "Advanced",
+          "icon": "🛡️",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "malicious_user_rule",
+          "description": "Malicious user rule for threat mitigation",
+          "description_short": "Malicious user rule",
+          "tier": "Advanced",
+          "icon": "🚨",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "mitigation_policy",
         "malicious_user_rule"
       ]
@@ -1078,6 +2215,57 @@
       "icon": "🕸️",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A855F7'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "endpoint",
+          "description": "Service mesh endpoint for traffic routing",
+          "description_short": "Endpoint",
+          "tier": "Advanced",
+          "icon": "🎯",
+          "category": "Networking",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "origin_pool",
+          "description": "Backend server group for load balancer traffic distribution",
+          "description_short": "Origin pool",
+          "tier": "Standard",
+          "icon": "🎯",
+          "category": "Load Balancing",
+          "supports_logs": false,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "healthcheck"
+            ]
+          },
+          "relationship_hints": [
+            "healthcheck: Monitor origin server health"
+          ]
+        },
+        {
+          "name": "service_discovery",
+          "description": "Service discovery configuration for dynamic endpoints",
+          "description_short": "Service discovery",
+          "tier": "Advanced",
+          "icon": "🔍",
+          "category": "Networking",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "endpoint",
         "origin_pool",
         "service_discovery"
@@ -1114,6 +2302,38 @@
       "icon": "🎭",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A855F7'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9c.83 0 1.5-.67 1.5-1.5S7.83 8 7 8s-1.5.67-1.5 1.5S6.17 11 7 11zm10 0c.83 0 1.5-.67 1.5-1.5S17.83 8 17 8s-1.5.67-1.5 1.5.67 1.5 1.5 1.5zM12 17.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "shape_app_firewall",
+          "description": "Shape application firewall for advanced protection",
+          "description_short": "Shape WAF",
+          "tier": "Advanced",
+          "icon": "🛡️",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "shape_recognizer",
+          "description": "Shape recognizer for traffic pattern analysis",
+          "description_short": "Shape recognizer",
+          "tier": "Advanced",
+          "icon": "🔍",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "shape_app_firewall",
         "shape_recognizer"
       ]
@@ -1152,6 +2372,61 @@
       "icon": "🌍",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310B981'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "site",
+          "description": "Physical or cloud deployment location for edge services",
+          "description_short": "Site",
+          "tier": "Standard",
+          "icon": "🏢",
+          "category": "Infrastructure",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "virtual_site"
+            ]
+          },
+          "relationship_hints": [
+            "virtual_site: Logical grouping of physical sites"
+          ]
+        },
+        {
+          "name": "virtual_site",
+          "description": "Logical grouping of sites using label selectors",
+          "description_short": "Virtual site",
+          "tier": "Standard",
+          "icon": "🏷️",
+          "category": "Infrastructure",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "site_mesh_group",
+          "description": "Mesh connectivity configuration between multiple sites",
+          "description_short": "Site mesh group",
+          "tier": "Advanced",
+          "icon": "🕸️",
+          "category": "Infrastructure",
+          "supports_logs": false,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "site"
+            ],
+            "optional": []
+          },
+          "relationship_hints": [
+            "site: Sites to include in mesh connectivity"
+          ]
+        }
+      ],
+      "primary_resources_simple": [
         "site",
         "virtual_site",
         "site_mesh_group"
@@ -1243,6 +2518,42 @@
       "icon": "📈",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310B981'%3E%3Cpath d='M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "dashboard",
+          "description": "Dashboard for metrics visualization",
+          "description_short": "Dashboard",
+          "tier": "Standard",
+          "icon": "📊",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "saved_query"
+            ]
+          },
+          "relationship_hints": [
+            "saved_query: Queries displayed on dashboard"
+          ]
+        },
+        {
+          "name": "saved_query",
+          "description": "Saved query for metrics and log analysis",
+          "description_short": "Saved query",
+          "tier": "Standard",
+          "icon": "🔍",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "dashboard",
         "saved_query"
       ]
@@ -1277,6 +2588,53 @@
       "icon": "🎫",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2314B8A6'%3E%3Cpath d='M22 10V6c0-1.11-.9-2-2-2H4c-1.1 0-1.99.89-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2zm-2-1.46c-1.19.69-2 1.99-2 3.46s.81 2.77 2 3.46V18H4v-2.54c1.19-.69 2-1.99 2-3.46 0-1.48-.8-2.77-1.99-3.46L4 6h16v2.54z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "support_case",
+          "description": "Support case for issue tracking and resolution",
+          "description_short": "Support case",
+          "tier": "Standard",
+          "icon": "🎫",
+          "category": "Other",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "alert",
+          "description": "System alert for operational notifications",
+          "description_short": "Alert",
+          "tier": "Standard",
+          "icon": "🔔",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "audit_log",
+          "description": "Audit log for compliance and security tracking",
+          "description_short": "Audit log",
+          "tier": "Standard",
+          "icon": "📝",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "support_case",
         "alert",
         "audit_log"
@@ -1312,6 +2670,38 @@
       "icon": "📉",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F59E0B'%3E%3Cpath d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "telemetry_receiver",
+          "description": "Telemetry receiver for data collection",
+          "description_short": "Telemetry receiver",
+          "tier": "Standard",
+          "icon": "📡",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "insight_query",
+          "description": "Insight query for analytics",
+          "description_short": "Insight query",
+          "tier": "Standard",
+          "icon": "🔍",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "telemetry_receiver",
         "insight_query"
       ]
@@ -1349,6 +2739,53 @@
       "icon": "🪪",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2306B6D4'%3E%3Cpath d='M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-9 3.5c1.38 0 2.5 1.12 2.5 2.5S12.38 12.5 11 12.5 8.5 11.38 8.5 10s1.12-2.5 2.5-2.5zm5 10.5H6v-1.25c0-1.66 3.33-2.5 5-2.5s5 .84 5 2.5V18zm2-4h-4v-2h4v2zm0-4h-4V8h4v2z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "user_profile",
+          "description": "User profile with personal settings",
+          "description_short": "User profile",
+          "tier": "Standard",
+          "icon": "👤",
+          "category": "Identity",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "session",
+          "description": "User session for authentication state",
+          "description_short": "Session",
+          "tier": "Standard",
+          "icon": "🔑",
+          "category": "Identity",
+          "supports_logs": true,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "otp_policy",
+          "description": "OTP policy for multi-factor authentication",
+          "description_short": "OTP policy",
+          "tier": "Standard",
+          "icon": "🔐",
+          "category": "Identity",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "user_profile",
         "session",
         "otp_policy"
@@ -1385,6 +2822,23 @@
       "icon": "⚠️",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FBBF24'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "threat_campaign_policy",
+          "description": "Threat campaign detection and mitigation policy",
+          "description_short": "Threat campaign policy",
+          "tier": "Advanced",
+          "icon": "🎯",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "threat_campaign_policy"
       ]
     },
@@ -1420,6 +2874,57 @@
       "icon": "👥",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366F1'%3E%3Cpath d='M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "user",
+          "description": "User account for platform access",
+          "description_short": "User",
+          "tier": "Standard",
+          "icon": "👤",
+          "category": "Identity",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "user_role"
+            ]
+          },
+          "relationship_hints": [
+            "user_role: Role assignment for user permissions"
+          ]
+        },
+        {
+          "name": "user_role",
+          "description": "User role for permission management",
+          "description_short": "User role",
+          "tier": "Standard",
+          "icon": "👔",
+          "category": "Identity",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "namespace_role",
+          "description": "Namespace-scoped role for fine-grained permissions",
+          "description_short": "Namespace role",
+          "tier": "Standard",
+          "icon": "📁",
+          "category": "Identity",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "user",
         "user_role",
         "namespace_role"
@@ -1462,6 +2967,94 @@
       "icon": "⚖️",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234F46E5'%3E%3Cpath d='M12 3c-1.27 0-2.4.8-2.82 2H3v2h1.95L2 14c-.47 2 1 4 4 4s4.47-2 4-4L7.05 7H9.1c.42 1.2 1.55 2 2.9 2s2.4-.8 2.82-2h2.13L14 14c-.47 2 1 4 4 4s4.47-2 4-4l-2.95-7H21V5h-6.18c-.42-1.2-1.55-2-2.82-2zm-6 12.5c-.73 0-1.45-.3-1.97-.82L6 10l1.97 4.68c-.52.52-1.24.82-1.97.82zm12 0c-.73 0-1.45-.3-1.97-.82L18 10l1.97 4.68c-.52.52-1.24.82-1.97.82z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "http_loadbalancer",
+          "description": "Layer 7 HTTP/HTTPS load balancer for application traffic distribution",
+          "description_short": "HTTP load balancer",
+          "tier": "Standard",
+          "icon": "🌐",
+          "category": "Load Balancing",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "origin_pool"
+            ],
+            "optional": [
+              "healthcheck",
+              "app_firewall",
+              "certificate",
+              "rate_limiter",
+              "service_policy",
+              "bot_defense_policy"
+            ]
+          },
+          "relationship_hints": [
+            "origin_pool: Backend servers for traffic distribution",
+            "app_firewall: WAF protection (requires WAAP subscription)",
+            "healthcheck: Monitor backend availability",
+            "certificate: TLS termination for HTTPS",
+            "rate_limiter: Protect against traffic spikes"
+          ]
+        },
+        {
+          "name": "tcp_loadbalancer",
+          "description": "Layer 4 TCP/UDP load balancer for non-HTTP protocol traffic",
+          "description_short": "TCP load balancer",
+          "tier": "Standard",
+          "icon": "🔌",
+          "category": "Load Balancing",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [
+              "origin_pool"
+            ],
+            "optional": [
+              "healthcheck"
+            ]
+          },
+          "relationship_hints": [
+            "origin_pool: Backend servers for TCP/UDP traffic",
+            "healthcheck: Monitor origin server health"
+          ]
+        },
+        {
+          "name": "origin_pool",
+          "description": "Backend server group for load balancer traffic distribution",
+          "description_short": "Origin pool",
+          "tier": "Standard",
+          "icon": "🎯",
+          "category": "Load Balancing",
+          "supports_logs": false,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "healthcheck"
+            ]
+          },
+          "relationship_hints": [
+            "healthcheck: Monitor origin server health"
+          ]
+        },
+        {
+          "name": "healthcheck",
+          "description": "Health monitoring configuration for origin server availability",
+          "description_short": "Health check",
+          "tier": "Standard",
+          "icon": "💓",
+          "category": "Monitoring",
+          "supports_logs": false,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "http_loadbalancer",
         "tcp_loadbalancer",
         "origin_pool",
@@ -1551,6 +3144,38 @@
       "icon": "🖥️",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364748B'%3E%3Cpath d='M20 13H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zM7 19c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM20 3H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM7 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "node_config",
+          "description": "Node configuration for edge device settings",
+          "description_short": "Node config",
+          "tier": "Standard",
+          "icon": "🖥️",
+          "category": "Infrastructure",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "vpm_config",
+          "description": "VPM configuration for virtual platform management",
+          "description_short": "VPM config",
+          "tier": "Standard",
+          "icon": "⚙️",
+          "category": "Infrastructure",
+          "supports_logs": false,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "node_config",
         "vpm_config"
       ]
@@ -1587,6 +3212,57 @@
       "icon": "🛡️",
       "logo_svg": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310B981'%3E%3Cpath d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z'/%3E%3C/svg%3E",
       "primary_resources": [
+        {
+          "name": "app_firewall",
+          "description": "Web Application Firewall policy for HTTP traffic protection",
+          "description_short": "WAF policy",
+          "tier": "Advanced",
+          "icon": "🛡️",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": [
+              "service_policy"
+            ]
+          },
+          "relationship_hints": [
+            "service_policy: Fine-grained access control rules"
+          ]
+        },
+        {
+          "name": "service_policy",
+          "description": "Service-level access control and traffic management rules",
+          "description_short": "Service policy",
+          "tier": "Advanced",
+          "icon": "📋",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": false,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        },
+        {
+          "name": "malicious_user_detection",
+          "description": "Automated detection and mitigation of malicious user behavior",
+          "description_short": "Malicious user detection",
+          "tier": "Advanced",
+          "icon": "🚨",
+          "category": "Security",
+          "supports_logs": true,
+          "supports_metrics": true,
+          "dependencies": {
+            "required": [],
+            "optional": []
+          },
+          "relationship_hints": []
+        }
+      ],
+      "primary_resources_simple": [
         "app_firewall",
         "service_policy",
         "malicious_user_detection"

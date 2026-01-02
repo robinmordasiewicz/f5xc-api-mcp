@@ -77,72 +77,20 @@ Ask Claude to help you work with Log Receiver resources:
 
 > "Get details of the log-receiver named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config log-receiver create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config log-receiver create {name} --namespace {namespace}
-```
-
-Create log-receiver
-
-### delete
-
-```bash
-f5xcctl config log-receiver delete {name} --namespace {namespace}
-```
-
-Delete log-receiver
-
-### get_specific
-
-```bash
-f5xcctl config log-receiver get {name} --namespace {namespace}
-```
-
-Get specific log-receiver
-
-### list_all
-
-```bash
-f5xcctl config log-receiver list --namespace {namespace}
-```
-
-List all log-receivers
-
-### update
-
-```bash
-f5xcctl config log-receiver update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update log-receiver
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create log_receiver -n <namespace> -i log_receiver.yaml
+xcsh statistics create log_receiver -n <namespace> -i log_receiver.yaml
 
 # Get
-f5xcctl statistics get log_receiver <name> -n <namespace>
+xcsh statistics get log_receiver <name> -n <namespace>
 
 # List
-f5xcctl statistics list log_receiver -n <namespace>
+xcsh statistics list log_receiver -n <namespace>
 
 # Delete
-f5xcctl statistics delete log_receiver <name> -n <namespace>
+xcsh statistics delete log_receiver <name> -n <namespace>
 ```
 
 ## Terraform Resource

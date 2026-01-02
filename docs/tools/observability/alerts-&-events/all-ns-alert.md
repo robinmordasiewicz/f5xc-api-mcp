@@ -40,32 +40,20 @@ Ask Claude to help you work with All Ns Alert resources:
 
 > "List all all-ns-alerts in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data all-ns-alert list --namespace {namespace}
-```
-
-List all all-ns-alerts
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create all_ns_alert -n <namespace> -i all_ns_alert.yaml
+xcsh observability create all_ns_alert -n <namespace> -i all_ns_alert.yaml
 
 # Get
-f5xcctl observability get all_ns_alert <name> -n <namespace>
+xcsh observability get all_ns_alert <name> -n <namespace>
 
 # List
-f5xcctl observability list all_ns_alert -n <namespace>
+xcsh observability list all_ns_alert -n <namespace>
 
 # Delete
-f5xcctl observability delete all_ns_alert <name> -n <namespace>
+xcsh observability delete all_ns_alert <name> -n <namespace>
 ```
 
 ## Terraform Resource

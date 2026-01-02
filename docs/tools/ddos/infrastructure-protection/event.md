@@ -54,56 +54,20 @@ Ask Claude to help you work with Event resources:
 
 > "List all events in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl infraprotect event create {name} --namespace {namespace}
-```
-
-Create event
-
-### file_based
-
-```bash
-f5xcctl infraprotect event create -f {file}.yaml
-```
-
-Create from YAML file
-
-### list_all
-
-```bash
-f5xcctl infraprotect event list --namespace {namespace}
-```
-
-List all events
-
-### update
-
-```bash
-f5xcctl infraprotect event update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update event
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create event -n <namespace> -i event.yaml
+xcsh ddos create event -n <namespace> -i event.yaml
 
 # Get
-f5xcctl ddos get event <name> -n <namespace>
+xcsh ddos get event <name> -n <namespace>
 
 # List
-f5xcctl ddos list event -n <namespace>
+xcsh ddos list event -n <namespace>
 
 # Delete
-f5xcctl ddos delete event <name> -n <namespace>
+xcsh ddos delete event <name> -n <namespace>
 ```
 
 ## Terraform Resource

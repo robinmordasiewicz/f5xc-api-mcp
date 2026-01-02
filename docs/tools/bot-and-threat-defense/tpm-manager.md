@@ -62,56 +62,20 @@ Ask Claude to help you work with Tpm Manager resources:
 
 > "Get details of the tpm-manager named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl tpm tpm-manager create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl tpm tpm-manager create {name} --namespace {namespace}
-```
-
-Create tpm-manager
-
-### get_specific
-
-```bash
-f5xcctl tpm tpm-manager get {name} --namespace {namespace}
-```
-
-Get specific tpm-manager
-
-### list_all
-
-```bash
-f5xcctl tpm tpm-manager list --namespace {namespace}
-```
-
-List all tpm-managers
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl bot_and_threat_defense create tpm_manager -n <namespace> -i tpm_manager.yaml
+xcsh bot_and_threat_defense create tpm_manager -n <namespace> -i tpm_manager.yaml
 
 # Get
-f5xcctl bot_and_threat_defense get tpm_manager <name> -n <namespace>
+xcsh bot_and_threat_defense get tpm_manager <name> -n <namespace>
 
 # List
-f5xcctl bot_and_threat_defense list tpm_manager -n <namespace>
+xcsh bot_and_threat_defense list tpm_manager -n <namespace>
 
 # Delete
-f5xcctl bot_and_threat_defense delete tpm_manager <name> -n <namespace>
+xcsh bot_and_threat_defense delete tpm_manager <name> -n <namespace>
 ```
 
 ## Terraform Resource

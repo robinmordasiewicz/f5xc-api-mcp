@@ -59,48 +59,20 @@ Ask Claude to help you work with Third Party Application resources:
 
 > "Get details of the third-party-application named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config third-party-application get {name} --namespace {namespace}
-```
-
-Get specific third-party-application
-
-### list_all
-
-```bash
-f5xcctl config third-party-application list --namespace {namespace}
-```
-
-List all third-party-applications
-
-### update
-
-```bash
-f5xcctl config third-party-application update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update third-party-application
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create third_party_application -n <namespace> -i third_party_application.yaml
+xcsh marketplace create third_party_application -n <namespace> -i third_party_application.yaml
 
 # Get
-f5xcctl marketplace get third_party_application <name> -n <namespace>
+xcsh marketplace get third_party_application <name> -n <namespace>
 
 # List
-f5xcctl marketplace list third_party_application -n <namespace>
+xcsh marketplace list third_party_application -n <namespace>
 
 # Delete
-f5xcctl marketplace delete third_party_application <name> -n <namespace>
+xcsh marketplace delete third_party_application <name> -n <namespace>
 ```
 
 ## Terraform Resource

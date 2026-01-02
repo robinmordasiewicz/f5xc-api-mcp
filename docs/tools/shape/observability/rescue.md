@@ -33,40 +33,20 @@ Ask Claude to help you work with Rescue resources:
 
 > "Create a rescue named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape rescue create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape rescue create {name} --namespace {namespace}
-```
-
-Create rescue
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create rescue -n <namespace> -i rescue.yaml
+xcsh shape create rescue -n <namespace> -i rescue.yaml
 
 # Get
-f5xcctl shape get rescue <name> -n <namespace>
+xcsh shape get rescue <name> -n <namespace>
 
 # List
-f5xcctl shape list rescue -n <namespace>
+xcsh shape list rescue -n <namespace>
 
 # Delete
-f5xcctl shape delete rescue <name> -n <namespace>
+xcsh shape delete rescue <name> -n <namespace>
 ```
 
 ## Terraform Resource

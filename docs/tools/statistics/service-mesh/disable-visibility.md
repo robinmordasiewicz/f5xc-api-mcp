@@ -44,40 +44,20 @@ Ask Claude to help you work with Disable Visibility resources:
 
 > "Create a disable-visibility named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl discovery disable-visibility create {name} --namespace {namespace}
-```
-
-Create disable-visibility
-
-### file_based
-
-```bash
-f5xcctl discovery disable-visibility create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create disable_visibility -n <namespace> -i disable_visibility.yaml
+xcsh statistics create disable_visibility -n <namespace> -i disable_visibility.yaml
 
 # Get
-f5xcctl statistics get disable_visibility <name> -n <namespace>
+xcsh statistics get disable_visibility <name> -n <namespace>
 
 # List
-f5xcctl statistics list disable_visibility -n <namespace>
+xcsh statistics list disable_visibility -n <namespace>
 
 # Delete
-f5xcctl statistics delete disable_visibility <name> -n <namespace>
+xcsh statistics delete disable_visibility <name> -n <namespace>
 ```
 
 ## Terraform Resource

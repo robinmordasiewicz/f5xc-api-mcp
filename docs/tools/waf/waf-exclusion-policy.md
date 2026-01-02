@@ -77,72 +77,20 @@ Ask Claude to help you work with WAF Exclusion Policy resources:
 
 > "Get details of the waf-exclusion-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config waf-exclusion-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config waf-exclusion-policy create {name} --namespace {namespace}
-```
-
-Create waf-exclusion-policy
-
-### delete
-
-```bash
-f5xcctl config waf-exclusion-policy delete {name} --namespace {namespace}
-```
-
-Delete waf-exclusion-policy
-
-### get_specific
-
-```bash
-f5xcctl config waf-exclusion-policy get {name} --namespace {namespace}
-```
-
-Get specific waf-exclusion-policy
-
-### list_all
-
-```bash
-f5xcctl config waf-exclusion-policy list --namespace {namespace}
-```
-
-List all waf-exclusion-policys
-
-### update
-
-```bash
-f5xcctl config waf-exclusion-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update waf-exclusion-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create waf_exclusion_policy -n <namespace> -i waf_exclusion_policy.yaml
+xcsh waf create waf_exclusion_policy -n <namespace> -i waf_exclusion_policy.yaml
 
 # Get
-f5xcctl waf get waf_exclusion_policy <name> -n <namespace>
+xcsh waf get waf_exclusion_policy <name> -n <namespace>
 
 # List
-f5xcctl waf list waf_exclusion_policy -n <namespace>
+xcsh waf list waf_exclusion_policy -n <namespace>
 
 # Delete
-f5xcctl waf delete waf_exclusion_policy <name> -n <namespace>
+xcsh waf delete waf_exclusion_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

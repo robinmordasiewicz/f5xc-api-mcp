@@ -40,32 +40,20 @@ Ask Claude to help you work with Report resources:
 
 > "Get details of the report named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl report report get {name} --namespace {namespace}
-```
-
-Get specific report
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create report -n <namespace> -i report.yaml
+xcsh statistics create report -n <namespace> -i report.yaml
 
 # Get
-f5xcctl statistics get report <name> -n <namespace>
+xcsh statistics get report <name> -n <namespace>
 
 # List
-f5xcctl statistics list report -n <namespace>
+xcsh statistics list report -n <namespace>
 
 # Delete
-f5xcctl statistics delete report <name> -n <namespace>
+xcsh statistics delete report <name> -n <namespace>
 ```
 
 ## Terraform Resource

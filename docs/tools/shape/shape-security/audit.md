@@ -41,32 +41,20 @@ Ask Claude to help you work with Audit resources:
 
 > "List all audits in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape audit list --namespace {namespace}
-```
-
-List all audits
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create audit -n <namespace> -i audit.yaml
+xcsh shape create audit -n <namespace> -i audit.yaml
 
 # Get
-f5xcctl shape get audit <name> -n <namespace>
+xcsh shape get audit <name> -n <namespace>
 
 # List
-f5xcctl shape list audit -n <namespace>
+xcsh shape list audit -n <namespace>
 
 # Delete
-f5xcctl shape delete audit <name> -n <namespace>
+xcsh shape delete audit <name> -n <namespace>
 ```
 
 ## Terraform Resource

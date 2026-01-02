@@ -42,32 +42,20 @@ Ask Claude to help you work with Monitor Event resources:
 
 > "List all monitor-events in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl observability monitor-event list --namespace {namespace}
-```
-
-List all monitor-events
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create monitor_event -n <namespace> -i monitor_event.yaml
+xcsh observability create monitor_event -n <namespace> -i monitor_event.yaml
 
 # Get
-f5xcctl observability get monitor_event <name> -n <namespace>
+xcsh observability get monitor_event <name> -n <namespace>
 
 # List
-f5xcctl observability list monitor_event -n <namespace>
+xcsh observability list monitor_event -n <namespace>
 
 # Delete
-f5xcctl observability delete monitor_event <name> -n <namespace>
+xcsh observability delete monitor_event <name> -n <namespace>
 ```
 
 ## Terraform Resource

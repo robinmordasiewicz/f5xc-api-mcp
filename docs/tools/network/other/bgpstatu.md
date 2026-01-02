@@ -40,32 +40,20 @@ Ask Claude to help you work with Bgpstatu resources:
 
 > "List all bgpstatus in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config bgpstatu list --namespace {namespace}
-```
-
-List all bgpstatus
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create bgpstatu -n <namespace> -i bgpstatu.yaml
+xcsh network create bgpstatu -n <namespace> -i bgpstatu.yaml
 
 # Get
-f5xcctl network get bgpstatu <name> -n <namespace>
+xcsh network get bgpstatu <name> -n <namespace>
 
 # List
-f5xcctl network list bgpstatu -n <namespace>
+xcsh network list bgpstatu -n <namespace>
 
 # Delete
-f5xcctl network delete bgpstatu <name> -n <namespace>
+xcsh network delete bgpstatu <name> -n <namespace>
 ```
 
 ## Terraform Resource

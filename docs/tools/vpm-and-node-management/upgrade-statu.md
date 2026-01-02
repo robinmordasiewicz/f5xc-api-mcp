@@ -25,32 +25,20 @@ Ask Claude to help you work with Upgrade Statu resources:
 
 > "List all upgrade-status in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data upgrade-statu list --namespace {namespace}
-```
-
-List all upgrade-status
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl vpm_and_node_management create upgrade_statu -n <namespace> -i upgrade_statu.yaml
+xcsh vpm_and_node_management create upgrade_statu -n <namespace> -i upgrade_statu.yaml
 
 # Get
-f5xcctl vpm_and_node_management get upgrade_statu <name> -n <namespace>
+xcsh vpm_and_node_management get upgrade_statu <name> -n <namespace>
 
 # List
-f5xcctl vpm_and_node_management list upgrade_statu -n <namespace>
+xcsh vpm_and_node_management list upgrade_statu -n <namespace>
 
 # Delete
-f5xcctl vpm_and_node_management delete upgrade_statu <name> -n <namespace>
+xcsh vpm_and_node_management delete upgrade_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

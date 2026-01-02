@@ -39,32 +39,20 @@ Ask Claude to help you work with Events Summary resources:
 
 > "List all events-summarys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl infraprotect events-summary list --namespace {namespace}
-```
-
-List all events-summarys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create events_summary -n <namespace> -i events_summary.yaml
+xcsh ddos create events_summary -n <namespace> -i events_summary.yaml
 
 # Get
-f5xcctl ddos get events_summary <name> -n <namespace>
+xcsh ddos get events_summary <name> -n <namespace>
 
 # List
-f5xcctl ddos list events_summary -n <namespace>
+xcsh ddos list events_summary -n <namespace>
 
 # Delete
-f5xcctl ddos delete events_summary <name> -n <namespace>
+xcsh ddos delete events_summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

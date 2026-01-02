@@ -52,48 +52,20 @@ Ask Claude to help you work with Justification resources:
 
 > "Create a justification named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape justification create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape justification create {name} --namespace {namespace}
-```
-
-Create justification
-
-### delete
-
-```bash
-f5xcctl shape justification delete {name} --namespace {namespace}
-```
-
-Delete justification
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create justification -n <namespace> -i justification.yaml
+xcsh shape create justification -n <namespace> -i justification.yaml
 
 # Get
-f5xcctl shape get justification <name> -n <namespace>
+xcsh shape get justification <name> -n <namespace>
 
 # List
-f5xcctl shape list justification -n <namespace>
+xcsh shape list justification -n <namespace>
 
 # Delete
-f5xcctl shape delete justification <name> -n <namespace>
+xcsh shape delete justification <name> -n <namespace>
 ```
 
 ## Terraform Resource

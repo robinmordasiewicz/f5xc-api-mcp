@@ -77,72 +77,20 @@ Ask Claude to help you work with Cdn Cache Rule resources:
 
 > "Get details of the cdn-cache-rule named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config cdn-cache-rule create {name} --namespace {namespace}
-```
-
-Create cdn-cache-rule
-
-### file_based
-
-```bash
-f5xcctl config cdn-cache-rule create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config cdn-cache-rule delete {name} --namespace {namespace}
-```
-
-Delete cdn-cache-rule
-
-### get_specific
-
-```bash
-f5xcctl config cdn-cache-rule get {name} --namespace {namespace}
-```
-
-Get specific cdn-cache-rule
-
-### list_all
-
-```bash
-f5xcctl config cdn-cache-rule list --namespace {namespace}
-```
-
-List all cdn-cache-rules
-
-### update
-
-```bash
-f5xcctl config cdn-cache-rule update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update cdn-cache-rule
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cdn create cdn_cache_rule -n <namespace> -i cdn_cache_rule.yaml
+xcsh cdn create cdn_cache_rule -n <namespace> -i cdn_cache_rule.yaml
 
 # Get
-f5xcctl cdn get cdn_cache_rule <name> -n <namespace>
+xcsh cdn get cdn_cache_rule <name> -n <namespace>
 
 # List
-f5xcctl cdn list cdn_cache_rule -n <namespace>
+xcsh cdn list cdn_cache_rule -n <namespace>
 
 # Delete
-f5xcctl cdn delete cdn_cache_rule <name> -n <namespace>
+xcsh cdn delete cdn_cache_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

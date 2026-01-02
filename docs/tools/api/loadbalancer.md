@@ -34,32 +34,20 @@ Ask Claude to help you work with Loadbalancer resources:
 
 > "Get details of the loadbalancer named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config loadbalancer get {name} --namespace {namespace}
-```
-
-Get specific loadbalancer
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create loadbalancer -n <namespace> -i loadbalancer.yaml
+xcsh api create loadbalancer -n <namespace> -i loadbalancer.yaml
 
 # Get
-f5xcctl api get loadbalancer <name> -n <namespace>
+xcsh api get loadbalancer <name> -n <namespace>
 
 # List
-f5xcctl api list loadbalancer -n <namespace>
+xcsh api list loadbalancer -n <namespace>
 
 # Delete
-f5xcctl api delete loadbalancer <name> -n <namespace>
+xcsh api delete loadbalancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

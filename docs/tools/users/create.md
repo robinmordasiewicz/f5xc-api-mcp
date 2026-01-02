@@ -41,40 +41,20 @@ Ask Claude to help you work with Create resources:
 
 > "Create a create named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config create create {name} --namespace {namespace}
-```
-
-Create create
-
-### file_based
-
-```bash
-f5xcctl config create create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl users create create -n <namespace> -i create.yaml
+xcsh users create create -n <namespace> -i create.yaml
 
 # Get
-f5xcctl users get create <name> -n <namespace>
+xcsh users get create <name> -n <namespace>
 
 # List
-f5xcctl users list create -n <namespace>
+xcsh users list create -n <namespace>
 
 # Delete
-f5xcctl users delete create <name> -n <namespace>
+xcsh users delete create <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -42,40 +42,20 @@ Ask Claude to help you work with Cache Purge resources:
 
 > "Create a cache-purge named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl cdn cache-purge create {name} --namespace {namespace}
-```
-
-Create cache-purge
-
-### file_based
-
-```bash
-f5xcctl cdn cache-purge create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cdn create cache_purge -n <namespace> -i cache_purge.yaml
+xcsh cdn create cache_purge -n <namespace> -i cache_purge.yaml
 
 # Get
-f5xcctl cdn get cache_purge <name> -n <namespace>
+xcsh cdn get cache_purge <name> -n <namespace>
 
 # List
-f5xcctl cdn list cache_purge -n <namespace>
+xcsh cdn list cache_purge -n <namespace>
 
 # Delete
-f5xcctl cdn delete cache_purge <name> -n <namespace>
+xcsh cdn delete cache_purge <name> -n <namespace>
 ```
 
 ## Terraform Resource

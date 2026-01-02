@@ -42,40 +42,20 @@ Ask Claude to help you work with Change Password resources:
 
 > "Create a change-password named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl operate change-password create {name} --namespace {namespace}
-```
-
-Create change-password
-
-### file_based
-
-```bash
-f5xcctl operate change-password create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create change_password -n <namespace> -i change_password.yaml
+xcsh support create change_password -n <namespace> -i change_password.yaml
 
 # Get
-f5xcctl support get change_password <name> -n <namespace>
+xcsh support get change_password <name> -n <namespace>
 
 # List
-f5xcctl support list change_password -n <namespace>
+xcsh support list change_password -n <namespace>
 
 # Delete
-f5xcctl support delete change_password <name> -n <namespace>
+xcsh support delete change_password <name> -n <namespace>
 ```
 
 ## Terraform Resource

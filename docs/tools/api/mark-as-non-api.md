@@ -42,40 +42,20 @@ Ask Claude to help you work with Mark As Non API resources:
 
 > "Create a mark-as-non-api named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config mark-as-non-api create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config mark-as-non-api create {name} --namespace {namespace}
-```
-
-Create mark-as-non-api
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create mark_as_non_api -n <namespace> -i mark_as_non_api.yaml
+xcsh api create mark_as_non_api -n <namespace> -i mark_as_non_api.yaml
 
 # Get
-f5xcctl api get mark_as_non_api <name> -n <namespace>
+xcsh api get mark_as_non_api <name> -n <namespace>
 
 # List
-f5xcctl api list mark_as_non_api -n <namespace>
+xcsh api list mark_as_non_api -n <namespace>
 
 # Delete
-f5xcctl api delete mark_as_non_api <name> -n <namespace>
+xcsh api delete mark_as_non_api <name> -n <namespace>
 ```
 
 ## Terraform Resource

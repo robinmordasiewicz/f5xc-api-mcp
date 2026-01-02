@@ -1143,7 +1143,7 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "data_and_privacy_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1165,7 +1165,20 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-sensitive-data-policy-delete",
@@ -1275,7 +1288,7 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "data_and_privacy_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1283,7 +1296,20 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-sensitive-data-policy-get",
@@ -1412,7 +1438,20 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-sensitive-data-policy-list",
@@ -1546,7 +1585,20 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-dataandprivacysecurity-sensitive-data-policy-update",
@@ -1660,7 +1712,7 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "data_and_privacy_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1682,7 +1734,20 @@ export const data_and_privacy_securityTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
 ];
 

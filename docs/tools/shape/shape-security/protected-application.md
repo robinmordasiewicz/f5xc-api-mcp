@@ -77,72 +77,20 @@ Ask Claude to help you work with Protected Application resources:
 
 > "Get details of the protected-application named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape protected-application create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape protected-application create {name} --namespace {namespace}
-```
-
-Create protected-application
-
-### delete
-
-```bash
-f5xcctl shape protected-application delete {name} --namespace {namespace}
-```
-
-Delete protected-application
-
-### get_specific
-
-```bash
-f5xcctl shape protected-application get {name} --namespace {namespace}
-```
-
-Get specific protected-application
-
-### list_all
-
-```bash
-f5xcctl shape protected-application list --namespace {namespace}
-```
-
-List all protected-applications
-
-### update
-
-```bash
-f5xcctl shape protected-application update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update protected-application
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create protected_application -n <namespace> -i protected_application.yaml
+xcsh shape create protected_application -n <namespace> -i protected_application.yaml
 
 # Get
-f5xcctl shape get protected_application <name> -n <namespace>
+xcsh shape get protected_application <name> -n <namespace>
 
 # List
-f5xcctl shape list protected_application -n <namespace>
+xcsh shape list protected_application -n <namespace>
 
 # Delete
-f5xcctl shape delete protected_application <name> -n <namespace>
+xcsh shape delete protected_application <name> -n <namespace>
 ```
 
 ## Terraform Resource

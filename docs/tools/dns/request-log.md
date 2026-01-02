@@ -41,40 +41,20 @@ Ask Claude to help you work with Request Log resources:
 
 > "Create a request-log named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data request-log create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data request-log create {name} --namespace {namespace}
-```
-
-Create request-log
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create request_log -n <namespace> -i request_log.yaml
+xcsh dns create request_log -n <namespace> -i request_log.yaml
 
 # Get
-f5xcctl dns get request_log <name> -n <namespace>
+xcsh dns get request_log <name> -n <namespace>
 
 # List
-f5xcctl dns list request_log -n <namespace>
+xcsh dns list request_log -n <namespace>
 
 # Delete
-f5xcctl dns delete request_log <name> -n <namespace>
+xcsh dns delete request_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

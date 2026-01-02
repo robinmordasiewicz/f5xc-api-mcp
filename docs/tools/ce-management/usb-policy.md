@@ -77,72 +77,20 @@ Ask Claude to help you work with Usb Policy resources:
 
 > "Get details of the usb-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config usb-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config usb-policy create {name} --namespace {namespace}
-```
-
-Create usb-policy
-
-### delete
-
-```bash
-f5xcctl config usb-policy delete {name} --namespace {namespace}
-```
-
-Delete usb-policy
-
-### get_specific
-
-```bash
-f5xcctl config usb-policy get {name} --namespace {namespace}
-```
-
-Get specific usb-policy
-
-### list_all
-
-```bash
-f5xcctl config usb-policy list --namespace {namespace}
-```
-
-List all usb-policys
-
-### update
-
-```bash
-f5xcctl config usb-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update usb-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create usb_policy -n <namespace> -i usb_policy.yaml
+xcsh ce_management create usb_policy -n <namespace> -i usb_policy.yaml
 
 # Get
-f5xcctl ce_management get usb_policy <name> -n <namespace>
+xcsh ce_management get usb_policy <name> -n <namespace>
 
 # List
-f5xcctl ce_management list usb_policy -n <namespace>
+xcsh ce_management list usb_policy -n <namespace>
 
 # Delete
-f5xcctl ce_management delete usb_policy <name> -n <namespace>
+xcsh ce_management delete usb_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

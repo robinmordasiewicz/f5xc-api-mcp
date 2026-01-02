@@ -48,48 +48,20 @@ Ask Claude to help you work with Fast Acls For Internet Vip resources:
 
 > "List all fast-acls-for-internet-vips in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config fast-acls-for-internet-vip create {name} --namespace {namespace}
-```
-
-Create fast-acls-for-internet-vip
-
-### file_based
-
-```bash
-f5xcctl config fast-acls-for-internet-vip create -f {file}.yaml
-```
-
-Create from YAML file
-
-### list_all
-
-```bash
-f5xcctl config fast-acls-for-internet-vip list --namespace {namespace}
-```
-
-List all fast-acls-for-internet-vips
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create fast_acls_for_internet_vip -n <namespace> -i fast_acls_for_internet_vip.yaml
+xcsh tenant_and_identity create fast_acls_for_internet_vip -n <namespace> -i fast_acls_for_internet_vip.yaml
 
 # Get
-f5xcctl tenant_and_identity get fast_acls_for_internet_vip <name> -n <namespace>
+xcsh tenant_and_identity get fast_acls_for_internet_vip <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list fast_acls_for_internet_vip -n <namespace>
+xcsh tenant_and_identity list fast_acls_for_internet_vip -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete fast_acls_for_internet_vip <name> -n <namespace>
+xcsh tenant_and_identity delete fast_acls_for_internet_vip <name> -n <namespace>
 ```
 
 ## Terraform Resource

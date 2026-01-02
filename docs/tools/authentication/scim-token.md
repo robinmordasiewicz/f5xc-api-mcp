@@ -49,48 +49,20 @@ Ask Claude to help you work with Scim Token resources:
 
 > "List all scim-tokens in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web scim-token create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web scim-token create {name} --namespace {namespace}
-```
-
-Create scim-token
-
-### list_all
-
-```bash
-f5xcctl web scim-token list --namespace {namespace}
-```
-
-List all scim-tokens
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl authentication create scim_token -n <namespace> -i scim_token.yaml
+xcsh authentication create scim_token -n <namespace> -i scim_token.yaml
 
 # Get
-f5xcctl authentication get scim_token <name> -n <namespace>
+xcsh authentication get scim_token <name> -n <namespace>
 
 # List
-f5xcctl authentication list scim_token -n <namespace>
+xcsh authentication list scim_token -n <namespace>
 
 # Delete
-f5xcctl authentication delete scim_token <name> -n <namespace>
+xcsh authentication delete scim_token <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with Voltstack Site resources:
 
 > "Get details of the voltstack-site named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config voltstack-site create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config voltstack-site create {name} --namespace {namespace}
-```
-
-Create voltstack-site
-
-### delete
-
-```bash
-f5xcctl config voltstack-site delete {name} --namespace {namespace}
-```
-
-Delete voltstack-site
-
-### get_specific
-
-```bash
-f5xcctl config voltstack-site get {name} --namespace {namespace}
-```
-
-Get specific voltstack-site
-
-### list_all
-
-```bash
-f5xcctl config voltstack-site list --namespace {namespace}
-```
-
-List all voltstack-sites
-
-### update
-
-```bash
-f5xcctl config voltstack-site update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update voltstack-site
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create voltstack_site -n <namespace> -i voltstack_site.yaml
+xcsh sites create voltstack_site -n <namespace> -i voltstack_site.yaml
 
 # Get
-f5xcctl sites get voltstack_site <name> -n <namespace>
+xcsh sites get voltstack_site <name> -n <namespace>
 
 # List
-f5xcctl sites list voltstack_site -n <namespace>
+xcsh sites list voltstack_site -n <namespace>
 
 # Delete
-f5xcctl sites delete voltstack_site <name> -n <namespace>
+xcsh sites delete voltstack_site <name> -n <namespace>
 ```
 
 ## Terraform Resource

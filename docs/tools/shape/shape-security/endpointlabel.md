@@ -41,40 +41,20 @@ Ask Claude to help you work with Endpointlabel resources:
 
 > "Create a endpointlabel named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape endpointlabel create {name} --namespace {namespace}
-```
-
-Create endpointlabel
-
-### file_based
-
-```bash
-f5xcctl shape endpointlabel create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create endpointlabel -n <namespace> -i endpointlabel.yaml
+xcsh shape create endpointlabel -n <namespace> -i endpointlabel.yaml
 
 # Get
-f5xcctl shape get endpointlabel <name> -n <namespace>
+xcsh shape get endpointlabel <name> -n <namespace>
 
 # List
-f5xcctl shape list endpointlabel -n <namespace>
+xcsh shape list endpointlabel -n <namespace>
 
 # Delete
-f5xcctl shape delete endpointlabel <name> -n <namespace>
+xcsh shape delete endpointlabel <name> -n <namespace>
 ```
 
 ## Terraform Resource

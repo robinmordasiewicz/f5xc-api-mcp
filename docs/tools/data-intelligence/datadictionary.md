@@ -33,32 +33,20 @@ Ask Claude to help you work with Datadictionary resources:
 
 > "List all datadictionarys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data-intelligence datadictionary list --namespace {namespace}
-```
-
-List all datadictionarys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl data_intelligence create datadictionary -n <namespace> -i datadictionary.yaml
+xcsh data_intelligence create datadictionary -n <namespace> -i datadictionary.yaml
 
 # Get
-f5xcctl data_intelligence get datadictionary <name> -n <namespace>
+xcsh data_intelligence get datadictionary <name> -n <namespace>
 
 # List
-f5xcctl data_intelligence list datadictionary -n <namespace>
+xcsh data_intelligence list datadictionary -n <namespace>
 
 # Delete
-f5xcctl data_intelligence delete datadictionary <name> -n <namespace>
+xcsh data_intelligence delete datadictionary <name> -n <namespace>
 ```
 
 ## Terraform Resource

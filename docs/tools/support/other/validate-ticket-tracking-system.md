@@ -33,40 +33,20 @@ Ask Claude to help you work with Validate Ticket Tracking System resources:
 
 > "Create a validate-ticket-tracking-system named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web validate-ticket-tracking-system create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web validate-ticket-tracking-system create {name} --namespace {namespace}
-```
-
-Create validate-ticket-tracking-system
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create validate_ticket_tracking_system -n <namespace> -i validate_ticket_tracking_system.yaml
+xcsh support create validate_ticket_tracking_system -n <namespace> -i validate_ticket_tracking_system.yaml
 
 # Get
-f5xcctl support get validate_ticket_tracking_system <name> -n <namespace>
+xcsh support get validate_ticket_tracking_system <name> -n <namespace>
 
 # List
-f5xcctl support list validate_ticket_tracking_system -n <namespace>
+xcsh support list validate_ticket_tracking_system -n <namespace>
 
 # Delete
-f5xcctl support delete validate_ticket_tracking_system <name> -n <namespace>
+xcsh support delete validate_ticket_tracking_system <name> -n <namespace>
 ```
 
 ## Terraform Resource

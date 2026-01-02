@@ -33,32 +33,20 @@ Ask Claude to help you work with To resources:
 
 > "List all tos in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web to list --namespace {namespace}
-```
-
-List all tos
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create to -n <namespace> -i to.yaml
+xcsh tenant_and_identity create to -n <namespace> -i to.yaml
 
 # Get
-f5xcctl tenant_and_identity get to <name> -n <namespace>
+xcsh tenant_and_identity get to <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list to -n <namespace>
+xcsh tenant_and_identity list to -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete to <name> -n <namespace>
+xcsh tenant_and_identity delete to <name> -n <namespace>
 ```
 
 ## Terraform Resource

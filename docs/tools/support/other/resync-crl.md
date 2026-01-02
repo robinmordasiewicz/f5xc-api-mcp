@@ -42,40 +42,20 @@ Ask Claude to help you work with Resync Crl resources:
 
 > "Create a resync-crl named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl operate resync-crl create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl operate resync-crl create {name} --namespace {namespace}
-```
-
-Create resync-crl
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create resync_crl -n <namespace> -i resync_crl.yaml
+xcsh support create resync_crl -n <namespace> -i resync_crl.yaml
 
 # Get
-f5xcctl support get resync_crl <name> -n <namespace>
+xcsh support get resync_crl <name> -n <namespace>
 
 # List
-f5xcctl support list resync_crl -n <namespace>
+xcsh support list resync_crl -n <namespace>
 
 # Delete
-f5xcctl support delete resync_crl <name> -n <namespace>
+xcsh support delete resync_crl <name> -n <namespace>
 ```
 
 ## Terraform Resource

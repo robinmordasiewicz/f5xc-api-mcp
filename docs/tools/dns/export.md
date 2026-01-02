@@ -34,32 +34,20 @@ Ask Claude to help you work with Export resources:
 
 > "List all exports in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config export list --namespace {namespace}
-```
-
-List all exports
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create export -n <namespace> -i export.yaml
+xcsh dns create export -n <namespace> -i export.yaml
 
 # Get
-f5xcctl dns get export <name> -n <namespace>
+xcsh dns get export <name> -n <namespace>
 
 # List
-f5xcctl dns list export -n <namespace>
+xcsh dns list export -n <namespace>
 
 # Delete
-f5xcctl dns delete export <name> -n <namespace>
+xcsh dns delete export <name> -n <namespace>
 ```
 
 ## Terraform Resource

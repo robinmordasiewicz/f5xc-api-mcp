@@ -77,72 +77,20 @@ Ask Claude to help you work with Cdn Loadbalancer resources:
 
 > "Get details of the cdn-loadbalancer named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config cdn-loadbalancer create {name} --namespace {namespace}
-```
-
-Create cdn-loadbalancer
-
-### file_based
-
-```bash
-f5xcctl config cdn-loadbalancer create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config cdn-loadbalancer delete {name} --namespace {namespace}
-```
-
-Delete cdn-loadbalancer
-
-### get_specific
-
-```bash
-f5xcctl config cdn-loadbalancer get {name} --namespace {namespace}
-```
-
-Get specific cdn-loadbalancer
-
-### list_all
-
-```bash
-f5xcctl config cdn-loadbalancer list --namespace {namespace}
-```
-
-List all cdn-loadbalancers
-
-### update
-
-```bash
-f5xcctl config cdn-loadbalancer update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update cdn-loadbalancer
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cdn create cdn_loadbalancer -n <namespace> -i cdn_loadbalancer.yaml
+xcsh cdn create cdn_loadbalancer -n <namespace> -i cdn_loadbalancer.yaml
 
 # Get
-f5xcctl cdn get cdn_loadbalancer <name> -n <namespace>
+xcsh cdn get cdn_loadbalancer <name> -n <namespace>
 
 # List
-f5xcctl cdn list cdn_loadbalancer -n <namespace>
+xcsh cdn list cdn_loadbalancer -n <namespace>
 
 # Delete
-f5xcctl cdn delete cdn_loadbalancer <name> -n <namespace>
+xcsh cdn delete cdn_loadbalancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

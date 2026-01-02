@@ -42,40 +42,20 @@ Ask Claude to help you work with Move To Inventory resources:
 
 > "Create a move-to-inventory named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config move-to-inventory create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config move-to-inventory create {name} --namespace {namespace}
-```
-
-Create move-to-inventory
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create move_to_inventory -n <namespace> -i move_to_inventory.yaml
+xcsh api create move_to_inventory -n <namespace> -i move_to_inventory.yaml
 
 # Get
-f5xcctl api get move_to_inventory <name> -n <namespace>
+xcsh api get move_to_inventory <name> -n <namespace>
 
 # List
-f5xcctl api list move_to_inventory -n <namespace>
+xcsh api list move_to_inventory -n <namespace>
 
 # Delete
-f5xcctl api delete move_to_inventory <name> -n <namespace>
+xcsh api delete move_to_inventory <name> -n <namespace>
 ```
 
 ## Terraform Resource

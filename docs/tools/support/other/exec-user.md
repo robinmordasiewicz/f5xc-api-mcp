@@ -43,40 +43,20 @@ Ask Claude to help you work with Exec User resources:
 
 > "Create a exec-user named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl operate exec-user create {name} --namespace {namespace}
-```
-
-Create exec-user
-
-### file_based
-
-```bash
-f5xcctl operate exec-user create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create exec_user -n <namespace> -i exec_user.yaml
+xcsh support create exec_user -n <namespace> -i exec_user.yaml
 
 # Get
-f5xcctl support get exec_user <name> -n <namespace>
+xcsh support get exec_user <name> -n <namespace>
 
 # List
-f5xcctl support list exec_user -n <namespace>
+xcsh support list exec_user -n <namespace>
 
 # Delete
-f5xcctl support delete exec_user <name> -n <namespace>
+xcsh support delete exec_user <name> -n <namespace>
 ```
 
 ## Terraform Resource

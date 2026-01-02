@@ -1131,7 +1131,7 @@ export const cdnTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "cdn",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1271,7 +1271,7 @@ export const cdnTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "cdn",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1678,7 +1678,7 @@ export const cdnTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "cdn",
         fieldPath: "",
         inline: false,
         required: false,

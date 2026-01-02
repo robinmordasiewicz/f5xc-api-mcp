@@ -4,7 +4,7 @@ Configure the F5XC API MCP Server with VS Code using Cline or Continue extension
 
 !!! note "Prerequisites"
     - VS Code installed
-    - Node.js 18+ installed (for npx)
+    - Node.js 24+ installed (for npx)
     - Cline or Continue extension installed
 
 ## Option 1: Cline Extension
@@ -92,7 +92,7 @@ For project-specific configuration, create `.vscode/mcp.json`:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"]
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
     }
   }
 }
@@ -118,7 +118,7 @@ For project-specific configuration, create `.vscode/mcp.json`:
     {
       "f5xc-api": {
         "command": "npx",
-        "args": ["f5xc-api-mcp"],
+        "args": ["@robinmordasiewicz/f5xc-api-mcp"],
         "envFile": "${workspaceFolder}/.env"
       }
     }

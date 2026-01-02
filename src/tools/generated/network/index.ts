@@ -8148,7 +8148,7 @@ export const networkTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "network",
         fieldPath: "",
         inline: false,
         required: false,
@@ -8281,7 +8281,7 @@ export const networkTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "network",
         fieldPath: "",
         inline: false,
         required: false,
@@ -8667,7 +8667,7 @@ export const networkTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "network",
         fieldPath: "",
         inline: false,
         required: false,
@@ -12055,7 +12055,7 @@ export const networkTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "network",
         fieldPath: "",
         inline: false,
         required: false,
@@ -12188,7 +12188,7 @@ export const networkTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "network",
         fieldPath: "",
         inline: false,
         required: false,
@@ -12574,7 +12574,7 @@ export const networkTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_networks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "network",
         fieldPath: "",
         inline: false,
         required: false,

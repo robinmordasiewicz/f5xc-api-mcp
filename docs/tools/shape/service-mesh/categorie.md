@@ -41,40 +41,20 @@ Ask Claude to help you work with Categorie resources:
 
 > "Create a categorie named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape categorie create {name} --namespace {namespace}
-```
-
-Create categorie
-
-### file_based
-
-```bash
-f5xcctl shape categorie create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create categorie -n <namespace> -i categorie.yaml
+xcsh shape create categorie -n <namespace> -i categorie.yaml
 
 # Get
-f5xcctl shape get categorie <name> -n <namespace>
+xcsh shape get categorie <name> -n <namespace>
 
 # List
-f5xcctl shape list categorie -n <namespace>
+xcsh shape list categorie -n <namespace>
 
 # Delete
-f5xcctl shape delete categorie <name> -n <namespace>
+xcsh shape delete categorie <name> -n <namespace>
 ```
 
 ## Terraform Resource

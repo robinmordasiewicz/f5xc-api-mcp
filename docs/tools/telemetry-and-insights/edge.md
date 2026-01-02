@@ -43,40 +43,20 @@ Ask Claude to help you work with Edge resources:
 
 > "Create a edge named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl data edge create {name} --namespace {namespace}
-```
-
-Create edge
-
-### file_based
-
-```bash
-f5xcctl data edge create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl telemetry_and_insights create edge -n <namespace> -i edge.yaml
+xcsh telemetry_and_insights create edge -n <namespace> -i edge.yaml
 
 # Get
-f5xcctl telemetry_and_insights get edge <name> -n <namespace>
+xcsh telemetry_and_insights get edge <name> -n <namespace>
 
 # List
-f5xcctl telemetry_and_insights list edge -n <namespace>
+xcsh telemetry_and_insights list edge -n <namespace>
 
 # Delete
-f5xcctl telemetry_and_insights delete edge <name> -n <namespace>
+xcsh telemetry_and_insights delete edge <name> -n <namespace>
 ```
 
 ## Terraform Resource

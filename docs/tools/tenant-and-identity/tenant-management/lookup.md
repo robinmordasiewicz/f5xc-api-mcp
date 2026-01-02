@@ -34,32 +34,20 @@ Ask Claude to help you work with Lookup resources:
 
 > "List all lookups in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web lookup list --namespace {namespace}
-```
-
-List all lookups
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create lookup -n <namespace> -i lookup.yaml
+xcsh tenant_and_identity create lookup -n <namespace> -i lookup.yaml
 
 # Get
-f5xcctl tenant_and_identity get lookup <name> -n <namespace>
+xcsh tenant_and_identity get lookup <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list lookup -n <namespace>
+xcsh tenant_and_identity list lookup -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete lookup <name> -n <namespace>
+xcsh tenant_and_identity delete lookup <name> -n <namespace>
 ```
 
 ## Terraform Resource

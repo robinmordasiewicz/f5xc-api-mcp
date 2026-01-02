@@ -43,40 +43,20 @@ Ask Claude to help you work with Primary resources:
 
 > "Create a primary named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web primary create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web primary create {name} --namespace {namespace}
-```
-
-Create primary
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create primary -n <namespace> -i primary.yaml
+xcsh billing_and_usage create primary -n <namespace> -i primary.yaml
 
 # Get
-f5xcctl billing_and_usage get primary <name> -n <namespace>
+xcsh billing_and_usage get primary <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list primary -n <namespace>
+xcsh billing_and_usage list primary -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete primary <name> -n <namespace>
+xcsh billing_and_usage delete primary <name> -n <namespace>
 ```
 
 ## Terraform Resource

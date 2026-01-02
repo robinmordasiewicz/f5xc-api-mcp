@@ -79,72 +79,20 @@ Ask Claude to help you work with Bgp resources:
 
 > "Get details of the bgp named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config bgp create {name} --namespace {namespace}
-```
-
-Create bgp
-
-### file_based
-
-```bash
-f5xcctl config bgp create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config bgp delete {name} --namespace {namespace}
-```
-
-Delete bgp
-
-### get_specific
-
-```bash
-f5xcctl config bgp get {name} --namespace {namespace}
-```
-
-Get specific bgp
-
-### list_all
-
-```bash
-f5xcctl config bgp list --namespace {namespace}
-```
-
-List all bgps
-
-### update
-
-```bash
-f5xcctl config bgp update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update bgp
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create bgp -n <namespace> -i bgp.yaml
+xcsh network create bgp -n <namespace> -i bgp.yaml
 
 # Get
-f5xcctl network get bgp <name> -n <namespace>
+xcsh network get bgp <name> -n <namespace>
 
 # List
-f5xcctl network list bgp -n <namespace>
+xcsh network list bgp -n <namespace>
 
 # Delete
-f5xcctl network delete bgp <name> -n <namespace>
+xcsh network delete bgp <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -48,40 +48,20 @@ Ask Claude to help you work with Rbac Policy resources:
 
 > "Get details of the rbac-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl web rbac-policy get {name} --namespace {namespace}
-```
-
-Get specific rbac-policy
-
-### list_all
-
-```bash
-f5xcctl web rbac-policy list --namespace {namespace}
-```
-
-List all rbac-policys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create rbac_policy -n <namespace> -i rbac_policy.yaml
+xcsh tenant_and_identity create rbac_policy -n <namespace> -i rbac_policy.yaml
 
 # Get
-f5xcctl tenant_and_identity get rbac_policy <name> -n <namespace>
+xcsh tenant_and_identity get rbac_policy <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list rbac_policy -n <namespace>
+xcsh tenant_and_identity list rbac_policy -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete rbac_policy <name> -n <namespace>
+xcsh tenant_and_identity delete rbac_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

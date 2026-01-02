@@ -41,40 +41,20 @@ Ask Claude to help you work with List resources:
 
 > "Create a list named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape list create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape list create {name} --namespace {namespace}
-```
-
-Create list
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create list -n <namespace> -i list.yaml
+xcsh shape create list -n <namespace> -i list.yaml
 
 # Get
-f5xcctl shape get list <name> -n <namespace>
+xcsh shape get list <name> -n <namespace>
 
 # List
-f5xcctl shape list list -n <namespace>
+xcsh shape list list -n <namespace>
 
 # Delete
-f5xcctl shape delete list <name> -n <namespace>
+xcsh shape delete list <name> -n <namespace>
 ```
 
 ## Terraform Resource

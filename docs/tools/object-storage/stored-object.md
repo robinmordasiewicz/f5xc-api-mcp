@@ -42,32 +42,20 @@ Ask Claude to help you work with Stored Object resources:
 
 > "List all stored-objects in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl object_store stored-object list --namespace {namespace}
-```
-
-List all stored-objects
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl object_storage create stored_object -n <namespace> -i stored_object.yaml
+xcsh object_storage create stored_object -n <namespace> -i stored_object.yaml
 
 # Get
-f5xcctl object_storage get stored_object <name> -n <namespace>
+xcsh object_storage get stored_object <name> -n <namespace>
 
 # List
-f5xcctl object_storage list stored_object -n <namespace>
+xcsh object_storage list stored_object -n <namespace>
 
 # Delete
-f5xcctl object_storage delete stored_object <name> -n <namespace>
+xcsh object_storage delete stored_object <name> -n <namespace>
 ```
 
 ## Terraform Resource

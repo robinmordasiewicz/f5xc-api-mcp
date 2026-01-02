@@ -29,32 +29,20 @@ Operations on this resource may have the following effects:
 
 Ask Claude to help you work with Catalog resources:
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### update
-
-```bash
-f5xcctl web catalog update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update catalog
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create catalog -n <namespace> -i catalog.yaml
+xcsh statistics create catalog -n <namespace> -i catalog.yaml
 
 # Get
-f5xcctl statistics get catalog <name> -n <namespace>
+xcsh statistics get catalog <name> -n <namespace>
 
 # List
-f5xcctl statistics list catalog -n <namespace>
+xcsh statistics list catalog -n <namespace>
 
 # Delete
-f5xcctl statistics delete catalog <name> -n <namespace>
+xcsh statistics delete catalog <name> -n <namespace>
 ```
 
 ## Terraform Resource

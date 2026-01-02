@@ -67,64 +67,20 @@ Ask Claude to help you work with Namespace resources:
 
 > "Get details of the namespace named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web namespace create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web namespace create {name} --namespace {namespace}
-```
-
-Create namespace
-
-### get_specific
-
-```bash
-f5xcctl web namespace get {name} --namespace {namespace}
-```
-
-Get specific namespace
-
-### list_all
-
-```bash
-f5xcctl web namespace list --namespace {namespace}
-```
-
-List all namespaces
-
-### update
-
-```bash
-f5xcctl web namespace update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update namespace
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create namespace -n <namespace> -i namespace.yaml
+xcsh tenant_and_identity create namespace -n <namespace> -i namespace.yaml
 
 # Get
-f5xcctl tenant_and_identity get namespace <name> -n <namespace>
+xcsh tenant_and_identity get namespace <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list namespace -n <namespace>
+xcsh tenant_and_identity list namespace -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete namespace <name> -n <namespace>
+xcsh tenant_and_identity delete namespace <name> -n <namespace>
 ```
 
 ## Terraform Resource

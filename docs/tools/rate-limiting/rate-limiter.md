@@ -77,72 +77,20 @@ Ask Claude to help you work with Rate Limiter resources:
 
 > "Get details of the rate-limiter named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config rate-limiter create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config rate-limiter create {name} --namespace {namespace}
-```
-
-Create rate-limiter
-
-### delete
-
-```bash
-f5xcctl config rate-limiter delete {name} --namespace {namespace}
-```
-
-Delete rate-limiter
-
-### get_specific
-
-```bash
-f5xcctl config rate-limiter get {name} --namespace {namespace}
-```
-
-Get specific rate-limiter
-
-### list_all
-
-```bash
-f5xcctl config rate-limiter list --namespace {namespace}
-```
-
-List all rate-limiters
-
-### update
-
-```bash
-f5xcctl config rate-limiter update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update rate-limiter
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl rate_limiting create rate_limiter -n <namespace> -i rate_limiter.yaml
+xcsh rate_limiting create rate_limiter -n <namespace> -i rate_limiter.yaml
 
 # Get
-f5xcctl rate_limiting get rate_limiter <name> -n <namespace>
+xcsh rate_limiting get rate_limiter <name> -n <namespace>
 
 # List
-f5xcctl rate_limiting list rate_limiter -n <namespace>
+xcsh rate_limiting list rate_limiter -n <namespace>
 
 # Delete
-f5xcctl rate_limiting delete rate_limiter <name> -n <namespace>
+xcsh rate_limiting delete rate_limiter <name> -n <namespace>
 ```
 
 ## Terraform Resource

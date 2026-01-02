@@ -35,32 +35,20 @@ Ask Claude to help you work with Rule resources:
 
 > "List all rules in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl operate rule list --namespace {namespace}
-```
-
-List all rules
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create rule -n <namespace> -i rule.yaml
+xcsh support create rule -n <namespace> -i rule.yaml
 
 # Get
-f5xcctl support get rule <name> -n <namespace>
+xcsh support get rule <name> -n <namespace>
 
 # List
-f5xcctl support list rule -n <namespace>
+xcsh support list rule -n <namespace>
 
 # Delete
-f5xcctl support delete rule <name> -n <namespace>
+xcsh support delete rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

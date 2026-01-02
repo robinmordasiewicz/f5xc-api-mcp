@@ -41,40 +41,20 @@ Ask Claude to help you work with Rate Limit resources:
 
 > "Create a rate-limit named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config rate-limit create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config rate-limit create {name} --namespace {namespace}
-```
-
-Create rate-limit
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create rate_limit -n <namespace> -i rate_limit.yaml
+xcsh api create rate_limit -n <namespace> -i rate_limit.yaml
 
 # Get
-f5xcctl api get rate_limit <name> -n <namespace>
+xcsh api get rate_limit <name> -n <namespace>
 
 # List
-f5xcctl api list rate_limit -n <namespace>
+xcsh api list rate_limit -n <namespace>
 
 # Delete
-f5xcctl api delete rate_limit <name> -n <namespace>
+xcsh api delete rate_limit <name> -n <namespace>
 ```
 
 ## Terraform Resource

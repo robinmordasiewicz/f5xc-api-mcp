@@ -60,48 +60,20 @@ Ask Claude to help you work with API Endpoint resources:
 
 > "Get details of the api-endpoint named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl ml api-endpoint create {name} --namespace {namespace}
-```
-
-Create api-endpoint
-
-### file_based
-
-```bash
-f5xcctl ml api-endpoint create -f {file}.yaml
-```
-
-Create from YAML file
-
-### get_specific
-
-```bash
-f5xcctl ml api-endpoint get {name} --namespace {namespace}
-```
-
-Get specific api-endpoint
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create api_endpoint -n <namespace> -i api_endpoint.yaml
+xcsh virtual create api_endpoint -n <namespace> -i api_endpoint.yaml
 
 # Get
-f5xcctl virtual get api_endpoint <name> -n <namespace>
+xcsh virtual get api_endpoint <name> -n <namespace>
 
 # List
-f5xcctl virtual list api_endpoint -n <namespace>
+xcsh virtual list api_endpoint -n <namespace>
 
 # Delete
-f5xcctl virtual delete api_endpoint <name> -n <namespace>
+xcsh virtual delete api_endpoint <name> -n <namespace>
 ```
 
 ## Terraform Resource

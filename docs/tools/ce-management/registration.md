@@ -78,72 +78,20 @@ Ask Claude to help you work with Registration resources:
 
 > "Get details of the registration named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl register registration create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl register registration create {name} --namespace {namespace}
-```
-
-Create registration
-
-### delete
-
-```bash
-f5xcctl register registration delete {name} --namespace {namespace}
-```
-
-Delete registration
-
-### get_specific
-
-```bash
-f5xcctl register registration get {name} --namespace {namespace}
-```
-
-Get specific registration
-
-### list_all
-
-```bash
-f5xcctl register registration list --namespace {namespace}
-```
-
-List all registrations
-
-### update
-
-```bash
-f5xcctl register registration update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update registration
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create registration -n <namespace> -i registration.yaml
+xcsh ce_management create registration -n <namespace> -i registration.yaml
 
 # Get
-f5xcctl ce_management get registration <name> -n <namespace>
+xcsh ce_management get registration <name> -n <namespace>
 
 # List
-f5xcctl ce_management list registration -n <namespace>
+xcsh ce_management list registration -n <namespace>
 
 # Delete
-f5xcctl ce_management delete registration <name> -n <namespace>
+xcsh ce_management delete registration <name> -n <namespace>
 ```
 
 ## Terraform Resource

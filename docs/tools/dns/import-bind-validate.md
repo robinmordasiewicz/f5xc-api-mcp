@@ -33,40 +33,20 @@ Ask Claude to help you work with Import Bind Validate resources:
 
 > "Create a import-bind-validate named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config import-bind-validate create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config import-bind-validate create {name} --namespace {namespace}
-```
-
-Create import-bind-validate
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create import_bind_validate -n <namespace> -i import_bind_validate.yaml
+xcsh dns create import_bind_validate -n <namespace> -i import_bind_validate.yaml
 
 # Get
-f5xcctl dns get import_bind_validate <name> -n <namespace>
+xcsh dns get import_bind_validate <name> -n <namespace>
 
 # List
-f5xcctl dns list import_bind_validate -n <namespace>
+xcsh dns list import_bind_validate -n <namespace>
 
 # Delete
-f5xcctl dns delete import_bind_validate <name> -n <namespace>
+xcsh dns delete import_bind_validate <name> -n <namespace>
 ```
 
 ## Terraform Resource

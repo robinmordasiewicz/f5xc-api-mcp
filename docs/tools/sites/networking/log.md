@@ -46,40 +46,20 @@ Ask Claude to help you work with Log resources:
 
 > "Create a log named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data log create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data log create {name} --namespace {namespace}
-```
-
-Create log
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create log -n <namespace> -i log.yaml
+xcsh sites create log -n <namespace> -i log.yaml
 
 # Get
-f5xcctl sites get log <name> -n <namespace>
+xcsh sites get log <name> -n <namespace>
 
 # List
-f5xcctl sites list log -n <namespace>
+xcsh sites list log -n <namespace>
 
 # Delete
-f5xcctl sites delete log <name> -n <namespace>
+xcsh sites delete log <name> -n <namespace>
 ```
 
 ## Terraform Resource

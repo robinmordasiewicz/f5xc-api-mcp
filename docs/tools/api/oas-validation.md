@@ -41,40 +41,20 @@ Ask Claude to help you work with Oas Validation resources:
 
 > "Create a oas-validation named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config oas-validation create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config oas-validation create {name} --namespace {namespace}
-```
-
-Create oas-validation
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create oas_validation -n <namespace> -i oas_validation.yaml
+xcsh api create oas_validation -n <namespace> -i oas_validation.yaml
 
 # Get
-f5xcctl api get oas_validation <name> -n <namespace>
+xcsh api get oas_validation <name> -n <namespace>
 
 # List
-f5xcctl api list oas_validation -n <namespace>
+xcsh api list oas_validation -n <namespace>
 
 # Delete
-f5xcctl api delete oas_validation <name> -n <namespace>
+xcsh api delete oas_validation <name> -n <namespace>
 ```
 
 ## Terraform Resource

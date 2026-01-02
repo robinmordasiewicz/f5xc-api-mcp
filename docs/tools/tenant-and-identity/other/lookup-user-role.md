@@ -33,40 +33,20 @@ Ask Claude to help you work with Lookup User Role resources:
 
 > "Create a lookup-user-role named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web lookup-user-role create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web lookup-user-role create {name} --namespace {namespace}
-```
-
-Create lookup-user-role
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create lookup_user_role -n <namespace> -i lookup_user_role.yaml
+xcsh tenant_and_identity create lookup_user_role -n <namespace> -i lookup_user_role.yaml
 
 # Get
-f5xcctl tenant_and_identity get lookup_user_role <name> -n <namespace>
+xcsh tenant_and_identity get lookup_user_role <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list lookup_user_role -n <namespace>
+xcsh tenant_and_identity list lookup_user_role -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete lookup_user_role <name> -n <namespace>
+xcsh tenant_and_identity delete lookup_user_role <name> -n <namespace>
 ```
 
 ## Terraform Resource

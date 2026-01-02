@@ -77,72 +77,20 @@ Ask Claude to help you work with DNS Load Balancer resources:
 
 > "Get details of the dns-load-balancer named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config dns-load-balancer create {name} --namespace {namespace}
-```
-
-Create dns-load-balancer
-
-### file_based
-
-```bash
-f5xcctl config dns-load-balancer create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config dns-load-balancer delete {name} --namespace {namespace}
-```
-
-Delete dns-load-balancer
-
-### get_specific
-
-```bash
-f5xcctl config dns-load-balancer get {name} --namespace {namespace}
-```
-
-Get specific dns-load-balancer
-
-### list_all
-
-```bash
-f5xcctl config dns-load-balancer list --namespace {namespace}
-```
-
-List all dns-load-balancers
-
-### update
-
-```bash
-f5xcctl config dns-load-balancer update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update dns-load-balancer
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create dns_load_balancer -n <namespace> -i dns_load_balancer.yaml
+xcsh dns create dns_load_balancer -n <namespace> -i dns_load_balancer.yaml
 
 # Get
-f5xcctl dns get dns_load_balancer <name> -n <namespace>
+xcsh dns get dns_load_balancer <name> -n <namespace>
 
 # List
-f5xcctl dns list dns_load_balancer -n <namespace>
+xcsh dns list dns_load_balancer -n <namespace>
 
 # Delete
-f5xcctl dns delete dns_load_balancer <name> -n <namespace>
+xcsh dns delete dns_load_balancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

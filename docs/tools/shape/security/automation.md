@@ -41,40 +41,20 @@ Ask Claude to help you work with Automation resources:
 
 > "Create a automation named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape automation create {name} --namespace {namespace}
-```
-
-Create automation
-
-### file_based
-
-```bash
-f5xcctl shape automation create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create automation -n <namespace> -i automation.yaml
+xcsh shape create automation -n <namespace> -i automation.yaml
 
 # Get
-f5xcctl shape get automation <name> -n <namespace>
+xcsh shape get automation <name> -n <namespace>
 
 # List
-f5xcctl shape list automation -n <namespace>
+xcsh shape list automation -n <namespace>
 
 # Delete
-f5xcctl shape delete automation <name> -n <namespace>
+xcsh shape delete automation <name> -n <namespace>
 ```
 
 ## Terraform Resource

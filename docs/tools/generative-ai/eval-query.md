@@ -41,40 +41,20 @@ Ask Claude to help you work with Eval Query resources:
 
 > "Create a eval-query named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl gen-ai eval-query create {name} --namespace {namespace}
-```
-
-Create eval-query
-
-### file_based
-
-```bash
-f5xcctl gen-ai eval-query create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl generative_ai create eval_query -n <namespace> -i eval_query.yaml
+xcsh generative_ai create eval_query -n <namespace> -i eval_query.yaml
 
 # Get
-f5xcctl generative_ai get eval_query <name> -n <namespace>
+xcsh generative_ai get eval_query <name> -n <namespace>
 
 # List
-f5xcctl generative_ai list eval_query -n <namespace>
+xcsh generative_ai list eval_query -n <namespace>
 
 # Delete
-f5xcctl generative_ai delete eval_query <name> -n <namespace>
+xcsh generative_ai delete eval_query <name> -n <namespace>
 ```
 
 ## Terraform Resource

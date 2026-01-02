@@ -33,32 +33,20 @@ Ask Claude to help you work with Flowlabel resources:
 
 > "List all flowlabels in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data-intelligence flowlabel list --namespace {namespace}
-```
-
-List all flowlabels
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl data_intelligence create flowlabel -n <namespace> -i flowlabel.yaml
+xcsh data_intelligence create flowlabel -n <namespace> -i flowlabel.yaml
 
 # Get
-f5xcctl data_intelligence get flowlabel <name> -n <namespace>
+xcsh data_intelligence get flowlabel <name> -n <namespace>
 
 # List
-f5xcctl data_intelligence list flowlabel -n <namespace>
+xcsh data_intelligence list flowlabel -n <namespace>
 
 # Delete
-f5xcctl data_intelligence delete flowlabel <name> -n <namespace>
+xcsh data_intelligence delete flowlabel <name> -n <namespace>
 ```
 
 ## Terraform Resource

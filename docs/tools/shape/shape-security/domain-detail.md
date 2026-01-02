@@ -39,32 +39,20 @@ Ask Claude to help you work with Domain Detail resources:
 
 > "List all domain-details in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape domain-detail list --namespace {namespace}
-```
-
-List all domain-details
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create domain_detail -n <namespace> -i domain_detail.yaml
+xcsh shape create domain_detail -n <namespace> -i domain_detail.yaml
 
 # Get
-f5xcctl shape get domain_detail <name> -n <namespace>
+xcsh shape get domain_detail <name> -n <namespace>
 
 # List
-f5xcctl shape list domain_detail -n <namespace>
+xcsh shape list domain_detail -n <namespace>
 
 # Delete
-f5xcctl shape delete domain_detail <name> -n <namespace>
+xcsh shape delete domain_detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

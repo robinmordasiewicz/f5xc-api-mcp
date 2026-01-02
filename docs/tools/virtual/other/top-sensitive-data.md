@@ -46,40 +46,20 @@ Ask Claude to help you work with Top Sensitive Data resources:
 
 > "Create a top-sensitive-data named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml top-sensitive-data create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml top-sensitive-data create {name} --namespace {namespace}
-```
-
-Create top-sensitive-data
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create top_sensitive_data -n <namespace> -i top_sensitive_data.yaml
+xcsh virtual create top_sensitive_data -n <namespace> -i top_sensitive_data.yaml
 
 # Get
-f5xcctl virtual get top_sensitive_data <name> -n <namespace>
+xcsh virtual get top_sensitive_data <name> -n <namespace>
 
 # List
-f5xcctl virtual list top_sensitive_data -n <namespace>
+xcsh virtual list top_sensitive_data -n <namespace>
 
 # Delete
-f5xcctl virtual delete top_sensitive_data <name> -n <namespace>
+xcsh virtual delete top_sensitive_data <name> -n <namespace>
 ```
 
 ## Terraform Resource

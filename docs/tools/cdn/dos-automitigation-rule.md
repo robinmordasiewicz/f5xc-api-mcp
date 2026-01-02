@@ -48,40 +48,20 @@ Ask Claude to help you work with Dos Automitigation Rule resources:
 
 > "Get details of the dos-automitigation-rule named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### delete
-
-```bash
-f5xcctl config dos-automitigation-rule delete {name} --namespace {namespace}
-```
-
-Delete dos-automitigation-rule
-
-### get_specific
-
-```bash
-f5xcctl config dos-automitigation-rule get {name} --namespace {namespace}
-```
-
-Get specific dos-automitigation-rule
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cdn create dos_automitigation_rule -n <namespace> -i dos_automitigation_rule.yaml
+xcsh cdn create dos_automitigation_rule -n <namespace> -i dos_automitigation_rule.yaml
 
 # Get
-f5xcctl cdn get dos_automitigation_rule <name> -n <namespace>
+xcsh cdn get dos_automitigation_rule <name> -n <namespace>
 
 # List
-f5xcctl cdn list dos_automitigation_rule -n <namespace>
+xcsh cdn list dos_automitigation_rule -n <namespace>
 
 # Delete
-f5xcctl cdn delete dos_automitigation_rule <name> -n <namespace>
+xcsh cdn delete dos_automitigation_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

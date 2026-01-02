@@ -80,72 +80,20 @@ Ask Claude to help you work with Cminstance resources:
 
 > "Get details of the cminstance named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config cminstance create {name} --namespace {namespace}
-```
-
-Create cminstance
-
-### file_based
-
-```bash
-f5xcctl config cminstance create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config cminstance delete {name} --namespace {namespace}
-```
-
-Delete cminstance
-
-### get_specific
-
-```bash
-f5xcctl config cminstance get {name} --namespace {namespace}
-```
-
-Get specific cminstance
-
-### list_all
-
-```bash
-f5xcctl config cminstance list --namespace {namespace}
-```
-
-List all cminstances
-
-### update
-
-```bash
-f5xcctl config cminstance update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update cminstance
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create cminstance -n <namespace> -i cminstance.yaml
+xcsh marketplace create cminstance -n <namespace> -i cminstance.yaml
 
 # Get
-f5xcctl marketplace get cminstance <name> -n <namespace>
+xcsh marketplace get cminstance <name> -n <namespace>
 
 # List
-f5xcctl marketplace list cminstance -n <namespace>
+xcsh marketplace list cminstance -n <namespace>
 
 # Delete
-f5xcctl marketplace delete cminstance <name> -n <namespace>
+xcsh marketplace delete cminstance <name> -n <namespace>
 ```
 
 ## Terraform Resource

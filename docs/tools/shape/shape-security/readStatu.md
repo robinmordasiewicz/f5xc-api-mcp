@@ -42,40 +42,20 @@ Ask Claude to help you work with ReadStatu resources:
 
 > "Create a readStatu named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape readStatu create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape readStatu create {name} --namespace {namespace}
-```
-
-Create readStatu
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create readStatu -n <namespace> -i readStatu.yaml
+xcsh shape create readStatu -n <namespace> -i readStatu.yaml
 
 # Get
-f5xcctl shape get readStatu <name> -n <namespace>
+xcsh shape get readStatu <name> -n <namespace>
 
 # List
-f5xcctl shape list readStatu -n <namespace>
+xcsh shape list readStatu -n <namespace>
 
 # Delete
-f5xcctl shape delete readStatu <name> -n <namespace>
+xcsh shape delete readStatu <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -41,40 +41,20 @@ Ask Claude to help you work with List Service Operations Statu resources:
 
 > "Create a list-service-operations-statu named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl cdn list-service-operations-statu create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl cdn list-service-operations-statu create {name} --namespace {namespace}
-```
-
-Create list-service-operations-statu
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cdn create list_service_operations_statu -n <namespace> -i list_service_operations_statu.yaml
+xcsh cdn create list_service_operations_statu -n <namespace> -i list_service_operations_statu.yaml
 
 # Get
-f5xcctl cdn get list_service_operations_statu <name> -n <namespace>
+xcsh cdn get list_service_operations_statu <name> -n <namespace>
 
 # List
-f5xcctl cdn list list_service_operations_statu -n <namespace>
+xcsh cdn list list_service_operations_statu -n <namespace>
 
 # Delete
-f5xcctl cdn delete list_service_operations_statu <name> -n <namespace>
+xcsh cdn delete list_service_operations_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

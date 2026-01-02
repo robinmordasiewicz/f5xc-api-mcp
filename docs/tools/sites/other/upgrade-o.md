@@ -42,40 +42,20 @@ Ask Claude to help you work with Upgrade O resources:
 
 > "Create a upgrade-o named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config upgrade-o create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config upgrade-o create {name} --namespace {namespace}
-```
-
-Create upgrade-o
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create upgrade_o -n <namespace> -i upgrade_o.yaml
+xcsh sites create upgrade_o -n <namespace> -i upgrade_o.yaml
 
 # Get
-f5xcctl sites get upgrade_o <name> -n <namespace>
+xcsh sites get upgrade_o <name> -n <namespace>
 
 # List
-f5xcctl sites list upgrade_o -n <namespace>
+xcsh sites list upgrade_o -n <namespace>
 
 # Delete
-f5xcctl sites delete upgrade_o <name> -n <namespace>
+xcsh sites delete upgrade_o <name> -n <namespace>
 ```
 
 ## Terraform Resource

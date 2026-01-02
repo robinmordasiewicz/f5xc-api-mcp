@@ -42,40 +42,20 @@ Ask Claude to help you work with Priority resources:
 
 > "Create a priority named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web priority create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web priority create {name} --namespace {namespace}
-```
-
-Create priority
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create priority -n <namespace> -i priority.yaml
+xcsh support create priority -n <namespace> -i priority.yaml
 
 # Get
-f5xcctl support get priority <name> -n <namespace>
+xcsh support get priority <name> -n <namespace>
 
 # List
-f5xcctl support list priority -n <namespace>
+xcsh support list priority -n <namespace>
 
 # Delete
-f5xcctl support delete priority <name> -n <namespace>
+xcsh support delete priority <name> -n <namespace>
 ```
 
 ## Terraform Resource

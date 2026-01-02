@@ -77,72 +77,20 @@ Ask Claude to help you work with Service Policy resources:
 
 > "Get details of the service-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config service-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config service-policy create {name} --namespace {namespace}
-```
-
-Create service-policy
-
-### delete
-
-```bash
-f5xcctl config service-policy delete {name} --namespace {namespace}
-```
-
-Delete service-policy
-
-### get_specific
-
-```bash
-f5xcctl config service-policy get {name} --namespace {namespace}
-```
-
-Get specific service-policy
-
-### list_all
-
-```bash
-f5xcctl config service-policy list --namespace {namespace}
-```
-
-List all service-policys
-
-### update
-
-```bash
-f5xcctl config service-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update service-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create service_policy -n <namespace> -i service_policy.yaml
+xcsh network_security create service_policy -n <namespace> -i service_policy.yaml
 
 # Get
-f5xcctl network_security get service_policy <name> -n <namespace>
+xcsh network_security get service_policy <name> -n <namespace>
 
 # List
-f5xcctl network_security list service_policy -n <namespace>
+xcsh network_security list service_policy -n <namespace>
 
 # Delete
-f5xcctl network_security delete service_policy <name> -n <namespace>
+xcsh network_security delete service_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

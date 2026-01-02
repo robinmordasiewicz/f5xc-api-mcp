@@ -25,32 +25,20 @@ Ask Claude to help you work with Current resources:
 
 > "List all currents in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web current list --namespace {namespace}
-```
-
-List all currents
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create current -n <namespace> -i current.yaml
+xcsh billing_and_usage create current -n <namespace> -i current.yaml
 
 # Get
-f5xcctl billing_and_usage get current <name> -n <namespace>
+xcsh billing_and_usage get current <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list current -n <namespace>
+xcsh billing_and_usage list current -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete current <name> -n <namespace>
+xcsh billing_and_usage delete current <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -76,72 +76,20 @@ Ask Claude to help you work with User Group resources:
 
 > "Get details of the user-group named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web user-group create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web user-group create {name} --namespace {namespace}
-```
-
-Create user-group
-
-### delete
-
-```bash
-f5xcctl web user-group delete {name} --namespace {namespace}
-```
-
-Delete user-group
-
-### get_specific
-
-```bash
-f5xcctl web user-group get {name} --namespace {namespace}
-```
-
-Get specific user-group
-
-### list_all
-
-```bash
-f5xcctl web user-group list --namespace {namespace}
-```
-
-List all user-groups
-
-### update
-
-```bash
-f5xcctl web user-group update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update user-group
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create user_group -n <namespace> -i user_group.yaml
+xcsh tenant_and_identity create user_group -n <namespace> -i user_group.yaml
 
 # Get
-f5xcctl tenant_and_identity get user_group <name> -n <namespace>
+xcsh tenant_and_identity get user_group <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list user_group -n <namespace>
+xcsh tenant_and_identity list user_group -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete user_group <name> -n <namespace>
+xcsh tenant_and_identity delete user_group <name> -n <namespace>
 ```
 
 ## Terraform Resource

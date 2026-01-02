@@ -206,7 +206,7 @@ export const statisticsTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "observability",
         fieldPath: "",
         inline: false,
         required: false,
@@ -338,7 +338,7 @@ export const statisticsTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "observability",
         fieldPath: "",
         inline: false,
         required: false,
@@ -721,7 +721,7 @@ export const statisticsTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "observability",
         fieldPath: "",
         inline: false,
         required: false,
@@ -4943,7 +4943,7 @@ export const statisticsTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "observability",
         fieldPath: "",
         inline: false,
         required: false,
@@ -5076,7 +5076,7 @@ export const statisticsTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "observability",
         fieldPath: "",
         inline: false,
         required: false,
@@ -5462,7 +5462,7 @@ export const statisticsTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "observability",
         fieldPath: "",
         inline: false,
         required: false,
@@ -7055,18 +7055,6 @@ export const statisticsTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
-        required: false,
-        tier: "standard",
-      },
-      {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
-        required: false,
-        tier: "advanced",
-      },
-      {
         addonService: "f5xc_site_management_standard",
         displayName: "F5XC Site Management Standard",
         required: false,
@@ -7153,18 +7141,6 @@ export const statisticsTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
-      {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
-        required: false,
-        tier: "standard",
-      },
-      {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
-        required: false,
-        tier: "advanced",
-      },
       {
         addonService: "f5xc_site_management_standard",
         displayName: "F5XC Site Management Standard",

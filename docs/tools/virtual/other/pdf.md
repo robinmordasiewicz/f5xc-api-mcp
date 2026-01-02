@@ -41,32 +41,20 @@ Ask Claude to help you work with Pdf resources:
 
 > "Get details of the pdf named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl ml pdf get {name} --namespace {namespace}
-```
-
-Get specific pdf
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create pdf -n <namespace> -i pdf.yaml
+xcsh virtual create pdf -n <namespace> -i pdf.yaml
 
 # Get
-f5xcctl virtual get pdf <name> -n <namespace>
+xcsh virtual get pdf <name> -n <namespace>
 
 # List
-f5xcctl virtual list pdf -n <namespace>
+xcsh virtual list pdf -n <namespace>
 
 # Delete
-f5xcctl virtual delete pdf <name> -n <namespace>
+xcsh virtual delete pdf <name> -n <namespace>
 ```
 
 ## Terraform Resource

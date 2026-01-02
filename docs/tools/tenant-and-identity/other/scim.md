@@ -38,32 +38,20 @@ Operations on this resource may have the following effects:
 
 Ask Claude to help you work with Scim resources:
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### update
-
-```bash
-f5xcctl web scim update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update scim
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create scim -n <namespace> -i scim.yaml
+xcsh tenant_and_identity create scim -n <namespace> -i scim.yaml
 
 # Get
-f5xcctl tenant_and_identity get scim <name> -n <namespace>
+xcsh tenant_and_identity get scim <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list scim -n <namespace>
+xcsh tenant_and_identity list scim -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete scim <name> -n <namespace>
+xcsh tenant_and_identity delete scim <name> -n <namespace>
 ```
 
 ## Terraform Resource

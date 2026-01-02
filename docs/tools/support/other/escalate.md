@@ -43,40 +43,20 @@ Ask Claude to help you work with Escalate resources:
 
 > "Create a escalate named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web escalate create {name} --namespace {namespace}
-```
-
-Create escalate
-
-### file_based
-
-```bash
-f5xcctl web escalate create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create escalate -n <namespace> -i escalate.yaml
+xcsh support create escalate -n <namespace> -i escalate.yaml
 
 # Get
-f5xcctl support get escalate <name> -n <namespace>
+xcsh support get escalate <name> -n <namespace>
 
 # List
-f5xcctl support list escalate -n <namespace>
+xcsh support list escalate -n <namespace>
 
 # Delete
-f5xcctl support delete escalate <name> -n <namespace>
+xcsh support delete escalate <name> -n <namespace>
 ```
 
 ## Terraform Resource

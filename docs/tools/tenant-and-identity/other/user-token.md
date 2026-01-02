@@ -25,32 +25,20 @@ Ask Claude to help you work with User Token resources:
 
 > "List all user-tokens in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config user-token list --namespace {namespace}
-```
-
-List all user-tokens
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create user_token -n <namespace> -i user_token.yaml
+xcsh tenant_and_identity create user_token -n <namespace> -i user_token.yaml
 
 # Get
-f5xcctl tenant_and_identity get user_token <name> -n <namespace>
+xcsh tenant_and_identity get user_token <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list user_token -n <namespace>
+xcsh tenant_and_identity list user_token -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete user_token <name> -n <namespace>
+xcsh tenant_and_identity delete user_token <name> -n <namespace>
 ```
 
 ## Terraform Resource

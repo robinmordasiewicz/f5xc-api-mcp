@@ -77,72 +77,20 @@ Ask Claude to help you work with Container Registry resources:
 
 > "Get details of the container-registry named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config container-registry create {name} --namespace {namespace}
-```
-
-Create container-registry
-
-### file_based
-
-```bash
-f5xcctl config container-registry create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config container-registry delete {name} --namespace {namespace}
-```
-
-Delete container-registry
-
-### get_specific
-
-```bash
-f5xcctl config container-registry get {name} --namespace {namespace}
-```
-
-Get specific container-registry
-
-### list_all
-
-```bash
-f5xcctl config container-registry list --namespace {namespace}
-```
-
-List all container-registrys
-
-### update
-
-```bash
-f5xcctl config container-registry update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update container-registry
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl managed_kubernetes create container_registry -n <namespace> -i container_registry.yaml
+xcsh managed_kubernetes create container_registry -n <namespace> -i container_registry.yaml
 
 # Get
-f5xcctl managed_kubernetes get container_registry <name> -n <namespace>
+xcsh managed_kubernetes get container_registry <name> -n <namespace>
 
 # List
-f5xcctl managed_kubernetes list container_registry -n <namespace>
+xcsh managed_kubernetes list container_registry -n <namespace>
 
 # Delete
-f5xcctl managed_kubernetes delete container_registry <name> -n <namespace>
+xcsh managed_kubernetes delete container_registry <name> -n <namespace>
 ```
 
 ## Terraform Resource

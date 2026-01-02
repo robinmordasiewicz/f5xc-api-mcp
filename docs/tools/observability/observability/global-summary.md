@@ -39,32 +39,20 @@ Ask Claude to help you work with Global Summary resources:
 
 > "List all global-summarys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl observability global-summary list --namespace {namespace}
-```
-
-List all global-summarys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create global_summary -n <namespace> -i global_summary.yaml
+xcsh observability create global_summary -n <namespace> -i global_summary.yaml
 
 # Get
-f5xcctl observability get global_summary <name> -n <namespace>
+xcsh observability get global_summary <name> -n <namespace>
 
 # List
-f5xcctl observability list global_summary -n <namespace>
+xcsh observability list global_summary -n <namespace>
 
 # Delete
-f5xcctl observability delete global_summary <name> -n <namespace>
+xcsh observability delete global_summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

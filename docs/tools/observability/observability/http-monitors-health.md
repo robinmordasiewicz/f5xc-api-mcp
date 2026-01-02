@@ -41,40 +41,20 @@ Ask Claude to help you work with HTTP Monitors Health resources:
 
 > "Create a http-monitors-health named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl observability http-monitors-health create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl observability http-monitors-health create {name} --namespace {namespace}
-```
-
-Create http-monitors-health
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create http_monitors_health -n <namespace> -i http_monitors_health.yaml
+xcsh observability create http_monitors_health -n <namespace> -i http_monitors_health.yaml
 
 # Get
-f5xcctl observability get http_monitors_health <name> -n <namespace>
+xcsh observability get http_monitors_health <name> -n <namespace>
 
 # List
-f5xcctl observability list http_monitors_health -n <namespace>
+xcsh observability list http_monitors_health -n <namespace>
 
 # Delete
-f5xcctl observability delete http_monitors_health <name> -n <namespace>
+xcsh observability delete http_monitors_health <name> -n <namespace>
 ```
 
 ## Terraform Resource

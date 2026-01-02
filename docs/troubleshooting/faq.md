@@ -16,7 +16,7 @@ Node.js is not installed or not in PATH.
 brew install node
 
 # Check version
-node --version  # Should be 18+
+node --version  # Should be 24+
 npx --version
 ```
 
@@ -237,7 +237,7 @@ Set authentication environment variables:
 
 **Solution:**
 
-Remove credentials to use documentation-only mode. This is useful when you authenticate separately via f5xcctl or Terraform.
+Remove credentials to use documentation-only mode. This is useful when you authenticate separately via xcsh or Terraform.
 
 ## Common Error Messages
 

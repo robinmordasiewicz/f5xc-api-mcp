@@ -41,40 +41,20 @@ Ask Claude to help you work with Update Asn Review Statu resources:
 
 > "Create a update-asn-review-statu named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl infraprotect update-asn-review-statu create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl infraprotect update-asn-review-statu create {name} --namespace {namespace}
-```
-
-Create update-asn-review-statu
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create update_asn_review_statu -n <namespace> -i update_asn_review_statu.yaml
+xcsh ddos create update_asn_review_statu -n <namespace> -i update_asn_review_statu.yaml
 
 # Get
-f5xcctl ddos get update_asn_review_statu <name> -n <namespace>
+xcsh ddos get update_asn_review_statu <name> -n <namespace>
 
 # List
-f5xcctl ddos list update_asn_review_statu -n <namespace>
+xcsh ddos list update_asn_review_statu -n <namespace>
 
 # Delete
-f5xcctl ddos delete update_asn_review_statu <name> -n <namespace>
+xcsh ddos delete update_asn_review_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

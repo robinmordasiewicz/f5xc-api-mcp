@@ -33,40 +33,20 @@ Ask Claude to help you work with Threat Type resources:
 
 > "Create a threat-type named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape threat-type create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape threat-type create {name} --namespace {namespace}
-```
-
-Create threat-type
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create threat_type -n <namespace> -i threat_type.yaml
+xcsh shape create threat_type -n <namespace> -i threat_type.yaml
 
 # Get
-f5xcctl shape get threat_type <name> -n <namespace>
+xcsh shape get threat_type <name> -n <namespace>
 
 # List
-f5xcctl shape list threat_type -n <namespace>
+xcsh shape list threat_type -n <namespace>
 
 # Delete
-f5xcctl shape delete threat_type <name> -n <namespace>
+xcsh shape delete threat_type <name> -n <namespace>
 ```
 
 ## Terraform Resource

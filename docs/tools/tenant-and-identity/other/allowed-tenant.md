@@ -78,72 +78,20 @@ Ask Claude to help you work with Allowed Tenant resources:
 
 > "Get details of the allowed-tenant named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web allowed-tenant create {name} --namespace {namespace}
-```
-
-Create allowed-tenant
-
-### file_based
-
-```bash
-f5xcctl web allowed-tenant create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl web allowed-tenant delete {name} --namespace {namespace}
-```
-
-Delete allowed-tenant
-
-### get_specific
-
-```bash
-f5xcctl web allowed-tenant get {name} --namespace {namespace}
-```
-
-Get specific allowed-tenant
-
-### list_all
-
-```bash
-f5xcctl web allowed-tenant list --namespace {namespace}
-```
-
-List all allowed-tenants
-
-### update
-
-```bash
-f5xcctl web allowed-tenant update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update allowed-tenant
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create allowed_tenant -n <namespace> -i allowed_tenant.yaml
+xcsh tenant_and_identity create allowed_tenant -n <namespace> -i allowed_tenant.yaml
 
 # Get
-f5xcctl tenant_and_identity get allowed_tenant <name> -n <namespace>
+xcsh tenant_and_identity get allowed_tenant <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list allowed_tenant -n <namespace>
+xcsh tenant_and_identity list allowed_tenant -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete allowed_tenant <name> -n <namespace>
+xcsh tenant_and_identity delete allowed_tenant <name> -n <namespace>
 ```
 
 ## Terraform Resource

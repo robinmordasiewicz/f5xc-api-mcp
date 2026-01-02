@@ -41,40 +41,20 @@ Ask Claude to help you work with Latency resources:
 
 > "Create a latency named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data latency create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data latency create {name} --namespace {namespace}
-```
-
-Create latency
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create latency -n <namespace> -i latency.yaml
+xcsh network_security create latency -n <namespace> -i latency.yaml
 
 # Get
-f5xcctl network_security get latency <name> -n <namespace>
+xcsh network_security get latency <name> -n <namespace>
 
 # List
-f5xcctl network_security list latency -n <namespace>
+xcsh network_security list latency -n <namespace>
 
 # Delete
-f5xcctl network_security delete latency <name> -n <namespace>
+xcsh network_security delete latency <name> -n <namespace>
 ```
 
 ## Terraform Resource

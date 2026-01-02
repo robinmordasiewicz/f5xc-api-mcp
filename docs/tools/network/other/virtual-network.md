@@ -77,72 +77,20 @@ Ask Claude to help you work with Virtual Network resources:
 
 > "Get details of the virtual-network named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config virtual-network create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config virtual-network create {name} --namespace {namespace}
-```
-
-Create virtual-network
-
-### delete
-
-```bash
-f5xcctl config virtual-network delete {name} --namespace {namespace}
-```
-
-Delete virtual-network
-
-### get_specific
-
-```bash
-f5xcctl config virtual-network get {name} --namespace {namespace}
-```
-
-Get specific virtual-network
-
-### list_all
-
-```bash
-f5xcctl config virtual-network list --namespace {namespace}
-```
-
-List all virtual-networks
-
-### update
-
-```bash
-f5xcctl config virtual-network update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update virtual-network
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create virtual_network -n <namespace> -i virtual_network.yaml
+xcsh network create virtual_network -n <namespace> -i virtual_network.yaml
 
 # Get
-f5xcctl network get virtual_network <name> -n <namespace>
+xcsh network get virtual_network <name> -n <namespace>
 
 # List
-f5xcctl network list virtual_network -n <namespace>
+xcsh network list virtual_network -n <namespace>
 
 # Delete
-f5xcctl network delete virtual_network <name> -n <namespace>
+xcsh network delete virtual_network <name> -n <namespace>
 ```
 
 ## Terraform Resource

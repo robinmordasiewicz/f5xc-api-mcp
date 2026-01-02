@@ -17,6 +17,7 @@ import { CredentialManager, AuthMode } from "../auth/credential-manager.js";
 import { HttpClient } from "../auth/http-client.js";
 import { formatErrorForMcp } from "../utils/error-handling.js";
 import { logger } from "../utils/logging.js";
+import { getDomainMetadata, getResourceMetadata } from "./domain-metadata.js";
 
 /**
  * Tool response for documentation mode
@@ -54,6 +55,14 @@ export interface DocumentationResponse {
   oneOfFields: Array<{ field: string; options: string[] }> | null;
   subscriptionRequirements: string[] | null;
   creationOrder: string[] | null;
+  // Domain metadata from upstream specs index.json
+  domainTitle: string | null;
+  domainDescription: string | null;
+  domainDescriptionShort: string | null;
+  domainCategory: string | null;
+  uiCategory: string | null;
+  domainUseCases: string[] | null;
+  domainComplexity: "simple" | "moderate" | "advanced" | null;
 }
 
 /**
@@ -183,33 +192,41 @@ export const SUBSCRIPTION_TIERS = {
 } as const;
 
 /**
- * Map resource types to subscription tiers
+ * Fallback tier map for resources not in upstream specs
  */
-const RESOURCE_TIER_MAP: Record<string, string> = {
-  // Standard tier resources
-  http_loadbalancer: SUBSCRIPTION_TIERS.STANDARD,
-  origin_pool: SUBSCRIPTION_TIERS.STANDARD,
-  dns_zone: SUBSCRIPTION_TIERS.STANDARD,
-  healthcheck: SUBSCRIPTION_TIERS.STANDARD,
-
-  // Advanced tier resources
-  app_firewall: SUBSCRIPTION_TIERS.ADVANCED,
-  bot_defense: SUBSCRIPTION_TIERS.ADVANCED,
-  api_discovery: SUBSCRIPTION_TIERS.ADVANCED,
-  malicious_user_detection: SUBSCRIPTION_TIERS.ADVANCED,
-
-  // Core resources (no tier)
+const FALLBACK_TIER_MAP: Record<string, string> = {
+  // Core resources (no tier) - fallback only
   namespace: SUBSCRIPTION_TIERS.NO_TIER,
   certificate: SUBSCRIPTION_TIERS.NO_TIER,
   secret: SUBSCRIPTION_TIERS.NO_TIER,
 };
 
 /**
- * Get subscription tier for a resource type
+ * Get subscription tier for a resource type using upstream metadata (v1.0.84+)
+ *
+ * Priority:
+ * 1. Upstream resource metadata tier field
+ * 2. Fallback tier map for unmapped resources
+ * 3. Default to NO_TIER
  */
 function getSubscriptionTier(resource: string): string {
   const normalizedResource = resource.toLowerCase().replace(/-/g, "_");
-  return RESOURCE_TIER_MAP[normalizedResource] ?? SUBSCRIPTION_TIERS.NO_TIER;
+
+  // Try upstream resource metadata first (v1.0.84+)
+  const resourceMeta = getResourceMetadata(normalizedResource);
+  if (resourceMeta) {
+    const upstreamTier = resourceMeta.tier.toLowerCase();
+    if (upstreamTier === "advanced") {
+      return SUBSCRIPTION_TIERS.ADVANCED;
+    }
+    if (upstreamTier === "standard") {
+      return SUBSCRIPTION_TIERS.STANDARD;
+    }
+    return SUBSCRIPTION_TIERS.NO_TIER;
+  }
+
+  // Fallback for resources not in upstream specs
+  return FALLBACK_TIER_MAP[normalizedResource] ?? SUBSCRIPTION_TIERS.NO_TIER;
 }
 
 /**
@@ -241,7 +258,12 @@ function generateTerraformExample(operation: ParsedOperation): string {
 }
 
 /**
- * Generate prerequisites based on resource type
+ * Generate prerequisites based on resource type using upstream metadata (v1.0.84+)
+ *
+ * Uses rich resource metadata including:
+ * - dependencies.required: Resources that MUST exist before creation
+ * - dependencies.optional: Resources that are optional dependencies
+ * - relationshipHints: Human-readable relationship descriptions
  */
 function generatePrerequisites(operation: ParsedOperation): string[] {
   const prerequisites: string[] = [];
@@ -251,29 +273,53 @@ function generatePrerequisites(operation: ParsedOperation): string[] {
     prerequisites.push("Namespace must exist");
   }
 
-  // Resource-specific prerequisites
-  const resource = operation.resource.toLowerCase();
+  // Get upstream resource metadata
+  const resource = operation.resource.toLowerCase().replace(/-/g, "_");
+  const resourceMeta = getResourceMetadata(resource);
 
-  if (resource.includes("loadbalancer") || resource.includes("lb")) {
-    prerequisites.push("Origin pool required for backend configuration");
-    prerequisites.push("DNS zone required for automatic DNS management (optional)");
-  }
+  if (resourceMeta) {
+    // Add required dependencies from upstream specs
+    for (const required of resourceMeta.dependencies.required) {
+      prerequisites.push(`${formatResourceName(required)} required`);
+    }
 
-  if (resource.includes("origin") && resource.includes("pool")) {
-    prerequisites.push("Backend servers must be accessible");
-    prerequisites.push("Health check configuration recommended");
-  }
+    // Add relationship hints (more descriptive than just dependency names)
+    for (const hint of resourceMeta.relationshipHints) {
+      prerequisites.push(hint);
+    }
 
-  if (resource.includes("site")) {
-    prerequisites.push("Cloud credentials must be configured");
-    prerequisites.push("VPC/VNet must exist in target cloud");
-  }
+    // Add tier requirement if Advanced
+    if (resourceMeta.tier === "Advanced") {
+      prerequisites.push(`${resourceMeta.category} subscription required`);
+    }
+  } else {
+    // Fallback for resources not in upstream specs (pattern-based)
+    const resourceName = operation.resource.toLowerCase();
 
-  if (resource.includes("waf") || resource.includes("firewall")) {
-    prerequisites.push("WAAP subscription required");
+    if (resourceName.includes("loadbalancer") || resourceName.includes("lb")) {
+      prerequisites.push("Origin pool required for backend configuration");
+    }
+
+    if (resourceName.includes("site")) {
+      prerequisites.push("Cloud credentials must be configured");
+    }
+
+    if (resourceName.includes("waf") || resourceName.includes("firewall")) {
+      prerequisites.push("WAAP subscription required");
+    }
   }
 
   return prerequisites;
+}
+
+/**
+ * Format resource name for human-readable display
+ */
+function formatResourceName(name: string): string {
+  return name
+    .split("_")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 /**
@@ -348,9 +394,11 @@ function buildToolSchema(operation: ParsedOperation): z.ZodObject<Record<string,
 
 /**
  * Build documentation response for a tool
+ * Includes domain metadata from upstream specs for richer context
  */
 function buildDocumentationResponse(operation: ParsedOperation): DocumentationResponse {
   const parameters: ParameterInfo[] = [];
+  const domainMeta = getDomainMetadata(operation.domain);
 
   // Add path parameters with rich metadata
   for (const param of operation.pathParameters) {
@@ -465,6 +513,14 @@ function buildDocumentationResponse(operation: ParsedOperation): DocumentationRe
     oneOfFields,
     subscriptionRequirements,
     creationOrder: null, // Populated from dependency graph at runtime
+    // Domain metadata from upstream specs index.json
+    domainTitle: domainMeta?.title ?? null,
+    domainDescription: domainMeta?.descriptionMedium ?? null,
+    domainDescriptionShort: domainMeta?.descriptionShort ?? null,
+    domainCategory: domainMeta?.domainCategory ?? null,
+    uiCategory: domainMeta?.uiCategory ?? null,
+    domainUseCases: domainMeta?.useCases ?? null,
+    domainComplexity: domainMeta?.complexity ?? null,
   };
 }
 
@@ -545,9 +601,11 @@ function generateExampleRequest(operation: ParsedOperation): Record<string, unkn
 
 /**
  * Build tool description with rich metadata
+ * Uses domain metadata from upstream specs for richer context
  */
 function buildToolDescription(operation: ParsedOperation): string {
   const parts: string[] = [];
+  const domainMeta = getDomainMetadata(operation.domain);
 
   // Use displayName if available, otherwise summary
   parts.push(operation.displayName ?? operation.summary);
@@ -582,9 +640,14 @@ function buildToolDescription(operation: ParsedOperation): string {
     }
   }
 
-  // Add standard metadata
+  // Add domain metadata from upstream specs
   parts.push("");
-  parts.push(`Domain: ${operation.domain}`);
+  if (domainMeta) {
+    parts.push(`Domain: ${domainMeta.title} (${domainMeta.domainCategory})`);
+    parts.push(`Tier: ${domainMeta.requiresTier}`);
+  } else {
+    parts.push(`Domain: ${operation.domain}`);
+  }
   parts.push(`Resource: ${operation.resource}`);
   parts.push(`HTTP: ${operation.method} ${operation.path}`);
 

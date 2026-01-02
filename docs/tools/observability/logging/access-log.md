@@ -45,40 +45,20 @@ Ask Claude to help you work with Access Log resources:
 
 > "Create a access-log named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl data access-log create {name} --namespace {namespace}
-```
-
-Create access-log
-
-### file_based
-
-```bash
-f5xcctl data access-log create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create access_log -n <namespace> -i access_log.yaml
+xcsh observability create access_log -n <namespace> -i access_log.yaml
 
 # Get
-f5xcctl observability get access_log <name> -n <namespace>
+xcsh observability get access_log <name> -n <namespace>
 
 # List
-f5xcctl observability list access_log -n <namespace>
+xcsh observability list access_log -n <namespace>
 
 # Delete
-f5xcctl observability delete access_log <name> -n <namespace>
+xcsh observability delete access_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

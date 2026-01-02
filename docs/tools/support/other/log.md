@@ -42,32 +42,20 @@ Ask Claude to help you work with Log resources:
 
 > "List all logs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl operate log list --namespace {namespace}
-```
-
-List all logs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create log -n <namespace> -i log.yaml
+xcsh support create log -n <namespace> -i log.yaml
 
 # Get
-f5xcctl support get log <name> -n <namespace>
+xcsh support get log <name> -n <namespace>
 
 # List
-f5xcctl support list log -n <namespace>
+xcsh support list log -n <namespace>
 
 # Delete
-f5xcctl support delete log <name> -n <namespace>
+xcsh support delete log <name> -n <namespace>
 ```
 
 ## Terraform Resource

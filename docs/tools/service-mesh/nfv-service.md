@@ -77,72 +77,20 @@ Ask Claude to help you work with Nfv Service resources:
 
 > "Get details of the nfv-service named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config nfv-service create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config nfv-service create {name} --namespace {namespace}
-```
-
-Create nfv-service
-
-### delete
-
-```bash
-f5xcctl config nfv-service delete {name} --namespace {namespace}
-```
-
-Delete nfv-service
-
-### get_specific
-
-```bash
-f5xcctl config nfv-service get {name} --namespace {namespace}
-```
-
-Get specific nfv-service
-
-### list_all
-
-```bash
-f5xcctl config nfv-service list --namespace {namespace}
-```
-
-List all nfv-services
-
-### update
-
-```bash
-f5xcctl config nfv-service update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update nfv-service
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl service_mesh create nfv_service -n <namespace> -i nfv_service.yaml
+xcsh service_mesh create nfv_service -n <namespace> -i nfv_service.yaml
 
 # Get
-f5xcctl service_mesh get nfv_service <name> -n <namespace>
+xcsh service_mesh get nfv_service <name> -n <namespace>
 
 # List
-f5xcctl service_mesh list nfv_service -n <namespace>
+xcsh service_mesh list nfv_service -n <namespace>
 
 # Delete
-f5xcctl service_mesh delete nfv_service <name> -n <namespace>
+xcsh service_mesh delete nfv_service <name> -n <namespace>
 ```
 
 ## Terraform Resource

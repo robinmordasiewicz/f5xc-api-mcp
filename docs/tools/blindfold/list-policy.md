@@ -34,32 +34,20 @@ Ask Claude to help you work with List Policy resources:
 
 > "List all list-policys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl secret_management list-policy list --namespace {namespace}
-```
-
-List all list-policys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create list_policy -n <namespace> -i list_policy.yaml
+xcsh blindfold create list_policy -n <namespace> -i list_policy.yaml
 
 # Get
-f5xcctl blindfold get list_policy <name> -n <namespace>
+xcsh blindfold get list_policy <name> -n <namespace>
 
 # List
-f5xcctl blindfold list list_policy -n <namespace>
+xcsh blindfold list list_policy -n <namespace>
 
 # Delete
-f5xcctl blindfold delete list_policy <name> -n <namespace>
+xcsh blindfold delete list_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

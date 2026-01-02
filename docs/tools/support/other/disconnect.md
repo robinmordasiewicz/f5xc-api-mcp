@@ -43,40 +43,20 @@ Ask Claude to help you work with Disconnect resources:
 
 > "Create a disconnect named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl operate disconnect create {name} --namespace {namespace}
-```
-
-Create disconnect
-
-### file_based
-
-```bash
-f5xcctl operate disconnect create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create disconnect -n <namespace> -i disconnect.yaml
+xcsh support create disconnect -n <namespace> -i disconnect.yaml
 
 # Get
-f5xcctl support get disconnect <name> -n <namespace>
+xcsh support get disconnect <name> -n <namespace>
 
 # List
-f5xcctl support list disconnect -n <namespace>
+xcsh support list disconnect -n <namespace>
 
 # Delete
-f5xcctl support delete disconnect <name> -n <namespace>
+xcsh support delete disconnect <name> -n <namespace>
 ```
 
 ## Terraform Resource

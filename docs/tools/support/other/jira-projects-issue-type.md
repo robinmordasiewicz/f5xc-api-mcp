@@ -34,40 +34,20 @@ Ask Claude to help you work with Jira Projects Issue Type resources:
 
 > "Create a jira-projects-issue-type named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web jira-projects-issue-type create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web jira-projects-issue-type create {name} --namespace {namespace}
-```
-
-Create jira-projects-issue-type
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create jira_projects_issue_type -n <namespace> -i jira_projects_issue_type.yaml
+xcsh support create jira_projects_issue_type -n <namespace> -i jira_projects_issue_type.yaml
 
 # Get
-f5xcctl support get jira_projects_issue_type <name> -n <namespace>
+xcsh support get jira_projects_issue_type <name> -n <namespace>
 
 # List
-f5xcctl support list jira_projects_issue_type -n <namespace>
+xcsh support list jira_projects_issue_type -n <namespace>
 
 # Delete
-f5xcctl support delete jira_projects_issue_type <name> -n <namespace>
+xcsh support delete jira_projects_issue_type <name> -n <namespace>
 ```
 
 ## Terraform Resource

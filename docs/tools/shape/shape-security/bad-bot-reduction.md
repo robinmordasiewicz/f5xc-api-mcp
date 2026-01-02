@@ -41,40 +41,20 @@ Ask Claude to help you work with Bad Bot Reduction resources:
 
 > "Create a bad-bot-reduction named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape bad-bot-reduction create {name} --namespace {namespace}
-```
-
-Create bad-bot-reduction
-
-### file_based
-
-```bash
-f5xcctl shape bad-bot-reduction create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create bad_bot_reduction -n <namespace> -i bad_bot_reduction.yaml
+xcsh shape create bad_bot_reduction -n <namespace> -i bad_bot_reduction.yaml
 
 # Get
-f5xcctl shape get bad_bot_reduction <name> -n <namespace>
+xcsh shape get bad_bot_reduction <name> -n <namespace>
 
 # List
-f5xcctl shape list bad_bot_reduction -n <namespace>
+xcsh shape list bad_bot_reduction -n <namespace>
 
 # Delete
-f5xcctl shape delete bad_bot_reduction <name> -n <namespace>
+xcsh shape delete bad_bot_reduction <name> -n <namespace>
 ```
 
 ## Terraform Resource

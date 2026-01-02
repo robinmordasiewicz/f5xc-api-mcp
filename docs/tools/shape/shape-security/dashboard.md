@@ -42,32 +42,20 @@ Ask Claude to help you work with Dashboard resources:
 
 > "Get details of the dashboard named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl shape dashboard get {name} --namespace {namespace}
-```
-
-Get specific dashboard
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create dashboard -n <namespace> -i dashboard.yaml
+xcsh shape create dashboard -n <namespace> -i dashboard.yaml
 
 # Get
-f5xcctl shape get dashboard <name> -n <namespace>
+xcsh shape get dashboard <name> -n <namespace>
 
 # List
-f5xcctl shape list dashboard -n <namespace>
+xcsh shape list dashboard -n <namespace>
 
 # Delete
-f5xcctl shape delete dashboard <name> -n <namespace>
+xcsh shape delete dashboard <name> -n <namespace>
 ```
 
 ## Terraform Resource

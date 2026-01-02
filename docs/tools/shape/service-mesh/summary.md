@@ -46,48 +46,20 @@ Ask Claude to help you work with Summary resources:
 
 > "List all summarys in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape summary create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape summary create {name} --namespace {namespace}
-```
-
-Create summary
-
-### list_all
-
-```bash
-f5xcctl shape summary list --namespace {namespace}
-```
-
-List all summarys
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create summary -n <namespace> -i summary.yaml
+xcsh shape create summary -n <namespace> -i summary.yaml
 
 # Get
-f5xcctl shape get summary <name> -n <namespace>
+xcsh shape get summary <name> -n <namespace>
 
 # List
-f5xcctl shape list summary -n <namespace>
+xcsh shape list summary -n <namespace>
 
 # Delete
-f5xcctl shape delete summary <name> -n <namespace>
+xcsh shape delete summary <name> -n <namespace>
 ```
 
 ## Terraform Resource

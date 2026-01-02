@@ -43,40 +43,20 @@ Ask Claude to help you work with Firewall Log resources:
 
 > "Create a firewall-log named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl data firewall-log create {name} --namespace {namespace}
-```
-
-Create firewall-log
-
-### file_based
-
-```bash
-f5xcctl data firewall-log create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create firewall_log -n <namespace> -i firewall_log.yaml
+xcsh sites create firewall_log -n <namespace> -i firewall_log.yaml
 
 # Get
-f5xcctl sites get firewall_log <name> -n <namespace>
+xcsh sites get firewall_log <name> -n <namespace>
 
 # List
-f5xcctl sites list firewall_log -n <namespace>
+xcsh sites list firewall_log -n <namespace>
 
 # Delete
-f5xcctl sites delete firewall_log <name> -n <namespace>
+xcsh sites delete firewall_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

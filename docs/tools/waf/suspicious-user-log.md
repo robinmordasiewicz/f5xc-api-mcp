@@ -47,40 +47,20 @@ Ask Claude to help you work with Suspicious User Log resources:
 
 > "Create a suspicious-user-log named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data suspicious-user-log create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data suspicious-user-log create {name} --namespace {namespace}
-```
-
-Create suspicious-user-log
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create suspicious_user_log -n <namespace> -i suspicious_user_log.yaml
+xcsh waf create suspicious_user_log -n <namespace> -i suspicious_user_log.yaml
 
 # Get
-f5xcctl waf get suspicious_user_log <name> -n <namespace>
+xcsh waf get suspicious_user_log <name> -n <namespace>
 
 # List
-f5xcctl waf list suspicious_user_log -n <namespace>
+xcsh waf list suspicious_user_log -n <namespace>
 
 # Delete
-f5xcctl waf delete suspicious_user_log <name> -n <namespace>
+xcsh waf delete suspicious_user_log <name> -n <namespace>
 ```
 
 ## Terraform Resource

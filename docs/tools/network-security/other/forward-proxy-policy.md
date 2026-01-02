@@ -77,72 +77,20 @@ Ask Claude to help you work with Forward Proxy Policy resources:
 
 > "Get details of the forward-proxy-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config forward-proxy-policy create {name} --namespace {namespace}
-```
-
-Create forward-proxy-policy
-
-### file_based
-
-```bash
-f5xcctl config forward-proxy-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config forward-proxy-policy delete {name} --namespace {namespace}
-```
-
-Delete forward-proxy-policy
-
-### get_specific
-
-```bash
-f5xcctl config forward-proxy-policy get {name} --namespace {namespace}
-```
-
-Get specific forward-proxy-policy
-
-### list_all
-
-```bash
-f5xcctl config forward-proxy-policy list --namespace {namespace}
-```
-
-List all forward-proxy-policys
-
-### update
-
-```bash
-f5xcctl config forward-proxy-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update forward-proxy-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create forward_proxy_policy -n <namespace> -i forward_proxy_policy.yaml
+xcsh network_security create forward_proxy_policy -n <namespace> -i forward_proxy_policy.yaml
 
 # Get
-f5xcctl network_security get forward_proxy_policy <name> -n <namespace>
+xcsh network_security get forward_proxy_policy <name> -n <namespace>
 
 # List
-f5xcctl network_security list forward_proxy_policy -n <namespace>
+xcsh network_security list forward_proxy_policy -n <namespace>
 
 # Delete
-f5xcctl network_security delete forward_proxy_policy <name> -n <namespace>
+xcsh network_security delete forward_proxy_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

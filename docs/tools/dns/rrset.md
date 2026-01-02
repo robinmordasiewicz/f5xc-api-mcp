@@ -42,40 +42,20 @@ Ask Claude to help you work with Rrset resources:
 
 > "Create a rrset named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config rrset create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config rrset create {name} --namespace {namespace}
-```
-
-Create rrset
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create rrset -n <namespace> -i rrset.yaml
+xcsh dns create rrset -n <namespace> -i rrset.yaml
 
 # Get
-f5xcctl dns get rrset <name> -n <namespace>
+xcsh dns get rrset <name> -n <namespace>
 
 # List
-f5xcctl dns list rrset -n <namespace>
+xcsh dns list rrset -n <namespace>
 
 # Delete
-f5xcctl dns delete rrset <name> -n <namespace>
+xcsh dns delete rrset <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -42,40 +42,20 @@ Ask Claude to help you work with Create HTTP Load Balancer resources:
 
 > "Create a create-http-load-balancer named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl discovery create-http-load-balancer create {name} --namespace {namespace}
-```
-
-Create create-http-load-balancer
-
-### file_based
-
-```bash
-f5xcctl discovery create-http-load-balancer create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create create_http_load_balancer -n <namespace> -i create_http_load_balancer.yaml
+xcsh statistics create create_http_load_balancer -n <namespace> -i create_http_load_balancer.yaml
 
 # Get
-f5xcctl statistics get create_http_load_balancer <name> -n <namespace>
+xcsh statistics get create_http_load_balancer <name> -n <namespace>
 
 # List
-f5xcctl statistics list create_http_load_balancer -n <namespace>
+xcsh statistics list create_http_load_balancer -n <namespace>
 
 # Delete
-f5xcctl statistics delete create_http_load_balancer <name> -n <namespace>
+xcsh statistics delete create_http_load_balancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

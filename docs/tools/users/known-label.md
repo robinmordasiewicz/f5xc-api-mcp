@@ -47,32 +47,20 @@ Ask Claude to help you work with Known Label resources:
 
 > "List all known-labels in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config known-label list --namespace {namespace}
-```
-
-List all known-labels
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl users create known_label -n <namespace> -i known_label.yaml
+xcsh users create known_label -n <namespace> -i known_label.yaml
 
 # Get
-f5xcctl users get known_label <name> -n <namespace>
+xcsh users get known_label <name> -n <namespace>
 
 # List
-f5xcctl users list known_label -n <namespace>
+xcsh users list known_label -n <namespace>
 
 # Delete
-f5xcctl users delete known_label <name> -n <namespace>
+xcsh users delete known_label <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with Alert Policy resources:
 
 > "Get details of the alert-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config alert-policy create {name} --namespace {namespace}
-```
-
-Create alert-policy
-
-### file_based
-
-```bash
-f5xcctl config alert-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config alert-policy delete {name} --namespace {namespace}
-```
-
-Delete alert-policy
-
-### get_specific
-
-```bash
-f5xcctl config alert-policy get {name} --namespace {namespace}
-```
-
-Get specific alert-policy
-
-### list_all
-
-```bash
-f5xcctl config alert-policy list --namespace {namespace}
-```
-
-List all alert-policys
-
-### update
-
-```bash
-f5xcctl config alert-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update alert-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create alert_policy -n <namespace> -i alert_policy.yaml
+xcsh statistics create alert_policy -n <namespace> -i alert_policy.yaml
 
 # Get
-f5xcctl statistics get alert_policy <name> -n <namespace>
+xcsh statistics get alert_policy <name> -n <namespace>
 
 # List
-f5xcctl statistics list alert_policy -n <namespace>
+xcsh statistics list alert_policy -n <namespace>
 
 # Delete
-f5xcctl statistics delete alert_policy <name> -n <namespace>
+xcsh statistics delete alert_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

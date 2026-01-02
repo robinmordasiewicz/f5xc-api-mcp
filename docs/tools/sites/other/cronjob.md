@@ -39,32 +39,20 @@ Ask Claude to help you work with Cronjob resources:
 
 > "List all cronjobs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data cronjob list --namespace {namespace}
-```
-
-List all cronjobs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create cronjob -n <namespace> -i cronjob.yaml
+xcsh sites create cronjob -n <namespace> -i cronjob.yaml
 
 # Get
-f5xcctl sites get cronjob <name> -n <namespace>
+xcsh sites get cronjob <name> -n <namespace>
 
 # List
-f5xcctl sites list cronjob -n <namespace>
+xcsh sites list cronjob -n <namespace>
 
 # Delete
-f5xcctl sites delete cronjob <name> -n <namespace>
+xcsh sites delete cronjob <name> -n <namespace>
 ```
 
 ## Terraform Resource

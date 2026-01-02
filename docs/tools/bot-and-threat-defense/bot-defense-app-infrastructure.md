@@ -77,72 +77,20 @@ Ask Claude to help you work with Bot Defense App Infrastructure resources:
 
 > "Get details of the bot-defense-app-infrastructure named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config bot-defense-app-infrastructure create {name} --namespace {namespace}
-```
-
-Create bot-defense-app-infrastructure
-
-### file_based
-
-```bash
-f5xcctl config bot-defense-app-infrastructure create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config bot-defense-app-infrastructure delete {name} --namespace {namespace}
-```
-
-Delete bot-defense-app-infrastructure
-
-### get_specific
-
-```bash
-f5xcctl config bot-defense-app-infrastructure get {name} --namespace {namespace}
-```
-
-Get specific bot-defense-app-infrastructure
-
-### list_all
-
-```bash
-f5xcctl config bot-defense-app-infrastructure list --namespace {namespace}
-```
-
-List all bot-defense-app-infrastructures
-
-### update
-
-```bash
-f5xcctl config bot-defense-app-infrastructure update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update bot-defense-app-infrastructure
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl bot_and_threat_defense create bot_defense_app_infrastructure -n <namespace> -i bot_defense_app_infrastructure.yaml
+xcsh bot_and_threat_defense create bot_defense_app_infrastructure -n <namespace> -i bot_defense_app_infrastructure.yaml
 
 # Get
-f5xcctl bot_and_threat_defense get bot_defense_app_infrastructure <name> -n <namespace>
+xcsh bot_and_threat_defense get bot_defense_app_infrastructure <name> -n <namespace>
 
 # List
-f5xcctl bot_and_threat_defense list bot_defense_app_infrastructure -n <namespace>
+xcsh bot_and_threat_defense list bot_defense_app_infrastructure -n <namespace>
 
 # Delete
-f5xcctl bot_and_threat_defense delete bot_defense_app_infrastructure <name> -n <namespace>
+xcsh bot_and_threat_defense delete bot_defense_app_infrastructure <name> -n <namespace>
 ```
 
 ## Terraform Resource

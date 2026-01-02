@@ -42,40 +42,20 @@ Ask Claude to help you work with Validate Config resources:
 
 > "Create a validate-config named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config validate-config create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config validate-config create {name} --namespace {namespace}
-```
-
-Create validate-config
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create validate_config -n <namespace> -i validate_config.yaml
+xcsh sites create validate_config -n <namespace> -i validate_config.yaml
 
 # Get
-f5xcctl sites get validate_config <name> -n <namespace>
+xcsh sites get validate_config <name> -n <namespace>
 
 # List
-f5xcctl sites list validate_config -n <namespace>
+xcsh sites list validate_config -n <namespace>
 
 # Delete
-f5xcctl sites delete validate_config <name> -n <namespace>
+xcsh sites delete validate_config <name> -n <namespace>
 ```
 
 ## Terraform Resource

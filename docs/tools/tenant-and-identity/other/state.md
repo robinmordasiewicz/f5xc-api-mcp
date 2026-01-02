@@ -34,32 +34,20 @@ Ask Claude to help you work with State resources:
 
 > "List all states in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web state list --namespace {namespace}
-```
-
-List all states
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create state -n <namespace> -i state.yaml
+xcsh tenant_and_identity create state -n <namespace> -i state.yaml
 
 # Get
-f5xcctl tenant_and_identity get state <name> -n <namespace>
+xcsh tenant_and_identity get state <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list state -n <namespace>
+xcsh tenant_and_identity list state -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete state <name> -n <namespace>
+xcsh tenant_and_identity delete state <name> -n <namespace>
 ```
 
 ## Terraform Resource

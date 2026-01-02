@@ -77,72 +77,20 @@ Ask Claude to help you work with Crl resources:
 
 > "Get details of the crl named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config crl create {name} --namespace {namespace}
-```
-
-Create crl
-
-### file_based
-
-```bash
-f5xcctl config crl create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config crl delete {name} --namespace {namespace}
-```
-
-Delete crl
-
-### get_specific
-
-```bash
-f5xcctl config crl get {name} --namespace {namespace}
-```
-
-Get specific crl
-
-### list_all
-
-```bash
-f5xcctl config crl list --namespace {namespace}
-```
-
-List all crls
-
-### update
-
-```bash
-f5xcctl config crl update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update crl
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl certificates create crl -n <namespace> -i crl.yaml
+xcsh certificates create crl -n <namespace> -i crl.yaml
 
 # Get
-f5xcctl certificates get crl <name> -n <namespace>
+xcsh certificates get crl <name> -n <namespace>
 
 # List
-f5xcctl certificates list crl -n <namespace>
+xcsh certificates list crl -n <namespace>
 
 # Delete
-f5xcctl certificates delete crl <name> -n <namespace>
+xcsh certificates delete crl <name> -n <namespace>
 ```
 
 ## Terraform Resource

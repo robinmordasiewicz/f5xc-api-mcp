@@ -33,40 +33,20 @@ Ask Claude to help you work with Refresh Token resources:
 
 > "Create a refresh-token named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ai_data refresh-token create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ai_data refresh-token create {name} --namespace {namespace}
-```
-
-Create refresh-token
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl generative_ai create refresh_token -n <namespace> -i refresh_token.yaml
+xcsh generative_ai create refresh_token -n <namespace> -i refresh_token.yaml
 
 # Get
-f5xcctl generative_ai get refresh_token <name> -n <namespace>
+xcsh generative_ai get refresh_token <name> -n <namespace>
 
 # List
-f5xcctl generative_ai list refresh_token -n <namespace>
+xcsh generative_ai list refresh_token -n <namespace>
 
 # Delete
-f5xcctl generative_ai delete refresh_token <name> -n <namespace>
+xcsh generative_ai delete refresh_token <name> -n <namespace>
 ```
 
 ## Terraform Resource

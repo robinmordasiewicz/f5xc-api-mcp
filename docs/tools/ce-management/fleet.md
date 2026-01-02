@@ -77,72 +77,20 @@ Ask Claude to help you work with Fleet resources:
 
 > "Get details of the fleet named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config fleet create {name} --namespace {namespace}
-```
-
-Create fleet
-
-### file_based
-
-```bash
-f5xcctl config fleet create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config fleet delete {name} --namespace {namespace}
-```
-
-Delete fleet
-
-### get_specific
-
-```bash
-f5xcctl config fleet get {name} --namespace {namespace}
-```
-
-Get specific fleet
-
-### list_all
-
-```bash
-f5xcctl config fleet list --namespace {namespace}
-```
-
-List all fleets
-
-### update
-
-```bash
-f5xcctl config fleet update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update fleet
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create fleet -n <namespace> -i fleet.yaml
+xcsh ce_management create fleet -n <namespace> -i fleet.yaml
 
 # Get
-f5xcctl ce_management get fleet <name> -n <namespace>
+xcsh ce_management get fleet <name> -n <namespace>
 
 # List
-f5xcctl ce_management list fleet -n <namespace>
+xcsh ce_management list fleet -n <namespace>
 
 # Delete
-f5xcctl ce_management delete fleet <name> -n <namespace>
+xcsh ce_management delete fleet <name> -n <namespace>
 ```
 
 ## Terraform Resource

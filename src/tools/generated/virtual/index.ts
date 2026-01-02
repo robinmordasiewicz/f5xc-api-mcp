@@ -2824,7 +2824,7 @@ export const virtualTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
     dependencies: [
       {
-        domain: "network",
+        domain: "virtual",
         fieldPath: "",
         inline: false,
         required: false,
@@ -2957,7 +2957,7 @@ export const virtualTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
     dependencies: [
       {
-        domain: "network",
+        domain: "virtual",
         fieldPath: "",
         inline: false,
         required: false,
@@ -3345,7 +3345,7 @@ export const virtualTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
     dependencies: [
       {
-        domain: "network",
+        domain: "virtual",
         fieldPath: "",
         inline: false,
         required: false,
@@ -4393,7 +4393,7 @@ export const virtualTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
     dependencies: [
       {
-        domain: "network",
+        domain: "virtual",
         fieldPath: "",
         inline: false,
         required: false,
@@ -4526,7 +4526,7 @@ export const virtualTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
     dependencies: [
       {
-        domain: "network",
+        domain: "virtual",
         fieldPath: "",
         inline: false,
         required: false,
@@ -4911,7 +4911,7 @@ export const virtualTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
     dependencies: [
       {
-        domain: "network",
+        domain: "virtual",
         fieldPath: "",
         inline: false,
         required: false,
@@ -5807,7 +5807,7 @@ export const virtualTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "rate_limiting",
         fieldPath: "",
         inline: false,
         required: false,
@@ -5952,7 +5952,7 @@ export const virtualTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "rate_limiting",
         fieldPath: "",
         inline: false,
         required: false,
@@ -6374,7 +6374,7 @@ export const virtualTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "rate_limiting",
         fieldPath: "",
         inline: false,
         required: false,
@@ -6511,7 +6511,7 @@ export const virtualTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "network_security",
+        domain: "waf",
         fieldPath: "",
         inline: false,
         required: false,
@@ -6656,7 +6656,7 @@ export const virtualTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "network_security",
+        domain: "waf",
         fieldPath: "",
         inline: false,
         required: false,
@@ -8083,7 +8083,7 @@ export const virtualTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "network_security",
+        domain: "waf",
         fieldPath: "",
         inline: false,
         required: false,

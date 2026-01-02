@@ -44,40 +44,20 @@ Ask Claude to help you work with Schema resources:
 
 > "Get details of the Schema named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl scim Schema get {name} --namespace {namespace}
-```
-
-Get specific Schema
-
-### list_all
-
-```bash
-f5xcctl scim Schema list --namespace {namespace}
-```
-
-List all Schemas
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create Schema -n <namespace> -i Schema.yaml
+xcsh tenant_and_identity create Schema -n <namespace> -i Schema.yaml
 
 # Get
-f5xcctl tenant_and_identity get Schema <name> -n <namespace>
+xcsh tenant_and_identity get Schema <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list Schema -n <namespace>
+xcsh tenant_and_identity list Schema -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete Schema <name> -n <namespace>
+xcsh tenant_and_identity delete Schema <name> -n <namespace>
 ```
 
 ## Terraform Resource

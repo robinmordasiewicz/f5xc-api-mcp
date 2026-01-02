@@ -42,40 +42,20 @@ Ask Claude to help you work with Generate resources:
 
 > "Create a generate named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl report generate create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl report generate create {name} --namespace {namespace}
-```
-
-Create generate
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create generate -n <namespace> -i generate.yaml
+xcsh statistics create generate -n <namespace> -i generate.yaml
 
 # Get
-f5xcctl statistics get generate <name> -n <namespace>
+xcsh statistics get generate <name> -n <namespace>
 
 # List
-f5xcctl statistics list generate -n <namespace>
+xcsh statistics list generate -n <namespace>
 
 # Delete
-f5xcctl statistics delete generate <name> -n <namespace>
+xcsh statistics delete generate <name> -n <namespace>
 ```
 
 ## Terraform Resource

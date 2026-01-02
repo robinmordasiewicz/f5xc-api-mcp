@@ -48,40 +48,20 @@ Ask Claude to help you work with Plan resources:
 
 > "Get details of the plan named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl web plan get {name} --namespace {namespace}
-```
-
-Get specific plan
-
-### list_all
-
-```bash
-f5xcctl web plan list --namespace {namespace}
-```
-
-List all plans
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create plan -n <namespace> -i plan.yaml
+xcsh marketplace create plan -n <namespace> -i plan.yaml
 
 # Get
-f5xcctl marketplace get plan <name> -n <namespace>
+xcsh marketplace get plan <name> -n <namespace>
 
 # List
-f5xcctl marketplace list plan -n <namespace>
+xcsh marketplace list plan -n <namespace>
 
 # Delete
-f5xcctl marketplace delete plan <name> -n <namespace>
+xcsh marketplace delete plan <name> -n <namespace>
 ```
 
 ## Terraform Resource

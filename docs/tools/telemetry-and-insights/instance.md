@@ -41,40 +41,20 @@ Ask Claude to help you work with Instance resources:
 
 > "Create a instance named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data instance create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data instance create {name} --namespace {namespace}
-```
-
-Create instance
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl telemetry_and_insights create instance -n <namespace> -i instance.yaml
+xcsh telemetry_and_insights create instance -n <namespace> -i instance.yaml
 
 # Get
-f5xcctl telemetry_and_insights get instance <name> -n <namespace>
+xcsh telemetry_and_insights get instance <name> -n <namespace>
 
 # List
-f5xcctl telemetry_and_insights list instance -n <namespace>
+xcsh telemetry_and_insights list instance -n <namespace>
 
 # Delete
-f5xcctl telemetry_and_insights delete instance <name> -n <namespace>
+xcsh telemetry_and_insights delete instance <name> -n <namespace>
 ```
 
 ## Terraform Resource

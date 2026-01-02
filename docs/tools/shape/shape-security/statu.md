@@ -47,48 +47,20 @@ Ask Claude to help you work with Statu resources:
 
 > "List all status in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape statu create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape statu create {name} --namespace {namespace}
-```
-
-Create statu
-
-### list_all
-
-```bash
-f5xcctl shape statu list --namespace {namespace}
-```
-
-List all status
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create statu -n <namespace> -i statu.yaml
+xcsh shape create statu -n <namespace> -i statu.yaml
 
 # Get
-f5xcctl shape get statu <name> -n <namespace>
+xcsh shape get statu <name> -n <namespace>
 
 # List
-f5xcctl shape list statu -n <namespace>
+xcsh shape list statu -n <namespace>
 
 # Delete
-f5xcctl shape delete statu <name> -n <namespace>
+xcsh shape delete statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

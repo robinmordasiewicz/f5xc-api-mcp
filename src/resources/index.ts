@@ -10,6 +10,9 @@ export {
   getResourceType,
   getResourceTypesByTier,
   buildApiPath,
+  enhanceWithDomainContext,
+  getEnhancedResourceTypes,
+  clearEnhancedTypesCache,
 } from "./templates.js";
 
 export type { ResourceType } from "./templates.js";

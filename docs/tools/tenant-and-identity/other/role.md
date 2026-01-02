@@ -66,72 +66,20 @@ Ask Claude to help you work with Role resources:
 
 > "Get details of the role named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web role create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web role create {name} --namespace {namespace}
-```
-
-Create role
-
-### delete
-
-```bash
-f5xcctl web role delete {name} --namespace {namespace}
-```
-
-Delete role
-
-### get_specific
-
-```bash
-f5xcctl web role get {name} --namespace {namespace}
-```
-
-Get specific role
-
-### list_all
-
-```bash
-f5xcctl web role list --namespace {namespace}
-```
-
-List all roles
-
-### update
-
-```bash
-f5xcctl web role update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update role
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create role -n <namespace> -i role.yaml
+xcsh tenant_and_identity create role -n <namespace> -i role.yaml
 
 # Get
-f5xcctl tenant_and_identity get role <name> -n <namespace>
+xcsh tenant_and_identity get role <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list role -n <namespace>
+xcsh tenant_and_identity list role -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete role <name> -n <namespace>
+xcsh tenant_and_identity delete role <name> -n <namespace>
 ```
 
 ## Terraform Resource

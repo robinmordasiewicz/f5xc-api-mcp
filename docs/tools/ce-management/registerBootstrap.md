@@ -34,40 +34,20 @@ Ask Claude to help you work with RegisterBootstrap resources:
 
 > "Create a registerBootstrap named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl register registerBootstrap create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl register registerBootstrap create {name} --namespace {namespace}
-```
-
-Create registerBootstrap
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create registerBootstrap -n <namespace> -i registerBootstrap.yaml
+xcsh ce_management create registerBootstrap -n <namespace> -i registerBootstrap.yaml
 
 # Get
-f5xcctl ce_management get registerBootstrap <name> -n <namespace>
+xcsh ce_management get registerBootstrap <name> -n <namespace>
 
 # List
-f5xcctl ce_management list registerBootstrap -n <namespace>
+xcsh ce_management list registerBootstrap -n <namespace>
 
 # Delete
-f5xcctl ce_management delete registerBootstrap <name> -n <namespace>
+xcsh ce_management delete registerBootstrap <name> -n <namespace>
 ```
 
 ## Terraform Resource

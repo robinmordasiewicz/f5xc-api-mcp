@@ -33,40 +33,20 @@ Ask Claude to help you work with Subscribe resources:
 
 > "Create a subscribe named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data-intelligence subscribe create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data-intelligence subscribe create {name} --namespace {namespace}
-```
-
-Create subscribe
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl data_intelligence create subscribe -n <namespace> -i subscribe.yaml
+xcsh data_intelligence create subscribe -n <namespace> -i subscribe.yaml
 
 # Get
-f5xcctl data_intelligence get subscribe <name> -n <namespace>
+xcsh data_intelligence get subscribe <name> -n <namespace>
 
 # List
-f5xcctl data_intelligence list subscribe -n <namespace>
+xcsh data_intelligence list subscribe -n <namespace>
 
 # Delete
-f5xcctl data_intelligence delete subscribe <name> -n <namespace>
+xcsh data_intelligence delete subscribe <name> -n <namespace>
 ```
 
 ## Terraform Resource

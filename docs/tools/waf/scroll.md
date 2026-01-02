@@ -59,48 +59,20 @@ Ask Claude to help you work with Scroll resources:
 
 > "List all scrolls in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data scroll create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data scroll create {name} --namespace {namespace}
-```
-
-Create scroll
-
-### list_all
-
-```bash
-f5xcctl data scroll list --namespace {namespace}
-```
-
-List all scrolls
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create scroll -n <namespace> -i scroll.yaml
+xcsh waf create scroll -n <namespace> -i scroll.yaml
 
 # Get
-f5xcctl waf get scroll <name> -n <namespace>
+xcsh waf get scroll <name> -n <namespace>
 
 # List
-f5xcctl waf list scroll -n <namespace>
+xcsh waf list scroll -n <namespace>
 
 # Delete
-f5xcctl waf delete scroll <name> -n <namespace>
+xcsh waf delete scroll <name> -n <namespace>
 ```
 
 ## Terraform Resource

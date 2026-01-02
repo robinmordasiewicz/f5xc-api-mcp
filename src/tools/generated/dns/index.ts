@@ -838,7 +838,7 @@ export const dnsTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dns_domains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "dns",
         fieldPath: "",
         inline: false,
         required: false,
@@ -971,7 +971,7 @@ export const dnsTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dns_domains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "dns",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1357,7 +1357,7 @@ export const dnsTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/dns_domains" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "dns",
         fieldPath: "",
         inline: false,
         required: false,
@@ -2765,7 +2765,7 @@ export const dnsTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "dns",
         fieldPath: "",
         inline: false,
         required: false,
@@ -2897,7 +2897,7 @@ export const dnsTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "dns",
         fieldPath: "",
         inline: false,
         required: false,
@@ -3280,7 +3280,7 @@ export const dnsTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "dns",
         fieldPath: "",
         inline: false,
         required: false,

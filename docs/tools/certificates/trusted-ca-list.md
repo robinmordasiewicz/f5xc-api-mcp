@@ -77,72 +77,20 @@ Ask Claude to help you work with Trusted Ca List resources:
 
 > "Get details of the trusted-ca-list named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config trusted-ca-list create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config trusted-ca-list create {name} --namespace {namespace}
-```
-
-Create trusted-ca-list
-
-### delete
-
-```bash
-f5xcctl config trusted-ca-list delete {name} --namespace {namespace}
-```
-
-Delete trusted-ca-list
-
-### get_specific
-
-```bash
-f5xcctl config trusted-ca-list get {name} --namespace {namespace}
-```
-
-Get specific trusted-ca-list
-
-### list_all
-
-```bash
-f5xcctl config trusted-ca-list list --namespace {namespace}
-```
-
-List all trusted-ca-lists
-
-### update
-
-```bash
-f5xcctl config trusted-ca-list update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update trusted-ca-list
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl certificates create trusted_ca_list -n <namespace> -i trusted_ca_list.yaml
+xcsh certificates create trusted_ca_list -n <namespace> -i trusted_ca_list.yaml
 
 # Get
-f5xcctl certificates get trusted_ca_list <name> -n <namespace>
+xcsh certificates get trusted_ca_list <name> -n <namespace>
 
 # List
-f5xcctl certificates list trusted_ca_list -n <namespace>
+xcsh certificates list trusted_ca_list -n <namespace>
 
 # Delete
-f5xcctl certificates delete trusted_ca_list <name> -n <namespace>
+xcsh certificates delete trusted_ca_list <name> -n <namespace>
 ```
 
 ## Terraform Resource

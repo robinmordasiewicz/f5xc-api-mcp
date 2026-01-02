@@ -71,64 +71,20 @@ Ask Claude to help you work with Protected Domain resources:
 
 > "Get details of the protected-domain named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape protected-domain create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape protected-domain create {name} --namespace {namespace}
-```
-
-Create protected-domain
-
-### delete
-
-```bash
-f5xcctl shape protected-domain delete {name} --namespace {namespace}
-```
-
-Delete protected-domain
-
-### get_specific
-
-```bash
-f5xcctl shape protected-domain get {name} --namespace {namespace}
-```
-
-Get specific protected-domain
-
-### list_all
-
-```bash
-f5xcctl shape protected-domain list --namespace {namespace}
-```
-
-List all protected-domains
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create protected_domain -n <namespace> -i protected_domain.yaml
+xcsh shape create protected_domain -n <namespace> -i protected_domain.yaml
 
 # Get
-f5xcctl shape get protected_domain <name> -n <namespace>
+xcsh shape get protected_domain <name> -n <namespace>
 
 # List
-f5xcctl shape list protected_domain -n <namespace>
+xcsh shape list protected_domain -n <namespace>
 
 # Delete
-f5xcctl shape delete protected_domain <name> -n <namespace>
+xcsh shape delete protected_domain <name> -n <namespace>
 ```
 
 ## Terraform Resource

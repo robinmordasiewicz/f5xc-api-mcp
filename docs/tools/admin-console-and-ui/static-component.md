@@ -48,40 +48,20 @@ Ask Claude to help you work with Static Component resources:
 
 > "Get details of the static-component named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl web static-component get {name} --namespace {namespace}
-```
-
-Get specific static-component
-
-### list_all
-
-```bash
-f5xcctl web static-component list --namespace {namespace}
-```
-
-List all static-components
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl admin_console_and_ui create static_component -n <namespace> -i static_component.yaml
+xcsh admin_console_and_ui create static_component -n <namespace> -i static_component.yaml
 
 # Get
-f5xcctl admin_console_and_ui get static_component <name> -n <namespace>
+xcsh admin_console_and_ui get static_component <name> -n <namespace>
 
 # List
-f5xcctl admin_console_and_ui list static_component -n <namespace>
+xcsh admin_console_and_ui list static_component -n <namespace>
 
 # Delete
-f5xcctl admin_console_and_ui delete static_component <name> -n <namespace>
+xcsh admin_console_and_ui delete static_component <name> -n <namespace>
 ```
 
 ## Terraform Resource

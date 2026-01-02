@@ -35,32 +35,20 @@ Ask Claude to help you work with {view Kind} resources:
 
 > "List all {view-kind}s in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config terraform-parameter list --namespace {namespace}
-```
-
-List all terraform-parameters
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create {view_kind} -n <namespace> -i {view_kind}.yaml
+xcsh marketplace create {view_kind} -n <namespace> -i {view_kind}.yaml
 
 # Get
-f5xcctl marketplace get {view_kind} <name> -n <namespace>
+xcsh marketplace get {view_kind} <name> -n <namespace>
 
 # List
-f5xcctl marketplace list {view_kind} -n <namespace>
+xcsh marketplace list {view_kind} -n <namespace>
 
 # Delete
-f5xcctl marketplace delete {view_kind} <name> -n <namespace>
+xcsh marketplace delete {view_kind} <name> -n <namespace>
 ```
 
 ## Terraform Resource

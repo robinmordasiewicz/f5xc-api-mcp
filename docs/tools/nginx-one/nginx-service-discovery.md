@@ -77,72 +77,20 @@ Ask Claude to help you work with Nginx Service Discovery resources:
 
 > "Get details of the nginx-service-discovery named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config nginx-service-discovery create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config nginx-service-discovery create {name} --namespace {namespace}
-```
-
-Create nginx-service-discovery
-
-### delete
-
-```bash
-f5xcctl config nginx-service-discovery delete {name} --namespace {namespace}
-```
-
-Delete nginx-service-discovery
-
-### get_specific
-
-```bash
-f5xcctl config nginx-service-discovery get {name} --namespace {namespace}
-```
-
-Get specific nginx-service-discovery
-
-### list_all
-
-```bash
-f5xcctl config nginx-service-discovery list --namespace {namespace}
-```
-
-List all nginx-service-discoverys
-
-### update
-
-```bash
-f5xcctl config nginx-service-discovery update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update nginx-service-discovery
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl nginx_one create nginx_service_discovery -n <namespace> -i nginx_service_discovery.yaml
+xcsh nginx_one create nginx_service_discovery -n <namespace> -i nginx_service_discovery.yaml
 
 # Get
-f5xcctl nginx_one get nginx_service_discovery <name> -n <namespace>
+xcsh nginx_one get nginx_service_discovery <name> -n <namespace>
 
 # List
-f5xcctl nginx_one list nginx_service_discovery -n <namespace>
+xcsh nginx_one list nginx_service_discovery -n <namespace>
 
 # Delete
-f5xcctl nginx_one delete nginx_service_discovery <name> -n <namespace>
+xcsh nginx_one delete nginx_service_discovery <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -41,40 +41,20 @@ Ask Claude to help you work with Expanded resources:
 
 > "Create a expanded named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape expanded create {name} --namespace {namespace}
-```
-
-Create expanded
-
-### file_based
-
-```bash
-f5xcctl shape expanded create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create expanded -n <namespace> -i expanded.yaml
+xcsh shape create expanded -n <namespace> -i expanded.yaml
 
 # Get
-f5xcctl shape get expanded <name> -n <namespace>
+xcsh shape get expanded <name> -n <namespace>
 
 # List
-f5xcctl shape list expanded -n <namespace>
+xcsh shape list expanded -n <namespace>
 
 # Delete
-f5xcctl shape delete expanded <name> -n <namespace>
+xcsh shape delete expanded <name> -n <namespace>
 ```
 
 ## Terraform Resource

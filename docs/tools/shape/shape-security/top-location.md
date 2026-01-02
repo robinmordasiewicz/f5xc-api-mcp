@@ -55,48 +55,20 @@ Ask Claude to help you work with Top Location resources:
 
 > "List all top-locations in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape top-location create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape top-location create {name} --namespace {namespace}
-```
-
-Create top-location
-
-### list_all
-
-```bash
-f5xcctl shape top-location list --namespace {namespace}
-```
-
-List all top-locations
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create top_location -n <namespace> -i top_location.yaml
+xcsh shape create top_location -n <namespace> -i top_location.yaml
 
 # Get
-f5xcctl shape get top_location <name> -n <namespace>
+xcsh shape get top_location <name> -n <namespace>
 
 # List
-f5xcctl shape list top_location -n <namespace>
+xcsh shape list top_location -n <namespace>
 
 # Delete
-f5xcctl shape delete top_location <name> -n <namespace>
+xcsh shape delete top_location <name> -n <namespace>
 ```
 
 ## Terraform Resource

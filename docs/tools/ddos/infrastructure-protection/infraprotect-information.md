@@ -40,32 +40,20 @@ Ask Claude to help you work with Infraprotect Information resources:
 
 > "Get details of the infraprotect-information named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl infraprotect infraprotect-information get {name} --namespace {namespace}
-```
-
-Get specific infraprotect-information
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create infraprotect_information -n <namespace> -i infraprotect_information.yaml
+xcsh ddos create infraprotect_information -n <namespace> -i infraprotect_information.yaml
 
 # Get
-f5xcctl ddos get infraprotect_information <name> -n <namespace>
+xcsh ddos get infraprotect_information <name> -n <namespace>
 
 # List
-f5xcctl ddos list infraprotect_information -n <namespace>
+xcsh ddos list infraprotect_information -n <namespace>
 
 # Delete
-f5xcctl ddos delete infraprotect_information <name> -n <namespace>
+xcsh ddos delete infraprotect_information <name> -n <namespace>
 ```
 
 ## Terraform Resource

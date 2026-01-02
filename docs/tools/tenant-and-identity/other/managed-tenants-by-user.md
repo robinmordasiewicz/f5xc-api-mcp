@@ -39,32 +39,20 @@ Ask Claude to help you work with Managed Tenants By User resources:
 
 > "List all managed-tenants-by-users in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web managed-tenants-by-user list --namespace {namespace}
-```
-
-List all managed-tenants-by-users
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create managed_tenants_by_user -n <namespace> -i managed_tenants_by_user.yaml
+xcsh tenant_and_identity create managed_tenants_by_user -n <namespace> -i managed_tenants_by_user.yaml
 
 # Get
-f5xcctl tenant_and_identity get managed_tenants_by_user <name> -n <namespace>
+xcsh tenant_and_identity get managed_tenants_by_user <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list managed_tenants_by_user -n <namespace>
+xcsh tenant_and_identity list managed_tenants_by_user -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete managed_tenants_by_user <name> -n <namespace>
+xcsh tenant_and_identity delete managed_tenants_by_user <name> -n <namespace>
 ```
 
 ## Terraform Resource

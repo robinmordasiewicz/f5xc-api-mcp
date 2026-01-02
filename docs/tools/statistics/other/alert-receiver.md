@@ -77,72 +77,20 @@ Ask Claude to help you work with Alert Receiver resources:
 
 > "Get details of the alert-receiver named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config alert-receiver create {name} --namespace {namespace}
-```
-
-Create alert-receiver
-
-### file_based
-
-```bash
-f5xcctl config alert-receiver create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config alert-receiver delete {name} --namespace {namespace}
-```
-
-Delete alert-receiver
-
-### get_specific
-
-```bash
-f5xcctl config alert-receiver get {name} --namespace {namespace}
-```
-
-Get specific alert-receiver
-
-### list_all
-
-```bash
-f5xcctl config alert-receiver list --namespace {namespace}
-```
-
-List all alert-receivers
-
-### update
-
-```bash
-f5xcctl config alert-receiver update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update alert-receiver
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create alert_receiver -n <namespace> -i alert_receiver.yaml
+xcsh statistics create alert_receiver -n <namespace> -i alert_receiver.yaml
 
 # Get
-f5xcctl statistics get alert_receiver <name> -n <namespace>
+xcsh statistics get alert_receiver <name> -n <namespace>
 
 # List
-f5xcctl statistics list alert_receiver -n <namespace>
+xcsh statistics list alert_receiver -n <namespace>
 
 # Delete
-f5xcctl statistics delete alert_receiver <name> -n <namespace>
+xcsh statistics delete alert_receiver <name> -n <namespace>
 ```
 
 ## Terraform Resource

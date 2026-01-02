@@ -77,72 +77,20 @@ Ask Claude to help you work with Cloud Connect resources:
 
 > "Get details of the cloud-connect named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config cloud-connect create {name} --namespace {namespace}
-```
-
-Create cloud-connect
-
-### file_based
-
-```bash
-f5xcctl config cloud-connect create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config cloud-connect delete {name} --namespace {namespace}
-```
-
-Delete cloud-connect
-
-### get_specific
-
-```bash
-f5xcctl config cloud-connect get {name} --namespace {namespace}
-```
-
-Get specific cloud-connect
-
-### list_all
-
-```bash
-f5xcctl config cloud-connect list --namespace {namespace}
-```
-
-List all cloud-connects
-
-### update
-
-```bash
-f5xcctl config cloud-connect update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update cloud-connect
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cloud_infrastructure create cloud_connect -n <namespace> -i cloud_connect.yaml
+xcsh cloud_infrastructure create cloud_connect -n <namespace> -i cloud_connect.yaml
 
 # Get
-f5xcctl cloud_infrastructure get cloud_connect <name> -n <namespace>
+xcsh cloud_infrastructure get cloud_connect <name> -n <namespace>
 
 # List
-f5xcctl cloud_infrastructure list cloud_connect -n <namespace>
+xcsh cloud_infrastructure list cloud_connect -n <namespace>
 
 # Delete
-f5xcctl cloud_infrastructure delete cloud_connect <name> -n <namespace>
+xcsh cloud_infrastructure delete cloud_connect <name> -n <namespace>
 ```
 
 ## Terraform Resource

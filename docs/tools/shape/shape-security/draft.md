@@ -55,56 +55,20 @@ Ask Claude to help you work with Draft resources:
 
 > "List all drafts in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape draft create {name} --namespace {namespace}
-```
-
-Create draft
-
-### file_based
-
-```bash
-f5xcctl shape draft create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl shape draft delete {name} --namespace {namespace}
-```
-
-Delete draft
-
-### list_all
-
-```bash
-f5xcctl shape draft list --namespace {namespace}
-```
-
-List all drafts
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create draft -n <namespace> -i draft.yaml
+xcsh shape create draft -n <namespace> -i draft.yaml
 
 # Get
-f5xcctl shape get draft <name> -n <namespace>
+xcsh shape get draft <name> -n <namespace>
 
 # List
-f5xcctl shape list draft -n <namespace>
+xcsh shape list draft -n <namespace>
 
 # Delete
-f5xcctl shape delete draft <name> -n <namespace>
+xcsh shape delete draft <name> -n <namespace>
 ```
 
 ## Terraform Resource

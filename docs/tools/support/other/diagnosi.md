@@ -39,32 +39,20 @@ Ask Claude to help you work with Diagnosi resources:
 
 > "List all diagnosis in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl operate diagnosi list --namespace {namespace}
-```
-
-List all diagnosis
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create diagnosi -n <namespace> -i diagnosi.yaml
+xcsh support create diagnosi -n <namespace> -i diagnosi.yaml
 
 # Get
-f5xcctl support get diagnosi <name> -n <namespace>
+xcsh support get diagnosi <name> -n <namespace>
 
 # List
-f5xcctl support list diagnosi -n <namespace>
+xcsh support list diagnosi -n <namespace>
 
 # Delete
-f5xcctl support delete diagnosi <name> -n <namespace>
+xcsh support delete diagnosi <name> -n <namespace>
 ```
 
 ## Terraform Resource

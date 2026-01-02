@@ -77,72 +77,20 @@ Ask Claude to help you work with External Connector resources:
 
 > "Get details of the external-connector named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config external-connector create {name} --namespace {namespace}
-```
-
-Create external-connector
-
-### file_based
-
-```bash
-f5xcctl config external-connector create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config external-connector delete {name} --namespace {namespace}
-```
-
-Delete external-connector
-
-### get_specific
-
-```bash
-f5xcctl config external-connector get {name} --namespace {namespace}
-```
-
-Get specific external-connector
-
-### list_all
-
-```bash
-f5xcctl config external-connector list --namespace {namespace}
-```
-
-List all external-connectors
-
-### update
-
-```bash
-f5xcctl config external-connector update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update external-connector
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create external_connector -n <namespace> -i external_connector.yaml
+xcsh marketplace create external_connector -n <namespace> -i external_connector.yaml
 
 # Get
-f5xcctl marketplace get external_connector <name> -n <namespace>
+xcsh marketplace get external_connector <name> -n <namespace>
 
 # List
-f5xcctl marketplace list external_connector -n <namespace>
+xcsh marketplace list external_connector -n <namespace>
 
 # Delete
-f5xcctl marketplace delete external_connector <name> -n <namespace>
+xcsh marketplace delete external_connector <name> -n <namespace>
 ```
 
 ## Terraform Resource

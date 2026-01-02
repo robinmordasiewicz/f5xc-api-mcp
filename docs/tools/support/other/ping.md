@@ -42,40 +42,20 @@ Ask Claude to help you work with Ping resources:
 
 > "Create a ping named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl operate ping create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl operate ping create {name} --namespace {namespace}
-```
-
-Create ping
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create ping -n <namespace> -i ping.yaml
+xcsh support create ping -n <namespace> -i ping.yaml
 
 # Get
-f5xcctl support get ping <name> -n <namespace>
+xcsh support get ping <name> -n <namespace>
 
 # List
-f5xcctl support list ping -n <namespace>
+xcsh support list ping -n <namespace>
 
 # Delete
-f5xcctl support delete ping <name> -n <namespace>
+xcsh support delete ping <name> -n <namespace>
 ```
 
 ## Terraform Resource

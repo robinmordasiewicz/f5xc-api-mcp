@@ -63,64 +63,20 @@ Ask Claude to help you work with Detail resources:
 
 > "List all details in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl infraprotect detail create {name} --namespace {namespace}
-```
-
-Create detail
-
-### file_based
-
-```bash
-f5xcctl infraprotect detail create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl infraprotect detail delete {name} --namespace {namespace}
-```
-
-Delete detail
-
-### list_all
-
-```bash
-f5xcctl infraprotect detail list --namespace {namespace}
-```
-
-List all details
-
-### update
-
-```bash
-f5xcctl infraprotect detail update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update detail
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create detail -n <namespace> -i detail.yaml
+xcsh ddos create detail -n <namespace> -i detail.yaml
 
 # Get
-f5xcctl ddos get detail <name> -n <namespace>
+xcsh ddos get detail <name> -n <namespace>
 
 # List
-f5xcctl ddos list detail -n <namespace>
+xcsh ddos list detail -n <namespace>
 
 # Delete
-f5xcctl ddos delete detail <name> -n <namespace>
+xcsh ddos delete detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

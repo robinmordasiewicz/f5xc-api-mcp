@@ -77,72 +77,20 @@ Ask Claude to help you work with Ike2 resources:
 
 > "Get details of the ike2 named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config ike2 create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config ike2 create {name} --namespace {namespace}
-```
-
-Create ike2
-
-### delete
-
-```bash
-f5xcctl config ike2 delete {name} --namespace {namespace}
-```
-
-Delete ike2
-
-### get_specific
-
-```bash
-f5xcctl config ike2 get {name} --namespace {namespace}
-```
-
-Get specific ike2
-
-### list_all
-
-```bash
-f5xcctl config ike2 list --namespace {namespace}
-```
-
-List all ike2s
-
-### update
-
-```bash
-f5xcctl config ike2 update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update ike2
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create ike2 -n <namespace> -i ike2.yaml
+xcsh network create ike2 -n <namespace> -i ike2.yaml
 
 # Get
-f5xcctl network get ike2 <name> -n <namespace>
+xcsh network get ike2 <name> -n <namespace>
 
 # List
-f5xcctl network list ike2 -n <namespace>
+xcsh network list ike2 -n <namespace>
 
 # Delete
-f5xcctl network delete ike2 <name> -n <namespace>
+xcsh network delete ike2 <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -1296,7 +1296,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "billing_and_usage",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1428,7 +1428,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "billing_and_usage",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1812,7 +1812,7 @@ export const billing_and_usageTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "billing_and_usage",
         fieldPath: "",
         inline: false,
         required: false,

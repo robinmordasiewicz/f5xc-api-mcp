@@ -108,7 +108,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "managed_kubernetes",
         fieldPath: "",
         inline: false,
         required: false,
@@ -247,7 +247,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "managed_kubernetes",
         fieldPath: "",
         inline: false,
         required: false,
@@ -651,7 +651,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "managed_kubernetes",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1470,7 +1470,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "managed_kubernetes",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1610,7 +1610,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "managed_kubernetes",
         fieldPath: "",
         inline: false,
         required: false,
@@ -2019,7 +2019,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "managed_kubernetes",
         fieldPath: "",
         inline: false,
         required: false,

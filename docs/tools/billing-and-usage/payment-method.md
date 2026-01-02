@@ -51,48 +51,20 @@ Ask Claude to help you work with Payment Method resources:
 
 > "Create a payment-method named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web payment-method create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web payment-method create {name} --namespace {namespace}
-```
-
-Create payment-method
-
-### delete
-
-```bash
-f5xcctl web payment-method delete {name} --namespace {namespace}
-```
-
-Delete payment-method
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create payment_method -n <namespace> -i payment_method.yaml
+xcsh billing_and_usage create payment_method -n <namespace> -i payment_method.yaml
 
 # Get
-f5xcctl billing_and_usage get payment_method <name> -n <namespace>
+xcsh billing_and_usage get payment_method <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list payment_method -n <namespace>
+xcsh billing_and_usage list payment_method -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete payment_method <name> -n <namespace>
+xcsh billing_and_usage delete payment_method <name> -n <namespace>
 ```
 
 ## Terraform Resource

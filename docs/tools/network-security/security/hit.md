@@ -41,40 +41,20 @@ Ask Claude to help you work with Hit resources:
 
 > "Create a hit named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data hit create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data hit create {name} --namespace {namespace}
-```
-
-Create hit
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create hit -n <namespace> -i hit.yaml
+xcsh network_security create hit -n <namespace> -i hit.yaml
 
 # Get
-f5xcctl network_security get hit <name> -n <namespace>
+xcsh network_security get hit <name> -n <namespace>
 
 # List
-f5xcctl network_security list hit -n <namespace>
+xcsh network_security list hit -n <namespace>
 
 # Delete
-f5xcctl network_security delete hit <name> -n <namespace>
+xcsh network_security delete hit <name> -n <namespace>
 ```
 
 ## Terraform Resource

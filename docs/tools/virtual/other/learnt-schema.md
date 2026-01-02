@@ -43,32 +43,20 @@ Ask Claude to help you work with Learnt Schema resources:
 
 > "Get details of the learnt-schema named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl ml learnt-schema get {name} --namespace {namespace}
-```
-
-Get specific learnt-schema
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create learnt_schema -n <namespace> -i learnt_schema.yaml
+xcsh virtual create learnt_schema -n <namespace> -i learnt_schema.yaml
 
 # Get
-f5xcctl virtual get learnt_schema <name> -n <namespace>
+xcsh virtual get learnt_schema <name> -n <namespace>
 
 # List
-f5xcctl virtual list learnt_schema -n <namespace>
+xcsh virtual list learnt_schema -n <namespace>
 
 # Delete
-f5xcctl virtual delete learnt_schema <name> -n <namespace>
+xcsh virtual delete learnt_schema <name> -n <namespace>
 ```
 
 ## Terraform Resource

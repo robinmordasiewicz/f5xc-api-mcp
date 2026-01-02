@@ -34,32 +34,20 @@ Ask Claude to help you work with Ca Certificate resources:
 
 > "Get details of the ca-certificate named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config ca-certificate get {name} --namespace {namespace}
-```
-
-Get specific ca-certificate
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create ca_certificate -n <namespace> -i ca_certificate.yaml
+xcsh virtual create ca_certificate -n <namespace> -i ca_certificate.yaml
 
 # Get
-f5xcctl virtual get ca_certificate <name> -n <namespace>
+xcsh virtual get ca_certificate <name> -n <namespace>
 
 # List
-f5xcctl virtual list ca_certificate -n <namespace>
+xcsh virtual list ca_certificate -n <namespace>
 
 # Delete
-f5xcctl virtual delete ca_certificate <name> -n <namespace>
+xcsh virtual delete ca_certificate <name> -n <namespace>
 ```
 
 ## Terraform Resource

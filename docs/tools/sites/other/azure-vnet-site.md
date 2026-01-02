@@ -77,72 +77,20 @@ Ask Claude to help you work with AZURE VNET Site resources:
 
 > "Get details of the azure-vnet-site named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config azure-vnet-site create {name} --namespace {namespace}
-```
-
-Create azure-vnet-site
-
-### file_based
-
-```bash
-f5xcctl config azure-vnet-site create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config azure-vnet-site delete {name} --namespace {namespace}
-```
-
-Delete azure-vnet-site
-
-### get_specific
-
-```bash
-f5xcctl config azure-vnet-site get {name} --namespace {namespace}
-```
-
-Get specific azure-vnet-site
-
-### list_all
-
-```bash
-f5xcctl config azure-vnet-site list --namespace {namespace}
-```
-
-List all azure-vnet-sites
-
-### update
-
-```bash
-f5xcctl config azure-vnet-site update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update azure-vnet-site
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create azure_vnet_site -n <namespace> -i azure_vnet_site.yaml
+xcsh sites create azure_vnet_site -n <namespace> -i azure_vnet_site.yaml
 
 # Get
-f5xcctl sites get azure_vnet_site <name> -n <namespace>
+xcsh sites get azure_vnet_site <name> -n <namespace>
 
 # List
-f5xcctl sites list azure_vnet_site -n <namespace>
+xcsh sites list azure_vnet_site -n <namespace>
 
 # Delete
-f5xcctl sites delete azure_vnet_site <name> -n <namespace>
+xcsh sites delete azure_vnet_site <name> -n <namespace>
 ```
 
 ## Terraform Resource

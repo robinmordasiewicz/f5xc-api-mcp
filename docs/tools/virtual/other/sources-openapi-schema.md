@@ -41,32 +41,20 @@ Ask Claude to help you work with Sources Openapi Schema resources:
 
 > "Get details of the sources-openapi-schema named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl ml sources-openapi-schema get {name} --namespace {namespace}
-```
-
-Get specific sources-openapi-schema
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create sources_openapi_schema -n <namespace> -i sources_openapi_schema.yaml
+xcsh virtual create sources_openapi_schema -n <namespace> -i sources_openapi_schema.yaml
 
 # Get
-f5xcctl virtual get sources_openapi_schema <name> -n <namespace>
+xcsh virtual get sources_openapi_schema <name> -n <namespace>
 
 # List
-f5xcctl virtual list sources_openapi_schema -n <namespace>
+xcsh virtual list sources_openapi_schema -n <namespace>
 
 # Delete
-f5xcctl virtual delete sources_openapi_schema <name> -n <namespace>
+xcsh virtual delete sources_openapi_schema <name> -n <namespace>
 ```
 
 ## Terraform Resource

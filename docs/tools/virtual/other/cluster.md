@@ -80,72 +80,20 @@ Ask Claude to help you work with Cluster resources:
 
 > "Get details of the cluster named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config cluster create {name} --namespace {namespace}
-```
-
-Create cluster
-
-### file_based
-
-```bash
-f5xcctl config cluster create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config cluster delete {name} --namespace {namespace}
-```
-
-Delete cluster
-
-### get_specific
-
-```bash
-f5xcctl config cluster get {name} --namespace {namespace}
-```
-
-Get specific cluster
-
-### list_all
-
-```bash
-f5xcctl config cluster list --namespace {namespace}
-```
-
-List all clusters
-
-### update
-
-```bash
-f5xcctl config cluster update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update cluster
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create cluster -n <namespace> -i cluster.yaml
+xcsh virtual create cluster -n <namespace> -i cluster.yaml
 
 # Get
-f5xcctl virtual get cluster <name> -n <namespace>
+xcsh virtual get cluster <name> -n <namespace>
 
 # List
-f5xcctl virtual list cluster -n <namespace>
+xcsh virtual list cluster -n <namespace>
 
 # Delete
-f5xcctl virtual delete cluster <name> -n <namespace>
+xcsh virtual delete cluster <name> -n <namespace>
 ```
 
 ## Terraform Resource

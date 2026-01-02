@@ -4,10 +4,10 @@ An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to
 
 ## Features
 
-- **1,426 API Tools** - Full coverage of F5XC API across 7 domains
+- **1,500+ API Tools** - Full coverage of F5XC API across 23 domains
 - **Dynamic Discovery** - 6 meta-tools with 95%+ token savings
 - **Dual-Mode Operation** - Works with OR without authentication
-- **f5xcctl Integration** - Every response includes CLI equivalents
+- **xcsh Integration** - Every response includes CLI equivalents
 - **Terraform Examples** - HCL snippets for infrastructure-as-code
 - **Workflow Prompts** - Guided workflows for common tasks
 
@@ -40,12 +40,12 @@ An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to
 
 ### Documentation Mode (Default)
 
-Works **without any credentials**. Perfect for users who authenticate via f5xcctl or Terraform.
+Works **without any credentials**. Perfect for users who authenticate via xcsh or Terraform.
 
 - OpenAPI spec documentation and schema information
 - API operation explanations and parameter descriptions
 - Request payload validation against schemas
-- f5xcctl command equivalents for operations
+- xcsh command equivalents for operations
 - Terraform HCL resource examples
 - Dependency graphs and prerequisite guidance
 
@@ -95,7 +95,7 @@ Works with any MCP-compatible AI assistant:
 
     CLI-based Claude with full MCP capabilities
 
-    [:octicons-arrow-right-24: Setup Guide](getting-started/claude-code.md)
+    [:octicons-arrow-right-24: Setup Guide](getting-started/claude-cli.md)
 
 - :material-microsoft-visual-studio-code:{ .lg .middle } **VS Code**
 
@@ -124,7 +124,7 @@ Ask Claude to help with F5XC infrastructure:
 Claude will use the MCP tools to:
 
 1. Show you the required configuration
-2. Provide f5xcctl commands you can run
+2. Provide xcsh commands you can run
 3. Generate Terraform HCL for infrastructure-as-code
 4. Execute the API calls (if authenticated)
 

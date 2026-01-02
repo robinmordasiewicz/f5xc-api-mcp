@@ -34,32 +34,20 @@ Ask Claude to help you work with Generate Token resources:
 
 > "Get details of the generate-token named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl config generate-token get {name} --namespace {namespace}
-```
-
-Get specific generate-token
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create generate_token -n <namespace> -i generate_token.yaml
+xcsh marketplace create generate_token -n <namespace> -i generate_token.yaml
 
 # Get
-f5xcctl marketplace get generate_token <name> -n <namespace>
+xcsh marketplace get generate_token <name> -n <namespace>
 
 # List
-f5xcctl marketplace list generate_token -n <namespace>
+xcsh marketplace list generate_token -n <namespace>
 
 # Delete
-f5xcctl marketplace delete generate_token <name> -n <namespace>
+xcsh marketplace delete generate_token <name> -n <namespace>
 ```
 
 ## Terraform Resource

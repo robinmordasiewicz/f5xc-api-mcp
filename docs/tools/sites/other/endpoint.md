@@ -39,32 +39,20 @@ Ask Claude to help you work with Endpoint resources:
 
 > "List all endpoints in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data endpoint list --namespace {namespace}
-```
-
-List all endpoints
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create endpoint -n <namespace> -i endpoint.yaml
+xcsh sites create endpoint -n <namespace> -i endpoint.yaml
 
 # Get
-f5xcctl sites get endpoint <name> -n <namespace>
+xcsh sites get endpoint <name> -n <namespace>
 
 # List
-f5xcctl sites list endpoint -n <namespace>
+xcsh sites list endpoint -n <namespace>
 
 # Delete
-f5xcctl sites delete endpoint <name> -n <namespace>
+xcsh sites delete endpoint <name> -n <namespace>
 ```
 
 ## Terraform Resource

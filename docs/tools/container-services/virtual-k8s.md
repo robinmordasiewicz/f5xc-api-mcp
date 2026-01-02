@@ -80,72 +80,20 @@ Ask Claude to help you work with Virtual K8S resources:
 
 > "Get details of the virtual-k8s named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config virtual-k8s create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config virtual-k8s create {name} --namespace {namespace}
-```
-
-Create virtual-k8s
-
-### delete
-
-```bash
-f5xcctl config virtual-k8s delete {name} --namespace {namespace}
-```
-
-Delete virtual-k8s
-
-### get_specific
-
-```bash
-f5xcctl config virtual-k8s get {name} --namespace {namespace}
-```
-
-Get specific virtual-k8s
-
-### list_all
-
-```bash
-f5xcctl config virtual-k8s list --namespace {namespace}
-```
-
-List all virtual-k8ss
-
-### update
-
-```bash
-f5xcctl config virtual-k8s update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update virtual-k8s
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl container_services create virtual_k8s -n <namespace> -i virtual_k8s.yaml
+xcsh container_services create virtual_k8s -n <namespace> -i virtual_k8s.yaml
 
 # Get
-f5xcctl container_services get virtual_k8s <name> -n <namespace>
+xcsh container_services get virtual_k8s <name> -n <namespace>
 
 # List
-f5xcctl container_services list virtual_k8s -n <namespace>
+xcsh container_services list virtual_k8s -n <namespace>
 
 # Delete
-f5xcctl container_services delete virtual_k8s <name> -n <namespace>
+xcsh container_services delete virtual_k8s <name> -n <namespace>
 ```
 
 ## Terraform Resource

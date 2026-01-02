@@ -33,40 +33,20 @@ Ask Claude to help you work with Preauth resources:
 
 > "Create a preauth named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl tpm preauth create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl tpm preauth create {name} --namespace {namespace}
-```
-
-Create preauth
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl bot_and_threat_defense create preauth -n <namespace> -i preauth.yaml
+xcsh bot_and_threat_defense create preauth -n <namespace> -i preauth.yaml
 
 # Get
-f5xcctl bot_and_threat_defense get preauth <name> -n <namespace>
+xcsh bot_and_threat_defense get preauth <name> -n <namespace>
 
 # List
-f5xcctl bot_and_threat_defense list preauth -n <namespace>
+xcsh bot_and_threat_defense list preauth -n <namespace>
 
 # Delete
-f5xcctl bot_and_threat_defense delete preauth <name> -n <namespace>
+xcsh bot_and_threat_defense delete preauth <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -33,40 +33,20 @@ Ask Claude to help you work with App Provision resources:
 
 > "Create a app-provision named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape app-provision create {name} --namespace {namespace}
-```
-
-Create app-provision
-
-### file_based
-
-```bash
-f5xcctl shape app-provision create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create app_provision -n <namespace> -i app_provision.yaml
+xcsh shape create app_provision -n <namespace> -i app_provision.yaml
 
 # Get
-f5xcctl shape get app_provision <name> -n <namespace>
+xcsh shape get app_provision <name> -n <namespace>
 
 # List
-f5xcctl shape list app_provision -n <namespace>
+xcsh shape list app_provision -n <namespace>
 
 # Delete
-f5xcctl shape delete app_provision <name> -n <namespace>
+xcsh shape delete app_provision <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -48,40 +48,20 @@ Ask Claude to help you work with API Group Element resources:
 
 > "Get details of the api-group-element named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl web api-group-element get {name} --namespace {namespace}
-```
-
-Get specific api-group-element
-
-### list_all
-
-```bash
-f5xcctl web api-group-element list --namespace {namespace}
-```
-
-List all api-group-elements
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create api_group_element -n <namespace> -i api_group_element.yaml
+xcsh api create api_group_element -n <namespace> -i api_group_element.yaml
 
 # Get
-f5xcctl api get api_group_element <name> -n <namespace>
+xcsh api get api_group_element <name> -n <namespace>
 
 # List
-f5xcctl api list api_group_element -n <namespace>
+xcsh api list api_group_element -n <namespace>
 
 # Delete
-f5xcctl api delete api_group_element <name> -n <namespace>
+xcsh api delete api_group_element <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -42,32 +42,20 @@ Ask Claude to help you work with Mobile Integrator resources:
 
 > "List all mobile-integrators in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl object_store mobile-integrator list --namespace {namespace}
-```
-
-List all mobile-integrators
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl object_storage create mobile_integrator -n <namespace> -i mobile_integrator.yaml
+xcsh object_storage create mobile_integrator -n <namespace> -i mobile_integrator.yaml
 
 # Get
-f5xcctl object_storage get mobile_integrator <name> -n <namespace>
+xcsh object_storage get mobile_integrator <name> -n <namespace>
 
 # List
-f5xcctl object_storage list mobile_integrator -n <namespace>
+xcsh object_storage list mobile_integrator -n <namespace>
 
 # Delete
-f5xcctl object_storage delete mobile_integrator <name> -n <namespace>
+xcsh object_storage delete mobile_integrator <name> -n <namespace>
 ```
 
 ## Terraform Resource

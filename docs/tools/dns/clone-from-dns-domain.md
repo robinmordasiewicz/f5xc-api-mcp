@@ -33,40 +33,20 @@ Ask Claude to help you work with Clone From DNS Domain resources:
 
 > "Create a clone-from-dns-domain named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config clone-from-dns-domain create {name} --namespace {namespace}
-```
-
-Create clone-from-dns-domain
-
-### file_based
-
-```bash
-f5xcctl config clone-from-dns-domain create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create clone_from_dns_domain -n <namespace> -i clone_from_dns_domain.yaml
+xcsh dns create clone_from_dns_domain -n <namespace> -i clone_from_dns_domain.yaml
 
 # Get
-f5xcctl dns get clone_from_dns_domain <name> -n <namespace>
+xcsh dns get clone_from_dns_domain <name> -n <namespace>
 
 # List
-f5xcctl dns list clone_from_dns_domain -n <namespace>
+xcsh dns list clone_from_dns_domain -n <namespace>
 
 # Delete
-f5xcctl dns delete clone_from_dns_domain <name> -n <namespace>
+xcsh dns delete clone_from_dns_domain <name> -n <namespace>
 ```
 
 ## Terraform Resource

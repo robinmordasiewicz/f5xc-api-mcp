@@ -77,72 +77,20 @@ Ask Claude to help you work with Ticket Tracking System resources:
 
 > "Get details of the ticket-tracking-system named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web ticket-tracking-system create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web ticket-tracking-system create {name} --namespace {namespace}
-```
-
-Create ticket-tracking-system
-
-### delete
-
-```bash
-f5xcctl web ticket-tracking-system delete {name} --namespace {namespace}
-```
-
-Delete ticket-tracking-system
-
-### get_specific
-
-```bash
-f5xcctl web ticket-tracking-system get {name} --namespace {namespace}
-```
-
-Get specific ticket-tracking-system
-
-### list_all
-
-```bash
-f5xcctl web ticket-tracking-system list --namespace {namespace}
-```
-
-List all ticket-tracking-systems
-
-### update
-
-```bash
-f5xcctl web ticket-tracking-system update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update ticket-tracking-system
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create ticket_tracking_system -n <namespace> -i ticket_tracking_system.yaml
+xcsh support create ticket_tracking_system -n <namespace> -i ticket_tracking_system.yaml
 
 # Get
-f5xcctl support get ticket_tracking_system <name> -n <namespace>
+xcsh support get ticket_tracking_system <name> -n <namespace>
 
 # List
-f5xcctl support list ticket_tracking_system -n <namespace>
+xcsh support list ticket_tracking_system -n <namespace>
 
 # Delete
-f5xcctl support delete ticket_tracking_system <name> -n <namespace>
+xcsh support delete ticket_tracking_system <name> -n <namespace>
 ```
 
 ## Terraform Resource

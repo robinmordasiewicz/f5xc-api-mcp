@@ -77,72 +77,20 @@ Ask Claude to help you work with DNS Domain resources:
 
 > "Get details of the dns-domain named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config dns-domain create {name} --namespace {namespace}
-```
-
-Create dns-domain
-
-### file_based
-
-```bash
-f5xcctl config dns-domain create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config dns-domain delete {name} --namespace {namespace}
-```
-
-Delete dns-domain
-
-### get_specific
-
-```bash
-f5xcctl config dns-domain get {name} --namespace {namespace}
-```
-
-Get specific dns-domain
-
-### list_all
-
-```bash
-f5xcctl config dns-domain list --namespace {namespace}
-```
-
-List all dns-domains
-
-### update
-
-```bash
-f5xcctl config dns-domain update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update dns-domain
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create dns_domain -n <namespace> -i dns_domain.yaml
+xcsh dns create dns_domain -n <namespace> -i dns_domain.yaml
 
 # Get
-f5xcctl dns get dns_domain <name> -n <namespace>
+xcsh dns get dns_domain <name> -n <namespace>
 
 # List
-f5xcctl dns list dns_domain -n <namespace>
+xcsh dns list dns_domain -n <namespace>
 
 # Delete
-f5xcctl dns delete dns_domain <name> -n <namespace>
+xcsh dns delete dns_domain <name> -n <namespace>
 ```
 
 ## Terraform Resource

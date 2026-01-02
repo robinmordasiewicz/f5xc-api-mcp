@@ -59,56 +59,20 @@ Ask Claude to help you work with FormField resources:
 
 > "Get details of the formField named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape formField create {name} --namespace {namespace}
-```
-
-Create formField
-
-### file_based
-
-```bash
-f5xcctl shape formField create -f {file}.yaml
-```
-
-Create from YAML file
-
-### get_specific
-
-```bash
-f5xcctl shape formField get {name} --namespace {namespace}
-```
-
-Get specific formField
-
-### list_all
-
-```bash
-f5xcctl shape formField list --namespace {namespace}
-```
-
-List all formFields
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create formField -n <namespace> -i formField.yaml
+xcsh shape create formField -n <namespace> -i formField.yaml
 
 # Get
-f5xcctl shape get formField <name> -n <namespace>
+xcsh shape get formField <name> -n <namespace>
 
 # List
-f5xcctl shape list formField -n <namespace>
+xcsh shape list formField -n <namespace>
 
 # Delete
-f5xcctl shape delete formField <name> -n <namespace>
+xcsh shape delete formField <name> -n <namespace>
 ```
 
 ## Terraform Resource

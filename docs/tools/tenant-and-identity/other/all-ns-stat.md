@@ -33,40 +33,20 @@ Ask Claude to help you work with All Ns Stat resources:
 
 > "Create a all-ns-stat named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl ml all-ns-stat create {name} --namespace {namespace}
-```
-
-Create all-ns-stat
-
-### file_based
-
-```bash
-f5xcctl ml all-ns-stat create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create all_ns_stat -n <namespace> -i all_ns_stat.yaml
+xcsh tenant_and_identity create all_ns_stat -n <namespace> -i all_ns_stat.yaml
 
 # Get
-f5xcctl tenant_and_identity get all_ns_stat <name> -n <namespace>
+xcsh tenant_and_identity get all_ns_stat <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list all_ns_stat -n <namespace>
+xcsh tenant_and_identity list all_ns_stat -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete all_ns_stat <name> -n <namespace>
+xcsh tenant_and_identity delete all_ns_stat <name> -n <namespace>
 ```
 
 ## Terraform Resource

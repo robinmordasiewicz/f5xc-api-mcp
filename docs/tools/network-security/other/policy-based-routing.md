@@ -77,72 +77,20 @@ Ask Claude to help you work with Policy Based Routing resources:
 
 > "Get details of the policy-based-routing named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config policy-based-routing create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config policy-based-routing create {name} --namespace {namespace}
-```
-
-Create policy-based-routing
-
-### delete
-
-```bash
-f5xcctl config policy-based-routing delete {name} --namespace {namespace}
-```
-
-Delete policy-based-routing
-
-### get_specific
-
-```bash
-f5xcctl config policy-based-routing get {name} --namespace {namespace}
-```
-
-Get specific policy-based-routing
-
-### list_all
-
-```bash
-f5xcctl config policy-based-routing list --namespace {namespace}
-```
-
-List all policy-based-routings
-
-### update
-
-```bash
-f5xcctl config policy-based-routing update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update policy-based-routing
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network_security create policy_based_routing -n <namespace> -i policy_based_routing.yaml
+xcsh network_security create policy_based_routing -n <namespace> -i policy_based_routing.yaml
 
 # Get
-f5xcctl network_security get policy_based_routing <name> -n <namespace>
+xcsh network_security get policy_based_routing <name> -n <namespace>
 
 # List
-f5xcctl network_security list policy_based_routing -n <namespace>
+xcsh network_security list policy_based_routing -n <namespace>
 
 # Delete
-f5xcctl network_security delete policy_based_routing <name> -n <namespace>
+xcsh network_security delete policy_based_routing <name> -n <namespace>
 ```
 
 ## Terraform Resource

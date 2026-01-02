@@ -77,72 +77,20 @@ Ask Claude to help you work with App Firewall resources:
 
 > "Get details of the app-firewall named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config app-firewall create {name} --namespace {namespace}
-```
-
-Create app-firewall
-
-### file_based
-
-```bash
-f5xcctl config app-firewall create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config app-firewall delete {name} --namespace {namespace}
-```
-
-Delete app-firewall
-
-### get_specific
-
-```bash
-f5xcctl config app-firewall get {name} --namespace {namespace}
-```
-
-Get specific app-firewall
-
-### list_all
-
-```bash
-f5xcctl config app-firewall list --namespace {namespace}
-```
-
-List all app-firewalls
-
-### update
-
-```bash
-f5xcctl config app-firewall update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update app-firewall
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create app_firewall -n <namespace> -i app_firewall.yaml
+xcsh waf create app_firewall -n <namespace> -i app_firewall.yaml
 
 # Get
-f5xcctl waf get app_firewall <name> -n <namespace>
+xcsh waf get app_firewall <name> -n <namespace>
 
 # List
-f5xcctl waf list app_firewall -n <namespace>
+xcsh waf list app_firewall -n <namespace>
 
 # Delete
-f5xcctl waf delete app_firewall <name> -n <namespace>
+xcsh waf delete app_firewall <name> -n <namespace>
 ```
 
 ## Terraform Resource

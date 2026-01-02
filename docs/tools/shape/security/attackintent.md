@@ -41,40 +41,20 @@ Ask Claude to help you work with Attackintent resources:
 
 > "Create a attackintent named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape attackintent create {name} --namespace {namespace}
-```
-
-Create attackintent
-
-### file_based
-
-```bash
-f5xcctl shape attackintent create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create attackintent -n <namespace> -i attackintent.yaml
+xcsh shape create attackintent -n <namespace> -i attackintent.yaml
 
 # Get
-f5xcctl shape get attackintent <name> -n <namespace>
+xcsh shape get attackintent <name> -n <namespace>
 
 # List
-f5xcctl shape list attackintent -n <namespace>
+xcsh shape list attackintent -n <namespace>
 
 # Delete
-f5xcctl shape delete attackintent <name> -n <namespace>
+xcsh shape delete attackintent <name> -n <namespace>
 ```
 
 ## Terraform Resource

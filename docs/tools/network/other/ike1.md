@@ -77,72 +77,20 @@ Ask Claude to help you work with Ike1 resources:
 
 > "Get details of the ike1 named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config ike1 create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config ike1 create {name} --namespace {namespace}
-```
-
-Create ike1
-
-### delete
-
-```bash
-f5xcctl config ike1 delete {name} --namespace {namespace}
-```
-
-Delete ike1
-
-### get_specific
-
-```bash
-f5xcctl config ike1 get {name} --namespace {namespace}
-```
-
-Get specific ike1
-
-### list_all
-
-```bash
-f5xcctl config ike1 list --namespace {namespace}
-```
-
-List all ike1s
-
-### update
-
-```bash
-f5xcctl config ike1 update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update ike1
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create ike1 -n <namespace> -i ike1.yaml
+xcsh network create ike1 -n <namespace> -i ike1.yaml
 
 # Get
-f5xcctl network get ike1 <name> -n <namespace>
+xcsh network get ike1 <name> -n <namespace>
 
 # List
-f5xcctl network list ike1 -n <namespace>
+xcsh network list ike1 -n <namespace>
 
 # Delete
-f5xcctl network delete ike1 <name> -n <namespace>
+xcsh network delete ike1 <name> -n <namespace>
 ```
 
 ## Terraform Resource

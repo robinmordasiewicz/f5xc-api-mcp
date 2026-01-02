@@ -41,40 +41,20 @@ Ask Claude to help you work with Listregistrationsbystate resources:
 
 > "Create a listregistrationsbystate named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl register listregistrationsbystate create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl register listregistrationsbystate create {name} --namespace {namespace}
-```
-
-Create listregistrationsbystate
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ce_management create listregistrationsbystate -n <namespace> -i listregistrationsbystate.yaml
+xcsh ce_management create listregistrationsbystate -n <namespace> -i listregistrationsbystate.yaml
 
 # Get
-f5xcctl ce_management get listregistrationsbystate <name> -n <namespace>
+xcsh ce_management get listregistrationsbystate <name> -n <namespace>
 
 # List
-f5xcctl ce_management list listregistrationsbystate -n <namespace>
+xcsh ce_management list listregistrationsbystate -n <namespace>
 
 # Delete
-f5xcctl ce_management delete listregistrationsbystate <name> -n <namespace>
+xcsh ce_management delete listregistrationsbystate <name> -n <namespace>
 ```
 
 ## Terraform Resource

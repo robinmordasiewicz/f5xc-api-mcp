@@ -42,40 +42,20 @@ Ask Claude to help you work with Test resources:
 
 > "Create a test named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl alert test create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl alert test create {name} --namespace {namespace}
-```
-
-Create test
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl statistics create test -n <namespace> -i test.yaml
+xcsh statistics create test -n <namespace> -i test.yaml
 
 # Get
-f5xcctl statistics get test <name> -n <namespace>
+xcsh statistics get test <name> -n <namespace>
 
 # List
-f5xcctl statistics list test -n <namespace>
+xcsh statistics list test -n <namespace>
 
 # Delete
-f5xcctl statistics delete test <name> -n <namespace>
+xcsh statistics delete test <name> -n <namespace>
 ```
 
 ## Terraform Resource

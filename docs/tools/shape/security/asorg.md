@@ -41,40 +41,20 @@ Ask Claude to help you work with Asorg resources:
 
 > "Create a asorg named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape asorg create {name} --namespace {namespace}
-```
-
-Create asorg
-
-### file_based
-
-```bash
-f5xcctl shape asorg create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create asorg -n <namespace> -i asorg.yaml
+xcsh shape create asorg -n <namespace> -i asorg.yaml
 
 # Get
-f5xcctl shape get asorg <name> -n <namespace>
+xcsh shape get asorg <name> -n <namespace>
 
 # List
-f5xcctl shape list asorg -n <namespace>
+xcsh shape list asorg -n <namespace>
 
 # Delete
-f5xcctl shape delete asorg <name> -n <namespace>
+xcsh shape delete asorg <name> -n <namespace>
 ```
 
 ## Terraform Resource

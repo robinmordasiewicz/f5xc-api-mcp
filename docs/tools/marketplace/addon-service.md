@@ -47,40 +47,20 @@ Ask Claude to help you work with Addon Service resources:
 
 > "Get details of the addon-service named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl web addon-service get {name} --namespace {namespace}
-```
-
-Get specific addon-service
-
-### list_all
-
-```bash
-f5xcctl web addon-service list --namespace {namespace}
-```
-
-List all addon-services
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create addon_service -n <namespace> -i addon_service.yaml
+xcsh marketplace create addon_service -n <namespace> -i addon_service.yaml
 
 # Get
-f5xcctl marketplace get addon_service <name> -n <namespace>
+xcsh marketplace get addon_service <name> -n <namespace>
 
 # List
-f5xcctl marketplace list addon_service -n <namespace>
+xcsh marketplace list addon_service -n <namespace>
 
 # Delete
-f5xcctl marketplace delete addon_service <name> -n <namespace>
+xcsh marketplace delete addon_service <name> -n <namespace>
 ```
 
 ## Terraform Resource

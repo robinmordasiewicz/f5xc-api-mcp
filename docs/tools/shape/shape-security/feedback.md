@@ -41,40 +41,20 @@ Ask Claude to help you work with Feedback resources:
 
 > "Create a feedback named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape feedback create {name} --namespace {namespace}
-```
-
-Create feedback
-
-### file_based
-
-```bash
-f5xcctl shape feedback create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create feedback -n <namespace> -i feedback.yaml
+xcsh shape create feedback -n <namespace> -i feedback.yaml
 
 # Get
-f5xcctl shape get feedback <name> -n <namespace>
+xcsh shape get feedback <name> -n <namespace>
 
 # List
-f5xcctl shape list feedback -n <namespace>
+xcsh shape list feedback -n <namespace>
 
 # Delete
-f5xcctl shape delete feedback <name> -n <namespace>
+xcsh shape delete feedback <name> -n <namespace>
 ```
 
 ## Terraform Resource

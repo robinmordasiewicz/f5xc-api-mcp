@@ -77,72 +77,20 @@ Ask Claude to help you work with Infraprotect Deny List Rule resources:
 
 > "Get details of the infraprotect-deny-list-rule named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl infraprotect infraprotect-deny-list-rule create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl infraprotect infraprotect-deny-list-rule create {name} --namespace {namespace}
-```
-
-Create infraprotect-deny-list-rule
-
-### delete
-
-```bash
-f5xcctl infraprotect infraprotect-deny-list-rule delete {name} --namespace {namespace}
-```
-
-Delete infraprotect-deny-list-rule
-
-### get_specific
-
-```bash
-f5xcctl infraprotect infraprotect-deny-list-rule get {name} --namespace {namespace}
-```
-
-Get specific infraprotect-deny-list-rule
-
-### list_all
-
-```bash
-f5xcctl infraprotect infraprotect-deny-list-rule list --namespace {namespace}
-```
-
-List all infraprotect-deny-list-rules
-
-### update
-
-```bash
-f5xcctl infraprotect infraprotect-deny-list-rule update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update infraprotect-deny-list-rule
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl ddos create infraprotect_deny_list_rule -n <namespace> -i infraprotect_deny_list_rule.yaml
+xcsh ddos create infraprotect_deny_list_rule -n <namespace> -i infraprotect_deny_list_rule.yaml
 
 # Get
-f5xcctl ddos get infraprotect_deny_list_rule <name> -n <namespace>
+xcsh ddos get infraprotect_deny_list_rule <name> -n <namespace>
 
 # List
-f5xcctl ddos list infraprotect_deny_list_rule -n <namespace>
+xcsh ddos list infraprotect_deny_list_rule -n <namespace>
 
 # Delete
-f5xcctl ddos delete infraprotect_deny_list_rule <name> -n <namespace>
+xcsh ddos delete infraprotect_deny_list_rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

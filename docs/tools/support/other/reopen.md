@@ -42,40 +42,20 @@ Ask Claude to help you work with Reopen resources:
 
 > "Create a reopen named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web reopen create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web reopen create {name} --namespace {namespace}
-```
-
-Create reopen
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create reopen -n <namespace> -i reopen.yaml
+xcsh support create reopen -n <namespace> -i reopen.yaml
 
 # Get
-f5xcctl support get reopen <name> -n <namespace>
+xcsh support get reopen <name> -n <namespace>
 
 # List
-f5xcctl support list reopen -n <namespace>
+xcsh support list reopen -n <namespace>
 
 # Delete
-f5xcctl support delete reopen <name> -n <namespace>
+xcsh support delete reopen <name> -n <namespace>
 ```
 
 ## Terraform Resource

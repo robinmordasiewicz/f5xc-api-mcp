@@ -34,32 +34,20 @@ Ask Claude to help you work with Deployment History resources:
 
 > "Get details of the deployment-history named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl shape deployment-history get {name} --namespace {namespace}
-```
-
-Get specific deployment-history
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create deployment_history -n <namespace> -i deployment_history.yaml
+xcsh shape create deployment_history -n <namespace> -i deployment_history.yaml
 
 # Get
-f5xcctl shape get deployment_history <name> -n <namespace>
+xcsh shape get deployment_history <name> -n <namespace>
 
 # List
-f5xcctl shape list deployment_history -n <namespace>
+xcsh shape list deployment_history -n <namespace>
 
 # Delete
-f5xcctl shape delete deployment_history <name> -n <namespace>
+xcsh shape delete deployment_history <name> -n <namespace>
 ```
 
 ## Terraform Resource

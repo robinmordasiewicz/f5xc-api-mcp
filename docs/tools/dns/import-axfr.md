@@ -33,40 +33,20 @@ Ask Claude to help you work with Import Axfr resources:
 
 > "Create a import-axfr named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config import-axfr create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config import-axfr create {name} --namespace {namespace}
-```
-
-Create import-axfr
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create import_axfr -n <namespace> -i import_axfr.yaml
+xcsh dns create import_axfr -n <namespace> -i import_axfr.yaml
 
 # Get
-f5xcctl dns get import_axfr <name> -n <namespace>
+xcsh dns get import_axfr <name> -n <namespace>
 
 # List
-f5xcctl dns list import_axfr -n <namespace>
+xcsh dns list import_axfr -n <namespace>
 
 # Delete
-f5xcctl dns delete import_axfr <name> -n <namespace>
+xcsh dns delete import_axfr <name> -n <namespace>
 ```
 
 ## Terraform Resource

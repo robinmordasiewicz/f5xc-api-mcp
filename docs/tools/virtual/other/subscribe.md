@@ -33,40 +33,20 @@ Ask Claude to help you work with Subscribe resources:
 
 > "Create a subscribe named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config subscribe create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config subscribe create {name} --namespace {namespace}
-```
-
-Create subscribe
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create subscribe -n <namespace> -i subscribe.yaml
+xcsh virtual create subscribe -n <namespace> -i subscribe.yaml
 
 # Get
-f5xcctl virtual get subscribe <name> -n <namespace>
+xcsh virtual get subscribe <name> -n <namespace>
 
 # List
-f5xcctl virtual list subscribe -n <namespace>
+xcsh virtual list subscribe -n <namespace>
 
 # Delete
-f5xcctl virtual delete subscribe <name> -n <namespace>
+xcsh virtual delete subscribe <name> -n <namespace>
 ```
 
 ## Terraform Resource

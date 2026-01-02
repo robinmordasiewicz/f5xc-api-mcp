@@ -41,40 +41,20 @@ Ask Claude to help you work with Browser resources:
 
 > "Create a browser named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape browser create {name} --namespace {namespace}
-```
-
-Create browser
-
-### file_based
-
-```bash
-f5xcctl shape browser create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create browser -n <namespace> -i browser.yaml
+xcsh shape create browser -n <namespace> -i browser.yaml
 
 # Get
-f5xcctl shape get browser <name> -n <namespace>
+xcsh shape get browser <name> -n <namespace>
 
 # List
-f5xcctl shape list browser -n <namespace>
+xcsh shape list browser -n <namespace>
 
 # Delete
-f5xcctl shape delete browser <name> -n <namespace>
+xcsh shape delete browser <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -41,40 +41,20 @@ Ask Claude to help you work with Rule resources:
 
 > "Create a rule named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape rule create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape rule create {name} --namespace {namespace}
-```
-
-Create rule
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create rule -n <namespace> -i rule.yaml
+xcsh shape create rule -n <namespace> -i rule.yaml
 
 # Get
-f5xcctl shape get rule <name> -n <namespace>
+xcsh shape get rule <name> -n <namespace>
 
 # List
-f5xcctl shape list rule -n <namespace>
+xcsh shape list rule -n <namespace>
 
 # Delete
-f5xcctl shape delete rule <name> -n <namespace>
+xcsh shape delete rule <name> -n <namespace>
 ```
 
 ## Terraform Resource

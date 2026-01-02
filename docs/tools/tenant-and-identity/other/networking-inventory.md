@@ -36,40 +36,20 @@ Ask Claude to help you work with Networking Inventory resources:
 
 > "Create a networking-inventory named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config networking-inventory create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config networking-inventory create {name} --namespace {namespace}
-```
-
-Create networking-inventory
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create networking_inventory -n <namespace> -i networking_inventory.yaml
+xcsh tenant_and_identity create networking_inventory -n <namespace> -i networking_inventory.yaml
 
 # Get
-f5xcctl tenant_and_identity get networking_inventory <name> -n <namespace>
+xcsh tenant_and_identity get networking_inventory <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list networking_inventory -n <namespace>
+xcsh tenant_and_identity list networking_inventory -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete networking_inventory <name> -n <namespace>
+xcsh tenant_and_identity delete networking_inventory <name> -n <namespace>
 ```
 
 ## Terraform Resource

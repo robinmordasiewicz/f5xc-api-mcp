@@ -42,40 +42,20 @@ Ask Claude to help you work with Aggregation resources:
 
 > "Create a aggregation named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl cdn aggregation create {name} --namespace {namespace}
-```
-
-Create aggregation
-
-### file_based
-
-```bash
-f5xcctl cdn aggregation create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl cdn create aggregation -n <namespace> -i aggregation.yaml
+xcsh cdn create aggregation -n <namespace> -i aggregation.yaml
 
 # Get
-f5xcctl cdn get aggregation <name> -n <namespace>
+xcsh cdn get aggregation <name> -n <namespace>
 
 # List
-f5xcctl cdn list aggregation -n <namespace>
+xcsh cdn list aggregation -n <namespace>
 
 # Delete
-f5xcctl cdn delete aggregation <name> -n <namespace>
+xcsh cdn delete aggregation <name> -n <namespace>
 ```
 
 ## Terraform Resource

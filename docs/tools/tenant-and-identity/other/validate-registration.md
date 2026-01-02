@@ -34,40 +34,20 @@ Ask Claude to help you work with Validate Registration resources:
 
 > "Create a validate-registration named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl default validate-registration create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl default validate-registration create {name} --namespace {namespace}
-```
-
-Create validate-registration
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create validate_registration -n <namespace> -i validate_registration.yaml
+xcsh tenant_and_identity create validate_registration -n <namespace> -i validate_registration.yaml
 
 # Get
-f5xcctl tenant_and_identity get validate_registration <name> -n <namespace>
+xcsh tenant_and_identity get validate_registration <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list validate_registration -n <namespace>
+xcsh tenant_and_identity list validate_registration -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete validate_registration <name> -n <namespace>
+xcsh tenant_and_identity delete validate_registration <name> -n <namespace>
 ```
 
 ## Terraform Resource

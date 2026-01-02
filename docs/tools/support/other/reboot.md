@@ -43,40 +43,20 @@ Ask Claude to help you work with Reboot resources:
 
 > "Create a reboot named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl operate reboot create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl operate reboot create {name} --namespace {namespace}
-```
-
-Create reboot
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl support create reboot -n <namespace> -i reboot.yaml
+xcsh support create reboot -n <namespace> -i reboot.yaml
 
 # Get
-f5xcctl support get reboot <name> -n <namespace>
+xcsh support get reboot <name> -n <namespace>
 
 # List
-f5xcctl support list reboot -n <namespace>
+xcsh support list reboot -n <namespace>
 
 # Delete
-f5xcctl support delete reboot <name> -n <namespace>
+xcsh support delete reboot <name> -n <namespace>
 ```
 
 ## Terraform Resource

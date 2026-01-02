@@ -77,72 +77,20 @@ Ask Claude to help you work with UDP Loadbalancer resources:
 
 > "Get details of the udp-loadbalancer named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config udp-loadbalancer create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config udp-loadbalancer create {name} --namespace {namespace}
-```
-
-Create udp-loadbalancer
-
-### delete
-
-```bash
-f5xcctl config udp-loadbalancer delete {name} --namespace {namespace}
-```
-
-Delete udp-loadbalancer
-
-### get_specific
-
-```bash
-f5xcctl config udp-loadbalancer get {name} --namespace {namespace}
-```
-
-Get specific udp-loadbalancer
-
-### list_all
-
-```bash
-f5xcctl config udp-loadbalancer list --namespace {namespace}
-```
-
-List all udp-loadbalancers
-
-### update
-
-```bash
-f5xcctl config udp-loadbalancer update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update udp-loadbalancer
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create udp_loadbalancer -n <namespace> -i udp_loadbalancer.yaml
+xcsh virtual create udp_loadbalancer -n <namespace> -i udp_loadbalancer.yaml
 
 # Get
-f5xcctl virtual get udp_loadbalancer <name> -n <namespace>
+xcsh virtual get udp_loadbalancer <name> -n <namespace>
 
 # List
-f5xcctl virtual list udp_loadbalancer -n <namespace>
+xcsh virtual list udp_loadbalancer -n <namespace>
 
 # Delete
-f5xcctl virtual delete udp_loadbalancer <name> -n <namespace>
+xcsh virtual delete udp_loadbalancer <name> -n <namespace>
 ```
 
 ## Terraform Resource

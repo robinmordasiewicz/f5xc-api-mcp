@@ -39,32 +39,20 @@ Ask Claude to help you work with Invoice Pdf resources:
 
 > "List all invoice-pdfs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web invoice-pdf list --namespace {namespace}
-```
-
-List all invoice-pdfs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create invoice_pdf -n <namespace> -i invoice_pdf.yaml
+xcsh billing_and_usage create invoice_pdf -n <namespace> -i invoice_pdf.yaml
 
 # Get
-f5xcctl billing_and_usage get invoice_pdf <name> -n <namespace>
+xcsh billing_and_usage get invoice_pdf <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list invoice_pdf -n <namespace>
+xcsh billing_and_usage list invoice_pdf -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete invoice_pdf <name> -n <namespace>
+xcsh billing_and_usage delete invoice_pdf <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -33,40 +33,20 @@ Ask Claude to help you work with Conversion resources:
 
 > "Create a conversion named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape conversion create {name} --namespace {namespace}
-```
-
-Create conversion
-
-### file_based
-
-```bash
-f5xcctl shape conversion create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create conversion -n <namespace> -i conversion.yaml
+xcsh shape create conversion -n <namespace> -i conversion.yaml
 
 # Get
-f5xcctl shape get conversion <name> -n <namespace>
+xcsh shape get conversion <name> -n <namespace>
 
 # List
-f5xcctl shape list conversion -n <namespace>
+xcsh shape list conversion -n <namespace>
 
 # Delete
-f5xcctl shape delete conversion <name> -n <namespace>
+xcsh shape delete conversion <name> -n <namespace>
 ```
 
 ## Terraform Resource

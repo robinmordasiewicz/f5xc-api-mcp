@@ -77,72 +77,20 @@ Ask Claude to help you work with Enhanced Firewall Policy resources:
 
 > "Get details of the enhanced-firewall-policy named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config enhanced-firewall-policy create {name} --namespace {namespace}
-```
-
-Create enhanced-firewall-policy
-
-### file_based
-
-```bash
-f5xcctl config enhanced-firewall-policy create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config enhanced-firewall-policy delete {name} --namespace {namespace}
-```
-
-Delete enhanced-firewall-policy
-
-### get_specific
-
-```bash
-f5xcctl config enhanced-firewall-policy get {name} --namespace {namespace}
-```
-
-Get specific enhanced-firewall-policy
-
-### list_all
-
-```bash
-f5xcctl config enhanced-firewall-policy list --namespace {namespace}
-```
-
-List all enhanced-firewall-policys
-
-### update
-
-```bash
-f5xcctl config enhanced-firewall-policy update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update enhanced-firewall-policy
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create enhanced_firewall_policy -n <namespace> -i enhanced_firewall_policy.yaml
+xcsh waf create enhanced_firewall_policy -n <namespace> -i enhanced_firewall_policy.yaml
 
 # Get
-f5xcctl waf get enhanced_firewall_policy <name> -n <namespace>
+xcsh waf get enhanced_firewall_policy <name> -n <namespace>
 
 # List
-f5xcctl waf list enhanced_firewall_policy -n <namespace>
+xcsh waf list enhanced_firewall_policy -n <namespace>
 
 # Delete
-f5xcctl waf delete enhanced_firewall_policy <name> -n <namespace>
+xcsh waf delete enhanced_firewall_policy <name> -n <namespace>
 ```
 
 ## Terraform Resource

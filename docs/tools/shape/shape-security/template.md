@@ -34,32 +34,20 @@ Ask Claude to help you work with Template resources:
 
 > "Get details of the template named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl shape template get {name} --namespace {namespace}
-```
-
-Get specific template
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create template -n <namespace> -i template.yaml
+xcsh shape create template -n <namespace> -i template.yaml
 
 # Get
-f5xcctl shape get template <name> -n <namespace>
+xcsh shape get template <name> -n <namespace>
 
 # List
-f5xcctl shape list template -n <namespace>
+xcsh shape list template -n <namespace>
 
 # Delete
-f5xcctl shape delete template <name> -n <namespace>
+xcsh shape delete template <name> -n <namespace>
 ```
 
 ## Terraform Resource

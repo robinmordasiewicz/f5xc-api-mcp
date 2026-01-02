@@ -77,72 +77,20 @@ Ask Claude to help you work with Dc Cluster Group resources:
 
 > "Get details of the dc-cluster-group named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config dc-cluster-group create {name} --namespace {namespace}
-```
-
-Create dc-cluster-group
-
-### file_based
-
-```bash
-f5xcctl config dc-cluster-group create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config dc-cluster-group delete {name} --namespace {namespace}
-```
-
-Delete dc-cluster-group
-
-### get_specific
-
-```bash
-f5xcctl config dc-cluster-group get {name} --namespace {namespace}
-```
-
-Get specific dc-cluster-group
-
-### list_all
-
-```bash
-f5xcctl config dc-cluster-group list --namespace {namespace}
-```
-
-List all dc-cluster-groups
-
-### update
-
-```bash
-f5xcctl config dc-cluster-group update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update dc-cluster-group
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create dc_cluster_group -n <namespace> -i dc_cluster_group.yaml
+xcsh network create dc_cluster_group -n <namespace> -i dc_cluster_group.yaml
 
 # Get
-f5xcctl network get dc_cluster_group <name> -n <namespace>
+xcsh network get dc_cluster_group <name> -n <namespace>
 
 # List
-f5xcctl network list dc_cluster_group -n <namespace>
+xcsh network list dc_cluster_group -n <namespace>
 
 # Delete
-f5xcctl network delete dc_cluster_group <name> -n <namespace>
+xcsh network delete dc_cluster_group <name> -n <namespace>
 ```
 
 ## Terraform Resource

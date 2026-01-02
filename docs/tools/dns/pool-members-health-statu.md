@@ -33,32 +33,20 @@ Ask Claude to help you work with Pool Members Health Statu resources:
 
 > "List all pool-members-health-status in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data pool-members-health-statu list --namespace {namespace}
-```
-
-List all pool-members-health-status
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl dns create pool_members_health_statu -n <namespace> -i pool_members_health_statu.yaml
+xcsh dns create pool_members_health_statu -n <namespace> -i pool_members_health_statu.yaml
 
 # Get
-f5xcctl dns get pool_members_health_statu <name> -n <namespace>
+xcsh dns get pool_members_health_statu <name> -n <namespace>
 
 # List
-f5xcctl dns list pool_members_health_statu -n <namespace>
+xcsh dns list pool_members_health_statu -n <namespace>
 
 # Delete
-f5xcctl dns delete pool_members_health_statu <name> -n <namespace>
+xcsh dns delete pool_members_health_statu <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -44,40 +44,20 @@ Ask Claude to help you work with Hourly Usage Detail resources:
 
 > "Create a hourly-usage-detail named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web hourly-usage-detail create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web hourly-usage-detail create {name} --namespace {namespace}
-```
-
-Create hourly-usage-detail
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create hourly_usage_detail -n <namespace> -i hourly_usage_detail.yaml
+xcsh billing_and_usage create hourly_usage_detail -n <namespace> -i hourly_usage_detail.yaml
 
 # Get
-f5xcctl billing_and_usage get hourly_usage_detail <name> -n <namespace>
+xcsh billing_and_usage get hourly_usage_detail <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list hourly_usage_detail -n <namespace>
+xcsh billing_and_usage list hourly_usage_detail -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete hourly_usage_detail <name> -n <namespace>
+xcsh billing_and_usage delete hourly_usage_detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

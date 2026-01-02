@@ -25,32 +25,20 @@ Ask Claude to help you work with Custom List resources:
 
 > "List all custom-lists in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web custom-list list --namespace {namespace}
-```
-
-List all custom-lists
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl billing_and_usage create custom_list -n <namespace> -i custom_list.yaml
+xcsh billing_and_usage create custom_list -n <namespace> -i custom_list.yaml
 
 # Get
-f5xcctl billing_and_usage get custom_list <name> -n <namespace>
+xcsh billing_and_usage get custom_list <name> -n <namespace>
 
 # List
-f5xcctl billing_and_usage list custom_list -n <namespace>
+xcsh billing_and_usage list custom_list -n <namespace>
 
 # Delete
-f5xcctl billing_and_usage delete custom_list <name> -n <namespace>
+xcsh billing_and_usage delete custom_list <name> -n <namespace>
 ```
 
 ## Terraform Resource

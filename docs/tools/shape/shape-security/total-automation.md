@@ -41,40 +41,20 @@ Ask Claude to help you work with Total Automation resources:
 
 > "Create a total-automation named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape total-automation create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape total-automation create {name} --namespace {namespace}
-```
-
-Create total-automation
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create total_automation -n <namespace> -i total_automation.yaml
+xcsh shape create total_automation -n <namespace> -i total_automation.yaml
 
 # Get
-f5xcctl shape get total_automation <name> -n <namespace>
+xcsh shape get total_automation <name> -n <namespace>
 
 # List
-f5xcctl shape list total_automation -n <namespace>
+xcsh shape list total_automation -n <namespace>
 
 # Delete
-f5xcctl shape delete total_automation <name> -n <namespace>
+xcsh shape delete total_automation <name> -n <namespace>
 ```
 
 ## Terraform Resource

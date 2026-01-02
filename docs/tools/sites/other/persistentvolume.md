@@ -33,32 +33,20 @@ Ask Claude to help you work with Persistentvolume resources:
 
 > "List all persistentvolumes in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl data persistentvolume list --namespace {namespace}
-```
-
-List all persistentvolumes
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create persistentvolume -n <namespace> -i persistentvolume.yaml
+xcsh sites create persistentvolume -n <namespace> -i persistentvolume.yaml
 
 # Get
-f5xcctl sites get persistentvolume <name> -n <namespace>
+xcsh sites get persistentvolume <name> -n <namespace>
 
 # List
-f5xcctl sites list persistentvolume -n <namespace>
+xcsh sites list persistentvolume -n <namespace>
 
 # Delete
-f5xcctl sites delete persistentvolume <name> -n <namespace>
+xcsh sites delete persistentvolume <name> -n <namespace>
 ```
 
 ## Terraform Resource

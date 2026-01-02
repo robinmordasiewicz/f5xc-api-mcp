@@ -77,72 +77,20 @@ Ask Claude to help you work with Securemesh Site V2 resources:
 
 > "Get details of the securemesh-site-v2 named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config securemesh-site-v2 create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config securemesh-site-v2 create {name} --namespace {namespace}
-```
-
-Create securemesh-site-v2
-
-### delete
-
-```bash
-f5xcctl config securemesh-site-v2 delete {name} --namespace {namespace}
-```
-
-Delete securemesh-site-v2
-
-### get_specific
-
-```bash
-f5xcctl config securemesh-site-v2 get {name} --namespace {namespace}
-```
-
-Get specific securemesh-site-v2
-
-### list_all
-
-```bash
-f5xcctl config securemesh-site-v2 list --namespace {namespace}
-```
-
-List all securemesh-site-v2s
-
-### update
-
-```bash
-f5xcctl config securemesh-site-v2 update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update securemesh-site-v2
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create securemesh_site_v2 -n <namespace> -i securemesh_site_v2.yaml
+xcsh sites create securemesh_site_v2 -n <namespace> -i securemesh_site_v2.yaml
 
 # Get
-f5xcctl sites get securemesh_site_v2 <name> -n <namespace>
+xcsh sites get securemesh_site_v2 <name> -n <namespace>
 
 # List
-f5xcctl sites list securemesh_site_v2 -n <namespace>
+xcsh sites list securemesh_site_v2 -n <namespace>
 
 # Delete
-f5xcctl sites delete securemesh_site_v2 <name> -n <namespace>
+xcsh sites delete securemesh_site_v2 <name> -n <namespace>
 ```
 
 ## Terraform Resource

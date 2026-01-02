@@ -47,48 +47,20 @@ Ask Claude to help you work with Local Kubeconfig resources:
 
 > "Get details of the local-kubeconfig named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config local-kubeconfig create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config local-kubeconfig create {name} --namespace {namespace}
-```
-
-Create local-kubeconfig
-
-### get_specific
-
-```bash
-f5xcctl config local-kubeconfig get {name} --namespace {namespace}
-```
-
-Get specific local-kubeconfig
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create local_kubeconfig -n <namespace> -i local_kubeconfig.yaml
+xcsh sites create local_kubeconfig -n <namespace> -i local_kubeconfig.yaml
 
 # Get
-f5xcctl sites get local_kubeconfig <name> -n <namespace>
+xcsh sites get local_kubeconfig <name> -n <namespace>
 
 # List
-f5xcctl sites list local_kubeconfig -n <namespace>
+xcsh sites list local_kubeconfig -n <namespace>
 
 # Delete
-f5xcctl sites delete local_kubeconfig <name> -n <namespace>
+xcsh sites delete local_kubeconfig <name> -n <namespace>
 ```
 
 ## Terraform Resource

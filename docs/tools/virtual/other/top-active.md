@@ -42,40 +42,20 @@ Ask Claude to help you work with Top Active resources:
 
 > "Create a top-active named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl ml top-active create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl ml top-active create {name} --namespace {namespace}
-```
-
-Create top-active
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl virtual create top_active -n <namespace> -i top_active.yaml
+xcsh virtual create top_active -n <namespace> -i top_active.yaml
 
 # Get
-f5xcctl virtual get top_active <name> -n <namespace>
+xcsh virtual get top_active <name> -n <namespace>
 
 # List
-f5xcctl virtual list top_active -n <namespace>
+xcsh virtual list top_active -n <namespace>
 
 # Delete
-f5xcctl virtual delete top_active <name> -n <namespace>
+xcsh virtual delete top_active <name> -n <namespace>
 ```
 
 ## Terraform Resource

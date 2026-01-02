@@ -41,32 +41,20 @@ Ask Claude to help you work with NetworkInteraction resources:
 
 > "Get details of the networkInteraction named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### get_specific
-
-```bash
-f5xcctl shape networkInteraction get {name} --namespace {namespace}
-```
-
-Get specific networkInteraction
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create networkInteraction -n <namespace> -i networkInteraction.yaml
+xcsh shape create networkInteraction -n <namespace> -i networkInteraction.yaml
 
 # Get
-f5xcctl shape get networkInteraction <name> -n <namespace>
+xcsh shape get networkInteraction <name> -n <namespace>
 
 # List
-f5xcctl shape list networkInteraction -n <namespace>
+xcsh shape list networkInteraction -n <namespace>
 
 # Delete
-f5xcctl shape delete networkInteraction <name> -n <namespace>
+xcsh shape delete networkInteraction <name> -n <namespace>
 ```
 
 ## Terraform Resource

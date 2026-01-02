@@ -41,40 +41,20 @@ Ask Claude to help you work with Admin Notification resources:
 
 > "List all admin-notifications in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl web admin-notification list --namespace {namespace}
-```
-
-List all admin-notifications
-
-### update
-
-```bash
-f5xcctl web admin-notification update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update admin-notification
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create admin_notification -n <namespace> -i admin_notification.yaml
+xcsh tenant_and_identity create admin_notification -n <namespace> -i admin_notification.yaml
 
 # Get
-f5xcctl tenant_and_identity get admin_notification <name> -n <namespace>
+xcsh tenant_and_identity get admin_notification <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list admin_notification -n <namespace>
+xcsh tenant_and_identity list admin_notification -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete admin_notification <name> -n <namespace>
+xcsh tenant_and_identity delete admin_notification <name> -n <namespace>
 ```
 
 ## Terraform Resource

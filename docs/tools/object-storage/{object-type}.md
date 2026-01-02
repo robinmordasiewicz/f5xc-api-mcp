@@ -56,40 +56,20 @@ Operations on this resource may have the following effects:
 
 Ask Claude to help you work with {object Type} resources:
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### delete
-
-```bash
-f5xcctl object_store stored-object delete {name} --namespace {namespace}
-```
-
-Delete stored-object
-
-### update
-
-```bash
-f5xcctl object_store stored-object update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update stored-object
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl object_storage create {object_type} -n <namespace> -i {object_type}.yaml
+xcsh object_storage create {object_type} -n <namespace> -i {object_type}.yaml
 
 # Get
-f5xcctl object_storage get {object_type} <name> -n <namespace>
+xcsh object_storage get {object_type} <name> -n <namespace>
 
 # List
-f5xcctl object_storage list {object_type} -n <namespace>
+xcsh object_storage list {object_type} -n <namespace>
 
 # Delete
-f5xcctl object_storage delete {object_type} <name> -n <namespace>
+xcsh object_storage delete {object_type} <name> -n <namespace>
 ```
 
 ## Terraform Resource

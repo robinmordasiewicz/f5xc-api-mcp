@@ -71,64 +71,20 @@ Ask Claude to help you work with Allowed Domain resources:
 
 > "Get details of the allowed-domain named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl shape allowed-domain create {name} --namespace {namespace}
-```
-
-Create allowed-domain
-
-### file_based
-
-```bash
-f5xcctl shape allowed-domain create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl shape allowed-domain delete {name} --namespace {namespace}
-```
-
-Delete allowed-domain
-
-### get_specific
-
-```bash
-f5xcctl shape allowed-domain get {name} --namespace {namespace}
-```
-
-Get specific allowed-domain
-
-### list_all
-
-```bash
-f5xcctl shape allowed-domain list --namespace {namespace}
-```
-
-List all allowed-domains
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create allowed_domain -n <namespace> -i allowed_domain.yaml
+xcsh shape create allowed_domain -n <namespace> -i allowed_domain.yaml
 
 # Get
-f5xcctl shape get allowed_domain <name> -n <namespace>
+xcsh shape get allowed_domain <name> -n <namespace>
 
 # List
-f5xcctl shape list allowed_domain -n <namespace>
+xcsh shape list allowed_domain -n <namespace>
 
 # Delete
-f5xcctl shape delete allowed_domain <name> -n <namespace>
+xcsh shape delete allowed_domain <name> -n <namespace>
 ```
 
 ## Terraform Resource

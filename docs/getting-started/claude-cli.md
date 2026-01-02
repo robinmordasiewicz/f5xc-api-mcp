@@ -1,17 +1,74 @@
-# Claude Code Setup
+# Claude Code CLI Setup
 
 Configure the F5XC API MCP Server with Claude Code CLI.
 
 ## Prerequisites
 
-- [Claude Code](https://docs.anthropic.com/claude-code) installed
-- Node.js 18+ installed (for npx)
+- [Claude Code](https://code.claude.com/docs) installed
+- Node.js 24+ installed (for npx)
 
-## Configuration
+## Quick Install with `claude mcp add`
 
-### Project-Level Configuration
+The fastest way to add the F5XC API MCP server:
 
-Create `.mcp.json` in your project root:
+=== "Documentation Mode"
+
+    ```bash
+    claude mcp add --transport stdio f5xc-api -- npx @robinmordasiewicz/f5xc-api-mcp
+    ```
+
+=== "With API Token"
+
+    ```bash
+    claude mcp add --transport stdio f5xc-api \
+      --env F5XC_API_URL=https://your-tenant.console.ves.volterra.io \
+      --env F5XC_API_TOKEN=your-api-token \
+      -- npx @robinmordasiewicz/f5xc-api-mcp
+    ```
+
+=== "With P12 Certificate"
+
+    ```bash
+    claude mcp add --transport stdio f5xc-api \
+      --env F5XC_API_URL=https://your-tenant.console.ves.volterra.io \
+      --env F5XC_P12_FILE=/path/to/certificate.p12 \
+      --env F5XC_P12_PASSWORD=your-password \
+      -- npx @robinmordasiewicz/f5xc-api-mcp
+    ```
+
+=== "User Scope (All Projects)"
+
+    ```bash
+    claude mcp add --transport stdio f5xc-api --scope user \
+      -- npx @robinmordasiewicz/f5xc-api-mcp
+    ```
+
+### Scope Options
+
+| Scope | Flag | Storage Location | Use Case |
+|-------|------|------------------|----------|
+| Local | `--scope local` | `.mcp.json` (gitignored) | Default, private to you |
+| Project | `--scope project` | `.mcp.json` (committed) | Share with team |
+| User | `--scope user` | `~/.claude.json` | Available in all projects |
+
+### Managing MCP Servers
+
+```bash
+# List all configured servers
+claude mcp list
+
+# Get details for a specific server
+claude mcp get f5xc-api
+
+# Remove a server
+claude mcp remove f5xc-api
+```
+
+---
+
+## Manual Configuration (Alternative)
+
+If you prefer manual configuration, create `.mcp.json` in your project root:
 
 === "Documentation Mode"
 
@@ -63,7 +120,7 @@ Create `.mcp.json` in your project root:
 
 ### Global Configuration
 
-For system-wide availability, add to `~/.claude/mcp.json`:
+For system-wide availability, add to `~/.claude/settings.local.json`:
 
 ```json
 {
@@ -78,10 +135,10 @@ For system-wide availability, add to `~/.claude/mcp.json`:
 
 ## Usage
 
-### List Available Tools
+### List Available MCP Servers
 
 ```bash
-claude-code mcp list-tools
+claude mcp list
 ```
 
 ### Interactive Mode
@@ -89,17 +146,19 @@ claude-code mcp list-tools
 Start Claude Code and ask about F5XC:
 
 ```bash
-claude-code
+claude
 ```
 
 Then:
 
 > "Show me the available F5XC API operations"
 
-### Direct Tool Calls
+### Direct Commands
+
+Use prompts directly from the command line:
 
 ```bash
-claude-code --tool f5xc-api-server-info
+claude -p "What F5XC tools are available?"
 ```
 
 ## Environment Variables
@@ -118,7 +177,7 @@ Then use a simpler config:
   "mcpServers": {
     "f5xc-api": {
       "command": "npx",
-      "args": ["f5xc-api-mcp"]
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
     }
   }
 }
@@ -131,16 +190,16 @@ Then use a simpler config:
 ```bash
 # Start Claude Code in your Terraform project
 cd example-terraform-project
-claude-code
+claude
 
 # Ask Claude to help with F5XC resources
 ```
 
 > "Generate Terraform for an HTTP load balancer at api.example.com"
 
-### f5xcctl Integration
+### xcsh Integration
 
-> "Show me the f5xcctl commands to deploy this load balancer configuration"
+> "Show me the xcsh commands to deploy this load balancer configuration"
 
 ## Troubleshooting
 
@@ -148,14 +207,14 @@ claude-code
 
 1. Check `.mcp.json` is in your current directory or parent
 2. Verify JSON syntax is valid
-3. Run `claude-code mcp list-servers` to see configured servers
+3. Run `claude mcp list` to see configured servers
 
 ### Connection Issues
 
-Enable verbose logging:
+Enable MCP debug logging:
 
 ```bash
-claude-code --verbose mcp list-tools
+claude --mcp-debug
 ```
 
 ### Tool Execution Errors
@@ -163,11 +222,11 @@ claude-code --verbose mcp list-tools
 Check the server is responding:
 
 ```bash
-echo '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | npx f5xc-api-mcp
+echo '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | npx @robinmordasiewicz/f5xc-api-mcp
 ```
 
 ## Next Steps
 
 - [Authentication Configuration](../configuration/authentication.md)
 - [Tools Reference](../tools/index.md)
-- [f5xcctl Integration](../integrations/f5xcctl.md)
+- [xcsh Integration](../integrations/xcsh.md)

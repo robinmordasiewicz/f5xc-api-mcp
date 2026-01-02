@@ -41,40 +41,20 @@ Ask Claude to help you work with API Endpoint Protection resources:
 
 > "Create a api-endpoint-protection named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config api-endpoint-protection create {name} --namespace {namespace}
-```
-
-Create api-endpoint-protection
-
-### file_based
-
-```bash
-f5xcctl config api-endpoint-protection create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create api_endpoint_protection -n <namespace> -i api_endpoint_protection.yaml
+xcsh api create api_endpoint_protection -n <namespace> -i api_endpoint_protection.yaml
 
 # Get
-f5xcctl api get api_endpoint_protection <name> -n <namespace>
+xcsh api get api_endpoint_protection <name> -n <namespace>
 
 # List
-f5xcctl api list api_endpoint_protection -n <namespace>
+xcsh api list api_endpoint_protection -n <namespace>
 
 # Delete
-f5xcctl api delete api_endpoint_protection <name> -n <namespace>
+xcsh api delete api_endpoint_protection <name> -n <namespace>
 ```
 
 ## Terraform Resource

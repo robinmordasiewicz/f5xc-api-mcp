@@ -1117,7 +1117,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1249,7 +1249,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1632,7 +1632,7 @@ export const cloud_infrastructureTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,

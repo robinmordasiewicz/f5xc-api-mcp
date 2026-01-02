@@ -42,40 +42,20 @@ Ask Claude to help you work with Unmark As Non API resources:
 
 > "Create a unmark-as-non-api named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config unmark-as-non-api create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config unmark-as-non-api create {name} --namespace {namespace}
-```
-
-Create unmark-as-non-api
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl api create unmark_as_non_api -n <namespace> -i unmark_as_non_api.yaml
+xcsh api create unmark_as_non_api -n <namespace> -i unmark_as_non_api.yaml
 
 # Get
-f5xcctl api get unmark_as_non_api <name> -n <namespace>
+xcsh api get unmark_as_non_api <name> -n <namespace>
 
 # List
-f5xcctl api list unmark_as_non_api -n <namespace>
+xcsh api list unmark_as_non_api -n <namespace>
 
 # Delete
-f5xcctl api delete unmark_as_non_api <name> -n <namespace>
+xcsh api delete unmark_as_non_api <name> -n <namespace>
 ```
 
 ## Terraform Resource

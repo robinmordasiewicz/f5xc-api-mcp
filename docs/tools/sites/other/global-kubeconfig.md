@@ -46,48 +46,20 @@ Ask Claude to help you work with Global Kubeconfig resources:
 
 > "List all global-kubeconfigs in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web global-kubeconfig create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web global-kubeconfig create {name} --namespace {namespace}
-```
-
-Create global-kubeconfig
-
-### list_all
-
-```bash
-f5xcctl web global-kubeconfig list --namespace {namespace}
-```
-
-List all global-kubeconfigs
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create global_kubeconfig -n <namespace> -i global_kubeconfig.yaml
+xcsh sites create global_kubeconfig -n <namespace> -i global_kubeconfig.yaml
 
 # Get
-f5xcctl sites get global_kubeconfig <name> -n <namespace>
+xcsh sites get global_kubeconfig <name> -n <namespace>
 
 # List
-f5xcctl sites list global_kubeconfig -n <namespace>
+xcsh sites list global_kubeconfig -n <namespace>
 
 # Delete
-f5xcctl sites delete global_kubeconfig <name> -n <namespace>
+xcsh sites delete global_kubeconfig <name> -n <namespace>
 ```
 
 ## Terraform Resource

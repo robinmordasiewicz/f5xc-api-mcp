@@ -73,64 +73,20 @@ Ask Claude to help you work with Tpm API Key resources:
 
 > "Get details of the tpm-api-key named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl tpm tpm-api-key create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl tpm tpm-api-key create {name} --namespace {namespace}
-```
-
-Create tpm-api-key
-
-### get_specific
-
-```bash
-f5xcctl tpm tpm-api-key get {name} --namespace {namespace}
-```
-
-Get specific tpm-api-key
-
-### list_all
-
-```bash
-f5xcctl tpm tpm-api-key list --namespace {namespace}
-```
-
-List all tpm-api-keys
-
-### update
-
-```bash
-f5xcctl tpm tpm-api-key update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update tpm-api-key
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl bot_and_threat_defense create tpm_api_key -n <namespace> -i tpm_api_key.yaml
+xcsh bot_and_threat_defense create tpm_api_key -n <namespace> -i tpm_api_key.yaml
 
 # Get
-f5xcctl bot_and_threat_defense get tpm_api_key <name> -n <namespace>
+xcsh bot_and_threat_defense get tpm_api_key <name> -n <namespace>
 
 # List
-f5xcctl bot_and_threat_defense list tpm_api_key -n <namespace>
+xcsh bot_and_threat_defense list tpm_api_key -n <namespace>
 
 # Delete
-f5xcctl bot_and_threat_defense delete tpm_api_key <name> -n <namespace>
+xcsh bot_and_threat_defense delete tpm_api_key <name> -n <namespace>
 ```
 
 ## Terraform Resource

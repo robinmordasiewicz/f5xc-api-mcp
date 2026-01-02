@@ -43,40 +43,20 @@ Ask Claude to help you work with Node resources:
 
 > "Create a node named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data node create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data node create {name} --namespace {namespace}
-```
-
-Create node
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl telemetry_and_insights create node -n <namespace> -i node.yaml
+xcsh telemetry_and_insights create node -n <namespace> -i node.yaml
 
 # Get
-f5xcctl telemetry_and_insights get node <name> -n <namespace>
+xcsh telemetry_and_insights get node <name> -n <namespace>
 
 # List
-f5xcctl telemetry_and_insights list node -n <namespace>
+xcsh telemetry_and_insights list node -n <namespace>
 
 # Delete
-f5xcctl telemetry_and_insights delete node <name> -n <namespace>
+xcsh telemetry_and_insights delete node <name> -n <namespace>
 ```
 
 ## Terraform Resource

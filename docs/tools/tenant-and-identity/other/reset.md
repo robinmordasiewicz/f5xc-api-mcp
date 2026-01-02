@@ -33,40 +33,20 @@ Ask Claude to help you work with Reset resources:
 
 > "Create a reset named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl web reset create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl web reset create {name} --namespace {namespace}
-```
-
-Create reset
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create reset -n <namespace> -i reset.yaml
+xcsh tenant_and_identity create reset -n <namespace> -i reset.yaml
 
 # Get
-f5xcctl tenant_and_identity get reset <name> -n <namespace>
+xcsh tenant_and_identity get reset <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list reset -n <namespace>
+xcsh tenant_and_identity list reset -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete reset <name> -n <namespace>
+xcsh tenant_and_identity delete reset <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -71,64 +71,20 @@ Ask Claude to help you work with Site resources:
 
 > "Get details of the site named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl data site create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl data site create {name} --namespace {namespace}
-```
-
-Create site
-
-### get_specific
-
-```bash
-f5xcctl config site get {name} --namespace {namespace}
-```
-
-Get specific site
-
-### list_all
-
-```bash
-f5xcctl config site list --namespace {namespace}
-```
-
-List all sites
-
-### update
-
-```bash
-f5xcctl config site update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update site
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create site -n <namespace> -i site.yaml
+xcsh sites create site -n <namespace> -i site.yaml
 
 # Get
-f5xcctl sites get site <name> -n <namespace>
+xcsh sites get site <name> -n <namespace>
 
 # List
-f5xcctl sites list site -n <namespace>
+xcsh sites list site -n <namespace>
 
 # Delete
-f5xcctl sites delete site <name> -n <namespace>
+xcsh sites delete site <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -34,40 +34,20 @@ Ask Claude to help you work with Process Policy Information resources:
 
 > "Create a process-policy-information named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl secret_management process-policy-information create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl secret_management process-policy-information create {name} --namespace {namespace}
-```
-
-Create process-policy-information
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl blindfold create process_policy_information -n <namespace> -i process_policy_information.yaml
+xcsh blindfold create process_policy_information -n <namespace> -i process_policy_information.yaml
 
 # Get
-f5xcctl blindfold get process_policy_information <name> -n <namespace>
+xcsh blindfold get process_policy_information <name> -n <namespace>
 
 # List
-f5xcctl blindfold list process_policy_information -n <namespace>
+xcsh blindfold list process_policy_information -n <namespace>
 
 # Delete
-f5xcctl blindfold delete process_policy_information <name> -n <namespace>
+xcsh blindfold delete process_policy_information <name> -n <namespace>
 ```
 
 ## Terraform Resource

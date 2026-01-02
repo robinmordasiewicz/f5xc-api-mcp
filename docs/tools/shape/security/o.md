@@ -41,40 +41,20 @@ Ask Claude to help you work with O resources:
 
 > "Create a o named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl shape o create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl shape o create {name} --namespace {namespace}
-```
-
-Create o
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create o -n <namespace> -i o.yaml
+xcsh shape create o -n <namespace> -i o.yaml
 
 # Get
-f5xcctl shape get o <name> -n <namespace>
+xcsh shape get o <name> -n <namespace>
 
 # List
-f5xcctl shape list o -n <namespace>
+xcsh shape list o -n <namespace>
 
 # Delete
-f5xcctl shape delete o <name> -n <namespace>
+xcsh shape delete o <name> -n <namespace>
 ```
 
 ## Terraform Resource

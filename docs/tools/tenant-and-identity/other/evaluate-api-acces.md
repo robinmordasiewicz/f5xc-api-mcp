@@ -34,40 +34,20 @@ Ask Claude to help you work with Evaluate API Acces resources:
 
 > "Create a evaluate-api-acces named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web evaluate-api-acces create {name} --namespace {namespace}
-```
-
-Create evaluate-api-acces
-
-### file_based
-
-```bash
-f5xcctl web evaluate-api-acces create -f {file}.yaml
-```
-
-Create from YAML file
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create evaluate_api_acces -n <namespace> -i evaluate_api_acces.yaml
+xcsh tenant_and_identity create evaluate_api_acces -n <namespace> -i evaluate_api_acces.yaml
 
 # Get
-f5xcctl tenant_and_identity get evaluate_api_acces <name> -n <namespace>
+xcsh tenant_and_identity get evaluate_api_acces <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list evaluate_api_acces -n <namespace>
+xcsh tenant_and_identity list evaluate_api_acces -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete evaluate_api_acces <name> -n <namespace>
+xcsh tenant_and_identity delete evaluate_api_acces <name> -n <namespace>
 ```
 
 ## Terraform Resource

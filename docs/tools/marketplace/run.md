@@ -43,40 +43,20 @@ Ask Claude to help you work with Run resources:
 
 > "Create a run named 'example' in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl terraform run create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl terraform run create {name} --namespace {namespace}
-```
-
-Create run
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl marketplace create run -n <namespace> -i run.yaml
+xcsh marketplace create run -n <namespace> -i run.yaml
 
 # Get
-f5xcctl marketplace get run <name> -n <namespace>
+xcsh marketplace get run <name> -n <namespace>
 
 # List
-f5xcctl marketplace list run -n <namespace>
+xcsh marketplace list run -n <namespace>
 
 # Delete
-f5xcctl marketplace delete run <name> -n <namespace>
+xcsh marketplace delete run <name> -n <namespace>
 ```
 
 ## Terraform Resource

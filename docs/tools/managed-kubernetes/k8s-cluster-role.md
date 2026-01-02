@@ -80,72 +80,20 @@ Ask Claude to help you work with K8S Cluster Role resources:
 
 > "Get details of the k8s-cluster-role named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config k8s-cluster-role create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config k8s-cluster-role create {name} --namespace {namespace}
-```
-
-Create k8s-cluster-role
-
-### delete
-
-```bash
-f5xcctl config k8s-cluster-role delete {name} --namespace {namespace}
-```
-
-Delete k8s-cluster-role
-
-### get_specific
-
-```bash
-f5xcctl config k8s-cluster-role get {name} --namespace {namespace}
-```
-
-Get specific k8s-cluster-role
-
-### list_all
-
-```bash
-f5xcctl config k8s-cluster-role list --namespace {namespace}
-```
-
-List all k8s-cluster-roles
-
-### update
-
-```bash
-f5xcctl config k8s-cluster-role update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update k8s-cluster-role
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl managed_kubernetes create k8s_cluster_role -n <namespace> -i k8s_cluster_role.yaml
+xcsh managed_kubernetes create k8s_cluster_role -n <namespace> -i k8s_cluster_role.yaml
 
 # Get
-f5xcctl managed_kubernetes get k8s_cluster_role <name> -n <namespace>
+xcsh managed_kubernetes get k8s_cluster_role <name> -n <namespace>
 
 # List
-f5xcctl managed_kubernetes list k8s_cluster_role -n <namespace>
+xcsh managed_kubernetes list k8s_cluster_role -n <namespace>
 
 # Delete
-f5xcctl managed_kubernetes delete k8s_cluster_role <name> -n <namespace>
+xcsh managed_kubernetes delete k8s_cluster_role <name> -n <namespace>
 ```
 
 ## Terraform Resource

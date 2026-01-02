@@ -41,32 +41,20 @@ Ask Claude to help you work with Detail resources:
 
 > "List all details in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl shape detail list --namespace {namespace}
-```
-
-List all details
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl shape create detail -n <namespace> -i detail.yaml
+xcsh shape create detail -n <namespace> -i detail.yaml
 
 # Get
-f5xcctl shape get detail <name> -n <namespace>
+xcsh shape get detail <name> -n <namespace>
 
 # List
-f5xcctl shape list detail -n <namespace>
+xcsh shape list detail -n <namespace>
 
 # Delete
-f5xcctl shape delete detail <name> -n <namespace>
+xcsh shape delete detail <name> -n <namespace>
 ```
 
 ## Terraform Resource

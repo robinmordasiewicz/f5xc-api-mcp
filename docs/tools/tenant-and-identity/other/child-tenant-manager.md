@@ -78,72 +78,20 @@ Ask Claude to help you work with Child Tenant Manager resources:
 
 > "Get details of the child-tenant-manager named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web child-tenant-manager create {name} --namespace {namespace}
-```
-
-Create child-tenant-manager
-
-### file_based
-
-```bash
-f5xcctl web child-tenant-manager create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl web child-tenant-manager delete {name} --namespace {namespace}
-```
-
-Delete child-tenant-manager
-
-### get_specific
-
-```bash
-f5xcctl web child-tenant-manager get {name} --namespace {namespace}
-```
-
-Get specific child-tenant-manager
-
-### list_all
-
-```bash
-f5xcctl web child-tenant-manager list --namespace {namespace}
-```
-
-List all child-tenant-managers
-
-### update
-
-```bash
-f5xcctl web child-tenant-manager update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update child-tenant-manager
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create child_tenant_manager -n <namespace> -i child_tenant_manager.yaml
+xcsh tenant_and_identity create child_tenant_manager -n <namespace> -i child_tenant_manager.yaml
 
 # Get
-f5xcctl tenant_and_identity get child_tenant_manager <name> -n <namespace>
+xcsh tenant_and_identity get child_tenant_manager <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list child_tenant_manager -n <namespace>
+xcsh tenant_and_identity list child_tenant_manager -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete child_tenant_manager <name> -n <namespace>
+xcsh tenant_and_identity delete child_tenant_manager <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -34,32 +34,20 @@ Ask Claude to help you work with Global Network resources:
 
 > "List all global-networks in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config global-network list --namespace {namespace}
-```
-
-List all global-networks
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl sites create global_network -n <namespace> -i global_network.yaml
+xcsh sites create global_network -n <namespace> -i global_network.yaml
 
 # Get
-f5xcctl sites get global_network <name> -n <namespace>
+xcsh sites get global_network <name> -n <namespace>
 
 # List
-f5xcctl sites list global_network -n <namespace>
+xcsh sites list global_network -n <namespace>
 
 # Delete
-f5xcctl sites delete global_network <name> -n <namespace>
+xcsh sites delete global_network <name> -n <namespace>
 ```
 
 ## Terraform Resource

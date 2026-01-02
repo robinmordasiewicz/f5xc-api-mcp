@@ -131,14 +131,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -263,14 +263,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -405,14 +405,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -553,14 +553,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -691,14 +691,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -823,14 +823,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -965,14 +965,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -1113,14 +1113,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -1263,14 +1263,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -1413,14 +1413,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -1550,14 +1550,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -1682,14 +1682,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -1824,14 +1824,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -1972,14 +1972,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -2121,14 +2121,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -2234,14 +2234,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -2349,7 +2349,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "network_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -2373,14 +2373,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -2494,7 +2494,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "network_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -2504,14 +2504,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -2645,14 +2645,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -2792,14 +2792,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -2916,7 +2916,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "network_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -2940,14 +2940,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -3054,14 +3054,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -3167,14 +3167,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -3279,14 +3279,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -3415,14 +3415,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -3546,14 +3546,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -3688,14 +3688,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -3835,14 +3835,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -3984,14 +3984,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -4100,7 +4100,7 @@ export const network_securityTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "network_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -4124,14 +4124,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -4246,7 +4246,7 @@ export const network_securityTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "network_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -4256,14 +4256,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -4398,14 +4398,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -4546,14 +4546,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -4671,7 +4671,7 @@ export const network_securityTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/network_firewalls" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "network_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -4695,14 +4695,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -4807,7 +4807,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "network_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -4831,14 +4831,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -4952,7 +4952,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "network_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -4962,14 +4962,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -5103,14 +5103,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -5250,14 +5250,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -5390,14 +5390,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -5522,14 +5522,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -5664,14 +5664,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -5812,14 +5812,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -5962,14 +5962,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -6102,14 +6102,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -6250,14 +6250,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -6375,7 +6375,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "network_security",
         fieldPath: "",
         inline: false,
         required: false,
@@ -6399,14 +6399,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -6539,14 +6539,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -6671,14 +6671,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -6813,14 +6813,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -6961,14 +6961,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -7110,14 +7110,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -7250,14 +7250,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -7382,14 +7382,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -7524,14 +7524,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -7672,14 +7672,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -7821,14 +7821,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -7962,14 +7962,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -8110,14 +8110,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -8259,14 +8259,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -8396,14 +8396,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -8528,14 +8528,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -8670,14 +8670,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -8818,14 +8818,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -8967,14 +8967,14 @@ export const network_securityTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
       },
       {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
         required: false,
         tier: "advanced",
       },
@@ -9080,7 +9080,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "network_security",
+        domain: "waf",
         fieldPath: "",
         inline: false,
         required: false,
@@ -9112,18 +9112,6 @@ export const network_securityTools: ParsedOperation[] = [
       {
         addonService: "f5xc_waap_advanced",
         displayName: "F5XC WAAP Advanced",
-        required: false,
-        tier: "advanced",
-      },
-      {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
-        required: false,
-        tier: "standard",
-      },
-      {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
         required: false,
         tier: "advanced",
       },
@@ -9237,7 +9225,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "network_security",
+        domain: "waf",
         fieldPath: "",
         inline: false,
         required: false,
@@ -9255,18 +9243,6 @@ export const network_securityTools: ParsedOperation[] = [
       {
         addonService: "f5xc_waap_advanced",
         displayName: "F5XC WAAP Advanced",
-        required: false,
-        tier: "advanced",
-      },
-      {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
-        required: false,
-        tier: "standard",
-      },
-      {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
         required: false,
         tier: "advanced",
       },
@@ -9409,18 +9385,6 @@ export const network_securityTools: ParsedOperation[] = [
       {
         addonService: "f5xc_waap_advanced",
         displayName: "F5XC WAAP Advanced",
-        required: false,
-        tier: "advanced",
-      },
-      {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
-        required: false,
-        tier: "standard",
-      },
-      {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
         required: false,
         tier: "advanced",
       },
@@ -9571,18 +9535,6 @@ export const network_securityTools: ParsedOperation[] = [
         required: false,
         tier: "advanced",
       },
-      {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
-        required: false,
-        tier: "standard",
-      },
-      {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
-        required: false,
-        tier: "advanced",
-      },
     ],
   },
   {
@@ -9697,7 +9649,7 @@ export const network_securityTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "network_security",
+        domain: "waf",
         fieldPath: "",
         inline: false,
         required: false,
@@ -9729,18 +9681,6 @@ export const network_securityTools: ParsedOperation[] = [
       {
         addonService: "f5xc_waap_advanced",
         displayName: "F5XC WAAP Advanced",
-        required: false,
-        tier: "advanced",
-      },
-      {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
-        required: false,
-        tier: "standard",
-      },
-      {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
         required: false,
         tier: "advanced",
       },

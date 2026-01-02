@@ -34,32 +34,20 @@ Ask Claude to help you work with Active Staged Signature resources:
 
 > "List all active-staged-signatures in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl config active-staged-signature list --namespace {namespace}
-```
-
-List all active-staged-signatures
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl waf create active_staged_signature -n <namespace> -i active_staged_signature.yaml
+xcsh waf create active_staged_signature -n <namespace> -i active_staged_signature.yaml
 
 # Get
-f5xcctl waf get active_staged_signature <name> -n <namespace>
+xcsh waf get active_staged_signature <name> -n <namespace>
 
 # List
-f5xcctl waf list active_staged_signature -n <namespace>
+xcsh waf list active_staged_signature -n <namespace>
 
 # Delete
-f5xcctl waf delete active_staged_signature <name> -n <namespace>
+xcsh waf delete active_staged_signature <name> -n <namespace>
 ```
 
 ## Terraform Resource

@@ -77,72 +77,20 @@ Ask Claude to help you work with Contact resources:
 
 > "Get details of the contact named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl web contact create {name} --namespace {namespace}
-```
-
-Create contact
-
-### file_based
-
-```bash
-f5xcctl web contact create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl web contact delete {name} --namespace {namespace}
-```
-
-Delete contact
-
-### get_specific
-
-```bash
-f5xcctl web contact get {name} --namespace {namespace}
-```
-
-Get specific contact
-
-### list_all
-
-```bash
-f5xcctl web contact list --namespace {namespace}
-```
-
-List all contacts
-
-### update
-
-```bash
-f5xcctl web contact update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update contact
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create contact -n <namespace> -i contact.yaml
+xcsh tenant_and_identity create contact -n <namespace> -i contact.yaml
 
 # Get
-f5xcctl tenant_and_identity get contact <name> -n <namespace>
+xcsh tenant_and_identity get contact <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list contact -n <namespace>
+xcsh tenant_and_identity list contact -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete contact <name> -n <namespace>
+xcsh tenant_and_identity delete contact <name> -n <namespace>
 ```
 
 ## Terraform Resource

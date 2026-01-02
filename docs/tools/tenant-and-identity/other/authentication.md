@@ -77,72 +77,20 @@ Ask Claude to help you work with Authentication resources:
 
 > "Get details of the authentication named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### basic_create
-
-```bash
-f5xcctl config authentication create {name} --namespace {namespace}
-```
-
-Create authentication
-
-### file_based
-
-```bash
-f5xcctl config authentication create -f {file}.yaml
-```
-
-Create from YAML file
-
-### delete
-
-```bash
-f5xcctl config authentication delete {name} --namespace {namespace}
-```
-
-Delete authentication
-
-### get_specific
-
-```bash
-f5xcctl config authentication get {name} --namespace {namespace}
-```
-
-Get specific authentication
-
-### list_all
-
-```bash
-f5xcctl config authentication list --namespace {namespace}
-```
-
-List all authentications
-
-### update
-
-```bash
-f5xcctl config authentication update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update authentication
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl tenant_and_identity create authentication -n <namespace> -i authentication.yaml
+xcsh tenant_and_identity create authentication -n <namespace> -i authentication.yaml
 
 # Get
-f5xcctl tenant_and_identity get authentication <name> -n <namespace>
+xcsh tenant_and_identity get authentication <name> -n <namespace>
 
 # List
-f5xcctl tenant_and_identity list authentication -n <namespace>
+xcsh tenant_and_identity list authentication -n <namespace>
 
 # Delete
-f5xcctl tenant_and_identity delete authentication <name> -n <namespace>
+xcsh tenant_and_identity delete authentication <name> -n <namespace>
 ```
 
 ## Terraform Resource

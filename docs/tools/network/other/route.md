@@ -81,72 +81,20 @@ Ask Claude to help you work with Route resources:
 
 > "Get details of the route named 'example' in namespace 'production'"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### file_based
-
-```bash
-f5xcctl config route create -f {file}.yaml
-```
-
-Create from YAML file
-
-### basic_create
-
-```bash
-f5xcctl config route create {name} --namespace {namespace}
-```
-
-Create route
-
-### delete
-
-```bash
-f5xcctl config route delete {name} --namespace {namespace}
-```
-
-Delete route
-
-### get_specific
-
-```bash
-f5xcctl config route get {name} --namespace {namespace}
-```
-
-Get specific route
-
-### list_all
-
-```bash
-f5xcctl config route list --namespace {namespace}
-```
-
-List all routes
-
-### update
-
-```bash
-f5xcctl config route update {name} --namespace {namespace} -f {file}.yaml
-```
-
-Update route
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl network create route -n <namespace> -i route.yaml
+xcsh network create route -n <namespace> -i route.yaml
 
 # Get
-f5xcctl network get route <name> -n <namespace>
+xcsh network get route <name> -n <namespace>
 
 # List
-f5xcctl network list route -n <namespace>
+xcsh network list route -n <namespace>
 
 # Delete
-f5xcctl network delete route <name> -n <namespace>
+xcsh network delete route <name> -n <namespace>
 ```
 
 ## Terraform Resource

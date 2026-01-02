@@ -41,32 +41,20 @@ Ask Claude to help you work with HTTP Monitor Detail resources:
 
 > "List all http-monitor-details in the 'production' namespace"
 
-## CLI Examples
-
-Examples from the enriched OpenAPI specifications:
-
-### list_all
-
-```bash
-f5xcctl observability http-monitor-detail list --namespace {namespace}
-```
-
-List all http-monitor-details
-
-## f5xcctl Equivalent
+## xcsh Equivalent
 
 ```bash
 # Create/Update
-f5xcctl observability create http_monitor_detail -n <namespace> -i http_monitor_detail.yaml
+xcsh observability create http_monitor_detail -n <namespace> -i http_monitor_detail.yaml
 
 # Get
-f5xcctl observability get http_monitor_detail <name> -n <namespace>
+xcsh observability get http_monitor_detail <name> -n <namespace>
 
 # List
-f5xcctl observability list http_monitor_detail -n <namespace>
+xcsh observability list http_monitor_detail -n <namespace>
 
 # Delete
-f5xcctl observability delete http_monitor_detail <name> -n <namespace>
+xcsh observability delete http_monitor_detail <name> -n <namespace>
 ```
 
 ## Terraform Resource
