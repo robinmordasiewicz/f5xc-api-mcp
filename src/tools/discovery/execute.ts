@@ -109,6 +109,24 @@ function buildQueryString(queryParams: Record<string, string | string[]>): strin
 }
 
 /**
+ * Normalize tool path by removing /api prefix.
+ * The baseURL already includes /api, so we strip it from tool paths
+ * to avoid double /api in the final URL.
+ *
+ * This ensures users can enter any URL format and the path will be
+ * correctly constructed:
+ * - tenant.volterra.us → normalized to tenant.console.ves.volterra.io/api
+ * - Tool paths like /api/config/... → stripped to /config/...
+ * - Final URL: baseURL + normalizedPath = correct single /api path
+ */
+function normalizeToolPath(path: string): string {
+  if (path.startsWith("/api/")) {
+    return path.slice(4); // Remove '/api', keep the leading '/'
+  }
+  return path;
+}
+
+/**
  * Generate curl command example
  */
 function generateCurlCommand(
@@ -116,7 +134,7 @@ function generateCurlCommand(
   params: ExecuteToolParams,
   apiUrl: string
 ): string {
-  const path = buildPath(tool.path, params.pathParams ?? {});
+  const path = buildPath(normalizeToolPath(tool.path), params.pathParams ?? {});
   const queryString = buildQueryString(params.queryParams ?? {});
   const fullUrl = `${apiUrl}${path}${queryString}`;
 
@@ -235,7 +253,7 @@ export async function executeTool(
   // Authenticated mode - execute API call
   try {
     const httpClient = createHttpClient(creds);
-    const path = buildPath(tool.path, pathParams);
+    const path = buildPath(normalizeToolPath(tool.path), pathParams);
     const queryString = buildQueryString(queryParams);
     const fullPath = `${path}${queryString}`;
 
