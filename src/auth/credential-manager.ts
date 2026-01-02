@@ -69,9 +69,11 @@ export interface Credentials {
  * URL normalization patterns
  */
 const URL_PATTERNS = {
-  // Match short-form URLs: tenant.volterra.us or tenant.staging.volterra.us
-  SHORT_FORM: /^https?:\/\/([^./]+)\.(staging\.)?volterra\.us\/?/i,
-  // Match console URLs: tenant.console.ves.volterra.io
+  // Match staging short-form URLs: tenant.staging.volterra.us (keep as-is)
+  STAGING_SHORT_FORM: /^https?:\/\/([^./]+)\.staging\.volterra\.us\/?/i,
+  // Match production short-form URLs: tenant.volterra.us (convert to console.ves)
+  PROD_SHORT_FORM: /^https?:\/\/([^./]+)\.volterra\.us\/?/i,
+  // Match console URLs: tenant.console.ves.volterra.io or tenant.staging.console.ves.volterra.io
   CONSOLE_FORM: /^https?:\/\/([^./]+)\.(staging\.)?console\.ves\.volterra\.io\/?/i,
   // Trailing slashes and /api suffix
   TRAILING_CLEANUP: /\/+$|\/api\/?$/gi,
@@ -81,8 +83,8 @@ const URL_PATTERNS = {
  * Normalize F5XC tenant URL to standard API endpoint format
  *
  * Handles various input formats:
- * - tenant.volterra.us -> tenant.console.ves.volterra.io/api
- * - tenant.staging.volterra.us -> tenant.staging.console.ves.volterra.io/api
+ * - tenant.volterra.us -> tenant.console.ves.volterra.io/api (production)
+ * - tenant.staging.volterra.us -> tenant.staging.volterra.us/api (staging - keep as-is)
  * - tenant.console.ves.volterra.io -> tenant.console.ves.volterra.io/api
  * - Any of the above with trailing slashes or /api suffix
  *
@@ -93,12 +95,20 @@ export function normalizeApiUrl(input: string): string {
   // Remove trailing slashes and existing /api suffix
   let url = input.replace(URL_PATTERNS.TRAILING_CLEANUP, "");
 
-  // Handle short-form URLs (tenant.volterra.us)
-  const shortFormMatch = url.match(URL_PATTERNS.SHORT_FORM);
-  if (shortFormMatch) {
-    const tenant = shortFormMatch[1];
-    const staging = shortFormMatch[2] ?? "";
-    url = `https://${tenant}.${staging}console.ves.volterra.io`;
+  // Handle staging short-form URLs - keep as-is (don't convert to console.ves)
+  const stagingMatch = url.match(URL_PATTERNS.STAGING_SHORT_FORM);
+  if (stagingMatch) {
+    const tenant = stagingMatch[1];
+    url = `https://${tenant}.staging.volterra.us`;
+    // Ensure /api suffix and return early
+    return `${url}/api`;
+  }
+
+  // Handle production short-form URLs (tenant.volterra.us -> tenant.console.ves.volterra.io)
+  const prodMatch = url.match(URL_PATTERNS.PROD_SHORT_FORM);
+  if (prodMatch) {
+    const tenant = prodMatch[1];
+    url = `https://${tenant}.console.ves.volterra.io`;
   }
 
   // Handle console URLs - ensure https

@@ -49,9 +49,10 @@ describe("normalizeApiUrl", () => {
     );
   });
 
-  it("should normalize staging URL", () => {
+  it("should normalize staging URL (keep as-is)", () => {
+    // Staging URLs use the short-form domain directly, not console.ves.volterra.io
     expect(normalizeApiUrl("https://mytenant.staging.volterra.us")).toBe(
-      "https://mytenant.staging.console.ves.volterra.io/api"
+      "https://mytenant.staging.volterra.us/api"
     );
   });
 
