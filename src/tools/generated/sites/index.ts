@@ -892,7 +892,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "sites",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1032,7 +1032,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "sites",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1439,7 +1439,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/aws_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "sites",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1570,7 +1570,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/azure_vnet_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "sites",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1710,7 +1710,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/azure_vnet_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "sites",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,
@@ -2117,7 +2117,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/azure_vnet_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "sites",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,
@@ -3231,7 +3231,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/gcp_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "sites",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,
@@ -3371,7 +3371,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/gcp_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "sites",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,
@@ -3778,7 +3778,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/gcp_vpc_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "sites",
+        domain: "cloud_infrastructure",
         fieldPath: "",
         inline: false,
         required: false,
@@ -10057,18 +10057,6 @@ export const sitesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
-        required: false,
-        tier: "standard",
-      },
-      {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
-        required: false,
-        tier: "advanced",
-      },
-      {
         addonService: "f5xc_site_management_standard",
         displayName: "F5XC Site Management Standard",
         required: false,
@@ -10155,18 +10143,6 @@ export const sitesTools: ParsedOperation[] = [
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
-      {
-        addonService: "f5xc_securemesh_standard",
-        displayName: "F5XC Securemesh Standard",
-        required: false,
-        tier: "standard",
-      },
-      {
-        addonService: "f5xc_securemesh_advanced",
-        displayName: "F5XC Securemesh Advanced",
-        required: false,
-        tier: "advanced",
-      },
       {
         addonService: "f5xc_site_management_standard",
         displayName: "F5XC Site Management Standard",
@@ -11115,7 +11091,7 @@ export const sitesTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "container_services",
         fieldPath: "",
         inline: false,
         required: false,
@@ -11254,7 +11230,7 @@ export const sitesTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "container_services",
         fieldPath: "",
         inline: false,
         required: false,
@@ -11660,7 +11636,7 @@ export const sitesTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "container_services",
         fieldPath: "",
         inline: false,
         required: false,
@@ -11791,7 +11767,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "sites",
         fieldPath: "",
         inline: false,
         required: false,
@@ -11931,7 +11907,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "sites",
         fieldPath: "",
         inline: false,
         required: false,
@@ -12338,7 +12314,7 @@ export const sitesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_sites" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "sites",
         fieldPath: "",
         inline: false,
         required: false,

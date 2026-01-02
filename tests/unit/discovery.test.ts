@@ -470,7 +470,8 @@ describe("Token Efficiency Validation", () => {
     const index = getToolIndex();
     const sampleEntry = index.tools[0];
 
-    // Each entry should have 7 fields (5 core + Phase A metadata)
+    // Each entry should have 14 fields:
+    // 5 core + Phase A metadata + domain metadata + resource metadata (v1.0.84+)
     const fields = Object.keys(sampleEntry);
     expect(fields).toEqual([
       "name",
@@ -480,6 +481,14 @@ describe("Token Efficiency Validation", () => {
       "summary",
       "dangerLevel",
       "isDeprecated",
+      "domainCategory",
+      "uiCategory",
+      // v1.0.84+ resource-level metadata fields
+      "resourceIcon",
+      "resourceCategory",
+      "supportsLogs",
+      "supportsMetrics",
+      "resourceTier",
     ]);
   });
 

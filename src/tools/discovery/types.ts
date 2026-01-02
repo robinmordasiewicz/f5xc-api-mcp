@@ -7,13 +7,15 @@
  */
 
 /**
- * Lightweight tool index entry (~50 tokens vs ~375 for full ParsedOperation)
+ * Lightweight tool index entry (~60 tokens vs ~375 for full ParsedOperation)
  * Contains only the minimum information needed for search/discovery.
+ * Includes domain metadata from upstream specs for enhanced filtering.
+ * Enhanced with v1.0.84+ resource-level metadata.
  */
 export interface ToolIndexEntry {
   /** Tool name (e.g., "f5xc-api-waap-http-loadbalancer-create") */
   name: string;
-  /** Domain category (e.g., "waap", "dns", "core") */
+  /** Domain identifier (e.g., "waf", "dns", "network") */
   domain: string;
   /** Resource type (e.g., "http-loadbalancer") */
   resource: string;
@@ -25,16 +27,37 @@ export interface ToolIndexEntry {
   dangerLevel: "low" | "medium" | "high";
   /** Deprecation status (Phase A) */
   isDeprecated: boolean;
+  /** Domain category from upstream specs (e.g., "Security", "Platform") */
+  domainCategory: string | null;
+  /** UI category from upstream specs (e.g., "API Protection", "Sites") */
+  uiCategory: string | null;
+  /** Resource icon from upstream specs (v1.0.84+) */
+  resourceIcon: string | null;
+  /** Resource category from upstream specs (v1.0.84+, e.g., "Load Balancing", "Security") */
+  resourceCategory: string | null;
+  /** Whether resource supports log collection (v1.0.84+) */
+  supportsLogs: boolean;
+  /** Whether resource supports metrics collection (v1.0.84+) */
+  supportsMetrics: boolean;
+  /** Resource tier requirement (v1.0.84+) */
+  resourceTier: string | null;
 }
 
 /**
  * Prerequisite hint for create operations (Phase B)
+ * Enhanced with v1.0.84+ upstream dependency metadata
  */
 export interface PrerequisiteHint {
   /** Required resources before creating this resource */
   resources: string[];
   /** Human-readable hint about prerequisites */
   hint: string;
+  /** Resources that MUST exist before creation (v1.0.84+) */
+  required?: string[];
+  /** Resources that are optional dependencies (v1.0.84+) */
+  optional?: string[];
+  /** Human-readable relationship hints from upstream (v1.0.84+) */
+  relationshipHints?: string[];
 }
 
 /**

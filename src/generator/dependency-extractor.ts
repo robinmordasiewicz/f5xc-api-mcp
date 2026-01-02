@@ -14,6 +14,7 @@ import type {
   ExtractedDependencies,
   ParsedRef,
 } from "./dependency-types.js";
+import { getResourceDomain, getResourceMetadata, getDomainMetadata } from "./domain-metadata.js";
 
 /**
  * Known resource type suffixes to strip from schema names
@@ -448,8 +449,27 @@ export function extractOperationDependencies(
 }
 
 /**
- * Map known resources to their required subscription services
- * This is a heuristic mapping based on F5 XC product offerings
+ * Map category to subscription IDs (v1.0.84+)
+ */
+const CATEGORY_SUBSCRIPTION_MAP: Record<string, string[]> = {
+  security: ["f5xc_waap_standard", "f5xc_waap_advanced"],
+  "api security": ["f5xc_waap_standard", "f5xc_waap_advanced"],
+  "bot defense": ["f5xc_waap_standard", "f5xc_waap_advanced"],
+  cdn: ["f5xc_content_delivery_network_standard"],
+  "content delivery": ["f5xc_content_delivery_network_standard"],
+  mesh: ["f5xc_securemesh_standard", "f5xc_securemesh_advanced"],
+  "service mesh": ["f5xc_securemesh_standard", "f5xc_securemesh_advanced"],
+  kubernetes: ["f5xc_appstack_standard"],
+  infrastructure: ["f5xc_site_management_standard"],
+};
+
+/**
+ * Map resources to subscription services using upstream metadata (v1.0.84+)
+ *
+ * Priority:
+ * 1. Upstream resource metadata (tier + category)
+ * 2. Domain metadata (requiresTier + uiCategory)
+ * 3. Fallback pattern-based heuristics
  *
  * @param resource - Resource name (e.g., "http-loadbalancer")
  * @param domain - Domain name (e.g., "virtual")
@@ -458,61 +478,89 @@ export function extractOperationDependencies(
 export function mapResourceToSubscriptions(resource: string, domain: string): string[] {
   const subscriptions: string[] = [];
 
-  // WAAP-related resources
-  const waapResources = [
-    "app-firewall",
-    "waf",
-    "service-policy",
-    "rate-limiter",
-    "api-definition",
-    "api-security",
-    "data-guard",
-    "trusted-client",
-    "malicious-user",
-    "client-side-defense",
-    "service-policy-set",
-  ];
-  const waapDomains = ["waf", "api", "rate_limiting", "bot_and_threat_defense"];
+  // Normalize resource name
+  const normalizedResource = resource.toLowerCase().replace(/-/g, "_");
 
-  if (waapResources.some((r) => resource.includes(r)) || waapDomains.includes(domain)) {
-    subscriptions.push("f5xc_waap_standard", "f5xc_waap_advanced");
+  // Try upstream resource metadata first (v1.0.84+)
+  const resourceMeta = getResourceMetadata(normalizedResource);
+
+  if (resourceMeta && resourceMeta.tier === "Advanced") {
+    const category = resourceMeta.category.toLowerCase();
+    const categorySubscriptions = CATEGORY_SUBSCRIPTION_MAP[category];
+    if (categorySubscriptions) {
+      subscriptions.push(...categorySubscriptions);
+    }
   }
 
-  // CDN-related resources
-  const cdnResources = ["cdn-loadbalancer", "cdn-origin", "cdn-origin-pool"];
-  if (cdnResources.some((r) => resource.includes(r)) || domain === "cdn") {
-    subscriptions.push("f5xc_content_delivery_network_standard");
+  // Also check domain metadata for domain-level subscriptions
+  const domainMeta = getDomainMetadata(domain);
+  if (domainMeta && domainMeta.requiresTier === "Advanced") {
+    const uiCategory = domainMeta.uiCategory.toLowerCase();
+    const domainSubscriptions = CATEGORY_SUBSCRIPTION_MAP[uiCategory];
+    if (domainSubscriptions) {
+      subscriptions.push(...domainSubscriptions);
+    }
   }
 
-  // SecureMesh-related resources
-  const meshResources = ["site-mesh-group", "mesh-policy", "global-network"];
-  if (
-    meshResources.some((r) => resource.includes(r)) ||
-    domain === "service_mesh" ||
-    domain === "network_security"
-  ) {
-    subscriptions.push("f5xc_securemesh_standard", "f5xc_securemesh_advanced");
-  }
+  // Fallback: Pattern-based heuristics for resources not in upstream specs
+  if (subscriptions.length === 0) {
+    // WAAP-related resources
+    const waapResources = [
+      "app-firewall",
+      "waf",
+      "service-policy",
+      "rate-limiter",
+      "api-definition",
+      "api-security",
+      "data-guard",
+      "trusted-client",
+      "malicious-user",
+      "client-side-defense",
+      "service-policy-set",
+    ];
+    const waapDomains = ["waf", "api", "rate_limiting", "bot_and_threat_defense"];
 
-  // AppStack-related resources
-  if (domain === "managed_kubernetes" || resource.includes("vk8s")) {
-    subscriptions.push("f5xc_appstack_standard");
-  }
+    if (waapResources.some((r) => resource.includes(r)) || waapDomains.includes(domain)) {
+      subscriptions.push("f5xc_waap_standard", "f5xc_waap_advanced");
+    }
 
-  // Site management resources
-  const siteResources = ["site", "fleet", "token", "tunnel"];
-  if (siteResources.some((r) => resource.includes(r)) || domain === "sites") {
-    subscriptions.push("f5xc_site_management_standard");
+    // CDN-related resources
+    const cdnResources = ["cdn-loadbalancer", "cdn-origin", "cdn-origin-pool"];
+    if (cdnResources.some((r) => resource.includes(r)) || domain === "cdn") {
+      subscriptions.push("f5xc_content_delivery_network_standard");
+    }
+
+    // SecureMesh-related resources
+    const meshResources = ["site-mesh-group", "mesh-policy", "global-network"];
+    if (
+      meshResources.some((r) => resource.includes(r)) ||
+      domain === "service_mesh" ||
+      domain === "network_security"
+    ) {
+      subscriptions.push("f5xc_securemesh_standard", "f5xc_securemesh_advanced");
+    }
+
+    // AppStack-related resources
+    if (domain === "managed_kubernetes" || resource.includes("vk8s")) {
+      subscriptions.push("f5xc_appstack_standard");
+    }
+
+    // Site management resources
+    const siteResources = ["site", "fleet", "token", "tunnel"];
+    if (siteResources.some((r) => resource.includes(r)) || domain === "sites") {
+      subscriptions.push("f5xc_site_management_standard");
+    }
   }
 
   return [...new Set(subscriptions)]; // Deduplicate
 }
 
 /**
- * Domain mapping for resource types
- * Maps common resource type patterns to their typical domains
+ * Fallback domain mapping for resource types not in upstream specs
+ * Used only when getResourceDomain() from domain-metadata.ts returns no match
+ * @deprecated Prefer adding resources to upstream specs instead of extending this map
  */
-export const RESOURCE_DOMAIN_MAP: Record<string, string> = {
+export const FALLBACK_RESOURCE_DOMAIN_MAP: Record<string, string> = {
   "origin-pool": "network",
   origin_pool: "network",
   "http-loadbalancer": "virtual",
@@ -542,13 +590,37 @@ export const RESOURCE_DOMAIN_MAP: Record<string, string> = {
 };
 
 /**
- * Resolve a resource type to its domain using the mapping
+ * @deprecated Use FALLBACK_RESOURCE_DOMAIN_MAP instead
+ */
+export const RESOURCE_DOMAIN_MAP = FALLBACK_RESOURCE_DOMAIN_MAP;
+
+/**
+ * Resolve a resource type to its domain
  *
- * @param resourceType - Normalized resource type
+ * Uses upstream specs as primary source of truth (via domain-metadata.ts),
+ * falling back to hardcoded mappings only when spec data is unavailable.
+ *
+ * @param resourceType - Normalized resource type (kebab-case or snake_case)
  * @returns Domain string or empty string if unknown
  */
 export function resolveResourceDomain(resourceType: string): string {
+  // Try upstream specs first (primary source of truth)
+  const domainMeta = getResourceDomain(resourceType);
+  if (domainMeta) {
+    return domainMeta.domain;
+  }
+
+  // Also try with underscore variant
+  const underscoreVariant = resourceType.replace(/-/g, "_");
+  const domainMetaUnderscore = getResourceDomain(underscoreVariant);
+  if (domainMetaUnderscore) {
+    return domainMetaUnderscore.domain;
+  }
+
+  // Fall back to hardcoded mappings for resources not in specs
   return (
-    RESOURCE_DOMAIN_MAP[resourceType] || RESOURCE_DOMAIN_MAP[resourceType.replace(/-/g, "_")] || ""
+    FALLBACK_RESOURCE_DOMAIN_MAP[resourceType] ||
+    FALLBACK_RESOURCE_DOMAIN_MAP[underscoreVariant] ||
+    ""
   );
 }

@@ -106,7 +106,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-aggregation-create",
@@ -207,7 +220,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-audit-log-create",
@@ -308,7 +334,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-decrypt-secret-create",
@@ -403,7 +442,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-get-policy-document-get",
@@ -510,7 +562,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-get-public-key-list",
@@ -606,7 +671,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-list-policy-list",
@@ -712,7 +790,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-process-policy-information-create",
@@ -810,7 +901,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-recover-create",
@@ -922,7 +1026,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-scroll-create",
@@ -1024,7 +1141,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-scroll-list",
@@ -1133,7 +1263,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-management-access-create",
@@ -1260,7 +1403,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-management-access-delete",
@@ -1378,7 +1534,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-management-access-get",
@@ -1507,7 +1676,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-management-access-list",
@@ -1641,7 +1823,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-management-access-update",
@@ -1777,7 +1972,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-create",
@@ -1879,7 +2087,7 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "blindfold",
         fieldPath: "",
         inline: false,
         required: false,
@@ -1901,7 +2109,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-delete",
@@ -2011,7 +2232,7 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "blindfold",
         fieldPath: "",
         inline: false,
         required: false,
@@ -2019,7 +2240,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-get",
@@ -2148,7 +2382,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-list",
@@ -2282,7 +2529,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-rule-create",
@@ -2409,7 +2669,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-rule-delete",
@@ -2527,7 +2800,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-rule-get",
@@ -2656,7 +2942,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-rule-list",
@@ -2790,7 +3089,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-rule-update",
@@ -2926,7 +3238,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-secret-policy-update",
@@ -3040,7 +3365,7 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "blindfold",
         fieldPath: "",
         inline: false,
         required: false,
@@ -3062,7 +3387,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-softdelete-create",
@@ -3182,7 +3520,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-voltshare-admin-policy-create",
@@ -3309,7 +3660,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-voltshare-admin-policy-delete",
@@ -3427,7 +3791,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-voltshare-admin-policy-get",
@@ -3556,7 +3933,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-voltshare-admin-policy-list",
@@ -3690,7 +4080,20 @@ export const blindfoldTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-blindfold-voltshare-admin-policy-update",
@@ -3826,7 +4229,20 @@ export const blindfoldTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
 ];
 

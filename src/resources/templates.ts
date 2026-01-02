@@ -3,7 +3,11 @@
  *
  * Defines URI templates for F5XC configuration resources.
  * URI scheme: f5xc://{tenant}/{namespace}/{resource-type}/{name}
+ *
+ * Resource descriptions are enhanced with domain context from upstream specs.
  */
+
+import { getResourceDomain, getResourceMetadata } from "../generator/domain-metadata.js";
 
 /**
  * Resource URI schemes
@@ -295,4 +299,102 @@ export function buildApiPath(
   }
 
   return path;
+}
+
+/**
+ * Map upstream tier string to ResourceType tier enum
+ */
+function mapUpstreamTier(upstreamTier: string): "NO_TIER" | "STANDARD" | "ADVANCED" {
+  const normalized = upstreamTier.toLowerCase();
+  if (normalized === "advanced") {
+    return "ADVANCED";
+  }
+  if (normalized === "standard") {
+    return "STANDARD";
+  }
+  return "NO_TIER";
+}
+
+/**
+ * Enhance a resource type with rich metadata from upstream specs
+ *
+ * Uses v1.0.84+ resource-level metadata including:
+ * - Resource-specific descriptions
+ * - Tier requirements
+ * - Dependencies (required + optional → relatedResources)
+ * - Domain context for additional context
+ *
+ * @param rt - Resource type to enhance
+ * @returns Enhanced resource type with upstream metadata
+ */
+export function enhanceWithDomainContext(rt: ResourceType): ResourceType {
+  // Normalize resource type for lookup (handle both snake_case and kebab-case)
+  const normalizedType = rt.type.replace(/-/g, "_");
+
+  // First try resource-level metadata (v1.0.84+)
+  const resourceMeta = getResourceMetadata(normalizedType);
+  const domainMeta = getResourceDomain(normalizedType);
+
+  if (!resourceMeta && !domainMeta) {
+    return rt;
+  }
+
+  // Build enhanced resource type
+  let enhancedDescription = rt.description;
+  let enhancedTier = rt.tier;
+  let enhancedRelatedResources = rt.relatedResources;
+
+  // Use resource-level metadata if available (preferred)
+  if (resourceMeta) {
+    // Use resource-specific description from upstream
+    enhancedDescription = resourceMeta.description;
+
+    // Use resource-specific tier from upstream
+    enhancedTier = mapUpstreamTier(resourceMeta.tier);
+
+    // Derive relatedResources from dependencies
+    const allDeps = [...resourceMeta.dependencies.required, ...resourceMeta.dependencies.optional];
+    if (allDeps.length > 0) {
+      enhancedRelatedResources = allDeps;
+    }
+  }
+
+  // Append domain context if available (adds broader context)
+  if (domainMeta && resourceMeta) {
+    // Append domain context to resource description
+    enhancedDescription = `${enhancedDescription}. ${domainMeta.title}: ${domainMeta.descriptionShort}`;
+  } else if (domainMeta && !resourceMeta) {
+    // Fallback: use domain context only
+    enhancedDescription = `${rt.description}. ${domainMeta.title}: ${domainMeta.descriptionShort}`;
+  }
+
+  return {
+    ...rt,
+    description: enhancedDescription,
+    tier: enhancedTier,
+    relatedResources: enhancedRelatedResources,
+  };
+}
+
+/**
+ * Get enhanced resource types with domain context
+ * Cached for performance
+ */
+let cachedEnhancedTypes: Record<string, ResourceType> | null = null;
+
+export function getEnhancedResourceTypes(): Record<string, ResourceType> {
+  if (!cachedEnhancedTypes) {
+    cachedEnhancedTypes = {};
+    for (const [key, rt] of Object.entries(RESOURCE_TYPES)) {
+      cachedEnhancedTypes[key] = enhanceWithDomainContext(rt);
+    }
+  }
+  return cachedEnhancedTypes;
+}
+
+/**
+ * Clear the enhanced types cache (useful for testing or refresh)
+ */
+export function clearEnhancedTypesCache(): void {
+  cachedEnhancedTypes = null;
 }

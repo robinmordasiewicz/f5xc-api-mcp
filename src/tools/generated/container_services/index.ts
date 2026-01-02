@@ -215,7 +215,7 @@ export const container_servicesTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "container_services",
         fieldPath: "",
         inline: false,
         required: false,
@@ -347,7 +347,7 @@ export const container_servicesTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "container_services",
         fieldPath: "",
         inline: false,
         required: false,
@@ -732,7 +732,7 @@ export const container_servicesTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [
       {
-        domain: "",
+        domain: "container_services",
         fieldPath: "",
         inline: false,
         required: false,
@@ -856,7 +856,7 @@ export const container_servicesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "container_services",
         fieldPath: "",
         inline: false,
         required: false,
@@ -989,7 +989,7 @@ export const container_servicesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "container_services",
         fieldPath: "",
         inline: false,
         required: false,
@@ -2018,7 +2018,7 @@ export const container_servicesTools: ParsedOperation[] = [
       'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
     dependencies: [
       {
-        domain: "",
+        domain: "container_services",
         fieldPath: "",
         inline: false,
         required: false,

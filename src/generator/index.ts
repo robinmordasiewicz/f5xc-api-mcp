@@ -5,3 +5,4 @@
 export * from "./naming/index.js";
 export * from "./openapi-parser.js";
 export * from "./tool-generator.js";
+export * from "./domain-metadata.js";
