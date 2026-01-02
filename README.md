@@ -410,6 +410,20 @@ export F5XC_TLS_INSECURE=true
 | `certificate has expired` | Expired certificate | Contact F5 XC admin |
 | `unable to verify the first certificate` | Missing intermediate CA | Add intermediates to CA bundle |
 
+### Security Best Practices
+
+1. **Prefer `F5XC_CA_BUNDLE` over `F5XC_TLS_INSECURE`**: Using a custom CA bundle maintains
+   certificate validation while trusting your organization's certificates.
+
+2. **Contact F5 Support**: For staging environments, contact F5 Support to request the official
+   staging environment CA certificate. This is the most secure long-term solution.
+
+3. **Never use `F5XC_TLS_INSECURE=true` in production**: This setting disables all certificate
+   validation and should only be used for development and testing.
+
+4. **Rotate credentials regularly**: API tokens and certificates should be rotated according to
+   your organization's security policies.
+
 ## Development
 
 ### Prerequisites

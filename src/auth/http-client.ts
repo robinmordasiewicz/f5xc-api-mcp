@@ -91,6 +91,14 @@ export class HttpClient {
     const tlsInsecure = this.credentialManager.getTlsInsecure();
     if (tlsInsecure) {
       options.rejectUnauthorized = false;
+
+      // Output to stderr for maximum visibility (always shown, even if logs are filtered)
+      const apiUrl = this.credentialManager.getApiUrl() ?? "unknown";
+      console.error("\n\x1b[33m⚠️  WARNING: TLS certificate verification is DISABLED\x1b[0m");
+      console.error(`   URL: ${apiUrl}`);
+      console.error("   This should ONLY be used for staging/development environments!");
+      console.error("   Consider using F5XC_CA_BUNDLE for a more secure solution.\n");
+
       logger.warn(
         "TLS certificate verification DISABLED - this is insecure and should only be used for staging/development"
       );
