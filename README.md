@@ -13,7 +13,7 @@ other MCP-compatible tools.
 - **Domain-Based Documentation** - Tools organized by domains with intelligent 2-level and
   3-level hierarchical navigation
 - **Dual-Mode Operation** - Works without authentication (documentation mode) AND with authentication (execution mode)
-- **f5xcctl Integration** - Every response includes equivalent CLI commands
+- **xcsh Integration** - Every response includes equivalent CLI commands
 - **Terraform Examples** - Every response includes Terraform HCL examples
 - **Multiple Auth Methods** - API token and P12 certificate (mTLS) support
 - **URL Normalization** - Automatically handles various F5XC URL formats
@@ -211,11 +211,11 @@ When no credentials are provided, the server provides:
 - OpenAPI specification documentation
 - API operation explanations
 - Parameter descriptions and validation
-- f5xcctl command equivalents
+- xcsh command equivalents
 - Terraform HCL examples
 - JSON request templates
 
-This mode is ideal for users who authenticate via f5xcctl or Terraform.
+This mode is ideal for users who authenticate via xcsh or Terraform.
 
 ### Execution Mode (With Authentication)
 
@@ -377,7 +377,7 @@ wildcards only match a single subdomain level, not two levels (`tenant.staging`)
 
 **Error Example:**
 
-```
+```text
 Hostname/IP does not match certificate's altnames:
 Host: tenant.staging.console.ves.volterra.io
 Cert covers: DNS:*.console.ves.volterra.io, DNS:console.ves.volterra.io
