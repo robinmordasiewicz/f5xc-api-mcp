@@ -25,6 +25,8 @@ export default [
       "@typescript-eslint": tseslint,
     },
     rules: {
+      // Disable no-undef for TypeScript (TypeScript handles this)
+      "no-undef": "off",
       // TypeScript rules
       "@typescript-eslint/explicit-function-return-type": "warn",
       "@typescript-eslint/no-unused-vars": [

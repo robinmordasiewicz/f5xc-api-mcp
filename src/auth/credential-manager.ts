@@ -166,7 +166,11 @@ export class CredentialManager {
   /**
    * Load credentials from environment variables
    */
-  private loadFromEnvironment(): Partial<Profile> & { hasAuth: boolean; tlsInsecure: boolean; caBundle: string | undefined } {
+  private loadFromEnvironment(): Partial<Profile> & {
+    hasAuth: boolean;
+    tlsInsecure: boolean;
+    caBundle: string | undefined;
+  } {
     const apiUrl = process.env[AUTH_ENV_VARS.API_URL];
     const apiToken = process.env[AUTH_ENV_VARS.API_TOKEN];
     const p12Bundle = process.env[AUTH_ENV_VARS.P12_BUNDLE];
@@ -217,7 +221,9 @@ export class CredentialManager {
   /**
    * Build credentials object from profile data
    */
-  private buildCredentials(profile: Profile & { tlsInsecure?: boolean; caBundle?: string }): Credentials {
+  private buildCredentials(
+    profile: Profile & { tlsInsecure?: boolean; caBundle?: string }
+  ): Credentials {
     const apiUrl = profile.apiUrl;
 
     // Determine authentication mode
