@@ -1,3 +1,4 @@
+/// <reference types="node" />
 /**
  * Error handling utilities for F5XC API MCP Server
  *
@@ -242,7 +243,7 @@ export function categorizeError(error: unknown): ErrorCategory {
       message.includes("ssl") ||
       message.includes("tls") ||
       message.includes("altnames") ||
-      message.includes("hostname") && message.includes("match") ||
+      (message.includes("hostname") && message.includes("match")) ||
       message.includes("self signed") ||
       message.includes("self-signed") ||
       message.includes("unable to verify") ||
