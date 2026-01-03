@@ -42,6 +42,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Close existing openapi-sync PRs
+        run: |
+          # Close any existing openapi-sync PRs to prevent accumulation
+          EXISTING_PRS=$(gh pr list --state open --head "openapi-sync/" --json number --jq '.[].number' || true)
+          for PR in $EXISTING_PRS; do
+            echo "Closing existing PR #$PR"
+            gh pr close "$PR" --comment "Superseded by newer OpenAPI sync" || true
+          done
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Download OpenAPI specs from enriched source
         run: npm run sync-specs
         env:
@@ -115,6 +126,7 @@ jobs:
           fi
 
       - name: Create Pull Request
+        id: create-pr
         if: steps.changes.outputs.changed == 'true' || github.event.inputs.force_regenerate == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
@@ -153,6 +165,13 @@ jobs:
             automated
             openapi
             dependencies
+
+      - name: Enable auto-merge
+        if: steps.create-pr.outputs.pull-request-number
+        run: |
+          gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --auto --squash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Summary
         run: |
