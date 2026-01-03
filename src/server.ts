@@ -9,8 +9,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
-import type { Server as HttpServer } from "node:http";
-import { setupHttpServer, cleanupSessions, type HttpServerOptions } from "./http-server.js";
 import { CredentialManager, AuthMode } from "./auth/credential-manager.js";
 import { HttpClient, createHttpClient } from "./auth/http-client.js";
 import { logger } from "./utils/logging.js";
@@ -83,7 +81,6 @@ export class F5XCApiServer {
   private httpClient: HttpClient | null = null;
   private resourceHandler: ResourceHandler;
   private transport: StdioServerTransport | null = null;
-  private httpServer: HttpServer | null = null;
 
   constructor(config: ServerConfig) {
     this.credentialManager = config.credentialManager;
@@ -962,62 +959,13 @@ export class F5XCApiServer {
   }
 
   /**
-   * Stop the MCP server (STDIO mode)
+   * Stop the MCP server
    */
   async stop(): Promise<void> {
     if (this.transport) {
       await this.server.close();
       this.transport = null;
       logger.info("F5XC API MCP Server stopped");
-    }
-  }
-
-  /**
-   * Start the MCP server with HTTP/SSE transport
-   *
-   * This mode enables integration with HTTP-based clients like vLLM
-   * servers and other AI utilities that communicate over HTTP.
-   *
-   * @param options - HTTP server configuration
-   */
-  async startHttp(options: HttpServerOptions = {}): Promise<void> {
-    const { port = 3000, host = "0.0.0.0" } = options;
-
-    logger.info("Starting F5XC API MCP Server (HTTP mode)", {
-      version: VERSION,
-      authMode: this.credentialManager.getAuthMode(),
-      port,
-      host,
-    });
-
-    const result = await setupHttpServer(this.server, options);
-    this.httpServer = result.server;
-
-    logger.info("F5XC API MCP Server started successfully (HTTP mode)", {
-      url: `${result.address}/sse`,
-      transport: "sse",
-    });
-  }
-
-  /**
-   * Stop the HTTP server
-   */
-  async stopHttp(): Promise<void> {
-    if (this.httpServer) {
-      await cleanupSessions();
-
-      return new Promise((resolve, reject) => {
-        this.httpServer!.close((err) => {
-          if (err) {
-            logger.error("Error stopping HTTP server", { error: err.message });
-            reject(err);
-          } else {
-            this.httpServer = null;
-            logger.info("F5XC API MCP HTTP Server stopped");
-            resolve();
-          }
-        });
-      });
     }
   }
 
