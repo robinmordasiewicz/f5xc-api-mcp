@@ -6,7 +6,7 @@
  * - Documentation mode: No credentials required
  * - Execution mode: API token or P12/Certificate authentication
  *
- * Cross-compatible with f5xc-xcsh CLI profiles.
+ * Uses XDG-compliant profile storage at ~/.config/f5xc/
  */
 
 import { readFileSync } from "fs";
@@ -140,7 +140,7 @@ export function extractTenantFromUrl(url: string): string | null {
  * Manages authentication credentials for F5 Distributed Cloud API.
  * Supports credential loading with priority:
  * 1. Environment variables (highest priority - overrides all)
- * 2. Active profile from ~/.config/xcsh/ (cross-compatible with xcsh CLI)
+ * 2. Active profile from ~/.config/f5xc/ (XDG Base Directory compliant)
  * 3. No credentials (documentation mode - lowest priority)
  */
 export class CredentialManager {
@@ -331,7 +331,7 @@ export class CredentialManager {
   /**
    * Load credentials with priority order:
    * 1. Environment variables (highest)
-   * 2. Active profile from ~/.config/xcsh/
+   * 2. Active profile from ~/.config/f5xc/
    * 3. No credentials - documentation mode (lowest)
    */
   private async loadCredentials(): Promise<Credentials> {
@@ -347,7 +347,7 @@ export class CredentialManager {
       return credentials;
     }
 
-    // Step 2: Try active profile from ~/.config/xcsh/
+    // Step 2: Try active profile from ~/.config/f5xc/
     const profile = await this.loadFromProfile();
     if (profile) {
       const credentials = this.buildCredentials(profile);

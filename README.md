@@ -13,8 +13,7 @@ other MCP-compatible tools.
 - **Domain-Based Documentation** - Tools organized by domains with intelligent 2-level and
   3-level hierarchical navigation
 - **Dual-Mode Operation** - Works without authentication (documentation mode) AND with authentication (execution mode)
-- **xcsh Integration** - Every response includes equivalent CLI commands
-- **Terraform Examples** - Every response includes Terraform HCL examples
+- **CURL Examples** - API documentation with curl commands for authenticated and unauthenticated modes
 - **Multiple Auth Methods** - API token and P12 certificate (mTLS) support
 - **URL Normalization** - Automatically handles various F5XC URL formats
 - **Pre-enriched Specs** - Uses optimized OpenAPI 3.0.3 specifications with domain metadata
@@ -88,91 +87,75 @@ Add to your MCP settings:
 |----------|----------|-------------|
 | `F5XC_API_URL` | For execution | Tenant URL (auto-normalized) |
 | `F5XC_API_TOKEN` | For token auth | API token from XC Console |
-| `F5XC_P12_FILE` | For cert auth | Path to P12 certificate file |
+| `F5XC_P12_BUNDLE` | For cert auth | Path to P12 certificate bundle |
 | `F5XC_P12_PASSWORD` | For cert auth | Password for P12 certificate |
-| `F5XC_PROFILE` | No | Profile name to use (default: `defaultProfile` from config) |
+| `F5XC_PROFILE` | No | Profile name to use (default: active profile from config) |
 | `F5XC_TLS_INSECURE` | No | Disable SSL verification (staging only, set to `true`) |
 | `F5XC_CA_BUNDLE` | No | Path to custom CA certificate bundle |
 | `LOG_LEVEL` | No | Logging verbosity (debug, info, warn, error) |
 
 ## Profile-Based Configuration
 
-Manage multiple F5XC tenant credentials with named profiles stored in `~/.f5xc/credentials.json`.
+Manage multiple F5XC tenant credentials with named profiles stored in `~/.config/f5xc/profiles/`.
 
-### Interactive Setup
+### Profile Management via MCP Tool
 
-Run the setup wizard to create profiles with auto-detection of existing environment variables:
+Use the `f5xc-api-configure-auth` MCP tool through your AI assistant:
 
-```bash
-f5xc-api-mcp --setup
+| Action | Description |
+|--------|-------------|
+| `status` | Check current authentication state and active profile |
+| `configure` | Save new credentials to a named profile |
+| `list-profiles` | List all available profiles |
+| `set-active` | Switch the active profile |
+
+**Example interactions:**
+
+```text
+"Check my F5XC authentication status"
+→ Uses f5xc-api-configure-auth with action: status
+
+"Configure a new F5XC profile called production"
+→ Uses f5xc-api-configure-auth with action: configure
+
+"Switch to the staging profile"
+→ Uses f5xc-api-configure-auth with action: set-active
 ```
-
-The wizard will:
-
-1. Detect existing `F5XC_API_URL`, `F5XC_API_TOKEN`, `F5XC_P12_FILE`, `F5XC_P12_PASSWORD`
-2. Offer to create a profile from detected credentials
-3. Allow manual profile creation if no credentials are detected
-4. Set a default profile for automatic selection
 
 ### Using Profiles
 
 ```bash
-# Use default profile
+# Use active profile (from ~/.config/f5xc/active_profile)
 f5xc-api-mcp
 
-# Use specific profile
+# Use specific profile via environment variable
 F5XC_PROFILE=staging f5xc-api-mcp
 
 # Override profile credentials with environment variables
 F5XC_PROFILE=production F5XC_API_TOKEN=temporary-token f5xc-api-mcp
 ```
 
-### Profile Management Commands
+### Configuration Directory Structure
 
-```bash
-# List all configured profiles
-f5xc-api-mcp --list-profiles
+Profiles are stored in `~/.config/f5xc/` (XDG Base Directory compliant):
 
-# Display configuration file
-f5xc-api-mcp --show-config
-
-# Set default profile
-f5xc-api-mcp --set-default production
-
-# Delete a profile
-f5xc-api-mcp --delete-profile staging
-
-# Test profile connection
-f5xc-api-mcp --test-profile production
+```text
+~/.config/f5xc/
+├── active_profile       # Contains the name of the active profile
+└── profiles/
+    ├── production.json  # Individual profile files
+    └── staging.json
 ```
 
-### Configuration File Format
-
-Profiles are stored in `~/.f5xc/credentials.json`:
+**Profile file format** (`~/.config/f5xc/profiles/production.json`):
 
 ```json
 {
-  "version": "1.0",
-  "defaultProfile": "production",
-  "profiles": {
-    "production": {
-      "apiUrl": "https://mytenant.console.ves.volterra.io",
-      "apiToken": "your-api-token",
-      "metadata": {
-        "description": "Production tenant",
-        "createdAt": "2025-12-21T10:00:00Z",
-        "lastUsedAt": "2025-12-21T15:30:00Z"
-      }
-    },
-    "staging": {
-      "apiUrl": "https://staging.console.ves.volterra.io",
-      "apiToken": "staging-token",
-      "metadata": {
-        "description": "Staging environment",
-        "createdAt": "2025-12-21T10:05:00Z"
-      }
-    }
-  }
+  "name": "production",
+  "tenant_url": "https://mytenant.console.ves.volterra.io",
+  "api_token": "your-api-token",
+  "created_at": "2025-12-21T10:00:00Z",
+  "last_used_at": "2025-12-21T15:30:00Z"
 }
 ```
 
@@ -181,7 +164,7 @@ Profiles are stored in `~/.f5xc/credentials.json`:
 Credentials are loaded in this order (highest to lowest priority):
 
 1. **Environment Variables** - `F5XC_API_URL`, `F5XC_API_TOKEN`, etc.
-2. **Active Profile** - Selected by `F5XC_PROFILE` or `defaultProfile`
+2. **Active Profile** - Selected by `F5XC_PROFILE` or from `~/.config/f5xc/active_profile`
 3. **Documentation Mode** - No credentials (read-only API documentation)
 
 Environment variables always override profile settings, enabling temporary overrides.
@@ -196,11 +179,7 @@ export F5XC_API_TOKEN=your-api-token
 f5xc-api-mcp
 ```
 
-No changes needed - profiles are optional. Migrate to profiles when ready:
-
-```bash
-f5xc-api-mcp --setup  # Auto-detects existing env vars
-```
+No changes needed - profiles are optional.
 
 ## Dual-Mode Operation
 
@@ -211,11 +190,10 @@ When no credentials are provided, the server provides:
 - OpenAPI specification documentation
 - API operation explanations
 - Parameter descriptions and validation
-- xcsh command equivalents
-- Terraform HCL examples
+- CURL command examples
 - JSON request templates
 
-This mode is ideal for users who authenticate via xcsh or Terraform.
+This mode is ideal for exploring the API and understanding available operations.
 
 ### Execution Mode (With Authentication)
 
@@ -342,7 +320,6 @@ The server includes guided workflow prompts:
 - `deploy-http-loadbalancer` - Deploy HTTP LB with origin pool
 - `configure-waf` - Configure Web Application Firewall
 - `create-multicloud-site` - Deploy F5XC site in AWS/Azure/GCP
-- `generate-terraform` - Export resources as Terraform
 
 ## Resource URIs
 

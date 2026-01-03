@@ -3,8 +3,6 @@
  *
  * Handles consistent capitalization of technical acronyms in API
  * documentation, tool names, and descriptions.
- *
- * Ported from terraform-provider-f5xc/tools/pkg/naming/acronyms.go
  */
 
 /**

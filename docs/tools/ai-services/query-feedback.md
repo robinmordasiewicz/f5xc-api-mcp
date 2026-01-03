@@ -1,0 +1,66 @@
+---
+page_title: f5xc_query_feedback - f5xc-api-mcp
+subcategory: AI Services
+description: Feedback of AI Assistant Query.
+---
+
+# Query Feedback
+
+!!! warning "Medium Risk"
+    Some operations on this resource may modify or delete data.
+
+Enable service by returning service account details.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `f5xc-api-aiservices-query-feedback-create` | Feedback of AI Assistant Query. |
+
+## Parameters
+
+### Path Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|--------|
+| `namespace` | Namespace | `System` |
+
+## Side Effects
+
+Operations on this resource may have the following effects:
+
+**Creates:**
+
+- query-feedback
+
+## Example Usage
+
+Ask Claude to help you work with Query Feedback resources:
+
+### Create Query Feedback
+
+> "Create a query-feedback named 'example' in the 'production' namespace"
+
+## CURL Examples
+
+```bash
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/query_feedbacks" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/query_feedbacks/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
+
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/query_feedbacks" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @query_feedback.json
+
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/query_feedbacks/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
+```

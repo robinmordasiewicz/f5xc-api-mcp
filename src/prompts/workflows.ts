@@ -86,53 +86,61 @@ I'll help you deploy an HTTP Load Balancer in F5 Distributed Cloud.
 ### Step 1: Create Origin Pool
 First, create an origin pool to define your backend servers.
 
-Use the **f5xc-api-waap-origin-pool-create** tool or Terraform:
+Use the **f5xc-api-waap-origin-pool-create** tool or CURL:
 
-**Terraform:**
-\`\`\`hcl
-resource "volterra_origin_pool" "{{name}}" {
-  name      = "{{name}}-origin-pool"
-  namespace = "{{namespace}}"
-
-  origin_servers {
-    public_ip {
-      ip = "{{backend_ip}}"
+**CURL (Authenticated):**
+\`\`\`bash
+curl -X POST "https://\${TENANT}.console.ves.volterra.io/api/config/namespaces/{{namespace}}/origin_pools" \\
+  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "metadata": {
+      "name": "{{name}}-origin-pool",
+      "namespace": "{{namespace}}"
+    },
+    "spec": {
+      "origin_servers": [{
+        "public_ip": {
+          "ip": "{{backend_ip}}"
+        }
+      }],
+      "port": {{backend_port}},
+      "no_tls": {},
+      "endpoint_selection": "LOCAL_PREFERRED",
+      "loadbalancer_algorithm": "ROUND_ROBIN"
     }
-  }
-
-  port             = {{backend_port}}
-  no_tls           = true
-  endpoint_selection = "LOCAL_PREFERRED"
-  loadbalancer_algorithm = "ROUND_ROBIN"
-}
+  }'
 \`\`\`
 
 ### Step 2: Create HTTP Load Balancer
 
-Use the **f5xc-api-waap-http-loadbalancer-create** tool or Terraform:
+Use the **f5xc-api-waap-http-loadbalancer-create** tool or CURL:
 
-**Terraform:**
-\`\`\`hcl
-resource "volterra_http_loadbalancer" "{{name}}" {
-  name      = "{{name}}"
-  namespace = "{{namespace}}"
-
-  domains = ["{{domain}}"]
-
-  http {
-    dns_volterra_managed = true
-  }
-
-  default_route_pools {
-    pool {
-      name      = volterra_origin_pool.{{name}}.name
-      namespace = "{{namespace}}"
+**CURL (Authenticated):**
+\`\`\`bash
+curl -X POST "https://\${TENANT}.console.ves.volterra.io/api/config/namespaces/{{namespace}}/http_loadbalancers" \\
+  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "metadata": {
+      "name": "{{name}}",
+      "namespace": "{{namespace}}"
+    },
+    "spec": {
+      "domains": ["{{domain}}"],
+      "http": {
+        "dns_volterra_managed": true
+      },
+      "default_route_pools": [{
+        "pool": {
+          "namespace": "{{namespace}}",
+          "name": "{{name}}-origin-pool"
+        },
+        "weight": 1
+      }],
+      "advertise_on_public_default_vip": {}
     }
-    weight = 1
-  }
-
-  advertise_on_public_default_vip = true
-}
+  }'
 \`\`\`
 
 {{#if enable_waf}}
@@ -196,31 +204,35 @@ I'll help you configure Web Application Firewall protection for your application
 
 ### Step 1: Create Application Firewall Policy
 
-Use the **f5xc-api-waf-app-firewall-create** tool or Terraform:
+Use the **f5xc-api-waf-app-firewall-create** tool or CURL:
 
-**Terraform:**
-\`\`\`hcl
-resource "volterra_app_firewall" "{{name}}" {
-  name      = "{{name}}"
-  namespace = "{{namespace}}"
-
-  detection_settings {
-    signature_selection_setting {
-      default_attack_type_settings {}
-      high_medium_accuracy_signatures {}
+**CURL (Authenticated):**
+\`\`\`bash
+curl -X POST "https://\${TENANT}.console.ves.volterra.io/api/config/namespaces/{{namespace}}/app_firewalls" \\
+  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "metadata": {
+      "name": "{{name}}",
+      "namespace": "{{namespace}}"
+    },
+    "spec": {
+      "detection_settings": {
+        "signature_selection_setting": {
+          "default_attack_type_settings": {},
+          "high_medium_accuracy_signatures": {}
+        },
+        "enable_suppression": {},
+        "enable_threat_campaigns": {}
+      },
+      "bot_protection_setting": {
+        "malicious_bot_action": "BLOCK",
+        "suspicious_bot_action": "REPORT",
+        "good_bot_action": "REPORT"
+      },
+      "blocking": {}
     }
-    enable_suppression {}
-    enable_threat_campaigns {}
-  }
-
-  bot_protection_setting {
-    malicious_bot_action = "BLOCK"
-    suspicious_bot_action = "REPORT"
-    good_bot_action      = "REPORT"
-  }
-
-  blocking {}
-}
+  }'
 \`\`\`
 
 ### Step 2: Attach WAF to Load Balancer
@@ -313,13 +325,7 @@ Use **f5xc-api-sites-azure-vnet-site-create** with appropriate parameters.
 Use **f5xc-api-sites-gcp-vpc-site-create** with appropriate parameters.
 {{/if}}
 
-### Step 3: Apply Terraform Configuration
-
-\`\`\`bash
-terraform apply -auto-approve
-\`\`\`
-
-### Step 4: Monitor Site Status
+### Step 3: Monitor Site Status
 
 Use the appropriate API get tool to check site status:
 - AWS: **f5xc-api-sites-aws-vpc-site-get**
@@ -338,108 +344,12 @@ Use **f5xc-api-sites-site-list** to view all sites.
 };
 
 /**
- * Generate Terraform from F5XC workflow
- */
-export const generateTerraformPrompt: WorkflowPrompt = {
-  name: "generate-terraform",
-  description: "Generate Terraform configuration from existing F5XC resources",
-  arguments: [
-    {
-      name: "namespace",
-      description: "Namespace to export",
-      required: true,
-    },
-    {
-      name: "resource_type",
-      description: "Resource type to export (e.g., http_loadbalancer)",
-      required: false,
-    },
-    {
-      name: "name",
-      description: "Specific resource name to export",
-      required: false,
-    },
-  ],
-  template: `# Generate Terraform Configuration
-
-I'll help you export F5XC resources as Terraform configuration.
-
-## Export Parameters
-- **Namespace**: {{namespace}}
-- **Resource Type**: {{resource_type}}
-- **Resource Name**: {{name}}
-
-## Steps
-
-### Step 1: List Resources
-
-Use the appropriate list tool to view existing resources:
-{{#if resource_type}}
-- **f5xc-api-*-{{resource_type}}-list** with namespace={{namespace}}
-{{else}}
-- **f5xc-api-waap-http-loadbalancer-list**
-- **f5xc-api-waap-origin-pool-list**
-- **f5xc-api-waf-app-firewall-list**
-{{/if}}
-
-### Step 2: Get Resource Details
-
-{{#if name}}
-Use **f5xc-api-*-{{resource_type}}-get** with name={{name}}, namespace={{namespace}} to get full resource configuration.
-{{else}}
-Use the appropriate get tool to retrieve each resource's configuration for Terraform export.
-{{/if}}
-
-### Step 3: Generate Terraform Configuration
-
-The API response contains all the configuration data needed to create Terraform resources.
-Use the response structure to populate your Terraform configuration.
-
-## Example Output
-
-\`\`\`hcl
-# Generated Terraform configuration
-terraform {
-  required_providers {
-    volterra = {
-      source  = "volterraedge/volterra"
-      version = "~> 0.11"
-    }
-  }
-}
-
-provider "volterra" {
-  api_p12_file = var.api_p12_file
-  url          = var.api_url
-}
-
-# Import command:
-# terraform import volterra_{{resource_type}}.{{name}} {{namespace}}/{{name}}
-
-resource "volterra_{{resource_type}}" "{{name}}" {
-  name      = "{{name}}"
-  namespace = "{{namespace}}"
-
-  # Configuration exported from F5XC
-}
-\`\`\`
-
-## Best Practices
-- Use variables for sensitive values
-- Organize resources by namespace
-- Use modules for reusable configurations
-- Store state in remote backend
-`,
-};
-
-/**
  * All workflow prompts
  */
 export const WORKFLOW_PROMPTS: WorkflowPrompt[] = [
   deployHttpLoadBalancerPrompt,
   configureWafPrompt,
   createMultiCloudSitePrompt,
-  generateTerraformPrompt,
 ];
 
 /**

@@ -154,42 +154,40 @@ interface ResourceDoc {
 }
 
 /**
- * Generate f5xcctl equivalent command
+ * Generate CURL command examples for API operations
  */
-function generateF5xcctlCommand(resource: string, operation: string, domain: string): string {
+function generateCurlCommand(resource: string, operation: string, domain: string): string {
   const normalizedResource = resource.replace(/-/g, "_");
-  const normalizedDomain = domain.replace(/-/g, "_");
+
+  // Build API path - most resources follow /api/config/namespaces/{namespace}/{resource_type}
+  const apiPath = `/api/config/namespaces/\${NAMESPACE}/${normalizedResource}s`;
 
   switch (operation) {
     case "list":
-      return `f5xcctl ${normalizedDomain} list ${normalizedResource} -n <namespace>`;
+      return `curl -X GET "https://\${TENANT}.console.ves.volterra.io${apiPath}" \\
+  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
+  -H "Content-Type: application/json"`;
     case "get":
-      return `f5xcctl ${normalizedDomain} get ${normalizedResource} <name> -n <namespace>`;
+      return `curl -X GET "https://\${TENANT}.console.ves.volterra.io${apiPath}/<name>" \\
+  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
+  -H "Content-Type: application/json"`;
     case "create":
-      return `f5xcctl ${normalizedDomain} create ${normalizedResource} -n <namespace> -i ${normalizedResource}.yaml`;
+      return `curl -X POST "https://\${TENANT}.console.ves.volterra.io${apiPath}" \\
+  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
+  -H "Content-Type: application/json" \\
+  -d @${normalizedResource}.json`;
     case "update":
-      return `f5xcctl ${normalizedDomain} apply ${normalizedResource} -n <namespace> -i ${normalizedResource}.yaml`;
+      return `curl -X PUT "https://\${TENANT}.console.ves.volterra.io${apiPath}/<name>" \\
+  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
+  -H "Content-Type: application/json" \\
+  -d @${normalizedResource}.json`;
     case "delete":
-      return `f5xcctl ${normalizedDomain} delete ${normalizedResource} <name> -n <namespace>`;
+      return `curl -X DELETE "https://\${TENANT}.console.ves.volterra.io${apiPath}/<name>" \\
+  -H "Authorization: APIToken \${F5XC_API_TOKEN}"`;
     default:
-      return `f5xcctl ${normalizedDomain} ${operation} ${normalizedResource}`;
+      return `curl -X GET "https://\${TENANT}.console.ves.volterra.io${apiPath}" \\
+  -H "Authorization: APIToken \${F5XC_API_TOKEN}"`;
   }
-}
-
-/**
- * Generate Terraform resource example
- */
-function generateTerraformExample(resource: string): string {
-  const normalizedResource = resource.replace(/-/g, "_");
-  const terraformResource = `volterra_${normalizedResource}`;
-
-  return `resource "${terraformResource}" "example" {
-  name      = "example-${resource}"
-  namespace = "default"
-
-  # Add resource-specific configuration
-  # See F5XC Terraform Provider documentation for details
-}`;
 }
 
 /**
@@ -391,36 +389,23 @@ Ask Claude to help you work with ${title} resources:
 `;
   }
 
-  // CLI equivalent
-  const cliSection = `
-## f5xcctl Equivalent
+  // CURL examples section
+  const curlSection = `
+## CURL Examples
 
 \`\`\`bash
-# Create/Update
-${generateF5xcctlCommand(resource, "create", categoryPath.domain)}
+# List resources
+${generateCurlCommand(resource, "list", categoryPath.domain)}
 
-# Get
-${generateF5xcctlCommand(resource, "get", categoryPath.domain)}
+# Get specific resource
+${generateCurlCommand(resource, "get", categoryPath.domain)}
 
-# List
-${generateF5xcctlCommand(resource, "list", categoryPath.domain)}
+# Create resource
+${generateCurlCommand(resource, "create", categoryPath.domain)}
 
-# Delete
-${generateF5xcctlCommand(resource, "delete", categoryPath.domain)}
+# Delete resource
+${generateCurlCommand(resource, "delete", categoryPath.domain)}
 \`\`\`
-`;
-
-  // Terraform section
-  const terraformSection = `
-## Terraform Resource
-
-\`\`\`hcl
-${generateTerraformExample(resource)}
-\`\`\`
-
-See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
-
-[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs
 `;
 
   // Wrap body description too for line length compliance
@@ -453,7 +438,7 @@ ${dangerBadge}${confirmationWarning}${wrappedBodyDescription}
 | Tool | Description |
 |------|-------------|
 ${toolRows}
-${parametersSection}${sideEffectsSection}${exampleSection}${cliSection}${terraformSection}`;
+${parametersSection}${sideEffectsSection}${exampleSection}${curlSection}`;
 
   return markdown;
 }

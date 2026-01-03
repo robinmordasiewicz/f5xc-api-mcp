@@ -1,7 +1,6 @@
 /**
  * Profile Module - XDG-compliant profile management
  *
- * Cross-compatible with f5xc-xcsh CLI.
  * Exports profile types and the ProfileManager singleton.
  */
 

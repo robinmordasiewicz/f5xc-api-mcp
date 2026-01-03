@@ -44,8 +44,8 @@ export interface ResourceDocumentation {
   apiPath: string;
   /** Example resource structure */
   exampleResource: Record<string, unknown>;
-  /** Terraform data source */
-  terraformDataSource: string;
+  /** CURL example for fetching this resource */
+  curlExample: string;
   /** Related resources */
   relatedResources: string[];
 }
@@ -168,18 +168,18 @@ function generateExampleResource(
 }
 
 /**
- * Generate Terraform data source
+ * Generate CURL example for fetching a resource
  */
-function generateTerraformDataSource(
-  resourceType: string,
-  namespace: string,
-  name: string
-): string {
-  const tfResource = `volterra_${resourceType.replace(/-/g, "_")}`;
-  return `data "${tfResource}" "example" {
-  name      = "${name}"
-  namespace = "${namespace}"
-}`;
+function generateCurlExample(resourceType: string, namespace: string, name: string): string {
+  const apiPath = buildApiPath(resourceType, namespace, name);
+  return `# Get resource (authenticated)
+curl -X GET "https://\${TENANT}.console.ves.volterra.io${apiPath}" \\
+  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
+  -H "Content-Type: application/json"
+
+# Get resource (unauthenticated - documentation mode)
+# Note: Actual API calls require authentication
+curl -X GET "https://\${TENANT}.console.ves.volterra.io${apiPath}"`;
 }
 
 /**
@@ -205,7 +205,7 @@ function buildDocumentationResponse(
     resourceType: rt,
     apiPath: apiPath ?? "",
     exampleResource: generateExampleResource(resourceType, namespace, name),
-    terraformDataSource: generateTerraformDataSource(resourceType, namespace, name),
+    curlExample: generateCurlExample(resourceType, namespace, name),
     relatedResources: rt.relatedResources ?? [],
   };
 }

@@ -61,8 +61,6 @@ describe("tool-generator", () => {
         parameters: [],
         requestBody: null,
         exampleRequest: null,
-        terraformResource: "volterra_http_loadbalancer",
-        terraformExample: "resource block",
         prerequisites: [],
         subscriptionTier: "STANDARD",
       };
@@ -150,38 +148,6 @@ describe("tool-generator", () => {
 
       expect(operation.requestBodySchema).not.toBeNull();
       expect(operation.requiredParams).toContain("body");
-    });
-  });
-
-  describe("Terraform Resource Generation Logic", () => {
-    it("should generate volterra_ prefix", () => {
-      const resource = "http_loadbalancer";
-      const terraformResource = `volterra_${resource}`;
-      expect(terraformResource).toBe("volterra_http_loadbalancer");
-    });
-
-    it("should convert hyphens to underscores", () => {
-      const resource = "http-loadbalancer";
-      const normalized = resource.replace(/-/g, "_");
-      const terraformResource = `volterra_${normalized}`;
-      expect(terraformResource).toBe("volterra_http_loadbalancer");
-    });
-
-    it("should generate resource block for create/update", () => {
-      const terraformExample = `resource "volterra_http_loadbalancer" "example" {
-  name      = "example"
-  namespace = "default"
-}`;
-      expect(terraformExample).toContain("resource");
-      expect(terraformExample).toContain('"volterra_http_loadbalancer"');
-    });
-
-    it("should generate data source for get/list operations", () => {
-      const dataSourceExample = `data "volterra_http_loadbalancer" "example" {
-  name      = "example"
-  namespace = "default"
-}`;
-      expect(dataSourceExample).toContain("data");
     });
   });
 
@@ -651,7 +617,6 @@ describe("tool-generator", () => {
         const response = JSON.parse(result.content[0].text) as DocumentationResponse;
         expect(response.mode).toBe("documentation");
         expect(response.tool).toBe(operation.toolName);
-        expect(response.terraformResource).toContain("volterra_");
       });
 
       it("should return documentation when httpClient is null", async () => {
@@ -811,29 +776,6 @@ describe("tool-generator", () => {
         expect(response.exampleRequest).toBeNull();
       });
 
-      it("should generate data source terraform example for get operations", async () => {
-        mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
-
-        const operation = createMockParsedOperation({
-          operation: "get",
-        });
-
-        registerTool(
-          mockServer as unknown as McpServer,
-          operation,
-          mockCredentialManager as unknown as CredentialManager,
-          null
-        );
-
-        const handler = mockServer.tool.mock.calls[0][3] as (
-          params: Record<string, unknown>
-        ) => Promise<{ content: Array<{ type: string; text: string }> }>;
-
-        const result = await handler({});
-
-        const response = JSON.parse(result.content[0].text) as DocumentationResponse;
-        expect(response.terraformExample).toContain("data");
-      });
     });
 
     describe("tool handler - execution mode", () => {

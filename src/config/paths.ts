@@ -5,22 +5,23 @@
  * This is the single source of truth for all application paths.
  * All modules should import from here instead of constructing paths directly.
  *
- * Cross-compatible with f5xc-xcsh CLI - both tools share the same config directory.
+ * Default paths:
+ * - Config: ~/.config/f5xc/
+ * - State: ~/.local/state/f5xc/
  */
 
 import { homedir } from "os";
 import { join } from "path";
 
 /**
- * Shared application name with f5xc-xcsh CLI for cross-compatibility
- * Both tools will read/write profiles from the same directory
+ * Application name for XDG-compliant directory structure
  */
-const APP_NAME = "xcsh";
+const APP_NAME = "f5xc";
 
 /**
  * Get XDG-compliant config directory
  * Config files: settings, profiles, preferences
- * Default: ~/.config/xcsh
+ * Default: ~/.config/f5xc
  */
 export function getConfigDir(): string {
   const xdgConfig = process.env.XDG_CONFIG_HOME;
@@ -33,7 +34,7 @@ export function getConfigDir(): string {
 /**
  * Get XDG-compliant state directory
  * State files: history, logs, undo history, session state
- * Default: ~/.local/state/xcsh
+ * Default: ~/.local/state/f5xc
  */
 export function getStateDir(): string {
   const xdgState = process.env.XDG_STATE_HOME;

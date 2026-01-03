@@ -1,13 +1,11 @@
 /**
  * Profile types for F5 XC authentication and configuration
  *
- * MUST match f5xc-xcsh/src/profile/types.ts exactly for cross-compatibility.
- * Both tools share the same profile format and storage location.
+ * Profiles are stored in ~/.config/f5xc/profiles/ (XDG Base Directory compliant)
  */
 
 /**
  * Profile represents a saved API connection configuration
- * Cross-compatible with f5xc-xcsh CLI
  */
 export interface Profile {
   /** Unique profile name */

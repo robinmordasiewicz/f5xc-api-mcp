@@ -237,7 +237,7 @@ Set authentication environment variables:
 
 **Solution:**
 
-Remove credentials to use documentation-only mode. This is useful when you authenticate separately via xcsh or Terraform.
+Remove credentials to use documentation-only mode. This is useful when you want to explore the API without executing operations.
 
 ## Common Error Messages
 

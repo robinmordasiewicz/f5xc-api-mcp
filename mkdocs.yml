@@ -77,8 +77,8 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: ""
+      emoji_generator: ""
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -95,7 +95,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: ""
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -137,6 +137,18 @@ nav:
       - Overview: tools/index.md
       - Admin Console And Ui:
           - Static Component: tools/admin-console-and-ui/static-component.md
+      - AI Services:
+          - Allocateip: tools/ai-services/allocateip.md
+          - Deallocateip: tools/ai-services/deallocateip.md
+          - Enable Feature: tools/ai-services/enable-feature.md
+          - Eval Query: tools/ai-services/eval-query.md
+          - Eval Query Feedback: tools/ai-services/eval-query-feedback.md
+          - Gettoken: tools/ai-services/gettoken.md
+          - Query: tools/ai-services/query.md
+          - Query Feedback: tools/ai-services/query-feedback.md
+          - Refresh Token: tools/ai-services/refresh-token.md
+          - Subscribe: tools/ai-services/subscribe.md
+          - Unsubscribe: tools/ai-services/unsubscribe.md
       - API:
           - API Crawler: tools/api/api-crawler.md
           - API Definition: tools/api/api-definition.md
@@ -345,18 +357,6 @@ nav:
           - Suggest Value: tools/dns/suggest-value.md
           - Unsubscribe: tools/dns/unsubscribe.md
           - Verify: tools/dns/verify.md
-      - Generative AI:
-          - Allocateip: tools/generative-ai/allocateip.md
-          - Deallocateip: tools/generative-ai/deallocateip.md
-          - Enable Feature: tools/generative-ai/enable-feature.md
-          - Eval Query: tools/generative-ai/eval-query.md
-          - Eval Query Feedback: tools/generative-ai/eval-query-feedback.md
-          - Gettoken: tools/generative-ai/gettoken.md
-          - Query: tools/generative-ai/query.md
-          - Query Feedback: tools/generative-ai/query-feedback.md
-          - Refresh Token: tools/generative-ai/refresh-token.md
-          - Subscribe: tools/generative-ai/subscribe.md
-          - Unsubscribe: tools/generative-ai/unsubscribe.md
       - Managed Kubernetes:
           - Container Registry: tools/managed-kubernetes/container-registry.md
           - K8S Cluster Role: tools/managed-kubernetes/k8s-cluster-role.md

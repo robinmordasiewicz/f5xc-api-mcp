@@ -7,8 +7,7 @@ An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to
 - **1,500+ API Tools** - Full coverage of F5XC API across 23 domains
 - **Dynamic Discovery** - 6 meta-tools with 95%+ token savings
 - **Dual-Mode Operation** - Works with OR without authentication
-- **xcsh Integration** - Every response includes CLI equivalents
-- **Terraform Examples** - HCL snippets for infrastructure-as-code
+- **CURL Examples** - API documentation with curl commands
 - **Workflow Prompts** - Guided workflows for common tasks
 
 !!! tip "Token Efficiency"
@@ -40,13 +39,12 @@ An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to
 
 ### Documentation Mode (Default)
 
-Works **without any credentials**. Perfect for users who authenticate via xcsh or Terraform.
+Works **without any credentials**. Ideal for exploring the API and understanding available operations.
 
 - OpenAPI spec documentation and schema information
 - API operation explanations and parameter descriptions
 - Request payload validation against schemas
-- xcsh command equivalents for operations
-- Terraform HCL resource examples
+- CURL command examples
 - Dependency graphs and prerequisite guidance
 
 ### Execution Mode (Authenticated)
@@ -124,9 +122,8 @@ Ask Claude to help with F5XC infrastructure:
 Claude will use the MCP tools to:
 
 1. Show you the required configuration
-2. Provide xcsh commands you can run
-3. Generate Terraform HCL for infrastructure-as-code
-4. Execute the API calls (if authenticated)
+2. Provide CURL command examples
+3. Execute the API calls (if authenticated)
 
 ## Next Steps
 

@@ -33,34 +33,26 @@ Ask Claude to help you work with Cloud Connect Reapply VPC Attachment resources:
 
 > "Create a cloud-connect-reapply-vpc-attachment named 'example' in the 'production' namespace"
 
-## xcsh Equivalent
+## CURL Examples
 
 ```bash
-# Create/Update
-xcsh cloud_infrastructure create cloud_connect_reapply_vpc_attachment -n <namespace> -i cloud_connect_reapply_vpc_attachment.yaml
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_connect_reapply_vpc_attachments" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# Get
-xcsh cloud_infrastructure get cloud_connect_reapply_vpc_attachment <name> -n <namespace>
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_connect_reapply_vpc_attachments/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# List
-xcsh cloud_infrastructure list cloud_connect_reapply_vpc_attachment -n <namespace>
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_connect_reapply_vpc_attachments" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @cloud_connect_reapply_vpc_attachment.json
 
-# Delete
-xcsh cloud_infrastructure delete cloud_connect_reapply_vpc_attachment <name> -n <namespace>
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/cloud_connect_reapply_vpc_attachments/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
 ```
-
-## Terraform Resource
-
-```hcl
-resource "volterra_cloud_connect_reapply_vpc_attachment" "example" {
-  name      = "example-cloud-connect-reapply-vpc-attachment"
-  namespace = "default"
-
-  # Add resource-specific configuration
-  # See F5XC Terraform Provider documentation for details
-}
-```
-
-See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
-
-[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

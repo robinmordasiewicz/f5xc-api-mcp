@@ -102,7 +102,6 @@ describe("handlers", () => {
           const content = JSON.parse(result.content) as ResourceDocumentation;
           expect(content.resourceType).toBeDefined();
           expect(content.apiPath).toContain("http_loadbalancers");
-          expect(content.terraformDataSource).toContain("volterra_http_loadbalancer");
           expect(content.exampleResource).toBeDefined();
           expect(content.exampleResource.metadata).toBeDefined();
           expect(content.exampleResource.spec).toBeDefined();
@@ -123,7 +122,6 @@ describe("handlers", () => {
           expect(result.mode).toBe("documentation");
           const content = JSON.parse(result.content) as ResourceDocumentation;
           expect(content.apiPath).toContain("origin_pools");
-          expect(content.terraformDataSource).toContain("volterra_origin_pool");
         });
 
         it("should return documentation for dns_zone resource", async () => {
@@ -626,39 +624,4 @@ describe("handlers", () => {
     });
   });
 
-  describe("Terraform data source generation", () => {
-    it("should generate correct Terraform data source format", async () => {
-      mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
-
-      const handler = new ResourceHandler(
-        mockCredentialManager as unknown as CredentialManager,
-        null
-      );
-
-      const result = await handler.readResource(
-        "f5xc://test-tenant/default/http_loadbalancer/example-lb"
-      );
-
-      const content = JSON.parse(result.content) as ResourceDocumentation;
-      expect(content.terraformDataSource).toContain('data "volterra_http_loadbalancer"');
-      expect(content.terraformDataSource).toContain('name      = "example-lb"');
-      expect(content.terraformDataSource).toContain('namespace = "default"');
-    });
-
-    it("should convert hyphens to underscores for Terraform", async () => {
-      mockCredentialManager.getAuthMode.mockReturnValue(AuthMode.NONE);
-
-      const handler = new ResourceHandler(
-        mockCredentialManager as unknown as CredentialManager,
-        null
-      );
-
-      const result = await handler.readResource(
-        "f5xc://test-tenant/default/origin_pool/example-pool"
-      );
-
-      const content = JSON.parse(result.content) as ResourceDocumentation;
-      expect(content.terraformDataSource).toContain("volterra_origin_pool");
-    });
-  });
 });

@@ -12,15 +12,10 @@ The server operates in two modes based on authentication status:
 
 - API documentation and schema information
 - Parameter descriptions and validation
-- xcsh command equivalents
-- Terraform HCL examples
+- CURL command examples
 - Dependency and prerequisite guidance
 
-This mode is ideal for users who:
-
-- Authenticate via xcsh CLI
-- Use Terraform with separate provider authentication
-- Want to explore the API without credentials
+This mode is ideal for exploring the API and understanding available operations.
 
 ### Execution Mode
 
@@ -96,7 +91,7 @@ More secure, certificate-based authentication.
 
 ```bash
 export F5XC_API_URL="https://your-tenant.console.ves.volterra.io"
-export F5XC_P12_FILE="/path/to/certificate.p12"
+export F5XC_P12_BUNDLE="/path/to/certificate.p12"
 export F5XC_P12_PASSWORD="your-certificate-password"
 ```
 
@@ -110,7 +105,7 @@ Or in MCP configuration:
       "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "env": {
         "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
-        "F5XC_P12_FILE": "/absolute/path/to/certificate.p12",
+        "F5XC_P12_BUNDLE": "/absolute/path/to/certificate.p12",
         "F5XC_P12_PASSWORD": "your-certificate-password"
       }
     }
@@ -123,7 +118,7 @@ Or via `claude mcp add`:
 ```bash
 claude mcp add --transport stdio f5xc-api \
   --env F5XC_API_URL=https://your-tenant.console.ves.volterra.io \
-  --env F5XC_P12_FILE=/absolute/path/to/certificate.p12 \
+  --env F5XC_P12_BUNDLE=/absolute/path/to/certificate.p12 \
   --env F5XC_P12_PASSWORD=your-certificate-password \
   -- npx @robinmordasiewicz/f5xc-api-mcp
 ```
@@ -147,7 +142,7 @@ You can use any of these formats - the server handles the conversion.
 
 ## Profile-Based Configuration
 
-For managing multiple F5XC tenant credentials, use xcsh-compatible profiles stored in `~/.config/xcsh/profiles/`.
+For managing multiple F5XC tenant credentials, use profiles stored in `~/.config/f5xc/profiles/`.
 
 ### Using the Configure Auth Tool
 
@@ -159,7 +154,7 @@ Claude will use the `f5xc-api-configure-auth` tool to:
 
 1. Check current authentication status
 2. Prompt you for tenant URL and API token
-3. Save credentials to an xcsh profile
+3. Save credentials to a profile
 4. Set the profile as active
 
 ### MCP Tool Actions
@@ -168,7 +163,7 @@ Claude will use the `f5xc-api-configure-auth` tool to:
 |--------|-------------|
 | `status` | Check current authentication state |
 | `configure` | Save credentials to a new or existing profile |
-| `list-profiles` | List all available xcsh profiles |
+| `list-profiles` | List all available profiles |
 | `set-active` | Switch to a different profile |
 
 **Example - Configure Credentials:**
@@ -185,10 +180,10 @@ Ask Claude:
 
 ### Profile Storage
 
-Profiles are stored in `~/.config/xcsh/profiles/` (XDG Base Directory compliant):
+Profiles are stored in `~/.config/f5xc/profiles/` (XDG Base Directory compliant):
 
 ```text
-~/.config/xcsh/
+~/.config/f5xc/
 ├── active_profile          # Name of the active profile
 └── profiles/
     ├── default.json        # Default profile
@@ -196,14 +191,12 @@ Profiles are stored in `~/.config/xcsh/profiles/` (XDG Base Directory compliant)
     └── staging.json        # Staging tenant
 ```
 
-This location is cross-compatible with the xcsh CLI.
-
 ### Credential Priority
 
 The server loads credentials in this order:
 
 1. **Environment variables** (highest priority) - Always override profiles
-2. **Active xcsh profile** - From `~/.config/xcsh/`
+2. **Active profile** - From `~/.config/f5xc/`
 3. **No credentials** - Documentation mode (lowest priority)
 
 See [Security Best Practices](../security.md) for credential storage and management guidance.
@@ -214,9 +207,9 @@ See [Security Best Practices](../security.md) for credential storage and managem
 |----------|----------|-------------|
 | `F5XC_API_URL` | For auth | Tenant URL (auto-normalized) |
 | `F5XC_API_TOKEN` | Token auth | API token from XC Console |
-| `F5XC_P12_FILE` | Cert auth | Absolute path to P12 certificate |
+| `F5XC_P12_BUNDLE` | Cert auth | Absolute path to P12 certificate bundle |
 | `F5XC_P12_PASSWORD` | Cert auth | Password for P12 certificate |
-| `F5XC_PROFILE` | No | Profile name from `~/.f5xc/credentials.json` |
+| `F5XC_PROFILE` | No | Profile name from `~/.config/f5xc/profiles/` |
 | `LOG_LEVEL` | No | Logging level (debug, info, warn, error) |
 
 ## Security Best Practices

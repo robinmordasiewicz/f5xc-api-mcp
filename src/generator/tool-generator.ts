@@ -31,8 +31,6 @@ export interface DocumentationResponse {
   parameters: ParameterInfo[];
   requestBody: RequestBodyInfo | null;
   exampleRequest: Record<string, unknown> | null;
-  terraformResource: string;
-  terraformExample: string;
   prerequisites: string[];
   subscriptionTier: string;
   // Rich metadata from enriched specs v1.0.63
@@ -227,34 +225,6 @@ function getSubscriptionTier(resource: string): string {
 
   // Fallback for resources not in upstream specs
   return FALLBACK_TIER_MAP[normalizedResource] ?? SUBSCRIPTION_TIERS.NO_TIER;
-}
-
-/**
- * Generate Terraform resource name
- */
-function generateTerraformResource(operation: ParsedOperation): string {
-  const resource = operation.resource.replace(/-/g, "_");
-  return `volterra_${resource}`;
-}
-
-/**
- * Generate Terraform example
- */
-function generateTerraformExample(operation: ParsedOperation): string {
-  const resource = operation.resource.replace(/-/g, "_");
-  const terraformResource = `volterra_${resource}`;
-
-  if (operation.operation !== "create" && operation.operation !== "update") {
-    return `# Use data source for ${operation.operation} operations\ndata "${terraformResource}" "example" {\n  name      = "example"\n  namespace = "default"\n}`;
-  }
-
-  return `resource "${terraformResource}" "example" {
-  name      = "example"
-  namespace = "default"
-
-  # Add resource-specific configuration here
-  # See F5XC Terraform Provider documentation for details
-}`;
 }
 
 /**
@@ -493,8 +463,6 @@ function buildDocumentationResponse(operation: ParsedOperation): DocumentationRe
     parameters,
     requestBody,
     exampleRequest: generateExampleRequest(operation),
-    terraformResource: generateTerraformResource(operation),
-    terraformExample: generateTerraformExample(operation),
     prerequisites,
     subscriptionTier: getSubscriptionTier(operation.resource),
     // Rich metadata from enriched specs

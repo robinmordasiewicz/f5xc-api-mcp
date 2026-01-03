@@ -124,9 +124,9 @@ Once configured, try these example prompts:
 
 > "Show me how to create an HTTP load balancer in F5XC"
 
-> "What's the Terraform resource for an origin pool?"
+> "What are the CURL commands to list namespaces?"
 
-> "Give me the xcsh command to list namespaces"
+> "What parameters are needed for an origin pool?"
 
 ### Execution Mode (With Auth)
 

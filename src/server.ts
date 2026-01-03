@@ -72,7 +72,7 @@ export interface ServerConfig {
  *
  * Provides tools, resources, and prompts for interacting with F5 Distributed Cloud APIs.
  * Works in two modes:
- * - Documentation mode: Returns API documentation, schemas, and Terraform examples
+ * - Documentation mode: Returns API documentation, schemas, and CURL examples
  * - Execution mode: Directly executes API calls when authenticated
  */
 export class F5XCApiServer {
@@ -146,7 +146,7 @@ export class F5XCApiServer {
                   tenantUrl: isAuthenticated ? tenantUrl : null,
                   capabilities: {
                     documentation: true,
-                    terraform_examples: true,
+                    curl_examples: true,
                     api_execution: isAuthenticated,
                   },
                   toolIndex: {
@@ -989,7 +989,7 @@ export class F5XCApiServer {
  *
  * Credentials are loaded asynchronously from:
  * 1. Environment variables (highest priority)
- * 2. Active profile from ~/.config/xcsh/ (cross-compatible with xcsh CLI)
+ * 2. Active profile from ~/.config/f5xc/ (XDG Base Directory compliant)
  * 3. No credentials - documentation mode (lowest priority)
  */
 export async function createServer(): Promise<F5XCApiServer> {
