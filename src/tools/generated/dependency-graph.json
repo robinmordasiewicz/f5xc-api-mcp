@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-02T06:42:53.279437+00:00",
+  "generatedAt": "2026-01-02T23:10:11.773708+00:00",
   "totalResources": 801,
   "dependencies": {
     "admin_console_and_ui/static-component": {
@@ -12,6 +12,141 @@
       "subscriptions": [],
       "creationOrder": [
         "admin_console_and_ui/static-component"
+      ]
+    },
+    "ai_services/enable-feature": {
+      "resource": "enable-feature",
+      "domain": "ai_services",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ai_services/enable-feature"
+      ]
+    },
+    "ai_services/gettoken": {
+      "resource": "gettoken",
+      "domain": "ai_services",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
+          "tier": "standard",
+          "required": false
+        }
+      ],
+      "creationOrder": [
+        "ai_services/gettoken"
+      ]
+    },
+    "ai_services/refresh-token": {
+      "resource": "refresh-token",
+      "domain": "ai_services",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
+          "tier": "standard",
+          "required": false
+        }
+      ],
+      "creationOrder": [
+        "ai_services/refresh-token"
+      ]
+    },
+    "ai_services/subscribe": {
+      "resource": "subscribe",
+      "domain": "ai_services",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ai_services/subscribe"
+      ]
+    },
+    "ai_services/unsubscribe": {
+      "resource": "unsubscribe",
+      "domain": "ai_services",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ai_services/unsubscribe"
+      ]
+    },
+    "ai_services/eval-query": {
+      "resource": "eval-query",
+      "domain": "ai_services",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ai_services/eval-query"
+      ]
+    },
+    "ai_services/eval-query-feedback": {
+      "resource": "eval-query-feedback",
+      "domain": "ai_services",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ai_services/eval-query-feedback"
+      ]
+    },
+    "ai_services/query": {
+      "resource": "query",
+      "domain": "ai_services",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ai_services/query"
+      ]
+    },
+    "ai_services/query-feedback": {
+      "resource": "query-feedback",
+      "domain": "ai_services",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ai_services/query-feedback"
+      ]
+    },
+    "ai_services/allocateip": {
+      "resource": "allocateip",
+      "domain": "ai_services",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ai_services/allocateip"
+      ]
+    },
+    "ai_services/deallocateip": {
+      "resource": "deallocateip",
+      "domain": "ai_services",
+      "requires": [],
+      "requiredBy": [],
+      "oneOfGroups": [],
+      "subscriptions": [],
+      "creationOrder": [
+        "ai_services/deallocateip"
       ]
     },
     "api/api-crawler": {
@@ -5588,141 +5723,6 @@
       "subscriptions": [],
       "creationOrder": [
         "dns/request-log"
-      ]
-    },
-    "generative_ai/enable-feature": {
-      "resource": "enable-feature",
-      "domain": "generative_ai",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "generative_ai/enable-feature"
-      ]
-    },
-    "generative_ai/gettoken": {
-      "resource": "gettoken",
-      "domain": "generative_ai",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_site_management_standard",
-          "displayName": "F5XC Site Management Standard",
-          "tier": "standard",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "generative_ai/gettoken"
-      ]
-    },
-    "generative_ai/refresh-token": {
-      "resource": "refresh-token",
-      "domain": "generative_ai",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_site_management_standard",
-          "displayName": "F5XC Site Management Standard",
-          "tier": "standard",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "generative_ai/refresh-token"
-      ]
-    },
-    "generative_ai/subscribe": {
-      "resource": "subscribe",
-      "domain": "generative_ai",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "generative_ai/subscribe"
-      ]
-    },
-    "generative_ai/unsubscribe": {
-      "resource": "unsubscribe",
-      "domain": "generative_ai",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "generative_ai/unsubscribe"
-      ]
-    },
-    "generative_ai/eval-query": {
-      "resource": "eval-query",
-      "domain": "generative_ai",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "generative_ai/eval-query"
-      ]
-    },
-    "generative_ai/eval-query-feedback": {
-      "resource": "eval-query-feedback",
-      "domain": "generative_ai",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "generative_ai/eval-query-feedback"
-      ]
-    },
-    "generative_ai/query": {
-      "resource": "query",
-      "domain": "generative_ai",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "generative_ai/query"
-      ]
-    },
-    "generative_ai/query-feedback": {
-      "resource": "query-feedback",
-      "domain": "generative_ai",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "generative_ai/query-feedback"
-      ]
-    },
-    "generative_ai/allocateip": {
-      "resource": "allocateip",
-      "domain": "generative_ai",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "generative_ai/allocateip"
-      ]
-    },
-    "generative_ai/deallocateip": {
-      "resource": "deallocateip",
-      "domain": "generative_ai",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "generative_ai/deallocateip"
       ]
     },
     "managed_kubernetes/container-registry": {
@@ -18950,6 +18950,80 @@
     }
   },
   "addonServiceMap": {
+    "f5xc_site_management_standard": [
+      "ai_services/gettoken",
+      "ai_services/refresh-token",
+      "authentication/scim-token",
+      "ce_management/fleet",
+      "ce_management/get-registrations-by-token",
+      "ce_management/registrations-by-site",
+      "ddos/infraprotect-tunnel",
+      "ddos/update-tunnel-statu",
+      "marketplace/generate-token",
+      "network/tunnel",
+      "service_mesh/site-mesh-group",
+      "sites/aws-tgw-site",
+      "sites/aws-vpc-site",
+      "sites/azure-vnet-site",
+      "sites/gcp-vpc-site",
+      "sites/k8s-cluster",
+      "sites/securemesh-site-v2",
+      "sites/securemesh-site",
+      "sites/site",
+      "sites/virtual-k8s",
+      "sites/virtual-site",
+      "sites/voltstack-site",
+      "sites/set-tgw-info",
+      "sites/set-vip-info",
+      "sites/set-vpc-ip-prefixe",
+      "sites/set-vpn-tunnel",
+      "sites/validate-config",
+      "sites/set-cloud-site-info",
+      "sites/set-vpc-k8s-hostname",
+      "sites/local-kubeconfig",
+      "sites/upgrade-o",
+      "sites/upgrade-sw",
+      "sites/global-network",
+      "sites/segment",
+      "sites/selectee",
+      "sites/statu",
+      "sites/configmap",
+      "sites/endpoint",
+      "sites/namespace",
+      "sites/persistentvolumeclaim",
+      "sites/pod",
+      "sites/secret",
+      "sites/service",
+      "sites/node",
+      "sites/persistentvolume",
+      "sites/daemonset",
+      "sites/deployment",
+      "sites/replicaset",
+      "sites/statefulset",
+      "sites/job",
+      "sites/cronjob",
+      "sites/metric",
+      "sites/dc-cluster-group",
+      "sites/route-table",
+      "sites/network",
+      "sites/site-mesh-group",
+      "sites/firewall-log",
+      "sites/aggregation",
+      "sites/scroll",
+      "sites/edge",
+      "sites/platform-event",
+      "sites/log",
+      "sites/k8s-audit-log",
+      "sites/k8s-event",
+      "sites/vk8s-audit-log",
+      "sites/vk8s-event",
+      "sites/state",
+      "sites/global-kubeconfig",
+      "statistics/site-mesh-group",
+      "telemetry_and_insights/status-at-site",
+      "tenant_and_identity/user-token",
+      "users/token"
+    ],
     "f5xc_waap_standard": [
       "api/api-crawler",
       "api/api-definition",
@@ -19135,80 +19209,6 @@
       "waf/rule-hit",
       "waf/security-event",
       "waf/staged-signature"
-    ],
-    "f5xc_site_management_standard": [
-      "authentication/scim-token",
-      "ce_management/fleet",
-      "ce_management/get-registrations-by-token",
-      "ce_management/registrations-by-site",
-      "ddos/infraprotect-tunnel",
-      "ddos/update-tunnel-statu",
-      "generative_ai/gettoken",
-      "generative_ai/refresh-token",
-      "marketplace/generate-token",
-      "network/tunnel",
-      "service_mesh/site-mesh-group",
-      "sites/aws-tgw-site",
-      "sites/aws-vpc-site",
-      "sites/azure-vnet-site",
-      "sites/gcp-vpc-site",
-      "sites/k8s-cluster",
-      "sites/securemesh-site-v2",
-      "sites/securemesh-site",
-      "sites/site",
-      "sites/virtual-k8s",
-      "sites/virtual-site",
-      "sites/voltstack-site",
-      "sites/set-tgw-info",
-      "sites/set-vip-info",
-      "sites/set-vpc-ip-prefixe",
-      "sites/set-vpn-tunnel",
-      "sites/validate-config",
-      "sites/set-cloud-site-info",
-      "sites/set-vpc-k8s-hostname",
-      "sites/local-kubeconfig",
-      "sites/upgrade-o",
-      "sites/upgrade-sw",
-      "sites/global-network",
-      "sites/segment",
-      "sites/selectee",
-      "sites/statu",
-      "sites/configmap",
-      "sites/endpoint",
-      "sites/namespace",
-      "sites/persistentvolumeclaim",
-      "sites/pod",
-      "sites/secret",
-      "sites/service",
-      "sites/node",
-      "sites/persistentvolume",
-      "sites/daemonset",
-      "sites/deployment",
-      "sites/replicaset",
-      "sites/statefulset",
-      "sites/job",
-      "sites/cronjob",
-      "sites/metric",
-      "sites/dc-cluster-group",
-      "sites/route-table",
-      "sites/network",
-      "sites/site-mesh-group",
-      "sites/firewall-log",
-      "sites/aggregation",
-      "sites/scroll",
-      "sites/edge",
-      "sites/platform-event",
-      "sites/log",
-      "sites/k8s-audit-log",
-      "sites/k8s-event",
-      "sites/vk8s-audit-log",
-      "sites/vk8s-event",
-      "sites/state",
-      "sites/global-kubeconfig",
-      "statistics/site-mesh-group",
-      "telemetry_and_insights/status-at-site",
-      "tenant_and_identity/user-token",
-      "users/token"
     ],
     "f5xc_content_delivery_network_standard": [
       "cdn/subscribe",

@@ -6,6 +6,7 @@
 import type { ParsedOperation } from "../generator/openapi-parser.js";
 
 import { admin_console_and_uiTools } from "./generated/admin_console_and_ui/index.js";
+import { ai_servicesTools } from "./generated/ai_services/index.js";
 import { apiTools } from "./generated/api/index.js";
 import { authenticationTools } from "./generated/authentication/index.js";
 import { bigipTools } from "./generated/bigip/index.js";
@@ -21,7 +22,6 @@ import { data_and_privacy_securityTools } from "./generated/data_and_privacy_sec
 import { data_intelligenceTools } from "./generated/data_intelligence/index.js";
 import { ddosTools } from "./generated/ddos/index.js";
 import { dnsTools } from "./generated/dns/index.js";
-import { generative_aiTools } from "./generated/generative_ai/index.js";
 import { managed_kubernetesTools } from "./generated/managed_kubernetes/index.js";
 import { marketplaceTools } from "./generated/marketplace/index.js";
 import { networkTools } from "./generated/network/index.js";
@@ -49,6 +49,7 @@ import { wafTools } from "./generated/waf/index.js";
  */
 export const allTools: ParsedOperation[] = [
   ...admin_console_and_uiTools,
+  ...ai_servicesTools,
   ...apiTools,
   ...authenticationTools,
   ...bigipTools,
@@ -64,7 +65,6 @@ export const allTools: ParsedOperation[] = [
   ...data_intelligenceTools,
   ...ddosTools,
   ...dnsTools,
-  ...generative_aiTools,
   ...managed_kubernetesTools,
   ...marketplaceTools,
   ...networkTools,
