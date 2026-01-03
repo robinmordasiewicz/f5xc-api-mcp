@@ -994,8 +994,8 @@ export class F5XCApiServer {
     this.httpServer = result.server;
 
     logger.info("F5XC API MCP Server started successfully (HTTP mode)", {
-      url: `${result.address}/mcp`,
-      transport: "http/sse",
+      url: `${result.address}/sse`,
+      transport: "sse",
     });
   }
 
