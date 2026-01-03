@@ -68,13 +68,12 @@ f5xc-api-mcp --http --port 8080
 f5xc-api-mcp --http --host 127.0.0.1 --port 3000
 ```
 
-#### HTTP Endpoints
+#### HTTP Endpoints (vLLM Compatible)
 
 | Endpoint | Method | Description |
 |----------|--------|-------------|
-| `/mcp` | POST | JSON-RPC request endpoint |
-| `/mcp` | GET | SSE streaming endpoint (requires session) |
-| `/mcp` | DELETE | Session termination |
+| `/sse` | GET | SSE streaming endpoint (returns `event: endpoint` with POST URL) |
+| `/messages` | POST | JSON-RPC request endpoint (requires `sessionId` query param) |
 | `/health` | GET | Health check endpoint |
 
 #### Docker with HTTP Mode
@@ -103,10 +102,10 @@ services:
 # Health check
 curl http://localhost:3000/health
 
-# Initialize session and send JSON-RPC request
-curl -X POST http://localhost:3000/mcp \
-  -H "Content-Type: application/json" \
-  -d '{"jsonrpc":"2.0","method":"tools/list","id":1}'
+# Test SSE endpoint (returns event: endpoint with session URL)
+curl -N http://localhost:3000/sse
+# Expected: event: endpoint
+#           data: /messages?sessionId=<uuid>
 ```
 
 ## Configuration

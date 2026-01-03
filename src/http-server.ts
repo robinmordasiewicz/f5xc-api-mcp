@@ -1,19 +1,17 @@
 /**
  * HTTP/SSE Transport Server for F5XC API MCP
  *
- * Provides HTTP-based transport for MCP communication, enabling
- * integration with vLLM servers and other HTTP-based AI clients.
+ * Provides classic SSE transport for MCP communication, enabling
+ * integration with vLLM servers and Python MCP SDK clients.
  *
  * Endpoints:
- * - POST /mcp - JSON-RPC request endpoint
- * - GET /mcp - SSE streaming endpoint
- * - DELETE /mcp - Session termination
+ * - GET /sse - SSE streaming endpoint (returns event: endpoint with POST URL)
+ * - POST /messages - JSON-RPC request endpoint (requires sessionId query param)
  */
 
 import express, { Request, Response, NextFunction } from "express";
-import { randomUUID } from "node:crypto";
 import type { Server } from "node:http";
-import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
+import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { logger } from "./utils/logging.js";
 
@@ -25,18 +23,14 @@ export interface HttpServerOptions {
   port?: number;
   /** Host/IP to bind to (default: 0.0.0.0) */
   host?: string;
-  /** Enable session management (default: true) */
-  enableSessions?: boolean;
 }
 
 /**
- * HTTP server result containing server and transport instances
+ * HTTP server result containing server instance
  */
 export interface HttpServerResult {
   /** The HTTP server instance */
   server: Server;
-  /** The MCP transport instance */
-  transport: StreamableHTTPServerTransport;
   /** The bound address */
   address: string;
 }
@@ -44,7 +38,7 @@ export interface HttpServerResult {
 /**
  * Session store for managing active MCP sessions
  */
-const sessions = new Map<string, StreamableHTTPServerTransport>();
+const sessions = new Map<string, SSEServerTransport>();
 
 /**
  * Create and configure the Express app with MCP endpoints
@@ -86,8 +80,12 @@ function createMcpApp(host: string): express.Application {
     next();
   });
 
-  // Handle preflight requests
-  app.options("/mcp", (_req: Request, res: Response) => {
+  // Handle preflight requests for SSE endpoints
+  app.options("/sse", (_req: Request, res: Response) => {
+    res.sendStatus(204);
+  });
+
+  app.options("/messages", (_req: Request, res: Response) => {
     res.sendStatus(204);
   });
 
@@ -102,52 +100,64 @@ function createMcpApp(host: string): express.Application {
 /**
  * Setup HTTP server with MCP transport
  *
- * Creates an Express server with proper MCP endpoints for:
- * - POST /mcp: Handle JSON-RPC requests
- * - GET /mcp: Establish SSE stream for server-to-client messages
- * - DELETE /mcp: Terminate session
+ * Creates an Express server with classic SSE endpoints for vLLM compatibility:
+ * - GET /sse: Establish SSE stream (returns event: endpoint with POST URL)
+ * - POST /messages: Handle JSON-RPC requests (requires sessionId query param)
  *
  * @param mcpServer - The MCP server instance to connect
  * @param options - Server configuration options
- * @returns Promise resolving to server and transport instances
+ * @returns Promise resolving to server instance
  */
 export async function setupHttpServer(
   mcpServer: McpServer,
   options: HttpServerOptions = {}
 ): Promise<HttpServerResult> {
-  const { port = 3000, host = "0.0.0.0", enableSessions = true } = options;
+  const { port = 3000, host = "0.0.0.0" } = options;
 
   const app = createMcpApp(host);
 
-  // Handle POST /mcp - JSON-RPC requests
-  app.post("/mcp", async (req: Request, res: Response) => {
-    const sessionId = req.headers["mcp-session-id"] as string | undefined;
+  // GET /sse - Establish SSE connection (vLLM compatible)
+  app.get("/sse", async (_req: Request, res: Response) => {
+    logger.debug("New SSE connection request");
 
-    let transport: StreamableHTTPServerTransport;
+    const transport = new SSEServerTransport("/messages", res);
+    sessions.set(transport.sessionId, transport);
 
-    if (enableSessions && sessionId && sessions.has(sessionId)) {
-      // Reuse existing session
-      transport = sessions.get(sessionId)!;
-    } else {
-      // Create new transport for this request/session
-      transport = new StreamableHTTPServerTransport({
-        sessionIdGenerator: enableSessions ? () => randomUUID() : undefined,
+    res.on("close", () => {
+      sessions.delete(transport.sessionId);
+      logger.debug("SSE connection closed", { sessionId: transport.sessionId });
+    });
+
+    await mcpServer.connect(transport);
+  });
+
+  // POST /messages - Handle JSON-RPC messages
+  app.post("/messages", async (req: Request, res: Response) => {
+    const sessionId = req.query.sessionId as string;
+
+    if (!sessionId) {
+      res.status(400).json({
+        jsonrpc: "2.0",
+        error: { code: -32600, message: "Missing sessionId query parameter" },
+        id: null,
       });
+      return;
+    }
 
-      // Connect the transport to the MCP server
-      await mcpServer.connect(transport);
-
-      // Store session if enabled
-      if (enableSessions && transport.sessionId) {
-        sessions.set(transport.sessionId, transport);
-        logger.debug("Created new MCP session", { sessionId: transport.sessionId });
-      }
+    const transport = sessions.get(sessionId);
+    if (!transport) {
+      res.status(404).json({
+        jsonrpc: "2.0",
+        error: { code: -32600, message: "Session not found. Connect to /sse first." },
+        id: null,
+      });
+      return;
     }
 
     try {
-      await transport.handleRequest(req, res, req.body);
+      await transport.handlePostMessage(req, res, req.body);
     } catch (error) {
-      logger.error("Error handling POST /mcp", {
+      logger.error("Error handling POST /messages", {
         error: error instanceof Error ? error.message : String(error),
         sessionId,
       });
@@ -164,80 +174,18 @@ export async function setupHttpServer(
     }
   });
 
-  // Handle GET /mcp - SSE stream for server-to-client messages
-  app.get("/mcp", async (req: Request, res: Response) => {
-    const sessionId = req.headers["mcp-session-id"] as string | undefined;
-
-    if (!enableSessions || !sessionId || !sessions.has(sessionId)) {
-      res.status(400).json({
-        jsonrpc: "2.0",
-        error: {
-          code: -32600,
-          message: "Invalid or missing session ID. Send POST first to initialize.",
-        },
-        id: null,
-      });
-      return;
-    }
-
-    const transport = sessions.get(sessionId)!;
-
-    try {
-      await transport.handleRequest(req, res);
-    } catch (error) {
-      logger.error("Error handling GET /mcp (SSE)", {
-        error: error instanceof Error ? error.message : String(error),
-        sessionId,
-      });
-    }
-  });
-
-  // Handle DELETE /mcp - Session termination
-  app.delete("/mcp", async (req: Request, res: Response) => {
-    const sessionId = req.headers["mcp-session-id"] as string | undefined;
-
-    if (sessionId && sessions.has(sessionId)) {
-      const transport = sessions.get(sessionId)!;
-      try {
-        await transport.close();
-      } catch {
-        // Ignore close errors
-      }
-      sessions.delete(sessionId);
-      logger.debug("Terminated MCP session", { sessionId });
-      res.status(200).json({ success: true, message: "Session terminated" });
-    } else {
-      res.status(404).json({
-        jsonrpc: "2.0",
-        error: {
-          code: -32600,
-          message: "Session not found",
-        },
-        id: null,
-      });
-    }
-  });
-
   // Start the server
   return new Promise((resolve, reject) => {
     try {
       const server = app.listen(port, host, () => {
         const address = `http://${host}:${port}`;
         logger.info("F5XC API MCP HTTP Server started", {
-          url: `${address}/mcp`,
-          transport: "http/sse",
-          sessions: enableSessions ? "enabled" : "disabled",
-        });
-
-        // Create a placeholder transport for the result
-        // Actual transports are created per-session
-        const placeholderTransport = new StreamableHTTPServerTransport({
-          sessionIdGenerator: enableSessions ? () => randomUUID() : undefined,
+          url: `${address}/sse`,
+          transport: "sse",
         });
 
         resolve({
           server,
-          transport: placeholderTransport,
           address,
         });
       });
