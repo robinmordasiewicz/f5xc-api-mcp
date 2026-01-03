@@ -10,6 +10,7 @@ other MCP-compatible tools.
 ## Features
 
 - **1500+ API Tools** - Complete coverage of F5XC API operations across 23 enriched domains
+- **Dual Transport** - STDIO for Claude/VS Code, HTTP/SSE for vLLM and web clients
 - **Domain-Based Documentation** - Tools organized by domains with intelligent 2-level and
   3-level hierarchical navigation
 - **Dual-Mode Operation** - Works without authentication (documentation mode) AND with authentication (execution mode)
@@ -38,6 +39,74 @@ f5xc-api-mcp
 
 ```bash
 docker run -i --rm ghcr.io/robinmordasiewicz/f5xc-api-mcp
+```
+
+## Transport Modes
+
+The server supports two transport modes for different integration scenarios:
+
+### STDIO Mode (Default)
+
+Standard input/output transport for Claude Desktop, Claude CLI, and VS Code extensions.
+
+```bash
+f5xc-api-mcp
+```
+
+### HTTP/SSE Mode
+
+HTTP transport with Server-Sent Events for vLLM servers, web-based clients, and private LLM utilities.
+
+```bash
+# Start HTTP server on default port 3000
+f5xc-api-mcp --http
+
+# Custom port
+f5xc-api-mcp --http --port 8080
+
+# Bind to localhost only
+f5xc-api-mcp --http --host 127.0.0.1 --port 3000
+```
+
+#### HTTP Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/mcp` | POST | JSON-RPC request endpoint |
+| `/mcp` | GET | SSE streaming endpoint (requires session) |
+| `/mcp` | DELETE | Session termination |
+| `/health` | GET | Health check endpoint |
+
+#### Docker with HTTP Mode
+
+```bash
+docker run -p 3000:3000 ghcr.io/robinmordasiewicz/f5xc-api-mcp --http --port 3000
+```
+
+Or with docker-compose:
+
+```yaml
+services:
+  f5xc-mcp:
+    image: ghcr.io/robinmordasiewicz/f5xc-api-mcp
+    command: ["--http", "--port", "3000"]
+    ports:
+      - "3000:3000"
+    environment:
+      - F5XC_API_URL=https://tenant.console.ves.volterra.io
+      - F5XC_API_TOKEN=${F5XC_API_TOKEN}
+```
+
+#### Testing HTTP Mode
+
+```bash
+# Health check
+curl http://localhost:3000/health
+
+# Initialize session and send JSON-RPC request
+curl -X POST http://localhost:3000/mcp \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","method":"tools/list","id":1}'
 ```
 
 ## Configuration
