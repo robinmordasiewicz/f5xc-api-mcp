@@ -132,8 +132,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -257,8 +257,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -392,8 +392,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -533,8 +533,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -675,8 +675,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -782,8 +782,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         creates: ["k8s-cluster-role-binding"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -810,8 +809,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -922,8 +921,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         deletes: ["k8s-cluster-role-binding", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -936,8 +934,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -1067,14 +1065,13 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -1209,14 +1206,13 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -1331,8 +1327,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         modifies: ["k8s-cluster-role-binding"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_role_bindings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -1359,8 +1354,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -1466,8 +1461,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         creates: ["k8s-cluster-role"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "managed_kubernetes",
@@ -1494,8 +1488,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -1606,8 +1600,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         deletes: ["k8s-cluster-role", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "managed_kubernetes",
@@ -1620,8 +1613,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -1751,14 +1744,13 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -1893,14 +1885,13 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -2015,8 +2006,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         modifies: ["k8s-cluster-role"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_cluster_roles" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "managed_kubernetes",
@@ -2043,8 +2033,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -2149,8 +2139,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         creates: ["k8s-pod-security-admission"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -2177,8 +2166,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -2289,8 +2278,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         deletes: ["k8s-pod-security-admission", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -2303,8 +2291,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -2433,14 +2421,13 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -2575,14 +2562,13 @@ export const managed_kubernetesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -2697,8 +2683,7 @@ export const managed_kubernetesTools: ParsedOperation[] = [
         modifies: ["k8s-pod-security-admission"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/k8s_pod_security_admissions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -2725,8 +2710,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -2859,8 +2844,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -2984,8 +2969,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -3120,8 +3105,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -3261,8 +3246,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },
@@ -3404,8 +3389,8 @@ export const managed_kubernetesTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_appstack_standard",
-        displayName: "F5XC Appstack Standard",
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
         required: false,
         tier: "standard",
       },

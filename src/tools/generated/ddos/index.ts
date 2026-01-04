@@ -84,7 +84,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-alert-create",
@@ -185,7 +198,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-alert-list",
@@ -291,7 +317,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-annotation-list",
@@ -397,7 +436,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-attachment-list",
@@ -504,7 +556,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-bgp-peer-statu-create",
@@ -604,7 +669,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-detail-create",
@@ -716,7 +794,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-detail-delete",
@@ -838,7 +929,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-detail-list",
@@ -945,7 +1049,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-detail-update",
@@ -1069,7 +1186,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-event-create",
@@ -1170,7 +1300,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-event-list",
@@ -1277,7 +1420,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-event-update",
@@ -1390,7 +1546,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-events-summary-list",
@@ -1498,7 +1667,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-create",
@@ -1624,7 +1806,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-delete",
@@ -1742,7 +1937,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-get",
@@ -1870,7 +2078,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-list",
@@ -2004,7 +2225,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-prefix-create",
@@ -2130,7 +2364,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-prefix-delete",
@@ -2248,7 +2495,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-prefix-get",
@@ -2376,7 +2636,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-prefix-list",
@@ -2510,7 +2783,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-prefix-update",
@@ -2645,7 +2931,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-asn-update",
@@ -2780,7 +3079,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-deny-list-rule-create",
@@ -2906,7 +3218,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-deny-list-rule-delete",
@@ -3024,7 +3349,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-deny-list-rule-get",
@@ -3152,7 +3490,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-deny-list-rule-list",
@@ -3286,7 +3637,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-deny-list-rule-update",
@@ -3421,7 +3785,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-create",
@@ -3547,7 +3924,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-delete",
@@ -3665,7 +4055,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-get",
@@ -3793,7 +4196,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-group-create",
@@ -3919,7 +4335,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-group-delete",
@@ -4037,7 +4466,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-group-get",
@@ -4165,7 +4607,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-group-list",
@@ -4300,7 +4755,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-group-update",
@@ -4435,7 +4903,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-list",
@@ -4569,7 +5050,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-rule-update",
@@ -4704,7 +5198,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-ruleset-get",
@@ -4831,7 +5338,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-ruleset-list",
@@ -4965,7 +5485,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-firewall-ruleset-update",
@@ -5100,7 +5633,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-information-get",
@@ -5226,7 +5772,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-internet-prefix-advertisement-create",
@@ -5352,7 +5911,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-internet-prefix-advertisement-delete",
@@ -5470,7 +6042,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-internet-prefix-advertisement-get",
@@ -5598,7 +6183,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-internet-prefix-advertisement-list",
@@ -5733,7 +6331,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-internet-prefix-advertisement-update",
@@ -5868,7 +6479,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-infraprotect-tunnel-create",
@@ -5996,10 +6620,16 @@ export const ddosTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_site_management_standard",
-        displayName: "F5XC Site Management Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
       },
     ],
   },
@@ -6121,10 +6751,16 @@ export const ddosTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_site_management_standard",
-        displayName: "F5XC Site Management Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
       },
     ],
   },
@@ -6256,10 +6892,16 @@ export const ddosTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_site_management_standard",
-        displayName: "F5XC Site Management Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
       },
     ],
   },
@@ -6397,10 +7039,16 @@ export const ddosTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_site_management_standard",
-        displayName: "F5XC Site Management Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
       },
     ],
   },
@@ -6539,10 +7187,16 @@ export const ddosTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_site_management_standard",
-        displayName: "F5XC Site Management Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
       },
     ],
   },
@@ -6651,7 +7305,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-mitigation-annotation-list",
@@ -6757,7 +7424,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-mitigation-create",
@@ -6857,7 +7537,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-mitigation-list",
@@ -6963,7 +7656,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-network-list",
@@ -7058,7 +7764,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-report-create",
@@ -7159,7 +7878,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-report-list",
@@ -7265,7 +7997,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-suggest-value-create",
@@ -7366,7 +8111,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-to-event-update",
@@ -7479,7 +8237,20 @@ export const ddosTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-transit-usage-create",
@@ -7587,7 +8358,20 @@ export const ddosTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-update-advertisement-statu-create",
@@ -7698,7 +8482,20 @@ export const ddosTools: ParsedOperation[] = [
         options: ["activation_announce", "activation_withdraw"],
       },
     ],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-update-asn-prefix-irr-override-create",
@@ -7808,7 +8605,20 @@ export const ddosTools: ParsedOperation[] = [
         options: [],
       },
     ],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-update-asn-prefix-review-statu-create",
@@ -7918,7 +8728,20 @@ export const ddosTools: ParsedOperation[] = [
         options: ["review_type_approved", "review_type_pending", "review_type_rejected"],
       },
     ],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-update-asn-review-statu-create",
@@ -8028,7 +8851,20 @@ export const ddosTools: ParsedOperation[] = [
         options: ["review_type_approved", "review_type_pending", "review_type_rejected"],
       },
     ],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
+        required: false,
+        tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-ddos-update-tunnel-statu-create",
@@ -8134,10 +8970,16 @@ export const ddosTools: ParsedOperation[] = [
     oneOfGroups: [],
     subscriptionRequirements: [
       {
-        addonService: "f5xc_site_management_standard",
-        displayName: "F5XC Site Management Standard",
+        addonService: "f5xc_waap_standard",
+        displayName: "F5XC WAAP Standard",
         required: false,
         tier: "standard",
+      },
+      {
+        addonService: "f5xc_waap_advanced",
+        displayName: "F5XC WAAP Advanced",
+        required: false,
+        tier: "advanced",
       },
     ],
   },

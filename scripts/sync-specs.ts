@@ -26,6 +26,7 @@ import { join, dirname, basename } from "path";
 import { fileURLToPath } from "url";
 import https from "https";
 import JSZip from "jszip";
+import { normalizeExamples } from "../src/generator/transformers/normalize-examples.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -69,6 +70,31 @@ const log = {
   error: (message: string): void => console.error(`[ERROR] ${message}`),
   success: (message: string): void => console.log(`[SUCCESS] ${message}`),
 };
+
+/**
+ * Recursively normalize "my-" prefixes to "example-" in all description fields
+ *
+ * Enforces the project's naming convention for examples throughout
+ * the OpenAPI specification descriptions.
+ *
+ * @param obj - The object to normalize (typically a parsed JSON spec)
+ */
+function normalizeSpecExamples(obj: unknown): void {
+  if (!obj || typeof obj !== "object") return;
+
+  if (Array.isArray(obj)) {
+    obj.forEach(normalizeSpecExamples);
+    return;
+  }
+
+  for (const [key, value] of Object.entries(obj as Record<string, unknown>)) {
+    if (key === "description" && typeof value === "string") {
+      (obj as Record<string, unknown>)[key] = normalizeExamples(value);
+    } else if (typeof value === "object") {
+      normalizeSpecExamples(value);
+    }
+  }
+}
 
 /**
  * GitHub release metadata
@@ -267,7 +293,10 @@ async function extractDomainSpecs(
       const destPath = join(destDir, filename);
 
       const content = await zipEntry.async("nodebuffer");
-      writeFileSync(destPath, content);
+      // Parse JSON, normalize "my-" prefixes to "example-", and write back
+      const jsonContent = JSON.parse(content.toString("utf-8")) as unknown;
+      normalizeSpecExamples(jsonContent);
+      writeFileSync(destPath, JSON.stringify(jsonContent, null, 2) + "\n");
       extracted++;
       log.info(`  Extracted: ${filename}`);
     }

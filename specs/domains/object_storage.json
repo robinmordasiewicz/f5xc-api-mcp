@@ -3,7 +3,7 @@
   "info": {
     "title": "Object Storage",
     "description": "Blob management for application component delivery across namespaces. Time-limited download links with cryptographic signing protect asset retrieval. Version-controlled packages organized by operating system type support artifact discovery. Query filtering by name, type, and release number enables programmatic access to integrator libraries and protection modules for mobile deployments.",
-    "version": "1.0.91",
+    "version": "2.0.1",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -22,7 +22,7 @@
       "variables": {
         "tenant": {
           "default": "example-corp",
-          "description": "F5 Distributed Cloud tenant identifier (e.g., my-company, acme-inc)"
+          "description": "F5 Distributed Cloud tenant identifier (e.g., example-company, acme-inc)"
         },
         "console_url": {
           "default": "console.ves.volterra.io",
@@ -2203,7 +2203,7 @@
         "title": "Empty",
         "x-displayname": "Empty",
         "x-ves-proto-message": "ves.io.schema.Empty",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaEmpty",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -2211,7 +2211,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_empties\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaHttpMethod": {
         "type": "string",
@@ -2233,7 +2233,7 @@
         "default": "ANY",
         "x-displayname": "HTTP Method.",
         "x-ves-proto-enum": "ves.io.schema.HttpMethod",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaHttpMethod",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -2241,7 +2241,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_http_methods\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "stored_objectCreateObjectRequest": {
         "type": "object",
@@ -2268,7 +2268,7 @@
             "minLength": 0,
             "maxLength": 1024,
             "ves.io.schema.rules.bytes.max_len": "5242880",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2290,7 +2290,7 @@
             "minLength": 0,
             "maxLength": 1024,
             "ves.io.schema.rules.string.in": "[\\\"\\\", \\\"json\\\", \\\"yaml\\\", \\\"txt\\\", \\\"bin\\\"]",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2312,7 +2312,7 @@
             },
             "minLength": 0,
             "ves.io.schema.rules.string.max_len": "512",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2320,7 +2320,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:55.354134+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:40.743894+00:00"
           },
           "mobile_app_shield": {
             "$ref": "#/components/schemas/stored_objectMobileAppShieldAttributes"
@@ -2356,7 +2356,7 @@
             "ves.io.schema.rules.string.max_len": "512",
             "ves.io.schema.rules.string.min_len": "1",
             "ves.io.schema.rules.string.ves_object_name": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2364,7 +2364,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:55.354144+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:40.743905+00:00"
           },
           "namespace": {
             "type": "string",
@@ -2382,7 +2382,7 @@
             "minLength": 0,
             "maxLength": 6,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2390,7 +2390,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:55.354150+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:40.743910+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -2414,7 +2414,7 @@
             "maxLength": 1024,
             "ves.io.schema.rules.message.required": "true",
             "ves.io.schema.rules.string.in": "[\\\"swagger\\\", \\\"generic\\\", \\\"big-object\\\", \\\"mobile-sdk\\\", \\\"mobile-integrator\\\", \\\"mobile-app-shield\\\"]",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2435,7 +2435,7 @@
             },
             "minLength": 0,
             "ves.io.schema.rules.string.max_len": "5242880",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2443,7 +2443,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectCreateObjectRequest",
           "required_fields": [
             "bytes_value",
@@ -2463,7 +2463,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"bytes_value\": \"value\",\n    \"content_format\": \"value\",\n    \"description\": \"value\",\n    \"mobile_app_shield\": \"value\",\n    \"mobile_integrator\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectCreateObjectResponse": {
         "type": "object",
@@ -2486,7 +2486,7 @@
             "$ref": "#/components/schemas/stored_objectStoredObjectResponseStatus"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectCreateObjectResponse",
           "required_fields": [
             "metadata",
@@ -2499,7 +2499,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"no_additional_info\": \"value\",\n    \"presigned_url\": \"value\",\n    \"status\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectDeleteObjectResponse": {
         "type": "object",
@@ -2517,7 +2517,7 @@
             },
             "x-displayname": "Deleted Object Names.",
             "x-ves-example": "Value",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2525,7 +2525,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectDeleteObjectResponse",
           "required_fields": [
             "deleted_objects"
@@ -2535,7 +2535,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"deleted_objects\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectGetObjectResponse": {
         "type": "object",
@@ -2562,7 +2562,7 @@
             "minLength": 0,
             "maxLength": 1024,
             "ves.io.schema.rules.bytes.max_len": "5242880",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2577,7 +2577,7 @@
             "x-ves-example": "JSON, YAML.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2605,7 +2605,7 @@
             },
             "minLength": 0,
             "ves.io.schema.rules.string.max_len": "5242880",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2613,7 +2613,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectGetObjectResponse",
           "required_fields": [
             "bytes_value",
@@ -2627,7 +2627,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"bytes_value\": \"value\",\n    \"content_format\": \"value\",\n    \"presigned_url\": \"value\",\n    \"string_value\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectListItemDescriptor": {
         "type": "object",
@@ -2654,7 +2654,7 @@
             "x-ves-example": "example-resource",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2662,7 +2662,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:55.354178+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:40.743940+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -2675,7 +2675,7 @@
             "x-ves-example": "Example-corp.",
             "minLength": 0,
             "maxLength": 18,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2684,7 +2684,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:55.354184+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:40.743946+00:00"
           },
           "versions": {
             "type": "array",
@@ -2694,7 +2694,7 @@
               "$ref": "#/components/schemas/stored_objectVersionDescriptor"
             },
             "x-displayname": "Versions",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2702,7 +2702,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectListItemDescriptor",
           "required_fields": [
             "mobile_app_shield",
@@ -2718,7 +2718,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"mobile_app_shield\": \"value\",\n    \"mobile_integrator\": \"value\",\n    \"mobile_sdk\": \"value\",\n    \"name\": \"value\",\n    \"no_attributes\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_list_item_descriptors\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectListObjectsResponse": {
         "type": "object",
@@ -2735,7 +2735,7 @@
               "$ref": "#/components/schemas/stored_objectListItemDescriptor"
             },
             "x-displayname": "Stored Object Descriptors.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2743,7 +2743,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectListObjectsResponse",
           "required_fields": [
             "items"
@@ -2753,7 +2753,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"items\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_list_objects_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectMobileAppShieldAttributes": {
         "type": "object",
@@ -2783,7 +2783,7 @@
             "minLength": 0,
             "ves.io.schema.rules.string.max_len": "32",
             "ves.io.schema.rules.string.not_empty": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2791,7 +2791,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectMobileAppShieldAttributes",
           "required_fields": [
             "os_type",
@@ -2802,7 +2802,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"os_type\": \"value\",\n    \"release_version\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_mobile_app_shield_attributeses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectMobileIntegratorAttributes": {
         "type": "object",
@@ -2832,7 +2832,7 @@
             "minLength": 0,
             "ves.io.schema.rules.string.max_len": "32",
             "ves.io.schema.rules.string.not_empty": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2840,7 +2840,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectMobileIntegratorAttributes",
           "required_fields": [
             "os_type",
@@ -2851,7 +2851,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"os_type\": \"value\",\n    \"release_version\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_mobile_integrator_attributeses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectMobileSDKAttributes": {
         "type": "object",
@@ -2871,7 +2871,7 @@
             "x-ves-example": "V.4.2.1",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2879,7 +2879,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectMobileSDKAttributes",
           "required_fields": [
             "os_type",
@@ -2890,7 +2890,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"os_type\": \"value\",\n    \"release_version\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_mobile_s_d_k_attributeses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectOSType": {
         "type": "string",
@@ -2903,7 +2903,7 @@
         "default": "ANDROID",
         "x-displayname": "Operating System type.",
         "x-ves-proto-enum": "ves.io.schema.stored_object.OSType",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectOSType",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -2911,7 +2911,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_o_s_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectPreSignedUrl": {
         "type": "object",
@@ -2925,7 +2925,7 @@
             "$ref": "#/components/schemas/stored_objectPresignedUrlData"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectPreSignedUrl",
           "required_fields": [
             "aws"
@@ -2935,7 +2935,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"aws\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_pre_signed_urls\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectPresignedUrlData": {
         "type": "object",
@@ -2956,7 +2956,7 @@
             "format": "uri",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -2964,7 +2964,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectPresignedUrlData",
           "required_fields": [
             "method",
@@ -2975,7 +2975,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"method\": \"value\",\n    \"url\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_presigned_url_datas\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectQueryType": {
         "type": "string",
@@ -2986,7 +2986,7 @@
           "PREFIX_MATCH"
         ],
         "default": "EXACT_MATCH",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectQueryType",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -2994,7 +2994,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_query_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectStoredObjectDescriptor": {
         "type": "object",
@@ -3020,7 +3020,7 @@
             "minLength": 0,
             "maxLength": 1024,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3042,7 +3042,7 @@
             },
             "minLength": 0,
             "ves.io.schema.rules.string.max_len": "512",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3050,7 +3050,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:55.354209+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:40.743971+00:00"
           },
           "mobile_app_shield": {
             "$ref": "#/components/schemas/stored_objectMobileAppShieldAttributes"
@@ -3077,7 +3077,7 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3085,7 +3085,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:55.354217+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:40.743979+00:00"
           },
           "namespace": {
             "type": "string",
@@ -3102,7 +3102,7 @@
             "minLength": 0,
             "maxLength": 6,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3110,7 +3110,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:55.354221+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:40.743984+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -3132,7 +3132,7 @@
             "minLength": 0,
             "maxLength": 1024,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3154,7 +3154,7 @@
             "minLength": 0,
             "maxLength": 1,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3162,10 +3162,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:55.354229+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:40.743991+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectStoredObjectDescriptor",
           "required_fields": [
             "creation_timestamp",
@@ -3184,7 +3184,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"description\": \"value\",\n    \"mobile_app_shield\": \"value\",\n    \"mobile_integrator\": \"value\",\n    \"mobile_sdk\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_stored_object_descriptors\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectStoredObjectResponseStatus": {
         "type": "string",
@@ -3199,7 +3199,7 @@
         "default": "STORED_OBJECT_STATUS_NONE",
         "x-displayname": "",
         "x-ves-proto-enum": "ves.io.schema.stored_object.StoredObjectResponseStatus",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectStoredObjectResponseStatus",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -3207,7 +3207,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_stored_object_response_statuses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       },
       "stored_objectVersionDescriptor": {
         "type": "object",
@@ -3232,7 +3232,7 @@
             "minLength": 0,
             "maxLength": 1024,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3254,7 +3254,7 @@
             },
             "minLength": 0,
             "ves.io.schema.rules.string.max_len": "512",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3262,7 +3262,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:55.354236+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:40.743998+00:00"
           },
           "latest_version": {
             "type": "boolean",
@@ -3270,7 +3270,7 @@
             "title": "Latest_version.",
             "format": "boolean",
             "x-displayname": "Latest Version.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3294,7 +3294,7 @@
             "minLength": 0,
             "maxLength": 1024,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3308,7 +3308,7 @@
             "x-displayname": "Version",
             "minLength": 0,
             "maxLength": 1,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3316,10 +3316,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:55.354243+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:40.744005+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for stored_objectVersionDescriptor",
           "required_fields": [
             "creation_timestamp",
@@ -3333,7 +3333,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"description\": \"value\",\n    \"latest_version\": \"value\",\n    \"url\": \"value\",\n    \"version\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/stored_object_version_descriptors\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "object_storage"
+        "x-f5xc-cli-domain": "object_storage"
       }
     },
     "responses": {},

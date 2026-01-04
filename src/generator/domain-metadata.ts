@@ -138,29 +138,31 @@ interface RawResourceEntry {
 }
 
 /**
- * Raw specification entry from JSON (snake_case)
+ * Raw specification entry from JSON (v2.0.0+ x-f5xc-* namespace)
+ * Note: Nested resource objects still use snake_case internally
  */
 interface RawSpecEntry {
   domain: string;
   title: string;
   description: string;
-  description_short: string;
-  description_medium: string;
   file: string;
   path_count: number;
   schema_count: number;
-  complexity: string;
-  is_preview: boolean;
-  requires_tier: string;
-  domain_category: string;
-  ui_category: string;
-  aliases: string[];
-  use_cases: string[];
-  related_domains: string[];
-  primary_resources: RawResourceEntry[];
-  primary_resources_simple: string[];
-  icon: string;
-  logo_svg?: string;
+  // x-f5xc-* prefixed fields (v2.0.0+)
+  "x-f5xc-description-short": string;
+  "x-f5xc-description-medium": string;
+  "x-f5xc-complexity": string;
+  "x-f5xc-is-preview": boolean;
+  "x-f5xc-requires-tier": string;
+  "x-f5xc-category": string; // Replaces both domain_category and ui_category
+  "x-f5xc-aliases": string[];
+  "x-f5xc-use-cases": string[];
+  "x-f5xc-related-domains": string[];
+  "x-f5xc-icon": string;
+  "x-f5xc-logo-svg"?: string;
+  "x-f5xc-primary-resources": RawResourceEntry[];
+  "x-f5xc-primary-resources-simple": string[];
+  // cli_metadata remains snake_case (wrapper field)
   cli_metadata?: {
     quick_start?: {
       command: string;
@@ -212,30 +214,34 @@ function transformResourceEntry(raw: RawResourceEntry): ResourceMetadata {
 }
 
 /**
- * Transform raw spec entry (snake_case) to DomainMetadata (camelCase)
+ * Transform raw spec entry (x-f5xc-* namespace) to DomainMetadata (camelCase)
+ * v2.0.0+: x-f5xc-category replaces both domain_category and ui_category
  */
 function transformSpecEntry(raw: RawSpecEntry): DomainMetadata {
+  // x-f5xc-category is a DRY consolidation of domain_category and ui_category
+  const category = raw["x-f5xc-category"];
+
   return {
     domain: raw.domain,
     title: raw.title,
     description: raw.description,
-    descriptionShort: raw.description_short,
-    descriptionMedium: raw.description_medium,
+    descriptionShort: raw["x-f5xc-description-short"],
+    descriptionMedium: raw["x-f5xc-description-medium"],
     file: raw.file,
     pathCount: raw.path_count,
     schemaCount: raw.schema_count,
-    complexity: raw.complexity as "simple" | "moderate" | "advanced",
-    isPreview: raw.is_preview,
-    requiresTier: raw.requires_tier as "Standard" | "Advanced",
-    domainCategory: raw.domain_category,
-    uiCategory: raw.ui_category,
-    aliases: raw.aliases || [],
-    useCases: raw.use_cases || [],
-    relatedDomains: raw.related_domains || [],
-    primaryResources: (raw.primary_resources || []).map(transformResourceEntry),
-    primaryResourcesSimple: raw.primary_resources_simple || [],
-    icon: raw.icon,
-    logoSvg: raw.logo_svg,
+    complexity: raw["x-f5xc-complexity"] as "simple" | "moderate" | "advanced",
+    isPreview: raw["x-f5xc-is-preview"],
+    requiresTier: raw["x-f5xc-requires-tier"] as "Standard" | "Advanced",
+    domainCategory: category, // From x-f5xc-category
+    uiCategory: category, // From x-f5xc-category (same value, DRY consolidation)
+    aliases: raw["x-f5xc-aliases"] || [],
+    useCases: raw["x-f5xc-use-cases"] || [],
+    relatedDomains: raw["x-f5xc-related-domains"] || [],
+    primaryResources: (raw["x-f5xc-primary-resources"] || []).map(transformResourceEntry),
+    primaryResourcesSimple: raw["x-f5xc-primary-resources-simple"] || [],
+    icon: raw["x-f5xc-icon"],
+    logoSvg: raw["x-f5xc-logo-svg"],
     cliMetadata: raw.cli_metadata,
   };
 }
