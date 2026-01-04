@@ -25,7 +25,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "App Type",
-        "x-ves-example": "Blogging-app.",
       },
       {
         description: "Namespace\nNamespace of the App type for current request.",
@@ -36,7 +35,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
       {
         description: "Service\nIdentifies the destination service.",
@@ -47,7 +45,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "N:public or S:productpage.",
       },
     ],
     queryParameters: [],
@@ -74,11 +71,7 @@ export const service_meshTools: ParsedOperation[] = [
       "path.service_name",
     ],
     confirmationRequired: false,
-    parameterExamples: {
-      app_type_name: "Blogging-app.",
-      namespace: "Shared",
-      service_name: "N:public or S:productpage.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -168,7 +161,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "App Type",
-        "x-ves-example": "Blogging-app.",
       },
       {
         description: "Namespace\nNamespace of the App type for current request.",
@@ -179,7 +171,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [
@@ -212,10 +203,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.app_type_name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      app_type_name: "Blogging-app.",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -298,7 +286,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -319,9 +306,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -427,7 +412,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -438,7 +422,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -457,10 +440,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -553,7 +533,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -564,7 +543,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -603,10 +581,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -688,7 +663,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -702,7 +676,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -744,10 +717,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -830,7 +800,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -842,7 +811,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -863,10 +831,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -973,7 +938,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -994,9 +958,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1102,7 +1064,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -1113,7 +1074,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -1132,10 +1092,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1227,7 +1184,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1238,7 +1194,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1277,10 +1232,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1362,7 +1314,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1376,7 +1327,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -1418,10 +1368,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1504,7 +1451,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -1516,7 +1462,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1537,10 +1482,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1648,7 +1590,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1669,9 +1610,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1777,7 +1716,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -1788,7 +1726,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -1807,10 +1744,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1903,7 +1837,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1914,7 +1847,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1953,10 +1885,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2038,7 +1967,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2052,7 +1980,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -2094,10 +2021,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2180,7 +2104,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -2192,7 +2115,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -2213,10 +2135,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2322,7 +2241,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Nfv-service-1.",
       },
     ],
     queryParameters: [],
@@ -2343,9 +2261,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Nfv-service-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2430,7 +2346,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "App Type",
-        "x-ves-example": "Blogging-app.",
       },
       {
         description: "Namespace\nNamespace of the App type for current request.",
@@ -2441,7 +2356,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -2462,10 +2376,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.app_type_name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      app_type_name: "Blogging-app.",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2554,7 +2465,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -2575,9 +2485,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2670,7 +2578,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -2691,9 +2598,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2799,7 +2704,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -2810,7 +2714,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -2829,10 +2732,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2924,7 +2824,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -2935,7 +2834,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2974,10 +2872,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3059,7 +2954,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -3073,7 +2967,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -3115,10 +3008,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3200,7 +3090,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -3212,7 +3101,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -3233,10 +3121,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3342,7 +3227,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "App Type",
-        "x-ves-example": "Blogging-app.",
       },
       {
         description: "Namespace\nNamespace of the App type for current request.",
@@ -3353,7 +3237,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -3370,10 +3253,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.app_type_name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      app_type_name: "Blogging-app.",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3455,7 +3335,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "App Type",
-        "x-ves-example": "Blogging-app.",
       },
       {
         description: "Namespace\nNamespace of the App type for current request.",
@@ -3466,7 +3345,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
       {
         description: "Service\nIdentifies the destination service.",
@@ -3477,7 +3355,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "N:public or S:productpage.",
       },
     ],
     queryParameters: [],
@@ -3504,11 +3381,7 @@ export const service_meshTools: ParsedOperation[] = [
       "path.service_name",
     ],
     confirmationRequired: false,
-    parameterExamples: {
-      app_type_name: "Blogging-app.",
-      namespace: "Shared",
-      service_name: "N:public or S:productpage.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3598,7 +3471,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "App Type",
-        "x-ves-example": "Blogging-app.",
       },
       {
         description: "Namespace\nNamespace of the App type for current request.",
@@ -3609,7 +3481,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [
@@ -3622,7 +3493,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "API URL",
-        "x-ves-example": "Value",
       },
       {
         description: "Method of API endpoint for which PDFs are requested.",
@@ -3633,7 +3503,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Method",
-        "x-ves-example": "Value",
       },
     ],
     requestBodySchema: null,
@@ -3649,12 +3518,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.app_type_name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      app_type_name: "Blogging-app.",
-      collapsed_url: "Value",
-      method: "Value",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3737,7 +3601,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "App Type",
-        "x-ves-example": "Blogging-app.",
       },
       {
         description: "Namespace\nNamespace of the App type for current request.",
@@ -3748,7 +3611,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -3769,10 +3631,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.app_type_name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      app_type_name: "Blogging-app.",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3862,7 +3721,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "App Type",
-        "x-ves-example": "Blogging-app.",
       },
       {
         description: "Namespace\nNamespace of the App type for current request.",
@@ -3873,7 +3731,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -3894,10 +3751,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.app_type_name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      app_type_name: "Blogging-app.",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3986,7 +3840,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -4007,9 +3860,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4102,7 +3953,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -4123,9 +3973,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4231,7 +4079,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -4242,7 +4089,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -4261,10 +4107,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4356,7 +4199,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -4367,7 +4209,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4406,10 +4247,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4491,7 +4329,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4505,7 +4342,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -4547,10 +4383,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4632,7 +4465,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -4644,7 +4476,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -4665,10 +4496,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4870,7 +4698,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\n\nfetch suspicious users for a given namespace.",
@@ -4881,7 +4708,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Suspicious User Status Request.",
-        "x-ves-example": "Bloggin-app-namespace-1.",
       },
     ],
     queryParameters: [
@@ -4895,7 +4721,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End Time",
-        "x-ves-example": "1570007981.",
       },
       {
         description:
@@ -4907,7 +4732,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Query",
-        "x-ves-example": "Query={app_type=.",
       },
       {
         description:
@@ -4919,7 +4743,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start Time.",
-        "x-ves-example": "1570007981.",
       },
       {
         description:
@@ -4932,8 +4755,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "TopN",
-        "x-ves-example":
-          "None of int32 samples [0 1 10 42 100 1024 2048] satisfied rules map[VES.I/o.schema.rules.uint32.gte:1 VES.I/o.schema.rules.uint32.lte:100]",
       },
     ],
     requestBodySchema: null,
@@ -4949,14 +4770,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "1570007981.",
-      name: "Value",
-      namespace: "Bloggin-app-namespace-1.",
-      query: "Query={app_type=.",
-      start_time: "1570007981.",
-      topn: "None of int32 samples [0 1 10 42 100 1024 2048] satisfied rules map[VES.I/o.schema.rules.uint32.gte:1 VES.I/o.schema.rules.uint32.lte:100]",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5038,7 +4852,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "App Type",
-        "x-ves-example": "Blogging-app.",
       },
       {
         description: "Namespace\nNamespace of the App type for current request.",
@@ -5049,7 +4862,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -5066,10 +4878,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.app_type_name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      app_type_name: "Blogging-app.",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5152,7 +4961,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5173,9 +4981,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5281,7 +5087,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -5292,7 +5097,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -5311,10 +5115,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5406,7 +5207,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -5417,7 +5217,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5456,10 +5255,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5541,7 +5337,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5555,7 +5350,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -5597,10 +5391,7 @@ export const service_meshTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5682,7 +5473,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -5694,7 +5484,6 @@ export const service_meshTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5715,10 +5504,7 @@ export const service_meshTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [

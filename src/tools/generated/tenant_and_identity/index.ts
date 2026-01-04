@@ -25,7 +25,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -46,9 +45,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -294,7 +291,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -315,9 +311,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -406,7 +400,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -423,9 +416,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -501,7 +492,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -522,9 +512,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -613,7 +601,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -630,9 +617,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -708,7 +693,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -729,9 +713,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -820,7 +802,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -837,9 +818,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1597,7 +1576,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1618,9 +1596,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1719,7 +1695,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -1730,7 +1705,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -1749,10 +1723,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1838,7 +1809,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1849,7 +1819,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1888,10 +1857,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1966,7 +1932,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1980,7 +1945,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -2022,10 +1986,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2101,7 +2062,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -2113,7 +2073,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -2134,10 +2093,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2333,7 +2289,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -2354,9 +2309,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2573,7 +2526,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
       },
     ],
     queryParameters: [],
@@ -2592,9 +2544,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2672,7 +2622,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -2693,9 +2642,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2794,7 +2741,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -2805,7 +2751,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -2824,10 +2769,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2912,7 +2854,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -2923,7 +2864,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2962,10 +2902,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3040,7 +2977,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -3054,7 +2990,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -3096,10 +3031,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3174,7 +3106,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -3186,7 +3117,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -3207,10 +3137,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3310,7 +3237,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -3331,9 +3257,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3420,7 +3344,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -3441,9 +3364,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3542,7 +3463,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -3553,7 +3473,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -3572,10 +3491,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3660,7 +3576,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -3677,9 +3592,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3757,7 +3670,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "CTM",
-        "x-ves-example": "Value",
       },
       {
         description: "Filter child tenant list using name of child tenant.",
@@ -3768,7 +3680,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description:
@@ -3781,7 +3692,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "PageLimit",
-        "x-ves-example": "100",
       },
       {
         description:
@@ -3793,7 +3703,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "PageStart",
-        "x-ves-example": "C5776a8e-bcae-4392-98d3-3556f4b9df1b.",
       },
     ],
     requestBodySchema: null,
@@ -3809,12 +3718,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      ctm: "Value",
-      name: "Value",
-      page_limit: "100",
-      page_start: "C5776a8e-bcae-4392-98d3-3556f4b9df1b.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3891,7 +3795,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -3912,9 +3815,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4016,7 +3917,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -4027,7 +3927,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -4046,10 +3945,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4135,7 +4031,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -4146,7 +4041,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4184,10 +4078,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4262,7 +4153,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4276,7 +4166,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -4318,10 +4207,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4396,7 +4282,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -4408,7 +4293,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -4429,10 +4313,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4531,7 +4412,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -4543,7 +4423,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -4564,10 +4443,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4667,7 +4543,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Country code.",
-        "x-ves-example": "US",
       },
       {
         description:
@@ -4679,7 +4554,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Prefix",
-        "x-ves-example": "DE",
       },
       {
         description:
@@ -4691,7 +4565,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "State",
-        "x-ves-example": "TN",
       },
     ],
     queryParameters: [],
@@ -4709,11 +4582,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.country_code", "path.prefix", "path.state_code"],
     confirmationRequired: false,
-    parameterExamples: {
-      country_code: "US",
-      prefix: "DE",
-      state_code: "TN",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4789,7 +4658,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Third Party ID.",
-        "x-ves-example": "123",
       },
     ],
     queryParameters: [],
@@ -4808,9 +4676,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.tp_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      tp_id: "123",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5054,7 +4920,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Third Party ID.",
-        "x-ves-example": "123",
       },
     ],
     queryParameters: [],
@@ -5075,9 +4940,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.tp_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      tp_id: "123",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5164,7 +5027,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5185,9 +5047,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5286,7 +5146,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -5297,7 +5156,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -5316,10 +5174,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5405,7 +5260,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -5416,7 +5270,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5455,10 +5308,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5533,7 +5383,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5547,7 +5396,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -5589,10 +5437,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5667,7 +5512,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -5679,7 +5523,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5700,10 +5543,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5804,7 +5644,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Prefix",
-        "x-ves-example": "US for USA.",
       },
     ],
     queryParameters: [],
@@ -5822,9 +5661,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.prefix"],
     confirmationRequired: false,
-    parameterExamples: {
-      prefix: "US for USA.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6178,7 +6015,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nSupports only system namespace.",
@@ -6189,7 +6025,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -6208,10 +6043,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6459,7 +6291,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Third Party ID.",
-        "x-ves-example": "123",
       },
     ],
     queryParameters: [],
@@ -6478,9 +6309,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.tp_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      tp_id: "123",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6746,7 +6575,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -6767,9 +6595,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6858,7 +6684,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -6875,9 +6700,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7202,7 +7025,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Email",
-        "x-ves-example": "sam.smith@gmail.com.",
       },
     ],
     queryParameters: [
@@ -7219,7 +7041,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "ExcludedAttributes.",
-        "x-ves-example": "[",
       },
     ],
     requestBodySchema: null,
@@ -7237,10 +7058,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.id"],
     confirmationRequired: true,
-    parameterExamples: {
-      excludedAttributes: "[",
-      id: "sam.smith@gmail.com.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7317,7 +7135,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Email",
-        "x-ves-example": "sam.smith@gmail.com.",
       },
     ],
     queryParameters: [
@@ -7334,7 +7151,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "ExcludedAttributes.",
-        "x-ves-example": "[",
       },
     ],
     requestBodySchema: null,
@@ -7350,10 +7166,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.id"],
     confirmationRequired: false,
-    parameterExamples: {
-      excludedAttributes: "[",
-      id: "sam.smith@gmail.com.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7430,7 +7243,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Count",
-        "x-ves-example": "8",
       },
       {
         description:
@@ -7445,7 +7257,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "ExcludedAttributes.",
-        "x-ves-example": "[",
       },
       {
         description: "Filter to be used for filtering objects.",
@@ -7456,7 +7267,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Filter",
-        "x-ves-example": "ExternalId.",
       },
       {
         description: "Start offset.",
@@ -7468,7 +7278,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Page",
-        "x-ves-example": "1",
       },
     ],
     requestBodySchema: null,
@@ -7484,12 +7293,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      count: "8",
-      excludedAttributes: "[",
-      filter: "ExternalId.",
-      page: "1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7564,7 +7368,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "ID",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -7585,9 +7388,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.id"],
     confirmationRequired: false,
-    parameterExamples: {
-      id: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7748,7 +7549,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "ID",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -7769,9 +7569,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.id"],
     confirmationRequired: false,
-    parameterExamples: {
-      id: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8349,7 +8147,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "First",
-        "x-ves-example": "100",
       },
       {
         description: "Records per page.",
@@ -8361,7 +8158,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "Max",
-        "x-ves-example": "25",
       },
     ],
     requestBodySchema: null,
@@ -8377,10 +8173,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      first: "100",
-      max: "25",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8536,7 +8329,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Cname",
-        "x-ves-example": "Domain1",
       },
       {
         description: "Namespace to query.",
@@ -8547,7 +8339,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     requestBodySchema: null,
@@ -8564,10 +8355,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      cname: "Domain1",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8733,7 +8521,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -8754,9 +8541,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8855,7 +8640,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -8866,7 +8650,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -8885,10 +8668,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8974,7 +8754,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -8985,7 +8764,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -9024,10 +8802,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9106,7 +8881,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "PageLimit",
-        "x-ves-example": "100",
       },
       {
         description:
@@ -9118,7 +8892,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "PageStart",
-        "x-ves-example": "C5776a8e-bcae-4392-98d3-3556f4b9df1b.",
       },
       {
         description: "Search Keyword for filtering the Managed Tenant List.",
@@ -9129,7 +8902,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "SearchKeyword.",
-        "x-ves-example": "Value",
       },
     ],
     requestBodySchema: null,
@@ -9145,11 +8917,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      page_limit: "100",
-      page_start: "C5776a8e-bcae-4392-98d3-3556f4b9df1b.",
-      search_keyword: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9225,7 +8993,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -9237,7 +9004,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -9258,10 +9024,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9364,7 +9127,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "PageLimit",
-        "x-ves-example": "100",
       },
       {
         description:
@@ -9376,7 +9138,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "PageStart",
-        "x-ves-example": "C5776a8e-bcae-4392-98d3-3556f4b9df1b.",
       },
       {
         description: "Search Keyword for filtering the Managed Tenant List.",
@@ -9387,7 +9148,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "SearchKeyword.",
-        "x-ves-example": "Value",
       },
     ],
     requestBodySchema: null,
@@ -9404,11 +9164,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      page_limit: "100",
-      page_start: "C5776a8e-bcae-4392-98d3-3556f4b9df1b.",
-      search_keyword: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9487,7 +9243,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "PageLimit",
-        "x-ves-example": "100",
       },
       {
         description:
@@ -9499,7 +9254,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "PageStart",
-        "x-ves-example": "C5776a8e-bcae-4392-98d3-3556f4b9df1b.",
       },
       {
         description: "Search Keyword for filtering the Managed Tenant List.",
@@ -9510,7 +9264,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "SearchKeyword.",
-        "x-ves-example": "Value",
       },
     ],
     requestBodySchema: null,
@@ -9526,11 +9279,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      page_limit: "100",
-      page_start: "C5776a8e-bcae-4392-98d3-3556f4b9df1b.",
-      search_keyword: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9605,7 +9354,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "OIDC provider name.",
-        "x-ves-example": "[OIDC, google, Azure-OIDC]",
       },
       {
         description:
@@ -9617,7 +9365,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -9636,10 +9383,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "[OIDC, google, Azure-OIDC]",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9716,7 +9460,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "OIDC provider name.",
-        "x-ves-example": "[OIDC, google, Azure-OIDC]",
       },
       {
         description:
@@ -9728,7 +9471,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -9745,10 +9487,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "[OIDC, google, Azure-OIDC]",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9823,7 +9562,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -9845,9 +9583,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10038,7 +9774,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
     ],
     queryParameters: [
@@ -10051,7 +9786,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
       {
         description:
@@ -10088,10 +9822,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10168,7 +9899,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: "Namespace to scope the listing of namespace.",
@@ -10179,7 +9909,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -10221,10 +9950,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10299,7 +10025,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -10310,7 +10035,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -10347,10 +10071,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10425,7 +10146,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -10439,7 +10159,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -10481,10 +10200,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10560,7 +10276,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
     ],
     queryParameters: [],
@@ -10581,9 +10296,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10939,7 +10652,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -10960,9 +10672,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -11055,7 +10765,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nSupports only system namespace.",
@@ -11066,7 +10775,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -11083,10 +10791,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -11162,7 +10867,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -11179,9 +10883,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -11257,7 +10959,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Google",
       },
       {
         description: "Namespace\nSupports only system namespace.",
@@ -11268,7 +10969,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -11288,10 +10988,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Google",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -11369,7 +11066,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Email",
-        "x-ves-example": "3d05688b-f560-4f70-9af1-384a0ec0ff15.",
       },
     ],
     requestBodySchema: null,
@@ -11385,9 +11081,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      realm_id: "3d05688b-f560-4f70-9af1-384a0ec0ff15.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -11462,7 +11156,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Third Party ID.",
-        "x-ves-example": "123",
       },
     ],
     queryParameters: [],
@@ -11483,9 +11176,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.tp_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      tp_id: "123",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -11563,7 +11254,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -11574,7 +11264,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -11611,10 +11300,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -11689,7 +11375,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -11703,7 +11388,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -11745,10 +11429,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -11823,7 +11504,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
       },
     ],
     queryParameters: [],
@@ -11842,9 +11522,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -11921,7 +11599,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Third Party ID.",
-        "x-ves-example": "123",
       },
     ],
     queryParameters: [],
@@ -11940,9 +11617,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.tp_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      tp_id: "123",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12277,7 +11952,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Email",
-        "x-ves-example": "sam.smith@gmail.com.",
       },
     ],
     queryParameters: [
@@ -12294,7 +11968,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "ExcludedAttributes.",
-        "x-ves-example": "[",
       },
     ],
     requestBodySchema: null,
@@ -12310,10 +11983,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.id"],
     confirmationRequired: false,
-    parameterExamples: {
-      excludedAttributes: "[",
-      id: "sam.smith@gmail.com.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12468,7 +12138,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -12489,9 +12158,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12590,7 +12257,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -12601,7 +12267,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -12620,10 +12285,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12708,7 +12370,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nNamespace fo the role to be retrieved.",
@@ -12719,7 +12380,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -12736,10 +12396,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12814,7 +12471,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -12831,9 +12487,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12908,7 +12562,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nNamespace.",
@@ -12919,7 +12572,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -12940,10 +12592,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13035,7 +12684,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -13056,9 +12704,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13143,7 +12789,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Email",
-        "x-ves-example": "sam.smith@gmail.com.",
       },
     ],
     queryParameters: [
@@ -13160,7 +12805,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "ExcludedAttributes.",
-        "x-ves-example": "[",
       },
     ],
     requestBodySchema: null,
@@ -13176,10 +12820,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.id"],
     confirmationRequired: false,
-    parameterExamples: {
-      excludedAttributes: "[",
-      id: "sam.smith@gmail.com.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13334,7 +12975,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nSupports only system namespace.",
@@ -13345,7 +12985,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -13366,10 +13005,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13447,7 +13083,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -13468,9 +13103,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13888,7 +13521,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Signup-1234-5678-9012-3456.",
       },
     ],
     queryParameters: [],
@@ -13905,9 +13537,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Signup-1234-5678-9012-3456.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13982,7 +13612,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -14003,9 +13632,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14092,7 +13719,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Country code.",
-        "x-ves-example": "US",
       },
       {
         description:
@@ -14104,7 +13730,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Prefix",
-        "x-ves-example": "AL for Alabama.",
       },
     ],
     queryParameters: [],
@@ -14122,10 +13747,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.country_code", "path.prefix"],
     confirmationRequired: false,
-    parameterExamples: {
-      country_code: "US",
-      prefix: "AL for Alabama.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14629,7 +14251,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -14650,9 +14271,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14747,7 +14366,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -14758,7 +14376,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -14777,10 +14394,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14865,7 +14479,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -14876,7 +14489,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -14915,10 +14527,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14993,7 +14602,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -15007,7 +14615,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -15049,10 +14656,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15127,7 +14731,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -15139,7 +14742,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -15160,10 +14762,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15337,7 +14936,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -15358,9 +14956,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15459,7 +15055,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -15470,7 +15065,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -15489,10 +15083,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15578,7 +15169,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -15589,7 +15179,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -15627,10 +15216,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15705,7 +15291,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -15719,7 +15304,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -15761,10 +15345,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15839,7 +15420,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -15851,7 +15431,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -15872,10 +15451,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15974,7 +15550,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -15991,9 +15566,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -16510,7 +16083,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Email",
-        "x-ves-example": "sam.smith@gmail.com.",
       },
     ],
     queryParameters: [
@@ -16527,7 +16099,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "ExcludedAttributes.",
-        "x-ves-example": "[",
       },
     ],
     requestBodySchema: null,
@@ -16545,10 +16116,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.id"],
     confirmationRequired: true,
-    parameterExamples: {
-      excludedAttributes: "[",
-      id: "sam.smith@gmail.com.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -16625,7 +16193,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Email",
-        "x-ves-example": "sam.smith@gmail.com.",
       },
     ],
     queryParameters: [
@@ -16642,7 +16209,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "ExcludedAttributes.",
-        "x-ves-example": "[",
       },
     ],
     requestBodySchema: null,
@@ -16658,10 +16224,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.id"],
     confirmationRequired: false,
-    parameterExamples: {
-      excludedAttributes: "[",
-      id: "sam.smith@gmail.com.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -16821,7 +16384,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
       },
     ],
     queryParameters: [
@@ -16853,9 +16415,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -16933,7 +16493,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
       },
     ],
     queryParameters: [],
@@ -16950,9 +16509,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -17108,7 +16665,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Sales",
       },
     ],
     queryParameters: [],
@@ -17127,9 +16683,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Sales",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -17208,7 +16762,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -17229,9 +16782,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -17333,7 +16884,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -17344,7 +16894,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -17363,10 +16912,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -17452,7 +16998,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -17463,7 +17008,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -17502,10 +17046,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -17580,7 +17121,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -17594,7 +17134,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -17636,10 +17175,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -17715,7 +17251,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -17727,7 +17262,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -17748,10 +17282,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -17852,7 +17383,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Count",
-        "x-ves-example": "8",
       },
       {
         description:
@@ -17867,7 +17397,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "ExcludedAttributes.",
-        "x-ves-example": "[",
       },
       {
         description: "Filter to be used for filtering objects.",
@@ -17878,7 +17407,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Filter",
-        "x-ves-example": "ExternalId.",
       },
       {
         description: "Start offset.",
@@ -17890,7 +17418,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Page",
-        "x-ves-example": "1",
       },
     ],
     requestBodySchema: null,
@@ -17906,12 +17433,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      count: "8",
-      excludedAttributes: "[",
-      filter: "ExternalId.",
-      page: "1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -18085,7 +17607,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -18104,9 +17625,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -18183,7 +17702,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -18200,9 +17718,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -18278,7 +17794,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -18297,9 +17812,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -18463,7 +17976,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "ID",
-        "x-ves-example": "123-456-789012.",
       },
     ],
     queryParameters: [],
@@ -18484,9 +17996,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.id"],
     confirmationRequired: false,
-    parameterExamples: {
-      id: "123-456-789012.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -19022,7 +18532,6 @@ export const tenant_and_identityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -19039,9 +18548,7 @@ export const tenant_and_identityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [

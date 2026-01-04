@@ -27,7 +27,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Blogging-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -48,9 +47,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Blogging-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -141,7 +138,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -162,9 +158,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -255,7 +249,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -276,9 +269,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -477,7 +468,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Site-secret-policy.",
       },
       {
         description: "Namespace\n\nx-required\nNamespace of the secret policy.",
@@ -488,7 +478,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -505,10 +494,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Site-secret-policy.",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -599,7 +585,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "Key Version.",
-        "x-ves-example": "0",
       },
     ],
     requestBodySchema: null,
@@ -615,9 +600,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      key_version: "0",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -705,7 +688,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Policy_state\n\nx-required\nstate of the policy to filter in results.",
@@ -716,7 +698,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Policy_state.",
-        "x-ves-example": "All",
       },
     ],
     queryParameters: [],
@@ -733,10 +714,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace", "path.policy_state"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-      policy_state: "All",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -935,7 +913,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Site-secret-policy.",
       },
       {
         description: "Namespace\n\nx-required\nNamespace of the secret policy.",
@@ -946,7 +923,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -967,10 +943,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Site-secret-policy.",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1061,7 +1034,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1083,9 +1055,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1176,7 +1146,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [
@@ -1190,7 +1159,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Scroll ID",
-        "x-ves-example": "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.",
       },
     ],
     requestBodySchema: null,
@@ -1206,10 +1174,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      scroll_id: "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1299,7 +1264,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1320,9 +1284,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1437,7 +1399,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -1448,7 +1409,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -1467,10 +1427,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1569,7 +1526,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1580,7 +1536,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1619,10 +1574,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1710,7 +1662,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1724,7 +1675,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -1766,10 +1716,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1858,7 +1805,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -1870,7 +1816,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1891,10 +1836,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2008,7 +1950,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -2029,9 +1970,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2143,7 +2082,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -2154,7 +2092,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -2173,10 +2110,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2275,7 +2209,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -2286,7 +2219,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2325,10 +2257,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2416,7 +2345,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2430,7 +2358,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -2472,10 +2399,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2565,7 +2489,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -2586,9 +2509,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2703,7 +2624,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -2714,7 +2634,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -2733,10 +2652,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2835,7 +2751,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -2846,7 +2761,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2885,10 +2799,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2976,7 +2887,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2990,7 +2900,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -3032,10 +2941,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3124,7 +3030,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -3136,7 +3041,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -3157,10 +3061,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3273,7 +3174,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -3285,7 +3185,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -3306,10 +3205,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3421,7 +3317,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Site-secret-policy.",
       },
       {
         description: "Namespace\n\nx-required\nNamespace of the secret policy.",
@@ -3432,7 +3327,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -3453,10 +3347,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Site-secret-policy.",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3556,7 +3447,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -3577,9 +3467,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3694,7 +3582,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -3705,7 +3592,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -3724,10 +3610,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3826,7 +3709,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -3837,7 +3719,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -3876,10 +3757,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3967,7 +3845,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -3981,7 +3858,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -4023,10 +3899,7 @@ export const blindfoldTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4115,7 +3988,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -4127,7 +3999,6 @@ export const blindfoldTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -4148,10 +4019,7 @@ export const blindfoldTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [

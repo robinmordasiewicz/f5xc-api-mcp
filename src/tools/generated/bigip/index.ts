@@ -26,7 +26,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -47,9 +46,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -148,7 +145,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -159,7 +155,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -178,10 +173,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -266,7 +258,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -277,7 +268,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -316,10 +306,7 @@ export const bigipTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -394,7 +381,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -408,7 +394,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -450,10 +435,7 @@ export const bigipTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -528,7 +510,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -540,7 +521,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -561,10 +541,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -664,7 +641,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -685,9 +661,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -786,7 +760,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -797,7 +770,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -816,10 +788,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -904,7 +873,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -915,7 +883,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -954,10 +921,7 @@ export const bigipTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1032,7 +996,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1046,7 +1009,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -1088,10 +1050,7 @@ export const bigipTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1166,7 +1125,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -1178,7 +1136,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1199,10 +1156,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1301,7 +1255,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1312,7 +1265,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1350,10 +1302,7 @@ export const bigipTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1428,7 +1377,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1442,7 +1390,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -1484,10 +1431,7 @@ export const bigipTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1562,7 +1506,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -1574,7 +1517,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1595,10 +1537,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1699,7 +1638,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1720,9 +1658,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1821,7 +1757,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -1832,7 +1767,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -1851,10 +1785,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1939,7 +1870,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1950,7 +1880,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1988,10 +1917,7 @@ export const bigipTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2066,7 +1992,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2080,7 +2005,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -2122,10 +2046,7 @@ export const bigipTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2200,7 +2121,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -2212,7 +2132,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -2233,10 +2152,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2336,7 +2252,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -2357,9 +2272,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2446,7 +2359,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -2467,9 +2379,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2568,7 +2478,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -2579,7 +2488,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -2598,10 +2506,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2686,7 +2591,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -2697,7 +2601,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2735,10 +2638,7 @@ export const bigipTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2813,7 +2713,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2827,7 +2726,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -2869,10 +2767,7 @@ export const bigipTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2947,7 +2842,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -2959,7 +2853,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -2980,10 +2873,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3082,7 +2972,6 @@ export const bigipTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -3103,9 +2992,7 @@ export const bigipTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [

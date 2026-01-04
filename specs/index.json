@@ -1,6 +1,6 @@
 {
-  "version": "2.0.1",
-  "timestamp": "2026-01-04T18:39:57.313111+00:00",
+  "version": "2.0.2",
+  "timestamp": "2026-01-04T19:55:56.974529+00:00",
   "specifications": [
     {
       "domain": "admin_console_and_ui",
@@ -63,10 +63,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "ui_component",
-        "static_asset"
       ]
     },
     {
@@ -131,10 +127,6 @@
             "ai_policy: Policy for AI traffic control"
           ]
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "ai_policy",
-        "ai_gateway"
       ]
     },
     {
@@ -221,12 +213,7 @@
           "relationship_hints": []
         }
       ],
-      "x-f5xc-primary-resources-simple": [
-        "api_definition",
-        "api_endpoint",
-        "api_rate_limit"
-      ],
-      "cli_metadata": {
+      "x-f5xc-cli-metadata": {
         "quick_start": {
           "command": "curl $F5XC_API_URL/api/config/namespaces/default/api_catalogs -H 'Authorization: APIToken $F5XC_API_TOKEN'",
           "description": "List all API catalogs in default namespace",
@@ -354,11 +341,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "authentication_policy",
-        "token",
-        "api_credential"
       ]
     },
     {
@@ -421,10 +403,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "bigip_pool",
-        "bigip_device"
       ]
     },
     {
@@ -503,11 +481,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "subscription",
-        "quota",
-        "usage_report"
       ]
     },
     {
@@ -585,11 +558,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "blindfold_secret",
-        "secret_policy",
-        "policy_document"
       ]
     },
     {
@@ -654,10 +622,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "bot_defense_instance",
-        "threat_category"
       ]
     },
     {
@@ -723,10 +687,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "cdn_loadbalancer",
-        "cdn_origin_pool"
       ]
     },
     {
@@ -805,11 +765,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "site_config",
-        "fleet_config",
-        "registration_token"
       ]
     },
     {
@@ -889,11 +844,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "certificate",
-        "ca_certificate",
-        "certificate_chain"
       ]
     },
     {
@@ -999,12 +949,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "aws_vpc_site",
-        "azure_vnet_site",
-        "gcp_vpc_site",
-        "cloud_credentials"
       ]
     },
     {
@@ -1092,11 +1036,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "virtual_k8s",
-        "workload",
-        "pod_security_policy"
       ]
     },
     {
@@ -1161,10 +1100,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "sensitive_data_policy",
-        "data_classification"
       ]
     },
     {
@@ -1227,10 +1162,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "analytics_query",
-        "data_export"
       ]
     },
     {
@@ -1296,10 +1227,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "ddos_protection",
-        "ddos_mitigation_rule"
       ]
     },
     {
@@ -1386,12 +1313,7 @@
           ]
         }
       ],
-      "x-f5xc-primary-resources-simple": [
-        "dns_zone",
-        "dns_domain",
-        "dns_load_balancer"
-      ],
-      "cli_metadata": {
+      "x-f5xc-cli-metadata": {
         "quick_start": {
           "command": "curl $F5XC_API_URL/api/config/namespaces/default/dns_domains -H 'Authorization: APIToken $F5XC_API_TOKEN'",
           "description": "List all DNS domains configured in default namespace",
@@ -1523,11 +1445,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "mk8s_cluster",
-        "k8s_cluster_role",
-        "container_registry"
       ]
     },
     {
@@ -1591,10 +1508,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "marketplace_item",
-        "subscription"
       ]
     },
     {
@@ -1688,11 +1601,6 @@
             "site: Sites to include in mesh connectivity"
           ]
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "virtual_network",
-        "network_connector",
-        "site_mesh_group"
       ]
     },
     {
@@ -1772,11 +1680,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "network_policy",
-        "forward_proxy_policy",
-        "network_firewall"
       ]
     },
     {
@@ -1842,10 +1745,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "nginx_config",
-        "nginx_upstream"
       ]
     },
     {
@@ -1915,10 +1814,6 @@
             "object_store: Parent object store"
           ]
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "object_store",
-        "bucket"
       ]
     },
     {
@@ -1996,11 +1891,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "log_receiver",
-        "metrics_receiver",
-        "alert_policy"
       ]
     },
     {
@@ -2082,11 +1972,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "rate_limiter",
-        "rate_limiter_policy",
-        "rate_limit_threshold"
       ]
     },
     {
@@ -2151,10 +2036,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "mitigation_policy",
-        "malicious_user_rule"
       ]
     },
     {
@@ -2237,11 +2118,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "endpoint",
-        "origin_pool",
-        "service_discovery"
       ]
     },
     {
@@ -2304,10 +2180,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "shape_app_firewall",
-        "shape_recognizer"
       ]
     },
     {
@@ -2397,12 +2269,7 @@
           ]
         }
       ],
-      "x-f5xc-primary-resources-simple": [
-        "site",
-        "virtual_site",
-        "site_mesh_group"
-      ],
-      "cli_metadata": {
+      "x-f5xc-cli-metadata": {
         "quick_start": {
           "command": "curl $F5XC_API_URL/api/config/namespaces/default/sites -H 'Authorization: APIToken $F5XC_API_TOKEN'",
           "description": "List all configured sites in default namespace",
@@ -2522,10 +2389,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "dashboard",
-        "saved_query"
       ]
     },
     {
@@ -2602,11 +2465,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "support_case",
-        "alert",
-        "audit_log"
       ]
     },
     {
@@ -2668,10 +2526,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "telemetry_receiver",
-        "insight_query"
       ]
     },
     {
@@ -2751,11 +2605,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "user_profile",
-        "session",
-        "otp_policy"
       ]
     },
     {
@@ -2803,9 +2652,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "threat_campaign_policy"
       ]
     },
     {
@@ -2888,11 +2734,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "user",
-        "user_role",
-        "namespace_role"
       ]
     },
     {
@@ -3018,13 +2859,7 @@
           "relationship_hints": []
         }
       ],
-      "x-f5xc-primary-resources-simple": [
-        "http_loadbalancer",
-        "tcp_loadbalancer",
-        "origin_pool",
-        "healthcheck"
-      ],
-      "cli_metadata": {
+      "x-f5xc-cli-metadata": {
         "quick_start": {
           "command": "curl $F5XC_API_URL/api/config/namespaces/default/http_loadbalancers -H 'Authorization: APIToken $F5XC_API_TOKEN'",
           "description": "List all HTTP load balancers in default namespace",
@@ -3137,10 +2972,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "node_config",
-        "vpm_config"
       ]
     },
     {
@@ -3223,11 +3054,6 @@
           },
           "relationship_hints": []
         }
-      ],
-      "x-f5xc-primary-resources-simple": [
-        "app_firewall",
-        "service_policy",
-        "malicious_user_detection"
       ]
     }
   ],

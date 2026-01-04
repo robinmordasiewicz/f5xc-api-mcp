@@ -3,7 +3,7 @@
   "info": {
     "title": "Object Storage",
     "description": "Blob management for application component delivery across namespaces. Time-limited download links with cryptographic signing protect asset retrieval. Version-controlled packages organized by operating system type support artifact discovery. Query filtering by name, type, and release number enables programmatic access to integrator libraries and protection modules for mobile deployments.",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -183,7 +183,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "System"
+            "x-f5xc-example": "system"
           },
           {
             "name": "object_type",
@@ -194,7 +194,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Swagger"
+            "x-f5xc-example": "swagger"
           },
           {
             "name": "name",
@@ -205,7 +205,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Example-file, shared/example-file, example-ns/example-file."
+            "x-f5xc-example": "example-file, shared/example-file, example-ns/example-file"
           },
           {
             "name": "query_type",
@@ -419,7 +419,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "System"
+            "x-f5xc-example": "system"
           },
           {
             "name": "name",
@@ -430,7 +430,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Volt-API-specs."
+            "x-f5xc-example": "volt-api-specs"
           },
           {
             "name": "version",
@@ -441,7 +441,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "V0-21-09-13."
+            "x-f5xc-example": "v0-21-09-13"
           },
           {
             "name": "object_type",
@@ -452,7 +452,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Swagger"
+            "x-f5xc-example": "swagger"
           }
         ],
         "externalDocs": {
@@ -644,7 +644,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "System"
+            "x-f5xc-example": "system"
           },
           {
             "name": "object_type",
@@ -655,7 +655,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Swagger"
+            "x-f5xc-example": "swagger"
           },
           {
             "name": "name",
@@ -666,7 +666,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Example-file, shared/example-file, example-ns/example-file."
+            "x-f5xc-example": "example-file, shared/example-file, example-ns/example-file"
           },
           {
             "name": "query_type",
@@ -880,7 +880,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "System"
+            "x-f5xc-example": "system"
           },
           {
             "name": "name",
@@ -891,7 +891,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Volt-API-specs."
+            "x-f5xc-example": "volt-api-specs"
           },
           {
             "name": "version",
@@ -902,7 +902,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "V0-21-09-13."
+            "x-f5xc-example": "v0-21-09-13"
           },
           {
             "name": "object_type",
@@ -913,7 +913,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Swagger"
+            "x-f5xc-example": "swagger"
           }
         ],
         "externalDocs": {
@@ -1105,7 +1105,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "System"
+            "x-f5xc-example": "system"
           },
           {
             "name": "object_type",
@@ -1116,7 +1116,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Swagger"
+            "x-f5xc-example": "swagger"
           },
           {
             "name": "name",
@@ -1127,7 +1127,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Example-file, shared/example-file, example-ns/example-file."
+            "x-f5xc-example": "example-file, shared/example-file, example-ns/example-file"
           },
           {
             "name": "query_type",
@@ -1343,7 +1343,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "System"
+            "x-f5xc-example": "system"
           },
           {
             "name": "object_type",
@@ -1354,7 +1354,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Swagger"
+            "x-f5xc-example": "swagger"
           },
           {
             "name": "name",
@@ -1365,7 +1365,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Volt-API-specs."
+            "x-f5xc-example": "volt-api-specs"
           },
           {
             "name": "version",
@@ -1376,7 +1376,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "V1-21-01-12."
+            "x-f5xc-example": "v1-21-01-12"
           },
           {
             "name": "force_delete",
@@ -1388,7 +1388,7 @@
               "type": "boolean",
               "format": "boolean"
             },
-            "x-ves-example": "Value"
+            "x-f5xc-example": "value"
           }
         ],
         "externalDocs": {
@@ -1590,7 +1590,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "System"
+            "x-f5xc-example": "system"
           },
           {
             "name": "object_type",
@@ -1601,7 +1601,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Swagger"
+            "x-f5xc-example": "swagger"
           },
           {
             "name": "name",
@@ -1612,7 +1612,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Volt-API-specs."
+            "x-f5xc-example": "volt-api-specs"
           }
         ],
         "requestBody": {
@@ -1825,7 +1825,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "System"
+            "x-f5xc-example": "system"
           },
           {
             "name": "object_type",
@@ -1836,7 +1836,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Swagger"
+            "x-f5xc-example": "swagger"
           },
           {
             "name": "name",
@@ -1847,7 +1847,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Volt-API-specs."
+            "x-f5xc-example": "volt-api-specs"
           },
           {
             "name": "version",
@@ -1858,7 +1858,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "V0-21-09-13."
+            "x-f5xc-example": "v0-21-09-13"
           }
         ],
         "externalDocs": {
@@ -2047,7 +2047,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "System"
+            "x-f5xc-example": "system"
           },
           {
             "name": "object_type",
@@ -2058,7 +2058,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Swagger"
+            "x-f5xc-example": "swagger"
           },
           {
             "name": "name",
@@ -2069,7 +2069,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Volt-API-specs."
+            "x-f5xc-example": "volt-api-specs"
           },
           {
             "name": "version",
@@ -2080,7 +2080,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "V1-21-01-12."
+            "x-f5xc-example": "v1-21-01-12"
           },
           {
             "name": "force_delete",
@@ -2092,7 +2092,7 @@
               "type": "boolean",
               "format": "boolean"
             },
-            "x-ves-example": "Value"
+            "x-f5xc-example": "value"
           }
         ],
         "externalDocs": {
@@ -2267,7 +2267,6 @@
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.bytes.max_len": "5242880",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2284,12 +2283,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.in": "[\\\"\\\", \\\"json\\\", \\\"yaml\\\", \\\"txt\\\", \\\"bin\\\"]"
             },
+            "x-f5xc-example": "json, yaml",
             "x-validation-rules": {
               "ves.io.schema.rules.string.in": "[\\\"\\\", \\\"json\\\", \\\"yaml\\\", \\\"txt\\\", \\\"bin\\\"]"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.in": "[\\\"\\\", \\\"json\\\", \\\"yaml\\\", \\\"txt\\\", \\\"bin\\\"]",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2307,11 +2306,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "512"
             },
+            "x-f5xc-example": "value",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "512"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "512",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2320,7 +2319,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:39:40.743894+00:00"
+            "x-reconciled-at": "2026-01-04T19:55:40.310526+00:00"
           },
           "mobile_app_shield": {
             "$ref": "#/components/schemas/stored_objectMobileAppShieldAttributes"
@@ -2346,16 +2345,13 @@
               "ves.io.schema.rules.string.min_len": "1",
               "ves.io.schema.rules.string.ves_object_name": "true"
             },
+            "x-f5xc-example": "volt-api-specs",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_len": "512",
               "ves.io.schema.rules.string.min_len": "1",
               "ves.io.schema.rules.string.ves_object_name": "true"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_len": "512",
-            "ves.io.schema.rules.string.min_len": "1",
-            "ves.io.schema.rules.string.ves_object_name": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2364,7 +2360,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:39:40.743905+00:00"
+            "x-reconciled-at": "2026-01-04T19:55:40.310537+00:00"
           },
           "namespace": {
             "type": "string",
@@ -2376,12 +2372,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
+            "x-f5xc-example": "system",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
             "minLength": 0,
             "maxLength": 6,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2390,7 +2386,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:39:40.743910+00:00"
+            "x-reconciled-at": "2026-01-04T19:55:40.310542+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -2406,14 +2402,13 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.in": "[\\\"swagger\\\", \\\"generic\\\", \\\"big-object\\\", \\\"mobile-sdk\\\", \\\"mobile-integrator\\\", \\\"mobile-app-shield\\\"]"
             },
+            "x-f5xc-example": "swagger",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.in": "[\\\"swagger\\\", \\\"generic\\\", \\\"big-object\\\", \\\"mobile-sdk\\\", \\\"mobile-integrator\\\", \\\"mobile-app-shield\\\"]"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.in": "[\\\"swagger\\\", \\\"generic\\\", \\\"big-object\\\", \\\"mobile-sdk\\\", \\\"mobile-integrator\\\", \\\"mobile-app-shield\\\"]",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2434,7 +2429,6 @@
               "ves.io.schema.rules.string.max_len": "5242880"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "5242880",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2517,6 +2511,7 @@
             },
             "x-displayname": "Deleted Object Names.",
             "x-ves-example": "Value",
+            "x-f5xc-example": "value",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2555,13 +2550,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.bytes.max_len": "5242880"
             },
-            "x-ves-example": "\"\"",
+            "x-f5xc-example": "\"\"",
             "x-validation-rules": {
               "ves.io.schema.rules.bytes.max_len": "5242880"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.bytes.max_len": "5242880",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2575,6 +2569,7 @@
             "title": "Content_format.",
             "x-displayname": "Content Format.",
             "x-ves-example": "JSON, YAML.",
+            "x-f5xc-example": "json, yaml",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2599,12 +2594,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "5242880"
             },
-            "x-ves-example": "\"\"",
+            "x-f5xc-example": "\"\"",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "5242880"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "5242880",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2651,7 +2645,7 @@
             "description": "Name of the stored object.",
             "title": "Name",
             "x-displayname": "Object Name.",
-            "x-ves-example": "example-resource",
+            "x-f5xc-example": "example-resource",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -2662,7 +2656,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:39:40.743940+00:00"
+            "x-reconciled-at": "2026-01-04T19:55:40.310570+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -2673,6 +2667,7 @@
             "title": "Tenant",
             "x-displayname": "Tenant",
             "x-ves-example": "Example-corp.",
+            "x-f5xc-example": "example-corp",
             "minLength": 0,
             "maxLength": 18,
             "x-f5xc-required-for": {
@@ -2684,7 +2679,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:39:40.743946+00:00"
+            "x-reconciled-at": "2026-01-04T19:55:40.310576+00:00"
           },
           "versions": {
             "type": "array",
@@ -2776,13 +2771,12 @@
               "ves.io.schema.rules.string.max_len": "32",
               "ves.io.schema.rules.string.not_empty": "true"
             },
+            "x-f5xc-example": "v.4.2.1",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "32",
               "ves.io.schema.rules.string.not_empty": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "32",
-            "ves.io.schema.rules.string.not_empty": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2825,13 +2819,12 @@
               "ves.io.schema.rules.string.max_len": "32",
               "ves.io.schema.rules.string.not_empty": "true"
             },
+            "x-f5xc-example": "v.4.2.1",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "32",
               "ves.io.schema.rules.string.not_empty": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "32",
-            "ves.io.schema.rules.string.not_empty": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2869,6 +2862,7 @@
             "title": "Release_version.",
             "x-displayname": "Mobile SDK release version.",
             "x-ves-example": "V.4.2.1",
+            "x-f5xc-example": "v.4.2.1",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2952,7 +2946,7 @@
             "description": "The URL to upload or download the resource.",
             "title": "URL",
             "x-displayname": "URL",
-            "x-ves-example": "https://example.com",
+            "x-f5xc-example": "https://example.com",
             "format": "uri",
             "minLength": 0,
             "maxLength": 1024,
@@ -3019,7 +3013,6 @@
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3041,7 +3034,6 @@
               "ves.io.schema.rules.string.max_len": "512"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "512",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3050,7 +3042,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:39:40.743971+00:00"
+            "x-reconciled-at": "2026-01-04T19:55:40.310600+00:00"
           },
           "mobile_app_shield": {
             "$ref": "#/components/schemas/stored_objectMobileAppShieldAttributes"
@@ -3073,10 +3065,9 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
-            "x-ves-example": "example-resource",
+            "x-f5xc-example": "example-resource",
             "minLength": 0,
             "maxLength": 16,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3085,7 +3076,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:39:40.743979+00:00"
+            "x-reconciled-at": "2026-01-04T19:55:40.310608+00:00"
           },
           "namespace": {
             "type": "string",
@@ -3101,7 +3092,6 @@
             },
             "minLength": 0,
             "maxLength": 6,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3110,7 +3100,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:39:40.743984+00:00"
+            "x-reconciled-at": "2026-01-04T19:55:40.310612+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -3127,11 +3117,10 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
-            "x-ves-example": "https://example.com",
+            "x-f5xc-example": "https://example.com",
             "format": "uri",
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3153,7 +3142,6 @@
             },
             "minLength": 0,
             "maxLength": 1,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3162,7 +3150,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:39:40.743991+00:00"
+            "x-reconciled-at": "2026-01-04T19:55:40.310618+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -3231,7 +3219,6 @@
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3253,7 +3240,6 @@
               "ves.io.schema.rules.string.max_len": "512"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "512",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3262,7 +3248,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:39:40.743998+00:00"
+            "x-reconciled-at": "2026-01-04T19:55:40.310625+00:00"
           },
           "latest_version": {
             "type": "boolean",
@@ -3289,11 +3275,10 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
-            "x-ves-example": "https://example.com",
+            "x-f5xc-example": "https://example.com",
             "format": "uri",
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3316,7 +3301,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:39:40.744005+00:00"
+            "x-reconciled-at": "2026-01-04T19:55:40.310631+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {

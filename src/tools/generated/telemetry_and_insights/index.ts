@@ -111,7 +111,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [
@@ -125,7 +124,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End Time",
-        "x-ves-example": "1570197600.",
       },
       {
         description:
@@ -137,7 +135,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start Time.",
-        "x-ves-example": "1570194000.",
       },
     ],
     requestBodySchema: null,
@@ -153,11 +150,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "1570197600.",
-      namespace: "Value",
-      start_time: "1570194000.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -232,7 +225,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -253,9 +245,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -333,7 +323,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "Vs1",
       },
       {
         description:
@@ -345,7 +334,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -366,10 +354,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Vs1",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -450,7 +435,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "Vs1",
       },
       {
         description:
@@ -462,7 +446,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -483,10 +466,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Vs1",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -567,7 +547,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "Vs1",
       },
       {
         description:
@@ -579,7 +558,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -600,10 +578,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Vs1",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -683,7 +658,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -694,7 +668,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -730,10 +703,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -810,7 +780,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [
@@ -823,7 +792,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Discovery Name Filter.",
-        "x-ves-example": "Disc-cbip-1.",
       },
       {
         description: "Identifies the discovered service type. Omit for all types.",
@@ -834,7 +802,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Type.",
-        "x-ves-example": "Bigip_virtual_server.",
       },
     ],
     requestBodySchema: null,
@@ -850,11 +817,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      discovery_name: "Disc-cbip-1.",
-      namespace: "Shared",
-      service_type: "Bigip_virtual_server.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -930,7 +893,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -951,9 +913,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1031,7 +991,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "Vs1",
       },
       {
         description:
@@ -1043,7 +1002,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -1064,10 +1022,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Vs1",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1231,7 +1186,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Vs1",
       },
       {
         description:
@@ -1243,7 +1197,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -1260,10 +1213,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Vs1",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1339,7 +1289,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1360,9 +1309,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1440,7 +1387,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1461,9 +1407,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1552,7 +1496,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1573,9 +1516,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1653,7 +1594,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1672,9 +1612,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1751,7 +1689,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Kind",
-        "x-ves-example": "Virtual_host.",
       },
       {
         description: "Name\n\nx-required\nObject name.",
@@ -1762,7 +1699,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Productpage.",
       },
       {
         description: "Namespace\n\nx-required\nNamespace of the configured object.",
@@ -1773,7 +1709,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Bookinfo",
       },
     ],
     queryParameters: [
@@ -1786,7 +1721,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site",
-        "x-ves-example": "Ce01",
       },
       {
         description:
@@ -1815,12 +1749,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.kind", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      kind: "Virtual_host.",
-      name: "Productpage.",
-      namespace: "Bookinfo",
-      site: "Ce01",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2077,7 +2006,6 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Foobar",
       },
     ],
     queryParameters: [],
@@ -2098,9 +2026,7 @@ export const telemetry_and_insightsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Foobar",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [

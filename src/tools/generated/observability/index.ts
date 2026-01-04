@@ -26,7 +26,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -47,9 +46,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -127,7 +124,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -148,9 +144,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -228,7 +222,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [
@@ -242,7 +235,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Filter",
-        "x-ves-example": "{alertname=\\.",
       },
       {
         description: "If set to true, active alerts will not be returned in the response.",
@@ -254,7 +246,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Inactive",
-        "x-ves-example": "False",
       },
       {
         description:
@@ -267,7 +258,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Inhibited",
-        "x-ves-example": "False",
       },
       {
         description:
@@ -280,7 +270,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Silenced",
-        "x-ves-example": "True",
       },
       {
         description: "Show unprocessed alerts.",
@@ -292,7 +281,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Unprocessed.",
-        "x-ves-example": "False",
       },
     ],
     requestBodySchema: null,
@@ -308,14 +296,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      filter: "{alertname=\\.",
-      inactive: "False",
-      inhibited: "False",
-      namespace: "Value",
-      silenced: "True",
-      unprocessed: "False",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -393,7 +374,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Filter",
-        "x-ves-example": "{alertname=\\.",
       },
       {
         description: "If set to true, active alerts will not be returned in the response.",
@@ -405,7 +385,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Inactive",
-        "x-ves-example": "False",
       },
       {
         description:
@@ -418,7 +397,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Inhibited",
-        "x-ves-example": "False",
       },
       {
         description:
@@ -430,7 +408,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description:
@@ -443,7 +420,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Silenced",
-        "x-ves-example": "True",
       },
       {
         description: "Show unprocessed alerts.",
@@ -455,7 +431,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Unprocessed.",
-        "x-ves-example": "False",
       },
     ],
     requestBodySchema: null,
@@ -471,14 +446,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      filter: "{alertname=\\.",
-      inactive: "False",
-      inhibited: "False",
-      namespace: "Value",
-      silenced: "True",
-      unprocessed: "False",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -554,7 +522,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -575,9 +542,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -654,7 +619,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -672,9 +636,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Demo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -750,7 +712,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -764,7 +725,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "Period in days.",
-        "x-ves-example": "30",
       },
     ],
     requestBodySchema: null,
@@ -780,10 +740,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Demo",
-      period_in_days: "30",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -858,7 +815,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -871,7 +827,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End time",
-        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_name.\nMonitor name.",
@@ -882,7 +837,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor_name.",
-        "x-ves-example": "Monitor1",
       },
       {
         description: "Start_time. X-required\nStart time for requested monitor data.",
@@ -893,7 +847,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start time.",
-        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
     ],
     requestBodySchema: null,
@@ -909,12 +862,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "2020-11-17T13:41:49.083255Z.",
-      monitor_name: "Monitor1",
-      namespace: "Demo",
-      start_time: "2020-11-17T12:41:49.083255Z.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -989,7 +937,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -1010,9 +957,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Demo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1092,7 +1037,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Foobar",
       },
     ],
     queryParameters: [
@@ -1105,7 +1049,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Filter",
-        "x-ves-example": "Monitor_name eq 'tester-name'",
       },
       {
         description:
@@ -1140,7 +1083,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Sort",
-        "x-ves-example": "-name, ID",
       },
     ],
     requestBodySchema: null,
@@ -1157,11 +1099,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      filter: "Monitor_name eq 'tester-name'",
-      namespace: "Foobar",
-      sort: "-name, ID",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1236,7 +1174,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Foobar",
       },
     ],
     queryParameters: [
@@ -1249,7 +1186,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Filter",
-        "x-ves-example": "Monitor_name eq 'tester-name'",
       },
       {
         description:
@@ -1284,7 +1220,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Sort",
-        "x-ves-example": "-name, ID",
       },
     ],
     requestBodySchema: null,
@@ -1301,11 +1236,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      filter: "Monitor_name eq 'tester-name'",
-      namespace: "Foobar",
-      sort: "-name, ID",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1381,7 +1312,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1402,9 +1332,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1481,7 +1409,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -1494,7 +1421,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End time",
-        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_type.\nMonitor type.",
@@ -1505,7 +1431,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor type.",
-        "x-ves-example": "HTTP",
       },
       {
         description: "Start_time.\nStart time for requested history.",
@@ -1516,7 +1441,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start time.",
-        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
       {
         description: "Step_size.\nStep size for time series aggregation.",
@@ -1527,7 +1451,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Step size",
-        "x-ves-example": "300s",
       },
     ],
     requestBodySchema: null,
@@ -1543,13 +1466,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "2020-11-17T13:41:49.083255Z.",
-      monitor_type: "HTTP",
-      namespace: "Demo",
-      start_time: "2020-11-17T12:41:49.083255Z.",
-      step_size: "300s",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1625,7 +1542,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -1638,7 +1554,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor type.",
-        "x-ves-example": "HTTP",
       },
     ],
     requestBodySchema: null,
@@ -1654,10 +1569,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      monitor_type: "HTTP",
-      namespace: "Demo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1732,7 +1644,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -1749,9 +1660,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Demo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1828,7 +1737,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1842,7 +1750,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End Time",
-        "x-ves-example": "2019-09-24T12:30:11.733Z.",
       },
       {
         description:
@@ -1854,7 +1761,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Filter",
-        "x-ves-example": "{alertname=\\.",
       },
       {
         description:
@@ -1866,7 +1772,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start Time.",
-        "x-ves-example": "2019-09-23T12:30:11.733Z.",
       },
     ],
     requestBodySchema: null,
@@ -1882,12 +1787,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "2019-09-24T12:30:11.733Z.",
-      filter: "{alertname=\\.",
-      namespace: "Ns1",
-      start_time: "2019-09-23T12:30:11.733Z.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1962,7 +1862,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -1975,7 +1874,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End time",
-        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_name. X-required\nMonitor name.",
@@ -1986,7 +1884,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor_name.",
-        "x-ves-example": "Monitor1",
       },
       {
         description: "Start_time. X-required\nStart time for requested monitor data.",
@@ -1997,7 +1894,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start time.",
-        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
     ],
     requestBodySchema: null,
@@ -2013,12 +1909,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "2020-11-17T13:41:49.083255Z.",
-      monitor_name: "Monitor1",
-      namespace: "Demo",
-      start_time: "2020-11-17T12:41:49.083255Z.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2093,7 +1984,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -2106,7 +1996,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "EndTime",
-        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_name. X-required\nMonitor name.",
@@ -2117,7 +2006,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor_name.",
-        "x-ves-example": "Monitor1",
       },
       {
         description: "Start_time. X-required\nStart time for requested monitor data.",
@@ -2128,7 +2016,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start time.",
-        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
     ],
     requestBodySchema: null,
@@ -2144,12 +2031,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "2020-11-17T13:41:49.083255Z.",
-      monitor_name: "Monitor1",
-      namespace: "Demo",
-      start_time: "2020-11-17T12:41:49.083255Z.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2224,7 +2106,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -2245,9 +2126,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Demo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2327,7 +2206,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -2348,9 +2226,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Demo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2427,7 +2303,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -2440,7 +2315,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End time",
-        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_name. X-required\nMonitor name.",
@@ -2451,7 +2325,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor name.",
-        "x-ves-example": "Monitor1",
       },
       {
         description: "Monitor_type. X-required\nMonitor type.",
@@ -2462,7 +2335,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor type.",
-        "x-ves-example": "HTTP",
       },
       {
         description: "Start_time. X-required\nStart time for requested events.",
@@ -2473,7 +2345,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start time.",
-        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
     ],
     requestBodySchema: null,
@@ -2489,13 +2360,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "2020-11-17T13:41:49.083255Z.",
-      monitor_name: "Monitor1",
-      monitor_type: "HTTP",
-      namespace: "Demo",
-      start_time: "2020-11-17T12:41:49.083255Z.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2570,7 +2435,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -2583,7 +2447,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End time",
-        "x-ves-example": "2020-11-17T13:41:49.083255Z.",
       },
       {
         description: "Monitor_name. X-required\nMonitor name.",
@@ -2594,7 +2457,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor_name.",
-        "x-ves-example": "Monitor1",
       },
       {
         description: "Monitor_type. X-required\nMonitor type.",
@@ -2605,7 +2467,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor type.",
-        "x-ves-example": "HTTP",
       },
       {
         description: "Start_time. X-required\nStart time for requested history.",
@@ -2616,7 +2477,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start time.",
-        "x-ves-example": "2020-11-17T12:41:49.083255Z.",
       },
       {
         description: "Step_size.\nStep size for time series aggregation.",
@@ -2627,7 +2487,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Step size",
-        "x-ves-example": "30s",
       },
     ],
     requestBodySchema: null,
@@ -2643,14 +2502,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "2020-11-17T13:41:49.083255Z.",
-      monitor_name: "Monitor1",
-      monitor_type: "HTTP",
-      namespace: "Demo",
-      start_time: "2020-11-17T12:41:49.083255Z.",
-      step_size: "30s",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2726,7 +2578,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -2747,9 +2598,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2826,7 +2675,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -2843,9 +2691,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Demo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2921,7 +2767,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -2941,9 +2786,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3021,7 +2864,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [
@@ -3035,7 +2877,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Scroll ID",
-        "x-ves-example": "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.",
       },
     ],
     requestBodySchema: null,
@@ -3051,10 +2892,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      scroll_id: "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3130,7 +2968,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -3143,7 +2980,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label filter.",
-        "x-ves-example": "F5 XC/country in (VES-I/O-usa), F5 XC/siteType=VES-I/O-RE.",
       },
       {
         description: "Monitor_name.\nMonitor name.",
@@ -3154,7 +2990,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor name.",
-        "x-ves-example": "Monitor1",
       },
       {
         description: "Monitor_type. X-required\nMonitor type.",
@@ -3165,7 +3000,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor type.",
-        "x-ves-example": "HTTP",
       },
     ],
     requestBodySchema: null,
@@ -3181,12 +3015,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "F5 XC/country in (VES-I/O-usa), F5 XC/siteType=VES-I/O-RE.",
-      monitor_name: "Monitor1",
-      monitor_type: "HTTP",
-      namespace: "Demo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3354,7 +3183,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Foobar",
       },
     ],
     queryParameters: [],
@@ -3375,9 +3203,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Foobar",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3454,7 +3280,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -3467,7 +3292,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor_name.",
-        "x-ves-example": "Monitor1",
       },
     ],
     requestBodySchema: null,
@@ -3483,10 +3307,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      monitor_name: "Monitor1",
-      namespace: "Demo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3561,7 +3382,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [
@@ -3574,7 +3394,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Monitor_name.",
-        "x-ves-example": "Monitor1",
       },
     ],
     requestBodySchema: null,
@@ -3590,10 +3409,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      monitor_name: "Monitor1",
-      namespace: "Demo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3668,7 +3484,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Demo",
       },
     ],
     queryParameters: [],
@@ -3685,9 +3500,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Demo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3855,7 +3668,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -3876,9 +3688,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3977,7 +3787,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -3988,7 +3797,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -4007,10 +3815,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4095,7 +3900,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -4106,7 +3910,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4145,10 +3948,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4223,7 +4023,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4237,7 +4036,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -4279,10 +4077,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4357,7 +4152,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -4369,7 +4163,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -4390,10 +4183,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4493,7 +4283,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -4514,9 +4303,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4615,7 +4402,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -4626,7 +4412,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -4645,10 +4430,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4733,7 +4515,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -4744,7 +4525,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4783,10 +4563,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4861,7 +4638,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4875,7 +4651,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -4917,10 +4692,7 @@ export const observabilityTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4995,7 +4767,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -5007,7 +4778,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5028,10 +4798,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5131,7 +4898,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -5152,9 +4918,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5239,7 +5003,6 @@ export const observabilityTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -5260,9 +5023,7 @@ export const observabilityTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
