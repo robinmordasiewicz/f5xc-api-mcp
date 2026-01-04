@@ -238,9 +238,9 @@ Tools follow the naming pattern: `f5xc-api-{domain}-{resource}-{operation}`
 
 ### Example Tools
 
-- `f5xc-api-loadbalancer-http-loadbalancer-create`
-- `f5xc-api-loadbalancer-origin-pool-list`
-- `f5xc-api-networking-network-interface-get`
+- `f5xc-api-virtual-http-loadbalancer-create`
+- `f5xc-api-virtual-origin-pool-list`
+- `f5xc-api-cemanagement-network-interface-get`
 - `f5xc-api-server-info`
 
 ## Documentation Structure
@@ -405,7 +405,7 @@ export F5XC_TLS_INSECURE=true
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 24+
 - npm 9+
 
 ### Setup
