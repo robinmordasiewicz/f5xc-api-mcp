@@ -96,6 +96,22 @@ function updatePackageVersion(version) {
 }
 
 /**
+ * Update manifest.json version field to match package.json
+ */
+function updateManifestVersion(version) {
+  const manifestPath = join(rootDir, "manifest.json");
+  const manifest = JSON.parse(readFileSync(manifestPath, "utf-8"));
+
+  // Remove 'v' prefix for manifest version
+  const manifestVersion = version.startsWith("v") ? version.slice(1) : version;
+
+  manifest.version = manifestVersion;
+  writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
+
+  return manifestVersion;
+}
+
+/**
  * Main CLI handler
  */
 function main() {
@@ -120,7 +136,9 @@ function main() {
     case "update": {
       const version = generateVersion({ beta, includeV: true });
       const npmVersion = updatePackageVersion(version);
+      const manifestVersion = updateManifestVersion(version);
       console.log(`Updated package.json version to: ${npmVersion}`);
+      console.log(`Updated manifest.json version to: ${manifestVersion}`);
       console.log(`Release version: ${version}`);
       break;
     }

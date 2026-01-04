@@ -19,9 +19,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
+    "generate:version": "tsx scripts/generate-version.ts",
+    "prebuild": "npm run generate:version",
     "build": "tsc && cp src/tools/generated/*.json dist/tools/generated/",
     "start": "node dist/index.js",
-    "dev": "tsx src/index.ts",
+    "dev": "npm run generate:version && tsx src/index.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
