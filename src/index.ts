@@ -27,9 +27,10 @@
 
 import { createServer } from "./server.js";
 import { logger } from "./utils/logging.js";
+import { VERSION } from "./version.js";
 
-/** Server version - synchronized with package.json */
-export const VERSION = "1.0.0";
+/** Re-export version for external consumers */
+export { VERSION } from "./version.js";
 
 /**
  * Main entry point
