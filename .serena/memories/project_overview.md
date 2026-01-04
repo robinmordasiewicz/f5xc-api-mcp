@@ -21,8 +21,7 @@ Model Context Protocol (Claude, VS Code, etc.)
 - 1500+ API tools covering 22 domains
 - Dual-mode: documentation mode (no auth) + execution mode (with auth)
 - Profile-based credential management
-- f5xcctl CLI equivalent commands
-- Terraform HCL examples
+- CURL examples for all API operations
 - API token + P12 certificate auth
 
 ## Codebase Structure

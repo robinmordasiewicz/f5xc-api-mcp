@@ -23,14 +23,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - API token authentication support
 - P12 certificate (mTLS) authentication support
 - Automatic URL normalization for various F5XC URL formats
-- xcsh CLI command equivalents in every response
-- Terraform HCL examples in every response
+- CURL examples for all API operations
 - MCP Resources for F5XC configuration objects via URI scheme
 - Workflow prompts for common operations:
   - `deploy-http-loadbalancer` - Deploy HTTP Load Balancer with origin pool
   - `configure-waf` - Configure Web Application Firewall
   - `create-multicloud-site` - Deploy F5XC site in AWS/Azure/GCP
-  - `generate-terraform` - Export resources as Terraform HCL
 - Subscription tier awareness (NO_TIER, STANDARD, ADVANCED)
 - Comprehensive documentation site with MkDocs
 - Docker container distribution via GHCR

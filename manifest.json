@@ -4,7 +4,7 @@
   "display_name": "F5 Distributed Cloud API",
   "version": "1.0.0",
   "description": "MCP server for F5 Distributed Cloud API - AI-powered infrastructure management with 1500+ tools across 22 domains",
-  "long_description": "Enables AI assistants to manage F5 Distributed Cloud resources including HTTP load balancers, origin pools, WAF policies, DNS zones, and multi-cloud sites. Works in dual mode: documentation mode (no auth) or execution mode (with auth). Every response includes equivalent xcsh CLI commands and Terraform HCL examples.",
+  "long_description": "Enables AI assistants to manage F5 Distributed Cloud resources including HTTP load balancers, origin pools, WAF policies, DNS zones, and multi-cloud sites. Works in dual mode: documentation mode (no auth) or execution mode (with auth). Provides CURL examples for all API operations.",
   "author": {
     "name": "Robin Mordasiewicz"
   },
@@ -25,7 +25,6 @@
     "load-balancer",
     "waf",
     "dns",
-    "terraform",
     "ai"
   ],
   "license": "MIT",
@@ -131,12 +130,6 @@
       "description": "Guided workflow for deploying F5XC site in AWS/Azure/GCP",
       "arguments": ["provider", "region"],
       "text": "Create a multi-cloud site on ${arguments.provider} in ${arguments.region}"
-    },
-    {
-      "name": "generate-terraform",
-      "description": "Export F5XC resources as Terraform configuration",
-      "arguments": ["resource_type", "namespace"],
-      "text": "Generate Terraform for ${arguments.resource_type} resources in ${arguments.namespace}"
     }
   ],
   "prompts_generated": false

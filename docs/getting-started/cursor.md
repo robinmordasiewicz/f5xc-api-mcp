@@ -65,9 +65,9 @@ Open the chat panel and ask about F5XC:
 
 ### Inline Assistance
 
-While editing Terraform files:
+While working with F5XC configurations:
 
-> "Generate an F5XC origin pool resource for this backend"
+> "Create an F5XC origin pool for this backend"
 
 ### Code Generation
 
@@ -108,22 +108,22 @@ For project-specific settings, create `.cursor/mcp.json`:
 > - Origin pool with 3 backend servers
 > - WAF protection with default rules"
 
-Cursor will use the MCP tools to generate the appropriate Terraform or API configurations.
+Cursor will use the MCP tools to generate the appropriate API configurations.
 
 ## Tips
 
 ### Context Awareness
 
-Cursor's AI is aware of your project context. Open your Terraform files and ask:
+Cursor's AI is aware of your project context. Ask:
 
 > "What F5XC resources would complement this existing configuration?"
 
-### Multi-File Generation
+### Multi-Resource Generation
 
 Use Composer to generate multiple related resources:
 
-> "Generate Terraform modules for a full F5XC deployment including networking, load balancing,
-> and security"
+> "Create a full F5XC deployment including networking, load balancing,
+> and security configurations"
 
 ### Documentation Lookup
 
