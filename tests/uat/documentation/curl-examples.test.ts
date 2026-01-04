@@ -3,9 +3,13 @@
  *
  * Validates that generated CURL examples have correct syntax,
  * proper quoting, valid JSON bodies, and correct URL structures.
+ *
+ * Tests both:
+ * 1. The validateCurlSyntax helper function
+ * 2. Real CURL output from executeTool in documentation mode
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { validateCurlSyntax } from "../utils/documentation-helpers.js";
 
 // Mock the logger to prevent console output
@@ -17,6 +21,29 @@ vi.mock("../../../src/utils/logging.js", () => ({
     warn: vi.fn(),
   },
 }));
+
+// Import the actual executeTool function to test real CURL generation
+import { executeTool } from "../../../src/tools/discovery/execute.js";
+
+// Type guard for documentation response
+interface DocumentationResponse {
+  curlExample: string;
+  tool: {
+    name: string;
+    method: string;
+    path: string;
+  };
+  authMessage: string;
+}
+
+function isDocumentationResponse(result: unknown): result is DocumentationResponse {
+  return (
+    typeof result === "object" &&
+    result !== null &&
+    "curlExample" in result &&
+    "authMessage" in result
+  );
+}
 
 describe("CURL Examples Validation", () => {
   describe("validateCurlSyntax helper", () => {
@@ -79,73 +106,157 @@ curl -X GET "https://example.com/api/test"`;
     });
   });
 
-  describe("execute.ts generateCurlCommand format", () => {
-    // These tests validate the format produced by src/tools/discovery/execute.ts
+  describe("Real executeTool CURL generation (documentation mode)", () => {
+    // Use correct tool names from the registry:
+    // - f5xc-api-virtual-http-loadbalancer-* (not waap)
+    // - f5xc-api-virtual-origin-pool-*
+    // - f5xc-api-waf-app-firewall-*
 
-    it("should use correct base URL structure", () => {
-      // The expected format from generateCurlCommand
-      const expectedPattern = /https:\/\/\{tenant\}\.console\.ves\.volterra\.io\/api/;
+    it("should generate valid CURL for HTTP load balancer list", async () => {
+      const result = await executeTool({
+        toolName: "f5xc-api-virtual-http-loadbalancer-list",
+        pathParams: { namespace: "default" },
+      });
 
-      // A sample curl command in the expected format
-      const sampleCurl = `curl -X GET "https://{tenant}.console.ves.volterra.io/api/config/namespaces/test/http_loadbalancers" \\
-  -H "Authorization: APIToken $F5XC_API_TOKEN" \\
-  -H "Content-Type: application/json"`;
+      expect(isDocumentationResponse(result)).toBe(true);
+      if (isDocumentationResponse(result)) {
+        expect(result.curlExample).toBeDefined();
+        expect(result.curlExample).toContain("curl -X GET");
+        expect(result.curlExample).toContain("http_loadbalancers");
 
-      expect(sampleCurl).toMatch(expectedPattern);
-      expect(validateCurlSyntax(sampleCurl).valid).toBe(true);
+        const validation = validateCurlSyntax(result.curlExample);
+        expect(validation.valid).toBe(true);
+      }
     });
 
-    it("should include Authorization header", () => {
-      const sampleCurl = `curl -X GET "https://{tenant}.console.ves.volterra.io/api/test" \\
-  -H "Authorization: APIToken $F5XC_API_TOKEN"`;
+    it("should generate valid CURL for origin pool list", async () => {
+      const result = await executeTool({
+        toolName: "f5xc-api-virtual-origin-pool-list",
+        pathParams: { namespace: "default" },
+      });
 
-      expect(sampleCurl).toContain("Authorization: APIToken");
-      expect(sampleCurl).toContain("$F5XC_API_TOKEN");
+      expect(isDocumentationResponse(result)).toBe(true);
+      if (isDocumentationResponse(result)) {
+        expect(result.curlExample).toContain("curl -X GET");
+        expect(result.curlExample).toContain("origin_pools");
+
+        const validation = validateCurlSyntax(result.curlExample);
+        expect(validation.valid).toBe(true);
+      }
     });
 
-    it("should include Content-Type header", () => {
-      const sampleCurl = `curl -X GET "https://{tenant}.console.ves.volterra.io/api/test" \\
-  -H "Content-Type: application/json"`;
+    it("should generate valid CURL for app firewall list", async () => {
+      const result = await executeTool({
+        toolName: "f5xc-api-waf-app-firewall-list",
+        pathParams: { namespace: "default" },
+      });
 
-      expect(sampleCurl).toContain("Content-Type: application/json");
+      expect(isDocumentationResponse(result)).toBe(true);
+      if (isDocumentationResponse(result)) {
+        expect(result.curlExample).toContain("curl -X GET");
+
+        const validation = validateCurlSyntax(result.curlExample);
+        expect(validation.valid).toBe(true);
+      }
     });
 
-    it("should use line continuation for readability", () => {
-      const sampleCurl = `curl -X GET "https://{tenant}.console.ves.volterra.io/api/test" \\
-  -H "Authorization: APIToken $F5XC_API_TOKEN" \\
-  -H "Content-Type: application/json"`;
+    it("should include Authorization header in CURL", async () => {
+      const result = await executeTool({
+        toolName: "f5xc-api-virtual-http-loadbalancer-list",
+        pathParams: { namespace: "default" },
+      });
 
-      // Should have backslash continuations
-      expect(sampleCurl).toContain("\\\n");
-    });
-  });
-
-  describe("handlers.ts generateCurlExample format", () => {
-    // These tests validate the format produced by src/resources/handlers.ts
-
-    it("should include both authenticated and unauthenticated examples", () => {
-      // Sample from handlers.ts generateCurlExample format
-      const sampleCurl = `# Get resource (authenticated)
-curl -X GET "https://\${TENANT}.console.ves.volterra.io/api/config/namespaces/default/http_loadbalancers/example" \\
-  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
-  -H "Content-Type: application/json"
-
-# Get resource (unauthenticated - documentation mode)
-# Note: Actual API calls require authentication
-curl -X GET "https://\${TENANT}.console.ves.volterra.io/api/config/namespaces/default/http_loadbalancers/example"`;
-
-      expect(sampleCurl).toContain("authenticated");
-      expect(sampleCurl).toContain("unauthenticated");
-      expect(sampleCurl).toContain("documentation mode");
+      expect(isDocumentationResponse(result)).toBe(true);
+      if (isDocumentationResponse(result)) {
+        expect(result.curlExample).toContain("Authorization: APIToken");
+        expect(result.curlExample).toContain("$F5XC_API_TOKEN");
+      }
     });
 
-    it("should have valid syntax in handlers example format", () => {
-      const sampleCurl = `curl -X GET "https://\${TENANT}.console.ves.volterra.io/api/config/namespaces/default/http_loadbalancers/test" \\
-  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
-  -H "Content-Type: application/json"`;
+    it("should include Content-Type header in CURL", async () => {
+      const result = await executeTool({
+        toolName: "f5xc-api-virtual-http-loadbalancer-list",
+        pathParams: { namespace: "default" },
+      });
 
-      const result = validateCurlSyntax(sampleCurl);
-      expect(result.valid).toBe(true);
+      expect(isDocumentationResponse(result)).toBe(true);
+      if (isDocumentationResponse(result)) {
+        expect(result.curlExample).toContain("Content-Type: application/json");
+      }
+    });
+
+    it("should use {tenant} placeholder in URL", async () => {
+      const result = await executeTool({
+        toolName: "f5xc-api-virtual-http-loadbalancer-list",
+        pathParams: { namespace: "default" },
+      });
+
+      expect(isDocumentationResponse(result)).toBe(true);
+      if (isDocumentationResponse(result)) {
+        expect(result.curlExample).toContain("{tenant}");
+        expect(result.curlExample).toContain("console.ves.volterra.io");
+      }
+    });
+
+    it("should substitute path parameters in URL", async () => {
+      const result = await executeTool({
+        toolName: "f5xc-api-virtual-http-loadbalancer-get",
+        pathParams: { namespace: "my-namespace", name: "my-lb" },
+      });
+
+      expect(isDocumentationResponse(result)).toBe(true);
+      if (isDocumentationResponse(result)) {
+        expect(result.curlExample).toContain("my-namespace");
+        expect(result.curlExample).toContain("my-lb");
+      }
+    });
+
+    it("should include request body for POST requests", async () => {
+      const result = await executeTool({
+        toolName: "f5xc-api-virtual-http-loadbalancer-create",
+        pathParams: { "metadata.namespace": "default" },
+        body: {
+          metadata: { name: "test-lb" },
+          spec: { domains: ["example.com"] },
+        },
+      });
+
+      expect(isDocumentationResponse(result)).toBe(true);
+      if (isDocumentationResponse(result)) {
+        expect(result.curlExample).toContain("curl -X POST");
+        expect(result.curlExample).toContain("-d '");
+        expect(result.curlExample).toContain("test-lb");
+        expect(result.curlExample).toContain("example.com");
+
+        const validation = validateCurlSyntax(result.curlExample);
+        expect(validation.valid).toBe(true);
+      }
+    });
+
+    it("should return authMessage in documentation mode", async () => {
+      const result = await executeTool({
+        toolName: "f5xc-api-virtual-http-loadbalancer-list",
+        pathParams: { namespace: "default" },
+      });
+
+      expect(isDocumentationResponse(result)).toBe(true);
+      if (isDocumentationResponse(result)) {
+        expect(result.authMessage).toContain("F5XC_API_URL");
+        expect(result.authMessage).toContain("F5XC_API_TOKEN");
+      }
+    });
+
+    it("should return tool metadata", async () => {
+      const result = await executeTool({
+        toolName: "f5xc-api-virtual-http-loadbalancer-list",
+        pathParams: { namespace: "default" },
+      });
+
+      expect(isDocumentationResponse(result)).toBe(true);
+      if (isDocumentationResponse(result)) {
+        expect(result.tool.name).toBe("f5xc-api-virtual-http-loadbalancer-list");
+        expect(result.tool.method).toBe("GET");
+      }
     });
   });
 
@@ -220,6 +331,19 @@ curl -X GET "https://\${TENANT}.console.ves.volterra.io/api/config/namespaces/de
       const result = validateCurlSyntax(curl);
 
       expect(result.valid).toBe(true);
+    });
+  });
+
+  describe("error handling for invalid tools", () => {
+    it("should handle non-existent tool gracefully", async () => {
+      const result = await executeTool({
+        toolName: "non-existent-tool",
+        pathParams: {},
+      });
+
+      // Should return an error object, not throw
+      expect(result).toBeDefined();
+      expect("error" in result || "success" in result).toBe(true);
     });
   });
 });
