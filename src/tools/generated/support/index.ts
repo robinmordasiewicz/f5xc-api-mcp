@@ -25,7 +25,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -36,7 +35,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -47,7 +45,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -74,11 +71,7 @@ export const supportTools: ParsedOperation[] = [
       "path.site",
     ],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -161,7 +154,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -172,7 +164,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -191,10 +182,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.node", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -286,7 +274,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -303,9 +290,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -381,7 +366,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nThe namespace in which the support ticket object is present.",
@@ -392,7 +376,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -413,10 +396,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -494,7 +474,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nThe namespace in which the support ticket object is present.",
@@ -505,7 +484,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -526,10 +504,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -614,7 +589,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -625,7 +599,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -636,7 +609,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -663,11 +635,7 @@ export const supportTools: ParsedOperation[] = [
       "path.site",
     ],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -750,7 +718,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -761,7 +728,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -772,7 +738,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -789,11 +754,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace", "path.node", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -869,7 +830,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -890,9 +850,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -995,7 +953,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1006,7 +963,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1044,10 +1000,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1123,7 +1076,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1137,7 +1089,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -1179,10 +1130,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1257,7 +1205,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -1268,7 +1215,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -1279,7 +1225,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1306,11 +1251,7 @@ export const supportTools: ParsedOperation[] = [
       "path.site",
     ],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1393,7 +1334,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Site Name\nName of the site.",
@@ -1404,7 +1344,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1421,10 +1360,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1499,7 +1435,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [
@@ -1512,7 +1447,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "User",
-        "x-ves-example": "Console-user.",
       },
     ],
     requestBodySchema: null,
@@ -1528,10 +1462,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      console_user: "Console-user.",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1606,7 +1537,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -1617,7 +1547,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -1628,7 +1557,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1655,11 +1583,7 @@ export const supportTools: ParsedOperation[] = [
       "path.site",
     ],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1742,7 +1666,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1759,9 +1682,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1837,7 +1758,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nThe namespace in which the support ticket object is present in.",
@@ -1848,7 +1768,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1869,10 +1788,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1949,7 +1865,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -1960,7 +1875,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -1971,7 +1885,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1996,11 +1909,7 @@ export const supportTools: ParsedOperation[] = [
       "path.site",
     ],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2083,7 +1992,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -2094,7 +2002,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -2105,7 +2012,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [
@@ -2119,7 +2025,6 @@ export const supportTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "Line Count.",
-        "x-ves-example": "200",
       },
     ],
     requestBodySchema: null,
@@ -2135,12 +2040,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace", "path.node", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      line_count: "200",
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2215,7 +2115,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -2226,7 +2125,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -2237,7 +2135,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -2262,11 +2159,7 @@ export const supportTools: ParsedOperation[] = [
       "path.site",
     ],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2349,7 +2242,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Site Name\nName of the site on which Tcpdump was run.",
@@ -2360,7 +2252,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -2379,10 +2270,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2459,7 +2347,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [
@@ -2472,7 +2359,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "User",
-        "x-ves-example": "Console-user.",
       },
     ],
     requestBodySchema: null,
@@ -2488,10 +2374,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      console_user: "Console-user.",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2566,7 +2449,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -2577,7 +2459,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -2588,7 +2469,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -2615,11 +2495,7 @@ export const supportTools: ParsedOperation[] = [
       "path.site",
     ],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2702,7 +2578,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -2713,7 +2588,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -2724,7 +2598,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -2741,11 +2614,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace", "path.node", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2911,7 +2780,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -2922,7 +2790,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -2933,7 +2800,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -2950,11 +2816,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace", "path.node", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3029,7 +2891,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Site Name\nName of the site.",
@@ -3040,7 +2901,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -3057,10 +2917,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3135,7 +2992,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Site Name\nName of the site on which Tcpdump status is requested.",
@@ -3146,7 +3002,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -3167,10 +3022,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3255,7 +3107,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -3266,7 +3117,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Service Name\nName of the service.",
@@ -3277,7 +3127,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "Vpm",
       },
       {
         description: "Site Name\nName of the site.",
@@ -3288,7 +3137,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [
@@ -3302,7 +3150,6 @@ export const supportTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "Last Lines.",
-        "x-ves-example": "200",
       },
     ],
     requestBodySchema: null,
@@ -3318,13 +3165,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace", "path.node", "path.service", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      last_lines: "200",
-      namespace: "Value",
-      node: "Master-0",
-      service: "Vpm",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3399,7 +3240,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Site Name\nName of the site from which ping is initiated.",
@@ -3410,7 +3250,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -3431,10 +3270,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3512,7 +3348,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nThe namespace in which the support ticket object is present.",
@@ -3523,7 +3358,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -3544,10 +3378,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3624,7 +3455,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -3635,7 +3465,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -3646,7 +3475,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -3673,11 +3501,7 @@ export const supportTools: ParsedOperation[] = [
       "path.site",
     ],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3760,7 +3584,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nThe namespace in which the support ticket object is present.",
@@ -3771,7 +3594,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -3792,10 +3614,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3872,7 +3691,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Site Name\nName of the site for which request is sent.",
@@ -3883,7 +3701,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -3904,10 +3721,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3990,7 +3804,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -4001,7 +3814,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -4012,7 +3824,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -4029,11 +3840,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace", "path.node", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4108,7 +3915,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Node Name\nName of the node.",
@@ -4119,7 +3925,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Service Name\nName of the service.",
@@ -4130,7 +3935,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "Vpm",
       },
       {
         description: "Site Name\nName of the site.",
@@ -4141,7 +3945,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -4169,12 +3972,7 @@ export const supportTools: ParsedOperation[] = [
       "path.site",
     ],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      node: "Master-0",
-      service: "Vpm",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4259,7 +4057,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Node Name",
-        "x-ves-example": "Master-0",
       },
       {
         description: "Site Name\nName of the site.",
@@ -4270,7 +4067,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -4285,10 +4081,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.node", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      node: "Master-0",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4363,7 +4156,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "Site Name\nName of the site.",
@@ -4374,7 +4166,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
       {
         description: "F5XC Namespace\nName of the site's namespace. Default's to VES-system.",
@@ -4385,7 +4176,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "F5XC Namespace.",
-        "x-ves-example": "VES-system.",
       },
     ],
     queryParameters: [
@@ -4414,11 +4204,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace", "path.site", "path.vesnamespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      site: "Value",
-      vesnamespace: "VES-system.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4493,7 +4279,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Site Name\nName of the site on which Tcpdump was run.",
@@ -4504,7 +4289,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -4523,10 +4307,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4788,7 +4569,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Site Name\nName of the site on which tcpdump is to be run.",
@@ -4799,7 +4579,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -4820,10 +4599,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4901,7 +4677,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -4922,9 +4697,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5026,7 +4799,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -5037,7 +4809,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -5056,10 +4827,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5144,7 +4912,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -5155,7 +4922,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5193,10 +4959,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5271,7 +5034,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5285,7 +5047,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -5327,10 +5088,7 @@ export const supportTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5405,7 +5163,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -5417,7 +5174,6 @@ export const supportTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5438,10 +5194,7 @@ export const supportTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [

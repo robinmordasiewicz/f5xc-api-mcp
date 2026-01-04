@@ -26,7 +26,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [
@@ -51,7 +50,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-file, shared/example-file, example-ns/example-file.",
       },
       {
         description: "Optional query parameter. Type of the stored_object.",
@@ -62,7 +60,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Object Type.",
-        "x-ves-example": "Swagger",
       },
       {
         description:
@@ -91,11 +88,7 @@ export const object_storageTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Example-file, shared/example-file, example-ns/example-file.",
-      namespace: "System",
-      object_type: "Swagger",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -171,7 +164,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [
@@ -196,7 +188,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-file, shared/example-file, example-ns/example-file.",
       },
       {
         description: "Optional query parameter. Type of the stored_object.",
@@ -207,7 +198,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Object Type.",
-        "x-ves-example": "Swagger",
       },
       {
         description:
@@ -236,11 +226,7 @@ export const object_storageTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Example-file, shared/example-file, example-ns/example-file.",
-      namespace: "System",
-      object_type: "Swagger",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -315,7 +301,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Volt-API-specs.",
       },
       {
         description: "Namespace\nx-required\nNamespace of the stored_object.",
@@ -326,7 +311,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Object_type\nx-required\nType of the stored_object.",
@@ -337,7 +321,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Object Type.",
-        "x-ves-example": "Swagger",
       },
       {
         description:
@@ -349,7 +332,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Version",
-        "x-ves-example": "V1-21-01-12.",
       },
     ],
     queryParameters: [
@@ -364,7 +346,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Force DELETE.",
-        "x-ves-example": "Value",
       },
     ],
     requestBodySchema: null,
@@ -383,13 +364,7 @@ export const object_storageTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace", "path.object_type", "path.version"],
     confirmationRequired: true,
-    parameterExamples: {
-      force_delete: "Value",
-      name: "Volt-API-specs.",
-      namespace: "System",
-      object_type: "Swagger",
-      version: "V1-21-01-12.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -467,7 +442,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Volt-API-specs.",
       },
       {
         description: "Namespace\nx-required\nNamespace of the stored_object.",
@@ -478,7 +452,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description:
@@ -490,7 +463,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Version",
-        "x-ves-example": "V0-21-09-13.",
       },
     ],
     queryParameters: [
@@ -503,7 +475,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Object Type.",
-        "x-ves-example": "Swagger",
       },
     ],
     requestBodySchema: null,
@@ -519,12 +490,7 @@ export const object_storageTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace", "path.version"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Volt-API-specs.",
-      namespace: "System",
-      object_type: "Swagger",
-      version: "V0-21-09-13.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -599,7 +565,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Volt-API-specs.",
       },
       {
         description: "Namespace\nx-required\nNamespace of the stored_object.",
@@ -610,7 +575,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Object_type\nx-required\nType of the stored_object.",
@@ -621,7 +585,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Object Type.",
-        "x-ves-example": "Swagger",
       },
     ],
     queryParameters: [
@@ -636,7 +599,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Force DELETE.",
-        "x-ves-example": "Value",
       },
       {
         description:
@@ -648,7 +610,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Version",
-        "x-ves-example": "V1-21-01-12.",
       },
     ],
     requestBodySchema: null,
@@ -666,13 +627,7 @@ export const object_storageTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace", "path.object_type"],
     confirmationRequired: true,
-    parameterExamples: {
-      force_delete: "Value",
-      name: "Volt-API-specs.",
-      namespace: "System",
-      object_type: "Swagger",
-      version: "V1-21-01-12.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -750,7 +705,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Volt-API-specs.",
       },
       {
         description: "Namespace\nx-required\nNamespace in which object is to be created.",
@@ -761,7 +715,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Object_type\nx-required\nType of the stored_object.",
@@ -772,7 +725,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Object Type.",
-        "x-ves-example": "Swagger",
       },
     ],
     queryParameters: [],
@@ -793,11 +745,7 @@ export const object_storageTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace", "path.object_type"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Volt-API-specs.",
-      namespace: "System",
-      object_type: "Swagger",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -885,7 +833,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Object_type\nOptional query parameter. Type of the stored_object.",
@@ -896,7 +843,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Object Type.",
-        "x-ves-example": "Swagger",
       },
     ],
     queryParameters: [
@@ -921,7 +867,6 @@ export const object_storageTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-file, shared/example-file, example-ns/example-file.",
       },
       {
         description:
@@ -950,11 +895,7 @@ export const object_storageTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace", "path.object_type"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Example-file, shared/example-file, example-ns/example-file.",
-      namespace: "System",
-      object_type: "Swagger",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [

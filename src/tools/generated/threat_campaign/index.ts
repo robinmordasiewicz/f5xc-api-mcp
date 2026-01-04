@@ -25,7 +25,6 @@ export const threat_campaignTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Threat Campaign ID.",
-        "x-ves-example": "Cmp5641a5adbeabaf2708ce7663ad937df8.",
       },
     ],
     queryParameters: [],
@@ -42,9 +41,7 @@ export const threat_campaignTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.id"],
     confirmationRequired: false,
-    parameterExamples: {
-      id: "Cmp5641a5adbeabaf2708ce7663ad937df8.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [

@@ -3,7 +3,7 @@
   "info": {
     "title": "Threat Campaign",
     "description": "F5 Distributed Cloud Threat Campaign API specifications",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -186,7 +186,7 @@
             "schema": {
               "type": "string"
             },
-            "x-ves-example": "Cmp5641a5adbeabaf2708ce7663ad937df8."
+            "x-f5xc-example": "cmp5641a5adbeabaf2708ce7663ad937df8"
           }
         ],
         "externalDocs": {
@@ -408,11 +408,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
+            "x-f5xc-example": "/abcd/DYN/xyz",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -425,7 +425,7 @@
             "description": "HTTP method.",
             "title": "Method",
             "x-displayname": "Method",
-            "x-ves-example": "GET",
+            "x-f5xc-example": "GET",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -465,6 +465,7 @@
             "title": "Name",
             "x-displayname": "HTTP Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -475,7 +476,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999323+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559839+00:00"
           },
           "namespace": {
             "type": "string",
@@ -483,6 +484,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Shared",
+            "x-f5xc-example": "shared",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -493,7 +495,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999330+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559845+00:00"
           },
           "path": {
             "type": "string",
@@ -508,15 +510,13 @@
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
+            "x-f5xc-example": "/example",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_len": "1024",
-            "ves.io.schema.rules.string.templated_http_path": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -584,11 +584,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
+            "x-f5xc-example": "as-description",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -609,6 +609,7 @@
               "ves.io.schema.rules.uint32.gte": "0",
               "ves.io.schema.rules.uint32.lte": "401308"
             },
+            "x-f5xc-example": "4683",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.uint32.gte": "0",
@@ -616,9 +617,6 @@
             },
             "minimum": 0,
             "maximum": 2147483647,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.uint32.gte": "0",
-            "ves.io.schema.rules.uint32.lte": "401308",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -637,14 +635,13 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.ip_prefix": "true"
             },
+            "x-f5xc-example": "192.168.20.0/24",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.ip_prefix": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.ip_prefix": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -658,6 +655,7 @@
             "title": "Name",
             "x-displayname": "HTTP Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -668,7 +666,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999347+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559861+00:00"
           },
           "namespace": {
             "type": "string",
@@ -676,6 +674,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Shared",
+            "x-f5xc-example": "shared",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -686,7 +685,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999351+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559866+00:00"
           },
           "user_id": {
             "type": "string",
@@ -698,11 +697,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
+            "x-f5xc-example": "abc",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -745,6 +744,7 @@
             "title": "Name",
             "x-displayname": "HTTP Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -755,7 +755,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999360+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559873+00:00"
           },
           "rule": {
             "$ref": "#/components/schemas/common_wafSimpleClientSrcRule"
@@ -802,8 +802,6 @@
               "ves.io.schema.rules.repeated.max_items": "64",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.max_items": "64",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -823,6 +821,7 @@
             "title": "Name",
             "x-displayname": "Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -833,7 +832,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999371+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559884+00:00"
           },
           "namespace": {
             "type": "string",
@@ -841,6 +840,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Shared",
+            "x-f5xc-example": "shared",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -851,7 +851,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999375+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559888+00:00"
           },
           "tls_fingerprint_matcher": {
             "$ref": "#/components/schemas/policyTlsFingerprintMatcherType"
@@ -894,6 +894,7 @@
             "title": "Name",
             "x-displayname": "DDoS Mitigation Rule Name.",
             "x-ves-example": "VES-I/O-DDoS-mitigation-rule.",
+            "x-f5xc-example": "ves-io-ddos-mitigation-rule",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -933,7 +934,7 @@
               "type": "string"
             },
             "x-displayname": "API Groups membership.",
-            "x-ves-example": "[\"group-1\", \"group-2\"]",
+            "x-f5xc-example": "[\"group-1\", \"group-2\"]",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -950,6 +951,7 @@
             "title": "Name",
             "x-displayname": "HTTP Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -960,7 +962,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999388+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559901+00:00"
           },
           "namespace": {
             "type": "string",
@@ -968,6 +970,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Shared",
+            "x-f5xc-example": "shared",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -978,7 +981,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999392+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559905+00:00"
           },
           "path": {
             "type": "string",
@@ -993,15 +996,13 @@
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
+            "x-f5xc-example": "/example",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_len": "1024",
-            "ves.io.schema.rules.string.templated_http_path": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1074,6 +1075,7 @@
             "title": "Name",
             "x-displayname": "HTTP Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -1084,7 +1086,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999403+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559916+00:00"
           },
           "namespace": {
             "type": "string",
@@ -1092,6 +1094,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Shared",
+            "x-f5xc-example": "shared",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -1102,7 +1105,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999408+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559920+00:00"
           },
           "path": {
             "type": "string",
@@ -1117,15 +1120,13 @@
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
+            "x-f5xc-example": "/example",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_len": "1024",
-            "ves.io.schema.rules.string.templated_http_path": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1192,6 +1193,7 @@
             "title": "Name",
             "x-displayname": "HTTP Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -1202,7 +1204,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999418+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559930+00:00"
           },
           "namespace": {
             "type": "string",
@@ -1210,6 +1212,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Shared",
+            "x-f5xc-example": "shared",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -1220,7 +1223,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999422+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559935+00:00"
           },
           "path": {
             "type": "string",
@@ -1235,15 +1238,13 @@
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
+            "x-f5xc-example": "/example",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_len": "1024",
-            "ves.io.schema.rules.string.templated_http_path": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1311,11 +1312,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
+            "x-f5xc-example": "as-description",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1336,6 +1337,7 @@
               "ves.io.schema.rules.uint32.gte": "0",
               "ves.io.schema.rules.uint32.lte": "401308"
             },
+            "x-f5xc-example": "4683",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.uint32.gte": "0",
@@ -1343,9 +1345,6 @@
             },
             "minimum": 0,
             "maximum": 2147483647,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.uint32.gte": "0",
-            "ves.io.schema.rules.uint32.lte": "401308",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1364,14 +1363,13 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.ip_prefix": "true"
             },
+            "x-f5xc-example": "192.168.20.0/24",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.ip_prefix": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.ip_prefix": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1386,6 +1384,7 @@
             "format": "boolean",
             "x-displayname": "IP Reputation Security Event.",
             "x-ves-example": "True",
+            "x-f5xc-example": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1399,6 +1398,7 @@
             "title": "Name",
             "x-displayname": "HTTP Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -1409,7 +1409,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999437+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559950+00:00"
           },
           "namespace": {
             "type": "string",
@@ -1417,6 +1417,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Shared",
+            "x-f5xc-example": "shared",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -1427,7 +1428,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999441+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559954+00:00"
           },
           "sec_event_name": {
             "type": "string",
@@ -1435,6 +1436,7 @@
             "title": "Security Event Name.",
             "x-displayname": "Security Event Name.",
             "x-ves-example": "Malicious User Mitigation.",
+            "x-f5xc-example": "Malicious User Mitigation",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -1458,12 +1460,11 @@
               "ves.io.schema.rules.repeated.max_items": "4",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "[WAF_SEC_EVENT]",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "4",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.max_items": "4",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1478,6 +1479,7 @@
             "format": "boolean",
             "x-displayname": "Threat Mesh Security Event.",
             "x-ves-example": "True",
+            "x-f5xc-example": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1495,11 +1497,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
+            "x-f5xc-example": "abc",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1546,6 +1548,7 @@
             "title": "Name",
             "x-displayname": "HTTP Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -1556,7 +1559,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999453+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559966+00:00"
           },
           "rule": {
             "$ref": "#/components/schemas/common_wafSimpleClientSrcRule"
@@ -1597,13 +1600,12 @@
               "ves.io.schema.rules.string.hostname": "true",
               "ves.io.schema.rules.string.max_len": "256"
             },
+            "x-f5xc-example": "juiceshop.com",
             "x-validation-rules": {
               "ves.io.schema.rules.string.hostname": "true",
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.hostname": "true",
-            "ves.io.schema.rules.string.max_len": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1613,7 +1615,7 @@
             "x-original-maxLength": 256,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999462+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559975+00:00"
           },
           "exclude_bot_names": {
             "type": "array",
@@ -1629,12 +1631,11 @@
               "ves.io.schema.rules.repeated.max_items": "64",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "Hydra, Nikto",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "64",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.max_items": "64",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1656,12 +1657,11 @@
               "ves.io.schema.rules.repeated.max_items": "1024",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "[[10000001, 30000000]]",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "1024",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.max_items": "1024",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1683,12 +1683,11 @@
               "ves.io.schema.rules.repeated.max_items": "64",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "[[VIOL_MANDATORY_HEADER, VIOL_REQUEST_MAX_LENGTH]]",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "64",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.max_items": "64",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1702,6 +1701,7 @@
             "title": "Name",
             "x-displayname": "HTTP Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -1712,7 +1712,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999472+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559985+00:00"
           },
           "namespace": {
             "type": "string",
@@ -1720,6 +1720,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Shared",
+            "x-f5xc-example": "shared",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -1730,7 +1731,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999476+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559989+00:00"
           },
           "req_path": {
             "type": "string",
@@ -1742,11 +1743,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
+            "x-f5xc-example": "/abcd/2452422c/xyz",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1763,12 +1764,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.pattern": "^$|^[a-fA-F0-9]{8}-([a-fA-F0-9]{4}-){3}[a-fA-F0-9]{12}$"
             },
+            "x-f5xc-example": "fc407065-7aa7-48a6-a3e7-c28108b29bcd",
             "x-validation-rules": {
               "ves.io.schema.rules.string.pattern": "^$|^[a-fA-F0-9]{8}-([a-fA-F0-9]{4}-){3}[a-fA-F0-9]{12}$"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.pattern": "^$|^[a-fA-F0-9]{8}-([a-fA-F0-9]{4}-){3}[a-fA-F0-9]{12}$",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -1813,6 +1814,7 @@
             "title": "Name",
             "x-displayname": "HTTP Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -1823,7 +1825,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999486+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.559998+00:00"
           },
           "waf_exclusion_policy": {
             "$ref": "#/components/schemas/schemaviewsObjectRefType"
@@ -1860,6 +1862,7 @@
             "title": "Name",
             "x-displayname": "HTTP Load Balancer Name.",
             "x-ves-example": "VES-I/O-frontend.",
+            "x-f5xc-example": "ves-io-frontend",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -1870,7 +1873,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999493+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560006+00:00"
           },
           "namespace": {
             "type": "string",
@@ -1878,6 +1881,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Bloggin-app-namespace-1.",
+            "x-f5xc-example": "bloggin-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -1888,7 +1892,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999497+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560010+00:00"
           },
           "request_data": {
             "$ref": "#/components/schemas/app_securityRequestData"
@@ -1924,7 +1928,7 @@
             "description": "The number of requests matching the filter for virtual host in the given namespace.",
             "format": "uint64",
             "x-displayname": "Count",
-            "x-ves-example": "15",
+            "x-f5xc-example": "15",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -1941,6 +1945,7 @@
             "format": "date-time",
             "x-displayname": "Maximum time.",
             "x-ves-example": "01-01-1970T00:00:00Z.",
+            "x-f5xc-example": "01-01-1970T00:00:00Z",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -1957,6 +1962,7 @@
             "format": "date-time",
             "x-displayname": "Minimum time.",
             "x-ves-example": "01-01-1970T00:00:00Z.",
+            "x-f5xc-example": "01-01-1970T00:00:00Z",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2007,10 +2013,10 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "5"
             },
+            "x-f5xc-example": "\"[\"blogging-app-namespace-1\", \"namespace-2\"]\"",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "5"
             },
-            "ves.io.schema.rules.repeated.max_items": "5",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2020,7 +2026,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999512+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560025+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -2069,7 +2075,7 @@
         "default": "IN",
         "x-displayname": "Search Label Operator.",
         "x-ves-proto-enum": "ves.io.schema.app_security.SearchLabelOperator",
-        "x-ves-example": "Field: [",
+        "x-f5xc-example": "field: [",
         "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for app_securitySearchLabelOperator",
           "required_fields": [],
@@ -2102,7 +2108,6 @@
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "5"
             },
-            "ves.io.schema.rules.repeated.max_items": "5",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2116,6 +2121,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Shared",
+            "x-f5xc-example": "shared",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -2126,7 +2132,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999520+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560032+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -2158,6 +2164,7 @@
             },
             "x-displayname": "HTTP Load Balancer List.",
             "x-ves-example": "[VES-I/O-frontend\", \"ns1\" , \"1\", \"0\"]",
+            "x-f5xc-example": "\"[ves-io-frontend\", \"ns1\" , \"1\", \"0\"]\"",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2235,12 +2242,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2254,6 +2261,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Bloggin-app-namespace-1.",
+            "x-f5xc-example": "bloggin-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -2264,7 +2272,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999530+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560043+00:00"
           },
           "query": {
             "type": "string",
@@ -2272,6 +2280,7 @@
             "title": "Query",
             "x-displayname": "Query",
             "x-ves-example": "Query={app_type=\"blogging_app\"}",
+            "x-f5xc-example": "\"query={app_type=\"blogging_app\"}\"",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2290,12 +2299,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2346,6 +2355,7 @@
             "format": "uint64",
             "x-displayname": "Total Hits.",
             "x-ves-example": "0",
+            "x-f5xc-example": "0",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2385,12 +2395,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2434,6 +2444,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Bloggin-app-namespace-1.",
+            "x-f5xc-example": "bloggin-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -2444,7 +2455,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999546+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560058+00:00"
           },
           "start_time": {
             "type": "string",
@@ -2455,12 +2466,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2477,12 +2488,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_step": "true"
             },
+            "x-f5xc-example": "15m",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_step": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_step": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2539,12 +2550,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.time_interval": "true"
             },
+            "x-f5xc-example": "30m",
             "x-validation-rules": {
               "ves.io.schema.rules.string.time_interval": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.time_interval": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2578,7 +2589,7 @@
             "description": "The number of security events for virtual host in the given namespace.",
             "format": "uint64",
             "x-displayname": "Count",
-            "x-ves-example": "15",
+            "x-f5xc-example": "15",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2595,6 +2606,7 @@
             "format": "date-time",
             "x-displayname": "Maximum time.",
             "x-ves-example": "01-01-1970T00:00:00Z.",
+            "x-f5xc-example": "01-01-1970T00:00:00Z",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2611,6 +2623,7 @@
             "format": "date-time",
             "x-displayname": "Minimum time.",
             "x-ves-example": "01-01-1970T00:00:00Z.",
+            "x-f5xc-example": "01-01-1970T00:00:00Z",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2663,12 +2676,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2683,6 +2696,7 @@
             "format": "int32",
             "x-displayname": "Limit",
             "x-ves-example": "100",
+            "x-f5xc-example": "100",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -2698,6 +2712,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Bloggin-app-namespace-1.",
+            "x-f5xc-example": "bloggin-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -2708,7 +2723,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999566+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560078+00:00"
           },
           "query": {
             "type": "string",
@@ -2716,6 +2731,7 @@
             "title": "Query",
             "x-displayname": "Query",
             "x-ves-example": "Query={app_type=\"blogging_app\"}",
+            "x-f5xc-example": "\"query={app_type=\"blogging_app\"}\"",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2732,6 +2748,7 @@
             "format": "boolean",
             "x-displayname": "Scroll",
             "x-ves-example": "True",
+            "x-f5xc-example": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2765,12 +2782,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2827,6 +2844,7 @@
             },
             "x-displayname": "Events",
             "x-ves-example": "Value",
+            "x-f5xc-example": "value",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2840,6 +2858,7 @@
             "title": "Scroll ID",
             "x-displayname": "Scroll ID",
             "x-ves-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==.",
+            "x-f5xc-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2857,6 +2876,7 @@
             "format": "uint64",
             "x-displayname": "Total Hits.",
             "x-ves-example": "0",
+            "x-f5xc-example": "0",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2895,6 +2915,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Bloggin-app-namespace-1.",
+            "x-f5xc-example": "bloggin-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -2905,7 +2926,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999583+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560096+00:00"
           },
           "scroll_id": {
             "type": "string",
@@ -2913,6 +2934,7 @@
             "title": "Scroll ID",
             "x-displayname": "Scroll ID",
             "x-ves-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==.",
+            "x-f5xc-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -2965,12 +2987,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -2984,6 +3006,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Bloggin-app-namespace-1.",
+            "x-f5xc-example": "bloggin-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -2994,7 +3017,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999593+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560105+00:00"
           },
           "query": {
             "type": "string",
@@ -3002,6 +3025,7 @@
             "title": "Query",
             "x-displayname": "Query",
             "x-ves-example": "Query={app_type=\"blogging_app\"}",
+            "x-f5xc-example": "\"query={app_type=\"blogging_app\"}\"",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3020,12 +3044,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3076,6 +3100,7 @@
             "format": "uint64",
             "x-displayname": "Total Hits.",
             "x-ves-example": "0",
+            "x-f5xc-example": "0",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3127,12 +3152,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3147,6 +3172,7 @@
             "format": "int32",
             "x-displayname": "Limit",
             "x-ves-example": "100",
+            "x-f5xc-example": "100",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -3162,6 +3188,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Bloggin-app-namespace-1.",
+            "x-f5xc-example": "bloggin-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -3172,7 +3199,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999609+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560120+00:00"
           },
           "query": {
             "type": "string",
@@ -3180,6 +3207,7 @@
             "title": "Query",
             "x-displayname": "Query",
             "x-ves-example": "Query={app_type=\"blogging_app\"}",
+            "x-f5xc-example": "\"query={app_type=\"blogging_app\"}\"",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3196,6 +3224,7 @@
             "format": "boolean",
             "x-displayname": "Scroll",
             "x-ves-example": "True",
+            "x-f5xc-example": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3229,12 +3258,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3291,6 +3320,7 @@
             },
             "x-displayname": "Incidents",
             "x-ves-example": "Value",
+            "x-f5xc-example": "value",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3304,6 +3334,7 @@
             "title": "Scroll ID",
             "x-displayname": "Scroll ID",
             "x-ves-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==.",
+            "x-f5xc-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3321,6 +3352,7 @@
             "format": "uint64",
             "x-displayname": "Total Hits.",
             "x-ves-example": "0",
+            "x-f5xc-example": "0",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3359,6 +3391,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Bloggin-app-namespace-1.",
+            "x-f5xc-example": "bloggin-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -3369,7 +3402,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999629+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560137+00:00"
           },
           "scroll_id": {
             "type": "string",
@@ -3377,6 +3410,7 @@
             "title": "Scroll ID",
             "x-displayname": "Scroll ID",
             "x-ves-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==.",
+            "x-f5xc-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3429,12 +3463,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3448,6 +3482,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Bloggin-app-namespace-1.",
+            "x-f5xc-example": "bloggin-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -3458,7 +3493,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999638+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560146+00:00"
           },
           "query": {
             "type": "string",
@@ -3466,6 +3501,7 @@
             "title": "Query",
             "x-displayname": "Query",
             "x-ves-example": "Query={vh_name=\"vh-1\", site=\"CE-01\"}",
+            "x-f5xc-example": "\"query={vh_name=\"vh-1\", site=\"ce-01\"}\"",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3484,12 +3520,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3540,6 +3576,7 @@
             "format": "uint64",
             "x-displayname": "Total Hits.",
             "x-ves-example": "1400",
+            "x-f5xc-example": "1400",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3591,12 +3628,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3611,6 +3648,7 @@
             "format": "int32",
             "x-displayname": "Limit",
             "x-ves-example": "100",
+            "x-f5xc-example": "100",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -3626,6 +3664,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Bloggin-app-namespace-1.",
+            "x-f5xc-example": "bloggin-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -3636,7 +3675,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999654+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560161+00:00"
           },
           "query": {
             "type": "string",
@@ -3644,6 +3683,7 @@
             "title": "Query",
             "x-displayname": "Query",
             "x-ves-example": "Query={vh_name=\"vh-1\", site=\"CE-01\"}",
+            "x-f5xc-example": "\"query={vh_name=\"vh-1\", site=\"ce-01\"}\"",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3660,6 +3700,7 @@
             "format": "boolean",
             "x-displayname": "Scroll",
             "x-ves-example": "True",
+            "x-f5xc-example": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3693,12 +3734,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
+            "x-f5xc-example": "1570007981",
             "x-validation-rules": {
               "ves.io.schema.rules.string.query_time": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.query_time": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3755,6 +3796,7 @@
             },
             "x-displayname": "Events",
             "x-ves-example": "Value",
+            "x-f5xc-example": "value",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3768,6 +3810,7 @@
             "title": "Scroll ID",
             "x-displayname": "Scroll ID",
             "x-ves-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==.",
+            "x-f5xc-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3785,6 +3828,7 @@
             "format": "uint64",
             "x-displayname": "Total Hits.",
             "x-ves-example": "100",
+            "x-f5xc-example": "100",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3823,6 +3867,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Bloggin-app-namespace-1.",
+            "x-f5xc-example": "bloggin-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -3833,7 +3878,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999672+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560178+00:00"
           },
           "scroll_id": {
             "type": "string",
@@ -3841,6 +3886,7 @@
             "title": "Scroll ID",
             "x-displayname": "Scroll ID",
             "x-ves-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==.",
+            "x-f5xc-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3878,6 +3924,7 @@
             "title": "Attack_type.",
             "x-displayname": "Attack Type.",
             "x-ves-example": "Server Side Code Injection.",
+            "x-f5xc-example": "Server Side Code Injection",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3893,6 +3940,7 @@
             "title": "Description.",
             "x-displayname": "Description.",
             "x-ves-example": "This campaign aims to identify Drupal web servers vulnerable to Drupalgeddon2 RCE vulnerability (CVE-2018-7600). The threat actor instructs the server to download and execute a cryptocurrency miner. The same threat actor was previously detected exploiting Drupal REST Module RCE vulnerability (CVE-2019-6340).",
+            "x-f5xc-example": "This campaign aims to identify Drupal web servers vulnerable to Drupalgeddon2 RCE vulnerability (CVE-2018-7600). The threat actor instructs the server to download and execute a cryptocurrency miner.   The same threat actor was previously detected exploiting Drupal REST Module RCE vulnerability (CVE-2019-6340).",
             "minLength": 0,
             "maxLength": 0,
             "x-f5xc-required-for": {
@@ -3903,7 +3951,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999681+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560185+00:00"
           },
           "id": {
             "type": "string",
@@ -3915,6 +3963,7 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
+            "x-f5xc-example": "cmp5641a5adbeabaf2708ce7663ad937df8",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
@@ -3922,7 +3971,6 @@
             "maximum": 4094,
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3936,6 +3984,7 @@
             "title": "Intent",
             "x-displayname": "Intent",
             "x-ves-example": "Malware Spreading - Crypto Currency Miner.",
+            "x-f5xc-example": "Malware Spreading - Crypto Currency Miner",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -3955,12 +4004,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
+            "x-f5xc-example": "2022/11/29 20:19:17",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -3981,10 +4030,10 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
+            "x-f5xc-example": "['Cryptocurrency Miner']",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4002,12 +4051,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
+            "x-f5xc-example": "Drupal 'Drupalgeddon2' RCE - exec48ne",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
             "minLength": 0,
             "maxLength": 16,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4016,7 +4065,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999692+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560196+00:00"
           },
           "references": {
             "type": "array",
@@ -4027,6 +4076,7 @@
             },
             "x-displayname": "References.",
             "x-ves-example": "['CVE-2018-7600']",
+            "x-f5xc-example": "['CVE-2018-7600']",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4044,12 +4094,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
+            "x-f5xc-example": "High",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4070,10 +4120,10 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
+            "x-f5xc-example": "['PHP', 'Unix/Linux']",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4170,7 +4220,7 @@
             "type": "string",
             "description": "X-displayName: \"Step\"\nx-required\nstep is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response.\nThe timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.\nFormat: [0-9][smhd], where s - seconds, m - minutes, h - hours, d - days.",
             "title": "Step",
-            "x-ves-example": "5m",
+            "x-f5xc-example": "5m",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -4257,7 +4307,7 @@
             "description": "X-displayName: \"TopK\"\nNumber of top field values to be returned in the response.",
             "title": "Topk",
             "format": "int64",
-            "x-ves-example": "10",
+            "x-f5xc-example": "10",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -4398,7 +4448,7 @@
             "description": "X-displayName: \"TopK\"\nNumber of top field values to be returned in the response.",
             "title": "Topk",
             "format": "int64",
-            "x-ves-example": "10",
+            "x-f5xc-example": "10",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -4476,7 +4526,7 @@
             "description": "X-displayName: \"Percent\"\nx-required\n\nPercentile for which value is calculated.",
             "title": "Percent",
             "format": "double",
-            "x-ves-example": "[99.0]",
+            "x-f5xc-example": "[99.0]",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4573,7 +4623,7 @@
             "type": "string",
             "description": "X-displayName: \"Step\"\nx-required\nstep is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response.\nThe timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.\nFormat: [0-9][smhd], where s - seconds, m - minutes, h - hours, d - days.",
             "title": "Step",
-            "x-ves-example": "5m",
+            "x-f5xc-example": "5m",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -4623,7 +4673,7 @@
             "description": "X-displayName: \"TopK\"\nNumber of top field values to be returned in the response.",
             "title": "Topk",
             "format": "int64",
-            "x-ves-example": "10",
+            "x-f5xc-example": "10",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -4729,7 +4779,7 @@
             "description": "X-displayName: \"Percent\"\nx-required\n\nPercentile for which value is calculated.",
             "title": "Percent",
             "format": "double",
-            "x-ves-example": "[99.0]",
+            "x-f5xc-example": "[99.0]",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4783,10 +4833,6 @@
               "ves.io.schema.rules.repeated.max_items": "64",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.items.enum.defined_only": "true",
-            "ves.io.schema.rules.repeated.items.enum.not_in": "[0]",
-            "ves.io.schema.rules.repeated.max_items": "64",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4842,12 +4888,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.timestamp.within.seconds": "31536000"
             },
+            "x-f5xc-example": "2019-12-31:44:34.171543432Z",
             "x-validation-rules": {
               "ves.io.schema.rules.timestamp.within.seconds": "31536000"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.timestamp.within.seconds": "31536000",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4908,15 +4954,13 @@
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
+            "x-f5xc-example": "/endpoint1",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_len": "1024",
-            "ves.io.schema.rules.string.templated_http_path": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -4944,13 +4988,12 @@
               "ves.io.schema.rules.string.max_len": "128",
               "ves.io.schema.rules.string.vh_domain": "true"
             },
+            "x-f5xc-example": "api.example.com",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "128",
               "ves.io.schema.rules.string.vh_domain": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "128",
-            "ves.io.schema.rules.string.vh_domain": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5028,14 +5071,12 @@
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "GET",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.items.enum.defined_only": "true",
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.items.enum.defined_only": "true",
-            "ves.io.schema.rules.repeated.max_items": "16",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5056,15 +5097,13 @@
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
+            "x-f5xc-example": "/api/v1/login",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_len": "1024",
-            "ves.io.schema.rules.string.templated_http_path": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5113,15 +5152,13 @@
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
+            "x-f5xc-example": "value",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_len": "1024",
               "ves.io.schema.rules.string.templated_http_path": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_len": "1024",
-            "ves.io.schema.rules.string.templated_http_path": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5156,8 +5193,6 @@
               "ves.io.schema.rules.string.vh_domain": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "128",
-            "ves.io.schema.rules.string.vh_domain": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5240,9 +5275,6 @@
               "ves.io.schema.rules.repeated.max_items": "15",
               "ves.io.schema.rules.repeated.unique_metadata_name": "true"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.repeated.max_items": "15",
-            "ves.io.schema.rules.repeated.unique_metadata_name": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5294,11 +5326,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "128"
             },
+            "x-f5xc-example": "oas-all-operations",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "128"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "128",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5317,13 +5349,12 @@
               "ves.io.schema.rules.string.http_path": "true",
               "ves.io.schema.rules.string.max_len": "128"
             },
+            "x-f5xc-example": "/api/v1",
             "x-validation-rules": {
               "ves.io.schema.rules.string.http_path": "true",
               "ves.io.schema.rules.string.max_len": "128"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.http_path": "true",
-            "ves.io.schema.rules.string.max_len": "128",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5378,8 +5409,6 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.repeated.max_items": "16"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.repeated.max_items": "16",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5423,6 +5452,7 @@
               "ves.io.schema.rules.uint32.gt": "0",
               "ves.io.schema.rules.uint32.lte": "8192"
             },
+            "x-f5xc-example": "1",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.uint32.gt": "0",
@@ -5430,9 +5460,6 @@
             },
             "minimum": 0,
             "maximum": 2147483647,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.uint32.gt": "0",
-            "ves.io.schema.rules.uint32.lte": "8192",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5637,11 +5664,6 @@
               "ves.io.schema.rules.repeated.min_items": "1",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.repeated.items.enum.defined_only": "true",
-            "ves.io.schema.rules.repeated.items.enum.not_in": "[7]",
-            "ves.io.schema.rules.repeated.min_items": "1",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5702,11 +5724,6 @@
               "ves.io.schema.rules.repeated.min_items": "1",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.repeated.items.enum.defined_only": "true",
-            "ves.io.schema.rules.repeated.items.enum.in": "[2,4,5,7]",
-            "ves.io.schema.rules.repeated.min_items": "1",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5754,11 +5771,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "128"
             },
+            "x-f5xc-example": "oas-all-operations",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "128"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "128",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5777,13 +5794,12 @@
               "ves.io.schema.rules.string.http_path": "true",
               "ves.io.schema.rules.string.max_len": "128"
             },
+            "x-f5xc-example": "/api/v1",
             "x-validation-rules": {
               "ves.io.schema.rules.string.http_path": "true",
               "ves.io.schema.rules.string.max_len": "128"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.http_path": "true",
-            "ves.io.schema.rules.string.max_len": "128",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5809,8 +5825,6 @@
               "ves.io.schema.rules.string.vh_domain": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "128",
-            "ves.io.schema.rules.string.vh_domain": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5868,9 +5882,6 @@
               "ves.io.schema.rules.repeated.max_items": "10",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.enum.defined_only": "true",
-            "ves.io.schema.rules.repeated.max_items": "10",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5889,14 +5900,13 @@
               "ves.io.schema.rules.uint32.gte": "1",
               "ves.io.schema.rules.uint32.lte": "401308"
             },
+            "x-f5xc-example": "4683",
             "x-validation-rules": {
               "ves.io.schema.rules.uint32.gte": "1",
               "ves.io.schema.rules.uint32.lte": "401308"
             },
             "minimum": 0,
             "maximum": 2147483647,
-            "ves.io.schema.rules.uint32.gte": "1",
-            "ves.io.schema.rules.uint32.lte": "401308",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5917,12 +5927,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.timestamp.within.seconds": "31536000"
             },
+            "x-f5xc-example": "2019-12-31:44:34.171543432Z",
             "x-validation-rules": {
               "ves.io.schema.rules.timestamp.within.seconds": "31536000"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.timestamp.within.seconds": "31536000",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5942,12 +5952,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.ipv4_prefix": "true"
             },
+            "x-f5xc-example": "192.168.20.0/24",
             "x-validation-rules": {
               "ves.io.schema.rules.string.ipv4_prefix": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.ipv4_prefix": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5964,12 +5974,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.ipv6_prefix": "true"
             },
+            "x-f5xc-example": "2001::1/64",
             "x-validation-rules": {
               "ves.io.schema.rules.string.ipv6_prefix": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.string.ipv6_prefix": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -5996,7 +6006,6 @@
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6138,6 +6147,7 @@
               "ves.io.schema.rules.repeated.min_items": "1",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "['user.email', 'credit_card']",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.repeated.items.string.json_path": "true",
@@ -6148,14 +6158,6 @@
               "ves.io.schema.rules.repeated.min_items": "1",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.repeated.items.string.json_path": "true",
-            "ves.io.schema.rules.repeated.items.string.max_bytes": "256",
-            "ves.io.schema.rules.repeated.items.string.min_bytes": "1",
-            "ves.io.schema.rules.repeated.items.string.not_empty": "true",
-            "ves.io.schema.rules.repeated.max_items": "16",
-            "ves.io.schema.rules.repeated.min_items": "1",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6277,13 +6279,12 @@
               "ves.io.schema.rules.string.max_bytes": "256",
               "ves.io.schema.rules.string.not_empty": "true"
             },
+            "x-f5xc-example": "application/json",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_bytes": "256",
               "ves.io.schema.rules.string.not_empty": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_bytes": "256",
-            "ves.io.schema.rules.string.not_empty": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6319,16 +6320,13 @@
               "ves.io.schema.rules.string.max_bytes": "256",
               "ves.io.schema.rules.string.min_bytes": "1"
             },
+            "x-f5xc-example": "Content-Type",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.http_header_field": "true",
               "ves.io.schema.rules.string.max_bytes": "256",
               "ves.io.schema.rules.string.min_bytes": "1"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.http_header_field": "true",
-            "ves.io.schema.rules.string.max_bytes": "256",
-            "ves.io.schema.rules.string.min_bytes": "1",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6337,7 +6335,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999879+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560375+00:00"
           },
           "presence": {
             "type": "boolean",
@@ -6369,9 +6367,6 @@
               "ves.io.schema.rules.string.regex": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_bytes": "256",
-            "ves.io.schema.rules.string.not_empty": "true",
-            "ves.io.schema.rules.string.regex": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -6409,6 +6404,7 @@
             "title": "Kind",
             "x-displayname": "Kind",
             "x-ves-example": "Virtual_site.",
+            "x-f5xc-example": "virtual_site",
             "minLength": 0,
             "maxLength": 14,
             "x-f5xc-required-for": {
@@ -6420,7 +6416,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999888+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560383+00:00"
           },
           "name": {
             "type": "string",
@@ -6428,6 +6424,7 @@
             "title": "Name",
             "x-displayname": "Name",
             "x-ves-example": "Contactus-route.",
+            "x-f5xc-example": "contactus-route",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -6438,7 +6435,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999892+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560387+00:00"
           },
           "namespace": {
             "type": "string",
@@ -6446,6 +6443,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Ns1",
+            "x-f5xc-example": "ns1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -6456,7 +6454,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999896+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560391+00:00"
           },
           "tenant": {
             "type": "string",
@@ -6464,6 +6462,7 @@
             "title": "Tenant",
             "x-displayname": "Tenant",
             "x-ves-example": "Example-corp.",
+            "x-f5xc-example": "example-corp",
             "minLength": 0,
             "maxLength": 18,
             "x-f5xc-required-for": {
@@ -6476,7 +6475,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999901+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560396+00:00"
           },
           "uid": {
             "type": "string",
@@ -6484,6 +6483,7 @@
             "title": "Uid",
             "x-displayname": "UID",
             "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31.",
+            "x-f5xc-example": "d15f1fad-4d37-48c0-8706-df1824d76d31",
             "minLength": 0,
             "maxLength": 36,
             "x-f5xc-required-for": {
@@ -6497,7 +6497,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999906+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560401+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -6535,7 +6535,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999912+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560407+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -6672,7 +6672,7 @@
             "type": "string",
             "description": "X-displayName: \"Step\"\nActual step size in the response. It could be higher than the requested step depending on the query duration and/or the log rollups.\nFormat: [0-9][smhd], where s - seconds, m - minutes, h - hours, d - days.",
             "title": "Step",
-            "x-ves-example": "30m",
+            "x-f5xc-example": "30m",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -6744,7 +6744,7 @@
             "type": "string",
             "description": "X-displayName: \"Key\"",
             "title": "Key",
-            "x-ves-example": "US",
+            "x-f5xc-example": "US",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -6755,7 +6755,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999934+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560447+00:00"
           },
           "order_by": {
             "$ref": "#/components/schemas/logOrderByData"
@@ -6846,7 +6846,7 @@
             "type": "string",
             "description": "X-displayName: \"Key\"\nKey contain the name/value pair that identifies the unique key fields.",
             "title": "Keys",
-            "x-ves-example": "HIT, MISS, REVALIDATED.",
+            "x-f5xc-example": "HIT, MISS, REVALIDATED",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -6857,7 +6857,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999946+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560460+00:00"
           },
           "order_by": {
             "$ref": "#/components/schemas/logOrderByData"
@@ -6956,7 +6956,7 @@
             "type": "string",
             "description": "X-displayName: \"Key\"\nKey contain the name/value pair that identifies the unique key fields.",
             "title": "Keys",
-            "x-ves-example": "HIT, MISS, REVALIDATED.",
+            "x-f5xc-example": "HIT, MISS, REVALIDATED",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -6967,7 +6967,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999962+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560476+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -7114,7 +7114,7 @@
             "type": "string",
             "description": "X-displayName: \"Key\"\nKey contain the name/value pair that identifies the unique key fields.",
             "title": "Keys",
-            "x-ves-example": "HIT, MISS, REVALIDATED.",
+            "x-f5xc-example": "HIT, MISS, REVALIDATED",
             "minLength": 0,
             "maxLength": 16,
             "x-f5xc-required-for": {
@@ -7125,7 +7125,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999975+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560489+00:00"
           },
           "sub_aggs": {
             "type": "object",
@@ -7229,7 +7229,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:29.999993+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560507+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -7284,7 +7284,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000001+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560515+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -7322,7 +7322,7 @@
             "type": "object",
             "description": "X-displayName: \"Keys\"\nKeys contain the name/value pair that identifies the unique combination of multiple key fields\nSRC_IP\": \"10.10.10.1\", \"COUNTRY\": \"US\"}\"",
             "title": "Keys",
-            "x-ves-example": "{",
+            "x-f5xc-example": "{",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7501,7 +7501,7 @@
             "maxLength": 16,
             "minLength": 7,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000037+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560537+00:00"
           },
           "value": {
             "type": "number",
@@ -7517,7 +7517,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000043+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560542+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -7632,6 +7632,7 @@
             "title": "Namespace",
             "x-displayname": "Namespace",
             "x-ves-example": "Blogging-app-namespace-1.",
+            "x-f5xc-example": "blogging-app-namespace-1",
             "minLength": 0,
             "maxLength": 6,
             "x-f5xc-required-for": {
@@ -7642,7 +7643,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000055+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560553+00:00"
           },
           "sec_event_type": {
             "type": "string",
@@ -7650,6 +7651,7 @@
             "title": "Security Event Type.",
             "x-displayname": "Security Event Type.",
             "x-ves-example": "WAF",
+            "x-f5xc-example": "WAF",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -7665,6 +7667,7 @@
             "title": "Source Instance.",
             "x-displayname": "Source Instance.",
             "x-ves-example": "IN",
+            "x-f5xc-example": "IN",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -7680,6 +7683,7 @@
             "title": "Source Site.",
             "x-displayname": "Source Site.",
             "x-ves-example": "Greatblogs-CE.",
+            "x-f5xc-example": "greatblogs-ce",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -7695,6 +7699,7 @@
             "title": "Virtual Host.",
             "x-displayname": "Virtual Host.",
             "x-ves-example": "Greatblogs-vhost.",
+            "x-f5xc-example": "greatblogs-vhost",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -7762,6 +7767,7 @@
             "title": "Value",
             "x-displayname": "Value",
             "x-ves-example": "Blogging-app-namespace-1.",
+            "x-f5xc-example": "blogging-app-namespace-1",
             "minLength": 0,
             "maxLength": 15,
             "x-f5xc-required-for": {
@@ -7772,7 +7778,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000068+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560566+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -7824,6 +7830,7 @@
             "format": "double",
             "x-displayname": "Timestamp",
             "x-ves-example": "1570007981.",
+            "x-f5xc-example": "1570007981",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7837,6 +7844,7 @@
             "title": "Value",
             "x-displayname": "Value",
             "x-ves-example": "15",
+            "x-f5xc-example": "15",
             "minLength": 0,
             "maxLength": 15,
             "x-f5xc-required-for": {
@@ -7847,7 +7855,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000074+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560573+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -7883,11 +7891,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "128"
             },
+            "x-f5xc-example": "exampleuser-agent for Header",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "128"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "128",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7937,8 +7945,6 @@
               "ves.io.schema.rules.repeated.max_items": "64",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.max_items": "64",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7963,8 +7969,6 @@
               "ves.io.schema.rules.repeated.max_items": "64",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.max_items": "64",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -7989,8 +7993,6 @@
               "ves.io.schema.rules.repeated.max_items": "1024",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.max_items": "1024",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8015,8 +8017,6 @@
               "ves.io.schema.rules.repeated.max_items": "64",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.max_items": "64",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8060,11 +8060,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "128"
             },
+            "x-f5xc-example": "exampleuser-agent for Header",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "128"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "128",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8085,6 +8085,7 @@
               "ves.io.schema.rules.uint32.gte": "0",
               "ves.io.schema.rules.uint32.lte": "299999999"
             },
+            "x-f5xc-example": "10000001",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.uint32.gte": "0",
@@ -8092,9 +8093,6 @@
             },
             "minimum": 0,
             "maximum": 2147483647,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.uint32.gte": "0",
-            "ves.io.schema.rules.uint32.lte": "299999999",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8138,11 +8136,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "128"
             },
+            "x-f5xc-example": "exampleuser-agent for Header",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "128"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "128",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8194,16 +8192,13 @@
               "ves.io.schema.rules.repeated.min_items": "1",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "[713, 7932, 847325, 4683, 15269, 1000001]",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.min_items": "1",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.repeated.max_items": "16",
-            "ves.io.schema.rules.repeated.min_items": "1",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8249,8 +8244,6 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.repeated.max_items": "4"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.repeated.max_items": "4",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8288,12 +8281,12 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
+            "x-f5xc-example": "Hydra",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
             "minLength": 0,
             "maxLength": 1024,
-            "ves.io.schema.rules.message.required": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8414,13 +8407,12 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
             },
+            "x-f5xc-example": "Session",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_bytes": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8429,7 +8421,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000120+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560618+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -8784,14 +8776,12 @@
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "['GET', 'POST', 'DELETE']",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.items.enum.defined_only": "true",
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.items.enum.defined_only": "true",
-            "ves.io.schema.rules.repeated.max_items": "16",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8882,8 +8872,6 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.repeated.max_items": "4"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.repeated.max_items": "4",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8931,9 +8919,6 @@
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.items.string.len": "36",
-            "ves.io.schema.rules.repeated.max_items": "16",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -8997,13 +8982,12 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
             },
+            "x-f5xc-example": "user_id",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_bytes": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9012,7 +8996,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000140+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560637+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -9088,16 +9072,13 @@
               "ves.io.schema.rules.repeated.max_items": "64",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "['new york', 'london', 'sydney', 'tokyo', 'cairo']",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.items.string.max_bytes": "256",
               "ves.io.schema.rules.repeated.items.string.not_empty": "true",
               "ves.io.schema.rules.repeated.max_items": "64",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.items.string.max_bytes": "256",
-            "ves.io.schema.rules.repeated.items.string.not_empty": "true",
-            "ves.io.schema.rules.repeated.max_items": "64",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9123,6 +9104,7 @@
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "['^new .*$', 'san f.*', '.* del .*']",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.items.string.max_bytes": "256",
               "ves.io.schema.rules.repeated.items.string.not_empty": "true",
@@ -9130,11 +9112,6 @@
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.items.string.max_bytes": "256",
-            "ves.io.schema.rules.repeated.items.string.not_empty": "true",
-            "ves.io.schema.rules.repeated.items.string.regex": "true",
-            "ves.io.schema.rules.repeated.max_items": "16",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9155,13 +9132,11 @@
               "ves.io.schema.rules.repeated.max_items": "9",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "x-ves-example": "\"[BASE64_DECODE, LOWER_CASE]",
+            "x-f5xc-example": "\"[BASE64_DECODE, LOWER_CASE]",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "9",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.max_items": "9",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9220,16 +9195,13 @@
               "ves.io.schema.rules.repeated.max_items": "128",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "192.168.20.0/24",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.items.string.ipv4_prefix": "true",
               "ves.io.schema.rules.repeated.items.string.not_empty": "true",
               "ves.io.schema.rules.repeated.max_items": "128",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.items.string.ipv4_prefix": "true",
-            "ves.io.schema.rules.repeated.items.string.not_empty": "true",
-            "ves.io.schema.rules.repeated.max_items": "128",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9273,7 +9245,6 @@
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "16"
             },
-            "ves.io.schema.rules.repeated.max_items": "16",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9296,7 +9267,6 @@
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "16"
             },
-            "ves.io.schema.rules.repeated.max_items": "16",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9319,7 +9289,6 @@
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "16"
             },
-            "ves.io.schema.rules.repeated.max_items": "16",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9342,7 +9311,6 @@
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "16"
             },
-            "ves.io.schema.rules.repeated.max_items": "16",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9399,14 +9367,12 @@
               "ves.io.schema.rules.string.max_len": "256",
               "ves.io.schema.rules.string.min_len": "1"
             },
+            "x-f5xc-example": "abc.zyz.com",
             "x-validation-rules": {
               "ves.io.schema.rules.string.hostname": "true",
               "ves.io.schema.rules.string.max_len": "256",
               "ves.io.schema.rules.string.min_len": "1"
             },
-            "ves.io.schema.rules.string.hostname": "true",
-            "ves.io.schema.rules.string.max_len": "256",
-            "ves.io.schema.rules.string.min_len": "1",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9421,6 +9387,7 @@
             "format": "date-time",
             "x-displayname": "Expiration Timestamp.",
             "x-ves-example": "2019-12-31:44:34.171543432Z.",
+            "x-f5xc-example": "2019-12-31:44:34.171543432Z",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -9448,14 +9415,12 @@
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "GET",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.items.enum.defined_only": "true",
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.items.enum.defined_only": "true",
-            "ves.io.schema.rules.repeated.max_items": "16",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9474,13 +9439,12 @@
               "ves.io.schema.rules.string.http_path": "true",
               "ves.io.schema.rules.string.max_len": "256"
             },
+            "x-f5xc-example": "/register/",
             "x-validation-rules": {
               "ves.io.schema.rules.string.http_path": "true",
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.http_path": "true",
-            "ves.io.schema.rules.string.max_len": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9499,13 +9463,12 @@
               "ves.io.schema.rules.string.max_bytes": "256",
               "ves.io.schema.rules.string.regex": "true"
             },
+            "x-f5xc-example": "/blog_id/.*",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_bytes": "256",
               "ves.io.schema.rules.string.regex": "true"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_bytes": "256",
-            "ves.io.schema.rules.string.regex": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9526,14 +9489,12 @@
               "ves.io.schema.rules.string.max_len": "256",
               "ves.io.schema.rules.string.min_len": "1"
             },
+            "x-f5xc-example": "xyz.com",
             "x-validation-rules": {
               "ves.io.schema.rules.string.hostname": "true",
               "ves.io.schema.rules.string.max_len": "256",
               "ves.io.schema.rules.string.min_len": "1"
             },
-            "ves.io.schema.rules.string.hostname": "true",
-            "ves.io.schema.rules.string.max_len": "256",
-            "ves.io.schema.rules.string.min_len": "1",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9587,13 +9548,11 @@
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "x-ves-example": "\"['ADWARE', 'TRICKBOT']",
+            "x-f5xc-example": "\"['ADWARE', 'TRICKBOT']",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.max_items": "16",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9616,14 +9575,12 @@
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "['ed6dfd54b01ebe31b7a65b88abfa7297', '16efcf0e00504ddfedde13bfea997952', 'de364c46b0dfc283b5e38c79ceae3f8f']",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.items.string.len": "32",
               "ves.io.schema.rules.repeated.max_items": "16",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.items.string.len": "32",
-            "ves.io.schema.rules.repeated.max_items": "16",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9646,14 +9603,12 @@
               "ves.io.schema.rules.repeated.max_items": "32",
               "ves.io.schema.rules.repeated.unique": "true"
             },
+            "x-f5xc-example": "['fb00055a1196aeea8d1bc609885ba953', 'b386946a5a44d1ddcc843bc75336dfce']",
             "x-validation-rules": {
               "ves.io.schema.rules.repeated.items.string.len": "32",
               "ves.io.schema.rules.repeated.max_items": "32",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.repeated.items.string.len": "32",
-            "ves.io.schema.rules.repeated.max_items": "32",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9799,6 +9754,7 @@
               "ves.io.schema.rules.repeated.items.string.min_len": "1",
               "ves.io.schema.rules.repeated.max_items": "1"
             },
+            "x-f5xc-example": "region in (us-west1, us-west2),tier in (staging)",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.repeated.items.string.k8s_label_selector": "true",
@@ -9806,11 +9762,6 @@
               "ves.io.schema.rules.repeated.items.string.min_len": "1",
               "ves.io.schema.rules.repeated.max_items": "1"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.repeated.items.string.k8s_label_selector": "true",
-            "ves.io.schema.rules.repeated.items.string.max_len": "4096",
-            "ves.io.schema.rules.repeated.items.string.min_len": "1",
-            "ves.io.schema.rules.repeated.max_items": "1",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9848,11 +9799,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
+            "x-f5xc-example": "Virtual Host for example-corp website",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_len": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_len": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9861,7 +9812,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000183+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560679+00:00"
           },
           "name": {
             "type": "string",
@@ -9876,15 +9827,13 @@
               "ves.io.schema.rules.string.min_len": "1",
               "ves.io.schema.rules.string.ves_object_name": "true"
             },
+            "x-f5xc-example": "example-corp-web",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.min_len": "1",
               "ves.io.schema.rules.string.ves_object_name": "true"
             },
             "maxLength": 16,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.min_len": "1",
-            "ves.io.schema.rules.string.ves_object_name": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -9893,7 +9842,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000188+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560683+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -9986,7 +9935,7 @@
             "type": "string",
             "description": "X-displayName: \"Description\"\ndescription of the method used to calculate trend.",
             "title": "Description.",
-            "x-ves-example": "Trend was calculated by comparing the avg of window size intervals of end-start Time and last window time interval.",
+            "x-f5xc-example": "Trend was calculated by comparing the avg of window size intervals of end-start Time and last window time interval",
             "minLength": 0,
             "maxLength": 0,
             "x-f5xc-required-for": {
@@ -9997,13 +9946,13 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000194+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560689+00:00"
           },
           "previous_value": {
             "type": "string",
             "description": "X-displayName: \"Previous Value\"",
             "title": "Previous Value.",
-            "x-ves-example": "200.00",
+            "x-f5xc-example": "200.00",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -10020,7 +9969,7 @@
             "type": "string",
             "description": "X-displayName: \"Value\"",
             "title": "Value",
-            "x-ves-example": "-15",
+            "x-f5xc-example": "-15",
             "minLength": 0,
             "maxLength": 15,
             "x-f5xc-required-for": {
@@ -10031,7 +9980,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000201+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560696+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -10067,7 +10016,7 @@
             "type": "boolean",
             "description": "Trend value computation requested for the field present in aggregation.\n\nX-displayName: \"Trend calculation requested by the user\"\nTrend value computation requested by the user\nOptional: default is false.",
             "format": "boolean",
-            "x-ves-example": "True",
+            "x-f5xc-example": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10129,7 +10078,7 @@
             "type": "string",
             "description": "X-displayName: \"Step\"\nx-required\nstep is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response.\nThe timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.\nFormat: [0-9][smhd], where s - seconds, m - minutes, h - hours, d - days.",
             "title": "Step",
-            "x-ves-example": "5m",
+            "x-f5xc-example": "5m",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -10216,7 +10165,7 @@
             "description": "X-displayName: \"TopK\"\nNumber of top field values to be returned in the response.",
             "title": "Topk",
             "format": "int64",
-            "x-ves-example": "10",
+            "x-f5xc-example": "10",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -10407,7 +10356,7 @@
             "description": "X-displayName: \"TopK\"\nNumber of top field values to be returned in the response.",
             "title": "Topk",
             "format": "int64",
-            "x-ves-example": "10",
+            "x-f5xc-example": "10",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -10498,7 +10447,7 @@
             "description": "X-displayName: \"Percent\"\nx-required\n\nPercentile for which value is calculated.",
             "title": "Percent",
             "format": "double",
-            "x-ves-example": "[99.0]",
+            "x-f5xc-example": "[99.0]",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10564,15 +10513,13 @@
               "ves.io.schema.rules.string.http_header_field": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
             },
+            "x-f5xc-example": "Accept-Encoding",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.http_header_field": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.http_header_field": "true",
-            "ves.io.schema.rules.string.max_bytes": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10581,7 +10528,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000246+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560739+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -10627,9 +10574,6 @@
               "ves.io.schema.rules.repeated.max_items": "32",
               "ves.io.schema.rules.repeated.unique": "true"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.repeated.max_items": "32",
-            "ves.io.schema.rules.repeated.unique": "true",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10693,13 +10637,12 @@
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
             },
+            "x-f5xc-example": "sourceid",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_bytes": "256"
             },
             "minLength": 0,
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_bytes": "256",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10708,7 +10651,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000257+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560751+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -10748,14 +10691,12 @@
               "ves.io.schema.rules.string.max_bytes": "128",
               "ves.io.schema.rules.string.min_bytes": "1"
             },
+            "x-f5xc-example": "contacts-route",
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true",
               "ves.io.schema.rules.string.max_bytes": "128",
               "ves.io.schema.rules.string.min_bytes": "1"
             },
-            "ves.io.schema.rules.message.required": "true",
-            "ves.io.schema.rules.string.max_bytes": "128",
-            "ves.io.schema.rules.string.min_bytes": "1",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10764,7 +10705,7 @@
             },
             "x-original-maxLength": 128,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000262+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560755+00:00"
           },
           "namespace": {
             "type": "string",
@@ -10776,11 +10717,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_bytes": "64"
             },
+            "x-f5xc-example": "ns1",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_bytes": "64"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_bytes": "64",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10789,7 +10730,7 @@
             },
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000266+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560759+00:00"
           },
           "tenant": {
             "type": "string",
@@ -10801,11 +10742,11 @@
             "x-ves-validation-rules": {
               "ves.io.schema.rules.string.max_bytes": "64"
             },
+            "x-f5xc-example": "example-corp",
             "x-validation-rules": {
               "ves.io.schema.rules.string.max_bytes": "64"
             },
             "minLength": 0,
-            "ves.io.schema.rules.string.max_bytes": "64",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -10816,7 +10757,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T18:38:30.000270+00:00"
+            "x-reconciled-at": "2026-01-04T19:54:30.560764+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {

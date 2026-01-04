@@ -26,7 +26,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -46,9 +45,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -138,7 +135,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
       {
         description: "Script_id\nx-required\nID of the script.",
@@ -149,7 +145,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Script ID",
-        "x-ves-example": "S-1234567",
       },
     ],
     queryParameters: [],
@@ -170,10 +165,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.script_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-      script_id: "S-1234567",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -363,7 +355,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -384,9 +375,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -501,7 +490,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -512,7 +500,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -531,10 +518,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -632,7 +616,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -643,7 +626,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -682,10 +664,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -773,7 +752,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -787,7 +765,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -829,10 +806,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -920,7 +894,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -932,7 +905,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -953,10 +925,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1069,7 +1038,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1090,9 +1058,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1204,7 +1170,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -1215,7 +1180,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -1234,10 +1198,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1335,7 +1296,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1346,7 +1306,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1384,10 +1343,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1475,7 +1431,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1489,7 +1444,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -1531,10 +1485,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1623,7 +1574,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1644,9 +1594,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1758,7 +1706,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -1769,7 +1716,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -1788,10 +1734,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1889,7 +1832,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1900,7 +1842,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1938,10 +1879,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2029,7 +1967,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2043,7 +1980,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -2085,10 +2021,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2176,7 +2109,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -2197,9 +2129,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2383,7 +2313,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -2402,9 +2331,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2693,7 +2620,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "App_id",
-        "x-ves-example": "``volt-testing_backenda949ef7c-eda1ab47``",
       },
     ],
     requestBodySchema: null,
@@ -2711,9 +2637,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: [],
     confirmationRequired: true,
-    parameterExamples: {
-      app_id: "``volt-testing_backenda949ef7c-eda1ab47``",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2897,7 +2821,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -2917,9 +2840,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3010,7 +2931,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -3029,9 +2949,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3122,7 +3040,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -3143,9 +3060,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3242,7 +3157,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [
@@ -3255,7 +3169,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Virtual Host Name.",
-        "x-ves-example": "Example-app-vh-1.",
       },
     ],
     requestBodySchema: null,
@@ -3271,10 +3184,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-      virtual_host: "Example-app-vh-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3363,7 +3273,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -3383,9 +3292,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3475,7 +3382,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [
@@ -3488,7 +3394,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Dimt",
-        "x-ves-example": "Account_id.",
       },
       {
         description: "The relevant account_id/device_id.",
@@ -3499,7 +3404,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Dimv",
-        "x-ves-example": "Goldcha",
       },
       {
         description: "The API version to use.",
@@ -3510,7 +3414,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Requested API version.",
-        "x-ves-example": "V2",
       },
     ],
     requestBodySchema: null,
@@ -3526,12 +3429,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      dimt: "Account_id.",
-      dimv: "Goldcha",
-      namespace: "Payment-app-namespace-1.",
-      version: "V2",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3620,7 +3518,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -3639,9 +3536,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3731,7 +3626,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -3750,9 +3644,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3845,7 +3737,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Script ID",
-        "x-ves-example": "S-1234567",
       },
       {
         description: "Namespace\nNamespace.",
@@ -3856,7 +3747,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [
@@ -3870,7 +3760,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End Time",
-        "x-ves-example": "1570194300.",
       },
       {
         description:
@@ -3882,7 +3771,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start Time.",
-        "x-ves-example": "1570194000.",
       },
       {
         description:
@@ -3896,7 +3784,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "ALL",
-        "x-ves-example": "NEW",
       },
     ],
     requestBodySchema: null,
@@ -3912,13 +3799,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.id", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "1570194300.",
-      id: "S-1234567",
-      namespace: "Default",
-      start_time: "1570194000.",
-      type: "NEW",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4007,7 +3888,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -4026,9 +3906,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4118,7 +3996,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -4136,9 +4013,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4226,7 +4101,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -4237,7 +4111,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4275,10 +4148,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4366,7 +4236,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4380,7 +4249,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -4422,10 +4290,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4513,7 +4378,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nNamespace.",
@@ -4524,7 +4388,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -4545,10 +4408,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4653,7 +4513,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -4673,9 +4532,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4768,7 +4625,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -4779,7 +4635,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4815,10 +4670,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4906,7 +4758,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4920,7 +4771,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -4962,10 +4812,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5053,7 +4900,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -5071,9 +4917,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5161,7 +5005,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -5179,9 +5022,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5269,7 +5110,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -5280,7 +5120,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5318,10 +5157,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5409,7 +5245,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5423,7 +5258,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -5465,10 +5299,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5556,7 +5387,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nNamespace.",
@@ -5567,7 +5397,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -5588,10 +5417,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5697,7 +5523,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5718,9 +5543,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5835,7 +5658,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -5846,7 +5668,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5885,10 +5706,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5976,7 +5794,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5990,7 +5807,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -6032,10 +5848,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6123,7 +5936,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -6135,7 +5947,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -6156,10 +5967,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6271,7 +6079,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -6289,9 +6096,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6379,7 +6184,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -6390,7 +6194,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -6428,10 +6231,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6519,7 +6319,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -6533,7 +6332,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -6575,10 +6373,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6666,7 +6461,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nNamespace.",
@@ -6677,7 +6471,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -6698,10 +6491,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Value",
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6807,7 +6597,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -6827,9 +6616,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6920,7 +6707,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -6939,9 +6725,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7349,7 +7133,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Application Name.",
-        "x-ves-example": "App 8000",
       },
       {
         description: "Namespace\nnamespace is used to scope the query.",
@@ -7360,7 +7143,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -7377,10 +7159,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "App 8000",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7666,7 +7445,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -7685,9 +7463,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7780,7 +7556,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Script ID",
-        "x-ves-example": "S-1234567",
       },
       {
         description: "Namespace\nNamespace.",
@@ -7791,7 +7566,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [
@@ -7805,7 +7579,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End Time",
-        "x-ves-example": "1570194300.",
       },
       {
         description:
@@ -7817,7 +7590,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start Time.",
-        "x-ves-example": "1570194000.",
       },
       {
         description:
@@ -7831,7 +7603,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "ALL",
-        "x-ves-example": "NEW",
       },
     ],
     requestBodySchema: null,
@@ -7847,13 +7618,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.id", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "1570194300.",
-      id: "S-1234567",
-      namespace: "Default",
-      start_time: "1570194000.",
-      type: "NEW",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7941,7 +7706,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nx-required.",
@@ -7952,7 +7716,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -7969,10 +7732,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8060,7 +7820,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [
@@ -8088,8 +7847,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "Partially Initiated.",
-        "x-ves-example":
-          "[BOT_DETECTION_RULES_DEPLOYMENT_STATUS_INITIATED, BOT_DETECTION_RULES_DEPLOYMENT_STATUS_PARTIALLY_INITIATED]",
       },
     ],
     requestBodySchema: null,
@@ -8106,11 +7863,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-      rules_deployment_status:
-        "[BOT_DETECTION_RULES_DEPLOYMENT_STATUS_INITIATED, BOT_DETECTION_RULES_DEPLOYMENT_STATUS_PARTIALLY_INITIATED]",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8198,7 +7951,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Name Space\nx-required\nName Space.",
@@ -8209,7 +7961,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name Space.",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -8227,10 +7978,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8318,7 +8066,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [
@@ -8331,7 +8078,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "The account ID.",
-        "x-ves-example": "Test123",
       },
       {
         description: "String representing the device ID.",
@@ -8342,7 +8088,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Device ID",
-        "x-ves-example": "Device123",
       },
       {
         description: "The API version to use.",
@@ -8353,7 +8098,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Requested API version.",
-        "x-ves-example": "V2",
       },
     ],
     requestBodySchema: null,
@@ -8369,12 +8113,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      account_id: "Test123",
-      device_id: "Device123",
-      namespace: "Payment-app-namespace-1.",
-      version: "V2",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8462,7 +8201,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [
@@ -8475,7 +8213,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Duration days.",
-        "x-ves-example": "15",
       },
       {
         description: "List of locations if backend needs to filter with locations passed.",
@@ -8486,7 +8223,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Locations",
-        "x-ves-example": "location1.com,location2.com.",
       },
       {
         description: "GET the list of high risk domains, all domains is by default.",
@@ -8497,7 +8233,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Risk",
-        "x-ves-example": "High",
       },
     ],
     requestBodySchema: null,
@@ -8513,12 +8248,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      duration: "15",
-      locations: "location1.com,location2.com.",
-      namespace: "Default",
-      risk: "High",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8607,7 +8337,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -8626,9 +8355,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8718,7 +8445,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [
@@ -8731,7 +8457,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Domain Name.",
-        "x-ves-example": "domain.com.",
       },
     ],
     requestBodySchema: null,
@@ -8747,10 +8472,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "domain.com.",
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8838,7 +8560,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [
@@ -8851,7 +8572,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Deployment ID.",
-        "x-ves-example": "06957ed8-52b5-43e0-bb56-429db281bfb4.",
       },
     ],
     requestBodySchema: null,
@@ -8868,10 +8588,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      deployment_id: "06957ed8-52b5-43e0-bb56-429db281bfb4.",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8959,7 +8676,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -8979,9 +8695,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9071,7 +8785,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -9091,9 +8804,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9183,7 +8894,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -9201,9 +8911,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9391,7 +9099,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -9410,9 +9117,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9503,7 +9208,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -9522,9 +9226,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9713,7 +9415,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -9734,9 +9435,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9827,7 +9526,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -9846,9 +9544,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -9938,7 +9634,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -9959,9 +9654,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10052,7 +9745,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Namespace1.",
       },
     ],
     queryParameters: [],
@@ -10073,9 +9765,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Namespace1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10165,7 +9855,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -10186,9 +9875,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10278,7 +9965,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "ID",
-        "x-ves-example": "F-ssabcde",
       },
       {
         description: "Namespace\nNamespace.",
@@ -10289,7 +9975,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -10306,10 +9991,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.id", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      id: "F-ssabcde",
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10398,7 +10080,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [
@@ -10412,7 +10093,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End Time",
-        "x-ves-example": "1570194300.",
       },
       {
         description:
@@ -10424,7 +10104,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start Time.",
-        "x-ves-example": "1570194000.",
       },
     ],
     requestBodySchema: null,
@@ -10440,11 +10119,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "1570194300.",
-      namespace: "Default",
-      start_time: "1570194000.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10736,7 +10411,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -10757,9 +10431,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -10853,7 +10525,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -10872,9 +10543,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -11577,7 +11246,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -11596,9 +11264,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -11781,7 +11447,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "ID",
-        "x-ves-example": "Rule_CB_DUBEXLDQKV.",
       },
       {
         description: "Namespace\nx-required\nNamespace is used to scope the query.",
@@ -11792,7 +11457,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -11810,10 +11474,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.id", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      id: "Rule_CB_DUBEXLDQKV.",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12001,7 +11662,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -12021,9 +11681,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12113,7 +11771,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [
@@ -12126,7 +11783,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "ScriptTag",
       },
     ],
     requestBodySchema: null,
@@ -12142,10 +11798,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "ScriptTag",
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12233,7 +11886,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
       {
         description: "Script_id\nx-required\nID of the script.",
@@ -12244,7 +11896,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Script ID",
-        "x-ves-example": "S-1234567",
       },
     ],
     queryParameters: [],
@@ -12265,10 +11916,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.script_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-      script_id: "S-1234567",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12358,7 +12006,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Justification ID.",
-        "x-ves-example": "J-1234567",
       },
       {
         description: "Namespace\nNamespace.",
@@ -12369,7 +12016,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -12388,10 +12034,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.justification_id", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      justification_id: "J-1234567",
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12581,7 +12224,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -12600,9 +12242,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12693,7 +12333,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -12713,9 +12352,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12806,7 +12443,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -12827,9 +12463,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -12944,7 +12578,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -12955,7 +12588,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -12974,10 +12606,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13075,7 +12704,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -13086,7 +12714,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -13124,10 +12751,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13215,7 +12839,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -13229,7 +12852,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -13271,10 +12893,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13363,7 +12982,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -13384,9 +13002,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13501,7 +13117,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -13512,7 +13127,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -13531,10 +13145,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13633,7 +13244,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Application Name.",
-        "x-ves-example": "App 8000",
       },
       {
         description: "Namespace\nx-required\nNamespace is used to scope the query.",
@@ -13644,7 +13254,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -13662,10 +13271,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "App 8000",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13753,7 +13359,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -13764,7 +13369,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -13802,10 +13406,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -13893,7 +13494,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -13907,7 +13507,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -13949,10 +13548,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14040,7 +13636,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -14052,7 +13647,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -14073,10 +13667,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14188,7 +13779,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [
@@ -14213,7 +13803,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-file, shared/example-file, example-ns/example-file.",
       },
       {
         description: "Optional query parameter. Type of the stored_object.",
@@ -14224,7 +13813,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Object Type.",
-        "x-ves-example": "Swagger",
       },
       {
         description:
@@ -14253,11 +13841,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Example-file, shared/example-file, example-ns/example-file.",
-      namespace: "System",
-      object_type: "Swagger",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14345,7 +13929,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Volt-API-specs.",
       },
       {
         description: "Namespace\nx-required\nNamespace of the stored_object.",
@@ -14356,7 +13939,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description:
@@ -14368,7 +13950,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Version",
-        "x-ves-example": "V0-21-09-13.",
       },
     ],
     queryParameters: [
@@ -14381,7 +13962,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Object Type.",
-        "x-ves-example": "Swagger",
       },
     ],
     requestBodySchema: null,
@@ -14397,12 +13977,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace", "path.version"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Volt-API-specs.",
-      namespace: "System",
-      object_type: "Swagger",
-      version: "V0-21-09-13.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14491,7 +14066,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Script ID",
-        "x-ves-example": "S-1234567",
       },
       {
         description: "Namespace\nNamespace.",
@@ -14502,7 +14076,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [
@@ -14516,7 +14089,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End Time",
-        "x-ves-example": "1570194300.",
       },
       {
         description:
@@ -14528,7 +14100,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start Time.",
-        "x-ves-example": "1570194000.",
       },
     ],
     requestBodySchema: null,
@@ -14545,12 +14116,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.id", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "1570194300.",
-      id: "S-1234567",
-      namespace: "Default",
-      start_time: "1570194000.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14639,7 +14205,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -14659,9 +14224,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14752,7 +14315,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -14771,9 +14333,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -14863,7 +14423,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [
@@ -14877,7 +14436,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start date of period (timestamp)",
-        "x-ves-example": "1638320400000.",
       },
       {
         description: "Timestamp representing end date of the requested period in millieseconds.",
@@ -14889,7 +14447,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End date of period (timestamp)",
-        "x-ves-example": "1639382940000.",
       },
       {
         description: "The API version to use.",
@@ -14900,7 +14457,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Requested API version.",
-        "x-ves-example": "V2",
       },
     ],
     requestBodySchema: null,
@@ -14916,12 +14472,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      from: "1638320400000.",
-      namespace: "Payment-app-namespace-1.",
-      to: "1639382940000.",
-      version: "V2",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15009,7 +14560,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -15028,9 +14578,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15121,7 +14669,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -15140,9 +14687,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15232,7 +14777,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Bot Infrastructure Name.",
-        "x-ves-example": "Cluster_1",
       },
       {
         description: "Namespace\nnamespace is used to scope the query.",
@@ -15243,7 +14787,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -15265,10 +14808,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Cluster_1",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15359,7 +14899,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -15380,9 +14919,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15497,7 +15034,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -15508,7 +15044,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -15527,10 +15062,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15628,7 +15160,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -15639,7 +15170,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -15678,10 +15208,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15769,7 +15296,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -15783,7 +15309,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -15825,10 +15350,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -15916,7 +15438,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -15928,7 +15449,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -15949,10 +15469,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -16065,7 +15582,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -16086,9 +15602,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -16203,7 +15717,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -16214,7 +15727,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -16233,10 +15745,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -16334,7 +15843,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -16345,7 +15853,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -16383,10 +15890,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -16474,7 +15978,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -16488,7 +15991,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -16530,10 +16032,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -16621,7 +16120,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -16642,9 +16140,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -16827,7 +16323,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Script ID",
-        "x-ves-example": "S-1234567",
       },
       {
         description: "Namespace\nNamespace.",
@@ -16838,7 +16333,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -16859,10 +16353,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.id", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      id: "S-1234567",
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -17144,7 +16635,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -17165,9 +16655,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -17356,7 +16844,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -17377,9 +16864,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -17469,7 +16954,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [
@@ -17483,7 +16967,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End Time",
-        "x-ves-example": "1570194300.",
       },
       {
         description:
@@ -17496,7 +16979,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "Page Number.",
-        "x-ves-example": "10",
       },
       {
         description: "The maximum number of scripts to return per page.",
@@ -17508,7 +16990,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "integer",
         },
         "x-displayname": "Page Size",
-        "x-ves-example": "500",
       },
       {
         description:
@@ -17520,7 +17001,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Page Token.",
-        "x-ves-example": "CGFnZV9zaXplPTUwMCZwYWdlX251bWJlcj0y.",
       },
       {
         description:
@@ -17532,7 +17012,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start Time.",
-        "x-ves-example": "1570194000.",
       },
     ],
     requestBodySchema: null,
@@ -17548,14 +17027,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      end_time: "1570194300.",
-      namespace: "Default",
-      page_number: "10",
-      page_size: "500",
-      page_token: "CGFnZV9zaXplPTUwMCZwYWdlX251bWJlcj0y.",
-      start_time: "1570194000.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -18057,7 +17529,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -18074,9 +17545,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -18264,7 +17733,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Foobar",
       },
     ],
     queryParameters: [],
@@ -18285,9 +17753,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Foobar",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -18378,7 +17844,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -18397,9 +17862,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -18489,7 +17952,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -18507,9 +17969,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -18597,7 +18057,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [
@@ -18610,7 +18069,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Action",
-        "x-ves-example": "Block",
       },
       {
         description: "Timestamp representing start date of the requested period in millieseconds.",
@@ -18622,7 +18080,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start date of period (timestamp)",
-        "x-ves-example": "1638320400000.",
       },
       {
         description: "Timestamp representing end date of the requested period in millieseconds.",
@@ -18634,7 +18091,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End date of period (timestamp)",
-        "x-ves-example": "1639382940000.",
       },
       {
         description: "The API version to use.",
@@ -18645,7 +18101,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Requested API version.",
-        "x-ves-example": "V2",
       },
     ],
     requestBodySchema: null,
@@ -18661,13 +18116,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      action: "Block",
-      from: "1638320400000.",
-      namespace: "Payment-app-namespace-1.",
-      to: "1639382940000.",
-      version: "V2",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -18755,7 +18204,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Application Name.",
-        "x-ves-example": "Billing-app.",
       },
       {
         description: "Namespace\nnamespace is used to scope the query.",
@@ -18766,7 +18214,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -18784,10 +18231,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Billing-app.",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -18875,7 +18319,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -18896,9 +18339,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -19086,7 +18527,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -19105,9 +18545,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -19294,7 +18732,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -19313,9 +18750,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -19405,7 +18840,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Apc-namespace.",
       },
     ],
     queryParameters: [
@@ -19419,7 +18853,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start date of period (timestamp)",
-        "x-ves-example": "1638320400000.",
       },
       {
         description: "Limited number of records.",
@@ -19431,7 +18864,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Limit of results.",
-        "x-ves-example": "3",
       },
       {
         description: "Timestamp representing end date of the requested period in millieseconds.",
@@ -19443,7 +18875,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End date of period (timestamp)",
-        "x-ves-example": "1638320400000.",
       },
       {
         description: "The API version to use.",
@@ -19454,7 +18885,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Requested API version.",
-        "x-ves-example": "V3",
       },
     ],
     requestBodySchema: null,
@@ -19470,13 +18900,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      from: "1638320400000.",
-      limit: "3",
-      namespace: "Apc-namespace.",
-      to: "1638320400000.",
-      version: "V3",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -19661,7 +19085,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -19680,9 +19103,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -19772,7 +19193,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Apc-namespace.",
       },
     ],
     queryParameters: [
@@ -19786,7 +19206,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Start date of period (timestamp)",
-        "x-ves-example": "1638320400000.",
       },
       {
         description: "Limited number of records.",
@@ -19798,7 +19217,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Limit of results.",
-        "x-ves-example": "3",
       },
       {
         description: "Timestamp representing end date of the requested period in millieseconds.",
@@ -19810,7 +19228,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "End date of period (timestamp)",
-        "x-ves-example": "1638320400000.",
       },
       {
         description: "The API version to use.",
@@ -19821,7 +19238,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Requested API version.",
-        "x-ves-example": "V3",
       },
     ],
     requestBodySchema: null,
@@ -19837,13 +19253,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      from: "1638320400000.",
-      limit: "3",
-      namespace: "Apc-namespace.",
-      to: "1638320400000.",
-      version: "V3",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -19931,7 +19341,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -19950,9 +19359,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -20144,7 +19551,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -20165,9 +19571,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -20260,7 +19664,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [
@@ -20273,7 +19676,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Transaction ID.",
-        "x-ves-example": "Value",
       },
       {
         description: "The API version to use.",
@@ -20284,7 +19686,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Requested API version.",
-        "x-ves-example": "V2",
       },
     ],
     requestBodySchema: null,
@@ -20300,11 +19701,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-      transaction_id: "Value",
-      version: "V2",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -20392,7 +19789,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -20413,9 +19809,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -20508,7 +19902,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -20529,9 +19922,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -20624,7 +20015,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -20645,9 +20035,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -20740,7 +20128,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -20761,9 +20148,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -20856,7 +20241,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -20877,9 +20261,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -20972,7 +20354,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -20993,9 +20374,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -21089,7 +20468,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Payment-app-namespace-1.",
       },
     ],
     queryParameters: [],
@@ -21109,9 +20487,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Payment-app-namespace-1.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -21201,7 +20577,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -21221,9 +20596,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -21514,7 +20887,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Default",
       },
     ],
     queryParameters: [],
@@ -21535,9 +20907,7 @@ export const shapeTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Default",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -21732,7 +21102,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Policy Name.",
-        "x-ves-example": "Web_policy.",
       },
       {
         description: "Namespace\nnamespace is used to scope the query.",
@@ -21743,7 +21112,6 @@ export const shapeTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -21761,10 +21129,7 @@ export const shapeTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Web_policy.",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [

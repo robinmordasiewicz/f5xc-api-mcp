@@ -26,7 +26,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -47,9 +46,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -127,7 +124,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -148,9 +144,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -249,7 +243,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -260,7 +253,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -279,10 +271,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -367,7 +356,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -378,7 +366,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -417,10 +404,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -495,7 +479,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -509,7 +492,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -551,10 +533,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -629,7 +608,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -641,7 +619,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -662,10 +639,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -765,7 +739,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -786,9 +759,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -887,7 +858,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -898,7 +868,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -917,10 +886,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1005,7 +971,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -1016,7 +981,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1055,10 +1019,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1133,7 +1094,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -1147,7 +1107,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -1189,10 +1148,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1267,7 +1223,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -1279,7 +1234,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -1300,10 +1254,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1405,7 +1356,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Filter",
-        "x-ves-example": "{alertname=\\.",
       },
       {
         description: "If set to true, active alerts will not be returned in the response.",
@@ -1417,7 +1367,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Inactive",
-        "x-ves-example": "False",
       },
       {
         description:
@@ -1430,7 +1379,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Inhibited",
-        "x-ves-example": "False",
       },
       {
         description:
@@ -1442,7 +1390,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description:
@@ -1455,7 +1402,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Silenced",
-        "x-ves-example": "True",
       },
       {
         description: "Show unprocessed alerts.",
@@ -1467,7 +1413,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "boolean",
         },
         "x-displayname": "Unprocessed.",
-        "x-ves-example": "False",
       },
     ],
     requestBodySchema: null,
@@ -1483,14 +1428,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: [],
     confirmationRequired: false,
-    parameterExamples: {
-      filter: "{alertname=\\.",
-      inactive: "False",
-      inhibited: "False",
-      namespace: "Value",
-      silenced: "True",
-      unprocessed: "False",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1649,7 +1587,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "NetworkId\nThe network ID.",
@@ -1660,7 +1597,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "NetworkId",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1681,10 +1617,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.network_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      network_id: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1761,7 +1694,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "MitigationId.",
-        "x-ves-example": "Value",
       },
       {
         description: "Namespace\nThis request is supported only in system namespace.",
@@ -1772,7 +1704,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1793,10 +1724,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.mitigation_id", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      mitigation_id: "Value",
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1878,7 +1806,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "NetworkId\nThe network ID.",
@@ -1889,7 +1816,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "NetworkId",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -1910,10 +1836,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.network_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      network_id: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -1990,7 +1913,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "NetworkId\nThe network ID.",
@@ -2001,7 +1923,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "NetworkId",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -2022,10 +1943,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.network_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      network_id: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2202,7 +2120,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Email1",
       },
       {
         description:
@@ -2214,7 +2131,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -2235,10 +2151,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Email1",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2316,7 +2229,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "Vs1",
       },
       {
         description:
@@ -2328,7 +2240,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -2349,10 +2260,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Vs1",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2433,7 +2341,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "Vs1",
       },
       {
         description:
@@ -2445,7 +2352,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -2466,10 +2372,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Vs1",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2549,7 +2452,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "DC Cluster group.",
-        "x-ves-example": "Dcg-1",
       },
     ],
     queryParameters: [],
@@ -2570,9 +2472,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.dc_cluster_group"],
     confirmationRequired: false,
-    parameterExamples: {
-      dc_cluster_group: "Dcg-1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2733,7 +2633,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "Vs1",
       },
       {
         description:
@@ -2745,7 +2644,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -2766,10 +2664,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Vs1",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2849,7 +2744,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -2860,7 +2754,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -2896,10 +2789,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -2976,7 +2866,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [
@@ -2989,7 +2878,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Discovery Name Filter.",
-        "x-ves-example": "Disc-cbip-1.",
       },
       {
         description: "Identifies the discovered service type. Omit for all types.",
@@ -3000,7 +2888,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Type.",
-        "x-ves-example": "Bigip_virtual_server.",
       },
     ],
     requestBodySchema: null,
@@ -3016,11 +2903,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      discovery_name: "Disc-cbip-1.",
-      namespace: "Shared",
-      service_type: "Bigip_virtual_server.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3095,7 +2978,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Report Name.",
-        "x-ves-example": "Test-report.",
       },
       {
         description: "Namespace\n\nx-required\nNamespace for this request.",
@@ -3106,7 +2988,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -3123,10 +3004,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Test-report.",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3202,7 +3080,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Service Name.",
-        "x-ves-example": "Vs1",
       },
       {
         description:
@@ -3214,7 +3091,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Shared",
       },
     ],
     queryParameters: [],
@@ -3235,10 +3111,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Vs1",
-      namespace: "Shared",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3318,7 +3191,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description:
@@ -3330,7 +3202,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "NetworkId",
-        "x-ves-example": "3c33d46b-8f19-420c-9202-038c5833ac55.",
       },
     ],
     queryParameters: [],
@@ -3351,10 +3222,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.network_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      network_id: "3c33d46b-8f19-420c-9202-038c5833ac55.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3432,7 +3300,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -3453,9 +3320,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3532,7 +3397,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -3543,7 +3407,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -3580,10 +3443,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3658,7 +3518,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -3672,7 +3531,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -3714,10 +3572,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3793,7 +3648,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Test-report.",
       },
       {
         description: "Namespace\n\nx-required\nNamespace for this request.",
@@ -3804,7 +3658,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -3825,10 +3678,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Test-report.",
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -3906,7 +3756,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -3927,9 +3776,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4031,7 +3878,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -4042,7 +3888,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -4061,10 +3906,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4149,7 +3991,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -4160,7 +4001,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4199,10 +4039,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4277,7 +4114,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -4291,7 +4127,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -4333,10 +4168,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4411,7 +4243,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -4423,7 +4254,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -4444,10 +4274,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4547,7 +4374,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -4566,9 +4392,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4649,7 +4473,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -4668,9 +4491,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4751,7 +4572,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
     ],
     queryParameters: [],
@@ -4770,9 +4590,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4853,7 +4671,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -4874,9 +4691,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -4975,7 +4790,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -4986,7 +4800,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -5005,10 +4818,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5093,7 +4903,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -5104,7 +4913,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5143,10 +4951,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5221,7 +5026,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -5235,7 +5039,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -5277,10 +5080,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5355,7 +5155,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -5367,7 +5166,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5388,10 +5186,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5491,7 +5286,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -5512,9 +5306,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5591,7 +5383,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "System",
       },
       {
         description: "Site Name\nName of the site from which flows are requested.",
@@ -5602,7 +5393,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Name",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -5623,10 +5413,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.site"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "System",
-      site: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5718,7 +5505,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -5739,9 +5525,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5820,7 +5604,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -5841,9 +5624,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -5942,7 +5723,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nNamespace in which the configuration object is present.",
@@ -5953,7 +5733,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -5972,10 +5751,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: true,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6060,7 +5836,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -6071,7 +5846,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -6110,10 +5884,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6188,7 +5959,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -6202,7 +5972,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Label Filter.",
-        "x-ves-example": "Env in (staging, testing), tier in (web, db)",
       },
       {
         description: 'X-example: ""\nExtra fields to return along with summary fields.',
@@ -6244,10 +6013,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      label_filter: "Env in (staging, testing), tier in (web, db)",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6323,7 +6089,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Example-corp-web.",
       },
       {
         description:
@@ -6335,7 +6100,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Staging",
       },
     ],
     queryParameters: [],
@@ -6356,10 +6120,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["path.metadata.name", "path.metadata.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      "metadata.name": "Example-corp-web.",
-      "metadata.namespace": "Staging",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6458,7 +6219,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Name",
       },
       {
         description: "Namespace\nThe namespace in which the configuration object is present.",
@@ -6469,7 +6229,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [
@@ -6505,10 +6264,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Name",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6583,7 +6339,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "ID",
-        "x-ves-example": "VPC-1234567898.",
       },
     ],
     queryParameters: [
@@ -6599,7 +6354,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "Regions",
-        "x-ves-example": "Us-west1, us-east1.",
       },
       {
         description: "Route Table IDs used as filters.",
@@ -6613,7 +6367,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "Route Table IDs.",
-        "x-ves-example": "Rtb-1234567898, rtb-2345678901.",
       },
       {
         description: "Site Name",
@@ -6624,7 +6377,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site",
-        "x-ves-example": "Site-name1.",
       },
       {
         description: "Subnet cidrs used as filters.",
@@ -6638,7 +6390,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "Subnet Cidrs.",
-        "x-ves-example": "10.10.0.0/16, 10.22.0.0/16.",
       },
       {
         description: "Subnet IDs used as filters.",
@@ -6652,7 +6403,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "array",
         },
         "x-displayname": "Subnet IDs.",
-        "x-ves-example": "Sub-1234567898, sub-2345678901.",
       },
     ],
     requestBodySchema: null,
@@ -6668,14 +6418,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.id"],
     confirmationRequired: false,
-    parameterExamples: {
-      id: "VPC-1234567898.",
-      regions: "Us-west1, us-east1.",
-      route_table_ids: "Rtb-1234567898, rtb-2345678901.",
-      site: "Site-name1.",
-      subnet_cidrs: "10.10.0.0/16, 10.22.0.0/16.",
-      subnet_ids: "Sub-1234567898, sub-2345678901.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6751,7 +6494,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -6771,9 +6513,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6851,7 +6591,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [
@@ -6865,7 +6604,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Scroll ID",
-        "x-ves-example": "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.",
       },
     ],
     requestBodySchema: null,
@@ -6881,10 +6619,7 @@ export const statisticsTools: ParsedOperation[] = [
     sideEffects: null,
     requiredFields: ["path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      scroll_id: "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -6959,7 +6694,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Site Mesh Group.",
-        "x-ves-example": "Smg-1",
       },
     ],
     queryParameters: [],
@@ -6980,9 +6714,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.site_mesh_group"],
     confirmationRequired: false,
-    parameterExamples: {
-      site_mesh_group: "Smg-1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7153,7 +6885,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Bookinfo",
       },
     ],
     queryParameters: [],
@@ -7174,9 +6905,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Bookinfo",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7428,7 +7157,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Foobar",
       },
     ],
     queryParameters: [],
@@ -7449,9 +7177,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Foobar",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7528,7 +7254,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Slack1",
       },
       {
         description:
@@ -7540,7 +7265,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -7561,10 +7285,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Slack1",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7641,7 +7362,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
       {
         description: "NetworkId\nThe network ID.",
@@ -7652,7 +7372,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "NetworkId",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -7673,10 +7392,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace", "path.network_id"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-      network_id: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7856,7 +7572,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Name",
-        "x-ves-example": "Email1",
       },
       {
         description:
@@ -7868,7 +7583,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Ns1",
       },
     ],
     queryParameters: [],
@@ -7889,10 +7603,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.name", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      name: "Email1",
-      namespace: "Ns1",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -7970,7 +7681,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -7991,9 +7701,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
@@ -8078,7 +7786,6 @@ export const statisticsTools: ParsedOperation[] = [
           type: "string",
         },
         "x-displayname": "Namespace",
-        "x-ves-example": "Value",
       },
     ],
     queryParameters: [],
@@ -8099,9 +7806,7 @@ export const statisticsTools: ParsedOperation[] = [
     },
     requiredFields: ["metadata.name", "metadata.namespace", "path.namespace"],
     confirmationRequired: false,
-    parameterExamples: {
-      namespace: "Value",
-    },
+    parameterExamples: {},
     validationRules: {},
     operationMetadata: {
       common_errors: [
