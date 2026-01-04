@@ -102,8 +102,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["api-crawler"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_crawlers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -248,8 +247,7 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["api-crawler", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_crawlers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -398,8 +396,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_crawlers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -546,8 +543,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_crawlers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -673,8 +669,7 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["api-crawler"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_crawlers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -810,8 +805,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["api-definition"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_definitions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "api",
@@ -956,8 +950,7 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["api-definition", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_definitions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "api",
@@ -1106,8 +1099,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_definitions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -1254,8 +1246,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_definitions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -1381,8 +1372,7 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["api-definition"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_definitions" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "api",
@@ -3024,8 +3014,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["api-testing"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_testings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -3170,8 +3159,7 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["api-testing", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_testings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -3320,8 +3308,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_testings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -3468,8 +3455,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_testings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -3595,8 +3581,7 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["api-testing"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/api_testings" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -3733,8 +3718,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["app-api-group"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_api_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -3879,8 +3863,7 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["app-api-group", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_api_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -4030,8 +4013,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_api_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -4178,8 +4160,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_api_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -4306,8 +4287,7 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["app-api-group"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/app_api_groups" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -4446,8 +4426,7 @@ export const apiTools: ParsedOperation[] = [
         creates: ["code-base-integration"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/code_base_integrations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -4592,8 +4571,7 @@ export const apiTools: ParsedOperation[] = [
         deletes: ["code-base-integration", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/code_base_integrations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -4742,8 +4720,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/code_base_integrations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -4890,8 +4867,7 @@ export const apiTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/code_base_integrations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -5017,8 +4993,7 @@ export const apiTools: ParsedOperation[] = [
         modifies: ["code-base-integration"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/code_base_integrations" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",

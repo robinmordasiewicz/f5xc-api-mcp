@@ -113,7 +113,14 @@ export const container_servicesTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-virtual-k8s-create",
@@ -237,7 +244,14 @@ export const container_servicesTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-virtual-k8s-delete",
@@ -355,7 +369,14 @@ export const container_servicesTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-virtual-k8s-get",
@@ -484,7 +505,14 @@ export const container_servicesTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-virtual-k8s-list",
@@ -618,7 +646,14 @@ export const container_servicesTools: ParsedOperation[] = [
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-virtual-k8s-update",
@@ -754,7 +789,14 @@ export const container_servicesTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-workload-create",
@@ -852,8 +894,7 @@ export const container_servicesTools: ParsedOperation[] = [
         creates: ["workload"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "container_services",
@@ -878,7 +919,14 @@ export const container_servicesTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-workload-delete",
@@ -985,8 +1033,7 @@ export const container_servicesTools: ParsedOperation[] = [
         deletes: ["workload", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "container_services",
@@ -997,7 +1044,14 @@ export const container_servicesTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-workload-flavor-create",
@@ -1095,8 +1149,7 @@ export const container_servicesTools: ParsedOperation[] = [
         creates: ["workload-flavor"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workload_flavors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -1121,7 +1174,14 @@ export const container_servicesTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-workload-flavor-delete",
@@ -1228,8 +1288,7 @@ export const container_servicesTools: ParsedOperation[] = [
         deletes: ["workload-flavor", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workload_flavors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -1240,7 +1299,14 @@ export const container_servicesTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-workload-flavor-get",
@@ -1365,11 +1431,17 @@ export const container_servicesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workload_flavors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-workload-flavor-list",
@@ -1500,11 +1572,17 @@ export const container_servicesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workload_flavors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-workload-flavor-update",
@@ -1614,8 +1692,7 @@ export const container_servicesTools: ParsedOperation[] = [
         modifies: ["workload-flavor"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workload_flavors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -1640,7 +1717,14 @@ export const container_servicesTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-workload-get",
@@ -1765,11 +1849,17 @@ export const container_servicesTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-workload-list",
@@ -1900,11 +1990,17 @@ export const container_servicesTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
   {
     toolName: "f5xc-api-containerservices-workload-update",
@@ -2014,8 +2110,7 @@ export const container_servicesTools: ParsedOperation[] = [
         modifies: ["workload"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/workloads" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "container_services",
@@ -2040,7 +2135,14 @@ export const container_servicesTools: ParsedOperation[] = [
       },
     ],
     oneOfGroups: [],
-    subscriptionRequirements: [],
+    subscriptionRequirements: [
+      {
+        addonService: "f5xc_site_management_standard",
+        displayName: "F5XC Site Management Standard",
+        required: false,
+        tier: "standard",
+      },
+    ],
   },
 ];
 

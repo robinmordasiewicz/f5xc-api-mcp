@@ -447,8 +447,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["cdn-cache-rule"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -587,8 +586,7 @@ export const cdnTools: ParsedOperation[] = [
         deletes: ["cdn-cache-rule", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -730,8 +728,7 @@ export const cdnTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -872,8 +869,7 @@ export const cdnTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -993,8 +989,7 @@ export const cdnTools: ParsedOperation[] = [
         modifies: ["cdn-cache-rule"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_cache_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -1127,8 +1122,7 @@ export const cdnTools: ParsedOperation[] = [
         creates: ["cdn-loadbalancer"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "cdn",
@@ -1267,8 +1261,7 @@ export const cdnTools: ParsedOperation[] = [
         deletes: ["cdn-loadbalancer", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "cdn",
@@ -1411,8 +1404,7 @@ export const cdnTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -1553,8 +1545,7 @@ export const cdnTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -1674,8 +1665,7 @@ export const cdnTools: ParsedOperation[] = [
         modifies: ["cdn-loadbalancer"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cdn_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "cdn",

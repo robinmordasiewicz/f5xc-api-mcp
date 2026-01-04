@@ -1161,8 +1161,7 @@ export const marketplaceTools: ParsedOperation[] = [
         creates: ["cminstance"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cminstances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -1294,8 +1293,7 @@ export const marketplaceTools: ParsedOperation[] = [
         deletes: ["cminstance", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cminstances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -1431,8 +1429,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cminstances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -1566,8 +1563,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cminstances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -1681,8 +1677,7 @@ export const marketplaceTools: ParsedOperation[] = [
         modifies: ["cminstance"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/cminstances" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -1808,8 +1803,7 @@ export const marketplaceTools: ParsedOperation[] = [
         creates: ["external-connector"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/external_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -1941,8 +1935,7 @@ export const marketplaceTools: ParsedOperation[] = [
         deletes: ["external-connector", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/external_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -2078,8 +2071,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/external_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -2213,8 +2205,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/external_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -2327,8 +2318,7 @@ export const marketplaceTools: ParsedOperation[] = [
         modifies: ["external-connector"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/external_connectors" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -3980,8 +3970,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/third_party_applications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -4115,8 +4104,7 @@ export const marketplaceTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/third_party_applications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -4229,8 +4217,7 @@ export const marketplaceTools: ParsedOperation[] = [
         modifies: ["third-party-application"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/third_party_applications" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",

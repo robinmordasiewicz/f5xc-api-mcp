@@ -841,8 +841,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["alert-receiver"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/alert_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -974,8 +973,7 @@ export const statisticsTools: ParsedOperation[] = [
         deletes: ["alert-receiver", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/alert_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -1111,8 +1109,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/alert_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -1246,8 +1243,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/alert_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -1360,8 +1356,7 @@ export const statisticsTools: ParsedOperation[] = [
         modifies: ["alert-receiver"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/alert_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -3990,8 +3985,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["global-log-receiver"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/global_log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -4123,8 +4117,7 @@ export const statisticsTools: ParsedOperation[] = [
         deletes: ["global-log-receiver", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/global_log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -4260,8 +4253,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/global_log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -4395,8 +4387,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/global_log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -4509,8 +4500,7 @@ export const statisticsTools: ParsedOperation[] = [
         modifies: ["global-log-receiver"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/global_log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -4939,8 +4929,7 @@ export const statisticsTools: ParsedOperation[] = [
         creates: ["log-receiver"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "observability",
@@ -5072,8 +5061,7 @@ export const statisticsTools: ParsedOperation[] = [
         deletes: ["log-receiver", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "observability",
@@ -5209,8 +5197,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -5344,8 +5331,7 @@ export const statisticsTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -5458,8 +5444,7 @@ export const statisticsTools: ParsedOperation[] = [
         modifies: ["log-receiver"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/log_receivers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "observability",

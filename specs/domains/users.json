@@ -3,7 +3,7 @@
   "info": {
     "title": "Users",
     "description": "Token lifecycle governs automated site onboarding through cloud-init integration with configurable validity periods. Explicit category keys establish permitted classification hierarchies enforced across deployments. Inferred attributes attach automatically based on object characteristics and placement context. Namespace-scoped operations handle credential generation, revocation, and state transitions for streamlined provisioning workflows.",
-    "version": "1.0.91",
+    "version": "2.0.1",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -22,7 +22,7 @@
       "variables": {
         "tenant": {
           "default": "example-corp",
-          "description": "F5 Distributed Cloud tenant identifier (e.g., my-company, acme-inc)"
+          "description": "F5 Distributed Cloud tenant identifier (e.g., example-company, acme-inc)"
         },
         "console_url": {
           "default": "console.ves.volterra.io",
@@ -3169,7 +3169,7 @@
               "$ref": "#/components/schemas/implicit_labelLabelType"
             },
             "x-displayname": "Labels",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3177,7 +3177,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for implicit_labelGetResponse",
           "required_fields": [
             "label"
@@ -3187,7 +3187,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"label\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/implicit_labels\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "implicit_labelLabelType": {
         "type": "object",
@@ -3204,7 +3204,7 @@
             "x-ves-example": "Description.",
             "minLength": 0,
             "maxLength": 0,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3212,7 +3212,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:24.286353+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:09.202986+00:00"
           },
           "key": {
             "type": "string",
@@ -3222,7 +3222,7 @@
             "x-ves-example": "Key",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3230,7 +3230,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:24.286359+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:09.202993+00:00"
           },
           "value": {
             "type": "string",
@@ -3240,7 +3240,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 15,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3248,10 +3248,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:24.286364+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:09.202999+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for implicit_labelLabelType",
           "required_fields": [
             "description",
@@ -3263,7 +3263,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"description\": \"value\",\n    \"key\": \"value\",\n    \"value\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/implicit_label_label_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "implicit_labelQueryType": {
         "type": "string",
@@ -3278,7 +3278,7 @@
           "QUERY_KEY_SUBSTRING"
         ],
         "default": "QUERY_ALL_LABELS",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for implicit_labelQueryType",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -3286,7 +3286,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/implicit_label_query_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "schemaLabelKeyClass": {
         "type": "string",
@@ -3304,7 +3304,7 @@
           "KEY_CLASS_AWS"
         ],
         "default": "KEY_CLASS_GENERIC",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaLabelKeyClass",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -3312,7 +3312,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_label_key_classes\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "label"
+        "x-f5xc-cli-domain": "label"
       },
       "known_labelCreateRequest": {
         "type": "object",
@@ -3329,7 +3329,7 @@
             "x-ves-example": "Paris metro region in France (EU)",
             "minLength": 0,
             "maxLength": 0,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3337,7 +3337,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:28.998699+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.072504+00:00"
           },
           "key": {
             "type": "string",
@@ -3347,7 +3347,7 @@
             "x-ves-example": "VES.I/O/region.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3355,7 +3355,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:28.998706+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.072511+00:00"
           },
           "namespace": {
             "type": "string",
@@ -3365,7 +3365,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3373,7 +3373,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:28.998711+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.072516+00:00"
           },
           "value": {
             "type": "string",
@@ -3390,7 +3390,7 @@
             "minLength": 0,
             "maxLength": 15,
             "ves.io.schema.rules.string.k8s_label_value": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3398,10 +3398,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:28.998715+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.072522+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_labelCreateRequest",
           "required_fields": [
             "description",
@@ -3414,7 +3414,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"description\": \"value\",\n    \"key\": \"value\",\n    \"namespace\": \"value\",\n    \"value\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_labels\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_labelCreateResponse": {
         "type": "object",
@@ -3427,7 +3427,7 @@
             "$ref": "#/components/schemas/known_labelLabelType"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_labelCreateResponse",
           "required_fields": [
             "label"
@@ -3437,7 +3437,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"label\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_labels\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_labelDeleteRequest": {
         "type": "object",
@@ -3454,7 +3454,7 @@
             "x-ves-example": "VES.I/O/region.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3462,7 +3462,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:28.998723+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.072530+00:00"
           },
           "namespace": {
             "type": "string",
@@ -3472,7 +3472,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3480,7 +3480,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:28.998727+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.072535+00:00"
           },
           "value": {
             "type": "string",
@@ -3497,7 +3497,7 @@
             "minLength": 0,
             "maxLength": 15,
             "ves.io.schema.rules.string.k8s_label_value": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3505,10 +3505,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:28.998731+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.072540+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_labelDeleteRequest",
           "required_fields": [
             "key",
@@ -3520,7 +3520,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"key\": \"value\",\n    \"namespace\": \"value\",\n    \"value\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_labels\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_labelDeleteResponse": {
         "type": "object",
@@ -3528,7 +3528,7 @@
         "title": "DELETE Response.",
         "x-displayname": "DELETE Response.",
         "x-ves-proto-message": "ves.io.schema.known_label.DeleteResponse",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_labelDeleteResponse",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -3536,7 +3536,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_labels\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_labelGetResponse": {
         "type": "object",
@@ -3553,7 +3553,7 @@
               "$ref": "#/components/schemas/known_labelLabelType"
             },
             "x-displayname": "Label Type.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3561,7 +3561,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_labelGetResponse",
           "required_fields": [
             "label"
@@ -3571,7 +3571,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"label\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_labels\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_labelLabelType": {
         "type": "object",
@@ -3588,7 +3588,7 @@
             "x-ves-example": "Paris metro region in France (EU)",
             "minLength": 0,
             "maxLength": 0,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3596,7 +3596,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:28.998738+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.072549+00:00"
           },
           "key": {
             "type": "string",
@@ -3606,7 +3606,7 @@
             "x-ves-example": "VES.I/O/region.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3614,7 +3614,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:28.998742+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.072555+00:00"
           },
           "value": {
             "type": "string",
@@ -3624,7 +3624,7 @@
             "x-ves-example": "VES-I/O-par.",
             "minLength": 0,
             "maxLength": 15,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3632,10 +3632,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:28.998746+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.072561+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_labelLabelType",
           "required_fields": [
             "description",
@@ -3647,7 +3647,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"description\": \"value\",\n    \"key\": \"value\",\n    \"value\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_label_label_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_labelQueryType": {
         "type": "string",
@@ -3660,7 +3660,7 @@
           "QUERY_KEY_PREFIX_LABELS"
         ],
         "default": "QUERY_ALL_LABELS",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_labelQueryType",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -3668,7 +3668,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_label_query_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_label_keyCreateRequest": {
         "type": "object",
@@ -3685,7 +3685,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 0,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3693,7 +3693,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:29.152071+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.234461+00:00"
           },
           "key": {
             "type": "string",
@@ -3703,7 +3703,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3711,7 +3711,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:29.152078+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.234468+00:00"
           },
           "namespace": {
             "type": "string",
@@ -3721,7 +3721,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3729,10 +3729,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:29.152083+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.234473+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_label_keyCreateRequest",
           "required_fields": [
             "description",
@@ -3744,7 +3744,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"description\": \"value\",\n    \"key\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_label_keies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_label_keyCreateResponse": {
         "type": "object",
@@ -3757,7 +3757,7 @@
             "$ref": "#/components/schemas/known_label_keyLabelKeyType"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_label_keyCreateResponse",
           "required_fields": [
             "label_key"
@@ -3767,7 +3767,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"label_key\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_label_keies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_label_keyDeleteRequest": {
         "type": "object",
@@ -3784,7 +3784,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3792,7 +3792,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:29.152091+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.234482+00:00"
           },
           "namespace": {
             "type": "string",
@@ -3802,7 +3802,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3810,10 +3810,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:29.152096+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.234487+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_label_keyDeleteRequest",
           "required_fields": [
             "key",
@@ -3824,7 +3824,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"key\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_label_keies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_label_keyDeleteResponse": {
         "type": "object",
@@ -3832,7 +3832,7 @@
         "title": "DELETE Response.",
         "x-displayname": "DELETE Response.",
         "x-ves-proto-message": "ves.io.schema.known_label_key.DeleteResponse",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_label_keyDeleteResponse",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -3840,7 +3840,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_label_keies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_label_keyGetResponse": {
         "type": "object",
@@ -3857,7 +3857,7 @@
               "$ref": "#/components/schemas/known_label_keyLabelKeyType"
             },
             "x-displayname": "Label Key",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3865,7 +3865,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_label_keyGetResponse",
           "required_fields": [
             "label_key"
@@ -3875,7 +3875,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"label_key\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_label_keies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_label_keyLabelKeyType": {
         "type": "object",
@@ -3892,7 +3892,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 0,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3900,7 +3900,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:29.152104+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.234495+00:00"
           },
           "key": {
             "type": "string",
@@ -3910,7 +3910,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3918,10 +3918,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:09:29.152108+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:14.234499+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_label_keyLabelKeyType",
           "required_fields": [
             "description",
@@ -3932,7 +3932,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"description\": \"value\",\n    \"key\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_label_key_label_key_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "known_label_keyQueryType": {
         "type": "string",
@@ -3944,7 +3944,7 @@
           "QUERY_PREFIX_LABEL_KEYS"
         ],
         "default": "QUERY_ALL_LABEL_KEYS",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for known_label_keyQueryType",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -3952,7 +3952,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/known_label_key_query_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "protobufAny": {
         "type": "object",
@@ -3963,7 +3963,7 @@
             "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `HTTP`, `HTTPS`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `HTTPS` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.type][]\nvalue in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\nURL, or have them precompiled into a binary to avoid any\nlookup. Therefore, binary compatibility needs to be preserved\non changes to types. (Use versioned type names to manage\nbreaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `HTTP`, `HTTPS` (or the empty scheme) might be\nused with implementation specific semantics.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3976,7 +3976,7 @@
             "format": "byte",
             "minLength": 0,
             "maxLength": 15,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -3984,10 +3984,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043358+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534886+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for protobufAny",
           "required_fields": [
             "type_url",
@@ -3998,7 +3998,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"type_url\": \"value\",\n    \"value\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/protobuf_anies\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaConditionType": {
         "type": "object",
@@ -4014,7 +4014,7 @@
             "x-displayname": "Hostname",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4029,7 +4029,7 @@
             "x-displayname": "Last Updated.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4044,7 +4044,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 43,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4052,7 +4052,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043370+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534898+00:00"
           },
           "service_name": {
             "type": "string",
@@ -4061,7 +4061,7 @@
             "x-displayname": "Service Name.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4083,7 +4083,7 @@
             "minLength": 0,
             "maxLength": 17,
             "ves.io.schema.rules.string.in": "[\\\"Success\\\",\\\"Failed\\\",\\\"Incomplete\\\",\\\"Installed\\\",\\\"Down\\\",\\\"Disabled\\\",\\\"NotApplicable\\\"]",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4091,7 +4091,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043376+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534905+00:00"
           },
           "type": {
             "type": "string",
@@ -4108,7 +4108,7 @@
             "minLength": 0,
             "maxLength": 1024,
             "ves.io.schema.rules.string.in": "[\\\"Validation\\\",\\\"Operational\\\"]",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4116,7 +4116,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaConditionType",
           "required_fields": [
             "hostname",
@@ -4131,7 +4131,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"hostname\": \"value\",\n    \"last_update_time\": \"value\",\n    \"reason\": \"value\",\n    \"service_name\": \"value\",\n    \"status\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_condition_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaErrorCode": {
         "type": "string",
@@ -4151,7 +4151,7 @@
         "default": "EOK",
         "x-displayname": "Error Code.",
         "x-ves-proto-enum": "ves.io.schema.ErrorCode",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaErrorCode",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -4159,7 +4159,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_error_codes\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaErrorType": {
         "type": "object",
@@ -4182,7 +4182,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4190,7 +4190,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaErrorType",
           "required_fields": [
             "code",
@@ -4202,7 +4202,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"code\": \"value\",\n    \"error_obj\": \"value\",\n    \"message\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_error_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaInitializerType": {
         "type": "object",
@@ -4219,7 +4219,7 @@
             "x-ves-example": "example-resource",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4227,10 +4227,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043389+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534918+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaInitializerType",
           "required_fields": [
             "name"
@@ -4240,7 +4240,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_initializer_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaInitializersType": {
         "type": "object",
@@ -4257,7 +4257,7 @@
               "$ref": "#/components/schemas/schemaInitializerType"
             },
             "x-displayname": "Pending",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4268,7 +4268,7 @@
             "$ref": "#/components/schemas/schemaStatusType"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaInitializersType",
           "required_fields": [
             "pending",
@@ -4279,7 +4279,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"pending\": \"value\",\n    \"result\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_initializers_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaObjectCreateMetaType": {
         "type": "object",
@@ -4310,7 +4310,7 @@
             "ves.io.schema.rules.map.keys.string.min_len": "1",
             "ves.io.schema.rules.map.values.string.max_len": "1024",
             "ves.io.schema.rules.map.values.string.min_len": "1",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4332,7 +4332,7 @@
             },
             "minLength": 0,
             "ves.io.schema.rules.string.max_bytes": "1200",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4340,7 +4340,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043399+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534929+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -4349,7 +4349,7 @@
             "format": "boolean",
             "x-displayname": "Disable",
             "x-ves-example": "True",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4362,7 +4362,7 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "Value",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4385,7 +4385,7 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4393,7 +4393,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043407+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534937+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4403,7 +4403,7 @@
             "x-ves-example": "Staging",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4411,10 +4411,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043412+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534941+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaObjectCreateMetaType",
           "required_fields": [
             "annotations",
@@ -4429,7 +4429,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disable\": \"value\",\n    \"labels\": \"value\",\n    \"name\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaObjectGetMetaType": {
         "type": "object",
@@ -4460,7 +4460,7 @@
             "ves.io.schema.rules.map.keys.string.min_len": "1",
             "ves.io.schema.rules.map.values.string.max_len": "1024",
             "ves.io.schema.rules.map.values.string.min_len": "1",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4482,7 +4482,7 @@
             },
             "minLength": 0,
             "ves.io.schema.rules.string.max_bytes": "1200",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4490,7 +4490,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043418+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534949+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -4499,7 +4499,7 @@
             "format": "boolean",
             "x-displayname": "Disable",
             "x-ves-example": "True",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4512,7 +4512,7 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "Value",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4535,7 +4535,7 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4543,7 +4543,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043425+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534975+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4553,7 +4553,7 @@
             "x-ves-example": "Staging",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4561,10 +4561,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043430+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534980+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaObjectGetMetaType",
           "required_fields": [
             "annotations",
@@ -4579,7 +4579,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disable\": \"value\",\n    \"labels\": \"value\",\n    \"name\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaObjectMetaType": {
         "type": "object",
@@ -4610,7 +4610,7 @@
             "ves.io.schema.rules.map.keys.string.min_len": "1",
             "ves.io.schema.rules.map.values.string.max_len": "1024",
             "ves.io.schema.rules.map.values.string.min_len": "1",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4632,7 +4632,7 @@
             },
             "minLength": 0,
             "ves.io.schema.rules.string.max_bytes": "1200",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4640,7 +4640,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043436+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534987+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -4649,7 +4649,7 @@
             "format": "boolean",
             "x-displayname": "Disable",
             "x-ves-example": "True",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4662,7 +4662,7 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "Value",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4685,7 +4685,7 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4693,7 +4693,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043443+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.534996+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4703,7 +4703,7 @@
             "x-ves-example": "Staging",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4711,7 +4711,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043447+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535000+00:00"
           },
           "uid": {
             "type": "string",
@@ -4721,7 +4721,7 @@
             "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31.",
             "minLength": 0,
             "maxLength": 36,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4732,10 +4732,10 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043453+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535006+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaObjectMetaType",
           "required_fields": [
             "annotations",
@@ -4751,7 +4751,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disable\": \"value\",\n    \"labels\": \"value\",\n    \"name\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_object_meta_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaObjectRefType": {
         "type": "object",
@@ -4768,7 +4768,7 @@
             "x-ves-example": "Virtual_site.",
             "minLength": 0,
             "maxLength": 14,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4777,7 +4777,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043459+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535012+00:00"
           },
           "name": {
             "type": "string",
@@ -4787,7 +4787,7 @@
             "x-ves-example": "Contactus-route.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4795,7 +4795,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043463+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535042+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4805,7 +4805,7 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4813,7 +4813,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043468+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535046+00:00"
           },
           "tenant": {
             "type": "string",
@@ -4823,7 +4823,7 @@
             "x-ves-example": "Example-corp.",
             "minLength": 0,
             "maxLength": 18,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4833,7 +4833,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043472+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535050+00:00"
           },
           "uid": {
             "type": "string",
@@ -4843,7 +4843,7 @@
             "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31.",
             "minLength": 0,
             "maxLength": 36,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4854,10 +4854,10 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043477+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535055+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaObjectRefType",
           "required_fields": [
             "kind",
@@ -4871,7 +4871,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"tenant\": \"value\",\n    \"uid\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_object_ref_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaObjectReplaceMetaType": {
         "type": "object",
@@ -4902,7 +4902,7 @@
             "ves.io.schema.rules.map.keys.string.min_len": "1",
             "ves.io.schema.rules.map.values.string.max_len": "1024",
             "ves.io.schema.rules.map.values.string.min_len": "1",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4924,7 +4924,7 @@
             },
             "minLength": 0,
             "ves.io.schema.rules.string.max_bytes": "1200",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4932,7 +4932,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043484+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535064+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -4941,7 +4941,7 @@
             "format": "boolean",
             "x-displayname": "Disable",
             "x-ves-example": "True",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4954,7 +4954,7 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "Value",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4976,7 +4976,7 @@
             "minLength": 0,
             "maxLength": 16,
             "ves.io.schema.rules.message.required": "true",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -4984,7 +4984,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043492+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535072+00:00"
           },
           "namespace": {
             "type": "string",
@@ -4994,7 +4994,7 @@
             "x-ves-example": "Staging",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5002,10 +5002,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043496+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535076+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaObjectReplaceMetaType",
           "required_fields": [
             "annotations",
@@ -5020,7 +5020,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disable\": \"value\",\n    \"labels\": \"value\",\n    \"name\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_object_replace_meta_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaStatusMetaType": {
         "type": "object",
@@ -5037,7 +5037,7 @@
             "x-displayname": "Creation Timestamp.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5053,7 +5053,7 @@
             "x-ves-example": "ver.re1.int.ves.I/O.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5069,7 +5069,7 @@
             "x-ves-example": "Ver-instance-1.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5087,7 +5087,7 @@
             "x-displayname": "Status ID",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5103,7 +5103,7 @@
             "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31.",
             "minLength": 0,
             "maxLength": 36,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5113,7 +5113,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043508+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535089+00:00"
           },
           "vtrp_id": {
             "type": "string",
@@ -5122,7 +5122,7 @@
             "x-displayname": "VTRP ID",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5136,7 +5136,7 @@
             "title": "Vtrp_stale.",
             "format": "boolean",
             "x-displayname": "VTRP Stale.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5144,7 +5144,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaStatusMetaType",
           "required_fields": [
             "creation_timestamp",
@@ -5161,7 +5161,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"creator_class\": \"value\",\n    \"creator_id\": \"value\",\n    \"publish\": \"value\",\n    \"status_id\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_status_meta_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaStatusPublishType": {
         "type": "string",
@@ -5174,7 +5174,7 @@
         "default": "STATUS_DO_NOT_PUBLISH",
         "x-displayname": "Status Publish Type.",
         "x-ves-proto-enum": "ves.io.schema.StatusPublishType",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaStatusPublishType",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -5182,7 +5182,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_status_publish_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaStatusType": {
         "type": "object",
@@ -5200,7 +5200,7 @@
             "x-ves-example": "0",
             "minimum": 0,
             "maximum": 2147483647,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5215,7 +5215,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 43,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5223,7 +5223,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043518+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535099+00:00"
           },
           "status": {
             "type": "string",
@@ -5233,7 +5233,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 17,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5241,10 +5241,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043522+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535103+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaStatusType",
           "required_fields": [
             "code",
@@ -5256,7 +5256,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"code\": \"value\",\n    \"reason\": \"value\",\n    \"status\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_status_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaSystemObjectGetMetaType": {
         "type": "object",
@@ -5273,7 +5273,7 @@
             "x-displayname": "Creation Timestamp.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5289,7 +5289,7 @@
             "x-ves-example": "Prism",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5305,7 +5305,7 @@
             "x-ves-example": "Admin@example-corp.com.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5321,7 +5321,7 @@
             "x-displayname": "Deletion Timestamp.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5337,7 +5337,7 @@
             },
             "x-displayname": "Finalizers.",
             "x-ves-example": "Value",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5353,7 +5353,7 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "'VES.I/O/soft-deleted': 'true'",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5368,7 +5368,7 @@
             "x-displayname": "Modification Timestamp.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5385,7 +5385,7 @@
             "x-ves-example": "0",
             "minimum": 0,
             "maximum": 2147483647,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5404,7 +5404,7 @@
             "x-ves-example": "Example-corp.",
             "minLength": 0,
             "maxLength": 18,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5413,7 +5413,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043540+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535122+00:00"
           },
           "uid": {
             "type": "string",
@@ -5423,7 +5423,7 @@
             "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31.",
             "minLength": 0,
             "maxLength": 36,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5433,10 +5433,10 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043545+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535127+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaSystemObjectGetMetaType",
           "required_fields": [
             "creation_timestamp",
@@ -5457,7 +5457,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"creator_class\": \"value\",\n    \"creator_id\": \"value\",\n    \"deletion_timestamp\": \"value\",\n    \"finalizers\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_system_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaSystemObjectMetaType": {
         "type": "object",
@@ -5474,7 +5474,7 @@
             "x-displayname": "Creation Timestamp.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5491,7 +5491,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5508,7 +5508,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5524,7 +5524,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5541,7 +5541,7 @@
             "x-displayname": "Deletion Timestamp.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5555,7 +5555,7 @@
             "x-displayname": "Direct Reference Hash.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5571,7 +5571,7 @@
             },
             "x-displayname": "Finalizers.",
             "x-ves-example": "Value",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5587,7 +5587,7 @@
             "title": "Labels",
             "x-displayname": "Labels",
             "x-ves-example": "'VES.I/O/soft-deleted': 'true'",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5602,7 +5602,7 @@
             "x-displayname": "Modification Timestamp.",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5627,7 +5627,7 @@
               "ves.io.schema.rules.repeated.max_items": "1"
             },
             "ves.io.schema.rules.repeated.max_items": "1",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5636,7 +5636,7 @@
             "maxLength": 6,
             "minLength": 6,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043565+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535147+00:00"
           },
           "object_index": {
             "type": "integer",
@@ -5647,7 +5647,7 @@
             "x-ves-example": "0",
             "minimum": 0,
             "maximum": 2147483647,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5667,7 +5667,7 @@
             "x-displayname": "Revision",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5681,7 +5681,7 @@
             "format": "boolean",
             "x-displayname": "SRE Disable.",
             "x-ves-example": "True",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5696,7 +5696,7 @@
             "x-ves-example": "Example-corp.",
             "minLength": 0,
             "maxLength": 18,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5706,7 +5706,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043575+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535157+00:00"
           },
           "trace_info": {
             "type": "string",
@@ -5716,7 +5716,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5731,7 +5731,7 @@
             "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31.",
             "minLength": 0,
             "maxLength": 36,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5742,7 +5742,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043581+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535164+00:00"
           },
           "vtrp_id": {
             "type": "string",
@@ -5751,7 +5751,7 @@
             "x-displayname": "VTRP ID",
             "minLength": 0,
             "maxLength": 1024,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5765,7 +5765,7 @@
             "title": "Vtrp_stale.",
             "format": "boolean",
             "x-displayname": "VTRP Stale.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5773,7 +5773,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaSystemObjectMetaType",
           "required_fields": [
             "creation_timestamp",
@@ -5802,7 +5802,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"creation_timestamp\": \"value\",\n    \"creator_class\": \"value\",\n    \"creator_cookie\": \"value\",\n    \"creator_id\": \"value\",\n    \"deletion_timestamp\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_system_object_meta_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schemaViewRefType": {
         "type": "object",
@@ -5819,7 +5819,7 @@
             "x-ves-example": "Http_proxy.",
             "minLength": 0,
             "maxLength": 14,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5827,7 +5827,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043589+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535171+00:00"
           },
           "name": {
             "type": "string",
@@ -5837,7 +5837,7 @@
             "x-ves-example": "Contactus-route.",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5845,7 +5845,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043593+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535176+00:00"
           },
           "namespace": {
             "type": "string",
@@ -5855,7 +5855,7 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5863,7 +5863,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043597+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535180+00:00"
           },
           "uid": {
             "type": "string",
@@ -5873,7 +5873,7 @@
             "x-ves-example": "F3744323-1adf-4aaa-a5dc-0707c1d1bd82.",
             "minLength": 0,
             "maxLength": 36,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -5883,10 +5883,10 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043601+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535185+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schemaViewRefType",
           "required_fields": [
             "kind",
@@ -5899,7 +5899,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"uid\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schema_view_ref_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "other"
+        "x-f5xc-cli-domain": "other"
       },
       "schematokenType": {
         "type": "string",
@@ -5910,7 +5910,7 @@
           "JWT"
         ],
         "default": "NORMAL",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for schematokenType",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -5918,7 +5918,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/schematoken_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenCreateRequest": {
         "type": "object",
@@ -5934,7 +5934,7 @@
             "$ref": "#/components/schemas/tokenCreateSpecType"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenCreateRequest",
           "required_fields": [
             "metadata",
@@ -5945,7 +5945,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/tokens\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenCreateResponse": {
         "type": "object",
@@ -5961,7 +5961,7 @@
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenCreateResponse",
           "required_fields": [
             "metadata",
@@ -5973,7 +5973,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\",\n    \"system_metadata\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/tokens\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenCreateSpecType": {
         "type": "object",
@@ -5981,7 +5981,7 @@
         "title": "Create token.",
         "x-displayname": "Create Token.",
         "x-ves-proto-message": "ves.io.schema.token.CreateSpecType",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenCreateSpecType",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -5989,7 +5989,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/tokens\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenDeleteRequest": {
         "type": "object",
@@ -6004,7 +6004,7 @@
             "title": "Fail_if_referred.",
             "format": "boolean",
             "x-displayname": "Fail-If-Referred.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6019,7 +6019,7 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6027,7 +6027,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043614+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535198+00:00"
           },
           "namespace": {
             "type": "string",
@@ -6037,7 +6037,7 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6045,10 +6045,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043619+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535203+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenDeleteRequest",
           "required_fields": [
             "fail_if_referred",
@@ -6060,7 +6060,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"fail_if_referred\": \"value\",\n    \"name\": \"value\",\n    \"namespace\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/tokens\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenGetCloudInitConfigResp": {
         "type": "object",
@@ -6076,7 +6076,7 @@
             "x-displayname": "Cloud-init config.",
             "minLength": 0,
             "maxLength": 279,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6084,10 +6084,10 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043624+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535207+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenGetCloudInitConfigResp",
           "required_fields": [
             "cloud_init_config"
@@ -6097,7 +6097,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"cloud_init_config\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/tokens\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenGetResponse": {
         "type": "object",
@@ -6117,7 +6117,7 @@
               "$ref": "#/components/schemas/schemaObjectRefType"
             },
             "x-displayname": "Deleted Referred Objects.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6132,7 +6132,7 @@
               "$ref": "#/components/schemas/schemaObjectRefType"
             },
             "x-displayname": "Disabled Referred Objects.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6150,7 +6150,7 @@
               "$ref": "#/components/schemas/schemaObjectRefType"
             },
             "x-displayname": "Referring Objects.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6171,7 +6171,7 @@
               "$ref": "#/components/schemas/tokenStatusObject"
             },
             "x-displayname": "Status",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6180,13 +6180,13 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043639+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535222+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenGetResponse",
           "required_fields": [
             "create_form",
@@ -6204,7 +6204,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"create_form\": \"value\",\n    \"deleted_referred_objects\": \"value\",\n    \"disabled_referred_objects\": \"value\",\n    \"referring_objects\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/tokens\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenGetResponseFormatCode": {
         "type": "string",
@@ -6220,7 +6220,7 @@
           "GET_RSP_FORMAT_BROKEN_REFERENCES"
         ],
         "default": "GET_RSP_FORMAT_DEFAULT",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenGetResponseFormatCode",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -6228,7 +6228,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/tokens\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenGetSpecType": {
         "type": "object",
@@ -6241,7 +6241,7 @@
             "$ref": "#/components/schemas/tokenState"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenGetSpecType",
           "required_fields": [
             "state"
@@ -6251,7 +6251,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"state\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/tokens\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenGlobalSpecType": {
         "type": "object",
@@ -6264,7 +6264,7 @@
             "$ref": "#/components/schemas/tokenState"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenGlobalSpecType",
           "required_fields": [
             "state"
@@ -6274,7 +6274,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"state\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_global_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenListResponse": {
         "type": "object",
@@ -6291,7 +6291,7 @@
               "$ref": "#/components/schemas/schemaErrorType"
             },
             "x-displayname": "Errors",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6306,7 +6306,7 @@
               "$ref": "#/components/schemas/tokenListResponseItem"
             },
             "x-displayname": "Items",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6314,7 +6314,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenListResponse",
           "required_fields": [
             "errors",
@@ -6325,7 +6325,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"errors\": \"value\",\n    \"items\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_list_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenListResponseItem": {
         "type": "object",
@@ -6339,7 +6339,7 @@
             "description": "The set of annotations present on this token.",
             "title": "Annotations.",
             "x-displayname": "Annotations.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6353,7 +6353,7 @@
             "x-displayname": "Description.",
             "minLength": 0,
             "maxLength": 0,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6361,7 +6361,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043653+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535237+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -6369,7 +6369,7 @@
             "title": "Disabled",
             "format": "boolean",
             "x-displayname": "Disabled",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6384,7 +6384,7 @@
             "description": "The set of labels present on this token.",
             "title": "Labels",
             "x-displayname": "Labels",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6402,7 +6402,7 @@
             "x-ves-example": "Name",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6410,7 +6410,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043662+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535247+00:00"
           },
           "namespace": {
             "type": "string",
@@ -6420,7 +6420,7 @@
             "x-ves-example": "Ns1",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6428,7 +6428,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043666+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535251+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -6441,7 +6441,7 @@
               "$ref": "#/components/schemas/tokenStatusObject"
             },
             "x-displayname": "Status",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6459,7 +6459,7 @@
             "x-ves-example": "Example-corp.",
             "minLength": 0,
             "maxLength": 18,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6468,7 +6468,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043673+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535259+00:00"
           },
           "uid": {
             "type": "string",
@@ -6478,7 +6478,7 @@
             "x-ves-example": "D27938ba-967e-40a7-9709-57b8627f9f75.",
             "minLength": 0,
             "maxLength": 36,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6488,10 +6488,10 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043678+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535264+00:00"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenListResponseItem",
           "required_fields": [
             "annotations",
@@ -6513,7 +6513,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"annotations\": \"value\",\n    \"description\": \"value\",\n    \"disabled\": \"value\",\n    \"get_spec\": \"value\",\n    \"labels\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_list_response_items\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenObject": {
         "type": "object",
@@ -6533,7 +6533,7 @@
             "$ref": "#/components/schemas/schemaSystemObjectMetaType"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenObject",
           "required_fields": [
             "metadata",
@@ -6545,7 +6545,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\",\n    \"system_metadata\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenObjectChangeResp": {
         "type": "object",
@@ -6558,7 +6558,7 @@
             "$ref": "#/components/schemas/tokenObject"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenObjectChangeResp",
           "required_fields": [
             "obj"
@@ -6568,7 +6568,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"obj\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_object_change_resps\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenReplaceRequest": {
         "type": "object",
@@ -6584,7 +6584,7 @@
             "$ref": "#/components/schemas/tokenReplaceSpecType"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenReplaceRequest",
           "required_fields": [
             "metadata",
@@ -6595,12 +6595,12 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"spec\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_replace_requests\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenReplaceResponse": {
         "type": "object",
         "x-ves-proto-message": "ves.io.schema.token.ReplaceResponse",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenReplaceResponse",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -6608,7 +6608,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_replace_responses\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenReplaceSpecType": {
         "type": "object",
@@ -6616,7 +6616,7 @@
         "title": "Replace token.",
         "x-displayname": "Replace Token.",
         "x-ves-proto-message": "ves.io.schema.token.ReplaceSpecType",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenReplaceSpecType",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -6624,7 +6624,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_replace_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenSpecType": {
         "type": "object",
@@ -6636,7 +6636,7 @@
             "$ref": "#/components/schemas/tokenGlobalSpecType"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenSpecType",
           "required_fields": [
             "gc_spec"
@@ -6646,7 +6646,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"gc_spec\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_spec_types\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenState": {
         "type": "string",
@@ -6660,7 +6660,7 @@
         "default": "UNKNOWN",
         "x-displayname": "Token State Values.",
         "x-ves-proto-enum": "ves.io.schema.token.State",
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenState",
           "required_fields": [],
           "mutually_exclusive_groups": [],
@@ -6668,7 +6668,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_states\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenStateReq": {
         "type": "object",
@@ -6685,7 +6685,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 16,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6693,7 +6693,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043693+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535279+00:00"
           },
           "namespace": {
             "type": "string",
@@ -6703,7 +6703,7 @@
             "x-ves-example": "Value",
             "minLength": 0,
             "maxLength": 6,
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6711,13 +6711,13 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-02T23:10:00.043697+00:00"
+            "x-reconciled-at": "2026-01-04T18:39:45.535284+00:00"
           },
           "state": {
             "$ref": "#/components/schemas/tokenState"
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenStateReq",
           "required_fields": [
             "name",
@@ -6729,7 +6729,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"name\": \"value\",\n    \"namespace\": \"value\",\n    \"state\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_state_reqs\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       },
       "tokenStatusObject": {
         "type": "object",
@@ -6746,7 +6746,7 @@
               "$ref": "#/components/schemas/schemaConditionType"
             },
             "x-displayname": "Conditions.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6764,7 +6764,7 @@
               "$ref": "#/components/schemas/schemaObjectRefType"
             },
             "x-displayname": "Config Object.",
-            "x-ves-required-for": {
+            "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
               "update": false,
@@ -6772,7 +6772,7 @@
             }
           }
         },
-        "x-ves-minimum-configuration": {
+        "x-f5xc-minimum-configuration": {
           "description": "Minimum configuration for tokenStatusObject",
           "required_fields": [
             "conditions",
@@ -6784,7 +6784,7 @@
           "example_json": "{\n  \"metadata\": {\n    \"name\": \"example\",\n    \"namespace\": \"default\"\n  },\n  \"spec\": {\n    \"conditions\": \"value\",\n    \"object_refs\": \"value\"\n  }\n}",
           "example_curl": "curl -X POST \"$F5XC_API_URL/api/config/namespaces/default/token_status_objects\" \\\n  -H \"Authorization: APIToken $F5XC_API_TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d @example.json"
         },
-        "x-ves-cli-domain": "users"
+        "x-f5xc-cli-domain": "users"
       }
     },
     "responses": {},

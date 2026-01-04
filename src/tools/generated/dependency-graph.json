@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-02T23:10:11.773708+00:00",
+  "generatedAt": "2026-01-04T18:39:57.313111+00:00",
   "totalResources": 801,
   "dependencies": {
     "admin_console_and_ui/static-component": {
@@ -3981,7 +3981,14 @@
         }
       ],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
+          "tier": "standard",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/schema-object-create-meta",
         "unknown/virtual-k8s-create",
@@ -4032,7 +4039,14 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
+          "tier": "standard",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/workload-flavor",
         "unknown/schema-object-create-meta",
@@ -4092,7 +4106,14 @@
         }
       ],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
+          "tier": "standard",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/schema-object-create-meta",
         "unknown/viewsworkload-create",
@@ -4115,7 +4136,14 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
+          "tier": "standard",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/workload-usage",
         "container_services/usage"
@@ -4163,7 +4191,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/data-type",
         "unknown/schema-object-create-meta",
@@ -4251,7 +4292,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "data_and_privacy_security/geo-config"
       ]
@@ -4262,7 +4316,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "data_and_privacy_security/lma-region"
       ]
@@ -4455,7 +4522,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/bgp-peer-statu"
       ]
@@ -4474,7 +4554,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/infraprotect-transit-usage",
         "ddos/transit-usage"
@@ -4486,7 +4579,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/acces"
       ]
@@ -4533,7 +4639,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/infraprotect-asn-prefix",
         "unknown/schema-object-create-meta",
@@ -4585,7 +4704,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/infraprotect-asn",
         "unknown/schema-object-create-meta",
@@ -4637,7 +4769,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/infraprotect-deny-list-rule",
         "unknown/schema-object-create-meta",
@@ -4689,7 +4834,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/infraprotect-firewall-rule-group",
         "unknown/schema-object-create-meta",
@@ -4741,7 +4899,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/infraprotect-firewall-rule",
         "unknown/schema-object-create-meta",
@@ -4779,7 +4950,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/infraprotect-firewall-ruleset",
         "unknown/schema-object-replace-meta",
@@ -4829,7 +5013,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/infraprotect-internet-prefix-advertisement",
         "unknown/schema-object-create-meta",
@@ -4883,9 +5080,15 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_site_management_standard",
-          "displayName": "F5XC Site Management Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
           "required": false
         }
       ],
@@ -4904,7 +5107,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/alert"
       ]
@@ -4915,7 +5131,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/to-event"
       ]
@@ -4926,7 +5155,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/event"
       ]
@@ -4937,7 +5179,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/attachment"
       ]
@@ -4948,7 +5203,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/detail"
       ]
@@ -4959,7 +5227,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/mitigation-annotation"
       ]
@@ -4970,7 +5251,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/events-summary"
       ]
@@ -4981,7 +5275,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/mitigation"
       ]
@@ -4992,7 +5299,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/annotation"
       ]
@@ -5003,7 +5323,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/ip"
       ]
@@ -5014,7 +5347,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/network"
       ]
@@ -5025,7 +5371,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/report"
       ]
@@ -5042,7 +5401,20 @@
           "fieldPath": "irr_override"
         }
       ],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/update-asn-prefix-irr-override"
       ]
@@ -5063,7 +5435,20 @@
           "fieldPath": "review_type"
         }
       ],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/update-asn-prefix-review-statu"
       ]
@@ -5084,7 +5469,20 @@
           "fieldPath": "review_type"
         }
       ],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/update-asn-review-statu"
       ]
@@ -5095,7 +5493,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/infraprotect-information"
       ]
@@ -5115,7 +5526,20 @@
           "fieldPath": "activation_selection"
         }
       ],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/update-advertisement-statu"
       ]
@@ -5128,9 +5552,15 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_site_management_standard",
-          "displayName": "F5XC Site Management Standard",
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
           "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
           "required": false
         }
       ],
@@ -5144,7 +5574,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "ddos/suggest-value"
       ]
@@ -5777,8 +6220,8 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_appstack_standard",
-          "displayName": "F5XC Appstack Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
           "required": false
         }
@@ -5835,8 +6278,8 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_appstack_standard",
-          "displayName": "F5XC Appstack Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
           "required": false
         }
@@ -5902,8 +6345,8 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_appstack_standard",
-          "displayName": "F5XC Appstack Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
           "required": false
         }
@@ -5960,8 +6403,8 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_appstack_standard",
-          "displayName": "F5XC Appstack Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
           "required": false
         }
@@ -6019,8 +6462,8 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_appstack_standard",
-          "displayName": "F5XC Appstack Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
           "required": false
         }
@@ -9482,15 +9925,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -9542,15 +9979,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -9607,15 +10038,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -9680,15 +10105,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -9744,15 +10163,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -9813,18 +10226,6 @@
           "displayName": "F5XC Site Management Standard",
           "tier": "standard",
           "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
-          "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
-          "required": false
         }
       ],
       "creationOrder": [
@@ -9880,15 +10281,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -9917,15 +10312,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -9950,15 +10339,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -9975,15 +10358,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -9999,15 +10376,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -10023,15 +10394,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -10047,15 +10412,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -10071,15 +10430,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -10095,15 +10448,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -10119,15 +10466,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -10143,15 +10484,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -10167,15 +10502,9 @@
       "oneOfGroups": [],
       "subscriptions": [
         {
-          "addonService": "f5xc_securemesh_standard",
-          "displayName": "F5XC Securemesh Standard",
+          "addonService": "f5xc_site_management_standard",
+          "displayName": "F5XC Site Management Standard",
           "tier": "standard",
-          "required": false
-        },
-        {
-          "addonService": "f5xc_securemesh_advanced",
-          "displayName": "F5XC Securemesh Advanced",
-          "tier": "advanced",
           "required": false
         }
       ],
@@ -10189,7 +10518,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/subscribe"
       ]
@@ -10200,7 +10542,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/unsubscribe"
       ]
@@ -10247,7 +10602,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/mobile-base-config",
         "unknown/schema-object-create-meta",
@@ -10263,7 +10631,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/mobile-base-config-file"
       ]
@@ -10274,7 +10655,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/mobile-sdk"
       ]
@@ -10285,7 +10679,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/{name}"
       ]
@@ -10332,7 +10739,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/alert-gen-policy",
         "unknown/schema-object-create-meta",
@@ -10370,7 +10790,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/alert-template",
         "unknown/schema-object-create-meta",
@@ -10384,7 +10817,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/statu"
       ]
@@ -10395,7 +10841,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/clone"
       ]
@@ -10406,7 +10865,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/bot-allowlist-policie"
       ]
@@ -10446,7 +10918,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/bot-allowlist-policy-custom",
         "unknown/bot-allowlist-policy-replace",
@@ -10461,7 +10946,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/bot-detection-rule"
       ]
@@ -10472,7 +10970,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/deployment"
       ]
@@ -10483,7 +10994,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/draft"
       ]
@@ -10494,7 +11018,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/summary"
       ]
@@ -10505,7 +11042,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/bot-endpoint-policie"
       ]
@@ -10545,7 +11095,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/bot-endpoint-policy-custom",
         "unknown/bot-endpoint-policy-replace",
@@ -10560,7 +11123,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/bot-network-policie"
       ]
@@ -10600,7 +11176,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/bot-network-policy-custom",
         "unknown/bot-network-policy-replace",
@@ -10615,7 +11204,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/apikey"
       ]
@@ -10626,7 +11228,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/region"
       ]
@@ -10637,7 +11252,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/check"
       ]
@@ -10684,7 +11312,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/bot-infrastructure",
         "unknown/schema-object-create-meta",
@@ -10736,7 +11377,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/protected-application",
         "unknown/schema-object-create-meta",
@@ -10752,7 +11406,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/version"
       ]
@@ -10763,7 +11430,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/history"
       ]
@@ -10774,7 +11454,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/bot-detection-update"
       ]
@@ -10785,7 +11478,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/download-release-note"
       ]
@@ -10796,7 +11502,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/deployment-history"
       ]
@@ -10807,7 +11526,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/deployment-statu"
       ]
@@ -10818,7 +11550,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/policie"
       ]
@@ -10829,7 +11574,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/config"
       ]
@@ -10840,7 +11598,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/template"
       ]
@@ -10861,7 +11632,20 @@
           "fieldPath": "frequency"
         }
       ],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/atb"
       ]
@@ -10872,7 +11656,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/categorie"
       ]
@@ -10883,7 +11680,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/list"
       ]
@@ -10894,7 +11704,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/endpoint"
       ]
@@ -10905,7 +11728,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/credential-stuffing-attack"
       ]
@@ -10916,7 +11752,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/bad-bot-reduction"
       ]
@@ -10927,7 +11776,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/unaddressed-automation"
       ]
@@ -10938,7 +11800,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/personal-stat"
       ]
@@ -10949,7 +11824,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/total-automation"
       ]
@@ -10960,7 +11848,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/asn"
       ]
@@ -10971,7 +11872,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/browser"
       ]
@@ -10982,7 +11896,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/ip"
       ]
@@ -10993,7 +11920,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/o"
       ]
@@ -11004,7 +11944,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/ua"
       ]
@@ -11015,7 +11968,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/overview"
       ]
@@ -11026,7 +11992,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/app"
       ]
@@ -11037,7 +12016,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/asorg"
       ]
@@ -11048,7 +12040,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/automation"
       ]
@@ -11059,7 +12064,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/endpointlabel"
       ]
@@ -11070,7 +12088,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/good"
       ]
@@ -11081,7 +12112,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/device"
       ]
@@ -11092,7 +12136,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/geolocation"
       ]
@@ -11103,7 +12160,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/platform"
       ]
@@ -11114,7 +12184,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/timeserie"
       ]
@@ -11125,7 +12208,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/attackintent"
       ]
@@ -11136,7 +12232,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/bfp"
       ]
@@ -11147,7 +12256,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/action"
       ]
@@ -11158,7 +12280,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/metric"
       ]
@@ -11169,7 +12304,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/expanded"
       ]
@@ -11180,7 +12328,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/suggest-value"
       ]
@@ -11191,7 +12352,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/field"
       ]
@@ -11202,7 +12376,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/threat-type"
       ]
@@ -11213,7 +12400,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/top-good-bot"
       ]
@@ -11224,7 +12424,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/top-reason-code"
       ]
@@ -11235,7 +12448,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/init"
       ]
@@ -11268,7 +12494,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/allowed-domain",
         "unknown/schema-object-create-meta",
@@ -11304,7 +12543,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/mitigated-domain",
         "unknown/schema-object-create-meta",
@@ -11340,7 +12592,20 @@
       ],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "unknown/protected-domain",
         "unknown/schema-object-create-meta",
@@ -11354,7 +12619,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/detected-domain"
       ]
@@ -11365,7 +12643,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/domain-detail"
       ]
@@ -11376,7 +12667,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/formField"
       ]
@@ -11387,7 +12691,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/analysi"
       ]
@@ -11398,7 +12715,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/js-configuration"
       ]
@@ -11409,7 +12739,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/justification"
       ]
@@ -11420,7 +12763,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/script"
       ]
@@ -11431,7 +12787,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/behavior"
       ]
@@ -11442,7 +12811,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/dashboard"
       ]
@@ -11453,7 +12835,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/networkInteraction"
       ]
@@ -11464,7 +12859,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/readStatu"
       ]
@@ -11475,7 +12883,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/affectedUser"
       ]
@@ -11486,7 +12907,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/testj"
       ]
@@ -11506,7 +12940,20 @@
           "fieldPath": "allowed_or_mitigated_domains"
         }
       ],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/update-domain"
       ]
@@ -11517,7 +12964,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/app-provision"
       ]
@@ -11528,7 +12988,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/application"
       ]
@@ -11539,7 +13012,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/transaction"
       ]
@@ -11550,7 +13036,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/url"
       ]
@@ -11561,7 +13060,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/age"
       ]
@@ -11572,7 +13084,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/country"
       ]
@@ -11583,7 +13108,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/session"
       ]
@@ -11594,7 +13132,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/unique"
       ]
@@ -11605,7 +13156,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/enable"
       ]
@@ -11616,7 +13180,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/src-tag-injection"
       ]
@@ -11627,7 +13204,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/channel"
       ]
@@ -11638,7 +13228,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/conversion"
       ]
@@ -11649,7 +13252,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/enjoy"
       ]
@@ -11660,7 +13276,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/friction-aggregation"
       ]
@@ -11671,7 +13300,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/friction-histogram"
       ]
@@ -11682,7 +13324,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/health"
       ]
@@ -11693,7 +13348,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/lift"
       ]
@@ -11704,7 +13372,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/rescue"
       ]
@@ -11715,7 +13396,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/provision"
       ]
@@ -11726,7 +13420,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/state"
       ]
@@ -11737,7 +13444,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/audit"
       ]
@@ -11748,7 +13468,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/table"
       ]
@@ -11759,7 +13492,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/detail"
       ]
@@ -11770,7 +13516,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/feedback"
       ]
@@ -11781,7 +13540,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/rule"
       ]
@@ -11792,7 +13564,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/ep"
       ]
@@ -11803,7 +13588,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/general-feedback"
       ]
@@ -11814,7 +13612,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/top-location"
       ]
@@ -11825,7 +13636,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/top-source"
       ]
@@ -11836,7 +13660,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/transactions-over-time"
       ]
@@ -11847,7 +13684,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/transaction-detail"
       ]
@@ -11858,7 +13708,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/transaction-device-history"
       ]
@@ -11869,7 +13732,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/transaction-location"
       ]
@@ -11880,7 +13756,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/transaction-related-session"
       ]
@@ -11891,7 +13780,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/transaction-timeline"
       ]
@@ -11902,7 +13804,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/transactions-csv"
       ]
@@ -11913,7 +13828,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/getcurrentfrauddata"
       ]
@@ -11924,7 +13852,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/gettopriskyaccount"
       ]
@@ -11935,7 +13876,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/gettopriskydevice"
       ]
@@ -11946,7 +13900,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/gettopriskyipaddresse"
       ]
@@ -11957,7 +13924,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/gettopriskyreason"
       ]
@@ -11968,7 +13948,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/gettransactiondata"
       ]
@@ -11979,7 +13972,20 @@
       "requires": [],
       "requiredBy": [],
       "oneOfGroups": [],
-      "subscriptions": [],
+      "subscriptions": [
+        {
+          "addonService": "f5xc_waap_standard",
+          "displayName": "F5XC WAAP Standard",
+          "tier": "standard",
+          "required": false
+        },
+        {
+          "addonService": "f5xc_waap_advanced",
+          "displayName": "F5XC WAAP Advanced",
+          "tier": "advanced",
+          "required": false
+        }
+      ],
       "creationOrder": [
         "shape/safecubejsdata"
       ]
@@ -18957,11 +20963,35 @@
       "ce_management/fleet",
       "ce_management/get-registrations-by-token",
       "ce_management/registrations-by-site",
-      "ddos/infraprotect-tunnel",
-      "ddos/update-tunnel-statu",
+      "container_services/virtual-k8s",
+      "container_services/workload-flavor",
+      "container_services/workload",
+      "container_services/usage",
+      "managed_kubernetes/container-registry",
+      "managed_kubernetes/k8s-cluster-role-binding",
+      "managed_kubernetes/k8s-cluster-role",
+      "managed_kubernetes/k8s-pod-security-admission",
+      "managed_kubernetes/k8s-pod-security-policy",
       "marketplace/generate-token",
       "network/tunnel",
+      "service_mesh/force-delete",
+      "service_mesh/app-setting",
+      "service_mesh/app-type",
+      "service_mesh/endpoint",
+      "service_mesh/nfv-service",
       "service_mesh/site-mesh-group",
+      "service_mesh/virtual-network",
+      "service_mesh/metric",
+      "service_mesh/sid-counter",
+      "service_mesh/software-os-version",
+      "service_mesh/suspicious-user",
+      "service_mesh/learnt-schema",
+      "service_mesh/pdf",
+      "service_mesh/api-endpoint",
+      "service_mesh/swagger-spec",
+      "service_mesh/pop",
+      "service_mesh/push",
+      "service_mesh/override",
       "sites/aws-tgw-site",
       "sites/aws-vpc-site",
       "sites/azure-vnet-site",
@@ -19069,7 +21099,40 @@
       "bot_and_threat_defense/tpm-manager",
       "bot_and_threat_defense/preauth",
       "bot_and_threat_defense/provision",
+      "data_and_privacy_security/data-type",
       "data_and_privacy_security/sensitive-data-policy",
+      "data_and_privacy_security/geo-config",
+      "data_and_privacy_security/lma-region",
+      "ddos/bgp-peer-statu",
+      "ddos/transit-usage",
+      "ddos/acces",
+      "ddos/infraprotect-asn-prefix",
+      "ddos/infraprotect-asn",
+      "ddos/infraprotect-deny-list-rule",
+      "ddos/infraprotect-firewall-rule-group",
+      "ddos/infraprotect-firewall-rule",
+      "ddos/infraprotect-firewall-ruleset",
+      "ddos/infraprotect-internet-prefix-advertisement",
+      "ddos/infraprotect-tunnel",
+      "ddos/alert",
+      "ddos/to-event",
+      "ddos/event",
+      "ddos/attachment",
+      "ddos/detail",
+      "ddos/mitigation-annotation",
+      "ddos/events-summary",
+      "ddos/mitigation",
+      "ddos/annotation",
+      "ddos/ip",
+      "ddos/network",
+      "ddos/report",
+      "ddos/update-asn-prefix-irr-override",
+      "ddos/update-asn-prefix-review-statu",
+      "ddos/update-asn-review-statu",
+      "ddos/infraprotect-information",
+      "ddos/update-advertisement-statu",
+      "ddos/update-tunnel-statu",
+      "ddos/suggest-value",
       "network_security/fast-acl-rule",
       "network_security/fast-acl",
       "network_security/filter-set",
@@ -19092,6 +21155,135 @@
       "rate_limiting/protocol-policer",
       "rate_limiting/rate-limiter",
       "secops_and_incident_response/malicious-user-mitigation",
+      "shape/subscribe",
+      "shape/unsubscribe",
+      "shape/mobile-base-config",
+      "shape/mobile-base-config-file",
+      "shape/mobile-sdk",
+      "shape/{name}",
+      "shape/alert-gen-policy",
+      "shape/alert-template",
+      "shape/statu",
+      "shape/clone",
+      "shape/bot-allowlist-policie",
+      "shape/bot-allowlist-policy",
+      "shape/bot-detection-rule",
+      "shape/deployment",
+      "shape/draft",
+      "shape/summary",
+      "shape/bot-endpoint-policie",
+      "shape/bot-endpoint-policy",
+      "shape/bot-network-policie",
+      "shape/bot-network-policy",
+      "shape/apikey",
+      "shape/region",
+      "shape/check",
+      "shape/bot-infrastructure",
+      "shape/protected-application",
+      "shape/version",
+      "shape/history",
+      "shape/bot-detection-update",
+      "shape/download-release-note",
+      "shape/deployment-history",
+      "shape/deployment-statu",
+      "shape/policie",
+      "shape/config",
+      "shape/template",
+      "shape/atb",
+      "shape/categorie",
+      "shape/list",
+      "shape/endpoint",
+      "shape/credential-stuffing-attack",
+      "shape/bad-bot-reduction",
+      "shape/unaddressed-automation",
+      "shape/personal-stat",
+      "shape/total-automation",
+      "shape/asn",
+      "shape/browser",
+      "shape/ip",
+      "shape/o",
+      "shape/ua",
+      "shape/overview",
+      "shape/app",
+      "shape/asorg",
+      "shape/automation",
+      "shape/endpointlabel",
+      "shape/good",
+      "shape/device",
+      "shape/geolocation",
+      "shape/platform",
+      "shape/timeserie",
+      "shape/attackintent",
+      "shape/bfp",
+      "shape/action",
+      "shape/metric",
+      "shape/expanded",
+      "shape/suggest-value",
+      "shape/field",
+      "shape/threat-type",
+      "shape/top-good-bot",
+      "shape/top-reason-code",
+      "shape/init",
+      "shape/allowed-domain",
+      "shape/mitigated-domain",
+      "shape/protected-domain",
+      "shape/detected-domain",
+      "shape/domain-detail",
+      "shape/formField",
+      "shape/analysi",
+      "shape/js-configuration",
+      "shape/justification",
+      "shape/script",
+      "shape/behavior",
+      "shape/dashboard",
+      "shape/networkInteraction",
+      "shape/readStatu",
+      "shape/affectedUser",
+      "shape/testj",
+      "shape/update-domain",
+      "shape/app-provision",
+      "shape/application",
+      "shape/transaction",
+      "shape/url",
+      "shape/age",
+      "shape/country",
+      "shape/session",
+      "shape/unique",
+      "shape/enable",
+      "shape/src-tag-injection",
+      "shape/channel",
+      "shape/conversion",
+      "shape/enjoy",
+      "shape/friction-aggregation",
+      "shape/friction-histogram",
+      "shape/health",
+      "shape/lift",
+      "shape/rescue",
+      "shape/provision",
+      "shape/state",
+      "shape/audit",
+      "shape/table",
+      "shape/detail",
+      "shape/feedback",
+      "shape/rule",
+      "shape/ep",
+      "shape/general-feedback",
+      "shape/top-location",
+      "shape/top-source",
+      "shape/transactions-over-time",
+      "shape/transaction-detail",
+      "shape/transaction-device-history",
+      "shape/transaction-location",
+      "shape/transaction-related-session",
+      "shape/transaction-timeline",
+      "shape/transactions-csv",
+      "shape/getcurrentfrauddata",
+      "shape/gettopriskyaccount",
+      "shape/gettopriskydevice",
+      "shape/gettopriskyipaddresse",
+      "shape/gettopriskyreason",
+      "shape/gettransactiondata",
+      "shape/safecubejsdata",
       "tenant_and_identity/all-application-inventory-waf-filter",
       "virtual/rate-limiter-policy",
       "virtual/service-policy-rule",
@@ -19162,7 +21354,40 @@
       "bot_and_threat_defense/tpm-manager",
       "bot_and_threat_defense/preauth",
       "bot_and_threat_defense/provision",
+      "data_and_privacy_security/data-type",
       "data_and_privacy_security/sensitive-data-policy",
+      "data_and_privacy_security/geo-config",
+      "data_and_privacy_security/lma-region",
+      "ddos/bgp-peer-statu",
+      "ddos/transit-usage",
+      "ddos/acces",
+      "ddos/infraprotect-asn-prefix",
+      "ddos/infraprotect-asn",
+      "ddos/infraprotect-deny-list-rule",
+      "ddos/infraprotect-firewall-rule-group",
+      "ddos/infraprotect-firewall-rule",
+      "ddos/infraprotect-firewall-ruleset",
+      "ddos/infraprotect-internet-prefix-advertisement",
+      "ddos/infraprotect-tunnel",
+      "ddos/alert",
+      "ddos/to-event",
+      "ddos/event",
+      "ddos/attachment",
+      "ddos/detail",
+      "ddos/mitigation-annotation",
+      "ddos/events-summary",
+      "ddos/mitigation",
+      "ddos/annotation",
+      "ddos/ip",
+      "ddos/network",
+      "ddos/report",
+      "ddos/update-asn-prefix-irr-override",
+      "ddos/update-asn-prefix-review-statu",
+      "ddos/update-asn-review-statu",
+      "ddos/infraprotect-information",
+      "ddos/update-advertisement-statu",
+      "ddos/update-tunnel-statu",
+      "ddos/suggest-value",
       "network_security/fast-acl-rule",
       "network_security/fast-acl",
       "network_security/filter-set",
@@ -19185,6 +21410,135 @@
       "rate_limiting/protocol-policer",
       "rate_limiting/rate-limiter",
       "secops_and_incident_response/malicious-user-mitigation",
+      "shape/subscribe",
+      "shape/unsubscribe",
+      "shape/mobile-base-config",
+      "shape/mobile-base-config-file",
+      "shape/mobile-sdk",
+      "shape/{name}",
+      "shape/alert-gen-policy",
+      "shape/alert-template",
+      "shape/statu",
+      "shape/clone",
+      "shape/bot-allowlist-policie",
+      "shape/bot-allowlist-policy",
+      "shape/bot-detection-rule",
+      "shape/deployment",
+      "shape/draft",
+      "shape/summary",
+      "shape/bot-endpoint-policie",
+      "shape/bot-endpoint-policy",
+      "shape/bot-network-policie",
+      "shape/bot-network-policy",
+      "shape/apikey",
+      "shape/region",
+      "shape/check",
+      "shape/bot-infrastructure",
+      "shape/protected-application",
+      "shape/version",
+      "shape/history",
+      "shape/bot-detection-update",
+      "shape/download-release-note",
+      "shape/deployment-history",
+      "shape/deployment-statu",
+      "shape/policie",
+      "shape/config",
+      "shape/template",
+      "shape/atb",
+      "shape/categorie",
+      "shape/list",
+      "shape/endpoint",
+      "shape/credential-stuffing-attack",
+      "shape/bad-bot-reduction",
+      "shape/unaddressed-automation",
+      "shape/personal-stat",
+      "shape/total-automation",
+      "shape/asn",
+      "shape/browser",
+      "shape/ip",
+      "shape/o",
+      "shape/ua",
+      "shape/overview",
+      "shape/app",
+      "shape/asorg",
+      "shape/automation",
+      "shape/endpointlabel",
+      "shape/good",
+      "shape/device",
+      "shape/geolocation",
+      "shape/platform",
+      "shape/timeserie",
+      "shape/attackintent",
+      "shape/bfp",
+      "shape/action",
+      "shape/metric",
+      "shape/expanded",
+      "shape/suggest-value",
+      "shape/field",
+      "shape/threat-type",
+      "shape/top-good-bot",
+      "shape/top-reason-code",
+      "shape/init",
+      "shape/allowed-domain",
+      "shape/mitigated-domain",
+      "shape/protected-domain",
+      "shape/detected-domain",
+      "shape/domain-detail",
+      "shape/formField",
+      "shape/analysi",
+      "shape/js-configuration",
+      "shape/justification",
+      "shape/script",
+      "shape/behavior",
+      "shape/dashboard",
+      "shape/networkInteraction",
+      "shape/readStatu",
+      "shape/affectedUser",
+      "shape/testj",
+      "shape/update-domain",
+      "shape/app-provision",
+      "shape/application",
+      "shape/transaction",
+      "shape/url",
+      "shape/age",
+      "shape/country",
+      "shape/session",
+      "shape/unique",
+      "shape/enable",
+      "shape/src-tag-injection",
+      "shape/channel",
+      "shape/conversion",
+      "shape/enjoy",
+      "shape/friction-aggregation",
+      "shape/friction-histogram",
+      "shape/health",
+      "shape/lift",
+      "shape/rescue",
+      "shape/provision",
+      "shape/state",
+      "shape/audit",
+      "shape/table",
+      "shape/detail",
+      "shape/feedback",
+      "shape/rule",
+      "shape/ep",
+      "shape/general-feedback",
+      "shape/top-location",
+      "shape/top-source",
+      "shape/transactions-over-time",
+      "shape/transaction-detail",
+      "shape/transaction-device-history",
+      "shape/transaction-location",
+      "shape/transaction-related-session",
+      "shape/transaction-timeline",
+      "shape/transactions-csv",
+      "shape/getcurrentfrauddata",
+      "shape/gettopriskyaccount",
+      "shape/gettopriskydevice",
+      "shape/gettopriskyipaddresse",
+      "shape/gettopriskyreason",
+      "shape/gettransactiondata",
+      "shape/safecubejsdata",
       "tenant_and_identity/all-application-inventory-waf-filter",
       "virtual/rate-limiter-policy",
       "virtual/service-policy-rule",
@@ -19226,11 +21580,6 @@
       "cdn/dos-automitigation-rule"
     ],
     "f5xc_appstack_standard": [
-      "managed_kubernetes/container-registry",
-      "managed_kubernetes/k8s-cluster-role-binding",
-      "managed_kubernetes/k8s-cluster-role",
-      "managed_kubernetes/k8s-pod-security-admission",
-      "managed_kubernetes/k8s-pod-security-policy",
       "observability/vk8s-audit-log",
       "observability/vk8s-event",
       "sites/vk8s-audit-log",
@@ -19239,45 +21588,9 @@
       "statistics/vk8s-event"
     ],
     "f5xc_securemesh_standard": [
-      "service_mesh/force-delete",
-      "service_mesh/app-setting",
-      "service_mesh/app-type",
-      "service_mesh/endpoint",
-      "service_mesh/nfv-service",
-      "service_mesh/site-mesh-group",
-      "service_mesh/virtual-network",
-      "service_mesh/metric",
-      "service_mesh/sid-counter",
-      "service_mesh/software-os-version",
-      "service_mesh/suspicious-user",
-      "service_mesh/learnt-schema",
-      "service_mesh/pdf",
-      "service_mesh/api-endpoint",
-      "service_mesh/swagger-spec",
-      "service_mesh/pop",
-      "service_mesh/push",
-      "service_mesh/override",
       "sites/global-network"
     ],
     "f5xc_securemesh_advanced": [
-      "service_mesh/force-delete",
-      "service_mesh/app-setting",
-      "service_mesh/app-type",
-      "service_mesh/endpoint",
-      "service_mesh/nfv-service",
-      "service_mesh/site-mesh-group",
-      "service_mesh/virtual-network",
-      "service_mesh/metric",
-      "service_mesh/sid-counter",
-      "service_mesh/software-os-version",
-      "service_mesh/suspicious-user",
-      "service_mesh/learnt-schema",
-      "service_mesh/pdf",
-      "service_mesh/api-endpoint",
-      "service_mesh/swagger-spec",
-      "service_mesh/pop",
-      "service_mesh/push",
-      "service_mesh/override",
       "sites/global-network"
     ]
   },

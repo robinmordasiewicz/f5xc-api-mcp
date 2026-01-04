@@ -853,8 +853,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["cluster"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -986,8 +985,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["cluster", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -1124,8 +1122,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -1259,8 +1256,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -1374,8 +1370,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["cluster"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/clusters" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -2820,8 +2815,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["healthcheck"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -2953,8 +2947,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["healthcheck", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -3091,8 +3084,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -3226,8 +3218,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -3341,8 +3332,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["healthcheck"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/healthchecks" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @healthcheck.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -3468,8 +3458,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["http-loadbalancer"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/http_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @http-lb.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -3601,8 +3590,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["http-loadbalancer", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/http_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @http-lb.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -3738,8 +3726,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/http_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @http-lb.json\n',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -3873,8 +3860,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/http_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @http-lb.json\n',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -3987,8 +3973,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["http-loadbalancer"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/http_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @http-lb.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -4389,8 +4374,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["origin-pool"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -4522,8 +4506,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["origin-pool", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -4658,8 +4641,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -4793,8 +4775,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -4907,8 +4888,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["origin-pool"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/origin_pools" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @origin-pool.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -7068,8 +7048,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["service-policy-rule"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -7214,8 +7193,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["service-policy-rule", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -7365,8 +7343,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -7513,8 +7490,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -7641,8 +7617,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["service-policy-rule"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_rules" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -7804,8 +7779,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -7952,8 +7926,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/service_policy_sets" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [
@@ -8649,8 +8622,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["tcp-loadbalancer"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tcp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @tcp-lb.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -8782,8 +8754,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["tcp-loadbalancer", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tcp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @tcp-lb.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -8919,8 +8890,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tcp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @tcp-lb.json\n',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -9054,8 +9024,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tcp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @tcp-lb.json\n',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -9168,8 +9137,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["tcp-loadbalancer"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/tcp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @tcp-lb.json\n',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -9532,8 +9500,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["udp-loadbalancer"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/udp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -9665,8 +9632,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["udp-loadbalancer", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/udp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -9802,8 +9768,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/udp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -9937,8 +9902,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/udp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -10051,8 +10015,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["udp-loadbalancer"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/udp_loadbalancers" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "",
@@ -10722,8 +10685,7 @@ export const virtualTools: ParsedOperation[] = [
         creates: ["virtual-host"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_hosts" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -10855,8 +10817,7 @@ export const virtualTools: ParsedOperation[] = [
         deletes: ["virtual-host", "contained_resources"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_hosts" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",
@@ -10992,8 +10953,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.name", "path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_hosts" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -11127,8 +11087,7 @@ export const virtualTools: ParsedOperation[] = [
       required_fields: ["path.namespace"],
       side_effects: {},
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_hosts" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [],
     oneOfGroups: [],
     subscriptionRequirements: [],
@@ -11241,8 +11200,7 @@ export const virtualTools: ParsedOperation[] = [
         modifies: ["virtual-host"],
       },
     },
-    curlExample:
-      'curl -X POST "$F5XC_API_URL/api/config/namespaces/default/virtual_hosts" \\\n  -H "Authorization: APIToken $F5XC_API_TOKEN" \\\n  -H "Content-Type: application/json" \\\n  -d @example.json',
+    curlExample: null,
     dependencies: [
       {
         domain: "virtual",

@@ -4,8 +4,8 @@
  * Normalizes example names in OpenAPI descriptions to follow
  * the project's naming convention (using "example-" prefix).
  *
- * @deprecated Pre-enriched specs already have normalized examples.
- * This module is only used by the deprecated parseSpecDirectory() function.
+ * Used by sync-specs.ts to normalize examples after downloading
+ * specs from the upstream repository.
  */
 
 /**
@@ -31,7 +31,6 @@ const MY_PREFIX_PATTERN = /\bmy-(\w+)/g;
  * normalizeExamples("Use namespace 'my-namespace' with resource 'my-lb'")
  * // Returns: "Use namespace 'example-namespace' with resource 'example-lb'"
  * ```
- * @deprecated Pre-enriched specs already have normalized examples
  */
 export function normalizeExamples(description: string): string {
   if (!description) {
