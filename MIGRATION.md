@@ -85,7 +85,7 @@ Observability
 
 **No breaking changes to tool functionality:**
 
-- Tool names remain unchanged (e.g., `f5xc-api-loadbalancer-http-loadbalancer-create`)
+- Tool names remain unchanged (e.g., `f5xc-api-virtual-http-loadbalancer-create`)
 - Tool behavior and parameters are identical
 - API responses and error handling unchanged
 - All existing scripts and automations continue to work
