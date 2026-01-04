@@ -4,7 +4,7 @@
  * Documentation Generation Script
  *
  * Generates MkDocs documentation from the tool registry with proper front matter
- * and category structure matching the Terraform provider and f5xcctl CLI.
+ * and organized category structure for API reference.
  *
  * Usage:
  *   npm run generate-docs

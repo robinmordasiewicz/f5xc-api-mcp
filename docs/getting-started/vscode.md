@@ -79,7 +79,7 @@ Edit `~/.continue/config.json`:
 1. Open Continue panel
 2. Use the chat to interact with F5XC:
 
-> "Generate Terraform for an origin pool with servers at 10.0.0.1 and 10.0.0.2"
+> "Create an origin pool with servers at 10.0.0.1 and 10.0.0.2"
 
 ---
 
@@ -151,18 +151,14 @@ If not found, add Node.js to your shell profile.
 ## Tips
 
 !!! example "Inline Documentation"
-    Hover over F5XC resources in your Terraform files and ask:
+    Ask about F5XC resources:
     > "What are the valid options for this load balancer's advertise setting?"
 
-### Code Generation
+### API Examples
 
-Select a comment describing what you need:
+Ask Claude to help with F5XC API operations:
 
-```terraform
-# Create HTTP LB for api.example.com with WAF enabled
-```
-
-Then ask Claude to generate the resource.
+> "Show me the CURL command to create an HTTP load balancer for api.example.com with WAF enabled"
 
 ## Next Steps
 

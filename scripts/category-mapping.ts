@@ -1,8 +1,8 @@
 /**
  * Category Mapping for Documentation Generation
  *
- * Maps tool domains and resources to documentation subcategories,
- * matching the structure used in Terraform provider and f5xcctl CLI.
+ * Maps tool domains and resources to documentation subcategories
+ * for organized API reference documentation.
  */
 
 import { readFileSync } from 'fs';
