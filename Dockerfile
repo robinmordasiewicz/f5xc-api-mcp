@@ -13,11 +13,14 @@ COPY package*.json ./
 # The prepare script runs npm build, but tsconfig.json isn't copied yet
 RUN npm ci --ignore-scripts
 
-# Copy source files
+# Copy source files and scripts
 COPY tsconfig.json ./
 COPY src/ ./src/
+COPY scripts/ ./scripts/
+COPY specs/index.json ./specs/
 
 # Build TypeScript (now that all source files are present)
+# The prebuild hook runs generate:version which needs scripts/
 RUN npm run build
 
 # Prune dev dependencies
