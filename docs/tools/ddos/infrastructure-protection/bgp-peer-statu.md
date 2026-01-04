@@ -41,34 +41,26 @@ Ask Claude to help you work with Bgp Peer Statu resources:
 
 > "Create a bgp-peer-statu named 'example' in the 'production' namespace"
 
-## xcsh Equivalent
+## CURL Examples
 
 ```bash
-# Create/Update
-xcsh ddos create bgp_peer_statu -n <namespace> -i bgp_peer_statu.yaml
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgp_peer_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# Get
-xcsh ddos get bgp_peer_statu <name> -n <namespace>
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgp_peer_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# List
-xcsh ddos list bgp_peer_statu -n <namespace>
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgp_peer_status" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @bgp_peer_statu.json
 
-# Delete
-xcsh ddos delete bgp_peer_statu <name> -n <namespace>
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/bgp_peer_status/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
 ```
-
-## Terraform Resource
-
-```hcl
-resource "volterra_bgp_peer_statu" "example" {
-  name      = "example-bgp-peer-statu"
-  namespace = "default"
-
-  # Add resource-specific configuration
-  # See F5XC Terraform Provider documentation for details
-}
-```
-
-See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
-
-[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

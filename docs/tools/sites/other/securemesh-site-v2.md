@@ -77,34 +77,26 @@ Ask Claude to help you work with Securemesh Site V2 resources:
 
 > "Get details of the securemesh-site-v2 named 'example' in namespace 'production'"
 
-## xcsh Equivalent
+## CURL Examples
 
 ```bash
-# Create/Update
-xcsh sites create securemesh_site_v2 -n <namespace> -i securemesh_site_v2.yaml
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/securemesh_site_v2s" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# Get
-xcsh sites get securemesh_site_v2 <name> -n <namespace>
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/securemesh_site_v2s/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# List
-xcsh sites list securemesh_site_v2 -n <namespace>
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/securemesh_site_v2s" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @securemesh_site_v2.json
 
-# Delete
-xcsh sites delete securemesh_site_v2 <name> -n <namespace>
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/securemesh_site_v2s/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
 ```
-
-## Terraform Resource
-
-```hcl
-resource "volterra_securemesh_site_v2" "example" {
-  name      = "example-securemesh-site-v2"
-  namespace = "default"
-
-  # Add resource-specific configuration
-  # See F5XC Terraform Provider documentation for details
-}
-```
-
-See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
-
-[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

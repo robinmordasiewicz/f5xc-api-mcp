@@ -80,34 +80,26 @@ Ask Claude to help you work with Endpoint resources:
 
 > "Get details of the endpoint named 'example' in namespace 'production'"
 
-## xcsh Equivalent
+## CURL Examples
 
 ```bash
-# Create/Update
-xcsh service_mesh create endpoint -n <namespace> -i endpoint.yaml
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/endpoints" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# Get
-xcsh service_mesh get endpoint <name> -n <namespace>
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/endpoints/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# List
-xcsh service_mesh list endpoint -n <namespace>
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/endpoints" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @endpoint.json
 
-# Delete
-xcsh service_mesh delete endpoint <name> -n <namespace>
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/endpoints/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
 ```
-
-## Terraform Resource
-
-```hcl
-resource "volterra_endpoint" "example" {
-  name      = "example-endpoint"
-  namespace = "default"
-
-  # Add resource-specific configuration
-  # See F5XC Terraform Provider documentation for details
-}
-```
-
-See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
-
-[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

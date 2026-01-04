@@ -41,34 +41,26 @@ Ask Claude to help you work with Testj resources:
 
 > "Create a testj named 'example' in the 'production' namespace"
 
-## xcsh Equivalent
+## CURL Examples
 
 ```bash
-# Create/Update
-xcsh shape create testj -n <namespace> -i testj.yaml
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/testjs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# Get
-xcsh shape get testj <name> -n <namespace>
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/testjs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# List
-xcsh shape list testj -n <namespace>
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/testjs" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @testj.json
 
-# Delete
-xcsh shape delete testj <name> -n <namespace>
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/testjs/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
 ```
-
-## Terraform Resource
-
-```hcl
-resource "volterra_testj" "example" {
-  name      = "example-testj"
-  namespace = "default"
-
-  # Add resource-specific configuration
-  # See F5XC Terraform Provider documentation for details
-}
-```
-
-See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
-
-[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

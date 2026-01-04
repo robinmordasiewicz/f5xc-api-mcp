@@ -42,34 +42,26 @@ Ask Claude to help you work with Stored Object resources:
 
 > "List all stored-objects in the 'production' namespace"
 
-## xcsh Equivalent
+## CURL Examples
 
 ```bash
-# Create/Update
-xcsh object_storage create stored_object -n <namespace> -i stored_object.yaml
+# List resources
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stored_objects" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# Get
-xcsh object_storage get stored_object <name> -n <namespace>
+# Get specific resource
+curl -X GET "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stored_objects/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json"
 
-# List
-xcsh object_storage list stored_object -n <namespace>
+# Create resource
+curl -X POST "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stored_objects" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d @stored_object.json
 
-# Delete
-xcsh object_storage delete stored_object <name> -n <namespace>
+# Delete resource
+curl -X DELETE "https://${TENANT}.console.ves.volterra.io/api/config/namespaces/${NAMESPACE}/stored_objects/<name>" \
+  -H "Authorization: APIToken ${F5XC_API_TOKEN}"
 ```
-
-## Terraform Resource
-
-```hcl
-resource "volterra_stored_object" "example" {
-  name      = "example-stored-object"
-  namespace = "default"
-
-  # Add resource-specific configuration
-  # See F5XC Terraform Provider documentation for details
-}
-```
-
-See the [F5XC Terraform Provider documentation][tf-docs] for detailed configuration options.
-
-[tf-docs]: https://registry.terraform.io/providers/robinmordasiewicz/f5xc/latest/docs

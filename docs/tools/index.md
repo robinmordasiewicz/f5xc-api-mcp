@@ -136,8 +136,7 @@ Get full schema and documentation for a specific tool.
 
 - Full parameter schema with types and validation
 - Request body JSON schema
-- xcsh CLI equivalent command
-- Terraform resource example
+- CURL command examples
 - Prerequisites and dependencies
 
 ---
@@ -297,9 +296,7 @@ When credentials are not configured, tools return documentation:
   "tool": "f5xc-api-waap-http-loadbalancer-create",
   "description": "Creates an HTTP Load Balancer",
   "parameters": {},
-  "xcsh_command": "xcsh load_balancer create http_loadbalancer -n production -i http_lb.yaml",
-  "terraform_resource": "volterra_http_loadbalancer",
-  "terraform_example": "resource \"volterra_http_loadbalancer\" {...}",
+  "curlCommand": "curl -X POST https://TENANT.console.ves.volterra.io/... -d @lb.json",
   "prerequisites": ["namespace must exist", "origin_pool required"],
   "subscription_tier": "STANDARD"
 }
@@ -361,18 +358,6 @@ Deploy an F5XC site in AWS, Azure, or GCP.
 | region | Yes | Cloud region |
 | vpc_id | Yes | VPC/VNet ID |
 
-### generate-terraform
-
-Export F5XC resources as Terraform configuration.
-
-| Argument | Required | Description |
-|----------|----------|-------------|
-| namespace | Yes | Namespace to export |
-| resource_type | No | Specific resource type |
-| name | No | Specific resource name |
-
----
-
 ## Subscription Tiers
 
 !!! warning "Tier Requirements"
@@ -391,5 +376,3 @@ Export F5XC resources as Terraform configuration.
 - [HTTP Load Balancer](virtual/other/http-loadbalancer.md) - Detailed load balancer documentation
 - [Origin Pool](virtual/other/origin-pool.md) - Backend pool configuration
 - [App Firewall](waf/app-firewall.md) - WAF configuration
-- [xcsh Integration](../integrations/xcsh.md) - CLI equivalents
-- [Terraform Integration](../integrations/terraform.md) - Infrastructure as code

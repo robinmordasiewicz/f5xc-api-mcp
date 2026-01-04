@@ -264,14 +264,12 @@ describe("Dual-Mode Operation Contract", () => {
           namespace: { type: "string", required: true },
           name: { type: "string", required: true },
         },
-        terraform_resource: "volterra_http_loadbalancer",
-        terraform_example: 'resource "volterra_http_loadbalancer" "example" {...}',
         prerequisites: ["namespace must exist"],
         subscription_tier: "STANDARD",
       };
 
       expect(docResponse.mode).toBe("documentation");
-      expect(docResponse.terraform_resource).toBeDefined();
+      expect(docResponse.tool).toBeDefined();
     });
   });
 

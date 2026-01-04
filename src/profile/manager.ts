@@ -1,8 +1,7 @@
 /**
  * ProfileManager - XDG-compliant profile storage and management
  *
- * Cross-compatible with f5xc-xcsh CLI.
- * Profiles are stored in ~/.config/xcsh/profiles/ (XDG Base Directory compliant)
+ * Profiles are stored in ~/.config/f5xc/profiles/ (XDG Base Directory compliant)
  */
 
 import { promises as fs } from "fs";

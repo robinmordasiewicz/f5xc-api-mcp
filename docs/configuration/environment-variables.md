@@ -11,9 +11,9 @@ Complete reference for F5XC API MCP Server environment variables.
 |----------|----------|-------------|
 | `F5XC_API_URL` | For auth | Tenant URL (auto-normalized) |
 | `F5XC_API_TOKEN` | Token auth | API token from XC Console |
-| `F5XC_P12_FILE` | Cert auth | Absolute path to P12 certificate |
+| `F5XC_P12_BUNDLE` | Cert auth | Absolute path to P12 certificate bundle |
 | `F5XC_P12_PASSWORD` | Cert auth | Password for P12 certificate |
-| `F5XC_PROFILE` | No | Profile name from `~/.f5xc/credentials.json` |
+| `F5XC_PROFILE` | No | Profile name from `~/.config/f5xc/profiles/` |
 | `LOG_LEVEL` | No | Logging level: debug, info, warn, error |
 | `NODE_ENV` | No | Node environment: development, production |
 
@@ -43,12 +43,12 @@ export F5XC_API_TOKEN="your-api-token"
 !!! warning "Security"
     Never commit API tokens to version control.
 
-### F5XC_P12_FILE
+### F5XC_P12_BUNDLE
 
-Absolute path to P12 certificate file. Required for certificate-based authentication.
+Absolute path to P12 certificate bundle. Required for certificate-based authentication.
 
 ```bash
-export F5XC_P12_FILE="/path/to/certificate.p12"
+export F5XC_P12_BUNDLE="/path/to/certificate.p12"
 ```
 
 !!! note "Absolute Paths Required"
@@ -64,14 +64,14 @@ export F5XC_P12_PASSWORD="certificate-password"
 
 ### F5XC_PROFILE
 
-Select a profile from `~/.f5xc/credentials.json` for multi-tenant credential management.
+Select a profile from `~/.config/f5xc/profiles/` for multi-tenant credential management.
 
 ```bash
 export F5XC_PROFILE="staging"
 ```
 
 !!! note "Profile-Based Configuration"
-    Profiles are optional. For setup, run: `f5xc-api-mcp --setup`
+    Profiles are optional. Use the `f5xc-api-configure-auth` MCP tool to set up profiles.
 
     See [Authentication Guide](authentication.md#profile-based-configuration) for details.
 
@@ -185,17 +185,14 @@ When multiple authentication sources are configured:
 
 1. **Environment Variables** (highest priority) - `F5XC_API_URL`, `F5XC_API_TOKEN`, etc.
    - Environment variables override all other sources
-2. **Profile-Based Configuration** - `F5XC_PROFILE` selection from `~/.f5xc/credentials.json`
-   - Selected by `F5XC_PROFILE` env var or default profile
+2. **Profile-Based Configuration** - `F5XC_PROFILE` selection from `~/.config/f5xc/profiles/`
+   - Selected by `F5XC_PROFILE` env var or active profile
    - Supports multiple credentials for different tenants
 3. **No Authentication** (lowest priority) - Documentation mode
    - Returns API documentation without executing operations
 
 !!! tip "Profile Setup"
-    Set up profiles with auto-detection of existing environment variables:
-    ```bash
-    f5xc-api-mcp --setup
-    ```
+    Use the `f5xc-api-configure-auth` MCP tool through your AI assistant to set up profiles.
 
 ---
 

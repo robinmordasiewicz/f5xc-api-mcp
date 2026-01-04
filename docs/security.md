@@ -4,10 +4,10 @@
 
 ### File Permissions
 
-The configuration file is protected with strict POSIX permissions:
+The configuration directory is protected with strict POSIX permissions:
 
-- **Directory (`~/.f5xc/`)**: `0700` (user read/write/execute only)
-- **File (`credentials.json`)**: `0600` (user read/write only)
+- **Directory (`~/.config/f5xc/`)**: `0700` (user read/write/execute only)
+- **Profile files**: `0600` (user read/write only)
 
 No group or other users can access your credentials. The system automatically:
 
@@ -39,13 +39,13 @@ Credentials are stored in plaintext JSON. This is the same approach used by:
 3. **Restrict File Access**
 
    ```bash
-   # Verify permissions
-   ls -la ~/.f5xc/credentials.json
-   # Should show: -rw------- (600)
-
    # Verify directory permissions
-   ls -la ~/.f5xc
+   ls -la ~/.config/f5xc
    # Should show: drwx------ (700)
+
+   # Verify profile file permissions
+   ls -la ~/.config/f5xc/profiles/
+   # Should show: -rw------- (600) for each profile
    ```
 
 ## Credential Management
@@ -183,16 +183,15 @@ withCredentials([string(credentialsId: 'f5xc-token', variable: 'F5XC_API_TOKEN')
 
 ### Securing Profile Files
 
-- Never commit `~/.f5xc/credentials.json` to version control
+- Never commit `~/.config/f5xc/` to version control
 - Add to `.gitignore`:
 
   ```bash
-  .f5xc/
-  ~/.f5xc/
+  .config/f5xc/
   ```
 
 - Never copy profile files between machines
-- Use `f5xc-api-mcp --setup` on each machine to create profiles
+- Use the `f5xc-api-configure-auth` MCP tool on each machine to create profiles
 
 ### Profile Isolation
 
@@ -255,8 +254,8 @@ If you suspect an API token is compromised:
 1. **Immediate Actions:**
 
    ```bash
-   # Remove from profile
-   f5xc-api-mcp --delete-profile compromised-profile
+   # Remove the profile file
+   rm ~/.config/f5xc/profiles/compromised-profile.json
 
    # Clear from environment
    unset F5XC_API_TOKEN
@@ -279,8 +278,8 @@ If your P12 certificate is compromised:
 1. **Immediate Actions:**
 
    ```bash
-   # Remove from profile
-   f5xc-api-mcp --delete-profile compromised-cert
+   # Remove the profile file
+   rm ~/.config/f5xc/profiles/compromised-cert.json
 
    # Delete the certificate file securely
    shred -vfz -n 10 certificate.p12
@@ -298,15 +297,14 @@ If your P12 certificate is compromised:
 
 ### File System Compromise
 
-If `~/.f5xc/credentials.json` is compromised:
+If `~/.config/f5xc/` is compromised:
 
 1. **Immediate Actions:**
 
    ```bash
-   # Disable all profiles immediately
-   for profile in $(f5xc-api-mcp --list-profiles); do
-     f5xc-api-mcp --delete-profile "$profile"
-   done
+   # Remove all profiles immediately
+   rm -rf ~/.config/f5xc/profiles/
+   rm ~/.config/f5xc/active_profile
    ```
 
 2. **Revoke All Credentials:**
@@ -315,19 +313,16 @@ If `~/.f5xc/credentials.json` is compromised:
    - Create new tokens/certificates
 
 3. **Rebuild Profiles:**
-
-   ```bash
-   f5xc-api-mcp --setup
-   ```
+   Use the `f5xc-api-configure-auth` MCP tool through your AI assistant to recreate profiles.
 
 ## Compliance and Auditing
 
 ### Security Checklist
 
-- [ ] File permissions verified: `ls -la ~/.f5xc/`
+- [ ] File permissions verified: `ls -la ~/.config/f5xc/`
 - [ ] No credentials in shell history: `history | grep F5XC`
 - [ ] Credentials not in version control: `git log --all -S F5XC`
-- [ ] `.gitignore` includes `.f5xc/`
+- [ ] `.gitignore` includes `.config/f5xc/`
 - [ ] Regular token rotation schedule defined
 - [ ] P12 passwords stored securely (not in email/chat)
 - [ ] CI/CD secrets configured correctly

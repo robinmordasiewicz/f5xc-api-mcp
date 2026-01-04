@@ -8,7 +8,7 @@
  *
  * Supports dual-mode operation:
  * - Documentation mode: No credentials required - provides API documentation
- *   and Terraform examples
+ *   and CURL examples
  * - Execution mode: When F5XC credentials are provided, enables direct API calls
  *
  * Credential Sources (in priority order):
@@ -20,16 +20,16 @@
  *    - F5XC_KEY: Path to private key file (for mTLS)
  *    - F5XC_NAMESPACE: Default namespace
  *
- * 2. Profile from ~/.config/xcsh/ (cross-compatible with f5xc-xcsh CLI):
- *    - Uses active profile from ~/.config/xcsh/active_profile
- *    - Individual profiles stored in ~/.config/xcsh/profiles/
+ * 2. Profile from ~/.config/f5xc/ (XDG Base Directory compliant):
+ *    - Uses active profile from ~/.config/f5xc/active_profile
+ *    - Individual profiles stored in ~/.config/f5xc/profiles/
  */
 
 import { createServer } from "./server.js";
 import { logger } from "./utils/logging.js";
 
 /** Server version - synchronized with package.json */
-export const VERSION = "0.1.0";
+export const VERSION = "1.0.0";
 
 /**
  * Main entry point
@@ -63,9 +63,9 @@ Environment Variables (override profile settings):
   F5XC_KEY            Path to private key file (for mTLS)
   F5XC_NAMESPACE      Default namespace
 
-Profile Configuration (cross-compatible with xcsh CLI):
-  Profiles are stored in ~/.config/xcsh/profiles/
-  Active profile is tracked in ~/.config/xcsh/active_profile
+Profile Configuration:
+  Profiles are stored in ~/.config/f5xc/profiles/
+  Active profile is tracked in ~/.config/f5xc/active_profile
 
 The server runs in documentation mode when no credentials are provided,
 allowing exploration of the API without authentication.

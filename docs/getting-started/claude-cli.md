@@ -31,7 +31,7 @@ The fastest way to add the F5XC API MCP server:
     ```bash
     claude mcp add --transport stdio f5xc-api \
       --env F5XC_API_URL=https://your-tenant.console.ves.volterra.io \
-      --env F5XC_P12_FILE=/path/to/certificate.p12 \
+      --env F5XC_P12_BUNDLE=/path/to/certificate.p12 \
       --env F5XC_P12_PASSWORD=your-password \
       -- npx @robinmordasiewicz/f5xc-api-mcp
     ```
@@ -110,7 +110,7 @@ If you prefer manual configuration, create `.mcp.json` in your project root:
           "args": ["@robinmordasiewicz/f5xc-api-mcp"],
           "env": {
             "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
-            "F5XC_P12_FILE": "/path/to/certificate.p12",
+            "F5XC_P12_BUNDLE": "/path/to/certificate.p12",
             "F5XC_P12_PASSWORD": "your-password"
           }
         }
@@ -185,21 +185,19 @@ Then use a simpler config:
 
 ## Integration with Workflows
 
-### Infrastructure as Code Workflow
+### Example Workflow
 
 ```bash
-# Start Claude Code in your Terraform project
-cd example-terraform-project
+# Start Claude Code in your project
+cd my-project
 claude
 
 # Ask Claude to help with F5XC resources
 ```
 
-> "Generate Terraform for an HTTP load balancer at api.example.com"
+> "Show me how to create an HTTP load balancer at api.example.com"
 
-### xcsh Integration
-
-> "Show me the xcsh commands to deploy this load balancer configuration"
+> "What CURL commands do I need to list all origin pools?"
 
 ## Troubleshooting
 
@@ -229,4 +227,3 @@ echo '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | npx @robinmordasiewicz/f
 
 - [Authentication Configuration](../configuration/authentication.md)
 - [Tools Reference](../tools/index.md)
-- [xcsh Integration](../integrations/xcsh.md)

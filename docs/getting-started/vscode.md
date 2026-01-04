@@ -167,5 +167,4 @@ Then ask Claude to generate the resource.
 ## Next Steps
 
 - [Authentication Configuration](../configuration/authentication.md)
-- [Terraform Integration](../integrations/terraform.md)
 - [Tools Reference](../tools/index.md)

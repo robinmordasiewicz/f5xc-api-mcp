@@ -10,13 +10,12 @@ import {
   deployHttpLoadBalancerPrompt,
   configureWafPrompt,
   createMultiCloudSitePrompt,
-  generateTerraformPrompt,
 } from "../../src/prompts/workflows.js";
 
 describe("Workflow Prompts", () => {
   describe("WORKFLOW_PROMPTS array", () => {
     it("should contain all defined prompts", () => {
-      expect(WORKFLOW_PROMPTS).toHaveLength(4);
+      expect(WORKFLOW_PROMPTS).toHaveLength(3);
     });
 
     it("should include deploy-http-loadbalancer prompt", () => {
@@ -31,11 +30,6 @@ describe("Workflow Prompts", () => {
 
     it("should include create-multicloud-site prompt", () => {
       const prompt = WORKFLOW_PROMPTS.find((p) => p.name === "create-multicloud-site");
-      expect(prompt).toBeDefined();
-    });
-
-    it("should include generate-terraform prompt", () => {
-      const prompt = WORKFLOW_PROMPTS.find((p) => p.name === "generate-terraform");
       expect(prompt).toBeDefined();
     });
   });
@@ -68,9 +62,9 @@ describe("Workflow Prompts", () => {
       expect(optional.map((a) => a.name)).toContain("enable_waf");
     });
 
-    it("should have template with Terraform examples", () => {
-      expect(deployHttpLoadBalancerPrompt.template).toContain("Terraform:");
-      expect(deployHttpLoadBalancerPrompt.template).toContain("volterra_");
+    it("should have template with CURL examples", () => {
+      expect(deployHttpLoadBalancerPrompt.template).toContain("CURL");
+      expect(deployHttpLoadBalancerPrompt.template).toContain("curl");
     });
   });
 
@@ -111,23 +105,6 @@ describe("Workflow Prompts", () => {
     });
   });
 
-  describe("generateTerraformPrompt", () => {
-    it("should have correct name", () => {
-      expect(generateTerraformPrompt.name).toBe("generate-terraform");
-    });
-
-    it("should have namespace as required", () => {
-      const nsArg = generateTerraformPrompt.arguments.find((a) => a.name === "namespace");
-      expect(nsArg).toBeDefined();
-      expect(nsArg!.required).toBe(true);
-    });
-
-    it("should have optional resource_type and name", () => {
-      const args = generateTerraformPrompt.arguments;
-      expect(args.find((a) => a.name === "resource_type")?.required).toBe(false);
-      expect(args.find((a) => a.name === "name")?.required).toBe(false);
-    });
-  });
 });
 
 describe("getWorkflowPrompt", () => {
@@ -147,7 +124,6 @@ describe("getWorkflowPrompt", () => {
       "deploy-http-loadbalancer",
       "configure-waf",
       "create-multicloud-site",
-      "generate-terraform",
     ];
 
     for (const name of names) {

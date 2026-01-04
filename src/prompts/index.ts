@@ -9,7 +9,6 @@ export {
   deployHttpLoadBalancerPrompt,
   configureWafPrompt,
   createMultiCloudSitePrompt,
-  generateTerraformPrompt,
 } from "./workflows.js";
 
 export type { WorkflowPrompt, WorkflowArgument } from "./workflows.js";

@@ -158,5 +158,4 @@ Use Composer to generate multiple related resources:
 ## Next Steps
 
 - [Authentication Configuration](../configuration/authentication.md)
-- [Terraform Integration](../integrations/terraform.md)
 - [Tools Reference](../tools/index.md)

@@ -1,8 +1,7 @@
 /**
  * Auth Module - Export all authentication utilities
  *
- * Cross-compatible with f5xc-xcsh CLI.
- * Profiles are stored in ~/.config/xcsh/ (shared with xcsh CLI).
+ * Profiles are stored in ~/.config/f5xc/ (XDG Base Directory compliant).
  */
 
 export {
@@ -19,7 +18,7 @@ export { HttpClient, createHttpClient } from "./http-client.js";
 
 export type { HttpClientConfig, ApiResponse } from "./http-client.js";
 
-// Re-export profile module for cross-compatibility with f5xc-xcsh
+// Re-export profile module
 export { ProfileManager, getProfileManager } from "../profile/index.js";
 
 export type {

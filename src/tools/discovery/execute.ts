@@ -61,8 +61,6 @@ export interface DocumentationResponse {
     resource: string;
     operation: string;
   };
-  /** Terraform resource example (if applicable) */
-  terraformExample?: string;
   /** curl command example */
   curlExample: string;
   /** Message about authentication */

@@ -3,7 +3,7 @@
  *
  * Provides actions:
  * - status: Check current authentication state
- * - configure: Save credentials to xcsh profile
+ * - configure: Save credentials to profile
  * - list-profiles: List available profiles
  * - set-active: Switch active profile
  */
@@ -19,7 +19,7 @@ import type { Profile } from "../profile/types.js";
 export const CONFIGURE_AUTH_TOOL = {
   name: "f5xc-api-configure-auth",
   description:
-    "Configure F5XC API authentication. Check status, save credentials to xcsh profile, list profiles, or switch active profile.",
+    "Configure F5XC API authentication. Check status, save credentials to profile, list profiles, or switch active profile.",
 };
 
 /**
@@ -142,7 +142,7 @@ async function handleStatus(
       activeProfile,
       profiles: profileNames,
       message: activeProfile
-        ? `Authenticated via xcsh profile '${activeProfile}'. API execution enabled.`
+        ? `Authenticated via profile '${activeProfile}'. API execution enabled.`
         : "Authenticated via environment variables. API execution enabled.",
     };
   }
