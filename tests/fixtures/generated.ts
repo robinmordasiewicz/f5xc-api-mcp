@@ -5,7 +5,7 @@
  * These fixtures are dynamically generated from the current OpenAPI specs
  * to ensure tests always use real values and don't hardcode spec content.
  *
- * Generated at: 2025-12-30T05:57:42.674Z
+ * Generated at: 2026-01-04T19:07:15.300Z
  * Total tools: 1548
  * Total domains: 38
  */
@@ -18,6 +18,7 @@ export const REGISTRY_STATS = {
   totalDomains: 38,
   domainCounts: {
     admin_console_and_ui: 2,
+    ai_services: 11,
     api: 52,
     authentication: 9,
     bigip: 25,
@@ -33,7 +34,6 @@ export const REGISTRY_STATS = {
     data_intelligence: 15,
     ddos: 68,
     dns: 52,
-    generative_ai: 11,
     managed_kubernetes: 25,
     marketplace: 36,
     network: 98,
@@ -63,6 +63,7 @@ export const REGISTRY_STATS = {
  */
 export const AVAILABLE_DOMAINS = [
   "admin_console_and_ui",
+  "ai_services",
   "api",
   "authentication",
   "bigip",
@@ -78,7 +79,6 @@ export const AVAILABLE_DOMAINS = [
   "data_intelligence",
   "ddos",
   "dns",
-  "generative_ai",
   "managed_kubernetes",
   "marketplace",
   "network",
@@ -119,6 +119,14 @@ export const SAMPLE_TOOLS_BY_DOMAIN = {
     path: "/api/web/namespaces/{namespace}/static_components/{name}",
     operation: "get",
   },
+  ai_services: {
+    toolName: "f5xc-api-aiservices-allocateip-create",
+    domain: "ai_services",
+    resource: "allocateip",
+    method: "POST",
+    path: "/api/gia/gia/allocateip",
+    operation: "create",
+  },
   api: {
     toolName: "f5xc-api-api-api-crawler-create",
     domain: "api",
@@ -143,14 +151,6 @@ export const SAMPLE_TOOLS_BY_DOMAIN = {
     path: "/api/config/namespaces/{metadata.namespace}/apms",
     operation: "create",
   },
-  billing_and_usage: {
-    toolName: "f5xc-api-billingandusage-current-list",
-    domain: "billing_and_usage",
-    resource: "current",
-    method: "GET",
-    path: "/api/web/namespaces/system/usage_plans/current",
-    operation: "list",
-  },
 } as const;
 
 /**
@@ -158,9 +158,9 @@ export const SAMPLE_TOOLS_BY_DOMAIN = {
  */
 export const SAMPLE_TOOLS_BY_OPERATION = {
   create: {
-    toolName: "f5xc-api-api-api-crawler-create",
-    domain: "api",
-    resource: "api-crawler",
+    toolName: "f5xc-api-aiservices-allocateip-create",
+    domain: "ai_services",
+    resource: "allocateip",
     operation: "create",
   },
   get: {
@@ -176,9 +176,9 @@ export const SAMPLE_TOOLS_BY_OPERATION = {
     operation: "list",
   },
   delete: {
-    toolName: "f5xc-api-api-api-crawler-delete",
-    domain: "api",
-    resource: "api-crawler",
+    toolName: "f5xc-api-aiservices-deallocateip-delete",
+    domain: "ai_services",
+    resource: "deallocateip",
     operation: "delete",
   },
   update: {
@@ -194,10 +194,10 @@ export const SAMPLE_TOOLS_BY_OPERATION = {
  */
 export const SAMPLE_RESOURCES = [
   "static-component",
+  "allocateip",
   "api-crawler",
   "api-credential",
   "apm",
-  "current",
 ] as const;
 
 /**
@@ -227,7 +227,7 @@ export const RICH_METADATA_SAMPLES = {
     pathParamCount: 2,
     queryParamCount: 1,
   },
-  withCurlExample: { toolName: "f5xc-api-api-api-crawler-create" },
+  withCurlExample: null,
 } as const;
 
 /**
