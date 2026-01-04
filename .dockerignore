@@ -52,8 +52,10 @@ tmp
 temp
 *.tmp
 
-# Scripts not needed in production
-scripts
+# Test scripts not needed in production
+scripts/generate-test-fixtures.ts
+scripts/validate-*.ts
 
-# Specs (OpenAPI)
-specs
+# OpenAPI specs (except index.json needed for version info)
+specs/*.json
+!specs/index.json
