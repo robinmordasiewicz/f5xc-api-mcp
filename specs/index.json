@@ -1,6 +1,6 @@
 {
-  "version": "2.0.9",
-  "timestamp": "2026-01-05T14:09:15.819203+00:00",
+  "version": "2.0.10",
+  "timestamp": "2026-01-05T14:39:24.398741+00:00",
   "specifications": [
     {
       "domain": "admin_console_and_ui",
@@ -3893,6 +3893,661 @@
           }
         ],
         "domain": "waf"
+      }
+    ]
+  },
+  "x-f5xc-acronyms": {
+    "version": "1.0.0",
+    "categories": [
+      "Networking",
+      "Security",
+      "Load Balancing",
+      "Cloud & Infrastructure",
+      "F5 Specific",
+      "Standards & Formats",
+      "Protocols",
+      "Other"
+    ],
+    "acronyms": [
+      {
+        "acronym": "TCP",
+        "expansion": "Transmission Control Protocol",
+        "category": "Networking"
+      },
+      {
+        "acronym": "UDP",
+        "expansion": "User Datagram Protocol",
+        "category": "Networking"
+      },
+      {
+        "acronym": "HTTP",
+        "expansion": "Hypertext Transfer Protocol",
+        "category": "Networking"
+      },
+      {
+        "acronym": "HTTPS",
+        "expansion": "Hypertext Transfer Protocol Secure",
+        "category": "Networking"
+      },
+      {
+        "acronym": "DNS",
+        "expansion": "Domain Name System",
+        "category": "Networking"
+      },
+      {
+        "acronym": "IP",
+        "expansion": "Internet Protocol",
+        "category": "Networking"
+      },
+      {
+        "acronym": "IPv4",
+        "expansion": "Internet Protocol version 4",
+        "category": "Networking"
+      },
+      {
+        "acronym": "IPv6",
+        "expansion": "Internet Protocol version 6",
+        "category": "Networking"
+      },
+      {
+        "acronym": "BGP",
+        "expansion": "Border Gateway Protocol",
+        "category": "Networking"
+      },
+      {
+        "acronym": "OSPF",
+        "expansion": "Open Shortest Path First",
+        "category": "Networking"
+      },
+      {
+        "acronym": "VLAN",
+        "expansion": "Virtual Local Area Network",
+        "category": "Networking"
+      },
+      {
+        "acronym": "VPN",
+        "expansion": "Virtual Private Network",
+        "category": "Networking"
+      },
+      {
+        "acronym": "CIDR",
+        "expansion": "Classless Inter-Domain Routing",
+        "category": "Networking"
+      },
+      {
+        "acronym": "NAT",
+        "expansion": "Network Address Translation",
+        "category": "Networking"
+      },
+      {
+        "acronym": "SNAT",
+        "expansion": "Source Network Address Translation",
+        "category": "Networking"
+      },
+      {
+        "acronym": "DNAT",
+        "expansion": "Destination Network Address Translation",
+        "category": "Networking"
+      },
+      {
+        "acronym": "MAC",
+        "expansion": "Media Access Control",
+        "category": "Networking"
+      },
+      {
+        "acronym": "ARP",
+        "expansion": "Address Resolution Protocol",
+        "category": "Networking"
+      },
+      {
+        "acronym": "NIC",
+        "expansion": "Network Interface Card",
+        "category": "Networking"
+      },
+      {
+        "acronym": "MTU",
+        "expansion": "Maximum Transmission Unit",
+        "category": "Networking"
+      },
+      {
+        "acronym": "QoS",
+        "expansion": "Quality of Service",
+        "category": "Networking"
+      },
+      {
+        "acronym": "MPLS",
+        "expansion": "Multiprotocol Label Switching",
+        "category": "Networking"
+      },
+      {
+        "acronym": "GRE",
+        "expansion": "Generic Routing Encapsulation",
+        "category": "Networking"
+      },
+      {
+        "acronym": "VXLAN",
+        "expansion": "Virtual Extensible LAN",
+        "category": "Networking"
+      },
+      {
+        "acronym": "IPsec",
+        "expansion": "Internet Protocol Security",
+        "category": "Networking"
+      },
+      {
+        "acronym": "SSL",
+        "expansion": "Secure Sockets Layer",
+        "category": "Networking"
+      },
+      {
+        "acronym": "TLS",
+        "expansion": "Transport Layer Security",
+        "category": "Networking"
+      },
+      {
+        "acronym": "SNI",
+        "expansion": "Server Name Indication",
+        "category": "Networking"
+      },
+      {
+        "acronym": "mTLS",
+        "expansion": "Mutual Transport Layer Security",
+        "category": "Networking"
+      },
+      {
+        "acronym": "FQDN",
+        "expansion": "Fully Qualified Domain Name",
+        "category": "Networking"
+      },
+      {
+        "acronym": "VIP",
+        "expansion": "Virtual IP Address",
+        "category": "Networking"
+      },
+      {
+        "acronym": "ASN",
+        "expansion": "Autonomous System Number",
+        "category": "Networking"
+      },
+      {
+        "acronym": "WAF",
+        "expansion": "Web Application Firewall",
+        "category": "Security"
+      },
+      {
+        "acronym": "DDoS",
+        "expansion": "Distributed Denial of Service",
+        "category": "Security"
+      },
+      {
+        "acronym": "XSS",
+        "expansion": "Cross-Site Scripting",
+        "category": "Security"
+      },
+      {
+        "acronym": "CSRF",
+        "expansion": "Cross-Site Request Forgery",
+        "category": "Security"
+      },
+      {
+        "acronym": "SQLi",
+        "expansion": "SQL Injection",
+        "category": "Security"
+      },
+      {
+        "acronym": "OWASP",
+        "expansion": "Open Web Application Security Project",
+        "category": "Security"
+      },
+      {
+        "acronym": "CVE",
+        "expansion": "Common Vulnerabilities and Exposures",
+        "category": "Security"
+      },
+      {
+        "acronym": "JWT",
+        "expansion": "JSON Web Token",
+        "category": "Security"
+      },
+      {
+        "acronym": "OAuth",
+        "expansion": "Open Authorization",
+        "category": "Security"
+      },
+      {
+        "acronym": "OIDC",
+        "expansion": "OpenID Connect",
+        "category": "Security"
+      },
+      {
+        "acronym": "SAML",
+        "expansion": "Security Assertion Markup Language",
+        "category": "Security"
+      },
+      {
+        "acronym": "LDAP",
+        "expansion": "Lightweight Directory Access Protocol",
+        "category": "Security"
+      },
+      {
+        "acronym": "AD",
+        "expansion": "Active Directory",
+        "category": "Security"
+      },
+      {
+        "acronym": "ACL",
+        "expansion": "Access Control List",
+        "category": "Security"
+      },
+      {
+        "acronym": "RBAC",
+        "expansion": "Role-Based Access Control",
+        "category": "Security"
+      },
+      {
+        "acronym": "MFA",
+        "expansion": "Multi-Factor Authentication",
+        "category": "Security"
+      },
+      {
+        "acronym": "SSO",
+        "expansion": "Single Sign-On",
+        "category": "Security"
+      },
+      {
+        "acronym": "PKI",
+        "expansion": "Public Key Infrastructure",
+        "category": "Security"
+      },
+      {
+        "acronym": "CA",
+        "expansion": "Certificate Authority",
+        "category": "Security"
+      },
+      {
+        "acronym": "CRL",
+        "expansion": "Certificate Revocation List",
+        "category": "Security"
+      },
+      {
+        "acronym": "LB",
+        "expansion": "Load Balancer",
+        "category": "Load Balancing"
+      },
+      {
+        "acronym": "SLB",
+        "expansion": "Server Load Balancer",
+        "category": "Load Balancing"
+      },
+      {
+        "acronym": "GLB",
+        "expansion": "Global Load Balancer",
+        "category": "Load Balancing"
+      },
+      {
+        "acronym": "GSLB",
+        "expansion": "Global Server Load Balancing",
+        "category": "Load Balancing"
+      },
+      {
+        "acronym": "ADC",
+        "expansion": "Application Delivery Controller",
+        "category": "Load Balancing"
+      },
+      {
+        "acronym": "NLB",
+        "expansion": "Network Load Balancer",
+        "category": "Load Balancing"
+      },
+      {
+        "acronym": "ALB",
+        "expansion": "Application Load Balancer",
+        "category": "Load Balancing"
+      },
+      {
+        "acronym": "ELB",
+        "expansion": "Elastic Load Balancer",
+        "category": "Load Balancing"
+      },
+      {
+        "acronym": "AWS",
+        "expansion": "Amazon Web Services",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "GCP",
+        "expansion": "Google Cloud Platform",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "Azure",
+        "expansion": "Microsoft Azure",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "VPC",
+        "expansion": "Virtual Private Cloud",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "VNet",
+        "expansion": "Virtual Network",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "EC2",
+        "expansion": "Elastic Compute Cloud",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "EKS",
+        "expansion": "Elastic Kubernetes Service",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "AKS",
+        "expansion": "Azure Kubernetes Service",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "GKE",
+        "expansion": "Google Kubernetes Engine",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "VM",
+        "expansion": "Virtual Machine",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "K8s",
+        "expansion": "Kubernetes",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "API",
+        "expansion": "Application Programming Interface",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "REST",
+        "expansion": "Representational State Transfer",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "gRPC",
+        "expansion": "gRPC Remote Procedure Call",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "SDK",
+        "expansion": "Software Development Kit",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "CLI",
+        "expansion": "Command Line Interface",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "CDN",
+        "expansion": "Content Delivery Network",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "SaaS",
+        "expansion": "Software as a Service",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "PaaS",
+        "expansion": "Platform as a Service",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "IaaS",
+        "expansion": "Infrastructure as a Service",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "CRD",
+        "expansion": "Custom Resource Definition",
+        "category": "Cloud & Infrastructure"
+      },
+      {
+        "acronym": "XC",
+        "expansion": "Distributed Cloud",
+        "category": "F5 Specific"
+      },
+      {
+        "acronym": "F5",
+        "expansion": "F5 Networks",
+        "category": "F5 Specific"
+      },
+      {
+        "acronym": "BIG-IP",
+        "expansion": "BIG-IP Application Delivery Controller",
+        "category": "F5 Specific"
+      },
+      {
+        "acronym": "NGINX",
+        "expansion": "NGINX Web Server",
+        "category": "F5 Specific"
+      },
+      {
+        "acronym": "RE",
+        "expansion": "Regional Edge",
+        "category": "F5 Specific"
+      },
+      {
+        "acronym": "CE",
+        "expansion": "Customer Edge",
+        "category": "F5 Specific"
+      },
+      {
+        "acronym": "POP",
+        "expansion": "Point of Presence",
+        "category": "F5 Specific"
+      },
+      {
+        "acronym": "VES",
+        "expansion": "Volterra Edge Services",
+        "category": "F5 Specific"
+      },
+      {
+        "acronym": "JSON",
+        "expansion": "JavaScript Object Notation",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "XML",
+        "expansion": "Extensible Markup Language",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "YAML",
+        "expansion": "YAML Ain't Markup Language",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "CSV",
+        "expansion": "Comma-Separated Values",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "HTML",
+        "expansion": "Hypertext Markup Language",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "CSS",
+        "expansion": "Cascading Style Sheets",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "URL",
+        "expansion": "Uniform Resource Locator",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "URI",
+        "expansion": "Uniform Resource Identifier",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "UUID",
+        "expansion": "Universally Unique Identifier",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "RFC",
+        "expansion": "Request for Comments",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "ISO",
+        "expansion": "International Organization for Standardization",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "UTC",
+        "expansion": "Coordinated Universal Time",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "TTL",
+        "expansion": "Time to Live",
+        "category": "Standards & Formats"
+      },
+      {
+        "acronym": "SMTP",
+        "expansion": "Simple Mail Transfer Protocol",
+        "category": "Protocols"
+      },
+      {
+        "acronym": "IMAP",
+        "expansion": "Internet Message Access Protocol",
+        "category": "Protocols"
+      },
+      {
+        "acronym": "POP3",
+        "expansion": "Post Office Protocol version 3",
+        "category": "Protocols"
+      },
+      {
+        "acronym": "FTP",
+        "expansion": "File Transfer Protocol",
+        "category": "Protocols"
+      },
+      {
+        "acronym": "SFTP",
+        "expansion": "SSH File Transfer Protocol",
+        "category": "Protocols"
+      },
+      {
+        "acronym": "SSH",
+        "expansion": "Secure Shell",
+        "category": "Protocols"
+      },
+      {
+        "acronym": "RDP",
+        "expansion": "Remote Desktop Protocol",
+        "category": "Protocols"
+      },
+      {
+        "acronym": "SNMP",
+        "expansion": "Simple Network Management Protocol",
+        "category": "Protocols"
+      },
+      {
+        "acronym": "NTP",
+        "expansion": "Network Time Protocol",
+        "category": "Protocols"
+      },
+      {
+        "acronym": "RADIUS",
+        "expansion": "Remote Authentication Dial-In User Service",
+        "category": "Protocols"
+      },
+      {
+        "acronym": "TACACS",
+        "expansion": "Terminal Access Controller Access-Control System",
+        "category": "Protocols"
+      },
+      {
+        "acronym": "CPU",
+        "expansion": "Central Processing Unit",
+        "category": "Other"
+      },
+      {
+        "acronym": "GPU",
+        "expansion": "Graphics Processing Unit",
+        "category": "Other"
+      },
+      {
+        "acronym": "RAM",
+        "expansion": "Random Access Memory",
+        "category": "Other"
+      },
+      {
+        "acronym": "SSD",
+        "expansion": "Solid State Drive",
+        "category": "Other"
+      },
+      {
+        "acronym": "HDD",
+        "expansion": "Hard Disk Drive",
+        "category": "Other"
+      },
+      {
+        "acronym": "IOPS",
+        "expansion": "Input/Output Operations Per Second",
+        "category": "Other"
+      },
+      {
+        "acronym": "I/O",
+        "expansion": "Input/Output",
+        "category": "Other"
+      },
+      {
+        "acronym": "ID",
+        "expansion": "Identifier",
+        "category": "Other"
+      },
+      {
+        "acronym": "OS",
+        "expansion": "Operating System",
+        "category": "Other"
+      },
+      {
+        "acronym": "GUI",
+        "expansion": "Graphical User Interface",
+        "category": "Other"
+      },
+      {
+        "acronym": "UI",
+        "expansion": "User Interface",
+        "category": "Other"
+      },
+      {
+        "acronym": "UX",
+        "expansion": "User Experience",
+        "category": "Other"
+      },
+      {
+        "acronym": "RTT",
+        "expansion": "Round-Trip Time",
+        "category": "Other"
+      },
+      {
+        "acronym": "SLA",
+        "expansion": "Service Level Agreement",
+        "category": "Other"
+      },
+      {
+        "acronym": "KPI",
+        "expansion": "Key Performance Indicator",
+        "category": "Other"
       }
     ]
   }
