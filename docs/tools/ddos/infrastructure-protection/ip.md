@@ -23,8 +23,8 @@ Returns list of IPs involved in a mitigation (and allows for searching through i
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `mitigation_id` | Mitigation ID | `9ba097cf-35e3-4560-9c00-5a1a36b8f85b.` |
-| `namespace` | Namespace | `Value` |
+| `mitigation_id` | Mitigation ID | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

@@ -23,8 +23,8 @@ API to send request to verify Alert Receiver - applicable only for email and sms
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Email1` |
-| `namespace` | Namespace | `Ns1` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

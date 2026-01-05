@@ -23,14 +23,14 @@ API to check if site is ready for upgrade.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `sw_version` | Software version to upgrade to. | `Crt-20241107-1123.` |
+| `sw_version` | Software version to upgrade to. | `-` |
 
 ## Example Usage
 

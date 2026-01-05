@@ -24,16 +24,16 @@ POST SAFE Analyst Station Dashboard Transaction Breakdown request.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Payment-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `from` | Timestamp representing start date of the requested period in millieseconds. | `1638320400000.` |
-| `limit` | Limited number of records. | `3` |
-| `to` | Timestamp representing end date of the requested period in millieseconds. | `1638320400000.` |
-| `version` | The API version to use. | `V3` |
+| `from` | Timestamp representing start date of the requested period in millieseconds. | `-` |
+| `limit` | Limited number of records. | `-` |
+| `to` | Timestamp representing end date of the requested period in millieseconds. | `-` |
+| `version` | The API version to use. | `-` |
 
 ## Side Effects
 

@@ -23,7 +23,7 @@ Validate JS script tag injection in the target URL.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

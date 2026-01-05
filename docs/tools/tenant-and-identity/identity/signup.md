@@ -24,7 +24,7 @@ signup object.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Signup name | `Signup-1234-5678-9012-3456.` |
+| `name` | Signup name | `-` |
 
 ## Example Usage
 

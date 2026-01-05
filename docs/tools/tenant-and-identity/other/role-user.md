@@ -23,7 +23,7 @@ AssignRole allows customers to assign a namespace/role pair to multiple users.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

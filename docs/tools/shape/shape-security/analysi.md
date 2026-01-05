@@ -23,7 +23,7 @@ Mark / unmark field sensitivity by customer.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

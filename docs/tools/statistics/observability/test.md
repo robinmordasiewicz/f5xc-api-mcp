@@ -23,8 +23,8 @@ API to send test alert.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Slack1` |
-| `namespace` | Namespace | `Ns1` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

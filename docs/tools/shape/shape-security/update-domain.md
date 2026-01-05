@@ -23,7 +23,7 @@ Update domain from mitigated domains to allowed domains and vice versa.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

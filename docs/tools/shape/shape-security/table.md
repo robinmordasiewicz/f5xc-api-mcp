@@ -23,16 +23,16 @@ GET Safe block table as CSV file.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Payment-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `action` | The action type - can be block or allow. | `Block` |
-| `from` | Timestamp representing start date of the requested period in millieseconds. | `1638320400000.` |
-| `to` | Timestamp representing end date of the requested period in millieseconds. | `1639382940000.` |
-| `version` | The API version to use. | `V2` |
+| `action` | The action type - can be block or allow. | `-` |
+| `from` | Timestamp representing start date of the requested period in millieseconds. | `-` |
+| `to` | Timestamp representing end date of the requested period in millieseconds. | `-` |
+| `version` | The API version to use. | `-` |
 
 ## Example Usage
 

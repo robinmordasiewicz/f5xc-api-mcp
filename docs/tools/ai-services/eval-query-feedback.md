@@ -23,7 +23,7 @@ Temporarily to be used in place of AIAssistantFeedback for evaluating API access
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

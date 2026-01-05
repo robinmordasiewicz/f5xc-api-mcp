@@ -23,16 +23,16 @@ List v1_http_monitor in a namespace based on filter.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Foobar` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `filter` | Monitor filter. | `Monitor_name eq 'tester-name'` |
+| `filter` | Monitor filter. | `-` |
 | `limit` | Limit. | `-` |
 | `page` | Page. | `-` |
-| `sort` | Sort. | `-name, ID` |
+| `sort` | Sort. | `-` |
 
 ## Example Usage
 

@@ -23,15 +23,15 @@ GetMobileSDK is an API to download particular version of SDK.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Volt-API-specs.` |
-| `namespace` | Namespace | `System` |
-| `version` | Version | `V0-21-09-13.` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `version` | Version | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `object_type` | X-required | `Swagger` |
+| `object_type` | X-required | `-` |
 
 ## Example Usage
 

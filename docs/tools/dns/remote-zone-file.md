@@ -23,8 +23,8 @@ GET remote zone file from primary DNS.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `dns_zone_name` | Name | `example.com.` |
-| `namespace` | Namespace | `System` |
+| `dns_zone_name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

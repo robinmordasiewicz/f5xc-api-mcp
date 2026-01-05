@@ -23,15 +23,15 @@ GET SAFE block details.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Payment-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `account_id` | String representing the account ID. | `Test123` |
-| `device_id` | String representing the device ID. | `Device123` |
-| `version` | The API version to use. | `V2` |
+| `account_id` | String representing the account ID. | `-` |
+| `device_id` | String representing the device ID. | `-` |
+| `version` | The API version to use. | `-` |
 
 ## Example Usage
 

@@ -23,8 +23,8 @@ Return mitigation annotations that occur while an event is active.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `event_id` | Event ID | `9ba097cf-35e3-4560-9c00-5a1a36b8f85b.` |
-| `namespace` | Namespace | `Value` |
+| `event_id` | Event ID | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

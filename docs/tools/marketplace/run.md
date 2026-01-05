@@ -23,9 +23,9 @@ Perform terraform actions for a given view. Supported actions are apply and plan
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `view_kind` | Kind of View | `Value` |
-| `view_name` | Name of view | `Value` |
+| `namespace` | Namespace | `-` |
+| `view_kind` | Kind of View | `-` |
+| `view_name` | Name of view | `-` |
 
 ## Side Effects
 

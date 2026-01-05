@@ -23,7 +23,7 @@ List Reports history for the list of report configurations in the given namespac
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

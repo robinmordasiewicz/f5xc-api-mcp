@@ -23,7 +23,7 @@ List Reports history waap for the list of report configurations in the given nam
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

@@ -23,8 +23,8 @@ GET deployment status.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Name` |
-| `namespace` | Name Space | `Ns1` |
+| `name` | Name | `-` |
+| `namespace` | Name Space | `-` |
 
 ## Example Usage
 

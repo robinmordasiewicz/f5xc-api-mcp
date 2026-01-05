@@ -23,7 +23,7 @@ Returns list of HTTP monitors in namespace with corresponding region health(s)
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

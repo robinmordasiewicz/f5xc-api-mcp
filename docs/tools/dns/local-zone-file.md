@@ -23,8 +23,8 @@ GET local zone file from secondary DNS.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `dns_zone_name` | Name | `example.com.` |
-| `namespace` | Namespace | `System` |
+| `dns_zone_name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

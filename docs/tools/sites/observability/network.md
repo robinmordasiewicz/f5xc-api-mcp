@@ -23,7 +23,7 @@ Gets Networks Associated to Site.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Site-1` |
+| `name` | Name | `-` |
 
 ## Example Usage
 

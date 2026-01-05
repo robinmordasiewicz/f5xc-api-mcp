@@ -23,8 +23,8 @@ Start collecting a zip file of debug info from node.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `node` | Node Name | `Master-0` |
-| `site` | Site Name | `Value` |
+| `node` | Node Name | `-` |
+| `site` | Site Name | `-` |
 
 ## Example Usage
 

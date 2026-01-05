@@ -23,7 +23,7 @@ Request to GET monitoring data for a service mesh of a given application.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

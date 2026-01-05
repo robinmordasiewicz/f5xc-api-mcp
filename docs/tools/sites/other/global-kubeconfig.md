@@ -24,7 +24,7 @@ Returns list of all global active kubeconfig minted for this site.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `site` | Site | `Ce398` |
+| `site` | Site | `-` |
 
 ## Side Effects
 

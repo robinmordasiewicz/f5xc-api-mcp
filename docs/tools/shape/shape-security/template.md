@@ -23,8 +23,8 @@ GET iApp template.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Application Name | `Billing-app.` |
-| `namespace` | Namespace | `Ns1` |
+| `name` | Application Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

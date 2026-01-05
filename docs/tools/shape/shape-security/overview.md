@@ -24,15 +24,15 @@ GET SAFE Analyst Station Dashboard Transaction Breakdown request.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Payment-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `from` | Timestamp representing start date of the requested period in millieseconds. | `1638320400000.` |
-| `to` | Timestamp representing end date of the requested period in millieseconds. | `1639382940000.` |
-| `version` | The API version to use. | `V2` |
+| `from` | Timestamp representing start date of the requested period in millieseconds. | `-` |
+| `to` | Timestamp representing end date of the requested period in millieseconds. | `-` |
+| `version` | The API version to use. | `-` |
 
 ## Side Effects
 

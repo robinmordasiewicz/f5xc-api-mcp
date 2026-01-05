@@ -23,8 +23,8 @@ API to GET list of pods in a site for a given namespace.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Ns1` |
-| `site` | Site | `Site-1` |
+| `namespace` | Namespace | `-` |
+| `site` | Site | `-` |
 
 ## Example Usage
 

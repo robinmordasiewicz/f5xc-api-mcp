@@ -24,8 +24,8 @@ will become secondary. The `name` parameter is ignored.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Payment-method-1.` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

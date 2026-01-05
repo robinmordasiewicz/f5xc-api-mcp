@@ -25,7 +25,7 @@ GET Client-Side Defense status for the tenant.
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `name` | Name | `-` |
-| `namespace` | Namespace | `Default` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

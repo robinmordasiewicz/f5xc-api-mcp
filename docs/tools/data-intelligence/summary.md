@@ -23,7 +23,7 @@ Executive summary page for DI premium customers.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Foobar` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

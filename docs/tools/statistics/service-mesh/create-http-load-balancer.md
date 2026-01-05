@@ -23,8 +23,8 @@ Create HTTP/HTTPS load balancer using the discovered virtual server as an origin
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Service Name | `Vs1` |
-| `namespace` | Namespace | `Shared` |
+| `name` | Service Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

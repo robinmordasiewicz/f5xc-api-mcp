@@ -23,7 +23,7 @@ GET Safe transactions as CSV file.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Payment-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

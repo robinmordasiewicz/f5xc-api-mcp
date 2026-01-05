@@ -25,8 +25,8 @@ a single PDF document.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `report_id` | Report ID | `9ba097cf-35e3-4560-9c00-5a1a36b8f85b.` |
+| `namespace` | Namespace | `-` |
+| `report_id` | Report ID | `-` |
 
 ## Side Effects
 

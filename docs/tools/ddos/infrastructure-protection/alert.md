@@ -26,8 +26,8 @@ help to start investigate and mitigate any malicious or suspicious activate.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `alert_id` | Alert ID | `12345` |
+| `namespace` | Namespace | `-` |
+| `alert_id` | Alert ID | `-` |
 
 ## Side Effects
 

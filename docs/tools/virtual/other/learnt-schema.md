@@ -23,17 +23,17 @@ GET Learnt Schema per API endpoint for a given auto discovered API endpoint for 
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Virtual Host | `Blogging-app-vhost.` |
-| `namespace` | Namespace | `Blogging-app.` |
+| `name` | Virtual Host | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `api_endpoint_info_request` | List of additional things that needs to be sent as part of the request | `-` |
-| `collapsed_url` | API endpoint for which PDFs are requested. | `API/v1/user_id/DYN/vehicle_id/DYN.` |
-| `domains` | List of domains that needs to be sent as part of the request | `www.example.com.` |
-| `method` | Method of API endpoint for which PDFs are requested. | `GET` |
+| `collapsed_url` | API endpoint for which PDFs are requested. | `-` |
+| `domains` | List of domains that needs to be sent as part of the request | `-` |
+| `method` | Method of API endpoint for which PDFs are requested. | `-` |
 
 ## Example Usage
 

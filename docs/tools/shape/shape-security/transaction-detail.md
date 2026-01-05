@@ -24,14 +24,14 @@ GET a detailed information about the requested transaction.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Payment-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `transaction_id` | Transaction identifier. | `Value` |
-| `version` | The API version to use. | `V2` |
+| `transaction_id` | Transaction identifier. | `-` |
+| `version` | The API version to use. | `-` |
 
 ## Side Effects
 

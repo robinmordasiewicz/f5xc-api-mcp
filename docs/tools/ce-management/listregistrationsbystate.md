@@ -23,7 +23,7 @@ API endpoint for returning Registrations by status, e.g APPROVED, NEW, or RETIRE
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

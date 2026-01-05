@@ -24,13 +24,13 @@ namespace.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `period_in_days` | Period_in_days. | `30` |
+| `period_in_days` | Period_in_days. | `-` |
 
 ## Example Usage
 

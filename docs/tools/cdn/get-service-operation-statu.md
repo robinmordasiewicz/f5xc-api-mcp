@@ -23,7 +23,7 @@ GET status of an operation command for a given CDN Loadbalancer.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

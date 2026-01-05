@@ -23,8 +23,8 @@ Create TCP load balancer using the discovered virtual server as an origin server
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Service Name | `Vs1` |
-| `namespace` | Namespace | `Shared` |
+| `name` | Service Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

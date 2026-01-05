@@ -23,7 +23,7 @@ GetPasswordPolicy returns password policy for tenant.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `realm_id` | User's email. | `3d05688b-f560-4f70-9af1-384a0ec0ff15.` |
+| `realm_id` | User's email. | `-` |
 
 ## Example Usage
 

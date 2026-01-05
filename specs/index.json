@@ -1,6 +1,6 @@
 {
-  "version": "2.0.3",
-  "timestamp": "2026-01-05T01:27:16.204408+00:00",
+  "version": "2.0.4",
+  "timestamp": "2026-01-05T02:28:30.087512+00:00",
   "specifications": [
     {
       "domain": "admin_console_and_ui",
@@ -15,11 +15,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Platform",
-      "x-f5xc-aliases": [
-        "console-ui",
-        "ui-assets",
-        "static-components"
-      ],
       "x-f5xc-use-cases": [
         "Manage static UI components for admin console",
         "Deploy and retrieve UI assets within namespaces",
@@ -78,11 +73,6 @@
       "x-f5xc-is-preview": true,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "AI",
-      "x-f5xc-aliases": [
-        "ai",
-        "genai",
-        "assistant"
-      ],
       "x-f5xc-use-cases": [
         "Access AI-powered features",
         "Configure AI assistant policies",
@@ -142,10 +132,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Security",
-      "x-f5xc-aliases": [
-        "apisec",
-        "api-discovery"
-      ],
       "x-f5xc-use-cases": [
         "Discover and catalog APIs",
         "Test API security and behavior",
@@ -277,11 +263,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Platform",
-      "x-f5xc-aliases": [
-        "authn",
-        "oidc",
-        "sso"
-      ],
       "x-f5xc-use-cases": [
         "Configure authentication mechanisms",
         "Manage OIDC and OAuth providers",
@@ -356,11 +337,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Platform",
-      "x-f5xc-aliases": [
-        "f5-bigip",
-        "irule",
-        "ltm"
-      ],
       "x-f5xc-use-cases": [
         "Manage BigIP F5 appliances",
         "Configure iRule scripts",
@@ -418,11 +394,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Platform",
-      "x-f5xc-aliases": [
-        "billing-usage",
-        "quotas",
-        "usage-tracking"
-      ],
       "x-f5xc-use-cases": [
         "Manage subscription plans and billing transitions",
         "Configure payment methods and invoices",
@@ -496,11 +467,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Security",
-      "x-f5xc-aliases": [
-        "bf",
-        "encrypt",
-        "secrets"
-      ],
       "x-f5xc-use-cases": [
         "Configure secret policies for encryption",
         "Manage sensitive data encryption",
@@ -573,11 +539,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Security",
-      "x-f5xc-aliases": [
-        "threat-defense",
-        "tpm",
-        "shape-bot"
-      ],
       "x-f5xc-use-cases": [
         "Configure bot defense instances per namespace",
         "Manage TPM threat categories for classification",
@@ -637,10 +598,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Networking",
-      "x-f5xc-aliases": [
-        "cache",
-        "content"
-      ],
       "x-f5xc-use-cases": [
         "Configure CDN load balancing",
         "Manage content delivery network services",
@@ -702,11 +659,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Infrastructure",
-      "x-f5xc-aliases": [
-        "ce-mgmt",
-        "edge-management",
-        "ce-lifecycle"
-      ],
       "x-f5xc-use-cases": [
         "Manage Customer Edge site lifecycle",
         "Configure network interfaces and fleet settings",
@@ -780,12 +732,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Security",
-      "x-f5xc-aliases": [
-        "cert",
-        "certs",
-        "ssl",
-        "tls"
-      ],
       "x-f5xc-use-cases": [
         "Manage SSL/TLS certificates",
         "Configure trusted CAs",
@@ -859,11 +805,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Infrastructure",
-      "x-f5xc-aliases": [
-        "cloud",
-        "infra",
-        "provider"
-      ],
       "x-f5xc-use-cases": [
         "Connect to cloud providers (AWS, Azure, GCP)",
         "Manage cloud credentials and authentication",
@@ -964,11 +905,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Infrastructure",
-      "x-f5xc-aliases": [
-        "vk8s",
-        "containers",
-        "workloads"
-      ],
       "x-f5xc-use-cases": [
         "Deploy XCCS (Container Services) namespaces for multi-tenant workloads",
         "Manage container workloads with simplified orchestration",
@@ -1051,12 +987,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Security",
-      "x-f5xc-aliases": [
-        "data-privacy",
-        "pii",
-        "sensitive-data",
-        "lma"
-      ],
       "x-f5xc-use-cases": [
         "Configure sensitive data detection policies",
         "Define custom data types for PII classification",
@@ -1115,11 +1045,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Operations",
-      "x-f5xc-aliases": [
-        "di",
-        "intelligence",
-        "insights"
-      ],
       "x-f5xc-use-cases": [
         "Analyze security and traffic data",
         "Generate intelligent insights from logs",
@@ -1177,10 +1102,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Security",
-      "x-f5xc-aliases": [
-        "dos",
-        "ddos-protect"
-      ],
       "x-f5xc-use-cases": [
         "Configure DDoS protection policies",
         "Monitor and analyze DDoS threats",
@@ -1242,10 +1163,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Networking",
-      "x-f5xc-aliases": [
-        "dns-zone",
-        "zones"
-      ],
       "x-f5xc-use-cases": [
         "Configure DNS load balancing",
         "Manage DNS zones and domains",
@@ -1377,11 +1294,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Infrastructure",
-      "x-f5xc-aliases": [
-        "mk8s",
-        "appstack",
-        "k8s-mgmt"
-      ],
       "x-f5xc-use-cases": [
         "Manage XCKS (Managed Kubernetes) cluster RBAC and security",
         "Configure pod security policies and admission controllers",
@@ -1460,11 +1372,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Platform",
-      "x-f5xc-aliases": [
-        "market",
-        "addons",
-        "extensions"
-      ],
       "x-f5xc-use-cases": [
         "Access third-party integrations and add-ons",
         "Manage marketplace extensions",
@@ -1523,11 +1430,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Networking",
-      "x-f5xc-aliases": [
-        "net",
-        "routing",
-        "bgp"
-      ],
       "x-f5xc-use-cases": [
         "Configure BGP routing and ASN management",
         "Manage IPsec tunnels and IKE phases",
@@ -1616,10 +1518,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Security",
-      "x-f5xc-aliases": [
-        "netsec",
-        "nfw"
-      ],
       "x-f5xc-use-cases": [
         "Configure network firewall and ACL policies",
         "Manage NAT policies and port forwarding",
@@ -1695,11 +1593,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Platform",
-      "x-f5xc-aliases": [
-        "nginx",
-        "nms",
-        "nginx-plus"
-      ],
       "x-f5xc-use-cases": [
         "Manage NGINX One platform integrations",
         "Configure NGINX Plus instances",
@@ -1760,11 +1653,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Platform",
-      "x-f5xc-aliases": [
-        "storage",
-        "s3",
-        "buckets"
-      ],
       "x-f5xc-use-cases": [
         "Manage object storage services",
         "Configure stored objects and buckets",
@@ -1829,11 +1717,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Operations",
-      "x-f5xc-aliases": [
-        "obs",
-        "monitoring",
-        "synth"
-      ],
       "x-f5xc-use-cases": [
         "Configure synthetic monitoring",
         "Define monitoring and testing policies",
@@ -1906,11 +1789,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Networking",
-      "x-f5xc-aliases": [
-        "ratelimit",
-        "throttle",
-        "policer"
-      ],
       "x-f5xc-use-cases": [
         "Configure rate limiter policies",
         "Manage policer configurations",
@@ -1987,11 +1865,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Security",
-      "x-f5xc-aliases": [
-        "secops",
-        "incident-response",
-        "mitigation"
-      ],
       "x-f5xc-use-cases": [
         "Configure automated threat mitigation policies",
         "Define rules for malicious user detection",
@@ -2051,10 +1924,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Infrastructure",
-      "x-f5xc-aliases": [
-        "mesh",
-        "svc-mesh"
-      ],
       "x-f5xc-use-cases": [
         "Configure service mesh connectivity",
         "Manage endpoint discovery and routing",
@@ -2133,10 +2002,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Security",
-      "x-f5xc-aliases": [
-        "shape-sec",
-        "safeap"
-      ],
       "x-f5xc-use-cases": [
         "Configure Shape Security policies",
         "Manage bot and threat prevention",
@@ -2195,10 +2060,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Infrastructure",
-      "x-f5xc-aliases": [
-        "site",
-        "deployment"
-      ],
       "x-f5xc-use-cases": [
         "Deploy F5 XC across cloud providers (AWS, Azure, GCP)",
         "Manage XCKS (Managed Kubernetes) site deployments (formerly AppStack)",
@@ -2335,11 +2196,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Operations",
-      "x-f5xc-aliases": [
-        "stats",
-        "metrics",
-        "logs"
-      ],
       "x-f5xc-use-cases": [
         "Access flow statistics and analytics",
         "Manage alerts and alerting policies",
@@ -2404,10 +2260,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Operations",
-      "x-f5xc-aliases": [
-        "tickets",
-        "help-desk"
-      ],
       "x-f5xc-use-cases": [
         "Submit and manage support tickets",
         "Track customer support requests",
@@ -2480,10 +2332,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Operations",
-      "x-f5xc-aliases": [
-        "telemetry",
-        "ti"
-      ],
       "x-f5xc-use-cases": [
         "Collect and analyze telemetry data",
         "Generate actionable insights from metrics",
@@ -2541,11 +2389,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Platform",
-      "x-f5xc-aliases": [
-        "tenant-identity",
-        "idm",
-        "user-settings"
-      ],
       "x-f5xc-use-cases": [
         "Manage user profiles and notification preferences",
         "Configure session controls and OTP settings",
@@ -2620,11 +2463,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Security",
-      "x-f5xc-aliases": [
-        "threats",
-        "campaigns",
-        "threat-intel"
-      ],
       "x-f5xc-use-cases": [
         "Track and analyze threat campaigns",
         "Monitor active threats and attack patterns",
@@ -2667,11 +2505,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Platform",
-      "x-f5xc-aliases": [
-        "user",
-        "accounts",
-        "iam"
-      ],
       "x-f5xc-use-cases": [
         "Manage user accounts and tokens",
         "Configure user identification",
@@ -2749,11 +2582,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Networking",
-      "x-f5xc-aliases": [
-        "lb",
-        "loadbalancer",
-        "vhost"
-      ],
       "x-f5xc-use-cases": [
         "Configure HTTP/TCP/UDP load balancers",
         "Manage origin pools and services",
@@ -2925,11 +2753,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Standard",
       "x-f5xc-category": "Platform",
-      "x-f5xc-aliases": [
-        "vpm",
-        "nodes",
-        "node-mgmt"
-      ],
       "x-f5xc-use-cases": [
         "Manage Virtual Private Mesh (VPM) configuration",
         "Configure node lifecycle and management",
@@ -2987,10 +2810,6 @@
       "x-f5xc-is-preview": false,
       "x-f5xc-requires-tier": "Advanced",
       "x-f5xc-category": "Security",
-      "x-f5xc-aliases": [
-        "firewall",
-        "appfw"
-      ],
       "x-f5xc-use-cases": [
         "Configure web application firewall rules",
         "Manage application security policies",

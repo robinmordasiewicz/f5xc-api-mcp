@@ -27,9 +27,9 @@ DELETE the specified script justification.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
-| `script_id` | Script_id | `S-1234567` |
-| `justification_id` | Justification_id | `J-1234567` |
+| `namespace` | Namespace | `-` |
+| `script_id` | Script_id | `-` |
+| `justification_id` | Justification_id | `-` |
 
 ## Side Effects
 

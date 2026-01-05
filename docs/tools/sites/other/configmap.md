@@ -23,13 +23,13 @@ API to GET list of configmaps for a given namespace in a site.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `site` | Site | `Site-1` |
+| `site` | Site | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace to scope the listing of configmaps in a site. | `Ns1` |
+| `namespace` | Namespace to scope the listing of configmaps in a site. | `-` |
 
 ## Example Usage
 

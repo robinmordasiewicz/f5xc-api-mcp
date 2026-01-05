@@ -23,8 +23,8 @@ Add override for dynamic component for API endpoints discovered for this App typ
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `app_type_name` | App Type | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
+| `app_type_name` | App Type | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

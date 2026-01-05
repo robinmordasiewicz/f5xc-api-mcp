@@ -23,15 +23,15 @@ Returns the healthy and critical status count, latency, and coordinates for each
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `label_filter` | Label_filter. | `F5 XC/country in (VES-I/O-usa), F5 XC/siteType=VES-I/O-RE.` |
-| `monitor_name` | Monitor_name. | `Monitor1` |
-| `monitor_type` | Monitor_type. X-required | `HTTP` |
+| `label_filter` | Label_filter. | `-` |
+| `monitor_name` | Monitor_name. | `-` |
+| `monitor_type` | Monitor_type. X-required | `-` |
 
 ## Example Usage
 

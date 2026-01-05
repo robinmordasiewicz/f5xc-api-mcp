@@ -23,15 +23,15 @@ GET the detected domains data for the tenant.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `duration` | Length in Days to fetch domain. | `15` |
-| `locations` | List of locations if backend needs to filter with locations passed. | `location1.com,location2.com.` |
-| `risk` | GET the list of high risk domains, all domains is by default. | `High` |
+| `duration` | Length in Days to fetch domain. | `-` |
+| `locations` | List of locations if backend needs to filter with locations passed. | `-` |
+| `risk` | GET the list of high risk domains, all domains is by default. | `-` |
 
 ## Example Usage
 

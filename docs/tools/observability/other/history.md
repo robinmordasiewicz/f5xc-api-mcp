@@ -25,15 +25,15 @@ filter specified in the request.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Ns1` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `end_time` | Fetch alerts whose timestamp <= end_time | `2019-09-24T12:30:11.733Z.` |
-| `filter` | HighDiskUsage\", severity=\"critical\"}" | `{alertname=\.` |
-| `start_time` | Fetch alerts whose timestamp >= start_time | `2019-09-23T12:30:11.733Z.` |
+| `end_time` | Fetch alerts whose timestamp <= end_time | `-` |
+| `filter` | HighDiskUsage\", severity=\"critical\"}" | `-` |
+| `start_time` | Fetch alerts whose timestamp >= start_time | `-` |
 
 ## Example Usage
 

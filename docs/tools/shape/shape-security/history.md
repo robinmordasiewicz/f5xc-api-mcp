@@ -23,8 +23,8 @@ Getbotdetectionrulechangehistory CustomAPI.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `id` | ID | `Rule_CB_DUBEXLDQKV.` |
-| `namespace` | Namespace | `System` |
+| `id` | ID | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

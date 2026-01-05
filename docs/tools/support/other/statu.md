@@ -23,9 +23,9 @@ GET Status of F5XC components.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `site` | Site Name | `Value` |
-| `vesnamespace` | F5XC Namespace | `VES-system.` |
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
+| `vesnamespace` | F5XC Namespace | `-` |
 
 ### Query Parameters
 

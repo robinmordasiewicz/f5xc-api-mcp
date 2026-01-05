@@ -23,8 +23,8 @@ Enables / Disables the SCIM integration for the OIDC provider.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Value` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

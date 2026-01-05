@@ -23,8 +23,8 @@ Run tcpdump on an interface in a ver node.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
-| `site` | Site Name | `Value` |
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
 
 ## Side Effects
 

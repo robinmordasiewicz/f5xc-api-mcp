@@ -23,7 +23,7 @@ Retrieve CDN Load-Balancer Access logs.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

@@ -23,8 +23,8 @@ Upgrade Site SW version.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Ce398` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

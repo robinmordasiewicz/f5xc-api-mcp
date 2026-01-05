@@ -23,10 +23,10 @@ Soft restart reloads VER instance on the node.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `node` | Node Name | `Master-0` |
-| `service` | Service Name | `Vpm` |
-| `site` | Site Name | `Value` |
+| `namespace` | Namespace | `-` |
+| `node` | Node Name | `-` |
+| `service` | Service Name | `-` |
+| `site` | Site Name | `-` |
 
 ## Side Effects
 

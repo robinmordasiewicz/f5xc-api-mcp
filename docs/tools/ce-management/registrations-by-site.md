@@ -23,8 +23,8 @@ List all registration in site.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
-| `site_name` | SiteName | `Ce02` |
+| `namespace` | Namespace | `-` |
+| `site_name` | SiteName | `-` |
 
 ## Example Usage
 

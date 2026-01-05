@@ -23,7 +23,7 @@ Temporarily to be used in place of AIAssistantQuery for evaluating API access/RB
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

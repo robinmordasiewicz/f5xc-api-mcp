@@ -23,9 +23,9 @@ Force DELETE view object. This can result in staled objects in cloud provider.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `view_kind` | Kind of View | `Value` |
-| `view_name` | Name of view | `Value` |
+| `namespace` | Namespace | `-` |
+| `view_kind` | Kind of View | `-` |
+| `view_name` | Name of view | `-` |
 
 ## Side Effects
 

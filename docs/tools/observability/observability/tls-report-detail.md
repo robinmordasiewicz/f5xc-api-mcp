@@ -23,13 +23,13 @@ Returns the HTML encoding of the generated TLS report.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `monitor_name` | Monitor_name. X-required | `Monitor1` |
+| `monitor_name` | Monitor_name. X-required | `-` |
 
 ## Example Usage
 

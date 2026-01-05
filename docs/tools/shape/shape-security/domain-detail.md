@@ -23,13 +23,13 @@ GET the details of the domain provided.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name of the domain to GET the details. | `domain.com.` |
+| `name` | Name of the domain to GET the details. | `-` |
 
 ## Example Usage
 

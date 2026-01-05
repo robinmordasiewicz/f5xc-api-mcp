@@ -23,8 +23,8 @@ Deploy Policies to Bot Infrastructure.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Bot Infra Name | `Cluster_1` |
-| `namespace` | Namespace | `System` |
+| `name` | Bot Infra Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

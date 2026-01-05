@@ -23,15 +23,15 @@ ListMobileSDKs is an API to list all mobile SDKs available for download.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `latest_version_only` | Optional query parameter. If passed, returns only latest version of the objects. | `-` |
-| `name` | Optional query parameter. Name of the stored_object. | `Example-file, shared/example-file, example-ns/example-file.` |
-| `object_type` | Optional query parameter. Type of the stored_object. | `Swagger` |
+| `name` | Optional query parameter. Name of the stored_object. | `-` |
+| `object_type` | Optional query parameter. Type of the stored_object. | `-` |
 | `query_type` | Optional query parameter. The type of search query needs to be performed. Could be EXACT_MATCH or PREFIX_MATCH. | `-` |
 
 ## Example Usage

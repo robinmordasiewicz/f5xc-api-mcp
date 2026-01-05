@@ -23,7 +23,7 @@ Returns time series data of monitor metric query by region.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

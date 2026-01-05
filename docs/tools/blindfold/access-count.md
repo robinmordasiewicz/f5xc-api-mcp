@@ -24,7 +24,7 @@ COUNTRY, RESULT, USER_TENANT.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Blogging-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

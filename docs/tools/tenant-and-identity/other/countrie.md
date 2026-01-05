@@ -24,7 +24,7 @@ validation rules.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `prefix` | Prefix | `US for USA.` |
+| `prefix` | Prefix | `-` |
 
 ## Example Usage
 

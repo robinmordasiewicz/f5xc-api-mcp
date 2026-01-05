@@ -24,7 +24,7 @@ be given to F5 Distributed Cloud secret management tool to do secret encryption.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `key_version` | The version of public key. | `0` |
+| `key_version` | The version of public key. | `-` |
 
 ## Example Usage
 

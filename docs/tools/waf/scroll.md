@@ -31,13 +31,13 @@ till the scroll_id returned is "" which indicates no more events to scroll.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Bloggin-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `scroll_id` | Long Base-64 encoded string which can be used to retrieve next batch of security events. | `DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==.` |
+| `scroll_id` | Long Base-64 encoded string which can be used to retrieve next batch of security events. | `-` |
 
 ## Side Effects
 

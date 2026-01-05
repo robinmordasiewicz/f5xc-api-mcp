@@ -24,8 +24,8 @@ RETIRED.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `R-e9030963-639e-41cd-aba6-261504f4a6be.` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

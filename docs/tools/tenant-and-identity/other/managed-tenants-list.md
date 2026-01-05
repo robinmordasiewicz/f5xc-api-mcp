@@ -27,9 +27,9 @@ enable access.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `page_limit` | PageLimit will hold the limit of items required per query. | `100` |
-| `page_start` | PageStart will hold the UUID of the first item in the requested page. | `C5776a8e-bcae-4392-98d3-3556f4b9df1b.` |
-| `search_keyword` | Search Keyword for filtering the Managed Tenant List. | `Value` |
+| `page_limit` | PageLimit will hold the limit of items required per query. | `-` |
+| `page_start` | PageStart will hold the UUID of the first item in the requested page. | `-` |
+| `search_keyword` | Search Keyword for filtering the Managed Tenant List. | `-` |
 
 ## Example Usage
 

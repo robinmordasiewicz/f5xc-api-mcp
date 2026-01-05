@@ -23,8 +23,8 @@ Returns a list of known states of a country. List will be empty if country has n
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `country_code` | Country code | `US` |
-| `prefix` | Prefix | `AL for Alabama.` |
+| `country_code` | Country code | `-` |
+| `prefix` | Prefix | `-` |
 
 ## Example Usage
 

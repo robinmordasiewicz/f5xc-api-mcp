@@ -35,7 +35,7 @@ the request, it will be considered as the removal of the field value.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name of the user group | `738b3156-112f-1f8b-a3e5-7e2ce1a6eff3.` |
+| `name` | Name of the user group | `-` |
 
 ### Query Parameters
 

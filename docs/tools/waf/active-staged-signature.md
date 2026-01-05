@@ -23,8 +23,8 @@ API to GET active Staged Signatures.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Shared` |
-| `vh_name` | Vh_name | `Blogging-app.` |
+| `namespace` | Namespace | `-` |
+| `vh_name` | Vh_name | `-` |
 
 ## Example Usage
 

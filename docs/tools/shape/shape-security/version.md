@@ -23,8 +23,8 @@ GET bot allowlist policy versions.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Policy name | `Web_policy.` |
-| `namespace` | Namespace | `System` |
+| `name` | Policy name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

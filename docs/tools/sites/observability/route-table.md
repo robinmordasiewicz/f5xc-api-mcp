@@ -23,17 +23,17 @@ Gets Route Tables Associated with a Network.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `id` | ID | `VPC-1234567898.` |
+| `id` | ID | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `regions` | Regions used as filters. | `Us-west1, us-east1.` |
-| `route_table_ids` | Route Table IDs used as filters. | `Rtb-1234567898, rtb-2345678901.` |
-| `site` | Site Name | `Site-name1.` |
-| `subnet_cidrs` | Subnet cidrs used as filters. | `10.10.0.0/16, 10.22.0.0/16.` |
-| `subnet_ids` | Subnet IDs used as filters. | `Sub-1234567898, sub-2345678901.` |
+| `regions` | Regions used as filters. | `-` |
+| `route_table_ids` | Route Table IDs used as filters. | `-` |
+| `site` | Site Name | `-` |
+| `subnet_cidrs` | Subnet cidrs used as filters. | `-` |
+| `subnet_ids` | Subnet IDs used as filters. | `-` |
 
 ## Example Usage
 

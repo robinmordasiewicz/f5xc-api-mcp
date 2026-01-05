@@ -23,8 +23,8 @@ Configure VPC IP prefix set.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `AWS-tgw-site-1.` |
-| `namespace` | Namespace | `Default` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

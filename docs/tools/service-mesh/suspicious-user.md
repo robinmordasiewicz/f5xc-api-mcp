@@ -23,17 +23,17 @@ GET status of suspicious users.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Value` |
-| `namespace` | Namespace | `Bloggin-app-namespace-1.` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `end_time` | Fetch suspicious users during timestamp <= end_time | `1570007981.` |
-| `query` | Blogging_app"}" | `Query={app_type=.` |
-| `start_time` | Fetch suspicious users during timestamp >= start_time | `1570007981.` |
-| `topn` | The topn parameter | `None of int32 samples [0 1 10 42 100 1024 2048] satisfied rules map[VES.I/o.schema.rules.uint32.gte:1 VES.I/o.schema.rules.uint32.lte:100]` |
+| `end_time` | Fetch suspicious users during timestamp <= end_time | `-` |
+| `query` | Blogging_app"}" | `-` |
+| `start_time` | Fetch suspicious users during timestamp >= start_time | `-` |
+| `topn` | The topn parameter | `-` |
 
 ## Example Usage
 

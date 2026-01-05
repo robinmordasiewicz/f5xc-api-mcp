@@ -23,16 +23,16 @@ Returns a time series of critical monitor counts in namespace.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `end_time` | End_time. | `2020-11-17T13:41:49.083255Z.` |
-| `monitor_type` | Monitor_type. | `HTTP` |
-| `start_time` | Start_time. | `2020-11-17T12:41:49.083255Z.` |
-| `step_size` | Step_size. | `300s` |
+| `end_time` | End_time. | `-` |
+| `monitor_type` | Monitor_type. | `-` |
+| `start_time` | Start_time. | `-` |
+| `step_size` | Step_size. | `-` |
 
 ## Example Usage
 

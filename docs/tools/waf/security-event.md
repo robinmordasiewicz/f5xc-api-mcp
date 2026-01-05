@@ -27,7 +27,7 @@ SERVICE, INSTANCE, WAF_INSTANCE_ID, WAF_MODE.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Bloggin-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

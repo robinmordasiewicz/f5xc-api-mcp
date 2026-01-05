@@ -24,8 +24,8 @@ the payment method is primary then it becomes secondary and there will be no pri
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Payment-method-1.` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

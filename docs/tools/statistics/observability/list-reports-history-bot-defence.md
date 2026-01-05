@@ -23,7 +23,7 @@ List Reports history bot defence for the list of report configurations in the gi
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

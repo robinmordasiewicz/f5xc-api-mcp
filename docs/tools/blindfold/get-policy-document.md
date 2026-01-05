@@ -26,8 +26,8 @@ secret management tool to do secret encryption.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Site-secret-policy.` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

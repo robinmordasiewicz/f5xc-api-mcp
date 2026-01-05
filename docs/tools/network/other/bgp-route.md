@@ -23,8 +23,8 @@ Show routes exported / imported via BGP.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `site` | Site Name | `Value` |
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
 
 ## Example Usage
 

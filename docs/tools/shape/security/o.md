@@ -23,7 +23,7 @@ Malicious Report Transactions OS.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Payment-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

@@ -23,7 +23,7 @@ Force DELETE NFV Service.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Nfv-service-1.` |
+| `name` | Name | `-` |
 
 ## Side Effects
 

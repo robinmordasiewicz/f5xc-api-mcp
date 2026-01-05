@@ -23,8 +23,8 @@ Download report.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Report Name | `Test-report.` |
-| `namespace` | Namespace | `System` |
+| `name` | Report Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

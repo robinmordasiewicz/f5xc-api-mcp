@@ -23,7 +23,7 @@ Check Site Exist for a site.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Ce01` |
+| `name` | Name | `-` |
 
 ## Side Effects
 

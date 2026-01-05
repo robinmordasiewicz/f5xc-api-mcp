@@ -23,7 +23,7 @@ Retrieve any saved filter sets that are applicable for the given context key(s)
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Bot-defense-apac.` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

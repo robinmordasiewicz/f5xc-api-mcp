@@ -23,7 +23,7 @@ Download the zip file of debug info from node if available.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `site` | Site Name | `Value` |
+| `site` | Site Name | `-` |
 
 ## Example Usage
 

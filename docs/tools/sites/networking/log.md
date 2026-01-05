@@ -26,9 +26,9 @@ request to GET the logs for a external connector.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `external_connector` | External connector | `Connector-1.` |
-| `namespace` | Namespace | `Value` |
-| `site` | Site | `CE-1` |
+| `external_connector` | External connector | `-` |
+| `namespace` | Namespace | `-` |
+| `site` | Site | `-` |
 
 ## Side Effects
 

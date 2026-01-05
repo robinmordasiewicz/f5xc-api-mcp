@@ -23,8 +23,8 @@ Configure VPC K8s node hostname set.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `AWS-VPC-site-1.` |
-| `namespace` | Namespace | `Default` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

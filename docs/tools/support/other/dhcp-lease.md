@@ -23,8 +23,8 @@ GET DHCP lease information.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `site` | Site Name | `Value` |
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
 
 ## Example Usage
 

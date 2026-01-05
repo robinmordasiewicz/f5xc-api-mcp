@@ -23,8 +23,8 @@ GET the corresponding Swagger spec for the given app type.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `app_type_name` | App Type | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
+| `app_type_name` | App Type | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

@@ -34,19 +34,19 @@ access to managed tenant.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `metadata.namespace` | Namespace | `Staging` |
-| `name` | Name | `Name` |
-| `namespace` | Namespace | `Ns1` |
-| `metadata.name` | Name | `Example-corp-web.` |
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
-| `page_limit` | PageLimit will hold the limit of items required per query. | `100` |
-| `page_start` | PageStart will hold the UUID of the first item in the requested page. | `C5776a8e-bcae-4392-98d3-3556f4b9df1b.` |
-| `search_keyword` | Search Keyword for filtering the Managed Tenant List. | `Value` |
+| `page_limit` | PageLimit will hold the limit of items required per query. | `-` |
+| `page_start` | PageStart will hold the UUID of the first item in the requested page. | `-` |
+| `search_keyword` | Search Keyword for filtering the Managed Tenant List. | `-` |
 
 ## Side Effects
 

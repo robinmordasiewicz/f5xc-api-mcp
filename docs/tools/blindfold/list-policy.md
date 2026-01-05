@@ -23,8 +23,8 @@ Listpolicy CustomAPI.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
-| `policy_state` | Policy_state | `All` |
+| `namespace` | Namespace | `-` |
+| `policy_state` | Policy_state | `-` |
 
 ## Example Usage
 

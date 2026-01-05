@@ -23,7 +23,7 @@ Returns 200 Ok if the service is healthy.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

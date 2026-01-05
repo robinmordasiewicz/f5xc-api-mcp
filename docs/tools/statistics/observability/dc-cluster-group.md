@@ -24,7 +24,7 @@ GET summary of all DC Cluster groups.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `dc_cluster_group` | DC Cluster group | `Dcg-1` |
+| `dc_cluster_group` | DC Cluster group | `-` |
 
 ## Side Effects
 

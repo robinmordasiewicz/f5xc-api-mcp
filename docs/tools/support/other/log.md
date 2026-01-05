@@ -23,16 +23,16 @@ GET logs for given service from the specific node.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `node` | Node Name | `Master-0` |
-| `service` | Service Name | `Vpm` |
-| `site` | Site Name | `Value` |
+| `namespace` | Namespace | `-` |
+| `node` | Node Name | `-` |
+| `service` | Service Name | `-` |
+| `site` | Site Name | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `last_lines` | Number of last log lines. | `200` |
+| `last_lines` | Number of last log lines. | `-` |
 
 ## Example Usage
 

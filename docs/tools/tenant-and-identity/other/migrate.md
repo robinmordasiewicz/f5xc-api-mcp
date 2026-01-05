@@ -23,7 +23,7 @@ Migrate ACTIVE child tenants from existing CTM to a specified new CTM.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Value` |
+| `name` | Name | `-` |
 
 ## Side Effects
 

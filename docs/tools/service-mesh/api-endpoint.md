@@ -24,9 +24,9 @@ GET all auto discovered API endpoints for App type.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `app_type_name` | App Type | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
-| `service_name` | Service | `N:public or S:productpage.` |
+| `app_type_name` | App Type | `-` |
+| `namespace` | Namespace | `-` |
+| `service_name` | Service | `-` |
 
 ### Query Parameters
 

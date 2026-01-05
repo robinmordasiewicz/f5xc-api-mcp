@@ -23,7 +23,7 @@ Custom endpoint to return quota limits.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

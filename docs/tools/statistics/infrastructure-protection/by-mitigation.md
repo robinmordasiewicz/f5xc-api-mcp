@@ -23,8 +23,8 @@ Request to GET l3l4 Mitigation Traffic data.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `mitigation_id` | MitigationId | `Value` |
-| `namespace` | Namespace | `Value` |
+| `mitigation_id` | MitigationId | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

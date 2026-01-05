@@ -24,16 +24,16 @@ GET PDF of all metrics for a given auto discovered API endpoint for App type.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `app_type_name` | App Type | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
-| `service_name` | Service | `N:public or S:productpage.` |
+| `app_type_name` | App Type | `-` |
+| `namespace` | Namespace | `-` |
+| `service_name` | Service | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `collapsed_url` | API endpoint for which PDFs are requested. | `Value` |
-| `method` | Method of API endpoint for which PDFs are requested. | `Value` |
+| `collapsed_url` | API endpoint for which PDFs are requested. | `-` |
+| `method` | Method of API endpoint for which PDFs are requested. | `-` |
 
 ## Side Effects
 

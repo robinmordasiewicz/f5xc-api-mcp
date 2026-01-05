@@ -25,7 +25,7 @@ Deprecated: use ResetPasswordByAdmin RPC instead.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

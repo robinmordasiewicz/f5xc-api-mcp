@@ -23,8 +23,8 @@ Verify DNS Domain for a given dns_domain object.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `example.com.` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

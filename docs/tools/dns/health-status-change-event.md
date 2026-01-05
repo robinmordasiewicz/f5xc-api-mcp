@@ -23,10 +23,10 @@ GET DNS Load Balancer Pool Health Status Changes.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `dns_lb_name` | DNS Load Balancer Name | `Dns_lb1` |
-| `dns_lb_pool_name` | DNS Load Balancer Pool Name | `Dns_lb_pool1.` |
-| `namespace` | Namespace | `Ns1` |
-| `pool_member_address` | DNS Load Balancer Pool Member Address | `10.0.0.1` |
+| `dns_lb_name` | DNS Load Balancer Name | `-` |
+| `dns_lb_pool_name` | DNS Load Balancer Pool Name | `-` |
+| `namespace` | Namespace | `-` |
+| `pool_member_address` | DNS Load Balancer Pool Member Address | `-` |
 
 ## Example Usage
 

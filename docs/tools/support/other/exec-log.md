@@ -23,15 +23,15 @@ Retrieve exec history on node.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `node` | Node Name | `Master-0` |
-| `site` | Site Name | `Value` |
+| `namespace` | Namespace | `-` |
+| `node` | Node Name | `-` |
+| `site` | Site Name | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `line_count` | Number of last log lines. | `200` |
+| `line_count` | Number of last log lines. | `-` |
 
 ## Example Usage
 

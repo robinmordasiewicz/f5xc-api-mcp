@@ -23,8 +23,8 @@ Unmerge Source Discovered schema from API Endpoint merged schema.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Virtual Host Name | `Blogging-app-vhost.` |
-| `namespace` | Namespace | `Blogging-app.` |
+| `name` | Virtual Host Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

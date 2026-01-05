@@ -28,16 +28,16 @@ version is created when the content is updated.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Volt-API-specs.` |
-| `namespace` | Namespace | `System` |
-| `object_type` | Object_type | `Swagger` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `object_type` | Object_type | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `force_delete` | Optional query parameter. If provided will DELETE all the versions of the specified object. | `Value` |
-| `version` | Version of the stored_object in "v{n}-{YY}-{MM}-{DD}" formatted string, where n is version number and YY/MM/DD is year, month and date. | `V1-21-01-12.` |
+| `force_delete` | Optional query parameter. If provided will DELETE all the versions of the specified object. | `-` |
+| `version` | Version of the stored_object in "v{n}-{YY}-{MM}-{DD}" formatted string, where n is version number and YY/MM/DD is year, month and date. | `-` |
 
 ## Side Effects
 

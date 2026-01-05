@@ -23,15 +23,15 @@ ListObjects is an API to list objects in object store.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
-| `object_type` | Object_type | `Swagger` |
+| `namespace` | Namespace | `-` |
+| `object_type` | Object_type | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `latest_version_only` | Optional query parameter. If passed, returns only latest version of the objects. | `-` |
-| `name` | Optional query parameter. Name of the stored_object. | `Example-file, shared/example-file, example-ns/example-file.` |
+| `name` | Optional query parameter. Name of the stored_object. | `-` |
 | `query_type` | Optional query parameter. The type of search query needs to be performed. Could be EXACT_MATCH or PREFIX_MATCH. | `-` |
 
 ## Example Usage

@@ -23,7 +23,7 @@ Create creates a new label in shared namespace. Any other namespace requested wi
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

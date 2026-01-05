@@ -23,16 +23,16 @@ List all the behaviors for a script depending on start time and end time.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `id` | ID | `S-1234567` |
-| `namespace` | Namespace | `Default` |
+| `id` | ID | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `end_time` | X-required | `1570194300.` |
-| `start_time` | X-required | `1570194000.` |
-| `type` | X-required | `NEW` |
+| `end_time` | X-required | `-` |
+| `start_time` | X-required | `-` |
+| `type` | X-required | `-` |
 
 ## Example Usage
 

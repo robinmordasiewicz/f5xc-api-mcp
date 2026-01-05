@@ -28,13 +28,13 @@ Query will look into current tenants shared namespace and VES-I/O shared.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `key` | Key to retrieve. | `Value` |
+| `key` | Key to retrieve. | `-` |
 | `query` | Query Type | `-` |
 
 ## Example Usage

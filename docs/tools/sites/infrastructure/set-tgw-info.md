@@ -23,8 +23,8 @@ Configure TGW Information like tgw-ID, F5 Distributed Cloud site's VPC-ID.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `AWS-tgw-site-1.` |
-| `namespace` | Namespace | `Default` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

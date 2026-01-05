@@ -23,9 +23,9 @@ Returned from list of terraform parameter objects for a given view.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `view_kind` | Kind of View | `Value` |
-| `view_name` | Name of view | `Value` |
+| `namespace` | Namespace | `-` |
+| `view_kind` | Kind of View | `-` |
+| `view_name` | Name of view | `-` |
 
 ## Example Usage
 

@@ -23,13 +23,13 @@ Downloadbotdetectionupdatesreleasenotes CustomAPI.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `deployment_id` | X-required | `06957ed8-52b5-43e0-bb56-429db281bfb4.` |
+| `deployment_id` | X-required | `-` |
 
 ## Example Usage
 

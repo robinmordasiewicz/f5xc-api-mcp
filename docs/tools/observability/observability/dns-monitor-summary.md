@@ -23,15 +23,15 @@ Returns the DNS monitor health status, latency, and trend.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `end_time` | End_time. | `2020-11-17T13:41:49.083255Z.` |
-| `monitor_name` | Monitor_name. | `Monitor1` |
-| `start_time` | Start_time. X-required | `2020-11-17T12:41:49.083255Z.` |
+| `end_time` | End_time. | `-` |
+| `monitor_name` | Monitor_name. | `-` |
+| `start_time` | Start_time. X-required | `-` |
 
 ## Example Usage
 

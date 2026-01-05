@@ -27,8 +27,8 @@ one stop shop to review activities to mitigate a DDoS attack.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `event_id` | Event ID | `9ba097cf-35e3-4560-9c00-5a1a36b8f85b.` |
+| `namespace` | Namespace | `-` |
+| `event_id` | Event ID | `-` |
 
 ## Side Effects
 

@@ -23,8 +23,8 @@ API to test receiver destination sink connection.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `id` | ID | `Splunk-cloud-receiver.` |
-| `namespace` | Namespace | `System` |
+| `id` | ID | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

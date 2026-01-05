@@ -23,8 +23,8 @@ Fetch the captured pcap data from an earlier Tcpdump request.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
-| `site` | Site Name | `Value` |
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
 
 ## Side Effects
 
