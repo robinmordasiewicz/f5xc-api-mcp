@@ -41,6 +41,8 @@ export interface ToolIndexEntry {
   supportsMetrics: boolean;
   /** Resource tier requirement (v1.0.84+) */
   resourceTier: string | null;
+  /** API response time from live discovery in ms (v2.0.5+) */
+  discoveryResponseTimeMs?: number;
 }
 
 /**

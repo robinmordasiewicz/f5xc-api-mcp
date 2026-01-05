@@ -14,7 +14,49 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 /**
- * CLI metadata for quick start examples
+ * Workflow step in a common workflow (v2.0.5+)
+ */
+export interface WorkflowStep {
+  /** Step number in sequence */
+  step: number;
+  /** Command to execute */
+  command: string;
+  /** Description of what this step does */
+  description: string;
+}
+
+/**
+ * Common workflow for domain operations (v2.0.5+)
+ */
+export interface CommonWorkflow {
+  /** Workflow name */
+  name: string;
+  /** Workflow description */
+  description: string;
+  /** Ordered steps to execute */
+  steps: WorkflowStep[];
+  /** Prerequisites before starting workflow */
+  prerequisites?: string[];
+  /** Expected outcome after workflow completion */
+  expectedOutcome?: string;
+}
+
+/**
+ * Troubleshooting guide for common issues (v2.0.5+)
+ */
+export interface TroubleshootingGuide {
+  /** Problem description */
+  problem: string;
+  /** Observable symptoms */
+  symptoms: string[];
+  /** Commands to diagnose the issue */
+  diagnosisCommands: string[];
+  /** Possible solutions */
+  solutions: string[];
+}
+
+/**
+ * CLI metadata for quick start examples and workflows (v2.0.5+)
  */
 export interface CliMetadata {
   quick_start?: {
@@ -22,6 +64,12 @@ export interface CliMetadata {
     description: string;
     expected_output: string;
   };
+  /** Common workflows for this domain */
+  common_workflows?: CommonWorkflow[];
+  /** Troubleshooting guides for common issues */
+  troubleshooting?: TroubleshootingGuide[];
+  /** Domain icon */
+  icon?: string;
 }
 
 /**
@@ -159,13 +207,31 @@ interface RawSpecEntry {
   "x-f5xc-logo-svg"?: string;
   "x-f5xc-primary-resources": RawResourceEntry[];
   "x-f5xc-primary-resources-simple": string[];
-  // cli_metadata remains snake_case (wrapper field)
-  cli_metadata?: {
+  // x-f5xc-cli-metadata (v2.0.5+) contains structured CLI guidance
+  "x-f5xc-cli-metadata"?: {
     quick_start?: {
       command: string;
       description: string;
       expected_output: string;
     };
+    common_workflows?: Array<{
+      name: string;
+      description: string;
+      steps: Array<{
+        step: number;
+        command: string;
+        description: string;
+      }>;
+      prerequisites?: string[];
+      expected_outcome?: string;
+    }>;
+    troubleshooting?: Array<{
+      problem: string;
+      symptoms: string[];
+      diagnosis_commands: string[];
+      solutions: string[];
+    }>;
+    icon?: string;
   };
 }
 
@@ -210,8 +276,38 @@ function transformResourceEntry(raw: RawResourceEntry): ResourceMetadata {
 }
 
 /**
+ * Transform raw CLI metadata to camelCase CliMetadata (v2.0.5+)
+ */
+function transformCliMetadata(raw: RawSpecEntry["x-f5xc-cli-metadata"]): CliMetadata | undefined {
+  if (!raw) return undefined;
+
+  return {
+    quick_start: raw.quick_start,
+    common_workflows: raw.common_workflows?.map((wf) => ({
+      name: wf.name,
+      description: wf.description,
+      steps: wf.steps.map((s) => ({
+        step: s.step,
+        command: s.command,
+        description: s.description,
+      })),
+      prerequisites: wf.prerequisites,
+      expectedOutcome: wf.expected_outcome,
+    })),
+    troubleshooting: raw.troubleshooting?.map((ts) => ({
+      problem: ts.problem,
+      symptoms: ts.symptoms,
+      diagnosisCommands: ts.diagnosis_commands,
+      solutions: ts.solutions,
+    })),
+    icon: raw.icon,
+  };
+}
+
+/**
  * Transform raw spec entry (x-f5xc-* namespace) to DomainMetadata (camelCase)
  * v2.0.0+: x-f5xc-category replaces both domain_category and ui_category
+ * v2.0.5+: x-f5xc-cli-metadata contains workflows and troubleshooting
  */
 function transformSpecEntry(raw: RawSpecEntry): DomainMetadata {
   // x-f5xc-category is a DRY consolidation of domain_category and ui_category
@@ -237,7 +333,7 @@ function transformSpecEntry(raw: RawSpecEntry): DomainMetadata {
     primaryResourcesSimple: raw["x-f5xc-primary-resources-simple"] || [],
     icon: raw["x-f5xc-icon"],
     logoSvg: raw["x-f5xc-logo-svg"],
-    cliMetadata: raw.cli_metadata,
+    cliMetadata: transformCliMetadata(raw["x-f5xc-cli-metadata"]),
   };
 }
 

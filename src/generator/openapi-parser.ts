@@ -120,6 +120,9 @@ const OpenApiOperationSchema = z.object({
   "x-ves-required-fields": z.array(z.string()).optional(),
   "x-ves-confirmation-required": z.boolean().optional(),
   "x-ves-operation-metadata": OperationMetadataSchema.optional(),
+  // Discovery metadata from live API exploration (v2.0.5+)
+  "x-discovered-response-time-ms": z.number().optional(),
+  "x-discovered-sample-size": z.number().optional(),
 });
 
 const OpenApiPathItemSchema = z.object({
@@ -176,6 +179,16 @@ export interface CommonError {
 export interface PerformanceImpact {
   latency?: string;
   resource_usage?: string;
+}
+
+/**
+ * Discovery metadata from live API exploration (v2.0.5+)
+ */
+export interface DiscoveryMetadata {
+  /** API response time in milliseconds */
+  responseTimeMs?: number;
+  /** Number of samples collected during discovery */
+  sampleSize?: number;
 }
 
 /**
@@ -274,6 +287,10 @@ export interface ParsedOperation {
   oneOfGroups: OneOfGroup[];
   /** Subscription/addon service requirements */
   subscriptionRequirements: SubscriptionRequirement[];
+
+  // Discovery metadata (v2.0.5+)
+  /** API discovery metadata from live exploration */
+  discoveryMetadata?: DiscoveryMetadata;
 }
 
 /**
@@ -526,6 +543,17 @@ function extractDomainOperations(
       const confirmationRequired = operation["x-ves-confirmation-required"] ?? false;
       const operationMetadata = operation["x-ves-operation-metadata"] ?? null;
 
+      // Extract discovery metadata from live API exploration (v2.0.5+)
+      const discoveredResponseTimeMs = operation["x-discovered-response-time-ms"];
+      const discoveredSampleSize = operation["x-discovered-sample-size"];
+      const discoveryMetadata: DiscoveryMetadata | undefined =
+        discoveredResponseTimeMs !== undefined || discoveredSampleSize !== undefined
+          ? {
+              responseTimeMs: discoveredResponseTimeMs,
+              sampleSize: discoveredSampleSize,
+            }
+          : undefined;
+
       // Extract parameter-level metadata (examples, validation rules, displaynames)
       const parameterExamples: Record<string, string> = {};
       const validationRules: Record<string, Record<string, string>> = {};
@@ -601,6 +629,8 @@ function extractDomainOperations(
         dependencies,
         oneOfGroups: extractedDeps.oneOfGroups,
         subscriptionRequirements,
+        // Discovery metadata (v2.0.5+)
+        discoveryMetadata,
       });
     }
   }
