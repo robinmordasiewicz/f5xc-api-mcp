@@ -14,9 +14,9 @@ import { HttpClient, createHttpClient } from "./auth/http-client.js";
 import { logger } from "./utils/logging.js";
 import { VERSION } from "./index.js";
 import {
-  WORKFLOW_PROMPTS,
+  getWorkflowPrompts,
   processPromptTemplate,
-  ERROR_PROMPTS,
+  getErrorPrompts,
   processErrorTemplate,
 } from "./prompts/index.js";
 import { RESOURCE_TYPES, createResourceHandler, ResourceHandler } from "./resources/index.js";
@@ -856,8 +856,9 @@ export class F5XCApiServer {
    * Register MCP prompts for common workflows
    */
   private registerPrompts(): void {
-    // Register all workflow prompts
-    for (const workflow of WORKFLOW_PROMPTS) {
+    // Register all workflow prompts (loaded from upstream)
+    const workflowPrompts = getWorkflowPrompts();
+    for (const workflow of workflowPrompts) {
       // Build Zod schema for arguments
       const argSchema: Record<string, z.ZodTypeAny> = {};
       for (const arg of workflow.arguments) {
@@ -901,8 +902,9 @@ export class F5XCApiServer {
       });
     }
 
-    // Phase B: Register error resolution prompts
-    for (const errorPrompt of ERROR_PROMPTS) {
+    // Phase B: Register error resolution prompts (loaded from upstream)
+    const errorPrompts = getErrorPrompts();
+    for (const errorPrompt of errorPrompts) {
       // Build Zod schema for arguments
       const argSchema: Record<string, z.ZodTypeAny> = {};
       for (const arg of errorPrompt.arguments) {
@@ -937,8 +939,8 @@ export class F5XCApiServer {
     }
 
     logger.info("Prompt registration completed", {
-      workflows: WORKFLOW_PROMPTS.length,
-      errorPrompts: ERROR_PROMPTS.length,
+      workflows: workflowPrompts.length,
+      errorPrompts: errorPrompts.length,
     });
   }
 

@@ -3,7 +3,6 @@
  */
 
 export {
-  WORKFLOW_PROMPTS,
   getWorkflowPrompts,
   getWorkflowPrompt,
   processPromptTemplate,
@@ -14,7 +13,6 @@ export type { WorkflowPrompt, WorkflowArgument } from "./workflows.js";
 
 // Phase B: Error resolution prompts (now sourced from upstream)
 export {
-  ERROR_PROMPTS,
   getErrorPrompts,
   getErrorPrompt,
   getErrorPromptByName,

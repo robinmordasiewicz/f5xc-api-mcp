@@ -160,18 +160,6 @@ export function getErrorPrompts(): ErrorPrompt[] {
 }
 
 /**
- * Backward compatibility: static array reference
- * @deprecated Use getErrorPrompts() instead
- */
-export const ERROR_PROMPTS: ErrorPrompt[] = [];
-
-// Initialize on first access - backward compatibility workaround
-Object.defineProperty(module.exports || {}, "ERROR_PROMPTS", {
-  get: () => loadErrorPrompts(),
-  enumerable: true,
-});
-
-/**
  * Get error prompt by HTTP status code
  */
 export function getErrorPrompt(code: number): ErrorPrompt | undefined {

@@ -148,19 +148,6 @@ export function getWorkflowPrompts(): WorkflowPrompt[] {
 }
 
 /**
- * Backward compatibility: static array reference
- * @deprecated Use getWorkflowPrompts() instead
- */
-export const WORKFLOW_PROMPTS: WorkflowPrompt[] = [];
-
-// Initialize on first access - this is a workaround for backward compatibility
-// The array will be empty until specs are loaded
-Object.defineProperty(module.exports || {}, "WORKFLOW_PROMPTS", {
-  get: () => loadWorkflowPrompts(),
-  enumerable: true,
-});
-
-/**
  * Get workflow prompt by name/ID
  */
 export function getWorkflowPrompt(name: string): WorkflowPrompt | undefined {
