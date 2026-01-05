@@ -6,7 +6,7 @@
  */
 
 import { getToolByName } from "../registry.js";
-import { toolExists } from "./index-loader.js";
+import { toolExists, getToolEntry } from "./index-loader.js";
 import type { CreationPlan, WorkflowStep } from "./resolver.js";
 
 /**
@@ -94,9 +94,9 @@ export interface EstimateCostParams {
 }
 
 /**
- * Latency level to milliseconds mapping
+ * Default latency level to milliseconds mapping (fallback when no discovery data)
  */
-const LATENCY_MS_MAP: Record<LatencyLevel, number> = {
+const DEFAULT_LATENCY_MS: Record<LatencyLevel, number> = {
   low: 500,
   moderate: 2000,
   high: 5000,
@@ -112,6 +112,19 @@ const LATENCY_DESCRIPTIONS: Record<LatencyLevel, string> = {
   high: "Complex operation, may take 3-10 seconds or involve async processing",
   unknown: "Latency not specified, estimate based on operation type",
 };
+
+/**
+ * Get milliseconds for latency level, using discovered data when available
+ */
+function getLatencyMs(toolName: string, level: LatencyLevel): number {
+  // Check for discovered response time from live API exploration
+  const entry = getToolEntry(toolName);
+  if (entry?.discoveryResponseTimeMs) {
+    return entry.discoveryResponseTimeMs;
+  }
+  // Fall back to default estimates
+  return DEFAULT_LATENCY_MS[level];
+}
 
 /**
  * Estimate token count for a string (rough approximation)
@@ -238,7 +251,7 @@ export function estimateToolLatency(toolName: string): LatencyEstimate {
   const level = getLatencyLevel(toolName);
   return {
     level,
-    estimatedMs: LATENCY_MS_MAP[level],
+    estimatedMs: getLatencyMs(toolName, level),
     description: LATENCY_DESCRIPTIONS[level],
   };
 }

@@ -2,8 +2,14 @@
  * MCP Workflow Prompts
  *
  * Provides guided workflows for common F5XC operations.
- * These prompts help users accomplish complex multi-step tasks.
+ * Workflows are now sourced from upstream x-f5xc-guided-workflows (v2.0.8+).
  */
+
+import {
+  getGuidedWorkflows,
+  getGuidedWorkflowById,
+  type GuidedWorkflow,
+} from "../generator/domain-metadata.js";
 
 /**
  * Workflow prompt definition
@@ -32,331 +38,128 @@ export interface WorkflowArgument {
 }
 
 /**
- * Deploy HTTP Load Balancer workflow
+ * Convert upstream GuidedWorkflow to WorkflowPrompt format
  */
-export const deployHttpLoadBalancerPrompt: WorkflowPrompt = {
-  name: "deploy-http-loadbalancer",
-  description:
-    "Guide through deploying an HTTP Load Balancer with origin pool, health checks, and optional WAF",
-  arguments: [
-    {
-      name: "namespace",
-      description: "Namespace for the load balancer",
-      required: true,
-    },
-    {
-      name: "name",
-      description: "Name for the load balancer",
-      required: true,
-    },
-    {
-      name: "domain",
-      description: "Domain name for the load balancer (e.g., app.example.com)",
-      required: true,
-    },
-    {
-      name: "backend_ip",
-      description: "IP address of the backend server",
-      required: true,
-    },
-    {
-      name: "backend_port",
-      description: "Port of the backend server (default: 80)",
-      required: false,
-    },
-    {
-      name: "enable_waf",
-      description: "Enable Web Application Firewall (true/false)",
-      required: false,
-    },
-  ],
-  template: `# Deploy HTTP Load Balancer Workflow
+function convertToWorkflowPrompt(workflow: GuidedWorkflow): WorkflowPrompt {
+  // Generate template from workflow steps
+  const steps = workflow.steps
+    .map((step) => {
+      let content = `### Step ${step.order}: ${step.name}\n\n`;
+      content += `${step.description}\n`;
 
-I'll help you deploy an HTTP Load Balancer in F5 Distributed Cloud.
+      if (step.resource) {
+        content += `\nUse the **f5xc-api-${workflow.domain}-${step.resource}-${step.action}** tool.\n`;
+      }
 
-## Configuration Summary
-- **Namespace**: {{namespace}}
-- **Load Balancer Name**: {{name}}
-- **Domain**: {{domain}}
-- **Backend**: {{backend_ip}}:{{backend_port}}
-- **WAF Enabled**: {{enable_waf}}
-
-## Steps
-
-### Step 1: Create Origin Pool
-First, create an origin pool to define your backend servers.
-
-Use the **f5xc-api-waap-origin-pool-create** tool or CURL:
-
-**CURL (Authenticated):**
-\`\`\`bash
-curl -X POST "https://\${TENANT}.console.ves.volterra.io/api/config/namespaces/{{namespace}}/origin_pools" \\
-  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "metadata": {
-      "name": "{{name}}-origin-pool",
-      "namespace": "{{namespace}}"
-    },
-    "spec": {
-      "origin_servers": [{
-        "public_ip": {
-          "ip": "{{backend_ip}}"
+      if (step.tips && step.tips.length > 0) {
+        content += `\n**Tips:**\n`;
+        for (const tip of step.tips) {
+          content += `- ${tip}\n`;
         }
-      }],
-      "port": {{backend_port}},
-      "no_tls": {},
-      "endpoint_selection": "LOCAL_PREFERRED",
-      "loadbalancer_algorithm": "ROUND_ROBIN"
+      }
+
+      if (step.verification && step.verification.length > 0) {
+        content += `\n**Verification:**\n`;
+        for (const v of step.verification) {
+          content += `- ${v}\n`;
+        }
+      }
+
+      return content;
+    })
+    .join("\n");
+
+  // Build prerequisites section
+  let prereqs = "";
+  if (workflow.prerequisites && workflow.prerequisites.length > 0) {
+    prereqs = `## Prerequisites\n${workflow.prerequisites.map((p) => `- ${p}`).join("\n")}\n\n`;
+  }
+
+  // Build full template
+  const template = `# ${workflow.name}
+
+${workflow.description}
+
+${prereqs}## Steps
+
+${steps}
+## Summary
+
+Workflow complexity: **${workflow.complexity}**
+Estimated steps: ${workflow.estimatedSteps}
+`;
+
+  // Extract arguments from required fields in steps
+  const argumentSet = new Map<string, WorkflowArgument>();
+  argumentSet.set("namespace", {
+    name: "namespace",
+    description: "Namespace for the resources",
+    required: true,
+  });
+  argumentSet.set("name", {
+    name: "name",
+    description: "Name prefix for resources",
+    required: true,
+  });
+
+  for (const step of workflow.steps) {
+    if (step.requiredFields) {
+      for (const field of step.requiredFields) {
+        if (!argumentSet.has(field)) {
+          argumentSet.set(field, {
+            name: field,
+            description: `${field.replace(/_/g, " ")} for the operation`,
+            required: true,
+          });
+        }
+      }
     }
-  }'
-\`\`\`
+  }
 
-### Step 2: Create HTTP Load Balancer
+  return {
+    name: workflow.id,
+    description: workflow.description,
+    arguments: Array.from(argumentSet.values()),
+    template,
+  };
+}
 
-Use the **f5xc-api-waap-http-loadbalancer-create** tool or CURL:
-
-**CURL (Authenticated):**
-\`\`\`bash
-curl -X POST "https://\${TENANT}.console.ves.volterra.io/api/config/namespaces/{{namespace}}/http_loadbalancers" \\
-  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "metadata": {
-      "name": "{{name}}",
-      "namespace": "{{namespace}}"
-    },
-    "spec": {
-      "domains": ["{{domain}}"],
-      "http": {
-        "dns_volterra_managed": true
-      },
-      "default_route_pools": [{
-        "pool": {
-          "namespace": "{{namespace}}",
-          "name": "{{name}}-origin-pool"
-        },
-        "weight": 1
-      }],
-      "advertise_on_public_default_vip": {}
-    }
-  }'
-\`\`\`
-
-{{#if enable_waf}}
-### Step 3: Enable WAF Protection
-
-Use the **f5xc-api-waf-app-firewall-create** tool to create a WAF policy.
-{{/if}}
-
-## Verification
-
-After deployment, verify using the following API tools:
-- **f5xc-api-waap-http-loadbalancer-get** with name={{name}}, namespace={{namespace}}
-- **f5xc-api-waap-origin-pool-get** with name={{name}}-origin-pool, namespace={{namespace}}
-
-## Next Steps
-- Configure DNS to point {{domain}} to the F5XC VIP
-- Set up monitoring and alerts
-- Consider enabling additional security features
-`,
-};
+// Cache for generated workflow prompts
+let cachedWorkflowPrompts: WorkflowPrompt[] | null = null;
 
 /**
- * Configure WAF workflow
+ * Get all workflow prompts from upstream data
  */
-export const configureWafPrompt: WorkflowPrompt = {
-  name: "configure-waf",
-  description: "Guide through configuring Web Application Firewall protection",
-  arguments: [
-    {
-      name: "namespace",
-      description: "Namespace for the WAF policy",
-      required: true,
-    },
-    {
-      name: "name",
-      description: "Name for the WAF policy",
-      required: true,
-    },
-    {
-      name: "loadbalancer",
-      description: "Name of the HTTP Load Balancer to protect",
-      required: true,
-    },
-    {
-      name: "mode",
-      description: "WAF mode: blocking or monitoring",
-      required: false,
-    },
-  ],
-  template: `# Configure WAF Protection Workflow
+function loadWorkflowPrompts(): WorkflowPrompt[] {
+  if (cachedWorkflowPrompts) {
+    return cachedWorkflowPrompts;
+  }
 
-I'll help you configure Web Application Firewall protection for your application.
-
-## Configuration Summary
-- **Namespace**: {{namespace}}
-- **WAF Policy Name**: {{name}}
-- **Load Balancer**: {{loadbalancer}}
-- **Mode**: {{mode}}
-
-## Steps
-
-### Step 1: Create Application Firewall Policy
-
-Use the **f5xc-api-waf-app-firewall-create** tool or CURL:
-
-**CURL (Authenticated):**
-\`\`\`bash
-curl -X POST "https://\${TENANT}.console.ves.volterra.io/api/config/namespaces/{{namespace}}/app_firewalls" \\
-  -H "Authorization: APIToken \${F5XC_API_TOKEN}" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "metadata": {
-      "name": "{{name}}",
-      "namespace": "{{namespace}}"
-    },
-    "spec": {
-      "detection_settings": {
-        "signature_selection_setting": {
-          "default_attack_type_settings": {},
-          "high_medium_accuracy_signatures": {}
-        },
-        "enable_suppression": {},
-        "enable_threat_campaigns": {}
-      },
-      "bot_protection_setting": {
-        "malicious_bot_action": "BLOCK",
-        "suspicious_bot_action": "REPORT",
-        "good_bot_action": "REPORT"
-      },
-      "blocking": {}
-    }
-  }'
-\`\`\`
-
-### Step 2: Attach WAF to Load Balancer
-
-Update your HTTP Load Balancer to use the WAF policy.
-
-## Verification
-
-Use the **f5xc-api-waf-app-firewall-get** tool with name={{name}}, namespace={{namespace}}.
-
-## Security Recommendations
-- Start in monitoring mode before enabling blocking
-- Review security events regularly
-- Fine-tune signature settings based on your application
-- Consider enabling bot defense for API endpoints
-`,
-};
+  const upstreamWorkflows = getGuidedWorkflows();
+  cachedWorkflowPrompts = upstreamWorkflows.map(convertToWorkflowPrompt);
+  return cachedWorkflowPrompts;
+}
 
 /**
- * Create Multi-Cloud Site workflow
+ * All workflow prompts (dynamically generated from upstream)
  */
-export const createMultiCloudSitePrompt: WorkflowPrompt = {
-  name: "create-multicloud-site",
-  description: "Guide through deploying an F5XC site in AWS, Azure, or GCP",
-  arguments: [
-    {
-      name: "namespace",
-      description: "Namespace for the site",
-      required: true,
-    },
-    {
-      name: "name",
-      description: "Name for the site",
-      required: true,
-    },
-    {
-      name: "cloud",
-      description: "Cloud provider: aws, azure, or gcp",
-      required: true,
-    },
-    {
-      name: "region",
-      description: "Cloud region for deployment",
-      required: true,
-    },
-    {
-      name: "vpc_id",
-      description: "VPC/VNet ID to deploy into",
-      required: true,
-    },
-  ],
-  template: `# Create Multi-Cloud Site Workflow
-
-I'll help you deploy an F5 Distributed Cloud site in {{cloud}}.
-
-## Configuration Summary
-- **Namespace**: {{namespace}}
-- **Site Name**: {{name}}
-- **Cloud Provider**: {{cloud}}
-- **Region**: {{region}}
-- **VPC/VNet**: {{vpc_id}}
-
-## Prerequisites
-1. Cloud credentials configured in F5XC
-2. Appropriate IAM permissions in {{cloud}}
-3. VPC/VNet exists and is accessible
-
-## Steps
-
-### Step 1: Verify Cloud Credentials
-
-Use the **f5xc-api-cloud-infrastructure-cloud-credentials-list** tool to verify credentials.
-
-### Step 2: Create Site
-
-Use the appropriate API tool based on your cloud provider:
-
-{{#if (eq cloud "aws")}}
-**AWS VPC Site:**
-Use **f5xc-api-sites-aws-vpc-site-create** with appropriate parameters.
-{{/if}}
-
-{{#if (eq cloud "azure")}}
-**Azure VNet Site:**
-Use **f5xc-api-sites-azure-vnet-site-create** with appropriate parameters.
-{{/if}}
-
-{{#if (eq cloud "gcp")}}
-**GCP VPC Site:**
-Use **f5xc-api-sites-gcp-vpc-site-create** with appropriate parameters.
-{{/if}}
-
-### Step 3: Monitor Site Status
-
-Use the appropriate API get tool to check site status:
-- AWS: **f5xc-api-sites-aws-vpc-site-get**
-- Azure: **f5xc-api-sites-azure-vnet-site-get**
-- GCP: **f5xc-api-sites-gcp-vpc-site-get**
-
-## Verification
-
-Use **f5xc-api-sites-site-list** to view all sites.
-
-## Next Steps
-- Configure network policies
-- Set up load balancers to use this site
-- Enable monitoring and logging
-`,
-};
+export function getWorkflowPrompts(): WorkflowPrompt[] {
+  return loadWorkflowPrompts();
+}
 
 /**
- * All workflow prompts
- */
-export const WORKFLOW_PROMPTS: WorkflowPrompt[] = [
-  deployHttpLoadBalancerPrompt,
-  configureWafPrompt,
-  createMultiCloudSitePrompt,
-];
-
-/**
- * Get workflow prompt by name
+ * Get workflow prompt by name/ID
  */
 export function getWorkflowPrompt(name: string): WorkflowPrompt | undefined {
-  return WORKFLOW_PROMPTS.find((p) => p.name === name);
+  // First check upstream by ID
+  const upstream = getGuidedWorkflowById(name);
+  if (upstream) {
+    return convertToWorkflowPrompt(upstream);
+  }
+
+  // Fall back to searching all prompts by name
+  const prompts = loadWorkflowPrompts();
+  return prompts.find((p) => p.name === name);
 }
 
 /**
@@ -385,4 +188,11 @@ export function processPromptTemplate(template: string, args: Record<string, str
   });
 
   return result;
+}
+
+/**
+ * Clear cached workflow prompts (useful for testing)
+ */
+export function clearWorkflowCache(): void {
+  cachedWorkflowPrompts = null;
 }

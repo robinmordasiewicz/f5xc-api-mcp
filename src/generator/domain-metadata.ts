@@ -537,4 +537,504 @@ export function clearMetadataCache(): void {
   cachedSpecIndex = null;
   resourceToDomainCache = null;
   resourceMetadataCache = null;
+  cachedGuidedWorkflows = null;
+  cachedErrorResolution = null;
+  cachedCriticalResources = null;
+  cachedAcronyms = null;
+}
+
+// ============================================================================
+// Upstream Extensions (v2.0.8+)
+// x-f5xc-guided-workflows, x-f5xc-error-resolution, x-f5xc-critical-resources
+// ============================================================================
+
+/**
+ * Guided workflow step from upstream x-f5xc-guided-workflows (v2.0.8+)
+ */
+export interface GuidedWorkflowStep {
+  order: number;
+  action: string;
+  name: string;
+  description: string;
+  resource?: string;
+  requiredFields?: string[];
+  dependsOn?: number[];
+  tips?: string[];
+  verification?: string[];
+  optional?: boolean;
+}
+
+/**
+ * Guided workflow from upstream x-f5xc-guided-workflows (v2.0.8+)
+ */
+export interface GuidedWorkflow {
+  id: string;
+  name: string;
+  description: string;
+  complexity: "low" | "medium" | "high";
+  estimatedSteps: number;
+  prerequisites: string[];
+  steps: GuidedWorkflowStep[];
+  domain: string;
+}
+
+/**
+ * HTTP error diagnostic step from upstream x-f5xc-error-resolution (v2.0.8+)
+ */
+export interface ErrorDiagnosticStep {
+  step: number;
+  action: string;
+  description: string;
+  command?: string;
+}
+
+/**
+ * HTTP error resolution from upstream x-f5xc-error-resolution (v2.0.8+)
+ */
+export interface HttpErrorResolution {
+  code: number;
+  name: string;
+  description: string;
+  commonCauses: string[];
+  diagnosticSteps: ErrorDiagnosticStep[];
+  prevention: string[];
+  relatedErrors: number[];
+}
+
+/**
+ * Resource-specific error pattern from upstream x-f5xc-error-resolution (v2.0.8+)
+ */
+export interface ResourceErrorPattern {
+  errorCode: number;
+  pattern: string;
+  resolution: string;
+}
+
+/**
+ * Error resolution index structure (v2.0.8+)
+ */
+export interface ErrorResolutionIndex {
+  version: string;
+  httpErrors: Map<number, HttpErrorResolution>;
+  resourceErrors: Map<string, ResourceErrorPattern[]>;
+}
+
+/**
+ * Guided workflows index structure (v2.0.8+)
+ */
+export interface GuidedWorkflowsIndex {
+  version: string;
+  totalWorkflows: number;
+  domains: string[];
+  workflows: GuidedWorkflow[];
+}
+
+/**
+ * Technical acronym entry from upstream x-f5xc-acronyms (v2.0.10+)
+ */
+export interface AcronymEntry {
+  /** The acronym (e.g., "TCP", "WAF") */
+  acronym: string;
+  /** Full expansion (e.g., "Transmission Control Protocol") */
+  expansion: string;
+  /** Category (e.g., "Networking", "Security") */
+  category: string;
+}
+
+/**
+ * Acronyms extension index structure (v2.0.10+)
+ */
+export interface AcronymsIndex {
+  version: string;
+  categories: string[];
+  acronyms: AcronymEntry[];
+}
+
+// Raw types for JSON parsing
+interface RawGuidedWorkflowStep {
+  order: number;
+  action: string;
+  name: string;
+  description: string;
+  resource?: string;
+  required_fields?: string[];
+  depends_on?: number[];
+  tips?: string[];
+  verification?: string[];
+  optional?: boolean;
+}
+
+interface RawGuidedWorkflow {
+  id: string;
+  name: string;
+  description: string;
+  complexity: string;
+  estimated_steps: number;
+  prerequisites: string[];
+  steps: RawGuidedWorkflowStep[];
+  domain: string;
+}
+
+interface RawGuidedWorkflowsExtension {
+  version: string;
+  total_workflows: number;
+  domains: string[];
+  workflows: RawGuidedWorkflow[];
+}
+
+interface RawErrorDiagnosticStep {
+  step: number;
+  action: string;
+  description: string;
+  command?: string;
+}
+
+interface RawHttpError {
+  code: number;
+  name: string;
+  description: string;
+  common_causes: string[];
+  diagnostic_steps: RawErrorDiagnosticStep[];
+  prevention: string[];
+  related_errors: number[];
+}
+
+interface RawResourceError {
+  error_code: number;
+  pattern: string;
+  resolution: string;
+}
+
+interface RawErrorResolutionExtension {
+  version: string;
+  http_errors: Record<string, RawHttpError>;
+  resource_errors: Record<string, RawResourceError[]>;
+}
+
+/**
+ * Raw acronym entry from JSON (snake_case)
+ */
+interface RawAcronymEntry {
+  acronym: string;
+  expansion: string;
+  category: string;
+}
+
+/**
+ * Raw acronyms extension from JSON (v2.0.10+)
+ */
+interface RawAcronymsExtension {
+  version: string;
+  categories: string[];
+  acronyms: RawAcronymEntry[];
+}
+
+interface RawSpecIndexWithExtensions extends RawSpecIndex {
+  "x-f5xc-guided-workflows"?: RawGuidedWorkflowsExtension;
+  "x-f5xc-error-resolution"?: RawErrorResolutionExtension;
+  "x-f5xc-critical-resources"?: string[];
+  "x-f5xc-acronyms"?: RawAcronymsExtension;
+}
+
+// Caches for new extensions
+let cachedGuidedWorkflows: GuidedWorkflowsIndex | null = null;
+let cachedErrorResolution: ErrorResolutionIndex | null = null;
+let cachedCriticalResources: string[] | null = null;
+let cachedAcronyms: AcronymsIndex | null = null;
+
+/**
+ * Transform raw guided workflow step to camelCase
+ */
+function transformGuidedWorkflowStep(raw: RawGuidedWorkflowStep): GuidedWorkflowStep {
+  return {
+    order: raw.order,
+    action: raw.action,
+    name: raw.name,
+    description: raw.description,
+    resource: raw.resource,
+    requiredFields: raw.required_fields,
+    dependsOn: raw.depends_on,
+    tips: raw.tips,
+    verification: raw.verification,
+    optional: raw.optional,
+  };
+}
+
+/**
+ * Transform raw guided workflow to camelCase
+ */
+function transformGuidedWorkflow(raw: RawGuidedWorkflow): GuidedWorkflow {
+  return {
+    id: raw.id,
+    name: raw.name,
+    description: raw.description,
+    complexity: raw.complexity as "low" | "medium" | "high",
+    estimatedSteps: raw.estimated_steps,
+    prerequisites: raw.prerequisites || [],
+    steps: raw.steps.map(transformGuidedWorkflowStep),
+    domain: raw.domain,
+  };
+}
+
+/**
+ * Load the raw spec index including extensions
+ */
+function loadRawSpecIndexWithExtensions(): RawSpecIndexWithExtensions {
+  const indexPath = getSpecIndexPath();
+
+  if (!existsSync(indexPath)) {
+    throw new Error(`Spec index not found at ${indexPath}. Run 'npm run sync-specs' first.`);
+  }
+
+  const content = readFileSync(indexPath, "utf-8");
+  return JSON.parse(content) as RawSpecIndexWithExtensions;
+}
+
+/**
+ * Load guided workflows from upstream specs (v2.0.8+)
+ */
+export function loadGuidedWorkflows(): GuidedWorkflowsIndex {
+  if (cachedGuidedWorkflows) {
+    return cachedGuidedWorkflows;
+  }
+
+  const raw = loadRawSpecIndexWithExtensions();
+  const ext = raw["x-f5xc-guided-workflows"];
+
+  if (!ext) {
+    cachedGuidedWorkflows = {
+      version: "0.0.0",
+      totalWorkflows: 0,
+      domains: [],
+      workflows: [],
+    };
+    return cachedGuidedWorkflows;
+  }
+
+  cachedGuidedWorkflows = {
+    version: ext.version,
+    totalWorkflows: ext.total_workflows,
+    domains: ext.domains || [],
+    workflows: ext.workflows.map(transformGuidedWorkflow),
+  };
+
+  return cachedGuidedWorkflows;
+}
+
+/**
+ * Get all guided workflows, optionally filtered by domain
+ */
+export function getGuidedWorkflows(domain?: string): GuidedWorkflow[] {
+  const index = loadGuidedWorkflows();
+
+  if (domain) {
+    return index.workflows.filter((w) => w.domain === domain);
+  }
+
+  return index.workflows;
+}
+
+/**
+ * Get a specific guided workflow by ID
+ */
+export function getGuidedWorkflowById(id: string): GuidedWorkflow | undefined {
+  const index = loadGuidedWorkflows();
+  return index.workflows.find((w) => w.id === id);
+}
+
+/**
+ * Get all domains that have guided workflows
+ */
+export function getDomainsWithWorkflows(): string[] {
+  const index = loadGuidedWorkflows();
+  return index.domains;
+}
+
+/**
+ * Load error resolution data from upstream specs (v2.0.8+)
+ */
+export function loadErrorResolution(): ErrorResolutionIndex {
+  if (cachedErrorResolution) {
+    return cachedErrorResolution;
+  }
+
+  const raw = loadRawSpecIndexWithExtensions();
+  const ext = raw["x-f5xc-error-resolution"];
+
+  if (!ext) {
+    cachedErrorResolution = {
+      version: "0.0.0",
+      httpErrors: new Map(),
+      resourceErrors: new Map(),
+    };
+    return cachedErrorResolution;
+  }
+
+  const httpErrors = new Map<number, HttpErrorResolution>();
+  for (const [codeStr, error] of Object.entries(ext.http_errors)) {
+    const code = parseInt(codeStr, 10);
+    httpErrors.set(code, {
+      code: error.code,
+      name: error.name,
+      description: error.description,
+      commonCauses: error.common_causes || [],
+      diagnosticSteps: (error.diagnostic_steps || []).map((s) => ({
+        step: s.step,
+        action: s.action,
+        description: s.description,
+        command: s.command,
+      })),
+      prevention: error.prevention || [],
+      relatedErrors: error.related_errors || [],
+    });
+  }
+
+  const resourceErrors = new Map<string, ResourceErrorPattern[]>();
+  for (const [resource, errors] of Object.entries(ext.resource_errors)) {
+    resourceErrors.set(
+      resource,
+      errors.map((e) => ({
+        errorCode: e.error_code,
+        pattern: e.pattern,
+        resolution: e.resolution,
+      }))
+    );
+  }
+
+  cachedErrorResolution = {
+    version: ext.version,
+    httpErrors,
+    resourceErrors,
+  };
+
+  return cachedErrorResolution;
+}
+
+/**
+ * Get HTTP error resolution by status code (v2.0.8+)
+ */
+export function getHttpErrorResolution(statusCode: number): HttpErrorResolution | undefined {
+  const index = loadErrorResolution();
+  return index.httpErrors.get(statusCode);
+}
+
+/**
+ * Get all HTTP error codes with resolutions
+ */
+export function getAllHttpErrorCodes(): number[] {
+  const index = loadErrorResolution();
+  return Array.from(index.httpErrors.keys()).sort((a, b) => a - b);
+}
+
+/**
+ * Get resource-specific error patterns (v2.0.8+)
+ */
+export function getResourceErrorPatterns(resourceType: string): ResourceErrorPattern[] {
+  const index = loadErrorResolution();
+  const normalized = resourceType.toLowerCase().replace(/-/g, "_");
+  return index.resourceErrors.get(normalized) || [];
+}
+
+/**
+ * Get all resources with error patterns
+ */
+export function getResourcesWithErrorPatterns(): string[] {
+  const index = loadErrorResolution();
+  return Array.from(index.resourceErrors.keys());
+}
+
+/**
+ * Load critical resources list from upstream specs (v2.0.8+)
+ */
+export function loadCriticalResources(): string[] {
+  if (cachedCriticalResources) {
+    return cachedCriticalResources;
+  }
+
+  const raw = loadRawSpecIndexWithExtensions();
+  cachedCriticalResources = raw["x-f5xc-critical-resources"] || [];
+  return cachedCriticalResources;
+}
+
+/**
+ * Check if a resource is considered critical
+ */
+export function isCriticalResource(resourceType: string): boolean {
+  const critical = loadCriticalResources();
+  const normalized = resourceType.toLowerCase().replace(/-/g, "_");
+  return critical.some((r) => r.toLowerCase().replace(/-/g, "_") === normalized);
+}
+
+// ============================================================================
+// Acronyms Extension (v2.0.10+)
+// x-f5xc-acronyms - Technical acronym definitions for consistent capitalization
+// ============================================================================
+
+/**
+ * Load acronyms from upstream specs (v2.0.10+)
+ */
+export function loadAcronyms(): AcronymsIndex {
+  if (cachedAcronyms) {
+    return cachedAcronyms;
+  }
+
+  const raw = loadRawSpecIndexWithExtensions();
+  const ext = raw["x-f5xc-acronyms"];
+
+  if (!ext) {
+    cachedAcronyms = {
+      version: "0.0.0",
+      categories: [],
+      acronyms: [],
+    };
+    return cachedAcronyms;
+  }
+
+  cachedAcronyms = {
+    version: ext.version,
+    categories: ext.categories || [],
+    acronyms: ext.acronyms || [],
+  };
+
+  return cachedAcronyms;
+}
+
+/**
+ * Get all technical acronyms from upstream specs (v2.0.10+)
+ */
+export function getAcronyms(): AcronymEntry[] {
+  const index = loadAcronyms();
+  return index.acronyms;
+}
+
+/**
+ * Get all acronym categories from upstream specs (v2.0.10+)
+ */
+export function getAcronymCategories(): string[] {
+  const index = loadAcronyms();
+  return index.categories;
+}
+
+/**
+ * Get acronyms by category (v2.0.10+)
+ */
+export function getAcronymsByCategory(category: string): AcronymEntry[] {
+  const index = loadAcronyms();
+  return index.acronyms.filter((a) => a.category.toLowerCase() === category.toLowerCase());
+}
+
+/**
+ * Get a specific acronym by name (case-insensitive) (v2.0.10+)
+ */
+export function getAcronymByName(name: string): AcronymEntry | undefined {
+  const index = loadAcronyms();
+  return index.acronyms.find((a) => a.acronym.toLowerCase() === name.toLowerCase());
+}
+
+/**
+ * Get acronyms version (v2.0.10+)
+ */
+export function getAcronymsVersion(): string {
+  const index = loadAcronyms();
+  return index.version;
 }

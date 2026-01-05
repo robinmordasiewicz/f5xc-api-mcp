@@ -6,13 +6,14 @@
  */
 
 export {
-  TECHNICAL_ACRONYMS,
+  getTechnicalAcronyms,
   isAcronym,
   getCanonicalAcronym,
   toKebabCase,
   toSnakeCase,
   toPascalCase,
   toCamelCase,
+  clearAcronymCache,
 } from "./acronyms.js";
 
 export {

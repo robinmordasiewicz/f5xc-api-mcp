@@ -3,148 +3,42 @@
  *
  * Handles consistent capitalization of technical acronyms in API
  * documentation, tool names, and descriptions.
+ *
+ * Acronyms are sourced from upstream x-f5xc-acronyms extension (v2.0.10+)
  */
+
+import { getAcronyms, type AcronymEntry } from "../domain-metadata.js";
 
 /**
- * Known technical acronyms that should be capitalized consistently
+ * Cached acronym map for case-insensitive lookup
+ * Built lazily from upstream x-f5xc-acronyms data
  */
-export const TECHNICAL_ACRONYMS: readonly string[] = [
-  // Networking
-  "TCP",
-  "UDP",
-  "HTTP",
-  "HTTPS",
-  "DNS",
-  "IP",
-  "IPv4",
-  "IPv6",
-  "BGP",
-  "OSPF",
-  "VLAN",
-  "VPN",
-  "CIDR",
-  "NAT",
-  "SNAT",
-  "DNAT",
-  "MAC",
-  "ARP",
-  "NIC",
-  "MTU",
-  "QoS",
-  "MPLS",
-  "GRE",
-  "VXLAN",
-  "IPsec",
-  "SSL",
-  "TLS",
-  "SNI",
-
-  // Security
-  "WAF",
-  "DDoS",
-  "XSS",
-  "CSRF",
-  "SQLi",
-  "OWASP",
-  "CVE",
-  "JWT",
-  "OAuth",
-  "SAML",
-  "LDAP",
-  "AD",
-  "ACL",
-  "RBAC",
-  "MFA",
-  "SSO",
-  "PKI",
-
-  // Load Balancing
-  "LB",
-  "SLB",
-  "GLB",
-  "GSLB",
-  "ADC",
-
-  // Cloud & Infrastructure
-  "AWS",
-  "GCP",
-  "Azure",
-  "VPC",
-  "VNet",
-  "EC2",
-  "EKS",
-  "AKS",
-  "GKE",
-  "VM",
-  "K8s",
-  "API",
-  "REST",
-  "gRPC",
-  "SDK",
-  "CLI",
-  "CDN",
-  "SaaS",
-  "PaaS",
-  "IaaS",
-
-  // F5 Specific
-  "XC",
-  "F5",
-  "BIG-IP",
-  "NGINX",
-  "RE",
-  "CE",
-  "POP",
-
-  // Standards & Formats
-  "JSON",
-  "XML",
-  "YAML",
-  "CSV",
-  "HTML",
-  "CSS",
-  "URL",
-  "URI",
-  "UUID",
-  "RFC",
-  "ISO",
-  "UTC",
-  "TTL",
-
-  // Protocols
-  "SMTP",
-  "IMAP",
-  "POP3",
-  "FTP",
-  "SFTP",
-  "SSH",
-  "RDP",
-  "SNMP",
-  "NTP",
-  "RADIUS",
-  "TACACS",
-
-  // Other
-  "CPU",
-  "GPU",
-  "RAM",
-  "SSD",
-  "HDD",
-  "IOPS",
-  "IO",
-  "ID",
-  "IDs",
-  "ASN",
-  "CRD",
-  "CRDs",
-] as const;
+let acronymMap: Map<string, string> | null = null;
 
 /**
- * Lowercase mapping of acronyms for case-insensitive lookup
+ * Build the acronym map from upstream data
  */
-const ACRONYM_MAP: Map<string, string> = new Map(
-  TECHNICAL_ACRONYMS.map((acronym) => [acronym.toLowerCase(), acronym])
-);
+function buildAcronymMap(): Map<string, string> {
+  if (acronymMap) {
+    return acronymMap;
+  }
+
+  const acronyms = getAcronyms();
+  acronymMap = new Map(
+    acronyms.map((entry: AcronymEntry) => [entry.acronym.toLowerCase(), entry.acronym])
+  );
+
+  return acronymMap;
+}
+
+/**
+ * Get all technical acronyms as a simple string array
+ * For backward compatibility with code expecting TECHNICAL_ACRONYMS
+ */
+export function getTechnicalAcronyms(): readonly string[] {
+  const acronyms = getAcronyms();
+  return Object.freeze(acronyms.map((entry: AcronymEntry) => entry.acronym));
+}
 
 /**
  * Check if a word is a known acronym
@@ -153,7 +47,8 @@ const ACRONYM_MAP: Map<string, string> = new Map(
  * @returns True if the word is a known acronym
  */
 export function isAcronym(word: string): boolean {
-  return ACRONYM_MAP.has(word.toLowerCase());
+  const map = buildAcronymMap();
+  return map.has(word.toLowerCase());
 }
 
 /**
@@ -163,7 +58,8 @@ export function isAcronym(word: string): boolean {
  * @returns Canonical acronym form or null if not an acronym
  */
 export function getCanonicalAcronym(word: string): string | null {
-  return ACRONYM_MAP.get(word.toLowerCase()) ?? null;
+  const map = buildAcronymMap();
+  return map.get(word.toLowerCase()) ?? null;
 }
 
 /**
@@ -211,11 +107,12 @@ export function toSnakeCase(text: string): string {
  * @returns PascalCase string
  */
 export function toPascalCase(text: string): string {
+  const map = buildAcronymMap();
   return text
     .trim()
     .split(/[\s_-]+/)
     .map((word) => {
-      const acronym = ACRONYM_MAP.get(word.toLowerCase());
+      const acronym = map.get(word.toLowerCase());
       if (acronym) {
         // Keep acronyms as-is for PascalCase
         return acronym;
@@ -237,4 +134,11 @@ export function toPascalCase(text: string): string {
 export function toCamelCase(text: string): string {
   const pascal = toPascalCase(text);
   return pascal.charAt(0).toLowerCase() + pascal.slice(1);
+}
+
+/**
+ * Clear the acronym cache (useful for testing)
+ */
+export function clearAcronymCache(): void {
+  acronymMap = null;
 }
