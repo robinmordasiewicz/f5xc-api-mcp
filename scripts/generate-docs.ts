@@ -17,14 +17,11 @@ import { fileURLToPath } from "url";
 import YAML from "yaml";
 import type { ParsedOperation } from "../src/generator/openapi-parser.js";
 import {
-  getSubcategory,
-  subcategoryToDirectory,
   resourceToTitle,
   getAllUsedSubcategories,
   domainToTitle,
   getCategoryPath,
   requiresSubdivision,
-  type Subcategory,
   type CategoryPath,
 } from "./category-mapping.js";
 
@@ -143,8 +140,7 @@ interface AggregatedMetadata {
 interface ResourceDoc {
   resource: string;
   domain: string;
-  subcategory: Subcategory;  // Deprecated, for backwards compatibility
-  categoryPath: CategoryPath; // NEW: Hierarchical category
+  categoryPath: CategoryPath;
   title: string;
   tools: ParsedOperation[];
   summary: string;
@@ -579,11 +575,9 @@ function groupToolsByResource(tools: ParsedOperation[]): Map<string, ResourceDoc
       // Generate category path using domain and tags
       const categoryPath = getCategoryPath(tool.domain, tool.resource, tags);
 
-      const subcategory = getSubcategory(tool.domain, tool.resource);
       resourceMap.set(key, {
         resource: tool.resource,
         domain: tool.domain,
-        subcategory,
         categoryPath,
         title: resourceToTitle(tool.resource),
         tools: [],

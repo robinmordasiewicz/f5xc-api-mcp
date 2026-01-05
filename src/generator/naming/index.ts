@@ -1,11 +1,12 @@
 /**
  * Naming Module - Export all naming utilities
+ *
+ * Pre-enriched specs from robinmordasiewicz/f5xc-api-enriched already have
+ * naming transformations applied, so legacy transform functions have been removed.
  */
 
 export {
   TECHNICAL_ACRONYMS,
-  normalizeAcronyms,
-  normalizeTitleAcronyms,
   isAcronym,
   getCanonicalAcronym,
   toKebabCase,
@@ -15,16 +16,7 @@ export {
 } from "./acronyms.js";
 
 export {
-  NAMESPACE_MAPPINGS,
-  RESOURCE_MAPPINGS,
-  FIELD_MAPPINGS,
-  transformNamespace,
-  transformResourceName,
-  transformFieldName,
-  transformText,
-  transformOpenApiSpec,
   generateToolName,
-  extractDomainFromPath,
   extractResourceFromPath,
   methodToOperation,
 } from "./volterra-mapping.js";

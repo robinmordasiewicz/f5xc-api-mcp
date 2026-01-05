@@ -108,7 +108,7 @@ To execute API calls directly (not just documentation), set credentials:
           "args": ["@robinmordasiewicz/f5xc-api-mcp"],
           "env": {
             "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
-            "F5XC_P12_FILE": "/path/to/certificate.p12",
+            "F5XC_P12_BUNDLE": "/path/to/certificate.p12",
             "F5XC_P12_PASSWORD": "your-password"
           }
         }

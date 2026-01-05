@@ -1,10 +1,10 @@
 # Tools Reference
 
-The F5XC API MCP Server exposes **1,500+ API tools** across 23 domains through a dynamic discovery
+The F5XC API MCP Server exposes **1,548 API tools** across 38 domains through a dynamic discovery
 architecture that reduces token consumption by 95%+.
 
 !!! info "Dynamic Discovery Architecture"
-    Instead of loading all tools upfront (~535K tokens), the server uses 6 meta-tools that load
+    Instead of loading all tools upfront (~535K tokens), the server uses 13 meta-tools that load
     schemas on-demand. Initial cost: ~500 tokens. Per-tool cost: ~375 tokens.
 
 ## Discovery Workflow
@@ -21,7 +21,7 @@ flowchart LR
 
 ## Meta-Tools
 
-These 7 tools are always available and provide access to all 1,500+ API operations.
+These 13 meta-tools are always available and provide access to all 1,548 API operations.
 
 ### f5xc-api-configure-auth
 
@@ -203,6 +203,91 @@ Execute a CRUD operation on a consolidated resource.
 | `pathParams` | object | No | Path parameters |
 | `queryParams` | object | No | Query parameters |
 | `body` | object | No | Request body |
+
+---
+
+### f5xc-api-dependencies
+
+Get dependency information for F5XC resources including prerequisites, dependents, and oneOf constraints.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `resource` | string | Yes | Resource name (e.g., `http-loadbalancer`) |
+| `domain` | string | Yes | Domain containing the resource (e.g., `virtual`) |
+| `action` | string | No | Type of info: `prerequisites`, `dependents`, `oneOf`, `subscriptions`, `creationOrder`, `full` (default: `full`) |
+
+---
+
+### f5xc-api-dependency-stats
+
+Get statistics about the F5XC resource dependency graph.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| *(none)* | - | - | No parameters required |
+
+**Example Response:**
+
+```json
+{
+  "totalResources": 285,
+  "totalDependencies": 142,
+  "availableAddons": ["bot-defense", "api-discovery"]
+}
+```
+
+---
+
+### f5xc-api-validate-params
+
+Validate parameters for an F5XC API tool before execution.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `toolName` | string | Yes | Tool name to validate parameters for |
+| `pathParams` | object | No | Path parameters to validate |
+| `queryParams` | object | No | Query parameters to validate |
+| `body` | object | No | Request body to validate |
+
+---
+
+### f5xc-api-resolve-dependencies
+
+Generate a complete creation plan for an F5XC resource with all transitive dependencies.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `resource` | string | Yes | Target resource to create |
+| `domain` | string | Yes | Domain containing the resource |
+| `existingResources` | array | No | Resources that already exist (will be skipped) |
+| `includeOptional` | boolean | No | Include optional dependencies (default: false) |
+| `expandAlternatives` | boolean | No | Include alternative paths for oneOf choices (default: false) |
+| `maxDepth` | number | No | Maximum dependency traversal depth (default: 10) |
+
+---
+
+### f5xc-api-estimate-cost
+
+Estimate token usage and latency for F5XC API tool calls.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `toolName` | string | No | Single tool name to estimate |
+| `toolNames` | array | No | Multiple tool names to estimate |
+| `plan` | object | No | CreationPlan object to estimate |
+| `detailed` | boolean | No | Include detailed breakdown (default: true) |
+
+---
+
+### f5xc-api-best-practices
+
+Get domain-specific best practices for F5XC API operations.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `domain` | string | No | Domain to get best practices for |
+| `aspect` | string | No | Specific aspect: `errors`, `workflows`, `danger`, `security`, `performance`, `all` (default: `all`) |
+| `detailed` | boolean | No | Include detailed breakdowns (default: true) |
 
 ---
 

@@ -164,7 +164,7 @@ export F5XC_API_TOKEN="your-api-token"
       "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "env": {
         "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
-        "F5XC_P12_FILE": "/Users/username/certs/f5xc.p12",
+        "F5XC_P12_BUNDLE": "/Users/username/certs/f5xc.p12",
         "F5XC_P12_PASSWORD": "certificate-password"
       }
     }
@@ -184,7 +184,7 @@ For better security with certificates:
       "args": ["@robinmordasiewicz/f5xc-api-mcp"],
       "env": {
         "F5XC_API_URL": "${env:F5XC_API_URL}",
-        "F5XC_P12_FILE": "${env:F5XC_P12_FILE}",
+        "F5XC_P12_BUNDLE": "${env:F5XC_P12_BUNDLE}",
         "F5XC_P12_PASSWORD": "${env:F5XC_P12_PASSWORD}"
       }
     }
@@ -196,7 +196,7 @@ With environment variables set:
 
 ```bash
 export F5XC_API_URL="https://your-tenant.console.ves.volterra.io"
-export F5XC_P12_FILE="/Users/username/certs/f5xc.p12"
+export F5XC_P12_BUNDLE="/Users/username/certs/f5xc.p12"
 export F5XC_P12_PASSWORD="certificate-password"
 ```
 
