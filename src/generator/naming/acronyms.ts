@@ -33,7 +33,7 @@ function buildAcronymMap(): Map<string, string> {
 
 /**
  * Get all technical acronyms as a simple string array
- * For backward compatibility with code expecting TECHNICAL_ACRONYMS
+ * Sourced from upstream x-f5xc-acronyms extension
  */
 export function getTechnicalAcronyms(): readonly string[] {
   const acronyms = getAcronyms();
