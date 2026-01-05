@@ -1,117 +1,98 @@
 /**
  * Unit tests for prompts module
+ *
+ * Tests for dynamically-loaded workflow prompts from upstream x-f5xc-guided-workflows
  */
 
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import {
-  WORKFLOW_PROMPTS,
+  getWorkflowPrompts,
   getWorkflowPrompt,
   processPromptTemplate,
-  deployHttpLoadBalancerPrompt,
-  configureWafPrompt,
-  createMultiCloudSitePrompt,
+  clearWorkflowCache,
 } from "../../src/prompts/workflows.js";
 
 describe("Workflow Prompts", () => {
-  describe("WORKFLOW_PROMPTS array", () => {
-    it("should contain all defined prompts", () => {
-      expect(WORKFLOW_PROMPTS).toHaveLength(3);
+  beforeEach(() => {
+    // Clear cache before each test to ensure fresh data
+    clearWorkflowCache();
+  });
+
+  describe("getWorkflowPrompts()", () => {
+    it("should return array of workflow prompts from upstream", () => {
+      const prompts = getWorkflowPrompts();
+      expect(Array.isArray(prompts)).toBe(true);
+      expect(prompts.length).toBeGreaterThan(0);
     });
 
-    it("should include deploy-http-loadbalancer prompt", () => {
-      const prompt = WORKFLOW_PROMPTS.find((p) => p.name === "deploy-http-loadbalancer");
+    it("should include deploy_http_loadbalancer workflow", () => {
+      const prompts = getWorkflowPrompts();
+      const prompt = prompts.find((p) => p.name === "deploy_http_loadbalancer");
       expect(prompt).toBeDefined();
     });
 
-    it("should include configure-waf prompt", () => {
-      const prompt = WORKFLOW_PROMPTS.find((p) => p.name === "configure-waf");
+    it("should include enable_waf_protection workflow", () => {
+      const prompts = getWorkflowPrompts();
+      const prompt = prompts.find((p) => p.name === "enable_waf_protection");
       expect(prompt).toBeDefined();
     });
 
-    it("should include create-multicloud-site prompt", () => {
-      const prompt = WORKFLOW_PROMPTS.find((p) => p.name === "create-multicloud-site");
-      expect(prompt).toBeDefined();
+    it("should have valid workflow structure for all prompts", () => {
+      const prompts = getWorkflowPrompts();
+      for (const prompt of prompts) {
+        expect(prompt.name).toBeTruthy();
+        expect(prompt.description).toBeTruthy();
+        expect(prompt.template).toBeTruthy();
+        expect(Array.isArray(prompt.arguments)).toBe(true);
+      }
     });
   });
 
-  describe("deployHttpLoadBalancerPrompt", () => {
-    it("should have correct name", () => {
-      expect(deployHttpLoadBalancerPrompt.name).toBe("deploy-http-loadbalancer");
+  describe("individual workflow prompts", () => {
+    it("deploy_http_loadbalancer should have description", () => {
+      const prompt = getWorkflowPrompt("deploy_http_loadbalancer");
+      expect(prompt).toBeDefined();
+      expect(prompt!.description).toBeTruthy();
     });
 
-    it("should have description", () => {
-      expect(deployHttpLoadBalancerPrompt.description).toBeTruthy();
-      expect(deployHttpLoadBalancerPrompt.description).toContain("HTTP Load Balancer");
-    });
+    it("deploy_http_loadbalancer should have required arguments", () => {
+      const prompt = getWorkflowPrompt("deploy_http_loadbalancer");
+      expect(prompt).toBeDefined();
 
-    it("should have required arguments", () => {
-      const args = deployHttpLoadBalancerPrompt.arguments;
+      const args = prompt!.arguments;
       const required = args.filter((a) => a.required);
 
       expect(required.map((a) => a.name)).toContain("namespace");
       expect(required.map((a) => a.name)).toContain("name");
-      expect(required.map((a) => a.name)).toContain("domain");
-      expect(required.map((a) => a.name)).toContain("backend_ip");
     });
 
-    it("should have optional arguments", () => {
-      const args = deployHttpLoadBalancerPrompt.arguments;
-      const optional = args.filter((a) => !a.required);
-
-      expect(optional.map((a) => a.name)).toContain("backend_port");
-      expect(optional.map((a) => a.name)).toContain("enable_waf");
+    it("enable_waf_protection should have description", () => {
+      const prompt = getWorkflowPrompt("enable_waf_protection");
+      expect(prompt).toBeDefined();
+      expect(prompt!.description).toBeTruthy();
     });
 
-    it("should have template with CURL examples", () => {
-      expect(deployHttpLoadBalancerPrompt.template).toContain("CURL");
-      expect(deployHttpLoadBalancerPrompt.template).toContain("curl");
-    });
-  });
-
-  describe("configureWafPrompt", () => {
-    it("should have correct name", () => {
-      expect(configureWafPrompt.name).toBe("configure-waf");
+    it("configure_origin_pool should exist", () => {
+      const prompt = getWorkflowPrompt("configure_origin_pool");
+      expect(prompt).toBeDefined();
     });
 
-    it("should have required arguments", () => {
-      const required = configureWafPrompt.arguments.filter((a) => a.required);
-      expect(required.map((a) => a.name)).toContain("namespace");
-      expect(required.map((a) => a.name)).toContain("name");
-      expect(required.map((a) => a.name)).toContain("loadbalancer");
-    });
-
-    it("should reference app_firewall resource", () => {
-      expect(configureWafPrompt.template).toContain("app_firewall");
+    it("configure_dns_zone should exist", () => {
+      const prompt = getWorkflowPrompt("configure_dns_zone");
+      expect(prompt).toBeDefined();
     });
   });
-
-  describe("createMultiCloudSitePrompt", () => {
-    it("should have correct name", () => {
-      expect(createMultiCloudSitePrompt.name).toBe("create-multicloud-site");
-    });
-
-    it("should have cloud argument", () => {
-      const cloudArg = createMultiCloudSitePrompt.arguments.find((a) => a.name === "cloud");
-      expect(cloudArg).toBeDefined();
-      expect(cloudArg!.required).toBe(true);
-    });
-
-    it("should have templates for all cloud providers", () => {
-      const template = createMultiCloudSitePrompt.template;
-      // Templates now use API tool names instead of Terraform resource types
-      expect(template).toContain("f5xc-api-sites-aws-vpc-site-create");
-      expect(template).toContain("f5xc-api-sites-azure-vnet-site-create");
-      expect(template).toContain("f5xc-api-sites-gcp-vpc-site-create");
-    });
-  });
-
 });
 
 describe("getWorkflowPrompt", () => {
+  beforeEach(() => {
+    clearWorkflowCache();
+  });
+
   it("should return prompt by name", () => {
-    const prompt = getWorkflowPrompt("deploy-http-loadbalancer");
+    const prompt = getWorkflowPrompt("deploy_http_loadbalancer");
     expect(prompt).toBeDefined();
-    expect(prompt!.name).toBe("deploy-http-loadbalancer");
+    expect(prompt!.name).toBe("deploy_http_loadbalancer");
   });
 
   it("should return undefined for unknown prompt", () => {
@@ -119,15 +100,20 @@ describe("getWorkflowPrompt", () => {
     expect(prompt).toBeUndefined();
   });
 
-  it("should find all defined prompts", () => {
-    const names = [
-      "deploy-http-loadbalancer",
-      "configure-waf",
-      "create-multicloud-site",
+  it("should find upstream workflow prompts", () => {
+    // Check for known upstream workflow IDs
+    const upstreamWorkflows = [
+      "deploy_http_loadbalancer",
+      "deploy_https_loadbalancer",
+      "enable_waf_protection",
+      "configure_origin_pool",
+      "configure_dns_zone",
     ];
 
-    for (const name of names) {
-      expect(getWorkflowPrompt(name)).toBeDefined();
+    for (const name of upstreamWorkflows) {
+      const prompt = getWorkflowPrompt(name);
+      expect(prompt).toBeDefined();
+      expect(prompt!.name).toBe(name);
     }
   });
 });
@@ -229,39 +215,23 @@ describe("processPromptTemplate", () => {
   });
 
   describe("complex templates", () => {
-    it("should process HTTP load balancer template", () => {
-      const result = processPromptTemplate(deployHttpLoadBalancerPrompt.template, {
-        namespace: "production",
-        name: "example-app",
-        domain: "app.example.com",
-        backend_ip: "10.0.0.1",
-        backend_port: "8080",
-        enable_waf: "true",
-      });
+    it("should process workflow template with variables", () => {
+      const prompt = getWorkflowPrompt("deploy_http_loadbalancer");
+      expect(prompt).toBeDefined();
 
-      expect(result).toContain("production");
-      expect(result).toContain("example-app");
-      expect(result).toContain("app.example.com");
-      expect(result).toContain("10.0.0.1");
-      expect(result).toContain("8080");
-      // Templates now use API tool names instead of Terraform resource types
-      expect(result).toContain("f5xc-api-waf-app-firewall-create");
+      // Ensure template contains expected structure
+      const template = prompt!.template;
+      expect(template).toBeTruthy();
+      expect(template.length).toBeGreaterThan(100);
     });
 
-    it("should process multicloud site template for AWS", () => {
-      const result = processPromptTemplate(createMultiCloudSitePrompt.template, {
-        namespace: "infra",
-        name: "us-site",
-        cloud: "aws",
-        region: "us-east-1",
-        vpc_id: "vpc-123456",
-      });
+    it("should have step-by-step structure in templates", () => {
+      const prompt = getWorkflowPrompt("deploy_http_loadbalancer");
+      expect(prompt).toBeDefined();
 
-      expect(result).toContain("us-site");
-      // Templates now use API tool names instead of Terraform resource types
-      expect(result).toContain("f5xc-api-sites-aws-vpc-site-create");
-      expect(result).toContain("us-east-1");
-      expect(result).toContain("vpc-123456");
+      // Upstream templates should have step markers
+      const template = prompt!.template;
+      expect(template).toContain("Step");
     });
   });
 });

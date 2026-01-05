@@ -10,7 +10,14 @@
 
 import { getToolIndex } from "./index-loader.js";
 import { getResourcesInDomain, getAllDependencyDomains } from "./dependencies.js";
-import { getDomainMetadata, type TroubleshootingGuide } from "../../generator/domain-metadata.js";
+import {
+  getDomainMetadata,
+  getGuidedWorkflows,
+  getHttpErrorResolution,
+  getResourceErrorPatterns,
+  type TroubleshootingGuide,
+  type GuidedWorkflow,
+} from "../../generator/domain-metadata.js";
 
 /**
  * Common error pattern with resolution guidance
@@ -127,160 +134,96 @@ export interface BestPracticesResult {
 }
 
 /**
- * Domain display names and descriptions
+ * Get domain display info from upstream metadata
+ * Falls back to formatted domain name if not available
  */
-const DOMAIN_INFO: Record<string, { displayName: string; description: string }> = {
-  virtual: {
-    displayName: "Virtual Services (WAAP)",
-    description: "HTTP load balancers, origin pools, and web application protection",
-  },
-  network: {
-    displayName: "Network Infrastructure",
-    description: "Network policies, cloud connectors, and routing configuration",
-  },
-  dns: {
-    displayName: "DNS Management",
-    description: "DNS zones, records, and domain management",
-  },
-  certificates: {
-    displayName: "Certificate Management",
-    description: "TLS certificates, CA management, and certificate lifecycle",
-  },
-  waf: {
-    displayName: "Web Application Firewall",
-    description: "WAF policies, rule sets, and security configurations",
-  },
-  sites: {
-    displayName: "Site Management",
-    description: "F5XC site deployment and configuration across cloud providers",
-  },
-  api: {
-    displayName: "API Security",
-    description: "API definitions, discovery, and protection policies",
-  },
-  bot_and_threat_defense: {
-    displayName: "Bot & Threat Defense",
-    description: "Bot detection, threat intelligence, and automated defense",
-  },
-  authentication: {
-    displayName: "Authentication",
-    description: "Identity providers, OIDC, and authentication policies",
-  },
-  users: {
-    displayName: "User Management",
-    description: "User accounts, roles, and access control",
-  },
-  tenant_and_identity: {
-    displayName: "Tenant & Identity",
-    description: "Tenant configuration and identity management",
-  },
-};
+function getDomainDisplayInfo(domain: string): { displayName: string; description: string } {
+  const meta = getDomainMetadata(domain);
+  if (meta) {
+    return {
+      displayName: meta.title,
+      description: meta.descriptionShort || meta.description,
+    };
+  }
+  // Fallback for unknown domains
+  return {
+    displayName: domain.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()),
+    description: `Operations for ${domain} resources`,
+  };
+}
 
 /**
- * Common errors by domain
+ * Get common errors for a domain from upstream error resolution data
+ * Combines HTTP errors with resource-specific errors
  */
-const DOMAIN_COMMON_ERRORS: Record<string, CommonError[]> = {
-  virtual: [
-    {
-      statusCode: 404,
-      errorType: "NotFound",
-      description: "Origin pool or referenced resource not found",
-      resolution: [
-        "Verify the origin pool exists using f5xc-api-network-origin-pool-list",
-        "Check namespace is correct",
-        "Ensure referenced certificates exist",
-      ],
-      relatedTools: ["f5xc-api-network-origin-pool-list", "f5xc-api-certificates-certificate-list"],
-    },
-    {
-      statusCode: 409,
-      errorType: "Conflict",
-      description: "Load balancer with same name already exists",
-      resolution: [
-        "Use a unique name for the load balancer",
-        "Delete existing resource if replacement is intended",
-        "Check for naming conflicts across namespaces",
-      ],
-    },
-  ],
-  dns: [
-    {
-      statusCode: 400,
-      errorType: "ValidationError",
-      description: "Invalid DNS record format or TTL",
-      resolution: [
-        "Verify record type matches the data format",
-        "Check TTL is within valid range (60-86400)",
-        "Ensure FQDN is properly formatted",
-      ],
-    },
-  ],
-  certificates: [
-    {
-      statusCode: 400,
-      errorType: "CertificateError",
-      description: "Invalid certificate chain or format",
-      resolution: [
-        "Verify certificate is in PEM format",
-        "Ensure full chain is included",
-        "Check certificate is not expired",
-        "Verify private key matches certificate",
-      ],
-    },
-  ],
-};
+function getDomainCommonErrors(domain: string): CommonError[] {
+  const errors: CommonError[] = [];
+
+  // Get resources in this domain to find resource-specific errors
+  const resources = getResourcesInDomain(domain);
+
+  for (const resource of resources) {
+    const resourceErrors = getResourceErrorPatterns(resource);
+    for (const err of resourceErrors) {
+      // Get HTTP error info for this status code
+      const httpError = getHttpErrorResolution(err.errorCode);
+
+      errors.push({
+        statusCode: err.errorCode,
+        errorType: httpError?.name || "Error",
+        description: err.pattern,
+        resolution: [err.resolution, ...(httpError?.prevention?.slice(0, 2) || [])],
+      });
+    }
+  }
+
+  // Add general HTTP errors relevant to this domain (common ones)
+  const commonHttpCodes = [400, 401, 403, 404, 409];
+  for (const code of commonHttpCodes) {
+    // Only add if we don't already have this code from resource errors
+    if (!errors.some((e) => e.statusCode === code)) {
+      const httpError = getHttpErrorResolution(code);
+      if (httpError) {
+        errors.push({
+          statusCode: httpError.code,
+          errorType: httpError.name,
+          description: httpError.description,
+          resolution: httpError.diagnosticSteps.slice(0, 3).map((s) => s.description),
+        });
+      }
+    }
+  }
+
+  // Deduplicate and limit to top 5 errors
+  const seen = new Set<number>();
+  return errors
+    .filter((e) => {
+      if (seen.has(e.statusCode)) return false;
+      seen.add(e.statusCode);
+      return true;
+    })
+    .slice(0, 5);
+}
 
 /**
- * Security notes by domain
+ * Get security notes for a domain
+ * Currently returns empty array - upstream x-f5xc-best-practices will provide this in future
  */
-const DOMAIN_SECURITY_NOTES: Record<string, string[]> = {
-  virtual: [
-    "Always enable WAF policies for production load balancers",
-    "Use TLS 1.2 or higher for all HTTPS listeners",
-    "Configure rate limiting to prevent DoS attacks",
-    "Review origin pool health check configurations",
-  ],
-  certificates: [
-    "Never expose private keys in API responses",
-    "Use certificate chains for proper validation",
-    "Set up certificate expiration alerts",
-    "Prefer automatic certificate management when available",
-  ],
-  authentication: [
-    "Use short-lived API tokens when possible",
-    "Implement token rotation policies",
-    "Audit authentication logs regularly",
-    "Use certificate-based authentication for automation",
-  ],
-  users: [
-    "Follow principle of least privilege",
-    "Regularly audit user access and roles",
-    "Use namespaces to isolate resources",
-    "Enable MFA for console access",
-  ],
-};
+function getDomainSecurityNotes(_domain: string): string[] {
+  // Security notes will be provided by upstream x-f5xc-best-practices extension
+  // when implemented. For now, return empty array.
+  return [];
+}
 
 /**
- * Performance tips by domain
+ * Get performance tips for a domain
+ * Currently returns empty array - upstream x-f5xc-best-practices will provide this in future
  */
-const DOMAIN_PERFORMANCE_TIPS: Record<string, string[]> = {
-  virtual: [
-    "Use appropriate health check intervals to balance detection vs overhead",
-    "Configure connection pooling for origin servers",
-    "Enable response caching where appropriate",
-    "Use regional deployments for latency-sensitive applications",
-  ],
-  dns: [
-    "Set appropriate TTLs based on update frequency",
-    "Use ALIAS records for apex domains when possible",
-    "Configure health-based routing for failover",
-  ],
-  sites: [
-    "Pre-configure site templates for faster deployments",
-    "Use site mesh groups for efficient routing",
-    "Monitor site health metrics proactively",
-  ],
-};
+function getDomainPerformanceTips(_domain: string): string[] {
+  // Performance tips will be provided by upstream x-f5xc-best-practices extension
+  // when implemented. For now, return empty array.
+  return [];
+}
 
 /**
  * Analyze danger levels for a domain
@@ -362,84 +305,60 @@ function countOperations(domain: string): DomainBestPractices["operations"] {
 }
 
 /**
- * Generate recommended workflows for a domain
+ * Convert upstream GuidedWorkflow to local RecommendedWorkflow format
+ */
+function convertUpstreamWorkflow(upstream: GuidedWorkflow): RecommendedWorkflow {
+  return {
+    name: upstream.name,
+    description: upstream.description,
+    steps: upstream.steps.map((step) => ({
+      stepNumber: step.order,
+      action: step.name,
+      toolName: step.resource
+        ? `f5xc-api-${upstream.domain}-${step.resource}-${step.action}`
+        : undefined,
+      note: step.description,
+    })),
+    prerequisites: upstream.prerequisites,
+    complexity: upstream.complexity,
+  };
+}
+
+/**
+ * Generate recommended workflows for a domain from upstream data
  */
 function generateWorkflows(domain: string): RecommendedWorkflow[] {
-  const workflows: RecommendedWorkflow[] = [];
+  // Get workflows from upstream x-f5xc-guided-workflows
+  const upstreamWorkflows = getGuidedWorkflows(domain);
+  const workflows: RecommendedWorkflow[] = upstreamWorkflows.map(convertUpstreamWorkflow);
 
-  // Get resources in the domain from dependency graph
-  const resources = getResourcesInDomain(domain);
-
-  // Create a basic CRUD workflow for the domain
-  if (resources.length > 0) {
-    workflows.push({
-      name: `List ${domain} resources`,
-      description: `Discover existing resources in the ${domain} domain`,
-      steps: [
-        {
-          stepNumber: 1,
-          action: "Search for list operations",
-          note: `Use f5xc-api-search-tools with query '${domain} list'`,
-        },
-        {
-          stepNumber: 2,
-          action: "Execute list operation",
-          note: "Provide namespace parameter to scope results",
-        },
-        {
-          stepNumber: 3,
-          action: "Review results",
-          note: "Check resource metadata and dependencies",
-        },
-      ],
-      complexity: "low",
-    });
-  }
-
-  // Domain-specific workflows
-  if (domain === "virtual") {
-    workflows.push({
-      name: "Deploy HTTP Load Balancer",
-      description: "Complete workflow to deploy an HTTP load balancer with WAF protection",
-      steps: [
-        {
-          stepNumber: 1,
-          action: "Create origin pool",
-          toolName: "f5xc-api-network-origin-pool-create",
-        },
-        {
-          stepNumber: 2,
-          action: "Create WAF policy (optional)",
-          toolName: "f5xc-api-waf-app-firewall-create",
-        },
-        {
-          stepNumber: 3,
-          action: "Create HTTP load balancer",
-          toolName: "f5xc-api-virtual-http-loadbalancer-create",
-        },
-        {
-          stepNumber: 4,
-          action: "Verify deployment",
-          toolName: "f5xc-api-virtual-http-loadbalancer-get",
-        },
-      ],
-      prerequisites: ["Certificate (if using HTTPS)", "Namespace"],
-      complexity: "medium",
-    });
-  }
-
-  if (domain === "dns") {
-    workflows.push({
-      name: "Configure DNS Zone",
-      description: "Set up a DNS zone with common record types",
-      steps: [
-        { stepNumber: 1, action: "Create DNS zone", toolName: "f5xc-api-dns-dns-zone-create" },
-        { stepNumber: 2, action: "Add A/AAAA records", note: "Create records for your services" },
-        { stepNumber: 3, action: "Add CNAME records (optional)", note: "Set up aliases" },
-        { stepNumber: 4, action: "Verify propagation", note: "Use dig or nslookup to verify" },
-      ],
-      complexity: "low",
-    });
+  // If no upstream workflows, add a basic discovery workflow
+  if (workflows.length === 0) {
+    const resources = getResourcesInDomain(domain);
+    if (resources.length > 0) {
+      workflows.push({
+        name: `List ${domain} resources`,
+        description: `Discover existing resources in the ${domain} domain`,
+        steps: [
+          {
+            stepNumber: 1,
+            action: "Search for list operations",
+            note: `Use f5xc-api-search-tools with query '${domain} list'`,
+          },
+          {
+            stepNumber: 2,
+            action: "Execute list operation",
+            note: "Provide namespace parameter to scope results",
+          },
+          {
+            stepNumber: 3,
+            action: "Review results",
+            note: "Check resource metadata and dependencies",
+          },
+        ],
+        complexity: "low",
+      });
+    }
   }
 
   return workflows;
@@ -447,6 +366,7 @@ function generateWorkflows(domain: string): RecommendedWorkflow[] {
 
 /**
  * Get best practices for a specific domain
+ * Sources data from upstream x-f5xc-* extensions (v2.0.8+)
  */
 export function getDomainBestPractices(domain: string): DomainBestPractices | null {
   const index = getToolIndex();
@@ -456,10 +376,8 @@ export function getDomainBestPractices(domain: string): DomainBestPractices | nu
     return null;
   }
 
-  const info = DOMAIN_INFO[domain] ?? {
-    displayName: domain.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()),
-    description: `Operations for ${domain} resources`,
-  };
+  // Get display info from upstream metadata
+  const info = getDomainDisplayInfo(domain);
 
   // Get troubleshooting guides from upstream CLI metadata (v2.0.5+)
   const domainMeta = getDomainMetadata(domain);
@@ -472,10 +390,10 @@ export function getDomainBestPractices(domain: string): DomainBestPractices | nu
     totalTools: domainTools.length,
     operations: countOperations(domain),
     dangerAnalysis: analyzeDangerLevels(domain),
-    commonErrors: DOMAIN_COMMON_ERRORS[domain] ?? [],
+    commonErrors: getDomainCommonErrors(domain),
     workflows: generateWorkflows(domain),
-    securityNotes: DOMAIN_SECURITY_NOTES[domain] ?? [],
-    performanceTips: DOMAIN_PERFORMANCE_TIPS[domain] ?? [],
+    securityNotes: getDomainSecurityNotes(domain),
+    performanceTips: getDomainPerformanceTips(domain),
     troubleshootingGuides,
   };
 }
@@ -573,11 +491,10 @@ export function getAllDomainsSummary(): Array<{
 
   return Array.from(domains.entries())
     .map(([domain, stats]) => {
-      const info = DOMAIN_INFO[domain];
+      const info = getDomainDisplayInfo(domain);
       return {
         domain,
-        displayName:
-          info?.displayName ?? domain.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()),
+        displayName: info.displayName,
         toolCount: stats.count,
         dangerSummary: { safe: stats.safe, dangerous: stats.dangerous },
       };
