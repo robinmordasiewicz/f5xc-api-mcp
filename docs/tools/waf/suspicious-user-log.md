@@ -29,7 +29,7 @@ fields such as `vh_name`, `user`, `site`,
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Bloggin-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

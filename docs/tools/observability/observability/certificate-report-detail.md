@@ -23,7 +23,7 @@ Returns the certificate report detail.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

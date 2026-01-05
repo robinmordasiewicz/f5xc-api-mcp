@@ -23,7 +23,7 @@ GET Threat Campaign by ID.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `id` | ID | `Cmp5641a5adbeabaf2708ce7663ad937df8.` |
+| `id` | ID | `-` |
 
 ## Example Usage
 

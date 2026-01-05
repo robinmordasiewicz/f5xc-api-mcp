@@ -23,7 +23,7 @@ Request to GET summary/analytics data for the audit logs that matches the criter
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

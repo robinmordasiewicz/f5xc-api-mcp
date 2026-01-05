@@ -23,7 +23,7 @@ GET the dataset features from Data dictionary API.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `dataset` | Dataset | `Di_advanced.` |
+| `dataset` | Dataset | `-` |
 
 ## Example Usage
 

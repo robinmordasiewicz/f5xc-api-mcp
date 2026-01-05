@@ -27,8 +27,8 @@ Creates a new payment method with a specific role.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
-| `name` | Name | `Payment-method-1.` |
+| `namespace` | Namespace | `-` |
+| `name` | Name | `-` |
 
 ## Side Effects
 

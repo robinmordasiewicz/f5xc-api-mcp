@@ -23,7 +23,7 @@ DELETE will DELETE a given label label key = label value from current tenants sh
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

@@ -30,8 +30,8 @@ Create a role object and the rbac_policy object which the role associated with.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `name` | Name | `Name` |
+| `namespace` | Namespace | `-` |
+| `name` | Name | `-` |
 
 ## Side Effects
 

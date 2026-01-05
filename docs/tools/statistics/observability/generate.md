@@ -23,8 +23,8 @@ Generate report now.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Test-report.` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

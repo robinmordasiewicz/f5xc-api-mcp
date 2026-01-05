@@ -23,8 +23,8 @@ API to GET pods metrics for a given namespace in a site.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Ns1` |
-| `site` | Site | `Site-1` |
+| `namespace` | Namespace | `-` |
+| `site` | Site | `-` |
 
 ## Side Effects
 

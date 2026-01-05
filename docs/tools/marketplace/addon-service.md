@@ -24,14 +24,14 @@ Retrieves addon service information for the given addon service name.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Addon-service-1.` |
-| `namespace` | Namespace | `Ns1` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
 

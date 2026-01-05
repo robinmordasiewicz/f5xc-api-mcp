@@ -23,8 +23,8 @@ API to GET list of sw versions that can be upgraded to.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `current_os_version` | Fetch upgradable sw versions for site. | `9.2023.23` |
-| `current_sw_version` | Fetch upgradable sw versions for site. | `Crt-20241107-1123.` |
+| `current_os_version` | Fetch upgradable sw versions for site. | `-` |
+| `current_sw_version` | Fetch upgradable sw versions for site. | `-` |
 
 ## Example Usage
 

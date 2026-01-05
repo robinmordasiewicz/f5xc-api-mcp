@@ -24,7 +24,7 @@ GET summary of all site mesh groups.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `site_mesh_group` | Site Mesh Group | `Smg-1` |
+| `site_mesh_group` | Site Mesh Group | `-` |
 
 ## Side Effects
 

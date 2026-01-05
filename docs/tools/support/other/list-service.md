@@ -23,8 +23,8 @@ GET List of services managed by F5 Distributed Cloud.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `site` | Site Name | `Value` |
+| `namespace` | Namespace | `-` |
+| `site` | Site Name | `-` |
 
 ## Example Usage
 

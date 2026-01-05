@@ -24,8 +24,8 @@ payment method is secondary then it becomes default and there will be no seconda
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Payment-method-1.` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

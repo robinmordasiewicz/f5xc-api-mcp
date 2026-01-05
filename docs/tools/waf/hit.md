@@ -23,7 +23,7 @@ GET the counter for Enhanced Firewall Policy hits for a given namespace.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Ns1` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

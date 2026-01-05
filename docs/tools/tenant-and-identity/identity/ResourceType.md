@@ -24,13 +24,13 @@ Getresourcetypesbyid CustomPublicAPI.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `id` | ID | `sam.smith@gmail.com.` |
+| `id` | ID | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `excludedAttributes` | Members"]" | `[` |
+| `excludedAttributes` | Members"]" | `-` |
 
 ## Example Usage
 

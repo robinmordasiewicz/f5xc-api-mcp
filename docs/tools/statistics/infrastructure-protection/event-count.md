@@ -23,8 +23,8 @@ Request to GET l3l4 Event counts over a period of time.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `network_id` | NetworkId | `3c33d46b-8f19-420c-9202-038c5833ac55.` |
+| `namespace` | Namespace | `-` |
+| `network_id` | NetworkId | `-` |
 
 ## Side Effects
 

@@ -26,13 +26,13 @@ For now this one returns only current State.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `id` | ID of the plan transition request. | `Dec2417d-adb1-4fcc-8dcd-529b1d31a652.` |
+| `id` | ID of the plan transition request. | `-` |
 
 ## Side Effects
 

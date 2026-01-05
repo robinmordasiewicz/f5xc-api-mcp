@@ -23,8 +23,8 @@ GET Connector config.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Application Name | `App 8000` |
-| `namespace` | Namespace | `Ns1` |
+| `name` | Application Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

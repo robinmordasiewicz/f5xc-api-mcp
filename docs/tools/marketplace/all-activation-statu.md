@@ -24,7 +24,7 @@ whether the service was successfully subscribed or in pending state.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `addon_service` | Addon_service | `Addon-service-1.` |
+| `addon_service` | Addon_service | `-` |
 
 ## Example Usage
 

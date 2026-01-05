@@ -25,7 +25,7 @@ namespace exclude shared namespace.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Shared` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

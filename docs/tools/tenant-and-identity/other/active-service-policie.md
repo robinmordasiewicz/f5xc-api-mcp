@@ -26,7 +26,7 @@ request will clear the active service policies for the namespace.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Ns1` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

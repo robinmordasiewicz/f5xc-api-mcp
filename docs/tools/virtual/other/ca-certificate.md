@@ -23,8 +23,8 @@ GetProxyServerCACert returns PEM encoded proxy server CA certificate.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Name` |
-| `namespace` | Namespace | `Ns1` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

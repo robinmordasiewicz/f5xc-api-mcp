@@ -23,8 +23,8 @@ TokenState changes token status, it can be used to disable token.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Token name | `Value` |
-| `namespace` | Token namespace | `Value` |
+| `name` | Token name | `-` |
+| `namespace` | Token namespace | `-` |
 
 ## Side Effects
 

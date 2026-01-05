@@ -23,8 +23,8 @@ Sets the L7 DDoS RPS threshold for HTTP load balancer.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Lb_name` |
-| `namespace` | Namespace | `Default` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

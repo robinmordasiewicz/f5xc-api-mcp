@@ -29,15 +29,15 @@ shared.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `key` | Key of the label to be retrieved. | `F5 XC/region.` |
+| `key` | Key of the label to be retrieved. | `-` |
 | `query` | Query type | `-` |
-| `value` | Value of the label to be retrieved. | `VES-I/O-par.` |
+| `value` | Value of the label to be retrieved. | `-` |
 
 ## Example Usage
 

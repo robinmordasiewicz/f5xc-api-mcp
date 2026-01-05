@@ -27,18 +27,18 @@ VES.I/o.schema.virtual_host.apiepcustomapi.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | HTTP LoadBalancer Name | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
+| `name` | HTTP LoadBalancer Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `api_endpoint_info_request` | List of additional things that needs to be sent as part of the request | `-` |
-| `apiep_category` | Category of API endpoints. Can be DISCOVERED, INVENTORY or SHADOW API. | `DISCOVERED.` |
-| `domains` | List of domains that needs to be sent as part of the request | `www.example.com.` |
-| `end_time` | Format: unix_timestamp\|RFC 3339 | `2019-09-24T12:30:11.733Z.` |
-| `start_time` | Format: unix_timestamp\|RFC 3339 | `2019-09-23T12:30:11.733Z.` |
+| `apiep_category` | Category of API endpoints. Can be DISCOVERED, INVENTORY or SHADOW API. | `-` |
+| `domains` | List of domains that needs to be sent as part of the request | `-` |
+| `end_time` | Format: unix_timestamp\|RFC 3339 | `-` |
+| `start_time` | Format: unix_timestamp\|RFC 3339 | `-` |
 
 ## Side Effects
 

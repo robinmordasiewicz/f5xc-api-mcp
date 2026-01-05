@@ -25,8 +25,8 @@ Login events are extracted directly from IDM.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `first` | Start offset. | `100` |
-| `max` | Records per page. | `25` |
+| `first` | Start offset. | `-` |
+| `max` | Records per page. | `-` |
 
 ## Example Usage
 

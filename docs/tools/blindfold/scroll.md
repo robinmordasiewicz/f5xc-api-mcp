@@ -28,13 +28,13 @@ response indicates no more messages to fetch (EOF).
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `scroll_id` | Long Base-64 encoded string which can be used to retrieve next batch of log messages. | `Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.` |
+| `scroll_id` | Long Base-64 encoded string which can be used to retrieve next batch of log messages. | `-` |
 
 ## Side Effects
 

@@ -25,7 +25,7 @@ response are sorted in the reverse chronological order.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

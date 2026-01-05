@@ -23,7 +23,7 @@ Enable service by returning service account details.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

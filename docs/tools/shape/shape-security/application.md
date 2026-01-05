@@ -28,7 +28,7 @@ Update an application's information.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `app_id` | Target application ID to DELETE. | ```volt-testing_backenda949ef7c-eda1ab47``` |
+| `app_id` | Target application ID to DELETE. | `-` |
 
 ## Side Effects
 

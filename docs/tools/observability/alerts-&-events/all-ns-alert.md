@@ -25,12 +25,12 @@ will be returned in the response.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `filter` | HighDiskUsage\", severity=\"critical\"}" | `{alertname=\.` |
-| `inactive` | If set to true, active alerts will not be returned in the response. | `False` |
-| `inhibited` | Show inhibited alerts - alerts that are suppressed if certain other alerts are firing. | `False` |
-| `namespace` | Namespace to scope the listing of alerts. | `Value` |
-| `silenced` | Show silenced alerts - alerts that are muted based on the matchers configured in the alert manager. | `True` |
-| `unprocessed` | Show unprocessed alerts. | `False` |
+| `filter` | HighDiskUsage\", severity=\"critical\"}" | `-` |
+| `inactive` | If set to true, active alerts will not be returned in the response. | `-` |
+| `inhibited` | Show inhibited alerts - alerts that are suppressed if certain other alerts are firing. | `-` |
+| `namespace` | Namespace to scope the listing of alerts. | `-` |
+| `silenced` | Show silenced alerts - alerts that are muted based on the matchers configured in the alert manager. | `-` |
+| `unprocessed` | Show unprocessed alerts. | `-` |
 
 ## Example Usage
 

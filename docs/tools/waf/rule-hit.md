@@ -27,7 +27,7 @@ WAF_INSTANCE_ID, RULE_ID, RULE_SEVERITY, RULE_TAG.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Bloggin-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

@@ -23,9 +23,9 @@ List USB Enablement Rules.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `node` | Node Name | `Master-0` |
-| `site` | Site Name | `Value` |
+| `namespace` | Namespace | `-` |
+| `node` | Node Name | `-` |
+| `site` | Site Name | `-` |
 
 ## Example Usage
 

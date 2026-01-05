@@ -23,7 +23,7 @@ GET Insight Credential Stuffing Attack.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

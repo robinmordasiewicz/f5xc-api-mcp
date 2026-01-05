@@ -23,7 +23,7 @@ Insight Personal Stats.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

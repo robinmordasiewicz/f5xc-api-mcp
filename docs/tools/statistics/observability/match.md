@@ -23,7 +23,7 @@ GET Alert Policies that match to a set of alert labels for a namespace.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Ns1` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

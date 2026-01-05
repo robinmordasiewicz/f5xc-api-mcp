@@ -23,8 +23,8 @@ GET openapi schema per API endpoint for a given source types and Virtual Host.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Virtual Host | `Blogging-app-vhost.` |
-| `namespace` | Namespace | `Blogging-app.` |
+| `name` | Virtual Host | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 

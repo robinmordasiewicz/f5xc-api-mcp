@@ -23,14 +23,14 @@ Returned from list of BGP status objects for a given view.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `view_name` | Name of view | `Value` |
+| `namespace` | Namespace | `-` |
+| `view_name` | Name of view | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `view_kind` | Kind of view of which BGP status objects are requested e.g. Aws_tgw_site. | `Value` |
+| `view_kind` | Kind of view of which BGP status objects are requested e.g. Aws_tgw_site. | `-` |
 
 ## Example Usage
 

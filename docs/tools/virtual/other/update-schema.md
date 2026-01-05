@@ -27,8 +27,8 @@ DEPRECATED. USE virtual host custom API UpdateAPIEndpointsSchemas.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Name` |
-| `namespace` | Namespace | `Shared` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

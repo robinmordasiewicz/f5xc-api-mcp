@@ -23,7 +23,7 @@ List of service operations for a given CDN LB.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Ns1` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

@@ -24,8 +24,8 @@ Update OIDC mappers updates OIDC mappers in underlying IDM provider.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | OIDC provider name | `[OIDC, google, Azure-OIDC]` |
-| `namespace` | Namespace | `System` |
+| `name` | OIDC provider name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

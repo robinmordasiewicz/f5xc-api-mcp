@@ -23,7 +23,7 @@ GET Health Status of all DNS Load Balancer Pool Members in a namespace.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Ns1` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

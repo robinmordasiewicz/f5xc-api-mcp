@@ -23,8 +23,8 @@ GET deployment history.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Name` |
-| `namespace` | Namespace | `Ns1` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

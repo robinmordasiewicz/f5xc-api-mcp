@@ -23,8 +23,8 @@ GET API endpoints stats for the given Virtual Host.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Virtual Host Name | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
+| `name` | Virtual Host Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

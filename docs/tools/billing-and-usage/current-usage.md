@@ -24,7 +24,7 @@ namespace and this selector has no effect on it.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

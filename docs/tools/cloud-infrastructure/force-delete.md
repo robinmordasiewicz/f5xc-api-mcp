@@ -23,7 +23,7 @@ Force DELETE Cloud Elastic IP.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Cloud-elastic-IP-1.` |
+| `name` | Name | `-` |
 
 ## Side Effects
 

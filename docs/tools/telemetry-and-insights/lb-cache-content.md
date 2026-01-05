@@ -23,7 +23,7 @@ Request to GET time-series cacheable data for HTTP-LBs.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

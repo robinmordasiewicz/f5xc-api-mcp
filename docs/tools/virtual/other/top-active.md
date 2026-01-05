@@ -23,8 +23,8 @@ Top APIs by requested activity metric. For example most-active APIs or most-atta
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Virtual Host Name | `Blogging-app-vhost.` |
-| `namespace` | Namespace | `Blogging-app.` |
+| `name` | Virtual Host Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

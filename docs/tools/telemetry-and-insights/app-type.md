@@ -26,14 +26,14 @@ will be returned in the response.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `end_time` | End time of metric collection from which data will be considered to build graph. | `1570197600.` |
-| `start_time` | Start time of metric collection from which data will be considered to build graph. | `1570194000.` |
+| `end_time` | End time of metric collection from which data will be considered to build graph. | `-` |
+| `start_time` | Start time of metric collection from which data will be considered to build graph. | `-` |
 
 ## Example Usage
 

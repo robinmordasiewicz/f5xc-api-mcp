@@ -24,8 +24,8 @@ Request to GET time-series data for a site returned in the site traffic graph.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `site` | Site | `Site-1` |
+| `namespace` | Namespace | `-` |
+| `site` | Site | `-` |
 
 ## Side Effects
 

@@ -23,13 +23,13 @@ Returns the TLS report summary including grade, score, and protocol names.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `monitor_name` | Monitor_name. X-required | `Monitor1` |
+| `monitor_name` | Monitor_name. X-required | `-` |
 
 ## Example Usage
 

@@ -23,13 +23,13 @@ Returns a healthy and critical count of all monitors in namespace, based on moni
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `monitor_type` | Monitor_type. | `HTTP` |
+| `monitor_type` | Monitor_type. | `-` |
 
 ## Example Usage
 

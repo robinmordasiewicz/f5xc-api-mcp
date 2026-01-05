@@ -25,8 +25,8 @@ being visible in other wokspaces like WAAP.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Service Name | `Vs1` |
-| `namespace` | Namespace | `Shared` |
+| `name` | Service Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

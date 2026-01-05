@@ -24,8 +24,8 @@ event investigation.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `alert_id` | Alert ID | `9ba097cf-35e3-4560-9c00-5a1a36b8f85b.` |
-| `namespace` | Namespace | `Value` |
+| `alert_id` | Alert ID | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

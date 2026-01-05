@@ -23,8 +23,8 @@ List affected users who have loaded this particular script.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
-| `script_id` | Script_id | `S-1234567` |
+| `namespace` | Namespace | `-` |
+| `script_id` | Script_id | `-` |
 
 ## Side Effects
 

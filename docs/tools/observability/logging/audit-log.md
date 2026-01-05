@@ -29,7 +29,7 @@ namespaces for a given tenant.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

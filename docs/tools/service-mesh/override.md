@@ -23,8 +23,8 @@ GET all override for API endpoints configured for this App type.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `app_type_name` | App Type | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
+| `app_type_name` | App Type | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

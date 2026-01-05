@@ -91,8 +91,6 @@ export interface DomainMetadata {
   domainCategory: string;
   /** UI grouping category */
   uiCategory: string;
-  /** Alternative names for the domain */
-  aliases: string[];
   /** Use case descriptions */
   useCases: string[];
   /** Related domain names */
@@ -155,7 +153,6 @@ interface RawSpecEntry {
   "x-f5xc-is-preview": boolean;
   "x-f5xc-requires-tier": string;
   "x-f5xc-category": string; // Replaces both domain_category and ui_category
-  "x-f5xc-aliases": string[];
   "x-f5xc-use-cases": string[];
   "x-f5xc-related-domains": string[];
   "x-f5xc-icon": string;
@@ -182,7 +179,6 @@ interface RawSpecIndex {
 let cachedSpecIndex: SpecIndex | null = null;
 let resourceToDomainCache: Map<string, DomainMetadata> | null = null;
 let resourceMetadataCache: Map<string, ResourceMetadata> | null = null;
-let aliasToDomainCache: Map<string, DomainMetadata> | null = null;
 
 /**
  * Get the path to specs/index.json
@@ -235,7 +231,6 @@ function transformSpecEntry(raw: RawSpecEntry): DomainMetadata {
     requiresTier: raw["x-f5xc-requires-tier"] as "Standard" | "Advanced",
     domainCategory: category, // From x-f5xc-category
     uiCategory: category, // From x-f5xc-category (same value, DRY consolidation)
-    aliases: raw["x-f5xc-aliases"] || [],
     useCases: raw["x-f5xc-use-cases"] || [],
     relatedDomains: raw["x-f5xc-related-domains"] || [],
     primaryResources: (raw["x-f5xc-primary-resources"] || []).map(transformResourceEntry),
@@ -279,24 +274,6 @@ export function loadSpecIndex(): SpecIndex {
 export function getDomainMetadata(domain: string): DomainMetadata | undefined {
   const index = loadSpecIndex();
   return index.specifications.find((spec) => spec.domain === domain);
-}
-
-/**
- * Get domain metadata by alias
- */
-export function getDomainByAlias(alias: string): DomainMetadata | undefined {
-  if (!aliasToDomainCache) {
-    aliasToDomainCache = new Map();
-    const index = loadSpecIndex();
-    for (const spec of index.specifications) {
-      for (const a of spec.aliases) {
-        aliasToDomainCache.set(a.toLowerCase(), spec);
-      }
-      // Also add domain name itself
-      aliasToDomainCache.set(spec.domain.toLowerCase(), spec);
-    }
-  }
-  return aliasToDomainCache.get(alias.toLowerCase());
 }
 
 /**
@@ -464,5 +441,4 @@ export function clearMetadataCache(): void {
   cachedSpecIndex = null;
   resourceToDomainCache = null;
   resourceMetadataCache = null;
-  aliasToDomainCache = null;
 }

@@ -23,8 +23,8 @@ Change host user password.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `node` | Node Name | `Master-0` |
-| `site` | Site Name | `Value` |
+| `node` | Node Name | `-` |
+| `site` | Site Name | `-` |
 
 ## Side Effects
 

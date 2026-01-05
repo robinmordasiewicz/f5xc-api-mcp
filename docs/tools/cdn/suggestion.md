@@ -23,8 +23,8 @@ Suggest blocking SimpleClientSrcRule for a given IP/ASN.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `VES-I/O-frontend.` |
-| `namespace` | Namespace | `Shared` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

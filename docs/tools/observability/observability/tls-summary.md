@@ -23,7 +23,7 @@ Returns TLS summary of all HTTPS monitors running in namespace.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

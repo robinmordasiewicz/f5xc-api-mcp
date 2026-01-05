@@ -23,8 +23,8 @@ Configure AWS VPC Site Information like public, private ips, subnet IDs and othe
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `AWS-VPC-site-1.` |
-| `namespace` | Namespace | `Default` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

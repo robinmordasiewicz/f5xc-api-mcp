@@ -23,7 +23,7 @@ GET status for global log receivers.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Bookinfo` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

@@ -34,8 +34,8 @@ credentials.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Credential name | `Value` |
-| `namespace` | Namespace | `System` |
+| `name` | Credential name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

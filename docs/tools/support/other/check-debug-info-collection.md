@@ -23,7 +23,7 @@ Check if the zip file of debug info from node is available.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `site` | Site Name | `Value` |
+| `site` | Site Name | `-` |
 
 ## Example Usage
 

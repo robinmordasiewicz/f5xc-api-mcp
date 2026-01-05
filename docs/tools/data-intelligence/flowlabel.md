@@ -23,7 +23,7 @@ ListFlowLabels takes a customer name and returns a list of FlowLabel objects.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Foobar` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

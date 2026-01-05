@@ -23,7 +23,7 @@ Returns suggested values for the specified field in the given Create/Replace/Cus
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Foobar` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

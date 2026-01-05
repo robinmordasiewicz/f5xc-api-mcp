@@ -23,8 +23,8 @@ Update receiver object status from enable to disable and vice versa.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `id` | ID | `Splunk-cloud-receiver.` |
-| `namespace` | Namespace | `Foobar` |
+| `id` | ID | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

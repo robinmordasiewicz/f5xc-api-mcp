@@ -23,8 +23,8 @@ Checks if a cname is available.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `cname` | Cname to look-uo. | `Domain1` |
-| `namespace` | Namespace to query. | `System` |
+| `cname` | Cname to look-uo. | `-` |
+| `namespace` | Namespace to query. | `-` |
 
 ## Example Usage
 

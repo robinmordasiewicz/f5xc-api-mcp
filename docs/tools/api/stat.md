@@ -24,7 +24,7 @@ updated for each API Group.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Shared` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

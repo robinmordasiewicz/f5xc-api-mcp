@@ -23,7 +23,7 @@ Fetch the corresponding Security Config for the given Third Party Application.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Shared` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

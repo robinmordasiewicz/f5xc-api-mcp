@@ -23,7 +23,7 @@ Request to GET DNS zone metrics data.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

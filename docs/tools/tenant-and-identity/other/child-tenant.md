@@ -34,19 +34,19 @@ tenant.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `metadata.namespace` | Namespace | `Staging` |
-| `name` | Name | `Name` |
-| `metadata.name` | Name | `Example-corp-web.` |
-| `namespace` | Namespace | `Ns1` |
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `metadata.name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `ctm` | Name of the Child Tenant Manager. | `Value` |
-| `name` | Filter child tenant list using name of child tenant. | `Name` |
-| `page_limit` | PageLimit will hold the limit of items required per query. | `100` |
-| `page_start` | PageStart will hold the UUID of the first item in the requested page. | `C5776a8e-bcae-4392-98d3-3556f4b9df1b.` |
+| `ctm` | Name of the Child Tenant Manager. | `-` |
+| `name` | Filter child tenant list using name of child tenant. | `-` |
+| `page_limit` | PageLimit will hold the limit of items required per query. | `-` |
+| `page_start` | PageStart will hold the UUID of the first item in the requested page. | `-` |
 
 ## Side Effects
 

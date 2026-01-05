@@ -24,7 +24,7 @@ associated with a specific asb_message object.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `token` | The token contains the encrypted data, secured using an HMAC key. | `7b22656e7469746c656d656e745f737562736372697074696f6e5f6964223a2261393933666633302d363138392d346231612d623064632d3630623034393063666463302d5445454d2d62343438666663362d34353166222c2276616c69645f74696c6c223a22323032342d31312d31355431373a31393a35382e3334323934352d30383a3030227d:d1bd81da4772d62fb424b805391fc946c611b5c245246e444410bcb0fe548ad7.` |
+| `token` | The token contains the encrypted data, secured using an HMAC key. | `-` |
 
 ## Example Usage
 

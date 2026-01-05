@@ -23,8 +23,8 @@ Generate token that will be used by the third party application.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Service Name | `Vs1` |
-| `namespace` | Namespace | `Shared` |
+| `name` | Service Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

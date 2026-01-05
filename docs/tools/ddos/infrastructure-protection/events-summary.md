@@ -23,13 +23,13 @@ Return a list of available event (suitable for an alert)
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `alert_id` | Optional - allows to filter events by alert so only relevant events are returned. If not provided, all user events are returned. | `9ba097cf-35e3-4560-9c00-5a1a36b8f85b.` |
+| `alert_id` | Optional - allows to filter events by alert so only relevant events are returned. If not provided, all user events are returned. | `-` |
 
 ## Example Usage
 

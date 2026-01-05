@@ -23,15 +23,15 @@ GET status of an object in a given site.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `kind` | Kind | `Virtual_host.` |
-| `name` | Name | `Productpage.` |
-| `namespace` | Namespace | `Bookinfo` |
+| `kind` | Kind | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `site` | Site name | `Ce01` |
+| `site` | Site name | `-` |
 | `site_type` | Site type indicates whether the site is CE or RE | `-` |
 
 ## Example Usage

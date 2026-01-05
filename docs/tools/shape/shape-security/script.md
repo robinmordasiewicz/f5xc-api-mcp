@@ -24,17 +24,17 @@ List all the scripts for the tenant depending on start time and end time.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `end_time` | X-required | `1570194300.` |
-| `page_number` | One-indexed page number (starts from 1), page_number and page_size are optional when page_token is specified. | `10` |
-| `page_size` | The maximum number of scripts to return per page. | `500` |
-| `page_token` | Page_token is the value of listscriptsresponse.next_page_token from previous request. | `CGFnZV9zaXplPTUwMCZwYWdlX251bWJlcj0y.` |
-| `start_time` | X-required | `1570194000.` |
+| `end_time` | X-required | `-` |
+| `page_number` | One-indexed page number (starts from 1), page_number and page_size are optional when page_token is specified. | `-` |
+| `page_size` | The maximum number of scripts to return per page. | `-` |
+| `page_token` | Page_token is the value of listscriptsresponse.next_page_token from previous request. | `-` |
+| `start_time` | X-required | `-` |
 
 ## Side Effects
 

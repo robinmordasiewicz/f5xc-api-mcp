@@ -23,8 +23,8 @@ Initiate Purge for Edge CDN Cache.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | CDN Distribution Name | `CDN-1` |
-| `namespace` | Namespace | `Default` |
+| `name` | CDN Distribution Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

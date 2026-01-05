@@ -23,8 +23,8 @@ Returns annotations of a single mitigation.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `mitigation_id` | Mitigation ID | `92d6e1e6-b6e9-46d4-9286-796a6b3fbf6a.` |
-| `namespace` | Namespace | `Value` |
+| `mitigation_id` | Mitigation ID | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

@@ -23,7 +23,7 @@ Getbotdetectionupdates CustomAPI.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

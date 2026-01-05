@@ -28,8 +28,8 @@ state is PROVISIONING and UPGRADING.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Ce398` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

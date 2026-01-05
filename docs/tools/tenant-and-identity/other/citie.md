@@ -23,9 +23,9 @@ Returns a list of known cities of a country/state.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `country_code` | Country code | `US` |
-| `prefix` | Prefix | `DE` |
-| `state_code` | State code | `TN` |
+| `country_code` | Country code | `-` |
+| `prefix` | Prefix | `-` |
+| `state_code` | State code | `-` |
 
 ## Example Usage
 

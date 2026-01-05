@@ -23,8 +23,8 @@ GET Learnt Schema per API endpoint for a given auto discovered API endpoint for 
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `app_type_name` | App Type | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
+| `app_type_name` | App Type | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

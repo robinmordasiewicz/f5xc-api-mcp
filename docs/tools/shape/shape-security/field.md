@@ -23,7 +23,7 @@ GET
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Namespace1.` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

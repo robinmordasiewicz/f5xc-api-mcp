@@ -23,8 +23,8 @@ GET total API calls for the given Virtual Host.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Virtual Host Name | `Blogging-app-vhost.` |
-| `namespace` | Namespace | `Blogging-app.` |
+| `name` | Virtual Host Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

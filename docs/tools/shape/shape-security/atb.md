@@ -24,13 +24,13 @@ Enable/disable ATB.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Payment-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `virtual_host` | Name of Virtual Host to scope traffic overview query. | `Example-app-vh-1.` |
+| `virtual_host` | Name of Virtual Host to scope traffic overview query. | `-` |
 
 ## Side Effects
 

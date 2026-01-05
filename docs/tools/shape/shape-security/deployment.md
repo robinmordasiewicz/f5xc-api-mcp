@@ -23,13 +23,13 @@ Getbotdetectionrulesdeployments CustomAPI.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `rules_deployment_status` | The deployments will be filtered by the deployment status values provided. This field is optional. If no deployment status values are provided, all the deployments will be fetched | `[BOT_DETECTION_RULES_DEPLOYMENT_STATUS_INITIATED, BOT_DETECTION_RULES_DEPLOYMENT_STATUS_PARTIALLY_INITIATED]` |
+| `rules_deployment_status` | The deployments will be filtered by the deployment status values provided. This field is optional. If no deployment status values are provided, all the deployments will be fetched | `-` |
 
 ## Example Usage
 

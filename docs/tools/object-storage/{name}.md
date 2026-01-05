@@ -27,17 +27,17 @@ GetMobileAppShield is an API to download particular version of mobile app shield
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Volt-API-specs.` |
-| `namespace` | Namespace | `System` |
-| `version` | Version | `V1-21-01-12.` |
-| `object_type` | Object_type | `Swagger` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `version` | Version | `-` |
+| `object_type` | Object_type | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `object_type` | X-required | `Swagger` |
-| `force_delete` | Optional query parameter. If provided will DELETE all the versions of the specified object. | `Value` |
+| `object_type` | X-required | `-` |
+| `force_delete` | Optional query parameter. If provided will DELETE all the versions of the specified object. | `-` |
 
 ## Side Effects
 

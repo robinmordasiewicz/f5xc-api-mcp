@@ -33,8 +33,8 @@ certificates files:
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Discovery Name | `Ds1` |
-| `namespace` | Namespace | `Shared` |
+| `name` | Discovery Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

@@ -23,7 +23,7 @@ Reapply CloudLink Config.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `AWS-cloud-link-east.` |
+| `name` | Name | `-` |
 
 ## Side Effects
 

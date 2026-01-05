@@ -25,15 +25,15 @@ List form fields for all the scripts depending on start time and end time with G
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
-| `id` | ID | `F-ssabcde` |
+| `namespace` | Namespace | `-` |
+| `id` | ID | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `end_time` | X-required | `1570194300.` |
-| `start_time` | X-required | `1570194000.` |
+| `end_time` | X-required | `-` |
+| `start_time` | X-required | `-` |
 
 ## Side Effects
 

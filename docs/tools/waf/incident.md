@@ -28,7 +28,7 @@ fields such as `vh_name`, `intent`, `city`, `country`.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Bloggin-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

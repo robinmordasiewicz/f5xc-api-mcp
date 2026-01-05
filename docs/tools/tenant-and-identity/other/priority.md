@@ -23,7 +23,7 @@ Priority of a selected ticket. Not possible if ticket's already closed.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `tp_id` | Third party ID | `123` |
+| `tp_id` | Third party ID | `-` |
 
 ## Side Effects
 

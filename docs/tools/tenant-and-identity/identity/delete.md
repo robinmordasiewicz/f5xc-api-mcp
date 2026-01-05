@@ -26,8 +26,8 @@ tenants `system` namespace for OIDC provider by name.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Value` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

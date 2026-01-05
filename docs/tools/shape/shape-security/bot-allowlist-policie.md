@@ -23,7 +23,7 @@ GET all bot allowlist policies and versions.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

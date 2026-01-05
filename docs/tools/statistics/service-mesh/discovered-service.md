@@ -24,16 +24,16 @@ List the discovered services of specific type like virtual-servers, K8s, consul,
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Name` |
-| `namespace` | Namespace | `Ns1` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
-| `discovery_name` | Filter results to only include items referencing this discovery object name. | `Disc-cbip-1.` |
-| `service_type` | Identifies the discovered service type. Omit for all types. | `Bigip_virtual_server.` |
+| `discovery_name` | Filter results to only include items referencing this discovery object name. | `-` |
+| `service_type` | Identifies the discovered service type. Omit for all types. | `-` |
 
 ## Example Usage
 

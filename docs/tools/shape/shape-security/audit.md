@@ -23,15 +23,15 @@ GET SAFE block table list.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Payment-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `dimt` | Account_id/device_id how to apply the blocking rule. | `Account_id.` |
-| `dimv` | The relevant account_id/device_id. | `Goldcha` |
-| `version` | The API version to use. | `V2` |
+| `dimt` | Account_id/device_id how to apply the blocking rule. | `-` |
+| `dimv` | The relevant account_id/device_id. | `-` |
+| `version` | The API version to use. | `-` |
 
 ## Example Usage
 

@@ -23,8 +23,8 @@ GetDnsInfo is an API to GET DNS information for a given HTTP load balancer.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Value` |
-| `namespace` | Namespace | `Value` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

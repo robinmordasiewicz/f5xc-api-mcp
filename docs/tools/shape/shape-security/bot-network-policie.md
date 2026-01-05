@@ -23,7 +23,7 @@ GET all bot network policies and versions.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

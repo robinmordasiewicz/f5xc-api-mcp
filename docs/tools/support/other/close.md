@@ -24,8 +24,8 @@ needed to be.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Value` |
-| `namespace` | Namespace | `Value` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

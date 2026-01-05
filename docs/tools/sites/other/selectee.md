@@ -23,8 +23,8 @@ GET the list of objects selected by this Virtual Site based on its selector labe
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Value` |
-| `namespace` | Namespace | `Value` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

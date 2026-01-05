@@ -23,13 +23,13 @@ GET VPM health information.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `site` | Site Name | `Value` |
+| `site` | Site Name | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `console_user` | Name of the console user who runs this command. | `Console-user.` |
+| `console_user` | Name of the console user who runs this command. | `-` |
 
 ## Example Usage
 

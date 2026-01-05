@@ -23,7 +23,7 @@ Returns record type summary for DNS monitor including record type and count.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Demo` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

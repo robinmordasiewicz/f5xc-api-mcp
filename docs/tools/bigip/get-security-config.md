@@ -23,7 +23,7 @@ Fetch the corresponding Security Config for the given BIG-IP load balancers.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Shared` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

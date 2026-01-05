@@ -27,8 +27,8 @@ VES.I/o.schema.views.api_definition.publicconfigcustomapi.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

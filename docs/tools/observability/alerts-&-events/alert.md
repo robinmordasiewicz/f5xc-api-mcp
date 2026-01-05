@@ -23,17 +23,17 @@ GET alerts matching the filter for the given namespace.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `filter` | HighDiskUsage\", severity=\"critical\"}" | `{alertname=\.` |
-| `inactive` | If set to true, active alerts will not be returned in the response. | `False` |
-| `inhibited` | Show inhibited alerts - alerts that are suppressed if certain other alerts are firing. | `False` |
-| `silenced` | Show silenced alerts - alerts that are muted based on the matchers configured in the alert manager. | `True` |
-| `unprocessed` | Show unprocessed alerts. | `False` |
+| `filter` | HighDiskUsage\", severity=\"critical\"}" | `-` |
+| `inactive` | If set to true, active alerts will not be returned in the response. | `-` |
+| `inhibited` | Show inhibited alerts - alerts that are suppressed if certain other alerts are firing. | `-` |
+| `silenced` | Show silenced alerts - alerts that are muted based on the matchers configured in the alert manager. | `-` |
+| `unprocessed` | Show unprocessed alerts. | `-` |
 
 ## Example Usage
 

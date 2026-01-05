@@ -23,7 +23,7 @@ GET TOS provides TOS version with text.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

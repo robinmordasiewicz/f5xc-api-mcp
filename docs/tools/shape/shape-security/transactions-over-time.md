@@ -23,7 +23,7 @@ POST Safe Analyst Station Dashboard Transaction Breakdown request.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Payment-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

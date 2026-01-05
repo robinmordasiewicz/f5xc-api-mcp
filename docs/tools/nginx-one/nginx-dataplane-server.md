@@ -23,7 +23,7 @@ GET NGINX One Servers associated to an NGINX dataplane.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

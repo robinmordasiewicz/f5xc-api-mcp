@@ -23,8 +23,8 @@ GET organisation information.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Name` |
-| `namespace` | Namespace | `Ns1` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 

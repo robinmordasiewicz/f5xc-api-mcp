@@ -25,8 +25,8 @@ DEPRECATED. Instead use virtual host public custom API - AssignAPIDefinition.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

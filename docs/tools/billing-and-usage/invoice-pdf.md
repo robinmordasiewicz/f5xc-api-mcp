@@ -23,13 +23,13 @@ Retrieve pdf for a paid invoice by its name.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name of the invoice to be downloaded. | `Invoice-1` |
+| `name` | Name of the invoice to be downloaded. | `-` |
 
 ## Example Usage
 

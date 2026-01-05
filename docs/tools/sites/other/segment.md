@@ -23,8 +23,8 @@ API to GET list of segments in a site.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
-| `site` | Site | `Ce398` |
+| `namespace` | Namespace | `-` |
+| `site` | Site | `-` |
 
 ## Example Usage
 

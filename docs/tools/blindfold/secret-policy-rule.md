@@ -30,17 +30,17 @@ Replace secret_policy_rule creates a new object in storage backend for metadata.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `metadata.namespace` | Namespace | `Staging` |
-| `name` | Name | `Name` |
-| `namespace` | Namespace | `Ns1` |
-| `metadata.name` | Name | `Example-corp-web.` |
+| `metadata.namespace` | Namespace | `-` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `metadata.name` | Name | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
 | `response_format` | The format in which the configuration object is to be fetched. This could be for example | `-` |
-| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `Env in (staging, testing), tier in (web, db)` |
+| `label_filter` | A LabelSelectorType expression that every item in list response will satisfy. | `-` |
 | `report_fields` | The report_fields parameter | `-` |
 | `report_status_fields` | The report_status_fields parameter | `-` |
 

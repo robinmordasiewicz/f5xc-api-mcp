@@ -27,7 +27,7 @@ host. By default, the access logs in the response are sorted in the reverse chro
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

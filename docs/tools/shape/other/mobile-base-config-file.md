@@ -23,8 +23,8 @@ GET Mobile Base Configuration File.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Mobile SDK Base Configuration name | `App 8000` |
-| `namespace` | Namespace | `Ns1` |
+| `name` | Mobile SDK Base Configuration name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

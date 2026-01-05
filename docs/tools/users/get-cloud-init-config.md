@@ -23,7 +23,7 @@ Returns cloud-init counfig for kvm provider with JWT token.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `provider` | Provider for that cloud-init config. | `Kvm` |
+| `provider` | Provider for that cloud-init config. | `-` |
 | `site_name` | Site name for this cloud-init config. | `-` |
 
 ## Example Usage

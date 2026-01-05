@@ -23,7 +23,7 @@ GET API endpoints stats for the given Namespace.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Shared` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

@@ -30,10 +30,10 @@ shared.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `key` | Key string in Query parameters. | `Value` |
-| `key_classes` | Key classes | `Key classes.` |
+| `key` | Key string in Query parameters. | `-` |
+| `key_classes` | Key classes | `-` |
 | `query` | Type of Query | `-` |
-| `value` | Value string in Query parameters. | `Value` |
+| `value` | Value string in Query parameters. | `-` |
 
 ## Example Usage
 

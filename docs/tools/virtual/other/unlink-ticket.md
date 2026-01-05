@@ -25,7 +25,7 @@ the record.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Virtual Host Name | `Blogging-app-vhost.` |
+| `name` | Virtual Host Name | `-` |
 | `namespace` | Namespace | `-` |
 
 ## Side Effects

@@ -24,7 +24,7 @@ request.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Foobar` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

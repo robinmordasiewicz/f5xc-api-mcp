@@ -49,8 +49,8 @@ request.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
-| `name` | Name | `Value` |
+| `namespace` | Namespace | `-` |
+| `name` | Name | `-` |
 
 ## Side Effects
 

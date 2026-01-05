@@ -23,7 +23,7 @@ GET allows users to query limits and current usage of resources.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

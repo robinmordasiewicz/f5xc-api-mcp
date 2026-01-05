@@ -26,7 +26,7 @@ ListUsageDetails.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

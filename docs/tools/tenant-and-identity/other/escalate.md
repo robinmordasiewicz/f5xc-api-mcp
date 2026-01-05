@@ -24,7 +24,7 @@ escalate tickets.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `tp_id` | Third party ID | `123` |
+| `tp_id` | Third party ID | `-` |
 
 ## Side Effects
 

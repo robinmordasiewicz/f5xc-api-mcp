@@ -23,13 +23,13 @@ GET JS Injection Configuration for this tenant.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Default` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Format we want the script to be returned in. | `ScriptTag` |
+| `name` | Format we want the script to be returned in. | `-` |
 
 ## Example Usage
 

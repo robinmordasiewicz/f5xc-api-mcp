@@ -29,8 +29,8 @@ in a K8s Cluster.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `site` | Site | `CE-1` |
+| `namespace` | Namespace | `-` |
+| `site` | Site | `-` |
 
 ## Side Effects
 

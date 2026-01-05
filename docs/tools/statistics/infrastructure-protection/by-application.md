@@ -23,8 +23,8 @@ Request to GET l3l4 Application traffic data.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
-| `network_id` | NetworkId | `Value` |
+| `namespace` | Namespace | `-` |
+| `network_id` | NetworkId | `-` |
 
 ## Side Effects
 

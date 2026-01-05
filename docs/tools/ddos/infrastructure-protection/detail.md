@@ -30,9 +30,9 @@ team members, mitigation annotations and any attachments.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `event_id` | Event ID | `8094c17b-80c1-429d-8b17-7232f0e2937c.` |
-| `namespace` | Namespace | `Value` |
-| `event_detail_id` | Event Detail ID | `8094c17b-80c1-429d-8b17-7232f0e2937c.` |
+| `event_id` | Event ID | `-` |
+| `namespace` | Namespace | `-` |
+| `event_detail_id` | Event Detail ID | `-` |
 
 ## Side Effects
 

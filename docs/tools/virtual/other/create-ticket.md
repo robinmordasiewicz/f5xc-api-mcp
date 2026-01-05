@@ -23,7 +23,7 @@ Create a ticket for the given vulnerability.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Virtual Host Name | `Blogging-app-vhost.` |
+| `name` | Virtual Host Name | `-` |
 | `namespace` | Namespace | `-` |
 
 ## Side Effects

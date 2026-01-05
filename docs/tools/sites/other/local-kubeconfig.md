@@ -24,8 +24,8 @@ Returns list of all local active kubeconfig minted for this site.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Ce398` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

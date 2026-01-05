@@ -23,7 +23,7 @@ Update fraud feedback for a transaction or session.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Payment-app-namespace-1.` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

@@ -23,7 +23,7 @@ Request to GET time-series data for an edge returned in the site traffic graph.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `Value` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

@@ -27,8 +27,8 @@ sensitive data type and return top k (max
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Virtual Host Name | `Blogging-app-vhost.` |
-| `namespace` | Namespace | `Blogging-app.` |
+| `name` | Virtual Host Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

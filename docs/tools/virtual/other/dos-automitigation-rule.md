@@ -27,9 +27,9 @@ DELETE the corresponding DoS Auto-Mitigation Rule for the given HTTP load balanc
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Blogging-app.` |
-| `namespace` | Namespace | `Shared` |
-| `dos_automitigation_rule_name` | DoS Mitigation Rule Name | `Dos-auto-mitigation-VES-I/O-HTTP-loadbalancer-ce22.` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
+| `dos_automitigation_rule_name` | DoS Mitigation Rule Name | `-` |
 
 ## Side Effects
 

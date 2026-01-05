@@ -31,16 +31,16 @@ Create creates a user and namespace roles binding for this user.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `id` | ID | `sam.smith@gmail.com.` |
+| `id` | ID | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `excludedAttributes` | Members"]" | `[` |
-| `count` | The number of entries after filter. | `8` |
-| `filter` | Filter to be used for filtering objects. | `ExternalId.` |
-| `page` | Start offset. | `1` |
+| `excludedAttributes` | Members"]" | `-` |
+| `count` | The number of entries after filter. | `-` |
+| `filter` | Filter to be used for filtering objects. | `-` |
+| `page` | Start offset. | `-` |
 
 ## Side Effects
 

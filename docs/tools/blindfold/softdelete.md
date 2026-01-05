@@ -23,8 +23,8 @@ Deletepolicy CustomAPI.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Site-secret-policy.` |
-| `namespace` | Namespace | `System` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

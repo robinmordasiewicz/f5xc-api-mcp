@@ -23,7 +23,7 @@ API to GET list of Persistent Volumes in a site.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `site` | Site | `Site-1` |
+| `site` | Site | `-` |
 
 ## Example Usage
 

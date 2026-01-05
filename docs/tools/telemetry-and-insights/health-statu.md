@@ -23,8 +23,8 @@ GET Discovered Service Health status.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `name` | Name | `Vs1` |
-| `namespace` | Namespace | `Ns1` |
+| `name` | Name | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Example Usage
 

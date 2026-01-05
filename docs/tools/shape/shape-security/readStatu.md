@@ -23,8 +23,8 @@ Allow / block script from reading form fields.
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `id` | ID | `S-1234567` |
-| `namespace` | Namespace | `Default` |
+| `id` | ID | `-` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 

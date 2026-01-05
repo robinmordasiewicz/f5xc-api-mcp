@@ -23,15 +23,15 @@ List all the network interactions for a script depending on start time and end t
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `id` | ID | `S-1234567` |
-| `namespace` | Namespace | `Default` |
+| `id` | ID | `-` |
+| `namespace` | Namespace | `-` |
 
 ### Query Parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `end_time` | X-required | `1570194300.` |
-| `start_time` | X-required | `1570194000.` |
+| `end_time` | X-required | `-` |
+| `start_time` | X-required | `-` |
 
 ## Example Usage
 

@@ -27,7 +27,7 @@ This detail RPC will show the current token's expiry. Returns API credential obj
 
 | Parameter | Description | Example |
 |-----------|-------------|--------|
-| `namespace` | Namespace | `System` |
+| `namespace` | Namespace | `-` |
 
 ## Side Effects
 
