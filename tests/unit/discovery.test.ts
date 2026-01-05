@@ -470,8 +470,8 @@ describe("Token Efficiency Validation", () => {
     const index = getToolIndex();
     const sampleEntry = index.tools[0];
 
-    // Each entry should have 14 fields:
-    // 5 core + Phase A metadata + domain metadata + resource metadata (v1.0.84+)
+    // Each entry should have 15 fields:
+    // 5 core + Phase A metadata + domain metadata + resource metadata (v1.0.84+) + discovery (v2.0.5+)
     const fields = Object.keys(sampleEntry);
     expect(fields).toEqual([
       "name",
@@ -489,6 +489,8 @@ describe("Token Efficiency Validation", () => {
       "supportsLogs",
       "supportsMetrics",
       "resourceTier",
+      // v2.0.5+ discovery metadata
+      "discoveryResponseTimeMs",
     ]);
   });
 

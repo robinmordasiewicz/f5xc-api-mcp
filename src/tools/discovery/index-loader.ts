@@ -43,6 +43,8 @@ function generateIndex(): ToolIndex {
       supportsLogs: resourceMeta?.supportsLogs ?? false,
       supportsMetrics: resourceMeta?.supportsMetrics ?? false,
       resourceTier: resourceMeta?.tier ?? null,
+      // Discovery metadata from live API exploration (v2.0.5+)
+      discoveryResponseTimeMs: tool.discoveryMetadata?.responseTimeMs,
     };
   });
 

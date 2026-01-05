@@ -10,6 +10,7 @@
 
 import { getToolIndex } from "./index-loader.js";
 import { getResourcesInDomain, getAllDependencyDomains } from "./dependencies.js";
+import { getDomainMetadata, type TroubleshootingGuide } from "../../generator/domain-metadata.js";
 
 /**
  * Common error pattern with resolution guidance
@@ -95,6 +96,8 @@ export interface DomainBestPractices {
   securityNotes: string[];
   /** Performance tips */
   performanceTips: string[];
+  /** Troubleshooting guides from upstream CLI metadata (v2.0.5+) */
+  troubleshootingGuides?: TroubleshootingGuide[];
 }
 
 /**
@@ -458,6 +461,10 @@ export function getDomainBestPractices(domain: string): DomainBestPractices | nu
     description: `Operations for ${domain} resources`,
   };
 
+  // Get troubleshooting guides from upstream CLI metadata (v2.0.5+)
+  const domainMeta = getDomainMetadata(domain);
+  const troubleshootingGuides = domainMeta?.cliMetadata?.troubleshooting;
+
   return {
     domain,
     displayName: info.displayName,
@@ -469,6 +476,7 @@ export function getDomainBestPractices(domain: string): DomainBestPractices | nu
     workflows: generateWorkflows(domain),
     securityNotes: DOMAIN_SECURITY_NOTES[domain] ?? [],
     performanceTips: DOMAIN_PERFORMANCE_TIPS[domain] ?? [],
+    troubleshootingGuides,
   };
 }
 
@@ -654,6 +662,26 @@ export function formatBestPractices(practices: DomainBestPractices): string {
       lines.push(`- ${tip}`);
     }
     lines.push("");
+  }
+
+  if (practices.troubleshootingGuides && practices.troubleshootingGuides.length > 0) {
+    lines.push("## Troubleshooting Guides");
+    for (const guide of practices.troubleshootingGuides) {
+      lines.push(`### ${guide.problem}`);
+      lines.push("**Symptoms**:");
+      for (const symptom of guide.symptoms) {
+        lines.push(`- ${symptom}`);
+      }
+      lines.push("**Diagnosis**:");
+      for (const cmd of guide.diagnosisCommands) {
+        lines.push(`- ${cmd}`);
+      }
+      lines.push("**Solutions**:");
+      for (const solution of guide.solutions) {
+        lines.push(`- ${solution}`);
+      }
+      lines.push("");
+    }
   }
 
   return lines.join("\n");
