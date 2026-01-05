@@ -315,11 +315,15 @@ The generator automatically:
 
 ## Workflow Prompts
 
-The server includes guided workflow prompts:
+The server includes guided workflow prompts sourced from upstream enriched specs:
 
-- `deploy-http-loadbalancer` - Deploy HTTP LB with origin pool
-- `configure-waf` - Configure Web Application Firewall
-- `create-multicloud-site` - Deploy F5XC site in AWS/Azure/GCP
+- `deploy_http_loadbalancer` - Create a fully configured HTTP load balancer with backend origin pool
+- `deploy_https_loadbalancer` - Create HTTPS load balancer with SSL/TLS termination
+- `enable_waf_protection` - Add web application firewall to existing load balancer
+- `configure_origin_pool` - Set up backend server pool with health checks
+- `configure_dns_zone` - Set up authoritative DNS zone with records
+- `enable_cdn_distribution` - Configure CDN for content delivery
+- `register_site` - Register and configure a CE site
 
 ## Resource URIs
 

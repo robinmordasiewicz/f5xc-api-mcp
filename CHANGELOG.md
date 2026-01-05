@@ -18,17 +18,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Initial release of F5 Distributed Cloud API MCP Server
-- 270+ API tools auto-generated from OpenAPI specifications
+- 1500+ API tools auto-generated from enriched OpenAPI specifications across 23 domains
 - Dual-mode operation: documentation mode (unauthenticated) and execution mode (authenticated)
 - API token authentication support
 - P12 certificate (mTLS) authentication support
 - Automatic URL normalization for various F5XC URL formats
 - CURL examples for all API operations
 - MCP Resources for F5XC configuration objects via URI scheme
-- Workflow prompts for common operations:
-  - `deploy-http-loadbalancer` - Deploy HTTP Load Balancer with origin pool
-  - `configure-waf` - Configure Web Application Firewall
-  - `create-multicloud-site` - Deploy F5XC site in AWS/Azure/GCP
+- Workflow prompts sourced from upstream x-f5xc-guided-workflows extension:
+  - `deploy_http_loadbalancer` - Create HTTP load balancer with origin pool
+  - `deploy_https_loadbalancer` - Create HTTPS load balancer with SSL/TLS termination
+  - `enable_waf_protection` - Add WAF to existing load balancer
+  - `configure_origin_pool` - Set up backend server pool with health checks
+  - `configure_dns_zone` - Set up authoritative DNS zone with records
+  - `enable_cdn_distribution` - Configure CDN for content delivery
+  - `register_site` - Register and configure a CE site
 - Subscription tier awareness (NO_TIER, STANDARD, ADVANCED)
 - Comprehensive documentation site with MkDocs
 - Docker container distribution via GHCR
@@ -41,20 +45,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Automated npm publishing
   - Documentation deployment to GitHub Pages
 
-### API Domains
+### API Domains (23 Total)
 
-- `waap` - HTTP/TCP load balancers, origin pools, app firewalls, rate limiters
-- `dns` - DNS zones, DNS load balancers, DNS LB pools
-- `network` - Network connectors, firewalls, enhanced firewall policies
-- `site` - AWS VPC sites, Azure VNET sites, GCP VPC sites, customer edge
-- `appstack` - K8s clusters, virtual K8s, workloads
-- `security` - Service policies, WAF, malicious user detection
-- `core` - Namespaces, certificates, cloud credentials
+Tools organized by enriched domains including:
+
+- Load Balancing - HTTP/TCP/UDP load balancers, origin pools
+- Networking - Network connectors, firewalls, interfaces, policies
+- Security - Service policies, WAF, malicious user mitigation
+- Infrastructure - AWS/Azure/GCP VPC sites, customer edge sites
+- DNS - DNS zones, DNS load balancers, DNS pools
+- CDN - CDN load balancers, cache rules
+- Observability - Alerts, logs, synthetic monitors, metrics
+- Identity - Authentication, users, roles, RBAC
+- Bot Defense - Bot defense, client-side defense
+- And 14 more domains with full API coverage
+
+See README.md for complete domain list with path counts.
 
 ### Technical
 
 - TypeScript 5.x with strict mode
-- Node.js 20+ LTS runtime
+- Node.js 24+ runtime
 - @modelcontextprotocol/sdk for MCP implementation
 - Zod for runtime validation
 - Axios with mTLS support for HTTP client

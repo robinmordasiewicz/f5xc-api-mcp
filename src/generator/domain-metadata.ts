@@ -143,10 +143,8 @@ export interface DomainMetadata {
   useCases: string[];
   /** Related domain names */
   relatedDomains: string[];
-  /** Primary resource types with rich metadata (v1.0.84+) */
+  /** Primary resource types with rich metadata */
   primaryResources: ResourceMetadata[];
-  /** Simple list of resource names for backward compatibility */
-  primaryResourcesSimple: string[];
   /** Emoji icon */
   icon: string;
   /** SVG logo data URI */
@@ -330,7 +328,6 @@ function transformSpecEntry(raw: RawSpecEntry): DomainMetadata {
     useCases: raw["x-f5xc-use-cases"] || [],
     relatedDomains: raw["x-f5xc-related-domains"] || [],
     primaryResources: (raw["x-f5xc-primary-resources"] || []).map(transformResourceEntry),
-    primaryResourcesSimple: raw["x-f5xc-primary-resources-simple"] || [],
     icon: raw["x-f5xc-icon"],
     logoSvg: raw["x-f5xc-logo-svg"],
     cliMetadata: transformCliMetadata(raw["x-f5xc-cli-metadata"]),
@@ -396,18 +393,6 @@ function buildResourceCaches(): void {
       const kebab = resource.name.toLowerCase().replace(/_/g, "-");
       resourceToDomainCache.set(kebab, spec);
       resourceMetadataCache.set(kebab, resource);
-    }
-
-    // Also index from primaryResourcesSimple for backward compatibility
-    for (const resourceName of spec.primaryResourcesSimple) {
-      const normalized = resourceName.toLowerCase().replace(/-/g, "_");
-      if (!resourceToDomainCache.has(normalized)) {
-        resourceToDomainCache.set(normalized, spec);
-      }
-      const kebab = resourceName.toLowerCase().replace(/_/g, "-");
-      if (!resourceToDomainCache.has(kebab)) {
-        resourceToDomainCache.set(kebab, spec);
-      }
     }
   }
 }
@@ -503,19 +488,10 @@ export function getResourceToDomainMap(): Record<string, string> {
   const map: Record<string, string> = {};
 
   for (const spec of index.specifications) {
-    // Use rich primaryResources with resource.name
     for (const resource of spec.primaryResources) {
       // Use kebab-case as the key (consistent with tool naming)
       const kebabCase = resource.name.toLowerCase().replace(/_/g, "-");
       map[kebabCase] = spec.domain;
-    }
-
-    // Also include primaryResourcesSimple for backward compatibility
-    for (const resourceName of spec.primaryResourcesSimple) {
-      const kebabCase = resourceName.toLowerCase().replace(/_/g, "-");
-      if (!map[kebabCase]) {
-        map[kebabCase] = spec.domain;
-      }
     }
   }
 
