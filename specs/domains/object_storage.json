@@ -3,7 +3,7 @@
   "info": {
     "title": "Object Storage",
     "description": "Blob management for application component delivery across namespaces. Time-limited download links with cryptographic signing protect asset retrieval. Version-controlled packages organized by operating system type support artifact discovery. Query filtering by name, type, and release number enables programmatic access to integrator libraries and protection modules for mobile deployments.",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -13,7 +13,7 @@
       "url": "https://www.f5.com/company/policies/eula"
     },
     "summary": "Versioned library distribution for mobile app integrators. Presigned URLs enable secure downloads with OS-specific builds for iOS and Android.",
-    "x-ves-cli-domain": "object_storage"
+    "x-f5xc-cli-domain": "object_storage"
   },
   "servers": [
     {
@@ -2319,7 +2319,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T19:55:40.310526+00:00"
+            "x-reconciled-at": "2026-01-05T01:26:59.770142+00:00"
           },
           "mobile_app_shield": {
             "$ref": "#/components/schemas/stored_objectMobileAppShieldAttributes"
@@ -2360,7 +2360,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T19:55:40.310537+00:00"
+            "x-reconciled-at": "2026-01-05T01:26:59.770153+00:00"
           },
           "namespace": {
             "type": "string",
@@ -2386,7 +2386,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T19:55:40.310542+00:00"
+            "x-reconciled-at": "2026-01-05T01:26:59.770158+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -2656,7 +2656,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T19:55:40.310570+00:00"
+            "x-reconciled-at": "2026-01-05T01:26:59.770191+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -2679,7 +2679,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T19:55:40.310576+00:00"
+            "x-reconciled-at": "2026-01-05T01:26:59.770198+00:00"
           },
           "versions": {
             "type": "array",
@@ -3042,7 +3042,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T19:55:40.310600+00:00"
+            "x-reconciled-at": "2026-01-05T01:26:59.770222+00:00"
           },
           "mobile_app_shield": {
             "$ref": "#/components/schemas/stored_objectMobileAppShieldAttributes"
@@ -3076,7 +3076,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T19:55:40.310608+00:00"
+            "x-reconciled-at": "2026-01-05T01:26:59.770230+00:00"
           },
           "namespace": {
             "type": "string",
@@ -3100,7 +3100,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T19:55:40.310612+00:00"
+            "x-reconciled-at": "2026-01-05T01:26:59.770234+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -3150,7 +3150,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T19:55:40.310618+00:00"
+            "x-reconciled-at": "2026-01-05T01:26:59.770253+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -3248,7 +3248,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T19:55:40.310625+00:00"
+            "x-reconciled-at": "2026-01-05T01:26:59.770260+00:00"
           },
           "latest_version": {
             "type": "boolean",
@@ -3301,7 +3301,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-04T19:55:40.310631+00:00"
+            "x-reconciled-at": "2026-01-05T01:26:59.770267+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
