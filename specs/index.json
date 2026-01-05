@@ -1,6 +1,6 @@
 {
-  "version": "2.0.7",
-  "timestamp": "2026-01-05T03:58:57.961107+00:00",
+  "version": "2.0.8",
+  "timestamp": "2026-01-05T05:45:02.635444+00:00",
   "specifications": [
     {
       "domain": "admin_console_and_ui",
@@ -2892,5 +2892,1008 @@
     "aws_vpc_site",
     "azure_vnet_site",
     "gcp_vpc_site"
-  ]
+  ],
+  "x-f5xc-error-resolution": {
+    "version": "1.0.0",
+    "http_errors": {
+      "400": {
+        "code": 400,
+        "name": "Bad Request",
+        "description": "The request was malformed or contains invalid data",
+        "common_causes": [
+          "Invalid JSON syntax in request body",
+          "Missing required fields",
+          "Invalid field values or formats",
+          "Malformed resource references"
+        ],
+        "diagnostic_steps": [
+          {
+            "step": 1,
+            "action": "Validate JSON syntax",
+            "description": "Check if request body is valid JSON",
+            "command": "echo '$REQUEST_BODY' | jq ."
+          },
+          {
+            "step": 2,
+            "action": "Check required fields",
+            "description": "Verify all required fields from OpenAPI spec are present"
+          },
+          {
+            "step": 3,
+            "action": "Validate field formats",
+            "description": "Check string patterns, enum values, and data types"
+          },
+          {
+            "step": 4,
+            "action": "Verify references",
+            "description": "Ensure referenced resources exist and are properly formatted"
+          }
+        ],
+        "prevention": [
+          "Use schema validation before submission",
+          "Validate JSON with jq or similar tools",
+          "Reference OpenAPI spec for required fields and formats"
+        ],
+        "related_errors": [
+          422
+        ]
+      },
+      "401": {
+        "code": 401,
+        "name": "Unauthorized",
+        "description": "Authentication credentials are missing or invalid",
+        "common_causes": [
+          "Missing Authorization header",
+          "Expired API token",
+          "Invalid API token format",
+          "Token revoked or disabled"
+        ],
+        "diagnostic_steps": [
+          {
+            "step": 1,
+            "action": "Check Authorization header",
+            "description": "Verify Authorization header is present and uses correct format"
+          },
+          {
+            "step": 2,
+            "action": "Validate token format",
+            "description": "Ensure token starts with correct prefix (APIToken, Bearer)"
+          },
+          {
+            "step": 3,
+            "action": "Check token expiry",
+            "description": "Verify token has not expired",
+            "command": "Check token creation date in console"
+          },
+          {
+            "step": 4,
+            "action": "Test with fresh token",
+            "description": "Generate new API token and retry"
+          }
+        ],
+        "prevention": [
+          "Store tokens securely in environment variables",
+          "Implement token refresh logic",
+          "Monitor token expiry dates",
+          "Use service accounts for automation"
+        ],
+        "related_errors": [
+          403
+        ]
+      },
+      "403": {
+        "code": 403,
+        "name": "Forbidden",
+        "description": "Authentication succeeded but authorization denied",
+        "common_causes": [
+          "Insufficient role permissions",
+          "Resource outside allowed namespaces",
+          "Operation not permitted for user type",
+          "Tenant-level restrictions"
+        ],
+        "diagnostic_steps": [
+          {
+            "step": 1,
+            "action": "Check user roles",
+            "description": "Verify current user's role assignments",
+            "command": "GET /api/web/custom/namespaces/{namespace}/whoami"
+          },
+          {
+            "step": 2,
+            "action": "Verify namespace access",
+            "description": "Confirm user has access to target namespace"
+          },
+          {
+            "step": 3,
+            "action": "Check resource permissions",
+            "description": "Verify user has permission for specific resource type"
+          },
+          {
+            "step": 4,
+            "action": "Review RBAC policies",
+            "description": "Audit role-based access control configuration"
+          }
+        ],
+        "prevention": [
+          "Request appropriate role assignments",
+          "Verify RBAC policies before operations",
+          "Use least privilege access principles"
+        ],
+        "related_errors": [
+          401
+        ]
+      },
+      "404": {
+        "code": 404,
+        "name": "Not Found",
+        "description": "The requested resource does not exist",
+        "common_causes": [
+          "Resource was deleted",
+          "Incorrect resource name or ID",
+          "Wrong namespace specified",
+          "Typo in resource path"
+        ],
+        "diagnostic_steps": [
+          {
+            "step": 1,
+            "action": "List resources",
+            "description": "List all resources of this type to verify existence",
+            "command": "GET /api/.../namespaces/{namespace}/{resource_type}"
+          },
+          {
+            "step": 2,
+            "action": "Check namespace",
+            "description": "Verify operating in correct namespace"
+          },
+          {
+            "step": 3,
+            "action": "Verify resource name",
+            "description": "Check for typos in resource name"
+          },
+          {
+            "step": 4,
+            "action": "Check deletion status",
+            "description": "Verify resource was not recently deleted"
+          }
+        ],
+        "prevention": [
+          "List resources before attempting operations",
+          "Use tab completion or autocomplete",
+          "Implement existence checks in scripts"
+        ],
+        "related_errors": [
+          410
+        ]
+      },
+      "409": {
+        "code": 409,
+        "name": "Conflict",
+        "description": "The request conflicts with current resource state",
+        "common_causes": [
+          "Resource with same name already exists",
+          "Concurrent modification detected",
+          "Resource in transitional state",
+          "Dependency conflict"
+        ],
+        "diagnostic_steps": [
+          {
+            "step": 1,
+            "action": "Check resource existence",
+            "description": "Verify if resource already exists",
+            "command": "GET /api/.../namespaces/{namespace}/{resource_type}/{name}"
+          },
+          {
+            "step": 2,
+            "action": "Check resource state",
+            "description": "Verify resource is not in a transitional state"
+          },
+          {
+            "step": 3,
+            "action": "Review dependencies",
+            "description": "Check for conflicting dependent resources"
+          },
+          {
+            "step": 4,
+            "action": "Use unique naming",
+            "description": "Try with a different resource name"
+          }
+        ],
+        "prevention": [
+          "Check existence before creation",
+          "Use unique naming conventions",
+          "Implement retry logic with backoff",
+          "Add timestamps or UUIDs to names"
+        ],
+        "related_errors": [
+          423
+        ]
+      },
+      "422": {
+        "code": 422,
+        "name": "Unprocessable Entity",
+        "description": "The request is well-formed but contains semantic errors",
+        "common_causes": [
+          "Business logic validation failure",
+          "Invalid resource configuration",
+          "Incompatible field combinations",
+          "Referenced resources don't meet requirements"
+        ],
+        "diagnostic_steps": [
+          {
+            "step": 1,
+            "action": "Review error details",
+            "description": "Check response body for specific validation errors"
+          },
+          {
+            "step": 2,
+            "action": "Validate configuration",
+            "description": "Compare configuration against documentation requirements"
+          },
+          {
+            "step": 3,
+            "action": "Check dependencies",
+            "description": "Verify referenced resources meet all requirements"
+          },
+          {
+            "step": 4,
+            "action": "Review constraints",
+            "description": "Check field-level constraints and requirements"
+          }
+        ],
+        "prevention": [
+          "Use configuration templates",
+          "Validate against OpenAPI spec",
+          "Review minimum configuration requirements"
+        ],
+        "related_errors": [
+          400
+        ]
+      },
+      "429": {
+        "code": 429,
+        "name": "Too Many Requests",
+        "description": "Rate limit exceeded",
+        "common_causes": [
+          "Too many requests in time window",
+          "Batch operations without delays",
+          "Parallel operations exceeding limits",
+          "Shared rate limit pool exhausted"
+        ],
+        "diagnostic_steps": [
+          {
+            "step": 1,
+            "action": "Check Retry-After header",
+            "description": "Note the suggested wait time from response headers"
+          },
+          {
+            "step": 2,
+            "action": "Review request rate",
+            "description": "Count requests made in recent time window"
+          },
+          {
+            "step": 3,
+            "action": "Implement backoff",
+            "description": "Add exponential backoff between requests"
+          }
+        ],
+        "prevention": [
+          "Implement exponential backoff",
+          "Add delays between batch operations",
+          "Use parallel request limits",
+          "Cache responses where appropriate"
+        ],
+        "related_errors": [
+          503
+        ]
+      },
+      "500": {
+        "code": 500,
+        "name": "Internal Server Error",
+        "description": "An unexpected server error occurred",
+        "common_causes": [
+          "Temporary service issue",
+          "Bug in request handling",
+          "Backend service failure",
+          "Resource constraint"
+        ],
+        "diagnostic_steps": [
+          {
+            "step": 1,
+            "action": "Retry request",
+            "description": "Wait a moment and retry the request"
+          },
+          {
+            "step": 2,
+            "action": "Check service status",
+            "description": "Verify F5 XC service health status"
+          },
+          {
+            "step": 3,
+            "action": "Simplify request",
+            "description": "Try with minimal configuration"
+          },
+          {
+            "step": 4,
+            "action": "Contact support",
+            "description": "If persistent, open support ticket with request ID"
+          }
+        ],
+        "prevention": [
+          "Implement retry logic",
+          "Monitor service status pages",
+          "Use health check endpoints"
+        ],
+        "related_errors": [
+          502,
+          503
+        ]
+      },
+      "502": {
+        "code": 502,
+        "name": "Bad Gateway",
+        "description": "Upstream service returned invalid response",
+        "common_causes": [
+          "Upstream service unavailable",
+          "Network connectivity issues",
+          "Timeout from backend services"
+        ],
+        "diagnostic_steps": [
+          {
+            "step": 1,
+            "action": "Retry request",
+            "description": "Wait and retry the request"
+          },
+          {
+            "step": 2,
+            "action": "Check connectivity",
+            "description": "Verify network connectivity to API endpoint"
+          },
+          {
+            "step": 3,
+            "action": "Check service status",
+            "description": "Verify F5 XC service availability"
+          }
+        ],
+        "prevention": [
+          "Implement retry logic with backoff",
+          "Use multiple endpoints for redundancy"
+        ],
+        "related_errors": [
+          500,
+          503
+        ]
+      },
+      "503": {
+        "code": 503,
+        "name": "Service Unavailable",
+        "description": "Service is temporarily unavailable",
+        "common_causes": [
+          "Service maintenance",
+          "Overload condition",
+          "Deployment in progress",
+          "Regional outage"
+        ],
+        "diagnostic_steps": [
+          {
+            "step": 1,
+            "action": "Check Retry-After header",
+            "description": "Note suggested retry time if present"
+          },
+          {
+            "step": 2,
+            "action": "Wait and retry",
+            "description": "Implement exponential backoff"
+          },
+          {
+            "step": 3,
+            "action": "Check status page",
+            "description": "Verify service status for maintenance windows"
+          }
+        ],
+        "prevention": [
+          "Implement circuit breaker pattern",
+          "Subscribe to status page updates",
+          "Build in retry logic with backoff"
+        ],
+        "related_errors": [
+          500,
+          502
+        ]
+      },
+      "504": {
+        "code": 504,
+        "name": "Gateway Timeout",
+        "description": "Request timed out waiting for response",
+        "common_causes": [
+          "Long-running operation",
+          "Backend overloaded",
+          "Network latency issues",
+          "Large payload processing"
+        ],
+        "diagnostic_steps": [
+          {
+            "step": 1,
+            "action": "Reduce payload size",
+            "description": "Try with smaller request payload"
+          },
+          {
+            "step": 2,
+            "action": "Check operation status",
+            "description": "For async operations, check status separately"
+          },
+          {
+            "step": 3,
+            "action": "Retry with longer timeout",
+            "description": "If client-controlled, increase timeout"
+          }
+        ],
+        "prevention": [
+          "Use pagination for large requests",
+          "Break large operations into smaller batches",
+          "Use async operation patterns"
+        ],
+        "related_errors": [
+          408,
+          503
+        ]
+      }
+    },
+    "resource_errors": {
+      "dns_zone": [
+        {
+          "error_code": 400,
+          "pattern": "invalid record",
+          "resolution": "Verify DNS record format matches record type requirements"
+        },
+        {
+          "error_code": 409,
+          "pattern": "zone exists",
+          "resolution": "Use existing zone or delete before recreation"
+        }
+      ],
+      "http_loadbalancer": [
+        {
+          "error_code": 400,
+          "pattern": "origin_pool.*not found",
+          "resolution": "Create the referenced origin pool before creating the load balancer"
+        },
+        {
+          "error_code": 400,
+          "pattern": "certificate.*invalid",
+          "resolution": "Verify certificate format and upload a valid certificate first"
+        },
+        {
+          "error_code": 409,
+          "pattern": "already exists",
+          "resolution": "Use a unique name or delete the existing load balancer"
+        }
+      ],
+      "origin_pool": [
+        {
+          "error_code": 400,
+          "pattern": "invalid port",
+          "resolution": "Specify a valid port number between 1-65535"
+        },
+        {
+          "error_code": 400,
+          "pattern": "invalid.*address",
+          "resolution": "Verify IP address format or DNS name resolution"
+        }
+      ],
+      "waf": [
+        {
+          "error_code": 400,
+          "pattern": "invalid rule",
+          "resolution": "Validate WAF rule syntax against rule specification"
+        },
+        {
+          "error_code": 409,
+          "pattern": "already attached",
+          "resolution": "Detach existing WAF policy before attaching new one"
+        }
+      ]
+    }
+  },
+  "x-f5xc-guided-workflows": {
+    "version": "1.0.0",
+    "total_workflows": 7,
+    "domains": [
+      "virtual",
+      "waf",
+      "dns",
+      "cdn",
+      "origin_pool",
+      "sites"
+    ],
+    "workflows": [
+      {
+        "id": "enable_cdn_distribution",
+        "name": "Enable CDN Distribution",
+        "description": "Configure CDN for content delivery",
+        "complexity": "medium",
+        "estimated_steps": 5,
+        "prerequisites": [
+          "Existing origin server or load balancer",
+          "Content cacheable via HTTP headers"
+        ],
+        "steps": [
+          {
+            "order": 1,
+            "action": "create_origin",
+            "name": "Define Origin",
+            "description": "Configure origin server for CDN",
+            "resource": "cdn_origin",
+            "required_fields": [
+              "name",
+              "origin_address"
+            ]
+          },
+          {
+            "order": 2,
+            "action": "configure_cache_rules",
+            "name": "Configure Cache Rules",
+            "description": "Define caching behavior per content type",
+            "tips": [
+              "Set longer TTL for static assets",
+              "Use vary headers appropriately"
+            ]
+          },
+          {
+            "order": 3,
+            "action": "create_distribution",
+            "name": "Create Distribution",
+            "description": "Configure CDN distribution",
+            "resource": "cdn_distribution",
+            "depends_on": [
+              1
+            ]
+          },
+          {
+            "order": 4,
+            "action": "configure_ssl",
+            "name": "Configure SSL",
+            "description": "Set up HTTPS for CDN endpoints",
+            "optional": true
+          },
+          {
+            "order": 5,
+            "action": "verify_caching",
+            "name": "Verify Caching",
+            "description": "Test CDN cache behavior",
+            "verification": [
+              "Check X-Cache headers",
+              "Verify content delivery from edge"
+            ]
+          }
+        ],
+        "domain": "cdn"
+      },
+      {
+        "id": "configure_dns_zone",
+        "name": "Configure DNS Zone",
+        "description": "Set up authoritative DNS zone with records",
+        "complexity": "low",
+        "estimated_steps": 4,
+        "prerequisites": [
+          "Domain name ownership",
+          "NS delegation configured at registrar"
+        ],
+        "steps": [
+          {
+            "order": 1,
+            "action": "create_dns_zone",
+            "name": "Create DNS Zone",
+            "description": "Create authoritative zone for domain",
+            "resource": "dns_zone",
+            "required_fields": [
+              "name",
+              "domain"
+            ]
+          },
+          {
+            "order": 2,
+            "action": "add_dns_records",
+            "name": "Add DNS Records",
+            "description": "Create A, CNAME, and other records",
+            "resource": "dns_record",
+            "depends_on": [
+              1
+            ],
+            "tips": [
+              "Use appropriate TTL values",
+              "Add MX records for email"
+            ]
+          },
+          {
+            "order": 3,
+            "action": "enable_dnssec",
+            "name": "Enable DNSSEC",
+            "description": "Configure DNS security extensions",
+            "optional": true,
+            "depends_on": [
+              1
+            ]
+          },
+          {
+            "order": 4,
+            "action": "verify_resolution",
+            "name": "Verify DNS Resolution",
+            "description": "Test DNS queries",
+            "verification": [
+              "Query records from public DNS",
+              "Verify propagation"
+            ]
+          }
+        ],
+        "domain": "dns"
+      },
+      {
+        "id": "configure_origin_pool",
+        "name": "Configure Origin Pool",
+        "description": "Set up backend server pool with health checks",
+        "complexity": "low",
+        "estimated_steps": 3,
+        "prerequisites": [
+          "Backend server addresses",
+          "Network connectivity to origins"
+        ],
+        "steps": [
+          {
+            "order": 1,
+            "action": "create_origin_pool",
+            "name": "Create Origin Pool",
+            "description": "Define backend servers",
+            "resource": "origin_pool",
+            "required_fields": [
+              "name",
+              "origin_servers",
+              "port"
+            ]
+          },
+          {
+            "order": 2,
+            "action": "add_healthcheck",
+            "name": "Add Health Check",
+            "description": "Configure health monitoring",
+            "resource": "healthcheck",
+            "optional": true
+          },
+          {
+            "order": 3,
+            "action": "verify_connectivity",
+            "name": "Verify Connectivity",
+            "description": "Test origin pool health",
+            "verification": [
+              "All origins showing healthy",
+              "Connection pooling working"
+            ]
+          }
+        ],
+        "domain": "origin_pool"
+      },
+      {
+        "id": "register_site",
+        "name": "Register Customer Edge Site",
+        "description": "Register and configure a CE site",
+        "complexity": "high",
+        "estimated_steps": 6,
+        "prerequisites": [
+          "Site hardware or VM provisioned",
+          "Network connectivity to F5 XC",
+          "Registration token generated"
+        ],
+        "steps": [
+          {
+            "order": 1,
+            "action": "generate_token",
+            "name": "Generate Registration Token",
+            "description": "Create site registration token",
+            "resource": "site_token"
+          },
+          {
+            "order": 2,
+            "action": "configure_site",
+            "name": "Configure Site Settings",
+            "description": "Define site parameters",
+            "resource": "site",
+            "required_fields": [
+              "name",
+              "site_type"
+            ]
+          },
+          {
+            "order": 3,
+            "action": "install_software",
+            "name": "Install CE Software",
+            "description": "Deploy F5 XC software on site",
+            "depends_on": [
+              1
+            ]
+          },
+          {
+            "order": 4,
+            "action": "complete_registration",
+            "name": "Complete Registration",
+            "description": "Finalize site registration",
+            "depends_on": [
+              2,
+              3
+            ]
+          },
+          {
+            "order": 5,
+            "action": "configure_network",
+            "name": "Configure Site Network",
+            "description": "Set up site networking",
+            "depends_on": [
+              4
+            ]
+          },
+          {
+            "order": 6,
+            "action": "verify_site",
+            "name": "Verify Site Status",
+            "description": "Confirm site is operational",
+            "verification": [
+              "Site shows online status",
+              "Tunnel connectivity established",
+              "Services deployed successfully"
+            ]
+          }
+        ],
+        "domain": "sites"
+      },
+      {
+        "id": "deploy_http_loadbalancer",
+        "name": "Deploy HTTP Load Balancer",
+        "description": "Create a fully configured HTTP load balancer with backend origin pool",
+        "complexity": "medium",
+        "estimated_steps": 5,
+        "prerequisites": [
+          "Valid namespace in target tenant",
+          "Backend application reachable via IP or DNS",
+          "SSL certificate (optional for HTTPS)"
+        ],
+        "steps": [
+          {
+            "order": 1,
+            "action": "create_origin_pool",
+            "name": "Create Origin Pool",
+            "description": "Define backend servers for the load balancer",
+            "resource": "origin_pool",
+            "required_fields": [
+              "name",
+              "origin_servers",
+              "port"
+            ],
+            "tips": [
+              "Use private IPs for internal applications",
+              "Configure health checks for high availability"
+            ]
+          },
+          {
+            "order": 2,
+            "action": "create_healthcheck",
+            "name": "Configure Health Check",
+            "description": "Set up health monitoring for origin pool",
+            "resource": "healthcheck",
+            "optional": true,
+            "required_fields": [
+              "name",
+              "http_health_check"
+            ],
+            "tips": [
+              "Use application-specific health endpoints",
+              "Set appropriate timeout values"
+            ]
+          },
+          {
+            "order": 3,
+            "action": "attach_healthcheck",
+            "name": "Attach Health Check",
+            "description": "Link health check to origin pool",
+            "optional": true,
+            "depends_on": [
+              1,
+              2
+            ]
+          },
+          {
+            "order": 4,
+            "action": "create_http_loadbalancer",
+            "name": "Create HTTP Load Balancer",
+            "description": "Configure the load balancer with origin pool",
+            "resource": "http_loadbalancer",
+            "depends_on": [
+              1
+            ],
+            "required_fields": [
+              "name",
+              "domains",
+              "http.port"
+            ],
+            "tips": [
+              "Use wildcard domains for multi-host routing",
+              "Configure advertise policy for internet exposure"
+            ]
+          },
+          {
+            "order": 5,
+            "action": "verify_deployment",
+            "name": "Verify Deployment",
+            "description": "Test load balancer endpoint accessibility",
+            "depends_on": [
+              4
+            ],
+            "verification": [
+              "DNS resolution for configured domains",
+              "HTTP response from load balancer VIP",
+              "Backend origin health status"
+            ]
+          }
+        ],
+        "domain": "virtual"
+      },
+      {
+        "id": "deploy_https_loadbalancer",
+        "name": "Deploy HTTPS Load Balancer with TLS",
+        "description": "Create HTTPS load balancer with SSL/TLS termination",
+        "complexity": "high",
+        "estimated_steps": 7,
+        "prerequisites": [
+          "Valid namespace in target tenant",
+          "SSL certificate and private key",
+          "Backend application reachable"
+        ],
+        "steps": [
+          {
+            "order": 1,
+            "action": "upload_certificate",
+            "name": "Upload SSL Certificate",
+            "description": "Upload certificate and private key",
+            "resource": "certificate",
+            "required_fields": [
+              "name",
+              "certificate_chain",
+              "private_key"
+            ],
+            "tips": [
+              "Include intermediate certificates in chain",
+              "Use PEM format for certificate data"
+            ]
+          },
+          {
+            "order": 2,
+            "action": "create_origin_pool",
+            "name": "Create Origin Pool",
+            "description": "Define backend servers",
+            "resource": "origin_pool",
+            "required_fields": [
+              "name",
+              "origin_servers"
+            ]
+          },
+          {
+            "order": 3,
+            "action": "create_healthcheck",
+            "name": "Configure Health Check",
+            "description": "Set up health monitoring",
+            "resource": "healthcheck",
+            "optional": true
+          },
+          {
+            "order": 4,
+            "action": "create_waf_policy",
+            "name": "Configure WAF Policy",
+            "description": "Enable web application firewall",
+            "resource": "app_firewall",
+            "optional": true,
+            "tips": [
+              "Start in monitoring mode",
+              "Use appropriate rule sets"
+            ]
+          },
+          {
+            "order": 5,
+            "action": "create_https_loadbalancer",
+            "name": "Create HTTPS Load Balancer",
+            "description": "Configure load balancer with TLS",
+            "resource": "http_loadbalancer",
+            "depends_on": [
+              1,
+              2
+            ],
+            "required_fields": [
+              "name",
+              "domains",
+              "https.tls_parameters"
+            ]
+          },
+          {
+            "order": 6,
+            "action": "attach_waf",
+            "name": "Attach WAF Policy",
+            "description": "Link WAF to load balancer",
+            "optional": true,
+            "depends_on": [
+              4,
+              5
+            ]
+          },
+          {
+            "order": 7,
+            "action": "verify_https",
+            "name": "Verify HTTPS Deployment",
+            "description": "Test secure endpoint",
+            "verification": [
+              "TLS certificate validation",
+              "HTTPS response codes",
+              "WAF policy application"
+            ]
+          }
+        ],
+        "domain": "virtual"
+      },
+      {
+        "id": "enable_waf_protection",
+        "name": "Enable WAF Protection",
+        "description": "Add web application firewall to existing load balancer",
+        "complexity": "medium",
+        "estimated_steps": 4,
+        "prerequisites": [
+          "Existing HTTP load balancer",
+          "Understanding of application traffic patterns"
+        ],
+        "steps": [
+          {
+            "order": 1,
+            "action": "create_app_firewall",
+            "name": "Create Application Firewall",
+            "description": "Define WAF policy with rule sets",
+            "resource": "app_firewall",
+            "required_fields": [
+              "name",
+              "blocking"
+            ],
+            "tips": [
+              "Start in monitoring mode for tuning",
+              "Select rules based on application stack"
+            ]
+          },
+          {
+            "order": 2,
+            "action": "configure_exclusions",
+            "name": "Configure Exclusions",
+            "description": "Add bypass rules for false positives",
+            "optional": true,
+            "tips": [
+              "Exclude trusted internal IPs",
+              "Add API endpoint exclusions if needed"
+            ]
+          },
+          {
+            "order": 3,
+            "action": "attach_to_loadbalancer",
+            "name": "Attach to Load Balancer",
+            "description": "Apply WAF policy to load balancer",
+            "depends_on": [
+              1
+            ]
+          },
+          {
+            "order": 4,
+            "action": "monitor_and_tune",
+            "name": "Monitor and Tune",
+            "description": "Review WAF logs and adjust rules",
+            "verification": [
+              "Check security event logs",
+              "Verify no legitimate traffic blocked",
+              "Adjust rules as needed"
+            ]
+          }
+        ],
+        "domain": "waf"
+      }
+    ]
+  }
 }
