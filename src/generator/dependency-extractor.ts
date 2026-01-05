@@ -590,11 +590,6 @@ export const FALLBACK_RESOURCE_DOMAIN_MAP: Record<string, string> = {
 };
 
 /**
- * @deprecated Use FALLBACK_RESOURCE_DOMAIN_MAP instead
- */
-export const RESOURCE_DOMAIN_MAP = FALLBACK_RESOURCE_DOMAIN_MAP;
-
-/**
  * Resolve a resource type to its domain
  *
  * Uses upstream specs as primary source of truth (via domain-metadata.ts),

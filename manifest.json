@@ -2,8 +2,8 @@
   "manifest_version": "0.3",
   "name": "f5xc-api-mcp",
   "display_name": "F5 Distributed Cloud API",
-  "version": "1.0.0",
-  "description": "MCP server for F5 Distributed Cloud API - AI-powered infrastructure management with 1500+ tools across 22 domains",
+  "version": "2.0.2",
+  "description": "MCP server for F5 Distributed Cloud API - AI-powered infrastructure management with 1548 tools across 38 domains",
   "long_description": "Enables AI assistants to manage F5 Distributed Cloud resources including HTTP load balancers, origin pools, WAF policies, DNS zones, and multi-cloud sites. Works in dual mode: documentation mode (no auth) or execution mode (with auth). Provides CURL examples for all API operations.",
   "author": {
     "name": "Robin Mordasiewicz"
@@ -44,8 +44,10 @@
       "env": {
         "F5XC_API_URL": "${user_config.f5xc_api_url}",
         "F5XC_API_TOKEN": "${user_config.f5xc_api_token}",
-        "F5XC_P12_FILE": "${user_config.f5xc_p12_file}",
+        "F5XC_P12_BUNDLE": "${user_config.f5xc_p12_bundle}",
         "F5XC_P12_PASSWORD": "${user_config.f5xc_p12_password}",
+        "F5XC_CERT": "${user_config.f5xc_cert}",
+        "F5XC_KEY": "${user_config.f5xc_key}",
         "LOG_LEVEL": "${user_config.log_level}"
       }
     }
@@ -64,10 +66,22 @@
       "sensitive": true,
       "required": false
     },
-    "f5xc_p12_file": {
+    "f5xc_p12_bundle": {
       "type": "file",
-      "title": "P12 Certificate File",
-      "description": "Path to P12 certificate for mTLS authentication (alternative to API token)",
+      "title": "P12 Certificate Bundle",
+      "description": "Path to P12 certificate bundle for mTLS authentication (alternative to API token)",
+      "required": false
+    },
+    "f5xc_cert": {
+      "type": "file",
+      "title": "Certificate File",
+      "description": "Path to PEM certificate file for mTLS authentication",
+      "required": false
+    },
+    "f5xc_key": {
+      "type": "file",
+      "title": "Private Key File",
+      "description": "Path to PEM private key file for mTLS authentication",
       "required": false
     },
     "f5xc_p12_password": {

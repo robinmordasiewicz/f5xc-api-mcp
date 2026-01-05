@@ -121,8 +121,8 @@ P12 certificate issues.
 1. **Use absolute path**:
 
    ```bash
-   F5XC_P12_FILE="/Users/username/certs/f5xc.p12"  # Correct
-   F5XC_P12_FILE="./f5xc.p12"  # Wrong
+   F5XC_P12_BUNDLE="/Users/username/certs/f5xc.p12"  # Correct
+   F5XC_P12_BUNDLE="./f5xc.p12"  # Wrong
    ```
 
 2. **Check password**: Verify password is correct

@@ -147,36 +147,6 @@ const ACRONYM_MAP: Map<string, string> = new Map(
 );
 
 /**
- * Normalize acronyms in a text string to consistent capitalization
- *
- * @param text - Input text with potentially inconsistent acronym casing
- * @returns Text with normalized acronym capitalization
- * @deprecated Pre-enriched specs already have normalized acronyms
- */
-export function normalizeAcronyms(text: string): string {
-  // Word boundary pattern that matches words
-  const wordPattern = /\b([a-zA-Z][a-zA-Z0-9-]*)\b/g;
-
-  return text.replace(wordPattern, (match) => {
-    const normalized = ACRONYM_MAP.get(match.toLowerCase());
-    return normalized ?? match;
-  });
-}
-
-/**
- * Normalize acronyms in title case text
- *
- * Handles cases like "Tcp Load Balancer" -> "TCP Load Balancer"
- *
- * @param title - Title text to normalize
- * @returns Title with normalized acronym capitalization
- * @deprecated Pre-enriched specs already have normalized acronyms
- */
-export function normalizeTitleAcronyms(title: string): string {
-  return normalizeAcronyms(title);
-}
-
-/**
  * Check if a word is a known acronym
  *
  * @param word - Word to check

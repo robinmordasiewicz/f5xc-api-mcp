@@ -1,11 +1,12 @@
 /**
- * Unit tests for acronym normalization
+ * Unit tests for acronym utilities
+ *
+ * Pre-enriched specs from robinmordasiewicz/f5xc-api-enriched already have
+ * normalized acronyms, so legacy normalize functions have been removed.
  */
 
 import { describe, it, expect } from "vitest";
 import {
-  normalizeAcronyms,
-  normalizeTitleAcronyms,
   isAcronym,
   getCanonicalAcronym,
   toKebabCase,
@@ -13,46 +14,6 @@ import {
   toPascalCase,
   toCamelCase,
 } from "../../src/generator/naming/acronyms.js";
-
-describe("normalizeAcronyms", () => {
-  it("should normalize TCP to uppercase", () => {
-    expect(normalizeAcronyms("tcp load balancer")).toBe("TCP load balancer");
-  });
-
-  it("should normalize multiple acronyms", () => {
-    expect(normalizeAcronyms("http and https protocols")).toBe(
-      "HTTP and HTTPS protocols"
-    );
-  });
-
-  it("should preserve already correct acronyms", () => {
-    expect(normalizeAcronyms("TCP/UDP traffic")).toBe("TCP/UDP traffic");
-  });
-
-  it("should handle DNS correctly", () => {
-    expect(normalizeAcronyms("dns zone configuration")).toBe(
-      "DNS zone configuration"
-    );
-  });
-
-  it("should normalize WAF", () => {
-    expect(normalizeAcronyms("waf policy")).toBe("WAF policy");
-  });
-});
-
-describe("normalizeTitleAcronyms", () => {
-  it("should normalize title case with acronyms", () => {
-    expect(normalizeTitleAcronyms("Tcp Load Balancer")).toBe(
-      "TCP Load Balancer"
-    );
-  });
-
-  it("should handle Http Load Balancer", () => {
-    expect(normalizeTitleAcronyms("Http Load Balancer")).toBe(
-      "HTTP Load Balancer"
-    );
-  });
-});
 
 describe("isAcronym", () => {
   it("should return true for known acronyms", () => {

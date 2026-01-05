@@ -13,6 +13,8 @@ Complete reference for F5XC API MCP Server environment variables.
 | `F5XC_API_TOKEN` | Token auth | API token from XC Console |
 | `F5XC_P12_BUNDLE` | Cert auth | Absolute path to P12 certificate bundle |
 | `F5XC_P12_PASSWORD` | Cert auth | Password for P12 certificate |
+| `F5XC_CERT` | Cert auth | Absolute path to PEM certificate file |
+| `F5XC_KEY` | Cert auth | Absolute path to PEM private key file |
 | `F5XC_PROFILE` | No | Profile name from `~/.config/f5xc/profiles/` |
 | `LOG_LEVEL` | No | Logging level: debug, info, warn, error |
 | `NODE_ENV` | No | Node environment: development, production |
@@ -45,7 +47,7 @@ export F5XC_API_TOKEN="your-api-token"
 
 ### F5XC_P12_BUNDLE
 
-Absolute path to P12 certificate bundle. Required for certificate-based authentication.
+Absolute path to P12 certificate bundle. Required for P12-based certificate authentication.
 
 ```bash
 export F5XC_P12_BUNDLE="/path/to/certificate.p12"
@@ -53,6 +55,25 @@ export F5XC_P12_BUNDLE="/path/to/certificate.p12"
 
 !!! note "Absolute Paths Required"
     Must be an absolute path, not relative.
+
+### F5XC_CERT
+
+Absolute path to PEM-formatted certificate file. Use with `F5XC_KEY` for PEM-based certificate authentication.
+
+```bash
+export F5XC_CERT="/path/to/certificate.pem"
+```
+
+!!! tip "Alternative to P12"
+    Use `F5XC_CERT` + `F5XC_KEY` as an alternative to P12 bundle authentication.
+
+### F5XC_KEY
+
+Absolute path to PEM-formatted private key file. Required when using `F5XC_CERT`.
+
+```bash
+export F5XC_KEY="/path/to/private-key.pem"
+```
 
 ### F5XC_P12_PASSWORD
 
