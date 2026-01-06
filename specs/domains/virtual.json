@@ -3,7 +3,7 @@
   "info": {
     "title": "Virtual",
     "description": "Traffic distribution across origin pools with weighted routing and session persistence. Malware protection integration, threat campaign blocking, and request inspection. Proxy forwarding policies, server monitoring, and latency-based routing decisions. Service policy sets for fine-grained access control and rate limiter policies for traffic shaping.",
-    "version": "2.0.14",
+    "version": "2.0.15",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -22439,6 +22439,7 @@
               "ves.io.schema.rules.uint32.lte": "32768"
             },
             "x-f5xc-description-short": "The maximum number of connections that loadbalancer will establish to all hosts in an upstream cluster.",
+            "x-f5xc-description-medium": "The maximum number of connections that loadbalancer will establish to all hosts in an upstream cluster. In practice this is only applicable to TCP and HTTP/1.1 clusters since HTTP/2 uses a single connection to each host. Remove endpoint out of load balancing decision, if number of connections...",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -22463,6 +22464,7 @@
               "ves.io.schema.rules.uint32.lte": "32768"
             },
             "x-f5xc-description-short": "The maximum number of requests that can be outstanding to all hosts in a cluster at any given time.",
+            "x-f5xc-description-medium": "The maximum number of requests that can be outstanding to all hosts in a cluster at any given time. In practice this is applicable to HTTP/2 clusters since HTTP/1.1 clusters are governed by the maximum connections (connection_limit). Remove endpoint out of load balancing decision, if requests...",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -22487,6 +22489,7 @@
               "ves.io.schema.rules.uint32.lte": "32768"
             },
             "x-f5xc-description-short": "The maximum number of requests that will be queued while waiting for a ready connection pool connection.",
+            "x-f5xc-description-medium": "The maximum number of requests that will be queued while waiting for a ready connection pool connection. Since HTTP/2 requests are sent over a single connection, this circuit breaker only comes into play as the initial connection is created, as requests will be multiplexed immediately...",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -22672,6 +22675,7 @@
               "ves.io.schema.rules.repeated.max_items": "32"
             },
             "x-f5xc-description-short": "Endpoint groups based on metadata labels for traffic routing.",
+            "x-f5xc-description-medium": "Configure endpoint groups based on metadata labels for traffic routing. Supports weighted distribution and session affinity across labeled endpoints.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -22744,6 +22748,7 @@
               "ves.io.schema.rules.uint32.lte": "600000"
             },
             "x-f5xc-description-short": "The idle timeout for upstream connection pool connections. The idle timeout is defined as the period in which there are no active requests.",
+            "x-f5xc-description-medium": "The idle timeout for upstream connection pool connections. The idle timeout is defined as the period in which there are no active requests. When the idle timeout is reached the connection will be closed.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -22865,7 +22870,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077229+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588262+00:00"
           },
           "namespace": {
             "type": "string",
@@ -22884,7 +22889,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077235+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588269+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -23053,7 +23058,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077254+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588288+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -23188,6 +23193,7 @@
               "ves.io.schema.rules.repeated.max_items": "32"
             },
             "x-f5xc-description-short": "Cluster may be configured to divide its endpoints into subsets based on metadata attached to the endpoints.",
+            "x-f5xc-description-medium": "Cluster may be configured to divide its endpoints into subsets based on metadata attached to the endpoints. Routes may then specify the metadata that a endpoint must match in order to be selected by the load balancer. Endpoint_subsets is list of subsets for this cluster.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -23260,6 +23266,7 @@
               "ves.io.schema.rules.uint32.lte": "600000"
             },
             "x-f5xc-description-short": "The idle timeout for upstream connection pool connections. The idle timeout is defined as the period in which there are no active requests.",
+            "x-f5xc-description-medium": "The idle timeout for upstream connection pool connections. The idle timeout is defined as the period in which there are no active requests. When the idle timeout is reached the connection will be closed.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -23487,7 +23494,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077301+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588330+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -23537,7 +23544,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077312+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588341+00:00"
           },
           "namespace": {
             "type": "string",
@@ -23556,7 +23563,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077316+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588345+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -23597,7 +23604,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077324+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588353+00:00"
           },
           "uid": {
             "type": "string",
@@ -23618,7 +23625,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077329+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588359+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -23715,6 +23722,7 @@
               "ves.io.schema.rules.uint32.lte": "1024"
             },
             "x-f5xc-description-short": "If an upstream endpoint returns some number of consecutive 5xx, it will be ejected.",
+            "x-f5xc-description-medium": "If an upstream endpoint returns some number of consecutive 5xx, it will be ejected. Note that in this case a 5xx means an actual 5xx respond code, or an event that would cause the HTTP router to return one on the upstream’s behalf(reset, connection failure, etc.) consecutive_5xx indicates the...",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -23739,6 +23747,7 @@
               "ves.io.schema.rules.uint32.lte": "1024"
             },
             "x-f5xc-description-short": "If an upstream endpoint returns some number of consecutive “gateway errors” (502, 503 or 504 status code), it will be ejected.",
+            "x-f5xc-description-medium": "If an upstream endpoint returns some number of consecutive “gateway errors” (502, 503 or 504 status code), it will be ejected. Note that this includes events that would cause the HTTP router to return one of these status codes on the upstream’s behalf (reset, connection failure, etc.)...",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -23929,6 +23938,7 @@
               "ves.io.schema.rules.repeated.max_items": "32"
             },
             "x-f5xc-description-short": "Cluster may be configured to divide its endpoints into subsets based on metadata attached to the endpoints.",
+            "x-f5xc-description-medium": "Cluster may be configured to divide its endpoints into subsets based on metadata attached to the endpoints. Routes may then specify the metadata that a endpoint must match in order to be selected by the load balancer. Endpoint_subsets is list of subsets for this cluster.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -24001,6 +24011,7 @@
               "ves.io.schema.rules.uint32.lte": "600000"
             },
             "x-f5xc-description-short": "The idle timeout for upstream connection pool connections. The idle timeout is defined as the period in which there are no active requests.",
+            "x-f5xc-description-medium": "The idle timeout for upstream connection pool connections. The idle timeout is defined as the period in which there are no active requests. When the idle timeout is reached the connection will be closed.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -24186,6 +24197,7 @@
             "type": "string",
             "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `HTTP`, `HTTPS`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `HTTPS` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.type][]\nvalue in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\nURL, or have them precompiled into a binary to avoid any\nlookup. Therefore, binary compatibility needs to be preserved\non changes to types. (Use versioned type names to manage\nbreaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `HTTP`, `HTTPS` (or the empty scheme) might be\nused with implementation specific semantics.",
             "x-f5xc-description-short": "URL identifying the protocol buffer message type.",
+            "x-f5xc-description-medium": "URL/resource name that uniquely identifies the type of the serialized protocol buffer message. This string must contain at least one \"/\" character. The last segment of the URL's path must represent the fully qualified name of the type (as in ).",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -24209,7 +24221,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077379+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588407+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -24275,7 +24287,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077387+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588414+00:00"
           },
           "store_provider": {
             "type": "string",
@@ -24333,7 +24345,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077394+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588431+00:00"
           },
           "url": {
             "type": "string",
@@ -24430,7 +24442,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077404+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588441+00:00"
           },
           "service_name": {
             "type": "string",
@@ -24460,6 +24472,7 @@
               "ves.io.schema.rules.string.in": "[\\\"Success\\\",\\\"Failed\\\",\\\"Incomplete\\\",\\\"Installed\\\",\\\"Down\\\",\\\"Disabled\\\",\\\"NotApplicable\\\"]"
             },
             "x-f5xc-description-short": "Status of the condition \"Success\" Validtion has succeded.",
+            "x-f5xc-description-medium": "Status of the condition \"Success\" Validtion has succeded. Requested operation was successful. \"Failed\" Validation has failed. \"Incomplete\" Validation of configuration has failed due to missing configuration. \"Installed\" Validation has passed and configuration has been installed in data path or...",
             "minLength": 0,
             "maxLength": 17,
             "x-f5xc-required-for": {
@@ -24470,7 +24483,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077410+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588447+00:00"
           },
           "type": {
             "type": "string",
@@ -24716,7 +24729,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077441+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588465+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -24825,7 +24838,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077451+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588475+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -24878,7 +24891,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077459+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588482+00:00"
           },
           "namespace": {
             "type": "string",
@@ -24897,7 +24910,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077463+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588486+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -24973,7 +24986,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077470+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588492+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -25028,7 +25041,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077477+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588499+00:00"
           },
           "namespace": {
             "type": "string",
@@ -25047,7 +25060,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077481+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588503+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -25092,7 +25105,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077486+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588508+00:00"
           },
           "name": {
             "type": "string",
@@ -25111,7 +25124,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077490+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588512+00:00"
           },
           "namespace": {
             "type": "string",
@@ -25130,7 +25143,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077494+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588516+00:00"
           },
           "tenant": {
             "type": "string",
@@ -25151,7 +25164,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077498+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588520+00:00"
           },
           "uid": {
             "type": "string",
@@ -25173,7 +25186,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077503+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588525+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -25248,7 +25261,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077510+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588532+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -25301,7 +25314,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077517+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588539+00:00"
           },
           "namespace": {
             "type": "string",
@@ -25320,7 +25333,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077521+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588543+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -25502,7 +25515,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077537+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588559+00:00"
           },
           "vtrp_id": {
             "type": "string",
@@ -25614,7 +25627,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077546+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588568+00:00"
           },
           "status": {
             "type": "string",
@@ -25633,7 +25646,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077550+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588572+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -25714,6 +25727,7 @@
             "format": "date-time",
             "x-displayname": "Deletion Timestamp.",
             "x-f5xc-description-short": "DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted.",
+            "x-f5xc-description-medium": "DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted. This field is set by the server when a graceful deletion is requested by the user, and is not directly settable by a client. The resource is expected to be deleted (no longer visible from resource lists, and not...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -25812,7 +25826,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077569+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588590+00:00"
           },
           "uid": {
             "type": "string",
@@ -25833,7 +25847,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077574+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588595+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -25916,7 +25930,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077581+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588602+00:00"
           },
           "disable_ocsp_stapling": {
             "$ref": "#/components/schemas/ioschemaEmpty"
@@ -25972,6 +25986,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "The following list specifies the supported cipher suite TLS_AES_128_GCM_SHA256 TLS_AES_256_GCM_SHA384 TLS_CHACHA20_POLY1305_SHA256...",
+            "x-f5xc-description-medium": "The following list specifies the supported cipher suite TLS_AES_128_GCM_SHA256 TLS_AES_256_GCM_SHA384 TLS_CHACHA20_POLY1305_SHA256 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -26218,6 +26233,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "The following list specifies the supported cipher suite TLS_AES_128_GCM_SHA256 TLS_AES_256_GCM_SHA384 TLS_CHACHA20_POLY1305_SHA256...",
+            "x-f5xc-description-medium": "The following list specifies the supported cipher suite TLS_AES_128_GCM_SHA256 TLS_AES_256_GCM_SHA384 TLS_CHACHA20_POLY1305_SHA256 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -26394,7 +26410,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077624+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588643+00:00"
           },
           "location": {
             "type": "string",
@@ -26411,7 +26427,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077628+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588647+00:00"
           },
           "provider": {
             "type": "string",
@@ -26428,7 +26444,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077632+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588651+00:00"
           },
           "secret_encoding": {
             "$ref": "#/components/schemas/schemaSecretEncodingType"
@@ -26450,7 +26466,7 @@
             "maxLength": 1,
             "minLength": 1,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077639+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588658+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -26493,7 +26509,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077644+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588662+00:00"
           },
           "name": {
             "type": "string",
@@ -26512,7 +26528,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077648+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588667+00:00"
           },
           "namespace": {
             "type": "string",
@@ -26531,7 +26547,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077652+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588671+00:00"
           },
           "uid": {
             "type": "string",
@@ -26552,7 +26568,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077657+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588676+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -26590,7 +26606,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:07.077662+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:17.588681+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -26894,7 +26910,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193354+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756372+00:00"
           }
         },
         "x-f5xc-example": "[EMAIL, CC]",
@@ -26939,6 +26955,7 @@
             "title": "Api_group",
             "x-f5xc-example": "oas-all-operations",
             "x-f5xc-description-short": "X-displayName: \"API Group\" The rule is applied on the APIs that belong to specified api_group.",
+            "x-f5xc-description-medium": "X-displayName: \"API Group\" The rule is applied on the APIs that belong to specified api_group. API groups derived from API Definition swaggers. For example oas-all-operations including all paths and methods from the swaggers, oas-base-URLs covering all requests under base-paths from the swaggers.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -27652,7 +27669,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193448+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756467+00:00"
           },
           "namespace": {
             "type": "string",
@@ -27678,7 +27695,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193454+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756473+00:00"
           },
           "service_op_id": {
             "type": "integer",
@@ -27938,7 +27955,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193478+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756495+00:00"
           },
           "namespace": {
             "type": "string",
@@ -27964,7 +27981,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193483+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756500+00:00"
           },
           "time_range": {
             "$ref": "#/components/schemas/common_cdnServiceOperationsTimeRange"
@@ -28238,7 +28255,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193507+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756524+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -28462,6 +28479,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various HTTP headers that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various HTTP headers that need to match. The criteria for matching each HTTP header are described in individual HeaderMatcherType instances. The actual HTTP header values are extracted from the request API as a list of strings for each HTTP header type.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -28537,6 +28555,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all query parameters that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all query parameters that need to be matched. The criteria for matching each query parameter are described in individual instances of QueryParameterMatcherType. The actual query parameter values are extracted from the request API as a list of strings for each query...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -29018,7 +29037,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193580+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756594+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -29974,6 +29993,7 @@
               "ves.io.schema.rules.string.max_len": "128"
             },
             "x-f5xc-description-short": "API groups derived from API Definition swaggers.",
+            "x-f5xc-description-medium": "API groups derived from API Definition swaggers. For example oas-all-operations including all paths and methods from the swaggers, oas-base-URLs covering all requests under base-paths from the swaggers. Custom groups can be created if user tags paths or operations with \"x-F5 Distributed...",
             "minLength": 0,
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -32142,6 +32162,7 @@
               "ves.io.schema.rules.string.max_len": "128"
             },
             "x-f5xc-description-short": "API groups derived from API Definition swaggers.",
+            "x-f5xc-description-medium": "API groups derived from API Definition swaggers. For example oas-all-operations including all paths and methods from the swaggers, oas-base-URLs covering all requests under base-paths from the swaggers. Custom groups can be created if user tags paths or operations with \"x-F5 Distributed...",
             "minLength": 0,
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -32262,6 +32283,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Service Policies is a sequential engine where policies (and rules within the policy) are evaluated one after the other.",
+            "x-f5xc-description-medium": "Service Policies is a sequential engine where policies (and rules within the policy) are evaluated one after the other. It's important to define the correct order (policies evaluated from top to bottom in the list) for service policies, to GET the intended result. For each request, its...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -32862,7 +32884,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193886+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756896+00:00"
           },
           "uid": {
             "type": "string",
@@ -32883,7 +32905,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193892+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756902+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -33048,6 +33070,7 @@
               "ves.io.schema.rules.map.values.string.uri_ref": "true"
             },
             "x-f5xc-description-short": "Map of integer error codes as keys and string values that can be used to provide custom HTTP pages for each error code.",
+            "x-f5xc-description-medium": "Map of integer error codes as keys and string values that can be used to provide custom HTTP pages for each error code. Key of the map can be either response code class or HTTP Error code. Response code classes for key is configured as follows 3 -- for 3xx response code class 4 -- for 4xx...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -33112,6 +33135,7 @@
               "ves.io.schema.rules.uint32.lte": "96"
             },
             "x-f5xc-description-short": "The maximum request header size for downstream connections, in KiB.",
+            "x-f5xc-description-medium": "The maximum request header size for downstream connections, in KiB. A HTTP 431 (Request Header Fields Too Large) error code is sent for requests that exceed this size. If multiple load balancers share the same advertise_policy, the highest value configured across all such load balancers is used...",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -33446,7 +33470,7 @@
             },
             "x-original-maxLength": 128,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193930+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756940+00:00"
           },
           "value": {
             "$ref": "#/components/schemas/schemaSecretType"
@@ -33616,7 +33640,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193946+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756955+00:00"
           },
           "namespace": {
             "type": "string",
@@ -33635,7 +33659,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193950+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756959+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -34147,7 +34171,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193980+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756989+00:00"
           },
           "namespace": {
             "type": "string",
@@ -34166,7 +34190,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193984+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756993+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -34224,7 +34248,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193988+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.756998+00:00"
           },
           "namespace": {
             "type": "string",
@@ -34243,7 +34267,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.193993+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757002+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -34392,7 +34416,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194003+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757011+00:00"
           },
           "namespace": {
             "type": "string",
@@ -34411,7 +34435,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194007+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757015+00:00"
           },
           "query_type": {
             "$ref": "#/components/schemas/http_loadbalancerApiInventorySchemaQueryType"
@@ -34640,7 +34664,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194028+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757034+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -34753,7 +34777,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194038+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757044+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -35174,7 +35198,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194066+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757071+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -35224,7 +35248,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194076+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757081+00:00"
           },
           "namespace": {
             "type": "string",
@@ -35243,7 +35267,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194081+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757086+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -35284,7 +35308,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194089+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757093+00:00"
           },
           "uid": {
             "type": "string",
@@ -35305,7 +35329,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194094+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757098+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -35454,6 +35478,7 @@
               "ves.io.schema.rules.repeated.unique_metadata_name": "true"
             },
             "x-f5xc-description-short": "Origin Server Subset Rules allow users to define match condition on Client (IP address, ASN, Country), IP Reputation, Regional Edge names, Request...",
+            "x-f5xc-description-medium": "Origin Server Subset Rules allow users to define match condition on Client (IP address, ASN, Country), IP Reputation, Regional Edge names, Request for subset selection of origin servers. Origin Server Subset is a sequential engine where rules are evaluated one after the other. It's important to...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -35662,6 +35687,7 @@
               "ves.io.schema.rules.uint32.lte": "600000"
             },
             "x-f5xc-description-short": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests.",
+            "x-f5xc-description-medium": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests. When the idle timeout is reached the connection will be closed.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -35879,6 +35905,7 @@
               "ves.io.schema.rules.uint32.lte": "600000"
             },
             "x-f5xc-description-short": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests.",
+            "x-f5xc-description-medium": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests. When the idle timeout is reached the connection will be closed.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -36204,6 +36231,7 @@
               "ves.io.schema.rules.map.max_pairs": "16"
             },
             "x-f5xc-description-short": "Upstream origin pool may be configured to divide its origin servers into subsets based on metadata attached to the origin servers.",
+            "x-f5xc-description-medium": "Upstream origin pool may be configured to divide its origin servers into subsets based on metadata attached to the origin servers. Routes may then specify the metadata that a endpoint must match in order to be selected by the load balancer For origin servers which are discovered in K8s or Consul...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -37025,7 +37053,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194236+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757240+00:00"
           },
           "namespace": {
             "type": "string",
@@ -37051,7 +37079,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194240+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757244+00:00"
           },
           "rps_threshold": {
             "type": "integer",
@@ -37334,7 +37362,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194261+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757264+00:00"
           },
           "namespace": {
             "type": "string",
@@ -37353,7 +37381,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194265+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757268+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -37516,7 +37544,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194274+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757278+00:00"
           },
           "presence": {
             "type": "boolean",
@@ -37597,7 +37625,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194282+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757286+00:00"
           },
           "name": {
             "type": "string",
@@ -37616,7 +37644,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194286+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757290+00:00"
           },
           "namespace": {
             "type": "string",
@@ -37635,7 +37663,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194290+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757294+00:00"
           },
           "tenant": {
             "type": "string",
@@ -37656,7 +37684,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194294+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757298+00:00"
           },
           "uid": {
             "type": "string",
@@ -37678,7 +37706,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194299+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757303+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -37957,6 +37985,7 @@
               "ves.io.schema.rules.uint32.lte": "600000"
             },
             "x-f5xc-description-short": "The idle timeout for upstream connection pool connections. The idle timeout is defined as the period in which there are no active requests.",
+            "x-f5xc-description-medium": "The idle timeout for upstream connection pool connections. The idle timeout is defined as the period in which there are no active requests. When the idle timeout is reached the connection will be closed.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -38279,6 +38308,7 @@
               "ves.io.schema.rules.string.ves_service_namespace_name": "true"
             },
             "x-f5xc-description-short": "Exclusive with [] K8s service name of the origin server will be listed, including the namespace and cluster-ID.",
+            "x-f5xc-description-medium": "Exclusive with [] K8s service name of the origin server will be listed, including the namespace and cluster-ID. For vK8s services, you need to enter a string with the format servicename.namespace:cluster-ID. If the servicename is \"frontend\", namespace is \"speedtest\" and cluster-ID is \"prod\"...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -39331,7 +39361,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194454+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757457+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -39605,7 +39635,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194480+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757482+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -40210,7 +40240,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194505+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757509+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -40483,7 +40513,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194523+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757527+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -40966,6 +40996,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all cookies that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all cookies that need to be matched. The criteria for matching each cookie is described in individual instances of CookieMatcherType. The actual cookie values are extracted from the request API as a list of strings for each cookie name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -40989,6 +41020,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various HTTP headers that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various HTTP headers that need to match. The criteria for matching each HTTP header are described in individual HeaderMatcherType instances. The actual HTTP header values are extracted from the request API as a list of strings for each HTTP header type.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -41012,6 +41044,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various JWT claims that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various JWT claims that need to match. The criteria for matching each JWT claim are described in individual JWTClaimMatcherType instances. The actual JWT claims values are extracted from the JWT payload as a list of strings.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -41035,6 +41068,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all query parameters that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all query parameters that need to be matched. The criteria for matching each query parameter are described in individual instances of QueryParameterMatcherType. The actual query parameter values are extracted from the request API as a list of strings for each query...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -41082,6 +41116,7 @@
               "ves.io.schema.rules.string.uri_ref": "true"
             },
             "x-f5xc-description-short": "Custom body message is of type uri_ref. Currently supported URL schemes is string:///.",
+            "x-f5xc-description-medium": "Custom body message is of type uri_ref. Currently supported URL schemes is string:///. For string:/// scheme, message needs to be encoded in Base64 format.",
             "minLength": 0,
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -42212,7 +42247,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194640+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757643+00:00"
           },
           "path": {
             "type": "string",
@@ -43250,7 +43285,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194740+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757741+00:00"
           },
           "regex_values": {
             "type": "array",
@@ -43542,7 +43577,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194786+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757787+00:00"
           },
           "samesite_lax": {
             "$ref": "#/components/schemas/ioschemaEmpty"
@@ -43614,7 +43649,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194795+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757795+00:00"
           },
           "overwrite": {
             "type": "boolean",
@@ -43653,7 +43688,7 @@
             },
             "x-original-maxLength": 8096,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194802+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757802+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -44209,7 +44244,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194842+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757843+00:00"
           },
           "secret_value": {
             "$ref": "#/components/schemas/schemaSecretType"
@@ -44235,7 +44270,7 @@
             },
             "x-original-maxLength": 8096,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194848+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757848+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -44490,7 +44525,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194868+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757869+00:00"
           },
           "name": {
             "type": "string",
@@ -44520,7 +44555,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194873+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757873+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -44806,6 +44841,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Conditions that trigger request retry (5xx, connection failures).",
+            "x-f5xc-description-medium": "Specifies the conditions under which retry takes place. Retries can be on different types of condition depending on application requirements. For example, network failure, all 5xx response codes, idempotent 4xx response codes, etc The possible values are \"5xx\" : Retry will be done if the...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -44997,7 +45033,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194965+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757966+00:00"
           },
           "overwrite": {
             "type": "boolean",
@@ -45045,7 +45081,7 @@
             },
             "x-original-maxLength": 8096,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.194975+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.757975+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -45470,7 +45506,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195112+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758108+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -45786,7 +45822,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195132+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758128+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -45923,7 +45959,7 @@
             },
             "x-original-maxLength": 128,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195142+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758139+00:00"
           },
           "namespace": {
             "type": "string",
@@ -45948,7 +45984,7 @@
             },
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195146+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758143+00:00"
           },
           "tenant": {
             "type": "string",
@@ -45975,7 +46011,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195151+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758147+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -46118,6 +46154,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all POST args that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all POST args that need to be matched. The criteria for matching each arg are described in individual instances of ArgMatcherType. The actual arg values are extracted from the request API as a list of strings for each arg selector name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -46151,6 +46188,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all cookies that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all cookies that need to be matched. The criteria for matching each cookie is described in individual instances of CookieMatcherType. The actual cookie values are extracted from the request API as a list of strings for each cookie name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -46198,6 +46236,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various HTTP headers that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various HTTP headers that need to match. The criteria for matching each HTTP header are described in individual HeaderMatcherType instances. The actual HTTP header values are extracted from the request API as a list of strings for each HTTP header type.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -46231,6 +46270,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all query parameters that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all query parameters that need to be matched. The criteria for matching each query parameter are described in individual instances of QueryParameterMatcherType. The actual query parameter values are extracted from the request API as a list of strings for each query...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -46752,7 +46792,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195221+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758216+00:00"
           },
           "status": {
             "type": "string",
@@ -46769,7 +46809,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195226+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758221+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -46825,7 +46865,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195232+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758227+00:00"
           },
           "nlb_cname": {
             "type": "string",
@@ -46870,7 +46910,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195239+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758234+00:00"
           },
           "target_group_status": {
             "type": "array",
@@ -46954,7 +46994,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195248+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758243+00:00"
           },
           "protocol": {
             "type": "string",
@@ -46985,7 +47025,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195253+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758248+00:00"
           },
           "status": {
             "type": "string",
@@ -47002,7 +47042,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195257+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758252+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -47091,6 +47131,7 @@
               "ves.io.schema.rules.map.max_pairs": "16"
             },
             "x-f5xc-description-short": "Upstream origin pool may be configured to divide its origin servers into subsets based on metadata attached to the origin servers.",
+            "x-f5xc-description-medium": "Upstream origin pool may be configured to divide its origin servers into subsets based on metadata attached to the origin servers. Routes may then specify the metadata that a endpoint must match in order to be selected by the load balancer For origin servers which are discovered in K8s or Consul...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -47116,6 +47157,7 @@
               "ves.io.schema.rules.uint32.lte": "32"
             },
             "x-f5xc-description-short": "Priority of this origin pool, valid only with multiple origin pools.",
+            "x-f5xc-description-medium": "Priority of this origin pool, valid only with multiple origin pools. Value of 0 will make the pool as lowest priority origin pool Priority of 1 means highest priority and is considered active. When active origin pool is not available, lower priority origin pools are made active as per the...",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -48068,7 +48110,7 @@
             "x-original-maxLength": 256,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195344+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758336+00:00"
           },
           "simple_login": {
             "$ref": "#/components/schemas/common_wafSimpleLogin"
@@ -48342,6 +48384,7 @@
               "ves.io.schema.rules.repeated.unique_metadata_name": "true"
             },
             "x-f5xc-description-short": "Data Guard prevents responses from exposing sensitive information by masking the data.",
+            "x-f5xc-description-medium": "Data Guard prevents responses from exposing sensitive information by masking the data. The system masks credit card numbers and social security numbers leaked from the application from within the HTTP response with a string of asterisks (*).",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -48479,6 +48522,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "List of Domains (host/authority header) that will be matched to load balancer. Supported Domains and search order: 1.",
+            "x-f5xc-description-medium": "List of Domains (host/authority header) that will be matched to load balancer. Supported Domains and search order: 1. Exact Domain names: www.example.com. 2.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -48521,6 +48565,7 @@
               "ves.io.schema.rules.repeated.unique_metadata_name": "true"
             },
             "x-f5xc-description-short": "GraphQL is a query language and server-side runtime for APIs which provides a complete and understandable description of the data in API.",
+            "x-f5xc-description-medium": "GraphQL is a query language and server-side runtime for APIs which provides a complete and understandable description of the data in API. GraphQL gives clients the power to ask for exactly what they need, makes it easier to evolve APIs over time, and enables powerful developer tools. Policy...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -48596,6 +48641,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Allows setting attributes (SameSite, Secure, and HttpOnly) on cookies in responses.",
+            "x-f5xc-description-medium": "Allows setting attributes (SameSite, Secure, and HttpOnly) on cookies in responses. Cookie Tampering Protection prevents attackers from modifying the value of session cookies. For Cookie Tampering Protection, enabling a web app firewall (WAF) is a prerequisite.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -48792,7 +48838,7 @@
             "x-original-maxLength": 256,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195466+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758457+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -48968,6 +49014,7 @@
               "ves.io.schema.rules.repeated.unique_metadata_name": "true"
             },
             "x-f5xc-description-short": "Data Guard prevents responses from exposing sensitive information by masking the data.",
+            "x-f5xc-description-medium": "Data Guard prevents responses from exposing sensitive information by masking the data. The system masks credit card numbers and social security numbers leaked from the application from within the HTTP response with a string of asterisks (*).",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -49119,6 +49166,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "List of Domains (host/authority header) that will be matched to load balancer. Supported Domains and search order: 1.",
+            "x-f5xc-description-medium": "List of Domains (host/authority header) that will be matched to load balancer. Supported Domains and search order: 1. Exact Domain names: www.example.com. 2.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -49161,6 +49209,7 @@
               "ves.io.schema.rules.repeated.unique_metadata_name": "true"
             },
             "x-f5xc-description-short": "GraphQL is a query language and server-side runtime for APIs which provides a complete and understandable description of the data in API.",
+            "x-f5xc-description-medium": "GraphQL is a query language and server-side runtime for APIs which provides a complete and understandable description of the data in API. GraphQL gives clients the power to ask for exactly what they need, makes it easier to evolve APIs over time, and enables powerful developer tools. Policy...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -49265,6 +49314,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Allows setting attributes (SameSite, Secure, and HttpOnly) on cookies in responses.",
+            "x-f5xc-description-medium": "Allows setting attributes (SameSite, Secure, and HttpOnly) on cookies in responses. Cookie Tampering Protection prevents attackers from modifying the value of session cookies. For Cookie Tampering Protection, enabling a web app firewall (WAF) is a prerequisite.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -49576,6 +49626,7 @@
               "ves.io.schema.rules.repeated.unique_metadata_name": "true"
             },
             "x-f5xc-description-short": "Data Guard prevents responses from exposing sensitive information by masking the data.",
+            "x-f5xc-description-medium": "Data Guard prevents responses from exposing sensitive information by masking the data. The system masks credit card numbers and social security numbers leaked from the application from within the HTTP response with a string of asterisks (*).",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -49713,6 +49764,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "List of Domains (host/authority header) that will be matched to load balancer. Supported Domains and search order: 1.",
+            "x-f5xc-description-medium": "List of Domains (host/authority header) that will be matched to load balancer. Supported Domains and search order: 1. Exact Domain names: www.example.com. 2.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -49755,6 +49807,7 @@
               "ves.io.schema.rules.repeated.unique_metadata_name": "true"
             },
             "x-f5xc-description-short": "GraphQL is a query language and server-side runtime for APIs which provides a complete and understandable description of the data in API.",
+            "x-f5xc-description-medium": "GraphQL is a query language and server-side runtime for APIs which provides a complete and understandable description of the data in API. GraphQL gives clients the power to ask for exactly what they need, makes it easier to evolve APIs over time, and enables powerful developer tools. Policy...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -49830,6 +49883,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Allows setting attributes (SameSite, Secure, and HttpOnly) on cookies in responses.",
+            "x-f5xc-description-medium": "Allows setting attributes (SameSite, Secure, and HttpOnly) on cookies in responses. Cookie Tampering Protection prevents attackers from modifying the value of session cookies. For Cookie Tampering Protection, enabling a web app firewall (WAF) is a prerequisite.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -50296,6 +50350,7 @@
               "ves.io.schema.rules.string.uri_ref": "true"
             },
             "x-f5xc-description-short": "Custom message is of type uri_ref. Currently supported URL schemes is string:///.",
+            "x-f5xc-description-medium": "Custom message is of type uri_ref. Currently supported URL schemes is string:///. For string:/// scheme, message needs to be encoded in Base64 format.",
             "minLength": 0,
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -50394,6 +50449,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Define the list of one or more Client IP Headers.",
+            "x-f5xc-description-medium": "Define the list of one or more Client IP Headers. Headers will be used in order from top to bottom, meaning if the first header is not present in the request, the system will proceed to check for the second header, and so on, until one of the listed headers is found. If none of the defined...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -50545,7 +50601,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195696+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758685+00:00"
           },
           "type": {
             "type": "string",
@@ -50578,7 +50634,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.195702+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:23.758691+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -50814,6 +50870,7 @@
               "ves.io.schema.rules.string.uri_ref": "true"
             },
             "x-f5xc-description-short": "Custom message is of type uri_ref. Currently supported URL schemes is string:///.",
+            "x-f5xc-description-medium": "Custom message is of type uri_ref. Currently supported URL schemes is string:///. For string:/// scheme, message needs to be encoded in Base64 format.",
             "minLength": 0,
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -50962,6 +51019,7 @@
               "ves.io.schema.rules.string.uri_ref": "true"
             },
             "x-f5xc-description-short": "Custom message is of type . Currently supported URL schemes is .",
+            "x-f5xc-description-medium": "Custom message is of type . Currently supported URL schemes is . For scheme, message needs to be encoded in Base64 format. You can specify this message as base64 encoded plain text message e.g. \"Blocked..\" or it can be HTML paragraph or a body string encoded as base64 string E.g. \"<p> Blocked...",
             "minLength": 0,
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -51162,7 +51220,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:15.589082+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.220825+00:00"
           },
           "namespace": {
             "type": "string",
@@ -51181,7 +51239,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:15.589086+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.220830+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -51322,7 +51380,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:15.589101+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.220844+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -51483,7 +51541,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:15.589114+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.220856+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -51533,7 +51591,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:15.589124+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.220865+00:00"
           },
           "namespace": {
             "type": "string",
@@ -51552,7 +51610,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:15.589128+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.220869+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -51593,7 +51651,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:15.589136+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.220878+00:00"
           },
           "uid": {
             "type": "string",
@@ -51614,7 +51672,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:15.589141+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.220883+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -51814,6 +51872,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "Service Policies is a sequential engine where policies (and rules within the policy) are evaluated one after the other.",
+            "x-f5xc-description-medium": "Service Policies is a sequential engine where policies (and rules within the policy) are evaluated one after the other. It's important to define the correct order (policies evaluated from top to bottom in the list) for service policies, to GET the intended result. For each request, its...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -51980,6 +52039,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "List of Domains (host/authority header) that will be matched to this Load Balancer.",
+            "x-f5xc-description-medium": "List of Domains (host/authority header) that will be matched to this Load Balancer. Supported Domains and search order: 1. Exact Domain names: www.example.com. 2.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -52229,6 +52289,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "List of Domains (host/authority header) that will be matched to this Load Balancer.",
+            "x-f5xc-description-medium": "List of Domains (host/authority header) that will be matched to this Load Balancer. Supported Domains and search order: 1. Exact Domain names: www.example.com. 2.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -52487,6 +52548,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "List of Domains (host/authority header) that will be matched to this Load Balancer.",
+            "x-f5xc-description-medium": "List of Domains (host/authority header) that will be matched to this Load Balancer. Supported Domains and search order: 1. Exact Domain names: www.example.com. 2.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -52740,7 +52802,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:16.030886+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.667704+00:00"
           },
           "namespace": {
             "type": "string",
@@ -52759,7 +52821,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:16.030890+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.667708+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -52880,7 +52942,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:16.030906+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.667723+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -53015,7 +53077,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:16.030918+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.667735+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -53065,7 +53127,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:16.030928+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.667744+00:00"
           },
           "namespace": {
             "type": "string",
@@ -53084,7 +53146,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:16.030933+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.667748+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -53125,7 +53187,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:16.030940+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.667756+00:00"
           },
           "uid": {
             "type": "string",
@@ -53146,7 +53208,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:16.030946+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:26.667761+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -53341,6 +53403,7 @@
             "format": "boolean",
             "x-displayname": "Per Packet Load Balancing.",
             "x-f5xc-description-short": "Per packet load balancing: If disabled (default): First packet identified by source IP/port and local IP/port is sent to an upstream server as the...",
+            "x-f5xc-description-medium": "Per packet load balancing: If disabled (default): First packet identified by source IP/port and local IP/port is sent to an upstream server as the load balancing algorithm dictates, and subsequent packets with the same identity are forwarded to the same upstream server without rechecking the...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -53564,6 +53627,7 @@
             "format": "boolean",
             "x-displayname": "Per Packet Load Balancing.",
             "x-f5xc-description-short": "Per packet load balancing: If disabled (default): First packet identified by source IP/port and local IP/port is sent to an upstream server as the...",
+            "x-f5xc-description-medium": "Per packet load balancing: If disabled (default): First packet identified by source IP/port and local IP/port is sent to an upstream server as the load balancing algorithm dictates, and subsequent packets with the same identity are forwarded to the same upstream server without rechecking the...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -53805,6 +53869,7 @@
             "format": "boolean",
             "x-displayname": "Per Packet Load Balancing.",
             "x-f5xc-description-short": "Per packet load balancing: If disabled (default): First packet identified by source IP/port and local IP/port is sent to an upstream server as the...",
+            "x-f5xc-description-medium": "Per packet load balancing: If disabled (default): First packet identified by source IP/port and local IP/port is sent to an upstream server as the load balancing algorithm dictates, and subsequent packets with the same identity are forwarded to the same upstream server without rechecking the...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -54129,7 +54194,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:29.816942+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:40.541662+00:00"
           },
           "namespace": {
             "type": "string",
@@ -54148,7 +54213,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:29.816949+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:40.541669+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -54246,7 +54311,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:29.816964+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:40.541684+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -54424,7 +54489,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:29.816981+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:40.541701+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -54474,7 +54539,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:29.816992+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:40.541711+00:00"
           },
           "namespace": {
             "type": "string",
@@ -54493,7 +54558,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:29.816996+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:40.541715+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -54534,7 +54599,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:29.817003+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:40.541723+00:00"
           },
           "uid": {
             "type": "string",
@@ -54555,7 +54620,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:29.817009+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:40.541728+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -54918,6 +54983,7 @@
               "ves.io.schema.rules.uint32.lte": "16"
             },
             "x-f5xc-description-short": "Number of failed responses before declaring unhealthy.",
+            "x-f5xc-description-medium": "Number of failed responses before declaring unhealthy. In other words, this is the number of unhealthy health checks required before a host is marked unhealthy. Note that for HTTP health checking if a host responds with 503 this threshold is ignored and the host is considered unhealthy immediately.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -55084,7 +55150,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:31.276670+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:42.015963+00:00"
           },
           "namespace": {
             "type": "string",
@@ -55103,7 +55169,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:31.276677+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:42.015970+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -55400,7 +55466,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:31.276706+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:42.016000+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -55605,6 +55671,7 @@
               "ves.io.schema.rules.uint32.lte": "16"
             },
             "x-f5xc-description-short": "Number of failed responses before declaring unhealthy.",
+            "x-f5xc-description-medium": "Number of failed responses before declaring unhealthy. In other words, this is the number of unhealthy health checks required before a host is marked unhealthy. Note that for HTTP health checking if a host responds with 503 this threshold is ignored and the host is considered unhealthy immediately.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -55923,7 +55990,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:31.276740+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:42.016034+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -55973,7 +56040,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:31.276750+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:42.016044+00:00"
           },
           "namespace": {
             "type": "string",
@@ -55992,7 +56059,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:31.276754+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:42.016048+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -56033,7 +56100,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:31.276761+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:42.016056+00:00"
           },
           "uid": {
             "type": "string",
@@ -56054,7 +56121,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:31.276767+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:42.016062+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -56282,6 +56349,7 @@
               "ves.io.schema.rules.uint32.lte": "16"
             },
             "x-f5xc-description-short": "Number of failed responses before declaring unhealthy.",
+            "x-f5xc-description-medium": "Number of failed responses before declaring unhealthy. In other words, this is the number of unhealthy health checks required before a host is marked unhealthy. Note that for HTTP health checking if a host responds with 503 this threshold is ignored and the host is considered unhealthy immediately.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -56551,7 +56619,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:48.778734+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:59.629982+00:00"
           },
           "namespace": {
             "type": "string",
@@ -56570,7 +56638,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:48.778738+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:59.629986+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -56782,7 +56850,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:48.778759+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:59.630006+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -56832,7 +56900,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:48.778768+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:59.630016+00:00"
           },
           "namespace": {
             "type": "string",
@@ -56851,7 +56919,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:48.778772+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:59.630020+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -56877,7 +56945,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:48.778779+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:59.630026+00:00"
           },
           "uid": {
             "type": "string",
@@ -56898,7 +56966,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:48.778784+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:59.630031+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -57490,7 +57558,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:51.735387+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:02.605788+00:00"
           },
           "namespace": {
             "type": "string",
@@ -57509,7 +57577,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:51.735392+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:02.605793+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -57621,6 +57689,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "List of Domains to be proxied. Wildcard hosts are supported in the suffix or prefix form Supported Domains and search order: 1.",
+            "x-f5xc-description-medium": "List of Domains to be proxied. Wildcard hosts are supported in the suffix or prefix form Supported Domains and search order: 1. Exact Domain names: www.example.com. 2.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -57782,7 +57851,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:51.735433+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:02.605820+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -57981,7 +58050,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:51.735456+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:02.605838+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -58031,7 +58100,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:51.735466+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:02.605848+00:00"
           },
           "namespace": {
             "type": "string",
@@ -58050,7 +58119,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:51.735470+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:02.605853+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -58091,7 +58160,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:51.735478+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:02.605860+00:00"
           },
           "uid": {
             "type": "string",
@@ -58112,7 +58181,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:51.735483+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:02.605866+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -58958,7 +59027,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:53.452301+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:04.337923+00:00"
           },
           "namespace": {
             "type": "string",
@@ -58977,7 +59046,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:53.452306+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:04.337928+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -59075,7 +59144,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:53.452320+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:04.337942+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -59210,7 +59279,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:53.452332+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:04.337954+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -59260,7 +59329,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:53.452342+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:04.337964+00:00"
           },
           "namespace": {
             "type": "string",
@@ -59279,7 +59348,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:53.452346+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:04.337968+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -59320,7 +59389,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:53.452354+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:04.337975+00:00"
           },
           "uid": {
             "type": "string",
@@ -59341,7 +59410,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:53.452359+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:04.337981+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -59545,6 +59614,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various HTTP headers that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various HTTP headers that need to match. The criteria for matching each HTTP header are described in individual HeaderMatcherType instances. The actual HTTP header values are extracted from the request API as a list of strings for each HTTP header type.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -59910,7 +59980,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549016+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500312+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -60078,7 +60148,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549034+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500331+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -61487,7 +61557,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549287+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500607+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -61550,7 +61620,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549395+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500717+00:00"
           },
           "previous_value": {
             "type": "string",
@@ -61588,7 +61658,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549401+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500723+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -61792,6 +61862,7 @@
               "ves.io.schema.rules.string.max_bytes": "256"
             },
             "x-f5xc-description-short": "Exclusive with [any_server server_name_matcher server_selector] The expected name of the server to which the request API is directed.",
+            "x-f5xc-description-medium": "Exclusive with [any_server server_name_matcher server_selector] The expected name of the server to which the request API is directed. The actual names for the server are extracted from the HTTP Host header and the name of the virtual_host to which the request is directed. If the request is...",
             "minLength": 0,
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -61871,6 +61942,7 @@
               "ves.io.schema.rules.string.max_bytes": "256"
             },
             "x-f5xc-description-short": "Exclusive with [any_server server_name_matcher server_selector] The expected name of the server to which the request API is directed.",
+            "x-f5xc-description-medium": "Exclusive with [any_server server_name_matcher server_selector] The expected name of the server to which the request API is directed. The actual names for the server are extracted from the HTTP Host header and the name of the virtual_host to which the request is directed. If the request is...",
             "minLength": 0,
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -61951,6 +62023,7 @@
               "ves.io.schema.rules.string.max_bytes": "256"
             },
             "x-f5xc-description-short": "Exclusive with [any_server server_name_matcher server_selector] The expected name of the server to which the request API is directed.",
+            "x-f5xc-description-medium": "Exclusive with [any_server server_name_matcher server_selector] The expected name of the server to which the request API is directed. The actual names for the server are extracted from the HTTP Host header and the name of the virtual_host to which the request is directed. If the request is...",
             "minLength": 0,
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -62031,6 +62104,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all POST args that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all POST args that need to be matched. The criteria for matching each arg are described in individual instances of ArgMatcherType. The actual arg values are extracted from the request API as a list of strings for each arg selector name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -62094,6 +62168,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all cookies that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all cookies that need to be matched. The criteria for matching each cookie is described in individual instances of CookieMatcherType. The actual cookie values are extracted from the request API as a list of strings for each cookie name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -62137,6 +62212,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various HTTP headers that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various HTTP headers that need to match. The criteria for matching each HTTP header are described in individual HeaderMatcherType instances. The actual HTTP header values are extracted from the request API as a list of strings for each HTTP header type.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -62175,6 +62251,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various JWT claims that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various JWT claims that need to match. The criteria for matching each JWT claim are described in individual JWTClaimMatcherType instances. The actual JWT claims values are extracted from the JWT payload as a list of strings.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -62210,6 +62287,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all query parameters that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all query parameters that need to be matched. The criteria for matching each query parameter are described in individual instances of QueryParameterMatcherType. The actual query parameter values are extracted from the request API as a list of strings for each query...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -62416,7 +62494,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549567+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500877+00:00"
           },
           "namespace": {
             "type": "string",
@@ -62435,7 +62513,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549571+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500881+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -62533,7 +62611,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549584+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500894+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -62710,7 +62788,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549598+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500907+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -62760,7 +62838,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549608+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500917+00:00"
           },
           "namespace": {
             "type": "string",
@@ -62779,7 +62857,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549612+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500921+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -62820,7 +62898,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549619+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500929+00:00"
           },
           "uid": {
             "type": "string",
@@ -62841,7 +62919,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549624+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500934+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -63058,7 +63136,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549641+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500952+00:00"
           },
           "policy": {
             "type": "string",
@@ -63235,7 +63313,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549656+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500967+00:00"
           },
           "start_time": {
             "type": "string",
@@ -63273,6 +63351,7 @@
               "ves.io.schema.rules.string.query_step": "true"
             },
             "x-f5xc-description-short": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response.",
+            "x-f5xc-description-medium": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -63414,7 +63493,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549669+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.500980+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -63464,6 +63543,7 @@
               "$ref": "#/components/schemas/policyArgMatcherType"
             },
             "x-f5xc-description-short": "X-displayName: \"Argument Matchers\" A list of predicates for all POST args that need to be matched.",
+            "x-f5xc-description-medium": "X-displayName: \"Argument Matchers\" A list of predicates for all POST args that need to be matched. The criteria for matching each arg are described in individual instances of ArgMatcherType. The actual arg values are extracted from the request API as a list of strings for each arg selector name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -63523,6 +63603,7 @@
               "$ref": "#/components/schemas/policyCookieMatcherType"
             },
             "x-f5xc-description-short": "X-displayName: \"Cookie Matchers\" A list of predicates for all cookies that need to be matched.",
+            "x-f5xc-description-medium": "X-displayName: \"Cookie Matchers\" A list of predicates for all cookies that need to be matched. The criteria for matching each cookie is described in individual instances of CookieMatcherType. The actual cookie values are extracted from the request API as a list of strings for each cookie name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -63545,7 +63626,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549691+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.501002+00:00"
           },
           "domain_matcher": {
             "$ref": "#/components/schemas/policyMatcherType"
@@ -63602,6 +63683,7 @@
               "$ref": "#/components/schemas/schemapolicyHeaderMatcherType"
             },
             "x-f5xc-description-short": "X-displayName: \"HTTP Headers\" A list of predicates for various HTTP headers that need to match.",
+            "x-f5xc-description-medium": "X-displayName: \"HTTP Headers\" A list of predicates for various HTTP headers that need to match. The criteria for matching each HTTP header are described in individual HeaderMatcherType instances. The actual HTTP header values are extracted from the request API as a list of strings for each HTTP...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -63632,6 +63714,7 @@
               "$ref": "#/components/schemas/policyJWTClaimMatcherType"
             },
             "x-f5xc-description-short": "X-displayName: \"JWT Claims\" A list of predicates for various JWT claims that need to match.",
+            "x-f5xc-description-medium": "X-displayName: \"JWT Claims\" A list of predicates for various JWT claims that need to match. The criteria for matching each JWT claim are described in individual JWTClaimMatcherType instances. The actual JWT claims values are extracted from the JWT payload as a list of strings.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -63682,7 +63765,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:00.549717+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:11.501029+00:00"
           },
           "openapi_validation_action": {
             "$ref": "#/components/schemas/policyOpenApiValidationAction"
@@ -63713,6 +63796,7 @@
               "$ref": "#/components/schemas/schemapolicyQueryParameterMatcherType"
             },
             "x-f5xc-description-short": "X-displayName: \"HTTP Query Parameters\" A list of predicates for all query parameters that need to be matched.",
+            "x-f5xc-description-medium": "X-displayName: \"HTTP Query Parameters\" A list of predicates for all query parameters that need to be matched. The criteria for matching each query parameter are described in individual instances of QueryParameterMatcherType. The actual query parameter values are extracted from the request API as...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64176,6 +64260,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all POST args that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all POST args that need to be matched. The criteria for matching each arg are described in individual instances of ArgMatcherType. The actual arg values are extracted from the request API as a list of strings for each arg selector name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64237,6 +64322,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all cookies that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all cookies that need to be matched. The criteria for matching each cookie is described in individual instances of CookieMatcherType. The actual cookie values are extracted from the request API as a list of strings for each cookie name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64278,6 +64364,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various HTTP headers that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various HTTP headers that need to match. The criteria for matching each HTTP header are described in individual HeaderMatcherType instances. The actual HTTP header values are extracted from the request API as a list of strings for each HTTP header type.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64315,6 +64402,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various JWT claims that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various JWT claims that need to match. The criteria for matching each JWT claim are described in individual JWTClaimMatcherType instances. The actual JWT claims values are extracted from the JWT payload as a list of strings.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64349,6 +64437,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all query parameters that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all query parameters that need to be matched. The criteria for matching each query parameter are described in individual instances of QueryParameterMatcherType. The actual query parameter values are extracted from the request API as a list of strings for each query...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64455,6 +64544,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all POST args that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all POST args that need to be matched. The criteria for matching each arg are described in individual instances of ArgMatcherType. The actual arg values are extracted from the request API as a list of strings for each arg selector name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64516,6 +64606,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all cookies that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all cookies that need to be matched. The criteria for matching each cookie is described in individual instances of CookieMatcherType. The actual cookie values are extracted from the request API as a list of strings for each cookie name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64557,6 +64648,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various HTTP headers that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various HTTP headers that need to match. The criteria for matching each HTTP header are described in individual HeaderMatcherType instances. The actual HTTP header values are extracted from the request API as a list of strings for each HTTP header type.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64594,6 +64686,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various JWT claims that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various JWT claims that need to match. The criteria for matching each JWT claim are described in individual JWTClaimMatcherType instances. The actual JWT claims values are extracted from the JWT payload as a list of strings.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64628,6 +64721,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all query parameters that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all query parameters that need to be matched. The criteria for matching each query parameter are described in individual instances of QueryParameterMatcherType. The actual query parameter values are extracted from the request API as a list of strings for each query...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64734,6 +64828,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all POST args that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all POST args that need to be matched. The criteria for matching each arg are described in individual instances of ArgMatcherType. The actual arg values are extracted from the request API as a list of strings for each arg selector name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64795,6 +64890,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all cookies that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all cookies that need to be matched. The criteria for matching each cookie is described in individual instances of CookieMatcherType. The actual cookie values are extracted from the request API as a list of strings for each cookie name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64836,6 +64932,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various HTTP headers that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various HTTP headers that need to match. The criteria for matching each HTTP header are described in individual HeaderMatcherType instances. The actual HTTP header values are extracted from the request API as a list of strings for each HTTP header type.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64873,6 +64970,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various JWT claims that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various JWT claims that need to match. The criteria for matching each JWT claim are described in individual JWTClaimMatcherType instances. The actual JWT claims values are extracted from the JWT payload as a list of strings.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -64907,6 +65005,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all query parameters that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all query parameters that need to be matched. The criteria for matching each query parameter are described in individual instances of QueryParameterMatcherType. The actual query parameter values are extracted from the request API as a list of strings for each query...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -65062,7 +65161,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.156773+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.110004+00:00"
           },
           "namespace": {
             "type": "string",
@@ -65081,7 +65180,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.156777+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.110008+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -65179,7 +65278,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.156792+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.110023+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -65314,7 +65413,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.156803+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.110034+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -65364,7 +65463,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.156813+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.110044+00:00"
           },
           "namespace": {
             "type": "string",
@@ -65383,7 +65482,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.156817+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.110048+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -65424,7 +65523,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.156825+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.110055+00:00"
           },
           "uid": {
             "type": "string",
@@ -65445,7 +65544,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.156830+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.110060+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -65779,7 +65878,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.462536+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.413907+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -65910,7 +66009,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.462549+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.413919+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -65960,7 +66059,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.462558+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.413928+00:00"
           },
           "namespace": {
             "type": "string",
@@ -65979,7 +66078,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.462563+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.413933+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -66020,7 +66119,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.462570+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.413941+00:00"
           },
           "uid": {
             "type": "string",
@@ -66041,7 +66140,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:01.462575+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:12.413946+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -66359,6 +66458,7 @@
             "x-ves-example": "{component_identifier: API/v1/user_id/DYN,component_examples: [cmenomo007]}",
             "x-f5xc-example": "{component_identifierapi/v1/user_id/DYN,component_examples: [cmenomo007]}",
             "x-f5xc-description-short": "For example - {\"dyn_examples\": [ { \"component_identifier\": \"API/v1/user_id/DYN\", \"component_examples\": [ \"cmenomo007\", \"marcusaurelius\"...",
+            "x-f5xc-description-medium": "For example - {\"dyn_examples\": [ { \"component_identifier\": \"API/v1/user_id/DYN\", \"component_examples\": [ \"cmenomo007\", \"marcusaurelius\" \"artattacksince1947\", \"johndoe83\", ] }, { \"component_identifier\": \"API/v1/user_id/DYN/vehicle_id/DYN\", \"component_examples\": [ \"JN1CV6AR3AM458367\"...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -67541,6 +67641,7 @@
               "ves.io.schema.rules.uint32.lte": "86400"
             },
             "x-f5xc-description-short": "Specifies in seconds refresh interval for session cookie. This is used to keep the active user active and reduce RE-login.",
+            "x-f5xc-description-medium": "Specifies in seconds refresh interval for session cookie. This is used to keep the active user active and reduce RE-login. When an incoming cookie's session expiry is still valid, and time to expire falls behind this interval, RE-issue a cookie with new expiry and with the same original session...",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -67842,6 +67943,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "The following list specifies the supported cipher suite TLS_AES_128_GCM_SHA256 TLS_AES_256_GCM_SHA384 TLS_CHACHA20_POLY1305_SHA256...",
+            "x-f5xc-description-medium": "The following list specifies the supported cipher suite TLS_AES_128_GCM_SHA256 TLS_AES_256_GCM_SHA384 TLS_CHACHA20_POLY1305_SHA256 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -68106,6 +68208,7 @@
             },
             "x-displayname": "Advertise Policies.",
             "x-f5xc-description-short": "Advertise Policy allows you to define networks or sites where you want a VIP for this virtual host to be advertised.",
+            "x-f5xc-description-medium": "Advertise Policy allows you to define networks or sites where you want a VIP for this virtual host to be advertised. Each Policy rule can have different parameters, like TLS configuration, ports, optionally IP address to be used for VIP. If advertise policy is not specified then no VIP is...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -68161,6 +68264,7 @@
               "ves.io.schema.rules.uint32.lte": "600000"
             },
             "x-f5xc-description-short": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests.",
+            "x-f5xc-description-medium": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests. When the idle timeout is reached the connection will be closed.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -68198,6 +68302,7 @@
               "ves.io.schema.rules.map.values.string.uri_ref": "true"
             },
             "x-f5xc-description-short": "Map of integer error codes as keys and string values that can be used to provide custom HTTP pages for each error code.",
+            "x-f5xc-description-medium": "Map of integer error codes as keys and string values that can be used to provide custom HTTP pages for each error code. Key of the map can be either response code class or HTTP Error code. Response code classes for key is configured as follows 3 -- for 3xx response code class 4 -- for 4xx...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -68263,6 +68368,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "List of domain names matched to this virtual host.",
+            "x-f5xc-description-medium": "List of domain names matched to this virtual host for routing incoming requests. Supports wildcard patterns like *.example.com for subdomain matching.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -68287,6 +68393,7 @@
             "x-ves-example": "2000",
             "x-f5xc-example": "2000",
             "x-f5xc-description-short": "Idle timeout is the amount of time that the loadbalancer will allow a stream to exist with no upstream or downstream activity.",
+            "x-f5xc-description-medium": "Idle timeout is the amount of time that the loadbalancer will allow a stream to exist with no upstream or downstream activity. Idle timeout and Proxy Type: HTTP_PROXY, HTTPS_PROXY: Idle timer is started when the first byte is received on the connection. Each time an encode/decode event for...",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -68313,6 +68420,7 @@
               "ves.io.schema.rules.uint32.lte": "96"
             },
             "x-f5xc-description-short": "The maximum request header size in KiB for incoming connections. If un-configured, the default max request headers allowed is 60 KiB.",
+            "x-f5xc-description-medium": "The maximum request header size in KiB for incoming connections. If un-configured, the default max request headers allowed is 60 KiB. Requests that exceed this limit will receive a 431 response.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -68576,6 +68684,7 @@
               "ves.io.schema.rules.repeated.max_items": "256"
             },
             "x-f5xc-description-short": "HTTP routing rules for matching requests to backends.",
+            "x-f5xc-description-medium": "HTTP routing rules that match incoming requests based on path, headers, or query parameters and forward them to appropriate backend origin pools.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -68748,6 +68857,7 @@
             },
             "x-displayname": "Advertise Policies.",
             "x-f5xc-description-short": "Advertise Policy allows you to define networks or sites where you want a VIP for this virtual host to be advertised.",
+            "x-f5xc-description-medium": "Advertise Policy allows you to define networks or sites where you want a VIP for this virtual host to be advertised. Each Policy rule can have different parameters, like TLS configuration, ports, optionally IP address to be used for VIP. If advertise policy is not specified then no VIP is...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -68825,6 +68935,7 @@
               "ves.io.schema.rules.uint32.lte": "600000"
             },
             "x-f5xc-description-short": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests.",
+            "x-f5xc-description-medium": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests. When the idle timeout is reached the connection will be closed.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -68862,6 +68973,7 @@
               "ves.io.schema.rules.map.values.string.uri_ref": "true"
             },
             "x-f5xc-description-short": "Map of integer error codes as keys and string values that can be used to provide custom HTTP pages for each error code.",
+            "x-f5xc-description-medium": "Map of integer error codes as keys and string values that can be used to provide custom HTTP pages for each error code. Key of the map can be either response code class or HTTP Error code. Response code classes for key is configured as follows 3 -- for 3xx response code class 4 -- for 4xx...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -68944,6 +69056,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "List of Domains (host/authority header) that will be matched to this Virtual Host.",
+            "x-f5xc-description-medium": "List of Domains (host/authority header) that will be matched to this Virtual Host. Wildcard hosts are supported in the suffix or prefix form Supported Domains and search order: 1. Exact Domain names: www.example.com. 2.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -68983,6 +69096,7 @@
             "x-ves-example": "2000",
             "x-f5xc-example": "2000",
             "x-f5xc-description-short": "Idle timeout is the amount of time that the loadbalancer will allow a stream to exist with no upstream or downstream activity.",
+            "x-f5xc-description-medium": "Idle timeout is the amount of time that the loadbalancer will allow a stream to exist with no upstream or downstream activity. Idle timeout and Proxy Type: HTTP_PROXY, HTTPS_PROXY: Idle timer is started when the first byte is received on the connection. Each time an encode/decode event for...",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -69015,6 +69129,7 @@
               "ves.io.schema.rules.uint32.lte": "96"
             },
             "x-f5xc-description-short": "The maximum request header size in KiB for incoming connections. If un-configured, the default max request headers allowed is 60 KiB.",
+            "x-f5xc-description-medium": "The maximum request header size in KiB for incoming connections. If un-configured, the default max request headers allowed is 60 KiB. Requests that exceed this limit will receive a 431 response.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -69284,6 +69399,7 @@
               "ves.io.schema.rules.repeated.max_items": "256"
             },
             "x-f5xc-description-short": "The list of routes that will be matched, in order, for incoming requests. The first route that matches will be used.",
+            "x-f5xc-description-medium": "The list of routes that will be matched, in order, for incoming requests. The first route that matches will be used. Currently route object is redundant in case of TCP proxy but required.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -69473,6 +69589,7 @@
             },
             "x-displayname": "Advertise Policies.",
             "x-f5xc-description-short": "Advertise Policy allows you to define networks or sites where you want a VIP for this virtual host to be advertised.",
+            "x-f5xc-description-medium": "Advertise Policy allows you to define networks or sites where you want a VIP for this virtual host to be advertised. Each Policy rule can have different parameters, like TLS configuration, ports, optionally IP address to be used for VIP. If advertise policy is not specified then no VIP is...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -69528,6 +69645,7 @@
               "ves.io.schema.rules.uint32.lte": "600000"
             },
             "x-f5xc-description-short": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests.",
+            "x-f5xc-description-medium": "The idle timeout for downstream connections. The idle timeout is defined as the period in which there are no active requests. When the idle timeout is reached the connection will be closed.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -69565,6 +69683,7 @@
               "ves.io.schema.rules.map.values.string.uri_ref": "true"
             },
             "x-f5xc-description-short": "Map of integer error codes as keys and string values that can be used to provide custom HTTP pages for each error code.",
+            "x-f5xc-description-medium": "Map of integer error codes as keys and string values that can be used to provide custom HTTP pages for each error code. Key of the map can be either response code class or HTTP Error code. Response code classes for key is configured as follows 3 -- for 3xx response code class 4 -- for 4xx...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -69630,6 +69749,7 @@
               "ves.io.schema.rules.repeated.unique": "true"
             },
             "x-f5xc-description-short": "List of Domains (host/authority header) that will be matched to this Virtual Host.",
+            "x-f5xc-description-medium": "List of Domains (host/authority header) that will be matched to this Virtual Host. Wildcard hosts are supported in the suffix or prefix form Supported Domains and search order: 1. Exact Domain names: www.example.com. 2.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -69654,6 +69774,7 @@
             "x-ves-example": "2000",
             "x-f5xc-example": "2000",
             "x-f5xc-description-short": "Idle timeout is the amount of time that the loadbalancer will allow a stream to exist with no upstream or downstream activity.",
+            "x-f5xc-description-medium": "Idle timeout is the amount of time that the loadbalancer will allow a stream to exist with no upstream or downstream activity. Idle timeout and Proxy Type: HTTP_PROXY, HTTPS_PROXY: Idle timer is started when the first byte is received on the connection. Each time an encode/decode event for...",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -69680,6 +69801,7 @@
               "ves.io.schema.rules.uint32.lte": "96"
             },
             "x-f5xc-description-short": "The maximum request header size in KiB for incoming connections. If un-configured, the default max request headers allowed is 60 KiB.",
+            "x-f5xc-description-medium": "The maximum request header size in KiB for incoming connections. If un-configured, the default max request headers allowed is 60 KiB. Requests that exceed this limit will receive a 431 response.",
             "minimum": 0,
             "maximum": 2147483647,
             "x-f5xc-required-for": {
@@ -69943,6 +70065,7 @@
               "ves.io.schema.rules.repeated.max_items": "256"
             },
             "x-f5xc-description-short": "The list of routes that will be matched, in order, for incoming requests. The first route that matches will be used.",
+            "x-f5xc-description-medium": "The list of routes that will be matched, in order, for incoming requests. The first route that matches will be used. Currently route object is redundant in case of TCP proxy but required.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -70121,7 +70244,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828796+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795733+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -70160,7 +70283,7 @@
             "maxLength": 0,
             "minLength": 21,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828802+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795739+00:00"
           },
           "issuetype": {
             "$ref": "#/components/schemas/ticket_managementJiraIssueType"
@@ -70260,7 +70383,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828815+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795751+00:00"
           },
           "status_category": {
             "$ref": "#/components/schemas/ticket_managementJiraIssueStatusCategory"
@@ -70411,7 +70534,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828829+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795765+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -70486,7 +70609,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828836+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795772+00:00"
           },
           "name": {
             "type": "string",
@@ -70505,7 +70628,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828840+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795777+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -71017,7 +71140,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828879+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795816+00:00"
           },
           "namespace": {
             "type": "string",
@@ -71036,7 +71159,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828883+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795820+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -71320,7 +71443,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828905+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795843+00:00"
           },
           "namespace": {
             "type": "string",
@@ -71339,7 +71462,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828909+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795847+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -71721,7 +71844,7 @@
             },
             "x-original-maxLength": 8096,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828958+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795896+00:00"
           },
           "issue_type": {
             "type": "string",
@@ -71920,7 +72043,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828976+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795914+00:00"
           },
           "namespace": {
             "type": "string",
@@ -71946,7 +72069,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.828980+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795919+00:00"
           },
           "ticket_tracking_system": {
             "type": "string",
@@ -72216,7 +72339,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829013+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795954+00:00"
           },
           "namespace": {
             "type": "string",
@@ -72235,7 +72358,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829017+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795958+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -72354,6 +72477,7 @@
             "format": "boolean",
             "x-displayname": "Dynamic Endpoint Resolution.",
             "x-f5xc-description-short": "X-example : true In this mode of proxy, virtual host will resolve the destination endpoint dynamically.",
+            "x-f5xc-description-medium": "X-example : true In this mode of proxy, virtual host will resolve the destination endpoint dynamically. The dynamic resolution is done using a predefined field in the request. This predefined field depends on the ProxyType configured on the Virtual Host.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -72404,7 +72528,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829031+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795972+00:00"
           },
           "namespace": {
             "type": "string",
@@ -72423,7 +72547,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829035+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795977+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -72537,7 +72661,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829044+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795986+00:00"
           },
           "namespace": {
             "type": "string",
@@ -72556,7 +72680,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829048+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.795990+00:00"
           },
           "query_type": {
             "$ref": "#/components/schemas/virtual_hostApiInventorySchemaQueryType"
@@ -72732,7 +72856,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829067+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796009+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -72809,7 +72933,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829074+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796017+00:00"
           },
           "namespace": {
             "type": "string",
@@ -72828,7 +72952,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829077+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796021+00:00"
           },
           "top_by_metric": {
             "$ref": "#/components/schemas/virtual_hostAPIEPActivityMetricType"
@@ -72994,7 +73118,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829089+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796033+00:00"
           },
           "namespace": {
             "type": "string",
@@ -73013,7 +73137,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829093+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796038+00:00"
           },
           "topk": {
             "type": "integer",
@@ -73154,7 +73278,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829104+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796048+00:00"
           },
           "namespace": {
             "type": "string",
@@ -73173,7 +73297,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829108+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796052+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -73390,7 +73514,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829133+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796077+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -73440,7 +73564,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829142+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796087+00:00"
           },
           "namespace": {
             "type": "string",
@@ -73459,7 +73583,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829146+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796091+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -73500,7 +73624,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829153+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796098+00:00"
           },
           "uid": {
             "type": "string",
@@ -73521,7 +73645,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829158+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796103+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -73972,7 +74096,7 @@
             "x-original-maxLength": 1024,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829194+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796139+00:00"
           },
           "internal_service_domain": {
             "type": "string",
@@ -74093,7 +74217,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829211+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796156+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -74208,7 +74332,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829223+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796169+00:00"
           },
           "namespace": {
             "type": "string",
@@ -74234,7 +74358,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829226+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796173+00:00"
           },
           "ticket_uid": {
             "type": "string",
@@ -74349,7 +74473,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829237+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796184+00:00"
           },
           "namespace": {
             "type": "string",
@@ -74368,7 +74492,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829241+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796188+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -74438,7 +74562,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829247+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796194+00:00"
           },
           "namespace": {
             "type": "string",
@@ -74457,7 +74581,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829251+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796198+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -74545,7 +74669,7 @@
             "x-original-maxLength": 1024,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829259+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796206+00:00"
           },
           "name": {
             "type": "string",
@@ -74564,7 +74688,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829263+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796210+00:00"
           },
           "namespace": {
             "type": "string",
@@ -74583,7 +74707,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829267+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796214+00:00"
           },
           "vuln_id": {
             "type": "string",
@@ -74732,7 +74856,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829279+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796226+00:00"
           },
           "namespace": {
             "type": "string",
@@ -74749,7 +74873,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829283+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796230+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -75097,7 +75221,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829304+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796252+00:00"
           },
           "domain": {
             "type": "string",
@@ -75117,7 +75241,7 @@
             "x-original-maxLength": 1024,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829309+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796257+00:00"
           },
           "evidence": {
             "$ref": "#/components/schemas/virtual_hostVulnEvidence"
@@ -75194,7 +75318,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:18.829321+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:29.796270+00:00"
           },
           "vuln_id": {
             "type": "string",
