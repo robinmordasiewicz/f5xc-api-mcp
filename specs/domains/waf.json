@@ -3,7 +3,7 @@
   "info": {
     "title": "Waf",
     "description": "Signature-based attack detection with customizable blocking responses. Attack type classification, protocol inspection, and AI-driven risk assessment. Exclusion policies override default blocking for trusted traffic. Staged signature testing validates rules before enforcement. Security event metrics track rule hits and blocked requests across namespaces.",
-    "version": "2.0.14",
+    "version": "2.0.15",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -11176,6 +11176,7 @@
               "ves.io.schema.rules.string.uri_ref": "true"
             },
             "x-f5xc-description-short": "Define the content of the response page (e.g., an HTML document or a JSON object), use the {{request_id}} placeholder to provide users with a...",
+            "x-f5xc-description-medium": "Define the content of the response page (e.g., an HTML document or a JSON object), use the {{request_id}} placeholder to provide users with a unique identifier to be able to trace the blocked request in the logs. The maximum allowed size of response body is 4096 bytes after base64 encoding...",
             "minLength": 0,
             "x-f5xc-required-for": {
               "minimum_config": false,
@@ -11239,7 +11240,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226408+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749282+00:00"
           },
           "namespace": {
             "type": "string",
@@ -11258,7 +11259,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226415+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749289+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -11420,7 +11421,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226456+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749317+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -11624,7 +11625,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226485+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749344+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -11674,7 +11675,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226496+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749355+00:00"
           },
           "namespace": {
             "type": "string",
@@ -11693,7 +11694,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226500+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749359+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -11734,7 +11735,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226508+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749367+00:00"
           },
           "uid": {
             "type": "string",
@@ -11755,7 +11756,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226514+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749373+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -11908,6 +11909,7 @@
             "x-ves-example": "{NAMESPACE=\\\"book-info\\\"}",
             "x-f5xc-example": "\"{NAMESPACE=\\\"book-info\\\"}\"",
             "x-f5xc-description-short": "Filter is used to specify the list of matchers syntax for filter := {[<matcher>]} <matcher> := <label><operator>\"<value>\" <label> := string...",
+            "x-f5xc-description-medium": "Filter is used to specify the list of matchers syntax for filter := {[<matcher>]} <matcher> := <label><operator>\"<value>\" <label> := string <value> := string <operator> := [\"=\"|\"!=\"|\"=~\"|\"!~\"] = : equal to != : not equal to =~ : regex match !~ : not regex match Optional: If not specified, metric...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -11963,7 +11965,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226531+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749390+00:00"
           },
           "range": {
             "type": "string",
@@ -11979,6 +11981,7 @@
               "ves.io.schema.rules.string.time_interval": "true"
             },
             "x-f5xc-description-short": "Range decides how far to go back in time to fetch values for each step.",
+            "x-f5xc-description-medium": "Range decides how far to go back in time to fetch values for each step. For example, if the range is 5m, then for step t1, query will be evaluated for t1-5m and for t2, query will be evaluated for t2-5m and so on. Format: [0-9][smhd], where s - seconds, m - minutes, h - hours, d - days.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -12024,6 +12027,7 @@
               "ves.io.schema.rules.string.query_step": "true"
             },
             "x-f5xc-description-short": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response.",
+            "x-f5xc-description-medium": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -12465,6 +12469,7 @@
             "type": "string",
             "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `HTTP`, `HTTPS`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `HTTPS` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.type][]\nvalue in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\nURL, or have them precompiled into a binary to avoid any\nlookup. Therefore, binary compatibility needs to be preserved\non changes to types. (Use versioned type names to manage\nbreaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `HTTP`, `HTTPS` (or the empty scheme) might be\nused with implementation specific semantics.",
             "x-f5xc-description-short": "URL identifying the protocol buffer message type.",
+            "x-f5xc-description-medium": "URL/resource name that uniquely identifies the type of the serialized protocol buffer message. This string must contain at least one \"/\" character. The last segment of the URL's path must represent the fully qualified name of the type (as in ).",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -12488,7 +12493,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226577+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749448+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -12557,7 +12562,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226585+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749456+00:00"
           },
           "service_name": {
             "type": "string",
@@ -12587,6 +12592,7 @@
               "ves.io.schema.rules.string.in": "[\\\"Success\\\",\\\"Failed\\\",\\\"Incomplete\\\",\\\"Installed\\\",\\\"Down\\\",\\\"Disabled\\\",\\\"NotApplicable\\\"]"
             },
             "x-f5xc-description-short": "Status of the condition \"Success\" Validtion has succeded.",
+            "x-f5xc-description-medium": "Status of the condition \"Success\" Validtion has succeded. Requested operation was successful. \"Failed\" Validation has failed. \"Incomplete\" Validation of configuration has failed due to missing configuration. \"Installed\" Validation has passed and configuration has been installed in data path or...",
             "minLength": 0,
             "maxLength": 17,
             "x-f5xc-required-for": {
@@ -12597,7 +12603,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226591+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749462+00:00"
           },
           "type": {
             "type": "string",
@@ -12810,7 +12816,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226602+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749473+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -12906,7 +12912,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226613+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749483+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -12978,7 +12984,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226619+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749490+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -13031,7 +13037,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226628+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749497+00:00"
           },
           "namespace": {
             "type": "string",
@@ -13050,7 +13056,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226632+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749501+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -13126,7 +13132,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226639+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749508+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -13181,7 +13187,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226646+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749515+00:00"
           },
           "namespace": {
             "type": "string",
@@ -13200,7 +13206,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226650+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749519+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -13245,7 +13251,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226654+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749524+00:00"
           },
           "name": {
             "type": "string",
@@ -13264,7 +13270,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226658+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749528+00:00"
           },
           "namespace": {
             "type": "string",
@@ -13283,7 +13289,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226662+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749532+00:00"
           },
           "tenant": {
             "type": "string",
@@ -13304,7 +13310,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226666+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749536+00:00"
           },
           "uid": {
             "type": "string",
@@ -13326,7 +13332,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226671+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749541+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -13401,7 +13407,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226678+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749548+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -13454,7 +13460,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226685+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749555+00:00"
           },
           "namespace": {
             "type": "string",
@@ -13473,7 +13479,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226689+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749559+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -13587,7 +13593,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226702+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749571+00:00"
           },
           "vtrp_id": {
             "type": "string",
@@ -13699,7 +13705,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226711+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749580+00:00"
           },
           "status": {
             "type": "string",
@@ -13718,7 +13724,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226715+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749584+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -13799,6 +13805,7 @@
             "format": "date-time",
             "x-displayname": "Deletion Timestamp.",
             "x-f5xc-description-short": "DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted.",
+            "x-f5xc-description-medium": "DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted. This field is set by the server when a graceful deletion is requested by the user, and is not directly settable by a client. The resource is expected to be deleted (no longer visible from resource lists, and not...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -13897,7 +13904,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226734+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749603+00:00"
           },
           "uid": {
             "type": "string",
@@ -13918,7 +13925,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226739+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749608+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -13990,7 +13997,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226744+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749612+00:00"
           },
           "previous_value": {
             "type": "string",
@@ -14028,7 +14035,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226751+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749619+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -14116,7 +14123,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226756+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749624+00:00"
           },
           "name": {
             "type": "string",
@@ -14135,7 +14142,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226760+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749628+00:00"
           },
           "namespace": {
             "type": "string",
@@ -14154,7 +14161,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226764+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749632+00:00"
           },
           "uid": {
             "type": "string",
@@ -14175,7 +14182,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226768+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749636+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -14241,7 +14248,7 @@
             "maxLength": 16,
             "minLength": 7,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226774+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749642+00:00"
           },
           "value": {
             "type": "array",
@@ -14260,7 +14267,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:50.226780+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:00.749647+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -14362,7 +14369,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.173968+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691137+00:00"
           },
           "namespace": {
             "type": "string",
@@ -14381,7 +14388,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.173975+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691144+00:00"
           },
           "path": {
             "type": "string",
@@ -14552,7 +14559,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.173990+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691158+00:00"
           },
           "namespace": {
             "type": "string",
@@ -14571,7 +14578,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.173994+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691163+00:00"
           },
           "user_id": {
             "type": "string",
@@ -14641,7 +14648,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174002+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691170+00:00"
           },
           "rule": {
             "$ref": "#/components/schemas/common_wafSimpleClientSrcRule"
@@ -14718,7 +14725,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174013+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691181+00:00"
           },
           "namespace": {
             "type": "string",
@@ -14737,7 +14744,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174018+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691184+00:00"
           },
           "tls_fingerprint_matcher": {
             "$ref": "#/components/schemas/policyTlsFingerprintMatcherType"
@@ -14848,7 +14855,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174031+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691197+00:00"
           },
           "namespace": {
             "type": "string",
@@ -14867,7 +14874,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174035+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691201+00:00"
           },
           "path": {
             "type": "string",
@@ -14972,7 +14979,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174046+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691212+00:00"
           },
           "namespace": {
             "type": "string",
@@ -14991,7 +14998,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174050+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691216+00:00"
           },
           "path": {
             "type": "string",
@@ -15090,7 +15097,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174060+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691225+00:00"
           },
           "namespace": {
             "type": "string",
@@ -15109,7 +15116,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174064+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691229+00:00"
           },
           "path": {
             "type": "string",
@@ -15295,7 +15302,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174079+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691244+00:00"
           },
           "namespace": {
             "type": "string",
@@ -15314,7 +15321,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174083+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691248+00:00"
           },
           "sec_event_name": {
             "type": "string",
@@ -15445,7 +15452,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174096+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691259+00:00"
           },
           "rule": {
             "$ref": "#/components/schemas/common_wafSimpleClientSrcRule"
@@ -15501,7 +15508,7 @@
             "x-original-maxLength": 256,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174106+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691268+00:00"
           },
           "exclude_bot_names": {
             "type": "array",
@@ -15598,7 +15605,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174115+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691278+00:00"
           },
           "namespace": {
             "type": "string",
@@ -15617,7 +15624,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174120+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691282+00:00"
           },
           "req_path": {
             "type": "string",
@@ -15711,7 +15718,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174129+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691291+00:00"
           },
           "waf_exclusion_policy": {
             "$ref": "#/components/schemas/schemaviewsObjectRefType"
@@ -15759,7 +15766,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174136+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691298+00:00"
           },
           "namespace": {
             "type": "string",
@@ -15778,7 +15785,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174140+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691302+00:00"
           },
           "request_data": {
             "$ref": "#/components/schemas/app_securityRequestData"
@@ -15912,7 +15919,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174156+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691317+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -16018,7 +16025,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174163+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691324+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -16113,6 +16120,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the security events response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the security events response. If the number of security events that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -16159,7 +16167,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174174+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691334+00:00"
           },
           "query": {
             "type": "string",
@@ -16169,6 +16177,7 @@
             "x-ves-example": "Query={app_type=\"blogging_app\"}",
             "x-f5xc-example": "\"query={app_type=\"blogging_app\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of these fields in the security event may be specified in the query. Vh_name - name of the virtual host src_site - source site city ...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -16230,6 +16239,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the security events response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the security events response. If the number of security events that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregation data is key'ed with the...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -16321,6 +16331,7 @@
             },
             "x-displayname": "Label Filter.",
             "x-f5xc-description-short": "List of label filter expressions of the form \"label\" \"value\". Response will only contain data that matches all the conditions specified in the .",
+            "x-f5xc-description-medium": "List of label filter expressions of the form \"label\" \"value\". Response will only contain data that matches all the conditions specified in the . One or more of the following labels can be specified in the label_filter. , , , .",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -16345,7 +16356,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174189+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691350+00:00"
           },
           "start_time": {
             "type": "string",
@@ -16383,6 +16394,7 @@
               "ves.io.schema.rules.string.query_step": "true"
             },
             "x-f5xc-description-short": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response.",
+            "x-f5xc-description-medium": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -16552,6 +16564,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the security events response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the security events response. If the number of security events that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -16615,7 +16628,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174209+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691369+00:00"
           },
           "query": {
             "type": "string",
@@ -16625,6 +16638,7 @@
             "x-ves-example": "Query={app_type=\"blogging_app\"}",
             "x-f5xc-example": "\"query={app_type=\"blogging_app\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of these fields in the security event may be specified in the query. Vh_name - name of the virtual host src_site - source site city ...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -16643,6 +16657,7 @@
             "x-ves-example": "True",
             "x-f5xc-example": "true",
             "x-f5xc-description-short": "Scroll is used to retrieve large number of security events (or all security events) that matches the query.",
+            "x-f5xc-description-medium": "Scroll is used to retrieve large number of security events (or all security events) that matches the query. If scroll is set to true, the scroll_id in the response can be used in the scroll API to fetch the next batch of security events until there are no more security events left to return. The...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -16754,6 +16769,7 @@
             "x-ves-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==.",
             "x-f5xc-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==",
             "x-f5xc-description-short": "Long Base-64 encoded string which can be used to retrieve the next batch of security events using the scroll request.",
+            "x-f5xc-description-medium": "Long Base-64 encoded string which can be used to retrieve the next batch of security events using the scroll request. Empty scroll_id indicates no more messages to scroll (EOF).",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -16821,7 +16837,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174227+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691387+00:00"
           },
           "scroll_id": {
             "type": "string",
@@ -16867,6 +16883,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over security incidents response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over security incidents response. If the number of security incidents that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -16913,7 +16930,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174236+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691396+00:00"
           },
           "query": {
             "type": "string",
@@ -16923,6 +16940,7 @@
             "x-ves-example": "Query={app_type=\"blogging_app\"}",
             "x-f5xc-example": "\"query={app_type=\"blogging_app\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of these fields in the security event may be specified in the query. Vh_name - name of the virtual host src_site - source site city ...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -16984,6 +17002,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the security incidents response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the security incidents response. If the number of security incidents that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregation data is key'ed with...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -17035,6 +17054,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the security incidents response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the security incidents response. If the number of security incidents that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -17098,7 +17118,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174251+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691411+00:00"
           },
           "query": {
             "type": "string",
@@ -17108,6 +17128,7 @@
             "x-ves-example": "Query={app_type=\"blogging_app\"}",
             "x-f5xc-example": "\"query={app_type=\"blogging_app\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of these fields in the security incident may be specified in the query. Vh_name - name of the virtual host src_site - source site city ...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -17126,6 +17147,7 @@
             "x-ves-example": "True",
             "x-f5xc-example": "true",
             "x-f5xc-description-short": "Scroll is used to retrieve large number of security incidents (or all security incidents) that matches the query.",
+            "x-f5xc-description-medium": "Scroll is used to retrieve large number of security incidents (or all security incidents) that matches the query. If scroll is set to true, the scroll_id in the response can be used in the scroll API to fetch the next batch of security events until there are no more security events left to...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -17237,6 +17259,7 @@
             "x-ves-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==.",
             "x-f5xc-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==",
             "x-f5xc-description-short": "Long Base-64 encoded string which can be used to retrieve the next batch of security incidents using the scroll request.",
+            "x-f5xc-description-medium": "Long Base-64 encoded string which can be used to retrieve the next batch of security incidents using the scroll request. Empty scroll_id indicates no more messages to scroll (EOF).",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -17304,7 +17327,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174269+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691451+00:00"
           },
           "scroll_id": {
             "type": "string",
@@ -17350,6 +17373,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the suspicious user logs response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the suspicious user logs response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -17396,7 +17420,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174278+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691461+00:00"
           },
           "query": {
             "type": "string",
@@ -17406,6 +17430,7 @@
             "x-ves-example": "Query={vh_name=\"vh-1\", site=\"CE-01\"}",
             "x-f5xc-example": "\"query={vh_name=\"vh-1\", site=\"ce-01\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of these fields in the suspicious user logs may be specified in the query. Vh_name - name of the virtual host user - user ID site ...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -17467,6 +17492,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the suspicious user logs response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the suspicious user logs response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregation data is key'ed with the...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -17518,6 +17544,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the suspicious user logs response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the suspicious user logs response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -17581,7 +17608,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174293+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691477+00:00"
           },
           "query": {
             "type": "string",
@@ -17591,6 +17618,7 @@
             "x-ves-example": "Query={vh_name=\"vh-1\", site=\"CE-01\"}",
             "x-f5xc-example": "\"query={vh_name=\"vh-1\", site=\"ce-01\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of these fields in the suspicious user logs may be specified in the query. Vh_name - name of the virtual host user - user ID site ...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -17609,6 +17637,7 @@
             "x-ves-example": "True",
             "x-f5xc-example": "true",
             "x-f5xc-description-short": "Scroll is used to retrieve large number of logs (or all logs) that matches the query.",
+            "x-f5xc-description-medium": "Scroll is used to retrieve large number of logs (or all logs) that matches the query. If scroll is set to true, the scroll_id in the response can be used in the scroll API to fetch the next batch of logs until there are no logs left to return. The number of logs in each batch is determined by...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -17720,6 +17749,7 @@
             "x-ves-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==.",
             "x-f5xc-example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAAAAAD4WYm9laVYtZndUQlNsdDcwakFMNjU1QQ==",
             "x-f5xc-description-short": "Long Base-64 encoded string which can be used to retrieve the next batch of suspicous user logs using the scroll request.",
+            "x-f5xc-description-medium": "Long Base-64 encoded string which can be used to retrieve the next batch of suspicous user logs using the scroll request. Empty scroll_id indicates no more messages to scroll (EOF).",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -17787,7 +17817,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174310+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691495+00:00"
           },
           "scroll_id": {
             "type": "string",
@@ -17860,7 +17890,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174318+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691502+00:00"
           },
           "id": {
             "type": "string",
@@ -17974,7 +18004,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174328+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691513+00:00"
           },
           "references": {
             "type": "array",
@@ -18131,6 +18161,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -18535,6 +18566,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -20236,7 +20268,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174522+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691697+00:00"
           },
           "presence": {
             "type": "boolean",
@@ -20317,7 +20349,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174531+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691705+00:00"
           },
           "name": {
             "type": "string",
@@ -20336,7 +20368,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174535+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691710+00:00"
           },
           "namespace": {
             "type": "string",
@@ -20355,7 +20387,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174540+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691714+00:00"
           },
           "tenant": {
             "type": "string",
@@ -20376,7 +20408,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174544+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691718+00:00"
           },
           "uid": {
             "type": "string",
@@ -20398,7 +20430,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174549+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691724+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -20436,7 +20468,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174555+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691729+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -20656,7 +20688,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174578+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691751+00:00"
           },
           "order_by": {
             "$ref": "#/components/schemas/logOrderByData"
@@ -20758,7 +20790,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174590+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691764+00:00"
           },
           "order_by": {
             "$ref": "#/components/schemas/logOrderByData"
@@ -20868,7 +20900,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174607+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691779+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -21026,7 +21058,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174620+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691792+00:00"
           },
           "sub_aggs": {
             "type": "object",
@@ -21130,7 +21162,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174639+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691811+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -21185,7 +21217,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174646+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691818+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -21402,7 +21434,7 @@
             "maxLength": 16,
             "minLength": 7,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174669+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691839+00:00"
           },
           "value": {
             "type": "number",
@@ -21418,7 +21450,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174673+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691844+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -21544,7 +21576,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174685+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691855+00:00"
           },
           "sec_event_type": {
             "type": "string",
@@ -21679,7 +21711,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174698+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691868+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -21756,7 +21788,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174705+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691874+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -22322,7 +22354,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174750+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691920+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -22897,7 +22929,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174775+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691938+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -23147,6 +23179,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all cookies that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all cookies that need to be matched. The criteria for matching each cookie is described in individual instances of CookieMatcherType. The actual cookie values are extracted from the request API as a list of strings for each cookie name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -23170,6 +23203,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various HTTP headers that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various HTTP headers that need to match. The criteria for matching each HTTP header are described in individual HeaderMatcherType instances. The actual HTTP header values are extracted from the request API as a list of strings for each HTTP header type.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -23193,6 +23227,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for various JWT claims that need to match.",
+            "x-f5xc-description-medium": "List of predicates for various JWT claims that need to match. The criteria for matching each JWT claim are described in individual JWTClaimMatcherType instances. The actual JWT claims values are extracted from the JWT payload as a list of strings.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -23216,6 +23251,7 @@
               "ves.io.schema.rules.repeated.max_items": "16"
             },
             "x-f5xc-description-short": "List of predicates for all query parameters that need to be matched.",
+            "x-f5xc-description-medium": "List of predicates for all query parameters that need to be matched. The criteria for matching each query parameter are described in individual instances of QueryParameterMatcherType. The actual query parameter values are extracted from the request API as a list of strings for each query...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -23717,7 +23753,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174823+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691980+00:00"
           },
           "name": {
             "type": "string",
@@ -23747,7 +23783,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174827+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.691984+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -23893,6 +23929,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -24342,7 +24379,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174883+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.692040+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -24465,7 +24502,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174899+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.692052+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -24519,7 +24556,7 @@
             },
             "x-original-maxLength": 128,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174904+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.692056+00:00"
           },
           "namespace": {
             "type": "string",
@@ -24544,7 +24581,7 @@
             },
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174908+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.692060+00:00"
           },
           "tenant": {
             "type": "string",
@@ -24571,7 +24608,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 64,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:51.174913+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:01.692064+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -24806,7 +24843,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.932921+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:24.527078+00:00"
           },
           "namespace": {
             "type": "string",
@@ -24825,7 +24862,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.932925+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:24.527082+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -24981,7 +25018,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.932945+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:24.527102+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -25147,7 +25184,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.932962+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:24.527117+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -25197,7 +25234,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.932973+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:24.527127+00:00"
           },
           "namespace": {
             "type": "string",
@@ -25216,7 +25253,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.932977+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:24.527131+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -25257,7 +25294,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.932985+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:24.527138+00:00"
           },
           "uid": {
             "type": "string",
@@ -25278,7 +25315,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:13.932990+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:24.527143+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -25595,7 +25632,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:24.607970+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:35.300103+00:00"
           },
           "namespace": {
             "type": "string",
@@ -25614,7 +25651,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:24.607977+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:35.300110+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -25710,7 +25747,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:24.607987+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:35.300121+00:00"
           },
           "policy": {
             "type": "string",
@@ -25853,7 +25890,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:24.608000+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:35.300134+00:00"
           },
           "start_time": {
             "type": "string",
@@ -25891,6 +25928,7 @@
               "ves.io.schema.rules.string.query_step": "true"
             },
             "x-f5xc-description-short": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response.",
+            "x-f5xc-description-medium": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -26030,7 +26068,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:24.608015+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:35.300148+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -26306,7 +26344,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:24.608060+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:35.300195+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -26441,7 +26479,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:24.608071+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:35.300207+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -26491,7 +26529,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:24.608081+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:35.300217+00:00"
           },
           "namespace": {
             "type": "string",
@@ -26510,7 +26548,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:24.608086+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:35.300221+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -26551,7 +26589,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:24.608093+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:35.300229+00:00"
           },
           "uid": {
             "type": "string",
@@ -26572,7 +26610,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:24.608099+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:35.300235+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -27483,7 +27521,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.577809+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.564295+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -27553,6 +27591,7 @@
             },
             "x-displayname": "Label Filter.",
             "x-f5xc-description-short": "List of label filter expressions of the form \"label\" Op \"value\".",
+            "x-f5xc-description-medium": "List of label filter expressions of the form \"label\" Op \"value\". Response will only contain data that matches all the conditions specified in the label_filter. One or more of the following labels can be specified in the label_filter.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -27577,7 +27616,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.577818+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.564304+00:00"
           },
           "range": {
             "type": "string",
@@ -27593,6 +27632,7 @@
               "ves.io.schema.rules.string.time_interval": "true"
             },
             "x-f5xc-description-short": "Range decides how far to go back in time to fetch values for each step.",
+            "x-f5xc-description-medium": "Range decides how far to go back in time to fetch values for each step. For example, if the range is 5m, then for step t1, query will be evaluated for t1-5m and for t2, query will be evaluated for t2-5m and so on. Format: [0-9][smhd], where s - seconds, m - minutes, h - hours, d - days.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -27638,6 +27678,7 @@
               "ves.io.schema.rules.string.query_step": "true"
             },
             "x-f5xc-description-short": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response.",
+            "x-f5xc-description-medium": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -27851,7 +27892,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.577840+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.564325+00:00"
           },
           "rule_id": {
             "type": "string",
@@ -28044,6 +28085,7 @@
             },
             "x-displayname": "Label Filter.",
             "x-f5xc-description-short": "List of label filter expressions of the form \"label\" Op \"value\".",
+            "x-f5xc-description-medium": "List of label filter expressions of the form \"label\" Op \"value\". Response will only contain data that matches all the conditions specified in the label_filter. One or more of the following labels can be specified in the label_filter.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -28068,7 +28110,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.577858+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.564343+00:00"
           },
           "range": {
             "type": "string",
@@ -28084,6 +28126,7 @@
               "ves.io.schema.rules.string.time_interval": "true"
             },
             "x-f5xc-description-short": "Range decides how far to go back in time to fetch values for each step.",
+            "x-f5xc-description-medium": "Range decides how far to go back in time to fetch values for each step. For example, if the range is 5m, then for step t1, query will be evaluated for t1-5m and for t2, query will be evaluated for t2-5m and so on. Format: [0-9][smhd], where s - seconds, m - minutes, h - hours, d - days.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -28129,6 +28172,7 @@
               "ves.io.schema.rules.string.query_step": "true"
             },
             "x-f5xc-description-short": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response.",
+            "x-f5xc-description-medium": "Step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -28342,7 +28386,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.577878+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.564363+00:00"
           },
           "service": {
             "type": "string",
@@ -28677,7 +28721,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.949897+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.941151+00:00"
           },
           "namespace": {
             "type": "string",
@@ -28696,7 +28740,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.949901+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.941155+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -28794,7 +28838,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.949915+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.941168+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -28929,7 +28973,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.949927+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.941180+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -28979,7 +29023,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.949937+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.941190+00:00"
           },
           "namespace": {
             "type": "string",
@@ -28998,7 +29042,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.949941+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.941194+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -29039,7 +29083,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.949949+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.941202+00:00"
           },
           "uid": {
             "type": "string",
@@ -29060,7 +29104,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:20.949954+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:31.941207+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -29425,7 +29469,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:21.142253+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:32.133246+00:00"
           },
           "state": {
             "type": "string",
@@ -29504,7 +29548,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:21.142263+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:32.133256+00:00"
           },
           "start_time": {
             "type": "string",

@@ -3,7 +3,7 @@
   "info": {
     "title": "Observability",
     "description": "Telemetry systems execute scheduled availability checks from distributed AWS locations worldwide. Response code validation and timing metrics feed into historical trend analysis. DNS resolution accuracy verification ensures name service reliability. Certificate lifecycle tracking generates expiration warnings before outages occur. Regional probe distribution provides geographic coverage insights. Health summaries aggregate results into actionable dashboards with configurable alerting thresholds.",
-    "version": "2.0.14",
+    "version": "2.0.15",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -14826,6 +14826,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the alert response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the alert response. If the number of alerts that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -14862,6 +14863,7 @@
             "x-displayname": "Filter",
             "x-ves-example": "{alertname=\\\"HighDiskUsage\\\", severity=\\\"critical\\\"}",
             "x-f5xc-example": "\"{alertname=\\\"HighDiskUsage\\\", severity=\\\"critical\\\"}\"",
+            "x-f5xc-description-medium": "List of matchers to filter alert by. Syntax for filter := {[<matcher>]} <matcher> := <label_name><operator>\"<label_value>\" <label_name> := string All alerts have the following default labels: \"alertname\", \"identifier\", \"group\", \"severity\" <label_value> := string <operator> :=...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -14888,7 +14890,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119377+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.644937+00:00"
           },
           "start_time": {
             "type": "string",
@@ -14942,6 +14944,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the alerts response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the alerts response. If the number of alerts that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregation data is key'ed with the aggregation name...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -15012,6 +15015,7 @@
             "x-ves-example": "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.",
             "x-f5xc-example": "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==",
             "x-f5xc-description-short": "Long Base-64 encoded string which can be used to retrieve next batch of alert messages using the scroll request.",
+            "x-f5xc-description-medium": "Long Base-64 encoded string which can be used to retrieve next batch of alert messages using the scroll request. Empty scroll_id indicates no more messages to scroll (EOF).",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -15078,7 +15082,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119395+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.644955+00:00"
           },
           "scroll_id": {
             "type": "string",
@@ -15143,6 +15147,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -15446,7 +15451,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119455+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.644987+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -15666,7 +15671,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119487+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.645010+00:00"
           },
           "order_by": {
             "$ref": "#/components/schemas/logOrderByData"
@@ -15768,7 +15773,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119499+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.645022+00:00"
           },
           "order_by": {
             "$ref": "#/components/schemas/logOrderByData"
@@ -15878,7 +15883,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119515+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.645038+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -16036,7 +16041,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119527+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.645051+00:00"
           },
           "sub_aggs": {
             "type": "object",
@@ -16140,7 +16145,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119545+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.645069+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -16195,7 +16200,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119552+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.645076+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -16412,7 +16417,7 @@
             "maxLength": 16,
             "minLength": 7,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119574+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.645100+00:00"
           },
           "value": {
             "type": "number",
@@ -16428,7 +16433,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119579+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.645105+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -16531,7 +16536,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119587+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.645113+00:00"
           },
           "previous_value": {
             "type": "string",
@@ -16565,7 +16570,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:04:48.119594+00:00"
+            "x-reconciled-at": "2026-01-06T16:56:58.645120+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -16607,6 +16612,7 @@
             "type": "string",
             "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `HTTP`, `HTTPS`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `HTTPS` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.type][]\nvalue in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\nURL, or have them precompiled into a binary to avoid any\nlookup. Therefore, binary compatibility needs to be preserved\non changes to types. (Use versioned type names to manage\nbreaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `HTTP`, `HTTPS` (or the empty scheme) might be\nused with implementation specific semantics.",
             "x-f5xc-description-short": "URL identifying the protocol buffer message type.",
+            "x-f5xc-description-medium": "URL/resource name that uniquely identifies the type of the serialized protocol buffer message. This string must contain at least one \"/\" character. The last segment of the URL's path must represent the fully qualified name of the type (as in ).",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -16630,7 +16636,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077705+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752462+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -16699,7 +16705,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077716+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752473+00:00"
           },
           "service_name": {
             "type": "string",
@@ -16729,6 +16735,7 @@
               "ves.io.schema.rules.string.in": "[\\\"Success\\\",\\\"Failed\\\",\\\"Incomplete\\\",\\\"Installed\\\",\\\"Down\\\",\\\"Disabled\\\",\\\"NotApplicable\\\"]"
             },
             "x-f5xc-description-short": "Status of the condition \"Success\" Validtion has succeded.",
+            "x-f5xc-description-medium": "Status of the condition \"Success\" Validtion has succeded. Requested operation was successful. \"Failed\" Validation has failed. \"Incomplete\" Validation of configuration has failed due to missing configuration. \"Installed\" Validation has passed and configuration has been installed in data path or...",
             "minLength": 0,
             "maxLength": 17,
             "x-f5xc-required-for": {
@@ -16739,7 +16746,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077723+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752480+00:00"
           },
           "type": {
             "type": "string",
@@ -16876,7 +16883,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077735+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752493+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -16985,7 +16992,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077745+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752504+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -17038,7 +17045,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077753+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752511+00:00"
           },
           "namespace": {
             "type": "string",
@@ -17057,7 +17064,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077757+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752516+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -17133,7 +17140,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077763+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752522+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -17188,7 +17195,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077770+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752529+00:00"
           },
           "namespace": {
             "type": "string",
@@ -17207,7 +17214,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077774+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752533+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -17283,7 +17290,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077779+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752540+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -17338,7 +17345,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077786+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752547+00:00"
           },
           "namespace": {
             "type": "string",
@@ -17357,7 +17364,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077790+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752551+00:00"
           },
           "uid": {
             "type": "string",
@@ -17367,6 +17374,7 @@
             "x-ves-example": "D15f1fad-4d37-48c0-8706-df1824d76d31.",
             "x-f5xc-example": "d15f1fad-4d37-48c0-8706-df1824d76d31",
             "x-f5xc-description-short": "Uid is the unique in time and space value for this object. Object create will fail if provided by the client and the value exists in the system.",
+            "x-f5xc-description-medium": "Uid is the unique in time and space value for this object. Object create will fail if provided by the client and the value exists in the system. Typically generated by the server on successful creation of an object and is not allowed to change once populated.",
             "minLength": 0,
             "maxLength": 36,
             "x-f5xc-required-for": {
@@ -17380,7 +17388,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077796+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752557+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -17426,7 +17434,7 @@
             "readOnly": true,
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077801+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752562+00:00"
           },
           "name": {
             "type": "string",
@@ -17445,7 +17453,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077806+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752566+00:00"
           },
           "namespace": {
             "type": "string",
@@ -17464,7 +17472,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077809+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752570+00:00"
           },
           "tenant": {
             "type": "string",
@@ -17485,7 +17493,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077813+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752574+00:00"
           },
           "uid": {
             "type": "string",
@@ -17507,7 +17515,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077818+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752579+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -17582,7 +17590,7 @@
             },
             "x-original-maxLength": 1200,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077825+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752585+00:00"
           },
           "disable": {
             "type": "boolean",
@@ -17635,7 +17643,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077833+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752592+00:00"
           },
           "namespace": {
             "type": "string",
@@ -17654,7 +17662,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077837+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752597+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -17768,7 +17776,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077849+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752609+00:00"
           },
           "vtrp_id": {
             "type": "string",
@@ -17880,7 +17888,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077859+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752618+00:00"
           },
           "status": {
             "type": "string",
@@ -17899,7 +17907,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077863+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752622+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -17980,6 +17988,7 @@
             "format": "date-time",
             "x-displayname": "Deletion Timestamp.",
             "x-f5xc-description-short": "DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted.",
+            "x-f5xc-description-medium": "DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted. This field is set by the server when a graceful deletion is requested by the user, and is not directly settable by a client. The resource is expected to be deleted (no longer visible from resource lists, and not...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -18078,7 +18087,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077882+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752642+00:00"
           },
           "uid": {
             "type": "string",
@@ -18099,7 +18108,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077887+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752647+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -18209,6 +18218,7 @@
             "format": "date-time",
             "x-displayname": "Deletion Timestamp.",
             "x-f5xc-description-short": "DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted.",
+            "x-f5xc-description-medium": "DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted. This field is set by the server when a graceful deletion is requested by the user, and is not directly settable by a client. The resource is expected to be deleted (no longer visible from resource lists, and not...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -18307,7 +18317,7 @@
             "maxLength": 6,
             "minLength": 6,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077906+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752668+00:00"
           },
           "object_index": {
             "type": "integer",
@@ -18380,7 +18390,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077917+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752678+00:00"
           },
           "trace_info": {
             "type": "string",
@@ -18418,7 +18428,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077923+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752685+00:00"
           },
           "vtrp_id": {
             "type": "string",
@@ -18504,7 +18514,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077930+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752693+00:00"
           },
           "name": {
             "type": "string",
@@ -18523,7 +18533,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077934+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752697+00:00"
           },
           "namespace": {
             "type": "string",
@@ -18542,7 +18552,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077938+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752701+00:00"
           },
           "uid": {
             "type": "string",
@@ -18563,7 +18573,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077942+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752706+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -19144,7 +19154,7 @@
             "x-original-maxLength": 2048,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.077983+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752748+00:00"
           },
           "external_sources": {
             "type": "array",
@@ -19447,7 +19457,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.078013+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752780+00:00"
           },
           "namespace": {
             "type": "string",
@@ -19466,7 +19476,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.078017+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752784+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -19615,7 +19625,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.078034+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752801+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -19704,7 +19714,7 @@
             "x-original-maxLength": 2048,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.078041+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752808+00:00"
           },
           "external_sources": {
             "type": "array",
@@ -20010,7 +20020,7 @@
             "x-original-maxLength": 2048,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.078070+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752839+00:00"
           },
           "external_sources": {
             "type": "array",
@@ -20369,7 +20379,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.078104+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752874+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -20419,7 +20429,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.078114+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752883+00:00"
           },
           "namespace": {
             "type": "string",
@@ -20438,7 +20448,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.078118+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752888+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -20479,7 +20489,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.078126+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752895+00:00"
           },
           "uid": {
             "type": "string",
@@ -20500,7 +20510,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.078130+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752900+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -20708,7 +20718,7 @@
             "x-original-maxLength": 2048,
             "format": "hostname",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:20.078146+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:30.752916+00:00"
           },
           "external_sources": {
             "type": "array",
@@ -21496,7 +21506,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:30.893715+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:41.630608+00:00"
           },
           "namespace": {
             "type": "string",
@@ -21515,7 +21525,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:30.893720+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:41.630612+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -21664,7 +21674,7 @@
             "maxLength": 17,
             "minLength": 17,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:30.893737+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:41.630629+00:00"
           },
           "system_metadata": {
             "$ref": "#/components/schemas/schemaSystemObjectGetMetaType"
@@ -22462,7 +22472,7 @@
             },
             "x-original-maxLength": 2048,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:30.893814+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:41.630704+00:00"
           },
           "value": {
             "type": "string",
@@ -22486,7 +22496,7 @@
             },
             "x-original-maxLength": 8192,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:30.893819+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:41.630709+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -22587,7 +22597,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:30.893829+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:41.630718+00:00"
           },
           "disabled": {
             "type": "boolean",
@@ -22637,7 +22647,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:30.893839+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:41.630728+00:00"
           },
           "namespace": {
             "type": "string",
@@ -22656,7 +22666,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:30.893843+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:41.630733+00:00"
           },
           "owner_view": {
             "$ref": "#/components/schemas/schemaViewRefType"
@@ -22697,7 +22707,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:30.893851+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:41.630741+00:00"
           },
           "uid": {
             "type": "string",
@@ -22718,7 +22728,7 @@
             "x-original-maxLength": 1024,
             "format": "uuid",
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:30.893857+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:41.630746+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -23479,6 +23489,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -23525,7 +23536,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.378827+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167460+00:00"
           },
           "query": {
             "type": "string",
@@ -23535,6 +23546,7 @@
             "x-ves-example": "{vh_name=\\\"productpage\\\"}",
             "x-f5xc-example": "\"{vh_name=\\\"productpage\\\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of following fields in access log may be specified in the query. App_type - application type vh_name - name of the virtual host src_site...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -23596,6 +23608,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -23659,7 +23672,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.378843+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167476+00:00"
           },
           "query": {
             "type": "string",
@@ -23669,6 +23682,7 @@
             "x-ves-example": "{vh_name=\\\"productpage\\\"}",
             "x-f5xc-example": "\"{vh_name=\\\"productpage\\\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of following fields in access log may be specified in the query. App_type - application type vh_name - name of the virtual host src_site...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -23687,6 +23701,7 @@
             "x-ves-example": "True",
             "x-f5xc-example": "true",
             "x-f5xc-description-short": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query.",
+            "x-f5xc-description-medium": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query. If scroll is set to true, the scroll_id in the response can be used in the scroll API to fetch the next batch of logs until there are no more logs left to return. The number of messages in each...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -23752,6 +23767,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -23798,7 +23814,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.378856+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167490+00:00"
           },
           "query": {
             "type": "string",
@@ -23808,6 +23824,7 @@
             "x-ves-example": "{user=\\\"abc\\\", rsp_code=\\\"404\\\"}",
             "x-f5xc-example": "\"{user=\\\"abc\\\", rsp_code=\\\"404\\\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in audit log may be specified in the query. User - user name src_site - source site src - source service...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -23869,6 +23886,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -23932,7 +23950,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.378868+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167503+00:00"
           },
           "query": {
             "type": "string",
@@ -23942,6 +23960,7 @@
             "x-ves-example": "{user=\\\"abc\\\", rsp_code=\\\"404\\\"}",
             "x-f5xc-example": "\"{user=\\\"abc\\\", rsp_code=\\\"404\\\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in audit log may be specified in the query. User - user name src_site - source site src - source service...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -23960,6 +23979,7 @@
             "x-ves-example": "True",
             "x-f5xc-example": "true",
             "x-f5xc-description-short": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query.",
+            "x-f5xc-description-medium": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query. If scroll is set to true, the scroll_id in the response can be used in the scroll API to fetch the next batch of logs until there are no more logs left to return. The number of messages in each...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -24076,6 +24096,7 @@
               "ves.io.schema.rules.repeated.max_items": "5"
             },
             "x-f5xc-description-short": "List of label filter expressions of the form \"label key\" QueryOp \"value\".",
+            "x-f5xc-description-medium": "List of label filter expressions of the form \"label key\" QueryOp \"value\". Response will only contain data that matches all the conditions specified in the label_filter. For external connector logs, user can specify LABEL_EXTERNAL_CONNECTOR_IP & LABEL_EXTERNAL_CONNECTOR_NODE in the label_filter...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -24125,7 +24146,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.378905+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167541+00:00"
           },
           "site": {
             "type": "string",
@@ -24197,6 +24218,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -24243,7 +24265,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.378962+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167600+00:00"
           },
           "query": {
             "type": "string",
@@ -24253,6 +24275,7 @@
             "x-ves-example": "{site=\\\"site-1\\\"}",
             "x-f5xc-example": "\"{site=\\\"site-1\\\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of following fields in Firewall log may be specified in the query. Site - Name of the site src_ip - Source IP Address dst_ip ...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -24314,6 +24337,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -24377,7 +24401,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.378973+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167612+00:00"
           },
           "query": {
             "type": "string",
@@ -24387,6 +24411,7 @@
             "x-ves-example": "{site=\\\"site-1\\\"}",
             "x-f5xc-example": "\"{site=\\\"site-1\\\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of following fields in Firewall log may be specified in the query. Site - Name of the site src_ip - Source IP Address dst_ip ...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -24405,6 +24430,7 @@
             "x-ves-example": "True",
             "x-f5xc-example": "true",
             "x-f5xc-description-short": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query.",
+            "x-f5xc-description-medium": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query. If scroll is set to true, the scroll_id in the response can be used in the scroll API to fetch the next batch of logs until there are no more logs left to return. The number of messages in each...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -24470,6 +24496,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -24516,7 +24543,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.378986+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167625+00:00"
           },
           "query": {
             "type": "string",
@@ -24526,6 +24553,7 @@
             "x-ves-example": "Query={objectref.resource=\"deployments\"}",
             "x-f5xc-example": "\"query={objectRef.resource=\"deployments\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in audit log may be specified in the query. user.username - user name sourceIPs - source IP verb - method...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -24604,6 +24632,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -24667,7 +24696,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.378998+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167638+00:00"
           },
           "query": {
             "type": "string",
@@ -24677,6 +24706,7 @@
             "x-ves-example": "Query={objectref.resource=\"deployments\"}",
             "x-f5xc-example": "\"query={objectRef.resource=\"deployments\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in audit log may be specified in the query. user.username - user name sourceIPs - source IP verb - method...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -24695,6 +24725,7 @@
             "x-ves-example": "True",
             "x-f5xc-example": "true",
             "x-f5xc-description-short": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query.",
+            "x-f5xc-description-medium": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query. If scroll is set to true, the scroll_id in the response can be used in the scroll API to fetch the next batch of logs until there are no more logs left to return. The number of messages in each...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -24777,6 +24808,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the events response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the events response. If the number of events that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -24823,7 +24855,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.379012+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167652+00:00"
           },
           "query": {
             "type": "string",
@@ -24833,6 +24865,7 @@
             "x-ves-example": "Query={involvedobject.kind=\"Pod\"}",
             "x-f5xc-example": "\"query={involvedObject.kind=\"Pod\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in the event may be specified in the query. involvedobject.kind - The object that this event is about, like Pod...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -24911,6 +24944,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the events response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the events response. If the number of events that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -24974,7 +25008,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.379024+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167665+00:00"
           },
           "query": {
             "type": "string",
@@ -24984,6 +25018,7 @@
             "x-ves-example": "Query={involvedobject.kind=\"Pod\"}",
             "x-f5xc-example": "\"query={involvedObject.kind=\"Pod\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in the event may be specified in the query. involvedobject.kind - The object that this event is about, like Pod...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -25002,6 +25037,7 @@
             "x-ves-example": "True",
             "x-f5xc-example": "true",
             "x-f5xc-description-short": "Scroll is used to retrieve large number of events (or all events) that matches the query.",
+            "x-f5xc-description-medium": "Scroll is used to retrieve large number of events (or all events) that matches the query. If scroll is set to true, the scroll_id in the response can be used in the scroll API to fetch the next batch of events until there are no more events left to return. The number of events in each batch is...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -25110,7 +25146,7 @@
             },
             "x-original-maxLength": 256,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.379037+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167679+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -25140,6 +25176,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregation data is key'ed with the aggregation name...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -25191,6 +25228,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregation data is key'ed with the aggregation name...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -25223,6 +25261,7 @@
             "x-ves-example": "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==.",
             "x-f5xc-example": "Vm9sdGVycmEgRWRnZSBQbGF0Zm9ybQ==",
             "x-f5xc-description-short": "Long Base-64 encoded string which can be used to retrieve next batch of log messages using the scroll request.",
+            "x-f5xc-description-medium": "Long Base-64 encoded string which can be used to retrieve next batch of log messages using the scroll request. Empty scroll_id indicates no more messages to scroll (EOF).",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -25290,7 +25329,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.379062+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167705+00:00"
           },
           "scroll_id": {
             "type": "string",
@@ -25336,6 +25375,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -25382,7 +25422,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.379110+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167754+00:00"
           },
           "query": {
             "type": "string",
@@ -25392,6 +25432,7 @@
             "x-ves-example": "{user=\\\"abc\\\", rsp_code=\\\"404\\\"}",
             "x-f5xc-example": "\"{user=\\\"abc\\\", rsp_code=\\\"404\\\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in platform events may be specified in the query. User - user name resource_type - resource type resource ...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -25453,6 +25494,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -25529,7 +25571,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.379123+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167768+00:00"
           },
           "query": {
             "type": "string",
@@ -25539,6 +25581,7 @@
             "x-ves-example": "{user=\\\"abc\\\", rsp_code=\\\"404\\\"}",
             "x-f5xc-example": "\"{user=\\\"abc\\\", rsp_code=\\\"404\\\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in platform events may be specified in the query. User - user name resource_type - resource type resource ...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -25557,6 +25600,7 @@
             "x-ves-example": "True",
             "x-f5xc-example": "true",
             "x-f5xc-description-short": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query.",
+            "x-f5xc-description-medium": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query. If scroll is set to true, the scroll_id in the response can be used in the scroll API to fetch the next batch of logs until there are no more logs left to return. The number of messages in each...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -25623,6 +25667,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -25669,7 +25714,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.379139+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167784+00:00"
           },
           "query": {
             "type": "string",
@@ -25679,6 +25724,7 @@
             "x-ves-example": "Query={objectref.resource=\"deployments\"}",
             "x-f5xc-example": "\"query={objectRef.resource=\"deployments\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in audit log may be specified in the query. user.username - user name sourceIPs - source IP verb - method...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -25740,6 +25786,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the log response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the log response. If the number of logs that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -25803,7 +25850,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.379150+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167795+00:00"
           },
           "query": {
             "type": "string",
@@ -25813,6 +25860,7 @@
             "x-ves-example": "Query={objectref.resource=\"deployments\"}",
             "x-f5xc-example": "\"query={objectRef.resource=\"deployments\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in audit log may be specified in the query. user.username - user name sourceIPs - source IP verb - method...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -25831,6 +25879,7 @@
             "x-ves-example": "True",
             "x-f5xc-example": "true",
             "x-f5xc-description-short": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query.",
+            "x-f5xc-description-medium": "Scroll is used to retrieve large number of log messages (or all log messages) that matches the query. If scroll is set to true, the scroll_id in the response can be used in the scroll API to fetch the next batch of logs until there are no more logs left to return. The number of messages in each...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -25896,6 +25945,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the events response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the events response. If the number of events that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -25942,7 +25992,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.379163+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167808+00:00"
           },
           "query": {
             "type": "string",
@@ -25952,6 +26002,7 @@
             "x-ves-example": "Query={involvedobject.kind=\"Pod\"}",
             "x-f5xc-example": "\"query={involvedObject.kind=\"Pod\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in the event may be specified in the query. involvedobject.kind - The object that this event is about, like Pod...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -26013,6 +26064,7 @@
             "title": "Aggregations.",
             "x-displayname": "Aggregations.",
             "x-f5xc-description-short": "Aggregations provide summary/analytics data over the events response.",
+            "x-f5xc-description-medium": "Aggregations provide summary/analytics data over the events response. If the number of events that matched the query is large and cannot be returned in a single response message, user can GET helpful insights/summary using aggregations. The aggregations are key'ed by user-defined aggregation name.",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -26076,7 +26128,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:05:40.379175+00:00"
+            "x-reconciled-at": "2026-01-06T16:57:51.167820+00:00"
           },
           "query": {
             "type": "string",
@@ -26086,6 +26138,7 @@
             "x-ves-example": "Query={involvedobject.kind=\"Pod\"}",
             "x-f5xc-example": "\"query={involvedObject.kind=\"Pod\"}\"",
             "x-f5xc-description-short": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> :=...",
+            "x-f5xc-description-medium": "Query is used to specify the list of matchers syntax for query := {[<matcher>]} <matcher> := <field_name><operator>\"<value>\" <field_name> := string One or more of the following fields in the event may be specified in the query. involvedobject.kind - The object that this event is about, like Pod...",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -26104,6 +26157,7 @@
             "x-ves-example": "True",
             "x-f5xc-example": "true",
             "x-f5xc-description-short": "Scroll is used to retrieve large number of events (or all events) that matches the query.",
+            "x-f5xc-description-medium": "Scroll is used to retrieve large number of events (or all events) that matches the query. If scroll is set to true, the scroll_id in the response can be used in the scroll API to fetch the next batch of events until there are no more events left to return. The number of events in each batch is...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -26233,6 +26287,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -26424,6 +26479,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -26574,6 +26630,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -26721,6 +26778,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -26779,6 +26837,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -26896,6 +26955,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -27005,6 +27065,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -27063,6 +27124,7 @@
             "title": "Step",
             "x-f5xc-example": "5m",
             "x-f5xc-description-short": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in...",
+            "x-f5xc-description-medium": "X-displayName: \"Step\" x-required step is the resolution width, which determines the number of the data points [x-axis (time)] to be returned in the response. The timestamps in the response will be t1=start_time, t2=t1+step, ... Tn=tn-1+step, where tn <= end_time.",
             "minLength": 0,
             "maxLength": 1024,
             "x-f5xc-required-for": {
@@ -27965,7 +28027,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592754+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495652+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -28407,7 +28469,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592785+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495683+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -28743,7 +28805,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592809+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495708+00:00"
           },
           "start_time": {
             "type": "string",
@@ -28847,6 +28909,7 @@
             "x-displayname": "Events",
             "x-f5xc-example": "[",
             "x-f5xc-description-short": "{ \"event_time\": \"2022-02-09T19:48:11Z\", \"historical_health\": \"Critical\", \"event\": \"HTTP monitor test1 in region VES-I/O-paris turns critical due...",
+            "x-f5xc-description-medium": "{ \"event_time\": \"2022-02-09T19:48:11Z\", \"historical_health\": \"Critical\", \"event\": \"HTTP monitor test1 in region VES-I/O-paris turns critical due to connection timeout.\", \"source\": \"Global\", \"monitor_type\": \"\", \"provider\": \"\", }, { \"event_time\": \"2022-02-09T19:48:11Z\", \"historical_health\"...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -28891,7 +28954,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592820+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495719+00:00"
           },
           "segments": {
             "type": "array",
@@ -28903,6 +28966,7 @@
             "x-displayname": "Segments",
             "x-f5xc-example": "[",
             "x-f5xc-description-short": "{ \"start_time\": \"2021-02-07T23:32:07Z\", \"end_time\": \"2021-02-25T16:00:00Z\", \"health\": \"Critical\", \"health_reason\": \"HTTP(s) Monitor was 17.7...",
+            "x-f5xc-description-medium": "{ \"start_time\": \"2021-02-07T23:32:07Z\", \"end_time\": \"2021-02-25T16:00:00Z\", \"health\": \"Critical\", \"health_reason\": \"HTTP(s) Monitor was 17.7 day(s) in critical state\" }, { \"start_time\": \"2021-02-25T16:00:00Z\", \"end_time\": \"2021-07-10T08:00:00Z\", \"health\": \"Healthy\", \"health_reason\": \"HTTP(s)...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -28958,6 +29022,7 @@
             "x-displayname": "Histories",
             "x-f5xc-example": "histories",
             "x-f5xc-description-short": ": { \"segment\": [ { \"start_time\": \"2023-01-10T18:00:00Z\", \"end_time\": \"2023-01-14T18:00:00Z\", \"health\": \"Healthy\", \"health_reason\": \"HTTP(s)...",
+            "x-f5xc-description-medium": ": { \"segment\": [ { \"start_time\": \"2023-01-10T18:00:00Z\", \"end_time\": \"2023-01-14T18:00:00Z\", \"health\": \"Healthy\", \"health_reason\": \"HTTP(s) Monitor was 4.0 day(s) in Healthy state\" }, { \"start_time\": \"2023-01-14T18:00:00Z\", \"end_time\": \"2023-01-15T00:00:00Z\", \"health\": \"Critical\"...",
             "x-f5xc-required-for": {
               "minimum_config": false,
               "create": false,
@@ -29923,7 +29988,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592893+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495793+00:00"
           },
           "source": {
             "type": "string",
@@ -30144,7 +30209,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592911+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495811+00:00"
           },
           "region": {
             "type": "string",
@@ -30246,7 +30311,7 @@
             "maxLength": 15,
             "minLength": 3,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592920+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495820+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -30403,7 +30468,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592933+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495833+00:00"
           },
           "region": {
             "type": "string",
@@ -30512,7 +30577,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592942+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495843+00:00"
           },
           "source": {
             "type": "string",
@@ -30614,7 +30679,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592951+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495851+00:00"
           },
           "request_body": {
             "$ref": "#/components/schemas/protobufAny"
@@ -30692,7 +30757,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592959+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495858+00:00"
           },
           "value": {
             "type": "string",
@@ -30709,7 +30774,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592963+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495863+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -30807,7 +30872,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-06T16:06:08.592974+00:00"
+            "x-reconciled-at": "2026-01-06T16:58:19.495872+00:00"
           },
           "values": {
             "type": "array",
