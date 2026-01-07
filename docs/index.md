@@ -111,6 +111,14 @@ Works with any MCP-compatible AI assistant:
 
     [:octicons-arrow-right-24: Setup Guide](getting-started/cursor.md)
 
+- :material-code-tags:{ .lg .middle } **OpenCode**
+
+    ---
+
+    AI assistant with MCP support
+
+    [:octicons-arrow-right-24: Setup Guide](getting-started/opencode.md)
+
 </div>
 
 ## Example Usage

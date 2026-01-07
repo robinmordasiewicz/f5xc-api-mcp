@@ -185,5 +185,6 @@ Then log out and back in.
 
 - [Claude Desktop Setup](claude-desktop.md)
 - [Claude CLI Setup](claude-cli.md)
+- [OpenCode Setup](opencode.md)
 - [VS Code Setup](vscode.md)
 - [Authentication Configuration](../configuration/authentication.md)

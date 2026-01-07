@@ -81,6 +81,29 @@ Add to your MCP settings:
 }
 ```
 
+### OpenCode
+
+Add to `opencode.json` (project root or `~/.config/opencode/opencode.json`):
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "f5xc-api": {
+      "type": "local",
+      "command": ["npx", "@robinmordasiewicz/f5xc-api-mcp"],
+      "environment": {
+        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
+        "F5XC_API_TOKEN": "your-api-token"
+      }
+    }
+  }
+}
+```
+
+> **Note:** OpenCode uses different schema: `"mcp"` key (not `"mcpServers"`), array-based
+> `"command"`, `"environment"` (not `"env"`), and requires `"type": "local"`.
+
 ## Environment Variables
 
 | Variable | Required | Description |

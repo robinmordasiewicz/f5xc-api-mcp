@@ -11,9 +11,21 @@ Complete reference for MCP server configuration files.
 | Claude Desktop (Linux) | `~/.config/Claude/claude_desktop_config.json` |
 | Claude Code (Project) | `.mcp.json` in project root |
 | Claude Code (Global) | `~/.claude/mcp.json` |
+| OpenCode (Project) | `opencode.json` or `opencode.jsonc` in project root |
+| OpenCode (Global) | `~/.config/opencode/opencode.json` |
 | VS Code (Cline) | Cline extension settings |
 | VS Code (Continue) | `~/.continue/config.json` |
 | Cursor | Cursor settings or `.cursor/mcp.json` |
+
+!!! note "OpenCode Configuration Differences"
+    OpenCode uses a different schema than Claude Desktop/Code:
+
+    - Top-level key: `"mcp"` (not `"mcpServers"`)
+    - Command format: `"command": ["npx", "package"]` (array, not separate command/args)
+    - Environment: `"environment"` (not `"env"`)
+    - Requires: `"type": "local"` for stdio servers
+
+    See [OpenCode Setup](../getting-started/opencode.md) for examples.
 
 ## Configuration Schema
 
