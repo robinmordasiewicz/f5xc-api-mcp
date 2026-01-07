@@ -50,24 +50,24 @@ export function getStateDir(): string {
  */
 export const paths = {
   // Config files (XDG_CONFIG_HOME)
-  get configDir() {
+  get configDir(): string {
     return getConfigDir();
   },
-  get profilesDir() {
+  get profilesDir(): string {
     return join(getConfigDir(), "profiles");
   },
-  get activeProfile() {
+  get activeProfile(): string {
     return join(getConfigDir(), "active_profile");
   },
-  get settings() {
+  get settings(): string {
     return join(getConfigDir(), "config.yaml");
   },
 
   // State files (XDG_STATE_HOME)
-  get stateDir() {
+  get stateDir(): string {
     return getStateDir();
   },
-  get history() {
+  get history(): string {
     return join(getStateDir(), "history");
   },
 };
