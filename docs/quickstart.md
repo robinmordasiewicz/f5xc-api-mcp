@@ -69,6 +69,25 @@ Add to your project's `.mcp.json`:
 }
 ```
 
+### OpenCode
+
+Add to your `opencode.json` (project root or `~/.config/opencode/opencode.json`):
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "f5xc-api": {
+      "type": "local",
+      "command": ["npx", "@robinmordasiewicz/f5xc-api-mcp"]
+    }
+  }
+}
+```
+
+!!! note "OpenCode uses different configuration format"
+    OpenCode uses `"mcp"` key (not `"mcpServers"`), array-based `"command"`, and requires `"type": "local"`.
+
 ## Step 3: Verify Installation
 
 Restart your AI assistant and ask:
