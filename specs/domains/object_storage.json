@@ -3,7 +3,7 @@
   "info": {
     "title": "Object Storage",
     "description": "Blob management for application component delivery across namespaces. Time-limited download links with cryptographic signing protect asset retrieval. Version-controlled packages organized by operating system type support artifact discovery. Query filtering by name, type, and release number enables programmatic access to integrator libraries and protection modules for mobile deployments.",
-    "version": "2.0.16",
+    "version": "2.0.17",
     "contact": {
       "name": "F5 Distributed Cloud",
       "url": "https://docs.cloud.f5.com"
@@ -2437,7 +2437,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-07T02:22:21.659075+00:00"
+            "x-reconciled-at": "2026-01-07T03:09:16.985783+00:00"
           },
           "mobile_app_shield": {
             "$ref": "#/components/schemas/stored_objectMobileAppShieldAttributes"
@@ -2479,7 +2479,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-07T02:22:21.659085+00:00"
+            "x-reconciled-at": "2026-01-07T03:09:16.985793+00:00"
           },
           "namespace": {
             "type": "string",
@@ -2506,7 +2506,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-07T02:22:21.659090+00:00"
+            "x-reconciled-at": "2026-01-07T03:09:16.985798+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -2782,7 +2782,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-07T02:22:21.659117+00:00"
+            "x-reconciled-at": "2026-01-07T03:09:16.985825+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -2805,7 +2805,7 @@
             "x-field-mutability": "read-only",
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-07T02:22:21.659123+00:00"
+            "x-reconciled-at": "2026-01-07T03:09:16.985831+00:00"
           },
           "versions": {
             "type": "array",
@@ -3180,7 +3180,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-07T02:22:21.659147+00:00"
+            "x-reconciled-at": "2026-01-07T03:09:16.985856+00:00"
           },
           "mobile_app_shield": {
             "$ref": "#/components/schemas/stored_objectMobileAppShieldAttributes"
@@ -3215,7 +3215,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-07T02:22:21.659155+00:00"
+            "x-reconciled-at": "2026-01-07T03:09:16.985864+00:00"
           },
           "namespace": {
             "type": "string",
@@ -3229,7 +3229,7 @@
             "x-validation-rules": {
               "ves.io.schema.rules.message.required": "true"
             },
-            "x-f5xc-example": "default",
+            "x-f5xc-example": "example-resource",
             "x-f5xc-description-short": "Namespace of the stored object Required: YES.",
             "minLength": 0,
             "maxLength": 6,
@@ -3241,7 +3241,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-07T02:22:21.659159+00:00"
+            "x-reconciled-at": "2026-01-07T03:09:16.985868+00:00"
           },
           "no_attributes": {
             "$ref": "#/components/schemas/schemaEmpty"
@@ -3292,7 +3292,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-07T02:22:21.659165+00:00"
+            "x-reconciled-at": "2026-01-07T03:09:16.985875+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
@@ -3394,7 +3394,7 @@
             },
             "x-original-maxLength": 512,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-07T02:22:21.659172+00:00"
+            "x-reconciled-at": "2026-01-07T03:09:16.985882+00:00"
           },
           "latest_version": {
             "type": "boolean",
@@ -3448,7 +3448,7 @@
             },
             "x-original-maxLength": 1024,
             "x-reconciled-from-discovery": true,
-            "x-reconciled-at": "2026-01-07T02:22:21.659179+00:00"
+            "x-reconciled-at": "2026-01-07T03:09:16.985889+00:00"
           }
         },
         "x-f5xc-minimum-configuration": {
