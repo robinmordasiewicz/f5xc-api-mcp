@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-06T16:58:36.582411+00:00",
-  "totalResources": 801,
+  "generatedAt": "2026-01-07T02:22:43.456035+00:00",
+  "totalResources": 792,
   "dependencies": {
     "admin_console_and_ui/static-component": {
       "resource": "static-component",
@@ -3111,194 +3111,6 @@
       "subscriptions": [],
       "creationOrder": [
         "ce_management/upgradable-sw-version"
-      ]
-    },
-    "ce_management/get-image-download-url": {
-      "resource": "get-image-download-url",
-      "domain": "ce_management",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "ce_management/get-image-download-url"
-      ]
-    },
-    "ce_management/get-registrations-by-token": {
-      "resource": "get-registrations-by-token",
-      "domain": "ce_management",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_site_management_standard",
-          "displayName": "F5XC Site Management Standard",
-          "tier": "standard",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "ce_management/get-registrations-by-token"
-      ]
-    },
-    "ce_management/suggest-value": {
-      "resource": "suggest-value",
-      "domain": "ce_management",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "ce_management/suggest-value"
-      ]
-    },
-    "ce_management/registration": {
-      "resource": "registration",
-      "domain": "ce_management",
-      "requires": [
-        {
-          "resourceType": "registration",
-          "domain": "",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schema-object-create-meta",
-          "domain": "",
-          "fieldPath": "metadata",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schemaregistration-create",
-          "domain": "",
-          "fieldPath": "spec",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schema-object-replace-meta",
-          "domain": "",
-          "fieldPath": "metadata",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schemaregistration-replace",
-          "domain": "",
-          "fieldPath": "spec",
-          "required": false,
-          "inline": false
-        }
-      ],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "unknown/registration",
-        "unknown/schema-object-create-meta",
-        "unknown/schemaregistration-create",
-        "unknown/schema-object-replace-meta",
-        "unknown/schemaregistration-replace",
-        "ce_management/registration"
-      ]
-    },
-    "ce_management/listregistrationsbystate": {
-      "resource": "listregistrationsbystate",
-      "domain": "ce_management",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "ce_management/listregistrationsbystate"
-      ]
-    },
-    "ce_management/approve": {
-      "resource": "approve",
-      "domain": "ce_management",
-      "requires": [
-        {
-          "resourceType": "schema-site-to-site-tunnel",
-          "domain": "",
-          "fieldPath": "tunnel_type",
-          "required": false,
-          "inline": false
-        }
-      ],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "unknown/schema-site-to-site-tunnel",
-        "ce_management/approve"
-      ]
-    },
-    "ce_management/registrations-by-site": {
-      "resource": "registrations-by-site",
-      "domain": "ce_management",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [
-        {
-          "addonService": "f5xc_site_management_standard",
-          "displayName": "F5XC Site Management Standard",
-          "tier": "standard",
-          "required": false
-        }
-      ],
-      "creationOrder": [
-        "ce_management/registrations-by-site"
-      ]
-    },
-    "ce_management/registerBootstrap": {
-      "resource": "registerBootstrap",
-      "domain": "ce_management",
-      "requires": [
-        {
-          "resourceType": "registration-registration",
-          "domain": "",
-          "fieldPath": "",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schema-object-create-meta",
-          "domain": "",
-          "fieldPath": "metadata",
-          "required": false,
-          "inline": false
-        },
-        {
-          "resourceType": "schemaregistration-create",
-          "domain": "",
-          "fieldPath": "spec",
-          "required": false,
-          "inline": false
-        }
-      ],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "unknown/registration-registration",
-        "unknown/schema-object-create-meta",
-        "unknown/schemaregistration-create",
-        "ce_management/registerBootstrap"
-      ]
-    },
-    "ce_management/requestConfig": {
-      "resource": "requestConfig",
-      "domain": "ce_management",
-      "requires": [],
-      "requiredBy": [],
-      "oneOfGroups": [],
-      "subscriptions": [],
-      "creationOrder": [
-        "ce_management/requestConfig"
       ]
     },
     "certificates/certificate-chain": {
@@ -20961,8 +20773,6 @@
       "ai_services/refresh-token",
       "authentication/scim-token",
       "ce_management/fleet",
-      "ce_management/get-registrations-by-token",
-      "ce_management/registrations-by-site",
       "container_services/virtual-k8s",
       "container_services/workload-flavor",
       "container_services/workload",
@@ -21775,20 +21585,6 @@
       },
       {
         "resourceType": "usb-policy",
-        "domain": "ce_management",
-        "fieldPath": "metadata",
-        "required": false,
-        "inline": false
-      },
-      {
-        "resourceType": "registration",
-        "domain": "ce_management",
-        "fieldPath": "metadata",
-        "required": false,
-        "inline": false
-      },
-      {
-        "resourceType": "registerBootstrap",
         "domain": "ce_management",
         "fieldPath": "metadata",
         "required": false,
@@ -22892,13 +22688,6 @@
       },
       {
         "resourceType": "usb-policy",
-        "domain": "ce_management",
-        "fieldPath": "metadata",
-        "required": false,
-        "inline": false
-      },
-      {
-        "resourceType": "registration",
         "domain": "ce_management",
         "fieldPath": "metadata",
         "required": false,
@@ -24624,58 +24413,6 @@
         "resourceType": "usb-policy",
         "domain": "ce_management",
         "fieldPath": "spec",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/registration": [
-      {
-        "resourceType": "registration",
-        "domain": "ce_management",
-        "fieldPath": "",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/schemaregistration-create": [
-      {
-        "resourceType": "registration",
-        "domain": "ce_management",
-        "fieldPath": "spec",
-        "required": false,
-        "inline": false
-      },
-      {
-        "resourceType": "registerBootstrap",
-        "domain": "ce_management",
-        "fieldPath": "spec",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/schemaregistration-replace": [
-      {
-        "resourceType": "registration",
-        "domain": "ce_management",
-        "fieldPath": "spec",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/schema-site-to-site-tunnel": [
-      {
-        "resourceType": "approve",
-        "domain": "ce_management",
-        "fieldPath": "tunnel_type",
-        "required": false,
-        "inline": false
-      }
-    ],
-    "unknown/registration-registration": [
-      {
-        "resourceType": "registerBootstrap",
-        "domain": "ce_management",
-        "fieldPath": "",
         "required": false,
         "inline": false
       }

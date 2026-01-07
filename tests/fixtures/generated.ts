@@ -5,8 +5,8 @@
  * These fixtures are dynamically generated from the current OpenAPI specs
  * to ensure tests always use real values and don't hardcode spec content.
  *
- * Generated at: 2026-01-06T17:01:20.806Z
- * Total tools: 1548
+ * Generated at: 2026-01-07T02:25:28.477Z
+ * Total tools: 1535
  * Total domains: 38
  */
 
@@ -14,7 +14,7 @@
  * Registry statistics
  */
 export const REGISTRY_STATS = {
-  totalTools: 1548,
+  totalTools: 1535,
   totalDomains: 38,
   domainCounts: {
     admin_console_and_ui: 2,
@@ -26,7 +26,7 @@ export const REGISTRY_STATS = {
     blindfold: 32,
     bot_and_threat_defense: 20,
     cdn: 22,
-    ce_management: 32,
+    ce_management: 19,
     certificates: 20,
     cloud_infrastructure: 33,
     container_services: 16,
