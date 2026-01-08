@@ -57,6 +57,43 @@ export {
   getOptimizationStats,
 } from "./describe.js";
 
+// Schema exports
+export {
+  getRequestBodySchema,
+  getResolvedRequestBodySchema,
+  getResponseSchema,
+  getToolSchemas,
+  getMinimumConfiguration,
+  getRequiredFields,
+  getMutuallyExclusiveFields,
+  generateExamplePayload,
+  generateSmartExamplePayload,
+  getComprehensiveSchemaInfo,
+  type ResolvedSchema,
+  type MinimumConfiguration,
+  type MutuallyExclusiveGroup,
+} from "./schema.js";
+
+// Schema loader exports
+export {
+  loadDomainSchemas,
+  resolveSchemaRef,
+  resolveNestedRefs,
+  clearSchemaCache,
+  getSchemaCacheStats,
+} from "./schema-loader.js";
+
+// Suggest parameters exports
+export {
+  suggestParameters,
+  getAvailableExamples,
+  hasSuggestedParameters,
+  hasCuratedExample,
+  getSuggestionSource,
+  getSuggestionStats,
+  type SuggestionResult,
+} from "./suggest-params.js";
+
 // Execute exports
 export { executeTool, validateExecuteParams } from "./execute.js";
 
@@ -496,6 +533,42 @@ export const DISCOVERY_TOOLS = {
           default: true,
         },
       },
+    },
+  },
+
+  getSchema: {
+    name: "f5xc-api-get-schema",
+    description:
+      "Get the complete JSON schema for a tool's request body. Returns the full OpenAPI schema definition " +
+      "including all nested objects, arrays, enums, and validation rules. Use this to understand the exact " +
+      "structure required for complex API payloads.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        toolName: {
+          type: "string",
+          description: "The exact tool name (e.g., 'f5xc-api-virtual-http-loadbalancer-create')",
+        },
+      },
+      required: ["toolName"],
+    },
+  },
+
+  suggestParameters: {
+    name: "f5xc-api-suggest-parameters",
+    description:
+      "Get pre-built example payloads for common F5XC operations. Returns complete, working examples " +
+      "for popular tools like HTTP load balancers, origin pools, and DNS zones. Use this to avoid " +
+      "guessing parameter formats and get started quickly.",
+    inputSchema: {
+      type: "object" as const,
+      properties: {
+        toolName: {
+          type: "string",
+          description: "The exact tool name (e.g., 'f5xc-api-virtual-http-loadbalancer-create')",
+        },
+      },
+      required: ["toolName"],
     },
   },
 } as const;

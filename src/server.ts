@@ -45,6 +45,9 @@ import {
   queryBestPractices,
   getAllDomainsSummary,
   formatBestPractices,
+  getRequestBodySchema,
+  getComprehensiveSchemaInfo,
+  suggestParameters,
   type CrudOperation,
   type CreationPlan,
 } from "./tools/discovery/index.js";
@@ -159,6 +162,8 @@ export class F5XCApiServer {
                     "f5xc-api-configure-auth",
                     "f5xc-api-search-tools",
                     "f5xc-api-describe-tool",
+                    "f5xc-api-get-schema",
+                    "f5xc-api-suggest-parameters",
                     "f5xc-api-execute-tool",
                     "f5xc-api-search-resources",
                     "f5xc-api-execute-resource",
@@ -307,7 +312,142 @@ export class F5XCApiServer {
               text: JSON.stringify(
                 {
                   tool: description,
-                  hint: "Use f5xc-api-execute-tool to execute this tool.",
+                  hint: "Use f5xc-api-get-schema to get the full JSON schema, or f5xc-api-execute-tool to execute this tool.",
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
+    );
+
+    // Get schema tool - get actionable schema info for request body
+    // Returns concise, actionable information (example payload, required fields, oneOf groups)
+    // without the full resolved schema which can be very large
+    this.server.tool(
+      DISCOVERY_TOOLS.getSchema.name,
+      DISCOVERY_TOOLS.getSchema.description,
+      {
+        toolName: z.string().describe("Exact tool name to get schema for"),
+      },
+      async (args) => {
+        // Get comprehensive schema info (resolved with metadata)
+        const comprehensiveInfo = getComprehensiveSchemaInfo(args.toolName);
+
+        if (comprehensiveInfo) {
+          // Return actionable info without the full resolved schema (which can be 1M+ chars)
+          // The examplePayload provides all the structure needed to construct valid requests
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    toolName: args.toolName,
+                    examplePayload: comprehensiveInfo.examplePayload,
+                    requiredFields: comprehensiveInfo.requiredFields,
+                    mutuallyExclusiveGroups: comprehensiveInfo.mutuallyExclusiveGroups,
+                    curlExample: comprehensiveInfo.curlExample,
+                    usage: {
+                      instruction:
+                        "Use examplePayload as the 'body' parameter for f5xc-api-execute-tool",
+                      steps: [
+                        "1. Copy examplePayload as your starting point",
+                        "2. Modify values (name, namespace, domains, etc.) for your use case",
+                        "3. For mutuallyExclusiveGroups, choose ONE option from each group",
+                        "4. Ensure all requiredFields are provided",
+                        "5. Execute with f5xc-api-execute-tool",
+                      ],
+                    },
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        // Fall back to raw schema if resolution failed
+        const rawSchema = getRequestBodySchema(args.toolName);
+
+        if (!rawSchema) {
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    error: `No request body schema found for tool "${args.toolName}"`,
+                    hint: "This tool may not require a request body, or use f5xc-api-describe-tool to check.",
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  toolName: args.toolName,
+                  requestBodySchema: rawSchema,
+                  note: "Schema contains unresolved $ref pointers. Use f5xc-api-suggest-parameters for working examples.",
+                  hint: "Use this schema to construct the 'body' parameter for f5xc-api-execute-tool.",
+                },
+                null,
+                2
+              ),
+            },
+          ],
+        };
+      }
+    );
+
+    // Suggest parameters tool - get pre-built example payloads
+    this.server.tool(
+      DISCOVERY_TOOLS.suggestParameters.name,
+      DISCOVERY_TOOLS.suggestParameters.description,
+      {
+        toolName: z.string().describe("Exact tool name to get examples for"),
+      },
+      async (args) => {
+        const suggestion = suggestParameters(args.toolName);
+
+        if (!suggestion) {
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(
+                  {
+                    error: `No pre-built examples available for tool "${args.toolName}"`,
+                    hint: "Use f5xc-api-get-schema to get the JSON schema, or f5xc-api-describe-tool for parameter descriptions.",
+                  },
+                  null,
+                  2
+                ),
+              },
+            ],
+          };
+        }
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(
+                {
+                  toolName: args.toolName,
+                  ...suggestion,
+                  hint: "Use this payload as the 'body' parameter for f5xc-api-execute-tool.",
                 },
                 null,
                 2
