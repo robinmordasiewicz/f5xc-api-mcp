@@ -11,7 +11,16 @@
  *   tsx scripts/generate-docs.ts
  */
 
-import { existsSync, mkdirSync, writeFileSync, rmSync, readdirSync, readFileSync, copyFileSync, renameSync } from "fs";
+import {
+  existsSync,
+  mkdirSync,
+  writeFileSync,
+  rmSync,
+  readdirSync,
+  readFileSync,
+  copyFileSync,
+  renameSync,
+} from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import YAML from "yaml";
@@ -69,9 +78,9 @@ function parseMkDocsConfig(filePath: string): {
     throw new Error(`mkdocs.yml not found at ${filePath}`);
   }
 
-  const content = readFileSync(filePath, 'utf-8');
+  const content = readFileSync(filePath, "utf-8");
   const config = YAML.parse(content);
-  const hasNav = 'nav' in config;
+  const hasNav = "nav" in config;
 
   return { config, hasNav };
 }
@@ -91,11 +100,11 @@ function backupMkDocsConfig(filePath: string): string {
  */
 function validateMkDocsConfig(filePath: string): boolean {
   try {
-    const content = readFileSync(filePath, 'utf-8');
+    const content = readFileSync(filePath, "utf-8");
     const config = YAML.parse(content);
 
     // Check required sections
-    const required = ['site_name', 'theme', 'plugins'];
+    const required = ["site_name", "theme", "plugins"];
     for (const section of required) {
       if (!(section in config)) {
         log.error(`Missing required section: ${section}`);
@@ -104,8 +113,8 @@ function validateMkDocsConfig(filePath: string): boolean {
     }
 
     // Validate nav is array if present
-    if ('nav' in config && !Array.isArray(config.nav)) {
-      log.error('nav section must be an array');
+    if ("nav" in config && !Array.isArray(config.nav)) {
+      log.error("nav section must be an array");
       return false;
     }
 
@@ -192,11 +201,11 @@ function generateCurlCommand(resource: string, operation: string, domain: string
 function getDangerBadge(level: "low" | "medium" | "high" | null): string {
   switch (level) {
     case "high":
-      return "!!! danger \"High Risk Operation\"\n    This resource includes operations that may cause significant changes. Review carefully before executing.\n\n";
+      return '!!! danger "High Risk Operation"\n    This resource includes operations that may cause significant changes. Review carefully before executing.\n\n';
     case "medium":
-      return "!!! warning \"Medium Risk\"\n    Some operations on this resource may modify or delete data.\n\n";
+      return '!!! warning "Medium Risk"\n    Some operations on this resource may modify or delete data.\n\n';
     case "low":
-      return "!!! info \"Low Risk\"\n    Operations on this resource are generally safe.\n\n";
+      return '!!! info "Low Risk"\n    Operations on this resource are generally safe.\n\n';
     default:
       return "";
   }
@@ -255,36 +264,36 @@ function generateMarkdown(resourceDoc: ResourceDoc): string {
   const rawDescription = summary || `Manage ${title} resources in F5 Distributed Cloud.`;
 
   // Wrap text at specified length, with optional indent for continuation lines
-  const wrapText = (text: string, maxLen: number, indent = ''): string => {
+  const wrapText = (text: string, maxLen: number, indent = ""): string => {
     if (text.length <= maxLen) return text;
-    const words = text.split(' ');
+    const words = text.split(" ");
     const lines: string[] = [];
-    let currentLine = '';
+    let currentLine = "";
     for (const word of words) {
-      if ((currentLine + ' ' + word).trim().length <= maxLen) {
-        currentLine = (currentLine + ' ' + word).trim();
+      if ((currentLine + " " + word).trim().length <= maxLen) {
+        currentLine = (currentLine + " " + word).trim();
       } else {
         if (currentLine) lines.push(currentLine);
         currentLine = word;
       }
     }
     if (currentLine) lines.push(currentLine);
-    return lines.join('\n' + indent);
+    return lines.join("\n" + indent);
   };
 
   // Use indent for YAML front matter continuation
-  const wrappedDescription = wrapText(rawDescription, 80, '  ');
+  const wrappedDescription = wrapText(rawDescription, 80, "  ");
 
   const frontMatter = {
     page_title: `f5xc_${resource.replace(/-/g, "_")} - f5xc-api-mcp`,
-    subcategory: categoryPath.domainTitle,  // Display-friendly domain title
+    subcategory: categoryPath.domainTitle, // Display-friendly domain title
     description: wrappedDescription,
   };
 
   // Generate danger badge and confirmation warning
   const dangerBadge = getDangerBadge(metadata.maxDangerLevel);
   const confirmationWarning = metadata.requiresConfirmation
-    ? "!!! note \"Confirmation Required\"\n    Some operations on this resource require explicit confirmation before execution.\n\n"
+    ? '!!! note "Confirmation Required"\n    Some operations on this resource require explicit confirmation before execution.\n\n'
     : "";
 
   // Tools table
@@ -325,10 +334,16 @@ function generateMarkdown(resourceDoc: ResourceDoc): string {
 
     if (pathParams.size > 0) {
       parametersSection += "### Path Parameters\n\n";
-      parametersSection += "| Parameter | Description | Example |\n|-----------|-------------|--------|\n";
+      parametersSection +=
+        "| Parameter | Description | Example |\n|-----------|-------------|--------|\n";
       for (const [name, desc] of pathParams) {
         // Clean up description - take first sentence only, escape pipes
-        const cleanDesc = escapeTableCell(desc.split("\n")[0].replace(/x-example:.*$/i, "").trim() || `The ${name} identifier`);
+        const cleanDesc = escapeTableCell(
+          desc
+            .split("\n")[0]
+            .replace(/x-example:.*$/i, "")
+            .trim() || `The ${name} identifier`
+        );
         // Get example from aggregated metadata
         const example = escapeTableCell(metadata.parameterExamples[name] || "-");
         parametersSection += `| \`${name}\` | ${cleanDesc} | \`${example}\` |\n`;
@@ -338,9 +353,15 @@ function generateMarkdown(resourceDoc: ResourceDoc): string {
 
     if (queryParams.size > 0) {
       parametersSection += "### Query Parameters\n\n";
-      parametersSection += "| Parameter | Description | Example |\n|-----------|-------------|--------|\n";
+      parametersSection +=
+        "| Parameter | Description | Example |\n|-----------|-------------|--------|\n";
       for (const [name, desc] of queryParams) {
-        const cleanDesc = escapeTableCell(desc.split("\n")[0].replace(/x-example:.*$/i, "").trim() || `The ${name} parameter`);
+        const cleanDesc = escapeTableCell(
+          desc
+            .split("\n")[0]
+            .replace(/x-example:.*$/i, "")
+            .trim() || `The ${name} parameter`
+        );
         // Get example from aggregated metadata
         const example = escapeTableCell(metadata.parameterExamples[name] || "-");
         parametersSection += `| \`${name}\` | ${cleanDesc} | \`${example}\` |\n`;
@@ -414,7 +435,9 @@ ${generateCurlCommand(resource, "delete", categoryPath.domain)}
     return sanitized;
   };
 
-  const bodyDescription = sanitizeDescription(description || summary || `Manage ${title} resources in F5 Distributed Cloud.`);
+  const bodyDescription = sanitizeDescription(
+    description || summary || `Manage ${title} resources in F5 Distributed Cloud.`
+  );
   const wrappedBodyDescription = wrapText(bodyDescription, 100);
 
   // Generate side effects from enriched specs
@@ -468,14 +491,11 @@ function cleanGeneratedDocs(): void {
 /**
  * Subdivide large domains by tags
  */
-function subdivideByTags(
-  domain: string,
-  docs: ResourceDoc[]
-): Map<string, ResourceDoc[]> {
+function subdivideByTags(domain: string, docs: ResourceDoc[]): Map<string, ResourceDoc[]> {
   const groups = new Map<string, ResourceDoc[]>();
 
   for (const doc of docs) {
-    const subdivision = doc.categoryPath.subdivision || 'Other';
+    const subdivision = doc.categoryPath.subdivision || "Other";
 
     if (!groups.has(subdivision)) {
       groups.set(subdivision, []);
@@ -612,9 +632,7 @@ function groupToolsByResource(tools: ParsedOperation[]): Map<string, ResourceDoc
 /**
  * Generate enhanced navigation structure with domain grouping
  */
-function generateEnhancedNavigation(
-  resourceDocs: ResourceDoc[]
-): Array<Record<string, unknown>> {
+function generateEnhancedNavigation(resourceDocs: ResourceDoc[]): Array<Record<string, unknown>> {
   // Group by domain
   const byDomain = new Map<string, ResourceDoc[]>();
 
@@ -651,21 +669,20 @@ function generateEnhancedNavigation(
         const tagDocs = tagGroups.get(tag)!;
         const resources = tagDocs
           .sort((a, b) => a.title.localeCompare(b.title))
-          .map(doc => ({
-            [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource}.md`
+          .map((doc) => ({
+            [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource}.md`,
           }));
 
         tagEntries.push({ [tag]: resources });
       }
 
       navigation.push({ [domainTitle]: tagEntries });
-
     } else {
       // Two-level: Domain → Resource
       const resources = docs
         .sort((a, b) => a.title.localeCompare(b.title))
-        .map(doc => ({
-          [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource}.md`
+        .map((doc) => ({
+          [doc.title]: `tools/${doc.categoryPath.directoryPath}/${doc.resource}.md`,
         }));
 
       navigation.push({ [domainTitle]: resources });
@@ -673,6 +690,27 @@ function generateEnhancedNavigation(
   }
 
   return navigation;
+}
+
+/**
+ * Read and parse a .pages file for navigation
+ */
+function readPagesFile(dirPath: string): Array<Record<string, unknown>> | null {
+  const pagesFile = join(dirPath, ".pages");
+  if (!existsSync(pagesFile)) {
+    return null;
+  }
+
+  try {
+    const content = readFileSync(pagesFile, "utf-8");
+    const parsed = YAML.parse(content);
+    if (parsed && "nav" in parsed && Array.isArray(parsed.nav)) {
+      return parsed.nav;
+    }
+    return null;
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -686,57 +724,58 @@ function updateMkDocsNavigation(
   const backupFile = backupMkDocsConfig(configPath);
 
   try {
-    log.info('Updating mkdocs.yml navigation...');
+    log.info("Updating mkdocs.yml navigation...");
 
     // Parse existing config
     const { config } = parseMkDocsConfig(configPath);
 
+    // Read getting-started .pages file for expanded navigation
+    const gettingStartedNav = readPagesFile(join(__dirname, "..", "docs", "getting-started"));
+
     // Build complete nav structure
     const completeNav = [
-      { Home: 'index.md' },
-      { 'Getting Started': 'getting-started/installation.md' },
-      { Tools: [
-        { Overview: 'tools/index.md' },
-        ...navigation
-      ]}
+      { Home: "index.md" },
+      { "Getting Started": gettingStartedNav || "getting-started/installation.md" },
+      { Tools: [{ Overview: "tools/index.md" }, ...navigation] },
     ];
 
     // Merge with existing config (remove old nav if present)
     const { nav: _, ...preserved } = config;
     const updated = {
       ...preserved,
-      nav: completeNav
+      nav: completeNav,
     };
 
     // Write to temp file
     const yamlContent = YAML.stringify(updated, {
       lineWidth: 0,
       indent: 2,
-      defaultKeyType: 'PLAIN',
-      defaultStringType: 'PLAIN'
+      defaultKeyType: "PLAIN",
+      defaultStringType: "PLAIN",
     });
 
     writeFileSync(tempFile, yamlContent);
 
     // Validate temp file
     if (!validateMkDocsConfig(tempFile)) {
-      throw new Error('Generated invalid YAML structure');
+      throw new Error("Generated invalid YAML structure");
     }
 
     // Atomic rename
     renameSync(tempFile, configPath);
-    log.success('mkdocs.yml navigation updated successfully');
+    log.success("mkdocs.yml navigation updated successfully");
 
     // Cleanup backup
     rmSync(backupFile);
-
   } catch (error) {
-    log.error(`Failed to update mkdocs.yml: ${error instanceof Error ? error.message : String(error)}`);
+    log.error(
+      `Failed to update mkdocs.yml: ${error instanceof Error ? error.message : String(error)}`
+    );
 
     // Rollback from backup
     if (existsSync(backupFile)) {
       copyFileSync(backupFile, configPath);
-      log.info('Rolled back from backup');
+      log.info("Rolled back from backup");
       rmSync(backupFile);
     }
 
@@ -808,8 +847,8 @@ async function generateDocs(): Promise<void> {
   try {
     updateMkDocsNavigation(CONFIG.MKDOCS_FILE, navigation);
   } catch (error) {
-    log.error('Failed to update mkdocs.yml - navigation changes not applied');
-    log.info('Navigation structure:');
+    log.error("Failed to update mkdocs.yml - navigation changes not applied");
+    log.info("Navigation structure:");
     console.log(YAML.stringify({ Tools: [{ Overview: "tools/index.md" }, ...navigation] }));
     throw error;
   }
@@ -848,9 +887,7 @@ generateDocs()
     process.exit(0);
   })
   .catch((error: unknown) => {
-    log.error(
-      `Generation failed: ${error instanceof Error ? error.message : String(error)}`
-    );
+    log.error(`Generation failed: ${error instanceof Error ? error.message : String(error)}`);
     if (error instanceof Error && error.stack) {
       console.error(error.stack);
     }
