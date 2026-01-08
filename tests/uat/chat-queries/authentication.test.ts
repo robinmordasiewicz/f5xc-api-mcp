@@ -82,11 +82,10 @@ describe("Authentication Queries - User Experience Simulation", () => {
 
       expect(isDocumentationResponse(response)).toBe(true);
       if (isDocumentationResponse(response)) {
-        // Should show {tenant} or similar placeholder
         expect(
           response.curlExample.includes("{tenant}") ||
             response.curlExample.includes("${TENANT}") ||
-            response.curlExample.includes("console.ves.volterra.io")
+            /\.console\.ves\.volterra\.io\b/.test(response.curlExample)
         ).toBe(true);
       }
     });
