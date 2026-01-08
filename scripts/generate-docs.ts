@@ -21,7 +21,7 @@ import {
   copyFileSync,
   renameSync,
 } from "fs";
-import { join, dirname } from "path";
+import { basename, join, dirname } from "path";
 import { fileURLToPath } from "url";
 import YAML from "yaml";
 import type { ParsedOperation } from "../src/generator/openapi-parser.js";
@@ -694,6 +694,7 @@ function generateEnhancedNavigation(resourceDocs: ResourceDoc[]): Array<Record<s
 
 /**
  * Read and parse a .pages file for navigation
+ * Returns nav entries with directory path prepended for mkdocs compatibility
  */
 function readPagesFile(dirPath: string): Array<Record<string, unknown>> | null {
   const pagesFile = join(dirPath, ".pages");
@@ -701,11 +702,20 @@ function readPagesFile(dirPath: string): Array<Record<string, unknown>> | null {
     return null;
   }
 
+  // Extract directory name for path prefix (e.g., "getting-started" from path)
+  const dirName = basename(dirPath);
+
   try {
     const content = readFileSync(pagesFile, "utf-8");
     const parsed = YAML.parse(content);
     if (parsed && "nav" in parsed && Array.isArray(parsed.nav)) {
-      return parsed.nav;
+      // Prefix each file entry with directory path for mkdocs
+      return parsed.nav.map((entry: unknown) => {
+        if (typeof entry === "string" && entry.endsWith(".md")) {
+          return `${dirName}/${entry}`;
+        }
+        return entry;
+      });
     }
     return null;
   } catch {
