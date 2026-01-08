@@ -88,6 +88,8 @@ export class HttpClient {
     }
 
     // Check for insecure mode (staging/development ONLY)
+    // CodeQL suppression: This is intentional for staging/development environments
+    // lgtm[js/disabling-certificate-validation]
     const tlsInsecure = this.credentialManager.getTlsInsecure();
     if (tlsInsecure) {
       options.rejectUnauthorized = false;
