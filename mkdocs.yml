@@ -77,8 +77,8 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: ""
+      emoji_generator: ""
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -132,7 +132,13 @@ extra:
 copyright: Copyright &copy; 2024 F5XC API MCP Server
 nav:
   - Home: index.md
-  - Getting Started: getting-started/installation.md
+  - Getting Started:
+      - installation.md
+      - claude-desktop.md
+      - claude-cli.md
+      - opencode.md
+      - vscode.md
+      - cursor.md
   - Tools:
       - Overview: tools/index.md
       - Admin Console And Ui:
@@ -241,19 +247,10 @@ nav:
           - Suggestion: tools/cdn/suggestion.md
           - Unsubscribe: tools/cdn/unsubscribe.md
       - Ce Management:
-          - Approve: tools/ce-management/approve.md
           - Fleet: tools/ce-management/fleet.md
-          - Get Image Download Url: tools/ce-management/get-image-download-url.md
-          - Get Registrations By Token: tools/ce-management/get-registrations-by-token.md
-          - Listregistrationsbystate: tools/ce-management/listregistrationsbystate.md
           - Network Interface: tools/ce-management/network-interface.md
           - Pre Upgrade Check: tools/ce-management/pre-upgrade-check.md
-          - RegisterBootstrap: tools/ce-management/registerBootstrap.md
-          - Registration: tools/ce-management/registration.md
-          - Registrations By Site: tools/ce-management/registrations-by-site.md
-          - RequestConfig: tools/ce-management/requestConfig.md
           - Setting: tools/ce-management/setting.md
-          - Suggest Value: tools/ce-management/suggest-value.md
           - Upgradable Sw Version: tools/ce-management/upgradable-sw-version.md
           - Upgrade Statu: tools/ce-management/upgrade-statu.md
           - Usb Policy: tools/ce-management/usb-policy.md
