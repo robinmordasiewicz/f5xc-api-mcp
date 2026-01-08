@@ -112,8 +112,8 @@ export function loadDomainSchemas(domain: string): DomainSchemaCache | null {
   const specPath = join(SPECS_DIR, specFileName);
 
   if (!existsSync(specPath)) {
-    // Try alternative naming (replace underscores with actual file name)
-    const altPath = join(SPECS_DIR, domain.replace(/_/g, "_") + ".json");
+    // Try alternative naming (replace underscores with hyphens)
+    const altPath = join(SPECS_DIR, domain.replace(/_/g, "-") + ".json");
     if (!existsSync(altPath)) {
       return null;
     }
