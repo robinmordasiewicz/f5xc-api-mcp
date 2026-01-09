@@ -23,7 +23,7 @@ import {
   ResourceHandler,
   ResourceDocumentation,
 } from "../../../src/resources/handlers.js";
-import { CredentialManager } from "../../../src/auth/credential-manager.js";
+import { CredentialManager } from "@robinmordasiewicz/f5xc-auth";
 
 // Type for parsed resource content
 interface ExampleResourceContent {

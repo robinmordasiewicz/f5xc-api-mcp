@@ -13,8 +13,7 @@ import {
   SideEffects,
   OperationMetadata,
 } from "./openapi-parser.js";
-import { CredentialManager, AuthMode } from "../auth/credential-manager.js";
-import { HttpClient } from "../auth/http-client.js";
+import { CredentialManager, AuthMode, HttpClient } from "@robinmordasiewicz/f5xc-auth";
 import { formatErrorForMcp } from "../utils/error-handling.js";
 import { logger } from "../utils/logging.js";
 import { getDomainMetadata, getResourceMetadata } from "./domain-metadata.js";

@@ -12,22 +12,17 @@ import {
   type ParameterInfo,
 } from "../../src/generator/tool-generator.js";
 import type { ParsedOperation, OpenApiParameter } from "../../src/generator/openapi-parser.js";
-import { CredentialManager, AuthMode } from "../../src/auth/credential-manager.js";
-import { HttpClient } from "../../src/auth/http-client.js";
+import { CredentialManager, AuthMode, HttpClient } from "@robinmordasiewicz/f5xc-auth";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
-// Mock credential manager
-vi.mock("../../src/auth/credential-manager.js", () => ({
+// Mock auth module
+vi.mock("@robinmordasiewicz/f5xc-auth", () => ({
   CredentialManager: vi.fn(),
   AuthMode: {
     NONE: "none",
     TOKEN: "token",
     MTLS: "mtls",
   },
-}));
-
-// Mock http client
-vi.mock("../../src/auth/http-client.js", () => ({
   HttpClient: vi.fn(),
 }));
 

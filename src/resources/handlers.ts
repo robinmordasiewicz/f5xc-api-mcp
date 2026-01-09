@@ -13,8 +13,7 @@ import {
   getEnhancedResourceTypes,
   ResourceType,
 } from "./templates.js";
-import { CredentialManager, AuthMode } from "../auth/credential-manager.js";
-import { HttpClient } from "../auth/http-client.js";
+import { CredentialManager, AuthMode, HttpClient } from "@robinmordasiewicz/f5xc-auth";
 import { logger } from "../utils/logging.js";
 import { F5XCApiError } from "../utils/error-handling.js";
 
