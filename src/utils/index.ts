@@ -18,3 +18,12 @@ export {
   formatErrorForMcp,
   withErrorHandling,
 } from "./error-handling.js";
+
+export {
+  normalizePath,
+  normalizeF5XCUrl,
+  extractTenantFromUrl,
+  verifyF5XCEndpoint,
+  verifyWithRetry,
+} from "./url-utils.js";
+export type { UrlVerificationResult } from "./url-utils.js";

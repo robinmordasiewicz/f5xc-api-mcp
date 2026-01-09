@@ -16,6 +16,7 @@ import {
   createHttpClient,
 } from "@robinmordasiewicz/f5xc-auth";
 import { logger } from "./utils/logging.js";
+import { normalizeF5XCUrl } from "./utils/url-utils.js";
 import { VERSION } from "./index.js";
 import {
   getWorkflowPrompts,
@@ -1139,6 +1140,20 @@ export class F5XCApiServer {
  * 3. No credentials - documentation mode (lowest priority)
  */
 export async function createServer(): Promise<F5XCApiServer> {
+  // Normalize F5XC_API_URL environment variable before CredentialManager reads it
+  // This handles various URL formats users might provide:
+  // - Protocol-less URLs: tenant.console.ves.volterra.io
+  // - URLs with /api suffix: https://tenant.console.ves.volterra.io/api
+  // - Combinations of the above
+  const apiUrl = process.env.F5XC_API_URL;
+  if (apiUrl) {
+    const normalizedUrl = normalizeF5XCUrl(apiUrl);
+    if (normalizedUrl !== apiUrl) {
+      logger.info(`Normalizing F5XC_API_URL: ${apiUrl} -> ${normalizedUrl}`);
+      process.env.F5XC_API_URL = normalizedUrl;
+    }
+  }
+
   const credentialManager = new CredentialManager();
   await credentialManager.initialize();
 
