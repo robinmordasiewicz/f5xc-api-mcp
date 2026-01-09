@@ -9,21 +9,17 @@ import {
   type ResourceReadResult,
   type ResourceDocumentation,
 } from "../../src/resources/handlers.js";
-import { CredentialManager, AuthMode } from "../../src/auth/credential-manager.js";
-import { HttpClient } from "../../src/auth/http-client.js";
+import { CredentialManager, AuthMode, HttpClient } from "@robinmordasiewicz/f5xc-auth";
 import * as templates from "../../src/resources/templates.js";
 
 // Mock modules
-vi.mock("../../src/auth/credential-manager.js", () => ({
+vi.mock("@robinmordasiewicz/f5xc-auth", () => ({
   CredentialManager: vi.fn(),
   AuthMode: {
     NONE: "none",
     TOKEN: "token",
     MTLS: "mtls",
   },
-}));
-
-vi.mock("../../src/auth/http-client.js", () => ({
   HttpClient: vi.fn(),
 }));
 

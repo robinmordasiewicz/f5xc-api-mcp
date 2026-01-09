@@ -9,9 +9,11 @@
  */
 
 import { z } from "zod";
-import { getProfileManager } from "../profile/index.js";
-import type { CredentialManager } from "../auth/credential-manager.js";
-import type { Profile } from "../profile/types.js";
+import {
+  getProfileManager,
+  type CredentialManager,
+  type Profile,
+} from "@robinmordasiewicz/f5xc-auth";
 
 /**
  * Tool name constant

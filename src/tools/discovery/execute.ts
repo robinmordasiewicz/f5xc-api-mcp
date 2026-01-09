@@ -8,8 +8,7 @@
 import type { ParsedOperation } from "../../generator/openapi-parser.js";
 import { getToolByName } from "../registry.js";
 import { toolExists } from "./index-loader.js";
-import { CredentialManager, AuthMode } from "../../auth/credential-manager.js";
-import { createHttpClient } from "../../auth/http-client.js";
+import { CredentialManager, AuthMode, createHttpClient } from "@robinmordasiewicz/f5xc-auth";
 import { logger } from "../../utils/logging.js";
 
 /**

@@ -9,8 +9,12 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
-import { CredentialManager, AuthMode } from "./auth/credential-manager.js";
-import { HttpClient, createHttpClient } from "./auth/http-client.js";
+import {
+  CredentialManager,
+  AuthMode,
+  HttpClient,
+  createHttpClient,
+} from "@robinmordasiewicz/f5xc-auth";
 import { logger } from "./utils/logging.js";
 import { VERSION } from "./index.js";
 import {

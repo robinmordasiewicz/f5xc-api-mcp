@@ -6,7 +6,7 @@
 
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { F5XCApiServer, createServer } from "../../src/server.js";
-import { CredentialManager, AuthMode } from "../../src/auth/credential-manager.js";
+import { CredentialManager, AuthMode } from "@robinmordasiewicz/f5xc-auth";
 import { setupDocumentationModeEnv } from "../../tests/utils/ci-environment.js";
 
 describe("MCP Protocol Compliance", () => {
