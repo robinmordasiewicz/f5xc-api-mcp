@@ -29,6 +29,8 @@
     "test:coverage": "vitest run --coverage",
     "test:uat": "vitest run tests/uat/",
     "test:docs": "vitest run tests/uat/documentation/",
+    "test:acceptance": "vitest run tests/acceptance/",
+    "validate:auth": "tsx scripts/validate-auth-integration.ts",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "format": "prettier --write 'src/**/*.ts'",
