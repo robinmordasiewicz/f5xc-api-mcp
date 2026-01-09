@@ -19,7 +19,6 @@ import {
   readdirSync,
   readFileSync,
   copyFileSync,
-  renameSync,
 } from "fs";
 import { basename, join, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -725,19 +724,20 @@ function readPagesFile(dirPath: string): Array<Record<string, unknown>> | null {
 
 /**
  * Update mkdocs.yml with new navigation structure
+ * Uses surgical text replacement to preserve Python-specific YAML tags
+ * (e.g., !!python/name: for pymdownx.emoji) that YAML.stringify cannot handle
  */
 function updateMkDocsNavigation(
   configPath: string,
   navigation: Array<Record<string, unknown>>
 ): void {
-  const tempFile = `${configPath}.tmp`;
   const backupFile = backupMkDocsConfig(configPath);
 
   try {
     log.info("Updating mkdocs.yml navigation...");
 
-    // Parse existing config
-    const { config } = parseMkDocsConfig(configPath);
+    // Read as text to preserve Python tags and other special YAML constructs
+    const originalContent = readFileSync(configPath, "utf-8");
 
     // Read getting-started .pages file for expanded navigation
     const gettingStartedNav = readPagesFile(join(__dirname, "..", "docs", "getting-started"));
@@ -745,37 +745,42 @@ function updateMkDocsNavigation(
     // Build complete nav structure
     const completeNav = [
       { Home: "index.md" },
-      { "Getting Started": gettingStartedNav || "getting-started/installation.md" },
+      { "Getting Started": gettingStartedNav || ["getting-started/installation.md"] },
       { Tools: [{ Overview: "tools/index.md" }, ...navigation] },
     ];
 
-    // Merge with existing config (remove old nav if present)
-    const { nav: _, ...preserved } = config;
-    const updated = {
-      ...preserved,
-      nav: completeNav,
-    };
-
-    // Write to temp file
-    const yamlContent = YAML.stringify(updated, {
+    // Generate nav YAML only (not the entire config)
+    const navYaml = YAML.stringify({ nav: completeNav }, {
       lineWidth: 0,
       indent: 2,
       defaultKeyType: "PLAIN",
       defaultStringType: "PLAIN",
     });
 
-    writeFileSync(tempFile, yamlContent);
+    // Find the nav: section and replace it (nav is at the end of the file)
+    // This regex matches 'nav:' at the start of a line through to EOF
+    const navPattern = /^nav:[\s\S]*$/m;
 
-    // Validate temp file
-    if (!validateMkDocsConfig(tempFile)) {
+    let newContent: string;
+    if (navPattern.test(originalContent)) {
+      // Replace existing nav section with new one
+      newContent = originalContent.replace(navPattern, navYaml.trim());
+    } else {
+      // No existing nav, append at end
+      newContent = originalContent.trimEnd() + "\n" + navYaml;
+    }
+
+    // Write the updated content
+    writeFileSync(configPath, newContent);
+
+    // Validate the result
+    if (!validateMkDocsConfig(configPath)) {
       throw new Error("Generated invalid YAML structure");
     }
 
-    // Atomic rename
-    renameSync(tempFile, configPath);
     log.success("mkdocs.yml navigation updated successfully");
 
-    // Cleanup backup
+    // Cleanup backup on success
     rmSync(backupFile);
   } catch (error) {
     log.error(
@@ -787,11 +792,6 @@ function updateMkDocsNavigation(
       copyFileSync(backupFile, configPath);
       log.info("Rolled back from backup");
       rmSync(backupFile);
-    }
-
-    // Cleanup temp file
-    if (existsSync(tempFile)) {
-      rmSync(tempFile);
     }
 
     throw error;
