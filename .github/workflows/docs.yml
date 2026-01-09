@@ -16,13 +16,7 @@ on:
       - "requirements.txt"
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write  # Need write access to push to gh-pages branch
 
 jobs:
   build:
@@ -64,25 +58,16 @@ jobs:
       - name: Build documentation
         run: mkdocs build --strict
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: ./site
-
-  deploy:
-    name: Deploy to GitHub Pages
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'docs: deploy ${{ github.sha }}'
 
   link-check:
     name: Check Links
@@ -94,25 +79,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
       - name: Setup Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: pip install linkchecker
-
-      - name: Download artifact
-        uses: actions/download-artifact@v6
+      - name: Cache pip
+        uses: actions/cache@v5
         with:
-          name: github-pages
-          path: ./site
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
 
-      - name: Extract artifact
-        run: |
-          cd site
-          tar -xvf artifact.tar
-          rm artifact.tar
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Generate documentation
+        run: npm run generate-docs
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt linkchecker
+
+      - name: Build documentation
+        run: mkdocs build --strict
 
       - name: Start local server
         run: |
