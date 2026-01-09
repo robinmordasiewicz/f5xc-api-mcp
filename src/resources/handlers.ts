@@ -16,6 +16,7 @@ import {
 import { CredentialManager, AuthMode, HttpClient } from "@robinmordasiewicz/f5xc-auth";
 import { logger } from "../utils/logging.js";
 import { F5XCApiError } from "../utils/error-handling.js";
+import { normalizePath } from "../utils/url-utils.js";
 
 /**
  * Resource read result
@@ -259,7 +260,8 @@ export class ResourceHandler {
     }
 
     try {
-      const response = await this.httpClient.get(apiPath);
+      // Use normalizePath to strip /api prefix since httpClient baseURL already includes /api
+      const response = await this.httpClient.get(normalizePath(apiPath));
 
       return {
         uri,
@@ -336,7 +338,8 @@ export class ResourceHandler {
     }
 
     try {
-      const response = await this.httpClient.get(apiPath);
+      // Use normalizePath to strip /api prefix since httpClient baseURL already includes /api
+      const response = await this.httpClient.get(normalizePath(apiPath));
 
       return {
         uri,

@@ -14,6 +14,8 @@ import {
   type CredentialManager,
   type Profile,
 } from "@robinmordasiewicz/f5xc-auth";
+import { normalizeF5XCUrl, verifyF5XCEndpoint } from "../utils/url-utils.js";
+import { logger } from "../utils/logging.js";
 
 /**
  * Tool name constant
@@ -36,13 +38,20 @@ export const configureAuthSchema = {
   tenantUrl: z
     .string()
     .optional()
-    .describe("F5XC tenant URL (e.g., https://tenant.console.ves.volterra.io)"),
+    .describe(
+      "F5XC tenant URL. Accepts various formats: https://tenant.console.ves.volterra.io, tenant.console.ves.volterra.io, tenant.staging.volterra.us, or even just the tenant name"
+    ),
   apiToken: z.string().optional().describe("API token for authentication"),
   profileName: z
     .string()
     .optional()
     .default("default")
     .describe("Profile name (default: 'default')"),
+  skipVerification: z
+    .boolean()
+    .optional()
+    .default(false)
+    .describe("Skip URL verification (useful for air-gapped environments)"),
 };
 
 /**
@@ -91,6 +100,7 @@ export async function handleConfigureAuth(
     tenantUrl?: string;
     apiToken?: string;
     profileName?: string;
+    skipVerification?: boolean;
   },
   credentialManager: CredentialManager
 ): Promise<ToolResponse> {
@@ -171,11 +181,12 @@ async function handleConfigure(
     tenantUrl?: string;
     apiToken?: string;
     profileName?: string;
+    skipVerification?: boolean;
   },
   credentialManager: CredentialManager,
   profileManager: ReturnType<typeof getProfileManager>
 ): Promise<ConfigureResponse> {
-  const { tenantUrl, apiToken, profileName = "default" } = args;
+  const { tenantUrl, apiToken, profileName = "default", skipVerification = false } = args;
 
   // Validate required fields
   if (!tenantUrl) {
@@ -194,10 +205,35 @@ async function handleConfigure(
     };
   }
 
-  // Create profile object
+  // Normalize URL to consistent format
+  const normalizedUrl = normalizeF5XCUrl(tenantUrl);
+  logger.info(`Normalizing URL: ${tenantUrl} -> ${normalizedUrl}`);
+
+  // Verify URL is accessible (unless skipped)
+  if (!skipVerification) {
+    logger.info(`Verifying URL accessibility: ${normalizedUrl}`);
+    const verification = await verifyF5XCEndpoint(normalizedUrl);
+
+    if (!verification.valid) {
+      let message = `URL verification failed for "${tenantUrl}": ${verification.error}`;
+      if (verification.suggestions?.length) {
+        message += `\n\nSuggestions:\n${verification.suggestions.map((s) => `  - ${s}`).join("\n")}`;
+      }
+      message += "\n\nUse skipVerification=true to bypass this check.";
+      return {
+        success: false,
+        profileName,
+        message,
+      };
+    }
+
+    logger.info(`URL verification successful: ${verification.normalizedUrl}`);
+  }
+
+  // Create profile object with normalized URL
   const profile: Profile = {
     name: profileName,
-    apiUrl: tenantUrl,
+    apiUrl: normalizedUrl,
     apiToken,
   };
 
@@ -229,7 +265,7 @@ async function handleConfigure(
   return {
     success: true,
     profileName,
-    message: `Credentials saved to profile '${profileName}' and set as active. API execution is now enabled.`,
+    message: `Credentials saved to profile '${profileName}' and set as active. URL normalized to: ${normalizedUrl}. API execution is now enabled.`,
   };
 }
 
