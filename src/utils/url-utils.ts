@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Robin Mordasiewicz. MIT License.
+
 /**
  * URL Normalization Utilities for F5 Distributed Cloud
  *

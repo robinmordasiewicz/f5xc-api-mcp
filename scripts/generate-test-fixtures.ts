@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+// Copyright (c) 2026 Robin Mordasiewicz. MIT License.
 
 /**
  * Dynamic Test Fixtures Generator

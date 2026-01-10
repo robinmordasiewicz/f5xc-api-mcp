@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Robin Mordasiewicz. MIT License.
+
 // @ts-check
 import eslint from "@eslint/js";
 import tseslint from "@typescript-eslint/eslint-plugin";

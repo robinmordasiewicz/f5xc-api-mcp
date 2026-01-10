@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Robin Mordasiewicz. MIT License.
+
 /// <reference types="node" />
 /**
  * Error handling utilities for F5XC API MCP Server
