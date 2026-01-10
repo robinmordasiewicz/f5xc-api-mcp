@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+// Copyright (c) 2026 Robin Mordasiewicz. MIT License.
+
 /**
  * Version Generator for F5 XC API MCP Server
  *

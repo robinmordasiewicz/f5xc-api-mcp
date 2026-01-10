@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+// Copyright (c) 2026 Robin Mordasiewicz. MIT License.
 
 /**
  * Validates that tool generation is consistent and complete
