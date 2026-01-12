@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "f5xc-api-mcp",
   "display_name": "F5 Distributed Cloud API",
-  "version": "2.0.2",
+  "version": "2.0.21-2601122132",
   "description": "MCP server for F5 Distributed Cloud API - AI-powered infrastructure management with 1548 tools across 38 domains",
   "long_description": "Enables AI assistants to manage F5 Distributed Cloud resources including HTTP load balancers, origin pools, WAF policies, DNS zones, and multi-cloud sites. Works in dual mode: documentation mode (no auth) or execution mode (with auth). Provides CURL examples for all API operations.",
   "author": {
@@ -30,7 +30,11 @@
   "license": "MIT",
   "compatibility": {
     "claude_desktop": ">=1.0.0",
-    "platforms": ["darwin", "win32", "linux"],
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
     "runtimes": {
       "node": ">=18.0.0"
     }
@@ -40,7 +44,9 @@
     "entry_point": "dist/index.js",
     "mcp_config": {
       "command": "node",
-      "args": ["${__dirname}/dist/index.js"],
+      "args": [
+        "${__dirname}/dist/index.js"
+      ],
       "env": {
         "F5XC_API_URL": "${user_config.f5xc_api_url}",
         "F5XC_API_TOKEN": "${user_config.f5xc_api_token}",
@@ -130,19 +136,27 @@
     {
       "name": "deploy-http-loadbalancer",
       "description": "Guided workflow for deploying HTTP Load Balancer with origin pool",
-      "arguments": ["namespace", "name"],
+      "arguments": [
+        "namespace",
+        "name"
+      ],
       "text": "Deploy an HTTP Load Balancer named ${arguments.name} in namespace ${arguments.namespace}"
     },
     {
       "name": "configure-waf",
       "description": "Guided workflow for configuring Web Application Firewall",
-      "arguments": ["namespace"],
+      "arguments": [
+        "namespace"
+      ],
       "text": "Configure WAF protection in namespace ${arguments.namespace}"
     },
     {
       "name": "create-multicloud-site",
       "description": "Guided workflow for deploying F5XC site in AWS/Azure/GCP",
-      "arguments": ["provider", "region"],
+      "arguments": [
+        "provider",
+        "region"
+      ],
       "text": "Create a multi-cloud site on ${arguments.provider} in ${arguments.region}"
     }
   ],
