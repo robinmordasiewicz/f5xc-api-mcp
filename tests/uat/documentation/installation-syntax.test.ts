@@ -175,10 +175,12 @@ describe("Installation Command Syntax Validation", () => {
       expect(pkg.version).toBe(manifest.version);
     });
 
-    it("should have valid semver format", () => {
+    it("should have valid version format", () => {
       const pkg = getPackageJson();
 
-      expect(pkg.version).toMatch(/^\d+\.\d+\.\d+$/);
+      // Accept both simple semver (2.0.2) and timestamped versions (2.0.21-2601122116)
+      // Format: MAJOR.MINOR.PATCH[-TIMESTAMP][-BETA]
+      expect(pkg.version).toMatch(/^\d+\.\d+\.\d+(-\d+)?(-[A-Z]+)?$/);
     });
   });
 
