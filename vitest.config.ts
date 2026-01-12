@@ -6,7 +6,17 @@ export default defineConfig({
   test: {
     // Test file patterns
     include: ["tests/**/*.test.ts", "tests/**/*.spec.ts"],
-    exclude: ["node_modules", "dist"],
+    exclude: [
+      "node_modules",
+      "dist",
+      // Exclude authenticated tests that require F5XC API credentials
+      // Run explicitly with npm run test:discover, test:errors, test:performance, test:workflows
+      "tests/acceptance/nferreira-tools-comprehensive.test.ts",
+      "tests/acceptance/error-scenarios.test.ts",
+      "tests/acceptance/performance-baseline.test.ts",
+      "tests/integration/network-failures.test.ts",
+      "tests/e2e/**/*.test.ts",
+    ],
 
     // Environment
     environment: "node",

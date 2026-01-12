@@ -495,7 +495,9 @@ async function validateDocumentationMode(tool: any, domain: string): Promise<voi
 // TEST SUITES BY DOMAIN
 // ============================================================================
 
-describe("F5XC API Comprehensive Tool Validation", () => {
+describe(
+  "F5XC API Comprehensive Tool Validation",
+  () => {
   // Generate test suites for each domain
   for (const domain of toolRegistry.domains) {
     describe(`domain: ${domain}`, () => {
