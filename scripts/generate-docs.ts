@@ -740,13 +740,9 @@ function updateMkDocsNavigation(
     // Read as text to preserve Python tags and other special YAML constructs
     const originalContent = readFileSync(configPath, "utf-8");
 
-    // Read getting-started .pages file for expanded navigation
-    const gettingStartedNav = readPagesFile(join(__dirname, "..", "docs", "getting-started"));
-
-    // Build complete nav structure
+    // Build complete nav structure (Getting Started section removed - consolidated into index.md)
     const completeNav = [
       { Home: "index.md" },
-      { "Getting Started": gettingStartedNav || ["getting-started/installation.md"] },
       { Tools: [{ Overview: "tools/index.md" }, ...navigation] },
     ];
 
