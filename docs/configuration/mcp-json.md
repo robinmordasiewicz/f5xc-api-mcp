@@ -25,7 +25,7 @@ Complete reference for MCP server configuration files.
     - Environment: `"environment"` (not `"env"`)
     - Requires: `"type": "local"` for stdio servers
 
-    See [OpenCode Setup](../getting-started/opencode.md) for examples.
+    See [OpenCode Configuration](../index.md#ide-configuration) for examples.
 
 ## Configuration Schema
 
