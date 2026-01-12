@@ -1,31 +1,33 @@
 # F5XC API MCP Server
 
-An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to AI assistants like Claude.
+An MCP server exposing F5 Distributed Cloud APIs to AI assistants like Claude.
 
 ## Features
 
-- **1,500+ API Tools** - Full coverage of F5XC API across 23 domains
+- **1,500+ API Tools** - Full F5XC API coverage across 23 domains
 - **Dynamic Discovery** - 6 meta-tools with 95%+ token savings
-- **Dual-Mode Operation** - Works with OR without authentication
-- **CURL Examples** - API documentation with curl commands
-- **Workflow Prompts** - Guided workflows for common tasks
+- **Dual-Mode** - Works with or without authentication
+- **CURL Examples** - API documentation with ready-to-use commands
 
-!!! tip "Token Efficiency"
-    The dynamic discovery architecture reduces initial token consumption from ~535K to ~500 tokens.
-    Schemas load on-demand at ~375 tokens per tool.
+## Requirements
 
-## Quick Install
+| Component | Version |
+|-----------|---------|
+| Node.js | 24.0+ (for npm/npx) |
+| Docker | 20.10+ (alternative) |
 
-=== "npx (Recommended)"
+## Installation
+
+=== "MCPB Bundle (Claude Desktop)"
+
+    1. Download `.mcpb` from [GitHub Releases](https://github.com/robinmordasiewicz/f5xc-api-mcp/releases)
+    2. Double-click or drag into Claude Desktop
+    3. Click **Install**
+
+=== "npx"
 
     ```bash
     npx @robinmordasiewicz/f5xc-api-mcp
-    ```
-
-=== "Docker"
-
-    ```bash
-    docker run -it ghcr.io/robinmordasiewicz/f5xc-api-mcp
     ```
 
 === "npm Global"
@@ -35,107 +37,105 @@ An MCP (Model Context Protocol) server that exposes F5 Distributed Cloud APIs to
     f5xc-api-mcp
     ```
 
+=== "Docker"
+
+    ```bash
+    docker pull ghcr.io/robinmordasiewicz/f5xc-api-mcp:latest
+    docker run -it ghcr.io/robinmordasiewicz/f5xc-api-mcp
+    ```
+
+=== "From Source"
+
+    ```bash
+    git clone https://github.com/robinmordasiewicz/f5xc-api-mcp.git
+    cd f5xc-api-mcp
+    npm install && npm run build && npm start
+    ```
+
+## IDE Configuration
+
+Configure your AI assistant to use the MCP server:
+
+| IDE | Config File | Guide |
+|-----|-------------|-------|
+| Claude Desktop | `~/Library/Application Support/Claude/claude_desktop_config.json` | [Setup](getting-started/claude-desktop.md) |
+| Claude Code | `.mcp.json` (project root) | [Setup](getting-started/claude-cli.md) |
+| VS Code | Via Cline/Continue extensions | [Setup](getting-started/vscode.md) |
+| Cursor | MCP settings | [Setup](getting-started/cursor.md) |
+| OpenCode | `opencode.json` | [Setup](getting-started/opencode.md) |
+
+**Basic MCP configuration:**
+
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"]
+    }
+  }
+}
+```
+
 ## Operating Modes
 
 ### Documentation Mode (Default)
 
-Works **without any credentials**. Ideal for exploring the API and understanding available operations.
+Works without credentials. Explore the API, view schemas, and get CURL examples.
 
-- OpenAPI spec documentation and schema information
-- API operation explanations and parameter descriptions
-- Request payload validation against schemas
-- CURL command examples
-- Dependency graphs and prerequisite guidance
+### Execution Mode
 
-### Execution Mode (Authenticated)
+Add credentials to execute API calls directly:
 
-Enabled when F5XC credentials are provided. Direct API execution.
+```json
+{
+  "mcpServers": {
+    "f5xc-api": {
+      "command": "npx",
+      "args": ["@robinmordasiewicz/f5xc-api-mcp"],
+      "env": {
+        "F5XC_API_URL": "https://your-tenant.console.ves.volterra.io",
+        "F5XC_API_TOKEN": "your-api-token"
+      }
+    }
+  }
+}
+```
 
-- All documentation mode features PLUS
-- Direct API CRUD operations against your tenant
-- Resource listing and retrieval
-- Configuration deployment
-- Real-time resource status queries
+See [Authentication](configuration/authentication.md) for P12 certificate and other options.
 
-!!! info "Authentication Options"
-    Configure credentials via environment variables or `.env` file.
-    See [Authentication Guide](configuration/authentication.md) for details.
+## Verification
 
-## Supported Resources
+Test the installation:
 
-| Domain | Resources |
-|--------|-----------|
-| **WAAP** | HTTP Load Balancer, Origin Pool, App Firewall, Rate Limiter |
-| **DNS** | DNS Zone, DNS Load Balancer, DNS LB Pool |
-| **Network** | Network Connector, Network Firewall, Enhanced Firewall Policy |
-| **Site** | AWS VPC Site, Azure VNet Site, GCP VPC Site, Customer Edge |
-| **AppStack** | K8s Cluster, Virtual K8s, Workload |
-| **Security** | Service Policy, WAF, Malicious User Detection |
-| **Core** | Namespace, Certificate, Cloud Credentials |
+```bash
+npx @robinmordasiewicz/f5xc-api-mcp --version
+```
 
-## IDE Support
+Or verify MCP protocol:
 
-Works with any MCP-compatible AI assistant:
+```bash
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"capabilities":{}}}' | npx @robinmordasiewicz/f5xc-api-mcp
+```
 
-<div class="grid cards" markdown>
+## Troubleshooting
 
-- :material-message-processing:{ .lg .middle } **Claude Desktop**
+**Node.js version too old:**
 
-    ---
+```bash
+node --version  # Must be 24+
+# macOS: brew install node@24
+# Linux: nvm install 24 && nvm use 24
+```
 
-    Native MCP support in Claude Desktop app
+**npm permission errors:**
 
-    [:octicons-arrow-right-24: Setup Guide](getting-started/claude-desktop.md)
+```bash
+npm install -g @robinmordasiewicz/f5xc-api-mcp --unsafe-perm
+```
 
-- :material-console:{ .lg .middle } **Claude Code**
+**Docker not running:**
 
-    ---
-
-    CLI-based Claude with full MCP capabilities
-
-    [:octicons-arrow-right-24: Setup Guide](getting-started/claude-cli.md)
-
-- :material-microsoft-visual-studio-code:{ .lg .middle } **VS Code**
-
-    ---
-
-    Via Cline or Continue extensions
-
-    [:octicons-arrow-right-24: Setup Guide](getting-started/vscode.md)
-
-- :material-cursor-default:{ .lg .middle } **Cursor**
-
-    ---
-
-    AI-first code editor with MCP support
-
-    [:octicons-arrow-right-24: Setup Guide](getting-started/cursor.md)
-
-- :material-code-tags:{ .lg .middle } **OpenCode**
-
-    ---
-
-    AI assistant with MCP support
-
-    [:octicons-arrow-right-24: Setup Guide](getting-started/opencode.md)
-
-</div>
-
-## Example Usage
-
-Ask Claude to help with F5XC infrastructure:
-
-> "Create an HTTP load balancer for my app at app.example.com with origin at 10.0.0.1:8080"
-
-Claude will use the MCP tools to:
-
-1. Show you the required configuration
-2. Provide CURL command examples
-3. Execute the API calls (if authenticated)
-
-## Next Steps
-
-- [Quick Start Guide](quickstart.md) - Get running in 5 minutes
-- [Installation](getting-started/installation.md) - Detailed installation options
-- [Authentication](configuration/authentication.md) - Configure API credentials
-- [Tools Reference](tools/index.md) - Browse available tools
+```bash
+docker info  # Verify Docker is running
+```
