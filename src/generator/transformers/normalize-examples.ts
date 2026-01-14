@@ -66,5 +66,7 @@ export function normalizeParameterExamples<T extends { description?: string }>(p
  * @returns True if "my-" prefixed examples are found
  */
 export function hasMyPrefixExamples(text: string): boolean {
-  return MY_PREFIX_PATTERN.test(text);
+  // Create new non-global regex for testing to avoid state pollution
+  // Global regex maintains lastIndex between calls
+  return /\bmy-(\w+)/.test(text);
 }

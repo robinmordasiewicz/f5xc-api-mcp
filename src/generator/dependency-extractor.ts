@@ -128,12 +128,24 @@ export function normalizeResourceType(resourceType: string): string {
  *
  * @param schema - OpenAPI schema object to traverse
  * @param currentPath - Current JSON path (for fieldPath tracking)
+ * @param depth - Current recursion depth (for cycle detection)
+ * @param maxDepth - Maximum allowed recursion depth (default: 20)
  * @returns Array of resource references found
+ * @throws Error if maxDepth is exceeded
  */
 export function extractRefPatterns(
   schema: Record<string, unknown>,
-  currentPath = ""
+  currentPath = "",
+  depth = 0,
+  maxDepth = 20
 ): ResourceReference[] {
+  // Depth protection
+  if (depth > maxDepth) {
+    throw new Error(
+      `Schema nesting exceeds maximum depth of ${maxDepth} at path: ${currentPath || "root"}`
+    );
+  }
+
   const references: ResourceReference[] = [];
 
   if (!schema || typeof schema !== "object") {
@@ -165,7 +177,12 @@ export function extractRefPatterns(
     for (const [propName, propSchema] of Object.entries(properties)) {
       if (typeof propSchema === "object" && propSchema !== null) {
         const propPath = currentPath ? `${currentPath}.${propName}` : propName;
-        const propRefs = extractRefPatterns(propSchema as Record<string, unknown>, propPath);
+        const propRefs = extractRefPatterns(
+          propSchema as Record<string, unknown>,
+          propPath,
+          depth + 1,
+          maxDepth
+        );
 
         // Mark as required if in parent's required array
         for (const ref of propRefs) {
@@ -184,7 +201,9 @@ export function extractRefPatterns(
     for (const [index, item] of schema.allOf.entries()) {
       if (typeof item === "object" && item !== null) {
         const allOfPath = currentPath ? `${currentPath}.allOf[${index}]` : `allOf[${index}]`;
-        references.push(...extractRefPatterns(item as Record<string, unknown>, allOfPath));
+        references.push(
+          ...extractRefPatterns(item as Record<string, unknown>, allOfPath, depth + 1, maxDepth)
+        );
       }
     }
   }
@@ -194,7 +213,12 @@ export function extractRefPatterns(
     for (const [index, item] of schema.oneOf.entries()) {
       if (typeof item === "object" && item !== null) {
         const oneOfPath = currentPath ? `${currentPath}.oneOf[${index}]` : `oneOf[${index}]`;
-        const oneOfRefs = extractRefPatterns(item as Record<string, unknown>, oneOfPath);
+        const oneOfRefs = extractRefPatterns(
+          item as Record<string, unknown>,
+          oneOfPath,
+          depth + 1,
+          maxDepth
+        );
         // Mark oneOf refs as supporting inline definitions
         for (const ref of oneOfRefs) {
           ref.inline = true;
@@ -209,7 +233,12 @@ export function extractRefPatterns(
     for (const [index, item] of schema.anyOf.entries()) {
       if (typeof item === "object" && item !== null) {
         const anyOfPath = currentPath ? `${currentPath}.anyOf[${index}]` : `anyOf[${index}]`;
-        const anyOfRefs = extractRefPatterns(item as Record<string, unknown>, anyOfPath);
+        const anyOfRefs = extractRefPatterns(
+          item as Record<string, unknown>,
+          anyOfPath,
+          depth + 1,
+          maxDepth
+        );
         for (const ref of anyOfRefs) {
           ref.inline = true;
         }
@@ -221,7 +250,9 @@ export function extractRefPatterns(
   // Handle items (arrays)
   if ("items" in schema && typeof schema.items === "object" && schema.items !== null) {
     const itemsPath = currentPath ? `${currentPath}[]` : "[]";
-    references.push(...extractRefPatterns(schema.items as Record<string, unknown>, itemsPath));
+    references.push(
+      ...extractRefPatterns(schema.items as Record<string, unknown>, itemsPath, depth + 1, maxDepth)
+    );
   }
 
   // Handle additionalProperties
@@ -232,7 +263,12 @@ export function extractRefPatterns(
   ) {
     const addPropsPath = currentPath ? `${currentPath}[*]` : "[*]";
     references.push(
-      ...extractRefPatterns(schema.additionalProperties as Record<string, unknown>, addPropsPath)
+      ...extractRefPatterns(
+        schema.additionalProperties as Record<string, unknown>,
+        addPropsPath,
+        depth + 1,
+        maxDepth
+      )
     );
   }
 

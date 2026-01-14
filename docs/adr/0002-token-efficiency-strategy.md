@@ -1,0 +1,137 @@
+# ADR-0002: Token Efficiency Strategy
+
+**Status**: Accepted
+**Date**: 2025-01
+**Deciders**: Project maintainers
+
+## Context and Problem Statement
+
+While the dynamic discovery pattern (ADR-0001) solved the initial context window problem by reducing upfront token usage by 95%+, the server still needs to process large OpenAPI specifications and handle complex tool operations. Without additional optimization strategies, individual operations can consume excessive tokens, limiting the number of operations possible within a single conversation and increasing API costs.
+
+How can we minimize token consumption across all server operations while maintaining functionality and user experience?
+
+## Decision Drivers
+
+* Token limits - Operations must fit within conversation context budgets
+* API costs - Minimize token usage to reduce operational expenses
+* Performance - Token optimization should not significantly impact response time
+* Maintainability - Compression strategies should not sacrifice code readability
+* User experience - Output must remain clear and actionable despite compression
+
+## Considered Options
+
+1. **No Additional Optimization**: Rely solely on dynamic discovery
+2. **Aggressive Compression**: Maximize token reduction at all costs
+3. **Balanced Optimization**: Strategic compression with quality preservation
+
+## Decision Outcome
+
+Chosen option: "**Balanced Optimization**", because it achieves significant token savings (30-50% reduction) while preserving information quality and maintaining code clarity.
+
+### Positive Consequences
+
+* **30-50% Token Reduction**: Additional savings beyond dynamic discovery
+* **Cost Efficiency**: Lower API costs for typical operations
+* **Extended Conversations**: More operations possible within context limits
+* **Code Quality**: Optimization doesn't compromise maintainability
+* **Preserved Clarity**: Users receive clear, actionable information
+
+### Negative Consequences
+
+* **Implementation Overhead**: Requires careful optimization in multiple areas
+* **Testing Complexity**: Must verify compressed output maintains quality
+* **Learning Curve**: Developers must understand optimization strategies
+
+## Pros and Cons of the Options
+
+### No Additional Optimization
+
+* **Good**: Simple implementation, no complexity
+* **Good**: No risk of over-compression
+* **Bad**: Higher token costs per operation
+* **Bad**: Fewer operations possible per conversation
+* **Bad**: Competitive disadvantage vs optimized alternatives
+
+### Aggressive Compression
+
+* **Good**: Maximum token savings (60-80% reduction)
+* **Good**: Lowest possible API costs
+* **Bad**: Potential information loss or confusion
+* **Bad**: Difficult to maintain and debug
+* **Bad**: Poor user experience with cryptic output
+
+### Balanced Optimization
+
+* **Good**: Significant savings (30-50%) with quality preservation
+* **Good**: Maintains code readability and maintainability
+* **Good**: Clear, actionable output for users
+* **Good**: Strategic optimization in high-impact areas
+* **Bad**: Requires careful implementation and testing
+* **Bad**: Not maximum possible savings
+
+## Implementation Details
+
+### Optimization Strategies
+
+1. **Schema Simplification**
+   * Remove verbose descriptions from runtime
+   * Strip unnecessary metadata
+   * Compress example payloads
+   * Deduplicate schema patterns
+
+2. **Response Optimization**
+   * Structured output formats (tables, lists)
+   * Concise error messages
+   * Minimal boilerplate text
+   * Focus on actionable information
+
+3. **Caching Strategy**
+   * Cache schema resolution results
+   * Cache search index structures
+   * Cache tool metadata
+   * Reduce repeated processing
+
+4. **Selective Detail**
+   * Full detail only when requested
+   * Summary views by default
+   * Progressive disclosure patterns
+   * Context-aware verbosity
+
+### Token Budget Allocation
+
+```
+Typical Operation Budget: 10,000 tokens
+├─ Tool Discovery: ~500 tokens (5%)
+├─ Schema Description: ~2,000 tokens (20%)
+├─ Execution Context: ~1,500 tokens (15%)
+├─ Error Handling: ~500 tokens (5%)
+├─ User Communication: ~1,000 tokens (10%)
+└─ Reserve Buffer: ~4,500 tokens (45%)
+```
+
+### Measurement and Monitoring
+
+* Track token usage per operation type
+* Monitor compression ratios
+* Measure user satisfaction with output clarity
+* Identify optimization opportunities
+* Validate quality preservation
+
+### Quality Gates
+
+1. **Information Completeness**: All critical data preserved
+2. **Clarity Threshold**: Users can take action without confusion
+3. **Error Rate**: No increase in user errors due to compression
+4. **Performance**: No degradation in response times
+
+## Links
+
+* Related: [ADR-0001: Dynamic Discovery Pattern](0001-dynamic-discovery-pattern.md)
+* Implementation: `src/tools/`, `src/generator/`
+* Issue: [#14 Token Efficiency Implementation](https://github.com/robinmordasiewicz/f5xc-api-mcp/issues/14)
+
+## Notes
+
+This strategy complements the dynamic discovery pattern by optimizing token usage at the operation level. Together, these approaches enable the server to provide access to 1,548+ tools while remaining practical and cost-effective for typical usage patterns.
+
+The 30-50% reduction applies to individual operations after initial discovery, resulting in compound savings when combined with the 95%+ reduction from dynamic discovery.

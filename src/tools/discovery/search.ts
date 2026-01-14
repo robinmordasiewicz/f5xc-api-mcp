@@ -4,13 +4,35 @@
  * Tool Search Implementation
  *
  * Provides natural language search across the tool index.
- * Uses lightweight text matching for efficient discovery.
+ * Uses inverted index for O(log n) lookups with fuzzy matching support.
  */
 
 import type { ToolIndexEntry, SearchResult, SearchOptions } from "./types.js";
 import { getToolIndex } from "./index-loader.js";
 import { getPrerequisiteResources } from "./dependencies.js";
 import { getResourceMetadata } from "../../generator/domain-metadata.js";
+import {
+  buildSearchIndex,
+  searchIndex as searchInvertedIndex,
+  filterByDomain,
+  filterByOperation,
+  type SearchIndex,
+} from "./search-index.js";
+
+// Global search index instance (initialized on first search)
+let globalSearchIndex: SearchIndex | null = null;
+
+/**
+ * Get or build the search index
+ * Lazy-loads and caches the index for performance
+ */
+function getSearchIndex(): SearchIndex {
+  if (!globalSearchIndex) {
+    const toolIndex = getToolIndex();
+    globalSearchIndex = buildSearchIndex(toolIndex.tools);
+  }
+  return globalSearchIndex;
+}
 
 /**
  * Normalize text for search matching
@@ -30,79 +52,6 @@ function tokenize(text: string): string[] {
   return normalizeText(text)
     .split(/\s+/)
     .filter((term) => term.length > 1);
-}
-
-/**
- * Calculate relevance score between query and tool
- */
-function calculateScore(
-  query: string,
-  tool: ToolIndexEntry
-): { score: number; matchedTerms: string[] } {
-  const queryTerms = tokenize(query);
-  const matchedTerms: string[] = [];
-
-  if (queryTerms.length === 0) {
-    return { score: 0, matchedTerms };
-  }
-
-  // Build searchable text from tool
-  const toolText = [tool.name, tool.domain, tool.resource, tool.operation, tool.summary].join(" ");
-
-  const normalizedToolText = normalizeText(toolText);
-  const toolTerms = new Set(tokenize(toolText));
-
-  let matchCount = 0;
-
-  for (const queryTerm of queryTerms) {
-    // Exact term match
-    if (toolTerms.has(queryTerm)) {
-      matchCount += 1;
-      matchedTerms.push(queryTerm);
-      continue;
-    }
-
-    // Partial match (query term contained in tool text)
-    if (normalizedToolText.includes(queryTerm)) {
-      matchCount += 0.7;
-      matchedTerms.push(queryTerm);
-      continue;
-    }
-
-    // Check if any tool term starts with query term (prefix match)
-    for (const toolTerm of toolTerms) {
-      if (toolTerm.startsWith(queryTerm)) {
-        matchCount += 0.5;
-        matchedTerms.push(queryTerm);
-        break;
-      }
-    }
-  }
-
-  // Boost scores for specific matches
-  let score = matchCount / queryTerms.length;
-
-  // Boost for domain match
-  if (normalizeText(tool.domain).includes(normalizeText(query.split(" ")[0] || ""))) {
-    score *= 1.2;
-  }
-
-  // Boost for operation match
-  const operationTerms = ["create", "get", "list", "update", "delete", "patch"];
-  for (const opTerm of operationTerms) {
-    if (query.toLowerCase().includes(opTerm) && tool.operation === opTerm) {
-      score *= 1.3;
-      break;
-    }
-  }
-
-  // Boost for resource match
-  if (normalizeText(tool.resource).includes(normalizeText(query))) {
-    score *= 1.4;
-  }
-
-  // Cap score at 1.0
-  return { score: Math.min(score, 1), matchedTerms: [...new Set(matchedTerms)] };
 }
 
 /**
@@ -132,36 +81,78 @@ export function searchTools(query: string, options: SearchOptions = {}): SearchR
     includeDependencies,
   } = options;
 
-  const index = getToolIndex();
-  let tools = index.tools;
+  // Get search index for O(log n) lookups
+  const searchIdx = getSearchIndex();
+  const queryTerms = tokenize(query);
 
-  // Apply domain filter
+  // Use inverted index for initial search (O(log n) instead of O(n))
+  const indexScores = searchInvertedIndex(searchIdx, queryTerms);
+
+  // Apply domain filter using inverted index
+  let candidateToolIds: Set<string> | null = null;
   if (domains && domains.length > 0) {
-    const domainSet = new Set(domains.map((d) => d.toLowerCase()));
-    tools = tools.filter((t) => domainSet.has(t.domain.toLowerCase()));
+    candidateToolIds = filterByDomain(searchIdx, domains);
   }
 
-  // Apply operation filter
+  // Apply operation filter using inverted index
   if (operations && operations.length > 0) {
-    const opSet = new Set(operations.map((o) => o.toLowerCase()));
-    tools = tools.filter((t) => opSet.has(t.operation.toLowerCase()));
-  }
-
-  // Phase A: Apply danger level filter
-  if (excludeDangerous) {
-    tools = tools.filter((t) => t.dangerLevel !== "high");
-  }
-
-  // Phase A: Apply deprecation filter
-  if (excludeDeprecated) {
-    tools = tools.filter((t) => !t.isDeprecated);
+    const opFilteredIds = filterByOperation(searchIdx, operations);
+    if (candidateToolIds) {
+      // Intersection with domain filter
+      candidateToolIds = new Set([...candidateToolIds].filter((id) => opFilteredIds.has(id)));
+    } else {
+      candidateToolIds = opFilteredIds;
+    }
   }
 
   // Score and rank tools
   const results: SearchResult[] = [];
 
-  for (const tool of tools) {
-    const { score, matchedTerms } = calculateScore(query, tool);
+  for (const [toolId, baseScore] of indexScores) {
+    // Apply filter restrictions
+    if (candidateToolIds && !candidateToolIds.has(toolId)) {
+      continue;
+    }
+
+    const tool = searchIdx.toolsById.get(toolId);
+    if (!tool) continue;
+
+    // Phase A: Apply danger level filter
+    if (excludeDangerous && tool.dangerLevel === "high") {
+      continue;
+    }
+
+    // Phase A: Apply deprecation filter
+    if (excludeDeprecated && tool.isDeprecated) {
+      continue;
+    }
+
+    // Calculate final score with boosts
+    let score = baseScore / queryTerms.length; // Normalize by query length
+    const matchedTerms = queryTerms;
+
+    // Apply boost factors from original implementation
+    // Boost for domain match
+    if (normalizeText(tool.domain).includes(normalizeText(query.split(" ")[0] || ""))) {
+      score *= 1.2;
+    }
+
+    // Boost for operation match
+    const operationTerms = ["create", "get", "list", "update", "delete", "patch"];
+    for (const opTerm of operationTerms) {
+      if (query.toLowerCase().includes(opTerm) && tool.operation === opTerm) {
+        score *= 1.3;
+        break;
+      }
+    }
+
+    // Boost for resource match
+    if (normalizeText(tool.resource).includes(normalizeText(query))) {
+      score *= 1.4;
+    }
+
+    // Cap score at 1.0
+    score = Math.min(score, 1);
 
     if (score >= minScore) {
       const result: SearchResult = { tool, score, matchedTerms };
@@ -203,20 +194,43 @@ export function searchTools(query: string, options: SearchOptions = {}): SearchR
 }
 
 /**
- * Get tools by exact domain
+ * Get tools by exact domain (O(1) using index)
  */
 export function getToolsByDomain(domain: string): ToolIndexEntry[] {
-  const index = getToolIndex();
-  return index.tools.filter((t) => t.domain.toLowerCase() === domain.toLowerCase());
+  const searchIdx = getSearchIndex();
+  const toolIds = filterByDomain(searchIdx, [domain]);
+
+  const results: ToolIndexEntry[] = [];
+  for (const toolId of toolIds) {
+    const tool = searchIdx.toolsById.get(toolId);
+    if (tool) {
+      results.push(tool);
+    }
+  }
+
+  return results;
 }
 
 /**
- * Get tools by resource name
+ * Get tools by resource name (O(log n) using index search)
  */
 export function getToolsByResource(resource: string): ToolIndexEntry[] {
-  const index = getToolIndex();
+  const searchIdx = getSearchIndex();
   const normalizedResource = normalizeText(resource);
-  return index.tools.filter((t) => normalizeText(t.resource).includes(normalizedResource));
+  const resourceTerms = tokenize(normalizedResource);
+
+  // Search index for resource terms
+  const toolScores = searchInvertedIndex(searchIdx, resourceTerms);
+
+  const results: ToolIndexEntry[] = [];
+  for (const toolId of toolScores.keys()) {
+    const tool = searchIdx.toolsById.get(toolId);
+    if (tool && normalizeText(tool.resource).includes(normalizedResource)) {
+      results.push(tool);
+    }
+  }
+
+  return results;
 }
 
 /**
