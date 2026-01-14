@@ -1,0 +1,234 @@
+# ADR-0004: External Authentication Package
+
+**Status**: Accepted
+**Date**: 2025-01
+**Deciders**: Project maintainers
+
+## Context and Problem Statement
+
+The F5 XC API MCP server requires authentication capabilities to make actual API calls to
+F5 Distributed Cloud tenants. Authentication involves:
+
+- Managing API tokens and tenant URLs
+- Handling token expiration and renewal
+- Supporting multiple authentication profiles
+- Providing HTTP client functionality with authentication
+- Maintaining secure credential storage
+
+Should this authentication logic be embedded in the MCP server, or extracted to a separate reusable package?
+
+## Decision Drivers
+
+- Code Reusability - Authentication logic useful for other F5 XC tools
+- Separation of Concerns - Authentication is distinct from MCP server logic
+- Security - Dedicated focus on credential management and security
+- Maintainability - Easier to test and update independently
+- Multi-Project Use - Other projects need similar authentication
+
+## Considered Options
+
+1. **Embedded Authentication**: Implement directly in MCP server codebase
+2. **External Package**: Create separate npm package for authentication
+3. **Third-Party Library**: Use existing generic API authentication library
+
+## Decision Outcome
+
+Chosen option: "**External Package**" (`@robinmordasiewicz/f5xc-auth`), because it provides
+clean separation of concerns, enables reuse across projects, and allows focused security
+maintenance.
+
+### Positive Consequences
+
+- **Reusability**: Multiple projects can use the same authentication package
+- **Maintainability**: Authentication updates don't require MCP server changes
+- **Security Focus**: Dedicated package for credential security
+- **Testing**: Independent test suite for authentication logic
+- **Clean Architecture**: Clear boundary between auth and MCP concerns
+- **Versioning**: Independent semantic versioning for auth changes
+
+### Negative Consequences
+
+- **Additional Dependency**: MCP server depends on external package
+- **Coordination**: Updates require coordination across repositories
+- **Documentation**: Must document both packages
+- **Development Overhead**: Maintaining separate repository
+
+## Pros and Cons of the Options
+
+### Embedded Authentication
+
+- **Good**: All code in one repository
+- **Good**: No external dependency management
+- **Good**: Easier initial development
+- **Bad**: No reusability across projects
+- **Bad**: Mixes authentication and MCP concerns
+- **Bad**: Harder to test authentication independently
+- **Bad**: Security updates affect entire MCP server
+
+### External Package
+
+- **Good**: Clean separation of concerns
+- **Good**: Reusable across multiple projects
+- **Good**: Independent security updates
+- **Good**: Focused testing and maintenance
+- **Bad**: Additional repository to maintain
+- **Bad**: Coordination overhead
+- **Bad**: Dependency management complexity
+
+### Third-Party Library
+
+- **Good**: No maintenance burden
+- **Good**: Community support and updates
+- **Bad**: No generic library for F5 XC API specifics
+- **Bad**: Would require custom wrapper regardless
+- **Bad**: Less control over authentication flow
+- **Bad**: May not support profile management
+
+## Implementation Details
+
+### Package Responsibilities
+
+**@robinmordasiewicz/f5xc-auth**:
+
+- F5 XC authentication configuration
+- API token management
+- Tenant URL handling
+- Profile storage and switching
+- HTTP client with authentication
+- Token refresh logic
+
+**f5xc-api-mcp (this server)**:
+
+- MCP protocol implementation
+- Tool discovery and execution
+- OpenAPI spec processing
+- Result formatting
+- User interaction
+
+### Package Interface
+
+```typescript
+// Authentication status and configuration
+export function getAuthStatus(): AuthStatus;
+export function configureAuth(config: AuthConfig): Promise<void>;
+export function listProfiles(): string[];
+export function setActiveProfile(name: string): void;
+
+// HTTP client with authentication
+export class HttpClient {
+  constructor(config?: HttpClientConfig);
+  get(url: string, options?: RequestOptions): Promise<Response>;
+  post(url: string, body: unknown, options?: RequestOptions): Promise<Response>;
+  put(url: string, body: unknown, options?: RequestOptions): Promise<Response>;
+  delete(url: string, options?: RequestOptions): Promise<Response>;
+}
+
+// Types
+export interface AuthStatus {
+  isAuthenticated: boolean;
+  tenantUrl?: string;
+  profileName?: string;
+}
+
+export interface AuthConfig {
+  tenantUrl: string;
+  apiToken: string;
+  profileName?: string;
+}
+```
+
+### Integration Pattern
+
+```typescript
+// In MCP server
+import { getAuthStatus, HttpClient } from '@robinmordasiewicz/f5xc-auth';
+
+async function executeTool(toolName: string, params: unknown) {
+  const authStatus = getAuthStatus();
+
+  if (!authStatus.isAuthenticated) {
+    return generateDocumentationResponse(toolName, params);
+  }
+
+  // Authenticated mode - make actual API call
+  const client = new HttpClient();
+  const response = await client.get(buildApiUrl(toolName, params));
+
+  return formatApiResponse(response);
+}
+```
+
+### Security Considerations
+
+**Package Responsibilities**:
+
+- Secure credential storage (OS keychain integration)
+- Token encryption at rest
+- No token logging or exposure
+- Profile isolation
+- Credential validation
+
+**MCP Server Responsibilities**:
+
+- Never store or log credentials
+- Use package APIs exclusively
+- Delegate all auth to package
+- Clear error messages without exposing secrets
+
+### Version Management
+
+```json
+// package.json
+{
+  "dependencies": {
+    "@robinmordasiewicz/f5xc-auth": "^1.0.0"
+  }
+}
+```
+
+Semantic versioning strategy:
+
+- **Major**: Breaking API changes
+- **Minor**: New features, non-breaking
+- **Patch**: Bug fixes, security updates
+
+### Testing Strategy
+
+**Package Tests** (in @robinmordasiewicz/f5xc-auth):
+
+- Unit tests for authentication logic
+- Integration tests with mock F5 XC API
+- Security tests for credential handling
+- Profile management tests
+
+**MCP Server Tests** (this repository):
+
+- Mock authentication package for testing
+- Test both authenticated and documentation modes
+- Integration tests with real auth flow
+- Error handling tests
+
+## Links
+
+- Related: [ADR-0003: Dual-Mode Operation Design](0003-dual-mode-operation.md)
+- Package Repository: [@robinmordasiewicz/f5xc-auth](https://github.com/robinmordasiewicz/f5xc-auth)
+- Implementation: `src/tools/discovery/execute.ts`, `src/server.ts`
+- Issue: [#16 External Authentication Integration](https://github.com/robinmordasiewicz/f5xc-api-mcp/issues/16)
+
+## Notes
+
+The external authentication package enables clean architecture and code reuse. Other F5 XC
+tooling projects (CLI tools, CI/CD integrations, monitoring tools) can leverage the same
+authentication logic.
+
+This separation also enables security-focused maintenance of the authentication package
+without requiring MCP server updates, improving the security posture of all dependent
+projects.
+
+Future considerations:
+
+- OAuth flow support for interactive authentication
+- Service account credential types
+- Multi-tenant support (switching between tenants)
+- Credential rotation automation
+- Integration with secret management systems (Vault, AWS Secrets Manager)

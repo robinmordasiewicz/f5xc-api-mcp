@@ -1,0 +1,54 @@
+# Architecture Decision Records (ADRs)
+
+This directory contains Architecture Decision Records (ADRs) documenting significant design
+decisions made in the F5 XC API MCP Server project.
+
+## What are ADRs?
+
+Architecture Decision Records document the key architectural decisions made throughout a project's lifecycle, including:
+
+- The context and problem being addressed
+- The decision that was made
+- The consequences of that decision
+- Alternative options that were considered
+
+## ADR Index
+
+| ADR | Title | Status | Date |
+|-----|-------|--------|------|
+| [0001](0001-dynamic-discovery-pattern.md) | Dynamic Discovery Pattern | Accepted | 2025-01 |
+| [0002](0002-token-efficiency-strategy.md) | Token Efficiency Strategy | Accepted | 2025-01 |
+| [0003](0003-dual-mode-operation.md) | Dual-Mode Operation Design | Accepted | 2025-01 |
+| [0004](0004-external-auth-package.md) | External Authentication Package | Accepted | 2025-01 |
+| [0005](0005-generator-architecture.md) | Generator Architecture | Accepted | 2025-01 |
+
+## Status Definitions
+
+- **Proposed**: Decision is under consideration
+- **Accepted**: Decision has been approved and implemented
+- **Deprecated**: Decision is no longer recommended
+- **Superseded**: Decision has been replaced by a newer ADR
+
+## Creating a New ADR
+
+1. Copy the [template](template.md)
+2. Number it sequentially (e.g., 0006)
+3. Fill in all sections with clear, concise information
+4. Submit as part of your PR
+5. Update this index
+
+## ADR Format
+
+We use the MADR (Markdown Architecture Decision Records) format with the following structure:
+
+1. **Title**: Brief, descriptive title
+2. **Status**: Proposed, Accepted, Deprecated, or Superseded
+3. **Context**: Background and problem statement
+4. **Decision**: The choice that was made
+5. **Consequences**: Positive and negative outcomes
+6. **Alternatives Considered**: Other options evaluated
+
+## References
+
+- [MADR Template](https://adr.github.io/madr/)
+- [Architecture Decision Records](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
