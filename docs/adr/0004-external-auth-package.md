@@ -6,7 +6,8 @@
 
 ## Context and Problem Statement
 
-The F5 XC API MCP server requires authentication capabilities to make actual API calls to F5 Distributed Cloud tenants. Authentication involves:
+The F5 XC API MCP server requires authentication capabilities to make actual API calls to
+F5 Distributed Cloud tenants. Authentication involves:
 
 - Managing API tokens and tenant URLs
 - Handling token expiration and renewal
@@ -32,7 +33,9 @@ Should this authentication logic be embedded in the MCP server, or extracted to 
 
 ## Decision Outcome
 
-Chosen option: "**External Package**" (`@robinmordasiewicz/f5xc-auth`), because it provides clean separation of concerns, enables reuse across projects, and allows focused security maintenance.
+Chosen option: "**External Package**" (`@robinmordasiewicz/f5xc-auth`), because it provides
+clean separation of concerns, enables reuse across projects, and allows focused security
+maintenance.
 
 ### Positive Consequences
 
@@ -214,9 +217,13 @@ Semantic versioning strategy:
 
 ## Notes
 
-The external authentication package enables clean architecture and code reuse. Other F5 XC tooling projects (CLI tools, CI/CD integrations, monitoring tools) can leverage the same authentication logic.
+The external authentication package enables clean architecture and code reuse. Other F5 XC
+tooling projects (CLI tools, CI/CD integrations, monitoring tools) can leverage the same
+authentication logic.
 
-This separation also enables security-focused maintenance of the authentication package without requiring MCP server updates, improving the security posture of all dependent projects.
+This separation also enables security-focused maintenance of the authentication package
+without requiring MCP server updates, improving the security posture of all dependent
+projects.
 
 Future considerations:
 

@@ -6,7 +6,9 @@
 
 ## Context and Problem Statement
 
-The F5 XC API comprises 1,548 tools across 39 domains. Loading all tool definitions upfront into the MCP context would consume ~535,000 tokens, making the server unusable with current LLM context limits and creating prohibitive costs.
+The F5 XC API comprises 1,548 tools across 39 domains. Loading all tool definitions upfront
+into the MCP context would consume ~535,000 tokens, making the server unusable with current
+LLM context limits and creating prohibitive costs.
 
 How can we provide access to all F5 XC API tools while remaining within practical token limits?
 
@@ -26,7 +28,8 @@ How can we provide access to all F5 XC API tools while remaining within practica
 
 ## Decision Outcome
 
-Chosen option: "**Dynamic Discovery with Meta-Tools**", because it provides the best balance of token efficiency (95%+ reduction), user experience, and scalability.
+Chosen option: "**Dynamic Discovery with Meta-Tools**", because it provides the best balance
+of token efficiency (95%+ reduction), user experience, and scalability.
 
 ### Positive Consequences
 
@@ -89,7 +92,7 @@ Chosen option: "**Dynamic Discovery with Meta-Tools**", because it provides the 
 
 ### Discovery Workflow
 
-```
+```text
 User Query → search-tools → Results with Scores
                 ↓
          describe-tool → Full Schema
@@ -112,6 +115,9 @@ User Query → search-tools → Results with Scores
 
 ## Notes
 
-This decision enabled the F5 XC API MCP server to be practical and usable. Without dynamic discovery, the project would be limited to a small subset of tools or require completely different architecture approaches.
+This decision enabled the F5 XC API MCP server to be practical and usable. Without dynamic
+discovery, the project would be limited to a small subset of tools or require completely
+different architecture approaches.
 
-The 95%+ token reduction makes the server cost-effective and enables natural conversational interactions with LLMs while maintaining access to the full API surface.
+The 95%+ token reduction makes the server cost-effective and enables natural conversational
+interactions with LLMs while maintaining access to the full API surface.

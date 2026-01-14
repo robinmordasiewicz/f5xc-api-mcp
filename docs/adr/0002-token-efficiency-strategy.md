@@ -6,7 +6,11 @@
 
 ## Context and Problem Statement
 
-While the dynamic discovery pattern (ADR-0001) solved the initial context window problem by reducing upfront token usage by 95%+, the server still needs to process large OpenAPI specifications and handle complex tool operations. Without additional optimization strategies, individual operations can consume excessive tokens, limiting the number of operations possible within a single conversation and increasing API costs.
+While the dynamic discovery pattern (ADR-0001) solved the initial context window problem by
+reducing upfront token usage by 95%+, the server still needs to process large OpenAPI
+specifications and handle complex tool operations. Without additional optimization strategies,
+individual operations can consume excessive tokens, limiting the number of operations possible
+within a single conversation and increasing API costs.
 
 How can we minimize token consumption across all server operations while maintaining functionality and user experience?
 
@@ -26,7 +30,8 @@ How can we minimize token consumption across all server operations while maintai
 
 ## Decision Outcome
 
-Chosen option: "**Balanced Optimization**", because it achieves significant token savings (30-50% reduction) while preserving information quality and maintaining code clarity.
+Chosen option: "**Balanced Optimization**", because it achieves significant token savings
+(30-50% reduction) while preserving information quality and maintaining code clarity.
 
 ### Positive Consequences
 
@@ -99,7 +104,7 @@ Chosen option: "**Balanced Optimization**", because it achieves significant toke
 
 ### Token Budget Allocation
 
-```
+```text
 Typical Operation Budget: 10,000 tokens
 ├─ Tool Discovery: ~500 tokens (5%)
 ├─ Schema Description: ~2,000 tokens (20%)
@@ -132,6 +137,9 @@ Typical Operation Budget: 10,000 tokens
 
 ## Notes
 
-This strategy complements the dynamic discovery pattern by optimizing token usage at the operation level. Together, these approaches enable the server to provide access to 1,548+ tools while remaining practical and cost-effective for typical usage patterns.
+This strategy complements the dynamic discovery pattern by optimizing token usage at the
+operation level. Together, these approaches enable the server to provide access to 1,548+
+tools while remaining practical and cost-effective for typical usage patterns.
 
-The 30-50% reduction applies to individual operations after initial discovery, resulting in compound savings when combined with the 95%+ reduction from dynamic discovery.
+The 30-50% reduction applies to individual operations after initial discovery, resulting in
+compound savings when combined with the 95%+ reduction from dynamic discovery.

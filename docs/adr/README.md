@@ -1,6 +1,7 @@
 # Architecture Decision Records (ADRs)
 
-This directory contains Architecture Decision Records (ADRs) documenting significant design decisions made in the F5 XC API MCP Server project.
+This directory contains Architecture Decision Records (ADRs) documenting significant design
+decisions made in the F5 XC API MCP Server project.
 
 ## What are ADRs?
 

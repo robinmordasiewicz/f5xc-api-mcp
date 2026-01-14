@@ -6,7 +6,9 @@
 
 ## Context and Problem Statement
 
-The F5 XC API comprises 1,548 tools across 39 domains, each with complex request/response schemas, dependencies, and validation rules. Manually creating and maintaining MCP tool definitions for this API surface would be:
+The F5 XC API comprises 1,548 tools across 39 domains, each with complex request/response
+schemas, dependencies, and validation rules. Manually creating and maintaining MCP tool
+definitions for this API surface would be:
 
 1. Prohibitively time-consuming (months of manual work)
 2. Error-prone (inconsistencies across tools)
@@ -32,7 +34,9 @@ How can we efficiently create and maintain accurate MCP tool definitions for a l
 
 ## Decision Outcome
 
-Chosen option: "**Sophisticated Generator Pipeline**", because it provides accurate, maintainable tool generation with proper dependency extraction, schema resolution, and validation.
+Chosen option: "**Sophisticated Generator Pipeline**", because it provides accurate,
+maintainable tool generation with proper dependency extraction, schema resolution, and
+validation.
 
 ### Positive Consequences
 
@@ -86,7 +90,7 @@ Chosen option: "**Sophisticated Generator Pipeline**", because it provides accur
 
 ### Generator Pipeline Stages
 
-```
+```text
 Stage 1: OpenAPI Spec Loading
 ├─ Load 39 domain OpenAPI specs
 ├─ Validate spec format and structure
@@ -119,7 +123,7 @@ Stage 5: Validation & Output
 
 ### Directory Structure
 
-```
+```text
 src/generator/
 ├── index.ts                    # Main generator orchestration
 ├── spec-loader.ts              # OpenAPI spec loading
@@ -140,6 +144,7 @@ src/tools/generated/
 ### Key Generator Components
 
 **1. Schema Loader** (`schema-loader.ts`):
+
 * Resolves OpenAPI $ref pointers
 * Handles nested schema references
 * Detects circular references
@@ -147,6 +152,7 @@ src/tools/generated/
 * Enforces max depth limits (20 levels)
 
 **2. Dependency Extractor** (`dependency-extractor.ts`):
+
 * Parses resource references from schemas
 * Extracts oneOf field patterns (x-ves-oneof-field)
 * Maps resources to subscription tiers
@@ -154,6 +160,7 @@ src/tools/generated/
 * Builds resource dependency graphs
 
 **3. Tool Generator** (`tool-generator.ts`):
+
 * Creates MCP tool definitions from operations
 * Generates parameter schemas
 * Builds request body schemas
@@ -161,6 +168,7 @@ src/tools/generated/
 * Includes metadata (domain, resource, operation)
 
 **4. Transformers** (`transformers/`):
+
 * Normalize example payloads
 * Clean schema descriptions
 * Format metadata consistently
@@ -189,6 +197,7 @@ Generation complete in 2m 34s
 ### Quality Assurance
 
 **Generator Tests** (Target: 50% coverage):
+
 * Schema resolution correctness
 * Dependency extraction accuracy
 * Tool generation validation
@@ -196,6 +205,7 @@ Generation complete in 2m 34s
 * Performance benchmarks
 
 **Generated Tool Validation**:
+
 * JSON schema validity
 * Required field presence
 * Reference integrity
@@ -213,6 +223,7 @@ Generation complete in 2m 34s
 ### Extensibility
 
 The generator architecture supports:
+
 * **New Transformers**: Add custom schema transformations
 * **Custom Validators**: Additional quality checks
 * **Metadata Enrichment**: Extra tool metadata
@@ -222,16 +233,19 @@ The generator architecture supports:
 ### Error Handling
 
 **Spec Errors**:
+
 * Invalid OpenAPI format → validation error
 * Missing required fields → generation skipped
 * Circular references → depth limit enforcement
 
 **Schema Errors**:
+
 * Unresolvable $ref → reference error reported
 * Invalid schema structure → transformation failed
 * Complex nesting → max depth protection
 
 **Generation Errors**:
+
 * Tool validation failure → tool excluded from output
 * Missing metadata → default values applied
 * Example errors → examples omitted
@@ -248,11 +262,15 @@ The generator architecture supports:
 
 ## Notes
 
-The generator architecture is critical infrastructure enabling the entire project. Without sophisticated generation, maintaining 1,548 tools manually would be impractical.
+The generator architecture is critical infrastructure enabling the entire project. Without
+sophisticated generation, maintaining 1,548 tools manually would be impractical.
 
-The multi-stage pipeline with validation ensures generated tools are production-ready, not just syntactically correct. Dependency extraction enables intelligent tool recommendations and workflow guidance.
+The multi-stage pipeline with validation ensures generated tools are production-ready, not
+just syntactically correct. Dependency extraction enables intelligent tool recommendations
+and workflow guidance.
 
 Generator complexity is justified by:
+
 * 95%+ automation of tool creation
 * Rapid API update synchronization
 * Consistent quality across all tools
@@ -260,6 +278,7 @@ Generator complexity is justified by:
 * Built-in validation and quality checks
 
 Future enhancements could include:
+
 * Incremental generation (only changed specs)
 * Parallel spec processing for faster builds
 * Custom tool templates per domain

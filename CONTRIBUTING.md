@@ -1,6 +1,7 @@
 # Contributing to F5XC API MCP Server
 
-Thank you for your interest in contributing to the F5 Distributed Cloud (XC) API MCP Server! This document provides guidelines and instructions for contributing to the project.
+Thank you for your interest in contributing to the F5 Distributed Cloud (XC) API MCP Server!
+This document provides guidelines and instructions for contributing to the project.
 
 ## Table of Contents
 
@@ -260,7 +261,7 @@ npm run test:uat          # UAT tests only
 
 We use **Conventional Commits** format:
 
-```
+```text
 <type>(<scope>): <subject>
 
 <body>
@@ -378,7 +379,7 @@ Closes #14
 
 Use the same format as commit messages:
 
-```
+```text
 <type>(<scope>): <description>
 ```
 
@@ -475,7 +476,7 @@ Closes #XXX
 
 ## Project Structure
 
-```
+```text
 f5xc-api-mcp/
 ├── src/
 │   ├── generator/          # OpenAPI code generation

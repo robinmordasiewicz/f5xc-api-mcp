@@ -11,7 +11,9 @@ The F5 XC API MCP server needs to serve two distinct use cases with different re
 1. **Documentation Mode**: Users exploring APIs, learning patterns, understanding capabilities without F5 XC credentials
 2. **Authenticated Mode**: Users performing actual API operations against their F5 XC tenant
 
-These modes have different authentication requirements, error handling needs, and output expectations. A single-mode design would either require credentials for all users (blocking documentation use) or prevent actual API operations (limiting utility).
+These modes have different authentication requirements, error handling needs, and output
+expectations. A single-mode design would either require credentials for all users (blocking
+documentation use) or prevent actual API operations (limiting utility).
 
 How can we support both documentation exploration and authenticated API operations in a seamless, user-friendly manner?
 
@@ -31,7 +33,9 @@ How can we support both documentation exploration and authenticated API operatio
 
 ## Decision Outcome
 
-Chosen option: "**Dual-Mode Operation**", because it provides maximum accessibility for learning while enabling full functionality for authenticated users, with automatic mode detection requiring no explicit mode switching.
+Chosen option: "**Dual-Mode Operation**", because it provides maximum accessibility for learning
+while enabling full functionality for authenticated users, with automatic mode detection
+requiring no explicit mode switching.
 
 ### Positive Consequences
 
@@ -98,6 +102,7 @@ function detectOperationMode(): 'documentation' | 'authenticated' {
 ### Mode-Specific Behavior
 
 **Documentation Mode**:
+
 * Returns CLI command equivalents (f5xcctl, curl)
 * Shows example request/response structures
 * Explains API authentication requirements
@@ -105,6 +110,7 @@ function detectOperationMode(): 'documentation' | 'authenticated' {
 * No actual API calls made
 
 **Authenticated Mode**:
+
 * Performs actual API calls to tenant
 * Returns real API responses
 * Handles rate limiting and errors
@@ -113,7 +119,7 @@ function detectOperationMode(): 'documentation' | 'authenticated' {
 
 ### Tool Execution Flow
 
-```
+```text
 User Request → Detect Mode
     │
     ├─ Documentation Mode
@@ -132,7 +138,7 @@ User Request → Detect Mode
 
 **Documentation Mode Response**:
 
-```
+```text
 Mode: Documentation (no authentication configured)
 
 To execute this operation, use:
@@ -157,7 +163,7 @@ Setup Instructions:
 
 **Authenticated Mode Response**:
 
-```
+```text
 Mode: Authenticated (tenant: my-tenant)
 
 API Call: GET /api/v1/config/namespaces/shared/http-loadbalancers/my-lb
@@ -174,11 +180,13 @@ Response:
 ### Error Handling
 
 **Documentation Mode**:
+
 * No API errors (no calls made)
 * Validation errors for invalid tool parameters
 * Clear guidance on required authentication setup
 
 **Authenticated Mode**:
+
 * Standard HTTP error codes (401, 403, 404, 429, 500)
 * Detailed error messages from API
 * Authentication expiration handling
@@ -201,8 +209,13 @@ Response:
 
 ## Notes
 
-The dual-mode design is a key differentiator for this MCP server, enabling both educational use and production operations. This approach maximizes accessibility while preserving full functionality.
+The dual-mode design is a key differentiator for this MCP server, enabling both educational
+use and production operations. This approach maximizes accessibility while preserving full
+functionality.
 
-Mode detection happens automatically on every tool execution, requiring no manual mode switching. Users naturally transition from documentation mode (learning) to authenticated mode (operating) by configuring credentials when ready.
+Mode detection happens automatically on every tool execution, requiring no manual mode
+switching. Users naturally transition from documentation mode (learning) to authenticated
+mode (operating) by configuring credentials when ready.
 
-This design pattern could be applied to other API-focused MCP servers facing similar documentation vs. operation trade-offs.
+This design pattern could be applied to other API-focused MCP servers facing similar
+documentation vs. operation trade-offs.

@@ -6,7 +6,8 @@
 
 ## Context and Problem Statement
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
+[Describe the context and problem statement, e.g., in free form using two to three
+sentences. You may want to articulate the problem in form of a question.]
 
 ## Decision Drivers
 
@@ -22,7 +23,8 @@
 
 ## Decision Outcome
 
-Chosen option: "[Option X]", because [justification. e.g., only option that meets k.o. criterion decision driver | which resolves force | … | comes out best (see below)].
+Chosen option: "[Option X]", because [justification. e.g., only option that meets k.o.
+criterion decision driver | which resolves force | … | comes out best (see below)].
 
 ### Positive Consequences
 
