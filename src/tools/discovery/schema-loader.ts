@@ -14,6 +14,7 @@ import { readFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { getToolByName } from "../registry.js";
+import type { FieldDefaultMetadata } from "../../generator/openapi-parser.js";
 
 // Get specs directory path
 const __filename = fileURLToPath(import.meta.url);
@@ -71,6 +72,15 @@ export interface ResolvedSchema {
   "x-f5xc-minimum-configuration"?: MinimumConfiguration;
   "x-displayname"?: string;
   "x-ves-example"?: unknown;
+  "x-ves-required"?: string | boolean;
+  // PR #449: Server-applied default values
+  "x-f5xc-server-default"?: boolean;
+  "x-f5xc-required-for"?: {
+    minimum_config?: boolean;
+    create?: boolean;
+    update?: boolean;
+    read?: boolean;
+  };
   [key: string]: unknown;
 }
 
@@ -270,6 +280,53 @@ export function resolveNestedRefs(
   }
 
   return result as ResolvedSchema;
+}
+
+/**
+ * Extract field default metadata from a resolved schema
+ * PR #449: Identifies server-defaulted fields and user requirements
+ *
+ * @param schema - Resolved schema to extract defaults from
+ * @param path - Current field path (for recursion)
+ * @returns Array of field default metadata
+ */
+export function extractFieldDefaults(
+  schema: ResolvedSchema,
+  path: string = ""
+): FieldDefaultMetadata[] {
+  const defaults: FieldDefaultMetadata[] = [];
+
+  if (!schema.properties) {
+    return defaults;
+  }
+
+  for (const [key, propSchema] of Object.entries(schema.properties)) {
+    const fieldPath = path ? `${path}.${key}` : key;
+
+    // Extract default metadata if present
+    if (propSchema.default !== undefined) {
+      defaults.push({
+        fieldPath,
+        defaultValue: propSchema.default,
+        isServerDefault: propSchema["x-f5xc-server-default"] === true,
+        requiredForCreate: propSchema["x-f5xc-required-for"]?.create === true,
+        vesRequired:
+          propSchema["x-ves-required"] === true || propSchema["x-ves-required"] === "true",
+      });
+    }
+
+    // Recurse into nested objects
+    if (propSchema.properties) {
+      defaults.push(...extractFieldDefaults(propSchema, fieldPath));
+    }
+
+    // Recurse into array items
+    if (propSchema.items && typeof propSchema.items === "object") {
+      defaults.push(...extractFieldDefaults(propSchema.items as ResolvedSchema, `${fieldPath}[]`));
+    }
+  }
+
+  return defaults;
 }
 
 /**
