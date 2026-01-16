@@ -5,7 +5,7 @@
  * These fixtures are dynamically generated from the current OpenAPI specs
  * to ensure tests always use real values and don't hardcode spec content.
  *
- * Generated at: 2026-01-08T05:53:13.078Z
+ * Generated at: 2026-01-16T08:00:36.991Z
  * Total tools: 1535
  * Total domains: 38
  */
@@ -216,11 +216,8 @@ export const FIRST_TOOL = {
  * Tools with rich metadata (for metadata-specific tests)
  */
 export const RICH_METADATA_SAMPLES = {
-  withDangerLevel: {
-    toolName: "f5xc-api-adminconsoleandui-static-component-get",
-    dangerLevel: "low",
-  },
-  withOperationMetadata: { toolName: "f5xc-api-adminconsoleandui-static-component-get" },
+  withDangerLevel: null,
+  withOperationMetadata: null,
   withValidationRules: null,
   withParameters: {
     toolName: "f5xc-api-adminconsoleandui-static-component-get",

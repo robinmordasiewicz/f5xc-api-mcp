@@ -41,68 +41,13 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
     tags: ["Other"],
     sourceFile: "domains/secops_and_incident_response.json",
     displayName: null,
-    dangerLevel: "medium",
-    sideEffects: {
-      creates: ["malicious-user-mitigation"],
-    },
-    requiredFields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
-    operationMetadata: {
-      common_errors: [
-        {
-          code: 401,
-          message: "Authentication required",
-          solution: "Provide valid API credentials",
-        },
-        {
-          code: 403,
-          message: "Permission denied",
-          solution: "Check access permissions for this operation",
-        },
-        {
-          code: 404,
-          message: "Resource not found",
-          solution: "Verify resource name, namespace, and path",
-        },
-        {
-          code: 409,
-          message: "Resource already exists",
-          solution: "Use different name or update existing resource",
-        },
-        {
-          code: 429,
-          message: "Rate limit exceeded",
-          solution: "Wait before retrying the operation",
-        },
-        {
-          code: 500,
-          message: "Server error",
-          solution: "Retry operation or contact support",
-        },
-      ],
-      conditions: {
-        postconditions: [
-          "Malicious-user-mitigation resource created",
-          "Resource assigned unique identifier",
-        ],
-        prerequisites: ["Active namespace"],
-      },
-      confirmation_required: false,
-      danger_level: "medium",
-      field_docs: {},
-      optional_fields: [],
-      performance_impact: {
-        latency: "low",
-        resource_usage: "low",
-      },
-      purpose: "Create new malicious-user-mitigation",
-      required_fields: ["metadata.name", "metadata.namespace", "path.metadata.namespace"],
-      side_effects: {
-        creates: ["malicious-user-mitigation"],
-      },
-    },
+    operationMetadata: null,
     curlExample: null,
     dependencies: [
       {
@@ -184,65 +129,13 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
     tags: ["Other"],
     sourceFile: "domains/secops_and_incident_response.json",
     displayName: null,
-    dangerLevel: "high",
-    sideEffects: {
-      deletes: ["malicious-user-mitigation", "contained_resources"],
-    },
-    requiredFields: ["path.name", "path.namespace"],
-    confirmationRequired: true,
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
+    confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
-    operationMetadata: {
-      common_errors: [
-        {
-          code: 401,
-          message: "Authentication required",
-          solution: "Provide valid API credentials",
-        },
-        {
-          code: 403,
-          message: "Permission denied",
-          solution: "Check access permissions for this operation",
-        },
-        {
-          code: 404,
-          message: "Resource not found",
-          solution: "Verify resource name, namespace, and path",
-        },
-        {
-          code: 409,
-          message: "Resource already exists",
-          solution: "Use different name or update existing resource",
-        },
-        {
-          code: 429,
-          message: "Rate limit exceeded",
-          solution: "Wait before retrying the operation",
-        },
-        {
-          code: 500,
-          message: "Server error",
-          solution: "Retry operation or contact support",
-        },
-      ],
-      conditions: {
-        postconditions: ["Resource removed from system", "Associated resources may be affected"],
-        prerequisites: ["Active namespace"],
-      },
-      confirmation_required: true,
-      danger_level: "high",
-      field_docs: {},
-      optional_fields: [],
-      performance_impact: {
-        latency: "high",
-        resource_usage: "moderate",
-      },
-      purpose: "Delete malicious-user-mitigation",
-      required_fields: ["path.name", "path.namespace"],
-      side_effects: {
-        deletes: ["malicious-user-mitigation", "contained_resources"],
-      },
-    },
+    operationMetadata: null,
     curlExample: null,
     dependencies: [
       {
@@ -333,61 +226,13 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
     tags: ["Other"],
     sourceFile: "domains/secops_and_incident_response.json",
     displayName: null,
-    dangerLevel: "low",
+    dangerLevel: null,
     sideEffects: null,
-    requiredFields: ["path.name", "path.namespace"],
+    requiredFields: [],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
-    operationMetadata: {
-      common_errors: [
-        {
-          code: 401,
-          message: "Authentication required",
-          solution: "Provide valid API credentials",
-        },
-        {
-          code: 403,
-          message: "Permission denied",
-          solution: "Check access permissions for this operation",
-        },
-        {
-          code: 404,
-          message: "Resource not found",
-          solution: "Verify resource name, namespace, and path",
-        },
-        {
-          code: 409,
-          message: "Resource already exists",
-          solution: "Use different name or update existing resource",
-        },
-        {
-          code: 429,
-          message: "Rate limit exceeded",
-          solution: "Wait before retrying the operation",
-        },
-        {
-          code: 500,
-          message: "Server error",
-          solution: "Retry operation or contact support",
-        },
-      ],
-      conditions: {
-        postconditions: [],
-        prerequisites: ["Active namespace"],
-      },
-      confirmation_required: false,
-      danger_level: "low",
-      field_docs: {},
-      optional_fields: [],
-      performance_impact: {
-        latency: "low",
-        resource_usage: "low",
-      },
-      purpose: "Retrieve specific malicious-user-mitigation",
-      required_fields: ["path.name", "path.namespace"],
-      side_effects: {},
-    },
+    operationMetadata: null,
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
@@ -475,61 +320,13 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
     tags: ["Other"],
     sourceFile: "domains/secops_and_incident_response.json",
     displayName: null,
-    dangerLevel: "low",
+    dangerLevel: null,
     sideEffects: null,
-    requiredFields: ["path.namespace"],
+    requiredFields: [],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
-    operationMetadata: {
-      common_errors: [
-        {
-          code: 401,
-          message: "Authentication required",
-          solution: "Provide valid API credentials",
-        },
-        {
-          code: 403,
-          message: "Permission denied",
-          solution: "Check access permissions for this operation",
-        },
-        {
-          code: 404,
-          message: "Resource not found",
-          solution: "Verify resource name, namespace, and path",
-        },
-        {
-          code: 409,
-          message: "Resource already exists",
-          solution: "Use different name or update existing resource",
-        },
-        {
-          code: 429,
-          message: "Rate limit exceeded",
-          solution: "Wait before retrying the operation",
-        },
-        {
-          code: 500,
-          message: "Server error",
-          solution: "Retry operation or contact support",
-        },
-      ],
-      conditions: {
-        postconditions: [],
-        prerequisites: ["Active namespace"],
-      },
-      confirmation_required: false,
-      danger_level: "low",
-      field_docs: {},
-      optional_fields: [],
-      performance_impact: {
-        latency: "moderate",
-        resource_usage: "moderate",
-      },
-      purpose: "List all malicious-user-mitigations",
-      required_fields: ["path.namespace"],
-      side_effects: {},
-    },
+    operationMetadata: null,
     curlExample: null,
     dependencies: [],
     oneOfGroups: [],
@@ -593,65 +390,13 @@ export const secops_and_incident_responseTools: ParsedOperation[] = [
     tags: ["Other"],
     sourceFile: "domains/secops_and_incident_response.json",
     displayName: null,
-    dangerLevel: "medium",
-    sideEffects: {
-      modifies: ["malicious-user-mitigation"],
-    },
-    requiredFields: ["path.metadata.name", "path.metadata.namespace"],
+    dangerLevel: null,
+    sideEffects: null,
+    requiredFields: [],
     confirmationRequired: false,
     parameterExamples: {},
     validationRules: {},
-    operationMetadata: {
-      common_errors: [
-        {
-          code: 401,
-          message: "Authentication required",
-          solution: "Provide valid API credentials",
-        },
-        {
-          code: 403,
-          message: "Permission denied",
-          solution: "Check access permissions for this operation",
-        },
-        {
-          code: 404,
-          message: "Resource not found",
-          solution: "Verify resource name, namespace, and path",
-        },
-        {
-          code: 409,
-          message: "Resource already exists",
-          solution: "Use different name or update existing resource",
-        },
-        {
-          code: 429,
-          message: "Rate limit exceeded",
-          solution: "Wait before retrying the operation",
-        },
-        {
-          code: 500,
-          message: "Server error",
-          solution: "Retry operation or contact support",
-        },
-      ],
-      conditions: {
-        postconditions: ["Resource updated with new values"],
-        prerequisites: ["Active namespace"],
-      },
-      confirmation_required: false,
-      danger_level: "medium",
-      field_docs: {},
-      optional_fields: [],
-      performance_impact: {
-        latency: "low",
-        resource_usage: "low",
-      },
-      purpose: "Replace existing malicious-user-mitigation",
-      required_fields: ["path.metadata.name", "path.metadata.namespace"],
-      side_effects: {
-        modifies: ["malicious-user-mitigation"],
-      },
-    },
+    operationMetadata: null,
     curlExample: null,
     dependencies: [
       {
