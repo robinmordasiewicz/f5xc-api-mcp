@@ -9,9 +9,12 @@ import {
   SUBSCRIPTION_TIERS,
   registerTool,
   registerAllTools,
+  validateParameters,
+  getDangerWarning,
   type DocumentationResponse,
   type ExecutionResponse,
   type ParameterInfo,
+  type ValidationResult,
 } from "../../src/generator/tool-generator.js";
 import type { ParsedOperation, OpenApiParameter } from "../../src/generator/openapi-parser.js";
 import { CredentialManager, AuthMode, HttpClient } from "@robinmordasiewicz/f5xc-auth";
@@ -44,6 +47,440 @@ describe("tool-generator", () => {
       expect(SUBSCRIPTION_TIERS.NO_TIER).toBe("NO_TIER");
       expect(SUBSCRIPTION_TIERS.STANDARD).toBe("STANDARD");
       expect(SUBSCRIPTION_TIERS.ADVANCED).toBe("ADVANCED");
+    });
+
+    it("should have exactly three subscription tiers", () => {
+      const tierKeys = Object.keys(SUBSCRIPTION_TIERS);
+      expect(tierKeys).toHaveLength(3);
+      expect(tierKeys).toContain("NO_TIER");
+      expect(tierKeys).toContain("STANDARD");
+      expect(tierKeys).toContain("ADVANCED");
+    });
+
+    it("should have unique tier values", () => {
+      const tierValues = Object.values(SUBSCRIPTION_TIERS);
+      const uniqueValues = new Set(tierValues);
+      expect(uniqueValues.size).toBe(tierValues.length);
+    });
+  });
+
+  describe("validateParameters", () => {
+    describe("max_len validation", () => {
+      it("should pass when string is within max length", () => {
+        const params = { name: "test" };
+        const rules = {
+          name: { "ves.io.schema.rules.string.max_len": "64" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+        expect(result.errors).toHaveLength(0);
+      });
+
+      it("should fail when string exceeds max length", () => {
+        const params = { name: "a".repeat(65) };
+        const rules = {
+          name: { "ves.io.schema.rules.string.max_len": "64" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(false);
+        expect(result.errors).toContain("name exceeds max length of 64");
+      });
+
+      it("should pass when string is exactly at max length", () => {
+        const params = { name: "a".repeat(64) };
+        const rules = {
+          name: { "ves.io.schema.rules.string.max_len": "64" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+
+      it("should skip validation for non-string values", () => {
+        const params = { count: 123 };
+        const rules = {
+          count: { "ves.io.schema.rules.string.max_len": "64" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+    });
+
+    describe("min_len validation", () => {
+      it("should pass when string meets minimum length", () => {
+        const params = { name: "test" };
+        const rules = {
+          name: { "ves.io.schema.rules.string.min_len": "2" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+
+      it("should fail when string is below minimum length", () => {
+        const params = { name: "a" };
+        const rules = {
+          name: { "ves.io.schema.rules.string.min_len": "2" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(false);
+        expect(result.errors).toContain("name must be at least 2 characters");
+      });
+
+      it("should pass when string is exactly at minimum length", () => {
+        const params = { name: "ab" };
+        const rules = {
+          name: { "ves.io.schema.rules.string.min_len": "2" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+
+      it("should skip validation for non-string values", () => {
+        const params = { count: 1 };
+        const rules = {
+          count: { "ves.io.schema.rules.string.min_len": "5" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+    });
+
+    describe("required validation", () => {
+      it("should pass when required field has value", () => {
+        const params = { name: "test" };
+        const rules = {
+          name: { "ves.io.schema.rules.message.required": "true" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+
+      it("should fail when required field is undefined", () => {
+        const params = { other: "value" };
+        const rules = {
+          name: { "ves.io.schema.rules.message.required": "true" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(false);
+        expect(result.errors).toContain("name is required");
+      });
+
+      it("should fail when required field is null", () => {
+        const params = { name: null };
+        const rules = {
+          name: { "ves.io.schema.rules.message.required": "true" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(false);
+        expect(result.errors).toContain("name is required");
+      });
+
+      it("should fail when required field is empty string", () => {
+        const params = { name: "" };
+        const rules = {
+          name: { "ves.io.schema.rules.message.required": "true" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(false);
+        expect(result.errors).toContain("name is required");
+      });
+
+      it("should pass when required rule is false", () => {
+        const params = {};
+        const rules = {
+          name: { "ves.io.schema.rules.message.required": "false" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+    });
+
+    describe("max_items validation", () => {
+      it("should pass when array is within max items", () => {
+        const params = { items: ["a", "b", "c"] };
+        const rules = {
+          items: { "ves.io.schema.rules.repeated.max_items": "5" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+
+      it("should fail when array exceeds max items", () => {
+        const params = { items: ["a", "b", "c", "d", "e", "f"] };
+        const rules = {
+          items: { "ves.io.schema.rules.repeated.max_items": "5" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(false);
+        expect(result.errors).toContain("items exceeds max items of 5");
+      });
+
+      it("should pass when array is exactly at max items", () => {
+        const params = { items: ["a", "b", "c", "d", "e"] };
+        const rules = {
+          items: { "ves.io.schema.rules.repeated.max_items": "5" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+
+      it("should skip validation for non-array values", () => {
+        const params = { items: "not an array" };
+        const rules = {
+          items: { "ves.io.schema.rules.repeated.max_items": "5" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+    });
+
+    describe("unique validation", () => {
+      it("should pass when array has unique items", () => {
+        const params = { items: ["a", "b", "c"] };
+        const rules = {
+          items: { "ves.io.schema.rules.repeated.unique": "true" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+
+      it("should fail when array has duplicate items", () => {
+        const params = { items: ["a", "b", "a"] };
+        const rules = {
+          items: { "ves.io.schema.rules.repeated.unique": "true" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(false);
+        expect(result.errors).toContain("items must contain unique items");
+      });
+
+      it("should handle duplicate objects", () => {
+        const params = { items: [{ a: 1 }, { a: 1 }] };
+        const rules = {
+          items: { "ves.io.schema.rules.repeated.unique": "true" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(false);
+        expect(result.errors).toContain("items must contain unique items");
+      });
+
+      it("should pass when unique rule is false", () => {
+        const params = { items: ["a", "a", "a"] };
+        const rules = {
+          items: { "ves.io.schema.rules.repeated.unique": "false" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+
+      it("should skip validation for non-array values", () => {
+        const params = { items: "string" };
+        const rules = {
+          items: { "ves.io.schema.rules.repeated.unique": "true" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+    });
+
+    describe("combined validations", () => {
+      it("should validate multiple rules on same parameter", () => {
+        const params = { name: "a" }; // Too short
+        const rules = {
+          name: {
+            "ves.io.schema.rules.string.min_len": "2",
+            "ves.io.schema.rules.string.max_len": "64",
+          },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(false);
+        expect(result.errors).toHaveLength(1);
+        expect(result.errors).toContain("name must be at least 2 characters");
+      });
+
+      it("should validate multiple parameters", () => {
+        const params = {
+          name: "", // Required but empty
+          items: ["a", "b", "c", "d", "e", "f"], // Exceeds max
+        };
+        const rules = {
+          name: { "ves.io.schema.rules.message.required": "true" },
+          items: { "ves.io.schema.rules.repeated.max_items": "5" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(false);
+        expect(result.errors).toHaveLength(2);
+        expect(result.errors).toContain("name is required");
+        expect(result.errors).toContain("items exceeds max items of 5");
+      });
+
+      it("should pass when all validations succeed", () => {
+        const params = {
+          name: "valid-name",
+          items: ["a", "b", "c"],
+        };
+        const rules = {
+          name: {
+            "ves.io.schema.rules.string.min_len": "2",
+            "ves.io.schema.rules.string.max_len": "64",
+            "ves.io.schema.rules.message.required": "true",
+          },
+          items: {
+            "ves.io.schema.rules.repeated.max_items": "5",
+            "ves.io.schema.rules.repeated.unique": "true",
+          },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+        expect(result.errors).toHaveLength(0);
+      });
+    });
+
+    describe("edge cases", () => {
+      it("should handle empty params", () => {
+        const params = {};
+        const rules = {};
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+        expect(result.errors).toHaveLength(0);
+      });
+
+      it("should handle empty rules", () => {
+        const params = { name: "test" };
+        const rules = {};
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+
+      it("should handle rules for non-existent params", () => {
+        const params = { other: "value" };
+        const rules = {
+          name: { "ves.io.schema.rules.string.max_len": "64" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+
+      it("should handle zero-length arrays", () => {
+        const params = { items: [] };
+        const rules = {
+          items: { "ves.io.schema.rules.repeated.max_items": "5" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+
+      it("should handle empty string max length check", () => {
+        const params = { name: "" };
+        const rules = {
+          name: { "ves.io.schema.rules.string.max_len": "64" },
+        };
+
+        const result = validateParameters(params, rules);
+
+        expect(result.valid).toBe(true);
+      });
+    });
+  });
+
+  describe("getDangerWarning", () => {
+    it("should return high risk warning for high level", () => {
+      const warning = getDangerWarning("high");
+
+      expect(warning).not.toBeNull();
+      expect(warning).toContain("HIGH RISK");
+      expect(warning).toContain("⚠️");
+      expect(warning).toContain("significant changes");
+    });
+
+    it("should return medium risk warning for medium level", () => {
+      const warning = getDangerWarning("medium");
+
+      expect(warning).not.toBeNull();
+      expect(warning).toContain("MEDIUM RISK");
+      expect(warning).toContain("⚡");
+      expect(warning).toContain("modify resources");
+    });
+
+    it("should return null for low level", () => {
+      const warning = getDangerWarning("low");
+
+      expect(warning).toBeNull();
+    });
+
+    it("should return null for null level", () => {
+      const warning = getDangerWarning(null);
+
+      expect(warning).toBeNull();
+    });
+
+    it("should return actionable warning text for high risk", () => {
+      const warning = getDangerWarning("high");
+
+      expect(warning).toContain("Confirm before proceeding");
+    });
+
+    it("should return actionable warning text for medium risk", () => {
+      const warning = getDangerWarning("medium");
+
+      expect(warning).toContain("Review parameters carefully");
     });
   });
 
