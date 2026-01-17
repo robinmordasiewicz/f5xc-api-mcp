@@ -17,6 +17,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Origin Pool Enhancements** (v2.0.33)
+  - Added server-applied defaults for origin pool configuration fields
+  - Documented critical UI vs Server discrepancy: `loadbalancer_algorithm` defaults to
+    `ROUND_ROBIN` on server but `LB_OVERRIDE` in web UI
+  - Added OneOf field pattern documentation for origin pool mutual exclusions:
+    - Port: `port` | `automatic_port` | `lb_port`
+    - TLS: `no_tls` | `use_tls`
+    - Circuit Breaker: `default_circuit_breaker` | `disable_circuit_breaker` | `circuit_breaker`
+    - HTTP Protocol: `auto_http_config` | `http1_config` | `http2_options`
+  - Server defaults: `endpoint_selection` (DISTRIBUTED), `no_tls` (enabled), connection
+    timeout (2000ms), HTTP idle timeout (300000ms)
+  - Enhanced README docs with origin pool server defaults table and minimal config example
 - **Healthcheck Enhancements** (v2.0.32)
   - Added `x-f5xc-recommended-value` extension support for F5 XC web UI default values
   - Parser extracts recommended values alongside server defaults
