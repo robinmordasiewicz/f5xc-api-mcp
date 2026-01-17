@@ -46,6 +46,8 @@ const OpenApiParameterSchema = z.object({
       read: z.boolean().optional(),
     })
     .optional(),
+  // v2.0.32: Recommended values matching web UI defaults
+  "x-f5xc-recommended-value": z.unknown().optional(),
 });
 
 const OpenApiRequestBodySchema = z.object({
@@ -237,13 +239,13 @@ export interface MinimumConfiguration {
 }
 
 /**
- * Field default value metadata from PR #449
- * Tracks server-applied defaults and user requirement semantics
+ * Field default value metadata from PR #449 + v2.0.32 enhancements
+ * Tracks server-applied defaults, user requirements, and recommended values
  */
 export interface FieldDefaultMetadata {
   /** Dot-notation path to field (e.g., "spec.timeout") */
   fieldPath: string;
-  /** Default value applied by server */
+  /** Default value applied by server (if any) */
   defaultValue: unknown;
   /** True if default is applied by server (x-f5xc-server-default) */
   isServerDefault: boolean;
@@ -251,6 +253,8 @@ export interface FieldDefaultMetadata {
   requiredForCreate: boolean;
   /** True if field must have non-zero value (x-ves-required) */
   vesRequired: boolean;
+  /** Recommended value matching F5 XC web UI (x-f5xc-recommended-value) */
+  recommendedValue?: unknown;
 }
 
 /**

@@ -81,6 +81,8 @@ export interface ResolvedSchema {
     update?: boolean;
     read?: boolean;
   };
+  // v2.0.32: Recommended values matching web UI defaults
+  "x-f5xc-recommended-value"?: unknown;
   [key: string]: unknown;
 }
 
@@ -303,8 +305,11 @@ export function extractFieldDefaults(
   for (const [key, propSchema] of Object.entries(schema.properties)) {
     const fieldPath = path ? `${path}.${key}` : key;
 
-    // Extract default metadata if present
-    if (propSchema.default !== undefined) {
+    // Extract metadata if field has defaults OR recommended values (v2.0.32+)
+    const hasDefault = propSchema.default !== undefined;
+    const hasRecommended = propSchema["x-f5xc-recommended-value"] !== undefined;
+
+    if (hasDefault || hasRecommended) {
       defaults.push({
         fieldPath,
         defaultValue: propSchema.default,
@@ -312,6 +317,7 @@ export function extractFieldDefaults(
         requiredForCreate: propSchema["x-f5xc-required-for"]?.create === true,
         vesRequired:
           propSchema["x-ves-required"] === true || propSchema["x-ves-required"] === "true",
+        recommendedValue: propSchema["x-f5xc-recommended-value"],
       });
     }
 

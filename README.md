@@ -21,7 +21,7 @@ other MCP-compatible tools.
 
 ## Server-Applied Default Values
 
-F5 XC API specifications (v2.0.28+) distinguish between three types of field requirements:
+F5 XC API specifications (v2.0.28+) distinguish between field requirements with enhanced metadata:
 
 ### Field Requirement Types
 
@@ -36,9 +36,36 @@ F5 XC API specifications (v2.0.28+) distinguish between three types of field req
    - Validation returns **warning** with default value info
    - Example: `healthcheck.jitter_percent` defaults to `0`
 
-3. **Schema-Required Fields** (`x-ves-required: true`)
+3. **Recommended Values** (`x-f5xc-recommended-value`) - *v2.0.32+*
+   - Suggested values matching F5 XC web UI defaults
+   - Provides guidance without enforcing specific values
+   - Example: `spec.timeout` recommended value is `3`
+
+4. **Schema-Required Fields** (`x-ves-required: true`)
    - Must have non-zero value when API processes the request
    - Can be user-provided OR server-defaulted
+
+### Healthcheck Configuration (v2.0.32+)
+
+#### Server-Applied Defaults
+
+| Field | Default Value |
+|-------|---------------|
+| `spec.jitter_percent` | `0` |
+| `spec.http_health_check.use_http2` | `false` |
+| `spec.http_health_check.headers` | `{}` |
+| `spec.http_health_check.expected_status_codes` | `[]` (accepts 200-299) |
+| `spec.http_health_check.request_headers_to_remove` | `[]` |
+
+#### Recommended Values (Web UI Defaults)
+
+| Field | Recommended |
+|-------|-------------|
+| `spec.timeout` | `3` seconds |
+| `spec.interval` | `15` seconds |
+| `spec.unhealthy_threshold` | `1` failure |
+| `spec.healthy_threshold` | `3` successes |
+| `spec.jitter_percent` | `30`% (production) |
 
 ### Example: Minimal Healthcheck Configuration
 
@@ -49,6 +76,10 @@ F5 XC API specifications (v2.0.28+) distinguish between three types of field req
     "namespace": "default"
   },
   "spec": {
+    "timeout": 3,
+    "interval": 15,
+    "unhealthy_threshold": 1,
+    "healthy_threshold": 3,
     "http_health_check": {
       "use_origin_server_name": {},
       "path": "/health"
@@ -60,6 +91,9 @@ F5 XC API specifications (v2.0.28+) distinguish between three types of field req
 **Server automatically applies:**
 
 - `spec.jitter_percent` → `0`
+- `spec.http_health_check.use_http2` → `false`
+- `spec.http_health_check.headers` → `{}`
+- `spec.http_health_check.expected_status_codes` → `[]`
 
 ### Validation Behavior
 
@@ -67,6 +101,7 @@ When validating parameters:
 
 - **Missing user-required field** → ❌ **Error**: "Missing required field: metadata.name"
 - **Missing server-default field** → ⚠️ **Warning**: "Field 'jitter_percent' will default to 0"
+- **Recommended values** → 📋 **Info**: Returned in `recommendedValues` for guidance
 
 ## Quick Start
 
