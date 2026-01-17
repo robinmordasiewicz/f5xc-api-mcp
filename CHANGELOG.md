@@ -17,6 +17,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Server-Applied Default Values** (v2.0.28+)
+  - Parser now extracts field default metadata from OpenAPI specs (PR #449)
+  - `FieldDefaultMetadata` interface tracks server defaults and user requirements
+  - Enhanced validation distinguishes user-required fields from server-defaulted fields
+  - Validation returns errors for missing user-required fields
+  - Validation returns warnings for server-defaulted fields with default value info
+  - `ValidationResult.appliedDefaults` tracks which defaults will be applied
+  - Supports `x-f5xc-server-default`, `x-f5xc-required-for`, and `default` extensions
+  - Current server defaults: `jitter_percent` (0), `rules` ([]), `user_identification` ([])
 - Initial release of F5 Distributed Cloud API MCP Server
 - 1500+ API tools auto-generated from enriched OpenAPI specifications across 23 domains
 - Dual-mode operation: documentation mode (unauthenticated) and execution mode (authenticated)
