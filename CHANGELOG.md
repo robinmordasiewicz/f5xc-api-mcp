@@ -17,6 +17,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Healthcheck Enhancements** (v2.0.32)
+  - Added `x-f5xc-recommended-value` extension support for F5 XC web UI default values
+  - Parser extracts recommended values alongside server defaults
+  - `FieldDefaultMetadata` interface now includes `recommendedValue` field
+  - Validation returns `recommendedValues` array with field guidance
+  - Healthcheck recommended values: timeout (3s), interval (15s), thresholds (1/3), jitter (30%)
+  - HTTP healthcheck server defaults: use_http2 (false), headers ({}), expected_status_codes ([])
+  - Enhanced documentation with server defaults and recommended values tables
 - **Server-Applied Default Values** (v2.0.28+)
   - Parser now extracts field default metadata from OpenAPI specs (PR #449)
   - `FieldDefaultMetadata` interface tracks server defaults and user requirements
