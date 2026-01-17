@@ -95,6 +95,80 @@ F5 XC API specifications (v2.0.28+) distinguish between field requirements with 
 - `spec.http_health_check.headers` → `{}`
 - `spec.http_health_check.expected_status_codes` → `[]`
 
+### Origin Pool Configuration (v2.0.33+)
+
+#### Server-Applied Defaults
+
+| Field | Server Default | UI Default | Note |
+|-------|---------------|------------|------|
+| `spec.loadbalancer_algorithm` | `ROUND_ROBIN` | `LB_OVERRIDE` | ⚠️ **Discrepancy!** |
+| `spec.endpoint_selection` | `DISTRIBUTED` | - | Distributed selection |
+| TLS to origin (`spec.no_tls`) | Disabled | - | No TLS by default |
+| Connection timeout | 2000 ms | - | 2 second timeout |
+| HTTP idle timeout | 300000 ms | - | 5 minute timeout |
+| Circuit breaker | Default enabled | - | Auto-enabled |
+| Outlier detection | Disabled | - | Must enable explicitly |
+| HTTP protocol | Auto-negotiation | - | `auto_http_config` |
+| Proxy protocol | Disabled | - | Must enable explicitly |
+
+> **⚠️ Critical UI vs Server Discrepancy:** The web console pre-selects `LB_OVERRIDE` for the
+> load balancer algorithm, but the server applies `ROUND_ROBIN` when the field is omitted.
+> This creates behavior mismatches between UI-created and API-created configurations.
+
+#### OneOf Field Patterns (Mutually Exclusive)
+
+Origin pools use mutually exclusive field groups where only one option should be specified:
+
+| Field Group | Options | Purpose |
+|-------------|---------|---------|
+| Port | `port` \| `automatic_port` \| `lb_port` | Origin server port selection |
+| TLS | `no_tls` \| `use_tls` | TLS configuration to origin |
+| Circuit Breaker | `default_circuit_breaker` \| `disable_circuit_breaker` \| `circuit_breaker` | Circuit breaker behavior |
+| HTTP Protocol | `auto_http_config` \| `http1_config` \| `http2_options` | HTTP protocol negotiation |
+| Health Check Port | `same_as_endpoint_port` \| `health_check_port` | Health check port selection |
+
+#### Required Fields
+
+Origin pool configurations must include:
+
+- `metadata.name` - Unique identifier
+- `metadata.namespace` - Target namespace
+- At least one `spec.origin_servers` entry
+- Explicit port (1-65535 range via `port`, `automatic_port`, or `lb_port`)
+
+#### Example: Minimal Origin Pool Configuration
+
+```json
+{
+  "metadata": {
+    "name": "example-origin-pool",
+    "namespace": "default"
+  },
+  "spec": {
+    "origin_servers": [
+      {
+        "public_ip": {
+          "ip": "192.0.2.1"
+        }
+      }
+    ],
+    "port": 443,
+    "use_tls": {
+      "use_host_header_as_sni": {}
+    }
+  }
+}
+```
+
+**Server automatically applies:**
+
+- `spec.loadbalancer_algorithm` → `ROUND_ROBIN`
+- `spec.endpoint_selection` → `DISTRIBUTED`
+- Connection timeout → 2000 ms
+- HTTP idle timeout → 300000 ms
+- Circuit breaker → Default enabled
+- HTTP protocol → Auto-negotiation
+
 ### Validation Behavior
 
 When validating parameters:
