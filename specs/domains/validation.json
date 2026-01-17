@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "version": "1.0.0",
   "description": "Centralized validation specification for F5 XC API",
-  "generated_at": "2026-01-17T05:34:17.787541+00:00",
+  "generated_at": "2026-01-17T07:54:40.480336+00:00",
   "source": "f5xc-api-enriched",
   "required_fields": {
     "common": {
@@ -226,6 +226,176 @@
         }
       ],
       "default": "NO_TLS"
+    },
+    "port_choice": {
+      "description": "Origin server port configuration method",
+      "values": [
+        {
+          "value": "port",
+          "description": "Explicit port number (1-65535)"
+        },
+        {
+          "value": "automatic_port",
+          "description": "Port automatically assigned"
+        },
+        {
+          "value": "lb_port",
+          "description": "Use load balancer port"
+        }
+      ],
+      "default": null
+    },
+    "upstream_conn_pool_reuse": {
+      "description": "Upstream connection pool reuse state",
+      "values": [
+        {
+          "value": "enable_conn_pool_reuse",
+          "description": "Enable connection pool reuse"
+        },
+        {
+          "value": "disable_conn_pool_reuse",
+          "description": "Disable connection pool reuse"
+        }
+      ],
+      "default": "enable_conn_pool_reuse"
+    },
+    "health_check_port_choice": {
+      "description": "Port used for health checks",
+      "values": [
+        {
+          "value": "same_as_endpoint_port",
+          "description": "Use endpoint port for health checks"
+        },
+        {
+          "value": "health_check_port",
+          "description": "Explicit health check port"
+        }
+      ],
+      "default": "same_as_endpoint_port"
+    },
+    "origin_tls_choice": {
+      "description": "TLS encryption to origin servers",
+      "values": [
+        {
+          "value": "no_tls",
+          "description": "Disable TLS to origin"
+        },
+        {
+          "value": "use_tls",
+          "description": "Enable TLS with configuration"
+        }
+      ],
+      "default": "no_tls"
+    },
+    "circuit_breaker_choice": {
+      "description": "Circuit breaker configuration",
+      "values": [
+        {
+          "value": "default_circuit_breaker",
+          "description": "Use default circuit breaker settings"
+        },
+        {
+          "value": "disable_circuit_breaker",
+          "description": "Disable circuit breaker"
+        },
+        {
+          "value": "circuit_breaker",
+          "description": "Custom circuit breaker configuration"
+        }
+      ],
+      "default": "default_circuit_breaker"
+    },
+    "outlier_detection_choice": {
+      "description": "Outlier detection configuration",
+      "values": [
+        {
+          "value": "disable_outlier_detection",
+          "description": "Disable outlier detection"
+        },
+        {
+          "value": "outlier_detection",
+          "description": "Enable custom outlier detection"
+        }
+      ],
+      "default": "disable_outlier_detection"
+    },
+    "panic_threshold_type": {
+      "description": "Panic threshold configuration",
+      "values": [
+        {
+          "value": "no_panic_threshold",
+          "description": "No panic threshold"
+        },
+        {
+          "value": "panic_threshold",
+          "description": "Custom panic threshold (0-100%)"
+        }
+      ],
+      "default": "no_panic_threshold"
+    },
+    "subset_choice": {
+      "description": "Subset load balancing configuration",
+      "values": [
+        {
+          "value": "disable_subsets",
+          "description": "Disable subset load balancing"
+        },
+        {
+          "value": "enable_subsets",
+          "description": "Enable subset load balancing"
+        }
+      ],
+      "default": "disable_subsets"
+    },
+    "http_protocol_type": {
+      "description": "HTTP protocol configuration",
+      "values": [
+        {
+          "value": "auto_http_config",
+          "description": "Automatic protocol negotiation"
+        },
+        {
+          "value": "http1_config",
+          "description": "HTTP/1.x configuration"
+        },
+        {
+          "value": "http2_options",
+          "description": "HTTP/2 configuration"
+        }
+      ],
+      "default": "auto_http_config"
+    },
+    "proxy_protocol_choice": {
+      "description": "Proxy protocol configuration",
+      "values": [
+        {
+          "value": "disable_proxy_protocol",
+          "description": "Disable proxy protocol"
+        },
+        {
+          "value": "proxy_protocol_v1",
+          "description": "Proxy Protocol v1"
+        },
+        {
+          "value": "proxy_protocol_v2",
+          "description": "Proxy Protocol v2"
+        }
+      ],
+      "default": "disable_proxy_protocol"
+    },
+    "lb_source_ip_persistence_choice": {
+      "description": "LB source IP persistence configuration",
+      "values": [
+        {
+          "value": "disable_lb_source_ip_persistance",
+          "description": "Disable LB source IP persistence"
+        },
+        {
+          "value": "enable_lb_source_ip_persistance",
+          "description": "Enable LB source IP persistence"
+        }
+      ],
+      "default": "disable_lb_source_ip_persistance"
     }
   },
   "constraints": {
@@ -422,6 +592,92 @@
         ],
         "conditional": []
       },
+      "origin_pool": {
+        "mutually_exclusive": [
+          {
+            "fields": [
+              "spec.port",
+              "spec.automatic_port",
+              "spec.lb_port"
+            ],
+            "reason": "Choose exactly one port configuration method"
+          },
+          {
+            "fields": [
+              "spec.enable_conn_pool_reuse",
+              "spec.disable_conn_pool_reuse"
+            ],
+            "reason": "Choose exactly one connection pool reuse setting"
+          },
+          {
+            "fields": [
+              "spec.advanced_options.health_check_port",
+              "spec.advanced_options.same_as_endpoint_port"
+            ],
+            "reason": "Choose exactly one health check port method"
+          },
+          {
+            "fields": [
+              "spec.no_tls",
+              "spec.use_tls"
+            ],
+            "reason": "Choose exactly one TLS configuration"
+          },
+          {
+            "fields": [
+              "spec.advanced_options.default_circuit_breaker",
+              "spec.advanced_options.disable_circuit_breaker",
+              "spec.advanced_options.circuit_breaker"
+            ],
+            "reason": "Choose exactly one circuit breaker configuration"
+          },
+          {
+            "fields": [
+              "spec.advanced_options.disable_outlier_detection",
+              "spec.advanced_options.outlier_detection"
+            ],
+            "reason": "Choose exactly one outlier detection configuration"
+          },
+          {
+            "fields": [
+              "spec.advanced_options.no_panic_threshold",
+              "spec.advanced_options.panic_threshold"
+            ],
+            "reason": "Choose exactly one panic threshold configuration"
+          },
+          {
+            "fields": [
+              "spec.advanced_options.disable_subsets",
+              "spec.advanced_options.enable_subsets"
+            ],
+            "reason": "Choose exactly one subset load balancing configuration"
+          },
+          {
+            "fields": [
+              "spec.advanced_options.auto_http_config",
+              "spec.advanced_options.http1_config",
+              "spec.advanced_options.http2_options"
+            ],
+            "reason": "Choose exactly one HTTP protocol configuration"
+          },
+          {
+            "fields": [
+              "spec.advanced_options.disable_proxy_protocol",
+              "spec.advanced_options.proxy_protocol_v1",
+              "spec.advanced_options.proxy_protocol_v2"
+            ],
+            "reason": "Choose exactly one proxy protocol configuration"
+          },
+          {
+            "fields": [
+              "spec.advanced_options.disable_lb_source_ip_persistance",
+              "spec.advanced_options.enable_lb_source_ip_persistance"
+            ],
+            "reason": "Choose exactly one LB source IP persistence configuration"
+          }
+        ],
+        "conditional": []
+      },
       "tcp_loadbalancer": {
         "mutually_exclusive": [
           {
@@ -591,6 +847,44 @@
       }
     }
   },
+  "oneof_defaults": {
+    "origin_pool": {
+      "port_choice": "port",
+      "upstream_conn_pool_reuse": "enable_conn_pool_reuse",
+      "health_check_port_choice": "same_as_endpoint_port",
+      "tls_choice": "no_tls",
+      "circuit_breaker_choice": "default_circuit_breaker",
+      "outlier_detection_choice": "disable_outlier_detection",
+      "panic_threshold_type": "no_panic_threshold",
+      "subset_choice": "disable_subsets",
+      "http_protocol_type": "auto_http_config",
+      "proxy_protocol_choice": "disable_proxy_protocol",
+      "lb_source_ip_persistence_choice": "disable_lb_source_ip_persistance"
+    }
+  },
+  "ui_vs_server_defaults": {
+    "origin_pool": {
+      "loadbalancer_algorithm": {
+        "ui_default": "LB_OVERRIDE",
+        "server_default": "ROUND_ROBIN",
+        "note": "UI pre-selects LB_OVERRIDE but server applies ROUND_ROBIN if omitted"
+      }
+    }
+  },
+  "advanced_options_defaults": {
+    "origin_pool": {
+      "connection_timeout": 2000,
+      "http_idle_timeout": 300000,
+      "same_as_endpoint_port": {},
+      "default_circuit_breaker": {},
+      "disable_outlier_detection": {},
+      "no_panic_threshold": {},
+      "disable_subsets": {},
+      "auto_http_config": {},
+      "disable_proxy_protocol": {},
+      "disable_lb_source_ip_persistance": {}
+    }
+  },
   "extensions": {
     "description": "OpenAPI extension field names used in enriched specs",
     "required_for": "x-f5xc-required-for",
@@ -616,14 +910,16 @@
   "_stats": {
     "resources_processed": 7,
     "required_fields_exported": 62,
-    "enum_values_exported": 16,
+    "enum_values_exported": 42,
     "constraints_exported": 14,
     "server_defaults_exported": 3,
-    "conditional_requirements_exported": 7,
+    "conditional_requirements_exported": 18,
     "minimum_configs_exported": 6,
+    "oneof_defaults_exported": 11,
+    "ui_vs_server_defaults_exported": 1,
     "warnings": []
   },
   "info": {
-    "version": "2.0.32"
+    "version": "2.0.33"
   }
 }
