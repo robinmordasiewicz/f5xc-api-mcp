@@ -48,6 +48,12 @@ export interface ValidationResult {
     field: string;
     defaultValue: unknown;
   }>;
+  /** Recommended values for fields (v2.0.32+) */
+  recommendedValues?: Array<{
+    field: string;
+    recommendedValue: unknown;
+    currentValue?: unknown;
+  }>;
 }
 
 /**
@@ -75,6 +81,11 @@ export function validateToolParams(params: ValidateParams): ValidationResult {
   const errors: ValidationError[] = [];
   const warnings: string[] = [];
   const appliedDefaults: Array<{ field: string; defaultValue: unknown }> = [];
+  const recommendedValues: Array<{
+    field: string;
+    recommendedValue: unknown;
+    currentValue?: unknown;
+  }> = [];
 
   // Get tool definition
   const tool = getToolByName(toolName);
@@ -108,7 +119,7 @@ export function validateToolParams(params: ValidateParams): ValidationResult {
 
   // Check required fields (PR #449: now distinguishes user-required from server-defaulted)
   if (tool.requiredFields && tool.requiredFields.length > 0) {
-    validateRequiredFields(tool, body, errors, warnings, appliedDefaults);
+    validateRequiredFields(tool, body, errors, warnings, appliedDefaults, recommendedValues);
   }
 
   // Check oneOf constraints
@@ -127,6 +138,7 @@ export function validateToolParams(params: ValidateParams): ValidationResult {
       operation: tool.operation,
     },
     appliedDefaults: appliedDefaults.length > 0 ? appliedDefaults : undefined,
+    recommendedValues: recommendedValues.length > 0 ? recommendedValues : undefined,
   };
 }
 
@@ -237,7 +249,8 @@ function validateRequiredFields(
   body: Record<string, unknown> | undefined,
   errors: ValidationError[],
   warnings: string[],
-  appliedDefaults: Array<{ field: string; defaultValue: unknown }>
+  appliedDefaults: Array<{ field: string; defaultValue: unknown }>,
+  recommendedValues: Array<{ field: string; recommendedValue: unknown; currentValue?: unknown }>
 ): void {
   // PR #449: Distinguish user-required from server-defaulted fields
   const userRequired: string[] = [];
@@ -294,6 +307,20 @@ function validateRequiredFields(
           field,
           defaultValue: fieldMeta.defaultValue,
         });
+      }
+    }
+
+    // v2.0.32: Track recommended values for fields
+    if (tool.fieldDefaults) {
+      for (const fieldMeta of tool.fieldDefaults) {
+        if (fieldMeta.recommendedValue !== undefined) {
+          const currentValue = getNestedValue(body, fieldMeta.fieldPath);
+          recommendedValues.push({
+            field: fieldMeta.fieldPath,
+            recommendedValue: fieldMeta.recommendedValue,
+            currentValue: currentValue !== undefined ? currentValue : undefined,
+          });
+        }
       }
     }
   }
