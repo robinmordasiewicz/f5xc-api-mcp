@@ -43,6 +43,11 @@ export interface ValidationResult {
     path: string;
     operation: string;
   };
+  /** Server defaults that will be applied (PR #449) */
+  appliedDefaults?: Array<{
+    field: string;
+    defaultValue: unknown;
+  }>;
 }
 
 /**
@@ -69,6 +74,7 @@ export function validateToolParams(params: ValidateParams): ValidationResult {
   const { toolName, pathParams = {}, queryParams = {}, body } = params;
   const errors: ValidationError[] = [];
   const warnings: string[] = [];
+  const appliedDefaults: Array<{ field: string; defaultValue: unknown }> = [];
 
   // Get tool definition
   const tool = getToolByName(toolName);
@@ -100,9 +106,9 @@ export function validateToolParams(params: ValidateParams): ValidationResult {
     warnings.push(`Tool ${toolName} does not accept a request body, but one was provided`);
   }
 
-  // Check required fields from enriched metadata
+  // Check required fields (PR #449: now distinguishes user-required from server-defaulted)
   if (tool.requiredFields && tool.requiredFields.length > 0) {
-    validateRequiredFields(tool.requiredFields, body, errors);
+    validateRequiredFields(tool, body, errors, warnings, appliedDefaults);
   }
 
   // Check oneOf constraints
@@ -120,6 +126,7 @@ export function validateToolParams(params: ValidateParams): ValidationResult {
       path: tool.path,
       operation: tool.operation,
     },
+    appliedDefaults: appliedDefaults.length > 0 ? appliedDefaults : undefined,
   };
 }
 
@@ -226,29 +233,68 @@ function validateBody(
  * Validate required fields from x-ves-required-fields
  */
 function validateRequiredFields(
-  requiredFields: string[],
+  tool: ParsedOperation,
   body: Record<string, unknown> | undefined,
-  errors: ValidationError[]
+  errors: ValidationError[],
+  warnings: string[],
+  appliedDefaults: Array<{ field: string; defaultValue: unknown }>
 ): void {
-  if (!body) {
-    for (const field of requiredFields) {
+  // PR #449: Distinguish user-required from server-defaulted fields
+  const userRequired: string[] = [];
+  const serverDefaulted: string[] = [];
+
+  // If we have field defaults metadata, use it for validation
+  if (tool.fieldDefaults && tool.fieldDefaults.length > 0) {
+    for (const fieldMeta of tool.fieldDefaults) {
+      if (fieldMeta.requiredForCreate && !fieldMeta.isServerDefault) {
+        // User MUST provide this field
+        userRequired.push(fieldMeta.fieldPath);
+      } else if (fieldMeta.isServerDefault) {
+        // Server will apply default if omitted
+        serverDefaulted.push(fieldMeta.fieldPath);
+      }
+    }
+  } else {
+    // Fallback: Use legacy requiredFields (all treated as user-required)
+    userRequired.push(...(tool.requiredFields || []));
+  }
+
+  // Validate user-required fields (errors for missing)
+  if (!body && userRequired.length > 0) {
+    for (const field of userRequired) {
       errors.push({
         path: `body.${field}`,
         message: `Missing required field: ${field}`,
-        expected: "Required by F5XC API",
+        expected: "User must provide value",
       });
     }
     return;
   }
 
-  for (const field of requiredFields) {
-    const value = getNestedValue(body, field);
-    if (value === undefined) {
-      errors.push({
-        path: `body.${field}`,
-        message: `Missing required field: ${field}`,
-        expected: "Required by F5XC API",
-      });
+  if (body) {
+    for (const field of userRequired) {
+      const value = getNestedValue(body, field);
+      if (value === undefined || value === null) {
+        errors.push({
+          path: `body.${field}`,
+          message: `Missing required field: ${field}`,
+          expected: "User must provide value",
+        });
+      }
+    }
+
+    // Check server-defaulted fields (warnings + track defaults)
+    for (const field of serverDefaulted) {
+      const value = getNestedValue(body, field);
+      const fieldMeta = tool.fieldDefaults?.find((f) => f.fieldPath === field);
+
+      if ((value === undefined || value === null) && fieldMeta) {
+        warnings.push(`Field "${field}" will default to ${JSON.stringify(fieldMeta.defaultValue)}`);
+        appliedDefaults.push({
+          field,
+          defaultValue: fieldMeta.defaultValue,
+        });
+      }
     }
   }
 }

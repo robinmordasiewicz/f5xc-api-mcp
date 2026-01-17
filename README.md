@@ -17,6 +17,56 @@ other MCP-compatible tools.
 - **Multiple Auth Methods** - API token and P12 certificate (mTLS) support
 - **URL Normalization** - Automatically handles various F5XC URL formats
 - **Pre-enriched Specs** - Uses optimized OpenAPI 3.0.3 specifications with domain metadata
+- **Server-Applied Defaults** - Distinguishes user-required fields from server-defaulted fields (v2.0.28+)
+
+## Server-Applied Default Values
+
+F5 XC API specifications (v2.0.28+) distinguish between three types of field requirements:
+
+### Field Requirement Types
+
+1. **User-Required Fields** (`x-f5xc-required-for.create: true`)
+   - Must be provided by user at creation time
+   - Validation returns **error** if missing
+   - Example: `metadata.name`, `http_health_check.path`
+
+2. **Server-Defaulted Fields** (`x-f5xc-server-default: true`)
+   - Optional at creation time
+   - Server applies default value if omitted
+   - Validation returns **warning** with default value info
+   - Example: `healthcheck.jitter_percent` defaults to `0`
+
+3. **Schema-Required Fields** (`x-ves-required: true`)
+   - Must have non-zero value when API processes the request
+   - Can be user-provided OR server-defaulted
+
+### Example: Minimal Healthcheck Configuration
+
+```json
+{
+  "metadata": {
+    "name": "example-hc",
+    "namespace": "default"
+  },
+  "spec": {
+    "http_health_check": {
+      "use_origin_server_name": {},
+      "path": "/health"
+    }
+  }
+}
+```
+
+**Server automatically applies:**
+
+- `spec.jitter_percent` → `0`
+
+### Validation Behavior
+
+When validating parameters:
+
+- **Missing user-required field** → ❌ **Error**: "Missing required field: metadata.name"
+- **Missing server-default field** → ⚠️ **Warning**: "Field 'jitter_percent' will default to 0"
 
 ## Quick Start
 

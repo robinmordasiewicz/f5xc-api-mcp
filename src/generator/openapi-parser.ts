@@ -35,6 +35,17 @@ const OpenApiParameterSchema = z.object({
   "x-ves-example": z.string().optional(),
   "x-ves-validation-rules": z.record(z.string(), z.string()).optional(),
   "x-ves-required": z.boolean().optional(),
+  // PR #449: Server-applied default values
+  default: z.unknown().optional(),
+  "x-f5xc-server-default": z.boolean().optional(),
+  "x-f5xc-required-for": z
+    .object({
+      minimum_config: z.boolean().optional(),
+      create: z.boolean().optional(),
+      update: z.boolean().optional(),
+      read: z.boolean().optional(),
+    })
+    .optional(),
 });
 
 const OpenApiRequestBodySchema = z.object({
@@ -226,6 +237,23 @@ export interface MinimumConfiguration {
 }
 
 /**
+ * Field default value metadata from PR #449
+ * Tracks server-applied defaults and user requirement semantics
+ */
+export interface FieldDefaultMetadata {
+  /** Dot-notation path to field (e.g., "spec.timeout") */
+  fieldPath: string;
+  /** Default value applied by server */
+  defaultValue: unknown;
+  /** True if default is applied by server (x-f5xc-server-default) */
+  isServerDefault: boolean;
+  /** True if user must provide value at creation (x-f5xc-required-for.create) */
+  requiredForCreate: boolean;
+  /** True if field must have non-zero value (x-ves-required) */
+  vesRequired: boolean;
+}
+
+/**
  * Parsed operation with metadata for tool generation
  */
 export interface ParsedOperation {
@@ -293,6 +321,10 @@ export interface ParsedOperation {
   // Discovery metadata (v2.0.5+)
   /** API discovery metadata from live exploration */
   discoveryMetadata?: DiscoveryMetadata;
+
+  // Server defaults (PR #449 - v2.0.28+)
+  /** Field default value metadata for validation and documentation */
+  fieldDefaults?: FieldDefaultMetadata[];
 }
 
 /**
