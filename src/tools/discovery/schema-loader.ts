@@ -228,7 +228,8 @@ export function resolveNestedRefs(
 
   const obj = schema as Record<string, unknown>;
 
-  // Handle $ref
+  // Handle $ref with sibling property preservation (v2.0.33+)
+  // JSON Schema allows sibling keywords alongside $ref - we must merge them
   if ("$ref" in obj && typeof obj["$ref"] === "string") {
     const ref = obj["$ref"];
 
@@ -241,8 +242,24 @@ export function resolveNestedRefs(
 
     const resolved = resolveSchemaRef(ref, domain);
     if (resolved) {
+      // Extract sibling properties (everything except $ref)
+      const siblingProps: Record<string, unknown> = {};
+      for (const [key, value] of Object.entries(obj)) {
+        if (key !== "$ref") {
+          siblingProps[key] = value;
+        }
+      }
+
       // Continue resolving nested refs in the resolved schema
-      return resolveNestedRefs(resolved, domain, depth + 1, new Set(visited));
+      const resolvedSchema = resolveNestedRefs(resolved, domain, depth + 1, new Set(visited));
+
+      // Merge sibling properties with resolved schema
+      // Sibling properties (like default, x-f5xc-server-default) take precedence
+      if (Object.keys(siblingProps).length > 0) {
+        return { ...resolvedSchema, ...siblingProps } as ResolvedSchema;
+      }
+
+      return resolvedSchema;
     }
 
     // Couldn't resolve - return original ref
