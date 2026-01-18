@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "description": "Centralized validation specification for F5 XC API",
-  "generated_at": "2026-01-17T07:54:40.480336+00:00",
+  "generated_at": "2026-01-18T06:23:45.765630+00:00",
   "source": "f5xc-api-enriched",
   "required_fields": {
     "common": {
@@ -518,36 +518,6 @@
       "description": "Percentage value for jitter"
     }
   ],
-  "server_defaults": {
-    "description": "Values automatically applied by the F5 XC API when fields are omitted",
-    "resources": {
-      "origin_pool": {
-        "spec": {
-          "no_tls": {},
-          "healthcheck": [],
-          "loadbalancer_algorithm": "ROUND_ROBIN",
-          "endpoint_selection": "DISTRIBUTED"
-        }
-      },
-      "healthcheck": {
-        "spec": {
-          "jitter": 0,
-          "jitter_percent": 0
-        }
-      },
-      "app_firewall": {
-        "spec": {
-          "allow_all_response_codes": {},
-          "default_anonymization": {},
-          "default_bot_setting": {},
-          "default_detection_settings": {},
-          "disable_ai_enhancements": {},
-          "monitoring": {},
-          "use_default_blocking_page": {}
-        }
-      }
-    }
-  },
   "conditional_requirements": {
     "description": "Fields required or mutually exclusive based on context",
     "resources": {
@@ -847,42 +817,89 @@
       }
     }
   },
-  "oneof_defaults": {
-    "origin_pool": {
-      "port_choice": "port",
-      "upstream_conn_pool_reuse": "enable_conn_pool_reuse",
-      "health_check_port_choice": "same_as_endpoint_port",
-      "tls_choice": "no_tls",
-      "circuit_breaker_choice": "default_circuit_breaker",
-      "outlier_detection_choice": "disable_outlier_detection",
-      "panic_threshold_type": "no_panic_threshold",
-      "subset_choice": "disable_subsets",
-      "http_protocol_type": "auto_http_config",
-      "proxy_protocol_choice": "disable_proxy_protocol",
-      "lb_source_ip_persistence_choice": "disable_lb_source_ip_persistance"
-    }
-  },
-  "ui_vs_server_defaults": {
-    "origin_pool": {
-      "loadbalancer_algorithm": {
-        "ui_default": "LB_OVERRIDE",
-        "server_default": "ROUND_ROBIN",
-        "note": "UI pre-selects LB_OVERRIDE but server applies ROUND_ROBIN if omitted"
+  "defaults": {
+    "description": "All default values organized by resource type",
+    "resources": {
+      "api_definition": {
+        "server_applied": {
+          "swagger_specs": []
+        }
+      },
+      "app_firewall": {
+        "server_applied": {
+          "allow_all_response_codes": {},
+          "default_anonymization": {},
+          "default_bot_setting": {},
+          "default_detection_settings": {},
+          "disable_ai_enhancements": {},
+          "monitoring": {},
+          "use_default_blocking_page": {}
+        }
+      },
+      "healthcheck": {
+        "server_applied": {
+          "jitter": 0,
+          "jitter_percent": 0
+        },
+        "recommended": {
+          "timeout": 3,
+          "interval": 15,
+          "unhealthy_threshold": 1,
+          "healthy_threshold": 3,
+          "jitter_percent": 30
+        }
+      },
+      "origin_pool": {
+        "server_applied": {
+          "no_tls": {},
+          "healthcheck": [],
+          "loadbalancer_algorithm": "ROUND_ROBIN",
+          "endpoint_selection": "DISTRIBUTED"
+        },
+        "recommended": {
+          "port": 443,
+          "connection_timeout": 2000,
+          "http_idle_timeout": 300000
+        },
+        "advanced_options": {
+          "connection_timeout": 2000,
+          "http_idle_timeout": 300000,
+          "same_as_endpoint_port": {},
+          "default_circuit_breaker": {},
+          "disable_outlier_detection": {},
+          "no_panic_threshold": {},
+          "disable_subsets": {},
+          "auto_http_config": {},
+          "disable_proxy_protocol": {},
+          "disable_lb_source_ip_persistance": {}
+        },
+        "oneof_choices": {
+          "port_choice": "port",
+          "upstream_conn_pool_reuse": "enable_conn_pool_reuse",
+          "health_check_port_choice": "same_as_endpoint_port",
+          "tls_choice": "no_tls",
+          "circuit_breaker_choice": "default_circuit_breaker",
+          "outlier_detection_choice": "disable_outlier_detection",
+          "panic_threshold_type": "no_panic_threshold",
+          "subset_choice": "disable_subsets",
+          "http_protocol_type": "auto_http_config",
+          "proxy_protocol_choice": "disable_proxy_protocol",
+          "lb_source_ip_persistence_choice": "disable_lb_source_ip_persistance"
+        },
+        "ui_vs_server": {
+          "loadbalancer_algorithm": {
+            "ui_default": "LB_OVERRIDE",
+            "server_default": "ROUND_ROBIN",
+            "note": "UI pre-selects LB_OVERRIDE but server applies ROUND_ROBIN if omitted"
+          }
+        }
+      },
+      "rate_limiter": {
+        "server_applied": {
+          "rules": [],
+          "user_identification": []
+        }
       }
-    }
-  },
-  "advanced_options_defaults": {
-    "origin_pool": {
-      "connection_timeout": 2000,
-      "http_idle_timeout": 300000,
-      "same_as_endpoint_port": {},
-      "default_circuit_breaker": {},
-      "disable_outlier_detection": {},
-      "no_panic_threshold": {},
-      "disable_subsets": {},
-      "auto_http_config": {},
-      "disable_proxy_protocol": {},
-      "disable_lb_source_ip_persistance": {}
     }
   },
   "extensions": {
@@ -912,7 +929,9 @@
     "required_fields_exported": 62,
     "enum_values_exported": 42,
     "constraints_exported": 14,
-    "server_defaults_exported": 3,
+    "server_defaults_exported": 5,
+    "recommended_values_exported": 8,
+    "advanced_options_exported": 1,
     "conditional_requirements_exported": 18,
     "minimum_configs_exported": 6,
     "oneof_defaults_exported": 11,
@@ -920,6 +939,6 @@
     "warnings": []
   },
   "info": {
-    "version": "2.0.33"
+    "version": "2.0.34"
   }
 }
